@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-3.0.4.ebuild,v 1.1 2004/08/23 07:44:40 arj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-3.0.6.ebuild,v 1.1 2004/09/05 19:51:26 arj Exp $
 
 IUSE="nls"
 
