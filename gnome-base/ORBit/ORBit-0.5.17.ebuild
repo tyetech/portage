@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/ORBit/Attic/ORBit-0.5.17.ebuild,v 1.3 2002/09/14 15:51:24 bjb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/ORBit/Attic/ORBit-0.5.17.ebuild,v 1.4 2002/09/23 19:16:36 vapier Exp $
 
 inherit libtool
 
@@ -18,7 +18,7 @@ RDEPEND="virtual/glibc
 	=dev-libs/glib-1.2*"
 
 SLOT="0"
-LICENSE="GPL"
+LICENSE="GPL-2"
 KEYWORDS="x86 sparc sparc64 alpha"
 
 src_compile() {
