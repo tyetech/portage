@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgtkhtml/Attic/libgtkhtml-2.4.0.ebuild,v 1.11 2004/07/14 15:58:18 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgtkhtml/Attic/libgtkhtml-2.4.0.ebuild,v 1.12 2005/01/08 23:23:45 slarti Exp $
 
 inherit eutils gnome2
 
