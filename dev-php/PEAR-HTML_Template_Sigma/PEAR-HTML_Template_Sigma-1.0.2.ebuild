@@ -1,11 +1,11 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTML_Template_Sigma/Attic/PEAR-HTML_Template_Sigma-1.0.2.ebuild,v 1.4 2004/06/25 01:19:02 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTML_Template_Sigma/Attic/PEAR-HTML_Template_Sigma-1.0.2.ebuild,v 1.5 2004/07/04 23:19:27 robbat2 Exp $
 
 inherit php-pear
 
 DESCRIPTION="An implementation of Integrated Templates API with template 'compilation' added"
 LICENSE="PHP"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc alpha"
+KEYWORDS="x86 ~ppc ~sparc alpha"
 IUSE=""
