@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/x2vnc/Attic/x2vnc-1.3.1.ebuild,v 1.3 2003/09/05 23:29:06 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/x2vnc/Attic/x2vnc-1.3.1.ebuild,v 1.4 2004/01/05 13:01:55 weeve Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Control a remote computer running VNC from X"
