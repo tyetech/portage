@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/lostirc/Attic/lostirc-0.2.0.ebuild,v 1.2 2002/11/28 16:51:18 phoenix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/lostirc/Attic/lostirc-0.2.1.ebuild,v 1.1 2002/11/28 16:51:18 phoenix Exp $
 
 IUSE=""
 
@@ -10,9 +10,9 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
-DEPEND="=x11-libs/gtkmm-2.0.0*
+DEPEND="=x11-libs/gtkmm-2.0*
 	=dev-libs/libsigc++-1.2*"
 
 
