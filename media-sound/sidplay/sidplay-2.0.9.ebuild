@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/sidplay/sidplay-2.0.9.ebuild,v 1.1 2004/07/03 08:19:01 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/sidplay/sidplay-2.0.9.ebuild,v 1.2 2004/09/03 20:16:41 eradicator Exp $
 
 IUSE=""
 
@@ -12,7 +12,7 @@ RESTRICT="nomirror"
 SLOT="0"
 LICENSE="GPL-2"
 
-KEYWORDS="~x86 ~ppc ~sparc ~amd64"
+KEYWORDS="x86 ~ppc sparc amd64"
 
 DEPEND=">=media-libs/libsidplay-2.1.0"
 
