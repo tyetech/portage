@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmap/Attic/nmap-3.30.ebuild,v 1.7 2003/09/16 11:21:02 taviso Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmap/Attic/nmap-3.30.ebuild,v 1.8 2004/01/20 19:52:13 spock Exp $
 
 inherit gcc eutils
 
