@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/sylpheed-claws-maildir/Attic/sylpheed-claws-maildir-0.6.ebuild,v 1.6 2004/12/14 06:42:13 genone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/sylpheed-claws-maildir/Attic/sylpheed-claws-maildir-0.7.ebuild,v 1.1 2004/12/14 06:42:13 genone Exp $
 
 MY_P="${P##sylpheed-claws-}"
 
@@ -11,14 +11,11 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~amd64 ~alpha"
 IUSE=""
-DEPEND="=mail-client/sylpheed-claws-0.9.12b-r1"
+DEPEND=">=mail-client/sylpheed-claws-0.9.13"
 
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
-	# patch broken Makefile
-	sed -i -e 's:\$(libdir)/sylpheed/plugins:\$(SYLPHEED_CLAWS_PLUGINDIR):' src/Makefile.in
-
 	econf || die
 	emake || die
 }

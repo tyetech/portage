@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/sylpheed-claws-mailmbox/Attic/sylpheed-claws-mailmbox-0.9.ebuild,v 1.4 2004/10/19 19:56:08 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/sylpheed-claws-mailmbox/Attic/sylpheed-claws-mailmbox-0.9.ebuild,v 1.5 2004/12/14 06:42:13 genone Exp $
 
 MY_P="${P##sylpheed-claws-}"
 
@@ -11,7 +11,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~amd64 ~alpha"
 IUSE=""
-DEPEND=">=mail-client/sylpheed-claws-0.9.12b"
+DEPEND="=mail-client/sylpheed-claws-0.9.12b-r1"
 
 S="${WORKDIR}/${MY_P}"
 
