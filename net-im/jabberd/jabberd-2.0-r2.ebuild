@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/jabberd/Attic/jabberd-2.0-r1.ebuild,v 1.4 2004/10/27 09:41:03 slarti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/jabberd/Attic/jabberd-2.0-r2.ebuild,v 1.1 2004/11/24 10:33:23 humpback Exp $
 
 inherit eutils
 
-MY_PV="2.0s3"
+MY_PV="2.0s4"
 S="${WORKDIR}/${PN}-${MY_PV}"
 
 DESCRIPTION="Open Source Jabber Server"
@@ -37,6 +37,8 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${PN}-${MY_PV}.tar.gz
+	cd ${WORKDIR}/${PN}-${MY_PV}
+	epatch ${FILESDIR}/patch-c2s-buffers
 }
 
 src_compile() {
