@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/pmud/Attic/pmud-0.10.1-r3.ebuild,v 1.3 2004/07/09 21:53:37 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/pmud/Attic/pmud-0.10.1-r3.ebuild,v 1.4 2005/01/01 14:47:46 eradicator Exp $
 
 inherit eutils
 
