@@ -1,11 +1,16 @@
 #!/sbin/runscript
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ircservices/files/ircservices.init.d,v 1.2 2004/08/14 22:35:49 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ircservices/files/ircservices.init.d,v 1.3 2004/08/14 22:55:05 swegener Exp $
 
 depend() {
-	need net
-	use ircd
+	if [ "${LOCALIRCD}" = true ]
+	then
+		need net ircd
+	else
+		need net
+		use ircd
+	fi
 }
 
 start() {
