@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mrtg/Attic/mrtg-2.10.12.ebuild,v 1.2 2004/06/08 21:41:08 swtaylor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mrtg/Attic/mrtg-2.10.14.ebuild,v 1.1 2004/06/08 21:41:08 swtaylor Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A tool to monitor the traffic load on network-links"
