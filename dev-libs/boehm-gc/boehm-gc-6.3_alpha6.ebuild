@@ -1,16 +1,17 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/boehm-gc/Attic/boehm-gc-6.2-r1.ebuild,v 1.3 2004/05/14 09:45:36 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/boehm-gc/Attic/boehm-gc-6.3_alpha6.ebuild,v 1.1 2004/05/14 09:45:36 usata Exp $
 
-S=${WORKDIR}/gc${PV/_/}
+MY_P=gc${PV/_/}
+S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="The Boehm-Demers-Weiser conservative garbage collector"
 HOMEPAGE="http://www.hpl.hp.com/personal/Hans_Boehm/gc/"
-SRC_URI="http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/gc${PV/_/}.tar.gz"
+SRC_URI="http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/${MY_P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 ~sparc alpha ppc ~amd64 hppa"
+KEYWORDS="~x86 ~sparc ~alpha ~ppc ~amd64 ~hppa"
 
 DEPEND="virtual/glibc"
 
@@ -21,8 +22,8 @@ src_compile() {
 }
 
 src_install() {
-	make prefix=${D}/usr \
-		mandir=${D}/usr/share/man \
+	make prefix=/usr \
+		mandir=/usr/share/man \
 		DESTDIR=${D} install-exec || die
 	insinto /usr/include/gc
 	doins include/*.h
