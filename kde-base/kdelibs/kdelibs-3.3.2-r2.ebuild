@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.3.2-r1.ebuild,v 1.5 2004/12/29 19:02:41 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.3.2-r2.ebuild,v 1.1 2005/01/03 16:56:49 caleb Exp $
 
 inherit kde eutils flag-o-matic
 set-kdedir 3.3
@@ -45,6 +45,7 @@ src_unpack() {
 	kde_src_unpack
 	epatch ${FILESDIR}/post-3.3.2-kdelibs-kio.diff
 	epatch ${FILESDIR}/post-3.3.2-kdelibs-htmlframes2.patch
+	epatch ${FILESDIR}/post-3.3.2-kdelibs-kioslave.patch
 }
 
 src_compile() {
