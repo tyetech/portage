@@ -1,6 +1,6 @@
 # for vixie cron
 #
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/vixie-cron/files/Attic/crontab,v 1.4 2004/03/29 21:28:19 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/vixie-cron/files/Attic/crontab,v 1.5 2004/07/18 04:40:50 dragonheart Exp $
 #
 
 # Global variables
