@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r11.ebuild,v 1.14 2004/09/29 05:24:47 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r12.ebuild,v 1.1 2004/10/07 22:24:28 lv Exp $
 
 inherit eutils flag-o-matic gcc
 
@@ -423,6 +423,9 @@ src_unpack() {
 
 	# Fix info leakage #59526
 	cd ${S}; epatch ${FILESDIR}/glibc-sec-hotfix-20040804.patch
+
+	# Improved handled temporary files. bug #66358
+	epatch ${FILESDIR}/2.3.3/${PN}-2.3.3-tempfile.patch
 
 	# Fix permissions on some of the scripts
 	chmod u+x ${S}/scripts/*.sh
