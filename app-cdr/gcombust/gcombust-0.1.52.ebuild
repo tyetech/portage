@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/gcombust/Attic/gcombust-0.1.50-r1.ebuild,v 1.2 2002/07/06 20:51:34 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/gcombust/Attic/gcombust-0.1.52.ebuild,v 1.1 2002/07/08 15:32:28 stroke Exp $
 
 DESCRIPTION="A GUI for mkisofs/mkhybrid/cdda2wav/cdrecord/cdlabelgen"
 HOMEPAGE="http://www.abo.fi/~jmunsin/gcombust/"
