@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/xslide/Attic/xslide-0.2.ebuild,v 1.5 2004/06/24 22:28:50 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/xslide/Attic/xslide-0.2.ebuild,v 1.6 2004/11/03 04:49:01 usata Exp $
 
 inherit elisp
 
@@ -13,7 +13,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86"
 
-DEPEND="virtual/emacs"
+DEPEND="app-arch/unzip"
+RDEPEND=""
 
 S="${WORKDIR}/"
 
