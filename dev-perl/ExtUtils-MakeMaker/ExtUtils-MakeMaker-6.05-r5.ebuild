@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/ExtUtils-MakeMaker/Attic/ExtUtils-MakeMaker-6.05-r5.ebuild,v 1.5 2003/09/06 22:37:58 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/ExtUtils-MakeMaker/Attic/ExtUtils-MakeMaker-6.05-r5.ebuild,v 1.6 2003/09/10 22:23:03 msterret Exp $
 
 DESCRIPTION="MakeMaker Perl Module"
 SRC_URI="http://cpan.valueclick.com/modules/by-module/ExtUtils/${P}.tar.gz"
@@ -64,7 +64,7 @@ src_install () {
 	fi
 
 	for FILE in `find ${D} -type f -name "*.html" -o -name ".packlist"`; do
-    	sed -i -e "s:${D}:/:g" ${FILE}
+		sed -i -e "s:${D}:/:g" ${FILE}
 	done
 
 	dodoc Change* MANIFEST* README* ${mydoc}
