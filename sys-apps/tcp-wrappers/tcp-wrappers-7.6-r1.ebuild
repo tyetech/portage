@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/tcp-wrappers/Attic/tcp-wrappers-7.6-r1.ebuild,v 1.2 2000/08/16 04:38:31 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/tcp-wrappers/Attic/tcp-wrappers-7.6-r1.ebuild,v 1.3 2000/09/15 20:09:23 drobbins Exp $
 
 P=tcp-wrappers-7.6      
 A=tcp_wrappers_7.6.tar.gz
@@ -21,7 +21,7 @@ src_unpack() {
 }
 
 src_compile() {                           
-    make REAL_DAEMON_DIR=/usr/sbin linux
+    try make REAL_DAEMON_DIR=/usr/sbin linux
 }
 
 src_install() {     
