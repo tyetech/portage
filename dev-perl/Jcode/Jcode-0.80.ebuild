@@ -1,6 +1,6 @@
 # Copyright 2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Jcode/Attic/Jcode-0.80.ebuild,v 1.1 2002/06/28 12:18:04 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Jcode/Attic/Jcode-0.80.ebuild,v 1.2 2002/06/28 12:20:42 seemant Exp $
 
 inherit perl-module
 
@@ -12,7 +12,7 @@ LICENSE="Artistic | GPL-2"
 SRC_URI="http://cpan.org/modules/by-authors/id/D/DA/DANKOGAI/${MY_P}.tar.gz"
 HOMEPAGE="http://cpan.org/modules/by-authors/id/D/DA/DANKOGAI/${MY_P}.readme"
 
-SLOT=""
+SLOT="0"
 newdepend ">=dev-perl/MIME-Base64-2.1"
 
 src_compile() {
