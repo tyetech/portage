@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/subversion/Attic/subversion-0.26.0.ebuild,v 1.4 2003/09/25 17:06:17 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/subversion/Attic/subversion-0.26.0.ebuild,v 1.5 2003/09/25 17:43:12 mholzer Exp $
 
 inherit libtool
 
@@ -252,4 +252,3 @@ pkg_config() {
 		chmod -Rf 755 ${SVN_REPOS_LOC}/repos
 	fi
 }
-
