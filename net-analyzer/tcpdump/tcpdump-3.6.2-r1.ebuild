@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcpdump/Attic/tcpdump-3.6.2-r1.ebuild,v 1.14 2003/09/05 23:40:10 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcpdump/Attic/tcpdump-3.6.2-r1.ebuild,v 1.15 2004/03/30 19:54:24 solar Exp $
 
 IUSE="ssl"
 
