@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/Attic/openbox-3.0.ebuild,v 1.1 2003/11/07 04:02:39 tseng Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/Attic/openbox-3.0.ebuild,v 1.2 2003/11/07 04:04:51 tseng Exp $
 
 S=${WORKDIR}/${P/_/-}
 DESCRIPTION="Openbox is a standards compliant, fast, light-weight, extensible window manager."
