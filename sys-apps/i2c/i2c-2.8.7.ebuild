@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/i2c/Attic/i2c-2.8.4.ebuild,v 1.5 2004/07/12 15:04:04 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/i2c/Attic/i2c-2.8.7.ebuild,v 1.1 2004/07/12 15:04:04 plasmaroo Exp $
 
 inherit eutils
 
