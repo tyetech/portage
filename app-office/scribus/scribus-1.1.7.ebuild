@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/scribus/Attic/scribus-1.1.7.ebuild,v 1.6 2004/10/17 10:18:38 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/scribus/Attic/scribus-1.1.7.ebuild,v 1.7 2005/01/01 15:41:45 eradicator Exp $
 
 inherit kde-functions
 need-qt 3
