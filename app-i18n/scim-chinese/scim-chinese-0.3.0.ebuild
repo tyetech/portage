@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-chinese/Attic/scim-chinese-0.3.0.ebuild,v 1.6 2004/07/17 16:33:06 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-chinese/Attic/scim-chinese-0.3.0.ebuild,v 1.7 2005/01/01 14:38:38 eradicator Exp $
 
 inherit gnome2
 

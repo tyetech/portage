@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skkserv/skkserv-9.6-r2.ebuild,v 1.10 2004/06/28 02:05:04 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skkserv/skkserv-9.6-r2.ebuild,v 1.11 2005/01/01 14:41:50 eradicator Exp $
 
 inherit eutils
 

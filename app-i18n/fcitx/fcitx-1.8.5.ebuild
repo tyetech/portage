@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/fcitx/Attic/fcitx-1.8.5.ebuild,v 1.6 2004/06/24 21:45:10 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/fcitx/Attic/fcitx-1.8.5.ebuild,v 1.7 2005/01/01 14:27:48 eradicator Exp $
 
 DESCRIPTION="Free Chinese Input Toy for X. Another Chinese XIM Input Method"
 HOMEPAGE="http://www.fcitx.org/"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/im-ja/Attic/im-ja-1.2-r1.ebuild,v 1.4 2004/11/16 17:20:55 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/im-ja/Attic/im-ja-1.2-r1.ebuild,v 1.5 2005/01/01 14:30:46 eradicator Exp $
 
 inherit gnome2 eutils
 

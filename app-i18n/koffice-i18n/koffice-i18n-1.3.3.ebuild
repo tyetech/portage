@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/koffice-i18n/Attic/koffice-i18n-1.3.3.ebuild,v 1.5 2004/11/11 09:37:19 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/koffice-i18n/Attic/koffice-i18n-1.3.3.ebuild,v 1.6 2005/01/01 14:32:58 eradicator Exp $
 
 inherit kde
 

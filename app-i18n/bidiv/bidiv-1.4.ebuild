@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/bidiv/Attic/bidiv-1.4.ebuild,v 1.4 2004/06/24 21:43:32 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/bidiv/Attic/bidiv-1.4.ebuild,v 1.5 2005/01/01 14:25:43 eradicator Exp $
 
 DESCRIPTION="A BiDirectional Text Viewer"
 HOMEPAGE="http://www.ivrix.org.il"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/nkf/Attic/nkf-2.0.2-r1.ebuild,v 1.9 2004/10/09 18:54:23 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/nkf/Attic/nkf-2.0.2-r1.ebuild,v 1.10 2005/01/01 14:36:38 eradicator Exp $
 
 inherit gcc
 inherit perl-module

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/xcin/Attic/xcin-2.5.2.3.ebuild,v 1.9 2004/06/28 02:07:11 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/xcin/Attic/xcin-2.5.2.3.ebuild,v 1.10 2005/01/01 14:43:44 eradicator Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/xsim/Attic/xsim-0.3.9.4-r2.ebuild,v 1.7 2004/06/28 02:07:45 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/xsim/Attic/xsim-0.3.9.4-r2.ebuild,v 1.8 2005/01/01 14:43:56 eradicator Exp $
 
 use kde && inherit kde
 

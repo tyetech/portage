@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/manpages-es/Attic/manpages-es-1.28.ebuild,v 1.7 2004/06/24 21:50:41 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/manpages-es/Attic/manpages-es-1.28.ebuild,v 1.8 2005/01/01 14:34:39 eradicator Exp $
 
 S1=${WORKDIR}/man-pages-es-1.28
 S2=${WORKDIR}/man-pages-es-extra-0.8a
