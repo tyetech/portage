@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skk-jisyo/Attic/skk-jisyo-200404.ebuild,v 1.2 2004/05/09 18:33:20 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skk-jisyo/Attic/skk-jisyo-200404.ebuild,v 1.3 2004/06/22 23:18:07 matsuu Exp $
 
 IUSE=""
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://gentoo/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 alpha ppc"
+KEYWORDS="x86 alpha ppc ~amd64 ~sparc"
 
 DEPEND="app-arch/gzip"
 RDEPEND=""
