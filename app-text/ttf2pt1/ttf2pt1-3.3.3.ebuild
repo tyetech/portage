@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ttf2pt1/Attic/ttf2pt1-3.3.3.ebuild,v 1.21 2004/07/14 00:49:03 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ttf2pt1/Attic/ttf2pt1-3.3.3.ebuild,v 1.22 2005/01/01 16:39:32 eradicator Exp $
 
 inherit eutils
 

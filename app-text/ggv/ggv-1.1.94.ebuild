@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ggv/Attic/ggv-1.1.94.ebuild,v 1.19 2004/10/25 08:02:20 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ggv/Attic/ggv-1.1.94.ebuild,v 1.20 2005/01/01 16:14:59 eradicator Exp $
 
 IUSE="nls bonobo"
 

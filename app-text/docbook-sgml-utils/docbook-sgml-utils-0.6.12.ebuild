@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/docbook-sgml-utils/Attic/docbook-sgml-utils-0.6.12.ebuild,v 1.18 2004/11/08 14:49:25 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/docbook-sgml-utils/Attic/docbook-sgml-utils-0.6.12.ebuild,v 1.19 2005/01/01 16:10:22 eradicator Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/rcs/Attic/rcs-5.7-r2.ebuild,v 1.18 2004/07/13 23:19:21 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/rcs/Attic/rcs-5.7-r2.ebuild,v 1.19 2005/01/01 16:32:51 eradicator Exp $
 
 DESCRIPTION="Revision Control System"
 HOMEPAGE="http://www.gnu.org/software/rcs/"
