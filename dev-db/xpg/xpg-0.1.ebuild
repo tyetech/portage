@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/xpg/Attic/xpg-0.1.ebuild,v 1.3 2004/08/05 09:25:13 sejo Exp $
 
 
 DESCRIPTION="GUI for PostgreSQL written in Java"
