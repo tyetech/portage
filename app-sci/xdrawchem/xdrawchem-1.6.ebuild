@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/xdrawchem/Attic/xdrawchem-1.6.ebuild,v 1.3 2003/01/08 06:00:40 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/xdrawchem/Attic/xdrawchem-1.6.ebuild,v 1.4 2003/02/13 09:27:13 vapier Exp $
 
 IUSE="qt"
 

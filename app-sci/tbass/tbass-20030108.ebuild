@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/tbass/Attic/tbass-20030108.ebuild,v 1.1 2003/02/07 06:22:03 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/tbass/Attic/tbass-20030108.ebuild,v 1.2 2003/02/13 09:26:23 vapier Exp $
 
 IUSE=""
 

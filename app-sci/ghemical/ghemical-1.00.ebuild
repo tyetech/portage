@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/ghemical/Attic/ghemical-1.00.ebuild,v 1.7 2003/01/13 16:09:09 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/ghemical/Attic/ghemical-1.00.ebuild,v 1.8 2003/02/13 09:21:40 vapier Exp $
 
 DEPEND="gnome-base/gnome-libs
 	dev-libs/libf2c
