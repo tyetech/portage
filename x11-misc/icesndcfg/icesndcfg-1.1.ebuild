@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/icesndcfg/Attic/icesndcfg-1.1.ebuild,v 1.8 2004/06/24 22:24:07 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/icesndcfg/Attic/icesndcfg-1.1.ebuild,v 1.9 2004/09/02 22:49:41 pvdabeel Exp $
 
 IUSE=""
 
@@ -13,7 +13,7 @@ DEPEND="virtual/x11
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 sparc ~ppc"
+KEYWORDS="x86 sparc ppc"
 
 src_compile () {
 	addwrite ${QTDIR}/etc/settings
