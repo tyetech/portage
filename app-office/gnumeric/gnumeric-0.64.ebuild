@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-office/cvs-repo/gentoo-x86/gnome-office/gnumeric/Attic/gnumeric-0.59a-r1.ebuild,v 1.1 2000/12/01 19:46:12 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/gnumeric/Attic/gnumeric-0.64.ebuild,v 1.1 2001/04/29 17:03:43 achim Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -10,12 +10,19 @@ SRC_URI="ftp://ftp.gnome.org/pub/GNOME/stable/sources/gnumeric/"${A}
 HOMEPAGE="http://www.gnome.org/gnome-office/gnumeric.shtml"
 
 DEPEND=">=sys-devel/perl-5
-	>=virtual/python-1.5.2
-	>=gnome-base/gal-0.2.2
-	>=gnome-libs/gb-0.0.15
+	>=dev-lang/python-2.0
+	>=gnome-base/gal-0.3.0
+	>=gnome-libs/gb-0.0.17
 	>=gnome-libs/libole2-0.1.7
 	bonobo? ( >=gnome-base/bonobo-0.28 
 		  >=gnome-libs/libgda-0.2.0 ) "
+
+src_unpack() {
+  unpack ${A}
+  cd ${S}
+  cp configure configure.orig
+  sed -e 's:"%d,:"%d",:' configure.orig > configure
+}
 
 src_compile() {                           
   cd ${S}
@@ -26,10 +33,6 @@ src_compile() {
   fi
   LDFLAGS="-L/opt/gnome/lib -lunicode" try ./configure --host=${CHOST} --prefix=/opt/gnome \
 	${myconf}  --with-gb
-  cd plugins/perl
-  cp Makefile Makefile.orig
-#  sed -e "s:perl Makefile\.PL:perl Makefile\.PL $PERLINSTALL:" \
-#	Makefile.orig > Makefile
   cd ${S}
   try make
 }
