@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmpeg3/Attic/libmpeg3-1.5-r1.ebuild,v 1.2 2002/06/08 05:56:38 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmpeg3/Attic/libmpeg3-1.5-r1.ebuild,v 1.3 2002/07/11 06:30:39 drobbins Exp $
 
 S=${WORKDIR}/${PN}
 DESCRIPTION="An mpeg library for linux"

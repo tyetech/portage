@@ -1,7 +1,6 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Peter Gavin <pete@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/netpbm/Attic/netpbm-9.12.ebuild,v 1.2 2001/08/11 03:44:19 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/netpbm/Attic/netpbm-9.12.ebuild,v 1.3 2002/07/11 06:30:39 drobbins Exp $
 
 A=${P}.tgz
 S=${WORKDIR}/${P}

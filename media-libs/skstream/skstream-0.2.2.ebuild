@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# Author Bart Verwilst <verwilst@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/skstream/Attic/skstream-0.2.2.ebuild,v 1.1 2002/04/07 23:00:22 verwilst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/skstream/Attic/skstream-0.2.2.ebuild,v 1.2 2002/07/11 06:30:40 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION=""
