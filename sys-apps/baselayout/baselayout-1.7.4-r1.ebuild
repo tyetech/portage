@@ -1,9 +1,9 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.7.3-r2.ebuild,v 1.1 2002/03/06 21:22:09 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.7.4-r1.ebuild,v 1.1 2002/03/11 06:37:32 azarah Exp $
 
-SV="1.2.9"
+SV="1.3.0"
 SVREV=""
 #sysvinit version
 SVIV="2.83"
@@ -14,18 +14,41 @@ SRC_URI="ftp://metalab.unc.edu/pub/Linux/system/daemons/init/sysvinit-${SVIV}.ta
 #	http://www.ibiblio.org/gentoo/distfiles/rc-scripts-${SV}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org"
 
-if [ -z "$BUILD" ]
+if [ -z "`use build`" ]
 then
 	DEPEND="sys-apps/kbd"
 fi
 
 #This ebuild needs to be merged "live".  You can't simply make a package of it and merge it later.
 
+pkg_setup() {
+	if [ "$ROOT" = "/" ]
+	then
+		#make sure we do not kill X because of the earlier bad /etc/inittab we used.
+		source /etc/init.d/functions.sh || die
+		if [ -L ${svcdir}/started/xdm ] && \
+		   [ -n "`grep -e 'x:3:respawn:/etc/X11/startDM.sh' /etc/inittab`" ] && \
+		   [ -n "`ps -A | grep -e "X"`" ]
+		then
+			echo
+		   	einfo "!!! With the current version of baselayout installed (1.7.3-r1), merging"
+			einfo "    this version of baselayout will cause X to die if you started it"
+			einfo "    with the /etc/init.d/xdm script!!!!"
+			echo
+			einfo "Please quit X and then merge this again."
+			die
+		fi
+	fi
+}
+
 src_unpack() {
 	unpack ${A}
 
 	echo ">>> Unpacking rc-scripts-${SV}${SVREV}.tar.bz2"
 	tar -jxf ${FILESDIR}/rc-scripts-${SV}${SVREV}.tar.bz2 || die
+
+	#fix depscan bug
+	cp -f ${FILESDIR}/depscan.sh ${S}/init.d/
 	
 	#fix CFLAGS for sysvinit stuff
 	cd ${S2}
@@ -336,14 +359,17 @@ EOF
 	#rather force the install of critical files to insure that there is no
 	#problems.
 	## add net.lo for now as well, as it is a problem case in this release.
-	for x in depscan.sh functions.sh runscript.sh checkroot net.lo consolefont keymaps xdm
+	for x in depscan.sh functions.sh runscript.sh checkroot net.eth0 net.lo consolefont keymaps xdm
 	do
 		rm -f ${ROOT}/etc/init.d/._cfg*_${x}
 		cp -f ${S}/init.d/${x} ${ROOT}/etc/init.d/
 	done
 	rm -f ${ROOT}/etc/._cfg*_inittab
 	cp -f ${S}/etc/inittab ${ROOT}/etc/
-	[ "$ROOT" = "/" ] && /sbin/init Q
+	if [ "$ROOT" = "/" ] && [ -z "`use build`" ]
+	then
+		/sbin/init Q
+	fi
 	mkdir -p ${ROOT}/etc/X11/
 	cp -f ${S}/sbin/startDM.sh ${ROOT}/etc/X11/
 	
@@ -361,7 +387,10 @@ EOF
 	fi
 
 	#reload init to fix unmounting problems of / on next reboot
-	[ "$ROOT" = "/" ] && /sbin/init U
+	if [ "$ROOT" = "/" ] && [ -z "`use build`" ]
+	then
+		/sbin/init U
+	fi
 
 	#kill the old /dev-state directory if it exists
 	if [ -e /dev-state ]
