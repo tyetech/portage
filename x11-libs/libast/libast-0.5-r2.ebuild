@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libast/Attic/libast-0.5-r2.ebuild,v 1.4 2004/07/08 17:48:21 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libast/Attic/libast-0.5-r2.ebuild,v 1.5 2004/07/09 19:45:26 slarti Exp $
 
-inherit 64-bit
+inherit 64-bit eutils
 
 DESCRIPTION="LIBrary of Assorted Spiffy Things"
 HOMEPAGE="http://www.eterm.org/download/"
