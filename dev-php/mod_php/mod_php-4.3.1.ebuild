@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.1.ebuild,v 1.10 2003/05/08 05:15:38 heim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.1.ebuild,v 1.11 2003/05/12 16:13:58 heim Exp $
 
 inherit flag-o-matic 
 
@@ -96,6 +96,11 @@ src_unpack() {
 	#                      > ext/java/Makefile.in
 	#	fi
 	#fi
+	
+	# pear's world writable files is a php issue fixed in their cvs tree.
+        # http://bugs.php.net/bug.php?id=20978
+        # http://bugs.php.net/bug.php?id=20974
+        epatch ${FILESDIR}/pear_config.diff || die "epatch failed"
 
 }
 
