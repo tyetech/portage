@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg/Attic/gnupg-1.2.6.ebuild,v 1.18 2004/12/31 08:44:25 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg/Attic/gnupg-1.2.6.ebuild,v 1.19 2004/12/31 14:50:11 dragonheart Exp $
 
 inherit eutils flag-o-matic
 
