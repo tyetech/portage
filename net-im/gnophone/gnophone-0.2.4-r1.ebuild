@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gnophone/Attic/gnophone-0.2.4-r1.ebuild,v 1.7 2004/07/15 00:12:45 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gnophone/Attic/gnophone-0.2.4-r1.ebuild,v 1.8 2005/03/23 16:18:32 seemant Exp $
 
 inherit eutils
 
@@ -15,7 +15,7 @@ IUSE="esd mozilla"
 DEPEND="media-sound/gsm
 	net-libs/iax
 	media-sound/sox
-	mozilla? ( net-www/mozilla )
+	mozilla? ( www-client/mozilla )
 	esd? ( media-sound/esound )
 	x11-libs/gtk+
 	media-libs/gdk-pixbuf
