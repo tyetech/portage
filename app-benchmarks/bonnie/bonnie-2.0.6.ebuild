@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/bonnie/bonnie-2.0.6.ebuild,v 1.1 2003/02/11 18:57:16 sethbc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/bonnie/bonnie-2.0.6.ebuild,v 1.2 2003/02/13 05:58:15 vapier Exp $
 
 DESCRIPTION="Performance Test of Filesystem I/O using standard C library calls."
 HOMEPAGE="http://www.textuality.com/bonnie/"
