@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/openldap/Attic/openldap-2.1.30-r4.ebuild,v 1.1 2004/12/02 04:54:33 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/openldap/Attic/openldap-2.1.30-r4.ebuild,v 1.2 2004/12/07 06:35:00 robbat2 Exp $
 
 inherit eutils
 
@@ -143,6 +143,7 @@ src_compile() {
 }
 
 src_test() {
+	einfo "Doing tests"
 	cd tests ; make tests || die "make tests failed"
 }
 
