@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/snorticus/Attic/snorticus-1.0.4.ebuild,v 1.6 2004/06/24 22:18:36 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/snorticus/Attic/snorticus-1.0.4.ebuild,v 1.7 2004/07/14 22:35:03 agriffis Exp $
 
 inherit eutils
 
@@ -17,7 +17,7 @@ RDEPEND="
 	app-shells/tcsh
 	net-analyzer/snort
 	net-analyzer/snortsnarf
-	sys-apps/sh-utils
+	sys-apps/coreutils
 	net-misc/openssh"
 
 src_unpack() {
