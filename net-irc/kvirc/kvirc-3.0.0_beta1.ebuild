@@ -1,6 +1,6 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/kvirc/Attic/kvirc-3.0.0_beta1.ebuild,v 1.5 2002/07/27 13:55:29 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/kvirc/Attic/kvirc-3.0.0_beta1.ebuild,v 1.6 2002/08/01 11:59:03 seemant Exp $
 inherit kde-base
 
 MYP=${P//_/-}

@@ -1,6 +1,6 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iplog/Attic/iplog-2.2.3.ebuild,v 1.7 2002/07/21 20:30:50 owen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iplog/Attic/iplog-2.2.3.ebuild,v 1.8 2002/08/01 11:59:03 seemant Exp $
 
 
 S=${WORKDIR}/${P}
