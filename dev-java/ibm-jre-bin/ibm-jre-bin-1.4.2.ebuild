@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jre-bin/Attic/ibm-jre-bin-1.4.2.ebuild,v 1.4 2004/10/15 09:28:40 sejo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jre-bin/Attic/ibm-jre-bin-1.4.2.ebuild,v 1.5 2004/12/12 11:45:08 sejo Exp $
 
 inherit java
 
@@ -17,7 +17,7 @@ LICENSE="IBM-J1.4"
 KEYWORDS="ppc ~x86 ppc64"
 DEPEND="virtual/libc
 	>=dev-java/java-config-0.2.5"
-RDEPEND="${DEPEND}"
+RDEPEND=""
 
 if use ppc; then
 	S=${WORKDIR}/IBMJava2-ppc-142
