@@ -1,10 +1,10 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Dan Armak <danarmak@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mad/Attic/mad-0.14.2b-r1.ebuild,v 1.1 2002/03/12 22:44:18 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mad/Attic/mad-0.14.2b-r1.ebuild,v 1.2 2002/05/27 17:27:38 drobbins Exp $
 
 S=${WORKDIR}/${P}
-SRC_URI="http://prdownloads.sourceforge.net/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 HOMEPAGE="http://mad.sourceforge.net/"
 DESCRIPTION="A high-quality MP3 decoder"
