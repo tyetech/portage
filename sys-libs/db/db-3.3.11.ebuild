@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/db/Attic/db-3.3.11.ebuild,v 1.17 2003/09/04 08:04:42 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/db/Attic/db-3.3.11.ebuild,v 1.18 2003/09/17 21:59:15 avenj Exp $
 
 S=${WORKDIR}/${P}/build_unix
 DESCRIPTION="Berkeley DB for transaction support in MySQL"
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.sleepycat.com/"
 
 SLOT="3"
 LICENSE="DB"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ia64"
 
 RDEPEND="virtual/glibc"
 DEPEND="${RDEPEND}
