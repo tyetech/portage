@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gdk-pixbuf/Attic/gdk-pixbuf-0.13.0.ebuild,v 1.1 2001/10/28 14:12:52 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gdk-pixbuf/Attic/gdk-pixbuf-0.16.0.ebuild,v 1.1 2002/01/23 12:16:57 hallski Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="GNOME Image Library"
@@ -15,9 +15,7 @@ src_compile() {
 
 	./configure --host=${CHOST} 					\
 		    --prefix=/usr					\
-		    --sysconfdir=/etc/X11/gdk-pixbuf
-
-	assert
+		    --sysconfdir=/etc/X11/gdk-pixbuf || die
 
 	emake || die
 }
