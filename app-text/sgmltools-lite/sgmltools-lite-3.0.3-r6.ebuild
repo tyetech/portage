@@ -1,6 +1,9 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/sgmltools-lite/Attic/sgmltools-lite-3.0.3-r4.ebuild,v 1.10 2002/12/09 04:17:45 manson Exp $
+# $Header:
+# /home/cvsroot/gentoo-x86/app-text/sgmltools-lite/sgmltools-lite-3.0.3-r4.ebuild,v 1.7 2002/08/16 02:42:02 murphy Exp $
+
+inherit sgml-catalog
 
 S=${WORKDIR}/${P}
 SRC_URI="mirror://sourceforge/sgmltools-lite/${P}.tar.gz
@@ -8,11 +11,12 @@ SRC_URI="mirror://sourceforge/sgmltools-lite/${P}.tar.gz
 HOMEPAGE="http://sgmltools-lite.sourceforge.net/"
 SLOT="0"
 LICENSE="GPL-2"
-DESCRIPTION="Python interface to SGML software specificially in a DocBook/OpenJade environment.  Provides sgml2{html,txt,rtf,dvi,ps}"
+DESCRIPTION="Python interface to SGML software specificially in a 
+DocBook/OpenJade environment.  Provides sgml2{html,txt,rtf,dvi,ps}"
 
 DEPEND="virtual/python
 	app-text/sgml-common
-	=app-text/docbook-sgml-dtd-3.1
+	=app-text/docbook-sgml-dtd-3.1-r1
 	app-text/docbook-dsssl-stylesheets
 	app-text/jadetex
 	app-text/openjade
@@ -78,11 +82,17 @@ src_install() {
 		cd ${S}
 	done
 
-	
+
 }
+
+sgml-catalog_cat_include "/etc/sgml/sgml-lite.cat" \
+	"/usr/share/sgml/stylesheets/sgmltools/sgmltools.cat"
 
 pkg_postinst() {
 
 	gensgmlenv
 	grep -v export /etc/sgml/sgml.env > /etc/env.d/93sgmltools-lite
+
+	sgml-catalog_pkg_postinst
+
 }
