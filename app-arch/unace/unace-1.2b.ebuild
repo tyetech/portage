@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/unace/Attic/unace-1.2b.ebuild,v 1.4 2003/06/24 13:52:26 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/unace/Attic/unace-1.2b.ebuild,v 1.5 2003/07/08 21:50:26 darkspecter Exp $
 
 S="${WORKDIR}/${PN}"
 DESCRIPTION="ACE unarchiver"
@@ -8,7 +8,7 @@ SRC_URI="http://wilma.vub.ac.be/~pdewacht/${P}.tar.gz"
 HOMEPAGE="http://www.winace.com/"
 
 SLOT="1"
-KEYWORDS="x86 -sparc"
+KEYWORDS="x86 -sparc -ppc"
 LICENSE="freedist"
 DEPEND="virtual/glibc"
 
