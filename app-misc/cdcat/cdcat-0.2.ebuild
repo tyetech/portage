@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Chris Houser <chouser@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdcat/Attic/cdcat-0.2.ebuild,v 1.1 2002/02/05 02:40:57 chouser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/cdcat/Attic/cdcat-0.2.ebuild,v 1.1 2002/02/06 01:59:53 chouser Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="CD Catalog is a simple yet effective CD indexing program."
