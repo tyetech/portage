@@ -1,13 +1,13 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/selflinux/Attic/selflinux-0.6.0.ebuild,v 1.1 2003/03/23 17:38:44 pylon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/selflinux/Attic/selflinux-0.8.1.ebuild,v 1.1 2003/07/29 20:26:12 mholzer Exp $
 
 IUSE=""
 
-MY_P="SelfLinux-0.6.0"
+MY_P="SelfLinux-${PV}"
 S=${WORKDIR}/${MY_P}
 DESCRIPTION="german-language hypertext tutorial about Linux"
-SRC_URI="mirror://sourceforge/selflinux/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}-html.tar.gz"
 HOMEPAGE="http://selflinux.sourceforge.net/"
 
 SLOT="0"
