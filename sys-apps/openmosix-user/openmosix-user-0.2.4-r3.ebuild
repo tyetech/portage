@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/openmosix-user/Attic/openmosix-user-0.2.4-r1.ebuild,v 1.4 2002/10/13 22:27:01 tantive Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/openmosix-user/Attic/openmosix-user-0.2.4-r3.ebuild,v 1.1 2002/10/13 22:27:01 tantive Exp $
 
 S=${WORKDIR}/openMosixUserland-${PV}
 DESCRIPTION="User-land utilities for openMosix process migration (clustering) software"
@@ -30,6 +30,7 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+	cat Makefile | sed s/DIRS.*=/DIRS=autodiscovery/g > Makefile
 	cat > configuration << EOF
 
 OPENMOSIX=/usr/src/linux
@@ -40,6 +41,13 @@ INSTALLDIR=/usr
 CFLAGS=-I/m/include -I./ -I/usr/include -I\$(OPENMOSIX)/include ${CFLAGS}
 INSTALL=/usr/bin/install
 EOF
+
+#non-alpha-mode for autodiscovery (omdiscd)
+cd ${S}/autodiscovery
+cat openmosix.c | grep -v "define ALPHA" > openmosix.c.tmp
+mv openmosix.c.tmp openmosix.c
+cat showmap.c | grep -v "define ALPHA" > showmap.c.tmp
+mv showmap.c.tmp showmap.c
 }
 
 src_compile() {
@@ -51,6 +59,7 @@ src_install () {
 	dodir /usr/lib
 	dodir /usr/sbin
 	dodir /usr/include
+	dodir /usr/share/include
 	dodir /usr/bin
 	dodir /bin
 	ln -s /usr/bin/migrate ${D}/bin/migrate
