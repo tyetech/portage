@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/gturing/Attic/gturing-0.1.1.ebuild,v 1.5 2004/03/08 17:40:33 augustus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/gturing/Attic/gturing-0.1.1.ebuild,v 1.6 2004/04/25 22:47:14 agriffis Exp $
 
 DESCRIPTION="GNOME turing machine simulator for"
 HOMEPAGE="http://www.nuclecu.unam.mx/~arturo/gTuring/"
@@ -14,7 +14,7 @@ IUSE=""
 DEPEND=">=gnome-base/libgnomeui-2.0.0"
 
 src_compile() {
-	econf
+	econf || die "econf failed"
 	emake || die
 }
 
