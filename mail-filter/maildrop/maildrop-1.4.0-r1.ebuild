@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/maildrop/Attic/maildrop-1.4.0-r1.ebuild,v 1.3 2004/07/14 16:43:08 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/maildrop/Attic/maildrop-1.4.0-r1.ebuild,v 1.4 2004/09/20 07:43:01 ticho Exp $
 
 DESCRIPTION="Mail delivery agent/filter"
 SRC_URI="mirror://sourceforge/courier/${P}.tar.gz"
-HOMEPAGE="http://www.flounder.net/~mrsam/maildrop/index.html"
+HOMEPAGE="http://www.courier-mta.org/maildrop/"
 
 DEPEND=">=sys-libs/gdbm-1.8.0
 	dev-lang/perl
