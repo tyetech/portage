@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse/Attic/seahorse-0.6.1.ebuild,v 1.1 2003/02/01 21:49:17 bcowan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse/Attic/seahorse-0.6.1.ebuild,v 1.2 2003/02/13 06:24:10 vapier Exp $
 
 DESCRIPTION="gnome front end to gnupg"
 SRC_URI="mirror://sourceforge/seahorse/${P}.tar.gz"

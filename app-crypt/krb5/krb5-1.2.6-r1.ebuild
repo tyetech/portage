@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/krb5/Attic/krb5-1.2.6-r1.ebuild,v 1.4 2003/01/21 11:44:16 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/krb5/Attic/krb5-1.2.6-r1.ebuild,v 1.5 2003/02/13 06:23:06 vapier Exp $
 
 inherit eutils
 
