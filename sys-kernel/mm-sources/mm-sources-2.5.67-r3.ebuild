@@ -1,7 +1,9 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.5.65-r4.ebuild,v 1.1 2003/03/23 10:16:04 sethbc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.5.67-r3.ebuild,v 1.1 2003/04/14 20:27:28 sethbc Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
+
+inherit eutils 
 
 OKV=${PV}
 if [ "${PR}" != "r0" ]; then 
@@ -41,8 +43,7 @@ src_unpack() {
 	if [ "${PATCH_URI}" ]; then
 		mv linux-${OKV} linux-${KV}
 		cd ${S}
-		zcat ${DISTDIR}/${PVR/r/mm}.gz | patch -p1 -l || \
-			die "akpm patch application failure"
+		epatch ${DISTDIR}/${PVR/r/mm}.gz
 		sed -e "s:^EXTRAVERSION.*$:EXTRAVERSION = -${PR/r/mm}:" \
 			Makefile > Makefile.new
 		mv Makefile.new Makefile
