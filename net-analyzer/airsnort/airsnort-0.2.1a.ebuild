@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/airsnort/Attic/airsnort-0.2.1a.ebuild,v 1.4 2002/09/08 21:03:56 owen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/airsnort/Attic/airsnort-0.2.1a.ebuild,v 1.5 2002/10/25 10:07:54 cselkirk Exp $
 
 MY_P=${P/a/A}
 S=${WORKDIR}/${MY_P}
@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 KEYWORDS="x86 ppc sparc sparc64"
 
 DEPEND=">=sys-devel/autoconf-2.13
-	>=x11-libs/gtk+-1.2.10-r8
+	>=x11-libs/gtk+-1.2.10-r9
 	>=net-libs/libpcap-0.7.1
 	>=sys-apps/pcmcia-cs-3.1.33"
 
