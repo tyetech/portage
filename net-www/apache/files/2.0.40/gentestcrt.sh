@@ -1,5 +1,5 @@
 #!/bin/sh
-## $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/apache/files/2.0.40/Attic/gentestcrt.sh,v 1.1 2002/11/28 20:23:09 woodchip Exp $
+## $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/apache/files/2.0.40/Attic/gentestcrt.sh,v 1.2 2004/07/18 04:20:47 dragonheart Exp $
 ##
 ##  gentestcrt -- Create self-signed test certificate
 ##  (C) 2001 Jean-Michel Dault <jmdault@mandrakesoft.com> and Mandrakesoft
