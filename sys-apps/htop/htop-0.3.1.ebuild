@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/htop/Attic/htop-0.3.1.ebuild,v 1.6 2004/09/03 21:03:23 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/htop/Attic/htop-0.3.1.ebuild,v 1.7 2005/02/23 15:45:53 malc Exp $
 
 inherit eutils flag-o-matic
 
