@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/khacc/Attic/khacc-1.7.8.ebuild,v 1.5 2004/06/19 07:33:30 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/khacc/Attic/khacc-1.7.8.ebuild,v 1.6 2004/06/24 22:41:27 agriffis Exp $
 
 inherit kde
 need-kde 3

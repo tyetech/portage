@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/mdbtools/Attic/mdbtools-0.5.ebuild,v 1.10 2004/03/26 19:06:39 jmaynard Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/mdbtools/Attic/mdbtools-0.5.ebuild,v 1.11 2004/06/24 22:42:55 agriffis Exp $
 
 DESCRIPTION="A set of libraries and utilities for reading Microsoft Access database (MDB) files"
 HOMEPAGE="http://sourceforge.net/projects/mdbtools/"
