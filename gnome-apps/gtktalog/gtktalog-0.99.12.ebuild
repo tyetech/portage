@@ -1,12 +1,12 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Mikael Hallendal <hallski@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/gtktalog/Attic/gtktalog-0.99.4.ebuild,v 1.1 2001/06/18 23:09:37 hallski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-apps/cvs-repo/gentoo-x86/gnome-apps/gtktalog/Attic/gtktalog-0.99.12.ebuild,v 1.1 2001/09/27 09:33:56 hallski Exp $
 
-A=${P}.tar.gz
+A=${P}.tar.bz2
 S=${WORKDIR}/${P}
 DESCRIPTION="The GTK disk catalog."
-SRC_URI="ftp://gtktalog.sourceforge.net/pub/gtktalog/gtktalog/tgz/${A}"
+SRC_URI="http://prdownloads.sourceforge.net/${PN}/${A}"
 HOMEPAGE="http://gtktalog.sourceforge.net"
 
 DEPEND=">=x11-libs/gtk+-1.2.0
@@ -20,8 +20,7 @@ src_compile() {
     if [ -z "`use nls`" ] ; then
         myconf="--disable-nls"
     fi
-    try ./configure --prefix=/opt/gnome --sysconfdir=/etc/opt/gnome \
-	            --mandir=/opt/gnome/man --host=${CHOST} \
+    try ./configure --prefix=/opt/gnome --sysconfdir=/etc/opt/gnome --host=${CHOST} \
 	            --enable-htmltitle --enable-mp3info --enable-aviinfo \
 	            --enable-mpeginfo --enable-modinfo --enable-catalog2
                     --enable-catalog3 $myconf
@@ -31,8 +30,8 @@ src_compile() {
 }
 
 src_install () {
-
-    try make DESTDIR=${D} install
+    # DESTDIR does not work for mo-files
+    try make prefix=${D}/opt/gnome sysconfdir=${D}/etc/opt/gnome install
     dodoc AUTHORS BUGS COPYING ChangeLog NEWS README TODO
 
 }
