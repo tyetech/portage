@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/CGI/Attic/CGI-2.78-r2.ebuild,v 1.12 2003/02/13 10:58:18 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/CGI/Attic/CGI-2.81.ebuild,v 1.1 2003/03/27 00:14:28 rac Exp $
 
 inherit perl-module
 
