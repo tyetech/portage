@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim/Attic/gaim-0.53-r1.ebuild,v 1.1 2002/03/07 07:04:15 blocke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim/Attic/gaim-0.54.ebuild,v 1.1 2002/03/29 04:55:17 seemant Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Gtk AOL Instant Messenger client"
@@ -30,9 +30,6 @@ src_compile() {
     use nls || myopts="$myopts --disable-nls"
 
     gnomeopts="${myopts}"
-
-    # if gnome support is disabled, do not build standalone with pixbuf
-    use gnome || myopts="${myopts} --disable-pixbuf"
 
     # always build standalone gaim program
     ./configure --host=${CHOST} --disable-gnome --prefix=/usr ${myopts} || die
