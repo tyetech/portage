@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/xbox-sources/Attic/xbox-sources-2.6.8.1-r8.ebuild,v 1.1 2004/12/20 22:21:09 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/xbox-sources/Attic/xbox-sources-2.6.8.1-r8.ebuild,v 1.2 2005/01/02 18:17:26 chrb Exp $
 
 ETYPE='sources'
 inherit kernel-2
