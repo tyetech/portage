@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/bestcrypt/Attic/bestcrypt-1.5_p7.ebuild,v 1.1 2004/10/07 17:11:23 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/bestcrypt/Attic/bestcrypt-1.5_p7.ebuild,v 1.2 2005/01/01 12:25:49 eradicator Exp $
 
 inherit flag-o-matic eutils check-kernel
 
