@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/dvssl/Attic/dvssl-0.5.2.ebuild,v 1.5 2004/06/14 17:27:39 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/dvssl/Attic/dvssl-0.5.2.ebuild,v 1.6 2004/06/24 23:07:08 agriffis Exp $
 
 S=${WORKDIR}/dvssl-${PV}
 DESCRIPTION="dvssl provides a simple interface to openssl"

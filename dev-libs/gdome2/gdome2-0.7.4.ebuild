@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gdome2/Attic/gdome2-0.7.4.ebuild,v 1.6 2004/03/24 14:32:38 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gdome2/Attic/gdome2-0.7.4.ebuild,v 1.7 2004/06/24 23:10:55 agriffis Exp $
 
 DESCRIPTION="The DOM C library for the GNOME project"
 HOMEPAGE="http://gdome2.cs.unibo.it/"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/mm/Attic/mm-1.1.3-r1.ebuild,v 1.10 2004/03/14 12:23:46 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/mm/Attic/mm-1.1.3-r1.ebuild,v 1.11 2004/06/24 23:28:41 agriffis Exp $
 
 DESCRIPTION="Shared Memory Abstraction Library"
 HOMEPAGE="http://www.ossp.org/pkg/lib/mm/"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/tc2/Attic/tc2-0.5.4.ebuild,v 1.3 2004/02/28 14:26:35 zypher Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/tc2/Attic/tc2-0.5.4.ebuild,v 1.4 2004/06/24 23:35:23 agriffis Exp $
 
 IUSE="static debug"
 

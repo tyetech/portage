@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/zthread/Attic/zthread-2.2.10-r1.ebuild,v 1.6 2004/06/21 08:17:49 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/zthread/Attic/zthread-2.2.10-r1.ebuild,v 1.7 2004/06/24 23:39:12 agriffis Exp $
 
 inherit eutils
 

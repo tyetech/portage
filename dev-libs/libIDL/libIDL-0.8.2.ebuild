@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libIDL/Attic/libIDL-0.8.2.ebuild,v 1.11 2004/05/14 02:03:48 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libIDL/Attic/libIDL-0.8.2.ebuild,v 1.12 2004/06/24 23:18:45 agriffis Exp $
 
 inherit gnome2
 
