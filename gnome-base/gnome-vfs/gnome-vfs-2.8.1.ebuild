@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-vfs/Attic/gnome-vfs-2.8.1.ebuild,v 1.1 2004/09/30 15:12:42 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-vfs/Attic/gnome-vfs-2.8.1.ebuild,v 1.2 2004/09/30 15:44:17 foser Exp $
 
 inherit gnome2 eutils
 
@@ -70,7 +70,6 @@ src_unpack() {
 
 	# make howl a real switch (#64906)
 	epatch ${FILESDIR}/${P}-howl_config.patch
-	automake
 	autoconf
 
 }
