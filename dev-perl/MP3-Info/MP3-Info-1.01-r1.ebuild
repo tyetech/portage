@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/MP3-Info/Attic/MP3-Info-1.01-r1.ebuild,v 1.7 2002/08/01 03:01:17 cselkirk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/MP3-Info/Attic/MP3-Info-1.01-r1.ebuild,v 1.8 2002/08/14 04:32:33 murphy Exp $
 
 inherit perl-module
 
@@ -11,4 +11,4 @@ HOMEPAGE="http://sourceforge.net/projects/mp3-info/"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="x86 ppc"
+KEYWORDS="x86 ppc sparc sparc64"

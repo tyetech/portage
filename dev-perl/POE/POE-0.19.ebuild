@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/POE/Attic/POE-0.19.ebuild,v 1.7 2002/08/01 03:59:47 cselkirk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/POE/Attic/POE-0.19.ebuild,v 1.8 2002/08/14 04:32:33 murphy Exp $
 
 inherit perl-module
 
@@ -11,7 +11,7 @@ SRC_URI="http://poe.perl.org/poedown/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="x86 ppc"
+KEYWORDS="x86 ppc sparc sparc64"
 
 DEPEND="${DEPEND}
 	dev-perl/Event
