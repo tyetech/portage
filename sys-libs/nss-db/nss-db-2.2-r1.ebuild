@@ -1,6 +1,6 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/nss-db/nss-db-2.2-r1.ebuild,v 1.7 2002/07/23 02:42:11 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/nss-db/nss-db-2.2-r1.ebuild,v 1.8 2002/08/01 11:59:04 seemant Exp $
 
 inherit libtool || die
 
