@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metacity/Attic/metacity-2.6.5.ebuild,v 1.5 2004/05/14 02:55:17 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metacity/Attic/metacity-2.6.5.ebuild,v 1.6 2004/05/29 03:37:52 pvdabeel Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="x86 ~ppc ~alpha sparc ~hppa ~amd64 ~ia64 mips"
+KEYWORDS="x86 ppc ~alpha sparc ~hppa ~amd64 ~ia64 mips"
 IUSE=""
 
 # not parallel-safe; see bug #14405
