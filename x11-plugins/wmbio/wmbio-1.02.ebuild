@@ -1,0 +1,37 @@
+# Copyright 1999-2004 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmbio/wmbio-1.02.ebuild,v 1.1 2004/08/23 19:36:44 s4t4n Exp $
+
+inherit eutils
+
+IUSE=""
+S=${WORKDIR}/${P}/src
+DESCRIPTION="a Window Maker applet that shows your biorhythm"
+SRC_URI="http://wmbio.sourceforge.net/${P}.tar.gz"
+HOMEPAGE="http://wmbio.sourceforge.net/"
+
+DEPEND="virtual/x11"
+
+SLOT="0"
+LICENSE="GPL-2"
+KEYWORDS="~x86 ~ppc"
+
+src_unpack()
+{
+	unpack ${A}
+	cd ${S}
+	# Honour Gentoo CFLAGS
+	epatch ${FILESDIR}/${PN}-Makefile.patch
+}
+
+src_compile()
+{
+	emake || die "Compilation failed"
+}
+
+src_install ()
+{
+	dobin wmbio
+	cd ..
+	dodoc AUTHORS README NEWS Changelog
+}
