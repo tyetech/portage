@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mbrowse/Attic/mbrowse-0.3.1.ebuild,v 1.7 2004/11/20 03:46:28 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mbrowse/Attic/mbrowse-0.3.1.ebuild,v 1.8 2005/02/21 04:38:47 dragonheart Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="x86 sparc ~amd64"
 IUSE=""
 
-DEPEND="virtual/snmp
+DEPEND="net-analyzer/net-snmp
 	>=x11-libs/gtk+-1.2.10"
 
 src_unpack() {
