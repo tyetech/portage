@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdauthor/Attic/dvdauthor-0.5.0.ebuild,v 1.3 2004/01/03 15:48:07 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdauthor/Attic/dvdauthor-0.6.8.ebuild,v 1.1 2004/01/03 15:48:07 mholzer Exp $
 
 DESCRIPTION="Tools for generating DVD files to be played on standalone DVD players"
 HOMEPAGE="http://sourceforge.net/projects/dvdauthor/"
@@ -9,15 +9,11 @@ RESTRICT="nomirror"
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS="x86"
-IUSE=""
+KEYWORDS="~x86 ~sparc"
+IUSE="png zlib"
 
-DEPEND="media-libs/libdvdread"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}; sed -e '/CFLAGS =/d' -i.bak Makefile.in
-}
+DEPEND="media-libs/libdvdread
+	>=dev-libs/libxml2-2.5.0"
 
 src_compile() {
 	econf || die "configuration failed"
