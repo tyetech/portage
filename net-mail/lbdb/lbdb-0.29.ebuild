@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/lbdb/Attic/lbdb-0.28.ebuild,v 1.6 2004/09/04 08:37:43 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/lbdb/Attic/lbdb-0.29.ebuild,v 1.1 2004/09/04 08:37:43 ticho Exp $
 
 IUSE="pda ldap"
 
@@ -10,11 +10,11 @@ SRC_URI="http://www.spinnaker.de/debian/${MY_P}.tar.gz"
 HOMEPAGE="http://www.spinnaker.de/lbdb/"
 DEPEND=">=mail-client/mutt-1.2.5"
 SLOT="0"
-KEYWORDS="~x86 ppc ~sparc"
+KEYWORDS="~x86 ~ppc ~sparc"
 LICENSE="GPL-2"
 DEPEND="dev-lang/perl"
 RDEPEND="pda? ( dev-perl/p5-Palm )
-		 ldap? ( dev-perl/perl-ldap )"
+	ldap? ( dev-perl/perl-ldap )"
 
 src_compile() {
 	econf --libdir=/usr/lib/lbdb || die

@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/lbdb/Attic/lbdb-0.26-r1.ebuild,v 1.13 2004/09/04 08:30:55 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/lbdb/Attic/lbdb-0.26-r1.ebuild,v 1.14 2004/09/04 08:37:43 ticho Exp $
 
 IUSE="pda"
 
 MY_P=${P/-/_}
 DESCRIPTION="Little Brother database"
 SRC_URI="http://www.spinnaker.de/debian/${MY_P}.tar.gz"
-HOMEPAGE="http://www.spinnaker.de/lbdb.html"
+HOMEPAGE="http://www.spinnaker.de/lbdb/"
 
 DEPEND=">=mail-client/mutt-1.2.5"
 
