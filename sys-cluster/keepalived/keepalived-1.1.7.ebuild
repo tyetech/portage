@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/keepalived/Attic/keepalived-1.1.6.ebuild,v 1.4 2004/08/30 14:01:50 tantive Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/keepalived/Attic/keepalived-1.1.7.ebuild,v 1.1 2004/08/30 14:01:50 tantive Exp $
 
 DESCRIPTION="add a strong & robust keepalive facility to the Linux Virtual Server project"
 HOMEPAGE="http://www.keepalived.org/"
