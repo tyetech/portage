@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim-snpp/Attic/gaim-snpp-0.4.0.ebuild,v 1.1 2004/05/31 01:15:45 rizzo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim-snpp/Attic/gaim-snpp-0.4.0.ebuild,v 1.2 2004/06/24 22:51:44 agriffis Exp $
 
 use debug && inherit debug
 

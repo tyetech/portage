@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/jabberd/Attic/jabberd-1.4.3-r3.ebuild,v 1.7 2004/06/19 20:31:06 humpback Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/jabberd/Attic/jabberd-1.4.3-r3.ebuild,v 1.8 2004/06/24 22:54:04 agriffis Exp $
 
 inherit eutils
 

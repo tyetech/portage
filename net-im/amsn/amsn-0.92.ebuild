@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/amsn/Attic/amsn-0.92.ebuild,v 1.1 2004/05/31 00:14:14 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/amsn/Attic/amsn-0.92.ebuild,v 1.2 2004/06/24 22:49:13 agriffis Exp $
 
 S="${WORKDIR}/msn"
 DESCRIPTION="Alvaro's Messenger client for MSN"
