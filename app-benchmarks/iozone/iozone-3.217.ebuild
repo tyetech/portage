@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/iozone/Attic/iozone-3.217.ebuild,v 1.4 2004/06/24 21:28:04 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/iozone/Attic/iozone-3.217.ebuild,v 1.5 2004/10/05 11:08:30 pvdabeel Exp $
 
 inherit eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.iozone.org/"
 SRC_URI="http://www.iozone.org/src/current/${PN}${PV/./_}.tar"
 LICENSE="freedist"
 SLOT="0"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="x86 ppc"
 IUSE=""
 
 DEPEND="sys-devel/gcc"
