@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/enchant/Attic/enchant-0.1.1.ebuild,v 1.2 2003/08/22 01:40:11 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/enchant/Attic/enchant-1.0.0.ebuild,v 1.1 2003/09/13 13:56:51 foser Exp $
 
 inherit gnome2
 
@@ -12,17 +12,14 @@ SRC_URI="mirror://sourceforge/abiword/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~sparc"
 
 IUSE=""
 
-# enchant doesn't need a spell lib around to build or 'work'
-# the aspell dep is meant to provide a sensible working default
-#
-# foser <foser@gentoo.org>
-
+# The || is meant to make sure there is a a default spell lib to work wit
+# 25 Aug 2003; foser <foser@gentoo.org>
 RDEPEND=">=dev-libs/glib-2
-	app-text/aspell"
+	|| ( app-text/aspell app-text/ispell )"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
