@@ -1,14 +1,9 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-7.10_beta1-r2.ebuild,v 1.2 2003/06/08 05:21:24 seemant Exp $
-#
-# 1. static       # Statically linked libraries, default.
-# 2. shared-2.95  # Dynamically linked libaries, compiled with gcc 2.95.
-# 3. shared-3.2	  # Dynamically linked libraries, compiled with gcc 3.2.
-#
-# Note that the default variant should work for everybody, and is the
-# least likely to cause you any grief.	Only change the variant if you
-# know what you are doing.
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-7.20_beta4.ebuild,v 1.1 2003/08/21 23:26:11 lanius Exp $
+
+# Here, like in the other .ebuilds, the static version is
+# forced for simplicity's sake
 
 DESCRIPTION="Opera web browser."
 HOMEPAGE="http://www.opera.com/linux/"
@@ -19,34 +14,26 @@ IUSE="gnome kde"
 DEPEND=">=sys-apps/sed-4"
 
 RDEPEND="virtual/x11
-	>=media-libs/fontconfig-2.1.94-r1"
+	>=media-libs/fontconfig-2.1.94-r1
+	=media-libs/libexif-0.5.9"  #for libexif.so.8
 
-KEYWORDS="-* ~x86"
+KEYWORDS="-*" #please test! This is for x86 only!!
 SLOT="0"
+OPERAVER="7.20-20030821"
+OPERATYPE="1-static-qt"
 
-#we can't modify (R)DEPEND info inside an if statement; that breaks metadata caching.
-#So I'm hard-coding the static version to be enabled.
 
-OPERA_VARIANT="static"
+SRC_URI="http://snapshot.opera.com/unix/intel-linux/445-20030821-7.20-B4//${PN}-${OPERAVER}.${OPERATYPE}.i386.tar.bz2"
+S=${WORKDIR}/opera-${OPERAVER}.${OPERATYPE}.i386
 
-if [ "$OPERA_VARIANT" = "shared-3.2" ]; then
-	    RDEPEND="${RDEPEND} =x11-libs/qt-3*"
-	    OPERA_VERSION="4-shared-qt"
-	    URL_DIR="shared/gcc-3.2/"
-elif [ "$OPERA_VARIANT" = "shared-2.95" ]; then
-	    RDEPEND="${RDEPEND} =x11-libs/qt-3*"
-	    OPERA_VERSION="2-shared-qt"
-	    URL_DIR="shared/gcc-2.95/"
-else
-	    OPERA_VERSION="1-static-qt"
-	    URL_DIR="static/"
-fi
-
-NV=7.1.0-20030410.${OPERA_VERSION}.i386
-SRC_URI="http://opera.online.no/linux/710/beta1/en/i386/${URL_DIR}/opera-${NV}.tar.gz"
-S=${WORKDIR}/opera-${NV}
 
 src_unpack() {
+	ewarn "This package is designed for an i386-based processor."
+	ewarn "Usage on another platform is at your own risk."
+	ewarn "If you want to abort this installation, press CTRL+C now"
+	ewarn "Pausing for 15 seconds..."
+	sleep 15s
+
 	unpack ${A}
 	cd ${S}
 	sed -i -e "s:/etc:${D}/etc:g" \
@@ -63,7 +50,6 @@ src_unpack() {
 	       -e 's:#\(OPERA_FORCE_JAVA_ENABLED=\):\1:' \
 	       -e 's:#\(export LD_PRELOAD OPERA_FORCE_JAVA_ENABLED\):\1:' \
 	       install.sh || die
-
 }
 
 src_compile() {
