@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/epic4/Attic/epic4-1.1.10.ebuild,v 1.7 2003/09/08 07:01:23 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/epic4/Attic/epic4-1.1.10.ebuild,v 1.8 2004/01/03 17:40:05 zul Exp $
 
 IUSE="ipv6 perl ssl"
 
