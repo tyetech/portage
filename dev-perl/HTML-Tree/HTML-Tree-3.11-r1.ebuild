@@ -1,7 +1,7 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
 # Manteiner: José Alberto Suárez López <bass@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTML-Tree/Attic/HTML-Tree-3.11-r1.ebuild,v 1.3 2002/12/15 10:44:14 bjb Exp $ 
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTML-Tree/Attic/HTML-Tree-3.11-r1.ebuild,v 1.4 2003/02/13 11:10:06 vapier Exp $ 
 
 inherit perl-module
 

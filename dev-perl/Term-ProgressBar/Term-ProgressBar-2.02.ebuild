@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Term-ProgressBar/Attic/Term-ProgressBar-2.02.ebuild,v 1.1 2003/02/12 03:23:12 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Term-ProgressBar/Attic/Term-ProgressBar-2.02.ebuild,v 1.2 2003/02/13 11:28:57 vapier Exp $
 
 inherit perl-module
 

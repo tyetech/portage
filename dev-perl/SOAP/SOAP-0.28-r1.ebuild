@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/SOAP/Attic/SOAP-0.28-r1.ebuild,v 1.11 2002/12/15 10:44:16 bjb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/SOAP/Attic/SOAP-0.28-r1.ebuild,v 1.12 2003/02/13 11:19:02 vapier Exp $
 
 inherit perl-module
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-LibXML/Attic/XML-LibXML-1.54.ebuild,v 1.3 2003/02/13 07:36:55 gerk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-LibXML/Attic/XML-LibXML-1.54.ebuild,v 1.4 2003/02/13 11:23:50 vapier Exp $
 
 
 inherit perl-module

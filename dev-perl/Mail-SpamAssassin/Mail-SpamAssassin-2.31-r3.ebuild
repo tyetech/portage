@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Mail-SpamAssassin/Attic/Mail-SpamAssassin-2.31-r3.ebuild,v 1.11 2002/12/15 10:44:15 bjb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Mail-SpamAssassin/Attic/Mail-SpamAssassin-2.31-r3.ebuild,v 1.12 2003/02/13 11:14:25 vapier Exp $
 
 inherit perl-module
 
