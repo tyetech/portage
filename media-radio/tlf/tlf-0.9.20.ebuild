@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/tlf/Attic/tlf-0.9.20.ebuild,v 1.3 2004/08/25 23:31:56 killsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/tlf/Attic/tlf-0.9.20.ebuild,v 1.4 2005/02/16 05:00:48 killsoft Exp $
 
 inherit eutils flag-o-matic
 
