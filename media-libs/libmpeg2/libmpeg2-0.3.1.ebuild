@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmpeg2/Attic/libmpeg2-0.3.1.ebuild,v 1.2 2003/02/09 15:21:56 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmpeg2/Attic/libmpeg2-0.3.1.ebuild,v 1.3 2003/02/13 12:49:33 vapier Exp $
 
 IUSE="sdl X"
 
