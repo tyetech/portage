@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/libnasl/Attic/libnasl-2.3.0.ebuild,v 1.6 2005/02/26 03:09:38 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/libnasl/Attic/libnasl-2.2.3.ebuild,v 1.1 2005/02/26 03:09:38 dragonheart Exp $
 
 inherit toolchain-funcs
 
