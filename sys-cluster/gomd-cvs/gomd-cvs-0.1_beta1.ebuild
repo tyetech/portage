@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/gomd-cvs/Attic/gomd-cvs-0.1_beta1.ebuild,v 1.2 2003/12/08 02:16:13 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/gomd-cvs/Attic/gomd-cvs-0.1_beta1.ebuild,v 1.3 2004/02/13 21:58:18 tantive Exp $
 
 DESCRIPTION="gomd is a daemon which executes commands and gets information from the nodes of an openMosix cluster. It has to run on every node in order to collect data, and it waits for commands to execute. gomd stands for general openMosix daemon."
 HOMEPAGE="http://nongnu.org/gomd"
