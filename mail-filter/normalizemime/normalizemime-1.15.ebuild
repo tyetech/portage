@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/normalizemime/Attic/normalizemime-1.15.ebuild,v 1.4 2005/01/03 23:34:29 slarti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/normalizemime/Attic/normalizemime-1.15.ebuild,v 1.5 2005/01/03 23:37:16 ticho Exp $
 
 inherit toolchain-funcs
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://hyvatti.iki.fi/~jaakko/spam/"
 SRC_URI="http://hyvatti.iki.fi/~jaakko/spam/${PN}.cc"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~x86 ~ppc"
+KEYWORDS="amd64 x86 ~ppc"
 IUSE=""
 
 DEPEND="sys-devel/gcc
