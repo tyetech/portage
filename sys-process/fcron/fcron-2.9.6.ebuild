@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-process/cvs-repo/gentoo-x86/sys-process/fcron/Attic/fcron-2.9.5.1-r3.ebuild,v 1.2 2005/03/16 10:51:29 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-process/cvs-repo/gentoo-x86/sys-process/fcron/Attic/fcron-2.9.6.ebuild,v 1.1 2005/03/16 10:51:29 ka0ttic Exp $
 
 inherit cron
 
@@ -33,7 +33,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/${PN}-2.0.0-configure.diff
-	epatch ${FILESDIR}/${P}-fix-mail-output.diff
+	epatch ${FILESDIR}/${PN}-2.9.5.1-fix-mail-output.diff
 	# respect LDFLAGS
 	sed -i "s:\(@LIBS@\):\$(LDFLAGS) \1:" Makefile.in || die "sed failed"
 }
