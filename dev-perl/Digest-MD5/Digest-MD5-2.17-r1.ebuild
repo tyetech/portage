@@ -1,10 +1,10 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Digest-MD5/Attic/Digest-MD5-2.17-r1.ebuild,v 1.1 2002/05/05 16:02:26 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Digest-MD5/Attic/Digest-MD5-2.17-r1.ebuild,v 1.2 2002/05/21 18:14:07 danarmak Exp $
 
 # Inherit from perl-module.eclass
-. /usr/portage/eclass/inherit.eclass || die
+
 inherit perl-module
 
 S=${WORKDIR}/${P}
