@@ -1,12 +1,11 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/colorgcc/colorgcc-1.3.2-r4.ebuild,v 1.3 2004/03/09 03:33:54 jhuebel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/colorgcc/colorgcc-1.3.2-r4.ebuild,v 1.4 2004/03/13 01:40:42 mr_bones_ Exp $
 
 IUSE=""
 
 inherit eutils
 
-S="${WORKDIR}/${P}"
 DESCRIPTION="Adds color to gcc output"
 HOMEPAGE="http://www.mindspring.com/~jamoyers/software/"
 SRC_URI="http://www.mindspring.com/~jamoyers/software/colorgcc/${P}.tar.gz"
