@@ -1,92 +1,89 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/binutils/Attic/binutils-2.13.90.0.18.ebuild,v 1.21 2004/04/16 03:33:04 kumba Exp $
-
-IUSE="nls bootstrap build"
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/binutils/Attic/binutils-2.15.90.0.3.ebuild,v 1.1 2004/04/16 03:33:04 kumba Exp $
 
 # NOTE to Maintainer:  ChangeLog states that it no longer use perl to build
 #                      the manpages, but seems this is incorrect ....
 
 inherit eutils libtool flag-o-matic
 
-# Generate borked binaries.  Bug #6730
-filter-flags "-fomit-frame-pointer -fssa"
+PATCHVER="1.0"
 
-S="${WORKDIR}/${P}"
 DESCRIPTION="Tools necessary to build programs"
-SRC_URI="mirror://kernel/linux/devel/binutils/${P}.tar.bz2
-	mirror://kernel/linux/devel/binutils/test/${P}.tar.bz2"
 HOMEPAGE="http://sources.redhat.com/binutils/"
+SRC_URI="mirror://kernel/linux/devel/binutils/${P}.tar.bz2
+	mirror://kernel/linux/devel/binutils/test/${P}.tar.bz2
+	mirror://gentoo/${PN}-2.15.90.0.3-patches-${PATCHVER}.tar.bz2"
 
-SLOT="0"
 LICENSE="GPL-2 | LGPL-2"
-KEYWORDS="x86 ppc alpha sparc ~mips ~hppa "
+SLOT="0"
+KEYWORDS="-*"
+IUSE="nls bootstrap build"
 
 DEPEND="virtual/glibc
 	nls? ( sys-devel/gettext )
-	|| ( dev-lang/perl
-	     ( !build?     ( dev-lang/perl ) )
-	     ( !bootstrap? ( dev-lang/perl ) )
-	    )"
-# This is a hairy one.  Basically depend on dev-lang/perl
-# if "build" or "bootstrap" not in USE.
-
-
-# filter CFLAGS=".. -O2 .." on arm
-if [ "${ARCH}" = "arm" ]; then
-	CFLAGS="$(echo "${CFLAGS}" | sed -e 's,-O[2-9] ,-O1 ,')"
-fi
+	!build? ( !bootstrap? ( dev-lang/perl ) )"
 
 src_unpack() {
-
 	unpack ${A}
 
 	cd ${S}
-	# Various patches from Redhat/Mandrake...
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.16-sparc-nonpic.patch
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-glibc21.patch
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-ia64-brl.patch
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-x86_64-testsuite.patch
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-x86_64-gotpcrel.patch
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-eh-frame-ro.patch
-	use x86 &> /dev/null \
-		&& epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.16-array-sects-compat.patch
 
-	# Add patches for mips
-	if [ "${ARCH}" = "mips" ]
-	then
-		cd ${S}
-		chmod +x mips/README
-		./mips/README
-	fi
+	# The prescott patch is not ready yet.
+	mkdir ${WORKDIR}/patch/skip
+	mv ${WORKDIR}/patch/05* ${WORKDIR}/patch/skip/
+
+	epatch ${WORKDIR}/patch
+
+
+	# Libtool is broken (Redhat).
+	for x in ${S}/opcodes/Makefile.{am,in}
+	do
+		cp ${x} ${x}.orig
+		gawk '
+			{
+				if ($0 ~ /LIBADD/)
+					gsub("../bfd/libbfd.la", "-L../bfd/.libs ../bfd/libbfd.la")
+
+					print
+			}' ${x}.orig > ${x}
+		rm -rf ${x}.orig
+	done
 }
 
 src_compile() {
-	local myconf=""
+	# Generate borked binaries.  Bug #6730
+	filter-flags "-fomit-frame-pointer -fssa"
 
-	use nls && \
-		myconf="${myconf} --without-included-gettext" || \
-		myconf="${myconf} --disable-nls"
+	local myconf=
+	[ ! -z "${CBUILD}" ] && myconf="--build=${CBUILD}"
+	use nls \
+		&& myconf="${myconf} --without-included-gettext" \
+		|| myconf="${myconf} --disable-nls"
+
+	# Filter CFLAGS=".. -O2 .." on arm
+	use arm && replace-flags -O? -O
 
 	# Fix /usr/lib/libbfd.la
 	elibtoolize --portage
 
-	./configure --enable-shared \
+	./configure \
+		--enable-shared \
 		--enable-64-bit-bfd \
 		--prefix=/usr \
 		--mandir=/usr/share/man \
 		--infodir=/usr/share/info \
 		--host=${CHOST} \
-		${myconf} || die
+		${myconf} \
+		|| die
 
 	make configure-bfd || die
 	make headers -C bfd || die
-	emake tooldir="${ROOT}/usr/bin" \
-		all || die
+	emake tooldir="${ROOT}/usr/bin" all || die
 
-	if [ -z "`use build`" ]
+	if ! use build
 	then
-		if [ -z "`use bootstrap`" ]
+		if ! use bootstrap
 		then
 			# Nuke the manpages to recreate them (only use this if we have perl)
 			find . -name '*.1' -exec rm -f {} \; || :
@@ -97,7 +94,6 @@ src_compile() {
 }
 
 src_install() {
-
 	make prefix=${D}/usr \
 		mandir=${D}/usr/share/man \
 		infodir=${D}/usr/share/info \
@@ -122,7 +118,7 @@ src_install() {
 	# move all the stuff in /usr/bin to /usr/${CHOST}/bin and create the
 	# appropriate symlinks.  Things are cleaner that way.
 	cd ${D}/usr/bin
-	local x=""
+	local x=
 	for x in * strip
 	do
 	if [ ! -e ../${CHOST}/bin/${x} ]
@@ -134,8 +130,21 @@ src_install() {
 		ln -s ../${CHOST}/bin/${x} ${x}
 	done
 
+	if [ -n "${PROFILE_ARCH}" ] && \
+	   [ "${PROFILE_ARCH/64}" != "${PROFILE_ARCH}" ]
+	then
+		dosym ${CHOST} /usr/${CHOST/-/64-}
+
+		for x in `ls ${D}/usr/${CHOST}/bin/`
+		do
+			[ ! -e "${D}/usr/bin/${CHOST}-${x}" ] && \
+				dosym ../${CHOST}/bin/${x} /usr/bin/${CHOST}-${x}
+			dosym ../${CHOST}/bin/${x} /usr/bin/${CHOST/-/64-}-${x}
+		done
+	fi
+
 	cd ${S}
-	if [ -z "`use build`" ]
+	if ! use build
 	then
 		make prefix=${D}/usr \
 			mandir=${D}/usr/share/man \
@@ -162,4 +171,3 @@ src_install() {
 		rm -rf ${D}/usr/share/man
 	fi
 }
-
