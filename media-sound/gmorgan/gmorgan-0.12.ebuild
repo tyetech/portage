@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gmorgan/Attic/gmorgan-0.12.ebuild,v 1.4 2004/03/01 05:37:14 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gmorgan/Attic/gmorgan-0.12.ebuild,v 1.5 2004/03/27 03:28:22 eradicator Exp $
 
 IUSE=""
 
@@ -14,12 +14,6 @@ KEYWORDS="~x86"
 
 DEPEND=">=x11-libs/fltk-1.1.2
 	virtual/alsa"
-
-src_compile() {
-	econf || die "configure failed"
-
-	emake || die "compile failed"
-}
 
 src_install() {
 	make prefix=${D}/usr install || die
