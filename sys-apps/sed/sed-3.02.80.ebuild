@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/sed/Attic/sed-3.02a.ebuild,v 1.1 2000/08/14 15:45:57 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/sed/Attic/sed-3.02.80.ebuild,v 1.1 2000/08/14 21:34:33 drobbins Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
