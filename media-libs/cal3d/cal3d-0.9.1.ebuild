@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/cal3d/Attic/cal3d-0.9.1.ebuild,v 1.5 2004/07/24 05:55:44 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/cal3d/Attic/cal3d-0.9.1.ebuild,v 1.6 2004/08/03 11:22:08 dholm Exp $
 
 DESCRIPTION="Cal3D is a skeletal based character animation library"
 HOMEPAGE="http://cal3d.sourceforge.net/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/cal3d/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 ~ppc"
 IUSE=""
 
 RDEPEND="virtual/libc"
