@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/phoenix-bin/Attic/phoenix-bin-0.4.ebuild,v 1.3 2002/11/07 19:36:05 phoenix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/phoenix-bin/Attic/phoenix-bin-0.4.ebuild,v 1.4 2002/11/17 11:59:44 phoenix Exp $
+
+IUSE=""
 
 MY_PN=${PN/-bin/}
 S=${WORKDIR}/${MY_PN}
@@ -9,10 +11,11 @@ SRC_URI="http://ftp.mozilla.org/pub/${MY_PN}/releases/${PV}/${MY_PN}-${PV}-i686-
 HOMEPAGE="http://www.mozilla.org/projects/phoenix/"
 RESTRICT="nostrip"
 
-KEYWORDS="~x86"
+KEYWORDS="x86"
 SLOT="0"
-LICENSE="MPL-1.1 | NPL-1.1"
+LICENSE="MPL-1.1 NPL-1.1"
 
+DEPEND="virtual/glibc"
 RDEPEND=">=sys-libs/lib-compat-1.0-r2
 	 >=x11-libs/gtk+-1.2.10-r9
 	 virtual/x11"

@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/phoenix-bin/Attic/phoenix-bin-0.3.ebuild,v 1.3 2002/11/17 11:59:44 phoenix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/phoenix-bin/Attic/phoenix-bin-0.4-r1.ebuild,v 1.1 2002/11/17 11:59:44 phoenix Exp $
 
 IUSE=""
 
 MY_PN=${PN/-bin/}
 S=${WORKDIR}/${MY_PN}
 DESCRIPTION="The Phoenix Web Browser"
-SRC_URI="http://ftp.mozilla.org/pub/phoenix/releases/0.3/phoenix-0.3-i686-pc-linux-gnu.tar.gz"
+SRC_URI="http://ftp.mozilla.org/pub/${MY_PN}/releases/${PV}/${MY_PN}-${PV}-i686-pc-linux-gnu.tar.gz"
 HOMEPAGE="http://www.mozilla.org/projects/phoenix/"
 RESTRICT="nostrip"
 
@@ -16,8 +16,8 @@ SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 
 DEPEND="virtual/glibc"
-RDEPEND=">=net-www/mozilla-1.0.1-r2
-	 >=sys-libs/lib-compat-1.0-r2
+RDEPEND=">=sys-libs/lib-compat-1.0-r2
+	 >=x11-libs/gtk+-1.2.10-r9
 	 virtual/x11"
 
 src_install() {
@@ -25,6 +25,11 @@ src_install() {
 
 	mv ${S} ${D}/usr/lib
 	chown -R root.root ${D}/usr/lib/${MY_PN}
+
+        cd ${D}/usr/lib/${MY_PN}/defaults/pref
+
+        einfo "Enabling truetype fonts"
+        patch < ${FILESDIR}/phoenix-0.4-antialiasing-patch
 
 	dobin ${FILESDIR}/phoenix
 	dosym /usr/lib/libstdc++-libc6.1-1.so.2 /usr/lib/${MY_PN}/libstdc++-libc6.2-2.so.3
