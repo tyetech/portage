@@ -1,6 +1,9 @@
 # ChangeLog for net-mail/fetchyahoo
 # Copyright 2002-2004 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/fetchyahoo/ChangeLog,v 1.16 2004/10/05 15:44:38 kanaka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/fetchyahoo/ChangeLog,v 1.17 2004/10/05 21:35:28 swegener Exp $
+
+  05 Oct 2004; Sven Wegener <swegener@gentoo.org> :
+  Removed stray digests.
 
   05 Oct 2004; Joel Martin <kanaka@gentoo.org> -fetchyahoo-2.5-r1.ebuild,
   -fetchyahoo-2.5.ebuild:
