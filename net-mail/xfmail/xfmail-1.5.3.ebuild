@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/xfmail/Attic/xfmail-1.5.3.ebuild,v 1.4 2003/09/05 08:36:13 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/xfmail/Attic/xfmail-1.5.3.ebuild,v 1.5 2004/02/22 16:30:50 agriffis Exp $
 
 IUSE="ldap"
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.xfmail.org"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc "
+KEYWORDS="x86 ppc sparc"
 
 DEPEND="virtual/x11
 	>=x11-libs/xforms-1.0_rc4
