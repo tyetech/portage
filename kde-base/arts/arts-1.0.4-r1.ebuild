@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/arts/Attic/arts-1.0.4-r1.ebuild,v 1.1 2002/12/15 20:55:02 hannes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/arts/Attic/arts-1.0.4-r1.ebuild,v 1.2 2002/12/17 02:57:16 hannes Exp $
 inherit kde-base flag-o-matic
 
 SRC_URI="mirror://kde/stable/3.0.4/src/${P}.tar.bz2"
@@ -21,7 +21,7 @@ SLOT="3.0"
 LICENSE="GPL-2 LGPL-2"
 
 # fix bug #10338
-PATCHES="${FILESDIR}/${P}-tmp-mcop-user-fix.patch"
+PATCHES="${FILESDIR}/tmp-mcop-user-fix.patch"
 
 # fix bug #8175
 MAKEOPTS="$MAKEOPTS -j1"
