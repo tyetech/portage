@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/uade/Attic/uade-0.81.ebuild,v 1.6 2004/06/15 03:19:49 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/uade/Attic/uade-0.81.ebuild,v 1.7 2004/06/24 22:35:14 agriffis Exp $
 
 DESCRIPTION="Unix Amiga Delitracker Emulator - plays old Amiga tunes through UAE emulation and cloned m68k-assembler Eagleplayer API"
 HOMEPAGE="http://uade.ton.tut.fi/"

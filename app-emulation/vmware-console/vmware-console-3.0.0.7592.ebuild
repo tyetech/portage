@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/vmware-console/Attic/vmware-console-3.0.0.7592.ebuild,v 1.2 2004/06/04 03:39:06 jmglov Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/vmware-console/Attic/vmware-console-3.0.0.7592.ebuild,v 1.3 2004/06/24 22:36:09 agriffis Exp $
 
 MY_PN="VMware-console"
 MY_PV=`echo ${PV} | sed -e 's/\.\([0-9]\+\)$/-\1/'`

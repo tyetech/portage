@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/bochs/Attic/bochs-2.0.ebuild,v 1.7 2004/06/16 09:31:38 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/bochs/Attic/bochs-2.0.ebuild,v 1.8 2004/06/24 22:30:15 agriffis Exp $
 
 DESCRIPTION="Bochs is a pc emulator.
 This ebuild is set up to emulate a Pentium, with a NE2000 network card, and a
