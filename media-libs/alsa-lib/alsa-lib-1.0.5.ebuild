@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/alsa-lib/Attic/alsa-lib-1.0.5.ebuild,v 1.7 2004/07/19 10:01:41 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/alsa-lib/Attic/alsa-lib-1.0.5.ebuild,v 1.8 2004/07/24 03:04:14 pylon Exp $
 
 inherit libtool
 
@@ -8,7 +8,7 @@ DESCRIPTION="Advanced Linux Sound Architecture Library"
 HOMEPAGE="http://www.alsa-project.org/"
 
 SLOT="0"
-KEYWORDS="x86 ~ppc ~alpha amd64 -sparc ~ia64 ppc64"
+KEYWORDS="x86 ppc ~alpha amd64 -sparc ~ia64 ppc64"
 LICENSE="GPL-2 LGPL-2.1"
 
 IUSE="static jack"
