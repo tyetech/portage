@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/vdkbuilder/Attic/vdkbuilder-2.0.2.ebuild,v 1.7 2002/10/05 05:39:12 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/vdkbuilder/Attic/vdkbuilder-2.0.2.ebuild,v 1.8 2002/12/09 04:21:16 manson Exp $
 
 IUSE="nls gnome"
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://vdkbuilder.sf.net"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 sparc sparc64"
+KEYWORDS="x86 sparc "
 
 DEPEND="dev-libs/atk
 	x11-libs/pango
