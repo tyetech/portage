@@ -1,7 +1,7 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.6.ebuild,v 1.1 2002/01/11 18:28:35 verwilst Exp $
+# Maintainer: Achim Gottinger <achim@gentoo.org>
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.6-r2.ebuild,v 1.1 2002/02/28 07:25:37 blocke Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="X MultiMedia System"
@@ -13,16 +13,17 @@ DEPEND="gnome? ( >=gnome-base/gnome-core-1.4.0.4-r1 )
 	>=media-libs/libmikmod-3.1.9
 	esd? ( >=media-sound/esound-0.2.22 )
 	vorbis? ( >=media-libs/libvorbis-1.0_beta4 )
-	>=x11-libs/gtk+-1.2.10-r4
-	virtual/opengl"
+	opengl? ( virtual/opengl )
+	nls? ( dev-util/intltool )
+	>=x11-libs/gtk+-1.2.10-r4"
 
 RDEPEND="gnome? ( >=gnome-base/gnome-core-1.4.0.4-r1 )
 	>=dev-libs/libxml-1.8.15
 	>=media-libs/libmikmod-3.1.9
 	esd? ( >=media-sound/esound-0.2.22 )
 	vorbis? ( >=media-libs/libvorbis-1.0_beta4 )
-	>=x11-libs/gtk+-1.2.10-r4
-	virtual/opengl"
+	opengl? ( virtual/opengl )
+	>=x11-libs/gtk+-1.2.10-r4"
 
 src_unpack() {
 	unpack ${A}
@@ -31,6 +32,7 @@ src_unpack() {
 	cp configure configure.orig
 	sed -e "s:-m486::" configure.orig > configure
 }
+
 src_compile() {
 	local myopts
 
@@ -47,6 +49,18 @@ src_compile() {
 		myopts="$myopts --disable-3dnow"
 	fi
 
+	if [ "`use esd`" ] ; then
+		myopts="$myopts --enable-esd"
+	else
+		myopts="$myopts --disable-esd"
+	fi	
+
+	if [ "`use opengl`" ] ; then
+		myopts="$myopts --enable-opengl"
+	else
+		myopts="$myopts --disable-opengl"
+	fi
+	
 	if [ "`use ogg`" ] ; then
 		myopts="$myopts --with-ogg"
 	else
@@ -59,7 +73,14 @@ src_compile() {
 		myopts="$myopts --disable-vorbis-test"
 	fi
 
-	./configure --host=${CHOST} --prefix=/usr ${myopts} || die
+	if [ ! "`use nls`" ] ; then
+		myopts="$myopts --disable-nls"
+	fi
+
+	
+	./configure --host=${CHOST} \
+		--prefix=/usr \
+		${myopts} || die
 
 	emake || die
 }
@@ -72,6 +93,21 @@ src_install() {
 	     install || die
 
 	dodoc AUTHORS ChangeLog COPYING FAQ NEWS README TODO 
+	
 	insinto /usr/share/pixmaps/
 	donewins gnomexmms/gnomexmms.xpm xmms.xpm
+	doins xmms/xmms_logo.xpm
+	insinto /usr/share/pixmaps/mini
+	doins xmms/xmms_mini.xpm
+
+	insinto /etc/X11/wmconfig
+	donewins xmms/xmms.wmconfig xmms
+
+	if [ "`use gnome`" ]
+	then
+		insinto /usr/share/gnome/apps/Multimedia
+		doins xmms/xmms.desktop
+		dosed "s:xmms_mini.xpm:mini/xmms_mini.xpm:" \
+			/usr/share/gnome/apps/Multimedia/xmms.desktop
+	fi
 }
