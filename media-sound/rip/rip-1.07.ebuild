@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rip/rip-1.07.ebuild,v 1.10 2004/12/04 11:49:38 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rip/rip-1.07.ebuild,v 1.11 2004/12/19 06:24:35 eradicator Exp $
 
 IUSE=""
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://rip.sourceforge.net"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="amd64 ~ppc sparc x86"
 
 DEPEND=""
 
