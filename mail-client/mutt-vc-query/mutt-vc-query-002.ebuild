@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt-vc-query/Attic/mutt-vc-query-002.ebuild,v 1.1 2004/06/07 08:18:15 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt-vc-query/Attic/mutt-vc-query-002.ebuild,v 1.2 2004/06/24 22:17:12 agriffis Exp $
 
 MY_PN="mutt_vc_query"
 DESCRIPTION="vCard query for mutt (aka rolo)"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.4.2.1.ebuild,v 1.2 2004/06/05 14:31:50 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.4.2.1.ebuild,v 1.3 2004/06/24 22:17:02 agriffis Exp $
 
 IUSE="ssl nls slang mbox cjk vanilla"
 

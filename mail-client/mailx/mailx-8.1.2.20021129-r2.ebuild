@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mailx/Attic/mailx-8.1.2.20021129-r2.ebuild,v 1.4 2004/06/07 20:41:19 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mailx/Attic/mailx-8.1.2.20021129-r2.ebuild,v 1.5 2004/06/24 22:16:17 agriffis Exp $
 
 inherit ccc eutils
 
