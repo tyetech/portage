@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/yahoo-transport/Attic/yahoo-transport-2.3.0-r3.ebuild,v 1.1 2004/06/26 03:12:13 humpback Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/yahoo-transport/Attic/yahoo-transport-2.3.0-r3.ebuild,v 1.2 2004/06/26 03:14:11 humpback Exp $
 
 inherit eutils
 
