@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/sbcl/Attic/sbcl-0.6.12.ebuild,v 1.10 2003/02/13 10:54:20 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/sbcl/Attic/sbcl-0.6.12.ebuild,v 1.11 2003/02/28 16:54:59 liquidx Exp $
 
 
 S=${WORKDIR}/${P}
@@ -14,7 +14,7 @@ HOMEPAGE="http://sbcl.sourceforge.net/"
 
 PROVIDE="virtual/commonlisp"
 
-LICENSE="PD"
+LICENSE="MIT"
 SLOT="0"
 KEYWORDS="x86"
 
