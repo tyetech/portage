@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ardour/Attic/ardour-0.9_beta18-r1.ebuild,v 1.1 2004/07/24 13:48:02 tigger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ardour/Attic/ardour-0.9_beta18-r1.ebuild,v 1.2 2004/08/14 02:47:11 squinky86 Exp $
 
 inherit eutils
 
@@ -27,7 +27,7 @@ RDEPEND="dev-util/pkgconfig
 	>=media-libs/libsamplerate-0.0.14
 	>=media-libs/liblrdf-0.3.1
 	>=dev-libs/libxml2-2.5.7
-	=media-libs/libart_lgpl-2.3*"
+	>=media-libs/libart_lgpl-2.3.16"
 
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
