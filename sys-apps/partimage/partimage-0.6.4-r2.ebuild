@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/partimage/Attic/partimage-0.6.4-r1.ebuild,v 1.7 2005/01/16 15:30:56 xmerlin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/partimage/Attic/partimage-0.6.4-r2.ebuild,v 1.1 2005/01/16 15:30:56 xmerlin Exp $
 
 inherit gnuconfig eutils
 
@@ -9,18 +9,19 @@ HOMEPAGE="http://www.partimage.org/"
 SRC_URI="mirror://sourceforge/partimage/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
-IUSE="ssl nologin"
+KEYWORDS="~x86"
+IUSE="ssl nologin nls"
+
+DEPEND="${RDEPEND} sys-devel/autoconf"
 
 RDEPEND="virtual/libc
 	>=sys-libs/zlib-1.1.4
 	>=dev-libs/lzo-1.08
 	>=dev-libs/newt-0.50.35-r1
-	>=sys-libs/slang-1.4.5-r2
 	app-arch/bzip2
+	>=sys-libs/slang-1.4.5-r2
+	nls? ( sys-devel/gettext )
 	ssl? ( >=dev-libs/openssl-0.9.6g )"
-
-DEPEND="${RDEPEND} sys-devel/autoconf"
 
 PARTIMAG_GROUP_GID=91
 PARTIMAG_USER_UID=91
@@ -39,56 +40,40 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+
 	# we can do better security ourselves
 	epatch ${FILESDIR}/${P}-nodumbpermchecks.diff || die
+	epatch ${FILESDIR}/${P}-chown.patch || die
+	epatch ${FILESDIR}/${P}-not_install_info.patch || die
 	epatch ${FILESDIR}/${P}-fixserverargs.diff || die
-	# Patch Makefile.am so we can take over some of is install work
-	#patch -p1 < ${FILESDIR}/${PF}-gentoo.patch || die "patch failed"
-	sed '18d' -i configure.ac
-	sed '1iACLOCAL_AMFLAGS = -I macros' -i Makefile.am
-	for i in intl/Makefile.in po/Makefile.in.in; do
-		sed 's/^mkinstalldirs =.*/mkinstalldirs = mkdir -p /g' -i ${i}
-	done
-	sed 's/chown partimag.root/chown partimag:root/g' -i Makefile.am
-	gnuconfig_update
-	automake
-	aclocal
-	autoconf
 }
 
 src_compile() {
-	# SSL is optional
 	local myconf
-	myconf="--cache-file=${S}/config.cache"
-	use ssl || myconf="${myconf} --disable-ssl"
 	use nologin && myconf="${myconf} --disable-login"
+
 	econf \
 		${myconf} \
-		--infodir=/usr/share/doc/${PF} || die "econf failed"
-	cp Makefile Makefile.orig
-	sed -e "s/partimag\.root/root:root/g" Makefile.orig > Makefile
+		`use_enable ssl` \
+		`use_enable nls`|| die "econf failed"
+
 	emake || die
 }
 
 src_install() {
-	make \
-	prefix=${D}/usr \
-	sysconfdir=${D}/etc \
-	mandir=${D}/usr/share/man \
-	datadir=${D}/usr/share \
-	infodir=${D}/usr/share/doc/${PF} \
-	localedir=${D}/usr/share/locale \
-	gettextsrcdir=${D}/usr/share/gettext/po \
-	install || die
+	einstall \
+		MKINSTALLDIRS=/usr/share/automake-1.8/mkinstalldirs || die
+
 	keepdir /var/log/partimage
-	insinto /etc/partimaged
-	doins ${FILESDIR}/servercert.cnf
+
+	insinto /etc/partimaged; doins ${FILESDIR}/servercert.cnf || die
 
 	# init.d / conf.d
 	exeinto /etc/init.d ; newexe ${FILESDIR}/${PN}d.init ${PN}d || die
 	insinto /etc/conf.d ; newins ${FILESDIR}/${PN}d.conf ${PN}d || die
 
 	doman debian/partimage.1 debian/partimaged.8 ${FILESDIR}/partimagedusers.5 || die
+	dodoc AUTHORS BUGS COPYING ChangeLog INSTALL README* TODO partimage.lsm
 }
 
 # vars for SSL stuff
