@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/eterm/Attic/eterm-0.9.2-r2.ebuild,v 1.2 2003/02/13 17:34:17 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/eterm/Attic/eterm-0.9.2-r4.ebuild,v 1.4 2003/03/20 12:52:09 seemant Exp $
 
 MY_PN=${PN/et/Et}
 MY_P=${MY_PN}-${PV}
@@ -12,12 +12,13 @@ HOMEPAGE="http://www.eterm.org/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~alpha"
+KEYWORDS="x86 ppc alpha ~sparc"
 IUSE="pic"
 
 DEPEND="virtual/x11
 	>=x11-libs/libast-0.5
-	media-libs/imlib2"
+	media-libs/imlib2
+	>=sys-devel/binutils-2.13*"
 
 src_unpack() {
 	unpack ${MY_P}.tar.gz
