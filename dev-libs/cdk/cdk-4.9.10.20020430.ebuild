@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/cdk/Attic/cdk-4.9.10.20020430.ebuild,v 1.8 2003/06/24 02:43:56 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/cdk/Attic/cdk-4.9.10.20020430.ebuild,v 1.9 2003/09/06 22:29:24 msterret Exp $
 
 
 MY_P=${P/.2002/-2002}
@@ -24,7 +24,7 @@ src_compile()
 
 	emake || die "make failed!"
 }
- 
+
 
 src_install()
 {
