@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/pam_krb5/Attic/pam_krb5-1.0.ebuild,v 1.8 2002/08/16 02:36:53 murphy Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/pam_krb5/Attic/pam_krb5-1.0.ebuild,v 1.9 2002/10/04 03:58:09 vapier Exp $
 
 S=${WORKDIR}/${PN}
 DESCRIPTION="Pam module for MIT Kerberos V"

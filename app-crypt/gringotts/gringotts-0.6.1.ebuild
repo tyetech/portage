@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gringotts/Attic/gringotts-0.6.1.ebuild,v 1.1 2002/08/16 16:18:20 stroke Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gringotts/Attic/gringotts-0.6.1.ebuild,v 1.2 2002/10/04 03:57:27 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Gringotts is a utility that allows you to jot down sensitive data"

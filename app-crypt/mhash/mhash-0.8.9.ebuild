@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/mhash/Attic/mhash-0.8.9.ebuild,v 1.6 2002/08/16 02:36:53 murphy Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/mhash/Attic/mhash-0.8.9.ebuild,v 1.7 2002/10/04 03:58:03 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="mhash is a library providing a uniform interface to a large number of hash algorithms."
