@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mod_ssl/Attic/mod_ssl-2.8.19.ebuild,v 1.7 2004/08/01 06:59:05 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mod_ssl/Attic/mod_ssl-2.8.19.ebuild,v 1.8 2004/08/01 14:49:47 gmsoft Exp $
 
 MY_P=${P}-1.3.31
 S=${WORKDIR}/${MY_P}
@@ -8,7 +8,7 @@ DESCRIPTION="An SSL module for the Apache Web server"
 SRC_URI="http://www.modssl.org/source/${MY_P}.tar.gz"
 HOMEPAGE="http://www.modssl.org/"
 
-KEYWORDS="x86 ppc sparc alpha ~hppa mips"
+KEYWORDS="x86 ppc sparc alpha hppa mips"
 LICENSE="as-is"
 SLOT="0"
 
