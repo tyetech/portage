@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/multisync/Attic/multisync-0.81.ebuild,v 1.9 2004/06/24 21:43:56 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/multisync/Attic/multisync-0.81.ebuild,v 1.10 2004/07/01 11:46:44 eradicator Exp $
 
 inherit eutils
 
@@ -17,7 +17,7 @@ IUSE="evo irmc opie ldap"
 # opie  - opie plugin                ( local )
 # ldap  - ldap plugin - experimental
 
-DEPEND="virtual/glibc
+DEPEND="virtual/libc
 	>=gnome-base/libbonobo-2.2
 	>=gnome-base/libgnome-2.2
 	>=gnome-base/ORBit2-2.8.2
