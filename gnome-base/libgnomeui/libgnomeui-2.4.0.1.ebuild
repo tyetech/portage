@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.4.0.1.ebuild,v 1.10 2004/03/19 13:03:58 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.4.0.1.ebuild,v 1.11 2004/05/14 02:43:52 geoman Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 IUSE="doc jpeg"
 SLOT="0"
-KEYWORDS="x86 ppc alpha sparc hppa amd64 ia64 ~mips"
+KEYWORDS="x86 ppc alpha sparc hppa amd64 ia64 mips"
 LICENSE="GPL-2 LGPL-2"
 
 RDEPEND=">=x11-libs/pango-1.1.2
