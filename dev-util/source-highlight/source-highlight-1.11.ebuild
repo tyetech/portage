@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/source-highlight/Attic/source-highlight-1.8.ebuild,v 1.7 2004/10/09 23:31:57 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/source-highlight/Attic/source-highlight-1.11.ebuild,v 1.1 2004/10/09 23:31:57 ka0ttic Exp $
 
 IUSE=""
 
