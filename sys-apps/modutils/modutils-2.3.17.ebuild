@@ -1,9 +1,9 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/modutils/Attic/modutils-2.3.16.ebuild,v 1.1 2000/09/20 16:17:19 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/modutils/Attic/modutils-2.3.17.ebuild,v 1.1 2000/09/26 16:50:41 achim Exp $
 
-A=${P}.tar.gz
+A=${P}.tar.bz2
 S=${WORKDIR}/${P}
 DESCRIPTION="Standard kernel module utilities"
 SRC_URI="ftp://ftp.ocs.com.au/pub/modutils/v2.3/${A}"
