@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.12.ebuild,v 1.3 2002/10/04 21:35:38 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.12.ebuild,v 1.4 2002/10/05 05:39:28 drobbins Exp $
+
+IUSE="nls"
 
 inherit commonbox flag-o-matic
 

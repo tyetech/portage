@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/multi-gnome-terminal/Attic/multi-gnome-terminal-1.5.2.ebuild,v 1.3 2002/10/04 06:46:38 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/multi-gnome-terminal/Attic/multi-gnome-terminal-1.5.2.ebuild,v 1.4 2002/10/05 05:39:28 drobbins Exp $
+
+IUSE="nls"
 
 inherit libtool
 

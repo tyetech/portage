@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.0.1-r4.ebuild,v 1.7 2002/10/04 06:48:50 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.0.1-r4.ebuild,v 1.8 2002/10/05 05:39:28 drobbins Exp $
+
+IUSE="gtk nls esd gnome"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Extensible window manager using a Lisp-based scripting language"
