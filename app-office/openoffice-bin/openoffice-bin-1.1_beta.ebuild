@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-bin/Attic/openoffice-bin-1.1_beta.ebuild,v 1.1 2003/03/27 08:27:41 sethbc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-bin/Attic/openoffice-bin-1.1_beta.ebuild,v 1.2 2003/04/10 21:27:11 sethbc Exp $
 
 IUSE="kde gnome"
 
@@ -39,7 +39,7 @@ DEPEND="virtual/glibc
 
 LICENSE="LGPL-2 | SISSL-1.1"
 SLOT="0"
-KEYWORDS="~x86 -ppc -sparc "
+KEYWORDS="-x86 -ppc -sparc "
 
 src_install() {
 
