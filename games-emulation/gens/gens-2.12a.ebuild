@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/gens/Attic/gens-2.12a.ebuild,v 1.5 2004/05/05 02:08:00 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/gens/Attic/gens-2.12a.ebuild,v 1.6 2004/06/24 22:27:24 agriffis Exp $
 
 inherit games
 

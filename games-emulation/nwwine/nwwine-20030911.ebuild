@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/nwwine/Attic/nwwine-20030911.ebuild,v 1.1 2004/03/04 09:58:18 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/nwwine/Attic/nwwine-20030911.ebuild,v 1.2 2004/06/24 22:31:49 agriffis Exp $
 
 inherit eutils
 

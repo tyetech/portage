@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/stella/Attic/stella-1.3-r1.ebuild,v 1.5 2004/05/27 02:15:00 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/stella/Attic/stella-1.3-r1.ebuild,v 1.6 2004/06/24 22:36:30 agriffis Exp $
 
 inherit eutils
 

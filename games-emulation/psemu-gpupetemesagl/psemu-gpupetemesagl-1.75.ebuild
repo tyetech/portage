@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/psemu-gpupetemesagl/Attic/psemu-gpupetemesagl-1.75.ebuild,v 1.3 2004/05/27 01:46:54 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/psemu-gpupetemesagl/Attic/psemu-gpupetemesagl-1.75.ebuild,v 1.4 2004/06/24 22:34:13 agriffis Exp $
 
 inherit games
 
