@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.4.22-r2.ebuild,v 1.3 2004/01/06 15:17:52 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.4.22-r4.ebuild,v 1.1 2004/01/09 06:40:36 iggy Exp $
 
 # OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
@@ -19,7 +19,7 @@ S=${WORKDIR}/linux-${KV}
 
 DESCRIPTION="Full sources for the Gentoo Kernel."
 SRC_URI="mirror://kernel/linux/kernel/v2.4/linux-${OKV}.tar.bz2
-	http://dev.gentoo.org/~iggy/gentoo-sources-${PVR}.patch.bz2"
+	http://dev.gentoo.org/~iggy/${PF}.patch.bz2"
 HOMEPAGE="http://www.gentoo.org/ http://www.kernel.org/"
 LICENSE="GPL-2"
 KEYWORDS="x86 -ppc -sparc -alpha -hppa -mips -arm ~amd64 ~ia64"
@@ -33,16 +33,12 @@ src_unpack() {
 
 	cd linux-${KV}
 
-	bzcat ${DISTDIR}/gentoo-sources-${PVR}.patch.bz2 | patch -p1 \
-		|| die "Failed to patch kernel, please file a bug at bugs.gentoo.org"
+	epatch ${DISTDIR}/${PF}.patch.bz2 \
+		|| die "Failed to patch kernel"
 
 	cd ${S}
 
-	epatch ${FILESDIR}/gentoo-sources-2.4.CAN-2003-0985.patch || die "Failed to apply mremap() fix!"
-	epatch ${FILESDIR}/gentoo-sources-2.4.22-rtc_fix.patch || die "Failed to apply RTC fix!"
-
-	make mrproper || die "make mrproper failed"
-	make include/linux/version.h || die "make include/linux/version.h failed"
+	kernel_universal_unpack
 }
 
 pkg_postinst() {
