@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-themes-extras/Attic/gnome-themes-extras-0.6.ebuild,v 1.4 2004/04/03 07:13:39 pylon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-themes-extras/Attic/gnome-themes-extras-0.6.ebuild,v 1.5 2004/04/17 12:26:49 aliz Exp $
 
-inherit gnome2
+inherit gnome2 eutils
 
 DESCRIPTION="Additional themes for GNOME 2.2"
 HOMEPAGE="http://librsvg.sourceforge.net/theme.php"
