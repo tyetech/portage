@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xine-ui/Attic/xine-ui-0.9.19.ebuild,v 1.1 2003/03/09 21:29:01 agenkin Exp $ 
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xine-ui/Attic/xine-ui-0.9.19.ebuild,v 1.2 2003/03/12 20:16:18 agenkin Exp $ 
 
 DESCRIPTION="Skinned front end for Xine movie player."
 HOMEPAGE="http://xine.sourceforge.net/"
@@ -9,7 +9,7 @@ LICENSE="GPL-2"
 DEPEND="media-libs/libpng
 	>=media-libs/xine-lib-1_alpha2
 	>=net-ftp/curl-7.10.2
-	app-misc/lirc
+	lirc? ( app-misc/lirc )
 	X? ( virtual/x11 )
 	aalib? ( media-libs/aalib )
 	gnome? ( gnome-base/ORBit )
