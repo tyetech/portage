@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/bing/Attic/bing-1.1.3.ebuild,v 1.6 2004/06/24 21:57:29 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/bing/Attic/bing-1.1.3.ebuild,v 1.7 2004/07/01 17:24:52 squinky86 Exp $
 
 DESCRIPTION="A point-to-point bandwidth measurement tool."
 SRC_URI="http://distro.ibiblio.org/pub/Linux/distributions/debian/pool/main/b/bing/${PN}_${PV}.orig.tar.gz"
@@ -11,7 +11,7 @@ SLOT="0"
 LICENSE="as-is"
 IUSE=""
 
-RDEPEND="virtual/glibc"
+RDEPEND="virtual/libc"
 DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
 
