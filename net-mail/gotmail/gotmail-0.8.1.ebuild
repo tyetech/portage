@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/gotmail/Attic/gotmail-0.8.1.ebuild,v 1.4 2004/02/15 13:29:06 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/gotmail/Attic/gotmail-0.8.1.ebuild,v 1.5 2004/03/24 23:20:22 mholzer Exp $
 
 DESCRIPTION="Utility to download mail from a HotMail account"
 SRC_URI="mirror://sourceforge/gotmail/${P}.tar.gz"
+RESTRICT="nomirror"
 HOMEPAGE="http://www.nongnu.org/gotmail/"
 
-RDEPEND="virtual/glibc net-ftp/curl dev-perl/URI dev-perl/libnet"
-DEPEND=${RDEPEND}
+DEPEND="virtual/glibc net-ftp/curl dev-perl/URI dev-perl/libnet"
 
 SLOT="0"
 LICENSE="GPL-2"
