@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libtorrent/Attic/libtorrent-0.3.2.ebuild,v 1.5 2004/09/17 04:35:16 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libtorrent/Attic/libtorrent-0.3.5.ebuild,v 1.1 2004/09/17 04:35:16 squinky86 Exp $
 
 DESCRIPTION="LibTorrent is a BitTorrent library written in C++ for *nix."
 HOMEPAGE="http://libtorrent.rakshasa.no/"
