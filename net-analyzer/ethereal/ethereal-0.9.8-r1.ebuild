@@ -1,12 +1,12 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ethereal/Attic/ethereal-0.9.7.ebuild,v 1.3 2002/12/10 21:19:30 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ethereal/Attic/ethereal-0.9.8-r1.ebuild,v 1.1 2002/12/30 02:30:40 drobbins Exp $
 
-IUSE="gtk ipv6 snmp ssl"
+IUSE="gtk ipv6 snmp ssl gtk2"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A commercial-quality network protocol analyzer"
-SRC_URI="http://www.ethereal.com/distribution/old-versions/${P}.tar.bz2"
+SRC_URI="http://www.ethereal.com/distribution/${P}.tar.bz2"
 HOMEPAGE="http://www.ethereal.com/"
 
 SLOT="0"
@@ -14,19 +14,17 @@ LICENSE="GPL-2"
 KEYWORDS="x86"
 
 RDEPEND=">=sys-libs/zlib-1.1.4
-	=dev-libs/glib-1.2*
 	snmp? ( >=net-analyzer/ucd-snmp-4.2.5 )
-	gtk? ( =x11-libs/gtk+-1.2* )
-	ssl? ( >=dev-libs/openssl-0.9.6e )"
+	gtk2? ( >=dev-libs/glib-2.0.4 =x11-libs/gtk+-2.0* ) : ( gtk? ( =x11-libs/gtk+-1.2* =dev-libs/glib-1.2* ) )
+	ssl? ( >=dev-libs/openssl-0.9.6e )
+	>=net-libs/libpcap-0.7.1"
 
 DEPEND="${RDEPEND}
 	sys-devel/perl
 	sys-devel/bison
-	sys-devel/flex
-	>=net-libs/libpcap-0.7.1"
+	sys-devel/flex"
 
 src_unpack() {
-
 	unpack ${A}
 	cd ${S}
 
@@ -39,7 +37,13 @@ src_unpack() {
 
 src_compile() {
 	local myconf
-	use gtk || myconf="${myconf} --disable-ethereal"
+	if [ "`use gtk2`" ]
+	then
+		myconf="--enable-gtk2"
+	elif [ -z "`use gtk`" ]
+	then
+		myconf="--disable-ethereal"
+	fi
 	use ssl || myconf="${myconf} --without-ssl"
 	use snmp || myconf="${myconf} --without-ucdsnmp"
 	use ipv6 && myconf="${myconf} --enable-ipv6"
@@ -67,11 +71,8 @@ src_compile() {
 
 src_install() {
 	dodir /usr/lib/ethereal/plugins/${PV}
-
-	einstall \
-		datadir=${D}/usr/share \
-		sysconfdir=${D}/etc/ethereal \
-		plugindir=${D}/usr/lib/ethereal/plugins/${PV} || die
-
+	make DESTDIR=${D} install
 	dodoc AUTHORS COPYING ChangeLog INSTALL.* NEWS README* TODO
 }
+
+    
