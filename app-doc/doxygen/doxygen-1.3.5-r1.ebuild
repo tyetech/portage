@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.3.5-r1.ebuild,v 1.11 2004/10/17 10:15:53 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.3.5-r1.ebuild,v 1.12 2005/01/01 13:06:35 eradicator Exp $
 
 DESCRIPTION="documentation system for C++, C, Java, IDL, PHP and C#"
 HOMEPAGE="http://www.doxygen.org/"
