@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/mc/Attic/mc-4.5.55-r4.ebuild,v 1.6 2002/08/16 04:14:00 murphy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/mc/Attic/mc-4.5.55-r6.ebuild,v 1.1 2002/08/23 17:50:37 naz Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="GNOME Midnight Commander"
@@ -13,6 +13,7 @@ DEPEND="virtual/glibc
 	>=sys-devel/automake-1.5d-r1
 	gpm? ( >=sys-libs/gpm-1.19.3 )
 	pam? ( >=sys-libs/pam-0.72 )
+	ncurses? ( >=sys-libs/ncurses-5.2 )
 	slang? ( >=sys-libs/slang-1.4.2 )
 	nls? ( sys-devel/gettext )
 	samba? ( >=net-fs/samba-2.2.3a-r1 )
@@ -20,8 +21,8 @@ DEPEND="virtual/glibc
 #currently broken
 #	gnome? ( >=gnome-base/gnome-libs-1.4.1.2-r1 )
 
-LICENSE="GPL-2"
 SLOT="0"
+LICENSE="GPL-2"
 KEYWORDS="x86 sparc sparc64"
 
 src_compile() {                           
@@ -30,8 +31,10 @@ src_compile() {
 	use pam && myconf="${myconf} --with-pam"
 	use pam || myconf="${myconf} --without-pam"
 
+	use ncurses && myconf="${myconf} --with-ncurses" || ( \
 	use slang && myconf="${myconf} --with-slang"
 	use slang || myconf="${myconf} --with-included-slang"
+	)
 
 #currently broken
 #	use gnome && myconf="${myconf} --with-gnome"
@@ -46,12 +49,16 @@ src_compile() {
 	use X && myconf="${myconf} --with-tm-x-support"
 	use X || myconf="${myconf} --without-tm-x-support"
 
-	if [ "`use samba`" ] ; then
+	use samba && myconf="${myconf} --with-samba"
+	use samba && ( \
 		cd ${S}/vfs
 		cp smbfs.c smbfs.c.orig
-		sed -e "s:/etc/smb\.conf:/etc/smb/smb\.conf:" smbfs.c.orig > smbfs.c
-		myconf="${myconf} --with-samba"
-	fi
+		sed -e "s:/etc/smb\.conf:/etc/samba/smb\.conf:" smbfs.c.orig > smbfs.c
+		cd samba
+		cp Makefile.in Makefile.in.orig
+		sed -e 's:$(LIBDIR)\(/codepages\):/var/lib/samba\1:' \
+			Makefile.in.orig > Makefile.in
+	)
 
 	cd ${S}
 #	export WANT_AUTOMAKE_1_5=1
@@ -60,7 +67,7 @@ src_compile() {
 #	autoconf
 	automake --add-missing
 
-	LDFLAGS="-lcrypt -lncurses" ./configure --host=${CHOST} 	 \
+	./configure --host=${CHOST} 	 \
 						--prefix=/usr		 \
 						--mandir=/usr/share/man	 \
 						--sysconfdir=/etc	 \
