@@ -1,8 +1,9 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
+# Distributed under the terms of the GNU General Public License v2
 # Author Dan Armak <danarmak@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kde.org.eclass,v 1.17 2002/10/24 18:38:39 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kde.org.eclass,v 1.18 2002/10/25 19:55:52 vapier Exp $
 # Contains the locations of ftp.kde.org packages and their mirrors
+
 ECLASS=kde.org
 INHERITED="$INHERITED $ECLASS"
 
