@@ -1,9 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/imhangul_status_applet/Attic/imhangul_status_applet-0.2-r1.ebuild,v 1.7 2004/06/24 21:46:40 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/imhangul_status_applet/Attic/imhangul_status_applet-0.2-r1.ebuild,v 1.8 2004/07/14 01:10:24 agriffis Exp $
 
 inherit gnome2
-S=${WORKDIR}/${P}
 DESCRIPTION="Status Applet for imhangul"
 HOMEPAGE="http://imhangul.kldp.net/"
 SRC_URI="http://download.kldp.net/imhangul/${P}.tar.gz"

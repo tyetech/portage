@@ -1,8 +1,7 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/imhangul/Attic/imhangul-0.9.5.ebuild,v 1.9 2004/06/24 21:46:24 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/imhangul/Attic/imhangul-0.9.5.ebuild,v 1.10 2004/07/14 01:10:01 agriffis Exp $
 
-S=${WORKDIR}/${P}
 DESCRIPTION="Gtk+-2.0 Hangul Input Modules"
 HOMEPAGE="http://imhangul.kldp.net/"
 SRC_URI="http://download.kldp.net/imhangul/${P}.tar.bz2"
