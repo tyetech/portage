@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Mikael Hallendal <hallski@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-libs/cvs-repo/gentoo-x86/gnome-libs/bonobo-conf/Attic/bonobo-conf-0.11.ebuild,v 1.2 2001/08/31 23:32:48 hallski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/bonobo-conf/Attic/bonobo-conf-0.12.ebuild,v 1.1 2001/10/06 10:06:50 hallski Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -10,9 +10,9 @@ SRC_URI="ftp://ftp.gnome.org/pub/GNOME/unstable/sources/${PN}/${A}"
 HOMEPAGE="http://www.gnome.org/"
 
 RDEPEND=">=dev-libs/glib-1.2.0
-	 >=x11-libs/gtk+-1.2.0
-	 >=gnome-base/bonobo-1.0
-	 >=gnome-base/oaf-0.6.2"
+	 >=x11-libs/gtk+-1.2.10-r4
+	 >=gnome-base/bonobo-1.0.9-r1
+	 >=gnome-base/oaf-0.6.6-r1"
 
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
@@ -26,9 +26,8 @@ src_compile() {
 	fi
 
 	./configure --host=${CHOST} 					\
-		    --prefix=/opt/gnome 				\
-		    --sysconfdir=/etc/opt/gnome				\
-		    --mandir=/opt/gnome/man				\
+		    --prefix=/usr	 				\
+		    --sysconfdir=/etc					\
 		    --disable-more-warnings $myconf || die
 
 	emake || die
