@@ -1,5 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/pilrc/Attic/pilrc-2.9.ebuild,v 1.8 2003/06/12 20:43:43 msterret Exp $
 
 S="${WORKDIR}/${P}"
 DESCRIPTION="Pilot Resource Compiler"
