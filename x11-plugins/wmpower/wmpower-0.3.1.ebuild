@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmpower/Attic/wmpower-0.3.1.ebuild,v 1.2 2004/06/22 20:26:40 s4t4n Exp $
 
 inherit eutils
 
