@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/chmlib/Attic/chmlib-0.31.ebuild,v 1.7 2004/05/31 18:31:34 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/chmlib/Attic/chmlib-0.31.ebuild,v 1.8 2004/06/24 21:38:53 agriffis Exp $
 
 DESCRIPTION="Library for MS CHM (compressed html) file format plus extracting and http server utils"
 HOMEPAGE="http://66.93.236.84/~jedwin/projects/chmlib/"

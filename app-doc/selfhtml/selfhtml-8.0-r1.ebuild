@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/selfhtml/Attic/selfhtml-8.0-r1.ebuild,v 1.3 2004/03/28 21:29:24 pylon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/selfhtml/Attic/selfhtml-8.0-r1.ebuild,v 1.4 2004/06/24 21:50:26 agriffis Exp $
 
 S=${WORKDIR}
 TARGET=/usr/share/doc/${PF}/html
