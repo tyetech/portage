@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.3a.ebuild,v 1.6 2003/12/05 16:41:17 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.3a.ebuild,v 1.7 2003/12/15 20:19:30 stuart Exp $
 
 inherit eutils webapp-apache
 
@@ -29,6 +29,8 @@ pkg_setup() {
 }
 
 src_install() {
+	webapp-mkdirs
+
 	local DocumentRoot=${HTTPD_ROOT}
 	local destdir=${DocumentRoot}/${PN}
 	dodir ${destdir}
