@@ -1,12 +1,12 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/w3mmee/Attic/w3mmee-0.3.2_p24.ebuild,v 1.2 2003/08/22 14:41:46 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/w3mmee/Attic/w3mmee-0.3.2_p24.ebuild,v 1.3 2003/12/06 12:16:27 usata Exp $
 
 IUSE="cjk gpm imlib nls ssl"
 
 MY_PV=${PV##*_}-18
 MY_P=${PN}-${MY_PV}
-GC_PV="6.3alpha1"
+GC_PV="6.2"
 MY_GC=gc${GC_PV}
 
 DESCRIPTION="A variant of w3m with support for multiple character encodings"

@@ -1,12 +1,12 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/w3mmee/Attic/w3mmee-0.3.2_p24-r1.ebuild,v 1.2 2003/12/06 12:16:27 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/w3mmee/Attic/w3mmee-0.3.2_p24-r2.ebuild,v 1.1 2003/12/06 12:16:27 usata Exp $
 
 inherit alternatives
 
 IUSE="cjk gpm imlib nls ssl"
 
-MY_PV=${PV##*_}-18
+MY_PV=${PV##*_}-19
 MY_P=${PN}-${MY_PV}
 GC_PV="6.2"
 MY_GC=gc${GC_PV}
@@ -18,7 +18,7 @@ HOMEPAGE="http://pub.ks-and-ks.ne.jp/prog/w3mmee/"
 
 SLOT="0"
 LICENSE="public-domain"
-KEYWORDS="x86 -alpha ppc sparc"
+KEYWORDS="~x86 -alpha"
 
 DEPEND=">=sys-libs/ncurses-5.2-r3
 	>=sys-libs/zlib-1.1.3-r2
