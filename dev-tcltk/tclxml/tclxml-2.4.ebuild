@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/tclxml/tclxml-2.4.ebuild,v 1.9 2004/04/14 11:32:38 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/tclxml/tclxml-2.4.ebuild,v 1.10 2004/06/03 09:16:26 kloeri Exp $
 
 DESCRIPTION="Pure Tcl implementation of an XML parser."
 HOMEPAGE="http://tclxml.sourceforge.net/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/tclxml/${P}.tar.gz"
 IUSE=""
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ~alpha"
+KEYWORDS="x86 alpha"
 
 DEPEND=">=dev-lang/tcl-8.3.3"
 
