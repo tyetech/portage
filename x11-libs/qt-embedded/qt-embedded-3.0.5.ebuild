@@ -1,8 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-embedded/Attic/qt-embedded-3.0.5.ebuild,v 1.4 2002/10/05 05:39:27 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-embedded/Attic/qt-embedded-3.0.5.ebuild,v 1.5 2002/10/05 18:19:10 gerk Exp $
 
-IUSE="gif build opengl x86 mysql odbc postgres"
+IUSE="gif build opengl mysql odbc postgres"
 
 S=${WORKDIR}/qt-embedded-free-${PV}
 
