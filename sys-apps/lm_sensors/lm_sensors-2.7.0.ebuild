@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/lm_sensors/Attic/lm_sensors-2.7.0.ebuild,v 1.8 2003/03/02 19:31:39 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/lm_sensors/Attic/lm_sensors-2.7.0.ebuild,v 1.9 2003/03/03 05:01:23 lostlogic Exp $
 
 inherit flag-o-matic
 
@@ -24,6 +24,7 @@ DEPEND="|| (
 	   )"
 
 src_compile()  {
+	check_KV
 
 	filter-flags -fPIC
 
