@@ -1,6 +1,6 @@
-# Copyright 1999-2001 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/setiathome/Attic/setiathome-3.03-r1.ebuild,v 1.3 2002/07/25 16:18:19 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/setiathome/Attic/setiathome-3.03-r1.ebuild,v 1.4 2002/08/01 11:40:14 seemant Exp $
 
 # generic archive name, this should be a link to the real archive
 A="${P}.tar"
