@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmatroska/Attic/libmatroska-0.5.2.ebuild,v 1.8 2004/07/01 07:59:02 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmatroska/Attic/libmatroska-0.5.2.ebuild,v 1.9 2004/07/14 20:10:09 agriffis Exp $
 
 inherit flag-o-matic
 
@@ -31,4 +31,3 @@ src_install () {
 	einstall || die "make install failed"
 	dodoc ${S}/LICENSE.*
 }
-
