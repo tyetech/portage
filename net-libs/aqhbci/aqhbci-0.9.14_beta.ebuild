@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/aqhbci/Attic/aqhbci-0.9.14_beta.ebuild,v 1.3 2004/12/26 19:53:08 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/aqhbci/Attic/aqhbci-0.9.14_beta.ebuild,v 1.4 2004/12/27 01:17:08 kloeri Exp $
 
 DESCRIPTION="HBCI backend for AqBanking"
 HOMEPAGE="http://www.aquamaniac.de/aqbanking/"
 SRC_URI="mirror://sourceforge/aqhbci/${P/_/}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~sparc"
+KEYWORDS="~x86 ~sparc ~alpha"
 IUSE="debug"
 DEPEND=">=net-libs/aqbanking-0.9.6"
 S=${WORKDIR}/${P/_/}
