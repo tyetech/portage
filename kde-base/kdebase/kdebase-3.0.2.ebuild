@@ -1,8 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebase/Attic/kdebase-3.0.2.ebuild,v 1.6 2002/07/11 06:30:26 drobbins Exp $
-
-
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebase/Attic/kdebase-3.0.2.ebuild,v 1.7 2002/07/12 21:48:03 danarmak Exp $
 inherit  kde-dist
 
 DESCRIPTION="${DESCRIPTION}Base"
