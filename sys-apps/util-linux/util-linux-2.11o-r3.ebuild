@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.11o-r3.ebuild,v 1.12 2003/01/18 19:12:38 tuxus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.11o-r3.ebuild,v 1.13 2003/02/13 16:21:04 vapier Exp $
 
 IUSE="nls"
 
