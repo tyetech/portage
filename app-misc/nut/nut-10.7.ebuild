@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/nut/Attic/nut-10.7.ebuild,v 1.1 2004/10/30 03:53:10 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/nut/Attic/nut-10.7.ebuild,v 1.2 2005/01/01 15:17:32 eradicator Exp $
 
 inherit flag-o-matic
 
