@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/naim/Attic/naim-0.11.5.2.ebuild,v 1.1 2003/01/14 22:42:09 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/naim/Attic/naim-0.11.5.3.ebuild,v 1.1 2003/01/15 23:45:43 lostlogic Exp $
 
 VA="`echo ${PV}|sed -e 's:^\([0-9]*\)\..*$:\1:'`"
 VB="`echo ${PV}|sed -e 's:^[0-9]*\.\([0-9]*\)\..*$:\1:'`"
