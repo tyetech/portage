@@ -1,14 +1,14 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.5-r5.ebuild,v 1.1 2004/08/02 06:57:17 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.4-r7.ebuild,v 1.1 2004/08/06 04:48:59 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
-CVSDATE="20040412"
+CVSDATE="20040311"
 COBALTPATCHVER="1.4"
-SECPATCHVER="1.0"
-IP32DIFFDATE="20040402"
+SECPATCHVER="1.1"
+IP32DIFFDATE="20040229"
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
 
@@ -22,12 +22,11 @@ inherit kernel eutils
 
 # INCLUDED:
 # 1) linux sources from kernel.org
-# 2) linux-mips.org CVS snapshot diff from 12 Apr 2004
-# 3) Patch to fix the Swap issue in 2.6.5+ (Credit: Peter Horton <cobalt@colonel-panic.org>
+# 2) linux-mips.org CVS snapshot diff from 11 Mar 2004
+# 3) Patch to tweak arch/mips/Makefile to build proper kernels under binutils-2.15.x
 # 4) Iluxa's minimal O2 patchset
-# 5) Patch to fix linking issue for initrd's
-# 6) Security Fixes
-# 7) Patches for Cobalt support
+# 5) Security Fixes
+# 6) Patches for Cobalt support
 
 
 DESCRIPTION="Linux-Mips CVS sources for MIPS-based machines, dated ${CVSDATE}"
@@ -67,17 +66,18 @@ src_unpack() {
 	# Update the vanilla sources with linux-mips CVS changes
 	epatch ${WORKDIR}/mipscvs-${OKV}-${CVSDATE}.diff
 
-	# Bug in 2.6.5 that triggers a kernel oops when swap is activated
+	# Binutils-2.14.90.0.8 and up does some magic with page alignment
+	# that prevents the kernel from booting.  This patch fixes it.
 	echo -e ""
 	einfo ">>> Generic Patches"
-	epatch ${FILESDIR}/mipscvs-${OKV}-swapbug-fix.patch
-
-	# Bug in 2.6.5 in which an include was left out of unistd.h (breaks initrd)
-	epatch ${FILESDIR}/mipscvs-${OKV}-unistd-linkage.patch
+	epatch ${FILESDIR}/mipscvs-2.6.x-no-page-align.patch
 
 	# In order to use arcboot on IP32, the kernel entry address needs to be
 	# set to 0x98000000, not 0xa8000000.
 	epatch ${FILESDIR}/mipscvs-2.6.x-ip32-kern_entry-arcboot.patch
+
+	# Force detection of PS/2 mice on SGI Systems
+	epatch ${FILESDIR}/misc-2.6-force_mouse_detection.patch
 
 	# iluxa's minpatchset for SGI O2
 	echo -e ""
@@ -89,8 +89,10 @@ src_unpack() {
 	ebegin ">>> Applying Security Fixes"
 		epatch ${WORKDIR}/security/CAN-2004-0075-2.6-vicam_usb.patch
 		epatch ${WORKDIR}/security/CAN-2004-0109-2.6-iso9660.patch
+		epatch ${WORKDIR}/security/CAN-2004-0181-2.6-jfs_ext3.patch
 		epatch ${WORKDIR}/security/CAN-2004-0228-cpufreq.patch
 		epatch ${WORKDIR}/security/CAN-2004-0229-fb_copy_cmap.patch
+		epatch ${WORKDIR}/security/CAN-2004-0415-2.6.4-file_offset_pointers.patch
 		epatch ${WORKDIR}/security/CAN-2004-0427-2.6-do_fork.patch
 		epatch ${WORKDIR}/security/CAN-2004-0495_0496-2.6-sparse.patch
 		epatch ${WORKDIR}/security/CAN-2004-0497-attr_gid.patch
@@ -98,7 +100,6 @@ src_unpack() {
 		epatch ${WORKDIR}/security/CAN-2004-0626-death_packet.patch
 		epatch ${WORKDIR}/security/security-2.6-attr_check.patch
 	eend
-
 
 	# Cobalt Patches
 	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
