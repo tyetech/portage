@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/eroaster/Attic/eroaster-2.2.0_pre6.ebuild,v 1.5 2004/02/24 14:55:52 bazik Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/eroaster/Attic/eroaster-2.2.0_pre6.ebuild,v 1.6 2004/03/27 16:58:44 lanius Exp $
 
 IUSE="xmms encode oggvorbis"
 
@@ -28,6 +28,12 @@ RDEPEND="${DEPEND}
 	encode? ( media-sound/lame
 		media-sound/sox )
 	oggvorbis? ( media-sound/vorbis-tools )"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/${P}-gentoo.patch
+}
 
 src_install() {
 	einstall \
