@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fvwm/Attic/fvwm-2.5.8-r1.ebuild,v 1.2 2003/11/13 20:51:01 taviso Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fvwm/Attic/fvwm-2.5.8-r2.ebuild,v 1.1 2003/11/27 16:28:17 taviso Exp $
 
 inherit eutils flag-o-matic
 
@@ -9,7 +9,7 @@ IUSE="readline truetype ncurses gtk stroke gnome rplay xinerama perl nls png bid
 S=${WORKDIR}/${P}
 DESCRIPTION="An extremely powerful ICCCM-compliant multiple virtual desktop window manager"
 SRC_URI="ftp://ftp.fvwm.org/pub/fvwm/version-2/${P}.tar.bz2
-		perl? ( mirror://gentoo/FvwmTabs-2.5.tar.gz )"
+		perl? ( mirror://gentoo/FvwmTabs-2.6.tar.gz )"
 HOMEPAGE="http://www.fvwm.org/"
 
 SLOT="0"
