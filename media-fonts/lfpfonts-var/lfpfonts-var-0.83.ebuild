@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/lfpfonts-var/Attic/lfpfonts-var-0.83.ebuild,v 1.3 2004/06/24 22:29:30 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/lfpfonts-var/Attic/lfpfonts-var-0.83.ebuild,v 1.4 2004/07/14 17:06:40 agriffis Exp $
 
 S=${WORKDIR}/${PN}
 DESCRIPTION="Linux Font Project variable-width fonts"
@@ -10,6 +10,7 @@ SRC_URI="http://dreamer.nitro.dk/linux/lfp/${P}.tar.bz2"
 SLOT="0"
 LICENSE="public-domain"
 KEYWORDS="x86 sparc ppc alpha amd64"
+IUSE=""
 
 DEPEND="virtual/x11"
 

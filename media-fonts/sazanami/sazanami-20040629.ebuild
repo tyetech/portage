@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/sazanami/sazanami-20040629.ebuild,v 1.3 2004/07/05 03:50:43 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/sazanami/sazanami-20040629.ebuild,v 1.4 2004/07/14 17:08:31 agriffis Exp $
 
 inherit font
 
@@ -13,6 +13,7 @@ SRC_URI="mirror://sourceforge.jp/efont/10087/${P}.tar.bz2"
 LICENSE="as-is public-domain"
 SLOT="0"
 KEYWORDS="~x86 ~alpha ~ppc ~amd64 ~sparc"
+IUSE=""
 
 FONT_SUFFIX="ttf"
 
