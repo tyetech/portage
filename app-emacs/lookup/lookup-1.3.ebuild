@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/lookup/Attic/lookup-1.3.ebuild,v 1.5 2003/09/29 11:31:09 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/lookup/Attic/lookup-1.3.ebuild,v 1.6 2004/04/25 14:26:59 usata Exp $
 
 inherit elisp
 
@@ -15,8 +15,6 @@ SLOT="0"
 KEYWORDS="x86"
 
 DEPEND="virtual/emacs"
-
-S="${WORKDIR}/${P}"
 
 src_compile() {
 
