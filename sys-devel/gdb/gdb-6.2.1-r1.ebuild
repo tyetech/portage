@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gdb/Attic/gdb-6.1.ebuild,v 1.10 2004/11/10 02:19:13 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gdb/Attic/gdb-6.2.1-r1.ebuild,v 1.1 2004/11/10 02:19:13 vapier Exp $
 
 inherit flag-o-matic eutils
 
@@ -11,7 +11,7 @@ SRC_URI="http://mirrors.rcn.net/pub/sourceware/gdb/releases/${P}.tar.bz2
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~hppa ppc64 s390 ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 -sparc ~x86"
 IUSE="nls makecheck"
 
 RDEPEND=">=sys-libs/ncurses-5.2-r2"
@@ -22,9 +22,11 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/gdb-6.1-ppc64-01.patch
-	epatch ${WORKDIR}/gdb-6.1-hppa-01.patch
 	epatch ${FILESDIR}/gdb-6.1-uclibc.patch
+	epatch ${FILESDIR}/gdb-6.2.1-relative-paths.patch
+	epatch ${FILESDIR}/gdb-6.x-crash.patch
+	epatch ${FILESDIR}/gdb-6.2.1-pass-libdir.patch
+	strip-linguas -u bfd/po opcodes/po
 }
 
 src_compile() {
