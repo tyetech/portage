@@ -1,10 +1,10 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/mcrypt/Attic/mcrypt-2.6.2.ebuild,v 1.8 2003/09/06 22:15:09 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/mcrypt/Attic/mcrypt-2.6.2.ebuild,v 1.9 2004/01/24 08:22:37 robbat2 Exp $
 
 DESCRIPTION="replacement of the old unix crypt(1)"
-HOMEPAGE="http://mcrypt.hellug.gr/"
-SRC_URI="ftp://mcrypt.hellug.gr/pub/crypto/mcrypt/${P}.tar.gz"
+HOMEPAGE="http://mcrypt.sourceforge.net/"
+SRC_URI="mirror://sourceforge/mcrypt/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
