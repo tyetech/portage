@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/darkice/Attic/darkice-0.10.1.ebuild,v 1.6 2003/09/07 00:06:04 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/darkice/Attic/darkice-0.10.1.ebuild,v 1.7 2003/10/27 09:47:42 aliz Exp $
 
 IUSE="encode oggvorbis"
 
@@ -13,7 +13,7 @@ DEPEND="encode?	( >=media-sound/lame-1.89 )
 
 SLOT="0"
 KEYWORDS="x86"
-SRC_URI="http://unc.dl.sourceforge.net/sourceforge/darkice/darkice-${PV}.tar.gz"
+SRC_URI="mirror://sourceforge/darkice/darkice-${PV}.tar.gz"
 S=${WORKDIR}/${P}
 
 src_compile() {
