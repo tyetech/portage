@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Ben Lutgens <lamer@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/blackbox/Attic/blackbox-0.65.0_alpha6.ebuild,v 1.1 2002/05/23 04:42:02 spider Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/blackbox/Attic/blackbox-0.65.0_alpha7.ebuild,v 1.1 2002/06/02 17:44:07 spider Exp $
 
 #Needed to change ${P} to match actual tarball version name.
 #It is an invalid ebuild name. Much simpler this way.
