@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/python/Attic/python-2.4.ebuild,v 1.6 2005/01/06 21:53:12 pythonhead Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/python/Attic/python-2.4-r1.ebuild,v 1.1 2005/02/07 04:28:20 pythonhead Exp $
 
 # NOTE about python-portage interactions :
 # - Do not add a pkg_setup() check for a certain version of portage
@@ -46,6 +46,9 @@ PROVIDE="virtual/python"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+	#Fixes security vulnerability in XML-RPC server - pythonhead (06 Feb 05)
+	#http://www.python.org/security/PSF-2005-001/
+	epatch ${FILESDIR}/${PN}-2.4-xmlrpc.patch
 	# prepends /usr/lib/portage/pym to sys.path
 	epatch ${FILESDIR}/${PN}-${PYVER}-add_portage_search_path.patch
 	# adds support for PYTHON_DONTCOMPILE shell environment to
