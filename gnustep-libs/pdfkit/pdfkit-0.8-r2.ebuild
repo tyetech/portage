@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-libs/cvs-repo/gentoo-x86/gnustep-libs/pdfkit/Attic/pdfkit-0.8-r2.ebuild,v 1.2 2004/11/12 03:50:59 fafhrd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-libs/cvs-repo/gentoo-x86/gnustep-libs/pdfkit/Attic/pdfkit-0.8-r2.ebuild,v 1.3 2005/01/12 21:03:28 fafhrd Exp $
 
 inherit gnustep
 
