@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc. and Luke-Jr
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/azureus-bin/Attic/azureus-bin-2.0.3.2.ebuild,v 1.1 2003/11/26 05:34:17 luke-jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/azureus-bin/Attic/azureus-bin-2.0.3.2-r1.ebuild,v 1.1 2003/12/10 22:54:03 luke-jr Exp $
 
 inherit java-pkg
 
