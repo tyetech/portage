@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.4.2.02.ebuild,v 1.5 2003/12/13 17:00:01 strider Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.4.2.02.ebuild,v 1.6 2004/01/10 18:26:14 strider Exp $
 
 IUSE="doc gnome kde mozilla"
 
