@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openpbs/Attic/openpbs-2.3.16-r1.ebuild,v 1.7 2004/05/12 15:22:15 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openpbs/Attic/openpbs-2.3.16-r1.ebuild,v 1.8 2004/06/14 01:01:35 spyderous Exp $
 
 inherit eutils
 
@@ -16,7 +16,7 @@ KEYWORDS="x86 ~ppc"
 IUSE="X tcltk crypt doc"
 RESTRICT="fetch"
 DEPEND="virtual/glibc
-		X? ( x11-base/xfree )
+		X? ( virtual/x11 )
 		tcltk? ( dev-lang/tcl )"
 RDEPEND="${DEPEND}
 		crypt? ( net-misc/openssh )"
