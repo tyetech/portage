@@ -1,14 +1,14 @@
-# ChangeLog for kde-base/kdeaddons
+# ChangeLog for kde-base/kdeedu
 # Copyright 2002 Gentoo Technologies, Inc.; Distributed under the GPL
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeaddons/Attic/ChangeLog,v 1.2 2002/04/04 20:09:22 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeedu/Attic/ChangeLog,v 1.1 2002/04/04 20:09:23 danarmak Exp $
 
-*kdeaddons-3.0 (4 Apr 2002)
+*kdeedu-3.0 (4 Apr 2002)
 
   4 Apr 2002; Dan Armak <danarmak@gentoo.org> Changelog :
 
   KDE 3.0 ebuilds. Based on the well-tested kde3pre ebuild set.
 
-*kdeaddons-2.2.2-r1 (1 Feb 2002)
+*kdebindings-2.2.2 (1 Feb 2002)
 
   1 Feb 2002; G.Bevin <gbevin@gentoo.org> ChangeLog :
   
