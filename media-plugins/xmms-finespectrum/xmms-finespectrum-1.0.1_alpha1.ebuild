@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-finespectrum/Attic/xmms-finespectrum-1.0.1_alpha1.ebuild,v 1.8 2004/09/15 19:25:23 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-finespectrum/Attic/xmms-finespectrum-1.0.1_alpha1.ebuild,v 1.9 2004/11/27 20:22:11 corsair Exp $
 
 IUSE=""
 
@@ -15,7 +15,7 @@ RESTRICT="nomirror"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 amd64 ~ia64 ~ppc sparc"
+KEYWORDS="x86 amd64 ~ia64 ~ppc sparc ~ppc64"
 
 DEPEND="media-sound/xmms"
 
