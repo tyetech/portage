@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-engines/cvs-repo/gentoo-x86/games-engines/scummvm/Attic/scummvm-0.6.0.ebuild,v 1.6 2004/06/01 21:05:28 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-engines/cvs-repo/gentoo-x86/games-engines/scummvm/Attic/scummvm-0.6.0.ebuild,v 1.7 2004/06/03 22:35:20 mr_bones_ Exp $
 
-inherit games
+inherit eutils games
 
 DESCRIPTION="Reimplementation of the SCUMM game engine used in Lucasarts adventures"
 HOMEPAGE="http://scummvm.sourceforge.net/"
