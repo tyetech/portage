@@ -3,6 +3,8 @@
 # Author Achim Gottinger <achim@gentoo.org>
 # Updated by Sebastian Werner <sebastian@werner-productions.de>
 # /home/cvsroot/gentoo-x86/gnome-apps/nautilus/nautilus-1.0.ebuild,v 1.3 2001/04/29 18:42:54 achim Exp
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-1.0.3.ebuild,v 1.6 2001/08/30 17:31:35 pm Exp $
+
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}

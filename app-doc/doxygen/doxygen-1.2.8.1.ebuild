@@ -1,4 +1,5 @@
 # Author Sean Mitchell <sean@arawak.on.ca>
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.2.8.1.ebuild,v 1.2 2001/08/30 17:31:35 pm Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Doxygen is a documentation system for C++, Java, IDL (Corba, Microsoft and KDE-DCOP flavors) and C"
