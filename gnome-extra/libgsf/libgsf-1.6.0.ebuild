@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgsf/Attic/libgsf-1.6.0.ebuild,v 1.9 2003/11/15 03:11:32 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgsf/Attic/libgsf-1.6.0.ebuild,v 1.10 2004/03/20 20:01:55 leonardop Exp $
 
 inherit gnome2
 
