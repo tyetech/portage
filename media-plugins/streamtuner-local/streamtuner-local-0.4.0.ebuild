@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/streamtuner-local/Attic/streamtuner-local-0.4.0.ebuild,v 1.1 2004/04/09 04:50:29 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/streamtuner-local/Attic/streamtuner-local-0.4.0.ebuild,v 1.2 2004/04/09 04:58:10 eradicator Exp $
 
 DESCRIPTION="A plugin for Streamtuner to browse and play local files."
 SRC_URI="http://savannah.nongnu.org/download/streamtuner/${P}.tar.gz"
@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="~x86"
 LICENSE="BSD"
 
-RDEPEND=">=net-misc/streamtuner-0.12.0
+DEPEND=">=net-misc/streamtuner-0.12.0
 	>=media-libs/libid3tag-0.15
 	oggvorbis? ( media-libs/libvorbis )"
 
