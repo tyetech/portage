@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/hdup/Attic/hdup-1.6.31.ebuild,v 1.2 2004/06/24 21:31:36 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/hdup/Attic/hdup-1.6.31.ebuild,v 1.3 2004/07/07 21:12:29 slarti Exp $
 
 DESCRIPTION="Hdup is backup program using tar,find,gzip/bzip2,mcrypt and ssh."
 HOMEPAGE="http://www.miek.nl/projects/hdup16/hdup16.html"
@@ -8,7 +8,7 @@ SRC_URI="http://www.miek.nl/projects/hdup16/previous/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
 
 DEPEND="app-arch/tar
