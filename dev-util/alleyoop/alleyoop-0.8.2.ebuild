@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/alleyoop/Attic/alleyoop-0.8.2.ebuild,v 1.4 2004/06/15 02:19:00 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/alleyoop/Attic/alleyoop-0.8.2.ebuild,v 1.5 2004/06/25 02:18:53 agriffis Exp $
 
 inherit gnome2
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cvsup/Attic/cvsup-16.1h.ebuild,v 1.9 2004/04/19 06:26:12 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cvsup/Attic/cvsup-16.1h.ebuild,v 1.10 2004/06/25 02:26:52 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/perforce-proxy/Attic/perforce-proxy-2003.1.ebuild,v 1.4 2004/04/26 01:41:51 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/perforce-proxy/Attic/perforce-proxy-2003.1.ebuild,v 1.5 2004/06/25 02:42:51 agriffis Exp $
 
 inherit eutils
 

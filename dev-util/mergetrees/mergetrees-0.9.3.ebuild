@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/mergetrees/Attic/mergetrees-0.9.3.ebuild,v 1.12 2004/05/07 14:16:11 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/mergetrees/Attic/mergetrees-0.9.3.ebuild,v 1.13 2004/06/25 02:40:35 agriffis Exp $
 
 DESCRIPTION="A three-way directory merge tool"
 SRC_URI="http://cvs.bofh.asn.au/mergetrees/${P}.tar.gz"

@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/splint/Attic/splint-3.0.1.6.ebuild,v 1.4 2003/09/06 20:32:23 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/splint/Attic/splint-3.0.1.6.ebuild,v 1.5 2004/06/25 02:47:30 agriffis Exp $
 
 DESCRIPTION="Check C programs for vulnerabilities and programming mistakes"
 HOMEPAGE="http://lclint.cs.virginia.edu/"

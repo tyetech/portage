@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/tkcvs/Attic/tkcvs-7.1.4.ebuild,v 1.3 2004/06/21 13:48:17 fmccor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/tkcvs/Attic/tkcvs-7.1.4.ebuild,v 1.4 2004/06/25 02:48:33 agriffis Exp $
 
 MY_P=${PN}_${PV//./_}
 S=${WORKDIR}/${MY_P}
