@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpd/Attic/mpd-0.11.2-r2.ebuild,v 1.1 2004/07/23 00:13:03 ferringb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpd/Attic/mpd-0.11.2-r2.ebuild,v 1.2 2004/07/26 09:34:03 eradicator Exp $
 
 inherit eutils
 
-IUSE="oggvorbis mad aac audiofile ipv6 flac droproot mikmod"
+IUSE="oggvorbis mad aac audiofile ipv6 flac droproot mikmod alsa"
 
 DESCRIPTION="Music Player Daemon (mpd)"
 SRC_URI="mirror://sourceforge/musicpd/${P}.tar.gz"
