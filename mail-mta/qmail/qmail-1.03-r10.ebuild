@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/qmail/Attic/qmail-1.03-r10.ebuild,v 1.4 2004/07/01 19:53:52 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/qmail/Attic/qmail-1.03-r10.ebuild,v 1.5 2004/10/26 22:23:11 slarti Exp $
 
-inherit gcc eutils
+inherit toolchain-funcs eutils
 
 IUSE="ssl"
 DESCRIPTION="A modern replacement for sendmail which uses maildirs and includes SSL/TLS, AUTH SMTP, and queue optimization"
