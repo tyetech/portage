@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.1.23.ebuild,v 1.2 2003/10/28 10:41:43 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.2.4.ebuild,v 1.1 2003/10/28 10:41:43 usata Exp $
 
 # flag-o-matic functions now in portage, no need to inherit it
 
@@ -37,7 +37,8 @@ src_compile() {
 	econf || die
 	# and now replace the detected optimisations with our safer ones
 	sed -i "s:\(^CXXOPTIMIZE = \).*:\1${CXXFLAGS}:" src/common.makefile
-	emake || die
+	# emake b0rked
+	make || die
 
 }
 
