@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.6-r1.ebuild,v 1.2 2003/01/27 07:12:08 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.6-r1.ebuild,v 1.3 2003/02/13 13:25:49 vapier Exp $
 
 DESCRIPTION="Complete solution to record, convert and stream audio and video. Includes libavcodec."
 SRC_URI="mirror://sourceforge/ffmpeg/${P}.tar.gz"
