@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/hddtemp/Attic/hddtemp-0.2.ebuild,v 1.22 2004/06/25 16:12:01 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/hddtemp/Attic/hddtemp-0.2.ebuild,v 1.23 2004/06/29 19:37:34 agriffis Exp $
 
 inherit eutils
 
@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="x86 ppc sparc"
 IUSE=""
 
-DEPEND="virtual/libc"
+DEPEND="virtual/libc
+	>=sys-apps/sed-4"
 
 src_unpack() {
 	unpack ${A} ; cd ${S}
