@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gtk-doc/Attic/gtk-doc-1.1.ebuild,v 1.9 2004/01/09 22:28:07 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gtk-doc/Attic/gtk-doc-1.1.ebuild,v 1.10 2004/01/11 23:19:38 gmsoft Exp $
 
 inherit gnome.org
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gtk.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="ia64 amd64 x86 ppc sparc alpha ~hppa"
+KEYWORDS="ia64 amd64 x86 ppc sparc alpha hppa"
 
 DEPEND=">=dev-util/pkgconfig-0.12.0
 	>=app-text/openjade-1.3.1
