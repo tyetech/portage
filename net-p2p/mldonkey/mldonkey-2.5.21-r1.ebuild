@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mldonkey/Attic/mldonkey-2.5.21-r1.ebuild,v 1.2 2004/05/21 18:04:11 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mldonkey/Attic/mldonkey-2.5.21-r1.ebuild,v 1.3 2004/06/25 00:34:39 agriffis Exp $
 
 inherit eutils
 

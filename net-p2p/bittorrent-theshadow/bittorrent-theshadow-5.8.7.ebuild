@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bittorrent-theshadow/Attic/bittorrent-theshadow-5.8.7.ebuild,v 1.6 2004/03/23 06:07:38 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bittorrent-theshadow/Attic/bittorrent-theshadow-5.8.7.ebuild,v 1.7 2004/06/25 00:29:01 agriffis Exp $
 
 inherit distutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/qtella/Attic/qtella-0.5.3-r2.ebuild,v 1.9 2004/05/04 05:09:32 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/qtella/Attic/qtella-0.5.3-r2.ebuild,v 1.10 2004/06/25 00:36:13 agriffis Exp $
 
 IUSE=""
 

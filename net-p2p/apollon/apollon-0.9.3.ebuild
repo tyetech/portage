@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/apollon/Attic/apollon-0.9.3.ebuild,v 1.3 2004/05/17 21:01:17 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/apollon/Attic/apollon-0.9.3.ebuild,v 1.4 2004/06/25 00:28:08 agriffis Exp $
 
 inherit kde
 need-kde 3

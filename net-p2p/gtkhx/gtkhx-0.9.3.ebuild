@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gtkhx/Attic/gtkhx-0.9.3.ebuild,v 1.10 2004/06/23 14:14:11 kang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gtkhx/Attic/gtkhx-0.9.3.ebuild,v 1.11 2004/06/25 00:33:36 agriffis Exp $
 
 DESCRIPTION="a GTK+ Hotline Client based off of Hx"
 SRC_URI="http://gtkhx.sourceforge.net/files/${P}.tar.gz"
