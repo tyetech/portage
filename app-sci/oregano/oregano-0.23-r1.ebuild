@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/oregano/Attic/oregano-0.23.ebuild,v 1.3 2002/09/22 18:53:52 blocke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/oregano/Attic/oregano-0.23-r1.ebuild,v 1.1 2002/09/22 18:57:21 blocke Exp $
 
 S=${WORKDIR}/${P}
 SRC_URI="ftp://ftp.codefactory.se/pub/CodeFactory/software/oregano/${P}.tar.gz"
