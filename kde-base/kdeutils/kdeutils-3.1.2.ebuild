@@ -1,10 +1,10 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeutils/Attic/kdeutils-3.1.2.ebuild,v 1.4 2003/07/16 17:00:57 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeutils/Attic/kdeutils-3.1.2.ebuild,v 1.5 2003/07/21 09:28:04 gmsoft Exp $
 inherit kde-dist 
 
 IUSE=""
 DESCRIPTION="KDE utilities"
 
 #RDEPEND="$RDEPEND app-admin/dosfstools" # for kfloppy
-KEYWORDS="x86 ppc sparc alpha"
+KEYWORDS="x86 ppc sparc alpha hppa"
