@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r9.ebuild,v 1.24 2004/04/27 03:17:50 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r9.ebuild,v 1.25 2004/06/22 07:16:57 solar Exp $
 
-IUSE="nls pic build nptl"
+IUSE="nls pic build nptl debug"
 
 inherit eutils flag-o-matic gcc
 
