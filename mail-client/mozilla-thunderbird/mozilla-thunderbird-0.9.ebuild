@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mozilla-thunderbird/Attic/mozilla-thunderbird-0.9.ebuild,v 1.2 2004/11/06 08:24:27 brad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mozilla-thunderbird/Attic/mozilla-thunderbird-0.9.ebuild,v 1.3 2005/03/23 15:40:55 brad Exp $
 
 IUSE="crypt gtk2"
 
