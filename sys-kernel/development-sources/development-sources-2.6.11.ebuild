@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.6.11_rc3.ebuild,v 1.1 2005/02/03 13:41:17 spock Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.6.11.ebuild,v 1.1 2005/03/02 13:40:45 chainsaw Exp $
 
 K_NOUSENAME="yes"
 K_NOSETEXTRAVERSION="yes"
