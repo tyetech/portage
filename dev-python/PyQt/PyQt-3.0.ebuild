@@ -1,17 +1,27 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Bart Verwilst <verwilst@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/PyQt/Attic/PyQt_qt2.3.1-3.0.ebuild,v 1.1 2001/11/29 20:37:49 verwilst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/PyQt/Attic/PyQt-3.0.ebuild,v 1.1 2001/12/04 18:17:22 verwilst Exp $
 
 S="${WORKDIR}/PyQt-3.0"
-DESCRIPTION="PyQt is a set of Python bindings for the Qt Toolkit."
-SRC_URI="http://www.river-bank.demon.co.uk/software/PyQt-3.0-Qt-2.3.1.tar.gz"
+DESCRIPTION="PyQt is a set of Python bindings for the Qt Toolkit( VERSION 3.x ONLY!!."
+SRC_URI="http://www.river-bank.demon.co.uk/software/PyQt-3.0-Qt-3.0.0.tar.gz
+	 http://www.river-bank.demon.co.uk/software/PyQt-3.0-Qt-3.0.0-patch.1"
 HOMEPAGE="http://www.thekompany.com/projects/pykde/"
 
 DEPEND="virtual/glibc
-	>=x11-libs/qt-x11-2.3
+	>=x11-libs/qt-x11-3
         =dev-python/sip-3.0
         >=dev-lang/python-2.0"
+
+src_unpack() {
+
+	unpack PyQt-3.0-Qt-3.0.0.tar.gz
+	cd ${WORKDIR}
+	patch -p0 < ${DISTDIR}/PyQt-3.0-Qt-3.0.0-patch.1 
+	cd ${S}
+	
+}
 
 src_compile() {
 	./configure --prefix=/usr					\
