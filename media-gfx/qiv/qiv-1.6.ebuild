@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Thread <thread@threadbox.net>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/qiv/Attic/qiv-1.6.ebuild,v 1.4 2001/06/23 19:30:38 thread Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/qiv/Attic/qiv-1.6.ebuild,v 1.5 2001/06/24 20:17:32 achim Exp $
 
 #P=
 S=${WORKDIR}/${P}
@@ -22,9 +22,8 @@ src_compile() {
 
 src_install () {
 
-    dodir /usr/bin
-    dodir /usr/man/man1
-    try make PREFIX=${D}usr install
-
+  dobin qiv
+  doman qiv.1
+  dodoc README*
 }
 
