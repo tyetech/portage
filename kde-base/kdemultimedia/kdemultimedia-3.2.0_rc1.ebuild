@@ -1,17 +1,19 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdemultimedia/Attic/kdemultimedia-3.2.0_beta1.ebuild,v 1.10 2004/01/11 13:48:19 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdemultimedia/Attic/kdemultimedia-3.2.0_rc1.ebuild,v 1.1 2004/01/19 03:29:52 caleb Exp $
 inherit kde-dist flag-o-matic
 
-IUSE="nas esd motif slang tcltk oggvorbis gtk alsa gstreamer"
+IUSE="nas encode esd motif slang tcltk oggvorbis gtk alsa gstreamer"
 DESCRIPTION="KDE multimedia apps: noatun, kscd, artsbuilder..."
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~sparc ~amd64"
 
-newdepend "sys-libs/ncurses
+DEPEND="~kde-base/kdebase-${PV}
+	sys-libs/ncurses
 	media-sound/cdparanoia
 	media-video/xanim
 	media-sound/mpg123
-	oggvorbis? ( media-libs/libvorbis )
+	encode? ( media-sound/lame )
+	oggvorbis? ( media-libs/libvorbis media-libs/libogg )
 	nas? ( media-libs/nas )
 	esd? ( media-sound/esound )
 	motif? ( x11-libs/openmotif )
@@ -22,8 +24,10 @@ newdepend "sys-libs/ncurses
 	gtk? ( =x11-libs/gtk+-1.2* )
 	alsa? ( media-libs/alsa-lib )
 	gstreamer? ( media-libs/gstreamer )
-	media-libs/id3lib media-libs/musicbrainz
+	media-libs/id3lib media-libs/musicbrainz media-libs/taglib
 	!media-sound/juk"
+
+RDEPEND="$DEPEND"
 
 replace-flags "-O3" "-O2"
 
@@ -46,10 +50,3 @@ use oggvorbis	&& myconf="$myconf --with-vorbis=/usr"		|| myconf="$myconf --witho
 
 myconf="$myconf $myaudio $myinterface --with-cdda --disable-strict --disable-warnings"
 
-src_unpack() {
-	kde_src_unpack
-}
-
-src_compile() {
-	kde_src_compile
-}
