@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/valgrind/Attic/valgrind-2.2.0.ebuild,v 1.1 2004/09/02 16:08:41 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/valgrind/Attic/valgrind-2.2.0.ebuild,v 1.2 2004/09/02 23:20:55 lu_zero Exp $
 
 inherit flag-o-matic eutils
 
@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}
 
 src_unpack() {
 	unpack ${A}
-	use ppc && cd "${WORKDIR}/${P}-ppc"
+	use ppc && cd "${WORKDIR}/${P}-ppc" || cd ${S}
 	#ugly but working workaround
 	if has_version '>=sys-kernel/linux26-headers-2.6.7' ; then
 		einfo "Removing net/if.h from the includes in vg_unsafe.h"
