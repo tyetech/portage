@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/heimdal/Attic/heimdal-0.6.3.ebuild,v 1.8 2004/09/15 22:40:44 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/heimdal/Attic/heimdal-0.6.3.ebuild,v 1.9 2004/09/17 22:55:39 aliz Exp $
 
 inherit libtool eutils flag-o-matic
 
@@ -35,7 +35,7 @@ src_unpack() {
 
 	epatch ${FILESDIR}/${P}.all.patch
 	cd ${S}
-	epatch ${FILESDIR}/${P}-ldap-subtree.patch
+	epatch ${FILESDIR}/${P}-ldap-subtree.patch.bz2
 }
 
 src_compile() {
