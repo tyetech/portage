@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmbutton/Attic/wmbutton-0.5.ebuild,v 1.3 2004/07/21 23:59:42 s4t4n Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmbutton/Attic/wmbutton-0.5.ebuild,v 1.4 2004/09/02 18:22:40 pvdabeel Exp $
 
 inherit eutils
 
@@ -14,7 +14,7 @@ DEPEND="virtual/x11"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ppc"
 
 src_unpack()
 {
