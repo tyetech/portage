@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/fujiplay/fujiplay-1.33.ebuild,v 1.2 2003/06/12 20:16:36 msterret Exp $
 
 DESCRIPTION="Utility for Fujifilm/Leica digital cameras (via serial port)"
 SRC_URI="http://topo.math.u-psud.fr/~bousch/fujiplay.tgz"
