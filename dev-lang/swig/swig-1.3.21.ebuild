@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/swig/Attic/swig-1.3.21.ebuild,v 1.17 2004/06/24 02:11:48 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/swig/Attic/swig-1.3.21.ebuild,v 1.18 2004/06/25 03:14:12 agriffis Exp $
 
 inherit mono #48511
 
