@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/uqm/Attic/uqm-0.3.ebuild,v 1.3 2003/09/17 06:24:14 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/uqm/Attic/uqm-0.3.ebuild,v 1.4 2004/01/24 14:09:56 mr_bones_ Exp $
 
 inherit games
 
