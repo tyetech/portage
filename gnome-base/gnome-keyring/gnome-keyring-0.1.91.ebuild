@@ -1,0 +1,21 @@
+# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-keyring/Attic/gnome-keyring-0.1.91.ebuild,v 1.1 2004/03/18 23:15:48 foser Exp $
+
+inherit gnome2
+
+DESCRIPTION="password and keyring managing daemon"
+HOMEPAGE="http://www.gnome.org/"
+LICENSE="GPL-2 LGPL-2"
+
+SLOT="0"
+KEYWORDS="~x86"
+IUSE=""
+
+RDEPEND=">=dev-libs/glib-2.3.1
+	>=x11-libs/gtk+-2.3.1"
+
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
+
+DOCS="AUTHORS COPYING* ChangeLog INSTALL NEWS README TODO"
