@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc. Distributed under the terms
 # of the GNU General Public License, v2 or later 
 # Author: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-1.8.9_pre9.ebuild,v 1.4 2002/02/22 17:22:36 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-1.8.9_pre9.ebuild,v 1.5 2002/02/22 17:48:38 drobbins Exp $
  
 S=${WORKDIR}/${P}
 DESCRIPTION="Portage ports system"
@@ -73,7 +73,7 @@ src_install() {
 
 	#symlinks
 	dodir /usr/bin /usr/sbin
-	dosym ../lib/portage/bin/emerge /usr/sbin/emerge
+	dosym ../lib/portage/bin/emerge /usr/bin/emerge
 	dosym ../lib/portage/bin/pkgmerge /usr/sbin/pkgmerge
 	dosym ../lib/portage/bin/ebuild /usr/sbin/ebuild
 	dosym ../lib/portage/bin/ebuild.sh /usr/sbin/ebuild.sh
