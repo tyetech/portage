@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/daaplib/Attic/daaplib-0.1.1a.ebuild,v 1.7 2004/10/05 08:55:58 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/daaplib/Attic/daaplib-0.1.1a.ebuild,v 1.8 2004/11/05 08:37:20 eradicator Exp $
 
 IUSE="static"
 
@@ -14,7 +14,7 @@ SRC_URI="http://deleet.de/projekte/daap/daaplib/${PN}.${PV}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 x86 ~ppc"
+KEYWORDS="amd64 x86 ~ppc"
 
 DEPEND="app-arch/unzip"
 RDEPEND=""
