@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/openjms-bin/Attic/openjms-bin-0.7.5-r3.ebuild,v 1.7 2004/11/24 21:21:09 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/openjms-bin/Attic/openjms-bin-0.7.5-r3.ebuild,v 1.8 2005/01/26 20:44:23 corsair Exp $
 
 SLOT=0
 LICENSE="GPL-2"
