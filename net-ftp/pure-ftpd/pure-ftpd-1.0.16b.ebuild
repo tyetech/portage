@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/pure-ftpd/Attic/pure-ftpd-1.0.16b.ebuild,v 1.2 2003/10/20 10:38:03 raker Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/pure-ftpd/Attic/pure-ftpd-1.0.16b.ebuild,v 1.3 2004/01/22 16:41:08 raker Exp $
 
 IUSE="pam mysql postgres ldap ssl"
 
