@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.26-r9.ebuild,v 1.1 2004/09/29 09:46:15 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.26-r10.ebuild,v 1.1 2004/11/14 04:59:41 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
 CVSDATE="20040712"			# Date of diff between kernel.org and lmo CVS
 COBALTPATCHVER="1.4"			# Tarball version for cobalt patches
-SECPATCHVER="1.2"			# Tarball version for security patches
+SECPATCHVER="1.4"			# Tarball version for security patches
 GENPATCHVER="1.0"			# Tarball version for generic patches
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
@@ -65,7 +65,10 @@ src_unpack() {
 		epatch ${WORKDIR}/security/CAN-2004-0497-attr_gid.patch
 		epatch ${WORKDIR}/security/CAN-2004-0535-2.4-e1000.patch
 		epatch ${WORKDIR}/security/CAN-2004-0685-2.4-conectiva_usb.patch
+		epatch ${WORKDIR}/security/CAN-2004-0814-2.4.26-tty_race_conditions.patch
 		epatch ${WORKDIR}/security/security-2.4-proc_race.patch
+		epatch ${WORKDIR}/security/security-2.4-binfmt_elf-fixes.patch
+		epatch ${WORKDIR}/security/security-2.4-remote_ddos.patch
 	eend
 
 
