@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeutils/Attic/kdeutils-3.4.0_beta1.ebuild,v 1.3 2005/01/15 13:54:01 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeutils/Attic/kdeutils-3.4.0_beta1.ebuild,v 1.4 2005/01/20 16:36:42 greg_g Exp $
 
-inherit kde-dist
+inherit kde-dist eutils
 
 DESCRIPTION="KDE utilities"
 
