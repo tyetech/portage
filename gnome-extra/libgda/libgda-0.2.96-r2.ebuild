@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgda/Attic/libgda-0.2.96-r2.ebuild,v 1.10 2003/09/08 05:11:17 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgda/Attic/libgda-0.2.96-r2.ebuild,v 1.11 2004/01/25 13:13:57 obz Exp $
 
 IUSE="odbc postgres mysql"
 
