@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/graphviz/Attic/graphviz-1.10.ebuild,v 1.21 2004/11/07 20:37:10 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/graphviz/Attic/graphviz-1.10.ebuild,v 1.22 2005/02/19 05:09:04 j4rg0n Exp $
 
 inherit gnuconfig
 
