@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-gtk/Attic/php-gtk-1.0.0.ebuild,v 1.4 2004/04/17 15:02:29 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-gtk/Attic/php-gtk-1.0.0.ebuild,v 1.5 2004/06/25 01:24:18 agriffis Exp $
 
 PHP_EXT_NAME="php_gtk"
 PHP_EXT_ZENDEXT="no"

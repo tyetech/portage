@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/phpsysinfo/Attic/phpsysinfo-2.1-r2.ebuild,v 1.7 2004/06/19 03:32:50 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/phpsysinfo/Attic/phpsysinfo-2.1-r2.ebuild,v 1.8 2004/06/25 01:24:29 agriffis Exp $
 
 inherit eutils kernel-mod
 

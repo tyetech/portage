@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/smarty/Attic/smarty-2.6.0-r2.ebuild,v 1.4 2004/04/17 15:02:29 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/smarty/Attic/smarty-2.6.0-r2.ebuild,v 1.5 2004/06/25 01:24:49 agriffis Exp $
 
 MY_P=Smarty-${PV}
 DESCRIPTION="A template engine for PHP"

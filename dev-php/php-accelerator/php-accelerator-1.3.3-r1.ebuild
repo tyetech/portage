@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-accelerator/Attic/php-accelerator-1.3.3-r1.ebuild,v 1.2 2004/01/05 21:26:00 stuart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-accelerator/Attic/php-accelerator-1.3.3-r1.ebuild,v 1.3 2004/06/25 01:23:14 agriffis Exp $
 
 DESCRIPTION="The ionCube PHP Accelerator"
 HOMEPAGE="http://www.php-accelerator.co.uk/"

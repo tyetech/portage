@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.6-r2.ebuild,v 1.3 2004/06/11 10:40:17 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.6-r2.ebuild,v 1.4 2004/06/25 01:17:20 agriffis Exp $
 
 IUSE="${IUSE} apache2"
 

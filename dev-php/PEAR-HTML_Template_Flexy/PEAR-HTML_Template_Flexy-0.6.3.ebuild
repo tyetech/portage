@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTML_Template_Flexy/Attic/PEAR-HTML_Template_Flexy-0.6.3.ebuild,v 1.2 2004/05/30 17:31:53 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTML_Template_Flexy/Attic/PEAR-HTML_Template_Flexy-0.6.3.ebuild,v 1.3 2004/06/25 01:18:52 agriffis Exp $
 
 inherit php-pear
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PECL-sqlite/Attic/PECL-sqlite-1.0-r1.ebuild,v 1.1 2004/01/24 17:14:34 coredumb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PECL-sqlite/Attic/PECL-sqlite-1.0-r1.ebuild,v 1.2 2004/06/25 01:22:53 agriffis Exp $
 
 PHP_EXT_ZENDEXT="no"
 PHP_EXT_INI="yes"
