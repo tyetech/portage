@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/tftp-hpa/Attic/tftp-hpa-0.34-r1.ebuild,v 1.2 2005/02/27 22:31:41 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/tftp-hpa/Attic/tftp-hpa-0.40-r1.ebuild,v 1.1 2005/02/27 22:31:41 squinky86 Exp $
 
 DESCRIPTION="port of the OpenBSD TFTP server"
 SRC_URI="mirror://kernel/software/network/tftp/${P}.tar.bz2"
@@ -8,7 +8,7 @@ HOMEPAGE="http://www.kernel.org/pub/software/network/tftp/"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc sparc x86 s390"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~sparc ~x86 ~s390"
 IUSE=""
 
 DEPEND="virtual/libc
