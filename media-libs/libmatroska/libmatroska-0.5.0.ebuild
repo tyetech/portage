@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmatroska/Attic/libmatroska-0.5.0.ebuild,v 1.3 2003/09/15 10:39:02 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmatroska/Attic/libmatroska-0.5.0.ebuild,v 1.4 2004/01/03 19:20:58 plasmaroo Exp $
 
 IUSE=""
 
