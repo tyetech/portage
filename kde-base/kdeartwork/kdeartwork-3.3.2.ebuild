@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork/Attic/kdeartwork-3.3.2.ebuild,v 1.8 2005/01/23 20:07:41 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork/Attic/kdeartwork-3.3.2.ebuild,v 1.9 2005/01/25 00:05:18 vapier Exp $
 
 inherit kde-dist eutils
 
 DESCRIPTION="KDE artwork package"
 
-KEYWORDS="x86 amd64 sparc ppc ppc64 hppa alpha"
+KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
 IUSE="opengl xscreensaver"
 
 DEPEND="opengl? ( virtual/opengl )
