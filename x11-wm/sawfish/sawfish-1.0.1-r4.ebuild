@@ -1,13 +1,15 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.0.1-r4.ebuild,v 1.3 2002/06/24 01:58:43 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.0.1-r4.ebuild,v 1.4 2002/07/08 13:47:11 aliz Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Extensible window manager using a Lisp-based scripting language"
 SRC_URI="mirror://sourceforge/sawmill/${P}.tar.gz"
 HOMEPAGE="http://sawmill.sourceforge.net/"
 SLOT="0"
+LICENSE="GPL-2"
+KEYWORDS="x86"
 
 DEPEND=">=x11-libs/rep-gtk-0.15-r1
 	>=dev-libs/librep-0.14

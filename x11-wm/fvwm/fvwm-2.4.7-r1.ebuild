@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Prakash Shetty <crux@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fvwm/Attic/fvwm-2.4.7-r1.ebuild,v 1.1 2002/05/26 13:58:04 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fvwm/Attic/fvwm-2.4.7-r1.ebuild,v 1.2 2002/07/08 13:47:11 aliz Exp $
 
 
 S=${WORKDIR}/${P}
@@ -9,6 +9,9 @@ DESCRIPTION="an extremely powerful ICCCM-compliant multiple virtual desktop wind
 SRC_URI="ftp://ftp.fvwm.org/pub/fvwm/version-2/${P}.tar.bz2
 	http://www.igs.net/~tril/fvwm/configs/fvwm-patch"
 HOMEPAGE="http://www.fvwm.org/"
+LICENSE="GPL-2 & FVWM"
+SLOT="0"
+KEYWORDS="x86"
 
 DEPEND=">=dev-libs/libstroke-0.4
 	gtk? ( =x11-libs/gtk+-1.2* )
