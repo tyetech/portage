@@ -1,17 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xvid/Attic/xvid-1.0.1.ebuild,v 1.9 2005/01/09 07:04:18 luckyduck Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xvid/Attic/xvid-1.0.3.ebuild,v 1.1 2005/01/09 07:04:18 luckyduck Exp $
 
 inherit eutils
 
-MY_P=${PN}core-${PV}
-DESCRIPTION="high performance/quality MPEG-4 video de-/encoding solution"
+MY_P=${PN}core-${PV/_rc/-rc}
+DESCRIPTION="XviD, a high performance/quality MPEG-4 video de-/encoding solution."
 HOMEPAGE="http://www.xvid.org/"
 SRC_URI="http://files.xvid.org/downloads/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="1"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha hppa ~amd64 ~ia64 ppc64 ~mips"
+KEYWORDS="~x86 ~amd64"
 IUSE="doc"
 
 DEPEND="virtual/libc
@@ -23,12 +23,6 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/${PV}-DESTDIR.patch
-
-	# Appliying 64bit patch unconditionally.
-	# Simple patch that works arch independent.
-	# Danny van Dyk <kugelfang@gentoo.org> 2004/06/22
-	cd ${S}/../..
-	epatch ${FILESDIR}/${P}-64bit-clean.patch
 }
 
 src_install() {
