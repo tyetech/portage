@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/dmake/dmake-4.1-r1.ebuild,v 1.8 2003/03/10 15:19:18 cretin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/dmake/dmake-4.1-r1.ebuild,v 1.9 2003/09/06 08:39:20 msterret Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Improved make"
@@ -17,7 +17,7 @@ src_unpack() {
 
 	cd ${WORKDIR}
 	unpack dmake-v4.1-src-export.all-unknown-all.tar.gz
-	
+
 	mv dmake ${P}
 
 	cd ${S}
@@ -29,16 +29,16 @@ src_compile() {
 
 	sh unix/linux/gnu/make.sh
 	cp man/dmake.tf man/dmake.1
-	
+
 }
 
 src_install () {
 
 	into /usr
-	
+
 	doman man/dmake.1
 	dobin dmake
-	
+
 	insinto /usr/share/dmake/startup
 	doins startup/{startup.mk,config.mk} startup/unix
 
