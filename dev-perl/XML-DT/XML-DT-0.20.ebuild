@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-DT/Attic/XML-DT-0.20.ebuild,v 1.5 2002/07/25 04:56:39 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-DT/Attic/XML-DT-0.20.ebuild,v 1.6 2002/07/27 18:27:16 aliz Exp $
 
 inherit perl-module
 
@@ -18,6 +18,6 @@ DEPEND="${DEPEND}
 
 src_install () {
 	
-	base_src_install
+	perl-module_src_install
 	dohtml DT.html
 }

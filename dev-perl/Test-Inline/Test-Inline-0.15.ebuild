@@ -1,6 +1,6 @@
 # Copyright 2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Test-Inline/Attic/Test-Inline-0.15.ebuild,v 1.3 2002/07/25 04:56:38 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Test-Inline/Attic/Test-Inline-0.15.ebuild,v 1.4 2002/07/27 18:27:16 aliz Exp $
 
 inherit perl-module
 
@@ -18,6 +18,6 @@ DEPEND="${DEPEND}
 	dev-perl/Memoize"
 
 src_compile() {
-	base_src_compile
-	base_src_test || die "test failed"
+	perl-module_src_compile
+	perl-module_src_test || die "test failed"
 }

@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/libnet/Attic/libnet-1.11.ebuild,v 1.5 2002/07/25 05:23:31 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/libnet/Attic/libnet-1.11.ebuild,v 1.6 2002/07/27 18:27:16 aliz Exp $
 
 inherit perl-module
 
@@ -15,5 +15,5 @@ KEYWORDS="x86"
 
 src_compile() {
 	cp ${O}/files/libnet.cfg .
-	base_src_compile
+	perl-module_src_compile
 }
