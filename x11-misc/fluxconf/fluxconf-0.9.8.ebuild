@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/fluxconf/Attic/fluxconf-0.9.2-r1.ebuild,v 1.8 2004/09/02 22:49:40 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/fluxconf/Attic/fluxconf-0.9.8.ebuild,v 1.1 2005/03/25 12:47:48 ka0ttic Exp $
 
 IUSE=""
 
@@ -10,26 +10,17 @@ HOMEPAGE="http://devaux.fabien.free.fr/flux/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64 ~ppc64"
 
 DEPEND="=x11-libs/gtk+-1.2*"
 
-src_compile() {
-
-	econf || die
-	emake || die
-}
-
 src_install () {
-
 	einstall || die
-
-
 	rm ${D}/usr/bin/fluxkeys ${D}/usr/bin/fluxmenu
 
 	dosym /usr/bin/fluxconf /usr/bin/fluxkeys
-	dosym /usr/bin/fluxconf /usr/bin/fluxbare
 	dosym /usr/bin/fluxconf /usr/bin/fluxmenu
+	dosym /usr/bin/fluxconf /usr/bin/fluxbare
 
 	dodoc AUTHORS COPYING ChangeLog NEWS README
 }
