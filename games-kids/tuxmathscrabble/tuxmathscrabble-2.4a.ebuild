@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-kids/cvs-repo/gentoo-x86/games-kids/tuxmathscrabble/Attic/tuxmathscrabble-2.4a.ebuild,v 1.3 2004/05/09 17:42:04 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-kids/cvs-repo/gentoo-x86/games-kids/tuxmathscrabble/Attic/tuxmathscrabble-2.4a.ebuild,v 1.4 2004/06/24 22:52:38 agriffis Exp $
 
 inherit distutils eutils games
 

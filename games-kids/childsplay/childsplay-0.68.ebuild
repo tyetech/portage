@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-kids/cvs-repo/gentoo-x86/games-kids/childsplay/Attic/childsplay-0.68.ebuild,v 1.6 2004/05/27 03:18:18 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-kids/cvs-repo/gentoo-x86/games-kids/childsplay/Attic/childsplay-0.68.ebuild,v 1.7 2004/06/24 22:50:51 agriffis Exp $
 
 inherit games
 
