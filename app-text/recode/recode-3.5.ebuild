@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer:  Desktop Team <desktop@cvs.gentoo.org>
 # Author:  Martin Schlemmer <azarah@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/recode/Attic/recode-3.6.ebuild,v 1.2 2002/06/25 00:11:22 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/recode/Attic/recode-3.5.ebuild,v 1.1 2002/06/25 00:11:22 george Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Convert files between various character sets."
