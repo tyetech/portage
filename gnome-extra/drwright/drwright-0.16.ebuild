@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/drwright/Attic/drwright-0.16.ebuild,v 1.2 2003/06/19 17:09:32 johnm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/drwright/Attic/drwright-0.16.ebuild,v 1.3 2003/06/25 13:39:32 foser Exp $
 
 inherit gnome2 flag-o-matic gcc
 
@@ -12,7 +12,7 @@ SRC_URI="http://drwright.codefactory.se/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="x86"
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.0.4
