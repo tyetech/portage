@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/pisg/Attic/pisg-0.51.ebuild,v 1.5 2004/06/25 22:38:35 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/pisg/Attic/pisg-0.51.ebuild,v 1.6 2004/08/28 02:16:23 swegener Exp $
 
 DESCRIPTION="Perl IRC Statistics Generator"
 HOMEPAGE="http://pisg.sourceforge.net/"
@@ -12,7 +12,7 @@ KEYWORDS="x86 ppc"
 IUSE=""
 
 RDEPEND="dev-lang/perl"
-DEPEND=""
+DEPEND=">=sys-apps/sed-4"
 
 src_unpack() {
 	unpack ${A}
@@ -33,8 +33,9 @@ src_install () {
 	dodir /usr/share/pisg
 	cp -r gfx layout lang.txt ${D}/usr/share/pisg
 
-	dodoc docs/CREDITS docs/Changelog docs/FORMATS docs/pisg-doc.txt
-	dodoc docs/dev/API pisg.cfg COPYING README
+	dodoc \
+		docs/{CREDITS,Changelog,FORMATS,pisg-doc.txt} \
+		docs/dev/API pisg.cfg README
 	dohtml docs/html/*
 }
 

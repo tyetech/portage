@@ -1,16 +1,15 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/pisg/Attic/pisg-0.56.ebuild,v 1.5 2004/08/28 02:16:23 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/pisg/Attic/pisg-0.57.ebuild,v 1.1 2004/08/28 02:16:23 swegener Exp $
 
 inherit eutils
 
 DESCRIPTION="Perl IRC Statistics Generator"
 HOMEPAGE="http://pisg.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
-RESTRICT="nomirror"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc"
 
 IUSE=""
 
@@ -22,7 +21,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	epatch ${FILESDIR}/${PV}-network-option-fix.patch
+	epatch ${FILESDIR}/0.56-network-option-fix.patch
 
 	sed -i 's!lang\.txt!/usr/share/pisg/lang.txt!' modules/Pisg.pm
 	sed -i 's!layout/!/usr/share/pisg/layout/!' modules/Pisg.pm
