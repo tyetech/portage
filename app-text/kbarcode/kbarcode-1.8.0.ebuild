@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/kbarcode/Attic/kbarcode-1.7.4.ebuild,v 1.4 2004/07/03 20:34:40 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/kbarcode/Attic/kbarcode-1.8.0.ebuild,v 1.1 2004/08/23 14:09:35 carlo Exp $
 
 inherit kde
 
