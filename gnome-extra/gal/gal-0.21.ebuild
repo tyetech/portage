@@ -1,20 +1,21 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gal/Attic/gal-0.20.ebuild,v 1.4 2002/10/20 18:48:25 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gal/Attic/gal-0.21.ebuild,v 1.1 2002/11/09 12:05:33 azarah Exp $
 
 IUSE="nls alsa"
 
 inherit gnome.org libtool
 
-S=${WORKDIR}/${P}
+S="${WORKDIR}/${P}"
 DESCRIPTION="The Gnome Application Libraries"
 HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="x86 ppc sparc sparc64"
+KEYWORDS="~x86 ~ppc ~sparc ~sparc64"
 
-DEPEND="nls? ( sys-devel/gettext )
+DEPEND="virtual/python
+	nls? ( sys-devel/gettext )
 	>=dev-util/intltool-0.11
 	sys-devel/perl
     <gnome-base/gnome-vfs-1.9.0
@@ -47,8 +48,8 @@ src_install() {
 	     install || die
 
 	# Add some type of backward compat...
-	local fullname="$(realpath ${D}/usr/lib/libgal.so)"
-	dosym ${fullname##*/} /usr/lib/libgal.so.$((${PV##*.}-1))
+	local fullname="`eval basename \`readlink ${D}/usr/lib/libgal.so\``"
+	dosym ${fullname##*/} /usr/lib/libgal.so.$((`echo ${PV} | cut -d. -f2`-1))
 
 	dodoc AUTHORS COPYING ChangeLog NEWS README
 }
