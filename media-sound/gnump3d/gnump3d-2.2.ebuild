@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gnump3d/Attic/gnump3d-2.2.ebuild,v 1.1 2003/03/08 23:43:48 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gnump3d/Attic/gnump3d-2.2.ebuild,v 1.2 2003/03/11 21:11:46 seemant Exp $
 
 inherit eutils
 
@@ -14,7 +14,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="virtual/glibc"
-RDEPEND=">=sys-devel/perl-5.6.1"
+RDEPEND=">=dev-lang/perl-5.6.1"
 
 src_install() {
 	eval `perl '-V:installarchlib'`
