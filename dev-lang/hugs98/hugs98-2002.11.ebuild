@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/hugs98/Attic/hugs98-2002.11.ebuild,v 1.5 2003/09/06 22:27:51 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/hugs98/Attic/hugs98-2002.11.ebuild,v 1.6 2004/06/03 16:03:41 agriffis Exp $
 
 IUSE=""
 
