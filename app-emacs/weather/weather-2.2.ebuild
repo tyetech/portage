@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/weather/Attic/weather-2.2.ebuild,v 1.6 2004/06/24 22:28:19 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/weather/Attic/weather-2.2.ebuild,v 1.7 2005/01/01 14:06:29 eradicator Exp $
 
 inherit elisp
 

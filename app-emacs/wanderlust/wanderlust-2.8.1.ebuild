@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/wanderlust/Attic/wanderlust-2.8.1.ebuild,v 1.3 2004/06/24 22:27:58 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/wanderlust/Attic/wanderlust-2.8.1.ebuild,v 1.4 2005/01/01 14:06:02 eradicator Exp $
 
 inherit elisp
 
