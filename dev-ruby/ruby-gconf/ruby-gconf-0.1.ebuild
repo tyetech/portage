@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-gconf/Attic/ruby-gconf-0.1.ebuild,v 1.9 2004/04/11 14:25:05 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-gconf/Attic/ruby-gconf-0.1.ebuild,v 1.10 2004/06/25 01:58:08 agriffis Exp $
 
 DESCRIPTION="Ruby Gconf bindings"
 SRC_URI="mirror://sourceforge/ruby-gnome/${P}.tar.gz"
