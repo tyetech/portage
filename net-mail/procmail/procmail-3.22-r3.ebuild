@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/procmail/Attic/procmail-3.22-r3.ebuild,v 1.5 2002/12/09 04:33:14 manson Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/procmail/Attic/procmail-3.22-r3.ebuild,v 1.6 2003/02/13 14:36:58 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Mail delivery agent/filter"

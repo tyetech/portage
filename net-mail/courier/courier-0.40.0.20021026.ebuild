@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/courier/Attic/courier-0.40.0.20021026.ebuild,v 1.3 2002/12/09 04:33:13 manson Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/courier/Attic/courier-0.40.0.20021026.ebuild,v 1.4 2003/02/13 14:25:14 vapier Exp $
 
 DESCRIPTION="An MTA designed specifically for maildirs"
 SRC_URI="http://ftp1.sourceforge.net/courier/${P}.tar.bz2"
