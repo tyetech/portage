@@ -1,10 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-3.0.8-r1.ebuild,v 1.2 2005/01/01 17:43:22 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-3.2.1-r1.ebuild,v 1.1 2005/04/02 20:11:34 arj Exp $
 
-IUSE="nls nothreadsafe"
+inherit eutils
 
-S=${WORKDIR}/sqlite
+IUSE="nothreadsafe"
+
 DESCRIPTION="SQLite: An SQL Database Engine in a C Library."
 SRC_URI="http://www.sqlite.org/${P}.tar.gz"
 HOMEPAGE="http://www.sqlite.org"
@@ -13,12 +14,12 @@ HOMEPAGE="http://www.sqlite.org"
 #   if all virtual/libc's provide POSIX threads (pthread.h)
 #   - 20041203, Armando Di Cianno <fafhrd@gentoo.org>
 DEPEND="virtual/libc
-	!nothreadsafe? ( sys-libs/glibc )
+	!nothreadsafe? ( !ppc-macos? ( sys-libs/glibc ) )
 	dev-lang/tcl"
 SLOT="3"
 LICENSE="as-is"
 
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc-macos ~sparc ~x86"
 
 src_compile() {
 	# sqlite includes a doc directory making it impossible to generate docs, 
@@ -36,9 +37,9 @@ src_compile() {
 	else
 		myconf="${myconf} --disable-threadsafe"
 	fi
-	myconf="${myconf} `use_with nls utf8`"
+	myconf="--with-tcl=/usr/$(get_libdir)/"
 	econf ${myconf} || die
-	emake all doc || die
+	emake all || die # doc is not working yet in 3.1.2
 }
 
 # In case we ever want testing support; note: this needs more work, as
@@ -50,13 +51,11 @@ src_compile() {
 #}
 
 src_install () {
-	dodir /usr/{bin,include,lib}
-
-	einstall || die
+	make DESTDIR="${D}" install || die
 
 	dobin lemon
 	dodoc README VERSION
-	doman sqlite.1
+	doman sqlite3.1
 	docinto html
 	dohtml doc/*.html doc/*.txt doc/*.png
 }
