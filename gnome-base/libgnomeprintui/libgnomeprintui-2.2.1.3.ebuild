@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprintui/Attic/libgnomeprintui-2.2.1.3.ebuild,v 1.4 2003/08/24 18:12:53 obz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprintui/Attic/libgnomeprintui-2.2.1.3.ebuild,v 1.5 2003/09/06 23:51:37 msterret Exp $
 
 inherit gnome2
 
@@ -16,7 +16,7 @@ LICENSE="GPL-2 LGPL-2.1"
 RDEPEND=">=gnome-base/libgnomeprint-${PV}*
 	>=gnome-base/libgnomecanvas-2"
 
-DEPEND="${RDEPEND} 
+DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.12.0
 	doc? ( >=dev-util/gtk-doc-0.10 )"
 

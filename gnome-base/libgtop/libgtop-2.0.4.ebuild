@@ -1,10 +1,10 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgtop/Attic/libgtop-2.0.4.ebuild,v 1.1 2003/08/24 20:26:39 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgtop/Attic/libgtop-2.0.4.ebuild,v 1.2 2003/09/06 23:51:37 msterret Exp $
 
 inherit gnome2
 
-DESCRIPTION="library that proivdes top functionality to applications" 
+DESCRIPTION="library that proivdes top functionality to applications"
 HOMEPAGE="http://www.gnome.org/"
 LICENSE="GPL-2"
 
