@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-1.2.10-r8.ebuild,v 1.10 2002/09/14 15:51:26 bjb Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-1.2.10-r8.ebuild,v 1.11 2002/10/04 06:38:53 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="The GIMP Toolkit"
