@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/perl/Attic/perl-5.8.1_rc1.ebuild,v 1.8 2003/08/22 12:25:34 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/perl/Attic/perl-5.8.1_rc4.ebuild,v 1.1 2003/08/22 12:25:34 mcummings Exp $
 
 inherit eutils flag-o-matic 
 
@@ -17,7 +17,7 @@ DESCRIPTION="Larry Wall's Practical Extraction and Reporting Language"
 SAFE_VERSION="2.09"
 MY_P="perl-`echo $PV | sed 's/_rc/-RC/'`"
 S="${WORKDIR}/${MY_P}"
-SRC_URI="http://www.cpan.org/authors/id/J/JH/JHI/${MY_P}.tgz"
+SRC_URI="http://www.cpan.org/authors/id/J/JH/JHI/${MY_P}.tar.gz"
 #ftp://ftp.perl.org/pub/CPAN/src/${MY_P}.tar.gz
 #ftp://ftp.perl.org/pub/CPAN/modules/by-module/DB_File/DB_File-${DB_FILE_VERSION}.tar.gz
 #ftp://ftp.perl.org/pub/CPAN/modules/by-module/Safe/Safe-${SAFE_VERSION}.tar.gz"
@@ -159,6 +159,7 @@ src_compile() {
 	fi
 
 	[ "${ARCH}" = "hppa" ] && append-flags -fPIC
+	
 	
 cat > config.over <<EOF
 installprefix=${D}/usr
