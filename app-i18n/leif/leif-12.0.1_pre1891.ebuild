@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/leif/Attic/leif-11.4.1467.ebuild,v 1.6 2004/06/24 21:49:44 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/leif/Attic/leif-12.0.1_pre1891.ebuild,v 1.1 2004/09/13 20:07:42 usata Exp $
 
 inherit iiimf eutils
 
@@ -9,12 +9,14 @@ DESCRIPTION="Language Engine is a component that provide actual Input Method ser
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="dev-libs/eimil"
+RDEPEND="dev-libs/eimil"
+DEPEND="${RDEPEND}
+	>=sys-apps/sed-4"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-gentoo.diff
+	cd ${S}/testEIMIL
+	sed -i -e 's,$(IM_LIBDIR)/EIMIL,/usr/lib,g' Makefile.* || die
 }
 
 src_install() {
