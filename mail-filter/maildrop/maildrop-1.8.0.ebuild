@@ -1,12 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/maildrop/Attic/maildrop-1.5.3.ebuild,v 1.6 2005/02/09 21:09:31 ferdy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/maildrop/Attic/maildrop-1.8.0.ebuild,v 1.1 2005/02/09 21:09:31 ferdy Exp $
 
+
+inherit eutils
 IUSE="mysql ldap gdbm berkdb"
-
-inherit flag-o-matic
-filter-flags -funroll-loops
-filter-flags -fomit-frame-pointer
 
 DESCRIPTION="Mail delivery agent/filter"
 HOMEPAGE="http://www.courier-mta.org/maildrop/"
@@ -14,16 +12,35 @@ SRC_URI="mirror://sourceforge/courier/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~sparc"
+KEYWORDS="~x86 ~sparc ~alpha ~amd64 ~ia64"
 
 DEPEND="dev-lang/perl
 	virtual/mta
-	berkdb? ( >=sys-libs/db-3.2 )
+	berkdb? ( >=sys-libs/db-3* )
 	gdbm? ( >=sys-libs/gdbm-1.8.0 )
 	mysql? ( >=dev-db/mysql-3.23.51 )
 	ldap? ( >=net-nds/openldap-2.0.23 )"
-
 PROVIDE="virtual/mda"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	# patch for db-4.x detection
+	epatch ${FILESDIR}/maildrop-1.7.0-db4-configure.in.patch \
+		|| die "patch failed."
+	epatch ${FILESDIR}/maildrop-1.7.0-db4-bdbobj_configure.in.patch \
+		|| die "patch failed."
+
+	ebegin "Recreating configure."
+	autoconf || die "recreate configure failed."
+	eend $?
+
+	ebegin "Recreating configure in bdbobj."
+	cd ${S}/bdbobj
+	autoconf || die "recreate configure failed."
+	eend $?
+	cd ${S}
+}
 
 src_compile() {
 	local myconf
@@ -37,22 +54,34 @@ src_compile() {
 			--with-ldapconfig=/etc/maildrop/maildropldap.cf" \
 		|| myconf="${myconf} --disable-maildropldap"
 
-	if use berkdb; then
-		myconf="${myconf} --with-db=db"
-	elif use gdbm; then
-		myconf="${myconf} --with-db=gdbm"
+	if use gdbm; then
+		# both flags present; default to gdbm.
+		einfo "build with GDBM support."
+		myconf="${myconf} --with-db=gdbm \
+		--enable-userdb"
+	elif use berkdb; then
+		einfo "build with DB support."
+		myconf="${myconf} --with-db=db \
+		--enable-userdb"
+	else
+		# without a db library support, can't build this.
+		einfo "moving ${S}/makedat to ${S}/makedat.org"
+		mv ${S}/makedat ${S}/makedat.org || "failed to move makedat."
+		einfo "build without-db."
+		myconf="${myconf} --without-db"
 	fi
+
+	libtoolize --copy --force
 
 	econf \
 		--with-devel \
-		--enable-userdb \
 		--disable-tempdir \
 		--enable-syslog=1 \
 		--enable-use-flock=1 \
 		--enable-maildirquota \
 		--enable-use-dotlock=1 \
 		--enable-restrict-trusted=1 \
-		--enable-trusted-users='root mail daemon postmaster qmaild mmdf vmail' \
+		--enable-trusted-users='apache dspam root mail daemon postmaster qmaild mmdf vmail' \
 		--with-default-maildrop=./.maildir/ \
 		--enable-sendmail=/usr/sbin/sendmail \
 		${myconf} || die
@@ -91,3 +120,4 @@ src_install() {
 	fi
 	use ldap && newins ${S}/maildropldap.config maildropldap.cf
 }
+
