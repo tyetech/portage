@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.0.19.ebuild,v 1.6 2002/09/21 11:49:09 bjb Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libxslt/Attic/libxslt-1.0.19.ebuild,v 1.7 2002/10/04 05:16:50 vapier Exp $
 
 inherit libtool
 
