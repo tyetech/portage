@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kde-functions.eclass,v 1.85 2005/01/15 14:52:10 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kde-functions.eclass,v 1.86 2005/01/17 08:48:07 danarmak Exp $
 #
 # Author Dan Armak <danarmak@gentoo.org>
 #
@@ -13,6 +13,7 @@ INHERITED="$INHERITED $ECLASS"
 # map of the monolithic->split ebuild derivation; used to build deps describing
 # the relationships between them
 KDE_DERIVATION_MAP='
+kde-base/kdeaccessibility kde-base/kbstateapplet
 kde-base/kdeaccessibility kde-base/kmag
 kde-base/kdeaccessibility kde-base/kmousetool
 kde-base/kdeaccessibility kde-base/kmouth
