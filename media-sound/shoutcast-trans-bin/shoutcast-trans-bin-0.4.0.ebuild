@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/shoutcast-trans-bin/Attic/shoutcast-trans-bin-0.4.0.ebuild,v 1.1 2004/08/31 23:57:00 chriswhite Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/shoutcast-trans-bin/Attic/shoutcast-trans-bin-0.4.0.ebuild,v 1.2 2004/09/03 22:47:06 chriswhite Exp $
 
 inherit eutils
 
@@ -44,7 +44,7 @@ src_install() {
 	doins sc_trans.conf
 
 	# create a directory for playlists to be put
-	mkdir ${D}/opt/shoutcast/playlists
+	keepdir /opt/shoutcast/playlists
 }
 
 pkg_postinst() {
