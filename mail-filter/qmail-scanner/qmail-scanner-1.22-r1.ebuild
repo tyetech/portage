@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/qmail-scanner/Attic/qmail-scanner-1.22-r1.ebuild,v 1.1 2004/07/17 09:07:13 st_lim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/qmail-scanner/Attic/qmail-scanner-1.22-r1.ebuild,v 1.2 2004/07/18 08:28:34 mr_bones_ Exp $
 
 inherit fixheadtails gcc eutils
 
