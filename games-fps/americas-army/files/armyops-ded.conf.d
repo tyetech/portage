@@ -1,6 +1,6 @@
-# Copyright 2004 Gentoo Technologies, Inc. 
+# Copyright 2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/americas-army/files/Attic/armyops-ded.conf.d,v 1.1 2004/09/14 22:40:36 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/americas-army/files/Attic/armyops-ded.conf.d,v 1.2 2004/09/28 01:58:30 mr_bones_ Exp $
 
 # Type of Server
 # This can be lan, global, lantournament, tournament
