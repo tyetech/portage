@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hotplug/Attic/hotplug-20030501-r2.ebuild,v 1.6 2003/09/07 00:45:48 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hotplug/Attic/hotplug-20030501-r2.ebuild,v 1.7 2004/01/06 00:19:49 azarah Exp $
 
 inherit eutils
 

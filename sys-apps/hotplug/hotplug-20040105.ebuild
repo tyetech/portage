@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hotplug/Attic/hotplug-20020826-r2.ebuild,v 1.6 2004/01/06 00:19:49 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hotplug/Attic/hotplug-20040105.ebuild,v 1.1 2004/01/06 00:19:49 azarah Exp $
 
 inherit eutils
 
@@ -10,26 +10,23 @@ S=${WORKDIR}/${MY_P}
 DESCRIPTION="USB and PCI hotplug scripts"
 HOMEPAGE="http://linux-hotplug.sourceforge.net"
 SRC_URI="mirror://sourceforge/linux-hotplug/${MY_P}.tar.gz
-	mirror://gentoo/${PN}-gentoo-conf.tar.bz2
-	mirror://gentoo/${PN}-${PVR}-gentoo-patches.tar.bz2"
+	mirror://gentoo/${P}-gentoo-patches.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 amd64 ppc ~hppa ~alpha"
+KEYWORDS="~x86 ~amd64 ~ppc ~hppa ~sparc ~alpha ~mips ~arm"
 
 # hotplug needs pcimodules utility provided by pcitutils-2.1.9-r1
-DEPEND=">=sys-apps/pciutils-2.1.9
-	>=sys-apps/sed-4
-	>=sys-apps/usbutils-0.9"
+DEPEND=">=sys-apps/pciutils-2.1.9 >=sys-apps/usbutils-0.9"
 
 src_unpack() {
 	unpack ${A}
+	cd ${S}
+	EPATCH_SUFFIX="patch" epatch ${WORKDIR}/hotplug-patches
 
-	cd ${S}/etc/hotplug
-	epatch ${WORKDIR}/hotplug-patches/
-
-	# fix for bug 17799
-	sed -i -e '145s:-le:-lt:' ${S}/etc/hotplug/usb.rc
+	EPATCH_OPTS="${EPATCH_OPTS} ${S}/etc/hotplug/usb.agent" \
+	epatch ${FILESDIR}/usb.agent.diff
+	epatch ${FILESDIR}/kernel-26-fix.patch || die
 }
 
 src_install() {
@@ -42,17 +39,23 @@ src_install() {
 	insinto /etc/hotplug
 	doins blacklist hotplug.functions usb.distmap usb.handmap usb.usermap
 	exeinto /etc/hotplug
-	doexe *.agent *.rc
+	doexe *.agent *.rc ${FILESDIR}/firmware.agent
+	dodir /usr/lib/hotplug/firmware
 	dodir /etc/hotplug/usb /etc/hotplug/pci
+	cd ${S}/etc/hotplug.d/default
+	exeinto /etc/hotplug.d/default
+	doexe default.hotplug
 
 	exeinto /etc/init.d
-	newexe ${WORKDIR}/hotplug-conf/hotplug.rc hotplug
+	newexe ${FILESDIR}/hotplug.rc hotplug
 
 	insinto /etc/conf.d
-	newins ${WORKDIR}/hotplug-conf/usb.conf usb
+	newins ${FILESDIR}/usb.confd usb
+	dodir /var/run/usb
 }
 
 pkg_postinst() {
 	ewarn "WARNING: The fxload program was spliced off this package"
 	ewarn "WARNING: emerge fxload if you need it"
 }
+
