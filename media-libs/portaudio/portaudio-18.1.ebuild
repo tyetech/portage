@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/portaudio/Attic/portaudio-18.1.ebuild,v 1.8 2004/10/01 00:00:38 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/portaudio/Attic/portaudio-18.1.ebuild,v 1.9 2004/10/08 01:09:20 kito Exp $
 
 inherit eutils
 
