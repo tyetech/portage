@@ -1,24 +1,24 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ggv/Attic/ggv-2.0.0.ebuild,v 1.6 2003/09/07 22:32:10 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ggv/Attic/ggv-2.3.99.ebuild,v 1.1 2003/09/07 22:32:10 foser Exp $
 
 inherit gnome2
 
-DESCRIPTION="your favourite PostScript previewer"
+DESCRIPTION="The GNOME PostScript document viewer"
 HOMEPAGE="http://www.gnome.org/"
 
-IUSE="doc"
+IUSE=""
 SLOT="0"
 LICENSE="GPL-2 FDL-1.1"
-KEYWORDS="x86 ppc ~alpha ~sparc hppa amd64"
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa ~amd64"
 
 RDEPEND=">=gnome-base/libgnomeui-2
 	>=gnome-base/ORBit2-2.4.1
 	app-text/ghostscript
-	>=dev-libs/popt-1.6"
+	dev-libs/popt"
 
 DEPEND="${RDEPEND}
-	doc? ( dev-util/gtk-doc )
-	>=dev-util/pkgconfig-0.12.0"
+	>=dev-util/pkgconfig-0.12.0
+	>=dev-util/intltool-0.21"
 
 DOC="AUTHORS ChangeLog COPYING* MAINTAINERS TODO NEWS README"

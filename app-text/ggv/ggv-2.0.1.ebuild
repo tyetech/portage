@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ggv/Attic/ggv-2.0.1.ebuild,v 1.5 2003/07/23 17:52:24 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ggv/Attic/ggv-2.0.1.ebuild,v 1.6 2003/09/07 22:32:10 foser Exp $
 
 inherit gnome2
 
@@ -8,7 +8,7 @@ DESCRIPTION="The GNOME PostScript document viewer"
 HOMEPAGE="http://www.gnome.org/"
 
 IUSE=""
-SLOT="1"
+SLOT="0"
 LICENSE="GPL-2 FDL-1.1"
 KEYWORDS="x86 ~ppc ~alpha ~sparc hppa amd64"
 
