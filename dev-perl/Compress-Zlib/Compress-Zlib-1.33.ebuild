@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Compress-Zlib/Attic/Compress-Zlib-1.33.ebuild,v 1.6 2004/12/22 11:57:49 nigoro Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Compress-Zlib/Attic/Compress-Zlib-1.33.ebuild,v 1.7 2005/01/04 12:05:37 mcummings Exp $
 
 inherit perl-module
 
