@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc. Distributed under the terms
 # of the GNU General Public License, v2 or later 
 # Author Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-1.5_pre1.ebuild,v 1.2 2001/02/19 10:02:13 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-1.5_pre2.ebuild,v 1.1 2001/02/19 15:07:21 drobbins Exp $
  
 S=${WORKDIR}/${P}
 DESCRIPTION="Portage autobuild system"
@@ -36,7 +36,7 @@ src_install() {
 	dodir /usr/lib/portage/bin
 	cd ${FILESDIR}/${PPV}/bin
 	exeinto /usr/lib/portage/bin
-	doexe * ${FILESDIR}/env-update 
+	doexe * 
 	doexe ${S}/tbz2tool
 	
 	#symlinks
