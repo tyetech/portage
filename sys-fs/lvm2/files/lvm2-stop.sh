@@ -1,3 +1,6 @@
+# /lib/rcscripts/addons/lvm2-stop.sh
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/lvm2/files/lvm2-stop.sh,v 1.2 2005/02/23 03:35:18 rocket Exp $
+
 # Stop LVM2
 
 if [ -x /sbin/vgchange ] && \
