@@ -1,14 +1,14 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/autoconf/Attic/autoconf-2.52i.ebuild,v 1.2 2002/04/07 13:36:44 gbevin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/autoconf/Attic/autoconf-2.53-r1.ebuild,v 1.1 2002/05/19 17:45:33 azarah Exp $
 
 OLD_PV=2.13
 OLD_P=${PN}-${OLD_PV}
 S=${WORKDIR}/${P}
 OLD_S=${WORKDIR}/${OLD_P}
 DESCRIPTION="Used to create autoconfiguration files"
-SRC_URI="ftp://alpha.gnu.org/gnu/${PN}/${P}.tar.bz2
+SRC_URI="ftp://ftp.gnu.org/gnu/${PN}/${P}.tar.bz2
 	ftp://ftp.gnu.org/gnu/${PN}/${OLD_P}.tar.gz"
 HOMEPAGE="http://www.gnu.org/software/autoconf/autoconf.html"
 
@@ -32,7 +32,6 @@ src_compile() {
 	#
 	cd ${S}
 	./configure --prefix=/usr \
-		--datadir=/usr/share/${P} \
 		--infodir=/usr/share/info \
 		--mandir=/usr/share/man \
 		--target=${CHOST} || die
@@ -44,7 +43,6 @@ src_compile() {
 	#
 	cd ${OLD_S}
 	./configure --prefix=/usr \
-		--datadir=/usr/share/${OLD_P} \
 		--infodir=/usr/share/info \
 		--mandir=/usr/share/man \
 		--target=${CHOST} || die
@@ -58,6 +56,7 @@ src_install() {
 	# to use.
 	exeinto /usr/lib/${PN}
 	doexe ${FILESDIR}/ac-wrapper.pl
+	dosed "s:2\.5x:${PV}:g" /usr/lib/${PN}/ac-wrapper.pl
 
 	#
 	# ************ autoconf-2.5x ************
@@ -66,19 +65,18 @@ src_install() {
 	# need to use 'DESTDIR' here, else perl stuff puke
 	cd ${S}
 	make DESTDIR=${D} \
-		datadir=/usr/share/${P} \
 		install || die
 
 	for x in autoconf autoheader autoreconf autoscan autoupdate ifnames autom4te
 	do
-		mv ${D}/usr/bin/${x} ${D}/usr/bin/${x}-2.5x
+		mv ${D}/usr/bin/${x} ${D}/usr/bin/${x}-${PV}
 	done
 	# new in 2.5x
 	dosym ../lib/${PN}/ac-wrapper.pl /usr/bin/autom4te
 
 	mv ${D}/usr/share/info/autoconf.info ${D}/usr/share/info/autoconf-2.5.info
 
-	docinto ${PF}/${PV}
+	docinto ${PV}
 	dodoc COPYING AUTHORS BUGS NEWS README TODO THANKS
 	dodoc ChangeLog ChangeLog.0 ChangeLog.1 ChangeLog.2
 
@@ -89,7 +87,6 @@ src_install() {
 	# need to use 'prefix' here, else we get sandbox problems
     cd ${OLD_S}
 	make prefix=${D}/usr \
-		datadir=${D}/usr/share/${OLD_P} \
 		mandir=${D}/usr/share/man \
 		infodir=${D}/usr/share/info \
 		install || die
@@ -100,7 +97,7 @@ src_install() {
 		dosym ../lib/${PN}/ac-wrapper.pl /usr/bin/${x}
 	done
 
-	docinto ${PF}/${OLD_PV}
+	docinto ${OLD_PV}
 	dodoc COPYING AUTHORS NEWS README TODO
 	dodoc ChangeLog ChangeLog.0 ChangeLog.1
 
