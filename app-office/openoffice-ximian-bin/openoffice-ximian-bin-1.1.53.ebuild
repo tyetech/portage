@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-ximian-bin/Attic/openoffice-ximian-bin-1.1.52.ebuild,v 1.9 2004/08/01 14:13:41 suka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-ximian-bin/Attic/openoffice-ximian-bin-1.1.53.ebuild,v 1.1 2004/08/01 14:13:41 suka Exp $
 
 inherit rpm
 
