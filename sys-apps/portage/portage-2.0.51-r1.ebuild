@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51.ebuild,v 1.6 2004/10/21 21:00:18 carpaski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51-r1.ebuild,v 1.1 2004/10/21 21:00:18 carpaski Exp $
 
 IUSE="build selinux"
 inherit flag-o-matic
