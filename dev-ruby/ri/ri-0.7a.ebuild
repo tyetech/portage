@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ri/Attic/ri-0.7a.ebuild,v 1.4 2002/08/01 11:40:14 seemant Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ri/Attic/ri-0.7a.ebuild,v 1.5 2002/10/04 05:28:46 vapier Exp $
 
 S="${WORKDIR}/ri"
 DESCRIPTION="Ruby Interactive reference"
