@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc-sources-dev/Attic/ppc-sources-dev-2.4.20.ebuild,v 1.14 2003/12/14 23:48:22 spider Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc-sources-dev/Attic/ppc-sources-dev-2.4.20.ebuild,v 1.15 2004/01/08 21:30:08 plasmaroo Exp $
 
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
