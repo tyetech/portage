@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/psmon/Attic/psmon-1.0.4.ebuild,v 1.4 2004/06/24 21:35:22 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/psmon/Attic/psmon-1.0.4.ebuild,v 1.5 2004/10/05 02:58:11 pvdabeel Exp $
 
 DESCRIPTION="Monitors process table to slay aggressive, and spawn dead, processes"
 HOMEPAGE="http://psmon.sourceforge.net/"
@@ -9,7 +9,7 @@ RESTRICT="nomirror"
 
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 ppc"
 IUSE=""
 
 DEPEND=">=dev-lang/perl-5.6.0

@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/modconf/Attic/modconf-0.2.43.ebuild,v 1.7 2004/06/24 21:31:50 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/modconf/Attic/modconf-0.2.43.ebuild,v 1.8 2004/10/05 02:58:11 pvdabeel Exp $
 
 # Some notes:  This should rather depend on dev-libs/newt, and use whiptail,
 #              not dev-util/dialog.
@@ -19,7 +19,7 @@ HOMEPAGE="http://packages.debian.org/stable/base/modconf.html"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="x86 ppc"
 
 DEPEND="dev-util/dialog
 	virtual/modutils"
