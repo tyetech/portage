@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/oaf/Attic/oaf-0.6.1.ebuild,v 1.1 2000/11/25 12:57:02 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/oaf/Attic/oaf-0.6.1.ebuild,v 1.2 2000/12/03 20:46:29 drobbins Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -25,7 +25,9 @@ src_install() {
   dodoc NEWS TODO
 }
 
-
+pkg_postinst() {
+	ldconfig -r ${ROOT}
+}
 
 
 
