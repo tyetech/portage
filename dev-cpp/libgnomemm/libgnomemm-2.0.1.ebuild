@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libgnomemm/Attic/libgnomemm-2.0.1.ebuild,v 1.10 2004/06/13 06:56:09 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libgnomemm/Attic/libgnomemm-2.0.1.ebuild,v 1.11 2004/06/24 21:50:10 agriffis Exp $
 
 inherit gnome2
 IUSE=""
