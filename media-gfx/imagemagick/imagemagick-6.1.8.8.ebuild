@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/imagemagick/Attic/imagemagick-6.1.8.8.ebuild,v 1.1 2005/01/17 21:41:37 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/imagemagick/Attic/imagemagick-6.1.8.8.ebuild,v 1.2 2005/01/17 21:42:17 sekretarz Exp $
 
 inherit libtool flag-o-matic eutils
 
@@ -78,10 +78,10 @@ src_compile() {
 src_install() {
 	make DESTDIR=${D} install
 
-	#bug 69705
+	# bug 69705
 	rm -f ${D}/usr/lib/libltdl*
 
-	#bug 73464
+	# bug 73464
 	rm -f ${D}/usr/lib/perl5/5.8.6/x86_64-linux/perllocal.pod
 
 	dosed "s:-I/usr/include ::" /usr/bin/Magick-config
