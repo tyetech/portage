@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.4-r7.ebuild,v 1.1 2004/08/06 04:48:59 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.4-r8.ebuild,v 1.1 2004/08/11 09:48:22 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
 CVSDATE="20040311"
 COBALTPATCHVER="1.4"
-SECPATCHVER="1.1"
+SECPATCHVER="1.2"
 IP32DIFFDATE="20040229"
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
@@ -98,7 +98,7 @@ src_unpack() {
 		epatch ${WORKDIR}/security/CAN-2004-0497-attr_gid.patch
 		epatch ${WORKDIR}/security/CAN-2004-0596-2.6-eql.patch
 		epatch ${WORKDIR}/security/CAN-2004-0626-death_packet.patch
-		epatch ${WORKDIR}/security/security-2.6-attr_check.patch
+		epatch ${WORKDIR}/security/security-2.6-proc_race.patch
 	eend
 
 	# Cobalt Patches
