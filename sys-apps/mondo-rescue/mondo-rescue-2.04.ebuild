@@ -1,16 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mondo-rescue/Attic/mondo-rescue-2.03.ebuild,v 1.5 2005/01/22 10:33:42 wschlich Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mondo-rescue/Attic/mondo-rescue-2.04.ebuild,v 1.1 2005/01/22 10:33:42 wschlich Exp $
 
 inherit libtool
 
 DESCRIPTION="A program which a Linux user can utilize to create a rescue/restore CD/tape."
 HOMEPAGE="http://www.mondorescue.org/"
-SRC_URI="http://www.microwerks.net/~hugo/download/MondoCD/TGZS/${PN/-rescue/}-${PV}.tgz"
+SRC_URI="http://www.mondorescue.org/download/MondoCD/TGZS/${PN/-rescue/}-${PV}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 -*"
+KEYWORDS="-* ~x86"
 IUSE=""
 
 DEPEND="virtual/libc
@@ -21,7 +21,7 @@ RDEPEND="app-arch/afio
 	sys-devel/binutils
 	>=app-arch/bzip2-0.9
 	app-cdr/cdrtools
-	>=sys-apps/mindi-1.03
+	>=sys-apps/mindi-1.04
 	>=dev-libs/newt-0.50
 	>=sys-libs/slang-1.4.1
 	>=sys-boot/syslinux-1.52"
