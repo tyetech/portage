@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/americas-army/Attic/americas-army-210.ebuild,v 1.2 2004/06/02 02:15:39 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/americas-army/Attic/americas-army-210.ebuild,v 1.3 2004/06/03 22:46:05 mr_bones_ Exp $
 
 inherit games
 
@@ -20,7 +20,7 @@ RESTRICT="nostrip nomirror"
 
 # dedicated is unused at this time until I can find some good generic dedicated
 # server scripts to include.
-IUSE="opengl dedicated"
+IUSE="opengl" # dedicated
 
 DEPEND="virtual/glibc
 	app-arch/unzip"
