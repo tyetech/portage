@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/lcrzo/Attic/lcrzo-4.10.ebuild,v 1.3 2002/08/16 02:57:06 murphy Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/lcrzo/Attic/lcrzo-4.10.ebuild,v 1.4 2002/10/04 06:05:44 vapier Exp $
 
 S=${WORKDIR}/${P}-src
 DESCRIPTION="Library of Ethernet, IP, UDP, TCP, ICMP, ARP and RARP protocols"

@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gnet/Attic/gnet-1.1.5.ebuild,v 1.1 2002/08/14 19:55:04 stroke Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gnet/Attic/gnet-1.1.5.ebuild,v 1.2 2002/10/04 06:05:42 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="GNet network library."
