@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.11.ebuild,v 1.1 2004/08/02 19:38:25 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.13.ebuild,v 1.1 2004/08/14 18:36:59 avenj Exp $
 
 MY_P="${P/_/}"
 MY_PV="${PV/_rc*/}"
-DESCRIPTION="Small forwarding DNS server for local networks"
+DESCRIPTION="Small forwarding DNS server"
 HOMEPAGE="http://www.thekelleys.org.uk/dnsmasq/"
 SRC_URI="http://www.thekelleys.org.uk/dnsmasq/${MY_P}.tar.gz"
 
