@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.2.3-r4.ebuild,v 1.3 2001/08/05 22:58:06 pete Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.2.3-r5.ebuild,v 1.1 2001/08/13 00:35:29 drobbins Exp $
 
 A="$P.tar.gz glibc-linuxthreads-${PV}.tar.gz"
 S=${WORKDIR}/${P}
@@ -39,7 +39,14 @@ src_unpack() {
     try patch -p0 < ${FILESDIR}/glibc-2.2.3-string2.diff
     cd io
     try patch -p0 < ${FILESDIR}/glibc-2.2.2-test-lfs-timeout.patch
-	
+	#now we need to fix a problem where glibc-2.2.3 doesn't compile with absolutely no -O optimizations.
+	#we'll need to keep our eyes on this one to see how things are in later versions of linuxthreads:
+	#for more info, see:
+	# http://gcc.gnu.org/ml/gcc-prs/2001-06/msg00044.html
+	# http://www.mail-archive.com/bug-glibc@gnu.org/msg01820.html
+	cd ${S}/linuxthreads
+	cp spinlock.c spinlock.c.orig
+	sed -e 's/ : "0" (lock->__status)//g' spinlock.c.orig > spinlock.c
 }
 
 src_compile() {
