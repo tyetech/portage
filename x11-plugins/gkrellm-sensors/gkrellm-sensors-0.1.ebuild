@@ -1,6 +1,6 @@
 # Copyright 2002 Robin Cull
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellm-sensors/Attic/gkrellm-sensors-0.1.ebuild,v 1.1 2002/08/30 09:11:26 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellm-sensors/Attic/gkrellm-sensors-0.1.ebuild,v 1.2 2002/09/12 04:46:45 owen Exp $
 
 MY_P=${P/gkrellm-/gklm}
 S=${WORKDIR}/gklmsensors
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/gklmsensors/${MY_P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 sparc sparc64"
+KEYWORDS="x86 ppc sparc sparc64"
 
 DEPEND="=app-admin/gkrellm-1.2*
 	>=sys-apps/lm_sensors-2.6.3"
