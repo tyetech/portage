@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/pptpclient/Attic/pptpclient-1.1.0-r1.ebuild,v 1.8 2004/06/24 22:31:23 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/pptpclient/Attic/pptpclient-1.1.0-r1.ebuild,v 1.9 2004/07/14 23:05:51 agriffis Exp $
 
 
 S=${WORKDIR}/pptp-linux-${PV}-1
@@ -44,4 +44,3 @@ src_install() {
 	dodoc Documentation/*
 	dodoc Reference/*
 }
-
