@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/penguin-command/Attic/penguin-command-1.6.6.ebuild,v 1.9 2004/06/19 16:32:41 jhuebel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/penguin-command/Attic/penguin-command-1.6.6.ebuild,v 1.10 2004/06/24 22:10:11 agriffis Exp $
 
 inherit gnuconfig games
 

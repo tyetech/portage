@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/insaneodyssey/insaneodyssey-000311.ebuild,v 1.2 2004/06/18 20:27:05 jhuebel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/insaneodyssey/insaneodyssey-000311.ebuild,v 1.3 2004/06/24 22:05:53 agriffis Exp $
 
 inherit eutils games
 
