@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/easytag/Attic/easytag-0.23.ebuild,v 1.4 2003/02/13 13:10:01 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/easytag/Attic/easytag-0.23.ebuild,v 1.5 2003/02/19 19:24:01 seemant Exp $
 
 IUSE="nls oggvorbis"
 
@@ -17,7 +17,7 @@ DEPEND="${RDEPEND}"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="x86 ~ppc ~sparc ~alpha ~mips ~hppa"
 
 src_compile() {
 	local myconf
