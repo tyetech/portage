@@ -1,10 +1,10 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/netpbm/Attic/netpbm-9.12-r4.ebuild,v 1.2 2002/12/09 04:26:13 manson Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/netpbm/Attic/netpbm-9.12-r4.ebuild,v 1.3 2003/01/05 12:12:18 mholzer Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A set of utilities for converting to/from the netpbm (and related) formats"
-SRC_URI="http://download.sourceforge.net/netpbm/${P}.tgz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 HOMEPAGE="http://netpbm.sourceforge.net/"
 
 DEPEND=">=media-libs/jpeg-6b
