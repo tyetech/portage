@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/gld/Attic/gld-1.4.ebuild,v 1.4 2004/10/19 10:05:07 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/gld/Attic/gld-1.4.ebuild,v 1.5 2004/11/13 12:44:34 slarti Exp $
 
 DESCRIPTION="A standalone anti-spam greylisting algorithm on top of Postfix"
 HOMEPAGE="http://www.gasmi.net/gld.html"
@@ -40,8 +40,7 @@ src_install() {
 	insinto /usr/share/doc/${PF}/sql
 	doins tables.sql
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/gld.rc gld
+	newinitd ${FILESDIR}/gld.rc gld
 }
 
 pkg_postinst() {
