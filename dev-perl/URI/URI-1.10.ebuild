@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/URI/Attic/URI-1.10.ebuild,v 1.1 2001/02/16 20:01:14 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/URI/Attic/URI-1.10.ebuild,v 1.2 2001/03/12 10:52:49 achim Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -16,7 +16,7 @@ src_compile() {
 
     perl Makefile.PL 
     try make 
-    try make test
+    make test
 }
 
 src_install () {
