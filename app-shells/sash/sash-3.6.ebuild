@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/sash/Attic/sash-3.6.ebuild,v 1.3 2003/10/18 09:14:03 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/sash/Attic/sash-3.6.ebuild,v 1.4 2003/10/18 11:16:44 plasmaroo Exp $
 
 IUSE="readline"
 
@@ -13,7 +13,6 @@ LICENSE="freedist"
 
 DEPEND="virtual/glibc
 	>=sys-libs/zlib-1.1.4
-	sys-fs/e2fsprogs
 	readline? ( >=sys-libs/readline-4.1 >=sys-libs/ncurses-5.2 )"
 
 RDEPEND=""
