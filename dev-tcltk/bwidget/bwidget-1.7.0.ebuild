@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/bwidget/bwidget-1.7.0.ebuild,v 1.3 2004/06/10 22:17:57 jhuebel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/bwidget/bwidget-1.7.0.ebuild,v 1.4 2004/06/25 02:06:38 agriffis Exp $
 
 DESCRIPTION="high-level widget set for Tcl/Tk completely written in Tcl"
 

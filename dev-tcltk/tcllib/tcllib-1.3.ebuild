@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/tcllib/Attic/tcllib-1.3.ebuild,v 1.7 2004/02/28 21:19:00 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/tcllib/Attic/tcllib-1.3.ebuild,v 1.8 2004/06/25 02:08:49 agriffis Exp $
 
 IUSE="X"
 
