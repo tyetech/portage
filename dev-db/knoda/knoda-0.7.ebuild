@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/knoda/Attic/knoda-0.7_alpha1.ebuild,v 1.3 2004/06/28 23:47:09 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/knoda/Attic/knoda-0.7.ebuild,v 1.1 2004/07/13 12:37:42 carlo Exp $
 
 inherit kde
 
-MY_P=${P/_alpha1/-test1}
+MY_P=${P/_alpha3/-test3a}
 S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="KDE database frontend based on the hk_classes library"
