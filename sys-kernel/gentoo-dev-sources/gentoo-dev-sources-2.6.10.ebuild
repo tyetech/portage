@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-dev-sources/Attic/gentoo-dev-sources-2.6.10.ebuild,v 1.2 2004/12/25 13:11:59 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-dev-sources/Attic/gentoo-dev-sources-2.6.10.ebuild,v 1.3 2005/01/02 00:22:00 dsd Exp $
 
 ETYPE="sources"
 inherit kernel-2

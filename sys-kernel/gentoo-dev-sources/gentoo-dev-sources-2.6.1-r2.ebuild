@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-dev-sources/Attic/gentoo-dev-sources-2.6.1-r2.ebuild,v 1.5 2004/06/24 22:56:39 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-dev-sources/Attic/gentoo-dev-sources-2.6.1-r2.ebuild,v 1.6 2005/01/02 00:22:00 dsd Exp $
 
 # As this is the example source to use kernel-2.eclass then a very brief explanation is to go here
 #
