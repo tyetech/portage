@@ -1,21 +1,20 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/kita/Attic/kita-0.160.0.ebuild,v 1.4 2005/01/15 00:17:47 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/kita/Attic/kita-0.175.1.ebuild,v 1.1 2005/03/27 15:07:53 usata Exp $
+
+inherit kde-functions
 
 IUSE=""
 
 DESCRIPTION="Kita - 2ch client for KDE"
 HOMEPAGE="http://kita.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/kita/10406/${P}.tar.gz"
+SRC_URI="mirror://sourceforge.jp/kita/13932/${P}.tar.gz"
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
-KEYWORDS="x86 ppc64 ppc"
+KEYWORDS="~x86 ~ppc ~ppc64 ~alpha ~amd64"
 
 RDEPEND="virtual/libc
-	>=x11-libs/qt-3.1
-	|| ( kde-base/kdebase-meta >=kde-base/kdebase-3.1 )
-	>=kde-base/kdelibs-3.1
 	>=kde-base/arts-1.1.4
 	>=dev-libs/libpcre-4.2
 	>=dev-libs/expat-1.95.6
@@ -29,13 +28,10 @@ RDEPEND="virtual/libc
 	sys-devel/gettext"
 DEPEND="${RDEPEND}
 	>=sys-devel/gcc-3.2"
-# Never depend on a meta package
-#	>=kde-base/kde-3.1
-# see http://dev.gentoo.org/~liquidx/ebuildmistakes.html
+
+need-kde 3.1
 
 src_compile() {
-	addpredict ${QTDIR}/etc
-
 	econf || die
 	emake -j1 || die
 }
