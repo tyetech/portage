@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-proxy/cvs-repo/gentoo-x86/www-proxy/oops/Attic/oops-1.5.6.ebuild,v 1.1 2004/08/15 18:58:06 stuart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-proxy/cvs-repo/gentoo-x86/www-proxy/oops/Attic/oops-1.5.6.ebuild,v 1.2 2005/02/16 22:27:57 mrness Exp $
 
 DESCRIPTION="An advanced multithreaded caching web proxy"
 HOMEPAGE="http://zipper.paco.net/~igor/oops.eng/"
