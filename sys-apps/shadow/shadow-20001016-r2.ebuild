@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-20001016-r2.ebuild,v 1.2 2001/04/06 16:08:21 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-20001016-r2.ebuild,v 1.3 2001/04/18 03:06:29 achim Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -70,7 +70,7 @@ src_install() {
         insopts -m0644
         doins shadow
         newins shadow groupadd
-        newins shadow userpadd
+        newins shadow useradd
 
  	cd ${S}/doc
 	dodoc ANNOUNCE CHANGES INSTALL LICENSE README WISHLIST
