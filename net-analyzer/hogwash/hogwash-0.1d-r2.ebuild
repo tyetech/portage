@@ -1,6 +1,6 @@
-# Copyright 1999-2001 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/hogwash/Attic/hogwash-0.1d-r2.ebuild,v 1.3 2002/07/18 23:22:46 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/hogwash/Attic/hogwash-0.1d-r2.ebuild,v 1.4 2002/08/01 11:40:16 seemant Exp $
 
 S=${WORKDIR}/devel
 DESCRIPTION="An invisible, layer2 network packet scrubber based on snort"
