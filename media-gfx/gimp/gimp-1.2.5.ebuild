@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp/Attic/gimp-1.2.5.ebuild,v 1.20 2004/06/24 22:38:36 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp/Attic/gimp-1.2.5.ebuild,v 1.21 2005/02/03 04:18:25 joem Exp $
 
 inherit eutils flag-o-matic
 
