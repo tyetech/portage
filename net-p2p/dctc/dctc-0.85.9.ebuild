@@ -1,8 +1,10 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dctc/dctc-0.85.9.ebuild,v 1.6 2004/04/27 21:58:12 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dctc/dctc-0.85.9.ebuild,v 1.7 2004/05/04 05:02:17 eradicator Exp $
 
 inherit eutils
+
+IUSE=""
 
 IUSE=""
 
