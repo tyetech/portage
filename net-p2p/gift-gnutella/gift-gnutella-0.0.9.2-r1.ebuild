@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gift-gnutella/Attic/gift-gnutella-0.0.9.2.ebuild,v 1.15 2004/09/12 04:26:26 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gift-gnutella/Attic/gift-gnutella-0.0.9.2-r1.ebuild,v 1.1 2005/01/14 20:50:40 squinky86 Exp $
 
 inherit eutils
 
@@ -16,7 +16,8 @@ KEYWORDS="x86 sparc ~ppc amd64"
 
 DEPEND="virtual/libc
 	dev-util/pkgconfig
-	app-arch/bzip2"
+	app-arch/bzip2
+	>=sys-apps/sed-4"
 
 RDEPEND=">=net-p2p/gift-0.11.6
 	>=sys-libs/zlib-1.1.4"
@@ -25,6 +26,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/${PN}-gcc35.patch
+	sed -i -e 's:365:999:g' src/gt_gnutella.c
 }
 
 src_compile() {
