@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bittornado/Attic/bittornado-0.3.7.ebuild,v 1.7 2004/11/23 18:52:39 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bittornado/Attic/bittornado-0.3.7.ebuild,v 1.8 2005/02/26 11:12:38 mholzer Exp $
 
 inherit distutils eutils
 
