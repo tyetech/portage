@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gst-plugins/Attic/gst-plugins-0.6.3.ebuild,v 1.17 2004/03/19 07:56:03 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gst-plugins/Attic/gst-plugins-0.6.3.ebuild,v 1.18 2004/03/24 01:14:24 foser Exp $
 
 # IMPORTANT
 #
@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 
 PDEPEND=">=media-plugins/gst-plugins-oss-${PV}"
 
-BUILD_GST_PLUGINS="ffmpeg"
+GST_PLUGINS_BUILD="ffmpeg"
 
 MAKEOPTS="${MAKEOPTS} -j1"
 
