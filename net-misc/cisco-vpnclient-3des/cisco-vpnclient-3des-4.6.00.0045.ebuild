@@ -1,17 +1,17 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cisco-vpnclient-3des/Attic/cisco-vpnclient-3des-4.0.5.ebuild,v 1.4 2004/11/04 01:18:27 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cisco-vpnclient-3des/Attic/cisco-vpnclient-3des-4.6.00.0045.ebuild,v 1.1 2004/11/04 01:18:27 wolf31o2 Exp $
 
 inherit eutils kernel-mod
 
-MY_PV=${PV}.Rel-k9
+MY_PV=${PV}-k9
 DESCRIPTION="Cisco VPN Client (3DES)"
 HOMEPAGE="http://cco.cisco.com/en/US/products/sw/secursw/ps2308/index.html"
 SRC_URI="vpnclient-linux-${MY_PV}.tar.gz"
 
 LICENSE="cisco-vpn-client"
 SLOT="${KV}"
-KEYWORDS="-* x86"
+KEYWORDS="-* ~x86"
 IUSE=""
 RESTRICT="fetch"
 
@@ -21,7 +21,7 @@ DEPEND="virtual/libc
 
 S=${WORKDIR}/vpnclient
 
-VPNDIR="/etc/CiscoSystemsVPNClient"
+VPNDIR="/etc/opt/cisco-vpnclient/"
 
 pkg_nofetch() {
 	einfo "Please visit:"
@@ -44,34 +44,43 @@ src_compile () {
 	[ ! -f ./cisco_ipsec -a ! -f ./cisco_ipsec.ko ] \
 		&& die "Failed to make module 'cisco_ipsec'"
 	sed -i "s#@VPNBINDIR@#/usr/bin#" vpnclient_init
-	sed -i "s#@VPNBINDIR@#/usr/bin#" vpnclient.ini.in
+	sed -i "s#@VPNBINDIR@#/usr/bin#" vpnclient.ini
 }
 
 src_install() {
 	exeinto /etc/init.d
 	newexe ${FILESDIR}/vpnclient.rc vpnclient
 
-	exeinto /usr/bin
+	exeinto /opt/cisco-vpnclient/bin
 	exeopts -m0711
 	doexe vpnclient
 	exeopts -m4711
 	doexe cvpnd
+	into /opt/cisco-vpnclient/
 	dobin ipseclog cisco_cert_mgr
+	dolib.so libvpnapi.so
+	doins vpnapi.h
+	dodir /usr/bin
+	dosym /opt/cisco-vpnclient/bin/vpnclient /usr/bin/vpnclient
+
 
 	insinto /lib/modules/${KV}/CiscoVPN
-	if kernel-mod_is_2_6_kernel ; then
+	if kernel-mod_is_2_6_kernel; then
 		doins cisco_ipsec.ko
 	else
 		doins cisco_ipsec
 	fi
 
 	insinto ${VPNDIR}
-	newins vpnclient.ini.in vpnclient.ini
+	doins vpnclient.ini
 	insinto ${VPNDIR}/Profiles
 	doins *.pcf
 	dodir ${VPNDIR}/Certificates
 }
 
 pkg_postinst() {
-	einfo  "You must run \`/etc/init.d/vpnclient start\` before using the client."
+	einfo "You must run \`/etc/init.d/vpnclient start\` before using the client."
+	echo ""
+	ewarn "Configuration directory has moved to ${VPNDIR}!"
+	echo ""
 }

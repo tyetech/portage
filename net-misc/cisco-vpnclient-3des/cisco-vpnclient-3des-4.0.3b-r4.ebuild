@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cisco-vpnclient-3des/Attic/cisco-vpnclient-3des-4.0.3b-r4.ebuild,v 1.4 2004/07/01 20:54:27 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cisco-vpnclient-3des/Attic/cisco-vpnclient-3des-4.0.3b-r4.ebuild,v 1.5 2004/11/04 01:18:27 wolf31o2 Exp $
 
-inherit eutils
+inherit eutils kernel-mod
 
 MY_PV=${PV/b/.B-k9}
 DESCRIPTION="Cisco VPN Client (3DES)"
@@ -48,7 +48,7 @@ src_unpack() {
 }
 
 src_compile () {
-	check_KV
+	unset ARCH
 	sh ./driver_build.sh /lib/modules/${KV}/build
 	[ ! -f ./cisco_ipsec ] && die "Failed to make module 'cisco_ipsec'"
 	sed -i "s#@VPNBINDIR@#/usr/bin#" vpnclient_init
