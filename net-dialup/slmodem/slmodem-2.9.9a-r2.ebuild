@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/slmodem/Attic/slmodem-2.9.9a-r1.ebuild,v 1.2 2005/01/21 21:12:22 dsd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/slmodem/Attic/slmodem-2.9.9a-r2.ebuild,v 1.1 2005/01/22 02:33:26 mrness Exp $
 
 inherit eutils linux-mod
 
