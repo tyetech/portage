@@ -1,11 +1,11 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-core/Attic/php-core-4.3.4-r1.ebuild,v 1.3 2004/06/25 01:23:36 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-core/Attic/php-core-4.3.4-r1.ebuild,v 1.4 2004/07/14 21:38:05 agriffis Exp $
 
 PHPSAPI="cli"
 inherit php-2 eutils
 
-IUSE="${IUSE} readline"
+IUSE="ncurses readline"
 DESCRIPTION="PHP core package"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~amd64"
