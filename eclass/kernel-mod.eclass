@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kernel-mod.eclass,v 1.7 2003/12/07 13:29:45 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kernel-mod.eclass,v 1.8 2004/06/25 00:39:48 vapier Exp $
 
 # This eclass provides help for compiling external kernel modules from
 # source.

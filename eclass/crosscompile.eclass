@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/crosscompile.eclass,v 1.8 2004/04/27 22:23:44 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/crosscompile.eclass,v 1.9 2004/06/25 00:39:48 vapier Exp $
 # Author: Zachary T Welch
 
 inherit flag-o-matic

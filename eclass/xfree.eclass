@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/xfree.eclass,v 1.19 2004/02/25 19:31:12 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/xfree.eclass,v 1.20 2004/06/25 00:39:48 vapier Exp $
 #
 # Author: Seemant Kulleen <seemant@gentoo.org>
 #

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/ruby.eclass,v 1.34 2004/06/24 07:11:54 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/ruby.eclass,v 1.35 2004/06/25 00:39:48 vapier Exp $
 #
 # Author: Mamoru KOMACHI <usata@gentoo.org>
 #

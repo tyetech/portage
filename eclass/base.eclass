@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/base.eclass,v 1.23 2003/04/08 17:48:12 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/base.eclass,v 1.24 2004/06/25 00:39:48 vapier Exp $
 #
 # Author Dan Armak <danarmak@gentoo.org>
 #
