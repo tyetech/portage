@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/udev/Attic/udev-018-r1.ebuild,v 1.2 2004/02/26 19:40:43 ciaranm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/udev/Attic/udev-018-r3.ebuild,v 1.1 2004/03/16 21:41:17 seemant Exp $
 
 # Note: Cannot use external libsysfs with klibc ..
 USE_KLIBC="no"
@@ -14,7 +14,7 @@ SRC_URI="mirror://kernel/linux/utils/kernel/hotplug/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~hppa ~amd64 ~sparc"
+KEYWORDS="~x86 ~ppc ~hppa ~amd64"
 
 DEPEND="virtual/glibc
 	>=sys-apps/hotplug-20030805-r1
@@ -23,6 +23,8 @@ DEPEND="virtual/glibc
 RDEPEND="${DEPEND}
 	>=sys-apps/baselayout-1.8.6.12-r3"
 # We need some changes for devfs type layout
+
+PROVIDE="virtual/dev-manager"
 
 pkg_setup() {
 	[ "${USE_KLIBC}" = "yes" ] && check_KV
@@ -98,14 +100,18 @@ src_compile() {
 src_install() {
 	dobin udevinfo
 	into /
-	dosbin udev udevd udevsend
+	dosbin udev
+	# *** Note that we do not yet use or install udevd and udevsend, ***
+	# *** as they seem to be still too buggy (udevsend do not even   ***
+	# *** start udevd over here ...                                  ***
+	#dosbin udevd udevsend
 	dosbin extras/scsi_id/scsi_id
 	# Device-mapper support?
 	if false
 	then
 		dosbin extras/multipath/{multipath,devmap_name}
 		exeinto /etc/hotplug.d/scsi/
-		doexe extras/multipath/multipath.hotplug
+		doexe  extras/multipath/multipath.hotplug
 	fi
 
 	exeinto /etc/udev/scripts
@@ -129,7 +135,8 @@ src_install() {
 	fi
 
 	dodir /etc/hotplug.d/default
-	dosym ../../../sbin/udevsend /etc/hotplug.d/default/udev.hotplug
+	#dosym ../../../sbin/udevsend /etc/hotplug.d/default/udev.hotplug
+	dosym ../../../sbin/udev /etc/hotplug.d/default/udev.hotplug
 
 	doman *.8
 	doman extras/scsi_id/scsi_id.8
