@@ -1,19 +1,30 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Dan Armak <danarmak@gantoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/allegro/Attic/allegro-4.0.1-r1.ebuild,v 1.2 2002/05/27 17:27:38 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/allegro/Attic/allegro-4.0.2.ebuild,v 1.1 2002/07/07 03:16:17 seemant Exp $
+
+LICENSE="Allegro"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Allegro is a cross-platform multimedia library"
 SRC_URI="mirror://sourceforge/alleg/${P}.tar.gz"
 HOMEPAGE="http://alleg.sourceforge.net/"
 
-DEPEND="X? ( virtual/x11 )
+
+SLOT="0"
+KEYWORDS="x86"
+
+
+RDEPEND="X? ( virtual/x11 )
+	alsa? ( media-libs/alsa-lib )
+	esd? ( media-sound/esound )
+	svga? ( media-libs/svgalib )"
+
+DEPEND="${RDEPEND}
 	tetex? ( app-text/tetex )"
 
 src_compile() {
 	
-	use tetex && einfo "TETEX baby!!"
+	use tetex
 	
 	# Always enable Linux console support and accompanying drivers
 	confopts="${confopts} --enable-linux --enable-vga"
@@ -78,11 +89,15 @@ src_compile() {
 	econf ${confopts} || die
 	
 	# emake doesn't work
-	make || die
+	make CFLAGS="${CFLAGS}" || die
 	
-	use tetex && ( \
+	if use tetex;
+	then
+		addwrite "/var/lib/texmf"
+		addwrite "/usr/share/texmf"
+		addwrite "/var/cache/fonts"
 		make docs-dvi docs-ps || die
-	)
+	fi
 	
 }
 
@@ -94,8 +109,23 @@ src_install () {
 		mandir=${D}/usr/share/man \
 		install install-gzipped-man install-gzipped-info || die
 	
-	cd ${S}
 	# Different format versions of the Allegro documentation
-	dodoc allegro.txt 
-	use tetex && dohtml allegro.dvi allegro.ps
+
+	dodoc AUTHORS CHANGES THANKS readme.txt todo.txt
+
+	if use tetex;
+	then 
+		dodoc docs/allegro.dvi docs/allegro.ps
+	fi
+
+	dohtml docs/html/*
+
+	docinto txt
+	dodoc docs/txt/*.txt
+
+	docinto rtf
+	dodoc docs/rtf/*.rtf
+	
+	docinto build
+	dodoc docs/build/*.txt
 }
