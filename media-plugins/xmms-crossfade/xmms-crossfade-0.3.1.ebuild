@@ -1,6 +1,8 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-crossfade/Attic/xmms-crossfade-0.3.1.ebuild,v 1.2 2003/07/12 18:40:43 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-crossfade/Attic/xmms-crossfade-0.3.1.ebuild,v 1.3 2004/04/20 17:49:44 eradicator Exp $
+
+IUSE=""
 
 S=${WORKDIR}/${P}
 DESCRIPTION="XMMS Plugin for crossfading, and continuous output."
