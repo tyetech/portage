@@ -1,10 +1,10 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-3.5.ebuild,v 1.1 2002/01/13 21:33:42 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-3.5.ebuild,v 1.2 2002/04/27 11:41:02 seemant Exp $
 
-P=Mesa-${PV}
-S=${WORKDIR}/${P}
+MY_P=Mesa-${PV}
+S=${WORKDIR}/${MY_P}
 DESCRIPTION="OpenGL like graphic library for Linux"
 SRC_URI="http://download.sourceforge.net/mesa3d/MesaLib-${PV}.tar.bz2
          http://download.sourceforge.net/mesa3d/MesaDemos-${PV}.tar.bz2"
