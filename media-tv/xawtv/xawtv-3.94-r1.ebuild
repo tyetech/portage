@@ -1,8 +1,8 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xawtv/Attic/xawtv-3.93.ebuild,v 1.1 2004/07/29 02:50:25 morfic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xawtv/Attic/xawtv-3.94-r1.ebuild,v 1.1 2005/01/25 15:25:35 cardoe Exp $
 
-inherit virtualx
+inherit virtualx eutils
 
 IUSE="aalib alsa lirc mmx motif nls opengl quicktime zvbi"
 
@@ -28,7 +28,17 @@ DEPEND=">=sys-libs/ncurses-5.1
 		app-text/recode )
 	opengl? ( virtual/opengl )
 	quicktime? ( virtual/quicktime )
-	zvbi? ( media-libs/zvbi )"
+	zvbi? ( media-libs/zvbi )
+	sys-devel/autoconf
+	sys-devel/automake
+	sys-devel/libtool"
+
+src_unpack() {
+	unpack ${A}
+	epatch ${FILESDIR}/${P}-allow-xlibs-in-normal-search-path.patch
+	cd ${S}
+	autoreconf
+}
 
 src_compile() {
 
