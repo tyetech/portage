@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gxine/Attic/gxine-0.3.ebuild,v 1.1 2003/03/04 21:52:35 agenkin Exp $ 
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gxine/Attic/gxine-0.3.ebuild,v 1.2 2003/03/10 22:01:16 agenkin Exp $ 
 
 DESCRIPTION="GTK+ Front-End for libxine"
 HOMEPAGE="http://xine.sourceforge.net/"
@@ -17,7 +17,7 @@ RDEPEND="nls? ( sys-devel/gettext )"
 IUSE="X gnome nls"
 
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 S=${WORKDIR}/${P}
 SRC_URI="mirror://sourceforge/xine/${P}.tar.gz"
