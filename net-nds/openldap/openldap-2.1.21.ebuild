@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/openldap/Attic/openldap-2.1.21.ebuild,v 1.3 2003/09/10 04:51:12 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/openldap/Attic/openldap-2.1.21.ebuild,v 1.4 2003/11/06 20:23:32 robbat2 Exp $
 
 IUSE="ssl tcpd readline ipv6 gdbm sasl kerberos odbc perl slp"
 
@@ -178,6 +178,6 @@ pkg_postinst() {
 		cd /etc/openldap/ssl
 		yes "" | sh gencert.sh
 		chmod 640 ldap.pem
-		chown root.ldap ldap.pem
+		chown root:ldap ldap.pem
 	fi
 }
