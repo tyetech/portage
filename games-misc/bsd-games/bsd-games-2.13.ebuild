@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-misc/cvs-repo/gentoo-x86/games-misc/bsd-games/Attic/bsd-games-2.13.ebuild,v 1.7 2004/05/11 12:21:38 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-misc/cvs-repo/gentoo-x86/games-misc/bsd-games/Attic/bsd-games-2.13.ebuild,v 1.8 2004/06/24 22:53:13 agriffis Exp $
 
 inherit eutils games
 
