@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/glsof/Attic/glsof-0.9.16.ebuild,v 1.3 2005/01/14 14:23:11 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/glsof/Attic/glsof-0.9.16.ebuild,v 1.4 2005/03/03 15:03:21 ciaranm Exp $
 
 inherit base  # Saves us work
 
@@ -15,7 +15,7 @@ IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.3.1
 	dev-libs/libxml2
-	sys-apps/lsof"
+	sys-process/lsof"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
