@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/blam/Attic/blam-1.2.1.ebuild,v 1.1 2004/08/04 09:28:41 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/blam/Attic/blam-1.4.1.ebuild,v 1.1 2004/09/23 21:14:21 latexer Exp $
 
 inherit mono gnome2
 
 DESCRIPTION="A RSS aggregator written in C#"
 HOMEPAGE="http://micke.hallendal.net/"
-SRC_URI="http://ftp.imendio.com/pub/imendio/${PN}/${P}.tar.gz"
+SRC_URI="http://ftp.imendio.com/pub/imendio/${PN}/src/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
