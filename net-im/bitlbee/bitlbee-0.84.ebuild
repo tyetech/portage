@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/bitlbee/Attic/bitlbee-0.84.ebuild,v 1.7 2004/07/01 22:17:14 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/bitlbee/Attic/bitlbee-0.84.ebuild,v 1.8 2005/02/27 16:13:11 weeve Exp $
 
 inherit eutils gcc
 
