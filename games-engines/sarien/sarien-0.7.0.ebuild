@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-engines/cvs-repo/gentoo-x86/games-engines/sarien/sarien-0.7.0.ebuild,v 1.6 2004/09/11 09:04:29 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-engines/cvs-repo/gentoo-x86/games-engines/sarien/sarien-0.7.0.ebuild,v 1.7 2004/12/28 17:17:21 josejx Exp $
 
 inherit games
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/sarien/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~amd64"
+KEYWORDS="x86 ppc ~amd64"
 IUSE=""
 
 RDEPEND="virtual/libc
