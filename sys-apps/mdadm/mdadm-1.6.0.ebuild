@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mdadm/Attic/mdadm-1.6.0.ebuild,v 1.6 2004/08/21 06:19:55 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mdadm/Attic/mdadm-1.6.0.ebuild,v 1.7 2004/08/28 17:12:18 tgall Exp $
 
 DESCRIPTION="A useful tool for running RAID systems - it can be used as a replacement for the raidtools, or as a supplement."
 HOMEPAGE="http://www.cse.unsw.edu.au/~neilb/source"
@@ -8,7 +8,7 @@ SRC_URI="http://www.cse.unsw.edu.au/~neilb/source/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc alpha amd64"
+KEYWORDS="x86 ppc alpha amd64 ppc64"
 IUSE="static"
 
 RDEPEND="virtual/libc"
