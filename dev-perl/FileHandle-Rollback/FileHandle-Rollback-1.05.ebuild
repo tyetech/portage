@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/FileHandle-Rollback/Attic/FileHandle-Rollback-1.05.ebuild,v 1.1 2003/12/31 11:08:35 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/FileHandle-Rollback/Attic/FileHandle-Rollback-1.05.ebuild,v 1.2 2004/06/19 13:02:49 dholm Exp $
 
 inherit perl-module
 
@@ -11,5 +11,5 @@ HOMEPAGE="http://www.cpan.org/"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="x86 sparc"
+KEYWORDS="x86 sparc ~ppc"
 
