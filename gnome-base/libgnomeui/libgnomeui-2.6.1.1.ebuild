@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.6.1.1.ebuild,v 1.7 2004/08/05 18:22:23 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.6.1.1.ebuild,v 1.8 2004/08/05 22:08:57 gustavoz Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 IUSE="doc jpeg"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~alpha ~sparc hppa amd64 ~ia64 ~mips ppc64"
+KEYWORDS="x86 ~ppc ~alpha sparc hppa amd64 ~ia64 ~mips ppc64"
 LICENSE="GPL-2 LGPL-2"
 
 RDEPEND=">=x11-libs/gtk+-2.4.1
