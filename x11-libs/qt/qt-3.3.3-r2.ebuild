@@ -1,19 +1,26 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt/Attic/qt-3.3.1-r2.ebuild,v 1.12 2005/01/08 10:36:27 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt/Attic/qt-3.3.3-r2.ebuild,v 1.1 2005/01/08 10:36:27 eradicator Exp $
 
-inherit eutils
+inherit eutils flag-o-matic
 
 SRCTYPE="free"
 DESCRIPTION="QT version ${PV}"
 HOMEPAGE="http://www.trolltech.com/"
 
-SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV}.tar.bz2"
+IMMQT_P="qt-x11-immodule-unified-qt3.3.3-20040910"
+
+SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV}.tar.bz2
+	immqt? ( http://freedesktop.org/Software/ImmoduleQtDownload/${IMMQT_P}.diff.gz )
+	immqt-bc? ( http://freedesktop.org/Software/ImmoduleQtDownload/${IMMQT_P}.diff.gz )
+	ppc-macos? ( http://dev.gentoo.org/~usata/distfiles/${P}-darwin-fink.patch.gz )"
 
 LICENSE="|| ( QPL-1.0 GPL-2 )"
 SLOT="3"
-KEYWORDS="~x86 ~alpha ~ppc ~amd64 sparc ~hppa mips"
-IUSE="cups debug doc firebird gif icc ipv6 mysql nas odbc opengl postgres sqlite xinerama zlib"
+#KEYWORDS="~x86 ~alpha ~ppc ~amd64 ~sparc ~hppa ~mips ~ppc64 ~ia64 ~ppc-macos"
+#-r2 is the same as -r1 but with multilib fixes
+KEYWORDS="~amd64 ~hppa ~mips ~ppc64 ~sparc"
+IUSE="cups debug doc firebird gif icc ipv6 mysql nas odbc opengl postgres sqlite xinerama zlib immqt immqt-bc"
 
 DEPEND="virtual/x11 virtual/xft
 	media-libs/libpng media-libs/jpeg media-libs/libmng
@@ -30,13 +37,34 @@ DEPEND="virtual/x11 virtual/xft
 	zlib? ( sys-libs/zlib )
 	icc? ( dev-lang/icc )"
 
-RDEPEND="${DEPEND}"
+# old immodules may cause segfaults on some qt applications,
+# especially qtconfig
+PDEPEND="!<=app-i18n/scim-qtimm-0.7
+	!<=app-i18n/uim-qt-0.1.7"
 
 S=${WORKDIR}/qt-x11-${SRCTYPE}-${PV}
 
 QTBASE=/usr/qt/3
 export QTDIR=${S}
-export PLATFORM=linux-g++
+
+pkg_setup() {
+	if use immqt ; then
+		ewarn
+		ewarn "You are going to compile binary imcompatible immodule for Qt. This means"
+		ewarn "you have to recompile everything depending on Qt after you install it."
+		ewarn "Be aware."
+		ewarn
+	fi
+
+	if useq ppc-macos ; then
+		export PLATFORM=darwin-g++
+		export DYLD_LIBRARY_PATH="${QTDIR}/lib:/usr/X11R6/lib:${DYLD_LIBRARY_PATH}"
+		export INSTALL_ROOT=""
+	else
+		export PLATFORM=linux-g++
+		#use icc && export PLATFORM=linux-icc
+	fi
+}
 
 src_unpack() {
 	unpack ${A}
@@ -48,14 +76,25 @@ src_unpack() {
 	sed -e 's:read acceptance:acceptance=yes:' configure.orig > configure
 
 	epatch ${FILESDIR}/qt-no-rpath-uic.patch
-	epatch ${FILESDIR}/qfontdatabase_x11.diff
-	epatch ${FILESDIR}/${P}-qclipboard-fix.patch
 
-	# mips requires this patch to pass a CFLAG to gcc/g++ (which passes it to the assembler).
-	# It tells the assembler to relax branches on mips, otherwise we get build errors.
-	use mips && epatch ${FILESDIR}/${P}-mips-relax-branches.patch
+	if use immqt || use immqt-bc ; then
+		epatch ../${IMMQT_P}.diff
+		sh make-symlinks.sh || die "make symlinks failed"
+	fi
 
-#	use icc && export PLATFORM=linux-icc
+	if use ppc-macos ; then
+		gzcat ${FILESDIR}/${P}-darwin-fink.patch.gz | sed -e "s:@QTBASE@:${QTBASE}:g" > ${T}/${P}-darwin-fink.patch
+		epatch ${T}/${P}-darwin-fink.patch
+	fi
+
+	cd mkspecs/${PLATFORM}
+	# set c/xxflags and ldflags
+	strip-flags
+	sed -i -e "s:QMAKE_CFLAGS_RELEASE.*=.*:QMAKE_CFLAGS_RELEASE=${CFLAGS}:" \
+		-e "s:QMAKE_CXXFLAGS_RELEASE.*=.*:QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS}:" \
+		-e "s:QMAKE_LFLAGS_RELEASE.*=.*:QMAKE_LFLAGS_RELEASE=${LDFLAGS}:" \
+		qmake.conf || die
+	cd ${S}
 }
 
 src_compile() {
@@ -72,7 +111,6 @@ src_compile() {
 	use mysql	&& myconf="${myconf} -plugin-sql-mysql -I/usr/include/mysql -L/usr/lib/mysql" || myconf="${myconf} -no-sql-mysql"
 	use postgres	&& myconf="${myconf} -plugin-sql-psql -I/usr/include/postgresql/server -I/usr/include/postgresql/pgsql -I/usr/include/postgresql/pgsql/server" || myconf="${myconf} -no-sql-psql"
 	use firebird    && myconf="${myconf} -plugin-sql-ibase" || myconf="${myconf} -no-sql-ibase"
-#	use oci8	&& myconf="${myconf} -plugin-sql-oci" || myconf="${myconf} -no-sql-oci"
 	use sqlite	&& myconf="${myconf} -plugin-sql-sqlite" || myconf="${myconf} -no-sql-sqlite"
 	use odbc	&& myconf="${myconf} -plugin-sql-odbc" || myconf="${myconf} -no-sql-odbc"
 	use cups	&& myconf="${myconf} -cups" || myconf="${myconf} -no-cups"
@@ -81,6 +119,15 @@ src_compile() {
 	use xinerama    && myconf="${myconf} -xinerama" || myconf="${myconf} -no-xinerama"
 	use zlib	&& myconf="${myconf} -system-zlib" || myconf="${myconf} -qt-zlib"
 	use ipv6        && myconf="${myconf} -ipv6" || myconf="${myconf} -no-ipv6"
+	use immqt-bc	&& myconf="${myconf} -inputmethod"
+	use immqt	&& myconf="${myconf} -inputmethod -inputmethod-ext"
+
+	if use ppc-macos ; then
+		myconf="${myconf} -no-sql-ibase -no-sql-mysql -no-sql-odbc -no-sql-psql -no-cups -lresolv -shared"
+		myconf="${myconf} -I/usr/X11R6/include -L/usr/X11R6/lib"
+		myconf="${myconf} -L${S}/lib -I${S}/include"
+		sed -i -e "s,#define QT_AOUT_UNDERSCORE,," mkspecs/${PLATFORM}/qplatformdefs.h || die
+	fi
 
 	export YACC='byacc -d'
 
@@ -93,6 +140,7 @@ src_compile() {
 	export QTDIR=${S}
 
 	emake src-qmake src-moc sub-src || die
+	DYLD_LIBRARY_PATH="${S}/lib:/usr/X11R6/lib:${DYLD_LIBRARY_PATH}" \
 	LD_LIBRARY_PATH="${S}/lib:${LD_LIBRARY_PATH}" emake sub-tools || die
 }
 
@@ -104,27 +152,38 @@ src_install() {
 	dobin bin/*
 
 	# libraries
+	if use ppc-macos; then
+		# dolib is broken on BSD because of missing readlink(1)
+		dodir ${QTBASE}/$(get_libdir)
+		cp -fR lib/*.{dylib,la,a} ${D}/${QTBASE}/$(get_libdir) || die
 
-	dolib lib/libqt-mt.so.3.3.1 lib/libqui.so.1.0.0
-	dolib lib/lib{editor,qassistantclient,designercore}.a lib/libqt-mt.la
+		cd ${D}/${QTBASE}/$(get_libdir)
+		for lib in libqt-mt* ; do
+			ln -s ${lib} ${lib/-mt/}
+		done
+	else
+		dolib lib/lib{editor,qassistantclient,designercore}.a
+		dolib lib/libqt-mt.la
+		dolib lib/libqt-mt.so.3.3.3 lib/libqui.so.1.0.0
+		cd ${D}/${QTBASE}/$(get_libdir)
 
-	cd ${D}/$QTBASE/lib
-	for x in libqui.so ; do
-		ln -s $x.1.0.0 $x.1.0
-		ln -s $x.1.0 $x.1
-		ln -s $x.1 $x
-	done
+		for x in libqui.so ; do
+			ln -s $x.1.0.0 $x.1.0
+			ln -s $x.1.0 $x.1
+			ln -s $x.1 $x
+		done
 
-	# version symlinks - 3.3.1->3.3->3->.so
-	ln -s libqt-mt.so.3.3.1 libqt-mt.so.3.3
-	ln -s libqt-mt.so.3.3 libqt-mt.so.3
-	ln -s libqt-mt.so.3 libqt-mt.so
+		# version symlinks - 3.3.3->3.3->3->.so
+		ln -s libqt-mt.so.3.3.3 libqt-mt.so.3.3
+		ln -s libqt-mt.so.3.3 libqt-mt.so.3
+		ln -s libqt-mt.so.3 libqt-mt.so
 
-	# libqt -> libqt-mt symlinks
-	ln -s libqt-mt.so.3.3.1 libqt.so.3.3.1
-	ln -s libqt-mt.so.3.3 libqt.so.3.3
-	ln -s libqt-mt.so.3 libqt.so.3
-	ln -s libqt-mt.so libqt.so
+		# libqt -> libqt-mt symlinks
+		ln -s libqt-mt.so.3.3.3 libqt.so.3.3.3
+		ln -s libqt-mt.so.3.3 libqt.so.3.3
+		ln -s libqt-mt.so.3 libqt.so.3
+		ln -s libqt-mt.so libqt.so
+	fi
 
 	# includes
 	cd ${S}
@@ -135,6 +194,13 @@ src_install() {
 	# misc
 	insinto /etc/env.d
 	doins ${FILESDIR}/{45qt3,50qtdir3}
+
+	# List all the multilib libdirs
+	local libdirs
+	for libdir in $(get_all_libdirs); do
+		libdirs="${libdirs}:/usr/qt/3/${libdir}"
+	done
+	dosed "s~^LDPATH=.*$~LDPATH=${libdirs:1}~" /etc/env.d/45qt3
 
 	dodir ${QTBASE}/tools/designer/templates
 	cd ${S}
@@ -173,12 +239,22 @@ src_install() {
 		cp -r ${S}/tutorial ${D}/${QTBASE}
 	fi
 
+	if use immqt || use immqt-bc ; then
+		dodoc ${S}/README.immodule
+	fi
+
 	# misc build reqs
 	dodir ${QTBASE}/mkspecs
 	cp -R ${S}/mkspecs/${PLATFORM} ${D}/${QTBASE}/mkspecs/
 
 	sed -e "s:${S}:${QTBASE}:g" \
 		${S}/.qmake.cache > ${D}${QTBASE}/.qmake.cache
+
+	if use ppc-macos ; then
+		dosed "s:linux-g++:${PLATFORM}:" /etc/env.d/45qt3 \
+			"s:\$(QTBASE):\$(QTDIR):g" ${QTBASE}/mkspecs/${PLATFORM}/qmake.conf \
+			"s:${S}:${QTBASE}:g" ${QTBASE}/mkspecs/${PLATFORM}/qmake.conf ${QTBASE}/lib/libqt-mt.la || die
+	fi
 
 	# plugins
 	cd ${S}
@@ -187,7 +263,4 @@ src_install() {
 		insinto ${QTBASE}/`dirname $x`
 		doins $x
 	done
-
-	# needed to fix lib64 issues on amd64, see bug #45669
-	use amd64 && ln -s ${QTBASE}/lib ${D}/${QTBASE}/lib64
 }
