@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mserv/Attic/mserv-0.35.ebuild,v 1.3 2004/03/23 06:41:39 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mserv/Attic/mserv-0.35.ebuild,v 1.4 2004/04/14 10:16:20 eradicator Exp $
 
 inherit webapp-apache eutils
 
@@ -11,8 +11,8 @@ RESTRICT="nomirror"
 LICENSE="mserv"
 
 SLOT="0"
-KEYWORDS="~x86"
-IUSE="apache2 oggvorbis"
+KEYWORDS="x86"
+IUSE="oggvorbis"
 
 DEPEND="virtual/glibc"
 RDEPEND=">=dev-lang/perl-5.6.1
