@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/tenshi/Attic/tenshi-0.3.ebuild,v 1.1 2004/07/15 22:17:16 tigger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/tenshi/Attic/tenshi-0.3.ebuild,v 1.2 2004/07/15 22:31:32 tigger Exp $
+
+inherit eutils
 
 DESCRIPTION="Log parsing and notification program"
 HOMEPAGE="http://www.gentoo.org/~lcars/tenshi"
