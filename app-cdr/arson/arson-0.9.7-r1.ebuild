@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/arson/Attic/arson-0.9.7-r1.ebuild,v 1.13 2004/06/24 21:29:17 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/arson/Attic/arson-0.9.7-r1.ebuild,v 1.14 2004/06/28 13:03:16 vapier Exp $
 
 inherit eutils kde
 
-DESCRIPTION="A KDE frontend to CD burning and CD ripping tools."
+DESCRIPTION="A KDE frontend to CD burning and CD ripping tools"
 HOMEPAGE="http://arson.sourceforge.net/"
 LICENSE="GPL-2"
 
