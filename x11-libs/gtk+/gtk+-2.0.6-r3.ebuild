@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.0.6-r3.ebuild,v 1.1 2002/10/21 20:26:41 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.0.6-r3.ebuild,v 1.2 2002/12/09 04:41:42 manson Exp $
 
 IUSE="tiff doc jpeg directfb"
 
 inherit libtool flag-o-matic
 
 SLOT="2"
-KEYWORDS="~x86 ~ppc ~sparc ~sparc64 ~alpha"
+KEYWORDS="~x86 ~ppc ~sparc  ~alpha"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Gimp ToolKit + "
