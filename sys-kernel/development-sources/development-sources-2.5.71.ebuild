@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.5.66.ebuild,v 1.1 2003/03/26 15:31:14 sethbc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.5.71.ebuild,v 1.1 2003/06/16 20:44:13 lostlogic Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 OKV=${PV}
@@ -11,9 +11,9 @@ ETYPE="sources"
 # What's in this kernel?
 
 # INCLUDED:
-# beta 2.5.59 kernel sources with the -mm1 patch.
+# beta ${PV} linux kernel sources with
 
-DESCRIPTION="Full sources for the Gentoo Linux kernel"
+DESCRIPTION="Full sources for the Development Branch of the Linux kernel"
 SRC_URI="http://www.kernel.org/pub/linux/kernel/v2.5/linux-${OKV}.tar.bz2 ${PATCH_URI}"
 PROVIDE="virtual/linux-sources"
 HOMEPAGE="http://www.kernel.org/ http://www.gentoo.org/" 
@@ -37,6 +37,7 @@ src_unpack() {
 
 	cd ${S}
 
+	unset ARCH
 	#sometimes we have icky kernel symbols; this seems to get rid of them
 	make mrproper || die
 
