@@ -1,16 +1,18 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.1.20.ebuild,v 1.18 2004/07/01 22:40:19 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.1.21_rc1.ebuild,v 1.1 2004/07/05 15:31:24 lanius Exp $
 
 inherit eutils flag-o-matic
 
+MY_P=${P/_/}
+
 DESCRIPTION="The Common Unix Printing System"
 HOMEPAGE="http://www.cups.org/"
-SRC_URI="ftp://ftp.easysw.com/pub/cups/${PV}/${P}-source.tar.bz2"
+SRC_URI="ftp://ftp.easysw.com/pub/cups/test/${MY_P}-source.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha hppa amd64 ia64 mips"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~s390 ~ppc64"
 IUSE="ssl slp pam"
 
 DEP="virtual/libc
@@ -19,20 +21,20 @@ DEP="virtual/libc
 	slp? ( >=net-libs/openslp-1.0.4 )
 	>=media-libs/libpng-1.2.1
 	>=media-libs/tiff-3.5.5
-	>=media-libs/jpeg-6b"
-
+	>=media-libs/jpeg-6b
+	samba? ( net-fs/samba )"
 DEPEND="${DEP}
 	>=sys-devel/autoconf-2.58"
-
 RDEPEND="${DEP}
 	!virtual/lpr"
-
 PROVIDE="virtual/lpr"
+
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/disable-strip.patch || die
+	epatch ${FILESDIR}/disable-strip.patch
 	WANT_AUTOCONF=2.5 autoconf || die
 }
 
