@@ -1,9 +1,9 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeaddons/Attic/kdeaddons-3.1_beta2.ebuild,v 1.4 2002/10/08 07:10:05 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeaddons/Attic/kdeaddons-3.1_beta2.ebuild,v 1.5 2002/10/08 21:13:25 danarmak Exp $
 
 IUSE="sdl xmms svga"
-inherit kde-dist 
+inherit kde-dist flag-o-matic
 
 DESCRIPTION="KDE $PV: addons - applets, plugins..."
 KEYWORDS="x86"
