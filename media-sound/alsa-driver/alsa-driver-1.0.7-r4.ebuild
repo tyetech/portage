@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-1.0.7-r4.ebuild,v 1.4 2004/12/19 10:11:41 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-1.0.7-r4.ebuild,v 1.5 2005/01/01 11:43:17 eradicator Exp $
 
 IUSE="oss doc"
 inherit linux-mod flag-o-matic eutils
