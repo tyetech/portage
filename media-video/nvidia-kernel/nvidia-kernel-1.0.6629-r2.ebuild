@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-kernel/Attic/nvidia-kernel-1.0.6111-r3.ebuild,v 1.5 2005/01/17 08:45:26 cyfred Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-kernel/Attic/nvidia-kernel-1.0.6629-r2.ebuild,v 1.1 2005/01/17 08:45:26 cyfred Exp $
 
 inherit eutils linux-mod
 
@@ -27,7 +27,7 @@ S="${WORKDIR}/${NV_PACKAGE}-${PKG_V}/usr/src/nv"
 
 LICENSE="NVIDIA"
 SLOT="0"
-KEYWORDS="-* x86 amd64"
+KEYWORDS="-* ~x86 ~amd64"
 RESTRICT="nostrip"
 IUSE=""
 
@@ -61,16 +61,6 @@ pkg_setup() {
 }
 
 src_unpack() {
-	# 2.6.10_rc1-mm{1,2,3} all EXPORT_SYMBOL_GPL the udev functions, this breaks loading
-	CS="$(grep -c EXPORT_SYMBOL\(class_simple_create\)\; ${KV_DIR}/drivers/base/class_simple.c)"
-	if [ "${CS}" == "0" ]
-	then
-		ewarn "Your current kernel uses EXPORT_SYMBOL_GPL() on some methods required by nvidia-kernel."
-		ewarn "This probably means you are using 2.6.10_rc1-mm*. Please change away from mm-sources until this is"
-		ewarn "revised and a solution released into the mm branch, development-sources will work."
-		die "Incompatible kernel export."
-	fi
-
 	if [ ${KV_MINOR} -ge 6 -a ${KV_PATCH} -lt 7 ]
 	then
 		echo
@@ -88,24 +78,29 @@ src_unpack() {
 	# Add patches below, with a breif description.
 	cd ${S}
 	# Any general patches should go here
-	# none at the moment
+	# Shutup pointer arith warnings
+	use x86 && epatch ${FILESDIR}/${PV}/nv-shutup-warnings.patch
+	use amd64 && epatch ${FILESDIR}/${PV}/nv-amd64-shutup-warnings.patch
+
+	# Patches from Zander (http://www.minion.de/files/1.0-6629/)
+	epatch ${FILESDIR}/${PV}/NVIDIA_kernel-1.0-6629-1155389.patch
+	#epatch ${FILESDIR}/${PV}/NVIDIA_kernel-1.0-6629-1162524.patch
+	epatch ${FILESDIR}/${PV}/NVIDIA_kernel-1.0-6629-1165235.patch
+	epatch ${FILESDIR}/${PV}/NVIDIA_kernel-1.0-6629-1171869.patch
+	epatch ${FILESDIR}/${PV}/NVIDIA_kernel-1.0-6629-1175225.patch
+	epatch ${FILESDIR}/${PV}/NVIDIA_kernel-1.0-6629-1182399.patch
+	epatch ${FILESDIR}/${PV}/NVIDIA_kernel-1.0-6629-1189413.patch
 
 	# Now any patches specific to the 2.6 kernel should go here
 	if kernel_is 2 6
 	then
 		einfo "Applying 2.6 kernel patches"
-		# Fix up the removal of PM_SAVE_STATE in kernels > 2.6.8
-		epatch ${FILESDIR}/${PV}/power-suspend-2.6.9-changes.patch
-		# Update pci stuff to work with irqroutes being changed in kernels
-		epatch ${FILESDIR}/${PV}/nv_enable_pci.patch
-		# Fix VMALLOC_RESERVE issues with the new 2.6.9 release candidates
-		epatch ${FILESDIR}/${PV}/vmalloc-reserve.patch
-		# Port pci_find_class() -> pci_get_class() for >= 2.6.9-rc2
-		epatch ${FILESDIR}/${PV}/nv-pci_find_class.patch
-		# Fix remap_page_range() -> remap_pfn_range() for >= 2.6.9-rc2
-		epatch ${FILESDIR}/${PV}/nv-remap-range.patch
 		# Fix the /usr/src/linux/include/asm not existing on koutput issue #58294
 		epatch ${FILESDIR}/${PV}/conftest_koutput_includes.patch
+		# Fix calling of smp_processor_id() when preempt is enabled
+		epatch ${FILESDIR}/${PV}/nv-disable-preempt-on-smp_processor_id.patch
+		# Fix a limitation on available video memory bug #71684
+		epatch ${FILESDIR}/${PV}/NVIDIA_kernel-1.0-6629-1161283.patch
 	fi
 
 	# if you set this then it's your own fault when stuff breaks :)

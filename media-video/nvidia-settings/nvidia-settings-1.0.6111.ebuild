@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-1.0.6111.ebuild,v 1.2 2004/11/07 07:25:08 cyfred Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-1.0.6111.ebuild,v 1.3 2005/01/17 08:49:29 cyfred Exp $
 
 inherit eutils
 
