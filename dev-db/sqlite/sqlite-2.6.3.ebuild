@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-2.4.2.ebuild,v 1.3 2002/07/23 03:03:25 rphillips Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-2.6.3.ebuild,v 1.1 2002/08/19 02:03:39 rphillips Exp $
 
 S=${WORKDIR}/sqlite
 DESCRIPTION="SQLite: An SQL Database Engine in a C Library."
