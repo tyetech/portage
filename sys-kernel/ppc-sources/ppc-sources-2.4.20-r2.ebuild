@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc-sources/Attic/ppc-sources-2.4.20-r2.ebuild,v 1.8 2003/11/20 07:43:38 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc-sources/Attic/ppc-sources-2.4.20-r2.ebuild,v 1.9 2004/01/08 06:22:58 iggy Exp $
 
 IUSE="build crypt"
 
