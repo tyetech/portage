@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/soundtracker/Attic/soundtracker-0.6.6.ebuild,v 1.10 2003/11/14 21:25:58 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/soundtracker/Attic/soundtracker-0.6.6.ebuild,v 1.11 2004/02/21 01:02:40 eradicator Exp $
 
 IUSE="nls esd gnome oss alsa"
 

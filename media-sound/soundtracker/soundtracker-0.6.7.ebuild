@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/soundtracker/Attic/soundtracker-0.6.7_pre5.ebuild,v 1.5 2004/02/21 01:02:40 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/soundtracker/Attic/soundtracker-0.6.7.ebuild,v 1.1 2004/02/21 01:02:40 eradicator Exp $
 
 IUSE="nls esd gnome oss alsa jack"
 
@@ -13,13 +13,15 @@ HOMEPAGE="http://www.soundtracker.org"
 DEPEND="sys-libs/zlib
 	=x11-libs/gtk+-1.2*
 	>=media-libs/audiofile-0.2.1
+	dev-util/pkgconfig
+	media-libs/libsndfile
 	alsa? ( media-libs/alsa-lib )
 	esd? ( media-sound/esound )
 	gnome? ( >=gnome-base/gnome-libs-1.4.1.7 )
 	nls? ( sys-devel/gettext )
 	jack? ( virtual/jack )"
 
-RDEPEND="$DEPEND
+RDEPEND="${DEPEND}
 	app-arch/bzip2
 	app-arch/gzip
 	app-arch/unzip"
@@ -27,6 +29,11 @@ RDEPEND="$DEPEND
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86"
+
+src_unpack() {
+	unpack ${A}
+	epatch ${FILESDIR}/${P}-alsa1.patch
+}
 
 src_compile() {
 	local myconf
@@ -43,6 +50,7 @@ src_compile() {
 
 src_install () {
 	einstall || die "make install failed"
+	#borks make DESTDIR=${D} install || die "make install failed"
 
 	# strip suid from binary
 	chmod -s ${D}/usr/bin/soundtracker
