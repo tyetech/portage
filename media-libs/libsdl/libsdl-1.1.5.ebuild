@@ -1,11 +1,10 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsdl/Attic/libsdl-1.1.4.ebuild,v 1.2 2000/09/15 20:09:03 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsdl/Attic/libsdl-1.1.5.ebuild,v 1.1 2000/10/04 15:28:46 achim Exp $
 
-P=libsdl-1.1.4
-A=SDL-1.1.4.tar.gz
-S=${WORKDIR}/SDL-1.1.4
+A=SDL-${PV}.tar.gz
+S=${WORKDIR}/SDL-${PV}
 DESCRIPTION="Simple Direct Media Layer"
 SRC_URI="http://www.libsdl.org/release/"${A}
 HOMEPAGE="http://www.libsdl.org/"
