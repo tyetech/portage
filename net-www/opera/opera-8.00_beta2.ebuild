@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-7.54-r1.ebuild,v 1.4 2005/02/08 17:57:53 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-8.00_beta2.ebuild,v 1.1 2005/03/02 11:25:40 lanius Exp $
 
 IUSE="static spell"
 
-OPERAVER="7.54-20041210"
-OPERAFTPDIR="754u1"
+OPERAVER="8.0-20050225"
+OPERAFTPDIR="800b2/beta/en"
 
 S=${WORKDIR}/${A/.tar.bz2/}
 
@@ -13,25 +13,17 @@ DESCRIPTION="Opera web browser."
 HOMEPAGE="http://www.opera.com/linux/"
 
 # that's an ugly workaround for the broken src_uri syntax
+OPERA_URI="ftp://ftp.opera.com/pub/opera/linux/${OPERAFTPDIR}/"
 SRC_URI="
-	x86? ( static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/i386/static/${PN}-${OPERAVER}.1-static-qt.i386-en.tar.bz2 ) )
-	x86? ( !static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/i386/${PN}-${OPERAVER}.5-shared-qt.i386-en.tar.bz2 ) )
-	amd64? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/i386/static/${PN}-${OPERAVER}.1-static-qt.i386-en.tar.bz2 )
-	ppc? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/ppc/static/${PN}-${OPERAVER}.1-static-qt.ppc-en.tar.bz2 )
-	sparc? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/sparc/static/${PN}-${OPERAVER}.1-static-qt.sparc-en.tar.bz2 )"
+	x86? ( static? ( ${OPERA_URI}/i386/static/${PN}-${OPERAVER}.1-static-qt.i386-en.tar.bz2 ) )
+	x86? ( !static? ( ${OPERA_URI}/i386/${PN}-${OPERAVER}.5-shared-qt.i386-en.tar.bz2 ) )
+	amd64? ( ${OPERA_URI}/i386/static/${PN}-${OPERAVER}.1-static-qt.i386-en.tar.bz2 )
+	sparc? ( static? ( ${OPERA_URI}/sparc/static/${PN}-${OPERAVER}.1-static-qt.sparc-en.tar.bz2 ) )
+	ppc? ( ${OPERA_URI}/ppc/static/${PN}-${OPERAVER}.1-static-qt.ppc-en.tar.bz2 )"
 
-# ppc shared version does not work as it uses gcc-2.95 - lanius
-#	ppc? ( static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/ppc/static/${PN}-${OPERAVER}.1-static-qt.ppc-en.tar.bz2 ) )
-#	ppc? ( !static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/ppc/shared/gcc-2.95/${PN}-${OPERAVER}.2-shared-qt.ppc-en.tar.bz2 ) )
-
-# amd64 shared libs require app-emulation/emul-linux-x86-qtlibs-1 which is not stable yet
-#	amd64? ( static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/i386/static/${PN}-${OPERAVER}.1-static-qt.i386-en.tar.bz2 ) )
-#	amd64? ( !static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/i386/shared/${PN}-${OPERAVER}.5-shared-qt.i386-en.tar.bz2 ) )
-
-# sparc shared version does not work for me as it uses gcc-2.95 - eradicator
-#	sparc? ( static?  ( mirror://opera/linux/${OPERAFTPDIR}/final/en/sparc/static/${PN}-${OPERAVER}.1-static-qt.sparc-en.tar.bz2 ) )
-#	sparc? ( !static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/sparc/shared/gcc-2.95/${PN}-${OPERAVER}.2-shared-qt.sparc-en.tar.bz2 ) )"
-
+#	sparc? ( !static? ( ${OPERA_URI}/sparc/${PN}-${OPERAVER}.2-shared-qt.sparc-en.tar.bz2 ) )
+#	amd64? ( !static? ( ${OPERA_URI}/intel-linux/en/${PN}-${OPERAVER}.5-shared-qt.i386-en.tar.bz2 ) )
+#	ppc? ( !static? ( ${OPERA_URI}/ppc-linux/en/${PN}-${OPERAVER}.3-shared-qt.ppc-en.tar.bz2 ) )
 
 # Dependencies may be augmented later (see below).
 DEPEND=">=sys-apps/sed-4
@@ -42,18 +34,14 @@ RDEPEND="virtual/x11
 	media-libs/libexif
 	x11-libs/openmotif
 	spell? ( app-text/aspell )
-	amd64? ( app-emulation/emul-linux-x86-xlibs )
-	!amd64? ( !sparc? ( !static? ( =x11-libs/qt-3* ) ) )"
+	amd64? ( static? ( app-emulation/emul-linux-x86-xlibs )
+	         !static? ( =app-emulation/emul-linux-x86-qtlibs-1* ) )
 
-#	static? (
-#		amd64? ( app-emulation/emul-linux-x86-xlibs ) )
-#	!static? (
-#		amd64? ( =app-emulation/emul-linux-x86-qtlibs-1* )
-#		!amd64? ( =x11-libs/qt-3* ) )
+	x86? ( !static? ( =x11-libs/qt-3* ) )"
 
 SLOT="0"
 LICENSE="OPERA"
-KEYWORDS="x86 ~ppc sparc amd64"
+KEYWORDS="~x86 ~ppc ~amd64"
 
 src_unpack() {
 	unpack ${A}
@@ -68,6 +56,7 @@ src_unpack() {
 	       -e 's:#\(export LD_PRELOAD OPERA_FORCE_JAVA_ENABLED\):\1:' \
 		   -e 's:read str_answer:return 0:' \
 		   -e "s:/opt/kde:${D}/usr/kde:" \
+		   -e "s:\(str_localdirplugin=\).*$:\1/opt/opera/lib/opera/plugins:" \
 	       install.sh || die
 }
 
@@ -88,9 +77,6 @@ src_install() {
 
 	# java workaround
 	sed -i -e 's:LD_PRELOAD="${OPERA_JAVA_DIR}/libawt.so":LD_PRELOAD="$LD_PRELOAD"\:"${OPERA_JAVA_DIR}/libawt.so":' ${D}/opt/opera/bin/opera
-
-	rm ${D}/opt/opera/share/doc/opera/help
-	dosym /opt/share/doc/opera/help /opt/opera/share/opera/help
 
 	dosed /opt/opera/bin/opera
 	dosed /opt/opera/share/opera/java/opera.policy
@@ -127,7 +113,4 @@ pkg_postinst() {
 	einfo
 	einfo "To change the spellcheck language edit /opt/opera/share/opera/ini/spellcheck.ini"
 	einfo "and emerge app-text/aspell-language."
-	einfo
-	ewarn "This update will overwrite your search.ini if you"
-	ewarn "do not change the \"File Version\" to 4 in the file."
 }
