@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/brag/Attic/brag-1.2.9-r1.ebuild,v 1.8 2004/07/04 22:49:20 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/brag/Attic/brag-1.2.9-r1.ebuild,v 1.9 2004/08/08 00:27:59 slarti Exp $
 
 inherit eutils
 
 IUSE=""
 
-DESCRIPTION="Brag collects and assembles multipart binary attachements from newsgroups."
+DESCRIPTION="Brag collects and assembles multipart binary attachments from newsgroups."
 SRC_URI="mirror://sourceforge/brag/${P}.tar.gz"
 HOMEPAGE="http://brag.sourceforge.net/"
 
