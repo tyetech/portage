@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2 
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xawtv/Attic/xawtv-3.85.ebuild,v 1.1 2003/03/09 13:32:37 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xawtv/Attic/xawtv-3.85.ebuild,v 1.2 2003/03/10 10:32:27 seemant Exp $
 
 inherit eutils
 
@@ -85,6 +85,7 @@ src_compile() {
 src_install() {
 	cd ${S}
 	einstall \
+		libdir=${D}/usr/lib/xawtv \
 		resdir=${D}/etc/X11 || die
 
 	dodoc COPYING Changes README* TODO
