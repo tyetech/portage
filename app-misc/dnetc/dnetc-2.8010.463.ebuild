@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/dnetc/Attic/dnetc-2.8010.463.ebuild,v 1.7 2003/02/13 08:55:39 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/dnetc/Attic/dnetc-2.8010.463.ebuild,v 1.8 2003/04/29 11:36:35 taviso Exp $
 
 MAJ_PV=${PV:0:6}
 MIN_PV=${PV:7:9}
@@ -12,7 +12,7 @@ SRC_URI="alpha? ( http://http.distributed.net/pub/dcti/v${MAJ_PV}/dnetc${MIN_PV}
 	mips? ( http://http.distributed.net/pub/dcti/v${MAJ_PV}/dnetc${MIN_PV}-linux-mips.tar.gz )"
 LICENSE="distributed.net"
 SLOT="0"
-KEYWORDS="x86 -ppc -sparc ~alpha ~mips"
+KEYWORDS="x86 -ppc -sparc -alpha ~mips"
 IUSE=""
 DEPEND=""
 RDEPEND="net-misc/host"
