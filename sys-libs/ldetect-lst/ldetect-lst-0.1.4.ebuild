@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/ldetect-lst/Attic/ldetect-lst-0.1.4.ebuild,v 1.10 2004/06/11 18:29:16 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/ldetect-lst/Attic/ldetect-lst-0.1.4.ebuild,v 1.11 2004/06/24 23:04:45 agriffis Exp $
 
 ECVS_ANON="no"
 ECVS_USER="anoncvs"

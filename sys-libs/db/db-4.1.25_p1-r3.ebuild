@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/db/Attic/db-4.1.25_p1-r3.ebuild,v 1.22 2004/04/27 02:16:32 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/db/Attic/db-4.1.25_p1-r3.ebuild,v 1.23 2004/06/24 23:03:02 agriffis Exp $
 
 inherit eutils gnuconfig db
 

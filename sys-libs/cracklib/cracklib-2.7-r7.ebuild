@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/cracklib/Attic/cracklib-2.7-r7.ebuild,v 1.23 2004/05/12 13:18:31 pappy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/cracklib/Attic/cracklib-2.7-r7.ebuild,v 1.24 2004/06/24 23:02:50 agriffis Exp $
 
 inherit flag-o-matic eutils
 

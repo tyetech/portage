@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/gi-detect/Attic/gi-detect-0.1.ebuild,v 1.5 2003/09/05 02:09:56 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/gi-detect/Attic/gi-detect-0.1.ebuild,v 1.6 2004/06/24 23:03:56 agriffis Exp $
 
 DESCRIPTION="Python interface to detect."
 HOMEPAGE="http://sourceforge.net/projects/linbrew/"
