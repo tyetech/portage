@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.5.72-r1.ebuild,v 1.2 2003/06/17 15:20:01 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.5.74-r1.ebuild,v 1.1 2003/07/03 13:56:44 latexer Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 inherit eutils 
