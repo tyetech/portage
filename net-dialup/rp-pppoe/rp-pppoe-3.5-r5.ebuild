@@ -1,30 +1,37 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/rp-pppoe/Attic/rp-pppoe-3.5-r1.ebuild,v 1.5 2004/09/27 12:49:23 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/rp-pppoe/Attic/rp-pppoe-3.5-r5.ebuild,v 1.1 2004/12/03 06:39:42 vapier Exp $
 
 inherit eutils
 
 DESCRIPTION="A user-mode PPPoE client and server suite for Linux"
-SRC_URI="http://www.roaringpenguin.com/pppoe/${P}.tar.gz"
 HOMEPAGE="http://www.roaringpenguin.com/"
+SRC_URI="http://www.roaringpenguin.com/pppoe/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa mips ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~sparc ~x86"
 IUSE="X"
 
 DEPEND=">=net-dialup/ppp-2.4.1
-	X? ( tcltk? ( 	virtual/x11
-			dev-lang/tcl
-			dev-lang/tk ) )"
+	X? ( tcltk? (
+		virtual/x11
+		dev-lang/tcl
+		dev-lang/tk ) )"
 
 src_unpack() {
-	unpack ${A} || die
-	cd ${S} || die
+	unpack ${A} || die "failed to unpack"
+	cd ${S} || die "${S} not found"
 
 	# Patch to enable integration of adsl-start and adsl-stop with
-	# net.eth0 so that the pidfile can be found reliably per interface
-	epatch ${FILESDIR}/rp-pppoe-3.5-pidfile.patch
+	# baselayout-1.11.x so that the pidfile can be found reliably per interface
+	#These 2 patches should be merged some day
+	epatch ${FILESDIR}/rp-pppoe-3.5-gentoo-netscripts.patch
+
+	epatch ${FILESDIR}/rp-pppoe-3.5-dsa-557.patch #66296
+
+	#Avoid "setXid, dynamically linked and using lazy bindings" QA notice
+	sed -i -e 's:\(@CC@\) \(-o pppoe-wrapper wrapper.o\):\1 -Wl,-z,now \2:' gui/Makefile.in
 }
 
 src_compile() {
