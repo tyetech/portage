@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/scigraphica/Attic/scigraphica-0.8.0-r1.ebuild,v 1.4 2003/09/06 22:23:06 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/scigraphica/Attic/scigraphica-0.8.0-r1.ebuild,v 1.5 2004/01/04 20:49:18 george Exp $
 
 DESCRIPTION="Scientific application for data analysis and technical graphics"
 SRC_URI="http://scigraphica.sourceforge.net/src/${P}.tar.gz"
