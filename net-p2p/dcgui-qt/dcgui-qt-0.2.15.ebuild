@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dcgui-qt/Attic/dcgui-qt-0.2.13.ebuild,v 1.1 2003/05/06 08:08:13 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dcgui-qt/Attic/dcgui-qt-0.2.15.ebuild,v 1.1 2003/06/17 08:38:12 aliz Exp $
 
 inherit kde-functions
 need-qt 3
@@ -19,7 +19,7 @@ KEYWORDS="~x86 ~ppc ~sparc ~alpha ~mips ~hppa ~arm"
 
 
 newdepend ">=dev-libs/libxml2-2.4.22
-	=net-p2p/dclib-${PV}*
+	~net-p2p/dclib-${PV}
 	ssl? ( dev-libs/openssl )"
 
 src_compile() {
