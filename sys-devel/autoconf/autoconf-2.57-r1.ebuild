@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/autoconf/Attic/autoconf-2.54.ebuild,v 1.13 2003/03/15 14:48:28 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/autoconf/Attic/autoconf-2.57-r1.ebuild,v 1.1 2003/03/15 14:48:28 azarah Exp $
 
 IUSE=""
 
@@ -17,7 +17,7 @@ HOMEPAGE="http://www.gnu.org/software/autoconf/autoconf.html"
 
 LICENSE="GPL-2"
 SLOT="2.5"
-KEYWORDS="x86 ppc sparc alpha hppa mips arm"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~mips arm"
 
 DEPEND=">=sys-apps/texinfo-4.3
 	~sys-devel/m4-1.4
@@ -34,7 +34,7 @@ src_unpack() {
 	
 	cd ${S}
 	# Enable both autoconf-2.1 and autoconf-2.5 info pages
-	epatch ${FILESDIR}/${PN}-2.5-infopage-namechange.patch
+	epatch ${FILESDIR}/${PN}-2.57-infopage-namechange.patch
 	ln -snf ${S}/doc/autoconf.texi ${S}/doc/autoconf25.texi
 }
 
@@ -104,7 +104,7 @@ src_install() {
 	#
 
 	# need to use 'prefix' here, else we get sandbox problems
-    cd ${OLD_S}
+	cd ${OLD_S}
 	make prefix=${D}/usr \
 		mandir=${D}/usr/share/man \
 		infodir=${D}/usr/share/info \

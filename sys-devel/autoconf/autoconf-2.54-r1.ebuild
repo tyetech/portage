@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/autoconf/Attic/autoconf-2.54.ebuild,v 1.13 2003/03/15 14:48:28 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/autoconf/Attic/autoconf-2.54-r1.ebuild,v 1.1 2003/03/15 14:48:28 azarah Exp $
 
 IUSE=""
 
