@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vcdimager/Attic/vcdimager-0.7.20.ebuild,v 1.6 2004/09/22 05:56:44 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vcdimager/Attic/vcdimager-0.7.20.ebuild,v 1.7 2004/09/29 00:51:02 blauwers Exp $
+
+inherit eutils
 
 DESCRIPTION="GNU VCDimager"
 HOMEPAGE="http://www.vcdimager.org/"
