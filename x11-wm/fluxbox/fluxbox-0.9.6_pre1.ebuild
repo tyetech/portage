@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.9.6_pre1.ebuild,v 1.2 2003/09/04 06:58:27 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.9.6_pre1.ebuild,v 1.3 2003/09/06 11:03:41 seemant Exp $
 
 IUSE="gnome kde nls xinerama truetype"
 
