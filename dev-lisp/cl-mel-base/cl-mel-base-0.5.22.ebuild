@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-mel-base/Attic/cl-mel-base-0.5.11.ebuild,v 1.2 2005/02/07 21:24:39 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-mel-base/Attic/cl-mel-base-0.5.22.ebuild,v 1.1 2005/02/07 21:24:39 mkennedy Exp $
 
 inherit common-lisp eutils
 
@@ -16,6 +16,9 @@ IUSE=""
 
 DEPEND="dev-lisp/common-lisp-controller
 	virtual/commonlisp"
+
+RDEPEND="${DEPEND}
+	app-misc/mime-types"
 
 CLPACKAGE=mel-base
 
@@ -33,5 +36,4 @@ src_install() {
 }
 
 # TODO:
-# * looks for /etc/mime.types at runtime (determine dep)
 # * CLOS-related build failure CMUCL
