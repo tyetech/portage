@@ -1,9 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/kahakai/Attic/kahakai-0.6.1.ebuild,v 1.3 2004/03/25 06:46:40 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/kahakai/Attic/kahakai-0.6.1.ebuild,v 1.4 2004/05/09 16:29:15 usata Exp $
 
 IUSE="truetype xinerama"
-S=${WORKDIR}/${P}
 
 DESCRIPTION="A language agnostic scriptable window manager based on Waimea."
 HOMEPAGE="http://kahakai.sf.net/"
