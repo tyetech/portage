@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-haskell/cvs-repo/gentoo-x86/dev-haskell/hmake/Attic/hmake-3.08.ebuild,v 1.10 2004/07/02 04:17:40 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-haskell/cvs-repo/gentoo-x86/dev-haskell/hmake/Attic/hmake-3.08.ebuild,v 1.11 2005/01/01 18:05:07 eradicator Exp $
 
 inherit base fixheadtails
 
