@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.10-r11.ebuild,v 1.1 2005/02/03 22:19:51 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.10-r12.ebuild,v 1.1 2005/02/04 08:18:55 eradicator Exp $
 
 inherit flag-o-matic eutils libtool gnuconfig
 
-PATCHVER="2.2.0"
+PATCHVER="2.2.1"
 
 PATCHDIR="${WORKDIR}/patches"
 
