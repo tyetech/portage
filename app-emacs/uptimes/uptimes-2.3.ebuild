@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/uptimes/Attic/uptimes-2.3.ebuild,v 1.7 2004/06/15 10:08:24 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/uptimes/Attic/uptimes-2.3.ebuild,v 1.8 2004/06/24 22:26:47 agriffis Exp $
 
 inherit elisp
 

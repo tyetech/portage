@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/inform-mode/inform-mode-1.5.8.ebuild,v 1.8 2004/06/15 08:37:13 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/inform-mode/inform-mode-1.5.8.ebuild,v 1.9 2004/06/24 22:15:50 agriffis Exp $
 
 inherit elisp
 

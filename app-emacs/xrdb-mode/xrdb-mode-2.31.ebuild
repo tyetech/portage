@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/xrdb-mode/xrdb-mode-2.31.ebuild,v 1.3 2004/06/15 10:11:25 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/xrdb-mode/xrdb-mode-2.31.ebuild,v 1.4 2004/06/24 22:28:30 agriffis Exp $
 
 inherit elisp
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/limit/Attic/limit-1.14.8_pre20040112.ebuild,v 1.2 2004/04/25 17:15:36 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/limit/Attic/limit-1.14.8_pre20040112.ebuild,v 1.3 2004/06/24 22:16:57 agriffis Exp $
 
 inherit elisp
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/ocaml-mode/Attic/ocaml-mode-3.07.ebuild,v 1.2 2004/04/14 07:17:15 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/ocaml-mode/Attic/ocaml-mode-3.07.ebuild,v 1.3 2004/06/24 22:19:51 agriffis Exp $
 
 inherit elisp
 
