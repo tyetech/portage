@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios/Attic/nagios-1.2.ebuild,v 1.6 2004/10/25 03:10:23 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios/Attic/nagios-1.2.ebuild,v 1.7 2005/01/29 05:12:51 dragonheart Exp $
 
 DESCRIPTION="The Nagios metapackage - merge this to pull install all of the nagios packages"
 HOMEPAGE="http://www.nagios.org/"
