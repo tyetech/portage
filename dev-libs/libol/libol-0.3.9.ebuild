@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libol/Attic/libol-0.3.9.ebuild,v 1.6 2003/04/14 14:20:41 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libol/Attic/libol-0.3.9.ebuild,v 1.7 2003/05/24 05:04:35 kumba Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Support library for syslog-ng"
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.balabit.hu/en/products/syslog-ng/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc ~sparc alpha hppa"
+KEYWORDS="x86 ppc ~sparc alpha hppa ~mips"
 IUSE=""
 
 DEPEND="virtual/glibc"
