@@ -1,7 +1,7 @@
 # Copyright 2002 Gentoo Technologies, Inc.
 # distributed under the terms of the GNU General Pulic License, v2.
 # Author: Defresne Sylvain (keiichi) <kamisama@free.fr>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/SDL-sdlpl/Attic/SDL-sdlpl-1.18.3-r1.ebuild,v 1.2 2002/06/05 14:25:22 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/SDL-sdlpl/Attic/SDL-sdlpl-1.18.5.ebuild,v 1.1 2002/06/21 13:51:40 seemant Exp $
 
 
 inherit perl-module
