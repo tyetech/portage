@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/pango/Attic/pango-1.2.3.ebuild,v 1.5 2003/08/24 17:15:45 obz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/pango/Attic/pango-1.2.3.ebuild,v 1.6 2003/08/27 17:33:35 foser Exp $
 
 inherit gnome2 eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.pango.org/"
 SRC_URI="ftp://ftp.gtk.org/pub/gtk/v2.2/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
-SLOT="1"
+SLOT="0"
 KEYWORDS="x86 ~ppc ~alpha ~sparc ~hppa ~amd64"
 IUSE="doc"
 
