@@ -2,18 +2,21 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: System Team <system@gentoo.org>
 # Author: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.6.1.ebuild,v 1.3 2001/10/06 17:22:52 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.6.5.ebuild,v 1.1 2001/10/30 05:55:12 drobbins Exp $
 
-SV=1.1.4
+SV=1.1.8
 S=${WORKDIR}/rc-scripts-${SV}
 DESCRIPTION="Base layout for Gentoo Linux filesystem (incl. initscripts)"
 SRC_URI="http://www.ibiblio.org/gentoo/distfiles/rc-scripts-${SV}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org"
 
+#This ebuild needs to be merged "live".  You can't simply make a package of it and merge it later.
+
 src_compile() {
 	cp ${S}/init.d/runscript.c ${T}
 	cd ${T}
 	gcc ${CFLAGS} runscript.c -o runscript
+	echo ${ROOT} > ${T}/ROOT
 }
 
 #adds ".keep" files so that dirs aren't auto-cleaned
@@ -29,14 +32,21 @@ keepdir() {
 src_install()
 {
 	local foo
-	if [ "$MAINTAINER" != "yes" ] && [ "$ROOT" = "/" ]
+	local altmerge
+	altmerge=0
+	#special ${T}/ROOT hack because ROOT gets automatically unset during src_install()
+	#(because it conflicts with some makefiles)
+	local ROOT
+	ROOT="`cat ${T}/ROOT`"
+	#if we are bootstrapping, we want to merge to /dev.
+	if [ -z "`use build`" ]
 	then
-		echo '!!! baselayout should only be merged if you know what youre doing.'
-		echo '!!! It will overwrite important system files (passwd/group and others) with their'
-		echo '!!! original versions.  For now, please update your files by hand by'
-		echo '!!! comparing the contents of the files in '${FILESDIR}' to your'
-		echo '!!! installed versions.  We will have an automated update system shortly.'
-		exit 1
+		if [ "$ROOT" = "/" ] && [ "`cat /proc/mounts | grep '/dev devfs'`" ]
+		then
+			#we're installing to our current system and have devfs enabled.  We'll need to
+			#make adjustments
+			altmerge=1
+		fi
 	fi
 	keepdir /sbin
 	exeinto /sbin
@@ -86,7 +96,7 @@ src_install()
 		#end FHS compatibility symlinks stuff
 		
 		doman ${FILESDIR}/MAKEDEV.8
-		dodoc ${FILESDIR}/copyright ${FILESDIR}/changelog.Debian
+		dodoc ${FILESDIR}/copyright 
 		keepdir /usr/X11R6/lib /usr/X11R6/man
 		keepdir /var/log/news
 		
@@ -96,22 +106,14 @@ src_install()
 		#install -d -m0750 -o root -g wheel ${D}/var/lib/supervise/services
 		#end supervise stuff
 	
-# Drobbins or Hallski please check this!	
+# Drobbins or Hallski please check this!
 		keepdir /opt
 #		keepdir /opt/gnome/man
 #		keepdir /opt/gnome/share
 #		dosym ../man /opt/gnome/share/man
-#		It makes sense to move these to the PAM package.
-#		dodir /etc/pam.d
-#		cd ${FILESDIR}/pam.d
-#		insinto /etc/pam.d
-#		doins *
 	fi
-	
-	touch ${D}/var/log/lastlog
-	touch ${D}/var/run/utmp
-	touch ${D}/var/log/wtmp
-	#the .keep file messes up Portage when looking in /var/db/pkg
+
+#the .keep file messes up Portage when looking in /var/db/pkg
 	dodir /var/db/pkg 
 	keepdir /var/spool /var/tmp /var/lib/misc
 	chmod 1777 ${D}/var/tmp
@@ -139,8 +141,8 @@ src_install()
 		#install files, not dirs
 		[ -f $foo ] && doins $foo
 	done
-	touch ${D}/etc/mtab	
-	#mtab is needed for the first boot to go flawlessly
+	#going back to symlink mtab; it just plain works better
+	dosym ../proc/mounts /etc/mtab
 	chmod go-rwx ${D}/etc/shadow
 	keepdir /lib /mnt/floppy /mnt/cdrom
 	chmod go-rwx ${D}/mnt/floppy ${D}/mnt/cdrom
@@ -149,11 +151,21 @@ src_install()
 #	insinto /usr/bin
 #	insopts -m0755
 #	doins colors
-  	keepdir /dev
-	keepdir /dev-state
-	keepdir /dev/pts /dev/shm
-	dosym /usr/sbin/MAKEDEV /dev/MAKEDEV
-	cd ${D}/dev
+	if [ $altmerge -eq 1 ]
+	then
+		#rootfs and devfs
+		keepdir /dev-state
+		dosym /usr/sbin/MAKEDEV /dev-state/MAKEDEV
+		keepdir /dev-state/pts /dev-state/shm
+		cd ${D}/dev-state
+	else
+		#normal
+		keepdir /dev
+		keepdir /dev-state
+		keepdir /dev/pts /dev/shm
+		dosym /usr/sbin/MAKEDEV /dev/MAKEDEV
+		cd ${D}/dev
+	fi	
 	#These devices are also needed by many people and should be included
 	echo "Making device nodes... (this could take a minute or so...)"
 	${S}/sbin/MAKEDEV generic-i386
@@ -168,16 +180,16 @@ src_install()
 
 	cd ${S}/sbin
 	into /
-	dosbin init rc
+	dosbin init rc rc-update
 
 	#env-update stuff
 	dodir /etc/env.d
 	insinto /etc/env.d
 	doins ${S}/etc/env.d/00basic
 	
-	dodir /etc/modutils
-	insinto /etc/modutils
-	doins ${S}/etc/modutils/aliases ${S}/etc/modutils/i386
+	dodir /etc/modules.d
+	insinto /etc/modules.d
+	doins ${S}/etc/modules.d/aliases ${S}/etc/modules.d/i386
 
 	dodir /etc/init.d
 	exeinto /etc/init.d
@@ -185,9 +197,12 @@ src_install()
 	do
 		[ -f $foo ] && doexe $foo
 	done
-	#not the greatest location for this file; should move it at some point
-	rm ${S}/etc/init.d/runscript.c
+	#not the greatest location for this file; should move it on cvs at some point
+	rm ${S}/init.d/runscript.c
 
+	#skip this if we are merging to ROOT
+	[ "$ROOT" = "/" ] && return
+	
 	#set up default runlevel symlinks
 	local bar
 	for foo in default boot nonetwork single
@@ -197,5 +212,18 @@ src_install()
 		do
 			[ -e ${S}/init.d/${bar} ] && dosym /etc/init.d/${bar} /etc/runlevels/${foo}/${bar}
 		done
+	done
+
+	cat << EOF >> ${D}/etc/hosts
+127.0.0.1	localhost
+EOF
+}
+
+pkg_postinst() {
+	#we should only install empty files if these files don't already exist.
+	local x
+	for x in log/lastlog run/utmp log/wtmp
+	do
+		[ -e ${ROOT}var/${x} ] || touch ${ROOT}var/${x}
 	done
 }
