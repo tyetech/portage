@@ -1,38 +1,32 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/curl/Attic/curl-7.9.7.ebuild,v 1.8 2002/10/05 05:39:18 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/curl/Attic/curl-7.9.7.ebuild,v 1.9 2002/11/19 19:43:31 vapier Exp $
 
-IUSE="ssl"
-
-S=${WORKDIR}/${P}
 DESCRIPTION="A Client that groks URLs"
 SRC_URI="http://curl.haxx.se/download/${P}.tar.gz"
 HOMEPAGE="http://curl.haxx.se"
 
-DEPEND=">=sys-libs/pam-0.75 
-	ssl? ( >=dev-libs/openssl-0.9.6a )"
-
 SLOT="0"
 LICENSE="MPL X11"
 KEYWORDS="x86 ppc sparc sparc64"
+IUSE="ssl"
+
+DEPEND=">=sys-libs/pam-0.75 
+	ssl? ( >=dev-libs/openssl-0.9.6a )"
 
 src_compile() {
-
 	local myconf
 	use ssl \
 		&& myconf="--with-ssl" \
 		|| myconf="--without-ssl"
 
-    cd ${S}
-    econf ${myconf} || die
-    emake || die
-
+	econf ${myconf}
+	emake || die
 }
 
-src_install () {
-    cd ${S}
-    make install DESTDIR=${D} || die
-    dodoc LEGAL CHANGES README 
-    dodoc docs/FEATURES docs/INSTALL docs/INTERNALS docs/LIBCURL 
-    dodoc docs/MANUAL docs/FAQ docs/BUGS docs/CONTRIBUTE
+src_install() {
+	make install DESTDIR=${D} || die
+	dodoc LEGAL CHANGES README 
+	dodoc docs/FEATURES docs/INSTALL docs/INTERNALS docs/LIBCURL 
+	dodoc docs/MANUAL docs/FAQ docs/BUGS docs/CONTRIBUTE
 }
