@@ -1,6 +1,8 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/cbind/Attic/cbind-6.ebuild,v 1.5 2004/01/05 20:57:34 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/cbind/Attic/cbind-6.ebuild,v 1.6 2004/03/19 10:07:11 aliz Exp $
+
+inherit eutils
 
 S="${WORKDIR}/${PN}${PV}"
 DESCRIPTION="This tool is designed to aid in the creation of Ada bindings to C."
