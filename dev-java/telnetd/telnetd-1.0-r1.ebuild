@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/telnetd/Attic/telnetd-1.0-r1.ebuild,v 1.3 2004/10/22 11:49:42 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/telnetd/Attic/telnetd-1.0-r1.ebuild,v 1.4 2004/10/29 12:48:39 axxo Exp $
 
 inherit java-pkg
 
@@ -15,7 +15,6 @@ DEPEND=">=virtual/jdk-1.4
 		>=dev-java/xerces-2.6.2-r1
 	jikes? ( dev-java/jikes )"
 RDEPEND=">=virtual/jdk-1.4"
-RESTRICT="nomirror"
 
 src_unpack() {
 	unpack ${A}
