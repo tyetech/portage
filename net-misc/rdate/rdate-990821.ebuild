@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Aaron Blew <moath@oddbox.org>
 # /home/cvsroot/gentoo-x86/net-misc/rdate,v 1.2 2001/02/15 18:17:31 achim Exp
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rdate/Attic/rdate-990821.ebuild,v 1.2 2001/08/30 17:31:35 pm Exp $
+
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
