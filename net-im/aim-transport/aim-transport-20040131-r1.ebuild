@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/aim-transport/Attic/aim-transport-20040131-r1.ebuild,v 1.10 2004/07/03 11:33:54 humpback Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/aim-transport/Attic/aim-transport-20040131-r1.ebuild,v 1.11 2005/02/24 03:09:52 tester Exp $
 
 inherit eutils
 
