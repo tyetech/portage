@@ -1,19 +1,23 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gnuplot/Attic/gnuplot-3.7.3.ebuild,v 1.4 2003/08/25 19:51:15 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gnuplot/Attic/gnuplot-3.8j.ebuild,v 1.1 2004/02/09 00:17:54 g2boojum Exp $
 
-IUSE="X readline svga plotutils"
+IUSE="X readline svga plotutils pdflib doc"
 
-S=${WORKDIR}/${P}
+MY_P="${P}.0"
+S=${WORKDIR}/${MY_P}
 DESCRIPTION="Quick and useful plotting program"
-SRC_URI="mirror://sourceforge/gnuplot/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/gnuplot/${MY_P}.tar.gz"
 HOMEPAGE="http://www.gnuplot.info"
 
 SLOT="0"
 LICENSE="gnuplot"
-KEYWORDS="x86 ~ppc alpha sparc"
+KEYWORDS="x86 ~ppc ~alpha ~sparc"
 
-DEPEND="media-libs/libpng
+# Old png driver seems to have problems; switching to gd instead
+DEPEND=">=media-libs/libgd-2
+	pdflib? ( media-libs/pdflib )
+	doc? ( virtual/tetex )
 	X? ( virtual/x11 )
 	svga? ( media-libs/svgalib )
 	readline? ( sys-libs/readline )
@@ -23,13 +27,17 @@ src_compile() {
 	local myconf
 	#--with-lasergnu flag seems to be broken and I'm too lazy to fix now
 	#myconf=" --with-png --without-gd --with-lasergnu"
-	myconf=" --with-png --without-gd --with-plot=/usr/lib"
+	myconf="  --with-gd --with-plot=/usr/lib"
 	#--with-plot enables the Gnu plotutils library
 	#need to specify path to differentiate from Unix plot
 
 	use plotutils \
 		&& myconf="${myconf} --with-plot=/usr/lib" \
 		|| myconf="${myconf} --without-plot"
+
+	use pdflib \
+		&& myconf="${myconf} --with-pdf" \
+		|| myconf="${myconf} --without-pdf"
 
 	use X \
 		&& myconf="${myconf} --with-x" \
@@ -47,27 +55,20 @@ src_compile() {
 		--datadir=/usr/share/gnuplot \
 		${myconf} || die
 
-	mv Makefile Makefile.orig
-	sed -e 's/datadir = \/usr/datadir = ${prefix}/' \
-	    -e 's/mandir = \/usr/mandir = ${prefix}/' \
-		-e 's/infodir = \/usr/infodir = ${prefix}/' \
-	    Makefile.orig > Makefile
-
-	cd docs
-	mv Makefile Makefile.orig
-	sed -e 's/datadir = \/usr/datadir = ${prefix}/' \
-		-e 's/infodir = \/usr/infodir = ${prefix}/' \
-		-e 's/mandir = \/usr/mandir = ${prefix}/' \
-		Makefile.orig > Makefile
-
 	cd ${S}
 	emake || die
+
+	if [ -n "`use doc`" ] ; then
+		cd docs
+		make pdf || die
+	fi
 }
 
 src_install () {
-	make prefix=${D}/usr install || die
+	make DESTDIR=${D} install || die
 
 	dodoc 0* ChangeLog CodeStyle Copyright NEWS PGPKEYS TODO
+	use doc && dodoc docs/gnuplot.pdf
 }
 
 pkg_postinst() {
