@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/planeshift/Attic/planeshift-0.2.010-r1.ebuild,v 1.11 2004/12/20 23:53:29 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/planeshift/Attic/planeshift-0.2.010-r1.ebuild,v 1.12 2005/01/09 21:10:25 vapier Exp $
 
 inherit eutils games
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://gentoo/distfiles/${P}.tar.bz2"
 
 LICENSE="|| ( GPL-2 Planeshift )"
 SLOT="0"
-KEYWORDS="x86 ppc"
+KEYWORDS="-*"
 IUSE=""
 
 # Doesn't like the new cs-config (bug #54659)
