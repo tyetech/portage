@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/pari/Attic/pari-2.1.5.ebuild,v 1.1 2003/05/11 05:28:31 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/pari/Attic/pari-2.1.5.ebuild,v 1.2 2003/05/11 05:33:41 george Exp $
 
 IUSE=""
 
@@ -29,4 +29,5 @@ src_compile() {
 
 src_install () {
 	make DESTDIR=${D} install || die
+	dodoc AUTHORS Announce.2.1 CHANGES README TODO
 }
