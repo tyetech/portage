@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Test-Simple/Attic/Test-Simple-0.42.ebuild,v 1.7 2002/10/04 05:23:21 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Test-Simple/Attic/Test-Simple-0.42.ebuild,v 1.8 2002/10/17 16:43:15 bjb Exp $
 
 inherit perl-module
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://search.cpan.org/search?dist=Test-Harness"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="x86 ppc sparc sparc64"
+KEYWORDS="x86 ppc sparc sparc64 alpha"
 
 mydoc="rfc*.txt"
 
