@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/ecore/Attic/ecore-1.0.0.20040529_pre7.ebuild,v 1.3 2004/06/28 17:27:01 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/ecore/Attic/ecore-1.0.0.20040710_pre7.ebuild,v 1.1 2004/07/12 05:25:58 vapier Exp $
 
 inherit enlightenment
 
