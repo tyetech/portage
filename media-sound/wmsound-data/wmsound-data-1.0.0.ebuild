@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/wmsound-data/wmsound-data-1.0.0.ebuild,v 1.3 2004/09/03 21:03:24 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/wmsound-data/wmsound-data-1.0.0.ebuild,v 1.4 2004/09/03 21:07:32 eradicator Exp $
 
 IUSE=""
 
@@ -18,8 +18,11 @@ KEYWORDS="x86 ~ppc ~amd64 ~sparc"
 S1=${WORKDIR}/Sounds
 S2=${WORKDIR}/SoundSets
 
-src_install()
-{
+src_compile() {
+	einfo "Nothing to compile"
+}
+
+src_install() {
 	insinto /usr/share/WindowMaker/Defaults
 	doins ${FILESDIR}/WMSound
 
