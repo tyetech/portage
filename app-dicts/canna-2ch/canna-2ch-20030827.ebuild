@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/canna-2ch/canna-2ch-20030827.ebuild,v 1.10 2004/06/24 21:36:24 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/canna-2ch/canna-2ch-20030827.ebuild,v 1.11 2004/09/01 16:42:04 tgall Exp $
 
 inherit cannadic eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://gentoo/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha"
+KEYWORDS="x86 ppc sparc alpha ppc64"
 IUSE="canna"
 
 DEPEND=""
