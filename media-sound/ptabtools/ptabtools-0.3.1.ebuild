@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ptabtools/Attic/ptabtools-0.3.1.ebuild,v 1.1 2004/09/12 23:25:45 pkdawson Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ptabtools/Attic/ptabtools-0.3.1.ebuild,v 1.2 2004/10/17 10:00:40 dholm Exp $
 
 MY_PV=${PV%.*}-${PV##*.}
 
@@ -10,7 +10,7 @@ SRC_URI="http://jelmer.vernstok.nl/releases/${PN}_${MY_PV}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 IUSE=""
 DEPEND="dev-libs/popt
 	dev-libs/libxml2"
