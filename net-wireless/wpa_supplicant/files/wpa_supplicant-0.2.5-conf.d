@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wpa-supplicant/files/Attic/wpa_supplicant-0.2.5-conf.d,v 1.1 2004/10/16 15:00:34 brix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wpa_supplicant/files/Attic/wpa_supplicant-0.2.5-conf.d,v 1.1 2004/12/10 15:45:32 brix Exp $
 
 # List of interfaces
 INTERFACES="eth1"
