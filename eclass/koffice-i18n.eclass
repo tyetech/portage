@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Dan Armak <danarmak@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/koffice-i18n.eclass,v 1.6 2002/04/02 23:00:18 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/koffice-i18n.eclass,v 1.7 2002/04/02 23:23:39 danarmak Exp $
 inherit kde
 ECLASS=koffice-i18n
 
@@ -21,3 +21,4 @@ HOMEPAGE="http://www.koffice.org/"
 
 DEPEND=">=app-office/koffice-${PV}"
 
+myconf="$myconf --enable-final"
