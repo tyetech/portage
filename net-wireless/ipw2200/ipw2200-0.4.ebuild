@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/ipw2200/Attic/ipw2200-0.4.ebuild,v 1.2 2004/08/17 03:31:17 jbms Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/ipw2200/Attic/ipw2200-0.4.ebuild,v 1.3 2004/08/17 04:14:02 jbms Exp $
 
 inherit kernel-mod eutils
 
@@ -17,8 +17,12 @@ SLOT="0"
 KEYWORDS="~x86"
 
 IUSE=""
-DEPEND=""
-RDEPEND=">=sys-apps/hotplug-20030805-r2"
+
+# net-wireless/ipw2100 builds a possibly incompatible ieee80211
+# module, so it is blocked.  This problem will likely be resolved
+# upstream eventually.
+DEPEND="!net-wireless/ipw2100"
+RDEPEND="!net-wireless/ipw2100 >=sys-apps/hotplug-20030805-r2"
 
 src_unpack() {
 

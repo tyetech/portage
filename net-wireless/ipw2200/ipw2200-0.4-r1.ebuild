@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/ipw2200/Attic/ipw2200-0.3.ebuild,v 1.2 2004/08/17 04:14:02 jbms Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/ipw2200/Attic/ipw2200-0.4-r1.ebuild,v 1.1 2004/08/17 04:14:02 jbms Exp $
 
 inherit kernel-mod eutils
 
@@ -17,14 +17,26 @@ SLOT="0"
 KEYWORDS="~x86"
 
 IUSE=""
+
+# net-wireless/ipw2100 builds a possibly incompatible ieee80211
+# module, so it is blocked.  This problem will likely be resolved
+# upstream eventually.
 DEPEND="!net-wireless/ipw2100"
 RDEPEND="!net-wireless/ipw2100 >=sys-apps/hotplug-20030805-r2"
 
 src_unpack() {
+
+	if ! egrep "^CONFIG_CRYPTO_ARC4=[ym]" ${ROOT}/usr/src/linux/.config >/dev/null
+	then
+		eerror ""
+		eerror "This version of ${PN} requires the ARC4 CryptoAPI module from"
+		eerror "the kernel."
+		die "ARC4 Crypto support not detected."
+	fi
 	if ! egrep "^CONFIG_FW_LOADER=[ym]" ${ROOT}/usr/src/linux/.config >/dev/null
 	then
 		eerror ""
-		eerror "New versions of ${PN} require firmware loader support from"
+		eerror "This version of ${PN} require firmware loader support from"
 		eerror "your kernel. This can be found in Device Drivers --> Generic"
 		eerror "Driver Support on 2.6 or in Library Routines on 2.4 kernels."
 		die "Firmware loading support not detected."
@@ -33,7 +45,7 @@ src_unpack() {
 	if ! egrep "^CONFIG_CRC32=[ym]" ${ROOT}/usr/src/linux/.config >/dev/null
 	then
 		eerror ""
-		eerror "New versions of ${PN} require support for CRC32 in"
+		eerror "This version of ${PN} requires support for CRC32 in"
 		eerror "your kernel. This can be found in Library Routines in"
 		eerror "kernel configs."
 		die "CRC32 function support not detected."
@@ -50,7 +62,9 @@ src_unpack() {
 
 src_compile() {
 	unset ARCH
-	emake KSRC=${ROOT}/usr/src/linux all || die
+
+	# Build WPA support
+	emake KSRC=${ROOT}/usr/src/linux all CONFIG_IEEE80211_WPA=y || die
 }
 
 src_install() {
@@ -65,6 +79,7 @@ src_install() {
 
 	insinto /lib/modules/${KV}/net
 	doins ieee80211_crypt.${KV_OBJ} ieee80211_crypt_wep.${KV_OBJ} \
+		ieee80211_crypt_ccmp.${KV_OBJ} ieee80211_crypt_tkip.${KV_OBJ} \
 		ieee80211.${KV_OBJ} ${PN}.${KV_OBJ}
 
 	insinto /usr/lib/hotplug/firmware
