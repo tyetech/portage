@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mcdp/Attic/mcdp-0.3j.ebuild,v 1.1 2003/07/11 09:36:25 jje Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mcdp/Attic/mcdp-0.3j.ebuild,v 1.2 2003/09/07 00:06:06 msterret Exp $
 
 DESCRIPTION="A very small console cd player"
 HOMEPAGE="http://www.mcmilk.de/projects/mcdp/"
@@ -23,9 +23,9 @@ src_compile()
 	make || die
 }
 
-src_install() 
+src_install()
 {
-	DESTDIR=${D}	
+	DESTDIR=${D}
 	dobin mcdp || die
 	doman mcdp.1 || die
 }

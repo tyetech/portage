@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rosegarden/Attic/rosegarden-4.0.9.ebuild,v 1.3 2003/07/12 20:30:57 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rosegarden/Attic/rosegarden-4.0.9.ebuild,v 1.4 2003/09/07 00:06:06 msterret Exp $
 
 MY_P=${P/\./-}
 DESCRIPTION="MIDI and audio sequencer and notation editor."
@@ -35,5 +35,5 @@ src_compile() {
 }
 
 src_install() {
-	einstall 
+	einstall
 }

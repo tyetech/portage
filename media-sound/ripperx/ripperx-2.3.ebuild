@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ripperx/Attic/ripperx-2.3.ebuild,v 1.6 2003/02/13 13:18:34 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ripperx/Attic/ripperx-2.3.ebuild,v 1.7 2003/09/07 00:06:06 msterret Exp $
 
 MY_P=${P/x/X}
 S=${WORKDIR}/${MY_P}
@@ -23,7 +23,7 @@ src_unpack () {
 
 src_compile () {
 	cd ${S}
-	./configure 
+	./configure
 	emake || die
 }
 
