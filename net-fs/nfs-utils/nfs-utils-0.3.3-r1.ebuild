@@ -1,27 +1,14 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author: Aron Griffis <agriffis@gentoo.org>
-# Maintainer: System Team
-# $Header: /usr/local/ssd/gentoo-x86/output/net-fs/cvs-repo/gentoo-x86/net-fs/nfs-utils/Attic/nfs-utils-0.3.3.ebuild,v 1.1 2002/01/13 22:29:12 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-fs/cvs-repo/gentoo-x86/net-fs/nfs-utils/Attic/nfs-utils-0.3.3-r1.ebuild,v 1.1 2002/04/24 22:18:11 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="kernel NFS client and server daemons"
 SRC_URI="http://download.sourceforge.net/nfs/${P}.tar.gz"
 HOMEPAGE="http://nfs.sourceforge.net/"
-
-DEPEND="
-	virtual/glibc
-	tcpd? ( sys-apps/tcp-wrappers )"
-
-RDEPEND="
-	virtual/glibc 
-	>=net-nds/portmap-5b-r6"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	patch -p1 < ${FILESDIR}/${PF}-gentoo.diff
-}
+DEPEND="virtual/glibc tcpd? ( sys-apps/tcp-wrappers )"
+RDEPEND="virtual/glibc >=net-nds/portmap-5b-r6"
 
 src_compile() {
 	./configure \
@@ -34,7 +21,7 @@ src_compile() {
 		sed -e "s:-lwrap::" -e "s:-DHAVE_TCP_WRAPPER::" \
 			config.mk.orig > config.mk
 	fi
-	make || die
+	emake || die
 }
 
 src_install() {
@@ -48,8 +35,8 @@ src_install() {
 	# using newexe/newins instead of doexe/doins allows us to specify
 	# a new filename on the command-line.
 	exeinto /etc/init.d
-	newexe ${FILESDIR}/nfs.rc6 nfs
-	newexe ${FILESDIR}/nfsmount.rc6 nfsmount
+	newexe ${FILESDIR}/nfs nfs
+	newexe ${FILESDIR}/nfsmount nfsmount
 	insinto /etc/conf.d
 	newins ${FILESDIR}/nfs.confd nfs
 	# Don't create runlevels symlinks here.  NFS is not something that
