@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/iverilog/Attic/iverilog-0.7.ebuild,v 1.7 2004/06/24 22:04:14 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/iverilog/Attic/iverilog-0.7.ebuild,v 1.8 2004/07/13 20:31:33 agriffis Exp $
 
 S="${WORKDIR}/verilog-${PV}"
 
@@ -13,6 +13,7 @@ DEPEND="dev-util/gperf"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86 ~ppc"
+IUSE=""
 
 src_compile() {
 
