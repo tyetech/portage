@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/eog/Attic/eog-0.5.ebuild,v 1.2 2000/09/15 20:08:57 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/eog/Attic/eog-0.5.ebuild,v 1.3 2000/10/14 12:30:11 achim Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.gnome.org/gnome-office/eog.shtml"
 src_compile() {                           
   cd ${S}
   try ./configure --host=${CHOST} --prefix=/opt/gnome \
-	--with-catgets --without-bonobo
+	--with-catgets --with-bonobo
   try make
 }
 
