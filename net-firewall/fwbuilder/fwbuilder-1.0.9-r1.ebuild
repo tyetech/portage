@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/fwbuilder/Attic/fwbuilder-1.0.9.ebuild,v 1.2 2003/03/20 14:35:53 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/fwbuilder/Attic/fwbuilder-1.0.9-r1.ebuild,v 1.1 2003/03/20 14:35:53 agriffis Exp $
 
 DESCRIPTION="A firewall GUI"
 SRC_URI="mirror://sourceforge/fwbuilder/${P}.tar.gz"
