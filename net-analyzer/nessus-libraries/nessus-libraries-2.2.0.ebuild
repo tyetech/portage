@@ -1,13 +1,13 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-libraries/Attic/nessus-libraries-2.2.0.ebuild,v 1.2 2005/01/12 08:30:30 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-libraries/Attic/nessus-libraries-2.2.0.ebuild,v 1.3 2005/01/28 02:01:52 dragonheart Exp $
 
 DESCRIPTION="A remote security scanner for Linux (nessus-libraries)"
 HOMEPAGE="http://www.nessus.org/"
 SRC_URI="ftp://ftp.nessus.org/pub/nessus/nessus-${PV}/src/${P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64 ~ppc64"
 IUSE=""
 
 # Hard dep on SSL since libnasl won't compile when this package is emerged -ssl.
