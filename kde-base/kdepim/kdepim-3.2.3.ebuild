@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdepim/Attic/kdepim-3.2.3.ebuild,v 1.6 2004/07/22 05:17:34 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdepim/Attic/kdepim-3.2.3.ebuild,v 1.7 2004/08/08 13:21:30 gmsoft Exp $
 
 inherit kde-dist
 
 DESCRIPTION="KDE PIM (Personal Information Management) apps: korganizer, kmail, knode..."
 
-KEYWORDS="x86 ~ppc amd64 ~sparc"
+KEYWORDS="x86 ~ppc amd64 ~sparc hppa"
 IUSE="pda crypt ldap"
 
 DEPEND="~kde-base/kdenetwork-${PV}
