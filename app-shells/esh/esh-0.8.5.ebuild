@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/esh/Attic/esh-0.8.5.ebuild,v 1.9 2004/01/11 03:47:09 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/esh/Attic/esh-0.8.5.ebuild,v 1.10 2004/01/30 20:01:12 gustavoz Exp $
 
 S=${WORKDIR}/esh
 DESCRIPTION="A UNIX Shell with a simplified Scheme syntax"
 SRC_URI="http://slon.ttk.ru/esh/${P}.tar.gz"
 HOMEPAGE="http://slon.ttk.ru/esh/"
-KEYWORDS="x86 -ppc ~sparc"
+KEYWORDS="x86 -ppc sparc"
 SLOT="0"
 LICENSE="GPL-2"
 
