@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/bmp-itouch/Attic/bmp-itouch-0.1.4.3.ebuild,v 1.1 2004/10/01 19:11:05 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/bmp-itouch/Attic/bmp-itouch-1.0.0.ebuild,v 1.1 2004/10/09 18:35:33 chainsaw Exp $
 
 IUSE=""
 
