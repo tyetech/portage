@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/pisg/Attic/pisg-0.57.ebuild,v 1.4 2004/12/08 14:37:57 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/pisg/Attic/pisg-0.57.ebuild,v 1.5 2005/01/12 07:06:01 swegener Exp $
 
 inherit eutils
 
