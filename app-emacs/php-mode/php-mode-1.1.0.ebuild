@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/php-mode/Attic/php-mode-105.ebuild,v 1.2 2004/03/04 05:07:04 jhuebel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/php-mode/Attic/php-mode-1.1.0.ebuild,v 1.1 2004/05/22 16:17:50 usata Exp $
 
 inherit elisp
 
@@ -8,14 +8,14 @@ IUSE=""
 
 DESCRIPTION="GNU Emacs major mode for editing PHP code"
 HOMEPAGE="http://php-mode.sourceforge.net"
-SRC_URI="mirror://gentoo/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/php-mode/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 
 DEPEND="virtual/emacs"
 
-S="${WORKDIR}/${P}"
+S="${WORKDIR}"
 
 SITEFILE=50php-mode-gentoo.el
 
