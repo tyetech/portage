@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Header: /usr/local/ssd/gentoo-x86/output/profiles/cvs-repo/gentoo-x86/profiles/default-sparc-1.0/scripts/Attic/generate-packages.sh,v 1.1 2002/04/16 20:07:18 murphy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/profiles/cvs-repo/gentoo-x86/profiles/default-sparc-1.0/scripts/Attic/generate-packages.sh,v 1.2 2002/04/16 20:37:57 murphy Exp $
 #
 # New packages file
 NEWPACKAGESBUILD=packages.build
@@ -66,4 +66,8 @@ cp -p ${from_dir}/use.defaults $NEWUSEDEFAULTS
 # 4) packages.build
 cp -p $NEWPACKAGESBUILD $KEEPPACKAGESBUILD
 cp -p ${from_dir}/packages.build $NEWPACKAGESBUILD
+
+# 5) virtuals
+cp -p $NEWVIRTUALS $KEEPVIRTUALS
+cp -p ${from_dir}/packages.build $NEWVIRTUALS
 
