@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/fvwm-crystal/Attic/fvwm-crystal-1.0.1.ebuild,v 1.3 2004/03/13 18:41:11 taviso Exp $
 
 DESCRIPTION="A very nice and powerful theme for FVWM"
 HOMEPAGE="http://fvwm-crystal.linuxpl.org/"
