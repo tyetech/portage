@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/perl/Attic/perl-5.8.1.ebuild,v 1.1 2003/09/27 23:16:37 rac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/perl/Attic/perl-5.8.1-r2.ebuild,v 1.1 2003/10/02 21:18:08 rac Exp $
 
 inherit eutils flag-o-matic
 
@@ -75,6 +75,13 @@ src_unpack() {
 
 	unpack ${A}
 
+	# Get -lpthread linked before -lc.  This is needed
+	# when using glibc >= 2.3, or else runtime signal
+	# handling breaks.  Fixes bug #14380.
+	# <rac@gentoo.org> (14 Feb 2003)
+	# reinstated to try to avoid sdl segfaults 03.10.02
+	cd ${S}; epatch ${FILESDIR}/${P}-prelink-lpthread.patch
+
 	# Patch perldoc to not abort when it attempts to search
 	# nonexistent directories; fixes bug #16589.
 	# <rac@gentoo.org> (28 Feb 2003)
@@ -142,25 +149,6 @@ src_compile() {
 
 	[ "${ARCH}" = "hppa" ] && append-flags -fPIC
 
-
-cat > config.over <<EOF
-installprefix=${D}/usr
-installarchlib=\`echo \$installarchlib | sed "s!\$prefix!\$installprefix!"\`
-installbin=\`echo \$installbin | sed "s!\$prefix!\$installprefix!"\`
-installman1dir=\`echo \$installman1dir | sed "s!\$prefix!\$installprefix!"\`
-installman3dir=\`echo \$installman3dir | sed "s!\$prefix!\$installprefix!"\`
-installman1dir=\`echo \$installman1dir | sed "s!/share/share/!/share/!"\`
-installman3dir=\`echo \$installman3dir | sed "s!/share/share/!/share/!"\`
-installman1dir=\`echo \$installman1dir | sed "s!/usr/man/!/usr/share/man/!"\`
-installman3dir=\`echo \$installman3dir | sed "s!/usr/man/!/usr/share/man/!"\`
-man1ext=1
-man3ext=3pm
-installprivlib=\`echo \$installprivlib | sed "s!\$prefix!\$installprefix!"\`
-installscript=\`echo \$installscript | sed "s!\$prefix!\$installprefix!"\`
-installsitelib=\`echo \$installsitelib | sed "s!\$prefix!\$installprefix!"\`
-installsitearch=\`echo \$installsitearch | sed "s!\$prefix!\$installprefix!"\`
-EOF
-	sleep 10
 	sh Configure -des \
 		-Darchname="${myarch}" \
 		-Dcc="${CC:-gcc}" \
@@ -233,8 +221,7 @@ EOF
 	fperms 0755 /usr/bin/xsubpp
 
 	./perl installman \
-		--man1dir="${D}/usr/share/man/man1" --man1ext='1' \
-		--man3dir="${D}/usr/share/man/man3" --man3ext='3'
+		--destdir="${D}" --man1ext='1' --man3ext='3'
 
 	# This removes ${D} from Config.pm and .packlist
 	for i in `find ${D} -iname "Config.pm"` `find ${D} -iname ".packlist"`;do
