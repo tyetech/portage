@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/gkrellm/Attic/gkrellm-2.1.28-r1.ebuild,v 1.4 2004/04/22 14:15:23 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/gkrellm/Attic/gkrellm-2.1.28-r1.ebuild,v 1.5 2004/04/27 19:09:38 agriffis Exp $
+
+inherit eutils
 
 S=${WORKDIR}/${P/a/}
 DESCRIPTION="Single process stack of various system monitors"
