@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qjackconnect/Attic/qjackconnect-0.0.3b-r1.ebuild,v 1.14 2004/12/04 11:42:43 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qjackconnect/Attic/qjackconnect-0.0.3b-r1.ebuild,v 1.15 2004/12/19 06:15:55 eradicator Exp $
 
 IUSE=""
 
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.suse.com/pub/people/mana/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="amd64 ~ppc sparc x86"
 
 DEPEND="virtual/libc
 	>=x11-libs/qt-3.0.5
