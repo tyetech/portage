@@ -1,14 +1,13 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/fox/Attic/fox-1.0.43.ebuild,v 1.6 2004/06/13 01:59:12 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/fox/Attic/fox-1.2.4.ebuild,v 1.1 2004/06/13 01:59:12 pyrania Exp $
 
-IUSE="cups opengl"
-S=${WORKDIR}/${P}
+IUSE="cups debug opengl"
 DESCRIPTION="C++ based Toolkit for developing Graphical User Interfaces easily and effectively"
 SRC_URI="http://www.fox-toolkit.org/ftp/${P}.tar.gz"
 HOMEPAGE="http://www.fox-toolkit.org"
 SLOT="0"
-KEYWORDS="x86 sparc "
+KEYWORDS="~x86"
 LICENSE="GPL-2"
 
 DEPEND="virtual/glibc
@@ -17,11 +16,10 @@ DEPEND="virtual/glibc
 
 
 src_compile() {
-
 	local myconf
 
 	use opengl || myconf="$myconf --with-opengl=no" #default enabled
-	use cups && myconf="$myconf --enable-cups"      #default disabled
+	myconf="$myconf `use_enable cups debug`"      #default disabled
 
 	./configure \
 		--prefix=/usr \
