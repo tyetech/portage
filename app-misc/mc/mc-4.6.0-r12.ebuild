@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/mc/Attic/mc-4.6.0-r9.ebuild,v 1.5 2004/10/19 09:46:47 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/mc/Attic/mc-4.6.0-r12.ebuild,v 1.1 2004/11/17 13:48:26 lanius Exp $
 
 inherit flag-o-matic eutils
 
@@ -11,16 +11,19 @@ SRC_URI="http://www.ibiblio.org/pub/Linux/utils/file/managers/${PN}/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ia64 x86 ppc ~sparc ~alpha ~mips ~hppa amd64 ppc64"
-IUSE="gpm nls samba ncurses X slang"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
+IUSE="gpm nls samba ncurses X slang unicode"
+
+PROVIDE="virtual/editor"
 
 DEPEND=">=sys-fs/e2fsprogs-1.19
 	ncurses? ( >=sys-libs/ncurses-5.2-r5 )
 	=dev-libs/glib-2*
-	>=sys-libs/pam-0.72
+	pam? ( >=sys-libs/pam-0.72 )
 	gpm? ( >=sys-libs/gpm-1.19.3 )
-	slang? ( >=sys-libs/slang-1.4.2 )
+	slang? ( >=sys-libs/slang-1.4.9-r1 )
 	samba? ( >=net-fs/samba-3.0.0 )
+	unicode? ( >=sys-libs/slang-1.4.9-r1 )
 	X? ( virtual/x11 )"
 
 src_unpack() {
@@ -34,9 +37,16 @@ src_unpack() {
 	epatch ${FILESDIR}/${P}-can-2004-0226-0231-0232.patch.bz2
 	epatch ${FILESDIR}/${P}-vfs.patch
 	epatch ${FILESDIR}/${P}-ftp.patch
+	epatch ${FILESDIR}/${P}-largefile.patch
+	epatch ${FILESDIR}/${P}-key.c.patch
+
+	if use unicode && use slang; then
+		epatch ${FILESDIR}/${P}-utf8.patch.bz2
+	fi
 }
 
 src_compile() {
+	append-flags -I/usr/include/gssapi
 	filter-flags -malign-double
 
 	local myconf=""
@@ -86,6 +96,11 @@ src_install() {
 
 	insinto /usr/share/mc
 	doins ${FILESDIR}/mc.gentoo
+
+	insinto /usr/share/mc/syntax
+	doins ${FILESDIR}/ebuild.syntax
+	cd ${D}/usr/share/mc/syntax
+	epatch ${FILESDIR}/${P}-ebuild-syntax.patch
 }
 
 pkg_postinst() {
