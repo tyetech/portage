@@ -1,37 +1,31 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/ochusha/Attic/ochusha-0.4.7.1.ebuild,v 1.3 2004/01/11 14:52:22 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/ochusha/Attic/ochusha-0.4.10.3.ebuild,v 1.1 2004/01/28 15:16:17 usata Exp $
 
 IUSE=""
 
 DESCRIPTION="Ochusha - 2ch viewer for GTK+"
 HOMEPAGE="http://ochusha.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/${PN}/7418/${P}.tar.bz2
+SRC_URI="mirror://sourceforge.jp/${PN}/7888/${P}.tar.bz2
 	http://ochusha.sourceforge.jp/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
-# ochusha failed to build with oniguruma-2.0.0
 DEPEND="virtual/xft
 	>=x11-libs/gtk+-2.2.4
 	>=dev-libs/glib-2.2.3
 	>=dev-libs/libxml2-2.5.0
 	>=gnome-base/libghttp-1.0.9
 	sys-libs/zlib
-	sys-devel/gettext
-	=dev-libs/oniguruma-1.9.5"
-#RDEPEND=""
+	sys-devel/gettext"
 
 S=${WORKDIR}/${P}
 
 src_compile() {
 
-	# onigposix.h resides in /usr/include
-	export ONIG_POSIX_H=1
-
-	econf --enable-regex || die
+	econf --enable-regex --with-included-oniguruma || die
 	emake || die
 }
 
