@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/gnome-terminal/Attic/gnome-terminal-2.2.2.ebuild,v 1.3 2003/07/19 23:40:40 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/gnome-terminal/Attic/gnome-terminal-2.2.2.ebuild,v 1.4 2003/08/24 17:10:22 obz Exp $
 
 inherit gnome2 eutils
 
@@ -8,7 +8,7 @@ S=${WORKDIR}/${P}
 DESCRIPTION="The Gnome Terminal"
 
 HOMEPAGE="http://www.gnome.org/"
-KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa ~amd64"
+KEYWORDS="x86 ~ppc ~alpha ~sparc ~hppa ~amd64"
 SLOT="0"
 LICENSE="GPL-2"
 
