@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/qmail-ldap/Attic/qmail-ldap-1.03-r3.ebuild,v 1.3 2004/07/01 19:54:07 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/qmail-ldap/Attic/qmail-ldap-1.03-r3.ebuild,v 1.4 2005/03/03 18:46:57 ciaranm Exp $
 
 IUSE="ssl"
 
@@ -27,7 +27,7 @@ DEPEND="virtual/libc
 
 RDEPEND="!virtual/mta
 	${DEPEND}
-	>=sys-apps/daemontools-0.76-r1
+	>=sys-process/daemontools-0.76-r1
 	>=net-mail/dot-forward-0.71"
 
 PROVIDE="virtual/mta
