@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/procps/Attic/procps-2.0.11.ebuild,v 1.4 2003/02/24 22:34:59 dragon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/procps/Attic/procps-2.0.11.ebuild,v 1.5 2003/06/21 21:19:40 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Standard informational utilities and process-handling tools"
@@ -9,7 +9,7 @@ HOMEPAGE="http://surriel.com/procps/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa mips"
+KEYWORDS="x86 amd64 ~ppc ~sparc ~alpha ~hppa mips"
 
 RDEPEND=">=sys-libs/ncurses-5.2-r2"
 DEPEND="${RDEPEND}

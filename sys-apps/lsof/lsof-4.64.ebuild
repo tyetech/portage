@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/lsof/Attic/lsof-4.64.ebuild,v 1.13 2003/04/14 16:49:09 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/lsof/Attic/lsof-4.64.ebuild,v 1.14 2003/06/21 21:19:40 drobbins Exp $
 
 MY_P=${P/-/_}
 S=${WORKDIR}/${MY_P}/${MY_P}_src
@@ -13,7 +13,7 @@ DEPEND="virtual/glibc"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha hppa"
+KEYWORDS="x86 amd64 ppc sparc alpha hppa"
 
 #This pkg appears to be highly kernel-dependent.
 
