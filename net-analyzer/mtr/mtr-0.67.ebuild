@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.67.ebuild,v 1.5 2005/03/19 15:37:00 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.67.ebuild,v 1.6 2005/03/21 10:06:21 gmsoft Exp $
 
 inherit eutils flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.bitwizard.nl/mtr/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~s390 sparc x86"
+KEYWORDS="alpha ~amd64 ~arm hppa ~ia64 ~ppc ~s390 sparc x86"
 IUSE="gtk gtk2"
 
 DEPEND="dev-util/pkgconfig"
