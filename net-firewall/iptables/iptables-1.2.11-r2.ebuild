@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/iptables/Attic/iptables-1.2.11-r2.ebuild,v 1.14 2004/11/07 10:36:09 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/iptables/Attic/iptables-1.2.11-r2.ebuild,v 1.15 2005/03/09 10:16:31 robbat2 Exp $
 
 inherit eutils flag-o-matic
 
