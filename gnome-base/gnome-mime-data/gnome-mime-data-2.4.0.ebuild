@@ -1,10 +1,10 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-mime-data/Attic/gnome-mime-data-2.3.2.ebuild,v 1.1 2003/09/07 23:31:39 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-mime-data/Attic/gnome-mime-data-2.4.0.ebuild,v 1.1 2003/09/10 22:50:58 foser Exp $
 
 inherit gnome2
 
-DESCRIPTION="MIME database for Gnome"
+DESCRIPTION="MIME data for Gnome"
 HOMEPAGE="http://www.gnome.org/"
 LICENSE="GPL-2"
 SLOT="0"
