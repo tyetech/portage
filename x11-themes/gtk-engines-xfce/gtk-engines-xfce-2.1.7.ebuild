@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gtk-engines-xfce/Attic/gtk-engines-xfce-2.1.7.ebuild,v 1.12 2004/12/17 06:20:14 bcowan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gtk-engines-xfce/Attic/gtk-engines-xfce-2.1.7.ebuild,v 1.13 2005/01/02 16:45:50 bcowan Exp $
 
 inherit gtk-engines2
 
