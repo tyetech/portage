@@ -1,12 +1,11 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/nut/Attic/nut-0.44.0-r1.ebuild,v 1.1 2000/08/09 22:58:29 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/nut/Attic/nut-0.44.0-r1.ebuild,v 1.2 2000/08/16 04:38:19 drobbins Exp $
 
 P=nut-0.44.0
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
-CATEGORY="net-misc"
 DESCRIPTION="Network-UPS Tools"
 SRC_URI="http://www.exploits.org/nut/release/"${A}
 HOMEPAGE="http://www.exploits.org/nut/"
