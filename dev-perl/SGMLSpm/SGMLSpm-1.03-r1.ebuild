@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/SGMLSpm/Attic/SGMLSpm-1.03-r1.ebuild,v 1.6 2002/08/14 04:32:33 murphy Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/SGMLSpm/Attic/SGMLSpm-1.03-r1.ebuild,v 1.7 2002/10/04 05:22:54 vapier Exp $
 
 MY_P="${P}ii"
 S=${WORKDIR}/${PN}
