@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/procinfo/Attic/procinfo-18.ebuild,v 1.16 2003/09/06 22:08:32 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/procinfo/Attic/procinfo-18.ebuild,v 1.17 2004/01/18 20:36:30 zul Exp $
 
 DESCRIPTION="A utility to prettyprint /proc/*"
 SRC_URI="ftp://ftp.cistron.nl/pub/people/svm/${P}.tar.gz"
