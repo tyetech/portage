@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/librsvg/Attic/librsvg-2.6.5.ebuild,v 1.3 2004/06/24 22:01:03 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/librsvg/Attic/librsvg-2.6.5.ebuild,v 1.4 2004/07/14 03:46:44 tgall Exp $
 
 inherit eutils gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://librsvg.sourceforge.net/"
 
 IUSE="doc zlib"
 SLOT="2"
-KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa amd64 ~ia64 ~mips"
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa amd64 ~ia64 ~mips ~ppc64"
 LICENSE="LGPL-2"
 
 RDEPEND=">=dev-libs/glib-2
