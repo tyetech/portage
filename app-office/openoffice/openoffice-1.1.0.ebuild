@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice/Attic/openoffice-1.1_rc2.ebuild,v 1.4 2003/09/19 20:25:11 pauldv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice/Attic/openoffice-1.1.0.ebuild,v 1.1 2003/10/03 11:39:26 pauldv Exp $
 
 # IMPORTANT:  This is extremely alpha!!!
 
@@ -53,7 +53,7 @@ FT_VER="2.1.4"
 STLP_VER="4.5.3"
 MY_PV="${PV/_rc/rc}"
 INSTDIR="${LOC}/OpenOffice.org${PV}"
-S="${WORKDIR}/oo_${MY_PV}_src"
+S="${WORKDIR}/oo_${MY_PV/1.1.0/1.1}_src"
 DESCRIPTION="OpenOffice.org, a full office productivity suite."
 SRC_URI="mirror://openoffice/stable/${MY_PV}/OOo_${MY_PV}_source.tar.bz2
 	ftp://ftp.cs.man.ac.uk/pub/toby/gpc/gpc231.tar.Z
@@ -62,7 +62,7 @@ HOMEPAGE="http://www.openoffice.org/"
 
 LICENSE="LGPL-2 | SISSL-1.1"
 SLOT="0"
-KEYWORDS="-x86 -ppc"
+KEYWORDS="~x86"
 IUSE="gnome kde"
 
 RDEPEND=">=sys-libs/glibc-2.1
@@ -225,7 +225,7 @@ oo_setup() {
 			export GCC_PROFILE="$(/usr/sbin/gcc-config --get-current-profile)"
 
 			# Just recheck gcc version ...
-			if [ "$(gcc-version)" != "3.2" ]
+			if [ "$(gcc-version)" != "3.2" ] && [ "$(gcc-version)" != "3.3" ]
 			then
 				# See if we can get a gcc profile we know is proper ...
 				if /usr/sbin/gcc-config --get-bin-path ${CHOST}-3.2.1 &> /dev/null
@@ -233,7 +233,7 @@ oo_setup() {
 					export PATH="$(/usr/sbin/gcc-config --get-bin-path ${CHOST}-3.2.1):${PATH}"
 					export GCC_PROFILE="${CHOST}-3.2.1"
 				else
-					eerror "This build needs gcc-3.2 or later!"
+					eerror "This build needs gcc-3.2 or gcc-3.3!"
 					eerror
 					eerror "Use gcc-config to change your gcc profile:"
 					eerror
@@ -268,7 +268,17 @@ src_unpack() {
 	cd ${S}
 	epatch ${FILESDIR}/${PV}/no-mozab.patch
 
-	epatch ${FILESDIR}/${PV}/no-crashrep.patch
+	#The gcc-3.2.3 version in gentoo is fixed for the internal error that
+	#blocks compilation with it, so remove the check from the configure script
+#	epatch ${FILESDIR}/${PV}/fixed-gcc.patch
+
+#	epatch ${FILESDIR}/${PV}/no-crashrep.patch
+
+#	einfo "Fixing up crashrep/source/unx/makefile.mk"
+#	sed -i -e "s,\(PRODUCT[^a-zA-Z]*\)\(FULL\),\1full," ${S}/crashrep/source/unx/makefile.mk||die
+#	einfo "Removing crashrep from the installed set"
+#	sed -i -e "s,\(crashrep \),," ${S}/instsetoo/prj/build.lst
+
 
 
 	# Now for our optimization flags ...
@@ -285,6 +295,9 @@ src_unpack() {
 	do
 		perl -pi -e "s/^(PRJNAME)/MAXPROCESS=1\n\1/" ${x}/makefile.mk
 	done
+
+	#Do our own branding by setting gentoo linux as the vendor
+	sed -i -e "s,\(//\)\(.*\)\(my company\),\2Gentoo Linux Inc.," ${S}/offmgr/source/offapp/intro/ooo.src
 }
 
 get_EnvSet() {
@@ -388,11 +401,6 @@ src_compile() {
 	else
 		buildcmd="${S}/solenv/bin/build.pl --all product=full"
 	fi
-
-	einfo "Fixing up crashrep/source/unx/makefile.mk"
-	sed -i -e "s,\(PRODUCT[^a-zA-Z]*\)\(FULL\),\1full," ${S}/crashrep/source/unx/makefile.mk||die
-	einfo "Removing crashrep from the installed set"
-	sed -i -e "s,\(crashrep \),," ${S}/instsetoo/prj/build.lst
 
 	if [ -z "$(grep 'CCCOMP' ${S}/${LinuxEnvSet})" ]
 	then
@@ -508,7 +516,7 @@ src_install() {
 	# Setup virtualmake
 	export maketype="./setup"
 	# We need X to install...
-	virtualmake "-v -r:${T}/autoresponse"
+	virtualmake "-v -r:${T}/autoresponse" ||die
 
 	echo
 	einfo "Removing build root from registy..."
@@ -534,7 +542,7 @@ src_install() {
 
 	# Install user autoresponse file
 	insinto /etc/openoffice
-	sed -e "s|<pv>|${PV//_beta2}|g" ${T}/rsfile-local > ${T}/autoresponse-${PV}.conf
+	sed -e "s|<pv>|${PV//_rc3/.0}|g" ${T}/rsfile-local > ${T}/autoresponse-${PV}.conf
 	doins ${T}/autoresponse-${PV}.conf
 
 	# Install wrapper script
