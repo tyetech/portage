@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-utils/Attic/gnome-utils-2.4.0.ebuild,v 1.10 2003/12/13 00:37:34 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-utils/Attic/gnome-utils-2.4.0.ebuild,v 1.11 2004/04/17 09:40:33 lv Exp $
 
 inherit gnome2
 
