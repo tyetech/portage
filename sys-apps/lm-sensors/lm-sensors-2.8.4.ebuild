@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/lm-sensors/Attic/lm-sensors-2.8.4.ebuild,v 1.3 2004/03/31 21:17:18 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/lm-sensors/Attic/lm-sensors-2.8.4.ebuild,v 1.4 2004/04/27 21:13:54 agriffis Exp $
 
-inherit flag-o-matic
+inherit flag-o-matic eutils
 
 MY_P=${PN/-/_}-${PV}
 S="${WORKDIR}/${MY_P}"
