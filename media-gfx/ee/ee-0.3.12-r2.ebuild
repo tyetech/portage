@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/ee/Attic/ee-0.3.12-r2.ebuild,v 1.11 2003/12/16 00:46:53 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/ee/Attic/ee-0.3.12-r2.ebuild,v 1.12 2004/06/24 22:35:22 agriffis Exp $
 
 inherit gnuconfig
 

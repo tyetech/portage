@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.31.ebuild,v 1.4 2004/04/27 21:40:49 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.31.ebuild,v 1.5 2004/06/24 22:33:42 agriffis Exp $
 
 inherit flag-o-matic eutils
 replace-flags -march=pentium4 -march=pentium3

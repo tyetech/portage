@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/povray/Attic/povray-3.50c.ebuild,v 1.17 2004/06/07 21:56:56 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/povray/Attic/povray-3.50c.ebuild,v 1.18 2004/06/24 22:47:50 agriffis Exp $
 
 inherit gcc eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/icoutils/Attic/icoutils-0.17.0.ebuild,v 1.4 2003/11/09 10:24:42 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/icoutils/Attic/icoutils-0.17.0.ebuild,v 1.5 2004/06/24 22:42:24 agriffis Exp $
 
 DESCRIPTION="A set of programs for extracting and converting images in Microsoft Windows icon and cursor files (.ico, .cur)."
 HOMEPAGE="http://www.student.lu.se/~nbi98oli"

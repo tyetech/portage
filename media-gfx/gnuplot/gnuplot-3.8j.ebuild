@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gnuplot/Attic/gnuplot-3.8j.ebuild,v 1.7 2004/06/07 21:55:46 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gnuplot/Attic/gnuplot-3.8j.ebuild,v 1.8 2004/06/24 22:39:42 agriffis Exp $
 
 MY_P="${P}.0"
 S=${WORKDIR}/${MY_P}

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pixieplus-kde/Attic/pixieplus-kde-0.5.4.ebuild,v 1.7 2004/03/20 03:54:30 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pixieplus-kde/Attic/pixieplus-kde-0.5.4.ebuild,v 1.8 2004/06/24 22:46:48 agriffis Exp $
 
 inherit kde
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pixie/Attic/pixie-1.3.11.ebuild,v 1.1 2004/06/15 03:54:43 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pixie/Attic/pixie-1.3.11.ebuild,v 1.2 2004/06/24 22:46:37 agriffis Exp $
 
 inherit eutils
 

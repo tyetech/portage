@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/fontforge/Attic/fontforge-20040509.ebuild,v 1.2 2004/06/21 17:09:14 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/fontforge/Attic/fontforge-20040509.ebuild,v 1.3 2004/06/24 22:37:42 agriffis Exp $
 
 inherit flag-o-matic
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/zphoto/Attic/zphoto-0.9.ebuild,v 1.2 2004/05/30 09:41:35 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/zphoto/Attic/zphoto-0.9.ebuild,v 1.3 2004/06/24 22:54:32 agriffis Exp $
 
 inherit eutils
 

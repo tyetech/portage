@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/transfig/Attic/transfig-3.2.3d-r1.ebuild,v 1.9 2004/04/27 21:49:38 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/transfig/Attic/transfig-3.2.3d-r1.ebuild,v 1.10 2004/06/24 22:50:51 agriffis Exp $
 
 MY_P=${P/transfig-/transfig.}
 S=${WORKDIR}/${MY_P}

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/truevision/Attic/truevision-0.3.10.ebuild,v 1.6 2004/04/27 21:50:31 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/truevision/Attic/truevision-0.3.10.ebuild,v 1.7 2004/06/24 22:51:01 agriffis Exp $
 
 inherit eutils
 

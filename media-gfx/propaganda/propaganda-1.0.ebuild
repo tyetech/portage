@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/propaganda/propaganda-1.0.ebuild,v 1.10 2004/06/06 06:23:01 rac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/propaganda/propaganda-1.0.ebuild,v 1.11 2004/06/24 22:48:13 agriffis Exp $
 
 S=${WORKDIR}/Propaganda
 DESCRIPTION="Propaganda Volume 1-14 + E. Tiling images for your desktop"

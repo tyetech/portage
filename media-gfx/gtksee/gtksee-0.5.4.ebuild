@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gtksee/Attic/gtksee-0.5.4.ebuild,v 1.4 2004/04/07 18:03:08 ciaranm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gtksee/Attic/gtksee-0.5.4.ebuild,v 1.5 2004/06/24 22:41:52 agriffis Exp $
 
 DESCRIPTION="A simple but functional image viewer/browser - ACD See alike."
 HOMEPAGE="http://gtksee.berlios.de/"
