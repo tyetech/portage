@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.6106-r1.ebuild,v 1.1 2004/07/17 03:28:57 cyfred Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.6106-r3.ebuild,v 1.1 2004/07/18 02:51:18 cyfred Exp $
 
 inherit eutils
 
@@ -33,7 +33,7 @@ IUSE="multilib"
 
 DEPEND="virtual/libc
 	virtual/x11
-	>=x11-base/opengl-update-1.8
+	>=x11-base/opengl-update-1.8.1
 	~media-video/nvidia-kernel-${PV}"
 
 PDEPEND="amd64? ( multilib? ( >=app-emulation/emul-linux-x86-nvidia-${PV}-r1 ) )"
@@ -151,13 +151,13 @@ src_install() {
 }
 
 pkg_preinst() {
-	#clean the dinamic libGL stuff's home to ensure
-	#we dont have stale libs floating around
+	# Clean the dinamic libGL stuff's home to ensure
+	# we dont have stale libs floating around
 	if [ -d ${ROOT}/usr/lib/opengl/nvidia ]
 	then
 		rm -rf ${ROOT}/usr/lib/opengl/nvidia/*
 	fi
-	#make sure we nuke the old nvidia-glx's env.d file
+	# Make sure we nuke the old nvidia-glx's env.d file
 	if [ -e ${ROOT}/etc/env.d/09nvidia ]
 	then
 		rm -f ${ROOT}/etc/env.d/09nvidia
