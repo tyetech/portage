@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.9.9.ebuild,v 1.2 2004/04/29 08:36:57 ciaranm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.9.9.ebuild,v 1.3 2004/05/01 17:34:41 agriffis Exp $
+
+inherit eutils
 
 IUSE="nls xinerama truetype kde gnome"
 
