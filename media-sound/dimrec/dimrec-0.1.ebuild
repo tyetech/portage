@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/dimrec/Attic/dimrec-0.1.ebuild,v 1.5 2003/02/13 13:09:55 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/dimrec/Attic/dimrec-0.1.ebuild,v 1.6 2004/03/01 05:37:13 eradicator Exp $
 
 IUSE="gtk"
 

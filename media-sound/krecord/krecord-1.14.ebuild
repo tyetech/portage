@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/krecord/Attic/krecord-1.14.ebuild,v 1.2 2003/10/03 14:00:17 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/krecord/Attic/krecord-1.14.ebuild,v 1.3 2004/03/01 05:37:14 eradicator Exp $
 inherit kde-base
 
 DESCRIPTION="KDE sound recorder app"

@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3c/Attic/mp3c-0.27.ebuild,v 1.6 2003/09/07 00:06:06 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3c/Attic/mp3c-0.27.ebuild,v 1.7 2004/03/01 05:37:15 eradicator Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="console based mp3 ripper, with cddb support"

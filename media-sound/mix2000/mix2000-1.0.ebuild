@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mix2000/Attic/mix2000-1.0.ebuild,v 1.7 2003/09/07 00:06:06 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mix2000/Attic/mix2000-1.0.ebuild,v 1.8 2004/03/01 05:37:15 eradicator Exp $
 
 S=${WORKDIR}/mix-2000
 DESCRIPTION="The OSS sound mixer from the bcast2000 people; now orphaned."

@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gramofile/Attic/gramofile-1.6.ebuild,v 1.7 2003/09/10 22:38:35 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gramofile/Attic/gramofile-1.6.ebuild,v 1.8 2004/03/01 05:37:14 eradicator Exp $
 
 DESCRIPTION="Gramofile"
 HOMEPAGE="http://panic.et.tudelft.nl/~costar/gramofile/"
