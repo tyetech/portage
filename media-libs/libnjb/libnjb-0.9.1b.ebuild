@@ -1,13 +1,15 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libnjb/Attic/libnjb-0.9.1b.ebuild,v 1.3 2004/01/20 20:52:43 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libnjb/Attic/libnjb-0.9.1b.ebuild,v 1.4 2004/03/04 10:58:02 eradicator Exp $
 
 DESCRIPTION="libnjb is a C library and API for communicating with the Creative Nomad JukeBox digital audio player under BSD and Linux."
 HOMEPAGE="http://libnjb.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+RESTRICT="nomirror"
+
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="x86"
 DEPEND=">=dev-libs/libusb-0.1.7"
 S="${WORKDIR}/libnjb"
 
