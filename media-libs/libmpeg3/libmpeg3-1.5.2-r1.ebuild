@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmpeg3/Attic/libmpeg3-1.5.2-r1.ebuild,v 1.3 2005/03/29 21:52:22 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmpeg3/Attic/libmpeg3-1.5.2-r1.ebuild,v 1.4 2005/04/01 01:02:11 eradicator Exp $
 
 inherit flag-o-matic eutils gcc
 
@@ -64,7 +64,7 @@ src_compile() {
 	rm -f ${obj_dir}/*.o
 
 	# x86 asm is not pic safe
-	if ! use mmx; then
+	if ! use mmx || has_pie; then
 		append-flags -fPIC
 	fi
 
