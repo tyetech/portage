@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/bsh/Attic/bsh-1.3.0.ebuild,v 1.4 2004/03/19 01:12:46 zx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/bsh/Attic/bsh-1.3.0.ebuild,v 1.5 2004/05/02 01:09:27 zx Exp $
 
 inherit java-pkg
 
@@ -12,6 +12,7 @@ HOMEPAGE="http://www.beanshell.org/"
 KEYWORDS="x86 amd64 ~ppc"
 LICENSE="LGPL-2.1"
 SLOT="0"
+IUSE=""
 DEPEND=""
 RDEPEND=">=virtual/jdk-1.2"
 
