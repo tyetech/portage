@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/horde-kronolith/Attic/horde-kronolith-2.0.1.ebuild,v 1.1 2005/01/16 11:07:42 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/horde-kronolith/Attic/horde-kronolith-2.0.2.ebuild,v 1.1 2005/02/23 23:04:03 vapier Exp $
 
 HORDE_PHP_FEATURES="-o mysql odbc postgres ldap"
 HORDE_MAJ="-h3"
