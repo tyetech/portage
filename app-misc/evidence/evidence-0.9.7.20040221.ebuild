@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/evidence/Attic/evidence-0.9.7.20040207.ebuild,v 1.1 2004/02/08 00:31:51 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/evidence/Attic/evidence-0.9.7.20040221.ebuild,v 1.1 2004/02/22 00:58:05 vapier Exp $
 
 inherit enlightenment eutils flag-o-matic
 
