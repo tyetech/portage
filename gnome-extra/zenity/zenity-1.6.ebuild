@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/zenity/Attic/zenity-1.6.ebuild,v 1.11 2003/11/08 16:41:31 todd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/zenity/Attic/zenity-1.6.ebuild,v 1.12 2003/11/15 03:13:58 agriffis Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 LICENSE="LGPL-2"
 
 SLOT="0"
-KEYWORDS="x86 ppc alpha sparc amd64"
+KEYWORDS="x86 ppc alpha sparc amd64 ia64"
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2
