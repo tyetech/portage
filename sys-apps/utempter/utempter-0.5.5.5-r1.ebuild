@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/utempter/Attic/utempter-0.5.5.5.ebuild,v 1.6 2004/11/05 23:22:16 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/utempter/Attic/utempter-0.5.5.5-r1.ebuild,v 1.1 2004/12/17 17:50:39 swegener Exp $
 
-inherit rpm eutils
+inherit rpm eutils flag-o-matic
 
 MY_P=${P%.*}-${PV##*.}
 S=${WORKDIR}/${P%.*}
@@ -29,6 +29,8 @@ src_unpack() {
 }
 
 src_compile() {
+	append-ldflags -Wl,-z,now
+
 	make RPM_OPT_FLAGS="${CFLAGS}" || die
 }
 
@@ -38,6 +40,9 @@ src_install() {
 		LIBDIR=/usr/lib \
 		install || die
 	dobin utmp
+
+	fowners root:utmp /usr/sbin/utempter
+	fperms 2755 /usr/sbin/utempter
 }
 
 
