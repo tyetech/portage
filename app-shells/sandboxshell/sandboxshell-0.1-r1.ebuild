@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/sandboxshell/Attic/sandboxshell-0.1.ebuild,v 1.6 2004/04/25 20:11:35 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/sandboxshell/Attic/sandboxshell-0.1-r1.ebuild,v 1.1 2004/06/24 00:25:51 vapier Exp $
 
 DESCRIPTION="launch a sandboxed shell ... useful for debugging ebuilds"
 HOMEPAGE="http://wh0rd.org/"
