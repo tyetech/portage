@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/autotrace/Attic/autotrace-0.31.1-r1.ebuild,v 1.12 2004/11/07 12:08:52 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/autotrace/Attic/autotrace-0.31.1-r1.ebuild,v 1.13 2004/12/21 17:47:18 sekretarz Exp $
 
 inherit eutils
 
@@ -27,7 +27,7 @@ src_unpack() {
 	cd ${S}
 
 	epatch ${FILESDIR}/${PN}-imagemagick.patch
-	autoreconf
+	autoconf
 }
 
 src_compile() {
