@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/angband/Attic/angband-3.0.4.ebuild,v 1.2 2004/03/10 23:16:12 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/angband/Attic/angband-3.0.4.ebuild,v 1.3 2004/04/19 11:32:19 mr_bones_ Exp $
 
 inherit games
 
@@ -11,7 +11,7 @@ SRC_URI="ftp://clockwork.dementia.org/${PN}/Source/${P}.tar.gz"
 LICENSE="Moria"
 SLOT="0"
 KEYWORDS="x86 ppc"
-IUSE="X"
+IUSE="X gtk"
 
 RDEPEND="virtual/glibc
 	>=sys-libs/ncurses-5
