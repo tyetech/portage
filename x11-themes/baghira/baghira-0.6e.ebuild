@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/baghira/Attic/baghira-0.6d.ebuild,v 1.2 2005/03/15 09:41:04 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/baghira/Attic/baghira-0.6e.ebuild,v 1.1 2005/03/20 17:30:59 voxus Exp $
 
 inherit kde
 
@@ -16,9 +16,3 @@ IUSE=""
 DEPEND="|| ( kde-base/kwin >=kde-base/kdebase-3.3 )"
 
 need-kde 3.3
-
-src_unpack() {
-	kde_src_unpack
-
-	epatch ${FILESDIR}/${P}-compile-fix.patch || die
-}
