@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gnomad/Attic/gnomad-2.4.4.ebuild,v 1.8 2004/10/31 11:00:14 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gnomad/Attic/gnomad-2.4.4.ebuild,v 1.9 2005/02/11 00:31:53 axxo Exp $
 
 IUSE=""
 
