@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/colorschemes/Attic/colorschemes-20050226.ebuild,v 1.1 2005/02/26 22:30:49 ciaranm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/colorschemes/Attic/colorschemes-20050321.ebuild,v 1.1 2005/03/21 22:53:47 ciaranm Exp $
 
 inherit vim-plugin
 
@@ -16,3 +16,10 @@ VIM_PLUGIN_HELPTEXT=\
 color schemes, use :colorscheme schemename (tab completion is available
 for scheme names). To automatically set a scheme at startup, please see
 :help vimrc ."
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	find . -type f -exec sed -i -e 's/\r//g' '{}' \;
+}
+
