@@ -1,12 +1,13 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Donny Davies <woodchip@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/fwanalog/Attic/fwanalog-0.4.ebuild,v 1.2 2001/10/10 20:20:26 woodchip Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/fwanalog/Attic/fwanalog-0.4-r2.ebuild,v 1.1 2002/05/04 01:22:36 woodchip Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Script to parse firewall logs and analyze them with Analog"
 SRC_URI="http://tud.at/programm/fwanalog/${P}.tar.gz"
 HOMEPAGE="http://tud.at/programm/fwanalog/"
+LICENSE="GPL-2"
+SLOT="0"
 
 DEPEND="" # this is just a bash script
 RDEPEND="virtual/glibc
@@ -29,7 +30,7 @@ src_install () {
 	doins fwanalog.analog.conf fwanalog.analog.conf.local
 	newins fwanalog.opts.linux24 fwanalog.opts
 
-	dosed "s/\"zegrep\"/\"zgrep\"/" /etc/fwanalog/fwanalog.opts
+	dosed "s/\"zegrep\"/\"egrep\"/" /etc/fwanalog/fwanalog.opts
 
 	dodoc CONTRIBUTORS COPYING ChangeLog README
 	docinto support ; dodoc support/*
