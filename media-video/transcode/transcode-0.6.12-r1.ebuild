@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-0.6.12-r1.ebuild,v 1.14 2004/10/07 02:26:12 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-0.6.12-r1.ebuild,v 1.15 2005/01/08 22:35:00 eradicator Exp $
 
 inherit libtool flag-o-matic eutils gcc
 
