@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyrex/Attic/pyrex-0.8.2.ebuild,v 1.5 2004/05/03 20:47:03 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyrex/Attic/pyrex-0.9.1.1.ebuild,v 1.1 2004/05/03 20:47:03 kloeri Exp $
 
 inherit distutils
 
@@ -12,9 +12,17 @@ SRC_URI="http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/${MY_P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
+IUSE=""
 
 DEPEND="virtual/python"
+
+src_unpack() {
+	unpack ${MY_P}.tar.gz
+	cd ${S}
+#	epatch ${FILESDIR}/pyrex-0.9.1.1-gentoo.patch
+	epatch ${FILESDIR}/${P}-gentoo.patch
+}
 
 src_install() {
 	mydoc="CHANGES.txt INSTALL.txt README.txt USAGE.txt"
