@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/xfs-sources/Attic/xfs-sources-2.4.19-r2.ebuild,v 1.1 2002/10/07 03:42:16 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/xfs-sources/Attic/xfs-sources-2.4.19-r2.ebuild,v 1.2 2002/10/07 03:59:42 lostlogic Exp $
+
+IUSE="build acpi4linux crypt"
 
 # OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
