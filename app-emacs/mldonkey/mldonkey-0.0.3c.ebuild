@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/mldonkey/Attic/mldonkey-0.0.3c.ebuild,v 1.1 2004/04/20 06:40:37 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/mldonkey/Attic/mldonkey-0.0.3c.ebuild,v 1.2 2004/05/07 14:23:14 dholm Exp $
 
 inherit elisp
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.physik.fu-berlin.de/~dhansen/mldonkey/"
 SRC_URI="http://www.physik.fu-berlin.de/%7Edhansen/mldonkey/files/mldonkey-el-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 IUSE=""
 DEPEND="virtual/emacs"
 S=${WORKDIR}/mldonkey-el-${PV}
