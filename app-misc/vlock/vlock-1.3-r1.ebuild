@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/vlock/Attic/vlock-1.3-r1.ebuild,v 1.13 2004/06/14 08:45:07 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/vlock/Attic/vlock-1.3-r1.ebuild,v 1.14 2004/06/24 22:37:35 agriffis Exp $
 
 DESCRIPTION="A console screen locker"
 SRC_URI="ftp://ftp.ibiblio.org/pub/Linux/utils/console/vlock-1.3.tar.gz"

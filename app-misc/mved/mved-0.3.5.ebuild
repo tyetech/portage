@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/mved/Attic/mved-0.3.5.ebuild,v 1.1 2004/05/14 19:52:16 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/mved/Attic/mved-0.3.5.ebuild,v 1.2 2004/06/24 22:26:20 agriffis Exp $
 
 DESCRIPTION="An editor-focused multiple file move utility."
 HOMEPAGE="http://guerila.com"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/kcpuload/Attic/kcpuload-1.99.ebuild,v 1.8 2004/06/19 03:27:25 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/kcpuload/Attic/kcpuload-1.99.ebuild,v 1.9 2004/06/24 22:18:58 agriffis Exp $
 
 inherit kde
 need-kde 3
