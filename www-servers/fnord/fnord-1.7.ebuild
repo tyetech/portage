@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/fnord/Attic/fnord-1.7.ebuild,v 1.2 2004/10/02 00:00:23 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/fnord/Attic/fnord-1.7.ebuild,v 1.3 2005/01/26 23:23:54 xmerlin Exp $
 
 inherit eutils
 
