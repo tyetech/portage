@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ext2resize/Attic/ext2resize-1.1.17-r1.ebuild,v 1.6 2004/06/04 12:28:14 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ext2resize/Attic/ext2resize-1.1.17-r1.ebuild,v 1.7 2004/06/25 03:17:27 agriffis Exp $
 
 inherit flag-o-matic eutils
 
