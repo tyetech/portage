@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/psmisc/Attic/psmisc-21.2-r4.ebuild,v 1.17 2004/06/24 22:22:59 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/psmisc/Attic/psmisc-21.2-r4.ebuild,v 1.18 2004/07/15 02:27:06 agriffis Exp $
 
 inherit eutils gnuconfig
 
@@ -49,7 +49,7 @@ src_unpack() {
 src_compile() {
 
 	# Detect mips systems properly
-	use mips && gnuconfig_update
+	gnuconfig_update
 
 	local myconf="--with-gnu-ld"
 	use nls || myconf="${myconf} --disable-nls"
