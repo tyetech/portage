@@ -1,29 +1,35 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0_p2-r2.ebuild,v 1.11 2004/03/08 23:02:24 darkspecter Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dhcp/Attic/dhcp-3.0_p2-r6.ebuild,v 1.1 2004/03/08 23:45:35 seemant Exp $
+
+IUSE="static"
 
 inherit eutils flag-o-matic
 
+MY_P=${P/_p/pl}
+S=${WORKDIR}/${MY_P}
 DESCRIPTION="ISC Dynamic Host Configuration Protocol."
 HOMEPAGE="http://www.isc.org/products/DHCP"
-SRC_URI="ftp://ftp.isc.org/isc/dhcp/${P/_p/pl}.tar.gz
+SRC_URI="ftp://ftp.isc.org/isc/dhcp/${MY_P}.tar.gz
 	http://www.episec.com/people/edelkind/patches/dhcp/dhcp-3.0+paranoia.patch"
 
-LICENSE="isc-dhcp"
 SLOT="0"
-KEYWORDS="x86 ppc sparc ~mips ppc64 hppa"
-IUSE="static"
+LICENSE="isc-dhcp"
+KEYWORDS="x86 ~ppc ~ppc64 sparc ~mips hppa"
 
-DEPEND="virtual/glibc
+RDEPEND="virtual/glibc"
+
+DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
 
-S="${WORKDIR}/${P/_p/pl}"
+PROVIDE="virtual/dhcpc"
 
 src_unpack() {
 	unpack ${A} && cd "${S}"
 	epatch "${FILESDIR}/dhcp-3.0pl2-user-option-fix.patch"
 	epatch "${FILESDIR}/dhclient.c-3.0-dw-cli-fix.patch"
 	epatch "${DISTDIR}/dhcp-3.0+paranoia.patch"
+	epatch "${FILESDIR}/dhcp-3.0pl2-fix-perms.patch"
 }
 
 src_compile() {
@@ -81,10 +87,12 @@ src_install() {
 	newdoc client/scripts/linux dhclient-script.sample
 	newdoc server/dhcpd.conf dhcpd.conf.sample
 
-	insinto /etc/conf.d
-	newins "${FILESDIR}/dhcp.conf" dhcp
 	exeinto /etc/init.d
 	newexe "${FILESDIR}/dhcp.rc6" dhcp
+	newexe "${FILESDIR}/dhcrelay.rc6" dhcrelay
+	insinto /etc/conf.d
+	newins "${FILESDIR}/dhcp.conf" dhcp
+	newins "${FILESDIR}/dhcrelay.conf" dhcrelay
 
 	keepdir /var/{lib,run}/dhcp
 }
@@ -108,10 +116,10 @@ pkg_config() {
 
 	if [ ! -d "${CHROOT:=/chroot/dhcp}" ] ; then
 		ebegin "Setting up the chroot directory"
-		mkdir -m 0755 -p "${CHROOT}/"{dev,etc,var/lib,var/run}
+		mkdir -m 0755 -p "${CHROOT}/"{dev,etc,var/lib,var/run/dhcp}
 		cp -R /etc/dhcp "${CHROOT}/etc/"
 		cp -R /var/lib/dhcp "${CHROOT}/var/lib"
-		chown -R dhcp:dhcp "${CHROOT}/var/lib" "${CHROOT}/var/run"
+		chown -R dhcp:dhcp "${CHROOT}/var/lib" "${CHROOT}/var/run/dhcp"
 		eend
 
 		if [ "`grep '^#[[:blank:]]\?CHROOT' /etc/conf.d/dhcp`" ] ; then
