@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/foomatic-db-engine/Attic/foomatic-db-engine-3.0.1.ebuild,v 1.8 2004/05/07 10:35:22 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/foomatic-db-engine/Attic/foomatic-db-engine-3.0.1.ebuild,v 1.9 2004/06/25 00:38:42 agriffis Exp $
 
 inherit perl-module eutils
 

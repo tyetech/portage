@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/fax4cups/Attic/fax4cups-1.23.ebuild,v 1.6 2004/05/05 23:14:58 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/fax4cups/Attic/fax4cups-1.23.ebuild,v 1.7 2004/06/25 00:38:10 agriffis Exp $
 
 DESCRIPTION="efax/hylafax backend for CUPS"
 

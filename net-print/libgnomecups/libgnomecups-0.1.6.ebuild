@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/libgnomecups/Attic/libgnomecups-0.1.6.ebuild,v 1.13 2004/05/14 04:20:20 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/libgnomecups/Attic/libgnomecups-0.1.6.ebuild,v 1.14 2004/06/25 00:40:06 agriffis Exp $
 
 inherit gnome2
 

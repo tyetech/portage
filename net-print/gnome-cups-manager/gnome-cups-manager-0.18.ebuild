@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/gnome-cups-manager/Attic/gnome-cups-manager-0.18.ebuild,v 1.1 2004/06/09 04:15:00 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/gnome-cups-manager/Attic/gnome-cups-manager-0.18.ebuild,v 1.2 2004/06/25 00:39:04 agriffis Exp $
 
 inherit gnome2 eutils
 
