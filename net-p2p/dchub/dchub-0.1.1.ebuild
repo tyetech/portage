@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dchub/Attic/dchub-0.1.1.ebuild,v 1.3 2002/08/26 21:20:18 rphillips Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dchub/Attic/dchub-0.1.1.ebuild,v 1.4 2002/10/04 06:16:56 vapier Exp $
 
 S="${WORKDIR}/${P}"
 
