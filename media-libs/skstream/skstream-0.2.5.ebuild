@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/skstream/Attic/skstream-0.2.5.ebuild,v 1.9 2004/11/15 18:21:54 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/skstream/Attic/skstream-0.2.5.ebuild,v 1.10 2005/02/04 08:29:42 dholm Exp $
 
 DESCRIPTION="FreeSockets - Portable C++ classes for IP (sockets) applications"
 SRC_URI="ftp://victor.worldforge.org/pub/worldforge/libs/${PN}/${P}.tar.bz2"
