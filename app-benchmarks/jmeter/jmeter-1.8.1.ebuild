@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/jmeter/Attic/jmeter-1.8.1.ebuild,v 1.7 2004/02/22 17:56:37 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/jmeter/Attic/jmeter-1.8.1.ebuild,v 1.8 2004/02/26 05:17:17 zx Exp $
 
 S=${WORKDIR}/${PN}-${PV}
 P=jakarta-${PN}-${PV}
