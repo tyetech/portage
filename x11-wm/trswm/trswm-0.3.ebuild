@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/trswm/Attic/trswm-0.3.ebuild,v 1.1 2003/06/17 20:02:33 twp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/trswm/Attic/trswm-0.3.ebuild,v 1.2 2003/09/04 07:33:31 msterret Exp $
 
 DESCRIPTION="A window manager"
 HOMEPAGE="http://www.relex.ru/~yarick/trswm/"
@@ -23,5 +23,5 @@ src_install() {
 	doexe trswm
 	insinto /etc/X11/trswm
 	doins ../trswm-devel/*
-	dodoc BUGS Roadmap 
+	dodoc BUGS Roadmap
 }
