@@ -1,11 +1,11 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.28c.ebuild,v 1.7 2004/06/24 22:33:42 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.28c.ebuild,v 1.8 2004/07/19 21:57:28 lu_zero Exp $
 
 inherit flag-o-matic eutils
 replace-flags -march=pentium4 -march=pentium3
 
-IUSE="sdl jpeg png mozilla truetype static"
+IUSE="sdl jpeg png mozilla truetype static fmod"
 #IUSE="${IUSE} blender-game blender-static blender-plugin"
 
 S=${WORKDIR}/${P}
