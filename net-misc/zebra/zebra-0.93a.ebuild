@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/zebra/Attic/zebra-0.93a.ebuild,v 1.5 2003/09/05 22:01:50 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/zebra/Attic/zebra-0.93a.ebuild,v 1.6 2004/04/27 21:56:49 agriffis Exp $
 
 S=${WORKDIR}/${P}
 IUSE="pam snmp ipv6"
