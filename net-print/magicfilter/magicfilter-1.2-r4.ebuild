@@ -1,12 +1,11 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/magicfilter/Attic/magicfilter-1.2-r4.ebuild,v 1.7 2004/06/25 00:40:37 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/magicfilter/Attic/magicfilter-1.2-r4.ebuild,v 1.8 2004/07/15 03:54:56 agriffis Exp $
 
 inherit eutils
 
 IUSE=""
 
-S=${WORKDIR}/${P}
 PATCHDIR=${WORKDIR}/${P}-gentoo
 DESCRIPTION="Customizable, extensible automatic printer filter"
 HOMEPAGE="http://www.gnu.org/directory/magicfilter.html"
