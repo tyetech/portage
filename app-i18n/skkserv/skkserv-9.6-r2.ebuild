@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skkserv/skkserv-9.6-r2.ebuild,v 1.9 2004/06/24 21:55:28 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skkserv/skkserv-9.6-r2.ebuild,v 1.10 2004/06/28 02:05:04 vapier Exp $
 
 inherit eutils
 
@@ -15,13 +15,13 @@ SLOT="0"
 KEYWORDS="x86 ppc sparc alpha"
 IUSE=""
 
-DEPEND="virtual/glibc
+DEPEND="virtual/libc
 	>=app-i18n/skk-jisyo-200210"
 PROVIDE="virtual/skkserv"
 
 S="${WORKDIR}/skk-${PV}mu"
 
-src_unpack(){
+src_unpack() {
 	unpack ${A}
 	cd ${S}/skkserv
 	epatch ${FILESDIR}/${P}-segfault-gentoo.patch
