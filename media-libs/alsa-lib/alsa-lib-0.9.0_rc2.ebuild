@@ -1,6 +1,6 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/alsa-lib/Attic/alsa-lib-0.9.0_rc2.ebuild,v 1.3 2002/07/16 11:36:46 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/alsa-lib/Attic/alsa-lib-0.9.0_rc2.ebuild,v 1.4 2002/07/22 21:56:12 drobbins Exp $
 
 MY_P=${P/_rc/rc}
 S=${WORKDIR}/${MY_P}
@@ -21,7 +21,7 @@ src_compile() {
 		--host=${CHOST} \
 		--prefix=/usr \
 		|| die "./configure failed"
-	emake || die "Parallel Make Failed"
+	make || die "Parallel Make Failed"
 }
 
 src_install() {
