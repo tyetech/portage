@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Tools Team <tools@gentoo.org>
 # Author: Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/php/Attic/php-4.1.2-r3.ebuild,v 1.1 2002/03/14 18:49:39 g2boojum Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/php/Attic/php-4.1.2-r5.ebuild,v 1.1 2002/04/11 04:34:21 woodchip Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="HTML embedded scripting language"
@@ -18,7 +18,7 @@ DEPEND="virtual/glibc
 	>=media-libs/libpng-1.0.7
 	>=media-libs/libgd-1.8.3
 	>=media-libs/t1lib-1.0.1
-	>=net-www/apache-1.3
+	>=net-www/apache-1.3.24-r1
 	pam? ( >=sys-libs/pam-0.75 )
 	readline? ( >=sys-libs/ncurses-5.1 >=sys-libs/readline-4.1 )
 	gettext? ( sys-devel/gettext )
@@ -46,7 +46,7 @@ RDEPEND="virtual/glibc
 	>=media-libs/jpeg-6b
  	>=media-libs/libpng-1.0.7
  	>=media-libs/t1lib-1.0.1
-	>=net-www/apache-1.3
+	>=net-www/apache-1.3.24-r1
 	pam? ( >=sys-libs/pam-0.75 )
 	gdbm? ( >=sys-libs/gdbm-1.8.0 )
 	berkdb? ( >=sys-libs/db-3 )
@@ -142,52 +142,62 @@ src_compile() {
 		LDFLAGS="$LDFLAGS -L/usr/X11R6/lib"
 	fi
     
-	./configure --enable-safe-mode --enable-ftp --enable-track-vars --with-gmp \
-		--enable-dbase --enable-sysvsem --enable-sysvshm --with-zlib=yes --enable-bcmath \
-		--enable-calendar --enable-versioning --enable-inline-optimization --enable-trans-sid \
-		--with-gd --with-ttf --with-t1lib --with-png-dir=/usr/lib --with-jpeg-dir=/usr/lib --prefix=/usr \
-		--with-config-file-path=`/usr/sbin/apxs -q SYSCONFDIR` --host=${CHOST} \
-		--with-apxs="/usr/sbin/apxs -ltiff" --with-exec-dir="/usr/lib/apache/bin" $myconf || die
+	./configure \
+		--prefix=/usr \
+		--with-gd \
+		--with-gmp \
+		--with-ttf \
+		--enable-ftp \
+		--with-t1lib \
+		--enable-dbase \
+		--with-zlib=yes \
+		--enable-bcmath \
+		--enable-sysvsem \
+		--enable-sysvshm \
+		--enable-calendar \
+		--enable-trans-sid \
+		--enable-safe-mode \
+		--enable-versioning \
+		--enable-track-vars \
+		--with-png-dir=/usr/lib \
+		--with-jpeg-dir=/usr/lib \
+		--enable-inline-optimization \
+		--with-apxs="/usr/sbin/apxs -ltiff" \
+		--with-exec-dir="/usr/lib/apache/bin" \
+		--with-config-file-path=`/usr/sbin/apxs -q SYSCONFDIR` \
+		--host=${CHOST} ${myconf} || die "bad ./configure"
 
-	make || die
+	make || die "compile problem"
 }
 
 
-src_install() {                 
- 
-	make INSTALL_ROOT=${D} install-pear || die
-	dodir /usr/lib/apache
-	cp .libs/libphp4.so ${D}/usr/lib/apache
+src_install() {
+ 	make INSTALL_ROOT=${D} install-pear || die
 
-	dodir /etc/httpd
-	cp php.ini-dist ${D}/etc/httpd/php.ini
 	dodoc CODING_STANDARDS LICENSE EXTENSIONS 
 	dodoc RELEASE_PROCESS README.* TODO NEWS
 	dodoc ChangeLog* *.txt
+
+	exeinto /usr/lib/apache-extramodules
+	doexe .libs/libphp4.so
+
+	insinto /etc/apache/conf/addon-modules
+	doins ${FILESDIR}/mod_php.conf
+	newins php.ini-dist php.ini
 }
 
 pkg_postinst() {
-        einfo "Run 'ebuild php-${PV}-${PR}.ebuild config' to update httpd.conf"
+	einfo
+	einfo "Execute ebuild /var/db/pkg/${CATEGORY}/${PF}/${PF}.ebuild config"
+	einfo "to have your apache.conf auto-updated for use with this module."
+	einfo "You should then edit your /etc/conf.d/apache file to suit."
+	einfo
 }
-		
+
 pkg_config() {
-
-	if [ -f "${ROOT}/etc/httpd/httpd.conf" -a ! "`grep "IfDefine PHP" /etc/httpd/httpd.conf`" ] ; then
-
-		einfo Enabling PHP support in ${ROOT}/etc/httpd/httpd.conf
-
-		# Activate PHP-Extension in httpd.conf
-		einfo "Activate PHP in httpd.conf..."
-		cp ${ROOT}/etc/httpd/httpd.conf ${ROOT}/etc/httpd/httpd.conf.orig
-		sed -e "s/#AddType application\/x-httpd-php /AddType application\/x-httpd-php /" \
-			-e "s/#AddType application\/x-httpd-php-/AddType application\/x-httpd-php-/" \
-			${ROOT}/etc/httpd/httpd.conf.orig > ${ROOT}/etc/httpd/httpd.conf
-
-		echo -e "\n<IfDefine PHP4>\nLoadModule php4_module /usr/lib/apache/libphp4.so\n</IfDefine>\n" >> ${ROOT}/etc/httpd/httpd.conf
-		
-	fi
-
+	${ROOT}/usr/sbin/apacheaddmod \
+		${ROOT}/etc/apache/conf/apache.conf \
+		extramodules/libphp4.so mod_php4.c php4_module \
+		before=perl define=PHP4 addconf=conf/addon-modules/mod_php.conf
+	:;
 }
-
-
-
