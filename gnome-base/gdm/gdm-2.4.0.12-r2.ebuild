@@ -1,16 +1,18 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.4.0.11.ebuild,v 1.9 2002/12/15 10:44:19 bjb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.4.0.12-r2.ebuild,v 1.1 2002/12/25 18:59:46 azarah Exp $
+
+inherit eutils gnome.org
 
 DESCRIPTION="GNOME2 Display Manager"
 HOMEPAGE="http://www.gnome.org/"
-SRC_URI="mirror://gnome/2.0.1/sources/${PN}/${P}.tar.bz2"
 
 SLOT="0"
 KEYWORDS="x86 ppc sparc alpha"
 LICENSE="GPL-2"
 IUSE="nls"
-
+SRC_URI="${SRC_URI}
+	http://cvs.gentoo.org/~foser/gentoo-gdm-theme.tar.bz2"
 MY_V="`echo ${PV} |cut -b -5`"
 
 RDEPEND=">=sys-libs/pam-0.72
@@ -27,6 +29,7 @@ RDEPEND=">=sys-libs/pam-0.72
 DEPEND="${RDEPEND}
 	>=x11-base/xfree-4.2.0-r3"
 
+
 src_unpack() {
 	unpack ${A}
 
@@ -39,8 +42,14 @@ src_unpack() {
 	cd ${S}/config
 	cp gdm.conf.in gdm.conf.in.orig
 	sed -e "s:/usr/bin/X11:/usr/X11R6/bin:g" \
+		-e "s:=circles:=gentoo-emergence:" \
+		-e "s:command=/usr/X11R6/bin/X:command=/usr/X11R6/bin/X -nolisten tcp:" \
 		gdm.conf.in.orig > gdm.conf.in
+
 	rm -f gdm.conf.in.orig
+
+	# Make the config use the Gentoo theme
+	
 }
 
 src_compile() {
@@ -122,9 +131,16 @@ src_install() {
 
 	cd ${S}
 
-	#support for new session stuff
+	# Support for new session stuff
 	rm -rf ${D}/etc/X11/gdm/Sessions
 	dosym ../Sessions /etc/X11/gdm/Sessions
+
+	# Make sure the users environment are set properly
+	# (bash users only though :( )
+	dosed "s:#!/bin/sh:#!/bin/bash --login:g" /etc/X11/gdm/PreSession/Default
+
+	# Move Gentoo theme in
+	mv ${WORKDIR}/gentoo-emergence  ${D}/usr/share/gdm/themes
 	
 	dodoc ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README* TODO
 }
@@ -167,7 +183,7 @@ pkg_postinst() {
 		fi
 	fi
 
-	# unmerge nukes sometimes
+	# Unmerge nukes sometimes
 	if [ ! -d ${ROOT}/var/lib/gdm ]
 	then
 		mkdir -p ${ROOT}/var/lib/gdm
@@ -191,3 +207,4 @@ pkg_postrm() {
 	einfo "To remove GDM from startup please execute"
 	einfo "'rc-update del xdm default'"
 }
+
