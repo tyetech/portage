@@ -10,17 +10,16 @@ DESCRIPTION="Gconf"
 SRC_URI="ftp://ftp.gnome.org/pub/GNOME/unstable/sources/GConf/${A}"
 HOMEPAGE="http://www.gnome.org/"
 
-DEPEND=">=dev-util/guile-1.4
-	>=x11-libs/gtk+-1.2.8
-	>=gnome-base/oaf-0.5.1"
+DEPEND=">=gnome-base/oaf-0.6.1"
 
 src_unpack() {
   unpack ${A}
+  cp ${FILESDIR}/bdb.h ${S}/backends/bdb.h
 }
 
 src_compile() {                           
   cd ${S}
-  try ./configure --host=${CHOST} --prefix=/opt/gnome 
+  try ./configure --host=${CHOST} --prefix=/opt/gnome
   try make
 }
 
@@ -30,6 +29,7 @@ src_install() {
 
   dodoc AUTHORS BUGS COPYING ChangeLog FAQ NEWS README* THANKS TODO
 }
+
 
 
 

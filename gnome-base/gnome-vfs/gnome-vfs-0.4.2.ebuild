@@ -1,35 +1,32 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-vfs/Attic/gnome-vfs-0.4.2.ebuild,v 1.1 2000/11/25 12:57:02 achim Exp $
 
-P=GConf-${PV}
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
-DESCRIPTION="Gconf"
-SRC_URI="ftp://ftp.gnome.org/pub/GNOME/unstable/sources/GConf/${A}"
+DESCRIPTION="gnome-vfs"
+SRC_URI="ftp://ftp.gnome.org/pub/GNOME/unstable/sources/${PN}/${A}"
 HOMEPAGE="http://www.gnome.org/"
 
-DEPEND=">=dev-util/guile-1.4
-	>=x11-libs/gtk+-1.2.8
-	>=gnome-base/oaf-0.5.1"
+DEPEND=">=gnome-base/gconf-0.10
+	>=gnome-base/control-center-1.2.2"
 
 src_unpack() {
   unpack ${A}
 }
-
 src_compile() {                           
   cd ${S}
   try ./configure --host=${CHOST} --prefix=/opt/gnome 
   try make
 }
 
-src_install() {                               
+src_install() {
   cd ${S}
   try make prefix=${D}/opt/gnome install
-
-  dodoc AUTHORS BUGS COPYING ChangeLog FAQ NEWS README* THANKS TODO
+  dodoc AUTHORS COPYING* ChangeLog NEWS README
 }
+
 
 
 
