@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gst-plugins-vorbis/Attic/gst-plugins-vorbis-0.6.2.ebuild,v 1.1 2003/06/16 22:33:08 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gst-plugins-vorbis/Attic/gst-plugins-vorbis-0.6.3.ebuild,v 1.1 2003/09/07 18:33:49 foser Exp $
 
 inherit gst-plugins
 
