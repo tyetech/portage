@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/mac-fdisk/Attic/mac-fdisk-0.1-r2.ebuild,v 1.7 2005/02/05 21:41:08 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/mac-fdisk/Attic/mac-fdisk-0.1-r4.ebuild,v 1.1 2005/02/05 21:41:08 hansmi Exp $
 
 inherit eutils
 
-DEBRV=10
+DEBRV=11
 DESCRIPTION="Mac/PowerMac disk partitioning utility"
 HOMEPAGE="ftp://ftp.mklinux.apple.com/pub/Other_Tools/"
 SRC_URI="http://http.us.debian.org/debian/pool/main/m/mac-fdisk/${PN}_${PV}.orig.tar.gz
@@ -12,7 +12,7 @@ SRC_URI="http://http.us.debian.org/debian/pool/main/m/mac-fdisk/${PN}_${PV}.orig
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* ppc ppc64"
+KEYWORDS="-* ~ppc64 ~ppc"
 IUSE=""
 
 DEPEND="virtual/libc"
@@ -23,14 +23,9 @@ src_unpack() {
 	cd ${S}
 	cat ${DISTDIR}/mac-fdisk_${PV}-${DEBRV}.diff.gz | gzip -dc | patch -p1 || die
 
-	# Hard code 2.4 headers in mac-fdisk itself - if no maintainer is found, macfdisk should
-	# be deprecated in favor or parted
+	use ppc64 && epatch ${FILESDIR}/mac-fdisk-0.1-r3-ppc64.patch
 
-	use ppc && epatch ${FILESDIR}/mac-fdisk-ppc.patch
-	use ppc64 && epatch ${FILESDIR}/mac-fdisk-ppc64.patch
-
-	# this can be applied on ppc32 too:
-	use ppc64 && epatch ${FILESDIR}/mac-fdisk-ppc64-1.patch
+	epatch ${FILESDIR}/largerthan2gb.patch
 
 	cd ${WORKDIR}
 	chown -R 0:0 *
