@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/vimspell/Attic/vimspell-1.70.ebuild,v 1.5 2004/04/07 22:50:00 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/vimspell/Attic/vimspell-1.70.ebuild,v 1.6 2004/06/24 23:05:07 agriffis Exp $
 
 inherit vim-plugin
 
