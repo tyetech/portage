@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-a52dec/Attic/gst-plugins-a52dec-0.8.5.ebuild,v 1.3 2004/11/12 04:15:54 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-a52dec/Attic/gst-plugins-a52dec-0.8.5.ebuild,v 1.4 2004/11/14 23:29:14 kloeri Exp $
 
 inherit gst-plugins
 
-KEYWORDS="x86 sparc"
+KEYWORDS="x86 sparc ~alpha"
 IUSE=""
 
 DEPEND=">=media-libs/a52dec-0.7.3"
