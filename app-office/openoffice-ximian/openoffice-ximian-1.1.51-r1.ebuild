@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-ximian/Attic/openoffice-ximian-1.1.52.ebuild,v 1.7 2004/04/24 10:53:51 suka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-ximian/Attic/openoffice-ximian-1.1.51-r1.ebuild,v 1.1 2004/04/25 11:41:11 suka Exp $
 
 # IMPORTANT:  This is extremely alpha!!!
 
@@ -45,15 +45,15 @@ export WANT_GCC_3="yes"
 #        to segfault :(
 [ -z "${ECPUS}" ] && export ECPUS="1"
 
-OO_VER=1.1.1
-PATCHLEVEL=OOO_1_1_1
+OO_VER=1.1.0
+PATCHLEVEL=OOO_1_1_0
 ICON_VER=OOO_1_1-8
 INSTDIR="/opt/Ximian-OpenOffice"
 PATCHDIR=${WORKDIR}/ooo-build-${PV}
 ICONDIR=${WORKDIR}/ooo-icons-${ICON_VER}
-S="${WORKDIR}/oo_${OO_VER}_src"
+S="${WORKDIR}/oo_${OO_VER/1.1.0/1.1}_src"
 DESCRIPTION="Ximian-ized version of OpenOffice.org, a full office productivity suite."
-SRC_URI="mirror://openoffice/stable/${OO_VER}/OOo_${OO_VER}p1_source.tar.bz2
+SRC_URI="mirror://openoffice/stable/${OO_VER}/OOo_${OO_VER}_source.tar.bz2
 	http://ooo.ximian.com/packages/${PATCHLEVEL}/ooo-build-${PV}.tar.gz
 	http://ooo.ximian.com/packages/ooo-icons-${ICON_VER}.tar.gz"
 
@@ -61,7 +61,7 @@ HOMEPAGE="http://ooo.ximian.com"
 
 LICENSE="LGPL-2 | SISSL-1.1"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ppc"
 IUSE="gnome kde"
 
 RDEPEND=">=sys-libs/glibc-2.1
@@ -228,12 +228,15 @@ src_unpack() {
 	oo_setup
 
 	cd ${WORKDIR}
-	unpack OOo_${OO_VER}p1_source.tar.bz2 ooo-build-${PV}.tar.gz ooo-icons-${ICON_VER}.tar.gz
+	unpack OOo_${OO_VER}_source.tar.bz2 ooo-build-${PV}.tar.gz ooo-icons-${ICON_VER}.tar.gz
 
 	#Still needed: The STLport patch
 	cd ${S}
 	rm stlport/STLport-4.5.3.patch
 	epatch ${FILESDIR}/${OO_VER}/newstlportfix.patch
+
+	#Fix compilation with gcc 3.2.x	
+	epatch ${FILESDIR}/${OO_VER}/config.patch
 
 	#Fix nptl compile issues
 	epatch ${FILESDIR}/${OO_VER}/nptl.patch
@@ -502,12 +505,6 @@ pkg_postinst() {
 	einfo " Also, for individual components, you can use any of:"
 	einfo
 	einfo "   xoocalc, xoodraw, xooimpress, xoomath, xooweb or xoowriter"
-	einfo
-	einfo "******************************************************************"
-	einfo
-	einfo "******************************************************************"
-	einfo " If you are upgrading from an older Ximian-OpenOffice.org"
-	einfo " you will have to redo your settings."
 	einfo
 	einfo "******************************************************************"
 }
