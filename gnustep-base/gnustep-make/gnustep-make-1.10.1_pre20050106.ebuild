@@ -1,18 +1,27 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-make/Attic/gnustep-make-1.10.0-r1.ebuild,v 1.3 2005/01/10 16:21:55 fafhrd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-make/Attic/gnustep-make-1.10.1_pre20050106.ebuild,v 1.1 2005/01/10 16:21:55 fafhrd Exp $
 
-inherit gnustep
+ECVS_CVS_COMMAND="cvs -q"
+ECVS_SERVER="savannah.gnu.org:/cvsroot/gnustep"
+ECVS_USER="anoncvs"
+ECVS_AUTH="ext"
+ECVS_MODULE="gnustep/core/make"
+ECVS_CO_OPTS="-P -D ${PV/*_pre}"
+ECVS_UP_OPTS="-dP -D ${PV/*_pre}"
+ECVS_TOP_DIR="${DISTDIR}/cvs-src/savannah.gnu.org-gnustep"
+inherit gnustep cvs
+
+S=${WORKDIR}/${ECVS_MODULE}
 
 DESCRIPTION="The makefile package is a simple, powerful and extensible way to write makefiles for a GNUstep-based project."
-
 HOMEPAGE="http://www.gnustep.org"
-SRC_URI="ftp://ftp.gnustep.org/pub/gnustep/core/${P}.tar.gz"
-KEYWORDS="ppc ~x86 amd64 ~sparc ~alpha"
+
+KEYWORDS="~x86 ~ppc ~amd64 ~sparc ~alpha"
 SLOT="0"
 LICENSE="GPL-2"
 
-IUSE="${IUSE} doc non-flattened layout-osx-like layout-from-conf-file"
+IUSE="${IUSE} doc layout-from-conf-file layout-osx-like non-flattened"
 DEPEND="${GNUSTEP_CORE_DEPEND}
 	>=sys-devel/make-3.75
 	${DOC_DEPEND}"
@@ -104,20 +113,18 @@ pkg_setup() {
 		egnustep_user_root '~/GNUstep'
 	fi
 
-#	if use layout-from-conf-file || use layout-osx-like; then
-		einfo "GNUstep installation will be laid out thusly:"
-		einfo "\tGNUSTEP_SYSTEM_ROOT=`egnustep_system_root`"
-		einfo "\tGNUSTEP_LOCAL_ROOT=`egnustep_local_root`"
-		einfo "\tGNUSTEP_NETWORK_ROOT=`egnustep_network_root`"
-		einfo "\tGNUSTEP_USER_ROOT=`egnustep_user_root`"
-		ebeep
-		epause 10
-#	fi
+	einfo "GNUstep installation will be laid out thusly:"
+	einfo "\tGNUSTEP_SYSTEM_ROOT=`egnustep_system_root`"
+	einfo "\tGNUSTEP_LOCAL_ROOT=`egnustep_local_root`"
+	einfo "\tGNUSTEP_NETWORK_ROOT=`egnustep_network_root`"
+	einfo "\tGNUSTEP_USER_ROOT=`egnustep_user_root`"
+	ebeep
+	epause 10
 }
 
 src_unpack() {
-	unpack ${A}
-	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/make-user-defaults.patch-${PV}
+	cvs_src_unpack
+	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/make-user-defaults.patch-1.10.0
 	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/GNUstep-reset.sh.patch
 }
 
