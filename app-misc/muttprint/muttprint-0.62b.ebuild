@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/muttprint/Attic/muttprint-0.62b.ebuild,v 1.7 2004/03/14 10:52:17 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/muttprint/Attic/muttprint-0.62b.ebuild,v 1.8 2004/06/14 08:49:14 kloeri Exp $
 
 DESCRIPTION="pretty printing of your mails"
 HOMEPAGE="http://muttprint.sf.net/"
@@ -9,6 +9,7 @@ SRC_URI="mirror://sourceforge/muttprint/${P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="x86"
+IUSE=""
 
 DEPEND="virtual/tetex"
 
