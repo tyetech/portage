@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/numeric/Attic/numeric-23.1.ebuild,v 1.7 2004/05/31 21:40:59 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/numeric/Attic/numeric-23.1.ebuild,v 1.8 2004/06/25 01:35:11 agriffis Exp $
 
 inherit distutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/clientform/Attic/clientform-0.1.15.ebuild,v 1.3 2004/06/15 18:58:19 pythonhead Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/clientform/Attic/clientform-0.1.15.ebuild,v 1.4 2004/06/25 01:27:48 agriffis Exp $
 
 inherit distutils
 

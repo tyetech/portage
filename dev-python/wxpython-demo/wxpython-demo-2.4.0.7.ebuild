@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/wxpython-demo/Attic/wxpython-demo-2.4.0.7.ebuild,v 1.3 2003/10/08 17:41:59 pythonhead Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/wxpython-demo/Attic/wxpython-demo-2.4.0.7.ebuild,v 1.4 2004/06/25 01:52:14 agriffis Exp $
 
 MY_P=${P/wxpython-demo/wxPythonDemo}
 
