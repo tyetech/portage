@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.2.3-r1.ebuild,v 1.11 2004/06/08 13:51:28 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.2.3-r1.ebuild,v 1.12 2004/06/24 22:33:44 agriffis Exp $
 
 inherit flag-o-matic gnuconfig
 
