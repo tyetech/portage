@@ -1,49 +1,47 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centericq/Attic/centericq-4.9.6.ebuild,v 1.5 2004/04/27 22:59:12 coronalvr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centericq/Attic/centericq-4.9.12.ebuild,v 1.1 2004/04/27 22:59:12 coronalvr Exp $
 
 inherit eutils
 
 IUSE="nls ssl"
 
 S=${WORKDIR}/${P}
-DESCRIPTION="A ncurses ICQ/Yahoo!/MSN/IRC/Jabber Client"
+DESCRIPTION="A ncurses ICQ/Yahoo!/AIM/IRC/MSN/Jabber Client"
 SRC_URI="http://konst.org.ua/download/${P}.tar.gz"
 HOMEPAGE="http://konst.org.ua/eng/software/centericq/info.html"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 sparc"
+KEYWORDS="~x86 ~sparc ~amd64 ~ppc"
 
 DEPEND="virtual/glibc
 	>=sys-libs/ncurses-5.2
-	=dev-libs/libsigc++-1.0*
-	=dev-libs/glib-1.2*
 	ssl? ( >=dev-libs/openssl-0.9.6g )
-	nls? ( dev-libs/fribidi )"
+	bidi? ( dev-libs/fribidi )"
 
 RDEPEND="nls? ( sys-devel/gettext )"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/missing_namespace.patch
 }
 
 src_compile() {
 	# Options you can add to myopts
-	# --disable-msn      Build without MSN
 	# --disable-yahoo    Build without Yahoo!
 	# --disable-aim      Build without AIM
 	# --disable-irc      Build without IRC
+	# --disable-msn      Build without MSN
 	# --disable-jabber   Build without Jabber
 	# --disable-rss      Build without RSS reader
 	# --no-konst         Don't add contact list items
+	# --disable-lj       Build without LiveJournal client"
 	#                    supplied by author by default
 	local myopts="--with-gnu-ld"
 
 	use nls || myopts="${myopts} --disable-nls"
 
-	use nls && myopts="${myopts} --with-fribidi"
+	use bidi && myopts="${myopts} --with-fribidi"
 
 	use ssl && myopts="${myopts} --with-ssl"
 
