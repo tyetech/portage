@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/bluej-bin/Attic/bluej-bin-1.3.5.ebuild,v 1.1 2004/07/30 19:13:31 axxo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/bluej-bin/Attic/bluej-bin-1.3.5.ebuild,v 1.2 2004/08/03 11:33:11 dholm Exp $
 
 inherit java-pkg
 
@@ -17,7 +17,7 @@ HOMEPAGE="http://www.bluej.org"
 
 LICENSE="freedist"
 SLOT="0"
-KEYWORDS="x86 ~sparc"
+KEYWORDS="x86 ~sparc ~ppc"
 
 DEPEND=">=virtual/jdk-1.4*"
 
