@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/net-tools/Attic/net-tools-1.60-r5.ebuild,v 1.17 2003/03/18 21:21:08 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/net-tools/Attic/net-tools-1.60-r6.ebuild,v 1.1 2003/03/18 21:36:25 mholzer Exp $
 
 inherit eutils
 
