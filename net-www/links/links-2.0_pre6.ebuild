@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
 # Author: Defresne Sylvain (keiichi) <kamisama@free.fr>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/links/Attic/links-2.0_pre4-r1.ebuild,v 1.2 2002/05/28 02:57:41 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/links/Attic/links-2.0_pre6.ebuild,v 1.1 2002/06/05 02:01:58 seemant Exp $
 
 DESCRIPTION="links is a fast lightweight text tand graphic web-browser"
 HOMEPAGE="http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/"
@@ -10,7 +10,8 @@ LICENSE="GPL-2"
 # To handle pre-version ...
 MYP="${P/_/}"
 S="${WORKDIR}/${MYP}"
-SRC_URI="${HOMEPAGE}/download/${MYP}.tar.bz2"
+SRC_URI="${HOMEPAGE}/download/${MYP}.tar.bz2
+		http://www.ibiblio.org/gentoo/distfiles/links-2.0pre4-patch.tar.bz2"
 SLOT="0"
 
 DEPEND="virtual/glibc
@@ -62,6 +63,8 @@ src_compile ()
 	# ./configure only support 'gpm' features auto-detection, so if
 	# 'sys-libs/gpm' is compiled on your system, you'll compile links
 	# with gpm support ...
+	# This patch adds support for various little fix's
+	patch -p1 < ${WORKDIR}/links.patch || die
 
 	econf ${myconf} || die
 	emake || die "make failed"
