@@ -1,26 +1,24 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/bug-buddy/Attic/bug-buddy-1.0.ebuild,v 1.3 2000/09/15 20:08:52 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-apps/cvs-repo/gentoo-x86/gnome-apps/medusa/Attic/medusa-0.2.ebuild,v 1.1 2000/10/14 11:32:54 achim Exp $
 
-P=bug-buddy-1.0
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
-DESCRIPTION="bug-buddy"
-SRC_URI="ftp://ftp.gnome.org/pub/GNOME/stable/sources/bug-buddy/"${A}
+DESCRIPTION="medusa"
+SRC_URI="ftp://ftp.gnome.org/pub/GNOME/unstable/sources/${PN}/${A}"
 HOMEPAGE="http://www.gnome.org/"
 
 src_compile() {                           
   cd ${S}
-  try ./configure --host=${CHOST} --prefix=/opt/gnome --with-catgets 
+  try ./configure --host=${CHOST} --prefix=/opt/gnome
   try make
 }
 
 src_install() {                               
   cd ${S}
   try make prefix=${D}/opt/gnome install
-  dodoc AUTHORS COPYING* NEWS
-  dodoc README* TODO
+  dodoc AUTHORS COPYING ChangeLog NEWS README
 }
 
 

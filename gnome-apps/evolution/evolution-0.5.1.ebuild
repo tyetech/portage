@@ -1,13 +1,13 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-apps/cvs-repo/gentoo-x86/gnome-apps/gnucash/Attic/gnucash-1.4.6.ebuild,v 1.1 2000/09/18 21:21:43 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-apps/cvs-repo/gentoo-x86/gnome-apps/evolution/Attic/evolution-0.5.1.ebuild,v 1.1 2000/10/14 11:32:52 achim Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
-DESCRIPTION="A personal finance manager"
-SRC_URI="http://download.sourceforge.net/gnucash/${A}"
-HOMEPAGE="http://gnucash.sourceforge.net"
+DESCRIPTION="evolution"
+SRC_URI="http://www.helixcode.com/apps/evolution-preview/${A}"
+HOMEPAGE="http://"
 
 
 src_compile() {
@@ -22,6 +22,7 @@ src_install () {
 
     cd ${S}
     try make DESTDIR=${D} install
-
+    dodoc AUTHORS COPYING ChangeLog HACKING MAINTAINERS
+    dodoc NEWS README
 }
 
