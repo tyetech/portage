@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mpeg4ip/Attic/mpeg4ip-1.1.ebuild,v 1.10 2004/11/06 03:18:29 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mpeg4ip/Attic/mpeg4ip-1.1.ebuild,v 1.11 2005/01/04 03:05:51 tester Exp $
 
 inherit eutils
 
