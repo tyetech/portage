@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/vte/Attic/vte-0.10.8.ebuild,v 1.1 2003/01/12 19:42:57 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/vte/Attic/vte-0.10.14.ebuild,v 1.1 2003/01/24 20:18:40 foser Exp $
 
 inherit gnome2
 
 IUSE="doc"
 
 S=${WORKDIR}/${P}
-DESCRIPTION="Xft terminal widget"
+DESCRIPTION="Xft powered terminal widget"
 HOMEPAGE="http://www.gnome.org/"
 
 SLOT="0"
