@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-20001016.ebuild,v 1.2 2001/01/20 01:13:36 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-20001016-r1.ebuild,v 1.1 2001/01/30 22:26:53 drobbins Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -26,6 +26,8 @@ src_compile() {
 src_install() {                               
 	cd ${S}
 	try make install prefix=${D}/usr mandir=${D}/usr/man exec_prefix=${D}
+	#add "vigr" symbolic link
+	dosym vipw /usr/sbin/vigr
 	mv ${D}/lib ${D}/usr
 	dosed "s:/lib:/usr/lib:" /usr/lib/libshadow.la
 	cd ${D}/usr/sbin
