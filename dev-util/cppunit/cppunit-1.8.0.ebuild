@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cppunit/Attic/cppunit-1.8.0.ebuild,v 1.9 2004/08/25 02:20:21 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cppunit/Attic/cppunit-1.8.0.ebuild,v 1.10 2005/03/14 13:42:57 caleb Exp $
 
 IUSE=""
 
