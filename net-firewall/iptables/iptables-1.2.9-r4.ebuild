@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/iptables/Attic/iptables-1.2.9-r3.ebuild,v 1.3 2004/07/02 10:31:32 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/iptables/Attic/iptables-1.2.9-r4.ebuild,v 1.1 2004/07/03 15:36:32 aliz Exp $
 
 inherit eutils flag-o-matic
 
@@ -95,12 +95,35 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR=${D} MANDIR=/usr/share/man ${myconf} install || die
-	make DESTDIR=${D} ${myconf} \
-		LIBDIR=/usr/lib \
-		MANDIR=/usr/share/man \
-		INCDIR=/usr/include \
-		install-devel || die
+	if use extensions; then
+		make DESTDIR=${D} ${myconf} \
+			LIBDIR=/lib \
+			MANDIR=/usr/share/man \
+			INCDIR=/usr/include \
+			KERNEL_DIR=/usr/src/linux \
+			install || die "Please check http://cvs.iptables.org/patch-o-matic-ng/updates/ if your kernel needs to be patched for iptables"
+
+		make DESTDIR=${D} ${myconf} \
+			LIBDIR=/usr/lib \
+			MANDIR=/usr/share/man \
+			INCDIR=/usr/include \
+			KERNEL_DIR=/usr/src/linux \
+			install-devel || die "Please check http://cvs.iptables.org/patch-o-matic-ng/updates/ if your kernel needs to be patched for iptables"
+	else
+		make DESTDIR=${D} ${myconf} \
+			LIBDIR=/lib \
+			MANDIR=/usr/share/man \
+			INCDIR=/usr/include \
+			KERNEL_DIR=/usr \
+			install || die
+
+		make DESTDIR=${D} ${myconf} \
+			LIBDIR=/usr/lib \
+			MANDIR=/usr/share/man \
+			INCDIR=/usr/include \
+			KERNEL_DIR=/usr \
+			install-devel || die
+	fi
 
 	dodoc COPYING
 	dodir /var/lib/iptables ; keepdir /var/lib/iptables
