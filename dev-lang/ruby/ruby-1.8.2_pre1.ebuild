@@ -1,21 +1,21 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.1-r6.ebuild,v 1.8 2004/07/17 09:54:45 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.2_pre1.ebuild,v 1.1 2004/07/17 09:54:45 usata Exp $
 
-ONIGURUMA="onigd2_2_8"
-SNAP_DATE="20040424-1"
+ONIGURUMA="onigd2_3_1"
+MY_P=${P/_pre/-preview}
 
 inherit flag-o-matic alternatives eutils gnuconfig
 
 DESCRIPTION="An object-oriented scripting language"
 HOMEPAGE="http://www.ruby-lang.org/"
-SRC_URI="mirror://ruby/${PV%.*}/${P/_pre/-preview}.tar.gz
-	mirror://gentoo/${P}-${SNAP_DATE}.diff.gz
-	cjk? ( ftp://ftp.ruby-lang.org/pub/ruby/contrib/${ONIGURUMA}.tar.gz )"
+SRC_URI="mirror://ruby/${PV%.*}/${MY_P}.tar.gz"
+SRC_URI="${SRC_URI}
+	cjk? ( http://www.geocities.jp/kosako1/oniguruma/archive/${ONIGURUMA}.tar.gz )"
 
 LICENSE="Ruby"
 SLOT="1.8"
-KEYWORDS="x86 ppc sparc ~mips alpha arm hppa amd64 -ia64 ~s390"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 -ia64 ~s390"
 IUSE="socks5 tcltk cjk"
 
 RDEPEND=">=sys-libs/glibc-2.1.3
@@ -31,14 +31,10 @@ DEPEND="sys-devel/autoconf
 	${RDEPEND}"
 PROVIDE="virtual/ruby"
 
-S=${WORKDIR}/${P%_pre*}
+S=${WORKDIR}/${P%_*}
 
 src_unpack() {
 	unpack ${A}
-
-	pushd ${S}
-	epatch ../${P}-${SNAP_DATE}.diff
-	popd
 
 	if use cjk ; then
 		einfo "Applying ${ONIGURUMA}"
