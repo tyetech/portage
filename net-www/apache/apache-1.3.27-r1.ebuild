@@ -1,46 +1,32 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/apache/Attic/apache-1.3.26-r3.ebuild,v 1.6 2002/10/04 06:18:56 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/apache/Attic/apache-1.3.27-r1.ebuild,v 1.1 2002/10/12 21:16:25 woodchip Exp $
 
-mod_ssl_ver=2.8.9-${PV}
-HARD_SERVER_LIMIT=512
+mod_ssl_ver=2.8.11-${PV}
 
-S=${WORKDIR}/apache_${PV}
+S=${WORKDIR}/${PN}_${PV}
 DESCRIPTION="The Apache Web Server"
 HOMEPAGE="http://www.apache.org http://www.modssl.org"
+KEYWORDS="x86 ppc sparc sparc64"
 SRC_URI="http://httpd.apache.org/dist/httpd/apache_${PV}.tar.gz
+	mirror://gentoo/${P}-gentoo.diff.bz2
 	ftp://ftp.modssl.org/source/mod_ssl-${mod_ssl_ver}.tar.gz"
 # The mod_ssl archive is only for providing the EAPI patch in here.
 # You should install the net-www/mod_ssl package for the actual DSO.
 
-RDEPEND="virtual/glibc
-	=sys-libs/db-1*
-	=sys-libs/db-3*
+DEPEND="sys-devel/perl sys-libs/db
 	>=dev-libs/mm-1.1.3
 	>=sys-libs/gdbm-1.8
 	>=dev-libs/expat-1.95.2"
-DEPEND="${RDEPEND} sys-devel/perl"
-
-SLOT="1"
+RDEPEND="${DEPEND}"
 LICENSE="Apache-1.1"
-KEYWORDS="x86 ppc sparc sparc64"
+SLOT="1"
 
 src_unpack() {
 	local myssl
-	unpack ${A} ; cd ${S}
-
-	# some nice patches..
-	patch -p1 < ${FILESDIR}/${PV}/mdk/apache_1.3.11-apxs.patch || die m1
-	patch -p1 < ${FILESDIR}/${PV}/mdk/apache_1.3.22-srvroot.patch || die m2
-	patch -p1 < ${FILESDIR}/${PV}/mdk/apache-1.3.14-mkstemp.patch || die m3
-	patch -p0 < ${FILESDIR}/${PV}/mdk/apache-1.3.20.manpage.patch || die m4
-	patch -p1 < ${FILESDIR}/${PV}/deb/apxs_wrong_prefix || die d1
-	patch -p1 < ${FILESDIR}/${PV}/deb/custom_response_segfaults || die d2
-	patch -p1 < ${FILESDIR}/${PV}/deb/mime_type_fix || die d3
-	patch -p1 < ${FILESDIR}/${PV}/deb/regex_must_conform_to_posix_for_LFS_to_work || die d4
-	patch -p1 < ${FILESDIR}/${PV}/deb/suexec_combined || die d5
-	patch -p1 < ${FILESDIR}/${PV}/deb/suexec_of_death || die d6
-	patch -p1 < ${FILESDIR}/${PV}/deb/usr_bin_perl_owns_you || die d7
+	unpack ${A} || die
+	cd ${S} || die
+	bzip2 -dc ${DISTDIR}/${P}-gentoo.diff.bz2 | patch -p1 || die
 
 	# yet another perl path fix..
 	cp htdocs/manual/search/manual-index.cgi \
@@ -51,7 +37,7 @@ src_unpack() {
 	rm -f htdocs/manual/search/manual-index.cgi.orig
 
 	# setup eapi...
-	myssl=${S}/../mod_ssl-${mod_ssl_ver}
+	myssl=${WORKDIR}/mod_ssl-${mod_ssl_ver}
 	cp ${myssl}/pkg.eapi/*.h src/include
 	cp ${myssl}/pkg.eapi/*.c src/ap
 	patch -p0 < ${myssl}/pkg.eapi/eapi.patch || die eapi
@@ -60,10 +46,6 @@ src_unpack() {
 	mv src/include/httpd.h src/include/httpd.h.orig
 	sed -e 's:logs/mm:/var/cache/apache-mm/mm:' \
 		src/include/httpd.h.orig > src/include/httpd.h
-
-	# fix this silly script so it finds a db lib..
-	mv src/helpers/find-dbm-lib src/helpers/find-dbm-lib.orig
-	cp ${FILESDIR}/find-dbm-lib src/helpers
 }
 
 src_compile() {
@@ -76,18 +58,18 @@ src_compile() {
 	DATA_DIR=`grep ^apache: /etc/passwd | cut -d: -f6`
 
 	if [ -z "$DATA_DIR" ]; then
-		eerror "DATA_DIR is null! Using defaults."
-		eerror "You probably want to check /etc/passwd"
 		DATA_DIR="/home/httpd"
+		eerror "DATA_DIR is null! Using default."
+		eerror "Create the apache user and set the homedir to your desired location."
 	fi
 
-	einfo "Using $DATA_DIR as the default data directory."
-        
+	einfo "Using $DATA_DIR as apache's default data directory."
+
 	select_modules_config || \
-	die "couldn't find apache-builtin-mods config file"        
+	die "couldn't find apache-builtin-mods config file"
 
 	#-DBUFFERED_LOGS
-	OPTIM="${mycflags} -DHARD_SERVER_LIMIT=${HARD_SERVER_LIMIT} \
+	OPTIM="${mycflags} -DHARD_SERVER_LIMIT=${HARD_SERVER_LIMIT:=512} \
 		-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64" \
 	LIBS="-lgdbm -lpthread" \
 	EAPI_MM=SYSTEM \
@@ -125,7 +107,7 @@ src_compile() {
 		--suexec-gidmin=100 \
 		--suexec-caller=apache \
 		--suexec-userdir=public_html \
-		--suexec-docroot=${DATA_DIR}/htdocs \
+		--suexec-docroot=/home \
 		--suexec-safepath="/bin:/usr/bin" \
 		--suexec-logfile=/var/log/apache/suexec_log \
 		\
@@ -145,16 +127,22 @@ src_install() {
 		DATA_DIR="/home/httpd"
 	fi
 
+	GID=`grep ^apache: /etc/group |cut -d: -f3`
+	if [ -z "${GID}" ]; then
+		einfo "Using default GID of 81 for Apache"
+		GID=81
+	fi
+
 	local myfile
 	make install-quiet root=${D} || die
-	dodoc ABOUT_APACHE Announcement INSTALL* LICENSE* README* WARNING*
+	dodoc ABOUT_APACHE Announcement INSTALL* LICENSE* README* WARNING* ${FILESDIR}/robots.txt
 
-	fowners root.apache /usr/sbin/suexec
+	fowners root.${GID} /usr/sbin/suexec
 	fperms 4710 /usr/sbin/suexec
 	#fowners apache.apache ${DATA_DIR}
 	#fowners apache.apache ${DATA_DIR}/htdocs
 
-	# nice support scripts..    # apachefixconf
+	# nice support scripts..
 	for myfile in apacheaddmod apachedelmod \
 		apachelogserverstatus apachesplitlogfile
 	do
@@ -174,6 +162,7 @@ src_install() {
 	dosym /usr/share/doc/${PF}/manual ${DATA_DIR}/htdocs/manual
 
 	# deprecated config files, empty dirs..
+	rm -f ${D}/etc/apache/conf/apache.conf.default
 	rm -f ${D}/etc/apache/conf/access.conf*
 	rm -f ${D}/etc/apache/conf/srm.conf*
 
@@ -207,11 +196,26 @@ src_install() {
 			rm ${FILE}.orig
 		done
 	fi
+	dodir /var/cache/apache
+	touch ${D}/var/cache/apache/.keep
+
+	dodir /var/cache/apache-mm
+	touch ${D}/var/cache/apache-mm/.keep
+
+	dodir /usr/lib/apache-extramodules
+	touch ${D}/usr/lib/apache-extramodules/.keep
+
+	dodir /etc/apache/conf/addon-modules
+	touch ${D}/etc/apache/conf/addon-modules/.keep
+
+	dodir /var/log/apache
+	touch ${D}/var/log/apache/.keep
+
 }
 
 pkg_postinst() {
-	# these are in baselayout now; it will not hurt to leave them here though..
-
+	# these are in baselayout now; it will not hurt to leave them here though
+	# moved to pkg_postinst by jnelson, moved to pkg_preinst by lostlogic
 	if ! groupmod apache; then
 		groupadd -g 81 apache || die "problem adding group apache"
 	fi
@@ -222,13 +226,6 @@ pkg_postinst() {
 		useradd -u 81 -g apache -s /bin/false -d /home/httpd -c "apache" apache
 		assert "problem adding user apache"
 	fi
-
-	# empty dirs..
-	install -d -o apache -g apache ${ROOT}/var/cache/apache
-	install -d -o apache -g apache -m1333 ${ROOT}/var/cache/apache-mm
-	install -d -o root -g root -m0755 ${ROOT}/usr/lib/apache-extramodules
-	install -d -o root -g root -m0755 ${ROOT}/etc/apache/conf/addon-modules
-	install -d -o root -g root -m0755 ${ROOT}/var/log/apache
 }
 
 parse_modules_config() {
@@ -237,7 +234,7 @@ parse_modules_config() {
 	local dso=""
 	local disable=""
 	[ -f ${filename} ] || return 1
-	einfo ">>> using ${filename} for builtins..."
+	einfo "Using ${filename} for builtins."
 	for i in `cat $filename | sed "s/^#.*//"` ; do
 		if [ $i == "-" ] ; then
 			disable="true"
