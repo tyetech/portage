@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmatroska/Attic/libmatroska-0.7.3.ebuild,v 1.3 2005/02/27 14:50:41 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmatroska/Attic/libmatroska-0.7.5.ebuild,v 1.1 2005/02/27 14:50:41 mholzer Exp $
 
 IUSE=""
 
@@ -12,12 +12,15 @@ SRC_URI="http://www.bunkus.org/videotools/mkvtoolnix/sources/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~hppa ~amd64 ~ia64"
+KEYWORDS="~x86 ~sparc ~ppc64 ~ppc"
 
-DEPEND=">=dev-libs/libebml-0.7.1"
+DEPEND=">=dev-libs/libebml-0.7.3"
 
 src_unpack() {
 	unpack ${A}
+
+	cd ${S}
+	epatch ${FILESDIR}/libmatroska-shared2.patch
 
 	cd ${S}/make/linux
 	sed -i -e 's/CXXFLAGS=/CXXFLAGS+=/g' Makefile
