@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/textutils/Attic/textutils-2.0.9.ebuild,v 1.1 2000/12/07 15:41:06 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/textutils/Attic/textutils-2.0.10.ebuild,v 1.1 2000/12/11 20:05:17 drobbins Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
