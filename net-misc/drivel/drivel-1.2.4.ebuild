@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/drivel/Attic/drivel-1.2.1.ebuild,v 1.6 2005/02/03 01:33:46 joem Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/drivel/Attic/drivel-1.2.4.ebuild,v 1.1 2005/02/03 01:33:46 joem Exp $
 
 inherit gnome2
 
@@ -9,9 +9,9 @@ HOMEPAGE="http://www.dropline.net/drivel/"
 SRC_URI="mirror://sourceforge/drivel/${P}.tar.bz2"
 LICENSE="GPL-2"
 
-IUSE=""
+IUSE="rhythmbox spell"
 SLOT="0"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc"
 
 # note: there's also an optional rhythmbox dependency
 
@@ -24,7 +24,9 @@ RDEPEND=">=dev-libs/glib-2.4
 	>=gnome-base/libglade-2
 	>=dev-libs/libxml2-2
 	>=x11-libs/gtksourceview-1
-	>=net-misc/curl-7.12.0"
+	>=net-misc/curl-7.12.0
+	spell? ( >=app-text/gtkspell-2.0 )
+	rhythmbox? ( media-sound/rhythmbox )"
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.12.0
@@ -32,11 +34,10 @@ DEPEND="${RDEPEND}
 
 DOCS="AUTHORS ChangeLog INSTALL NEWS README TODO"
 
-G2CONF="${G2CONF} --without-rhythmbox"
+G2CONF="${G2CONF} \
+	`use_with spell gtkspell` \
+	`use_with rhythmbox` \
+	--disable-mime-update \
+	--disable-desktop-update"
 
-src_unpack() {
-	unpack ${A}
-
-#	sed -e 's/-DGTK_DISABLE_DEPRECATED//g' -i ${S}/src/Makefile.in
-#	sed -e 's/-DGNOME_DISABLE_DEPRECATED//g' -i ${S}/src/Makefile.in
-}
+USE_DESTDIR="1"
