@@ -1,14 +1,15 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metacity/Attic/metacity-2.6.1.ebuild,v 1.1 2003/09/12 00:31:25 spider Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metacity/Attic/metacity-2.6.1.ebuild,v 1.2 2003/09/12 14:30:01 foser Exp $
 
 inherit gnome2
 
-DESCRIPTION="Small gtk2 WindowManager"
+DESCRIPTION="Gnome default windowmanager"
 HOMEPAGE="http://people.redhat.com/~hp/metacity/"
-SLOT="1"
+
+SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~alpha ~sparc"
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa ~amd64"
 
 # not parallel-safe; see bug #14405
 MAKEOPTS="${MAKEOPTS} -j1"
