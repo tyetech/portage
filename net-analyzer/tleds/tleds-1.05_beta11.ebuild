@@ -1,6 +1,6 @@
 # Copyright 2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tleds/Attic/tleds-1.05_beta11.ebuild,v 1.6 2002/10/20 18:50:48 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tleds/Attic/tleds-1.05_beta11.ebuild,v 1.7 2002/12/09 04:33:09 manson Exp $
 
 IUSE="X"
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.hut.fi/~jlohikos/tleds/public/${MY_P/11/10}.tgz
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 sparc sparc64"
+KEYWORDS="x86 sparc "
 
 DEPEND="X? ( virtual/x11 )"
 

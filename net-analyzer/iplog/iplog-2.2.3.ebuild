@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iplog/Attic/iplog-2.2.3.ebuild,v 1.10 2002/10/04 05:58:27 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iplog/Attic/iplog-2.2.3.ebuild,v 1.11 2002/12/09 04:33:08 manson Exp $
 
 
 S=${WORKDIR}/${P}
@@ -12,7 +12,7 @@ DEPEND="net-libs/libpcap"
 
 SLOT="0"
 LICENSE="GPL-2 | FDL-1.1"
-KEYWORDS="x86 ppc sparc sparc64"
+KEYWORDS="x86 ppc sparc "
 
 src_compile() {
 
