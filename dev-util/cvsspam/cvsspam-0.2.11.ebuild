@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cvsspam/Attic/cvsspam-0.2.11.ebuild,v 1.1 2004/12/13 11:01:18 nakano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cvsspam/Attic/cvsspam-0.2.11.ebuild,v 1.2 2004/12/26 03:37:49 nakano Exp $
 
 DESCRIPTION="a system for flagging CVS commit mails with HTML-colourisation-goop"
 SRC_URI="http://www.badgers-in-foil.co.uk/projects/cvsspam/${P}.tar.gz"
@@ -8,7 +8,7 @@ HOMEPAGE="http://www.badgers-in-foil.co.uk/projects/cvsspam/"
 LICENSE="GPL-2"
 DEPEND="virtual/libc"
 RDEPEND="dev-lang/ruby"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ~ppc"
 SLOT="0"
 IUSE=""
 
