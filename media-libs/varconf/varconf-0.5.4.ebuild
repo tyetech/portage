@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/varconf/Attic/varconf-0.5.4.ebuild,v 1.7 2004/11/15 18:26:43 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/varconf/Attic/varconf-0.5.4.ebuild,v 1.8 2004/12/27 18:21:52 gustavoz Exp $
 
 DESCRIPTION="A configuration system designed for the STAGE server."
 SRC_URI="ftp://victor.worldforge.org/pub/worldforge/libs/varconf/${P}.tar.bz2"
@@ -8,7 +8,7 @@ HOMEPAGE="http://www.worldforge.net"
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="x86 ~sparc"
+KEYWORDS="x86 sparc"
 IUSE=""
 
 DEPEND="virtual/libc"
