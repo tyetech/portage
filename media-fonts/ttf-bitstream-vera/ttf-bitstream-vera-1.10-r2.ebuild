@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/ttf-bitstream-vera/Attic/ttf-bitstream-vera-1.10-r2.ebuild,v 1.10 2004/06/07 21:29:54 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/ttf-bitstream-vera/Attic/ttf-bitstream-vera-1.10-r2.ebuild,v 1.11 2004/06/24 22:31:35 agriffis Exp $
 
 inherit gnome.org
 
