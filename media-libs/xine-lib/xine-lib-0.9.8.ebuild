@@ -1,11 +1,11 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
+# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Distributed under the terms of the GNU General Public License v2 
 # Author Martin Schlemmer <azarah@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-0.9.7.ebuild,v 1.2 2002/01/25 09:29:30 gbevin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-0.9.8.ebuild,v 1.1 2002/02/12 19:23:33 verwilst Exp $ 
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Xine is a free gpl-licensed video player for unix-like systems"
-SRC_URI="http://skyblade.homeip.net/xine/XINE-${PV}/source.TAR.BZ2s/xine-lib-${PV}.tar.bz2"
+SRC_URI="http://xine.sourceforge.net/files/xine-lib-${PV}.tar.gz"
 HOMEPAGE="http://xine.sourceforge.net/"
 
 DEPEND="virtual/glibc
@@ -28,20 +28,19 @@ src_compile() {
 	use X      || myconf="${myconf} --disable-x11 --disable-xv"
 	use alsa   || myconf="${myconf} --disable-alsa --disable-alsatest"
 	use esd    || myconf="${myconf} --disable-esd --disable-esdtest"
-#	use aalib  || myconf="${myconf} --disable-aalib --disable-aalibtest"
+#	use aalib  || myconf="${myconf} --disable-aalib --disable-aalibtest" 
 	use arts   || myconf="${myconf} --disable-arts --disable-artstest"
 	use ogg    || myconf="${myconf} --disable-ogg --disable-oggtest"
 	use vorbis || myconf="${myconf} --disable-vorbis --disable-vorbistest"
 	 
-	./configure --host=${CHOST} 					\
-		    --prefix=/usr					\
-		    --mandir=/usr/share/man				\
-		    --infodir=/usr/share/info				\
-		    --sysconfdir=/etc					\
-		    --with-w32-path=/usr/lib/win32			\
+	./configure --host=${CHOST} 			\
+		    --prefix=/usr			\
+		    --mandir=/usr/share/man		\
+		    --infodir=/usr/share/info		\		    --sysconfdir=/etc			\
+		    --with-w32-path=/usr/lib/win32	\
 		    ${myconf} || die
 		    
-	make || die
+	emake || die
 }
 
 src_install() {
@@ -56,5 +55,8 @@ src_install() {
 	dodoc AUTHORS COPYING ChangeLog INSTALL README TODO
 	cd ${S}/doc
 	dodoc dataflow.dia README*
+
 }
+
+
 
