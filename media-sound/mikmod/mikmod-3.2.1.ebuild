@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mikmod/mikmod-3.2.1.ebuild,v 1.7 2004/07/06 08:02:06 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mikmod/mikmod-3.2.1.ebuild,v 1.8 2004/07/09 22:17:05 hansmi Exp $
 
 IUSE=""
 
@@ -10,7 +10,7 @@ SRC_URI="http://mikmod.raphnet.net/files/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~amd64 ~sparc"
+KEYWORDS="x86 ~amd64 ~sparc ~ppc"
 
 DEPEND=">=media-libs/libmikmod-3.1.5"
 
