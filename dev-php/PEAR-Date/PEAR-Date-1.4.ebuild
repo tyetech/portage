@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Date/Attic/PEAR-Date-1.4.ebuild,v 1.1 2003/12/23 17:01:36 coredumb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Date/Attic/PEAR-Date-1.4.ebuild,v 1.2 2004/05/30 17:15:00 kloeri Exp $
 
 inherit php-pear
 
@@ -8,5 +8,5 @@ IUSE=""
 DESCRIPTION="Date and Time Zone Classes"
 LICENSE="PHP"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha"
+KEYWORDS="~x86 ~ppc ~sparc alpha"
 
