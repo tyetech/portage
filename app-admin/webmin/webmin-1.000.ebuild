@@ -1,6 +1,6 @@
-# Copyright 2002, Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/webmin/Attic/webmin-1.000.ebuild,v 1.2 2002/09/16 16:50:52 bjb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/webmin/Attic/webmin-1.000.ebuild,v 1.3 2002/09/30 02:06:35 vapier Exp $
 
 DESCRIPTION="Webmin, a web-based system administration interface"
 SRC_URI="http://www.webmin.com/download/${P}.tar.gz"
