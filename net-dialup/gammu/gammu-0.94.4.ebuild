@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/gammu/Attic/gammu-0.94.2.ebuild,v 1.1 2004/04/11 01:11:35 st_lim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/gammu/Attic/gammu-0.94.4.ebuild,v 1.1 2004/04/12 11:18:49 st_lim Exp $
 
 inherit eutils
 
