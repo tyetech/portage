@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-ximian/Attic/openoffice-ximian-1.1.55-r1.ebuild,v 1.4 2004/05/12 09:15:46 suka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-ximian/Attic/openoffice-ximian-1.1.55-r1.ebuild,v 1.5 2004/05/14 14:21:39 suka Exp $
 
 # IMPORTANT:  This is extremely alpha!!!
 
@@ -339,7 +339,7 @@ src_compile() {
 		--with-system-zlib \
 		--with-system-freetype \
 		--with-system-curl \
-		--disable-java
+		--disable-java \
 		--with-widgetset=${WIDGETSET}"
 	./configure ${myconf} || die
 
