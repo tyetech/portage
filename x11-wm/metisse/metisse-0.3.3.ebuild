@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metisse/Attic/metisse-0.3.3.ebuild,v 1.2 2004/10/03 13:51:23 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metisse/Attic/metisse-0.3.3.ebuild,v 1.3 2005/02/20 10:55:13 usata Exp $
 
 inherit eutils
 
