@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/ppracer/Attic/ppracer-0.2.1.ebuild,v 1.1 2004/12/15 09:48:43 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/ppracer/Attic/ppracer-0.2.1.ebuild,v 1.2 2005/01/20 03:10:09 mr_bones_ Exp $
 
 inherit flag-o-matic gnuconfig games
 
