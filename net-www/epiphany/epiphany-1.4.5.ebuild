@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/epiphany/Attic/epiphany-1.4.5.ebuild,v 1.4 2004/12/11 09:24:16 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/epiphany/Attic/epiphany-1.4.5.ebuild,v 1.5 2005/01/08 13:38:04 slarti Exp $
 
 inherit eutils gnome2
 
