@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsdl/Attic/libsdl-1.2.7.ebuild,v 1.5 2004/06/09 15:37:54 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsdl/Attic/libsdl-1.2.7.ebuild,v 1.6 2004/06/24 23:14:01 agriffis Exp $
 
 inherit fixheadtails eutils
 

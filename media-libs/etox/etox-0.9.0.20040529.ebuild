@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/etox/Attic/etox-0.9.0.20040529.ebuild,v 1.1 2004/05/30 18:30:44 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/etox/Attic/etox-0.9.0.20040529.ebuild,v 1.2 2004/06/24 22:59:16 agriffis Exp $
 
 EHACKAUTOGEN=yes
 export WANT_AUTOMAKE=1.8

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/allegro/Attic/allegro-4.1.14.ebuild,v 1.2 2004/06/09 18:00:37 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/allegro/Attic/allegro-4.1.14.ebuild,v 1.3 2004/06/24 22:55:33 agriffis Exp $
 
 inherit flag-o-matic
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/a52dec/Attic/a52dec-0.7.4-r1.ebuild,v 1.1 2004/04/05 16:46:02 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/a52dec/Attic/a52dec-0.7.4-r1.ebuild,v 1.2 2004/06/24 22:54:49 agriffis Exp $
 
 inherit flag-o-matic
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xvid/Attic/xvid-1.0.0_rc4.ebuild,v 1.2 2004/05/16 09:02:44 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xvid/Attic/xvid-1.0.0_rc4.ebuild,v 1.3 2004/06/24 23:26:07 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gltt/Attic/gltt-2.5.2-r1.ebuild,v 1.11 2004/03/19 07:56:03 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gltt/Attic/gltt-2.5.2-r1.ebuild,v 1.12 2004/06/24 23:01:29 agriffis Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="GL truetype library"

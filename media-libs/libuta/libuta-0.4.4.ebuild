@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libuta/Attic/libuta-0.4.4.ebuild,v 1.3 2004/03/19 07:56:04 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libuta/Attic/libuta-0.4.4.ebuild,v 1.4 2004/06/24 23:15:34 agriffis Exp $
 
 IUSE=""
 DESCRIPTION="a GUI library for C++ that uses SDL as its output layer"

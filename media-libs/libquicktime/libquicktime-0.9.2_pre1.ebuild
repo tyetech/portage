@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libquicktime/Attic/libquicktime-0.9.2_pre1.ebuild,v 1.19 2004/06/07 23:29:24 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libquicktime/Attic/libquicktime-0.9.2_pre1.ebuild,v 1.20 2004/06/24 23:13:38 agriffis Exp $
 
 inherit libtool eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libpixman/Attic/libpixman-0.1.1.ebuild,v 1.3 2004/06/05 00:25:17 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libpixman/Attic/libpixman-0.1.1.ebuild,v 1.4 2004/06/24 23:13:17 agriffis Exp $
 
 DESCRIPTION="A generic library for manipulating pixel regions"
 HOMEPAGE="http://cairographics.org/"

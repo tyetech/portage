@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/vgui/Attic/vgui-1.90a.ebuild,v 1.2 2004/06/04 09:16:33 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/vgui/Attic/vgui-1.90a.ebuild,v 1.3 2004/06/24 23:25:11 agriffis Exp $
 
 MY_PN="v"
 MY_PV="${PV/a}"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdl-mixer/Attic/sdl-mixer-1.2.5-r1.ebuild,v 1.13 2004/05/28 11:34:12 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdl-mixer/Attic/sdl-mixer-1.2.5-r1.ebuild,v 1.14 2004/06/24 23:21:43 agriffis Exp $
 
 inherit eutils
 

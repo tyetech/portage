@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/fontconfig/Attic/fontconfig-2.2.1.ebuild,v 1.17 2004/06/11 12:58:50 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/fontconfig/Attic/fontconfig-2.2.1.ebuild,v 1.18 2004/06/24 23:00:12 agriffis Exp $
 
 inherit eutils gcc
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgd/Attic/libgd-2.0.22.ebuild,v 1.8 2004/04/07 23:05:28 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgd/Attic/libgd-2.0.22.ebuild,v 1.9 2004/06/24 23:09:30 agriffis Exp $
 
 inherit eutils
 
