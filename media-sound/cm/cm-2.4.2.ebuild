@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cm/Attic/cm-2.4.2.ebuild,v 1.2 2004/03/19 23:27:21 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cm/Attic/cm-2.4.2.ebuild,v 1.3 2004/03/23 06:40:07 eradicator Exp $
 
 DESCRIPTION="Common Music: An object oriented music composition environment in LISP/scheme"
 HOMEPAGE="http://commonmusic.sourceforge.net"
@@ -16,8 +16,7 @@ DEPEND=">=dev-util/guile-1.6.4"
 src_install() {
 	dodir /usr/share/${PN}
 	# the installer part needs the bin dir created
-	dodir /usr/share/${PN}/bin
-	touch ${D}/usr/share/${PN}/bin/.keep
+	keepdir /usr/share/${PN}/bin
 	dodir /usr/share/${PN}/src
 	insinto /usr/share/${PN}/src
 	doins ${S}/src/*

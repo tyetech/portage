@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mserv/Attic/mserv-0.35.ebuild,v 1.2 2004/03/12 03:53:06 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mserv/Attic/mserv-0.35.ebuild,v 1.3 2004/03/23 06:41:39 eradicator Exp $
 
 inherit webapp-apache eutils
 
@@ -82,10 +82,8 @@ src_install() {
 	fowners mserv:mserv /var/log/mserv.log
 
 	# Track and album info
-	dodir /var/lib/mserv/trackinfo
+	keepdir /var/lib/mserv/trackinfo
 	fowners mserv:mserv /var/lib/mserv/trackinfo
-	touch ${D}/var/lib/mserv/trackinfo/.keep
-	fowners mserv:mserv /var/lib/mserv/trackinfo/.keep
 
 	# Current track output
 	dodir /var/spool/mserv
