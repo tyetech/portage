@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gstreamer/Attic/gstreamer-0.8.7.ebuild,v 1.10 2004/12/16 05:43:59 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gstreamer/Attic/gstreamer-0.8.7.ebuild,v 1.11 2005/01/25 19:56:45 corsair Exp $
 
 inherit eutils flag-o-matic libtool gnome2
 
