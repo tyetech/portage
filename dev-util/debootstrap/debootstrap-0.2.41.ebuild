@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/debootstrap/Attic/debootstrap-0.2.41.ebuild,v 1.3 2004/10/31 00:58:21 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/debootstrap/Attic/debootstrap-0.2.41.ebuild,v 1.4 2005/01/27 13:57:31 lanius Exp $
 
 MY_PV=${PV}-0.2
 DESCRIPTION="Debian bootstrap scripts"
