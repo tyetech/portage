@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.2.0.2.ebuild,v 1.4 2003/02/13 12:15:02 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.2.0.2.ebuild,v 1.5 2003/02/19 19:46:39 foser Exp $
 
 inherit gnome2 eutils
 
@@ -50,4 +50,6 @@ src_unpack() {
 	# Fix bug 15450: nautilus-2.2.0.2 doesn't build without
 	# optimization.  We'll need this patch until it's fixed upstream.
 	epatch ${FILESDIR}/${PN}-2.2.0.2-locale.patch
+        # Fix bug #15984: double rightclick menus on localized systems
+        epatch ${FILESDIR}/${PN}-2.2-double_menu_entry_fix.patch
 }
