@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libglademm/Attic/libglademm-1.3.4.ebuild,v 1.4 2002/12/23 17:05:36 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libglademm/Attic/libglademm-2.0.0.ebuild,v 1.1 2002/12/23 17:05:37 foser Exp $
 
 inherit gnome2
 
@@ -12,11 +12,13 @@ HOMEPAGE="http://gtkmm.sourceforge.net/"
 LICENSE="LGPL-2.1"
 KEYWORDS="~x86 ~ppc ~sparc"
 
-RDEPEND=">=gnome-base/libglade-2.0.0
-	>=x11-libs/gtkmm-1.3.17"
-
+RDEPEND=">=gnome-base/libglade-2
+	>=x11-libs/gtkmm-2.0.2"
 
 DEPEND=">=dev-util/pkgconfig-0.12.0
 	${RDEPEND}"
 
-DOCS="AUTHORS COPYING ChangeLog NEWS README TODO"
+# Needed for 2.0.0, it misses some make/libtool magic
+export SED=sed
+
+DOCS="AUTHORS COPYING ChangeLog NEWS README TODO INSTALL"
