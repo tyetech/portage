@@ -1,11 +1,11 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/hylafax/Attic/hylafax-4.1.7-r1.ebuild,v 1.2 2003/10/25 05:57:26 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/hylafax/Attic/hylafax-4.1.8.ebuild,v 1.1 2003/11/13 07:49:16 nerdboy Exp $
 
 # This is basically unchanged from the one supplied by Stephane Loeuillet
 # to Gentoo bug: http://bugs.gentoo.org/show_bug.cgi?id=28574
 # Nice job, and thanks :)
-# Now with autoreconf for new gcc.
+# Now with autoreconf for new gcc, and a new gentoo init script.
 
 IUSE="jpeg"
 
@@ -72,7 +72,7 @@ src_install() {
 
 	insinto /etc/init.d
 	insopts -m 755
-	doins etc/hylafax
+	doins ${FILESDIR}/hylafax
 
 	dodoc COPYRIGHT README TODO VERSION
 
