@@ -1,31 +1,30 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/evolution/Attic/evolution-1.0.8-r1.ebuild,v 1.7 2002/10/05 05:39:22 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/evolution/Attic/evolution-1.1.90.ebuild,v 1.1 2002/11/09 12:58:31 azarah Exp $
 
 IUSE="ssl nls mozilla ldap doc spell pda"
 
 #provide Xmake and Xemake
 
-inherit virtualx libtool
+inherit gnome.org virtualx libtool
 
-DB3=db-3.1.17
-S=${WORKDIR}/${P}
+DB3="db-3.1.17"
+S="${WORKDIR}/${P}"
 DESCRIPTION="A GNOME groupware application, a Microsoft Outlook workalike"
-SRC_URI="ftp://ftp.gnome.org/pub/GNOME/stable/sources/${PN}/${P}.tar.gz
-	ftp://ftp.ximian.com/pub/source/${PN}/${P}.tar.gz
-	http://people.codefactory.se/~micke/${PN}/${P}.tar.gz
+SRC_URI="${SRC_URI}
 	http://www.sleepycat.com/update/3.1.17/${DB3}.tar.gz"
 HOMEPAGE="http://www.ximian.com"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc sparc64"
+KEYWORDS="~x86 ~ppc ~sparc ~sparc64"
 
 RDEPEND="app-text/scrollkeeper
-	>=gnome-extra/bonobo-conf-0.14
-	>=gnome-base/bonobo-1.0.18
-	>=gnome-extra/gal-0.19.2
+	>=gnome-extra/bonobo-conf-0.16
+	>=gnome-base/bonobo-1.0.21
+	>=gnome-base/gnome-common-1.2
+	>=gnome-extra/gal-0.21
 	=gnome-base/gconf-1.0*
-	>=gnome-extra/gtkhtml-1.0.2-r2
+	>=gnome-extra/gtkhtml-1.1.4
 	>=gnome-base/oaf-0.6.7
 	>=gnome-base/ORBit-0.5.12
 	( >=gnome-base/libglade-0.17-r1
@@ -35,6 +34,7 @@ RDEPEND="app-text/scrollkeeper
 	=gnome-base/gnome-vfs-1.0*		
 	>=gnome-base/gnome-print-0.34
 	>=dev-util/gob-1.0.12
+	>=net-libs/soup-0.7.4-r1
 	doc?	 ( >=app-text/scrollkeeper-0.3.10-r1 )
 	ssl?     ( >=net-www/mozilla-0.9.9 )
 	ldap?    ( >=net-nds/openldap-2.0 )
@@ -53,39 +53,17 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	
-	cd ${S}
-	# Fix the filter crash.  This is actually a problem in the add and
-	# edit code.  Mikael Hallendal originally fixed the bug in the add
-	# code.  I added the fixes for the edit code.
-	#
-	# Martin Schlemmer (02 April 2002)
-	patch -p0 < ${FILESDIR}/evolution-1.0.3-filter-crash.patch || die
-	# add mandrake patches
-	# fix KDE detection
-	patch -d ${S} -p1 < ${FILESDIR}/evolution-1.0.2-kde.patch || die
-	# call pilot conduit applet (not pilot link applet)
-	patch -d ${S} -p1 < ${FILESDIR}/evolution-1.0.2-conduit.patch || die
-	# Patch from Preston A. Elder to resolve bug #1355
-	# fix a problem with literal strings and sertain IMAP servers
-	patch -d ${S} -p1 < ${FILESDIR}/evolution-1.0.2-imapfix.diff || die
-	# Use DTD compliant scrollkeeper file (from Mandrake/CVS)
-	patch -d ${S} -p1 < ${FILESDIR}/evolution-1.0.8-scrollkeeper.patch || die
-
-	# lobtoolize to fix not all libs installing, and buggy .la files.
+	# libtoolize to fix not all libs installing, and buggy .la files.
 	# also add the gnome-pilot.m4 to the macros directory to fix
 	# problems with the pilot conduct
 	cd ${S}
-	if [ ! -f ${S}/macros/gnome-pilot.m4 ]
-	then
-		cp ${FILESDIR}/gnome-pilot.m4 ${S}/macros || die
-	fi
 	elibtoolize
 	xml-i18n-toolize --force
-	aclocal -I macros
+	aclocal -I macros -I /usr/share/aclocal/gnome-macros
 	autoconf
 	automake --add-missing
 	
-	(cd libical ; aclocal ; autoconf)
+	(cd libical ; aclocal -I /usr/share/aclocal/gnome-macros ; autoconf)
 
 	# Fix sandbox errors
 	cd ${S}/default_user
@@ -105,8 +83,7 @@ src_compile() {
 	cd ${S}
   
 	local myconf=""
-
-	MOZILLA=$MOZILLA_FIVE_HOME
+	local MOZILLA="${MOZILLA_FIVE_HOME}"
 
 	if [ -n "`use pda`" ] ; then
 		myconf="${myconf} --with-pisock=/usr --enable-pilot-conduits=yes"
