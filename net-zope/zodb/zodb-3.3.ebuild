@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/zodb/Attic/zodb-3.3.ebuild,v 1.1 2004/10/14 19:40:25 radek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/zodb/Attic/zodb-3.3.ebuild,v 1.2 2005/01/14 22:16:59 radek Exp $
 
 inherit distutils
 
