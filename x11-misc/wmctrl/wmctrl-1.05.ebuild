@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wmctrl/Attic/wmctrl-1.05.ebuild,v 1.4 2004/09/02 22:49:41 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wmctrl/Attic/wmctrl-1.05.ebuild,v 1.5 2005/02/20 10:42:49 usata Exp $
 
 DESCRIPTION="command line tool to interact with an EWMH/NetWM compatible X Window Manager"
 HOMEPAGE="http://sweb.cz/tripie/utils/wmctrl/"
