@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/blam/Attic/blam-1.2.0.ebuild,v 1.1 2004/08/04 01:48:42 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/blam/Attic/blam-1.2.0.ebuild,v 1.2 2004/08/04 03:40:10 dholm Exp $
 
 inherit mono gnome2
 
@@ -10,7 +10,7 @@ SRC_URI="http://ftp.imendio.com/pub/imendio/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 
 IUSE=""
 DEPEND=">=dev-dotnet/mono-1.0
