@@ -1,8 +1,9 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/tetex/Attic/tetex-1.0.7-r12.ebuild,v 1.9 2003/04/10 01:54:33 satai Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/tetex/Attic/tetex-1.0.7-r12.ebuild,v 1.10 2003/04/12 23:48:02 method Exp $
 
 inherit flag-o-matic
+filter-flags "-fstack-protector"
 
 TEXMFSRC="teTeX-texmf-gg-1.0.3.tar.bz2"
 S=${WORKDIR}/teTeX-1.0
