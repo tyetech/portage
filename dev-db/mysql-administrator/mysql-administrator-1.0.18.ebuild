@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-administrator/Attic/mysql-administrator-1.0.17a.ebuild,v 1.2 2004/12/17 18:05:49 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-administrator/Attic/mysql-administrator-1.0.18.ebuild,v 1.1 2004/12/20 18:52:07 swegener Exp $
 
 inherit gnome2
 
