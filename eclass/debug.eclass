@@ -1,6 +1,6 @@
-`# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/debug.eclass,v 1.19 2004/05/24 00:30:34 carpaski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/debug.eclass,v 1.20 2004/05/24 00:31:29 carpaski Exp $
 #
 # Author: Spider
 #
