@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/rasmol/Attic/rasmol-2.7.2.1.ebuild,v 1.2 2004/04/01 09:31:26 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/rasmol/Attic/rasmol-2.7.2.1.1.ebuild,v 1.1 2004/04/01 09:31:26 phosphan Exp $
 
 MY_P="RasMol_${PV}"
 
@@ -22,7 +22,6 @@ src_unpack() {
 	# Hack required for build
 	cd src
 	ln -s ../doc
-	gunzip doc/rasmol.1.gz
 }
 
 src_compile() {
