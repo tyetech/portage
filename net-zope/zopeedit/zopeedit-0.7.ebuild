@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/zopeedit/Attic/zopeedit-0.7.ebuild,v 1.1 2004/01/22 14:41:34 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/zopeedit/Attic/zopeedit-0.7.ebuild,v 1.2 2004/06/25 01:27:04 agriffis Exp $
 
 inherit distutils
 
