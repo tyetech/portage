@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xfree-drm/Attic/xfree-drm-4.3.0-r2.ebuild,v 1.4 2003/06/14 09:01:24 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xfree-drm/Attic/xfree-drm-4.3.0-r3.ebuild,v 1.1 2003/06/14 09:01:24 seemant Exp $
 
 # Small note:  we should prob consider using a DRM only tarball, as it will ease
 #              some of the overhead on older systems, and will enable us to
@@ -15,7 +15,7 @@ inherit eutils
 DEBUG="yes"
 RESTRICT="nostrip"
 
-SNAPSHOT="20030306"
+SNAPSHOT="20030504"
 
 S="${WORKDIR}/drm"
 DESCRIPTION="Xfree86 Kernel DRM modules"
@@ -25,14 +25,15 @@ SRC_URI="mirror://gentoo/linux-drm-${PV}-kernelsource-${SNAPSHOT}.tar.gz
 # Latest tarball of DRM sources can be found here:
 #
 #   http://www.xfree86.org/~alanh/
-#
+# 
+# We now use Daenzer's sources at http://people.debian.org/~daenzer/
 
-LICENSE="X11"
 SLOT="${KV}"
-KEYWORDS="x86 ppc ~alpha"
+LICENSE="X11"
+KEYWORDS="~x86 ~ppc ~alpha"
 
 DEPEND=">=x11-base/xfree-${PV}
-		virtual/linux-sources"
+	virtual/linux-sources"
 
 PROVIDE="virtual/drm"
 
@@ -67,12 +68,21 @@ if [ "`use gamma`" ]
 then
 	VIDCARDS="${VIDCARDS} gamma.o"
 fi
-if [ -z "${VIDCARDS}" -a "${ARCH}" = "ppc" ]
+if [ -z "${VIDCARDS}" ]
 then
-	VIDCARDS="r128.o radeon.o"
+	if [ "${ARCH}" = "ppc" ]
+	then
+		VIDCARDS="r128.o radeon.o"
+	else
+		VIDCARDS="mga.o tdfx.o r128.o radeon.o sis.o i810.o i830.o gamma.o"
+	fi
 fi
 
 src_unpack() {
+	if [ ! -f /usr/src/linux/include/config/MARKER ] ; then
+		die "Please compile kernel sources"
+	fi
+
 	unpack ${A}
 	cd ${S}
 
@@ -80,7 +90,8 @@ src_unpack() {
 
 	epatch ${PATCHDIR}/${PF}-gentoo-Makefile-fixup.patch
 	epatch ${PATCHDIR}/${PF}-drm-ioremap.patch
-	epatch ${PATCHDIR}/${PF}-radeon-resume-v8.patch
+#	This patch is irrelevant but it was in Daenzer's stuff
+#	epatch ${PATCHDIR}/${PF}-radeon-resume-v8.patch
 	epatch ${PATCHDIR}/${PF}-dristat.patch
 }
 
@@ -88,35 +99,20 @@ src_compile() {
 	check_KV
 	ln -sf Makefile.linux Makefile
 	einfo "Building DRM..."
-	if [ -z "${VIDCARDS}" ]
-	then
-		make \
-			TREE="/usr/src/linux/include" KV="${KV}"
-	else
-		make ${VIDCARDS} \
-			TREE="/usr/src/linux/include" KV="${KV}"
-	fi
+	make ${VIDCARDS} \
+		TREE="/usr/src/linux/include" KV="${KV}"
 	make dristat || die
 }
 
 src_install() {
 
 	einfo "installing DRM..."
-	if [ -z "${VIDCARDS}" ]
-	then
-		make \
-			TREE="/usr/src/linux/include" \
-			KV="${KV}" \
-			DESTDIR="${D}" \
-			install || die
-	else
-		make \
-			TREE="/usr/src/linux/include" \
-			KV="${KV}" \
-			DESTDIR="${D}" \
-			MODS="${VIDCARDS}" \
-			install || die
-	fi
+	make \
+		TREE="/usr/src/linux/include" \
+		KV="${KV}" \
+		DESTDIR="${D}" \
+		MODS="${VIDCARDS}" \
+		install || die
 	dodoc README*
 	exeinto /usr/X11R6/bin
 	doexe dristat
