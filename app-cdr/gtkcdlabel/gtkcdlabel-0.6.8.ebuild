@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/gtkcdlabel/Attic/gtkcdlabel-0.6.8.ebuild,v 1.11 2004/06/06 15:05:44 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/gtkcdlabel/Attic/gtkcdlabel-0.6.8.ebuild,v 1.12 2004/06/24 21:33:59 agriffis Exp $
 
 DESCRIPTION="A GTK+ frontend to cdlabelgen for easy and fast cd cover creation."
 HOMEPAGE="http://gtkcdlabel.sourceforge.net"

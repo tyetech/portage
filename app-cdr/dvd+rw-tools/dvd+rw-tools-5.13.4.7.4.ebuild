@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/dvd+rw-tools/Attic/dvd+rw-tools-5.13.4.7.4.ebuild,v 1.6 2004/06/14 17:08:18 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/dvd+rw-tools/Attic/dvd+rw-tools-5.13.4.7.4.ebuild,v 1.7 2004/06/24 21:33:16 agriffis Exp $
 
 DESCRIPTION="A set of tools for DVD+RW/-RW drives."
 HOMEPAGE="http://fy.chalmers.se/~appro/linux/DVD+RW/"

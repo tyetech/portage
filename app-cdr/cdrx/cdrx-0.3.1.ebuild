@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrx/Attic/cdrx-0.3.1.ebuild,v 1.13 2004/06/06 14:53:36 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrx/Attic/cdrx-0.3.1.ebuild,v 1.14 2004/06/24 21:32:35 agriffis Exp $
 
 DESCRIPTION="Menu based front-end to mkisofs and cdrecord"
 SRC_URI="mirror://sourceforge/cdrx/${P}.tar.gz"

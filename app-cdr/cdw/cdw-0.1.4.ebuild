@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdw/Attic/cdw-0.1.4.ebuild,v 1.3 2004/03/12 12:02:37 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdw/Attic/cdw-0.1.4.ebuild,v 1.4 2004/06/24 21:32:45 agriffis Exp $
 
 DESCRIPTION="ncurses-based console frontend to cdrecord and mkisofs"
 HOMEPAGE="http://cdw.sourceforge.net"
