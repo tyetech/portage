@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-proxy/cvs-repo/gentoo-x86/www-proxy/squid/Attic/squid-2.5.5-r3.ebuild,v 1.3 2004/10/11 23:07:15 cyfred Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-proxy/cvs-repo/gentoo-x86/www-proxy/squid/Attic/squid-2.5.5-r3.ebuild,v 1.4 2005/01/11 21:38:53 cyfred Exp $
 
 inherit eutils
 
