@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc. Distributed under the terms
 # of the GNU General Public License, v2 or later 
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-1.9.3.ebuild,v 1.2 2002/04/26 02:44:09 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-1.9.5.ebuild,v 1.1 2002/04/30 06:12:52 drobbins Exp $
  
 S=${WORKDIR}/${P}
 SLOT="0"
@@ -129,8 +129,8 @@ pkg_postinst() {
 	#fix cache (could contain staleness)
 	if [ -d ${ROOT}var/cache/edb/dep ]
 	then
-		#remove the entire dir because using * can overload the commandline
-		rm -rf ${ROOT}var/cache/edb/dep
-	fi
-	install -d ${ROOT}var/cache/edb/dep
+		rm -rf ${ROOT}var/cache/edb/dep/*
+	else
+		install -d ${ROOT}var/cache/edb/dep
+	fi	
 }
