@@ -1,18 +1,18 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/clamav/Attic/clamav-0.75.ebuild,v 1.3 2004/10/05 10:38:47 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/clamav/Attic/clamav-0.80_rc3.ebuild,v 1.1 2004/10/08 19:07:02 lordvan Exp $
 
 inherit eutils flag-o-matic
 
-#MY_P="${PN}-0.70-rc"
-MY_P="${P}"
+MY_P="${PN}-0.80rc3"
+#MY_P="${P}"
 DESCRIPTION="Clam Anti-Virus Scanner"
 HOMEPAGE="http://www.clamav.net/"
 SRC_URI="mirror://sourceforge/clamav/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc ~sparc ~mips ~alpha ~hppa ~amd64 ~ia64"
+KEYWORDS="~x86"
 IUSE="milter crypt"
 
 DEPEND="virtual/libc
