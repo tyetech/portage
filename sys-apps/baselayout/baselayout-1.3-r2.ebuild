@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.3.ebuild,v 1.5 2000/11/15 01:48:27 drobbins Exp $# Copyright 1999-2000 Gentoo Technologies, Inc.
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.3-r2.ebuild,v 1.1 2000/11/22 20:56:31 drobbins Exp $# Copyright 1999-2000 Gentoo Technologies, Inc.
 
 A=""
 S=${WORKDIR}/${P}
@@ -43,7 +43,7 @@ src_install()
 	chmod 1777 ${D}/tmp
 	insopts -m0644
 	insinto /etc
-	for foo in services passwd shadow nsswitch.conf inetd.conf ld.so.conf pam.conf protocols fstab hosts syslog.conf pwdb.conf filesystems group profile crontab
+	for foo in services passwd shadow nsswitch.conf inetd.conf ld.so.conf protocols fstab hosts syslog.conf pwdb.conf filesystems group profile crontab
 	do
 		doins ${FILESDIR}/${foo}
 	done
@@ -62,6 +62,10 @@ src_install()
         dosym rcboot.d /etc/rc.d/rc0.d
         dosym rchalt.d /etc/rc.d/rc6.d
 
+    dodir /etc/pam.d
+    cd ${FILESDIR}/pam.d
+    insinto /etc/pam.d
+    doins *
 	dodir /etc/rc.d/init.d
 	dodir /etc/rc.d/config
 	cd ${FILESDIR}/rc.d/init.d
