@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-21.3-r2.ebuild,v 1.15 2004/06/24 21:53:36 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-21.3-r2.ebuild,v 1.16 2004/07/04 14:15:47 usata Exp $
 
 inherit flag-o-matic eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://gnu/emacs/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc sparc alpha amd64 hppa ia64 s390"
+KEYWORDS="x86 ppc sparc alpha amd64 hppa ia64 s390"
 IUSE="X nls motif leim gnome Xaw3d"
 
 RDEPEND="sys-libs/ncurses
@@ -55,10 +55,10 @@ src_compile() {
 			--with-tiff
 			--with-gif
 			--with-png"
-		if use motif ; then
-			myconf="${myconf} --with-x-toolkit=motif"
-		elif use Xaw3d ; then
+		if use Xaw3d ; then
 			myconf="${myconf} --with-x-toolkit=athena"
+		elif use motif ; then
+			myconf="${myconf} --with-x-toolkit=motif"
 		else
 			# do not build emacs with any toolkit, bug 35300
 			myconf="${myconf} --with-x-toolkit=no"

@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-21.3-r3.ebuild,v 1.7 2004/07/04 14:15:47 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-21.3-r4.ebuild,v 1.1 2004/07/04 14:15:47 usata Exp $
 
-inherit flag-o-matic eutils
+inherit flag-o-matic eutils alternatives
 
 DESCRIPTION="An incredibly powerful, extensible text editor"
 HOMEPAGE="http://www.gnu.org/software/emacs"
@@ -10,8 +10,8 @@ SRC_URI="mirror://gnu/emacs/${P}.tar.gz
 	leim? ( mirror://gnu/emacs/leim-${PV}.tar.gz )"
 
 LICENSE="GPL-2"
-SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc -alpha arm -hppa ~amd64 -ia64 ~s390"
+SLOT="${PV}"
+KEYWORDS="~x86 ~ppc ~sparc -alpha ~arm -hppa ~amd64 -ia64 ~s390"
 IUSE="X nls motif leim gnome Xaw3d lesstif"
 
 RDEPEND="sys-libs/ncurses
@@ -79,6 +79,11 @@ src_compile() {
 
 src_install() {
 	einstall || die
+	for i in ${D}/usr/bin/* ; do
+		mv ${i} ${i}-${PV}
+	done
+	mv ${D}/usr/bin/emacs-${PV}{-${PV},}
+
 	einfo "Fixing info documentation..."
 	rm -f ${D}/usr/share/info/dir
 	for i in ${D}/usr/share/info/*
@@ -86,16 +91,35 @@ src_install() {
 		mv ${i%.info} $i.info
 	done
 
+	for m in ${D}/usr/share/man/man1/* ; do
+		mv ${m} ${m/.1/-${PV}.1}
+	done
+
 	einfo "Fixing permissions..."
 	find ${D} -perm 664 |xargs chmod 644
 	find ${D} -type d |xargs chmod 755
 
-	dodoc BUGS ChangeLog README
-
 	keepdir /usr/share/emacs/${PV}/leim
+
+	dodoc BUGS ChangeLog README
 
 	if use gnome ; then
 		insinto /usr/share/gnome/apps/Application
 		doins ${FILESDIR}/${DFILE}
 	fi
+}
+
+update-alternatives() {
+	for i in emacs emacsclient etags ctags b2m ebrowse \
+		rcs-checkin grep-changelog ; do
+		alternatives_auto_makesym "/usr/bin/$i" "/usr/bin/$i-21.*"
+	done
+}
+
+pkg_postinst() {
+	update-alternatives
+}
+
+pkg_postrm() {
+	update-alternatives
 }
