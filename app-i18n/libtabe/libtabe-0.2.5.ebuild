@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/libtabe/Attic/libtabe-0.2.5.ebuild,v 1.10 2004/06/14 07:19:54 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/libtabe/Attic/libtabe-0.2.5.ebuild,v 1.11 2004/06/24 21:50:05 agriffis Exp $
 
 inherit eutils
 

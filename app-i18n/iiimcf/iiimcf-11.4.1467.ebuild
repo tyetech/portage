@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/iiimcf/Attic/iiimcf-11.4.1467.ebuild,v 1.3 2004/03/10 20:23:44 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/iiimcf/Attic/iiimcf-11.4.1467.ebuild,v 1.4 2004/06/24 21:45:31 agriffis Exp $
 
 inherit iiimf
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/uim-svn/Attic/uim-svn-20040124.ebuild,v 1.7 2004/04/16 02:14:14 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/uim-svn/Attic/uim-svn-20040124.ebuild,v 1.8 2004/06/24 21:56:10 agriffis Exp $
 
 inherit subversion flag-o-matic eutils
 
