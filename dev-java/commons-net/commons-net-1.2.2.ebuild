@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/commons-net/Attic/commons-net-1.2.2.ebuild,v 1.9 2004/10/16 08:40:19 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/commons-net/Attic/commons-net-1.2.2.ebuild,v 1.10 2004/10/16 17:08:56 axxo Exp $
 
 inherit eutils java-pkg
 
@@ -34,5 +34,5 @@ src_compile() {
 src_install() {
 	mv ${S}/target/${P}-dev.jar ${S}/target/${PN}.jar
 	java-pkg_dojar target/${PN}.jar || die "died on java-pkg_dojar"
-	use doc && dohtml -r dist/docs/
+	use doc && java-pkg_dohtml -r dist/docs/
 }
