@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/BSD-Resource/Attic/BSD-Resource-1.22.ebuild,v 1.3 2003/08/07 02:12:05 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/BSD-Resource/Attic/BSD-Resource-1.23.ebuild,v 1.1 2003/12/24 21:33:04 mcummings Exp $
 
 inherit perl-module
 
