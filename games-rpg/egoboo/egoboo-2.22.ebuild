@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/egoboo/Attic/egoboo-2.22.ebuild,v 1.7 2004/03/15 19:25:11 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/egoboo/Attic/egoboo-2.22.ebuild,v 1.8 2004/05/05 01:17:16 mr_bones_ Exp $
 
 inherit eutils flag-o-matic games
 
@@ -11,6 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/ego${PV/./}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="-* x86 ppc"
+IUSE=""
 
 RDEPEND="virtual/glibc
 	virtual/x11
