@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprint/Attic/libgnomeprint-2.5.4.ebuild,v 1.1 2004/03/21 16:09:03 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprint/Attic/libgnomeprint-2.6.0.ebuild,v 1.1 2004/03/23 13:51:28 foser Exp $
 
 inherit gnome2
 
