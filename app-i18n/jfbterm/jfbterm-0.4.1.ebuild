@@ -1,13 +1,13 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/jfbterm/Attic/jfbterm-0.4.0.ebuild,v 1.2 2003/09/04 01:47:36 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/jfbterm/Attic/jfbterm-0.4.1.ebuild,v 1.1 2003/09/04 01:47:36 usata Exp $
 
 inherit flag-o-matic
 replace-flags "-march=pentium3" "-mcpu=pentium3"
 
 DESCRIPTION="The J Framebuffer Terminal/Multilingual Enhancement"
 HOMEPAGE="http://jfbterm.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/${PN}/5792/${P}.tar.gz"
+SRC_URI="mirror://sourceforge.jp/${PN}/5803/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
