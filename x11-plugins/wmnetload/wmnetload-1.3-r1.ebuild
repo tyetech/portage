@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmnetload/Attic/wmnetload-1.3.ebuild,v 1.5 2004/07/20 12:57:23 s4t4n Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmnetload/Attic/wmnetload-1.3-r1.ebuild,v 1.1 2004/07/20 12:57:23 s4t4n Exp $
 
 inherit eutils
 
@@ -12,10 +12,19 @@ SRC_URI="ftp://truffula.com/pub/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 amd64 ~ppc"
+KEYWORDS="~x86 ~amd64 ~ppc"
 
 DEPEND="virtual/x11
-	=x11-libs/libdockapp-0.4.0-r1"
+	>=x11-libs/libdockapp-0.5.0"
+
+src_unpack()
+{
+	unpack ${A}
+	cd ${S}
+
+	# Add support for libdockapp 0.5
+	epatch ${FILESDIR}/add_support_for_libdockapp_0.5.patch
+}
 
 src_compile()
 {
