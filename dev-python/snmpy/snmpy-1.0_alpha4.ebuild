@@ -1,8 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author: gert@hobbiton.be (Gert)
-# Maintainer: Jon Nelson <jnelson@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/snmpy/Attic/snmpy-1.0_alpha4.ebuild,v 1.2 2002/05/27 17:27:37 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/snmpy/Attic/snmpy-1.0_alpha4.ebuild,v 1.3 2002/07/11 06:30:24 drobbins Exp $
 
 TARNAME=snmpy-alpha-4
 S=${WORKDIR}/${TARNAME}

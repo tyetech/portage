@@ -1,7 +1,6 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/RPC-XML/Attic/RPC-XML-0.27.ebuild,v 1.1 2001/07/10 07:33:07 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/RPC-XML/Attic/RPC-XML-0.27.ebuild,v 1.2 2002/07/11 06:30:22 drobbins Exp $
 
 A=${PN}-${PV}.tar.gz
 S=${WORKDIR}/${P}

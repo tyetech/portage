@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Bart Lauwers <blauwers@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/DelimMatch/Attic/DelimMatch-1.04.ebuild,v 1.2 2002/06/01 12:38:45 blauwers Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/DelimMatch/Attic/DelimMatch-1.04.ebuild,v 1.3 2002/07/11 06:30:21 drobbins Exp $
 
 inherit perl-module
 

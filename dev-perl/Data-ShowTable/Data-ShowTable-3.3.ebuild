@@ -1,7 +1,6 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Data-ShowTable/Attic/Data-ShowTable-3.3.ebuild,v 1.2 2001/05/03 16:38:57 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Data-ShowTable/Attic/Data-ShowTable-3.3.ebuild,v 1.3 2002/07/11 06:30:21 drobbins Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}

@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author: Tools Team <tools@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/gtk-perl-glade/Attic/gtk-perl-glade-0.7004-r1.ebuild,v 1.3 2002/05/06 23:28:26 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/gtk-perl-glade/Attic/gtk-perl-glade-0.7004-r1.ebuild,v 1.4 2002/07/11 06:30:23 drobbins Exp $
 
 S=${WORKDIR}/Gtk-Perl-${PV}
 DESCRIPTION="Perl bindings for GTK"

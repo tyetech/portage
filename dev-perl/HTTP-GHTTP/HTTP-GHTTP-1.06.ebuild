@@ -1,7 +1,6 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTTP-GHTTP/Attic/HTTP-GHTTP-1.06.ebuild,v 1.5 2001/10/07 11:11:07 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTTP-GHTTP/Attic/HTTP-GHTTP-1.06.ebuild,v 1.6 2002/07/11 06:30:22 drobbins Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
