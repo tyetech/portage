@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/fileutils/Attic/fileutils-4.0.31.ebuild,v 1.1 2000/11/05 16:23:39 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/fileutils/Attic/fileutils-4.0.32.ebuild,v 1.1 2000/11/11 16:38:04 drobbins Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
