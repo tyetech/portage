@@ -1,7 +1,7 @@
 #!/sbin/runscript
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rsync/files/rsyncd.init.d,v 1.2 2004/05/02 22:45:02 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rsync/files/rsyncd.init.d,v 1.3 2004/07/15 00:11:37 agriffis Exp $
 
 depend() {
 	use net

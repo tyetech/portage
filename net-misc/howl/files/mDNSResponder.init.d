@@ -1,7 +1,7 @@
 #!/sbin/runscript
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2         
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/howl/files/Attic/mDNSResponder.init.d,v 1.1 2003/12/27 16:25:28 lisa Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/howl/files/Attic/mDNSResponder.init.d,v 1.2 2004/07/14 23:59:44 agriffis Exp $
 
 depend() {
 	use nifd

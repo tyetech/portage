@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/mdidentd/files/mdidentd.conf.d,v 1.1 2003/11/04 00:32:16 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/mdidentd/files/mdidentd.conf.d,v 1.2 2004/07/15 00:03:10 agriffis Exp $
 
 # Config file for /etc/init.d/mdidentd
 
