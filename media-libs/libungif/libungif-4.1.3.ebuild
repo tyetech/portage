@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libungif/Attic/libungif-4.1.3.ebuild,v 1.8 2005/01/31 03:02:01 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libungif/Attic/libungif-4.1.3.ebuild,v 1.9 2005/02/03 21:06:22 tgall Exp $
 
 inherit eutils libtool
 
@@ -24,6 +24,7 @@ src_unpack() {
 }
 
 src_compile() {
+	export WANT_AUTOCONF=2.5
 	econf $(use_with X x) || die
 	emake || die
 }
