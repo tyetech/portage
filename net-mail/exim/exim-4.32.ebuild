@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/exim/Attic/exim-4.32.ebuild,v 1.1 2004/04/24 13:03:45 peitolm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/exim/Attic/exim-4.32.ebuild,v 1.2 2004/04/27 20:54:50 agriffis Exp $
+
+inherit eutils
 
 IUSE="tcpd ssl postgres mysql ldap pam exiscan-acl maildir lmtp ipv6 sasl wildlsearch dnsdb perl mbox X"
 

@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mozilla-thunderbird/Attic/mozilla-thunderbird-0.5-r1.ebuild,v 1.3 2004/04/26 15:56:49 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mozilla-thunderbird/Attic/mozilla-thunderbird-0.5-r1.ebuild,v 1.4 2004/04/27 20:59:00 agriffis Exp $
 
-inherit makeedit flag-o-matic gcc nsplugins
+inherit makeedit flag-o-matic gcc nsplugins eutils
 
 S=${WORKDIR}/mozilla
 
