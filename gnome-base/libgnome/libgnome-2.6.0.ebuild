@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnome/Attic/libgnome-2.5.92.1.ebuild,v 1.1 2004/03/19 16:25:56 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnome/Attic/libgnome-2.6.0.ebuild,v 1.1 2004/03/22 11:58:20 foser Exp $
 
 inherit gnome2
 
