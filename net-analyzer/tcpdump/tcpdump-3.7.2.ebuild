@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcpdump/Attic/tcpdump-3.7.2.ebuild,v 1.10 2004/04/27 21:21:46 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcpdump/Attic/tcpdump-3.7.2.ebuild,v 1.11 2004/05/02 07:20:05 vapier Exp $
 
 inherit eutils
 
-IUSE="ssl"
+IUSE="ssl ipv6"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A Tool for network monitoring and data acquisition"
