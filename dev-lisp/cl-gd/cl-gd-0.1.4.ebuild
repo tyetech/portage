@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-gd/Attic/cl-gd-0.1.4.ebuild,v 1.2 2003/10/16 03:08:45 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-gd/Attic/cl-gd-0.1.4.ebuild,v 1.3 2004/05/08 23:58:36 mkennedy Exp $
 
 inherit common-lisp
 
