@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/gtetrinet/Attic/gtetrinet-0.7.5.ebuild,v 1.11 2005/02/23 01:42:34 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/gtetrinet/Attic/gtetrinet-0.7.8.ebuild,v 1.1 2005/02/23 01:42:34 wolf31o2 Exp $
 
 # games after gnome2 so games' functions will override gnome2's
 inherit gnome2 games
@@ -12,7 +12,7 @@ SRC_URI="${SRC_URI}
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 amd64 sparc ~ppc"
+KEYWORDS="~x86 ~amd64 ~sparc ~ppc"
 IUSE="nls ipv6"
 
 RDEPEND="dev-libs/libxml2
@@ -28,6 +28,7 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+	return 0
 	sed -i \
 		-e "s:\$(datadir)/pixmaps:/usr/share/pixmaps:" \
 		-e "/DISABLE_DEPRECATED/d" \
