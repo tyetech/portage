@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk-sharp/Attic/gtk-sharp-0.9.ebuild,v 1.5 2003/09/07 00:23:27 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk-sharp/Attic/gtk-sharp-0.15.ebuild,v 1.1 2004/02/02 07:00:15 tberman Exp $
 
 # WARNING
 # All gst-sharp hacks done in this build are nonfunctional
@@ -17,15 +17,16 @@ HOMEPAGE="http://gtk-sharp.sourceforge.net/"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-IUSE="gnome gnomedb"
+IUSE="gnome gnomedb libgda gtkhtml"
 
-# since mono and gtk-sharp get released together, we follow the mono version
 RDEPEND=">=dev-dotnet/mono-0.24
-	>=x11-libs/gtk+-2
+	>=x11-libs/gtk+-2.2
 	>=gnome-base/libglade-2
-	gnome? ( >=gnome-base/libgnomecanvas-2
-		>=gnome-base/libgnomeui-2 )
-	gnomedb? ( >=gnome-extra/libgnomedb-0.11 )"
+	gnome? ( >=gnome-base/libgnomecanvas-2.2
+		>=gnome-base/libgnomeui-2.2 )
+	libgda? ( >=gnome-extra/libgda-0.11 )
+	gnomedb? ( >=gnome-extra/libgnomedb-0.11 )
+	gtkhtml? ( >=gnome-extra/libgtkhtml-3* )"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
@@ -39,23 +40,12 @@ src_unpack() {
 	cd ${S}
 	mv Makefile.in Makefile.in.old
 	sed -e "s:sample::" Makefile.in.old > Makefile.in
-	mv configure.in configure.in.old
-	sed -e "s:sample/Makefile::" -e "s:sample/rsvg/Makefile::" configure.in.old > configure.in
-
-	# Workaround possible upgrade problems
-	cd ${S}/rsvg
-	mv Makefile.in Makefile.in.old
-	sed -e "s:glib-sharp:../glib/glib-sharp.dll:" Makefile.in.old > Makefile.in
 
 	# patch gst-sharp stuff
 	# epatch ${FILESDIR}/${P}-gst_sharp.patch
 }
 
 src_compile() {
-	# configure switches do not work
-
-	# disable samples
-	./autogen.sh
 
 	econf || die "./configure failed"
 
@@ -71,9 +61,10 @@ src_compile() {
 src_install () {
 	# Path for the installation of the libs is hardcoded in the Makefile,
 	# so we need to change it - Is being changed, check every release
-	for i in $(find . -iname Makefile); do cp $i ${i}.orig; sed "s:${DESTDIR}/usr:${D}/usr:" $i.orig > $i; done
+	for i in $(find . -iname Makefile); do cp $i ${i}.orig; sed -e "s:${DESTDIR}/usr:${D}/usr:" -e "s:${D}/usr/bin:${DESTDIR}/usr/bin:" < $i.orig > $i; done
 
-	einstall || die
+	# one of the samples require gconf schemas, and it'll violate sandbox
+	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL="1" einstall || die
 
 	# gst-sharp install
 	# cd ${S}/gst/
