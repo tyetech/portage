@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/kita/Attic/kita-0.6.4.ebuild,v 1.1 2003/12/02 17:42:39 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/kita/Attic/kita-0.6.4-r1.ebuild,v 1.1 2003/12/04 19:41:32 usata Exp $
 
 IUSE=""
 
@@ -17,7 +17,7 @@ SRC_URI="mirror://sourceforge.jp/kita/7044/${MY_P}.tar.gz"
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="x86"
 
 DEPEND=">=x11-libs/qt-3.1
 	>=kde-base/kde-3.1
@@ -36,6 +36,7 @@ src_unpack() {
 
 	cd ${S}
 	epatch ${FILESDIR}/${P}-close-gentoo.diff
+	epatch ${FILESDIR}/${PN}-boardview-gentoo.diff
 }
 
 src_install() {
