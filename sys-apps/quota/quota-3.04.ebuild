@@ -1,7 +1,6 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Aron Griffis <agriffis@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/quota/Attic/quota-3.04.ebuild,v 1.3 2002/05/27 17:27:39 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/quota/Attic/quota-3.04.ebuild,v 1.4 2002/07/11 06:30:55 drobbins Exp $
 
 S=${WORKDIR}/quota-tools
 DESCRIPTION="Linux quota tools"

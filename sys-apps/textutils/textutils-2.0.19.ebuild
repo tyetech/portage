@@ -1,7 +1,6 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/textutils/Attic/textutils-2.0.19.ebuild,v 1.1 2001/12/12 20:26:28 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/textutils/Attic/textutils-2.0.19.ebuild,v 1.2 2002/07/11 06:30:55 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Standard GNU text utilities"
