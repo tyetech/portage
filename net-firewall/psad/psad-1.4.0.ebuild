@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/psad/Attic/psad-1.4.0.ebuild,v 1.1 2004/12/01 08:15:12 battousai Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/psad/Attic/psad-1.4.0.ebuild,v 1.2 2005/01/05 20:22:36 battousai Exp $
 
 inherit eutils perl-module
 
@@ -20,7 +20,7 @@ DEPEND="${DEPEND}
 RDEPEND="virtual/logger
 	dev-perl/Unix-Syslog
 	dev-perl/Date-Calc
-	mail-client/mailx
+	virtual/mailx
 	net-firewall/iptables"
 
 src_compile() {
