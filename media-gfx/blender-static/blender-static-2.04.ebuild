@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-static-2.04.ebuild,v 1.2 2000/11/02 02:17:12 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender-static/Attic/blender-static-2.04.ebuild,v 1.1 2000/12/09 06:31:24 drobbins Exp $
 
 A="blender${PV}-linux-glibc2.1.2-i386-static.tar.gz manual_1.5.zip"
 S=${WORKDIR}
