@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gtk-thinice-engine/Attic/gtk-thinice-engine-2.0.1.ebuild,v 1.5 2002/10/04 06:47:20 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gtk-thinice-engine/Attic/gtk-thinice-engine-2.0.1.ebuild,v 1.6 2002/10/22 15:45:01 bjb Exp $
 
 SLOT="0"
 S=${WORKDIR}/${P}
 DESCRIPTION="GTK theme engine for ThinICE"
 SRC_URI="http://thinice.sourceforge.net/${P}.tar.gz"
 HOMEPAGE="http://thinice.sourceforge.net"
-KEYWORDS="x86"
+KEYWORDS="x86 alpha"
 
 DEPEND=">=x11-libs/gtk+-2.0.0"
 RDEPEND=$DEPEND
