@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.4.1_p1.ebuild,v 1.9 2004/01/16 17:49:26 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.4.1_p1.ebuild,v 1.10 2004/01/18 23:02:37 spider Exp $
 
 S=${WORKDIR}
 DESCRIPTION="Meta package for the GNOME desktop."
@@ -66,7 +66,7 @@ RDEPEND="!gnome-base/gnome-core
 	>=gnome-extra/nautilus-media-0.3.3.1
 
 	>=media-gfx/eog-2.4.1
-	>=net-www/epiphany-1.0.6
+	>=net-www/epiphany-1.0.7
 	>=app-arch/file-roller-2.4.1.1
 	>=gnome-extra/gcalctool-4.3.16
 	>=gnome-extra/gconf-editor-2.4
