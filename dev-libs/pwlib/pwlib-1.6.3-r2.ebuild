@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/pwlib/Attic/pwlib-1.6.3-r2.ebuild,v 1.11 2004/10/19 17:54:08 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/pwlib/Attic/pwlib-1.6.3-r2.ebuild,v 1.12 2005/01/08 20:12:42 stkn Exp $
 
 IUSE="ssl sdl ieee1394 alsa esd"
 
