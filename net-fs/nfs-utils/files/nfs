@@ -1,7 +1,7 @@
 #!/sbin/runscript
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-fs/cvs-repo/gentoo-x86/net-fs/nfs-utils/files/Attic/nfs-2,v 1.4 2004/07/14 23:36:38 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-fs/cvs-repo/gentoo-x86/net-fs/nfs-utils/files/Attic/nfs,v 1.8 2004/11/14 02:34:05 vapier Exp $
 
 #---------------------------------------------------------------------------
 # This script starts/stops the following
@@ -13,12 +13,11 @@
 
 # NB: Config is in /etc/conf.d/nfs
 
-
 opts="start stop restart reload"
 
 # This variable is used for controlling whether or not to run exportfs -ua;
 # see stop() for more information
-restarting=no
+restarting=yes
 
 # The binary locations
 exportfs=/usr/sbin/exportfs
@@ -28,7 +27,15 @@ nfsd=/usr/sbin/rpc.nfsd
 mountd=/usr/sbin/rpc.mountd
 
 depend() {
-	need net portmap
+	use ypbind
+
+	local myneed="net portmap"
+	if [ -x /sbin/idmapd ] ; then
+		if grep -q rpc_pipefs /proc/filesystems &>/dev/null; then
+			myneed="${myneed} idmapd"
+		fi
+	fi
+	need ${myneed}
 	after quota
 }
 
@@ -52,7 +59,28 @@ stop_statd() {
 	eend $? "Error stopping NFS statd"
 }
 
+waitfor_exportfs() {
+	local pid=$1
+	( sleep ${EXPORTFSTIMEOUT:-30}; kill -9 $pid &>/dev/null ) &
+	wait $1
+}
+
 start() {
+	# Make sure nfs support is loaded in the kernel #64709
+	if [ -e /proc/modules ] ; then
+		modprobe nfsd &> /dev/null
+	fi
+
+	# This is the new "kernel 2.6 way" to handle the exports file
+	if grep -q nfsd /proc/filesystems &>/dev/null; then
+		if ! grep -q "nfsd /proc/fs/nfs" /proc/mounts &>/dev/null; then
+			ebegin "Mounting nfsd filesystem in /proc"
+			mount -t nfsd nfsd /proc/fs/nfs
+			eend $? "Error mounting nfsd filesystem in /proc"
+		fi
+	fi
+	# now that nfsd is mounted inside /proc, we can safely start mountd later
+
 	start_statd
 
 	# Exportfs likes to hang if networking isn't working.
@@ -61,9 +89,7 @@ start() {
 	if grep -q '^/' /etc/exports &>/dev/null; then
 		ebegin "Exporting NFS directories"
 		$exportfs -r 1>&2 &
-		pid=$!
-		( sleep 30; kill -9 $pid &>/dev/null ) &
-		wait $pid
+		waitfor_exportfs $!
 		eend $? "Error exporting NFS directories"
 	fi
 
@@ -79,16 +105,14 @@ start() {
 		$nfsd -- $RPCNFSDCOUNT 1>&2
 	eend $? "Error starting NFS daemon"
 
-	# Check if we support NFSv3
+	# Start mountd
 	ebegin "Starting NFS mountd"
-	rpcinfo -u localhost nfs 3 &>/dev/null || \
-		RPCMOUNTDOPTS="$RPCMOUNTDOPTS --no-nfs-version 3"
 	start-stop-daemon --start --quiet --exec \
 		$mountd -- $RPCMOUNTDOPTS 1>&2
 	eend $? "Error starting NFS mountd"
 }
 
-stop() { 
+stop() {
 	# Don't check NFSSERVER variable since it might have changed,
 	# instead use --oknodo to smooth things over
 	ebegin "Stopping NFS mountd"
@@ -128,9 +152,7 @@ stop() {
 		# If that's the case, then try to kill it so the
 		# shutdown process can continue.
 		$exportfs -ua 1>&2 &
-		pid=$!
-		( sleep 30; kill -9 $pid &>/dev/null ) &
-		wait $pid
+		waitfor_exportfs $!
 		eend $? "Error unexporting NFS directories"
 	fi
 
@@ -143,9 +165,7 @@ reload() {
 	# bootup process can continue.
 	ebegin "Reloading /etc/exports"
 	$exportfs -r 1>&2 &
-	pid=$!
-	( sleep 30; kill -9 $pid &>/dev/null ) &
-	wait $pid
+	waitfor_exportfs $!
 	eend $? "Error exporting NFS directories"
 }
 
