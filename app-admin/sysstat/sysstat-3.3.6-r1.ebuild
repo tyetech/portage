@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sysstat/Attic/sysstat-3.3.6-r1.ebuild,v 1.13 2003/09/23 20:20:55 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sysstat/Attic/sysstat-3.3.6-r1.ebuild,v 1.14 2004/01/02 21:00:23 plasmaroo Exp $
 
 DESCRIPTION="System performance tools for Linux"
 SRC_URI="http://www.ibiblio.org/pub/Linux/system/status/${P}.tar.gz"
