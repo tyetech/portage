@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/ksvg/Attic/ksvg-3.4.0.ebuild,v 1.3 2005/03/25 04:20:05 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/ksvg/Attic/ksvg-3.4.0.ebuild,v 1.4 2005/04/03 17:08:28 greg_g Exp $
 
 KMNAME=kdegraphics
 MAXKDEVER=$PV
@@ -11,4 +11,6 @@ DESCRIPTION="SVG viewer library and embeddable kpart"
 KEYWORDS="~x86 ~amd64 ~ppc ~sparc"
 IUSE=""
 
-DEPEND="dev-libs/fribidi"
+DEPEND="media-libs/libart_lgpl
+	media-libs/lcms
+	dev-libs/fribidi"
