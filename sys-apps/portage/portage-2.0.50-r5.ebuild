@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.50-r3.ebuild,v 1.2 2004/04/05 00:07:16 carpaski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.50-r5.ebuild,v 1.1 2004/04/12 01:09:36 carpaski Exp $
 
 IUSE="build"
 
