@@ -1,8 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gift-openft/Attic/gift-openft-0.2.1.2.ebuild,v 1.6 2004/05/04 05:04:19 eradicator Exp $
-
-IUSE=""
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gift-openft/Attic/gift-openft-0.2.1.2.ebuild,v 1.7 2004/05/18 17:08:54 squinky86 Exp $
 
 IUSE=""
 
