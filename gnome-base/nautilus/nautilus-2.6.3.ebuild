@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.6.3.ebuild,v 1.11 2004/11/08 20:50:44 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.6.3.ebuild,v 1.12 2004/11/21 18:56:48 foser Exp $
 
 inherit gnome2 eutils
 
@@ -32,7 +32,7 @@ RDEPEND=">=dev-libs/glib-2.3
 	>=gnome-base/orbit-2.4
 	>=x11-libs/startup-notification-0.5
 	dev-libs/popt
-	app-admin/fam
+	virtual/fam
 	sys-apps/eject
 	cups? ( net-print/libgnomecups
 		net-print/gnome-cups-manager )
