@@ -1,23 +1,34 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mozilla-thunderbird/Attic/mozilla-thunderbird-0.2_alpha20030813.ebuild,v 1.3 2003/09/05 02:20:58 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mozilla-thunderbird/Attic/mozilla-thunderbird-0.3.ebuild,v 1.1 2003/10/17 16:33:36 brad Exp $
 
 inherit makeedit flag-o-matic gcc nsplugins
 
 # Added to get thunderbird to compile on sparc.
 replace-sparc64-flags
+if [ "`use ppc`" -a "$(gcc-major-version)" -eq "3" -a "$(gcc-minor-version)" -eq "3" ]
+then
+
+append-flags -fno-strict-aliasing
+
+fi
+
 
 S=${WORKDIR}/mozilla
-MOZ_CO_DATE="20030813"
+
+EMVER="0.81.latest"
+IPCVER="1.0.4"
 
 DESCRIPTION="Thunderbird Mail Client"
 HOMEPAGE="http://www.mozilla.org/projects/thunderbird/"
-SRC_URI="mirror://gentoo/MozillaThunderbird-${MOZ_CO_DATE}-source.tar.bz2"
+SRC_URI="http://ftp.mozilla.org/pub/thunderbird/releases/${PV}/thunderbird-source-${PV}.tar.bz2
+	 crypt? ( mirror://gentoo/enigmail-${EMVER}.tar.gz
+	   		  http://downloads.mozdev.org/enigmail/src/ipc-${IPCVER}.tar.gz )"
 
 KEYWORDS="~x86 ~ppc ~sparc ~alpha"
 SLOT="0"
 LICENSE="MPL-1.1 | NPL-1.1"
-IUSE="gtk2 ipv6"
+IUSE="gtk2 ipv6 crypt"
 
 RDEPEND="virtual/x11
 	>=dev-libs/libIDL-0.8.0
@@ -32,7 +43,8 @@ RDEPEND="virtual/x11
 	app-arch/zip
 	app-arch/unzip
 	( gtk2? >=x11-libs/gtk+-2.1.1 :
-		=x11-libs/gtk+-1.2* ) "
+		=x11-libs/gtk+-1.2* )
+		crypt? ( >=app-crypt/gnupg-1.2.1 )"
 
 DEPEND="${RDEPEND}
 	virtual/glibc
@@ -42,9 +54,30 @@ DEPEND="${RDEPEND}
 export MOZ_THUNDERBIRD=1
 export MOZ_ENABLE_XFT=1
 
+pkg_setup() {
+	einfo "Please unmerge previous installs of Mozilla Thunderbird before"
+	einfo "merging this. Running emerge unmerge mozilla-thunderbird && rm -rf"
+	einfo "/usr/lib/MozillaThunderbird will ensure that all files are"
+	einfo "removed. If you need to do this, please press ctrl-c now and"
+	einfo "resume emerging once you're done."
+	sleep 5
+}
+
 src_unpack() {
 
-	unpack MozillaThunderbird-${MOZ_CO_DATE}-source.tar.bz2
+	unpack thunderbird-source-${PV}.tar.bz2
+
+	# Unpack the enigmail plugin
+	if use crypt
+		then
+			unpack ipc-${IPCVER}.tar.gz
+			unpack enigmail-${EMVER}.tar.gz
+
+			mv -f ${WORKDIR}/ipc ${S}/extensions/
+			mv -f ${WORKDIR}/enigmail ${S}/extensions/
+			cp ${FILESDIR}/enigmail/Makefile-ipc ${S}/extensions/ipc/Makefile
+			cp ${FILESDIR}/enigmail/Makefile-enigmail ${S}/extensions/enigmail/Makefile
+	fi
 
 }
 
@@ -123,6 +156,17 @@ src_compile() {
 
 	edit_makefiles
 	emake MOZ_THUNDERBIRD=1 || die
+
+	# Build the enigmail plugin
+	if use crypt
+	then
+		einfo "Building Enigmail plugin..."
+		cd ${S}/extensions/ipc
+		make || die
+
+		cd ${S}/extensions/enigmail
+		make || die
+	fi
 }
 
 src_install() {
