@@ -1,15 +1,15 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/henplus/Attic/henplus-0.9.5.ebuild,v 1.2 2004/06/24 21:54:30 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/henplus/Attic/henplus-0.9.5-r2.ebuild,v 1.1 2004/07/23 09:25:20 axxo Exp $
 
-inherit java-pkg
+inherit java-pkg eutils
 
 DESCRIPTION="HenPlus is a SQL shell that can handle multiple sessions in parallel. The commandline interface with the usual history functions features TAB-completion for commands, tables and columns. Database connect via JDBC."
 HOMEPAGE="http://www.sourceforge.net/projects/henplus"
 SRC_URI="mirror://sourceforge/henplus/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~sparc"
+KEYWORDS="~x86 ~sparc ~ppc"
 IUSE="jikes"
 
 DEPEND=">=virtual/jdk-1.3
@@ -18,6 +18,11 @@ DEPEND=">=virtual/jdk-1.3
 	jikes? ( >=dev-java/jikes-1.17 )"
 
 RDEPEND=">=virtual/jdk-1.3"
+
+src_unpack() {
+	base_src_unpack && cd ${S}
+	epatch ${FILESDIR}/henplus.patch
+}
 
 src_compile() {
 	local antflags="jar"
@@ -30,5 +35,6 @@ src_compile() {
 src_install () {
 	java-pkg_dojar build/*.jar
 	dodoc README
+	dobin bin/henplus
 }
 
