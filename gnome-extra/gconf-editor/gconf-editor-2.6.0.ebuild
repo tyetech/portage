@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gconf-editor/Attic/gconf-editor-2.6.0.ebuild,v 1.5 2004/06/06 10:54:35 lv Exp $ 
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gconf-editor/Attic/gconf-editor-2.6.0.ebuild,v 1.6 2004/06/24 22:03:41 agriffis Exp $ 
 
 inherit gnome2 eutils
 
