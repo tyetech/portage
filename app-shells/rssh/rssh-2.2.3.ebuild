@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/rssh/Attic/rssh-2.2.1.ebuild,v 1.4 2005/01/01 15:59:31 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/rssh/Attic/rssh-2.2.3.ebuild,v 1.1 2005/01/16 19:10:46 vapier Exp $
 
 DESCRIPTION="Restricted shell for SSHd"
 HOMEPAGE="http://rssh.sourceforge.net/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/rssh/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ppc sparc"
+KEYWORDS="sparc ppc x86"
 IUSE="static"
 
 RDEPEND="virtual/ssh"
@@ -24,11 +24,12 @@ src_compile() {
 		--libexecdir=/usr/lib/misc \
 		--with-scp=/usr/bin/scp \
 		--with-sftp-server=/usr/lib/misc/sftp-server \
-		`use_enable static` || die "econf failed"
+		$(use_enable static) \
+		 || die "econf failed"
 	emake || die
 }
 
 src_install() {
-	make install DESTDIR=${D} || die
+	make install DESTDIR="${D}" || die
 	dodoc AUTHORS ChangeLog CHROOT INSTALL README TODO
 }
