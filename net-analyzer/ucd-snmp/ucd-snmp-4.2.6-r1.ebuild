@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ucd-snmp/Attic/ucd-snmp-4.2.6-r1.ebuild,v 1.8 2004/07/11 10:52:37 eldad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ucd-snmp/Attic/ucd-snmp-4.2.6-r1.ebuild,v 1.9 2004/09/03 20:54:56 pvdabeel Exp $
 
 IUSE="ssl ipv6 tcpd"
 PROVIDE="virtual/snmp"
@@ -16,7 +16,7 @@ RDEPEND="${DEPEND}
 	!virtual/snmp"
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="x86 sparc ~ppc hppa"
+KEYWORDS="x86 sparc ppc hppa"
 
 src_compile() {
 	export SNMPCONFPATH="/etc/ucd-snmp"
