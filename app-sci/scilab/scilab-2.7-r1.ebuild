@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/scilab/Attic/scilab-2.7-r1.ebuild,v 1.3 2004/06/14 18:02:07 kugelfang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/scilab/Attic/scilab-2.7-r1.ebuild,v 1.4 2004/06/24 22:16:56 agriffis Exp $
 
 DESCRIPTION="scientific software package for numerical computations"
 SRC_URI="ftp://ftp.inria.fr/INRIA/Projects/Meta2/Scilab/distributions/${P}.src.tar.gz

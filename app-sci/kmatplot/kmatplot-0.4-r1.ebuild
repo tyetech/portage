@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/kmatplot/Attic/kmatplot-0.4-r1.ebuild,v 1.5 2004/04/16 01:16:43 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/kmatplot/Attic/kmatplot-0.4-r1.ebuild,v 1.6 2004/06/24 22:05:11 agriffis Exp $
 
 PATCHES="${FILESDIR}/${P}-gentoo.patch
 	${FILESDIR}/${P}-inline.patch

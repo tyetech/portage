@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/biopython/Attic/biopython-1.21.ebuild,v 1.6 2004/06/14 09:25:14 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/biopython/Attic/biopython-1.21.ebuild,v 1.7 2004/06/24 21:53:05 agriffis Exp $
 
 IUSE=""
 

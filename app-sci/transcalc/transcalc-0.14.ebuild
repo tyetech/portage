@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/transcalc/Attic/transcalc-0.14.ebuild,v 1.1 2004/05/17 12:20:01 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/transcalc/Attic/transcalc-0.14.ebuild,v 1.2 2004/06/24 22:19:37 agriffis Exp $
 
 DESCRIPTION="A microwave and RF transmission line calculator"
 HOMEPAGE="http://transcalc.sourceforge.net"

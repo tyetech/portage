@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/phylip/Attic/phylip-3.5.ebuild,v 1.4 2003/09/11 01:02:54 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/phylip/Attic/phylip-3.5.ebuild,v 1.5 2004/06/24 22:14:56 agriffis Exp $
 
 DESCRIPTION="PHYLIP (the PHYLogeny Inference Package) is a package of programs for inferring phylogenies (evolutionary trees)"
 

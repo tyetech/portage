@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/pcb/Attic/pcb-20031113.ebuild,v 1.3 2004/04/19 12:10:16 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/pcb/Attic/pcb-20031113.ebuild,v 1.4 2004/06/24 22:14:35 agriffis Exp $
 
 DESCRIPTION="PCB is a tool for the layout of printed circuit boards."
 HOMEPAGE="http://sourceforge.net/projects/pcb/"

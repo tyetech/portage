@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/xd3d/Attic/xd3d-8.2.1.ebuild,v 1.2 2004/05/24 21:56:31 xtv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/xd3d/Attic/xd3d-8.2.1.ebuild,v 1.3 2004/06/24 22:21:36 agriffis Exp $
 
 DESCRIPTION="scientific visualization tool"
 

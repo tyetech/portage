@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/calcoo/Attic/calcoo-1.3.15.ebuild,v 1.1 2003/08/08 23:47:16 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/calcoo/Attic/calcoo-1.3.15.ebuild,v 1.2 2004/06/24 21:54:24 agriffis Exp $
 
 IUSE=""
 

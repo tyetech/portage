@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/pariguide/Attic/pariguide-0.43a.ebuild,v 1.6 2004/05/04 23:28:36 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/pariguide/Attic/pariguide-0.43a.ebuild,v 1.7 2004/06/24 22:14:25 agriffis Exp $
 
 IUSE=""
 

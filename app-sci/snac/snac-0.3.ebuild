@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/snac/Attic/snac-0.3.ebuild,v 1.8 2004/05/11 07:04:03 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/snac/Attic/snac-0.3.ebuild,v 1.9 2004/06/24 22:18:00 agriffis Exp $
 
 DESCRIPTION="SNAC's a Neat Algebraic Calculator."
 SRC_URI="http://snac.seul.org/${P}.tar.gz"
