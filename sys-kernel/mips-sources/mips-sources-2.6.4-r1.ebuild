@@ -1,18 +1,15 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.3-r2.ebuild,v 1.2 2004/03/08 09:21:15 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.4-r1.ebuild,v 1.1 2004/04/16 01:25:20 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
-CVSDATE="20040305"
-COBALTPATCHVER="1.1"
+CVSDATE="20040311"
+COBALTPATCHVER="1.2"
 IP32DIFFDATE="20040229"
 [ "${USE_IP32}" = "yes" ] && EXTRAVERSION="-mipscvs-${CVSDATE}-ip32" || EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
-
-
-
 
 # Miscellaneous stuff
 S=${WORKDIR}/linux-${OKV}-${CVSDATE}
@@ -72,6 +69,13 @@ src_unpack() {
 
 	# Update the vanilla sources with linux-mips CVS changes
 	epatch ${WORKDIR}/mipscvs-${OKV}-${CVSDATE}.diff
+
+	# Binutils-2.14.90.0.8 and does some magic with page alignment
+	# that prevents the kernel from booting.  This patch fixes it.
+	epatch ${FILESDIR}/mipscvs-2.6.x-no-page-align.patch
+
+	# Security Fixes
+	epatch ${FILESDIR}/CAN-2004-0109-2.6-iso9660.patch
 
 	# Cobalt Patches
 	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
