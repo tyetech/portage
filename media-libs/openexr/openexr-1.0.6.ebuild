@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/openexr/Attic/openexr-1.0.6.ebuild,v 1.4 2004/06/24 23:18:04 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/openexr/Attic/openexr-1.0.6.ebuild,v 1.5 2004/07/14 20:21:02 agriffis Exp $
 
 inherit eutils
 
@@ -14,6 +14,7 @@ HOMEPAGE="http://www.openexr.com"
 SLOT="0"
 LICENSE="as-is"
 KEYWORDS="~x86"
+IUSE=""
 
 DEPEND="x11-libs/fltk"
 
