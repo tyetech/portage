@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.4363.ebuild,v 1.10 2004/07/14 22:09:53 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.4499-r1.ebuild,v 1.1 2004/07/19 10:24:49 cyfred Exp $
 
 inherit eutils
 
@@ -9,11 +9,11 @@ NV_PACKAGE="NVIDIA_GLX-${NV_V}"
 S="${WORKDIR}/NVIDIA_GLX-${NV_V}"
 DESCRIPTION="XFree86 GLX libraries for the NVIDIA's X driver"
 HOMEPAGE="http://www.nvidia.com/"
-SRC_URI="http://download.nvidia.com/XFree86/Linux-x86/${NV_V}/${NV_PACKAGE}.tar.gz"
+SRC_URI="http://download.nvidia.com/XFree86/linux-x86-64/${NV_V}/${NV_PACKAGE}.tar.gz"
 
 LICENSE="NVIDIA"
 SLOT="0"
-KEYWORDS="-* x86"
+KEYWORDS="-* amd64"
 IUSE=""
 RESTRICT="nostrip"
 
@@ -29,21 +29,11 @@ src_unpack() {
 	unpack ${A}
 
 	# correct defines to make gtkglext build work
-	cd ${S}; epatch ${FILESDIR}/${P}-defines.patch
+	epatch ${FILESDIR}/${P}-defines.patch
 }
 
 src_install() {
 	local NV_ROOT="/usr/lib/opengl/nvidia"
-	local TLS=
-
-	# Check if we should install TLS versions of the libraries
-	${S}/usr/bin/tls_test 2> /dev/null
-	# Only trust this if we are merging to /
-	if [ "$?" = "0" -a "${ROOT}" = "/" ]
-	then
-		einfo "Using TLS..."
-		TLS="tls/"
-	fi
 
 	# The X module
 	exeinto /usr/X11R6/lib/modules/drivers
@@ -51,12 +41,12 @@ src_install() {
 
 	# The GLX extension
 	exeinto ${NV_ROOT}/extensions
-	newexe usr/X11R6/lib/modules/extensions/${TLS}libglx.so.${PV} libglx.so
+	newexe usr/X11R6/lib/modules/extensions/libglx.so.${PV} libglx.so
 
 	# The GLX libraries
 	exeinto ${NV_ROOT}/lib
-	doexe usr/lib/${TLS}libGL.so.${PV} \
-	      usr/lib/${TLS}libGLcore.so.${PV}
+	doexe usr/lib/libGL.so.${PV} \
+	      usr/lib/libGLcore.so.${PV}
 	dosym libGL.so.${PV} ${NV_ROOT}/lib/libGL.so
 	dosym libGL.so.${PV} ${NV_ROOT}/lib/libGL.so.1
 	dosym libGLcore.so.${PV} ${NV_ROOT}/lib/libGLcore.so
@@ -83,7 +73,7 @@ src_install() {
 		-e "s:\${ver1}:${ver1}:" \
 		-e "s:\${ver2}:${ver2}:" \
 		-e "s:\${ver3}:${ver3}:" \
-		${FILESDIR}/libGL.la.1 > ${D}/${NV_ROOT}/lib/libGL.la
+		${FILESDIR}/libGL.la.2 > ${D}/${NV_ROOT}/lib/libGL.la
 }
 
 pkg_preinst() {

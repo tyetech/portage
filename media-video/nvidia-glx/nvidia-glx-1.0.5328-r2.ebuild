@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.5328-r1.ebuild,v 1.8 2004/07/14 22:09:53 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.5328-r2.ebuild,v 1.1 2004/07/19 10:24:49 cyfred Exp $
 
 inherit eutils
 
@@ -90,7 +90,7 @@ src_install() {
 		-e "s:\${ver1}:${ver1}:" \
 		-e "s:\${ver2}:${ver2}:" \
 		-e "s:\${ver3}:${ver3}:" \
-		${FILESDIR}/libGL.la.1 > ${D}/${NV_ROOT}/lib/libGL.la
+		${FILESDIR}/libGL.la.2 > ${D}/${NV_ROOT}/lib/libGL.la
 }
 
 pkg_preinst() {
