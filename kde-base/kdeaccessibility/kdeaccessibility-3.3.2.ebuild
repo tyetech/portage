@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeaccessibility/Attic/kdeaccessibility-3.3.2.ebuild,v 1.7 2005/01/12 03:50:40 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeaccessibility/Attic/kdeaccessibility-3.3.2.ebuild,v 1.8 2005/01/14 23:17:06 danarmak Exp $
 
 inherit kde-dist
 
