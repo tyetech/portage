@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/simutrans/Attic/simutrans-0.82.15.7.ebuild,v 1.2 2004/01/13 02:52:24 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/simutrans/Attic/simutrans-0.82.15.7.ebuild,v 1.3 2004/06/24 23:23:35 agriffis Exp $
 
 inherit games
 
