@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/windowlab/Attic/windowlab-1.24.ebuild,v 1.3 2004/08/13 14:18:00 slarti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/windowlab/Attic/windowlab-1.24.ebuild,v 1.4 2004/10/09 19:41:13 usata Exp $
 
 IUSE=""
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.nickgravgaard.com/${PN}/${P}.tar"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="x86 ppc ~amd64"
 
 DEPEND="virtual/x11"
 
