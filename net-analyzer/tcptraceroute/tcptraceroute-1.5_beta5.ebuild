@@ -1,0 +1,32 @@
+# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptraceroute/Attic/tcptraceroute-1.5_beta5.ebuild,v 1.1 2004/06/08 16:07:26 squinky86 Exp $
+
+MY_P=${P/_beta/beta}
+MY_PV=${PV/_beta/beta}
+S=${WORKDIR}/${MY_P}
+
+DESCRIPTION="tcptraceroute is a traceroute implementation using TCP packets"
+HOMEPAGE="http://michael.toren.net/code/tcptraceroute/"
+SRC_URI="http://michael.toren.net/code/tcptraceroute/${MY_P}.tar.gz"
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~x86 ~ppc ~sparc"
+
+DEPEND="net-libs/libpcap
+	net-libs/libnet"
+
+src_compile() {
+	econf || die
+	emake || die
+}
+
+src_install() {
+	dosbin tcptraceroute
+	fperms 4710 /usr/sbin/tcptraceroute
+	fowners root:wheel /usr/sbin/tcptraceroute
+	doman tcptraceroute.1
+	dodoc examples.txt COPYING README changelog
+	dohtml -r ./
+}

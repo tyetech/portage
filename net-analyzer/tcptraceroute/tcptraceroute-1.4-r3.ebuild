@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptraceroute/tcptraceroute-1.4-r3.ebuild,v 1.3 2004/02/22 22:36:38 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptraceroute/tcptraceroute-1.4-r3.ebuild,v 1.4 2004/06/08 16:07:26 squinky86 Exp $
 
 inherit eutils
 
