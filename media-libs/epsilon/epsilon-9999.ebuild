@@ -1,7 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/epsilon/Attic/epsilon-9999.ebuild,v 1.1 2004/10/22 12:44:31 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/epsilon/Attic/epsilon-9999.ebuild,v 1.2 2004/12/27 14:40:03 vapier Exp $
 
+EHACKAUTOGEN=yes
 inherit enlightenment
 
 DESCRIPTION="nice thumbnail generator"
