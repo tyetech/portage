@@ -1,32 +1,34 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/zsh/Attic/zsh-4.0.9-r3.ebuild,v 1.2 2004/03/03 18:41:45 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/zsh/Attic/zsh-4.2.0_pre2.ebuild,v 1.1 2004/03/03 18:41:45 usata Exp $
 
-IUSE="maildir ncurses static doc cjk"
+IUSE="maildir ncurses static doc pcre"
 
 DESCRIPTION="UNIX Shell similar to the Korn shell"
 HOMEPAGE="http://www.zsh.org/"
 
 MYDATE="20040204"
+MY_P="${P/_pre/-pre-}"
 
-SRC_URI="ftp://ftp.zsh.org/pub/${P}.tar.bz2
-	doc? ( ftp://ftp.zsh.org/pub/${P}-doc.tar.bz2 )
-	cjk? ( http://www.ono.org/software/dist/${P}-euc-0.2.patch.gz )"
+SRC_URI="ftp://ftp.zsh.org/pub/${MY_P}.tar.bz2
+	doc? ( ftp://ftp.zsh.org/pub/${MY_P}-doc.tar.bz2 )"
 
 SLOT="0"
 LICENSE="ZSH"
-KEYWORDS="x86 alpha ~ppc ~sparc"
+KEYWORDS="~x86 ~alpha ~ppc ~sparc ~amd64 ~hppa"
 
-DEPEND="virtual/glibc
-	sys-apps/groff
+DEPEND="sys-apps/groff
+	>=sys-apps/sed-4
 	${RDEPEND}"
-RDEPEND="ncurses? ( >=sys-libs/ncurses-5.1 )"
+RDEPEND="pcre? ( >=dev-libs/libpcre-3.9 )
+	sys-libs/libcap
+	ncurses? ( >=sys-libs/ncurses-5.1 )"
+
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
-	unpack ${A}
-	cd ${S}
-	use cjk && epatch ../${P}-euc-0.2.patch
-	epatch ${FILESDIR}/${PN}-strncmp.diff
+	unpack ${MY_P}.tar.bz2
+	use doc && unpack ${MY_P}-doc.tar.bz2
 	cd ${S}/Doc
 	ln -sf . man1
 	# fix zshall problem with soelim
@@ -37,10 +39,11 @@ src_unpack() {
 src_compile() {
 	local myconf
 
-	use ncurses && myconf="--with-curses-terminfo"
+	use ncurses && myconf="${myconf} --with-curses-terminfo"
 	use maildir && myconf="${myconf} --enable-maildir-support"
 	use static && myconf="${myconf} --disable-dynamic" \
 		&& LDFLAGS="${LDFLAGS} -static"
+	use pcre && myconf="${myconf} --enable-pcre"
 
 	econf \
 		--bindir=/bin \
@@ -56,8 +59,20 @@ src_compile() {
 		--enable-function-subdirs \
 		--enable-ldflags="${LDFLAGS}" \
 		${myconf} || die "configure failed"
+
+	if [ -n "`use static`" ] ; then
+		# compile all modules statically, see Bug #27392
+		sed -i -e "s/link=no/link=static/g" \
+			-e "s/load=no/load=yes/g" \
+			config.modules || die
+	else
+		# avoid linking to libs in /usr/lib, see Bug #27064
+		sed -i -e "/LIBS/s%-lpcre%/usr/lib/libpcre.a%" \
+			Makefile || die
+	fi
+
 	# emake still b0rks
-	make || die "make failed"
+	emake -j1 || die "make failed"
 	#make check || die "make check failed"
 }
 
@@ -96,4 +111,14 @@ pkg_preinst() {
 	if [ -f /etc/zsh/zshenv -a ! -f /etc/zsh/zprofile ]; then
 		mv /etc/zsh/zshenv /etc/zsh/zprofile
 	fi
+}
+
+pkg_postinst() {
+
+	# see Bug 26776
+	ewarn
+	ewarn "If you are upgrading from zsh-4.0.x you may need to"
+	ewarn "remove all your old ~/.zcompdump files in order to use"
+	ewarn "completion.  For more info see zcompsys manpage."
+	ewarn
 }
