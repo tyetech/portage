@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.6.0.ebuild,v 1.1 2004/03/22 01:31:42 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.6.0.ebuild,v 1.2 2004/04/05 22:10:04 lu_zero Exp $
 
 inherit gnome2
 
@@ -42,7 +42,7 @@ src_unpack() {
 	unpack ${A}
 
 	gnome2_omf_fix
-
+	epatch ${FILESDIR}/gnome-applets-2.6.0-battstat.patch
 }
 
 src_install () {
