@@ -1,11 +1,11 @@
 #!/sbin/runscript
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ptlink-services/files/Attic/ptlink-services.init.d,v 1.1 2004/07/10 23:09:39 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ptlink-services/files/Attic/ptlink-services.init.d,v 1.2 2004/07/10 23:16:14 swegener Exp $
 
 depend() {
 	need net
-	use dns
+	use dns ircd
 }
 
 start() {
