@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg321/Attic/mpg321-0.2.10-r1.ebuild,v 1.22 2004/07/13 02:39:57 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg321/Attic/mpg321-0.2.10-r1.ebuild,v 1.23 2004/07/30 02:33:48 tgall Exp $
 
 IUSE=""
 
@@ -13,7 +13,7 @@ DEPEND=">=media-sound/madplay-0.14.2b
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 x86 ~ppc sparc mips alpha"
+KEYWORDS="amd64 x86 ~ppc sparc mips alpha ppc64"
 
 PROVIDE="virtual/mpg123"
 
