@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/tellico/Attic/tellico-0.13.ebuild,v 1.1 2004/12/04 19:49:58 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/tellico/Attic/tellico-0.13.1.ebuild,v 1.1 2004/12/12 20:37:23 carlo Exp $
 
 inherit kde
 
