@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgda/Attic/libgda-0.2.96-r1.ebuild,v 1.1 2002/07/03 20:17:56 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgda/Attic/libgda-0.2.96-r1.ebuild,v 1.2 2002/07/11 06:30:26 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="gda lib"

@@ -1,8 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author: Spider <spider@gentoo.org>
-# Maintainer: Spider  <spider@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/ORBit2/Attic/ORBit2-2.4.0-r2.ebuild,v 1.2 2002/07/04 13:03:34 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/ORBit2/Attic/ORBit2-2.4.0-r2.ebuild,v 1.3 2002/07/11 06:30:25 drobbins Exp $
 
 inherit debug 
 inherit libtool

@@ -1,7 +1,6 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgtop/Attic/libgtop-1.0.12-r2.ebuild,v 1.1 2001/10/07 22:39:35 hallski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgtop/Attic/libgtop-1.0.12-r2.ebuild,v 1.2 2002/07/11 06:30:26 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="libgtop"
