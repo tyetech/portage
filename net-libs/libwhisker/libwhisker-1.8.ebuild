@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libwhisker/Attic/libwhisker-1.8.ebuild,v 1.8 2004/11/20 04:36:49 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libwhisker/Attic/libwhisker-1.8.ebuild,v 1.9 2005/01/31 12:17:50 mcummings Exp $
 
 DESCRIPTION="Perl module geared to HTTP testing."
 HOMEPAGE="http://www.wiretrip.net/rfp/"
