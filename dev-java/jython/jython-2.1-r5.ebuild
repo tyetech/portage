@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jython/Attic/jython-2.1-r5.ebuild,v 1.6 2004/09/16 08:24:48 sejo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jython/Attic/jython-2.1-r5.ebuild,v 1.7 2004/09/17 02:05:42 mr_bones_ Exp $
 
 inherit java-pkg
 
@@ -24,7 +24,7 @@ src_unpack() {
 	cp ${DISTDIR}/${A} ${WORKDIR}
 	cd ${WORKDIR}
 	`java-config -J` -classpath . ${PN}-${MY_PV} -o ${S}/ demo lib source || die "unpack failed"
-	
+
 }
 
 src_compile() {
