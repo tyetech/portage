@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php/Attic/php-5.0.1.ebuild,v 1.2 2004/08/14 21:07:12 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php/Attic/php-5.0.1.ebuild,v 1.3 2005/01/09 20:51:40 weeve Exp $
 
 PHPSAPI="cli"
 MY_P="${PN}-${PV}"
