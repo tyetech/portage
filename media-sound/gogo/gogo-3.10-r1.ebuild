@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gogo/Attic/gogo-3.10-r1.ebuild,v 1.3 2002/07/21 03:07:46 seemant Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gogo/Attic/gogo-3.10-r1.ebuild,v 1.4 2002/10/04 05:53:29 vapier Exp $
 
 S=${WORKDIR}/petit310pl3
 DESCRIPTION="GoGo is an assembly optimized version of LAME 3.91"
