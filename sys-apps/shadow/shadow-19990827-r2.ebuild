@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-19990827-r1.ebuild,v 1.3 2000/09/15 20:09:22 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-19990827-r2.ebuild,v 1.1 2000/11/05 06:11:58 drobbins Exp $
 
 P="shadow-19990827"      
 A=${P}.tar.gz
