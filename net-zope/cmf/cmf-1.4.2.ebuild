@@ -1,0 +1,19 @@
+# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/cmf/Attic/cmf-1.4.2.ebuild,v 1.1 2004/01/19 13:23:19 lanius Exp $
+
+inherit zproduct
+
+DESCRIPTION="Content Management Framework. Services for content-oriented portal sites."
+
+HOMEPAGE="http://cmf.zope.org/"
+MY_PN="CMF"
+MY_P="${MY_PN}-${PV}"
+SRC_URI="${HOMEPAGE}/download/${MY_P}/${MY_P}.tar.gz"
+SLOT=1.4
+LICENSE="ZPL"
+KEYWORDS="~x86 ~ppc"
+
+ZPROD_LIST="CMFCalendar CMFCore CMFDefault CMFTopic"
+MYDOC="*.txt ${MYDOC}"
+S=${WORKDIR}/${MY_P}
