@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/htmlparser/Attic/htmlparser-1.4.ebuild,v 1.3 2004/10/20 07:56:33 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/htmlparser/Attic/htmlparser-1.5.20040728.ebuild,v 1.1 2004/10/20 07:56:33 absinthe Exp $
 
 inherit java-pkg
 
@@ -12,14 +12,14 @@ MY_P=${MY_P//./_}
 SRC_URI="mirror://sourceforge/htmlparser/${MY_P}.zip"
 LICENSE="LGPL-2.1"
 SLOT="${PV}"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~ppc ~amd64"
 IUSE="doc"
 DEPEND="virtual/jdk
 		app-arch/unzip
 		dev-java/ant"
 #RDEPEND=""
 
-S=${WORKDIR}/${MY_P}
+S=${WORKDIR}/${MY_P%_*}
 
 src_unpack() {
 	unpack ${A}
