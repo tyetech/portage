@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Dan Armak <danarmak@gentoo.org>
-# $HEADER$
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/mini-howto-ps/Attic/mini-howto-ps-20010702.ebuild,v 1.3 2001/08/02 20:45:02 danarmak Exp $
 
 P="Linux-mini-ps-HOWTOs"
 S=${WORKDIR}/${P}
