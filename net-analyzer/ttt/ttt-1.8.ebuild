@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ttt/Attic/ttt-1.8.ebuild,v 1.1 2004/03/04 17:00:39 mboman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ttt/Attic/ttt-1.8.ebuild,v 1.2 2004/04/27 21:27:03 agriffis Exp $
+
+inherit eutils
 
 DESCRIPTION="Tele Traffic Taper (ttt) - Real-time Graphical Remote Traffic Monitor"
 SRC_URI="ftp://ftp.csl.sony.co.jp/pub/kjc/${P}.tar.gz"

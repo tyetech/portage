@@ -1,6 +1,8 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/portsentry/portsentry-1.2.ebuild,v 1.2 2003/09/16 19:20:12 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/portsentry/portsentry-1.2.ebuild,v 1.3 2004/04/27 21:16:21 agriffis Exp $
+
+inherit eutils
 
 DESCRIPTION="Automated port scan detector and response tool"
 # Seems like CISCO took the site down?

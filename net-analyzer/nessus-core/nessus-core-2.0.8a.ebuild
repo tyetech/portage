@@ -1,6 +1,8 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.0.8a.ebuild,v 1.4 2003/12/09 07:54:11 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.0.8a.ebuild,v 1.5 2004/04/27 21:10:40 agriffis Exp $
+
+inherit eutils
 
 DESCRIPTION="A remote security scanner for Linux (nessus-core)"
 HOMEPAGE="http://www.nessus.org/"
