@@ -1,19 +1,20 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Joe Bormolini <lordjoe@bigfoot.com>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim/Attic/gaim-0.11.0_pre13.ebuild,v 1.4 2001/08/08 12:57:01 hallski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim/Attic/gaim-0.43.ebuild,v 1.1 2001/09/07 00:05:09 lordjoe Exp $
 
-P2=gaim-0.11.0pre13
-S=${WORKDIR}/${P2}
+A=${P}.tar.bz2
+S=${WORKDIR}/${P}
 DESCRIPTION="Gtk AOL Instant Messenger client"
-SRC_URI="http://prdownloads.sourceforge.net/gaim/${P2}.tar.bz2"
+SRC_URI="http://prdownloads.sourceforge.net/gaim/${A}"
 HOMEPAGE="http://gaim.sourceforge.net"
 
 DEPEND=">=x11-libs/gtk+-1.2.3
-	gnome? ( >=gnome-base/gnome-core-1.2.13 )
+	gnome? ( >=gnome-base/gnome-libs-1.2.13 )
 	perl? ( >=sys-devel/perl-5.6.1 )
 	nas? ( >=media-sound/nas-1.4.1-r1 )
-	esd? ( >=media-sound/esound-0.2.22-r2 )"
+	esd? ( >=media-sound/esound-0.2.22-r2 )
+	arts? ( >=kde-base/kdelibs-2.1.1 )"
 	
 src_compile() {
     
@@ -33,8 +34,11 @@ src_compile() {
     if [ -z "`use perl`" ] ; then
     	myopts="$myopts --disable-perl"
     fi
+    if [ -z "`use arts`" ] ; then
+        myopts="$myopts --disable-arts"
+    fi
     try ./configure --host=${CHOST} ${myopts}
-    try pmake
+    try emake
 
 }
 
