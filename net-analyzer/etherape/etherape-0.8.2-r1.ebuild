@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/etherape/Attic/etherape-0.8.2-r1.ebuild,v 1.2 2002/08/14 12:11:46 murphy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/etherape/Attic/etherape-0.8.2-r1.ebuild,v 1.3 2002/08/17 15:03:21 gerk Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A graphical network monitor for Unix modeled after etherman"
@@ -16,7 +16,7 @@ RDEPEND="${DEPEND}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 sparc sparc64"
+KEYWORDS="x86 ppc sparc sparc64"
 
 src_unpack() {
 	unpack ${A}
