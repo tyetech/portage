@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mldonkey/Attic/mldonkey-2.5.16-r4.ebuild,v 1.3 2004/06/25 00:34:39 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mldonkey/Attic/mldonkey-2.5.16-r4.ebuild,v 1.4 2004/07/06 20:49:20 squinky86 Exp $
 
 inherit eutils
 
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="x86 ~ppc ~alpha ~ia64"
 
 DEPEND="gtk? ( =dev-ml/lablgtk-1* )
-	>=dev-lang/ocaml-3.06
+	>=dev-lang/ocaml-3.07
 	dev-lang/perl"
 
 RDEPEND="${DEPEND}
