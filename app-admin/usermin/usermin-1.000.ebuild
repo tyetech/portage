@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/usermin/Attic/usermin-1.000.ebuild,v 1.5 2003/09/06 22:08:32 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/usermin/Attic/usermin-1.000.ebuild,v 1.6 2004/01/05 12:55:44 weeve Exp $
 
 DESCRIPTION="a web-based user administration interface"
 HOMEPAGE="http://www.webmin.com/index6.html"
