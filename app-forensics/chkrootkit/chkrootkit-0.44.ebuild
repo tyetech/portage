@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-forensics/cvs-repo/gentoo-x86/app-forensics/chkrootkit/Attic/chkrootkit-0.44.ebuild,v 1.7 2004/12/16 05:00:29 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-forensics/cvs-repo/gentoo-x86/app-forensics/chkrootkit/Attic/chkrootkit-0.44.ebuild,v 1.8 2005/01/01 14:22:35 eradicator Exp $
 
 inherit eutils flag-o-matic
 
