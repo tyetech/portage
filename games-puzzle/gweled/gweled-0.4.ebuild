@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/gweled/Attic/gweled-0.4.ebuild,v 1.5 2004/06/24 23:05:57 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/gweled/Attic/gweled-0.4.ebuild,v 1.6 2005/01/27 21:20:44 wolf31o2 Exp $
 
 inherit flag-o-matic
 
