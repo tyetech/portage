@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.7-r4.ebuild,v 1.1 2004/06/29 21:37:51 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.7-r4.ebuild,v 1.2 2004/07/04 19:17:48 plasmaroo Exp $
 
-UNIPATCH_LIST="${DISTDIR}/${KV}.bz2"
+UNIPATCH_LIST="${DISTDIR}/${KV}.bz2 ${FILESDIR}/${PN}.IPTables-RDoS.patch"
 K_PREPATCHED="yes"
 UNIPATCH_STRICTORDER="yes"
 
