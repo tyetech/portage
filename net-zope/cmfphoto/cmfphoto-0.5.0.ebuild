@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/cmfphoto/Attic/cmfphoto-0.5.0.ebuild,v 1.1 2004/09/25 23:06:42 radek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/cmfphoto/Attic/cmfphoto-0.5.0.ebuild,v 1.2 2004/10/14 20:47:14 radek Exp $
 
 inherit zproduct
 
@@ -8,7 +8,7 @@ DESCRIPTION="Zope product to have photos."
 HOMEPAGE="http://sourceforge.net/projects/collective/"
 SRC_URI="mirror://sourceforge/collective/CMFPhoto-${PV}.tar.gz"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ~ppc"
 RDEPEND="dev-python/imaging
 		>=net-zope/cmf-1.3
 		>=net-zope/plone-1.0.1
