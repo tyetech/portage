@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/kcdlabel/Attic/kcdlabel-2.12.ebuild,v 1.7 2004/07/04 13:26:47 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/kcdlabel/Attic/kcdlabel-2.12.ebuild,v 1.8 2004/08/25 12:41:50 weeve Exp $
 
 inherit flag-o-matic kde
 
@@ -12,7 +12,7 @@ SRC_URI="http://kcdlabel.sourceforge.net/download/${P}-KDE3.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="x86 ~ppc ~sparc"
 IUSE=""
 
 need-kde 3
