@@ -1,47 +1,62 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bossogg/Attic/bossogg-0.13.5.ebuild,v 1.6 2005/03/02 05:05:55 jnc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bossogg/Attic/bossogg-0.13.6-r2.ebuild,v 1.1 2005/03/02 05:05:55 jnc Exp $
 
 inherit eutils
 
-IUSE="oggvorbis mad"
+IUSE="oggvorbis mad flac"
 
 DESCRIPTION="Bossogg Music Server"
 HOMEPAGE="http://bossogg.wishy.org"
 SRC_URI="mirror://sourceforge/bossogg/${P}.tar.gz"
-RESTRICT="nomirror"
 
-KEYWORDS="x86 ~ppc"
+KEYWORDS="x86 sparc amd64"
 SLOT="0"
 LICENSE="GPL-2"
 
 DEPEND=">=media-libs/libao-0.8.3
+	media-libs/libshout
+	flac? ( media-libs/flac )
 	oggvorbis? ( media-libs/libvorbis )
 	mad? ( media-sound/madplay media-libs/id3lib )"
 
 RDEPEND="${DEPEND}
 	 dev-python/pysqlite"
 
+DEPEND="${DEPEND}
+	>=sys-devel/automake-1.7"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+
+	epatch ${FILESDIR}/${P}-Makefile.patch
+	touch NEWS AUTHORS
+
+	export WANT_AUTOMAKE=1.7
+	export WANT_AUTOCONF=2.5
+	aclocal || die
+	automake || die
+	autoconf || die
+}
+
 src_compile() {
-	local myconf
-	myconf=""
-
-	use oggvorbis \
-		|| myconf="${myconf} --disable-ogg  --disable-oggtest \
-		   --disable-vorbistest"
-	use mad || myconf="${myconf} --disable-mp3"
-
-	econf ${myconf} || die "could not configure"
+	libtoolize --copy --force	# per bug number 83003
+	econf --enable-shout \
+	      `use_enable oggvorbis vorbis` \
+	      `use_enable flac` \
+	      `use_enable mad mp3` \
+	      `use_enable mad id3` || die "could not configure"
 
 	emake -j1 || die "emake failed"
 }
 
 src_install() {
-	# borks make DESTDIR=${D} install || die
-	einstall || die
-	dodoc README TODO INSTALL COPYING
+	make DESTDIR="${D}" install || die
+	dodoc README TODO INSTALL COPYING API
 
-	exeinto /etc/init.d; newexe ${FILESDIR}/bossogg.initd bossogg
+	exeinto /etc/init.d
+	newexe ${FILESDIR}/bossogg.initd bossogg
 }
 
 pkg_postinst() {
