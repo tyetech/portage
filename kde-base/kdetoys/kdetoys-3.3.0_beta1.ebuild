@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdetoys/Attic/kdetoys-3.3.0_alpha1.ebuild,v 1.3 2004/06/24 22:14:03 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdetoys/Attic/kdetoys-3.3.0_beta1.ebuild,v 1.1 2004/07/08 22:35:01 caleb Exp $
 
 inherit kde-dist
 
