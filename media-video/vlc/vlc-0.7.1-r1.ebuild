@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.7.1-r1.ebuild,v 1.4 2004/06/07 17:15:11 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.7.1-r1.ebuild,v 1.5 2004/06/16 09:50:57 kloeri Exp $
 
 inherit libtool gcc eutils
 
@@ -14,7 +14,6 @@ IUSE="arts ncurses dvd gtk nls 3dfx svga fbcon esd X alsa ggi speex
 	wxwindows imlib matroska dvb mozilla debug faad
 	xosd altivec png"
 
-S=${WORKDIR}/${P}
 DESCRIPTION="VLC media player - Video player and streamer"
 SRC_URI="http://download.videolan.org/pub/${PN}/${PV}/${P}.tar.bz2"
 
