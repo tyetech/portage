@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gwget2/Attic/gwget2-0.8.ebuild,v 1.2 2004/05/31 23:06:02 khai Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gwget2/Attic/gwget2-0.11.ebuild,v 1.1 2004/05/31 23:06:02 khai Exp $
 
 inherit gnome2
 
@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 #IUSE="nls"
 IUSE=""
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 
 RDEPEND=">=net-misc/wget-1.8
 	>=x11-libs/gtk+-2
@@ -24,13 +24,11 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	>=sys-devel/gettext-0.10.4"
 
-DOCS="ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS TODO"
+DOCS="ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL README THANKS TODO"
 
-# disabling nls breaks atm <foser@gentoo.org>
-# still broken in 0.8 <obz@gentoo.org>
-#use nls \
-#	&& G2CONF="${G2CONF} --enable-nls" \
-#	|| G2CONF="${G2CONF} --disable-nls"
+use nls \
+	&& G2CONF="${G2CONF} --enable-nls" \
+	|| G2CONF="${G2CONF} --disable-nls"
 
 src_unpack( ) {
 
