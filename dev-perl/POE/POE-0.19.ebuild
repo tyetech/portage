@@ -1,13 +1,15 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/POE/Attic/POE-0.19.ebuild,v 1.3 2002/07/11 06:30:22 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/POE/Attic/POE-0.19.ebuild,v 1.4 2002/07/25 04:13:27 seemant Exp $
 
 DESCRIPTION="A framework for creating multitasking programs in Perl"
 HOMEPAGE="http://poe.perl.org"
 
 SRC_URI="http://poe.perl.org/poedown/${P}.tar.gz"
+SLOT="0"
 S=${WORKDIR}/${P}
 
+SLOT="0"
 DEPEND=">=sys-devel/perl-5
 	dev-perl/Event
 	dev-perl/Time-HiRes
