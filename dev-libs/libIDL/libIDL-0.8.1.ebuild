@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libIDL/Attic/libIDL-0.8.1.ebuild,v 1.1 2003/05/05 12:13:52 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libIDL/Attic/libIDL-0.8.1.ebuild,v 1.2 2003/05/05 12:16:00 foser Exp $
 
 inherit gnome2
 
@@ -35,4 +35,3 @@ src_compile() {
 
 DOCS="AUTHORS BUGS COPYING ChangeLog INSTALL NEWS  README*"
 
-SCROLLKEEPER_UPDATE="0"
