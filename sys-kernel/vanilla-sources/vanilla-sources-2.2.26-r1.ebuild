@@ -1,19 +1,19 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.2.26.ebuild,v 1.6 2005/01/10 21:49:33 dsd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.2.26-r1.ebuild,v 1.1 2005/03/16 09:34:14 eradicator Exp $
 #OKV=original kernel version, KV=patched kernel version. They can be the same.
 
 #we use this next variable to avoid duplicating stuff on cvs
 GFILESDIR=${PORTDIR}/sys-kernel/linux-sources/files
-OKV=2.2.25
-KV=2.2.25
+OKV=${PV}
+KV=${PV}
 S=${WORKDIR}/linux-${KV}
 ETYPE="sources"
 
 # What's in this kernel?
 
 # INCLUDED:
-# stock 2.2.25 kernel sources
+# stock 2.2.26 kernel sources
 
 DESCRIPTION="Full sources for the Gentoo Linux kernel"
 SRC_URI="mirror://kernel/linux/kernel/v2.2/linux-${OKV}.tar.bz2"
@@ -36,7 +36,7 @@ fi
 src_unpack() {
 	cd ${WORKDIR}
 	unpack linux-${OKV}.tar.bz2
-	mv linux linux-${KV} || die
+	#mv linux linux-${KV} || die
 	cd ${S}
 
 	#sometimes we have icky kernel symbols; this seems to get rid of them
