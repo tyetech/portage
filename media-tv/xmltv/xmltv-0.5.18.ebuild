@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.14-r1.ebuild,v 1.2 2003/09/16 15:46:27 max Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.18.ebuild,v 1.1 2003/09/16 15:46:27 max Exp $
 
 inherit perl-module
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 # NOTE: you can customize the xmltv installation by
 #       defining a XMLTV_OPTS variable which contains
@@ -129,11 +129,6 @@ make_config() {
 	[ "`has tv_check ${XMLTV_OPTS}`" ] && echo "yes" || echo "no"
 	# Enable CGI support
 	[ "`has tv_pick_cgi ${XMLTV_OPTS}`" ] && echo "yes" || echo "no"
-}
-
-src_unpack() {
-	unpack ${A} && cd "${S}"
-	epatch "${FILESDIR}/xmltv-${PV}-code_500.patch"
 }
 
 src_compile() {
