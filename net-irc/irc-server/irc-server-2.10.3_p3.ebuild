@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irc-server/irc-server-2.10.3_p3.ebuild,v 1.5 2004/06/17 11:28:08 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irc-server/irc-server-2.10.3_p3.ebuild,v 1.6 2004/06/24 23:05:33 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ircii/Attic/ircii-20030709-r2.ebuild,v 1.6 2004/05/29 16:16:27 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ircii/Attic/ircii-20030709-r2.ebuild,v 1.7 2004/06/24 23:05:11 agriffis Exp $
 
 IUSE="ipv6"
 

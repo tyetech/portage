@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/muh/Attic/muh-2.1_rc1.ebuild,v 1.6 2004/06/05 17:37:02 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/muh/Attic/muh-2.1_rc1.ebuild,v 1.7 2004/06/24 23:07:30 agriffis Exp $
 
 MY_P=${P/_/}
 S=${WORKDIR}/${MY_P}
