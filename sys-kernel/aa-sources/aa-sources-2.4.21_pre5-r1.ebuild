@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/aa-sources/Attic/aa-sources-2.4.21_pre3-r1.ebuild,v 1.2 2003/02/13 16:34:52 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/aa-sources/Attic/aa-sources-2.4.21_pre5-r1.ebuild,v 1.1 2003/03/14 14:46:58 lostlogic Exp $
 
 IUSE="build"
 
