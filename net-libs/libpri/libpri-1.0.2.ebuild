@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libpri/Attic/libpri-1.0.2.ebuild,v 1.3 2004/12/19 00:26:36 stkn Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libpri/Attic/libpri-1.0.2.ebuild,v 1.4 2005/02/14 19:59:23 stkn Exp $
 
 IUSE=""
 
