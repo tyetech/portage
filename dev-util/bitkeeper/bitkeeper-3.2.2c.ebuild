@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/bitkeeper/Attic/bitkeeper-3.2.2b.ebuild,v 1.2 2004/06/29 17:42:41 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/bitkeeper/Attic/bitkeeper-3.2.2c.ebuild,v 1.1 2004/07/02 22:40:45 dholm Exp $
 
 DESCRIPTION="A scalable configuration management system"
 HOMEPAGE="http://www.bitkeeper.com/"
