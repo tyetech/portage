@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/madman/Attic/madman-0.93.ebuild,v 1.1 2004/07/12 19:43:15 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/madman/Attic/madman-0.93.ebuild,v 1.2 2004/07/13 23:00:20 mr_bones_ Exp $
 
 IUSE=""
 
