@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/imhangul/Attic/imhangul-0.9.9.ebuild,v 1.3 2004/06/24 21:46:24 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/imhangul/Attic/imhangul-0.9.9.ebuild,v 1.4 2004/08/14 15:28:03 usata Exp $
 
 IUSE=""
 
@@ -10,7 +10,7 @@ SRC_URI="http://download.kldp.net/imhangul/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="x86 ~alpha ppc"
 
 DEPEND=">=x11-libs/gtk+-2.2.0"
 
