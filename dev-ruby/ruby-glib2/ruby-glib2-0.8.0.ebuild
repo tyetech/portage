@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-glib2/Attic/ruby-glib2-0.8.0.ebuild,v 1.6 2004/07/14 22:05:53 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-glib2/Attic/ruby-glib2-0.8.0.ebuild,v 1.7 2005/04/01 05:13:01 agriffis Exp $
 
 inherit ruby-gnome2
 
