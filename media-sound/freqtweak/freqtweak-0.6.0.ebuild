@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/freqtweak/Attic/freqtweak-0.6.0.ebuild,v 1.5 2004/12/19 05:39:23 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/freqtweak/Attic/freqtweak-0.6.0.ebuild,v 1.6 2004/12/29 03:01:17 ribosome Exp $
 
 IUSE=""
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="amd64 ~ppc sparc x86"
 
 DEPEND="x11-libs/wxGTK
-	>=dev-libs/fftw-3.0
+	>=sci-libs/fftw-3.0
 	>=dev-libs/libsigc++-0.14
 	dev-libs/libxml2
 	media-sound/jack-audio-connection-kit"
