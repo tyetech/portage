@@ -1,15 +1,14 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-misc/cvs-repo/gentoo-x86/www-misc/squidalyser/Attic/squidalyser-0.2.55.ebuild,v 1.3 2004/09/03 16:15:14 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-misc/cvs-repo/gentoo-x86/www-misc/squidalyser/Attic/squidalyser-0.2.55.ebuild,v 1.4 2004/09/06 01:46:00 swegener Exp $
 
 inherit eutils
 
 IUSE=""
 
-S=${WORKDIR}/${P}
 DESCRIPTION="Interactive log analyser for the Squid proxy."
-HOMEPAGE="http://ababa.org"
-SRC_URI="http://ababa.org/dist/${P}.tar.gz
+HOMEPAGE="http://squidalyser.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz
 	mirror://gentoo/${P}-gentoo.diff.bz2"
 
 SLOT="0"
