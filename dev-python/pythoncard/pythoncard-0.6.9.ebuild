@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pythoncard/Attic/pythoncard-0.6.9.ebuild,v 1.7 2003/09/06 23:32:28 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pythoncard/Attic/pythoncard-0.6.9.ebuild,v 1.8 2004/04/15 23:30:09 pythonhead Exp $
 
 DESCRIPTION="Cross-platform GUI construction kit for python"
 HOMEPAGE="http://pythoncard.sourceforge.net/index.html"
