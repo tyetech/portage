@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/stardict-jmdict-ja-en/Attic/stardict-jmdict-ja-en-2.1.1.ebuild,v 1.1 2003/07/06 17:49:48 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/stardict-jmdict-ja-en/Attic/stardict-jmdict-ja-en-2.1.1.ebuild,v 1.2 2003/09/06 22:15:57 msterret Exp $
 
 FROM_LANG="Japanese"
 TO_LANG="English"
@@ -15,6 +15,6 @@ S=${WORKDIR}
 src_install() {
 	stardict_src_install
 	dodoc README
-}	
+}
 
 
