@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Bart Verwilst <verwilst@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/PyQt/Attic/qt3.0.0_PyQt-3.0.ebuild,v 1.2 2001/11/27 23:10:09 verwilst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/PyQt/Attic/PyQt_qt3.0.0-3.0.ebuild,v 1.1 2001/11/29 20:37:50 verwilst Exp $
 
 S="${WORKDIR}/PyQt-3.0"
 DESCRIPTION="PyQt is a set of Python bindings for the Qt Toolkit."
