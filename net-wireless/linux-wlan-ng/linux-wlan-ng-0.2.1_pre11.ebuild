@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng/Attic/linux-wlan-ng-0.2.1_pre11.ebuild,v 1.7 2004/07/09 22:11:18 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng/Attic/linux-wlan-ng-0.2.1_pre11.ebuild,v 1.8 2005/01/23 20:49:04 blubb Exp $
 
 
 inherit eutils
