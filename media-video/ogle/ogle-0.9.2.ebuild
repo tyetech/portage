@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ogle/Attic/ogle-0.9.0.ebuild,v 1.3 2003/10/10 17:04:29 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ogle/Attic/ogle-0.9.2.ebuild,v 1.1 2003/11/09 03:13:45 seemant Exp $
 
 inherit libtool
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.dtek.chalmers.se/groups/dvd/"
 SRC_URI="http://www.dtek.chalmers.se/groups/dvd/dist/${P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc"
 LICENSE="GPL-2"
 IUSE="oss mmx alsa xv"
 
@@ -56,5 +56,6 @@ src_compile() {
 
 src_install() {
 	einstall || die
-	dodoc AUTHORS COPYING ChangeLog INSTALL NEWS README
+	dodoc AUTHORS COPYING ChangeLog HISTORY INSTALL NEWS README TODO
+	dodoc doc/liba52.txt
 }
