@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/noteedit/Attic/noteedit-2.6.2.ebuild,v 1.5 2004/09/03 09:57:56 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/noteedit/Attic/noteedit-2.6.2.ebuild,v 1.6 2004/10/15 09:16:55 eradicator Exp $
 
-IUSE="arts"
+IUSE=""
 
 inherit kde-functions kde eutils flag-o-matic
 
@@ -14,7 +14,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86 ~ppc sparc amd64"
 
-DEPEND="arts? ( kde-base/kdemultimedia )
+DEPEND="kde-base/kdemultimedia
+	kde-base/arts
 	media-libs/tse3"
 
 need-kde 3
