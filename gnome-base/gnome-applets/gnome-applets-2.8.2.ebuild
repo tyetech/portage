@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.8.2.ebuild,v 1.5 2005/03/10 02:10:32 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.8.2.ebuild,v 1.6 2005/03/15 19:17:16 ciaranm Exp $
 
 inherit gnome2 eutils
 
@@ -23,7 +23,7 @@ RDEPEND=">=x11-libs/gtk+-2.1
 	>=gnome-base/gail-1.3
 	>=x11-libs/libxklavier-0.97
 	apm? ( sys-apps/apmd )
-	acpi? ( sys-apps/acpid )
+	acpi? ( sys-power/acpid )
 	gstreamer? ( >=media-libs/gstreamer-0.8 )"
 
 DEPEND="${RDEPEND}
