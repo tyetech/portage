@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/gtkmm/Attic/gtkmm-2.2.10.ebuild,v 1.8 2004/05/12 13:47:00 khai Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/gtkmm/Attic/gtkmm-2.2.10.ebuild,v 1.9 2004/06/02 15:36:02 agriffis Exp $
 
 inherit gnome2
 
