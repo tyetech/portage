@@ -1,33 +1,28 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/qt-dcgui/Attic/qt-dcgui-0.2.10.ebuild,v 1.1 2003/04/17 10:21:04 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dcgui-qt/Attic/dcgui-qt-0.2.4-r1.ebuild,v 1.1 2003/05/06 08:08:13 aliz Exp $
 
 inherit kde-functions
-need-qt 3
-
-IUSE="ssl"
 
 MY_P=${P/qt-/}
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 DESCRIPTION="Qt based client for DirectConnect"
 HOMEPAGE="http://dc.ketelhot.de/"
 SRC_URI="http://download.berlios.de/dcgui/${MY_P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~mips ~hppa ~arm"
+KEYWORDS="x86 ppc ~sparc ~alpha ~mips ~hppa ~arm"
 
-
+need-qt 3
 newdepend ">=dev-libs/libxml2-2.4.22
-	=net-p2p/dclib-${PV}*
-	ssl? ( dev-libs/openssl )"
+		~net-p2p/dclib-${PV}"
 
 src_compile() {
-	econf \
-		--with-gnu-ld \
-		`use_with ssl` \
-		--with-libdc=/usr \
-		--with-qt-dir=/usr/qt/3 \
+	export CPPFLAGS="${CXXFLAGS} -I/usr/include/libxml2/libxml"
+
+	econf --with-libdc=/usr \
+		--with-qt-dir=${QTDIR} \
 		|| die
 	make || die
 }
