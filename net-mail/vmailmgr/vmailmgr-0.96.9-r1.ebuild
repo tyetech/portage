@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vmailmgr/Attic/vmailmgr-0.96.9-r1.ebuild,v 1.17 2004/05/30 11:03:07 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vmailmgr/Attic/vmailmgr-0.96.9-r1.ebuild,v 1.18 2004/06/24 23:32:00 agriffis Exp $
 
 inherit gcc
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mboxgrep/Attic/mboxgrep-0.7.9.ebuild,v 1.1 2003/10/19 17:57:01 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mboxgrep/Attic/mboxgrep-0.7.9.ebuild,v 1.2 2004/06/24 23:25:14 agriffis Exp $
 
 DESCRIPTION="Grep for mbox files"
 SRC_URI="mirror://sourceforge/mboxgrep/${P}.tar.gz"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mailutils/Attic/mailutils-0.3.1.ebuild,v 1.4 2004/05/30 08:28:41 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mailutils/Attic/mailutils-0.3.1.ebuild,v 1.5 2004/06/24 23:24:41 agriffis Exp $
 
 DESCRIPTION="A useful collection of mail servers, clients, and filters."
 HOMEPAGE="http://www.gnu.org/software/mailutils/mailutils.html"
