@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/hexedit/Attic/hexedit-1.2.9.ebuild,v 1.10 2004/08/05 23:40:55 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/hexedit/Attic/hexedit-1.2.10.ebuild,v 1.1 2004/08/05 23:40:55 swegener Exp $
 
 DESCRIPTION="View and edit files in hex or ASCII"
 HOMEPAGE="http://www.chez.com/prigaux/hexedit.html"
@@ -8,7 +8,7 @@ SRC_URI="http://merd.net/pixel/${P}.src.tgz"
 
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="x86 ~ppc sparc alpha arm hppa amd64"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~arm ~hppa ~amd64"
 IUSE=""
 
 DEPEND="sys-libs/ncurses"
