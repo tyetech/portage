@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/fuse/Attic/fuse-2.2_pre5.ebuild,v 1.1 2005/01/25 13:26:42 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/fuse/Attic/fuse-2.2_pre6.ebuild,v 1.1 2005/01/27 18:19:06 genstef Exp $
 
 inherit linux-mod eutils
 
