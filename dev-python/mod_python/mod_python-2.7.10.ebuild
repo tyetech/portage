@@ -1,6 +1,8 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/mod_python/Attic/mod_python-2.7.9.ebuild,v 1.1 2003/12/12 02:44:23 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/mod_python/Attic/mod_python-2.7.10.ebuild,v 1.1 2004/01/24 21:06:45 liquidx Exp $
+
+inherit python
 
 DESCRIPTION="Python module for Apache 1.x, not for Apache 2.x"
 SRC_URI="http://www.apache.org/dist/httpd/modpython/${P}.tgz"
@@ -9,16 +11,16 @@ HOMEPAGE="http://www.modpython.org/"
 LICENSE="as-is"
 KEYWORDS="~x86"
 SLOT="0"
+IUSE=""
 
-DEPEND="=net-www/apache-1* dev-lang/python"
+DEPEND="=net-www/apache-1*"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
 	# This patch from SuSE fixes the missing CFLAGS.
 	# If you remove it, your apache will most likely
 	# fail (lots of dieing pids in error_log).
-	sed -i -e 's:OPT=:OPT=$(OPTFLAGS):' src/Makefile.in
+	sed -e 's:OPT=:OPT=$(OPTFLAGS):' -i ${S}/src/Makefile.in
 }
 
 src_compile() {
@@ -29,21 +31,19 @@ src_compile() {
 	export OPTFLAGS="`/usr/sbin/apxs -q CFLAGS`"
 	econf --with-apxs=/usr/sbin/apxs
 
-	cp Makefile Makefile.orig
 	sed -e 's/LIBEXECDIR=\/usr\/lib\/apache/LIBEXECDIR=${D}\/usr\/lib\/apache-extramodules/' \
 		-e 's/PY_STD_LIB=/PY_STD_LIB=${D}/' \
-		Makefile.orig > Makefile
+		-i Makefile
 
-	cd src
-	cp Makefile Makefile.orig
 	sed -e 's/CFLAGS=$(OPT) $(INCLUDES)/CFLAGS=$(OPT) $(INCLUDES) -DEAPI -O0/' \
-		Makefile.orig > Makefile
+		-i ${S}/src/Makefile
 
 	emake || die "emake failed"
 }
 
 src_install() {
-	PY_LIBPATH="/usr/lib/python$(python -c 'import sys; print sys.version[0:3]')"
+	python_version
+	PY_LIBPATH="/usr/lib/python${PYVER}"
 
 	dodir /usr/lib/apache-extramodules
 	dodir ${PY_LIBPATH}
@@ -57,9 +57,9 @@ src_install() {
 	insinto /etc/apache/conf/addon-modules
 	doins ${FILESDIR}/mod_python.conf
 	dodoc COPYRIGHT CREDITS NEWS README
-	insinto /usr/share/doc/${P}/html
+	insinto /usr/share/doc/${PF}/html
 	doins doc-html/*
-	insinto /usr/share/doc/${P}/html/icons
+	insinto /usr/share/doc/${PF}/html/icons
 	doins doc-html/icons/*
 }
 
