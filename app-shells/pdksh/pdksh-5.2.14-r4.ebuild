@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/pdksh/Attic/pdksh-5.2.14-r4.ebuild,v 1.20 2004/06/14 17:15:06 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/pdksh/Attic/pdksh-5.2.14-r4.ebuild,v 1.21 2004/06/24 22:24:51 agriffis Exp $
 
 inherit eutils
 
