@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/dump/Attic/dump-0.4.34.ebuild,v 1.15 2004/05/18 00:08:20 jhuebel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/dump/Attic/dump-0.4.34.ebuild,v 1.16 2004/06/01 22:38:03 agriffis Exp $
 
 MY_P=${P/4./4b}
 S=${WORKDIR}/${MY_P}
@@ -27,7 +27,7 @@ RDEPEND="${DEPEND}
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	if [ `use readline` ] ; then
+	if use readline ; then
 		for i in configure.in configure
 		do
 			sed -i "s:-ltermcap:-lncurses:g" \
