@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/blam/Attic/blam-1.6.0.ebuild,v 1.2 2005/01/12 23:24:24 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/blam/Attic/blam-1.6.1.ebuild,v 1.1 2005/01/12 23:24:24 latexer Exp $
 
 inherit mono gnome2 eutils
 
@@ -14,15 +14,11 @@ KEYWORDS="~x86 ~ppc"
 
 IUSE=""
 DEPEND=">=dev-dotnet/mono-1.0
-		>=dev-dotnet/gtk-sharp-1.0
+		>=dev-dotnet/gtk-sharp-1.0.4-r1
+		>=dev-dotnet/gconf-sharp-1.0.4
+		>=dev-dotnet/glade-sharp-1.0.4
 		>=dev-dotnet/gecko-sharp-0.6
 		>=gnome-base/gconf-2.4"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${P}-gecko-fix.diff
-}
 
 src_compile() {
 	econf || die
