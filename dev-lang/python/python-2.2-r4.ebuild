@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/python/Attic/python-2.2-r3.ebuild,v 1.2 2002/01/15 00:32:54 gbevin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/python/Attic/python-2.2-r4.ebuild,v 1.1 2002/01/15 01:27:50 gbevin Exp $
 
 PYVER="`echo ${PV} | cut -d '.' -f 1,2`"
 S=${WORKDIR}/Python-${PV}
