@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice/Attic/openoffice-1.1_beta2.ebuild,v 1.2 2003/06/20 09:07:57 pauldv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice/Attic/openoffice-1.1_rc1.ebuild,v 1.1 2003/07/20 09:29:16 pauldv Exp $
 
 # IMPORTANT:  This is extremely alpha!!!
 
@@ -49,11 +49,11 @@ inherit virtualx
 
 
 LOC="/opt"
-FT_VER="2.1.3"
+FT_VER="2.1.4"
 STLP_VER="4.5.3"
-MY_PV="${PV/_/}"
+MY_PV="${PV/_rc1/rc}"
 INSTDIR="${LOC}/OpenOffice.org${PV}"
-S="${WORKDIR}/ooo_${MY_PV}_src"
+S="${WORKDIR}/oo_${MY_PV}_src"
 DESCRIPTION="OpenOffice.org, a full office productivity suite."
 SRC_URI="http://ny1.mirror.openoffice.org/stable/${MY_PV}/OOo_${MY_PV}_source.tar.bz2
 	http://sf1.mirror.openoffice.org/stable/${MY_PV}/OOo_${MY_PV}_source.tar.bz2
@@ -68,6 +68,7 @@ KEYWORDS="-x86 -ppc"
 IUSE="gnome kde"
 
 RDEPEND=">=sys-libs/glibc-2.1
+	!=sys-libs/glibc-2.3.1*
 	>=dev-lang/perl-5.0
 	virtual/x11
 	app-arch/zip
@@ -477,6 +478,7 @@ src_install() {
 	dosym ooffice /usr/bin/ooimpress
 	dosym ooffice /usr/bin/oomath
 	dosym ooffice /usr/bin/oowriter
+	dosym ooffice /usr/bin/ooweb
 	dosym ooffice /usr/bin/oosetup
 	dosym ooffice /usr/bin/oopadmin
 
@@ -502,10 +504,7 @@ src_install() {
 	then
 		local kdeloc="${D}${INSTDIR}/share/kde/net/"
 	
-		# Portage do not work with the space ..
-#		mv ${D}${INSTDIR}/share/kde/net/applnk/OpenOffice.org\ ${PV//_beta/Beta} ${kdeloc}
-		
-		insinto /usr/share/applnk/OpenOffice.org
+		insinto /usr/share/applnk/OpenOffice.org\ 1.1
 		# Install the files needed for the catagory
 		doins ${kdeloc}/.directory
 		doins ${kdeloc}/.order
@@ -547,7 +546,7 @@ pkg_postinst() {
 	einfo
 	einfo " Also, for individual components, you can use any of:"
 	einfo
-	einfo "   oocalc, oodraw, ooimpress, oomath or oowriter"
+	einfo "   oocalc, oodraw, ooimpress, oomath, ooweb or oowriter"
 	einfo
 	einfo " If the fonts appear garbled in the user interface refer to "
 	einfo " Bug 8539, or http://www.openoffice.org/FAQs/fontguide.html#8"
