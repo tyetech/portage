@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.0.10a.ebuild,v 1.6 2004/06/24 22:10:26 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.0.10a.ebuild,v 1.7 2004/07/13 06:14:50 eldad Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.nessus.org/pub/nessus/nessus-${PV}/src/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc alpha ~amd64"
+KEYWORDS="x86 ~ppc ~sparc alpha ~amd64"
 IUSE="X tcpd gtk2 debug prelude"
 
 DEPEND="=net-analyzer/libnasl-${PV}
