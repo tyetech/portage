@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/fwbuilder/Attic/fwbuilder-2.0.3.ebuild,v 1.2 2005/02/07 17:22:46 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/fwbuilder/Attic/fwbuilder-2.0.5.ebuild,v 1.1 2005/02/07 17:22:46 carlo Exp $
 
 inherit eutils
 
@@ -16,12 +16,6 @@ IUSE="nls"
 DEPEND="~net-libs/libfwbuilder-${PV}
 	nls? ( >=sys-devel/gettext-0.11.4 )
 	>=dev-libs/libxslt-1.0.7"
-
-src_unpack() {
-	unpack ${A} ; cd ${S}
-
-	epatch ${FILESDIR}/${P}-errno.patch
-}
 
 src_compile() {
 	export QMAKESPEC="linux-g++"
