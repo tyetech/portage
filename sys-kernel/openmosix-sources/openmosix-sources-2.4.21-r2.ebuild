@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/openmosix-sources/Attic/openmosix-sources-2.4.21-r1.ebuild,v 1.1 2003/12/27 11:20:14 tantive Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/openmosix-sources/Attic/openmosix-sources-2.4.21-r2.ebuild,v 1.1 2004/01/06 22:42:38 plasmaroo Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 #we use this next variable to avoid duplicating stuff on cvs
@@ -44,7 +44,9 @@ src_unpack() {
 	cd ${S}
 	cat ${DISTDIR}/openMosix-2.4.21-1.bz2 | bzip2 -d | patch -p1 || die
 
-	epatch ${FILESDIR}/do_brk_fix.patch || die "failed to patch for do_brk vuln"
+	epatch ${FILESDIR}/do_brk_fix.patch || die "Failed to patch do_brk() vulnerability!"
+	epatch ${FILESDIR}/${PN}.CAN-2003-0985.patch || die "Failed to patch mremap() vulnerability!"
+	epatch ${FILESDIR}/${PN}-2.4.20.rtc_fix.patch || die "Failed to patch RTC vulnerabilities!"
 
 	# Gentoo Linux uses /boot, so fix 'make install' to work properly
 	cd ${S}
