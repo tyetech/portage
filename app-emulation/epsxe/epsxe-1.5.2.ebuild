@@ -1,11 +1,11 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/epsxe/Attic/epsxe-1.5.2.ebuild,v 1.5 2002/08/06 19:04:14 gerk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/epsxe/Attic/epsxe-1.5.2.ebuild,v 1.6 2002/10/17 00:55:31 vapier Exp $
 
 S=${WORKDIR}
 DESCRIPTION="ePSXe Playstation Emulator"
 HOMEPAGE="http://www.epsxe.com"
-LICENSE="Freeware"
+LICENSE="freedist"
 KEYWORDS="x86 -ppc"
 SLOT="0"    
 
