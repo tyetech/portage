@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/seq24/Attic/seq24-0.5.1.ebuild,v 1.2 2004/09/03 17:27:56 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/seq24/Attic/seq24-0.5.1.ebuild,v 1.3 2005/01/06 00:59:21 fvdpol Exp $
 
 IUSE=""
 
