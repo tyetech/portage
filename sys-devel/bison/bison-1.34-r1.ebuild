@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/bison/Attic/bison-1.34-r1.ebuild,v 1.12 2003/09/08 02:14:58 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/bison/Attic/bison-1.34-r1.ebuild,v 1.13 2003/09/08 06:04:02 msterret Exp $
 
 IUSE="nls static build"
 
@@ -17,7 +17,7 @@ DEPEND="nls? ( sys-devel/gettext )"
 src_compile() {
 
 	local myconf=
-	
+
 	use nls || myconf="--disable-nls"
 
 	./configure --prefix=/usr \
