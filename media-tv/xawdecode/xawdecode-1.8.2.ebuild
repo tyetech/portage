@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xawdecode/Attic/xawdecode-1.8.2.ebuild,v 1.5 2004/07/14 21:11:42 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xawdecode/Attic/xawdecode-1.8.2.ebuild,v 1.6 2004/08/29 10:57:14 mholzer Exp $
 
 inherit eutils
 
@@ -9,7 +9,6 @@ IUSE="alsa jpeg encode ffmpeg xvid lirc xosd"
 DESCRIPTION="TV viewer with support for AVI recording and plugins"
 HOMEPAGE="http://xawdecode.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
-RESTRICT="nomirror"
 
 SLOT="0"
 LICENSE="GPL-2"
