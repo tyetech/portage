@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/saxon/Attic/saxon-7.8.ebuild,v 1.3 2004/06/24 22:42:26 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/saxon-bin/Attic/saxon-bin-7.8.ebuild,v 1.1 2004/07/30 21:46:14 axxo Exp $
 
 inherit java-pkg
 
@@ -16,9 +16,7 @@ SLOT="0"
 
 S=${WORKDIR}
 
-src_compile() {
-	einfo "This is a binary-only ebuild (for now)."
-}
+src_compile() { :; }
 
 src_install() {
 	use doc && dohtml -r doc/*
