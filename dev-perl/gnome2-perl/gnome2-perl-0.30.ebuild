@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/gnome2-perl/Attic/gnome2-perl-0.30.ebuild,v 1.1 2003/09/08 11:23:32 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/gnome2-perl/Attic/gnome2-perl-0.30.ebuild,v 1.2 2003/12/30 15:53:17 mcummings Exp $
 
 inherit perl-module
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://gtk2-perl.sf.net/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~sparc ~ppc ~alpha"
+KEYWORDS="x86 ~sparc ~ppc ~alpha"
 
 DEPEND="${DEPEND}
 	>=x11-libs/gtk+-2*
