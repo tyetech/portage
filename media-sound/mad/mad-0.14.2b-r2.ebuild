@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mad/Attic/mad-0.14.2b-r2.ebuild,v 1.9 2003/07/17 16:59:31 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mad/Attic/mad-0.14.2b-r2.ebuild,v 1.10 2003/07/18 21:43:37 tester Exp $
 
 IUSE="nls esd"
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc alpha sparc hppa"
+KEYWORDS="x86 ppc alpha sparc hppa amd64"
 
 DEPEND="esd? ( media-sound/esound )
 	nls? ( sys-devel/gettext )"
