@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/killproc/Attic/killproc-1.12-r1.ebuild,v 1.2 2000/08/16 04:37:52 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/killproc/Attic/killproc-1.12-r1.ebuild,v 1.3 2000/09/15 20:08:42 drobbins Exp $
 
 P=killproc-1.12
 A=${P}.tar.gz
@@ -18,7 +18,7 @@ src_unpack() {
 
 src_compile() {                           
   cd ${S}
-  make
+  try make
 }
 
 src_install() {                               
