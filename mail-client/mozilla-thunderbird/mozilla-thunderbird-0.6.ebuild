@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mozilla-thunderbird/Attic/mozilla-thunderbird-0.6.ebuild,v 1.2 2004/06/08 03:37:08 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mozilla-thunderbird/Attic/mozilla-thunderbird-0.6.ebuild,v 1.3 2004/06/09 18:35:51 brad Exp $
 
-IUSE="gtk2 ipv6 ldap crypt xinerama"
+IUSE="gnome gtk2 ipv6 ldap crypt xinerama"
 
 unset ALLOWED_FLAGS  # stupid extra-functions.sh ... bug 49179
 inherit flag-o-matic gcc eutils nsplugins
