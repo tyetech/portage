@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ri/Attic/ri-0.8a.ebuild,v 1.12 2004/08/30 17:25:23 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ri/Attic/ri-0.8a.ebuild,v 1.13 2005/02/06 23:44:53 kumba Exp $
 
 DESCRIPTION="Ruby Interactive reference"
 HOMEPAGE="http://www.pragmaticprogrammer.com/ruby/downloads/ri.html"
