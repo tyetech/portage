@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/d4x/Attic/d4x-2.5.0_rc4.ebuild,v 1.4 2004/07/03 15:02:58 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/d4x/Attic/d4x-2.5.0_rc4.ebuild,v 1.5 2004/07/15 02:43:10 agriffis Exp $
 
 IUSE="nls esd gnome oss kde"
 
@@ -83,4 +83,3 @@ src_install () {
 	dodoc AUTHORS COPYING ChangeLog* NEWS PLANS TODO \
 		DOC/{FAQ*,LICENSE,NAMES,README*,TROUBLES,THANKS}
 }
-
