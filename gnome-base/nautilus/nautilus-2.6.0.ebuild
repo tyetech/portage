@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.6.0.ebuild,v 1.16 2004/11/01 01:04:20 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.6.0.ebuild,v 1.17 2004/11/08 20:50:43 vapier Exp $
 
 inherit gnome2 eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/nautilus/"
 
 LICENSE="GPL-2 LGPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="x86 ppc alpha ~sparc hppa amd64 ~ia64 mips"
+KEYWORDS="x86 ppc alpha ~sparc hppa amd64 arm ia64 mips"
 IUSE="oggvorbis cups gstreamer"
 
 RDEPEND=">=dev-libs/glib-2.3
