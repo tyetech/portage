@@ -1,6 +1,6 @@
 # Copyright 2001-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iptraf/Attic/iptraf-2.7.0.ebuild,v 1.10 2002/12/15 10:44:20 bjb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iptraf/Attic/iptraf-2.7.0.ebuild,v 1.11 2003/02/02 15:13:47 aliz Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="IPTraf is an ncurses-based IP LAN monitor"
@@ -15,7 +15,7 @@ DEPEND=">=sys-libs/ncurses-5.2-r1"
 
 src_compile() {
 	cd src
-	emake TARGET="/usr/sbin" WORKDIR="/var/lib/iptraf" \
+	emake CFLAGS="$CFLAGS" DEBUG="" TARGET="/usr/sbin" WORKDIR="/var/lib/iptraf" \
 	clean all || die "emake failed"
 }
 src_install() {
