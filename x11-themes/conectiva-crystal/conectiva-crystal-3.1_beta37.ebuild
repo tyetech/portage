@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/conectiva-crystal/Attic/conectiva-crystal-3.1_beta37.ebuild,v 1.4 2002/07/22 12:55:05 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/conectiva-crystal/Attic/conectiva-crystal-3.1_beta37.ebuild,v 1.5 2002/08/02 17:53:24 seemant Exp $
 
 S="${WORKDIR}/Crystal"
 DESCRIPTION="Conectiva Crystal - Icon theme"
@@ -27,8 +27,8 @@ src_install(){
 	fi
 
 	if [ -d ${KDE3DIR} ] ; then
-        mkdir -p ${D}/${KDE3DIR}/share/icons/
-        cp -rf ${S} ${D}/${KDE3DIR}/share/icons/Crystal
-        fi
+	mkdir -p ${D}/${KDE3DIR}/share/icons/
+	cp -rf ${S} ${D}/${KDE3DIR}/share/icons/Crystal
+	fi
 
 }
