@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-179.ebuild,v 1.7 2004/04/08 01:57:17 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-179.ebuild,v 1.8 2004/04/08 02:34:52 spyderous Exp $
 
 IUSE="truetype"
 
@@ -14,8 +14,7 @@ LICENSE="X11"
 KEYWORDS="~x86 ~ppc sparc ~alpha ~hppa ~mips ~amd64 ~ia64"
 
 DEPEND="virtual/x11
-	sys-apps/utempter
-	sys-libs/libtermcap-compat"
+	sys-apps/utempter"
 
 src_compile() {
 
