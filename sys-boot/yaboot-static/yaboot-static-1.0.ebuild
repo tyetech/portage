@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/yaboot-static/Attic/yaboot-static-1.0.ebuild,v 1.2 2004/03/23 04:03:34 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/yaboot-static/Attic/yaboot-static-1.0.ebuild,v 1.3 2004/06/24 22:36:42 agriffis Exp $
 
 DESCRIPTION="Static yaboot ppc boot loader for machines with open firmware"
 
