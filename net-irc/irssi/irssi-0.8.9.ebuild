@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irssi/Attic/irssi-0.8.8-r1.ebuild,v 1.1 2003/11/27 02:31:56 gregf Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irssi/Attic/irssi-0.8.9.ebuild,v 1.1 2003/12/12 02:23:45 gregf Exp $
 
 IUSE="nls ipv6 perl ssl"
 
