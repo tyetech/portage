@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/x-unikey/Attic/x-unikey-0.9.1d.ebuild,v 1.3 2004/09/04 04:16:48 pclouds Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/x-unikey/Attic/x-unikey-0.9.1d.ebuild,v 1.4 2004/10/03 22:04:32 swegener Exp $
 
 inherit eutils
 
