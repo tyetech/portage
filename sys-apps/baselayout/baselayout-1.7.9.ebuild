@@ -1,8 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.7.7.ebuild,v 1.1 2002/04/05 21:38:36 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.7.9.ebuild,v 1.1 2002/05/12 22:00:33 azarah Exp $
 
-SV="1.3.3"
+SV="1.3.5"
 SVREV=""
 #sysvinit version
 SVIV="2.83"
@@ -12,6 +12,8 @@ DESCRIPTION="Base layout for Gentoo Linux filesystem (incl. initscripts and sysv
 SRC_URI="ftp://metalab.unc.edu/pub/Linux/system/daemons/init/sysvinit-${SVIV}.tar.gz"
 #	http://www.ibiblio.org/gentoo/distfiles/rc-scripts-${SV}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org"
+
+SLOT="0"
 
 DEPEND="sys-kernel/linux-headers"
 RDEPEND=""
@@ -201,6 +203,10 @@ src_install()
 	keepdir /lib /mnt/floppy /mnt/cdrom
 	chmod go-rwx ${D}/mnt/floppy ${D}/mnt/cdrom
 
+	#dont add a new /etc/{passwd,shadow} if they exist
+	[ -f ${ROOT}/etc/passwd ] && rm -f ${D}/etc/passwd
+	[ -f ${ROOT}/etc/shadow ] && rm -f ${D}/etc/shadow
+
 #	dodir /etc/X11
 #	exeinto /etc/X11
 #	doexe ${S}/sbin/startDM.sh
@@ -280,6 +286,7 @@ src_install()
 	doexe ${S}/sbin/depscan.sh
 	doexe ${S}/sbin/runscript.sh
 	doexe ${S}/sbin/functions.sh
+	doexe ${S}/sbin/rc-envupdate.sh
 	doexe ${S}/sbin/rc-help.sh
 	#compat symlinks (some stuff have hardcoded paths)
 	dosym /sbin/depscan.sh /etc/init.d/depscan.sh
