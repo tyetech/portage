@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/wvstreams/Attic/wvstreams-3.75.ebuild,v 1.12 2004/12/29 03:02:46 ribosome Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/wvstreams/Attic/wvstreams-3.75.ebuild,v 1.13 2005/01/04 19:55:23 sekretarz Exp $
 
 inherit eutils
 
