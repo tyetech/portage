@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/dav/Attic/dav-0.8.4.ebuild,v 1.3 2004/06/07 01:25:38 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/dav/Attic/dav-0.8.4.ebuild,v 1.4 2004/06/24 21:52:37 agriffis Exp $
 
 DESCRIPTION="A minimal console text editor"
 HOMEPAGE="http://dav-text.sourceforge.net/"

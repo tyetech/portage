@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/klat/Attic/klat-0.4.0.ebuild,v 1.11 2004/06/19 08:18:16 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/klat/Attic/klat-0.4.0.ebuild,v 1.12 2004/06/24 21:57:58 agriffis Exp $
 
 inherit kde-base
 need-kde 3

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/qemacs/Attic/qemacs-0.3.1.ebuild,v 1.9 2004/05/31 22:12:04 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/qemacs/Attic/qemacs-0.3.1.ebuild,v 1.10 2004/06/24 22:01:17 agriffis Exp $
 
 inherit eutils
 

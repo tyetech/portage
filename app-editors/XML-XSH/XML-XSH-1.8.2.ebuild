@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/XML-XSH/XML-XSH-1.8.2.ebuild,v 1.4 2004/06/15 08:05:02 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/XML-XSH/XML-XSH-1.8.2.ebuild,v 1.5 2004/06/24 22:04:23 agriffis Exp $
 
 inherit perl-module
 

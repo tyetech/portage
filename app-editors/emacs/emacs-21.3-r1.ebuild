@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-21.3-r1.ebuild,v 1.9 2004/06/15 08:07:12 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-21.3-r1.ebuild,v 1.10 2004/06/24 21:53:36 agriffis Exp $
 
 IUSE="X nls motif leim gnome Xaw3d"
 

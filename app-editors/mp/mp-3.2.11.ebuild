@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/mp/Attic/mp-3.2.11.ebuild,v 1.5 2004/06/16 03:43:34 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/mp/Attic/mp-3.2.11.ebuild,v 1.6 2004/06/24 21:59:23 agriffis Exp $
 
 inherit eutils
 
