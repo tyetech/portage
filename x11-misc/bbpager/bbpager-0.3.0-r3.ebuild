@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbpager/Attic/bbpager-0.3.0-r3.ebuild,v 1.7 2003/02/13 17:08:38 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbpager/Attic/bbpager-0.3.0-r3.ebuild,v 1.8 2003/09/05 23:18:18 msterret Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="An understated pager for Blackbox."
@@ -14,7 +14,7 @@ DEPEND="virtual/blackbox"
 
 src_unpack () {
 	unpack ${A} ; cd ${S}
-	patch -p1 < ${FILESDIR}/bbpager-gcc3.patch	
+	patch -p1 < ${FILESDIR}/bbpager-gcc3.patch
 }
 
 src_compile() {
