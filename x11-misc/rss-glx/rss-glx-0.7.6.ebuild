@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/rss-glx/Attic/rss-glx-0.7.6.ebuild,v 1.7 2004/04/15 02:26:33 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/rss-glx/Attic/rss-glx-0.7.6.ebuild,v 1.8 2004/04/27 20:49:28 agriffis Exp $
 
-inherit flag-o-matic
+inherit flag-o-matic eutils
 use kde && inherit kde
 
 MY_P=${PN}_${PV}
