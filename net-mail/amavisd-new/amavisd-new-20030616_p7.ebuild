@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/amavisd-new/Attic/amavisd-new-20030616_p6.ebuild,v 1.5 2004/01/14 19:53:04 max Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/amavisd-new/Attic/amavisd-new-20030616_p7.ebuild,v 1.1 2004/01/14 19:53:04 max Exp $
 
 inherit eutils
 
@@ -47,6 +47,11 @@ RDEPEND="${DEPEND}
 	milter? ( >=net-mail/sendmail-8.12 )"
 
 S="${WORKDIR}/${PN}-${PV/_*/}"
+
+src_unpack() {
+	unpack ${A} && cd "${S}"
+	epatch "${FILESDIR}/uid-as-string.patch"
+}
 
 src_compile() {
 	if [ "`use milter`" ] ; then
