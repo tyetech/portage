@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/tuxcards/Attic/tuxcards-1.2.ebuild,v 1.3 2004/12/03 21:25:31 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/tuxcards/Attic/tuxcards-1.2.ebuild,v 1.4 2004/12/13 22:56:57 ticho Exp $
 
 inherit kde-functions
 
@@ -34,6 +34,5 @@ src_compile() {
 
 src_install() {
 	make INSTALL_ROOT=${D} install || die
-
 	dodoc AUTHORS COPYING INSTALL README
 }
