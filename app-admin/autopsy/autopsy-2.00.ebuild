@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/autopsy/Attic/autopsy-2.00.ebuild,v 1.5 2004/06/05 23:33:38 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/autopsy/Attic/autopsy-2.00.ebuild,v 1.6 2004/06/24 21:23:17 agriffis Exp $
 
 inherit eutils
 

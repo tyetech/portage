@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/systemimager-boot-bin/Attic/systemimager-boot-bin-3.0.1.ebuild,v 1.2 2004/05/31 19:21:33 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/systemimager-boot-bin/Attic/systemimager-boot-bin-3.0.1.ebuild,v 1.3 2004/06/24 21:39:49 agriffis Exp $
 
 MY_P="systemimager-i386boot-standard-3.0.1-4.noarch"
 

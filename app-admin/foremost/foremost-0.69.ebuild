@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/foremost/Attic/foremost-0.69.ebuild,v 1.3 2004/06/13 12:27:09 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/foremost/Attic/foremost-0.69.ebuild,v 1.4 2004/06/24 21:25:54 agriffis Exp $
 
 DESCRIPTION="A console program to recover files based on their headers and footers"
 SRC_URI="http://foremost.sourceforge.net/pkg/${P}.tar.gz"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/superadduser/Attic/superadduser-1.0.7.ebuild,v 1.9 2004/06/13 12:17:28 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/superadduser/Attic/superadduser-1.0.7.ebuild,v 1.10 2004/06/24 21:38:25 agriffis Exp $
 
 DESCRIPTION="Interactive adduser script"
 SRC_URI=""

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sudo/Attic/sudo-1.6.7_p5.ebuild,v 1.15 2004/06/02 02:16:58 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sudo/Attic/sudo-1.6.7_p5.ebuild,v 1.16 2004/06/24 21:38:17 agriffis Exp $
 
 #
 # TODO: Fix support for krb4 and krb5

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/powertweak/Attic/powertweak-0.99.5-r1.ebuild,v 1.4 2004/06/06 02:56:05 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/powertweak/Attic/powertweak-0.99.5-r1.ebuild,v 1.5 2004/06/24 21:34:21 agriffis Exp $
 
 inherit eutils
 

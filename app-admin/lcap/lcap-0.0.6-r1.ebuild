@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/lcap/Attic/lcap-0.0.6-r1.ebuild,v 1.5 2004/03/24 10:46:01 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/lcap/Attic/lcap-0.0.6-r1.ebuild,v 1.6 2004/06/24 21:30:11 agriffis Exp $
 
 inherit eutils
 

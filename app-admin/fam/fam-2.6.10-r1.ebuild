@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/fam/Attic/fam-2.6.10-r1.ebuild,v 1.3 2004/01/30 05:07:49 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/fam/Attic/fam-2.6.10-r1.ebuild,v 1.4 2004/06/24 21:25:22 agriffis Exp $
 
 IUSE=""
 

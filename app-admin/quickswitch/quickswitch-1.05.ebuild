@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/quickswitch/quickswitch-1.05.ebuild,v 1.9 2004/06/01 22:29:46 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/quickswitch/quickswitch-1.05.ebuild,v 1.10 2004/06/24 21:36:12 agriffis Exp $
 
 IUSE="ncurses"
 

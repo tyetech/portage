@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/aide/Attic/aide-0.9.ebuild,v 1.17 2004/03/29 15:10:57 zul Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/aide/Attic/aide-0.9.ebuild,v 1.18 2004/06/24 21:22:23 agriffis Exp $
 
 inherit eutils
 

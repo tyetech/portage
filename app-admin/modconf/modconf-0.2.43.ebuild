@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/modconf/Attic/modconf-0.2.43.ebuild,v 1.6 2004/03/12 10:33:05 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/modconf/Attic/modconf-0.2.43.ebuild,v 1.7 2004/06/24 21:31:50 agriffis Exp $
 
 # Some notes:  This should rather depend on dev-libs/newt, and use whiptail,
 #              not dev-util/dialog.

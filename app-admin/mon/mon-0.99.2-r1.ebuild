@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/mon/Attic/mon-0.99.2-r1.ebuild,v 1.15 2004/05/31 19:21:32 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/mon/Attic/mon-0.99.2-r1.ebuild,v 1.16 2004/06/24 21:32:23 agriffis Exp $
 
 DESCRIPTION="highly configurable service monitoring daemon"
 HOMEPAGE="http://www.kernel.org/software/mon/"

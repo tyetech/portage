@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/fam/Attic/fam-2.7.0-r1.ebuild,v 1.6 2004/06/20 04:55:30 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/fam/Attic/fam-2.7.0-r1.ebuild,v 1.7 2004/06/24 21:25:22 agriffis Exp $
 
 inherit libtool eutils gnuconfig
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/logsentry/logsentry-1.1.1.ebuild,v 1.14 2004/06/06 11:11:45 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/logsentry/logsentry-1.1.1.ebuild,v 1.15 2004/06/24 21:30:51 agriffis Exp $
 
 DESCRIPTION="automatically monitor system logs and mail security violations on a periodic basis"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/moodss/Attic/moodss-18.1.ebuild,v 1.1 2004/05/16 23:50:28 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/moodss/Attic/moodss-18.1.ebuild,v 1.2 2004/06/24 21:32:41 agriffis Exp $
 
 DESCRIPTION="Modular Object Oriented Dynamic SpreadSheet"
 HOMEPAGE="http://jfontain.free.fr/moodss/"
