@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-icon-theme/Attic/gnome-icon-theme-1.0.3.ebuild,v 1.1 2003/05/19 13:22:08 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-icon-theme/Attic/gnome-icon-theme-1.0.5.ebuild,v 1.1 2003/06/10 12:31:03 foser Exp $
 
 inherit gnome2
 
