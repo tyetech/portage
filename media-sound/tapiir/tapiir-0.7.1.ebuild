@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/tapiir/Attic/tapiir-0.7.1.ebuild,v 1.8 2004/06/13 08:42:49 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/tapiir/Attic/tapiir-0.7.1.ebuild,v 1.9 2004/06/25 00:25:40 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/madplay/Attic/madplay-0.15.1b.ebuild,v 1.5 2004/04/21 14:57:31 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/madplay/Attic/madplay-0.15.1b.ebuild,v 1.6 2004/06/25 00:09:45 agriffis Exp $
 
 IUSE="debug nls"
 

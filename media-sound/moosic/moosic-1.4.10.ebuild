@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/moosic/Attic/moosic-1.4.10.ebuild,v 1.3 2004/04/01 07:34:40 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/moosic/Attic/moosic-1.4.10.ebuild,v 1.4 2004/06/25 00:11:09 agriffis Exp $
 
 DESCRIPTION="Moosic is a music player that focuses on easy playlist management"
 HOMEPAGE="http://www.nanoo.org/~daniel/moosic/"

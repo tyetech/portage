@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.10-r1.ebuild,v 1.9 2004/04/22 14:10:46 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.10-r1.ebuild,v 1.10 2004/06/25 00:29:52 agriffis Exp $
 
 inherit flag-o-matic eutils
 

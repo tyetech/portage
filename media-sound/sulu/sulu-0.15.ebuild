@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/sulu/Attic/sulu-0.15.ebuild,v 1.7 2004/04/20 17:37:17 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/sulu/Attic/sulu-0.15.ebuild,v 1.8 2004/06/25 00:25:00 agriffis Exp $
 
 IUSE=""
 

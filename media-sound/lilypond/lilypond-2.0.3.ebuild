@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lilypond/Attic/lilypond-2.0.3.ebuild,v 1.5 2004/05/28 14:36:08 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lilypond/Attic/lilypond-2.0.3.ebuild,v 1.6 2004/06/25 00:08:52 agriffis Exp $
 
 inherit eutils
 

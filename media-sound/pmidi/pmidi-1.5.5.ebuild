@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pmidi/Attic/pmidi-1.5.5.ebuild,v 1.9 2004/06/18 09:01:42 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pmidi/Attic/pmidi-1.5.5.ebuild,v 1.10 2004/06/25 00:17:10 agriffis Exp $
 
 IUSE=""
 

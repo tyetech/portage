@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/dcd/Attic/dcd-0.90.ebuild,v 1.14 2004/04/22 09:12:35 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/dcd/Attic/dcd-0.90.ebuild,v 1.15 2004/06/24 23:57:06 agriffis Exp $
 
 IUSE=""
 

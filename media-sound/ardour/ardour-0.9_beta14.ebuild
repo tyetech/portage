@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ardour/Attic/ardour-0.9_beta14.ebuild,v 1.2 2004/06/13 07:52:31 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ardour/Attic/ardour-0.9_beta14.ebuild,v 1.3 2004/06/24 23:50:51 agriffis Exp $
 
 MY_P="${P}-3"
 MY_PV="${PV}-3"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/trommler/Attic/trommler-3.3.ebuild,v 1.10 2004/04/20 17:38:46 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/trommler/Attic/trommler-3.3.ebuild,v 1.11 2004/06/25 00:27:22 agriffis Exp $
 
 IUSE=""
 

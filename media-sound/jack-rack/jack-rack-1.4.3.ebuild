@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-rack/Attic/jack-rack-1.4.3.ebuild,v 1.8 2004/06/17 07:16:22 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-rack/Attic/jack-rack-1.4.3.ebuild,v 1.9 2004/06/25 00:07:00 agriffis Exp $
 
 IUSE="gnome"
 

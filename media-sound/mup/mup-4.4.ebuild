@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mup/Attic/mup-4.4.ebuild,v 1.6 2004/06/08 00:39:06 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mup/Attic/mup-4.4.ebuild,v 1.7 2004/06/25 00:14:22 agriffis Exp $
 
 MY_P="${PN}44"
 

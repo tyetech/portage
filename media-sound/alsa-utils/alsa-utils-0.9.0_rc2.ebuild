@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-utils/Attic/alsa-utils-0.9.0_rc2.ebuild,v 1.11 2004/06/06 04:28:39 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-utils/Attic/alsa-utils-0.9.0_rc2.ebuild,v 1.12 2004/06/24 23:49:49 agriffis Exp $
 
 S=${WORKDIR}/${P/_rc/rc}
 DESCRIPTION="Advanced Linux Sound Architecture Utils (alsactl, alsamixer, etc.)"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/imp3sh/Attic/imp3sh-0.2.3.ebuild,v 1.9 2004/04/22 06:25:15 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/imp3sh/Attic/imp3sh-0.2.3.ebuild,v 1.10 2004/06/25 00:06:29 agriffis Exp $
 
 IUSE="oggvorbis"
 

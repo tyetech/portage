@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bplay/bplay-0.991.ebuild,v 1.10 2004/04/27 07:18:08 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bplay/bplay-0.991.ebuild,v 1.11 2004/06/24 23:53:09 agriffis Exp $
 
 IUSE=""
 
