@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/pwgen/Attic/pwgen-2.03-r1.ebuild,v 1.9 2004/05/04 13:41:44 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/pwgen/Attic/pwgen-2.03-r1.ebuild,v 1.10 2004/05/10 04:07:16 iluxa Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://sourceforge.net/projects/pwgen/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc sparc hppa amd64 alpha ~mips ppc64"
+KEYWORDS="x86 ~ppc sparc hppa amd64 alpha mips ppc64"
 
 DEPEND="virtual/glibc"
 
