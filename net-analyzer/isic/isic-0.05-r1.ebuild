@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/isic/Attic/isic-0.05-r1.ebuild,v 1.7 2004/07/10 12:12:19 eldad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/isic/Attic/isic-0.05-r1.ebuild,v 1.8 2005/01/08 10:02:57 dragonheart Exp $
 
 inherit eutils
 
