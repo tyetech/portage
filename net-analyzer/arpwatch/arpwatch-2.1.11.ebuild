@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/arpwatch/Attic/arpwatch-2.1.11.ebuild,v 1.3 2003/02/15 07:35:13 gerk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/arpwatch/Attic/arpwatch-2.1.11.ebuild,v 1.4 2003/07/13 11:30:10 aliz Exp $
 
 P=arpwatch-2.1a11
 S=${WORKDIR}/$P
@@ -9,7 +9,7 @@ SRC_URI="ftp://ftp.ee.lbl.gov/${P}.tar.gz"
 HOMEPAGE="http://www-nrg.ee.lbl.gov/"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ~ppc"
 
 DEPEND="net-libs/libpcap
 	sys-libs/ncurses"

@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nsat/nsat-1.5.ebuild,v 1.2 2003/02/13 13:49:09 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nsat/nsat-1.5.ebuild,v 1.3 2003/07/13 11:30:13 aliz Exp $
 
 IUSE="pcap X"
 
@@ -15,7 +15,7 @@ RDEPEND=${DEPEND}
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="x86"
 
 src_unpack() {
 	unpack ${A}
