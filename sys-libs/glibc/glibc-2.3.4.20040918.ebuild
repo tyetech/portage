@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.4.20040916.ebuild,v 1.4 2004/09/18 01:02:56 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.4.20040918.ebuild,v 1.1 2004/09/19 04:18:34 lv Exp $
 
 inherit eutils flag-o-matic gcc
 
 # Branch update support.  Following will disable:
 #  BRANCH_UPDATE=
-BRANCH_UPDATE="20040916"
+BRANCH_UPDATE="20040918"
 
 
 # Minimum kernel version we support
