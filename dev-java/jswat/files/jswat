@@ -2,7 +2,7 @@
 # jswat Launch Script
 # Author: Dylan Carlson
 # May 2003
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jswat/files/Attic/jswat,v 1.1 2003/05/24 10:45:47 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jswat/files/Attic/jswat,v 1.2 2004/07/18 02:53:05 dragonheart Exp $
 
 JSWAT_VER="1.7.1"
 
