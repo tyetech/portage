@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Bart Verwilst <verwilst@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/kmess/Attic/kmess-0.9.5.ebuild,v 1.1 2002/05/29 11:05:53 verwilst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/kmess/Attic/kmess-0.9.6.ebuild,v 1.1 2002/06/20 16:42:00 verwilst Exp $
 
 inherit kde-base || die
 
