@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpd/Attic/mpd-0.11.4-r1.ebuild,v 1.5 2005/01/21 20:29:46 pylon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpd/Attic/mpd-0.11.4-r1.ebuild,v 1.6 2005/02/14 02:05:34 ticho Exp $
 
 IUSE="oggvorbis mad aac audiofile ipv6 flac mikmod alsa"
 
@@ -23,7 +23,8 @@ DEPEND="oggvorbis? ( media-libs/libvorbis )
 	mikmod? ( media-libs/libmikmod )
 	alsa? ( media-libs/alsa-lib )
 	>=media-libs/libao-0.8.4
-	sys-libs/zlib"
+	sys-libs/zlib
+	!media-sound/mpd-svn"
 
 src_compile() {
 	econf `use_enable aac` \
