@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/color-theme/Attic/color-theme-5.2.13.ebuild,v 1.4 2003/09/20 05:50:21 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/color-theme/Attic/color-theme-5.2.13.ebuild,v 1.5 2004/05/11 03:54:52 weeve Exp $
 
 inherit elisp
 
