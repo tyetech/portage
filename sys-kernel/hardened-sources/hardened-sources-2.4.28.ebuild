@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: 
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/hardened-sources/Attic/hardened-sources-2.4.28.ebuild,v 1.3 2004/11/28 18:14:57 solar Exp $
 
 IUSE="selinux"
 ETYPE="sources"
