@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/glade/Attic/glade-0.6.4.ebuild,v 1.4 2002/08/16 04:04:41 murphy Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/glade/Attic/glade-0.6.4.ebuild,v 1.5 2002/10/04 05:31:51 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="glade"
