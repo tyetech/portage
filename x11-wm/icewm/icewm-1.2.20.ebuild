@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/icewm/Attic/icewm-1.2.16-r1.ebuild,v 1.15 2005/02/20 05:23:32 morfic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/icewm/Attic/icewm-1.2.20.ebuild,v 1.1 2005/02/20 05:23:32 morfic Exp $
 
 inherit eutils
 
@@ -9,18 +9,15 @@ DESCRIPTION="Ice Window Manager"
 HOMEPAGE="http://www.icewm.org/
 	http://sourceforge.net/projects/icewmsilverxp/"
 
-#this needs to use the theme for 1.2.14 probably all through pre phase
-SILVERXP_P="SilverXP-1.2.14-single-3"
 #fix for icewm preversion package names
 S=${WORKDIR}/${P/_}
 
-SRC_URI="mirror://sourceforge/${PN}/${P/_}.tar.gz
-	mirror://sourceforge/icewmsilverxp/${SILVERXP_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P/_}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS="ppc x86 sparc amd64"
+KEYWORDS="~ppc ~x86 ~sparc ~amd64"
 
 IUSE="esd gnome imlib nls spell truetype xinerama silverxp"
 
@@ -40,7 +37,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}/src
 	if use silverxp ; then
-		epatch ${WORKDIR}/${PN}/themes/${SILVERXP_P}/Linux/ybutton.cc.patch
+		epatch ${FILESDIR}/${P/_}.ybutton.cc.patch
 	fi
 
 	echo "#!/bin/sh" > $T/icewm
@@ -78,7 +75,7 @@ src_compile(){
 }
 
 src_install(){
-	make DESTDIR=${D} install || die  "make instal failed"
+	make DESTDIR=${D} install || die  "make install failed"
 
 	dodoc AUTHORS BUGS CHANGES FAQ PLATFORMS README* TODO VERSION
 	dohtml -a html,sgml doc/*
@@ -88,9 +85,4 @@ src_install(){
 
 	insinto /usr/share/xsessions
 	doins ${FILESDIR}/IceWM.desktop
-
-	if use silverxp
-	then
-	einfo "Please use Version 1.2.14-3 of the Silverxp theme"
-	fi
 }
