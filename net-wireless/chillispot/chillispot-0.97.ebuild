@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/chillispot/Attic/chillispot-0.97.ebuild,v 1.1 2004/10/03 18:15:52 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/chillispot/Attic/chillispot-0.97.ebuild,v 1.2 2005/01/12 21:12:24 solar Exp $
 
 inherit eutils flag-o-matic gnuconfig
 

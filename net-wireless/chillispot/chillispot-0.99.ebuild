@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/chillispot/Attic/chillispot-0.95.ebuild,v 1.3 2005/01/12 21:12:24 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/chillispot/Attic/chillispot-0.99.ebuild,v 1.1 2005/01/12 21:12:24 solar Exp $
 
-inherit eutils flag-o-matic
+inherit eutils flag-o-matic gnuconfig
 
 DESCRIPTION="ChilliSpot is an open source captive portal or wireless LAN access point controller."
 HOMEPAGE="http://www.chillispot.org"
@@ -13,10 +13,12 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~s390 ~sparc ~x86"
 IUSE="pic"
 
 DEPEND="virtual/libc >=sys-apps/sed-4*"
+RDEPEND=""
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+	gnuconfig_update
 	chmod 644 doc/*.conf
 	find . -exec chmod go-w '{}' \;
 }
