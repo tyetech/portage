@@ -1,16 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdv/Attic/libdv-0.99-r1.ebuild,v 1.14 2005/01/11 02:44:46 malc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdv/Attic/libdv-0.104.ebuild,v 1.1 2005/01/11 02:44:46 malc Exp $
 
-inherit eutils
+inherit eutils flag-o-matic
 
 DESCRIPTION="Software codec for dv-format video (camcorders etc)."
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+RESTRICT="nomirror"
 HOMEPAGE="http://libdv.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 amd64 ppc sparc alpha hppa"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug gtk sdl xv"
 
 RDEPEND="dev-libs/popt
@@ -22,8 +23,8 @@ DEPEND="${RDEPEND}
 
 src_unpack() {
 	unpack ${A} && cd "${S}"
-	epatch "${FILESDIR}/${P}-disablegtk.patch"
-	epatch "${FILESDIR}/${P}-2.6.patch"
+	epatch "${FILESDIR}/${PN}-0.99-2.6.patch"
+	epatch "${FILESDIR}/${PN}-0.104-amd64reloc.patch"
 }
 
 src_compile() {
@@ -32,8 +33,6 @@ src_compile() {
 	myconf="${myconf} `use_enable gtk` `use_enable gtk gtktest`"
 	myconf="${myconf} `use_enable sdl`"
 	myconf="${myconf} `use_enable xv`"
-
-	unset CFLAGS CXXFLAGS
 
 	econf ${myconf} || die "econf failed"
 	make || die "compile problem"
