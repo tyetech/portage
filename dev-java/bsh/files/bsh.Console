@@ -2,7 +2,7 @@
 # bsh.Console Launch Script
 # Author: Dylan Carlson
 # May 2003
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/bsh/files/Attic/bsh.Console,v 1.1 2003/05/15 03:57:52 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/bsh/files/Attic/bsh.Console,v 1.2 2004/07/18 02:50:53 dragonheart Exp $
 
 JAVA_HOME=`/usr/bin/java-config --jdk-home`
 if [ -z "${JAVA_HOME}" ] ; then
