@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gsubedit/Attic/gsubedit-0.4_pre1-r1.ebuild,v 1.1 2004/06/15 07:18:08 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gsubedit/Attic/gsubedit-0.4_pre1-r1.ebuild,v 1.2 2004/06/18 20:04:22 dholm Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P/_}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 IUSE="nls"
 
 DEPEND="=x11-libs/gtk+-1.2*
