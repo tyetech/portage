@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/btreefolder2/Attic/btreefolder2-0.5.0.ebuild,v 1.7 2004/06/25 01:17:38 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/btreefolder2/Attic/btreefolder2-0.5.0.ebuild,v 1.8 2004/09/11 21:59:48 lanius Exp $
 
 inherit zproduct
 
@@ -11,3 +11,4 @@ LICENSE="ZPL"
 KEYWORDS="x86"
 
 ZPROD_LIST="BTreeFolder2"
+IUSE=""
