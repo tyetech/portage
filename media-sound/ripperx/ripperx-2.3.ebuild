@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ripperx/Attic/ripperx-2.3.ebuild,v 1.12 2004/08/25 02:35:21 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ripperx/Attic/ripperx-2.3.ebuild,v 1.13 2005/01/19 15:44:19 luckyduck Exp $
 
 IUSE=""
 
