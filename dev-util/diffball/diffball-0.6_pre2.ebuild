@@ -1,8 +1,8 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/diffball/Attic/diffball-0.6_pre2.ebuild,v 1.2 2004/09/17 10:47:10 ferringb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/diffball/Attic/diffball-0.6_pre2.ebuild,v 1.3 2005/03/09 10:08:58 ferringb Exp $
 
-IUSE=""
+IUSE="debug"
 
 DESCRIPTION="Delta compression suite for using/generating binary patches"
 HOMEPAGE="http://sourceforge.net/projects/diffball"
