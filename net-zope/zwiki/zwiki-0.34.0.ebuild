@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/zwiki/Attic/zwiki-0.34.0.ebuild,v 1.2 2004/10/14 20:50:24 radek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/zwiki/Attic/zwiki-0.34.0.ebuild,v 1.3 2004/10/18 12:34:01 dholm Exp $
 
 inherit zproduct
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://zwiki.org"
 SRC_URI="${HOMEPAGE}/releases/ZWiki-${PV}.tgz"
 
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="x86 ~ppc"
 
 ZPROD_LIST="ZWiki"
 MYDOC="ChangeLog GPL.txt ${MYDOC}"
