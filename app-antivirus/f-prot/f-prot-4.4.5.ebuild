@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/f-prot/Attic/f-prot-4.3.5.ebuild,v 1.5 2004/09/24 14:43:05 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/f-prot/Attic/f-prot-4.4.5.ebuild,v 1.1 2004/09/24 14:43:05 ticho Exp $
 
 IUSE=""
 
@@ -20,7 +20,7 @@ PROVIDE="virtual/antivirus"
 
 SLOT="0"
 LICENSE="F-PROT"
-KEYWORDS="~x86 -ppc -sparc amd64"
+KEYWORDS="~x86 -ppc -sparc ~amd64"
 
 src_install ()
 {
@@ -36,7 +36,7 @@ src_install ()
 	doins *.DEF ENGLISH.TX0
 
 	doman man_pages/*
-	dodoc LICENSE* CHANGES INSTALL* README
+	dodoc LICENSE* CHANGES README
 	dohtml doc_ws/*
 
 	dosed "s:/usr/local/f-prot:/opt/f-prot:g" /usr/bin/f-prot.sh /opt/f-prot/check-updates.pl
