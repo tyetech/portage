@@ -1,27 +1,28 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/module-init-tools/Attic/module-init-tools-0.9.15_pre1.ebuild,v 1.4 2004/01/07 17:21:29 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/module-init-tools/Attic/module-init-tools-3.0_pre5.ebuild,v 1.1 2004/01/07 17:21:29 azarah Exp $
 
 # This ebuild includes backwards compatability for stable 2.4 kernels
 IUSE=""
 
-inherit flag-o-matic
-inherit eutils
+inherit flag-o-matic eutils gnuconfig
 
 MYP="${P/_pre/-pre}"
 S="${WORKDIR}/${MYP}"
-MODUTILS_PV="2.4.25"
+MODUTILS_PV="2.4.26"
 DESCRIPTION="Kernel module tools for the development kernel >=2.5.48"
 SRC_URI="mirror://kernel/linux/kernel/people/rusty/modules/${MYP}.tar.bz2
 	mirror://kernel/linux/kernel/people/rusty/modules/old/${MYP}.tar.bz2
 	mirror://kernel/linux/utils/kernel/modutils/v2.4/modutils-${MODUTILS_PV}.tar.bz2"
 HOMEPAGE="http://www.kernel.org/pub/linux/kernel/people/rusty/modules"
 
-KEYWORDS="~x86 ~amd64 ~ppc ~sparc ~alpha mips ~arm ia64"
+KEYWORDS="~x86 amd64 ~ppc ~sparc ~alpha ~mips ~arm ~ia64 ppc64 hppa"
 LICENSE="GPL-2"
 SLOT="0"
 
-DEPEND="virtual/glibc"
+DEPEND="virtual/glibc
+	sys-libs/zlib"
+
 PROVIDE="virtual/modutils"
 
 src_unpack() {
@@ -47,6 +48,10 @@ src_unpack() {
 }
 
 src_compile() {
+
+	# If running mips64, we need updated configure data
+	use mips && gnuconfig_update
+
 	local myconf=
 
 	filter-flags -fPIC
@@ -67,6 +72,7 @@ src_compile() {
 
 	econf \
 		--prefix=/ \
+		--enable-zlib \
 		${myconf}
 
 	emake || die "emake module-init-tools failed"
@@ -93,14 +99,14 @@ src_install () {
 		then
 			einfo "Moving symlink $f to ${f}.old"
 			#runme = the target of the symlink with a .old tagged on.
-			runme=`ls -l ${D}/sbin/${f} | sed 's/.* -> //'`.old
+			runme="`ls -l ${D}/sbin/${f} | sed 's/.* -> //'`.old"
 			[ ! -e ${D}/sbin/${runme} ] || einfo "${D}/sbin/${runme} not found"
-			ln -snf $runme ${D}/sbin/${f} || die
+			dosym $runme /sbin/${f} || die
 		elif [ -e ${D}/sbin/${f} ]
 		then
 			einfo "Moving executable $f to ${f}.old"
 		fi
-		mv -f ${D}/sbin/${f} ${D}/sbin/${f}.old;
+		mv -f ${D}/sbin/${f} ${D}/sbin/${f}.old
 	done
 	# Move the man pages as well.  We only do this for the man pages of the
 	# tools that module-init-tools will replace.
