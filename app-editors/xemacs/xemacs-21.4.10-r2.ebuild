@@ -1,8 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/xemacs/Attic/xemacs-21.4.10-r2.ebuild,v 1.1 2002/12/24 23:27:34 jhhudso Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/xemacs/Attic/xemacs-21.4.10-r2.ebuild,v 1.2 2003/01/01 11:32:46 rendhalver Exp $
 
-IUSE="gpm postgres xface nas dnd X jpeg tiff png mule motif canna freewnn lucid athena next xaw3d"
+IUSE="gpm postgres xface nas dnd X jpeg tiff png mule motif canna freewnn lucid athena neXt Xaw3d"
 
 LICENSE="GPL-2"
 
