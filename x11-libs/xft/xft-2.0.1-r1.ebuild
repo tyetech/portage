@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xft/Attic/xft-2.0.1-r1.ebuild,v 1.7 2003/02/08 12:07:21 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xft/Attic/xft-2.0.1-r1.ebuild,v 1.8 2003/02/13 17:04:18 vapier Exp $
 
 IUSE=""
 

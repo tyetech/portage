@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtkglarea/Attic/gtkglarea-1.99.0.ebuild,v 1.8 2003/01/09 16:05:40 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtkglarea/Attic/gtkglarea-1.99.0.ebuild,v 1.9 2003/02/13 16:57:26 vapier Exp $
 
 inherit gnome2
 
