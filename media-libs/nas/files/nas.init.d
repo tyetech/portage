@@ -1,11 +1,11 @@
 #!/sbin/runscript
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/nas/files/nas.init.d,v 1.3 2004/07/14 22:42:31 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/nas/files/nas.init.d,v 1.4 2004/09/16 15:49:40 eradicator Exp $
 
 depend() {
 	need net
-	use alsasound
+	after alsasound esd
 }
 
 start() {
