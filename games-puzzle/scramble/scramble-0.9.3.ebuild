@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/scramble/Attic/scramble-0.7.ebuild,v 1.2 2004/06/24 23:09:18 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/scramble/Attic/scramble-0.9.3.ebuild,v 1.1 2005/01/30 06:11:54 mr_bones_ Exp $
 
 inherit games
 
@@ -8,9 +8,9 @@ DESCRIPTION="Create as many words as you can before the time runs out"
 HOMEPAGE="http://www.shiftygames.com/scramble/scramble.html"
 SRC_URI="http://www.shiftygames.com/scramble/${P}.tar.gz"
 
-KEYWORDS="x86"
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="~amd64 ~ppc x86"
 IUSE=""
 
 DEPEND=">=media-libs/libsdl-1.2
@@ -19,14 +19,6 @@ DEPEND=">=media-libs/libsdl-1.2
 	media-libs/sdl-ttf"
 RDEPEND="${DEPEND}
 	sys-apps/miscfiles"
-
-src_compile() {
-	egamesconf \
-		--disable-dependency-tracking \
-		--datadir=${GAMES_DATADIR_BASE} \
-		|| die
-	emake || die "emake faile"
-}
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
