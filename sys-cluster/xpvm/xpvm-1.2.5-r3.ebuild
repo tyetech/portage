@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/xpvm/Attic/xpvm-1.2.5-r3.ebuild,v 1.4 2004/08/14 13:45:43 swegener Exp $
 
 inherit eutils
 
