@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/skype/Attic/skype-0.93.0.3-r1.ebuild,v 1.1 2004/12/28 13:35:56 humpback Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/skype/Attic/skype-0.93.0.3-r2.ebuild,v 1.1 2004/12/30 11:33:31 humpback Exp $
 
 inherit eutils
 
@@ -35,6 +35,8 @@ src_unpack() {
 	else
 		unpack ${P}.tar.bz2
 	fi
+	cd ${P}
+	unpack skype-avatars-${AVATARV}.tgz
 }
 
 src_install() {
@@ -62,6 +64,8 @@ src_install() {
 	#	fi;
 	#done;
 
+	insinto /opt/skype/avatars
+	doins avatars/*.jpg
 
 	insinto /opt/skype
 	make_desktop_entry skype "Skype VoIP" ../icons/hicolor/48x48/apps/skype.png
