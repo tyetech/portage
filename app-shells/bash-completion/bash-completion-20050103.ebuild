@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/bash-completion/Attic/bash-completion-20041017-r3.ebuild,v 1.5 2005/01/04 11:57:23 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/bash-completion/Attic/bash-completion-20050103.ebuild,v 1.1 2005/01/04 11:57:23 ka0ttic Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.caliban.org/files/bash/${P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~s390 ~sparc x86 ~ppc64"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~s390 ~sparc ~x86 ~ppc64"
 IUSE=""
 
 DEPEND="app-arch/tar
@@ -29,7 +29,6 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/${PV}-gentoo.diff
-	epatch ${FILESDIR}/${PV}-rcs.diff
 }
 
 src_install() {
@@ -52,7 +51,7 @@ src_install() {
 	dosym ../../usr/share/bash-completion/gentoo /etc/bash_completion.d/gentoo \
 		|| die "dosym gentoo-bashcomp failed"
 	docinto gentoo
-	dodoc AUTHORS NEWS TODO
+	dodoc AUTHORS TODO
 }
 
 pkg_postinst() {
