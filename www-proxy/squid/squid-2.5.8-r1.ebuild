@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-proxy/cvs-repo/gentoo-x86/www-proxy/squid/Attic/squid-2.5.7-r6.ebuild,v 1.1 2005/02/09 12:55:39 cyfred Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-proxy/cvs-repo/gentoo-x86/www-proxy/squid/Attic/squid-2.5.8-r1.ebuild,v 1.1 2005/02/23 20:06:05 mrness Exp $
 
 inherit eutils
 
@@ -8,35 +8,36 @@ inherit eutils
 S_PV=${PV%.*}
 S_PL=${PV##*.}
 S_PP=${PN}-${S_PV}.STABLE${S_PL}
-PATCH_VERSION="20050210"
+PATCH_VERSION="20050223"
 
 DESCRIPTION="A caching web proxy, with advanced features"
 HOMEPAGE="http://www.squid-cache.org/"
 
 S=${WORKDIR}/${S_PP}
 SRC_URI="ftp://ftp.squid-cache.org/pub/squid-2/STABLE/${S_PP}.tar.bz2
-	http://dev.gentoo.org/~cyfred/distfiles/squid-2.5.STABLE7-patches-${PATCH_VERSION}.tar.gz"
+	mirror://gentoo/squid-2.5.STABLE8-patches-${PATCH_VERSION}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 mips"
-IUSE="pam ldap ssl sasl snmp debug uclibc selinux underscores"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~mips"
+IUSE="pam ldap ssl sasl snmp debug uclibc selinux underscores logrotate"
 
 RDEPEND="virtual/libc
 	pam? ( >=sys-libs/pam-0.75 )
 	ldap? ( >=net-nds/openldap-2.1.26 )
 	ssl? ( >=dev-libs/openssl-0.9.6m )
 	sasl? ( >=dev-libs/cyrus-sasl-1.5.27 )
-	selinux? ( sec-policy/selinux-squid )"
+	selinux? ( sec-policy/selinux-squid )
+	!mips? ( logrotate? ( app-admin/logrotate ) )"
 DEPEND="${RDEPEND} dev-lang/perl"
 
 src_unpack() {
-	unpack ${A} || die
-	cd ${S} || die
+	unpack ${A} || die "unpack failed"
+	cd ${S} || die "dir ${S} not found"
 
 	#do NOT just remove this patch.  yes, it's here for a reason.
 	#woodchip@gentoo.org (07 Nov 2002)
-	patch -p1 <${FILESDIR}/squid-2.5.7-gentoo.diff || die
+	patch -p1 <${FILESDIR}/squid-${PV}-gentoo.diff || die "failed to apply squid-{PV}-gentoo.diff"
 
 	# Do bulk patching from squids bug fix list for stable 6 see #57081
 	EPATCH_SUFFIX="patch" epatch ${WORKDIR}/patch
@@ -53,7 +54,7 @@ src_unpack() {
 		mv configure.in configure.in.orig
 		sed -e 's%LDFLAGS="-g"%LDFLAGS=""%' configure.in.orig > configure.in
 		export WANT_AUTOCONF=2.1
-		autoconf || die
+		autoconf || die "autoconf failed"
 	fi
 }
 
@@ -169,10 +170,19 @@ src_install() {
 	doman helpers/basic_auth/LDAP/*.8
 	dodoc helpers/basic_auth/SASL/squid_sasl_auth*
 
-	insinto /etc/pam.d ; newins ${FILESDIR}/squid.pam squid
-	exeinto /etc/init.d ; newexe ${FILESDIR}/squid.rc6 squid
-	insinto /etc/conf.d ; newins ${FILESDIR}/squid.confd squid
-	exeinto /etc/cron.weekly ; newexe ${FILESDIR}/squid-r1.cron squid.cron
+	insinto /etc/pam.d
+	newins ${FILESDIR}/squid.pam squid
+	exeinto /etc/init.d
+	newexe ${FILESDIR}/squid.rc6 squid
+	insinto /etc/conf.d
+	newins ${FILESDIR}/squid.confd squid
+	if useq logrotate; then
+		insinto /etc/logrotate.d
+		newins ${FILESDIR}/squid-logrotate squid
+	else
+		exeinto /etc/cron.weekly
+		newexe ${FILESDIR}/squid-r1.cron squid.cron
+	fi
 }
 
 pkg_postinst() {
