@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/turck-mmcache/Attic/turck-mmcache-2.3.20.ebuild,v 1.2 2003/08/03 23:12:08 stuart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/turck-mmcache/Attic/turck-mmcache-2.3.21.ebuild,v 1.1 2003/08/03 23:12:08 stuart Exp $
 
 PHP_EXT_NAME="mmcache"
 PHP_EXT_ZENDEXT="yes"
@@ -14,6 +14,7 @@ SRC_URI="mirror://sourceforge/turck-mmcache/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
+
 DEPEND="!dev-php/ioncube_loaders
 	    !dev-php/php-accelerator"
 
