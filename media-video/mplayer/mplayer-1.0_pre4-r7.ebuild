@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre4-r7.ebuild,v 1.9 2004/07/30 21:39:04 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre4-r7.ebuild,v 1.10 2004/07/31 06:35:45 chriswhite Exp $
 
 inherit eutils flag-o-matic kmod
 
@@ -187,7 +187,7 @@ src_compile() {
 		myconf="${myconf} $(use_enable png)"
 	fi
 
-	if use ia64; then
+	if use ia64 || use !network; then
 		myconf="${myconf} --disable-live"
 	else
 		myconf="${myconf} $(use_enable live)"
