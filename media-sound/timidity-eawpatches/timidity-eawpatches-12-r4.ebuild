@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/timidity-eawpatches/Attic/timidity-eawpatches-12-r4.ebuild,v 1.3 2004/12/21 13:27:22 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/timidity-eawpatches/Attic/timidity-eawpatches-12-r4.ebuild,v 1.4 2005/02/28 10:38:15 eradicator Exp $
 
 IUSE=""
 
