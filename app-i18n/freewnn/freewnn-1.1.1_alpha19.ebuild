@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/freewnn/Attic/freewnn-1.1.1_alpha19.ebuild,v 1.1 2002/07/01 15:19:15 stubear Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/freewnn/Attic/freewnn-1.1.1_alpha19.ebuild,v 1.2 2002/07/09 14:14:39 stubear Exp $
+
+KEYWORDS="x86"
 
 DESCRIPTION="Network-Extensible Kana-to-Kanji Conversion System"
 HOMEPAGE="http://www.freewnn.org/"
