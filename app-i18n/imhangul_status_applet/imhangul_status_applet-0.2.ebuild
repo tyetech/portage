@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/imhangul_status_applet/Attic/imhangul_status_applet-0.2.ebuild,v 1.1 2003/01/24 11:35:45 jayskwak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/imhangul_status_applet/Attic/imhangul_status_applet-0.2.ebuild,v 1.2 2003/01/24 13:56:14 seo Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Status Applet for imhangul"
@@ -9,7 +9,7 @@ SRC_URI="http://download.kldp.net/imhangul/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 
 DEPEND=">=app-i18n/imhangul-0.9.4"
 
