@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/lfpfonts-fix/Attic/lfpfonts-fix-0.82-r1.ebuild,v 1.3 2003/12/05 22:07:03 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/lfpfonts-fix/Attic/lfpfonts-fix-0.82-r1.ebuild,v 1.4 2004/05/24 16:16:38 usata Exp $
 
 S=${WORKDIR}/${PN}-src
 DESCRIPTION="Linux Font Project fixed-width fonts"
