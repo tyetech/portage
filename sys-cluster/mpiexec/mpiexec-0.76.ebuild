@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/mpiexec/Attic/mpiexec-0.75.ebuild,v 1.3 2004/05/10 23:18:42 tantive Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/mpiexec/Attic/mpiexec-0.76.ebuild,v 1.1 2004/05/10 23:18:42 tantive Exp $
 
 #S=${WORKDIR}/mpiexec-${PV}
 DESCRIPTION="replacement for mpirun, integrates MPI with PBS."
@@ -15,7 +15,7 @@ RDEPEND="net-misc/openssh"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 pkg_setup() {
 	# Do we have a SMP enabled kernel?
