@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/dbunit-bin/Attic/dbunit-bin-2.0.ebuild,v 1.3 2004/09/07 06:41:12 axxo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/dbunit-bin/Attic/dbunit-bin-2.1.ebuild,v 1.1 2004/09/07 06:41:12 axxo Exp $
 
 inherit java-pkg
 
