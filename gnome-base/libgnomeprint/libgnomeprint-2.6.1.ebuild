@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprint/Attic/libgnomeprint-2.6.1.ebuild,v 1.1 2004/04/22 03:15:08 khai Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprint/Attic/libgnomeprint-2.6.1.ebuild,v 1.2 2004/05/24 21:47:46 leonardop Exp $
 
 inherit gnome2
 
@@ -26,7 +26,8 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	>=dev-util/intltool-0.29
 	>=dev-util/pkgconfig-0.12.0
-	doc? ( >=dev-util/gtk-doc-0.9 )"
+	doc? ( =app-text/docbook-sgml-dtd-3.0*
+		>=dev-util/gtk-doc-0.9 )"
 
 G2CONF="${G2CONF} `use_with cups`"
 
