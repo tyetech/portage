@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Config-Simple/Attic/Config-Simple-4.55.ebuild,v 1.1 2004/06/13 19:43:16 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Config-Simple/Attic/Config-Simple-4.55.ebuild,v 1.2 2004/06/14 13:01:50 dholm Exp $
 
 inherit perl-module
 
@@ -10,5 +10,5 @@ HOMEPAGE="http://www.cpan.org/authors/id/S/SH/SHERZODR/${P}.readme"
 
 SLOT="0"
 LICENSE="Artistic | GPL-2"
-KEYWORDS="x86"
+KEYWORDS="x86 ~ppc"
 IUSE=""
