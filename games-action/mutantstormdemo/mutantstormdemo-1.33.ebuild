@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/mutantstormdemo/Attic/mutantstormdemo-1.33.ebuild,v 1.1 2003/10/07 17:04:01 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/mutantstormdemo/Attic/mutantstormdemo-1.33.ebuild,v 1.2 2004/02/20 06:13:56 mr_bones_ Exp $
 
 inherit games eutils
 
