@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/acovea/Attic/acovea-4.0.0.ebuild,v 1.3 2004/06/14 16:45:55 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/acovea/Attic/acovea-4.0.0.ebuild,v 1.4 2004/06/24 21:26:51 agriffis Exp $
 
 DESCRIPTION="Analysis of Compiler Options via Evolutionary Algorithm"
 HOMEPAGE="http://www.coyotegulch.com/acovea/"

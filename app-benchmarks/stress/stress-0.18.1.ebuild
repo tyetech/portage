@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/stress/Attic/stress-0.18.1.ebuild,v 1.5 2004/04/26 15:34:26 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/stress/Attic/stress-0.18.1.ebuild,v 1.6 2004/06/24 21:29:20 agriffis Exp $
 
 MY_P=${PN}-${PV/_/}
 S="${WORKDIR}/${MY_P}"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/dbench/Attic/dbench-1.3.ebuild,v 1.11 2004/06/13 12:44:30 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/dbench/Attic/dbench-1.3.ebuild,v 1.12 2004/06/24 21:27:48 agriffis Exp $
 
 S="${WORKDIR}/${PN}"
 DESCRIPTION="Popular filesystem benchmark"
