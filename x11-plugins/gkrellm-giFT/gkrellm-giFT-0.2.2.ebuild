@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellm-giFT/Attic/gkrellm-giFT-0.2.2.ebuild,v 1.3 2004/06/12 18:21:17 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellm-giFT/Attic/gkrellm-giFT-0.2.2.ebuild,v 1.4 2004/06/24 22:54:28 agriffis Exp $
 
 inherit eutils
 

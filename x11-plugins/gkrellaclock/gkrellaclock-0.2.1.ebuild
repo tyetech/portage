@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellaclock/Attic/gkrellaclock-0.2.1.ebuild,v 1.9 2004/06/13 04:21:48 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellaclock/Attic/gkrellaclock-0.2.1.ebuild,v 1.10 2004/06/24 22:53:03 agriffis Exp $
 
 IUSE=""
 S=${WORKDIR}/${P/a/A}

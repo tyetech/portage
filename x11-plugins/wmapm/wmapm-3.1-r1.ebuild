@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmapm/wmapm-3.1-r1.ebuild,v 1.9 2004/06/19 03:58:49 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmapm/wmapm-3.1-r1.ebuild,v 1.10 2004/06/24 23:04:41 agriffis Exp $
 
 IUSE=""
 S=${WORKDIR}/${P}/${PN}

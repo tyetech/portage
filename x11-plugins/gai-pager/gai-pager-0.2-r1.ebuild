@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gai-pager/Attic/gai-pager-0.2-r1.ebuild,v 1.2 2004/05/10 13:22:17 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gai-pager/Attic/gai-pager-0.2-r1.ebuild,v 1.3 2004/06/24 22:52:42 agriffis Exp $
 
 MY_PV="${PV}"
 MY_P="${PN}-${MY_PV}"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/asbutton/Attic/asbutton-0.3-r1.ebuild,v 1.9 2004/06/19 04:22:41 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/asbutton/Attic/asbutton-0.3-r1.ebuild,v 1.10 2004/06/24 22:47:51 agriffis Exp $
 
 inherit eutils
 

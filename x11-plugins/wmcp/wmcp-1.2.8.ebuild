@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmcp/wmcp-1.2.8.ebuild,v 1.10 2004/06/12 19:31:54 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmcp/wmcp-1.2.8.ebuild,v 1.11 2004/06/24 23:07:21 agriffis Exp $
 
 inherit eutils
 

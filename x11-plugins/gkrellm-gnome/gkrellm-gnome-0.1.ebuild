@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellm-gnome/Attic/gkrellm-gnome-0.1.ebuild,v 1.8 2004/03/26 23:10:05 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellm-gnome/Attic/gkrellm-gnome-0.1.ebuild,v 1.9 2004/06/24 22:54:39 agriffis Exp $
 
 IUSE=""
 S=${WORKDIR}/${PN}
