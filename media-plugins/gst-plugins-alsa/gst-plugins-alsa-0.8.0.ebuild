@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-alsa/Attic/gst-plugins-alsa-0.8.0.ebuild,v 1.1 2004/04/03 01:16:41 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-alsa/Attic/gst-plugins-alsa-0.8.0.ebuild,v 1.2 2004/04/03 01:17:30 foser Exp $
 
 inherit gst-plugins
 
@@ -12,7 +12,7 @@ DEPEND=">=media-libs/alsa-lib-0.9.1"
 
 pkg_postinst() {
 
-	gst-plugins-pkg_postinst
+	gst-plugins_pkg_postinst
 
 	ewarn "This plugin has known problems on some hardware due to alsa bugs"
 
