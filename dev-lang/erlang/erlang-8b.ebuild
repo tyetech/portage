@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/erlang/Attic/erlang-8b.ebuild,v 1.2 2002/12/09 04:20:57 manson Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/erlang/Attic/erlang-8b.ebuild,v 1.3 2003/01/08 05:21:01 george Exp $
 
 IUSE="X ssl"
 
@@ -11,9 +11,9 @@ S="${WORKDIR}/otp_src_R8B-2"
 
 LICENSE="EPL"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc "
+KEYWORDS="x86 ~ppc ~sparc "
 
-RDEPEND=">=sys-devel/perl-5.6.1
+DEPEND=">=sys-devel/perl-5.6.1
 	X?	( >=x11-base/xfree-4.2.0-r12 )
 	ssl?	( >=dev-libs/openssl-0.9.6d )"
 
@@ -24,30 +24,28 @@ src_compile() {
 
 src_install() {
 	ERL_LIBDIR="/usr/lib/erlang"
-	
+
 	make INSTALL_PREFIX=${D} install || die
-		
+
 	dosym ${ERL_LIBDIR}/bin/erl /usr/bin/erl
 	dosym ${ERL_LIBDIR}/bin/erlc /usr/bin/erlc
 	dosym ${ERL_LIBDIR}/erts-5.1.2/bin/epmd ${ERL_LIBDIR}/bin/
-	
+
 	## Remove ${D} from the /usr/lib/erlang/bin/erl and start script
-	
+
 	cd ${D}/${ERL_LIBDIR}/bin
 	sed -e "s;${D};;" erl > erl.tmp
 	mv ./erl.tmp ./erl
 	sed -e "s;${D};;" start > start.tmp
 	mv ./start.tmp ./start
-	
+
 	chmod 755 ./erl ./start
-	
-	
+
+
 	## Clean up the no longer needed
-	
+
 	rm ${D}/${ERL_LIBDIR}/Install
-	
+
 	cd ${S}
 	dodoc AUTHORS EPLICENCE README
 }
-
-	      
