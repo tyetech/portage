@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/esms/Attic/esms-0.9.5.ebuild,v 1.6 2002/07/06 14:58:54 phoenix Exp $
 
 S=${WORKDIR}/${P}
 
