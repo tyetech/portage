@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mac-fdisk/Attic/mac-fdisk-0.1.ebuild,v 1.6 2002/10/19 04:06:04 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mac-fdisk/Attic/mac-fdisk-0.1.ebuild,v 1.7 2002/10/20 18:54:50 vapier Exp $
 
 S=${WORKDIR}/${P}
 DEBRV=8
@@ -12,7 +12,6 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="ppc"
 DEPEND="virtual/glibc"
-RDEPEND="${DEPEND}"
 
 src_unpack() {
 	cd ${WORKDIR}
