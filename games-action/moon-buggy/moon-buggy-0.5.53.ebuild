@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/moon-buggy/Attic/moon-buggy-0.5.53.ebuild,v 1.11 2004/08/02 09:20:24 tomk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/moon-buggy/Attic/moon-buggy-0.5.53.ebuild,v 1.12 2005/01/19 00:28:56 wolf31o2 Exp $
 
 inherit games
 
