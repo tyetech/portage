@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/most/Attic/most-4.9.4.ebuild,v 1.1 2004/04/06 17:48:07 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/most/Attic/most-4.9.4.ebuild,v 1.2 2004/06/24 22:18:14 agriffis Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="An extremely excellent text file reader"

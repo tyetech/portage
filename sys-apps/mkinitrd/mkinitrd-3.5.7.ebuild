@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mkinitrd/Attic/mkinitrd-3.5.7.ebuild,v 1.6 2004/04/27 21:19:05 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mkinitrd/Attic/mkinitrd-3.5.7.ebuild,v 1.7 2004/06/24 22:17:18 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/netkit-base/netkit-base-0.17-r8.ebuild,v 1.8 2003/09/18 22:22:02 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/netkit-base/netkit-base-0.17-r8.ebuild,v 1.9 2004/06/24 22:19:06 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/lshw/Attic/lshw-01.06a.ebuild,v 1.3 2004/05/12 12:55:42 pappy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/lshw/Attic/lshw-01.06a.ebuild,v 1.4 2004/06/24 22:14:11 agriffis Exp $
 
 inherit flag-o-matic
 

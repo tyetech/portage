@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/fakeroot/Attic/fakeroot-0.4.4.ebuild,v 1.5 2003/08/12 17:34:15 pappy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/fakeroot/Attic/fakeroot-0.4.4.ebuild,v 1.6 2004/06/24 22:05:37 agriffis Exp $
 
 MY_P="${PN}_${PV}-4.1"
 

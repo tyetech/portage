@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/powerpc-utils/Attic/powerpc-utils-1.1.3-r7.ebuild,v 1.6 2004/02/23 00:49:45 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/powerpc-utils/Attic/powerpc-utils-1.1.3-r7.ebuild,v 1.7 2004/06/24 22:22:37 agriffis Exp $
 
 S=${WORKDIR}/${P}
 DEBRV=7

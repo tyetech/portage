@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/isapnptools/Attic/isapnptools-1.23-r6.ebuild,v 1.11 2003/07/16 13:50:45 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/isapnptools/Attic/isapnptools-1.23-r6.ebuild,v 1.12 2004/06/24 22:12:28 agriffis Exp $
 
 S="${WORKDIR}/${P}"
 DESCRIPTION="Tools for configuring ISA PnP devices"

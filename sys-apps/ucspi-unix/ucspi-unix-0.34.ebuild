@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/ucspi-unix/Attic/ucspi-unix-0.34.ebuild,v 1.11 2004/01/07 22:14:55 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/ucspi-unix/Attic/ucspi-unix-0.34.ebuild,v 1.12 2004/06/24 22:31:11 agriffis Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A ucspi implementation for unix sockets."

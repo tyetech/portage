@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/checkpolicy/Attic/checkpolicy-1.4-r1.ebuild,v 1.4 2004/04/07 20:42:19 pebenito Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/checkpolicy/Attic/checkpolicy-1.4-r1.ebuild,v 1.5 2004/06/24 22:00:09 agriffis Exp $
 
 inherit eutils
 

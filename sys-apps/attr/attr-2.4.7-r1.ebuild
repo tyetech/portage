@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/attr/Attic/attr-2.4.7-r1.ebuild,v 1.21 2004/06/15 18:23:41 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/attr/Attic/attr-2.4.7-r1.ebuild,v 1.22 2004/06/24 21:58:49 agriffis Exp $
 
 inherit eutils
 

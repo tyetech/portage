@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mpi350-driver/Attic/mpi350-driver-2.0.ebuild,v 1.5 2003/09/07 02:58:37 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/mpi350-driver/Attic/mpi350-driver-2.0.ebuild,v 1.6 2004/06/24 22:18:24 agriffis Exp $
 
 DESCRIPTION="Cisco's wireless drivers and utilities"
 
