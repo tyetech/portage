@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/dspam/Attic/dspam-3.3.8.ebuild,v 1.2 2005/01/04 01:32:07 st_lim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/dspam/Attic/dspam-3.2.4.ebuild,v 1.1 2005/01/04 01:32:07 st_lim Exp $
 
 inherit eutils
 
@@ -160,13 +160,13 @@ src_install () {
 	dodoc CHANGELOG LICENSE README* RELEASE.NOTES
 	dodoc ${FILESDIR}/README.postfix ${FILESDIR}/README.qmail
 	if use mysql; then
-		dodoc src/tools.mysql_drv/README
+		dodoc tools.mysql_drv/README
 	elif use postgres ; then
-		dodoc src/tools.pgsql_drv/README
+		dodoc tools.pgsql_drv/README
 	elif use oci8 ; then
-		dodoc src/tools.ora_drv/README
+		dodoc tools.ora_drv/README
 	elif use sqlite ; then
-		dodoc src/tools.sqlite_drv/README
+		dodoc tools.sqlite_drv/README
 	fi
 	doman man/dspam*
 
@@ -216,13 +216,13 @@ src_install () {
 			doins ${T}/mysql.data
 		fi
 
-		newins src/tools.mysql_drv/mysql_objects-space.sql mysql_objects-space.sql
-		newins src/tools.mysql_drv/mysql_objects-speed.sql mysql_objects-speed.sql
-		newins src/tools.mysql_drv/mysql_objects-4.1.sql mysql_objects-4.1.sql
-		newins src/tools.mysql_drv/virtual_users.sql mysql_virtual_users.sql
-		newins src/tools.mysql_drv/neural.sql mysql_neural.sql
-		newins src/tools.mysql_drv/purge.sql mysql_purge.sql
-		newins src/tools.mysql_drv/purge-4.1.sql mysql_purge-4.1.sql
+		newins tools.mysql_drv/mysql_objects-space.sql mysql_objects-space.sql
+		newins tools.mysql_drv/mysql_objects-speed.sql mysql_objects-speed.sql
+		newins tools.mysql_drv/mysql_objects-4.1.sql mysql_objects-4.1.sql
+		newins tools.mysql_drv/virtual_users.sql mysql_virtual_users.sql
+		newins tools.mysql_drv/neural.sql mysql_neural.sql
+		newins tools.mysql_drv/purge.sql mysql_purge.sql
+		newins tools.mysql_drv/purge-4.1.sql mysql_purge-4.1.sql
 		newins ${FILESDIR}/upgrade.sql mysql_upgrade.sql
 	elif use postgres ; then
 		if [ -f ${HOMEDIR}/pgsql.data ]; then
@@ -240,9 +240,9 @@ src_install () {
 			doins ${T}/pgsql.data
 		fi
 
-		newins src/tools.pgsql_drv/pgsql_objects.sql pgsql_objects.sql
-		newins src/tools.pgsql_drv/virtual_users.sql pgsql_virtual_users.sql
-		newins src/tools.pgsql_drv/purge.sql pgsql_purge.sql
+		newins tools.pgsql_drv/pgsql_objects.sql pgsql_objects.sql
+		newins tools.pgsql_drv/virtual_users.sql pgsql_virtual_users.sql
+		newins tools.pgsql_drv/purge.sql pgsql_purge.sql
 
 	elif use oci8 ; then
 		if [ -f ${HOMEDIR}/oracle.data ]; then
@@ -259,11 +259,11 @@ src_install () {
 			doins ${T}/oracle.data
 		fi
 
-		newins src/tools.ora_drv/oral_objects.sql ora_objects.sql
-		newins src/tools.ora_drv/virtual_users.sql ora_virtual_users.sql
-		newins src/tools.ora_drv/purge.sql ora_purge.sql
+		newins tools.ora_drv/oral_objects.sql ora_objects.sql
+		newins tools.ora_drv/virtual_users.sql ora_virtual_users.sql
+		newins tools.ora_drv/purge.sql ora_purge.sql
 	elif use sqlite ; then
-		newins src/tools.sqlite_drv/purge.sql sqlite_purge.sql
+		newins tools.sqlite_drv/purge.sql sqlite_purge.sql
 	fi
 	insinto ${HOMEDIR}
 	insopts -m644 -o dspam -g dspam
