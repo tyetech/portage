@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/openjms-bin/Attic/openjms-bin-0.7.5-r3.ebuild,v 1.6 2004/10/22 11:26:35 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/openjms-bin/Attic/openjms-bin-0.7.5-r3.ebuild,v 1.7 2004/11/24 21:21:09 swegener Exp $
 
 SLOT=0
 LICENSE="GPL-2"
@@ -9,7 +9,7 @@ DEPEND="virtual/libc"
 RDEPEND="virtual/jdk"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
-SRC_URI="mirror://sourceforge/${PN/-bin/}/${P/-bin/}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN/-bin/}/${P/-bin/}.tgz"
 
 src_unpack() {
 	einfo "Nothing to unpack"
