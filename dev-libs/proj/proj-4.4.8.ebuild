@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/proj/Attic/proj-4.4.8.ebuild,v 1.2 2004/12/12 04:03:20 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/proj/Attic/proj-4.4.8.ebuild,v 1.3 2004/12/15 22:19:39 kloeri Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.remotesensing.org/pub/proj/${P}.tar.gz
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="x86 ppc ~sparc ~alpha ~mips ~hppa ~amd64"
+KEYWORDS="x86 ppc ~sparc alpha ~mips ~hppa ~amd64"
 IUSE=""
 
 DEPEND="virtual/libc"
