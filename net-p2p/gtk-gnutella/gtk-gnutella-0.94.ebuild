@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gtk-gnutella/Attic/gtk-gnutella-0.94.ebuild,v 1.5 2004/10/04 22:01:32 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gtk-gnutella/Attic/gtk-gnutella-0.94.ebuild,v 1.6 2005/01/30 20:46:05 squinky86 Exp $
 
 IUSE="gnome gtk2 xml2 nls"
 
