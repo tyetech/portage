@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/IPC-ShareLite/Attic/IPC-ShareLite-0.08.ebuild,v 1.1 2002/11/17 03:22:01 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/IPC-ShareLite/Attic/IPC-ShareLite-0.08.ebuild,v 1.2 2002/11/20 04:33:10 mkennedy Exp $
 
 inherit perl-module
 
@@ -17,4 +17,7 @@ DEPEND="${DEPEND}"
 
 export OPTIMIZE="$CFLAGS"
 
+# closing stdin causes IPC-ShareLites build system use a
+# non-interactive mode <mkennedy@gentoo.org>
 
+exec <&-
