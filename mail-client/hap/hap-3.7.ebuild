@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/hap/Attic/hap-3.7.ebuild,v 1.1 2004/09/22 22:50:00 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/hap/Attic/hap-3.7.ebuild,v 1.2 2004/10/17 09:42:03 dholm Exp $
 
 IUSE=""
 
@@ -12,7 +12,7 @@ DEPEND="sys-libs/libtermcap-compat"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 
 # untars to 'hap/'
 S="${WORKDIR}/${PN}"
