@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtheora/Attic/libtheora-1.0_alpha2.ebuild,v 1.4 2004/06/24 23:15:04 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtheora/Attic/libtheora-1.0_alpha2.ebuild,v 1.5 2005/01/01 05:56:40 chriswhite Exp $
 
 DESCRIPTION="The Theora Video Compression Codec"
 HOMEPAGE="http://www.theora.org/"
