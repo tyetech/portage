@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/enlightenment/Attic/enlightenment-0.16.6.ebuild,v 1.10 2004/03/09 23:43:15 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/enlightenment/Attic/enlightenment-0.16.6.ebuild,v 1.11 2004/04/19 06:39:22 vapier Exp $
+
+inherit eutils
 
 DESCRIPTION="Enlightenment Window Manager"
 HOMEPAGE="http://www.enlightenment.org/"
