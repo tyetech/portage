@@ -1,11 +1,12 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/electricsheep/Attic/electricsheep-2.3_beta1.ebuild,v 1.3 2003/02/13 17:12:06 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/electricsheep/Attic/electricsheep-2.3.ebuild,v 1.1 2003/03/10 12:53:01 vapier Exp $
 
-MY_P="${PN}-${PV/_beta1/}"
+inherit eutils
+
 DESCRIPTION="realize the collective dream of sleeping computers from all over the internet"
 HOMEPAGE="http://electricsheep.org/"
-SRC_URI="http://electricsheep.org/${MY_P}.tar.gz"
+SRC_URI="http://electricsheep.org/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -19,24 +20,12 @@ RDEPEND="virtual/x11
 	net-ftp/curl
 	x11-misc/xloadimage"
 
-S="${WORKDIR}/${MY_P}"
-
 src_compile() {
-	# fix hardcoded path
-	cp electricsheep.c electricsheep.c.old
-	sed -e "s:/usr/local/share/:/usr/share/${PN}/:" \
-		electricsheep.c.old > electricsheep.c
-
-	econf --datadir=/usr/share/${PN}
+	econf --datadir=/usr/share/${PN} || die
 	emake || die
 }
 
 src_install() {
-	# fix install path for flame
-	cp flame/Makefile flame/Makefile.old
-	sed -e "s:/usr/local/bin:${D}/usr/bin:" \
-		flame/Makefile.old > flame/Makefile
-
 	# prevent writing for xscreensaver
 	cp Makefile Makefile.old
 	sed -e "s/^install-data-local:$/install-data-local:\nmy-install-data-local:/" \
