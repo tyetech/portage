@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/bonobo/Attic/bonobo-1.0.22.ebuild,v 1.5 2003/02/07 14:45:17 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/bonobo/Attic/bonobo-1.0.22.ebuild,v 1.6 2003/02/13 12:04:24 vapier Exp $
 
 IUSE="nls"
 
