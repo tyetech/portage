@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gconf/Attic/gconf-2.2.0.ebuild,v 1.11 2003/05/30 10:46:14 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gconf/Attic/gconf-2.2.0.ebuild,v 1.12 2003/07/01 19:07:47 gmsoft Exp $
 
 IUSE="doc"
 
@@ -16,7 +16,7 @@ HOMEPAGE="http://www.gnome.org/"
 LICENSE="LGPL-2"
 
 SLOT="2"
-KEYWORDS="x86 ppc alpha sparc"
+KEYWORDS="x86 ppc alpha sparc hppa"
 
 RDEPEND=">=dev-libs/glib-2.0.1
 	>=gnome-base/ORBit2-2.4
