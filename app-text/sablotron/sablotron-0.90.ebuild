@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/sablotron/Attic/sablotron-0.90.ebuild,v 1.1 2002/03/13 09:48:44 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/sablotron/Attic/sablotron-0.90.ebuild,v 1.2 2002/07/11 06:30:19 drobbins Exp $
 
 MY_P="Sablot-${PV}"
 S=${WORKDIR}/${MY_P}
