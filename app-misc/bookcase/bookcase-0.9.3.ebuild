@@ -1,27 +1,30 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/bookcase/Attic/bookcase-0.9.ebuild,v 1.4 2004/07/03 17:21:14 centic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/bookcase/Attic/bookcase-0.9.3.ebuild,v 1.1 2004/07/03 17:21:14 centic Exp $
 
 inherit kde
-need-kde 3.1
 
 DESCRIPTION="A book manager for the KDE environment"
 HOMEPAGE="http://www.periapsis.org/bookcase/"
 SRC_URI="http://www.periapsis.org/${PN}/download/${P}.tar.gz"
 
-KEYWORDS="x86 ~sparc ~amd64 ~ppc"
+KEYWORDS="~x86"
 LICENSE="GPL-2"
 
 IUSE=""
 SLOT="0"
 
-
-newdepend ">=dev-libs/libxml2-2.4.23
+DEPEND=">=dev-libs/libxml2-2.4.23
 	>=dev-libs/libxslt-1.0.19"
+need-kde 3.1
 
+src_unpack() {
+	kde_src_unpack
+	epatch ${FILESDIR}/bookcase.gcc34.patch
+}
 
 src_compile() {
-	myconf="${myconf} --disable-debug --enable-final"
+#	myconf="${myconf} --disable-debug --enable-final"
 	# The package does not want to build without the 
 	#	--disable-debug: since fileappfinder uses an undefined 
 	#		kbDebug function
