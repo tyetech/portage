@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php/Attic/php-4.3.3.ebuild,v 1.1 2003/08/29 03:10:57 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php/Attic/php-4.3.3.ebuild,v 1.2 2003/09/08 04:45:56 msterret Exp $
 
 PHPSAPI="cli"
 inherit php eutils
@@ -26,7 +26,7 @@ src_compile() {
 	myconf="${myconf} \
 		--disable-cgi \
 		--enable-cli"
-	
+
 	php_src_compile
 }
 
