@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-4.0.12.ebuild,v 1.8 2004/02/04 10:14:27 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-4.0.12.ebuild,v 1.9 2004/02/22 07:34:13 mr_bones_ Exp $
 
 #to accomodate -laadeedah releases
 NEWP=${P}
