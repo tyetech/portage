@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libaio/Attic/libaio-0.3.92.ebuild,v 1.2 2003/11/30 15:59:36 brad_mssw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libaio/Attic/libaio-0.3.92.ebuild,v 1.3 2003/11/30 19:58:07 brad_mssw Exp $
 
 DESCRIPTION="Asynchronous input/output library maintained by RedHat, required by Oracle9i AMD64 edition"
 #SRC_URI="mirror://gentoo/${P}.tar.bz2"
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.kernel.org/pub/linux/kernel/people/bcrl/aio/"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa amd64"
+KEYWORDS="-*"
 IUSE="nls"
 
 DEPEND=""
