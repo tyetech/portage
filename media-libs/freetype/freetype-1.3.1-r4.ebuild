@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/freetype/Attic/freetype-1.3.1-r4.ebuild,v 1.3 2004/06/24 23:00:24 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/freetype/Attic/freetype-1.3.1-r4.ebuild,v 1.4 2004/07/01 07:55:56 eradicator Exp $
 
 # r3 change by me (danarmak): there's a contrib dir inside the freetype1
 # sources with important utils: ttf2bdf, ttf2pfb, ttf2pk, ttfbanner.
@@ -29,7 +29,7 @@ SLOT="1"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha ~arm ~hppa ~amd64 ~ia64"
 IUSE="nls tetex"
 
-DEPEND="virtual/glibc
+DEPEND="virtual/libc
 	tetex? ( virtual/tetex )"
 RDEPEND="${DEPEND}
 	nls? ( sys-devel/gettext )"

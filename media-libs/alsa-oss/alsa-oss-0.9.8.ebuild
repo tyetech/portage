@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/alsa-oss/Attic/alsa-oss-0.9.8.ebuild,v 1.8 2004/06/24 22:56:17 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/alsa-oss/Attic/alsa-oss-0.9.8.ebuild,v 1.9 2004/07/01 07:54:35 eradicator Exp $
 
 IUSE=""
 
@@ -8,7 +8,7 @@ DESCRIPTION="Advanced Linux Sound Architecture OSS compatibility layer."
 HOMEPAGE="http://www.alsa-project.org/"
 LICENSE="GPL-2"
 
-DEPEND="virtual/glibc
+DEPEND="virtual/libc
 	>=media-libs/alsa-lib-0.9.8"
 
 SLOT="0"
