@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-alsa/Attic/gst-plugins-alsa-0.8.2-r1.ebuild,v 1.10 2004/11/17 02:31:55 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-alsa/Attic/gst-plugins-alsa-0.8.2-r1.ebuild,v 1.11 2005/01/25 00:43:56 eradicator Exp $
 
 inherit eutils gst-plugins
 
