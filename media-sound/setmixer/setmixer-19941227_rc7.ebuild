@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/setmixer/Attic/setmixer-19941227_rc7.ebuild,v 1.4 2004/04/12 04:50:52 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/setmixer/Attic/setmixer-19941227_rc7.ebuild,v 1.5 2004/04/20 17:33:48 eradicator Exp $
+
+IUSE=""
 
 inherit eutils
 

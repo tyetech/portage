@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ermixer/Attic/ermixer-0.7.1.ebuild,v 1.5 2004/03/16 15:27:53 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ermixer/Attic/ermixer-0.7.1.ebuild,v 1.6 2004/04/20 17:19:52 eradicator Exp $
+
+IUSE=""
 
 DESCRIPTION="A full featured console-based audio mixer."
 HOMEPAGE="http://ermixer.sourceforge.net"

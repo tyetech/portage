@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/abcde/Attic/abcde-2.1.15.ebuild,v 1.1 2004/03/22 16:57:40 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/abcde/Attic/abcde-2.1.15.ebuild,v 1.2 2004/04/20 17:12:19 eradicator Exp $
+
+IUSE=""
 
 DESCRIPTION="a better cd encoder"
 SRC_URI="http://www.hispalinux.es/~data/files/${PN}_${PV}.orig.tar.gz"

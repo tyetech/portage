@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cdcd/Attic/cdcd-0.6.4.ebuild,v 1.9 2004/04/07 16:11:13 jhuebel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cdcd/Attic/cdcd-0.6.4.ebuild,v 1.10 2004/04/20 17:17:31 eradicator Exp $
+
+IUSE=""
 
 inherit eutils gnuconfig
 

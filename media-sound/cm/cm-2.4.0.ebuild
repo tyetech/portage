@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cm/Attic/cm-2.4.0.ebuild,v 1.8 2004/03/23 06:40:07 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cm/Attic/cm-2.4.0.ebuild,v 1.9 2004/04/20 17:18:45 eradicator Exp $
+
+IUSE=""
 
 DESCRIPTION="Common Music: An object oriented music composition environment in LISP/scheme"
 HOMEPAGE="http://www-ccrma.stanford.edu/software/cm/doc/cm.html"

@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-0.8.3.ebuild,v 1.4 2004/04/16 01:17:49 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-0.8.3.ebuild,v 1.5 2004/04/20 17:14:54 eradicator Exp $
+
+IUSE=""
 
 inherit kde
 need-kde 3
