@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Dan Armak <danarmak@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/howto-text/Attic/howto-text-20010701.ebuild,v 1.2 2001/08/02 20:45:02 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/howto-text/Attic/howto-text-20010706.ebuild,v 1.1 2001/08/07 18:11:50 danarmak Exp $
 
 P="Linux-HOWTOs"
 S=${WORKDIR}/${P}
