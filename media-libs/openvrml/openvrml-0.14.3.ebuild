@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/openvrml/Attic/openvrml-0.14.3.ebuild,v 1.2 2004/03/19 07:56:04 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/openvrml/Attic/openvrml-0.14.3.ebuild,v 1.3 2004/03/30 09:35:03 aliz Exp $
 
 IUSE="zlib png jpeg truetype javascript java opengl doc"
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://openvrml.org"
 
 SLOT="0"
 LICENSE="LGPL-2.1 GPL-2"
-KEYWORDS="~x86 ~sparc"
+KEYWORDS="~x86 ~sparc ~amd64"
 
 DEPEND="virtual/x11
 	app-doc/doxygen
