@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
-
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/gtk-systrace/Attic/gtk-systrace-0.1-r1.ebuild,v 1.2 2003/06/12 22:08:48 msterret Exp $
 
 DESCRIPTION="Systrace gtk notification gui"
 HOMEPAGE="http://www.citi.umich.edu/u/provos/systrace/index.html"
