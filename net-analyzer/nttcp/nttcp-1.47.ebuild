@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nttcp/Attic/nttcp-1.47.ebuild,v 1.3 2004/06/19 05:05:47 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nttcp/Attic/nttcp-1.47.ebuild,v 1.4 2004/06/25 03:21:48 agriffis Exp $
 
 inherit gcc
 
