@@ -1,12 +1,12 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/otter/Attic/otter-3.2.ebuild,v 1.1 2003/05/16 09:54:21 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/otter/Attic/otter-3.2.ebuild,v 1.2 2004/01/01 04:04:22 george Exp $
 
 DESCRIPTION="An Automated Deduction System."
 SRC_URI="http://www-unix.mcs.anl.gov/AR/${PN}/${P}.tar.gz"
 HOMEPAGE="http://www-unix.mcs.anl.gov/AR/otter/"
 
-KEYWORDS="~x86"
+KEYWORDS="x86"
 LICENSE="otter"
 SLOT="0"
 IUSE=""
