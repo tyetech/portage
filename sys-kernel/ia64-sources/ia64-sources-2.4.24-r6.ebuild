@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ia64-sources/Attic/ia64-sources-2.4.22-r2.ebuild,v 1.3 2004/06/24 22:58:19 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ia64-sources/Attic/ia64-sources-2.4.24-r6.ebuild,v 1.1 2004/07/09 15:35:50 plasmaroo Exp $
 
 IUSE=""
 
@@ -29,18 +29,17 @@ S=${WORKDIR}/linux-${KV}
 # to /usr/share/doc/gentoo-sources-${PV}/patches.txt.gz
 
 #MYCSET="1.1063.2.37-to-1.1088"
-MYSNAPSHOT="030909"
+MYSNAPSHOT="040109"
 DESCRIPTION="Full sources for the Gentoo Kernel."
 SRC_URI="mirror://kernel/linux/kernel/v2.4/linux-${OKV}.tar.bz2
 mirror://kernel/linux/kernel/ports/ia64/v2.4/linux-${OKV}-ia64-${MYSNAPSHOT}.diff.bz2"
 
 HOMEPAGE="http://www.gentoo.org/ http://www.kernel.org/"
 LICENSE="GPL-2"
-KEYWORDS="-* ia64"
+KEYWORDS="-* ~ia64"
 SLOT="${KV}"
 
 src_unpack() {
-
 	unpack linux-${OKV}.tar.bz2
 	cd ${WORKDIR}
 	mv linux-${OKV} linux-${KV} || die "Error moving kernel source tree to linux-${KV}"
@@ -50,10 +49,21 @@ src_unpack() {
 	[ ! -e ${DISTDIR}/linux-${OKV}-ia64-${MYSNAPSHOT}.diff.bz2 ] && die "patch not found"
 	cat ${DISTDIR}/linux-${OKV}-ia64-${MYSNAPSHOT}.diff.bz2 | bzip2 -d | patch -f -p1
 
-	epatch ${FILESDIR}/do_brk_fix.patch || die "Failed to patch do_brk() vulnerability!"
-	epatch ${FILESDIR}/${PN}.CAN-2003-0985.patch || die "Failed to patch mremap() vulnerability!"
-	epatch ${FILESDIR}/${PN}.rtc_fix.patch || die "Failed to patch RTC vulnerabilities!"
+	# 2.4.24 includes the do_brk, mremap and rtc fixes, so those
+	# patches aren't needed (29 Jan 2004 agriffis)
 
+	epatch ${FILESDIR}/${P}.munmap.patch || die "Failed to apply munmap patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0010.patch || die "Failed to add the CAN-2004-0010 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0075.patch || die "Failed to add the CAN-2004-0075 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0109.patch || die "Failed to add the CAN-2004-0109 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0177.patch || die "Failed to add the CAN-2004-0177 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0178.patch || die "Failed to add the CAN-2004-0178 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0181.patch || die "Failed to add the CAN-2004-0181 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0394.patch || die "Failed to add the CAN-2004-0394 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0427.patch || die "Failed to add the CAN-2004-0427 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0495.patch || die "Failed to add the CAN-2004-0495 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0497.patch || die "Failed to add the CAN-2004-0497 patch!"
+	epatch ${FILESDIR}/${P}.CAN-2004-0535.patch || die "Failed to add the CAN-2004-0535 patch!"
 	kernel_universal_unpack
 }
 
