@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/aterm/Attic/aterm-0.4.2-r5.ebuild,v 1.2 2003/12/03 12:02:53 zul Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/aterm/Attic/aterm-0.4.2-r5.ebuild,v 1.3 2004/01/17 18:09:33 spock Exp $
 
 IUSE="cjk"
 S=${WORKDIR}/${P}
