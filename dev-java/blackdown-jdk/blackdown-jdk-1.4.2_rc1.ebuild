@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/blackdown-jdk/Attic/blackdown-jdk-1.4.2_rc1.ebuild,v 1.10 2004/06/07 21:56:42 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/blackdown-jdk/Attic/blackdown-jdk-1.4.2_rc1.ebuild,v 1.11 2004/06/24 22:18:36 agriffis Exp $
 
 IUSE="doc"
 

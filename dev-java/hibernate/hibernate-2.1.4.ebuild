@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/hibernate/Attic/hibernate-2.1.4.ebuild,v 1.2 2004/06/16 00:56:57 st_lim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/hibernate/Attic/hibernate-2.1.4.ebuild,v 1.3 2004/06/24 22:28:26 agriffis Exp $
 
 inherit java-pkg
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jdbc2-postgresql/Attic/jdbc2-postgresql-7.3.ebuild,v 1.6 2004/02/25 09:02:44 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jdbc2-postgresql/Attic/jdbc2-postgresql-7.3.ebuild,v 1.7 2004/06/24 22:32:13 agriffis Exp $
 
 inherit java-pkg
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jmbus/Attic/jmbus-1.0.7.ebuild,v 1.3 2004/03/07 00:21:22 zx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jmbus/Attic/jmbus-1.0.7.ebuild,v 1.4 2004/06/24 22:34:59 agriffis Exp $
 
 inherit java-pkg
 
