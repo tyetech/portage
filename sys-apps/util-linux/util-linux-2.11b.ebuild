@@ -1,13 +1,13 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.11b.ebuild,v 1.1 2001/05/08 01:10:53 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/util-linux/Attic/util-linux-2.11b.ebuild,v 1.2 2001/05/28 05:24:13 achim Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Various useful Linux utilities"
 SRC_URI="ftp://ftp.win.tue.nl/pub/linux-local/utils/util-linux/${P}.tar.gz"
-DEPEND=">=sys-libs/ncurses-5.2-r2"
 
+DEPEND="virtual/glibc >=sys-libs/ncurses-5.2-r2"
 
 RDEPEND="$DEPEND
 	 sys-devel/perl"
