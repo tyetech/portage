@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/guarddog/Attic/guarddog-2.0.0.ebuild,v 1.5 2004/01/09 20:21:37 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/guarddog/Attic/guarddog-2.0.0.ebuild,v 1.6 2004/03/14 17:24:52 mr_bones_ Exp $
 
-inherit kde-base
+inherit kde
 
 need-kde 3
 
