@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/gok/Attic/gok-0.10.0.ebuild,v 1.5 2004/05/26 01:29:51 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/gok/Attic/gok-0.10.0.ebuild,v 1.6 2004/05/29 03:26:43 pvdabeel Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gok.ca/"
 
 LICENSE="LGPL-2"
 SLOT="1"
-KEYWORDS="x86 ~sparc hppa ~alpha ~ia64 ~ppc ~amd64"
+KEYWORDS="x86 ~sparc hppa ~alpha ~ia64 ppc ~amd64"
 
 IUSE=""
 
