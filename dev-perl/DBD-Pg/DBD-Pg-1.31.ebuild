@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/DBD-Pg/Attic/DBD-Pg-1.31.ebuild,v 1.2 2004/01/16 03:56:02 esammer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/DBD-Pg/Attic/DBD-Pg-1.31.ebuild,v 1.3 2004/04/16 11:20:09 mcummings Exp $
 
 inherit perl-module
 inherit eutils
@@ -13,7 +13,7 @@ SLOT="0"
 LICENSE="Artistic | GPL-2"
 KEYWORDS="~x86 ~amd64 ~ppc ~sparc ~alpha ~hppa"
 
-newdepend "dev-perl/Test-Simple
+DEPEND="dev-perl/Test-Simple
 	dev-perl/DBI
 	dev-db/postgresql"
 
