@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/lrmi/Attic/lrmi-0.6.ebuild,v 1.6 2003/06/22 05:10:31 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/lrmi/Attic/lrmi-0.6.ebuild,v 1.7 2004/06/15 18:22:35 hanno Exp $
 
 IUSE=""
 DESCRIPTION="LRMI is a library for calling real mode BIOS routines under Linux."
