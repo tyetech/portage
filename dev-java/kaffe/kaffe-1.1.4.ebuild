@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/kaffe/Attic/kaffe-1.1.4.ebuild,v 1.10 2004/09/18 10:33:34 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/kaffe/Attic/kaffe-1.1.4.ebuild,v 1.11 2004/10/16 08:48:11 absinthe Exp $
 
 inherit java
 
@@ -15,7 +15,7 @@ DEPEND=">=dev-libs/gmp-3.1
 		>=dev-java/java-config-0.2.4"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 sparc ~ppc hppa ~amd64"
+KEYWORDS="x86 sparc ~ppc hppa amd64"
 IUSE="alsa esd"
 
 PROVIDE="virtual/jdk-1.4
