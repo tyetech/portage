@@ -1,14 +1,14 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/fuse/Attic/fuse-0.6.1.1.ebuild,v 1.14 2005/01/03 22:11:18 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/fuse/Attic/fuse-0.7.0.ebuild,v 1.1 2005/01/03 22:11:18 dragonheart Exp $
 
 DESCRIPTION="Free Unix Spectrum Emulator by Philip Kendall"
-HOMEPAGE="http://www.srcf.ucam.org/~pak21/spectrum/fuse.html"
+HOMEPAGE="http://fuse-emulator.sourceforge.net/"
 SRC_URI="mirror://sourceforge/fuse-emulator/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc"
 IUSE="xml2 png zlib X gtk gtk2 sdl svga fbcon gnome libdsk"
 
 # This build is heavily use dependent. USE="svga" will build the svga
@@ -18,7 +18,7 @@ DEPEND="dev-lang/perl
 	xml2? ( dev-libs/libxml2 )
 	png? ( media-libs/libpng )
 	zlib? ( sys-libs/zlib )
-	>=app-emulation/libspectrum-0.1.0
+	>=app-emulation/libspectrum-0.2.2
 	X? (
 		virtual/x11
 		gtk? (

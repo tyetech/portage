@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/fuse/Attic/fuse-0.6.2.1.ebuild,v 1.7 2005/01/01 14:12:48 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/fuse/Attic/fuse-0.6.2.1.ebuild,v 1.8 2005/01/03 22:11:18 dragonheart Exp $
 
 DESCRIPTION="Free Unix Spectrum Emulator by Philip Kendall"
 HOMEPAGE="http://fuse-emulator.sourceforge.net/"
@@ -30,7 +30,6 @@ DEPEND="dev-lang/perl
 		|| (
 			sdl? ( media-libs/libsdl )
 			svga? ( media-libs/svgalib )
-			fbcon? ( )
 			virtual/x11
 		)
 	)
