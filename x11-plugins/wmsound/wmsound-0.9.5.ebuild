@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmsound/wmsound-0.9.5.ebuild,v 1.1 2004/07/22 01:12:31 s4t4n Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmsound/wmsound-0.9.5.ebuild,v 1.2 2004/07/22 20:57:06 dholm Exp $
 
 inherit eutils
 
@@ -18,7 +18,7 @@ DEPEND="virtual/x11
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 
 src_unpack()
 {
