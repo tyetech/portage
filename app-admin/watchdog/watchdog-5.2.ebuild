@@ -1,12 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: William McArthur <sandymac@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/watchdog/Attic/watchdog-5.2.ebuild,v 1.2 2002/04/19 05:43:52 sandymac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/watchdog/Attic/watchdog-5.2.ebuild,v 1.3 2002/07/06 18:49:03 drobbins Exp $
 
 DESCRIPTION="A software watchdog."
 HOMEPAGE="http://www.ibiblio.org/pub/Linux/system/daemons/watchdog/"
 SRC_URI="http://www.ibiblio.org/pub/Linux/system/daemons/watchdog/${P}.tar.gz"
 S="${WORKDIR}/${P}"
+LICENSE="GPL-2"
 
 src_compile() {
     # Two configure switches have been added to use /etc/watchdog
