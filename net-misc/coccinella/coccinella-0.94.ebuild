@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/coccinella/Attic/coccinella-0.94.ebuild,v 1.4 2002/07/06 14:43:56 phoenix Exp $
 
 NAME=Whiteboard
 S="${WORKDIR}/${NAME}-${PV}"
