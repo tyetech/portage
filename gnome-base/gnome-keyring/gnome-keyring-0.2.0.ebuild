@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-keyring/Attic/gnome-keyring-0.2.0.ebuild,v 1.10 2004/06/03 22:55:55 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-keyring/Attic/gnome-keyring-0.2.0.ebuild,v 1.11 2004/06/24 21:57:12 agriffis Exp $
 
 inherit gnome2
 

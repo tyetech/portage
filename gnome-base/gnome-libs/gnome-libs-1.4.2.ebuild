@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-libs/Attic/gnome-libs-1.4.2.ebuild,v 1.22 2004/06/03 22:49:20 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-libs/Attic/gnome-libs-1.4.2.ebuild,v 1.23 2004/06/24 21:57:22 agriffis Exp $
 
 IUSE="doc nls kde"
 

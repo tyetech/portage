@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/bonobo-activation/Attic/bonobo-activation-2.2.4.ebuild,v 1.7 2004/05/26 10:49:16 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/bonobo-activation/Attic/bonobo-activation-2.2.4.ebuild,v 1.8 2004/06/24 21:54:39 agriffis Exp $
 
 IUSE="doc"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-panel/Attic/gnome-panel-1.4.2-r2.ebuild,v 1.9 2004/06/03 22:54:14 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-panel/Attic/gnome-panel-1.4.2-r2.ebuild,v 1.10 2004/06/24 21:57:57 agriffis Exp $
 
 IUSE="kde nls"
 

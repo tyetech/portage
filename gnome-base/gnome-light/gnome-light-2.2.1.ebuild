@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-light/Attic/gnome-light-2.2.1.ebuild,v 1.3 2003/09/06 23:51:37 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-light/Attic/gnome-light-2.2.1.ebuild,v 1.4 2004/06/24 21:57:34 agriffis Exp $
 
 S=${WORKDIR}
 DESCRIPTION="Meta package for the GNOME desktop, merge this package to install"

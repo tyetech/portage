@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-1.0.6-r9.ebuild,v 1.20 2004/06/03 22:34:29 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-1.0.6-r9.ebuild,v 1.21 2004/06/24 22:01:16 agriffis Exp $
 
 IUSE="nls mozilla"
 

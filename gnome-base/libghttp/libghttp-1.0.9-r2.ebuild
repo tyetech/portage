@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libghttp/Attic/libghttp-1.0.9-r2.ebuild,v 1.12 2004/04/27 21:11:18 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libghttp/Attic/libghttp-1.0.9-r2.ebuild,v 1.13 2004/06/24 21:59:30 agriffis Exp $
 
 inherit libtool
 

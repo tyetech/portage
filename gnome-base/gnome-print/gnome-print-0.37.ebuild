@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-print/Attic/gnome-print-0.37.ebuild,v 1.10 2004/05/25 14:46:11 augustus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-print/Attic/gnome-print-0.37.ebuild,v 1.11 2004/06/24 21:58:22 agriffis Exp $
 
 inherit gnome.org libtool eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libbonoboui/Attic/libbonoboui-2.6.1.ebuild,v 1.2 2004/06/06 10:54:34 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libbonoboui/Attic/libbonoboui-2.6.1.ebuild,v 1.3 2004/06/24 21:59:19 agriffis Exp $
 
 inherit gnome2
 

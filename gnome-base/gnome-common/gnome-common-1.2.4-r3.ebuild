@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-common/Attic/gnome-common-1.2.4-r3.ebuild,v 1.18 2004/06/02 17:51:50 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-common/Attic/gnome-common-1.2.4-r3.ebuild,v 1.19 2004/06/24 21:56:35 agriffis Exp $
 
 inherit flag-o-matic gnome.org
 # Do _NOT_ strip symbols in the build!
