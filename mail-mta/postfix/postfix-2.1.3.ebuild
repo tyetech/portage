@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/postfix/Attic/postfix-2.1.3.ebuild,v 1.12 2004/09/26 14:08:52 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/postfix/Attic/postfix-2.1.3.ebuild,v 1.13 2005/01/02 21:04:26 kloeri Exp $
 
 inherit eutils ssl-cert
 
