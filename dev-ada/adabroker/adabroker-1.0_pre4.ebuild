@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/adabroker/Attic/adabroker-1.0_pre4.ebuild,v 1.7 2003/10/28 19:59:46 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/adabroker/Attic/adabroker-1.0_pre4.ebuild,v 1.8 2004/06/24 21:44:47 agriffis Exp $
 
 inherit gnat
 

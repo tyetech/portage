@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/gtkada/Attic/gtkada-2.2.1_pre20031005.ebuild,v 1.2 2003/10/28 14:48:26 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/gtkada/Attic/gtkada-2.2.1_pre20031005.ebuild,v 1.3 2004/06/24 21:47:19 agriffis Exp $
 
 inherit gnat
 

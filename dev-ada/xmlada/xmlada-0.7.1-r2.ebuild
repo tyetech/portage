@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/xmlada/Attic/xmlada-0.7.1-r2.ebuild,v 1.4 2003/10/28 13:28:13 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/xmlada/Attic/xmlada-0.7.1-r2.ebuild,v 1.5 2004/06/24 21:47:35 agriffis Exp $
 
 inherit gnat
 

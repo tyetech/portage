@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/asis/Attic/asis-3.15p.ebuild,v 1.10 2004/03/19 10:07:11 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/asis/Attic/asis-3.15p.ebuild,v 1.11 2004/06/24 21:45:34 agriffis Exp $
 
 inherit gnat eutils
 
