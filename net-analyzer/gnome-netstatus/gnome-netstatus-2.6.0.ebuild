@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/gnome-netstatus/Attic/gnome-netstatus-2.5.92.ebuild,v 1.3 2004/03/23 22:14:48 puggy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/gnome-netstatus/Attic/gnome-netstatus-2.6.0.ebuild,v 1.1 2004/03/24 11:49:32 foser Exp $
 
 inherit gnome2
 
