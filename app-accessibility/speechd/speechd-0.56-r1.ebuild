@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/speechd/Attic/speechd-0.56-r1.ebuild,v 1.6 2004/06/15 04:07:25 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/speechd/Attic/speechd-0.56-r1.ebuild,v 1.7 2004/06/24 21:24:04 agriffis Exp $
 
 inherit eutils
 

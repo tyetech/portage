@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/gok/Attic/gok-0.10.0.ebuild,v 1.8 2004/06/06 10:54:34 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/gok/Attic/gok-0.10.0.ebuild,v 1.9 2004/06/24 21:23:20 agriffis Exp $
 
 inherit gnome2
 
