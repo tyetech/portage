@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/ut2004-demo/Attic/ut2004-demo-3120-r3.ebuild,v 1.9 2004/06/24 22:50:06 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/ut2004-demo/Attic/ut2004-demo-3120-r4.ebuild,v 1.1 2004/07/08 13:43:31 wolf31o2 Exp $
 
 inherit games
 
@@ -18,7 +18,7 @@ SRC_URI="x86? ( ftp://ftp.linuxhardware.org/ut2004/ut2004-lnx-demo-${PV}.run.bz2
 IUSE="alsa dedicated"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="-* x86"
+KEYWORDS="-* x86 amd64"
 
 DEPEND="!dedicated? ( virtual/opengl )
 	alsa? ( >=media-libs/alsa-lib-1.0.2 ) "
@@ -54,6 +54,10 @@ src_install() {
 	exeinto ${dir}/System
 	doexe ut2004-bin
 	doins README-tts.txt tts-festival.pl
+
+	# Here we apply fix for bug #54726
+	dosed "s:UplinkToGamespy=True:UplinkToGamespy=False:" \
+		${dir}/System/Default.ini
 
 	# ALSA and VoIP
 	if use alsa && use amd64 ; then
