@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/modplugplay/Attic/modplugplay-1.0.ebuild,v 1.1 2004/11/11 22:28:14 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/modplugplay/Attic/modplugplay-1.0.ebuild,v 1.2 2004/12/19 05:56:04 eradicator Exp $
 
 IUSE=""
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.linuks.mine.nu/modplugplay/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 #-sparc: 1.0 - Bus Error on play
-KEYWORDS="~amd64 -sparc ~x86"
+KEYWORDS="amd64 -sparc x86"
 
 RDEPEND=">=media-libs/libmodplug-0.7"
 DEPEND="${RDEPEND}
