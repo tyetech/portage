@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/config-kernel/Attic/config-kernel-0.2.9.ebuild,v 1.1 2004/03/26 17:36:48 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/config-kernel/Attic/config-kernel-0.3.2.ebuild,v 1.1 2004/04/02 20:08:15 latexer Exp $
 
 inherit distutils
 
