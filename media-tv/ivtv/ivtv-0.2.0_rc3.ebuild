@@ -1,11 +1,9 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/ivtv/Attic/ivtv-0.1.9-r4.ebuild,v 1.3 2004/10/02 17:45:57 iggy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/ivtv/Attic/ivtv-0.2.0_rc3.ebuild,v 1.1 2004/11/30 13:34:24 iggy Exp $
 
 # TODO
 # the "Gentoo way" is to use /usr/src/linux, not the running kernel
-# removed ptune*.pl, need to make a seperate package for it
-# check for other msp3400 modules
 # add a few notes to the postinst output about what's needed (bttv/tuner, etc.)
 
 inherit eutils
@@ -13,8 +11,13 @@ inherit eutils
 DESCRIPTION="ivtv driver for Hauppauge PVR[23]50 cards"
 HOMEPAGE="http://ivtv.sourceforge.net"
 
-SRC_URI="mirror://gentoo/${P}-${PR}.tar.bz2
-	http://hauppauge.lightpath.net/software/pvr250/pvr250_18a_inf.zip"
+# stupidly named tarballs
+MY_P="${P/_/-}"
+FW_VER="pvr_1.18.21.22168_inf.zip"
+
+SRC_URI="http://67.18.1.101/~ckennedy/ivtv/${MY_P}.tgz
+	http://67.18.1.101/~ckennedy/ivtv/ivtv-0.2.0-rc/${MY_P}.tgz
+	ftp://ftp.shspvr.com/download/wintv-pvr_250-350/inf/${FW_VER}"
 
 RESTRICT="nomirror"
 SLOT="0"
@@ -25,64 +28,64 @@ KEYWORDS="~x86"
 
 IUSE="lirc"
 
-DEPEND="lirc? ( app-misc/lirc )
-	app-arch/unzip"
+DEPEND="app-arch/unzip
+	lirc? ( app-misc/lirc )"
 
 src_unpack() {
-	unpack ${P}-${PR}.tar.bz2
+	unpack ${MY_P}.tgz
+	cd ${WORKDIR}/${MY_P}/driver
+	sed -i -e 's:$(MODDIR):$(DESTDIR)/$(MODDIR):g' \
+		-e 's:$(INCLUDEDIR):$(DESTDIR)/$(INCLUDEDIR):g' \
+		Makefile2.4 || die "sed failed"
 }
 
 src_compile() {
 	set_arch_to_kernel
 
-	cd ${WORKDIR}/${P}-${PR}/driver
+	cd ${WORKDIR}/${MY_P}/driver
 	make || die "build of driver failed"
 
-	cd ${WORKDIR}/${P}-${PR}/utils
+	cd ${WORKDIR}/${MY_P}/utils
 	make ||  die "build of utils failed"
 }
 
 src_install() {
-	cd ${WORKDIR}/${P}-${PR}/utils
-	cp ${DISTDIR}/pvr250_18a_inf.zip .
+	cd ${WORKDIR}/${MY_P}/utils
+	cp ${DISTDIR}/${FW_VER} .
 	dodir /lib/modules
 	touch ${D}/lib/modules/ivtv-fw-{enc,dec}.bin
-	./ivtvfwextract.pl pvr250_18a_inf.zip \
+	./ivtvfwextract.pl ${FW_VER} \
 		${D}/lib/modules/ivtv-fw-enc.bin \
 		${D}/lib/modules/ivtv-fw-dec.bin
 
-	cd ${WORKDIR}/${P}-${PR}
+	cd ${WORKDIR}/${MY_P}
 	dodoc README doc/*
 
-	cd ${WORKDIR}/${P}-${PR}/utils
-	newbin test_ioctl ivtvctl
+	cd ${WORKDIR}/${MY_P}/utils
 	newbin encoder ivtv-encoder
 	newbin fwapi ivtv-fwapi
 	newbin radio ivtv-radio
 	newbin vbi ivtv-vbi
 	newbin mpegindex ivtv-mpegindex
-	dobin ivtvfbctl ivtvplay
+	dobin ivtvfbctl ivtvplay ivtvctl
 	newdoc README README.utils
 	dodoc README.mythtv-ivtv README.radio README.vbi zvbi.diff
 	dodoc lircd-g.conf lircd.conf lircrc
 
-	cd ${WORKDIR}/${P}-${PR}/driver
-	make DESTDIR=${D} install || die "installation of driver failed"
+	# for whatever reason, the Makefile doesn't make the dirs we need
+	# fixes bug # 68110
+	dodir /usr/include/linux
+	dodir /lib/modules/`uname -r`/extra
+	cd ${WORKDIR}/${MY_P}/driver
+	make DESTDIR=${D} INSTALL_MOD_PATH=${D} \
+		install || die "installation of driver failed"
 
 	set_arch_to_portage
 
 	dodir /etc/modules.d
 
-	echo <<-myEOF >>${D}/etc/modules.d/ivtv
-	alias char-major-81     videodev
-	alias char-major-81-0   ivtv
-	options ivtv debug=1
-	options tuner type=2
-	options saa7127 enable_output=1 output_select=0
-	options msp3400 once=1 simple=1
-	add below ivtv msp3400 saa7115 tuner
-	post-install ivtv /usr/local/bin/test_ioctl -d /dev/video0 -u 0x3000
-	myEOF
+	echo "alias char-major-81     videodev" >>${D}/etc/modules.d/ivtv
+	echo "alias char-major-81-0   ivtv" >>${D}/etc/modules.d/ivtv
 
 	if [ `has app-misc/lirc` ] || use lirc ; then
 		echo "alias char-major-61 lirc_i2c" >> ${D}/etc/modules.d/ivtv
@@ -98,8 +101,8 @@ pkg_postinst() {
 
 	einfo "You now have the driver for the Hauppauge PVR-[23]50 cards."
 	einfo "Add ivtv to /etc/modules.autoload.d/kernel-2.X"
-	einfo "You'll now need an application to watch tv. MythTV is the only choice at"
-	einfo "the moment. To get the ir remote working, you'll need to emerge lirc"
+	einfo "You'll now need an application to watch tv. "
+	einfo "To get the ir remote working, you'll need to emerge lirc"
 	einfo "with the following env variable set:"
 	einfo "LIRC_OPTS=\"--with-x --with-driver=hauppauge --with-major=61"
 	einfo "	--with-port=none --with-irq=none\""
@@ -108,6 +111,8 @@ pkg_postinst() {
 	einfo "to use vbi, you'll need a few other things, check README.vbi in the docs dir"
 	echo
 	einfo "you'll also need to add 'LIRCD_OPTS=\"--device=/dev/lirc/0\"' to /etc/conf.d/lircd"
+	echo
+	einfo "The ptune* scripts have moved to media-tv/ivtv-ptune, emerge that to use those scripts"
 
 	if [ -f "/lib/modules/`uname -r`/kernel/drivers/media/video/msp3400.ko" ] ; then
 		ewarn "You have the msp3400 module that comes with the kernel. It isn't compatible"
