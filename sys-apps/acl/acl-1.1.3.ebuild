@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/acl/Attic/acl-1.1.3.ebuild,v 1.5 2002/07/14 19:20:15 aliz Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/acl/Attic/acl-1.1.3.ebuild,v 1.6 2002/10/04 06:22:03 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="XFS dump/restore utilities"
