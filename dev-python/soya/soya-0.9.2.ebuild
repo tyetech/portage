@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/soya/Attic/soya-0.8.2.ebuild,v 1.2 2005/02/09 23:21:31 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/soya/Attic/soya-0.9.2.ebuild,v 1.1 2005/02/09 23:21:31 kloeri Exp $
 
 inherit distutils
 
-IUSE=""
+IUSE="ode"
 MY_P=${P/soya/Soya}
 DESCRIPTION="A high-level 3D engine for Python, designed with games in mind"
 SRC_URI="http://download.gna.org/soya/${MY_P}.tar.bz2"
@@ -30,10 +30,14 @@ DEPEND="virtual/x11
 	>=media-libs/cal3d-0.9
 	>=media-libs/libpng-1.2.5
 	>=media-libs/freetype-2.1.5
+	ode? ( >=dev-games/ode-0.5 )
 	dev-python/imaging"
 
 S=${WORKDIR}/${MY_P}
 
 src_compile() {
+	if ! use ode; then
+		sed -i -e "s/^\(USE_ODE = \).*$/\1False/" setup.py || die "sed install.py failed"
+	fi
 	distutils_src_compile
 }
