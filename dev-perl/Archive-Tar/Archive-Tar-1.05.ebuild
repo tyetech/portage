@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Archive-Tar/Attic/Archive-Tar-1.05.ebuild,v 1.6 2004/05/24 00:01:06 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Archive-Tar/Attic/Archive-Tar-1.05.ebuild,v 1.7 2004/06/25 00:06:22 agriffis Exp $
 
 inherit perl-module
 

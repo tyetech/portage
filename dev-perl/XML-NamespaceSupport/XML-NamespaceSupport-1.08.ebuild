@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-NamespaceSupport/Attic/XML-NamespaceSupport-1.08.ebuild,v 1.5 2004/05/26 22:10:57 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-NamespaceSupport/Attic/XML-NamespaceSupport-1.08.ebuild,v 1.6 2004/06/25 01:12:28 agriffis Exp $
 
 inherit perl-module
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-Temp/Attic/File-Temp-0.12.ebuild,v 1.8 2004/05/04 23:10:51 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-Temp/Attic/File-Temp-0.12.ebuild,v 1.9 2004/06/25 00:30:33 agriffis Exp $
 
 inherit perl-module
 

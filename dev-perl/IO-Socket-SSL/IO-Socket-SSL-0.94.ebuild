@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/IO-Socket-SSL/Attic/IO-Socket-SSL-0.94.ebuild,v 1.10 2004/03/27 02:17:25 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/IO-Socket-SSL/Attic/IO-Socket-SSL-0.94.ebuild,v 1.11 2004/06/25 00:39:57 agriffis Exp $
 
 inherit perl-module
 

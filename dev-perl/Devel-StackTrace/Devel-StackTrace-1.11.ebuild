@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Devel-StackTrace/Attic/Devel-StackTrace-1.11.ebuild,v 1.1 2004/06/05 17:27:19 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Devel-StackTrace/Attic/Devel-StackTrace-1.11.ebuild,v 1.2 2004/06/25 00:23:45 agriffis Exp $
 
 inherit perl-module
 

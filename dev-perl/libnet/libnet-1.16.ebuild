@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/libnet/Attic/libnet-1.16.ebuild,v 1.6 2004/02/22 20:45:15 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/libnet/Attic/libnet-1.16.ebuild,v 1.7 2004/06/25 00:41:49 agriffis Exp $
 
 inherit perl-module
 

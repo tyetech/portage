@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Digest-SHA1/Attic/Digest-SHA1-2.07.ebuild,v 1.6 2004/03/23 09:47:50 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Digest-SHA1/Attic/Digest-SHA1-2.07.ebuild,v 1.7 2004/06/25 00:25:27 agriffis Exp $
 
 inherit perl-module
 

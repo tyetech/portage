@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Date-Calc/Attic/Date-Calc-5.3.ebuild,v 1.5 2004/05/26 08:11:30 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Date-Calc/Attic/Date-Calc-5.3.ebuild,v 1.6 2004/06/25 00:20:49 agriffis Exp $
 
 inherit perl-module
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-Flat/Attic/File-Flat-0.8.ebuild,v 1.4 2004/05/26 09:18:10 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-Flat/Attic/File-Flat-0.8.ebuild,v 1.5 2004/06/25 00:28:30 agriffis Exp $
 
 inherit perl-module
 

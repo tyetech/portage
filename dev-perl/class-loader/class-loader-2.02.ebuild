@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/class-loader/Attic/class-loader-2.02.ebuild,v 1.6 2004/05/27 22:56:12 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/class-loader/Attic/class-loader-2.02.ebuild,v 1.7 2004/06/25 00:13:08 agriffis Exp $
 
 inherit perl-module
 

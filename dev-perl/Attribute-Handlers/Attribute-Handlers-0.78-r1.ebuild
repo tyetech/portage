@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Attribute-Handlers/Attic/Attribute-Handlers-0.78-r1.ebuild,v 1.3 2003/06/21 21:36:35 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Attribute-Handlers/Attic/Attribute-Handlers-0.78-r1.ebuild,v 1.4 2004/06/25 00:07:06 agriffis Exp $
 
 inherit perl-module
 

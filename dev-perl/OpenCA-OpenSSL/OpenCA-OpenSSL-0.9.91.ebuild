@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/OpenCA-OpenSSL/Attic/OpenCA-OpenSSL-0.9.91.ebuild,v 1.3 2004/06/07 09:38:05 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/OpenCA-OpenSSL/Attic/OpenCA-OpenSSL-0.9.91.ebuild,v 1.4 2004/06/25 00:52:06 agriffis Exp $
 
 inherit perl-module
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/digest-base/Attic/digest-base-1.05.ebuild,v 1.12 2004/05/28 02:52:35 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/digest-base/Attic/digest-base-1.05.ebuild,v 1.13 2004/06/25 00:24:16 agriffis Exp $
 
 inherit perl-module
 

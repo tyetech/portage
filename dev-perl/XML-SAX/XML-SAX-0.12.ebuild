@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-SAX/Attic/XML-SAX-0.12.ebuild,v 1.6 2004/05/01 20:24:34 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-SAX/Attic/XML-SAX-0.12.ebuild,v 1.7 2004/06/25 01:13:30 agriffis Exp $
 
 inherit perl-module
 

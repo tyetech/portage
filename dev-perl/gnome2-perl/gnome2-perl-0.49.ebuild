@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/gnome2-perl/Attic/gnome2-perl-0.49.ebuild,v 1.3 2004/03/07 22:19:22 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/gnome2-perl/Attic/gnome2-perl-0.49.ebuild,v 1.4 2004/06/25 00:33:27 agriffis Exp $
 
 inherit perl-module
 

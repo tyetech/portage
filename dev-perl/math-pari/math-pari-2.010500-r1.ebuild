@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/math-pari/Attic/math-pari-2.010500-r1.ebuild,v 1.6 2004/04/20 05:56:25 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/math-pari/Attic/math-pari-2.010500-r1.ebuild,v 1.7 2004/06/25 00:45:28 agriffis Exp $
 
 inherit perl-module
 

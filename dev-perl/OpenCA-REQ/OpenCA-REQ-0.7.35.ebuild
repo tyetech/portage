@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/OpenCA-REQ/Attic/OpenCA-REQ-0.7.35.ebuild,v 1.11 2003/06/21 21:36:36 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/OpenCA-REQ/Attic/OpenCA-REQ-0.7.35.ebuild,v 1.12 2004/06/25 00:52:16 agriffis Exp $
 
 inherit perl-module
 S=${WORKDIR}/${P}
