@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/aterm/Attic/aterm-1.6.6.ebuild,v 1.10 2003/09/06 22:29:24 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/aterm/Attic/aterm-1.6.6.ebuild,v 1.11 2004/05/15 02:53:37 kloeri Exp $
 
 DESCRIPTION="ATerm tree-handling library"
 HOMEPAGE="http://www.cwi.nl/projects/MetaEnv/aterm/"
