@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.3.1.05.ebuild,v 1.1 2002/10/17 03:38:19 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.3.1.05.ebuild,v 1.2 2002/10/17 14:31:08 blizzy Exp $
 
 IUSE="doc mozilla"
 
@@ -21,7 +21,7 @@ PROVIDE="virtual/jre-1.3.1
 	virtual/java-scheme-2"
 LICENSE="sun-bcla"
 SLOT="1.3"
-KEYWORDS="x86 -ppc -sparc -sparc64"
+KEYWORDS="x86 -ppc -sparc -sparc64 -alpha"
 	
 src_unpack() {
 	if [ ! -f ${DISTDIR}/${At} ] ; then
