@@ -1,20 +1,20 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/canna/Attic/canna-3.6_p4.ebuild,v 1.13 2004/05/04 18:12:04 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/canna/Attic/canna-3.7_p1.ebuild,v 1.1 2004/05/04 18:12:04 usata Exp $
 
 inherit cannadic eutils
 
 IUSE="doc"
 
-MY_P="Canna${PV//[._]/}"
+MY_P="Canna${PV//./}"
 
 DESCRIPTION="A client-server based Kana-Kanji conversion system"
 HOMEPAGE="http://canna.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/canna/6059/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge.jp/canna/7449/${MY_P/_/}.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 alpha ppc sparc"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64"
 
 DEPEND="virtual/glibc
 	virtual/x11
@@ -22,21 +22,27 @@ DEPEND="virtual/glibc
 	doc? ( app-text/ptex )"
 RDEPEND="virtual/glibc"
 
-S="${WORKDIR}/${MY_P}"
+S="${WORKDIR}/${MY_P/_/}"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
 	find . -name '*.man' -o -name '*.jmn' | xargs sed -i.bak -e 's/1M/8/g'
-	epatch ${FILESDIR}/${P}-gentoo.diff
+	sed -e "s%@cannapkgver@%${PF}%" \
+		${FILESDIR}/${P/_*/}-gentoo.diff.in > ${T}/${PF}-gentoo.diff
+	epatch ${T}/${PF}-gentoo.diff
 	cd dic/phono
 	epatch ${FILESDIR}/${PN}-kpdef-gentoo.diff
 }
 
 src_compile() {
+
 	xmkmf || die
-	make Makefiles || die
-	# make includes
+
+	# put quotes around VENDORNAME if any, see bug #48229
+	sed -i -e '/VENDORNAME/s/= \(.*\)$/= "\1"/g' Makefile || die
+
+	#make libCannaDir=../lib/canna canna || die
 	make canna || die
 
 	if [ -n "`use doc`" ] ; then
@@ -63,6 +69,9 @@ src_install() {
 	# install default.canna (removed from Canna36p4)
 	insinto /usr/share/canna
 	newins misc/initfiles/verbose.canna default.canna
+
+	# cannakill should link to /usr/bin/catdic
+	dosym ../bin/catdic /usr/sbin/cannakill
 
 	dodir /usr/share/man/man8 /usr/share/man/ja/man8
 	for man in cannaserver cannakill ; do
@@ -95,23 +104,36 @@ src_install() {
 	fperms 775 /var/lib/canna/dic/{user,group}
 }
 
+pkg_postinst() {
+
+	update-cannadic-dir
+	einfo
+	einfo "Canna dictionary format has been changed."
+	einfo "You should rebuild app-dict/canna-* after emerge."
+	einfo
+}
+
 pkg_prerm () {
 
 	if [ -S /tmp/.iroha_unix/IROHA ] ; then
+		# make sure cannaserver get stopped because otherwise
+		# we cannot stop it with /etc/init.d after emerge -C canna
 		einfo
 		einfo "Stopping Canna for safe unmerge"
 		einfo
 		/etc/init.d/canna stop
+		touch ${T}/canna.cookie
 	fi
 }
 
 pkg_postrm () {
 
-	if [ -f /usr/sbin/cannaserver ] ; then
-		update-cannadic-dir
+	if [ -f /usr/sbin/cannaserver -a -e ${T}/canna.cookie ] ; then
+		#update-cannadic-dir
 		einfo
 		einfo "Restarting Canna"
 		einfo
 		/etc/init.d/canna start
+		rm -f ${T}/canna.cookie
 	fi
 }
