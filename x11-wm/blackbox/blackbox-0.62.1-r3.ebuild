@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/blackbox/Attic/blackbox-0.62.1-r3.ebuild,v 1.6 2002/12/09 04:42:01 manson Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/blackbox/Attic/blackbox-0.62.1-r3.ebuild,v 1.7 2003/02/13 17:46:35 vapier Exp $
 
 IUSE="nls"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/xpde/Attic/xpde-0.1.1.ebuild,v 1.1 2002/12/07 09:21:30 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/xpde/Attic/xpde-0.1.1.ebuild,v 1.2 2003/02/13 17:56:11 vapier Exp $
 
 S=${WORKDIR}/${PN}
 DESCRIPTION="A Desktop Environment modelled after the O/S from Redmond, WA"

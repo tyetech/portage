@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.12-r1.ebuild,v 1.6 2002/12/15 10:44:24 bjb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.12-r1.ebuild,v 1.7 2003/02/13 17:47:25 vapier Exp $
 
 IUSE="nls"
 
