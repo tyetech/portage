@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.8.2_pre0.ebuild,v 1.6 2004/12/29 17:15:23 obz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.8.2_pre0.ebuild,v 1.7 2005/01/08 23:58:23 slarti Exp $
 
 S=${WORKDIR}
 DESCRIPTION="Meta package for the GNOME desktop"
