@@ -1,10 +1,11 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeadmin/Attic/kdeadmin-2.2.2.ebuild,v 1.6 2002/07/11 06:30:26 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeadmin/Attic/kdeadmin-2.2.2.ebuild,v 1.7 2002/07/25 17:53:21 danarmak Exp $
+inherit kde-dist
 
-inherit kde-dist || die
+DESCRIPTION="KDE $PV - administration tools"
 
-DESCRIPTION="${DESCRIPTION}Administration"
+KEYWORDS="x86"
 
 newdepend ">=app-arch/rpm-3.0.5
 	dev-libs/popt
