@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gal/Attic/gal-2.4.0.ebuild,v 1.1 2005/03/09 08:24:44 joem Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gal/Attic/gal-2.4.0.ebuild,v 1.2 2005/03/09 16:44:55 mr_bones_ Exp $
 
 inherit gnome2 libtool eutils
 
@@ -45,5 +45,5 @@ src_unpack() {
 
 	#USE=doc build fix
 	epatch ${FILESDIR}/gal-1.99.3-docfix.patch
-	
+
 }
