@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Dan Armak <danarmak@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-2.2.2-r2.ebuild,v 1.5 2002/01/17 18:59:47 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-2.2.2-r3.ebuild,v 1.1 2002/02/23 20:55:15 danarmak Exp $
 . /usr/portage/eclass/inherit.eclass || die
 inherit kde kde.org || die
 #don't inherit kde-dist! it calls need-kde which adds kdelibs to depend -> circular deps!
@@ -62,6 +62,8 @@ src_compile() {
 	use ssl		&& myconf="$myconf --with-ssl-dir=/usr"		|| myconf="$myconf --without-ssl"
 	use alsa	&& myconf="$myconf --with-alsa"			|| myconf="$myconf --without-alsa"
 	use cups	&& myconf="$myconf --enable-cups"		|| myconf="$myconf --disable-cups"
+	
+	myconf="$myconf --prefix=$KDE2LIBSDIR"
 
 	kde_src_compile configure make
 
@@ -75,11 +77,21 @@ src_install() {
 	dodoc *.html
 	
 	dodir /etc/env.d
-	echo "KDEDIR=${KDE2DIR}
-PATH=${KDE2DIR}/bin
-ROOTPATH=${KDE2DIR}/bin
-LDPATH=${KDE2DIR}/lib" > ${D}/etc/env.d/70kdelibs-2.2.2
 	
+	if [ "$KDE2DIR" != "$KDE2LIBSDIR" ]; then
+	    echo "KDEDIR=${KDE2DIR}
+KDEDIRS=${KDE2LIBSDIR}:${KDE2DIR}
+PATH=${KDE2LIBSDIR}/bin:${KDE2DIR}/bin
+ROOTPATH=${KDE2LIBSDIR}/bin:${KDE2DIR}/bin
+LDPATH=${KDE2LIBSDIR}/lib:${KDE2DIR}/lib" > ${D}/etc/env.d/70kdelibs-2.2.2
+	else
+	    echo "KDEDIR=${KDE2DIR}
+KDEDIRS=${KDE2DIR}
+PATH=${KDE2LIBSDIR}/bin
+ROOTPATH=${KDE2LIBSDIR}/bin
+LDPATH=${KDE2LIBSDIR}/lib" > ${D}/etc/env.d/70kdelibs-2.2.2
+	fi
+
 }
 
 
