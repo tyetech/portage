@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/sylpheed-iconset/Attic/sylpheed-iconset-20030712.ebuild,v 1.1 2003/07/31 03:07:46 bcowan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/sylpheed-iconset/Attic/sylpheed-iconset-20030712.ebuild,v 1.2 2004/03/23 18:44:28 mholzer Exp $
 
 DESCRIPTION="Iconset for sylpheed-claws"
 
@@ -9,10 +9,10 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="x86 alpha"
 
-DEPEND="${RDEPEND}"
-RDEPEND="virtual/sylpheed"
+DEPEND="virtual/sylpheed"
 
 SRC_URI="mirror://sourceforge/sylpheed-claws/${P}.tar.gz"
+RESTRICT="nomirror"
 
 S=${WORKDIR}/${P}
 
