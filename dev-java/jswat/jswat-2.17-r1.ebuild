@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jswat/Attic/jswat-2.17-r1.ebuild,v 1.4 2003/09/06 22:26:46 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jswat/Attic/jswat-2.17-r1.ebuild,v 1.5 2003/09/08 07:20:54 msterret Exp $
 
 inherit java-pkg
 
