@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/amule/Attic/amule-1.0.7.ebuild,v 1.4 2003/10/18 23:18:13 scandium Exp $
+# $Header:
 
 MY_P=${P/m/M}
 S=${WORKDIR}/${MY_P}
@@ -15,7 +15,7 @@ KEYWORDS="~x86"
 
 IUSE=""
 
-DEPEND=">=x11-libs/wxGTK-2.4
+DEPEND=">=x11-libs/wxGTK-2.4.1
 	>=sys-libs/zlib-1.1.4"
 
 pkg_setup() {
@@ -30,6 +30,9 @@ pkg_setup() {
 }
 
 src_compile () {
+	export WANT_AUTOCONF_2_5='1'
+	export WANT_AUTOMAKE='1.7'
+	./autogen.sh
 	econf || die
 	MAKEOPTS="${MAKEOPTS} -j1" emake || die
 }
