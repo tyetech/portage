@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-base64/Attic/cl-base64-3.2.ebuild,v 1.2 2003/09/06 22:35:54 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-base64/Attic/cl-base64-3.2.ebuild,v 1.3 2004/05/09 01:52:45 mkennedy Exp $
 
 inherit common-lisp
 
