@@ -1,7 +1,7 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # Author Kevin Koltzau <kevin@plop.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/synce-kde/Attic/synce-kde-0.6.1.ebuild,v 1.4 2004/06/02 12:36:41 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/synce-kde/Attic/synce-kde-0.6.1.ebuild,v 1.5 2004/06/24 21:46:06 agriffis Exp $
 
 inherit kde
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/qtopia-desktop-bin/Attic/qtopia-desktop-bin-1.7.0.ebuild,v 1.1 2004/04/07 06:15:34 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/qtopia-desktop-bin/Attic/qtopia-desktop-bin-1.7.0.ebuild,v 1.2 2004/06/24 21:45:08 agriffis Exp $
 
 IUSE="X"
 
