@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/jext/Attic/jext-3.2_pre3.ebuild,v 1.2 2003/07/01 21:47:40 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/jext/Attic/jext-3.2_pre3.ebuild,v 1.3 2003/09/05 23:09:10 msterret Exp $
 
 inherit java-pkg
 
