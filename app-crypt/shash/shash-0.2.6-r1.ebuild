@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/shash/shash-0.2.6-r1.ebuild,v 1.3 2004/11/06 13:33:50 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/shash/shash-0.2.6-r1.ebuild,v 1.4 2004/11/15 09:34:16 swegener Exp $
 
-inherit bash-completion
+inherit bash-completion eutils
 
 DESCRIPTION="Generate or check digests or MACs of files"
 HOMEPAGE="http://mcrypt.hellug.gr/shash/"
