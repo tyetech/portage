@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/esound/Attic/esound-0.2.19.ebuild,v 1.2 2000/08/16 04:38:09 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/esound/Attic/esound-0.2.19.ebuild,v 1.4 2000/09/15 20:09:04 drobbins Exp $
 
 P=esound-0.2.19
 A=${P}.tar.gz
@@ -13,14 +13,13 @@ HOMEPAGE="http://www.tux.org/~ricdude/EsounD.html"
 
 src_compile() {                           
   cd ${S}
-  ./configure --host=${CHOST} --prefix=/usr --sysconfdir=/etc/esd \
-    --with-libwrap
-  make
+  try ./configure --host=${CHOST} --prefix=/usr --sysconfdir=/etc/esd --with-libwrap
+  try make
 }
 
 src_install() {                               
   cd ${S}
-  make prefix=${D}/usr sysconfdir=${D}/etc/esd install
+  try make prefix=${D}/usr sysconfdir=${D}/etc/esd install
   dodoc AUTHORS COPYING* ChangeLog README TODO
   dodoc NEWS TIPS
   dodoc docs/esound.ps
