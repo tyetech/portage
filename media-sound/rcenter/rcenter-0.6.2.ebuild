@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rcenter/rcenter-0.6.2.ebuild,v 1.7 2004/07/01 07:58:01 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rcenter/rcenter-0.6.2.ebuild,v 1.8 2004/07/19 22:27:09 eradicator Exp $
 
 IUSE=""
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://rooster.stanford.edu/~ben/projects/rcenter.php"
 SRC_URI="http://rooster.stanford.edu/~ben/projects/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 ~amd64"
 DEPEND="virtual/libc"
 
 src_compile() {
