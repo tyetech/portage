@@ -1,8 +1,7 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/qat/Attic/qat-2.7.0.ebuild,v 1.2 2003/07/11 21:41:54 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/qat/Attic/qat-2.7.0.ebuild,v 1.3 2004/03/07 02:45:00 zx Exp $
 
-#S=${WORKDIR}/jakarta-ant-${PV}
 DESCRIPTION="Quality Assurance Tester - A distributed test harnass."
 SRC_URI="mirror://sourceforge/qat/qat-${PV}.zip"
 HOMEPAGE="http://qat.sourceforge.net"
