@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptraceroute/Attic/tcptraceroute-1.4-r2.ebuild,v 1.3 2003/11/10 14:43:46 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptraceroute/tcptraceroute-1.4-r3.ebuild,v 1.1 2003/11/29 23:32:18 vapier Exp $
 
 inherit eutils
 
@@ -24,13 +24,11 @@ src_unpack() {
 }
 
 src_compile() {
-	make CFLAGS="$CFLAGS" || die
+	make CFLAGS="${CFLAGS}" || die
 }
 
 src_install() {
-	dobin tcptraceroute
-	fperms u+s /usr/bin/tcptraceroute
-
+	dosbin tcptraceroute
 	doman tcptraceroute.8
 	dodoc examples.txt COPYING README changelog
 	dohtml -r ./
