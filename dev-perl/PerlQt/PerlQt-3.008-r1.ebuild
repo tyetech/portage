@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/PerlQt/Attic/PerlQt-3.008-r1.ebuild,v 1.3 2004/10/19 07:53:00 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/PerlQt/Attic/PerlQt-3.008-r1.ebuild,v 1.4 2005/02/19 16:08:19 greg_g Exp $
 
-inherit perl-module kde-base
+inherit perl-module kde
 
 #install pqtsh to this directory
 myinst="${myinst} INSTBINDIR=${D}/usr/bin"
