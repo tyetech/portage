@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-clamav/Attic/selinux-clamav-20041016.ebuild,v 1.1 2004/10/28 14:02:45 kaiowas Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-clamav/Attic/selinux-clamav-20041112.ebuild,v 1.1 2004/11/13 19:22:55 kaiowas Exp $
 
 inherit selinux-policy
 
