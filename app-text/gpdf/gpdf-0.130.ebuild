@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/gpdf/Attic/gpdf-0.125.ebuild,v 1.1 2004/03/21 16:37:27 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/gpdf/Attic/gpdf-0.130.ebuild,v 1.1 2004/03/24 15:22:22 foser Exp $
 
 inherit gnome2 flag-o-matic
 
-DESCRIPTION="your favourite pdf previewer"
+DESCRIPTION="A viewer for Portable Document Format (PDF) files"
 HOMEPAGE="http://www.gnome.org/"
 LICENSE="GPL-2"
 
