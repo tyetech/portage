@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cfengine/Attic/cfengine-2.1.10-r2.ebuild,v 1.2 2005/01/27 21:40:48 klieber Exp $
+# $
 
-inherit eutils
+inherit gnuconfig eutils
 
 DESCRIPTION="An agent/software robot and a high level policy language for building expert systems to administrate and configure large computer networks"
 HOMEPAGE="http://www.iu.hio.no/cfengine/"
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.iu.hio.no/pub/cfengine/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc ~sparc ~arm ~amd64"
+KEYWORDS="~x86 ~ppc ~sparc ~arm ~amd64"
 IUSE=""
 
 DEPEND="virtual/libc
@@ -21,7 +21,6 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	gnuconfig_update ${S}
-	epatch ${FILESDIR}/${PN}-2.1.10-setnetgrent.patch
 }
 
 src_compile() {
@@ -38,6 +37,9 @@ src_compile() {
 }
 
 src_install() {
+	exeinto /etc/init.d
+	newexe "${FILESDIR}/cfservd.rc6" cfservd
+
 	make DESTDIR=${D} install || die
 	dodoc AUTHORS ChangeLog COPYING README TODO
 
@@ -45,6 +47,7 @@ src_install() {
 	doinfo doc/*.info*
 	dohtml doc/*.html
 	dodoc inputs/*.example
+	dodoc ${FILESDIR}/cfportage.README
 
 	# Create cfengine working directory
 	mkdir -p ${D}/var/cfengine
@@ -52,8 +55,8 @@ src_install() {
 	keepdir /var/cfengine/bin
 	keepdir /var/cfengine/inputs
 	dodir /var/cfengine/modules
-	cd ${D}/var/cfengine/modules
-	tar pjxf ${FILESDIR}/module-cfportage.tbz2
+	tar jxf ${FILESDIR}/module-cfportage.tbz2 -C ${D}/var/cfengine/modules
+	fowners root:root /var/cfengine/modules/module\:cfportage
 }
 
 pkg_postinst() {
@@ -70,4 +73,11 @@ pkg_postinst() {
 	# binaries.
 
 	cp /usr/sbin/cf{agent,servd,execd} /var/cfengine/bin/
+
+	einfo
+	einfo "Now an init script for cfservd is provided."
+	einfo
+	einfo "To run cfengine out of cron every half hour modify your crontab:"
+	einfo "0,30 * * * *    /usr/sbin/cfexecd -F"
+	einfo
 }
