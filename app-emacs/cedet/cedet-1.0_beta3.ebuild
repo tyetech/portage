@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/cedet/Attic/cedet-1.0_beta3.ebuild,v 1.1 2004/07/23 03:18:21 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/cedet/Attic/cedet-1.0_beta3.ebuild,v 1.2 2004/07/23 19:16:16 mr_bones_ Exp $
 
 inherit elisp
 
@@ -50,4 +50,3 @@ src_install() {
 	dodoc docs/*
 	elisp-site-file-install ${FILESDIR}/${SITEFILE}
 }
-
