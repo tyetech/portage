@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/xinetd/Attic/xinetd-2.1.8.9_pre16.ebuild,v 1.1 2001/06/21 14:16:26 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/xinetd/Attic/xinetd-2.1.8.9_pre16.ebuild,v 1.2 2001/06/27 01:49:25 achim Exp $
 
 P=${PN}-2.1.8.9pre16
 A=${P}.tar.gz
@@ -37,7 +37,9 @@ src_install() {
 	insinto /etc
 	#doins ${FILESDIR}/xinetd.conf
 	exeinto /var/lib/supervise/services/xinetd
-	newexe ${FILESDIR}/xinetd-run run
+	newexe ${FILESDIR}/xinetd-run-${PV}  run
+        exeinto /usr/sbin
+	doexe ${FILESDIR}/xconv.pl
 }
 
 
