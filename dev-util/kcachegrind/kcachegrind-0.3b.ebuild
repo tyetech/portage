@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kcachegrind/Attic/kcachegrind-0.3b.ebuild,v 1.4 2003/12/28 04:06:41 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kcachegrind/Attic/kcachegrind-0.3b.ebuild,v 1.5 2004/05/25 23:57:27 caleb Exp $
 inherit kde
 
 need-kde 3
