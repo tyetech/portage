@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.6_rc2.ebuild,v 1.2 2004/04/06 16:47:52 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.6_rc2.ebuild,v 1.3 2004/04/08 19:27:48 stuart Exp $
 
 IUSE="${IUSE} apache2"
 
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~ia64 ~amd64"
+KEYWORDS="x86 ~ppc ~sparc ~alpha ~hppa ~ia64 ~amd64"
 
 detectapache() {
 	local domsg=
