@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/bonobo/Attic/bonobo-1.0.21.ebuild,v 1.1 2002/11/09 03:16:17 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/bonobo/Attic/bonobo-1.0.21.ebuild,v 1.2 2002/11/09 05:08:33 azarah Exp $
 
 IUSE="nls"
 
@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 
 src_compile() {
 	#libtoolize to fix relink bug
-	elibtoolize --copy --force
+	elibtoolize
 
 	local myconf=""
 	use nls || myconf="${myconf} --disable-nls"
