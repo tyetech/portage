@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hwdata-knoppix/Attic/hwdata-knoppix-0.107.ebuild,v 1.7 2004/06/30 17:46:08 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hwdata-knoppix/Attic/hwdata-knoppix-0.107.ebuild,v 1.8 2004/07/15 01:47:22 agriffis Exp $
+
+inherit eutils
 
 MY_PV=${PV}-4
 DESCRIPTION="Data for the hwsetup program"
