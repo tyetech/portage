@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/perl/Attic/perl-5.8.2-r1.ebuild,v 1.12 2004/05/31 22:16:26 rac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/perl/Attic/perl-5.8.2-r1.ebuild,v 1.13 2004/06/03 15:39:57 agriffis Exp $
 
 inherit eutils flag-o-matic gcc
 
@@ -251,7 +251,7 @@ EOF
 
 	dodoc Changes* Artistic Copying README Todo* AUTHORS
 
-	if [ -n "`use doc`" ]
+	if use doc
 	then
 		# HTML Documentation
 		# We expect errors, warnings, and such with the following.
