@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/fnord/Attic/fnord-1.8.ebuild,v 1.1 2004/08/08 11:37:29 stuart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/fnord/Attic/fnord-1.8.ebuild,v 1.2 2004/09/03 15:58:51 pvdabeel Exp $
 
 S=${WORKDIR}/${P}
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.fefe.de/fnord/${P}.tar.bz2
 	mirror://gentoo/${P}-gentoo.diff"
 HOMEPAGE="http://www.fefe.de/fnord/"
 
-KEYWORDS="~x86 ~sparc ~ppc"
+KEYWORDS="~x86 ~sparc ppc"
 SLOT="0"
 LICENSE="GPL-2"
 
