@@ -1,31 +1,26 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mldonkey/Attic/mldonkey-2.00-r1.ebuild,v 1.4 2002/12/15 17:07:27 hannes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mldonkey/Attic/mldonkey-2.01-r1.ebuild,v 1.1 2002/12/15 17:07:27 hannes Exp $
 
 IUSE="gtk"
 DESCRIPTION="edonkey, opennap,... client written in ocaml"
 HOMEPAGE="http://www.nongnu.org/mldonkey/"
-SRC_URI="http://savannah.nongnu.org/download/mldonkey/stable/${P}.sources.tar.gz
-	http://concept.free.free.fr/mldonkey/patches-against-CVS2.00+2/diff-2.00-2.00+2.patch.gz
-	http://concept.free.free.fr/mldonkey/patches-against-CVS2.00+2/pango-20021208a.tar.gz"
+SRC_URI="http://savannah.nongnu.org/download/${PN}/stable/${P}.sources.tar.gz
+	http://concept.free.free.fr/mldonkey/patches-against-CVS2.01/pango-20021213b.tar.gz"
 
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 DEPEND="gtk? ( >=lablgtk-1.2.3 )
         >=ocaml-3.06
 		>=perl-5.6.1"
-S="${WORKDIR}/mldonkey"
+S="${WORKDIR}/${PN}"
 
 src_unpack() {
 	unpack ${P}.sources.tar.gz
 	cd ${S}
-	cp ${DISTDIR}/diff-2.00-2.00+2.patch.gz ./
-	cp ${DISTDIR}/pango-20021208a.tar.gz ./
-	gunzip diff-2.00-2.00+2.patch.gz
-	tar -xzf pango-20021208a.tar.gz
-	patch -p0 <  diff-2.00-2.00+2.patch
-	patch -p0 -E -s < pango.patch 
+	tar -xzf ${DISTDIR}/pango-20021213b.tar.gz
+	patch -p0 -E < pango.patch
 }
 
 src_compile() {
