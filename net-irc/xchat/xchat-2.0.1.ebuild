@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/xchat/Attic/xchat-2.0.0.ebuild,v 1.2 2003/02/13 14:17:24 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/xchat/Attic/xchat-2.0.1.ebuild,v 1.1 2003/03/03 15:34:08 lostlogic Exp $
 
 IUSE="perl tcltk python ssl gtk mmx ipv6" 
 
