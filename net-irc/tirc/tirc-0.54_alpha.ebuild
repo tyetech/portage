@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/tirc/tirc-0.54_alpha.ebuild,v 1.1 2004/07/16 11:55:56 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/tirc/tirc-0.54_alpha.ebuild,v 1.2 2004/07/17 19:06:45 dholm Exp $
 
 MY_P=${P/_alpha/a}-patched
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://home.mayn.de/jean-luc/alt/tirc/"
 SRC_URI="http://home.mayn.de/jean-luc/alt/tirc/${MY_P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 IUSE="debug"
 
 DEPEND="sys-libs/ncurses"
