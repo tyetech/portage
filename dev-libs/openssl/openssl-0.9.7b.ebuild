@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/openssl/Attic/openssl-0.9.7b.ebuild,v 1.9 2003/12/15 05:41:38 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/openssl/Attic/openssl-0.9.7b.ebuild,v 1.10 2004/01/17 07:26:29 kumba Exp $
 
 inherit eutils
 
