@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/apcupsd/Attic/apcupsd-3.10.6.ebuild,v 1.13 2004/01/03 00:54:46 tantive Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/apcupsd/Attic/apcupsd-3.10.8.ebuild,v 1.1 2004/01/03 00:54:46 tantive Exp $
 
 IUSE="doc snmp usb apache2"
 
@@ -9,14 +9,14 @@ DESCRIPTION="APC UPS daemon with integrated tcp/ip remote shutdown"
 SRC_URI="mirror://sourceforge/apcupsd/${P}.tar.gz
 	ftp://ftp.apcupsd.com/pub/apcupsd/contrib/gd1.2.tar.gz"
 HOMEPAGE="http://www.sibbald.com/apcupsd/"
-KEYWORDS="x86 ~amd64 ~ppc ~arm ~sparc"
+KEYWORDS="~x86 ~amd64 ~ppc ~arm ~sparc"
 SLOT="0"
 LICENSE="GPL-2"
 
 DEPEND=">=sys-apps/baselayout-1.8.4
 	virtual/glibc
 	virtual/mta
-	snmp? ( virtual/snmp )
+	snmp? ( net-analyzer/ucd-snmp )
 	sys-libs/ncurses"
 RDEPEND="${DEPEND}
 	usb? ( sys-apps/hotplug )"
