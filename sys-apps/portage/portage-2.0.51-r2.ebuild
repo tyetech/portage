@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51_rc10.ebuild,v 1.1 2004/10/20 01:29:39 carpaski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51-r2.ebuild,v 1.1 2004/10/21 23:02:44 carpaski Exp $
 
 IUSE="build selinux"
 inherit flag-o-matic
@@ -14,11 +14,11 @@ SLOT="0"
 DESCRIPTION="The Portage Package Management System (Similar to BSD's ports). The primary package management and distribution system for Gentoo."
 SRC_URI="http://zarquon.twobit.net/gentoo/portage/${PF}.tar.bz2 http://gentoo.twobit.net/portage/${PF}.tar.bz2 mirror://gentoo/${PF}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org"
-RESTRICT="nomirror mirror"
+RESTRICT="nomirror mirror nosandbox sandbox"
 
 # Contact carpaski with a reason before you modify any of these.
-#KEYWORDS="  alpha  amd64  arm  hppa  ia64  macos  mips  ppc  ppc-macos ppc64  s390  sparc  x86"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~macos ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS="  alpha  amd64  arm  hppa  ia64  macos  mips  ppc  ppc-macos  ppc64  s390  sparc  x86"
+#KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~macos ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sparc ~x86"
 
 LICENSE="GPL-2"
 RDEPEND="!build? ( >=sys-apps/sed-4.0.5 dev-python/python-fchksum >=dev-lang/python-2.2.1 sys-apps/debianutils >=app-shells/bash-2.05a ) selinux? ( >=dev-python/python-selinux-2.15 )"
@@ -63,13 +63,13 @@ src_compile() {
 			;;
 		"amd64")
 			check_multilib
-			make CFLAGS="-O2 -pipe" HAVE_64BIT_ARCH="${MULTILIB}" || die
+			make CFLAGS="-O1 -pipe" HAVE_64BIT_ARCH="${MULTILIB}" || die
 			;;
 		*)
 			if useq macos || useq ppc-macos || useq x86-fbsd; then
 				ewarn "NOT BUILDING SANDBOX ON $ARCH"
 			else
-				make || die
+				make CFLAGS="-O1 -pipe" || die
 			fi
 			;;
 	esac
@@ -124,8 +124,14 @@ src_install() {
 	else
 		#install sandbox
 		cd ${S}/src/sandbox-1.1
-		make DESTDIR=${D} HAVE_64BIT_ARCH="${MULTILIB}" \
-			install || die "Failed to compile sandbox"
+		if [ "$ARCH" == "amd64" ]; then
+			check_multilib
+			make DESTDIR="${D}" HAVE_64BIT_ARCH="${MULTILIB}" install || \
+			die "Failed to compile sandbox"
+		else
+			make DESTDIR="${D}" install || \
+			die "Failed to compile sandbox"
+		fi
 	fi
 
 	#symlinks
@@ -175,6 +181,12 @@ pkg_preinst() {
 			rm -Rf "${IMAGE}"/usr/lib/portage/bin/*
 			mv "${T}"/{sandbox,tbz2tool} "${IMAGE}"/usr/lib/portage/bin/
 		fi
+	fi
+	
+	# If we return true, then we don't have HIGHEST_PROTOCOL.
+	# We need to modify the source for this case.
+	if python -c "import cPickle,sys; sys.exit('HIGHEST_PROTOCOL' in dir(cPickle))"; then
+		sed -i "s:cPickle.HIGHEST_PROTOCOL:-1:" "${IMAGE}"/usr/lib/portage/pym/*.py
 	fi
 }
 
