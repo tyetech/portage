@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/sn/Attic/sn-0.3.7.ebuild,v 1.4 2004/07/01 22:39:28 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/sn/Attic/sn-0.3.7.ebuild,v 1.5 2004/07/22 01:27:18 swegener Exp $
 
 DESCRIPTION="Hassle-free Usenet news system for small sites"
 SRC_URI="http://infa.abo.fi/~patrik/sn/files/${P}.tar.bz2"
 HOMEPAGE="http://infa.abo.fi/~patrik/sn/"
 
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ~ppc"
 SLOT="0"
 LICENSE="GPL-2"
 IUSE=""
