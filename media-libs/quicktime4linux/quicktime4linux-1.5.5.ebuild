@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/quicktime4linux/Attic/quicktime4linux-1.5.5.ebuild,v 1.5 2002/10/04 05:50:15 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/quicktime4linux/Attic/quicktime4linux-1.5.5.ebuild,v 1.6 2002/12/09 04:26:13 manson Exp $
 
 S=${WORKDIR}/quicktime
 DESCRIPTION="quicktime library for linux"
@@ -9,7 +9,7 @@ HOMEPAGE="http://heroinewarrior.com/quicktime.php3"
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="x86 sparc sparc64"
+KEYWORDS="x86 sparc "
 
 DEPEND="media-libs/jpeg"
 
