@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/portaudio/Attic/portaudio-18.ebuild,v 1.9 2004/03/30 23:46:32 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/portaudio/Attic/portaudio-18.ebuild,v 1.10 2004/03/31 17:32:17 eradicator Exp $
+
+inherit eutils
 
 S=${WORKDIR}/${PN}_v${PV}
 DESCRIPTION="An open-source cross platform audio API."
