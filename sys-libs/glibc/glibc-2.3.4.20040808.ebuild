@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.4.20040808.ebuild,v 1.2 2004/08/08 22:31:48 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.4.20040808.ebuild,v 1.3 2004/08/08 23:44:39 lv Exp $
 
 inherit eutils flag-o-matic gcc
 
@@ -278,6 +278,8 @@ pkg_setup() {
 		die "GCC too old"
 	fi
 	echo
+
+	hasq sandbox $FEATURES && use makecheck && die "sandbox breaks make check. either take makecheck out of USE or set FEATURES=-sandbox"
 }
 
 
