@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/devtodo/Attic/devtodo-0.1.18-r1.ebuild,v 1.3 2004/11/15 13:56:14 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/devtodo/Attic/devtodo-0.1.18-r1.ebuild,v 1.4 2004/11/18 16:09:06 ka0ttic Exp $
 
 inherit eutils gnuconfig bash-completion flag-o-matic
 
@@ -13,21 +13,19 @@ SLOT="0"
 KEYWORDS="x86 ~ppc sparc ~mips ~alpha ~hppa ~amd64 ~ia64 s390"
 IUSE=""
 
-RDEPEND=">=sys-libs/ncurses-5.2 >=sys-libs/readline-4.1"
-DEPEND="${RDEPEND} sys-devel/automake"
+RDEPEND=">=sys-libs/ncurses-5.2
+	>=sys-libs/readline-4.1"
+DEPEND="${RDEPEND}"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-
-	# bug #55371 - tdl conflicts with app-misc/tdl
-	epatch ${FILESDIR}/${PN}-1.1.17-notdl.patch
-	# invalid pointer bug that rears its head w/gcc-3.4.x
-	epatch ${FILESDIR}/${P}-invalid-ptr.patch
+	epatch ${FILESDIR}/${P}-gentoo.diff
 	gnuconfig_update
 }
 
 src_compile() {
+	einfo "Running autoreconf"
 	autoreconf || die "autoreconf failed"
 	replace-flags -O? -O1
 	econf --sysconfdir=/etc/devtodo || die "econf failed"
@@ -37,7 +35,7 @@ src_compile() {
 src_install() {
 	make DESTDIR=${D} install || die "make install failed"
 	dodoc AUTHORS ChangeLog QuickStart README TODO doc/scripts.sh \
-		doc/scripts.tcsh doc/todorc.example contrib/tdrec
+	doc/scripts.tcsh doc/todorc.example contrib/tdrec || die "dodoc failed"
 	dobashcompletion ${FILESDIR}/${PN}.bash-completion ${PN}
 }
 
