@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/amap/Attic/amap-4.3.ebuild,v 1.3 2004/03/21 14:04:46 mboman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/amap/Attic/amap-4.3.ebuild,v 1.4 2004/05/20 18:16:20 squinky86 Exp $
 
 DESCRIPTION="A network scanning tool for pentesters"
 HOMEPAGE="http://www.thc.org/releases.php"
@@ -16,7 +16,8 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	# gentoo standard place for templates/configuration files
-	sed -i -e 's:/usr/local/bin:/usr/share/amap:' > amap.h
+	sed -i -e 's:/usr/local/bin:/usr/share/amap:g' amap.h || die
+	sed -i -e 's:#define AMAP_APPDEF_PATH.*$:#define AMAP_APPDEF_PATH "/usr/share/amap":g' amap.h || die
 }
 
 src_compile() {
