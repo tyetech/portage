@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/vienna-rna/Attic/vienna-rna-1.4.ebuild,v 1.1 2004/12/23 16:09:31 ribosome Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/vienna-rna/Attic/vienna-rna-1.4.ebuild,v 1.2 2005/01/09 18:48:37 ribosome Exp $
 
 inherit flag-o-matic
 
