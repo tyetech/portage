@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/odinmp/Attic/odinmp-0.167.2.ebuild,v 1.1 2003/06/03 13:00:05 tantive Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/odinmp/Attic/odinmp-0.167.2.ebuild,v 1.2 2004/06/24 22:48:27 agriffis Exp $
 
 DESCRIPTION="The OdinMP OpenMP compiler"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gdb/Attic/gdb-6.0.ebuild,v 1.12 2004/06/11 18:23:48 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gdb/Attic/gdb-6.0.ebuild,v 1.13 2004/06/24 22:46:27 agriffis Exp $
 
 inherit flag-o-matic eutils
 
