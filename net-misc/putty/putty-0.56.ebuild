@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/putty/Attic/putty-0.55.ebuild,v 1.1 2004/08/04 16:19:31 taviso Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/putty/Attic/putty-0.56.ebuild,v 1.1 2004/10/27 13:37:40 taviso Exp $
 
 inherit eutils
 
