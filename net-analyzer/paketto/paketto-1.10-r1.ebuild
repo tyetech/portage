@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/paketto/Attic/paketto-1.10.ebuild,v 1.3 2003/03/20 14:37:48 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/paketto/Attic/paketto-1.10-r1.ebuild,v 1.1 2003/03/20 14:37:48 agriffis Exp $
 
 DESCRIPTION="Paketto Keiretsu - experimental TCP/IP tools - scanrand, minewt, lc, phentropy, paratrace"
 HOMEPAGE="http://www.doxpara.com/"
