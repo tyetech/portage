@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mairix/Attic/mairix-0.15.ebuild,v 1.5 2004/11/24 09:42:01 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mairix/Attic/mairix-0.15.ebuild,v 1.6 2005/02/04 13:19:42 tove Exp $
 
 DESCRIPTION="Indexes and searches Maildir/MH folders"
 HOMEPAGE="http://www.rpcurnow.force9.co.uk/mairix/"
