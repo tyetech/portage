@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.64.ebuild,v 1.7 2004/11/30 20:22:01 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.64.ebuild,v 1.8 2004/12/17 23:30:56 eldad Exp $
 
-inherit eutils
+inherit eutils flag-o-matic
 
 DESCRIPTION="My TraceRoute. Excellent network diagnostic tool."
 HOMEPAGE="http://www.bitwizard.nl/mtr/"
@@ -21,11 +21,14 @@ src_compile() {
 	local myconf
 	use gtk || myconf="${myconf} --without-gtk"
 
+	append-ldflags -Wl,-z,now
+
 	epatch ${FILESDIR}/mtr-ac-res_mkquery.patch
 	autoconf
 
 	econf ${myconf} \
 		`use_enable gtk2` || die
+
 	emake || die
 }
 

@@ -1,36 +1,34 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.54-r2.ebuild,v 1.8 2004/12/17 23:30:56 eldad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.67.ebuild,v 1.1 2004/12/17 23:30:56 eldad Exp $
 
-inherit flag-o-matic
-
-IUSE="gtk ipv6"
+inherit eutils flag-o-matic
 
 DESCRIPTION="My TraceRoute. Excellent network diagnostic tool."
-SRC_URI="ftp://ftp.bitwizard.nl/mtr/${P}.tar.gz ipv6? ( http://debian.fabbione.net/debian-ipv6/dists/sid/ipv6/pool/mtr_${PV}-1.0.ipv6.r1.diff.gz )"
 HOMEPAGE="http://www.bitwizard.nl/mtr/"
+SRC_URI="ftp://ftp.bitwizard.nl/mtr/${P}.tar.gz"
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~s390 ~sparc ~x86"
+IUSE="gtk gtk2"
 
 DEPEND=">=sys-libs/ncurses-5.2
-	gtk? ( =x11-libs/gtk+-1.2* )"
-
-SLOT="0"
-LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc hppa alpha"
-
-src_unpack() {
-
-	unpack ${P}.tar.gz
-	cd ${S}
-	use ipv6 && zcat ${DISTDIR}/mtr_0.54-1.0.ipv6.r1.diff.gz | patch -p 1
-
-}
+	gtk? ( !gtk2? ( =x11-libs/gtk+-1.2* )
+		gtk2? ( >=x11-libs/gtk+-2* ) )"
 
 src_compile() {
 	local myconf
 	use gtk || myconf="${myconf} --without-gtk"
 
 	append-ldflags -Wl,-z,now
-	econf ${myconf} || die
+
+	epatch ${FILESDIR}/mtr-ac-res_mkquery.patch
+	autoconf
+
+	econf ${myconf} \
+		`use_enable gtk2` || die
+
 	emake || die
 }
 
