@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios/Attic/nagios-2.0b_p1.ebuild,v 1.2 2005/02/24 09:51:20 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios/Attic/nagios-2.0b_p2.ebuild,v 1.1 2005/02/24 09:51:20 dragonheart Exp $
 
 DESCRIPTION="The Nagios"
 HOMEPAGE="http://www.nagios.org"
