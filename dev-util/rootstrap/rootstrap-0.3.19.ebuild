@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/rootstrap/Attic/rootstrap-0.3.19.ebuild,v 1.1 2004/04/09 13:09:52 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/rootstrap/Attic/rootstrap-0.3.19.ebuild,v 1.2 2004/04/27 20:58:17 agriffis Exp $
+
+inherit eutils
 
 DESCRIPTION="A tool for building complete Linux filesystem images"
 HOMEPAGE="http://packages.qa.debian.org/rootstrap"
