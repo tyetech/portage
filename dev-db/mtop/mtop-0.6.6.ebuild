@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header : $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mtop/mtop-0.6.6.ebuild,v 1.2 2004/09/15 17:40:48 axxo Exp $
 
 inherit perl-module
 
