@@ -1,6 +1,6 @@
-# Copyright 2004-2004 Gentoo Foundation
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jjtraveler/Attic/jjtraveler-0.4.3.ebuild,v 1.3 2004/08/24 03:27:31 zx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jjtraveler/Attic/jjtraveler-0.4.3.ebuild,v 1.4 2004/09/17 09:43:51 axxo Exp $
 
 inherit java-pkg
 
