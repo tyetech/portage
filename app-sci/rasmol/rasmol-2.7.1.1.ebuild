@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/rasmol/Attic/rasmol-2.7.1.1.ebuild,v 1.2 2004/04/01 19:44:53 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/rasmol/Attic/rasmol-2.7.1.1.ebuild,v 1.3 2004/04/19 12:20:49 phosphan Exp $
 
 MY_P="RasMol_${PV}"
 
@@ -8,6 +8,7 @@ DESCRIPTION="Free program that displays molecular structure."
 HOMEPAGE="http://www.openrasmol.org/"
 KEYWORDS="x86"
 SLOT="0"
+IUSE=""
 LICENSE="public-domain"
 DEPEND="virtual/x11"
 
