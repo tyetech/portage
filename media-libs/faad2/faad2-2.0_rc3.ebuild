@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/faad2/Attic/faad2-2.0_rc3.ebuild,v 1.5 2004/01/30 05:55:55 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/faad2/Attic/faad2-2.0_rc3.ebuild,v 1.6 2004/03/17 00:37:16 weeve Exp $
 
 inherit eutils libtool flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/faac/${PN}-${PV/_/-}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~sparc ~amd64"
+KEYWORDS="x86 ~ppc sparc ~amd64"
 
 DEPEND="sys-devel/automake
 	>=sys-devel/autoconf-2.58"
