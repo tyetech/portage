@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/netselect/Attic/netselect-0.3.ebuild,v 1.10 2003/07/18 20:59:56 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/netselect/Attic/netselect-0.3.ebuild,v 1.11 2003/09/05 23:40:10 msterret Exp $
 
 S=${WORKDIR}/${PN}
 DESCRIPTION="Ultrafast implementation of ping."
@@ -25,6 +25,6 @@ src_compile() {
 
 src_install () {
 	make install || die
-	
+
 	dodoc ChangeLog HISTORY README*
 }
