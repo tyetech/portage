@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sablecc/Attic/sablecc-2.18.2.ebuild,v 1.3 2004/05/03 21:57:49 zx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sablecc/Attic/sablecc-2.18.2.ebuild,v 1.4 2004/06/03 01:59:13 agriffis Exp $
 
 inherit java-pkg
 
@@ -20,7 +20,7 @@ RDEPEND=">=virtual/jre-1.4"
 
 src_compile () {
 	local antflags="jar"
-	if [ `use jikes` ] ; then
+	if use jikes ; then
 		:; # Do nothing, jikes is enable by default
 	else
 		antflags="${antflags} -Dbuild.compiler=modern"
