@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-systray/Attic/xfce4-systray-4.1.99.2.ebuild,v 1.3 2005/01/02 16:34:32 bcowan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-icon-theme/Attic/xfce4-icon-theme-4.1.99.3.ebuild,v 1.1 2005/01/02 16:31:30 bcowan Exp $
 
-DESCRIPTION="Xfce 4 system tray"
+DESCRIPTION="Xfce 4 icon theme"
 HOMEPAGE="http://www.xfce.org/"
 SRC_URI="http://www.xfce.org/archive/xfce-${PV}/src/${P}.tar.gz"
 
@@ -18,11 +18,11 @@ RDEPEND="virtual/x11
 	=xfce-base/libxfcegui4-${PV}
 	=xfce-base/libxfce4mcs-${PV}
 	=xfce-base/xfce-mcs-manager-${PV}
-	=xfce-base/xfce4-panel-${PV}"
+	=xfce-base/xffm-${PV}"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_install () {
 	make DESTDIR=${D} install || die
-	dodoc ChangeLog* AUTHORS README*
+	dodoc ChangeLog*
 }
