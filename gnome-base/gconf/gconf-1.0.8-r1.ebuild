@@ -1,8 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gconf/Attic/gconf-1.0.8-r1.ebuild,v 1.1 2002/02/24 19:39:00 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gconf/Attic/gconf-1.0.8-r1.ebuild,v 1.2 2002/02/25 00:50:27 drobbins Exp $
 
-S=${WORKDIR}/Gconf-${PV}
+S=${WORKDIR}/GConf-${PV}
 DESCRIPTION="Gconf"
 SRC_URI="ftp://ftp.gnome.org/pub/GNOME/stable/sources/GConf/GConf-${PV}.tar.gz"
 HOMEPAGE="http://www.gnome.org/"
