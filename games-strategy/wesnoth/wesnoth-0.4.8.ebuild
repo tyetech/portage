@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-0.4.8.ebuild,v 1.1 2003/10/22 21:21:07 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-0.4.8.ebuild,v 1.2 2004/01/29 06:14:55 mr_bones_ Exp $
 
 inherit games
 
