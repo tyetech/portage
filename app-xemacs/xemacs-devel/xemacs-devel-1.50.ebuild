@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-xemacs/cvs-repo/gentoo-x86/app-xemacs/xemacs-devel/Attic/xemacs-devel-1.50.ebuild,v 1.4 2004/03/13 00:15:38 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-xemacs/cvs-repo/gentoo-x86/app-xemacs/xemacs-devel/Attic/xemacs-devel-1.50.ebuild,v 1.5 2004/06/24 23:25:34 agriffis Exp $
 
 SLOT="0"
 IUSE=""
