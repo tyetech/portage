@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/file-roller/Attic/file-roller-2.4.1.1.ebuild,v 1.3 2003/12/13 01:03:53 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/file-roller/Attic/file-roller-2.4.1.1.ebuild,v 1.4 2004/01/06 18:47:42 gustavoz Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://fileroller.sourceforge.net/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc ~alpha ~sparc hppa ~amd64"
+KEYWORDS="x86 ~ppc ~alpha sparc hppa ~amd64"
 
 DEPEND=">=dev-libs/glib-2
 	>=x11-libs/gtk+-2.1
