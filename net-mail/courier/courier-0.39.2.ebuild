@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/courier/Attic/courier-0.39.2.ebuild,v 1.2 2002/10/04 06:07:03 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/courier/Attic/courier-0.39.2.ebuild,v 1.3 2002/10/05 05:39:22 drobbins Exp $
+
+IUSE="gdbm tcltk postgres ldap berkdb mysql pam"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="An MTA designed specifically for maildirs"

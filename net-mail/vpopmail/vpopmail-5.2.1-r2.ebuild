@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vpopmail/Attic/vpopmail-5.2.1-r2.ebuild,v 1.7 2002/10/04 06:10:09 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vpopmail/Attic/vpopmail-5.2.1-r2.ebuild,v 1.8 2002/10/05 05:39:23 drobbins Exp $
+
+IUSE="mysql"
 
 # TODO: all ldap, sybase support
 S=${WORKDIR}/${P}
