@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/Attic/openbox-2.0.0-r1.ebuild,v 1.1 2002/09/04 12:18:43 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/Attic/openbox-2.0.0-r2.ebuild,v 1.1 2002/09/05 04:34:53 seemant Exp $
 
 inherit commonbox
 
