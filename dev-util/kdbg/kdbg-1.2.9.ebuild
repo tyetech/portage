@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kdbg/Attic/kdbg-1.2.9.ebuild,v 1.6 2004/06/25 02:38:01 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kdbg/Attic/kdbg-1.2.9.ebuild,v 1.7 2004/06/25 19:34:35 agriffis Exp $
 
 inherit kde
 
