@@ -1,13 +1,13 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/reiserfsprogs/Attic/reiserfsprogs-3.1c.ebuild,v 1.2 2002/07/14 19:20:19 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/reiserfsprogs/Attic/reiserfsprogs-3.1c.ebuild,v 1.3 2002/07/16 05:51:04 seemant Exp $
 
 MYPV=3.x.1c-pre3
 S=${WORKDIR}/reiserfsprogs-${MYPV}
 DESCRIPTION="Reiserfs Utilities"
 SRC_URI="ftp://ftp.namesys.com/pub/reiserfsprogs/pre/reiserfsprogs-${MYPV}.tar.gz"
 HOMEPAGE="http://www.namesys.com"
-KEYWORDS="x86"
+KEYWORDS="x86 ppc"
 SLOT="0"
 LICENSE="GPL-2"
 
