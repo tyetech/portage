@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc. 
-# Distributed under the terms of the GNU General Public License, v2 or later 
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/kgpg/Attic/kgpg-0.9.3.ebuild,v 1.2 2002/11/30 02:58:14 hannes Exp $
+# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/kgpg/Attic/kgpg-0.9.3.ebuild,v 1.3 2002/12/08 22:02:14 hannes Exp $
 
 inherit kde-base 
 need-kde 3 
