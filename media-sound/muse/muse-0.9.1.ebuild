@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/muse/Attic/muse-0.9.ebuild,v 1.7 2005/01/21 21:29:29 luckyduck Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/muse/Attic/muse-0.9.1.ebuild,v 1.1 2005/01/21 21:29:29 luckyduck Exp $
 
 IUSE="ncurses gtk debug"
 
@@ -24,11 +24,14 @@ DEPEND="media-sound/lame
 	ncurses? ( sys-libs/ncurses )
 	gtk? ( =x11-libs/gtk+-1*
 	>=dev-libs/glib-1 )"
+RESTRICT="nomirror"
+
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${P}-locale-Makefile.patch
+	epatch ${FILESDIR}/${P}-include.patch
+	epatch ${FILESDIR}/${P}-miscfixes.patch
 }
 
 src_compile() {
@@ -37,7 +40,7 @@ src_compile() {
 	`use_with ncurses rubik` \
 	`use_enable debug` || die "econf failed"
 
-	emake CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" || die "emake failed"
+	emake CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS} -fpermissive" || die "emake failed"
 }
 
 src_install() {
