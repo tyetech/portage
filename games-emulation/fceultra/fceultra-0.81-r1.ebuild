@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/fceultra/Attic/fceultra-081-r1.ebuild,v 1.1 2003/09/17 10:07:04 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/fceultra/Attic/fceultra-0.81-r1.ebuild,v 1.1 2003/11/10 14:48:09 vapier Exp $
 
 inherit gcc
 
