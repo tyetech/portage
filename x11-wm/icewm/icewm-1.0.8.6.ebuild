@@ -1,5 +1,5 @@
 #Author Nathaniel Hirsch <nh2@njit.edu>
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/icewm/Attic/icewm-1.0.8.6.ebuild,v 1.3 2001/08/30 17:31:36 pm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/icewm/Attic/icewm-1.0.8.6.ebuild,v 1.4 2001/08/31 03:23:39 pm Exp $
 
 
 A=icewm-1.0.8-6.tar.gz

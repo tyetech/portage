@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Bruce A. Locke <blocke@shivan.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-0.18_pre.ebuild,v 1.3 2001/08/30 17:31:35 pm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-0.18_pre.ebuild,v 1.4 2001/08/31 03:23:39 pm Exp $
 
 
 MY_P="MPlayer-0.18pre"
