@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/fbi/Attic/fbi-1.25.ebuild,v 1.12 2004/06/24 22:36:36 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/fbi/Attic/fbi-1.25.ebuild,v 1.13 2005/01/17 19:20:28 spock Exp $
 
 DESCRIPTION="fbi a framebuffer image viewer"
 HOMEPAGE="http://bytesex.org/fbi.html"
