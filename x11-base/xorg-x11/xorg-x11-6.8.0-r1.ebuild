@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-x11/Attic/xorg-x11-6.8.0-r1.ebuild,v 1.4 2004/09/18 10:26:25 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-x11/Attic/xorg-x11-6.8.0-r1.ebuild,v 1.5 2004/09/18 12:16:26 gmsoft Exp $
 
 # Set TDFX_RISKY to "yes" to get 16-bit, 1024x768 or higher on low-memory
 # voodoo3 cards.
@@ -380,6 +380,9 @@ host_def_setup() {
 		if use hppa
 		then
 			echo "#define DoLoadableServer NO" >> ${HOSTCONF}
+			echo "#define BuildXF86DRI NO" >> config/cf/host.def
+			echo "#undef DriDrivers" >> config/cf/host.def
+			echo "#define XF86CardDrivers fbdev" >> config/cf/host.def
 		fi
 
 		if use alpha
