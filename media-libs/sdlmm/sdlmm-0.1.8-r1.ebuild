@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdlmm/sdlmm-0.1.8-r1.ebuild,v 1.3 2002/10/04 21:04:43 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdlmm/sdlmm-0.1.8-r1.ebuild,v 1.4 2002/10/20 18:49:12 vapier Exp $
 
 MY_P="${P/sdl/SDL}"
 S=${WORKDIR}/${MY_P}
@@ -13,7 +13,6 @@ LICENSE="LGPL-2"
 KEYWORDS="x86 sparc sparc64"
 
 DEPEND=">=media-libs/libsdl-1.2.4"
-RDEPEND="${DEPEND}"
 
 src_compile() {
 	econf || die
