@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsoup/Attic/libsoup-2.2.1.ebuild,v 1.9 2004/12/11 09:47:11 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsoup/Attic/libsoup-2.2.1.ebuild,v 1.10 2004/12/17 20:11:58 corsair Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="LGPL-2"
 SLOT="2.2"
-KEYWORDS="x86 alpha amd64 ~arm ~hppa ~ia64 ~mips ppc sparc ~ppc64"
+KEYWORDS="x86 alpha amd64 ~arm ~hppa ~ia64 ~mips ppc sparc ppc64"
 IUSE="ssl doc ipv6"
 
 RDEPEND=">=dev-libs/glib-2
