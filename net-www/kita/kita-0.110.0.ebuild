@@ -1,20 +1,16 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/kita/Attic/kita-0.10.2.1.ebuild,v 1.2 2004/03/14 10:05:14 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/kita/Attic/kita-0.110.0.ebuild,v 1.1 2004/04/11 14:45:30 usata Exp $
 
 IUSE=""
 
-MY_PV="`echo ${PV} | sed 's/\([0-9]*\).\([0-9]*\).\(.*\)/\1.\2\3/g'`"
-
-MY_P="${PN}-${MY_PV}"
-
 DESCRIPTION="Kita - 2ch client for KDE"
 HOMEPAGE="http://kita.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/kita/8449/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge.jp/kita/9093/${P}.tar.gz"
 
 LICENSE="GPL-2 BSD"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 DEPEND="virtual/glibc
 	>=x11-libs/qt-3.1
@@ -36,18 +32,16 @@ DEPEND="virtual/glibc
 #	>=kde-base/kde-3.1
 # see http://dev.gentoo.org/~liquidx/ebuildmistakes.html
 
-S=${WORKDIR}/${MY_P}
-
 src_compile() {
 	addwrite ${QTDIR}/etc
 
 	econf || die
-	cd kita ; emake -j1 || die ; cd -
+	emake -j1 || die
 }
 
 src_install() {
 
-	cd kita ; make DESTDIR=${D} install || die ; cd -
+	make DESTDIR=${D} install || die
 
 	dodoc AUTHORS ChangeLog INSTALL NEWS README
 }
