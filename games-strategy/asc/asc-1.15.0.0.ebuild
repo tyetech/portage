@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/asc/Attic/asc-1.15.0.0.ebuild,v 1.2 2004/06/24 12:50:29 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/asc/Attic/asc-1.15.0.0.ebuild,v 1.3 2004/06/24 23:25:55 agriffis Exp $
 
 inherit games
 

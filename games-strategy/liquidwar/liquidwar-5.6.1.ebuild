@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/liquidwar/Attic/liquidwar-5.6.1.ebuild,v 1.1 2004/01/13 06:17:30 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/liquidwar/Attic/liquidwar-5.6.1.ebuild,v 1.2 2004/06/24 23:28:25 agriffis Exp $
 
 inherit games flag-o-matic
 

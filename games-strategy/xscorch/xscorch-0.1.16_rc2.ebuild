@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/xscorch/Attic/xscorch-0.1.16_rc2.ebuild,v 1.4 2004/03/10 21:14:32 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/xscorch/Attic/xscorch-0.1.16_rc2.ebuild,v 1.5 2004/06/24 23:30:56 agriffis Exp $
 
 inherit eutils games
 

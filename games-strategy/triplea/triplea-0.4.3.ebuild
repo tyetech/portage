@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/triplea/Attic/triplea-0.4.3.ebuild,v 1.1 2004/05/10 12:19:37 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/triplea/Attic/triplea-0.4.3.ebuild,v 1.2 2004/06/24 23:29:29 agriffis Exp $
 
 inherit games
 
