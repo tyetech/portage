@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/sdcc/Attic/sdcc-2.4.0_p20040304.ebuild,v 1.7 2004/04/14 22:40:36 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/sdcc/Attic/sdcc-2.4.0_p20040304.ebuild,v 1.8 2004/05/09 23:17:56 dragonheart Exp $
 
 S=${WORKDIR}/${PN}
 MY_PV=${PV/*_p/}
@@ -11,7 +11,7 @@ HOMEPAGE="http://sdcc.sourceforge.net/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ~ppc"
 
 IUSE="doc"
 DEPEND="virtual/glibc
