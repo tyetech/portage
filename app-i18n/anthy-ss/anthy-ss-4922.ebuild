@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/anthy-ss/Attic/anthy-ss-4922.ebuild,v 1.1 2004/01/25 15:34:34 hattya Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/anthy-ss/Attic/anthy-ss-4922.ebuild,v 1.2 2004/01/25 15:52:14 hattya Exp $
 
 inherit elisp-common
 
@@ -65,6 +65,7 @@ pkg_postinst() {
 
 pkg_postrm() {
 
-	elisp-site-regen
+	use emacs && elisp-site-regen
+
 
 }
