@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Jerry Alexandratos <jerry@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.0.33.ebuild,v 1.2 2002/01/27 07:08:54 blocke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.0.35.ebuild,v 1.1 2002/03/21 10:57:18 m0rpheus Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
