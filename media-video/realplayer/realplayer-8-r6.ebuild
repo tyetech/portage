@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/realplayer/Attic/realplayer-8-r6.ebuild,v 1.6 2003/09/07 00:08:13 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/realplayer/Attic/realplayer-8-r6.ebuild,v 1.7 2003/09/07 19:21:16 weeve Exp $
 
 inherit nsplugins
 
@@ -35,7 +35,9 @@ LICENSE="realplayer8"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha"
 
-DEPEND="virtual/glibc"
+# Fix for bug 15314
+DEPEND="virtual/glibc
+	sparc? ( sys-libs/lib-compat )"
 RDEPEND="virtual/x11"
 RESTRICT="nostrip fetch"
 
