@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/kompose/Attic/kompose-0.5.ebuild,v 1.1 2004/10/31 00:00:14 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/kompose/Attic/kompose-0.5.ebuild,v 1.2 2004/11/23 15:50:26 carlo Exp $
 
 inherit kde
 
@@ -10,7 +10,7 @@ SRC_URI="http://download.berlios.de/kompose/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="x86 ~ppc ~amd64"
 IUSE=""
 
 DEPEND="media-libs/imlib2"
