@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/groupoffice/Attic/groupoffice-2.09.ebuild,v 1.2 2005/03/28 13:54:54 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/groupoffice/Attic/groupoffice-2.11a.ebuild,v 1.1 2005/03/28 13:54:54 mholzer Exp $
 
 inherit webapp
 
