@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/tramp/Attic/tramp-2.0.36.ebuild,v 1.2 2003/09/09 00:07:22 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/tramp/Attic/tramp-2.0.36.ebuild,v 1.3 2004/03/04 19:13:54 usata Exp $
 
 inherit elisp
 
@@ -8,7 +8,7 @@ IUSE=""
 
 DESCRIPTION="TRAMP is a package for editing remote files similar to ange-ftp but with rlogin, telnet and/or ssh"
 HOMEPAGE="http://savannah.nongnu.org/projects/tramp/"
-SRC_URI="http://savannah.nongnu.org/download/tramp/${P}.tar.gz"
+SRC_URI="mirror://gentoo/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
