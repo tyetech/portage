@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dchub/Attic/dchub-0.4.2.ebuild,v 1.5 2004/07/01 09:13:42 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dchub/Attic/dchub-0.4.2.ebuild,v 1.6 2004/07/05 17:38:59 squinky86 Exp $
 
 IUSE=""
 
-HOMEPAGE="http://www.ac2i.tzo.com/dctc/#dchub"
+HOMEPAGE="http://ac2i.homelinux.com/dctc/#dchub"
 DESCRIPTION="dchub (Direct Connect Hub), a linux hub for the p2p 'direct connect'"
-SRC_URI="http://ac2i.tzo.com/dctc/${P}.tar.gz"
+SRC_URI="http://ac2i.homelinux.com/dctc/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
