@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/entrance/Attic/entrance-0.9.0.20031115.ebuild,v 1.1 2003/11/16 00:16:21 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/entrance/Attic/entrance-0.9.0.20031129.ebuild,v 1.1 2003/11/30 02:42:55 vapier Exp $
 
 inherit enlightenment eutils
 
