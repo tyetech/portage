@@ -1,10 +1,11 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/xfsprogs/Attic/xfsprogs-20020330-r1.ebuild,v 1.5 2002/10/19 17:08:06 bjb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/xfsprogs/Attic/xfsprogs-2.0.1_p20020330.ebuild,v 1.1 2002/12/22 05:29:35 drobbins Exp $
 
 S=${WORKDIR}/cmd/${PN}
+OPV=20020330
 DESCRIPTION="xfs filesystem utilities"
-SRC_URI="http://www.ibiblio.org/gentoo/distfiles/xfs-cmd-${PV}.tar.bz2"
+SRC_URI="http://www.ibiblio.org/gentoo/distfiles/xfs-cmd-${OPV}.tar.bz2"
 HOMEPAGE="http://oss.sgi.com/projects/xfs"
 KEYWORDS="x86 ppc alpha"
 SLOT="0"

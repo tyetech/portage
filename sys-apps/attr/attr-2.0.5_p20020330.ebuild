@@ -1,10 +1,11 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/attr/Attic/attr-20020330.ebuild,v 1.8 2002/12/09 04:37:24 manson Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/attr/Attic/attr-2.0.5_p20020330.ebuild,v 1.1 2002/12/22 05:29:35 drobbins Exp $
 
 S=${WORKDIR}/cmd/${PN}
+OPV=20020330
 DESCRIPTION="xfs extended attributes tools"
-SRC_URI="http://www.ibiblio.org/gentoo/distfiles/xfs-cmd-${PV}.tar.bz2"
+SRC_URI="http://www.ibiblio.org/gentoo/distfiles/xfs-cmd-${OPV}.tar.bz2"
 HOMEPAGE="http://oss.sgi.com/projects/xfs"
 KEYWORDS="x86 ppc sparc "
 SLOT="0"
