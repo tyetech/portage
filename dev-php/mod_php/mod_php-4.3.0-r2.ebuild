@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.0-r2.ebuild,v 1.4 2003/02/07 21:41:14 rphillips Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.0-r2.ebuild,v 1.5 2003/02/13 11:30:03 vapier Exp $
 
 inherit flag-o-matic 
 
