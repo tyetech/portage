@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/newsyslog/newsyslog-1.1.ebuild,v 1.8 2004/04/25 21:38:40 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/newsyslog/newsyslog-1.1.ebuild,v 1.9 2004/05/04 13:39:25 kloeri Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.weird.com/pub/local/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="MIT"
-KEYWORDS="x86 ~ppc ~sparc ~alpha hppa ~mips"
+KEYWORDS="x86 ~ppc ~sparc alpha hppa ~mips"
 
 DEPEND="sys-apps/groff"
 RDEPEND="virtual/cron
