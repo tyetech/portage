@@ -1,13 +1,13 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTML_QuickForm/Attic/PEAR-HTML_QuickForm-3.2.1-r1.ebuild,v 1.4 2005/01/09 21:05:36 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTML_QuickForm/Attic/PEAR-HTML_QuickForm-3.2.1-r1.ebuild,v 1.5 2005/03/08 16:53:39 sebastian Exp $
 
 inherit php-pear
 
 DESCRIPTION="The PEAR::HTML_QuickForm package provides methods for creating, validating, processing HTML forms."
 LICENSE="PHP"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~sparc ~ppc ~ia64 ~amd64"
 DEPEND=">=dev-php/PEAR-HTML_Common-1.2.1
 		dev-php/PEAR-HTML_Template_Flexy
 		dev-php/PEAR-HTML_Template_IT"
