@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/kmplayer/Attic/kmplayer-0.8b.ebuild,v 1.2 2003/10/04 17:11:17 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/kmplayer/Attic/kmplayer-0.8.1.ebuild,v 1.1 2003/11/12 17:27:46 caleb Exp $
 
 inherit kde-base
 need-kde 3.1
