@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/vixie-cron/Attic/vixie-cron-3.0.1-r3.ebuild,v 1.9 2004/06/24 22:32:23 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/vixie-cron/Attic/vixie-cron-3.0.1-r3.ebuild,v 1.10 2004/08/17 21:04:23 swegener Exp $
 
 inherit eutils
 
@@ -10,7 +10,8 @@ SELINUX_PATCH="${P}-selinux.diff.bz2"
 
 DESCRIPTION="The Vixie cron daemon"
 HOMEPAGE="http://www.vix.com/"
-SRC_URI="mirror://gentoo/${P}.tar.bz2"
+SRC_URI="mirror://gentoo/${P}.tar.bz2
+	mirror://gentoo/${P}-gentoo.patch.bz2"
 
 SLOT="0"
 LICENSE="as-is"
@@ -32,7 +33,7 @@ src_unpack() {
 
 	cd ${S}
 
-	epatch ${FILESDIR}/${P}-gentoo.patch
+	epatch ${WORKDIR}/${P}-gentoo.patch
 	epatch ${FILESDIR}/${P}-close_stdin.diff
 
 	use selinux && epatch ${FILESDIR}/${SELINUX_PATCH}
