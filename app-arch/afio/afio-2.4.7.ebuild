@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/afio/Attic/afio-2.4.7.ebuild,v 1.19 2004/06/13 12:32:24 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/afio/Attic/afio-2.4.7.ebuild,v 1.20 2004/06/24 21:27:01 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/cksfv/Attic/cksfv-1.3.ebuild,v 1.12 2004/05/28 15:40:59 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/cksfv/Attic/cksfv-1.3.ebuild,v 1.13 2004/06/24 21:29:00 agriffis Exp $
 
 inherit eutils
 

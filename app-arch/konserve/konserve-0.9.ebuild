@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/konserve/Attic/konserve-0.9.ebuild,v 1.3 2004/05/01 11:07:00 centic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/konserve/Attic/konserve-0.9.ebuild,v 1.4 2004/06/24 21:32:12 agriffis Exp $
 
 inherit kde
 need-kde 3

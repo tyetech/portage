@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/pax/Attic/pax-3.3.4.ebuild,v 1.7 2004/05/04 13:57:18 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/pax/Attic/pax-3.3.4.ebuild,v 1.8 2004/06/24 21:34:16 agriffis Exp $
 
 inherit eutils rpm
 

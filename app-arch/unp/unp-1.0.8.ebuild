@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/unp/Attic/unp-1.0.8.ebuild,v 1.3 2004/03/12 11:02:39 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/unp/Attic/unp-1.0.8.ebuild,v 1.4 2004/06/24 21:37:48 agriffis Exp $
 
 DESCRIPTION="Script for unpacking various file formats"
 HOMEPAGE="http://packages.qa.debian.org/u/unp.html"

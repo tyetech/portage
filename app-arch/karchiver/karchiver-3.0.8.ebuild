@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/karchiver/Attic/karchiver-3.0.8.ebuild,v 1.3 2004/06/06 15:38:19 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/karchiver/Attic/karchiver-3.0.8.ebuild,v 1.4 2004/06/24 21:31:47 agriffis Exp $
 
 inherit kde
 need-kde 3.1

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/hdup/Attic/hdup-1.6.29-r1.ebuild,v 1.2 2004/05/01 17:21:23 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/hdup/Attic/hdup-1.6.29-r1.ebuild,v 1.3 2004/06/24 21:31:36 agriffis Exp $
 
 inherit eutils
 

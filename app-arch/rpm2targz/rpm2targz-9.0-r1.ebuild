@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/rpm2targz/Attic/rpm2targz-9.0-r1.ebuild,v 1.14 2004/06/13 12:39:11 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/rpm2targz/Attic/rpm2targz-9.0-r1.ebuild,v 1.15 2004/06/24 21:35:43 agriffis Exp $
 
 inherit eutils
 

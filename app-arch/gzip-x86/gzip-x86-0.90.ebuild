@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/gzip-x86/Attic/gzip-x86-0.90.ebuild,v 1.3 2004/06/06 14:35:35 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/gzip-x86/Attic/gzip-x86-0.90.ebuild,v 1.4 2004/06/24 21:31:26 agriffis Exp $
 
 
 MY_P=${PN/-/_}-${PV}

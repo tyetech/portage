@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/par/par-1.1.ebuild,v 1.17 2004/05/31 19:41:37 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/par/par-1.1.ebuild,v 1.18 2004/06/24 21:33:50 agriffis Exp $
 
 DESCRIPTION="Parchive archive fixing tool"
 HOMEPAGE="http://parchive.sourceforge.net/"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/star/Attic/star-1.5_alpha14.ebuild,v 1.6 2004/05/31 19:41:37 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/star/Attic/star-1.5_alpha14.ebuild,v 1.7 2004/06/24 21:36:20 agriffis Exp $
 
 S=${WORKDIR}/${P/_alpha[0-9][0-9]}
 
