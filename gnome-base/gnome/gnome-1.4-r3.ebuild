@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-1.4-r3.ebuild,v 1.11 2004/02/22 20:46:20 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-1.4-r3.ebuild,v 1.12 2004/03/17 22:47:52 leonardop Exp $
 
 S=${WORKDIR}
 DESCRIPTION="GNOME 1.4 - merge this package to merge all GNOME base packages"
