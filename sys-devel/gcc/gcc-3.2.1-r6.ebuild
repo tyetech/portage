@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc/Attic/gcc-3.2.1-r6.ebuild,v 1.10 2003/02/08 19:52:28 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc/Attic/gcc-3.2.1-r6.ebuild,v 1.11 2003/02/13 16:31:20 vapier Exp $
 
 IUSE="static nls bootstrap java build"
 
