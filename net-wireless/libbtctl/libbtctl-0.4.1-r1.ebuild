@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/libbtctl/Attic/libbtctl-0.4.1-r1.ebuild,v 1.2 2005/02/22 17:06:43 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/libbtctl/Attic/libbtctl-0.4.1-r1.ebuild,v 1.3 2005/03/11 03:21:58 latexer Exp $
 
 inherit gnome2 mono
 
@@ -19,7 +19,7 @@ RDEPEND=">=dev-libs/glib-2
 	>=dev-libs/openobex-1
 	>=dev-lang/python-2.3
 	>=dev-python/pygtk-2.0
-	!sparc? ( mono? ( >=dev-dotnet/mono-0.96 ) )"
+	!sparc? ( mono? ( >=dev-lang/mono-0.96 ) )"
 
 DEPEND="${RDEPEND}
 	dev-util/intltool

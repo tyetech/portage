@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/libbtctl/Attic/libbtctl-0.3.ebuild,v 1.13 2005/02/22 17:06:43 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/libbtctl/Attic/libbtctl-0.3.ebuild,v 1.14 2005/03/11 03:21:58 latexer Exp $
 
 inherit gnome2
 
