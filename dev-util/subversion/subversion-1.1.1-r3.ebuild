@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/subversion/Attic/subversion-1.1.1-r3.ebuild,v 1.9 2004/12/19 18:58:25 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/subversion/Attic/subversion-1.1.1-r3.ebuild,v 1.10 2005/01/10 22:48:09 trapni Exp $
 
 inherit elisp-common libtool python eutils bash-completion
 
