@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/ypbind/Attic/ypbind-1.11-r1.ebuild,v 1.7 2002/10/05 05:39:23 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/ypbind/Attic/ypbind-1.11-r1.ebuild,v 1.8 2002/12/09 04:33:19 manson Exp $
 
 IUSE="nls"
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.linux-nis.org/nis/ypbind-mt/index.html"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 sparc sparc64"
+KEYWORDS="x86 sparc "
 
 DEPEND="net-nds/yp-tools
 	net-nds/portmap"
