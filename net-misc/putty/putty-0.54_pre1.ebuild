@@ -1,24 +1,22 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/putty/Attic/putty-20040313.ebuild,v 1.4 2004/04/17 15:14:10 taviso Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/putty/Attic/putty-0.54_pre1.ebuild,v 1.1 2004/06/01 21:33:54 taviso Exp $
 
 inherit eutils
 
 DESCRIPTION="UNIX port of the famous Telnet and SSH client"
 
 HOMEPAGE="http://www.chiark.greenend.org.uk/~sgtatham/putty/"
-SRC_URI="mirror://gentoo/putty-cvs-${PV}.tar.bz2"
+SRC_URI="mirror://gentoo/putty-cvs-20040313.tar.bz2"
 LICENSE="MIT"
 
 SLOT="0"
-KEYWORDS="x86 ~alpha ~ppc ~sparc"
+KEYWORDS="x86 alpha ~ppc ~sparc ~amd64"
 IUSE="doc"
 
 RDEPEND="=x11-libs/gtk+-1.2* virtual/x11"
 
-DEPEND="${RDEPEND}
-	>=dev-lang/perl-5.8.0
-	>=sys-apps/sed-4"
+DEPEND="${RDEPEND} dev-lang/perl sys-apps/sed"
 
 S=${WORKDIR}/${PN}
 
@@ -35,6 +33,9 @@ src_unpack() {
 	ebegin "Setting CFLAGS"
 	sed -i "s!-O2!${CFLAGS}!g" ${S}/unix/Makefile.gtk
 	eend $?
+
+	# apply ut_time patch for amd64
+	use amd64 && epatch ${FILESDIR}/putty-ut_time.patch
 }
 
 src_compile() {
@@ -60,6 +61,11 @@ src_install() {
 	use doc && dodoc doc/*
 
 	prepallman
+
+	# install desktop file provided by Gustav Schaffter in #49577
+	dodir /usr/share/applications
+	insinto /usr/share/applications
+	doins ${FILESDIR}/putty.desktop
 
 	if test ! -c /dev/ptmx; then
 		ewarn
