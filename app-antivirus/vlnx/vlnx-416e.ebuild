@@ -1,7 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# Script Revised by Parag Mehta <pm@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/vlnx/Attic/vlnx-416e.ebuild,v 1.3 2004/06/24 21:27:14 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/vlnx/Attic/vlnx-416e.ebuild,v 1.4 2004/10/03 22:03:19 swegener Exp $
 
 DAT_VER=4228
 
