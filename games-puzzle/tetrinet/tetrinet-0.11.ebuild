@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/tetrinet/tetrinet-0.11.ebuild,v 1.5 2004/05/12 09:02:46 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/tetrinet/tetrinet-0.11.ebuild,v 1.6 2004/06/04 21:28:07 jhuebel Exp $
 
 inherit games flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="http://tetrinet.or.cz/download/${P}.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 ~amd64"
 IUSE="ipv6"
 
 RDEPEND=">=sys-libs/ncurses-5"
