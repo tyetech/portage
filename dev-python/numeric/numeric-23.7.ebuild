@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/numeric/Attic/numeric-23.0.ebuild,v 1.5 2005/01/21 16:49:57 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/numeric/Attic/numeric-23.7.ebuild,v 1.1 2005/01/21 16:49:57 carlo Exp $
 
-inherit distutils
+inherit distutils eutils
 
 MY_P=${P/n/N}
 S=${WORKDIR}/${MY_P}
@@ -13,11 +13,18 @@ HOMEPAGE="http://www.pfdubois.com/numpy/"
 
 IUSE=""
 SLOT="0"
-KEYWORDS="x86 ~ppc ~sparc ~alpha"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~amd64"
 LICENSE="as-is"
 
 # 2.1 gave sandbox violations see #21
 DEPEND=">=dev-lang/python-2.2"
+
+src_unpack() {
+	unpack ${A}
+
+	cd ${S}
+	epatch ${FILESDIR}/${P}.patch
+}
 
 src_install() {
 
@@ -29,7 +36,3 @@ src_install() {
 	doins Demo/NumTut/*
 
 }
-
-
-
-
