@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/prelude-nids/Attic/prelude-nids-0.8.6.ebuild,v 1.4 2004/04/17 14:33:59 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/prelude-nids/Attic/prelude-nids-0.8.6.ebuild,v 1.5 2004/06/24 22:16:17 agriffis Exp $
 
 inherit flag-o-matic
 

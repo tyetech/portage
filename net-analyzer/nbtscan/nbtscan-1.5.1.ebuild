@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nbtscan/Attic/nbtscan-1.5.1.ebuild,v 1.2 2004/03/29 13:49:55 mboman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nbtscan/Attic/nbtscan-1.5.1.ebuild,v 1.3 2004/06/24 22:09:50 agriffis Exp $
 
 S=${WORKDIR}/${P}a
 DESCRIPTION="NBTscan is a program for scanning IP networks for NetBIOS name information"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.49-r1.ebuild,v 1.12 2004/06/05 13:45:04 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.49-r1.ebuild,v 1.13 2004/06/24 22:07:52 agriffis Exp $
 
 IUSE="gtk"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/prelude-nagios/Attic/prelude-nagios-0.0.3.ebuild,v 1.2 2004/03/20 06:37:02 mboman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/prelude-nagios/Attic/prelude-nagios-0.0.3.ebuild,v 1.3 2004/06/24 22:15:55 agriffis Exp $
 
 inherit eutils
 

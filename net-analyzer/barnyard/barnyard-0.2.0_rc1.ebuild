@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/barnyard/Attic/barnyard-0.2.0_rc1.ebuild,v 1.1 2004/03/29 12:26:53 mboman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/barnyard/Attic/barnyard-0.2.0_rc1.ebuild,v 1.2 2004/06/24 21:57:08 agriffis Exp $
 
 IUSE="mysql"
 

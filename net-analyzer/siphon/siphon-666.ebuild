@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/siphon/siphon-666.ebuild,v 1.4 2004/03/22 12:38:40 mboman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/siphon/siphon-666.ebuild,v 1.5 2004/06/24 22:17:53 agriffis Exp $
 
 IUSE=""
 MY_P=${PN}-v.${PV}

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sonar/Attic/sonar-1.2.2.ebuild,v 1.2 2004/05/12 15:27:49 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sonar/Attic/sonar-1.2.2.ebuild,v 1.3 2004/06/24 22:19:09 agriffis Exp $
 
 inherit gcc
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mbrowse/Attic/mbrowse-0.3.1.ebuild,v 1.1 2004/02/10 18:54:23 anti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mbrowse/Attic/mbrowse-0.3.1.ebuild,v 1.2 2004/06/24 22:07:14 agriffis Exp $
 
 DESCRIPTION="MBrowse is a graphical MIB browser"
 HOMEPAGE="http://www.kill-9.org/mbrowse/index.html"
