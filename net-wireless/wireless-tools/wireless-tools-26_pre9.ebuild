@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wireless-tools/Attic/wireless-tools-26_pre9.ebuild,v 1.5 2003/05/31 04:34:30 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wireless-tools/Attic/wireless-tools-26_pre9.ebuild,v 1.6 2004/03/19 03:42:49 latexer Exp $
 
 MY_P=wireless_tools.${PV/_/\.}
 S=${WORKDIR}/${MY_P/.pre9/}
