@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/cdcat/Attic/cdcat-0.2.ebuild,v 1.3 2002/07/25 16:55:21 seemant Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/cdcat/Attic/cdcat-0.2.ebuild,v 1.4 2002/10/04 04:54:23 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="CD Catalog is a simple yet effective CD indexing program."
