@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.2.4-r5.ebuild,v 1.1 2003/06/24 01:09:31 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.2.4-r5.ebuild,v 1.2 2003/06/24 11:24:33 foser Exp $
 
 inherit gnome2 eutils
 
@@ -51,7 +51,7 @@ src_unpack() {
 	if [ `use cups` ]; then
 		epatch ${FILESDIR}/${PN}-2-x-printers.patch
 		WANT_AUTOCONF_2_5=1 autoconf || die
-		automake || die
+		WANT_AUTOMAKE=1.4 automake || die
 	fi
 }
 
