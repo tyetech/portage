@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-DT/Attic/XML-DT-0.32.ebuild,v 1.1 2004/09/22 14:37:40 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-DT/Attic/XML-DT-0.32.ebuild,v 1.2 2004/10/01 20:24:46 mcummings Exp $
 
 inherit perl-module
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://search/cpan/org/~jjoao/${P}/"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~sparc"
 IUSE=""
 
 SRC_TEST="do"
