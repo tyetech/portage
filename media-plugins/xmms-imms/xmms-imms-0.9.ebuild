@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-imms/Attic/xmms-imms-0.9.ebuild,v 1.1 2003/08/14 18:56:54 g2boojum Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-imms/Attic/xmms-imms-0.9.ebuild,v 1.2 2003/09/05 18:35:50 dholm Exp $
 
 IUSE=""
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.luminal.org/phpwiki/index.php/IMMS"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 
 DEPEND="dev-db/sqlite
 	media-libs/id3lib
