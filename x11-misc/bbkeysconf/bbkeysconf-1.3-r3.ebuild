@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Joe Bormolini <lordjoe@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbkeysconf/Attic/bbkeysconf-1.3-r3.ebuild,v 1.6 2002/07/08 16:58:05 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbkeysconf/Attic/bbkeysconf-1.3-r3.ebuild,v 1.7 2002/07/08 21:31:05 aliz Exp $
 
 inherit kde base || die		# note: base is intended to override kde!
 
@@ -9,6 +9,8 @@ DESCRIPTION="Configure bbkeys"
 SRC_URI="http://movingparts.thelinuxcommunity.org/bbkeys/${P}.tar.gz"
 HOMEPAGE="http://movingparts.thelinuxcommunity.org"
 LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="x86"
 
 newdepend ">=x11-wm/blackbox-0.61 >=x11-misc/bbkeys-0.8.2"
 
