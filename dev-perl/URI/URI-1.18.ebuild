@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/URI/Attic/URI-1.18.ebuild,v 1.7 2002/08/14 04:32:34 murphy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/URI/Attic/URI-1.18.ebuild,v 1.8 2002/09/22 23:14:50 mcummings Exp $
 
 inherit perl-module
 
@@ -14,6 +14,6 @@ LICENSE="Artistic"
 KEYWORDS="x86 ppc sparc sparc64"
 
 DEPEND="${DEPEND}
-	>=dev-perl/MIME-Base64-2.11"
+	dev-perl/MIME-Base64"
 
 mydoc="rfc2396.txt"
