@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mnet/Attic/mnet-0.6.2.383.ebuild,v 1.4 2004/07/01 09:34:34 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mnet/Attic/mnet-0.6.2.383.ebuild,v 1.5 2004/07/03 12:14:54 kloeri Exp $
 
 IUSE="gtk"
 S=${WORKDIR}/${PN}
@@ -12,7 +12,7 @@ HOMEPAGE="http://mnet.sourceforge.net/"
 DEPEND="dev-lang/python"
 RDEPEND="virtual/libc
 	dev-lang/python
-	gtk? ( dev-python/wxPython  )"
+	gtk? ( dev-python/wxpython  )"
 LICENSE="LGPL-2.1"
 KEYWORDS="~x86 ~ppc"
 SLOT="0"
