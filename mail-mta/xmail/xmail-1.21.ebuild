@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/xmail/Attic/xmail-1.16.ebuild,v 1.6 2005/01/27 17:25:35 superlag Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/xmail/Attic/xmail-1.21.ebuild,v 1.1 2005/01/27 17:25:35 superlag Exp $
 
 inherit eutils
 
@@ -10,10 +10,11 @@ SRC_URI="http://www.xmailserver.org/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~sparc ~ppc"
+KEYWORDS="~x86 ~ppc ~sparc"
 IUSE=""
 
-DEPEND="virtual/libc"
+DEPEND="virtual/libc
+	>=sys-apps/sed-4"
 PROVIDE="virtual/mta"
 
 pkg_setup() {
@@ -22,19 +23,24 @@ pkg_setup() {
 }
 
 src_compile() {
-	if use x86 ; then
-		emake -f Makefile.lnx || die
-	elif use sparc ; then
-		emake -f Makefile.slx || die
-	fi
-	sed -e "s:/var/MailRoot:/etc/xmail:g" sendmail.sh > sendmail.sh.new
+	sed -i -e "s:^CFLAGS = -O2:CFLAGS=$CFLAGS:g" Makefile.lnx
+
+	# Makefile does not setup dependencies properly to handle parallel build
+	emake -j1 -f Makefile.lnx || die
+
+	sed -e "s:/var/MailRoot:/chroot/xmail/var/MailRoot:g" sendmail.sh > sendmail.sh.new
 }
 
 src_install() {
+	# create some image directories with default diropts
+	dodir /etc/conf.d
+	dodir /etc/init.d
+	dodir /etc/env.d
+
 	einfo "Setting up directory hierarchy"
 	diropts -m 700 -o xmail -g xmail
 	dodir /etc/xmail
-	dodir /chroot/xmail/var/MailRoot/bin
+	keepdir /chroot/xmail/var/MailRoot/bin
 	dodir /etc/xmail/tabindex
 	dodir /etc/xmail/dnscache/mx
 	dodir /etc/xmail/dnscache/ns
@@ -44,19 +50,15 @@ src_install() {
 	dodir /etc/init.d
 	dodir /etc/conf.d
 
-	touch ${D}/chroot/xmail/var/MailRoot/bin/.keep
-
 	for i in cmdaliases custdomains domains filters pop3linklocks\
 		pop3links pop3locks userauth
 	do
-		dodir /etc/xmail/${i}
-		touch ${D}/etc/xmail/${i}/.keep
+		keepdir /etc/xmail/${i}
 	done
 
 	for i in pop3 smtp
 	do
-		dodir /etc/xmail/userauth/${i}
-		touch ${D}/etc/xmail/userauth/${i}/.keep
+		keepdir /etc/xmail/userauth/${i}
 	done
 	rm -f ${D}/etc/xmail/userauth/.keep
 
@@ -68,17 +70,17 @@ src_install() {
 		message.id pop3.ipmap.tab smtp.ipmap.tab\
 		userdef.tab
 
-	umask 077
 	for i in mailusers extaliases domains mailusers aliases \
 		aliasdomain extaliases pop3links smtpauth smtpextauth \
 		smtpfwd smtprelay smtpgw spam-address spammers ctrlaccounts \
 		filters.in filters.out
 	do
 		touch ${D}/etc/xmail/${i}.tab
+		fowners xmail:xmail /etc/xmail/${i}.tab
+		fperms 600 /etc/xmail/${i}.tab
 	done
 
 	einfo "Installing the XMail documentation"
-	umask 022
 	dodoc ${S}/docs/*
 	dodoc ${S}/gpl.txt
 	dodoc ${S}/ToDo.txt
@@ -91,13 +93,15 @@ src_install() {
 	newexe ${FILESDIR}/xmail.initd xmail
 	insinto /etc/conf.d
 	newins ${FILESDIR}/xmail.confd xmail
-	cd ${S}
-	insopts -o xmail -g xmail -m 4700
-	newsbin sendmail sendmail.xmail
-	insopts -o xmail -g xmail -m 700
+	cd ${S}/bin
+	exeopts -o xmail -g xmail -m 4700
+	exeinto /usr/sbin
+	newexe sendmail sendmail.xmail
+	exeopts -o root -g root -m 755
+	newexe ../sendmail.sh.new sendmail
+	exeopts -o xmail -g xmail -m 700
 	exeinto /chroot/xmail/var/MailRoot/bin
 	doexe CtrlClnt XMail XMCrypt MkUsers
-	newsbin sendmail.sh.new sendmail
 }
 
 pkg_postinst() {
@@ -121,7 +125,8 @@ pkg_postinst() {
 
 	einfo "You can quickly configure XMail by running ${FILESDIR}/xmailwizard."
 
-	ewarn ""
-	ewarn "Make sure you have iptables enabled in your kernel!"
-	ewarn ""
+	ewarn
+	ewarn "Make sure you have iptables/netfilter with connection tracking"
+	ewarn "and the REDIRECT target enabled in your kernel!"
+	ewarn
 }
