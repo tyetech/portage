@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pmacct/Attic/pmacct-0.7.0.ebuild,v 1.2 2005/01/09 07:44:27 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pmacct/Attic/pmacct-0.7.9.ebuild,v 1.1 2005/01/09 07:44:27 dragonheart Exp $
 
 DESCRIPTION="A network tool to gather ip traffic informations"
 HOMEPAGE="http://www.ba.cnr.it/~paolo/pmacct/"
@@ -8,16 +8,17 @@ SRC_URI="http://www.ba.cnr.it/~paolo/pmacct/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
-IUSE="mysql postgres"
+KEYWORDS="~x86 ~ppc"
+IUSE="mysql postgres mmap"
 
-RDEPEND="net-libs/libpcap
+RDEPEND=">=net-libs/libpcap-0.6
 	mysql? ( dev-db/mysql )
 	postgres? ( dev-db/postgresql )"
 
 src_compile() {
-	econf 	`use_enable mysql mysql` \
+	econf 	`use_enable mysql` \
 		`use_enable postgres pgsql` \
+		`use_enable mmap` \
 		|| die "econf failed"
 
 	emake || die "emake failed"
@@ -25,9 +26,9 @@ src_compile() {
 
 src_install() {
 	make install DESTDIR=${D} || die "make install failed"
-	dodoc README EXAMPLE KNOWN-BUGS CONFIG-KEYS FAQS ChangeLog SIGNALS TODO TOOLS || die "dodoc failed"
+	dodoc README EXAMPLES KNOWN-BUGS CONFIG-KEYS FAQS ChangeLog docs/SIGNALS docs/PLUGINS docs/INTERNALS TODO TOOLS || die "dodoc failed"
 
-	for dirname in examples sql pcap; do
+	for dirname in examples sql; do
 		docinto ${dirname}
 		dodoc ${dirname}/* || die "dodoc failed"
 	done
