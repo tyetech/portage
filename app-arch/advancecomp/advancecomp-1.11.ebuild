@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/advancecomp/Attic/advancecomp-1.11.ebuild,v 1.5 2004/10/02 13:20:57 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/advancecomp/Attic/advancecomp-1.11.ebuild,v 1.6 2005/01/01 11:40:04 eradicator Exp $
 
 inherit eutils
 

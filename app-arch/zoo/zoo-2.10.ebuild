@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/zoo/Attic/zoo-2.10.ebuild,v 1.19 2004/12/29 09:54:04 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/zoo/Attic/zoo-2.10.ebuild,v 1.20 2005/01/01 12:02:43 eradicator Exp $
 
 inherit eutils
 
