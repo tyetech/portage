@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skk-jisyo/Attic/skk-jisyo-200207.ebuild,v 1.2 2002/09/30 14:58:42 stubear Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skk-jisyo/Attic/skk-jisyo-200207.ebuild,v 1.3 2002/09/30 15:04:56 stubear Exp $
 
 DESCRIPTION="Jisyo (dictionary) files for the SKK Japanese-input software"
 
