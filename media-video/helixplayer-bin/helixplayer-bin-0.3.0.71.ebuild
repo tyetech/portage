@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/helixplayer-bin/Attic/helixplayer-bin-0.3.0.71.ebuild,v 1.2 2004/04/26 19:28:40 kanaka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/helixplayer-bin/Attic/helixplayer-bin-0.3.0.71.ebuild,v 1.3 2004/04/27 18:36:59 kanaka Exp $
 
 inherit nsplugins
 
-A="hxplay-0.3.0.71-linux-2.2-libc6-gcc32-i586.tar.bz2"
+SRC_URI="hxplay-0.3.0.71-linux-2.2-libc6-gcc32-i586.tar.bz2"
 S=${WORKDIR}/hxplay-linux-2.2-libc6-gcc32-i586
 DESCRIPTION="Helix Player"
 
