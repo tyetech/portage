@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/rox-extra/cvs-repo/gentoo-x86/rox-extra/wallpaper/Attic/wallpaper-1.9.2.ebuild,v 1.1 2004/12/18 12:15:53 sergey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/rox-extra/cvs-repo/gentoo-x86/rox-extra/wallpaper/Attic/wallpaper-1.9.2.ebuild,v 1.2 2005/03/06 00:44:37 josejx Exp $
 
 DESCRIPTION="Wallpaper - For setting the backdrop for the ROX Desktop"
 
@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 
 IUSE=""
 
