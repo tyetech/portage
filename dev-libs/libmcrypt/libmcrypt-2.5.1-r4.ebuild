@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libmcrypt/Attic/libmcrypt-2.5.1-r3.ebuild,v 1.5 2002/07/01 16:54:27 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libmcrypt/Attic/libmcrypt-2.5.1-r4.ebuild,v 1.1 2002/07/01 18:09:02 azarah Exp $
 
 inherit libtool
 
@@ -29,22 +29,18 @@ src_unpack() {
 
 	# Try to fix some wierd build problems. See bug #3940.
 	echo ">>> Reconfiguring package..."
-	for x in $(find ${S} -name configure)
-	do
-		cd ${x%/*}
-		export WANT_AUTOMAKE_1_6=1
-		export WANT_AUTOCONF_2_5=1
-		autoreconf --force --install --symlink &>${T}/autoreconf.log || ( \
-			echo "DEBUG: working directory is: `pwd`" >>${T}/autoreconf.log
-			eerror "Reonfigure failed, please attatch the contents of:"
-			eerror
-			eerror "  ${T}/autoreconf.log"
-			eerror
-			eerror "in your bugreport."
-			# we need an error here, else the ebuild do not die
-			exit 1
-		) || die "running autoreconf failed"
-	done
+	export WANT_AUTOMAKE_1_6=1
+	export WANT_AUTOCONF_2_5=1
+	autoreconf --force --install --symlink &>${T}/autoreconf.log || ( \
+		echo "DEBUG: working directory is: `pwd`" >>${T}/autoreconf.log
+		eerror "Reonfigure failed, please attatch the contents of:"
+		eerror
+		eerror "  ${T}/autoreconf.log"
+		eerror
+		eerror "in your bugreport."
+		# we need an error here, else the ebuild do not die
+		exit 1
+	) || die "running autoreconf failed"
 }
 
 src_compile() {
