@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Mikael Hallendal <hallski@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.2.5.2.ebuild,v 1.1 2001/11/25 22:34:23 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.2.5.4-r4.ebuild,v 1.1 2002/01/27 14:01:33 azarah Exp $
 
 MY_V="`echo ${PV} |cut -b -5`"
 S=${WORKDIR}/${P}
@@ -14,6 +14,10 @@ DEPEND=">=sys-libs/pam-0.72
 	>=gnome-base/gnome-libs-1.4.1.2-r1
 	>=gnome-base/libglade-0.17-r1
 	>=media-libs/gdk-pixbuf-0.11.0-r1"
+
+RDEPEND="${DEPEND}
+	>=x11-base/xfree-4.2.0-r3
+	gnome? ( >=gnome-base/gnome-core-1.4.0.6 )"
 
 
 src_unpack() {
@@ -32,9 +36,6 @@ src_unpack() {
 }
 
 src_compile() {
-
-	CFLAGS="${CFLAGS} `gnome-config --cflags libglade`"
-
 	./configure --host=${CHOST} 					\
 		    --prefix=/usr					\
 		    --sysconfdir=/etc/X11				\
@@ -45,6 +46,11 @@ src_compile() {
 }
 
 src_install() {
+        cd omf-install
+        cp Makefile Makefile.old
+        sed -e "s:scrollkeeper-update.*::g" Makefile.old > Makefile
+        rm Makefile.old
+        cd ${S}
 
 	make prefix=${D}/usr						\
 	     sysconfdir=${D}/etc/X11					\
@@ -95,11 +101,24 @@ src_install() {
 	rm gdm.conf.orig
 
 	cd ${S}
+
+	#support for new session stuff
+	rm -rf ${D}/etc/X11/gdm/Sessions
+	dosym ../Sessions /etc/X11/gdm/Sessions
 	
 	dodoc ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README* TODO
 }
 
+pkg_preinst() {
+	#support for new session stuff
+	if [ -d /etc/X11/gdm/Sessions ] ; then
+		mv -f /etc/X11/gdm/Sessions /etc/X11/gdm/Sessions.old
+	fi
+}
+
 pkg_postinst() {
+        echo ">>> Updating Scrollkeeper database..."
+        scrollkeeper-update >/dev/null 2>&1
 
 	# Attempt to restart GDM softly by use of the fifo.  Wont work on older
 	# then 2.2.3.1 versions but should work nicely on later upgrades.
@@ -133,6 +152,8 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
+        echo ">>> Updating Scrollkeeper database..."
+        scrollkeeper-update >/dev/null 2>&1
 
 	echo
 	echo "**********************************************"
