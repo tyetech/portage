@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/penggy/Attic/penggy-0.2.1.ebuild,v 1.2 2003/10/29 05:20:01 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/penggy/Attic/penggy-0.2.1.ebuild,v 1.3 2004/06/24 22:30:28 agriffis Exp $
 
 DESCRIPTION="Provide access to Internet using the AOL/Compuserve network."
 HOMEPAGE="http://www.peng.apinc.org/"

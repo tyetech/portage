@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/slmodem/Attic/slmodem-2.9.8.ebuild,v 1.1 2004/06/20 07:28:56 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/slmodem/Attic/slmodem-2.9.8.ebuild,v 1.2 2004/06/24 22:32:43 agriffis Exp $
 
 inherit kmod
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/cistronradius/Attic/cistronradius-1.6.7.ebuild,v 1.2 2004/03/19 02:47:30 pfeifer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/cistronradius/Attic/cistronradius-1.6.7.ebuild,v 1.3 2004/06/24 22:25:07 agriffis Exp $
 
 IUSE=""
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/pppconfig/Attic/pppconfig-2.1.ebuild,v 1.3 2003/10/27 09:54:31 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/pppconfig/Attic/pppconfig-2.1.ebuild,v 1.4 2004/06/24 22:31:01 agriffis Exp $
 
 DESCRIPTION="A text menu based utility for configuring ppp."
 SRC_URI="mirror://debian/pool/main/p/pppconfig/${PN}_${PV}.tar.gz"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/gmasqdialer/Attic/gmasqdialer-0.99.13.ebuild,v 1.2 2004/03/19 11:30:46 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/gmasqdialer/Attic/gmasqdialer-0.99.13.ebuild,v 1.3 2004/06/24 22:26:58 agriffis Exp $
 
 DESCRIPTION="GMasqdialer - A GNOME Client for MasqDialer"
 HOMEPAGE="http://www.dpinson.com/software/gmasqdialer/index.php"

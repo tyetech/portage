@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/gcdial/Attic/gcdial-0.7b.ebuild,v 1.1 2003/11/28 00:54:18 brandy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/gcdial/Attic/gcdial-0.7b.ebuild,v 1.2 2004/06/24 22:26:36 agriffis Exp $
 
 DESCRIPTION="A simple GTK+ client for DWUN"
 HOMEPAGE="http://dwun.sourceforge.net/"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/mserver/Attic/mserver-0.5.5-r1.ebuild,v 1.6 2004/04/27 21:41:20 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/mserver/Attic/mserver-0.5.5-r1.ebuild,v 1.7 2004/06/24 22:30:17 agriffis Exp $
 
 inherit eutils
 
