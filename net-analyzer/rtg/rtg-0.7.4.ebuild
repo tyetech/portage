@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rtg/Attic/rtg-0.7.4.ebuild,v 1.1 2004/02/08 19:26:36 anti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rtg/Attic/rtg-0.7.4.ebuild,v 1.2 2004/02/22 22:36:02 agriffis Exp $
 
 inherit eutils
 
