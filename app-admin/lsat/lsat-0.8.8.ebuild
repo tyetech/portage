@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/lsat/Attic/lsat-0.8.8.ebuild,v 1.4 2004/06/24 21:31:07 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/lsat/Attic/lsat-0.8.8.ebuild,v 1.5 2004/06/25 18:03:57 vapier Exp $
 
 DESCRIPTION="The Linux Security Auditing Tool"
 HOMEPAGE="http://usat.sourceforge.net/"
@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="x86 ~ppc"
 IUSE=""
 
-RDEPEND="virtual/glibc
+RDEPEND="virtual/libc
 	dev-libs/popt"
 DEPEND="${RDEPEND}
 	dev-lang/perl"
