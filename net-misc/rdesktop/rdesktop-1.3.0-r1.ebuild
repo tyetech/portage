@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rdesktop/Attic/rdesktop-1.3.0.ebuild,v 1.8 2003/12/10 14:18:59 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rdesktop/Attic/rdesktop-1.3.0-r1.ebuild,v 1.1 2003/12/10 14:18:59 wolf31o2 Exp $
 
 DESCRIPTION="A Remote Desktop Protocol Client"
 HOMEPAGE="http://rdesktop.sourceforge.net/"
