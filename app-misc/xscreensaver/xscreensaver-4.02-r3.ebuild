@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Martin Schlemmer <azarah@gentoo.org> 
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/xscreensaver/Attic/xscreensaver-4.02-r2.ebuild,v 1.1 2002/06/01 11:16:52 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/xscreensaver/Attic/xscreensaver-4.02-r3.ebuild,v 1.1 2002/06/02 09:05:26 azarah Exp $
 
 S="${WORKDIR}/${P}"
 DESCRIPTION="a modular screensaver for X11"
@@ -72,6 +72,6 @@ src_install() {
 		doins "${FILESDIR}/pam.d/xscreensaver"
 	fi
 	
-	[ -n "`use kde`" ] || rm -rf ${D}/${KDEDIR}
+	[ -n "`use kde`" ] || ( [ -n "${KDEDIR}" ] && rm -rf ${D}/${KDEDIR} )
 }
 
