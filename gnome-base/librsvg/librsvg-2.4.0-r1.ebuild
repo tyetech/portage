@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/librsvg/Attic/librsvg-2.4.0-r1.ebuild,v 1.4 2004/06/24 22:01:03 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/librsvg/Attic/librsvg-2.4.0-r1.ebuild,v 1.5 2005/01/08 23:39:41 slarti Exp $
 
 inherit gnome2
 

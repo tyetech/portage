@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.4.2.ebuild,v 1.10 2004/06/24 21:56:03 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.4.2.ebuild,v 1.11 2005/01/08 23:21:09 slarti Exp $
 
 inherit gnome2
 

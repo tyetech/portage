@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/orbit/Attic/orbit-2.10.3.ebuild,v 1.3 2004/11/08 14:17:18 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/orbit/Attic/orbit-2.10.3.ebuild,v 1.4 2005/01/08 23:35:35 slarti Exp $
 
 inherit gnome2 eutils
 
