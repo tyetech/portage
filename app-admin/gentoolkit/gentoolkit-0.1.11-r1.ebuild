@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/gentoolkit/Attic/gentoolkit-0.1.11.ebuild,v 1.2 2002/06/05 01:36:47 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/gentoolkit/Attic/gentoolkit-0.1.11-r1.ebuild,v 1.1 2002/06/08 13:38:46 lostlogic Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Collection of unofficial administration scripts for Gentoo"
