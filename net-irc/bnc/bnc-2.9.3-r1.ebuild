@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/bnc/Attic/bnc-2.9.3.ebuild,v 1.1 2005/01/29 04:04:26 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/bnc/Attic/bnc-2.9.3-r1.ebuild,v 1.1 2005/04/03 21:41:12 swegener Exp $
 
 inherit eutils
 
@@ -18,6 +18,11 @@ DEPEND="virtual/libc"
 
 S=${WORKDIR}/${MY_P}
 
+src_unpack() {
+	unpack ${A}
+	sed -i -e s:./mkpasswd:/usr/bin/bncmkpasswd: ${S}/bncsetup || die
+}
+
 src_compile() {
 	econf || die "econf failed"
 	emake CFLAGS="${CFLAGS}" || die "emake failed"
@@ -26,7 +31,7 @@ src_compile() {
 
 src_install() {
 	dobin bnc bncchk bncsetup bncmkpasswd || die "dobin failed"
-	dodoc CHANGES README example.conf motd
+	dodoc ChangeLog README example.conf motd
 }
 
 pkg_postinst() {
