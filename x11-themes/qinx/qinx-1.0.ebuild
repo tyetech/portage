@@ -1,6 +1,6 @@
-qqq# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/qinx/Attic/qinx-1.0.ebuild,v 1.2 2004/07/17 18:40:42 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/qinx/Attic/qinx-1.0.ebuild,v 1.3 2004/07/18 08:29:27 mr_bones_ Exp $
 
 inherit kde
 
