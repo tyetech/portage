@@ -1,15 +1,16 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/eel/Attic/eel-2.6.0.ebuild,v 1.8 2004/07/03 19:08:02 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/eel/Attic/eel-2.6.0.ebuild,v 1.9 2004/11/08 20:01:20 vapier Exp $
 
 inherit gnome2
 
-IUSE=""
 DESCRIPTION="The Eazel Extentions Library"
 HOMEPAGE="http://www.gnome.org/"
-SLOT="2"
+
 LICENSE="LGPL-2"
-KEYWORDS="x86 ppc alpha ~sparc hppa amd64 ~ia64 mips"
+SLOT="2"
+KEYWORDS="x86 ppc alpha ~sparc hppa amd64 arm ia64 mips"
+IUSE=""
 
 RDEPEND=">=dev-libs/glib-2
 	>=x11-libs/gtk+-2.3
