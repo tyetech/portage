@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/qterm/Attic/qterm-0.3.5.ebuild,v 1.3 2004/06/04 18:49:59 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/qterm/Attic/qterm-0.3.5.ebuild,v 1.4 2004/06/24 22:31:11 agriffis Exp $
 
 DESCRIPTION="QTerm is a BBS client in Linux."
 HOMEPAGE="http://qterm.sourceforge.net/"

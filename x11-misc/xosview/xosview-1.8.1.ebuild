@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xosview/Attic/xosview-1.8.1.ebuild,v 1.9 2004/06/12 17:58:37 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xosview/Attic/xosview-1.8.1.ebuild,v 1.10 2004/06/24 22:43:00 agriffis Exp $
 
 inherit eutils
 

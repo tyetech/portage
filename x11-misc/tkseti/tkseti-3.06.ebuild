@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/tkseti/Attic/tkseti-3.06.ebuild,v 1.13 2004/06/19 14:02:48 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/tkseti/Attic/tkseti-3.06.ebuild,v 1.14 2004/06/24 22:34:13 agriffis Exp $
 
 DESCRIPTION="TkSeti is a GUI to control the SETI@Home client for UNIX."
 SRC_URI="http://www.cuug.ab.ca/~macdonal/tkseti/${P}.tar.gz"

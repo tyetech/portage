@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xtermcontrol/Attic/xtermcontrol-2.4.ebuild,v 1.1 2004/05/20 13:28:36 pfeifer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xtermcontrol/Attic/xtermcontrol-2.4.ebuild,v 1.2 2004/06/24 22:45:41 agriffis Exp $
 
 IUSE=""
 

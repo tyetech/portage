@@ -1,7 +1,7 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # Author David Chamberlain <daybird@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/Xautoconfig/Attic/Xautoconfig-0.15.ebuild,v 1.13 2004/04/14 09:09:01 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/Xautoconfig/Attic/Xautoconfig-0.15.ebuild,v 1.14 2004/06/24 22:37:40 agriffis Exp $
 
 inherit eutils
 

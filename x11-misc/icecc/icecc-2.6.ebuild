@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/icecc/Attic/icecc-2.6.ebuild,v 1.3 2004/03/24 11:19:51 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/icecc/Attic/icecc-2.6.ebuild,v 1.4 2004/06/24 22:22:42 agriffis Exp $
 
 inherit eutils
 

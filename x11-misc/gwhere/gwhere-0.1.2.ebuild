@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gwhere/Attic/gwhere-0.1.2.ebuild,v 1.3 2004/06/19 14:12:17 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gwhere/Attic/gwhere-0.1.2.ebuild,v 1.4 2004/06/24 22:21:59 agriffis Exp $
 
 DESCRIPTION="removable media cataloger made with GTK+"
 HOMEPAGE="http://www.gwhere.org/"

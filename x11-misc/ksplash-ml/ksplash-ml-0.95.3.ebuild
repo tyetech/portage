@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/ksplash-ml/Attic/ksplash-ml-0.95.3.ebuild,v 1.8 2004/06/19 14:08:26 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/ksplash-ml/Attic/ksplash-ml-0.95.3.ebuild,v 1.9 2004/06/24 22:27:11 agriffis Exp $
 
 inherit kde-base
 

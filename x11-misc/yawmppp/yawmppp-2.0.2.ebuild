@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/yawmppp/Attic/yawmppp-2.0.2.ebuild,v 1.10 2004/06/19 13:55:30 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/yawmppp/Attic/yawmppp-2.0.2.ebuild,v 1.11 2004/06/24 22:47:15 agriffis Exp $
 
 DESCRIPTION="Yet Another PPP Window Maker dock applet"
 SRC_URI="ftp://ftp.seul.org/pub/yawmppp/${P}.tar.gz"

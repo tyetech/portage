@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/kgamma/Attic/kgamma-1.0.1.ebuild,v 1.7 2004/06/19 14:13:05 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/kgamma/Attic/kgamma-1.0.1.ebuild,v 1.8 2004/06/24 22:26:16 agriffis Exp $
 
 inherit kde
 

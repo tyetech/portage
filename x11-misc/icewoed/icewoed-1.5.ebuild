@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/icewoed/Attic/icewoed-1.5.ebuild,v 1.3 2004/03/24 11:35:38 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/icewoed/Attic/icewoed-1.5.ebuild,v 1.4 2004/06/24 22:24:49 agriffis Exp $
 
 DESCRIPTION="IceWM winoptions editor."
 SRC_URI="mirror://sourceforge/icecc/${P}.tar.bz2"

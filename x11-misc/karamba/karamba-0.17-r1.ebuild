@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/karamba/Attic/karamba-0.17-r1.ebuild,v 1.11 2004/06/20 18:16:42 port001 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/karamba/Attic/karamba-0.17-r1.ebuild,v 1.12 2004/06/24 22:25:54 agriffis Exp $
 
 inherit kde
 

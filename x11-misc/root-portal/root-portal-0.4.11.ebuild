@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/root-portal/Attic/root-portal-0.4.11.ebuild,v 1.8 2004/06/01 19:25:48 tseng Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/root-portal/Attic/root-portal-0.4.11.ebuild,v 1.9 2004/06/24 22:31:47 agriffis Exp $
 
 inherit debug eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbsload/bbsload-0.2.8.ebuild,v 1.7 2004/06/06 23:34:04 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbsload/bbsload-0.2.8.ebuild,v 1.8 2004/06/24 22:14:04 agriffis Exp $
 
 DESCRIPTION="blackbox load monitor"
 SRC_URI="http://bbtools.windsofstorm.net/sources/${P}.tar.gz"
