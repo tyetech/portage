@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgnomedb/Attic/libgnomedb-1.0.0.ebuild,v 1.3 2003/10/08 21:50:51 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgnomedb/Attic/libgnomedb-1.0.0.ebuild,v 1.4 2004/04/02 07:58:56 leonardop Exp $
 
 IUSE="doc"
 
