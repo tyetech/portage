@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/deadftp/Attic/deadftp-0.1.3.ebuild,v 1.10 2003/09/07 00:12:23 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/deadftp/Attic/deadftp-0.1.3.ebuild,v 1.11 2004/06/24 22:44:44 agriffis Exp $
 
 IUSE="nls"
 

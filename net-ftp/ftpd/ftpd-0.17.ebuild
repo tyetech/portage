@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/ftpd/Attic/ftpd-0.17.ebuild,v 1.11 2004/06/09 21:41:10 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/ftpd/Attic/ftpd-0.17.ebuild,v 1.12 2004/06/24 22:45:25 agriffis Exp $
 
 inherit eutils
 

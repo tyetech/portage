@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/easyftp/Attic/easyftp-6_beta.ebuild,v 1.8 2004/05/10 14:51:20 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/easyftp/Attic/easyftp-6_beta.ebuild,v 1.9 2004/06/24 22:44:54 agriffis Exp $
 
 inherit eutils
 
