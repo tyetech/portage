@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.23-r7.ebuild,v 1.2 2004/04/16 06:03:36 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.23-r8.ebuild,v 1.1 2004/04/21 22:05:38 kumba Exp $
 
 
 # Version Data
@@ -8,7 +8,7 @@ OKV=${PV/_/-}
 CVSDATE="20031128"
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
-COBALTPATCHVER="1.0"
+COBALTPATCHVER="1.3"
 
 # Miscellaneous stuff
 S=${WORKDIR}/linux-${OKV}-${CVSDATE}
@@ -82,6 +82,8 @@ src_unpack() {
 		epatch ${FILESDIR}/CAN-2004-0010-ncpfs.patch
 		epatch ${FILESDIR}/CAN-2004-0077-do_munmap.patch
 		epatch ${FILESDIR}/CAN-2004-0109-2.4-iso9660.patch
+		epatch ${FILESDIR}/CAN-2004-0177-ext3_jbd.patch
+		epatch ${FILESDIR}/CAN-2004-0178-sbblaster.patch
 	eend
 
 	# Cobalt Patches
