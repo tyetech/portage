@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gmime/Attic/gmime-2.1.10.ebuild,v 1.7 2005/03/23 01:57:17 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gmime/Attic/gmime-2.1.14.ebuild,v 1.1 2005/04/01 12:10:43 dsd Exp $
 
 inherit gnome2 eutils mono
 
