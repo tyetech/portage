@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/readline/Attic/readline-4.1-r4.ebuild,v 1.7 2002/08/14 04:03:53 murphy Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/readline/Attic/readline-4.1-r4.ebuild,v 1.8 2002/10/04 06:37:40 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Another cute console display library"
