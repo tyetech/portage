@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mkvtoolnix/Attic/mkvtoolnix-0.9.5.ebuild,v 1.2 2004/09/02 11:39:34 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mkvtoolnix/Attic/mkvtoolnix-0.9.7-r1.ebuild,v 1.1 2004/12/07 19:32:04 mholzer Exp $
 
 inherit eutils wxwidgets
 
@@ -10,11 +10,11 @@ SRC_URI="http://www.bunkus.org/videotools/mkvtoolnix/sources/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~x86"
 IUSE="gtk2 X oggvorbis"
 
-DEPEND=">=dev-libs/libebml-0.7.1
-	>=media-libs/libmatroska-0.7.3
+DEPEND=">=dev-libs/libebml-0.7.2
+	>=media-libs/libmatroska-0.7.4
 	oggvorbis? ( media-libs/libogg media-libs/libvorbis media-libs/flac )
 	X? ( >=x11-libs/wxGTK-2.4.2-r2 )
 	dev-libs/expat
@@ -25,15 +25,15 @@ DEPEND=">=dev-libs/libebml-0.7.1
 src_unpack() {
 	unpack ${A} || die "Failed to unpack ${A}"
 	cd ${S} || die "Failed to cd ${S}"
-	epatch ${FILESDIR}/configure-wx_config.patch || die "epatch failed"
-
 }
 
 src_compile() {
-	if ! use gtk2 ; then
-		need-wxwidgets gtk
-	else
-		need-wxwidgets gtk2
+	if use X ; then
+		if ! use gtk2 ; then
+			need-wxwidgets gtk
+		else
+			need-wxwidgets gtk2
+		fi
 	fi
 	./configure || die "configure died"
 	emake || die "make failed"
