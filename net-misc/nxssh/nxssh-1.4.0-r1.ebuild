@@ -1,15 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/nxssh/Attic/nxssh-1.3.2.ebuild,v 1.4 2005/01/02 09:40:02 stuart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/nxssh/Attic/nxssh-1.4.0-r1.ebuild,v 1.1 2005/01/02 09:40:02 stuart Exp $
 
-MY_P="${PN}-1.3.2-3"
+MY_P="${PN}-${PV}-21"
 DESCRIPTION="Modified openssh client, used by nxclient"
 HOMEPAGE="http://www.nomachine.com/"
 SRC_URI="http://www.nomachine.com/download/nxsources/nxssh/${MY_P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 ~ppc -sparc -mips -alpha"
-DEPEND=""
+KEYWORDS="~x86 ~ppc"
+DEPEND=">=dev-libs/openssl-0.9.7d-r1
+	    >=sys-libs/glibc-2.3.3.20040420-r1
+	    >=sys-libs/zlib-1.2.1-r2"
 # Run-time dependencies, same as DEPEND if RDEPEND isn't defined:
 #RDEPEND=""
 IUSE="ipv6 kerberos pam tcpd"
@@ -40,7 +42,7 @@ src_compile() {
 		--with-md5-passwords \
 		--host=${CHOST} ${myconf} || die "bad configure"
 
-	DISTCC_HOSTS="localhost" CCACHE_DISABLE='1' emake || die "compile problem"
+	emake || die "compile problem"
 }
 
 src_install() {
