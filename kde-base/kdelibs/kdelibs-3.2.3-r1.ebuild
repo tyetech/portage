@@ -1,41 +1,40 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.3.0_beta1.ebuild,v 1.1 2004/07/08 22:23:30 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.2.3-r1.ebuild,v 1.1 2004/08/06 15:08:20 caleb Exp $
 
 inherit kde eutils
-set-kdedir 3.3
 
-MY_PV=3.2.91
-S=${WORKDIR}/${PN}-${MY_PV}
+need-autoconf 2.5
+set-kdedir ${PV}
 
 DESCRIPTION="KDE libraries needed by all kde programs"
 HOMEPAGE="http//www.kde.org/"
-SRC_URI="mirror://kde/unstable/${MY_PV}/src/${PN}-${MY_PV}.tar.bz2"
+SRC_URI="mirror://kde/stable/${PV}/src/${PN}-${PV}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2"
-SLOT="3.3"
-KEYWORDS="~x86 ~amd64"
+SLOT="3.2"
+KEYWORDS="x86 ~ppc ~sparc ~mips ~alpha hppa amd64 ~ia64"
 IUSE="alsa cups ipv6 ssl doc ldap"
 
 # kde.eclass has kdelibs in DEPEND, and we can't have that in here.
 # so we recreate the entire DEPEND from scratch.
 DEPEND=">=sys-devel/autoconf-2.58
 	>=sys-devel/automake-1.8
-	>=app-arch/bzip2
-	>=dev-libs/libxslt-1.1.4
-	>=dev-libs/libxml2-2.6.6
-	>=dev-libs/libpcre-4.2
-	ssl? ( >=dev-libs/openssl-0.9.7d )
+	>=app-arch/bzip2-1.0.2
+	>=dev-libs/libxslt-1.0.31
+	>=dev-libs/libxml2-2.5.8
+	>=dev-libs/libpcre-3.9
+	ssl? ( >=dev-libs/openssl-0.9.6k )
 	alsa? ( media-libs/alsa-lib virtual/alsa )
 	cups? ( >=net-print/cups-1.1.19 )
-	ldap? ( >=net-nds/openldap-2.1.26 )
+	ldap? ( >=net-nds/openldap-2.0.25 )
 	media-libs/tiff
-	>=app-admin/fam-2.7.0
+	>=app-admin/fam-2.6.10
 	virtual/ghostscript
 	media-libs/libart_lgpl
 	sys-devel/gettext
-	~kde-base/arts-1.3.0_beta1
-	>=x11-libs/qt-3.3.2"
+	~kde-base/arts-1.2.3
+	>=x11-libs/qt-3.2.3"
 RDEPEND="${DEPEND}
 	app-text/sgml-common
 	cups? ( net-print/cups )
@@ -44,6 +43,10 @@ RDEPEND="${DEPEND}
 
 src_unpack() {
 	kde_src_unpack
+	epatch ${FILESDIR}/post-3.2.3-kdelibs-kcookiejar.patch
+	epatch ${FILESDIR}/post-3.2.3-kdelibs-kstandarddirs.patch
+	epatch ${FILESDIR}/post-3.2.3-kdelibs-htmlframes.patch
+	cd ${S}/dcop && patch -p0 < ${FILESDIR}/post-3.2.3-kdelibs-dcopserver.patch
 }
 
 src_compile() {
