@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.2.ebuild,v 1.2 2004/10/13 18:59:49 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.2.ebuild,v 1.3 2004/10/13 19:13:19 agriffis Exp $
 
 inherit flag-o-matic eutils
 
@@ -251,7 +251,8 @@ src_install() {
 	fperms 0600 /etc/shadow
 	mv ${D}/etc/{passwd,shadow,group,fstab,hosts} ${D}/usr/share/baselayout
 
-	exeinto /etc/init.d
+	cp -P ${S}/init.d/* ${D}/etc/init.d
+	chmod a+x ${D}/etc/init.d/*
 	doexe ${S}/init.d/*
 	insinto /etc/conf.d
 	doins ${S}/etc/conf.d/*
