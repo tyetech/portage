@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jdk/Attic/ibm-jdk-1.3.1-r3.ebuild,v 1.5 2003/12/07 17:55:32 strider Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jdk/Attic/ibm-jdk-1.3.1-r3.ebuild,v 1.6 2004/03/12 02:38:59 zx Exp $
 
 IUSE="doc"
 
