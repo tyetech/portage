@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodoc/Attic/monodoc-1.0.2.ebuild,v 1.2 2004/10/26 21:53:58 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodoc/Attic/monodoc-1.0.2.ebuild,v 1.3 2005/02/19 19:09:30 dholm Exp $
 
 inherit mono
 
