@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/elicit/Attic/elicit-0.7.20031020.ebuild,v 1.1 2003/10/20 15:21:12 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/elicit/Attic/elicit-0.7.20040117.ebuild,v 1.1 2004/01/20 05:03:29 vapier Exp $
 
 inherit enlightenment
 
