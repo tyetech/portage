@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/emu10k1/Attic/emu10k1-0.20a-r2.ebuild,v 1.2 2003/02/13 13:10:27 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/emu10k1/Attic/emu10k1-0.20a-r4.ebuild,v 1.1 2003/03/07 15:35:10 vapier Exp $
 
 MY_P="${P/-/-v}"
 DESCRIPTION="Drivers, utilities, and effects for Sound Blaster cards (SBLive!, SB512, Audigy)"
@@ -55,6 +55,15 @@ src_install() {
 	cd ${D}
 	rm -rf ${D}/usr/etc
 
+	# add wrapper script to handle audigy and emu cards
+	dobin ${FILESDIR}/emu10k1-script
+	cd ${D}/etc
+	cp emu10k1.conf ${T}/
+	{
+		cat ${FILESDIR}/emu10k1.conf-gentoo-header
+		cat ${T}/emu10k1.conf
+	} > emu10k1.conf
+
 	# clean up the scripts
 	dosed 's:$BASE_PATH/etc:/etc:g' /usr/bin/emu-script
 	dosed 's:$BASE_PATH/etc:/etc:g' /usr/bin/audigy-script
@@ -70,6 +79,8 @@ src_install() {
 
 pkg_postinst() {
 	/sbin/depmod -a
+	/sbin/update-modules
+
 	einfo "In order for the module to work correctly you must"
 	einfo "Enable the following options in your kernel:"
 	echo
