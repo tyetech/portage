@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/amsn/Attic/amsn-0.92.ebuild,v 1.5 2004/10/04 22:40:37 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/amsn/Attic/amsn-0.94.ebuild,v 1.1 2004/11/06 15:51:16 tester Exp $
 
-S="${WORKDIR}/msn"
+S="${WORKDIR}/${P/./_}"
 DESCRIPTION="Alvaro's Messenger client for MSN"
 SRC_URI="mirror://sourceforge/${PN}/${P/./_}.tar.gz"
 HOMEPAGE="http://amsn.sourceforge.net"
@@ -11,7 +11,7 @@ IUSE="gnome kde imlib xmms"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~alpha ~sparc ppc hppa ~amd64"
+KEYWORDS="~x86 ~alpha ~sparc ~ppc ~hppa ~amd64"
 
 
 DEPEND=">=dev-lang/tcl-8.3
@@ -72,6 +72,10 @@ src_install() {
 	fi
 
 	rm -rf ${D}/usr/share/amsn/plugins/winflash
+	rm -rf ${D}/usr/share/amsn/plugins/QuickTimeTcl3.1
+	rm -rf ${D}/usr/share/amsn/plugins/applescript
+	rm -rf ${D}/usr/share/amsn/plugins/tclCarbonNotification
+	rm -rf ${D}/usr/share/amsn/plugins/tclAE2.0
 	rm -rf ${D}/usr/share/amsn/utils/
 
 	dodir /usr/bin/
