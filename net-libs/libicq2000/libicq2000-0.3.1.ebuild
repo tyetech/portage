@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# Author: Spider <spider@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libicq2000/Attic/libicq2000-0.3.1.ebuild,v 1.3 2002/06/05 19:18:57 spider Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libicq2000/Attic/libicq2000-0.3.1.ebuild,v 1.4 2002/07/11 06:30:47 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="ICQ 200x compatible ICQ libraries."
