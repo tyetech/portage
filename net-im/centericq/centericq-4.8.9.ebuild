@@ -1,11 +1,11 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centericq/Attic/centericq-4.8.7.ebuild,v 1.3 2002/11/10 00:04:59 rphillips Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centericq/Attic/centericq-4.8.9.ebuild,v 1.1 2002/12/03 13:06:20 verwilst Exp $
 
 IUSE="nls"
 
 S=${WORKDIR}/${P}
-DESCRIPTION="A ncurses ICQ/Yahoo!/MSN Client"
+DESCRIPTION="A ncurses ICQ/Yahoo!/MSN/IRC/Jabber Client"
 SRC_URI="http://konst.org.ua/download/${P}.tar.gz"
 HOMEPAGE="http://konst.org.ua/eng/software/centericq/info.html"
 SLOT="0"
