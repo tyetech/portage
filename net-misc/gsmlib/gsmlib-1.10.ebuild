@@ -1,8 +1,7 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gsmlib/Attic/gsmlib-1.10.ebuild,v 1.7 2004/07/01 21:04:20 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gsmlib/Attic/gsmlib-1.10.ebuild,v 1.8 2004/07/15 02:50:14 agriffis Exp $
 
-S=${WORKDIR}/${P}
 IUSE=""
 DESCRIPTION="Library and Applications to access GSM mobile phones"
 SRC_URI="http://www.pxh.de/fs/gsmlib/download/${P}.tar.gz"
