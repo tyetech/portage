@@ -1,7 +1,6 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Bart Verwilst <verwilst@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kdevelop/Attic/kdevelop-2.0.2.ebuild,v 1.6 2002/05/21 18:14:08 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kdevelop/Attic/kdevelop-2.0.2.ebuild,v 1.7 2002/07/11 06:30:25 drobbins Exp $
 
 inherit kde-base || die
 

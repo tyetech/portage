@@ -1,8 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author: Achim Gottinger <achim@gentoo.org>
-# Maintainer: Jon Nelson <jnelson@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/strace/Attic/strace-4.4.ebuild,v 1.3 2002/06/03 21:25:35 murphy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/strace/Attic/strace-4.4.ebuild,v 1.4 2002/07/11 06:30:25 drobbins Exp $
 
 # NOTE: For some reason, upstream has changed the naming scheme
 # for the tarballs to something quite lame:

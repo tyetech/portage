@@ -1,7 +1,6 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/sel/Attic/sel-0.08.2.ebuild,v 1.4 2001/11/10 12:45:09 hallski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/sel/Attic/sel-0.08.2.ebuild,v 1.5 2002/07/11 06:30:25 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A filemanager for shell scripts"
