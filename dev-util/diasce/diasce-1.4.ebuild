@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/diasce/Attic/diasce-1.4.ebuild,v 1.2 2003/10/30 01:31:15 brandy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/diasce/Attic/diasce-1.4.ebuild,v 1.3 2004/03/13 01:49:46 mr_bones_ Exp $
 
 MY_P=${PN}2-${PV}
 S=${WORKDIR}/${MY_P}
