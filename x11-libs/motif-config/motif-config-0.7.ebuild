@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/motif-config/Attic/motif-config-0.5.ebuild,v 1.1 2005/03/14 13:57:36 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/motif-config/Attic/motif-config-0.7.ebuild,v 1.1 2005/03/24 18:26:53 lanius Exp $
 
 inherit multilib
 
