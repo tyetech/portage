@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/heimdal/Attic/heimdal-0.4e-r1.ebuild,v 1.6 2002/08/16 02:36:53 murphy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/heimdal/Attic/heimdal-0.4e-r1.ebuild,v 1.7 2002/09/09 07:54:55 seemant Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Kerberos 5 implementation from KTH"
@@ -33,7 +33,7 @@ src_compile() {
 		--with-krb4=/usr/athena \
 		${myconf} || die
 
-	emake || die
+	make || die
 }
 
 src_install () {
