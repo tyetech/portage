@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/getmail/Attic/getmail-4.0.6.ebuild,v 1.2 2004/08/06 20:07:05 slarti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/getmail/Attic/getmail-4.0.8.ebuild,v 1.1 2004/08/06 20:07:05 slarti Exp $
 
 inherit distutils
 IUSE=""
