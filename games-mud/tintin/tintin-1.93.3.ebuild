@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-mud/cvs-repo/gentoo-x86/games-mud/tintin/Attic/tintin-1.93.3.ebuild,v 1.1 2004/09/20 00:03:30 jhhudso Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-mud/cvs-repo/gentoo-x86/games-mud/tintin/Attic/tintin-1.93.3.ebuild,v 1.2 2004/10/14 19:56:01 dholm Exp $
 
 inherit games
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.scandum.com/tintin/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~ppc"
 IUSE=""
 
 DEPEND="virtual/libc
