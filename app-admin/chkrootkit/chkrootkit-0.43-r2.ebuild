@@ -1,12 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/chkrootkit/Attic/chkrootkit-0.43-r2.ebuild,v 1.3 2004/07/29 04:05:01 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/chkrootkit/Attic/chkrootkit-0.43-r2.ebuild,v 1.4 2004/08/21 22:55:57 kloeri Exp $
 
 inherit eutils
 
 DESCRIPTION="a tool to locally check for signs of a rootkit"
 HOMEPAGE="http://www.chkrootkit.org/"
-SRC_URI="ftp://ftp.pangeia.com.br/pub/seg/pac/${P}.tar.gz"
+SRC_URI="ftp://ftp.pangeia.com.br/pub/seg/pac/${P}.tar.gz
+		 mirror://gentoo/${PF}-gentoo.diff.gz"
 
 LICENSE="AMS"
 SLOT="0"
@@ -19,7 +20,7 @@ DEPEND="virtual/libc
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${PF}-gentoo.diff
+	epatch ${WORKDIR}/${PF}-gentoo.diff
 	sed -i 's:${head} -:${head} -n :' chkrootkit
 	sed -i 's:/var/adm:/var/log:g' chklastlog.c
 }
