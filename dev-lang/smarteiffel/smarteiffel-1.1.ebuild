@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/smarteiffel/Attic/smarteiffel-1.1.ebuild,v 1.2 2004/03/14 02:40:38 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/smarteiffel/Attic/smarteiffel-1.1.ebuild,v 1.3 2004/05/15 01:13:07 kloeri Exp $
 
 #IUSE="doc"
 IUSE="doc tcc"
@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.loria.fr/pub/loria/SmartEiffel/se-${PV}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~alpha ~sparc"
+KEYWORDS="~x86 ~ppc alpha ~sparc"
 
 DEPEND="tcc? ( >=dev-lang/tcc-0.9.14 )"
 #DEPEND="virtual/glibc"
