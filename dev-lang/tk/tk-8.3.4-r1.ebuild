@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/tk/Attic/tk-8.3.4-r1.ebuild,v 1.8 2004/04/26 02:53:24 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/tk/Attic/tk-8.3.4-r1.ebuild,v 1.9 2004/06/24 22:58:25 agriffis Exp $
 
 inherit eutils
 

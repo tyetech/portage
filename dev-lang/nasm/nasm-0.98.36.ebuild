@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/nasm/Attic/nasm-0.98.36.ebuild,v 1.8 2004/04/16 04:30:53 steel300 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/nasm/Attic/nasm-0.98.36.ebuild,v 1.9 2004/06/24 22:52:35 agriffis Exp $
 
 inherit eutils
 

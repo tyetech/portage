@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/maude/Attic/maude-2.1.ebuild,v 1.1 2004/05/27 10:10:55 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/maude/Attic/maude-2.1.ebuild,v 1.2 2004/06/24 22:51:33 agriffis Exp $
 
 DESCRIPTION="Maude - A high-level specification language"
 HOMEPAGE="http://maude.cs.uiuc.edu/"

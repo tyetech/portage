@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/perl/Attic/perl-5.8.2-r1.ebuild,v 1.14 2004/06/15 06:18:26 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/perl/Attic/perl-5.8.2-r1.ebuild,v 1.15 2004/06/24 22:53:51 agriffis Exp $
 
 inherit eutils flag-o-matic gcc
 
