@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gnunet/Attic/gnunet-0.6.1c.ebuild,v 1.4 2004/06/25 00:33:04 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gnunet/Attic/gnunet-0.6.2b.ebuild,v 1.1 2004/06/29 01:25:10 squinky86 Exp $
 
 inherit libtool
 
@@ -12,7 +12,7 @@ RESTRICT="nomirror"
 
 IUSE="ipv6 gtk crypt mysql"
 
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc"
 LICENSE="GPL-2"
 SLOT="0"
 
@@ -21,7 +21,13 @@ DEPEND=">=dev-libs/openssl-0.9.6d
 	crypt? ( dev-libs/libgcrypt )
 	gtk? ( =x11-libs/gtk+-1.2* )
 	mysql? ( dev-db/mysql )
-	>=media-libs/libextractor-0.2.6"
+	>=media-libs/libextractor-0.3.1"
+
+src_unpack() {
+	unpack ${A}
+	cp ${FILESDIR}/gnunet-download-manager.scm ${S}/contrib/
+	cd ${S}
+}
 
 src_compile() {
 	elibtoolize
@@ -55,7 +61,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	use ipv6 && ewarn "ipv6 support is -very- experimental and prone to bug"
+	use ipv6 && ewarn "ipv6 support is -very- experimental and prone to bugs"
 	einfo
 	einfo "now copy an appropriate config file from"
 	einfo "/usr/share/doc/${P}/contrib"
