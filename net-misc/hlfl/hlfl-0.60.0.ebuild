@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Arnaud Launay <asl@launay.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/hlfl/Attic/hlfl-0.60.0.ebuild,v 1.2 2002/07/07 07:49:40 phoenix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/hlfl/Attic/hlfl-0.60.0.ebuild,v 1.3 2002/07/11 06:30:48 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="High Level Firewall Language"

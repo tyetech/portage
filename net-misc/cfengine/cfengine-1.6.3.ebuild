@@ -1,7 +1,6 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Prakash Shetty (Crux) <ps@gnuos.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cfengine/Attic/cfengine-1.6.3.ebuild,v 1.5 2002/07/06 14:39:35 phoenix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cfengine/Attic/cfengine-1.6.3.ebuild,v 1.6 2002/07/11 06:30:48 drobbins Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
