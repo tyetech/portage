@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ia64-sources/Attic/ia64-sources-2.4.24-r4.ebuild,v 1.1 2004/06/02 12:48:30 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ia64-sources/Attic/ia64-sources-2.4.24-r4.ebuild,v 1.2 2004/06/24 22:58:19 agriffis Exp $
 
 IUSE=""
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/wolk-sources/Attic/wolk-sources-4.14-r2.ebuild,v 1.1 2004/06/15 19:57:02 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/wolk-sources/Attic/wolk-sources-4.14-r2.ebuild,v 1.2 2004/06/24 23:02:25 agriffis Exp $
 
 OKV="2.4.20"
 OKB="2.4"

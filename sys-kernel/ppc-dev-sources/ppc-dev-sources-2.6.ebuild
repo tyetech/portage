@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc-dev-sources/Attic/ppc-dev-sources-2.6.ebuild,v 1.2 2004/05/30 23:18:56 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc-dev-sources/Attic/ppc-dev-sources-2.6.ebuild,v 1.3 2004/06/24 23:00:47 agriffis Exp $
 
 DESCRIPTION="Dummy ebuild pointing the user to gentoo-dev-sources as 2.6 kernel (incl pegasos)"
 LICENSE="GPL-2"

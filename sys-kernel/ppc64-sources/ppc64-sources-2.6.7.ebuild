@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc64-sources/Attic/ppc64-sources-2.6.7.ebuild,v 1.1 2004/06/04 04:42:02 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc64-sources/Attic/ppc64-sources-2.6.7.ebuild,v 1.2 2004/06/24 23:00:36 agriffis Exp $
 
 ETYPE="sources"
 inherit kernel

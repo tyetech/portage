@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/pegasos-dev-sources/Attic/pegasos-dev-sources-2.6.7.ebuild,v 1.1 2004/06/24 08:03:26 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/pegasos-dev-sources/Attic/pegasos-dev-sources-2.6.7.ebuild,v 1.2 2004/06/24 22:59:53 agriffis Exp $
 
 ETYPE="sources"
 inherit kernel-2
