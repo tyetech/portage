@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: System Team <system@gentoo.org>
 # Author: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/iptables/Attic/iptables-1.2.3.ebuild,v 1.1 2001/09/06 20:21:09 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/iptables/Attic/iptables-1.2.3.ebuild,v 1.2 2001/10/06 17:13:29 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Kernel 2.4 routing and traffic control utilities"
@@ -18,7 +18,7 @@ src_unpack() {
 }
 
 src_compile() {
-    #I had a problem with emake - DR
+	#I had a problem with emake - DR
 	make || die
 }
 
