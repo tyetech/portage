@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnome/Attic/libgnome-2.8.0.ebuild,v 1.1 2004/09/15 14:39:15 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnome/Attic/libgnome-2.8.0.ebuild,v 1.2 2004/10/21 16:19:50 agriffis Exp $
 
 inherit gnome2 eutils
 
@@ -28,3 +28,9 @@ DEPEND="${RDEPEND}
 G2CONF="${G2CONF} --disable-schemas-install "
 
 DOCS="AUTHORS COPYING* ChangeLog INSTALL NEWS README"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/${P}-va_list.patch
+}
