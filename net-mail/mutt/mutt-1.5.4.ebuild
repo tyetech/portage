@@ -1,8 +1,8 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mutt/Attic/mutt-1.5.4.ebuild,v 1.1 2003/03/26 01:01:46 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mutt/Attic/mutt-1.5.4.ebuild,v 1.2 2003/03/26 05:10:39 latexer Exp $
 
-IUSE="ssl nls slang cjk"
+IUSE="ssl nls slang cjk crypt imap"
 
 inherit eutils
 
