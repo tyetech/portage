@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-196-r1.ebuild,v 1.4 2005/01/21 08:30:34 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-199.ebuild,v 1.1 2005/01/21 08:30:34 spyderous Exp $
 
 inherit eutils flag-o-matic
 
@@ -10,18 +10,12 @@ SRC_URI="ftp://invisible-island.net/${PN}/${P}.tgz"
 
 LICENSE="X11"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="truetype Xaw3d unicode"
 
 DEPEND="virtual/x11
 	sys-apps/utempter
 	Xaw3d? ( x11-libs/Xaw3d )"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/${PN}-184-remove-termcap-breakage.patch
-}
 
 src_compile() {
 
@@ -33,6 +27,10 @@ src_compile() {
 		`use_with Xaw3d` \
 		--libdir=/etc \
 		--with-utempter \
+		--disable-setuid \
+		--disable-full-tgetent \
+		--disable-imake \
+		--disable-toolbar \
 		--enable-ansi-color \
 		--enable-88-color \
 		--enable-256-color \
@@ -44,14 +42,13 @@ src_compile() {
 		--enable-doublechars \
 		--enable-warnings \
 		--enable-tcap-query \
-		--disable-imake \
-		--disable-toolbar \
 		${myconf} || die
 	emake || die
 }
 
 src_install() {
-	make DESTDIR=${D} install-full || die
+	make DESTDIR=${D} install    || die
+	make DESTDIR=${D} install-ti || die
 	dodoc README* INSTALL*
 
 	# Fix permissions -- it grabs them from live system, and they can
