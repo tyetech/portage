@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3butler/Attic/mp3butler-1.2.ebuild,v 1.7 2004/07/13 08:01:17 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3butler/Attic/mp3butler-1.2.ebuild,v 1.8 2004/09/15 16:13:17 eradicator Exp $
 
 IUSE=""
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://babblica.net/mp3butler"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~sparc ~amd64"
+KEYWORDS="x86 sparc amd64"
 
 DEPEND="media-sound/id3"
 
