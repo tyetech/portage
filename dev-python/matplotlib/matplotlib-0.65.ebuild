@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/matplotlib/Attic/matplotlib-0.65.ebuild,v 1.1 2004/12/20 00:30:06 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/matplotlib/Attic/matplotlib-0.65.ebuild,v 1.2 2005/01/24 22:13:05 fserb Exp $
 
 inherit distutils virtualx
 
