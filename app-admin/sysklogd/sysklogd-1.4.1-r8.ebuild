@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sysklogd/Attic/sysklogd-1.4.1-r8.ebuild,v 1.8 2004/06/24 21:39:04 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sysklogd/Attic/sysklogd-1.4.1-r8.ebuild,v 1.9 2004/06/25 23:01:49 vapier Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~hppa"
 IUSE=""
 
-DEPEND="virtual/glibc"
+DEPEND="virtual/libc"
 RDEPEND="dev-lang/perl sys-apps/debianutils"
 PROVIDE="virtual/logger"
 
