@@ -1,10 +1,9 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ngrep/Attic/ngrep-1.41.ebuild,v 1.10 2004/07/03 05:29:48 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ngrep/Attic/ngrep-1.41.ebuild,v 1.11 2004/07/08 22:54:37 eldad Exp $
 
 inherit eutils
 
-S="${WORKDIR}/${P}"
 IUSE=""
 DESCRIPTION="A grep for network layers"
 SRC_URI="mirror://sourceforge/ngrep/${P}.tar.bz2"
