@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3wrap/mp3wrap-0.5.ebuild,v 1.10 2004/11/23 09:50:49 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3wrap/mp3wrap-0.5.ebuild,v 1.11 2004/12/19 05:57:09 eradicator Exp $
 
 IUSE=""
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://${PN}.sourceforge.net/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~sparc x86"
+KEYWORDS="amd64 sparc x86"
 
 DEPEND=""
 
