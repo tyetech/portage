@@ -1,6 +1,6 @@
 # Copyright 999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xforms/Attic/xforms-1.0.ebuild,v 1.1 2003/02/09 08:57:55 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xforms/Attic/xforms-1.0.ebuild,v 1.2 2003/02/13 16:24:36 mkennedy Exp $
 
 S=${WORKDIR}/${P}-release
 DESCRIPTION="A graphical user interface toolkit for X"
@@ -9,7 +9,7 @@ SRC_URI="ftp://ncmir.ucsd.edu/pub/xforms/OpenSource/${P}-release.tgz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ppc sparc"
+KEYWORDS="x86 ppc sparc"
 
 DEPEND="virtual/x11"
 IUSE=""
