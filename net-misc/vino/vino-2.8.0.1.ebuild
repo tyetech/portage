@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/vino/Attic/vino-2.8.0.1.ebuild,v 1.9 2004/12/11 10:16:52 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/vino/Attic/vino-2.8.0.1.ebuild,v 1.10 2004/12/23 20:07:51 gmsoft Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="x86 ppc ~amd64 sparc ~mips ~hppa ~ia64 alpha ~ppc64"
+KEYWORDS="x86 ppc ~amd64 sparc ~mips hppa ~ia64 alpha ~ppc64"
 #IUSE="jpeg zlib gnutls crypt"
 IUSE="jpeg gnutls crypt"
 
