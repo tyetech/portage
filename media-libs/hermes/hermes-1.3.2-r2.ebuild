@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/hermes/Attic/hermes-1.3.2-r2.ebuild,v 1.27 2004/12/16 20:22:01 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/hermes/Attic/hermes-1.3.2-r2.ebuild,v 1.28 2005/01/11 00:31:01 kloeri Exp $
 
 IUSE=""
 
