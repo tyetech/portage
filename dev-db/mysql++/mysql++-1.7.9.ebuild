@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql++/Attic/mysql++-1.7.9.ebuild,v 1.11 2004/03/14 13:19:53 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql++/Attic/mysql++-1.7.9.ebuild,v 1.12 2004/06/24 21:57:12 agriffis Exp $
 
 inherit gcc eutils
 

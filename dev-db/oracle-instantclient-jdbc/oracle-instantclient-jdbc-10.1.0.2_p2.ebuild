@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/oracle-instantclient-jdbc/Attic/oracle-instantclient-jdbc-10.1.0.2_p2.ebuild,v 1.1 2004/06/21 18:35:12 rizzo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/oracle-instantclient-jdbc/Attic/oracle-instantclient-jdbc-10.1.0.2_p2.ebuild,v 1.2 2004/06/24 21:58:37 agriffis Exp $
 
 inherit eutils
 
