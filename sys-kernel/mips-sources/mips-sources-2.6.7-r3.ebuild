@@ -1,12 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.7-r2.ebuild,v 1.2 2004/08/01 08:11:29 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.7-r3.ebuild,v 1.1 2004/08/02 06:57:17 kumba Exp $
 
 
 # Version Data
 OKV=${PV/_/-}
 CVSDATE="20040621"
 COBALTPATCHVER="1.5"
+SECPATCHVER="1.0"
 IP32DIFFDATE="20040402"
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
@@ -33,7 +34,8 @@ DESCRIPTION="Linux-Mips CVS sources for MIPS-based machines, dated ${CVSDATE}"
 SRC_URI="mirror://kernel/linux/kernel/v2.6/linux-${OKV}.tar.bz2
 		mirror://gentoo/mipscvs-${OKV}-${CVSDATE}.diff.bz2
 		mirror://gentoo/cobalt-patches-26xx-${COBALTPATCHVER}.tar.bz2
-		mirror://gentoo/ip32-iluxa-minpatchset-${IP32DIFFDATE}.diff.bz2"
+		mirror://gentoo/ip32-iluxa-minpatchset-${IP32DIFFDATE}.diff.bz2
+		mirror://gentoo/${PN}-security_patches-${SECPATCHVER}.tar.bz2"
 
 HOMEPAGE="http://www.linux-mips.org/"
 SLOT="${OKV}"
@@ -65,24 +67,33 @@ src_unpack() {
 	# Update the vanilla sources with linux-mips CVS changes
 	epatch ${WORKDIR}/mipscvs-${OKV}-${CVSDATE}.diff
 
+	# Fix a compile glitch for SGI O2/IP32
+	echo -e ""
+	einfo ">>> Generic Patches"
+	epatch ${FILESDIR}/mipscvs-2.6.7-maceisa_rtc_irq-fix.patch
+
+	# In order to use arcboot on IP32, the kernel entry address needs to be
+	# set to 0x98000000, not 0xa8000000.
+	epatch ${FILESDIR}/mipscvs-2.6.x-ip32-kern_entry-arcboot.patch
+
+	# Misc Fixes
+	epatch ${FILESDIR}/misc-2.6-iptables_headers.patch
+
 	# iluxa's minpatchset for SGI O2
 	echo -e ""
 	einfo ">>> Patching kernel with iluxa's minimal IP32 patchset ..."
 	epatch ${WORKDIR}/ip32-iluxa-minpatchset-${IP32DIFFDATE}.diff
 
-	# Fix a compile glitch for SGI O2/IP32
-	epatch ${FILESDIR}/mipscvs-2.6.7-maceisa_rtc_irq-fix.patch
 
 	# Security Fixes
 	echo -e ""
-	ebegin "Applying Security Fixes"
-		epatch ${FILESDIR}/CAN-2004-0497-attr_gid.patch
-		epatch ${FILESDIR}/CAN-2004-0596-2.6-eql.patch
-		epatch ${FILESDIR}/CAN-2004-0626-death_packet.patch
+	ebegin ">>> Applying Security Fixes"
+		epatch ${WORKDIR}/security/CAN-2004-0497-attr_gid.patch
+		epatch ${WORKDIR}/security/CAN-2004-0596-2.6-eql.patch
+		epatch ${WORKDIR}/security/CAN-2004-0626-death_packet.patch
+		epatch ${WORKDIR}/security/security-2.6-attr_check.patch
 	eend
 
-	# Misc Fixes
-	epatch ${FILESDIR}/misc-2.6-iptables_headers.patch
 
 	# Cobalt Patches
 	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
