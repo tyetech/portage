@@ -1,6 +1,9 @@
 # ChangeLog for net-mail/vpopmail
 # Copyright 2002-2004 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vpopmail/ChangeLog,v 1.30 2004/04/03 04:20:12 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vpopmail/ChangeLog,v 1.31 2004/04/25 17:00:45 kugelfang Exp $
+
+  25 Apr 2004; Danny van Dyk <kugelfang@gentoo.org> vpopmail-5.4.0.ebuild:
+  marked ~amd64.
 
 *vpopmail-5.4.0 (02 Apr 2004)
 
