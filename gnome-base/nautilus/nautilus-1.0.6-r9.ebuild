@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Updated by Sebastian Werner <sebastian@werner-productions.de>
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-1.0.6-r9.ebuild,v 1.8 2002/08/01 11:59:02 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-1.0.6-r9.ebuild,v 1.9 2002/08/16 04:09:25 murphy Exp $
 
 
 S=${WORKDIR}/${P}
@@ -9,7 +9,7 @@ DESCRIPTION="nautilus"
 SRC_URI="ftp://ftp.gnome.org/pub/GNOME/stable/sources/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc"
+KEYWORDS="x86 ppc sparc sparc64"
 
 
 HOMEPAGE="http://www.gnome.org/"
