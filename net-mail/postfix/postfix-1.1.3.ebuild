@@ -1,13 +1,11 @@
-# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Jerry Alexandratos <jerry@gentoo.org>, Donny Davies <woodchip@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/postfix/Attic/postfix-20010228.5.ebuild,v 1.1 2001/10/14 10:21:58 woodchip Exp $
+# Maintainer: Jerry Alexandratos <jerry@gentoo.org>, Donny Davies <woodchip@gentoo.org>
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/postfix/Attic/postfix-1.1.3.ebuild,v 1.1 2002/02/03 07:19:19 azarah Exp $
 
-P=${PN}-20010228-pl05
-A=${P}.tar.gz
 S=${WORKDIR}/${P}
 DESCRIPTION="A fast and secure drop-in replacement for sendmail"
-SRC_URI="ftp://ftp.porcupine.org/mirrors/postfix-release/official/${A}"
+SRC_URI="ftp://ftp.porcupine.org/mirrors/postfix-release/official/${P}.tar.gz"
 HOMEPAGE="http://www.postfix.org/"
 
 PROVIDE="virtual/mta"
@@ -62,16 +60,28 @@ src_install () {
 	cd ${S}/man ; doman man*/*
 
 	cd ${S}
-	dodoc *README COMPATIBILITY HISTORY LICENSE PORTING
-	dodoc RELEASE_NOTES RESTRICTION_CLASS TODO
+	dodoc *README COMPATIBILITY HISTORY LICENSE PORTING RELEASE_NOTES
 	docinto html ; dodoc html/*
 
 	cd ${S}/conf
 	insinto /etc/postfix/sample
 	doins access aliases canonical relocated transport
 	doins pcre_table regexp_table postfix-script* *.cf
-	exeinto /etc/postfix ; newexe postfix-script-sgid postfix-script
-	insinto /etc/postfix ; doins ${FILESDIR}/{main.cf,master.cf}
+	exeinto /etc/postfix
+	doexe postfix-script post-install postfix-files || die
+	insinto /etc/postfix
+	doins ${FILESDIR}/main.cf master.cf || die
 
-	exeinto /etc/rc.d/init.d ; newexe ${FILESDIR}/postfix.rc5 postfix
+	exeinto /etc/init.d ; newexe ${FILESDIR}/postfix.rc6 postfix
+}
+
+pkg_postinst() {
+	echo
+	echo "***************************************************************"
+	echo "* NOTE:  Please add the 'postdrop' group, and also be sure    *"
+	echo "*        to update /etc/postfix/master.cf to the latest       *"
+	echo "*        as postfix 1.1.1 and later versions' is not          *"
+	echo "*        compadible with earlier versions.                    *"
+	echo "***************************************************************"
+	echo
 }
