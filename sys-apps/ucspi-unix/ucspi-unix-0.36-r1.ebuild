@@ -1,16 +1,16 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/ucspi-unix/Attic/ucspi-unix-0.36-r1.ebuild,v 1.3 2004/06/24 22:31:11 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/ucspi-unix/Attic/ucspi-unix-0.36-r1.ebuild,v 1.4 2004/07/15 02:45:25 agriffis Exp $
 
 inherit eutils
 
-S=${WORKDIR}/${P}
 DESCRIPTION="A ucspi implementation for unix sockets."
 SRC_URI="http://untroubled.org/ucspi-unix/${P}.tar.gz"
 
 DEPEND=">=dev-libs/bglibs-1.009-r1"
 HOMEPAGE="http://untroubled.org/ucspi-unix/"
 KEYWORDS="x86 amd64 ~sparc"
+IUSE=""
 SLOT="0"
 LICENSE="GPL-2"
 
