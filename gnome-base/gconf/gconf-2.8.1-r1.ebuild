@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gconf/Attic/gconf-2.8.1.ebuild,v 1.1 2004/11/24 16:46:59 obz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gconf/Attic/gconf-2.8.1-r1.ebuild,v 1.1 2004/11/29 07:16:28 obz Exp $
 
 inherit eutils gnome2
 
@@ -31,6 +31,15 @@ DEPEND="${RDEPEND}
 # FIXME : consider merging the tree (?)
 
 MAKEOPTS="${MAKEOPTS} -j1"
+
+src_unpack() {
+
+	unpack ${A}
+	cd ${S}
+	# Apply the patch for gconf/locale settings, see bug #72416
+	epatch ${FILESDIR}/gconf-2-locale-c.patch
+
+}
 
 src_install() {
 
