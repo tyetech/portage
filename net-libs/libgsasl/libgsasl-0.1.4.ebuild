@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libgsasl/Attic/libgsasl-0.1.4.ebuild,v 1.3 2004/11/27 12:34:15 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libgsasl/Attic/libgsasl-0.1.4.ebuild,v 1.4 2005/01/03 19:59:34 corsair Exp $
 
 DESCRIPTION="The GNU SASL library"
 HOMEPAGE="http://www.gnu.org/software/gsasl/"
