@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-1.11.ebuild,v 1.2 2001/11/10 02:36:20 hallski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-1.11.ebuild,v 1.3 2001/12/04 20:27:12 danarmak Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="cdrtools - A set of tools for CDR drives, including cdrecord"
@@ -33,7 +33,7 @@ src_install() {
   dobin cdrecord/OBJ/*-linux-cc/cdrecord
   cd ${S}
   dobin mkisofs/OBJ/*-linux-cc/mkisofs
-  dobin misc/OBJ/*-linux-cc/readcd
+  dobin readcd/OBJ/*-linux-cc/readcd
   insinto /usr/include
   doins incs/*-linux-cc/align.h incs/*-linux-cc/avoffset.h
 
