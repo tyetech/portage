@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-headers/Attic/linux-headers-2.4.26.ebuild,v 1.8 2004/10/04 05:17:09 iggy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-headers/Attic/linux-headers-2.4.26.ebuild,v 1.9 2005/01/12 02:09:16 vapier Exp $
 
 ETYPE="headers"
 inherit kernel eutils
