@@ -1,20 +1,20 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/lard/Attic/lard-2.0.15.ebuild,v 1.3 2004/04/19 15:53:27 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/lard/Attic/lard-2.0.15-r1.ebuild,v 1.1 2004/04/19 15:53:27 phosphan Exp $
 
 inherit eutils
 
 IUSE=""
 
 DESCRIPTION="Language for Asynchronous Research and Development. Used to describe and simulate asynchronous circuits"
-HOMEPAGE="http://www.cs.man.ac.uk/apt/projects/lard/index.html"
+HOMEPAGE="http://www.cs.man.ac.uk/apt/projects/tools/lard/index.html"
 SRC_URI="ftp://ftp.cs.man.ac.uk/pub/amulet/lard/${P}.tar.gz
 	ftp://ftp.cs.man.ac.uk/pub/amulet/lard/lard-demos-2.0.12.tar.gz
 	ftp://ftp.cs.man.ac.uk/pub/amulet/lard/lard-doc-2.0.14.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~sparc"
+KEYWORDS="~x86 ~ppc ~sparc"
 
 DEPEND="sys-devel/flex
 	dev-lang/tcl
@@ -29,6 +29,8 @@ DEPEND="sys-devel/flex
 src_unpack() {
 	unpack ${A} ; cd ${S}
 	epatch ${FILESDIR}/${P}-configure.patch
+	epatch ${FILESDIR}/${PV}-gcc-multi-string-literal.patch
+	chmod +x interpreter/con.py
 }
 
 src_compile() {
