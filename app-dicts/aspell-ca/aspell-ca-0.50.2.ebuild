@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/aspell-ca/aspell-ca-0.50.2.ebuild,v 1.4 2004/06/24 21:31:39 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/aspell-ca/aspell-ca-0.50.2.ebuild,v 1.5 2005/01/01 12:40:21 eradicator Exp $
 
 ASPELL_LANG="Catalan"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/freedict-fra-eng/freedict-fra-eng-1.0.ebuild,v 1.3 2004/06/24 21:40:43 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/freedict-fra-eng/freedict-fra-eng-1.0.ebuild,v 1.4 2005/01/01 12:52:06 eradicator Exp $
 
 
 FORLANG="French"
