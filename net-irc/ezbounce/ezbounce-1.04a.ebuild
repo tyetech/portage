@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ezbounce/Attic/ezbounce-1.04a.ebuild,v 1.3 2004/01/07 06:44:39 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ezbounce/Attic/ezbounce-1.04a.ebuild,v 1.4 2004/04/27 22:09:48 agriffis Exp $
+
+inherit eutils
 
 DESCRIPTION="ezbounce is a small IRC bouncer"
 HOMEPAGE="http://druglord.freelsd.org/ezbounce/"
