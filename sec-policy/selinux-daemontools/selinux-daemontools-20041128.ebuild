@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-daemontools/Attic/selinux-daemontools-20041111.ebuild,v 1.1 2004/11/13 19:40:14 kaiowas Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-daemontools/Attic/selinux-daemontools-20041128.ebuild,v 1.1 2004/12/12 12:02:06 kaiowas Exp $
 
 inherit selinux-policy
 
@@ -11,5 +11,5 @@ IUSE=""
 
 DESCRIPTION="SELinux policy for daemontools"
 
-KEYWORDS="x86 ppc sparc amd64"
+KEYWORDS="~x86 ~ppc ~sparc ~amd64"
 
