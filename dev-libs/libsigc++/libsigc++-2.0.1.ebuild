@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libsigc++/Attic/libsigc++-2.0.1.ebuild,v 1.10 2004/10/05 12:19:14 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libsigc++/Attic/libsigc++-2.0.1.ebuild,v 1.11 2005/01/09 14:56:42 corsair Exp $
 
 DESCRIPTION="Typesafe callback system for standard C++"
 HOMEPAGE="http://libsigc.sourceforge.net/"
