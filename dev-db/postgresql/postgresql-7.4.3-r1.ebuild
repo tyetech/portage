@@ -1,36 +1,33 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql/Attic/postgresql-7.4.2-r1.ebuild,v 1.10 2004/07/14 01:23:36 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql/Attic/postgresql-7.4.3-r1.ebuild,v 1.1 2004/07/18 08:42:36 nakano Exp $
 
 inherit eutils gnuconfig flag-o-matic
 
 DESCRIPTION="sophisticated Object-Relational DBMS."
-
-P_HIERPG="hier-Pg7.4-0.5.1"
+HOMEPAGE="http://www.postgresql.org/"
+P_HIERPG="hier-Pg7.4-0.5.2"
 SRC_URI="mirror://postgresql/source/v${PV}/${PN}-base-${PV}.tar.bz2
 	mirror://postgresql/source/v${PV}/${PN}-opt-${PV}.tar.bz2
 	doc? ( mirror://postgresql/source/v${PV}/${PN}-docs-${PV}.tar.bz2 )
 	pg-hier? ( http://gppl.terminal.ru/${P_HIERPG}.tar.gz )"
 
-HOMEPAGE="http://www.postgresql.org/"
-
 LICENSE="POSTGRESQL"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha amd64 hppa ia64 mips"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~s390 ~ppc64"
 IUSE="ssl nls java python tcltk perl libg++ pam readline zlib doc pg-hier pg-vacuumdelay pg-intdatetime"
 
 DEPEND="virtual/libc
 	sys-devel/autoconf
-	app-admin/sudo
 	>=sys-libs/ncurses-5.2
 	>=sys-devel/bison-1.875
 	zlib? ( >=sys-libs/zlib-1.1.3 )
 	readline? ( >=sys-libs/readline-4.1 )
 	tcltk? ( >=dev-lang/tcl-8 >=dev-lang/tk-8.3.3-r1 )
 	perl? ( >=dev-lang/perl-5.6.1-r2 )
-	python? ( !mips? ( >=dev-lang/python-2.2 dev-python/egenix-mx-base ) )
-	java? ( !amd64? ( >=virtual/jdk-1.3* >=dev-java/ant-1.3
-		dev-java/java-config ) )
+	python? ( >=dev-lang/python-2.2 dev-python/egenix-mx-base )
+	java? ( >=virtual/jdk-1.3* >=dev-java/ant-1.3
+		dev-java/java-config )
 	ssl? ( >=dev-libs/openssl-0.9.6-r1 )
 	nls? ( sys-devel/gettext )"
 # java dep workaround for portage bug
@@ -40,7 +37,7 @@ RDEPEND="virtual/libc
 	tcltk? ( >=dev-lang/tcl-8 )
 	perl? ( >=dev-lang/perl-5.6.1-r2 )
 	python? ( >=dev-lang/python-2.2 )
-	java? ( !amd64? ( >=virtual/jdk-1.3* ) )
+	java? ( >=virtual/jdk-1.3* )
 	ssl? ( >=dev-libs/openssl-0.9.6-r1 )"
 
 PG_DIR="/var/lib/postgresql"
@@ -63,7 +60,7 @@ pkg_setup() {
 
 check_java_config() {
 	JDKHOME="`java-config --jdk-home`"
-	if [[ -z ${JDKHOME} || ! -d ${JDKHOME} ]]; then
+	if [[ -z ${JDKHOME} && ! -d ${JDKHOME} ]]; then
 		NOJDKERROR="You need to use java-config to set your JVM to a JDK!"
 		eerror "${NOJDKERROR}"
 		die "${NOJDKERROR}"
@@ -83,23 +80,25 @@ src_unpack() {
 		epatch ${FILESDIR}/${P}-vacuum-delay.patch
 	fi
 
-	[ "${ARCH}" = "hppa" ] && epatch ${FILESDIR}/${P}-hppa-testandset.patch
+	if [ "${ARCH}" = "hppa" ]
+	then
+		cd ${S}
+		epatch ${FILESDIR}/${P}-hppa-testandset.patch
+	fi
 }
 
 src_compile() {
 	filter-flags -ffast-math
 
-	if use java && ! use amd64; then
+	if use java; then
 		check_java_config
 	fi
 
 	local myconf
 	use tcltk && myconf="--with-tcl"
-	use python && use mips || myconf="$myconf --with-python"
+	use python && myconf="$myconf --with-python"
 	use perl && myconf="$myconf --with-perl"
-	if use java && ! use amd64; then
-		myconf="$myconf --with-java"
-	fi
+	use java && myconf="$myconf --with-java"
 	use ssl && myconf="$myconf --with-openssl"
 	use nls && myconf="$myconf --enable-nls"
 	use libg++ && myconf="$myconf --with-CXX"
@@ -149,14 +148,18 @@ src_install() {
 	if use pg-hier; then
 		dodoc ${WORKDIR}/README-${P_HIERPG}.html || die
 	fi
-	dodoc README HISTORY
+	dodoc README HISTORY COPYRIGHT INSTALL
 	dodoc contrib/adddepend/*
 
 	exeinto /usr/bin
 
-	if use java && ! use amd64; then
+	if use java; then
+		# we need to remove jar file after dojar; otherwise two same jar
+		# file are installed.
 		dojar ${D}/usr/share/postgresql/java/postgresql.jar || die
 		rm ${D}/usr/share/postgresql/java/postgresql.jar
+		dojar ${D}/usr/share/postgresql/java/postgresql-examples.jar || die
+		rm ${D}/usr/share/postgresql/java/postgresql-examples.jar
 	fi
 
 	dodir /usr/include/postgresql/pgsql
@@ -259,7 +262,7 @@ pkg_config() {
 			eerror "Temporary setting this value to ${SEMMNI_MIN} while creating the initial database."
 			echo ${SEM} ${SEMMNI_MIN} > /proc/sys/kernel/sem
 		fi
-		sudo -u postgres /usr/bin/initdb --pgdata ${PG_DIR}/data
+		su postgres -c "/usr/bin/initdb --pgdata ${PG_DIR}/data"
 
 		if [ ! `sysctl -n kernel.sem | cut -f4` -eq ${SEMMNI} ] ; then
 			echo ${SEM} ${SEMMNI} > /proc/sys/kernel/sem

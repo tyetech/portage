@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql/Attic/postgresql-7.3.6.ebuild,v 1.9 2004/07/05 22:20:02 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql/Attic/postgresql-7.3.6-r2.ebuild,v 1.1 2004/07/18 08:42:36 nakano Exp $
 
 inherit flag-o-matic
 
@@ -13,20 +13,19 @@ SRC_URI="mirror://postgresql/source/v${PV}/${PN}-base-${PV}.tar.bz2
 
 LICENSE="POSTGRESQL"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha amd64 hppa ia64 mips"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64 ~hppa ~ia64 ~mips"
 IUSE="doc java libg++ nls pam perl python readline ssl tcltk zlib"
 
 DEPEND="virtual/libc
 	sys-devel/autoconf
-	app-admin/sudo
 	>=sys-libs/ncurses-5.2
 	zlib? ( >=sys-libs/zlib-1.1.3 )
 	readline? ( >=sys-libs/readline-4.1 )
 	tcltk? ( >=dev-lang/tcl-8 >=dev-lang/tk-8.3.3-r1 )
 	perl? ( >=dev-lang/perl-5.6.1-r2 )
-	python? ( !ppc? ( >=dev-lang/python-2.2 dev-python/egenix-mx-base ) )
-	java? ( !amd64? ( >=virtual/jdk-1.3* >=dev-java/ant-1.3
-		dev-java/java-config ) )
+	python? ( >=dev-lang/python-2.2 dev-python/egenix-mx-base )
+	java? ( >=virtual/jdk-1.3* >=dev-java/ant-1.3
+		dev-java/java-config )
 	ssl? ( >=dev-libs/openssl-0.9.6-r1 )
 	nls? ( sys-devel/gettext )"
 # java dep workaround for portage bug
@@ -35,8 +34,8 @@ RDEPEND="virtual/libc
 	zlib? ( >=sys-libs/zlib-1.1.3 )
 	tcltk? ( >=dev-lang/tcl-8 )
 	perl? ( >=dev-lang/perl-5.6.1-r2 )
-	python? ( !ppc? ( >=dev-lang/python-2.2 ) )
-	java? ( !amd64? ( >=virtual/jdk-1.3* ) )
+	python? ( >=dev-lang/python-2.2 )
+	java? ( >=virtual/jdk-1.3* )
 	ssl? ( >=dev-libs/openssl-0.9.6-r1 )"
 
 PG_DIR="/var/lib/postgresql"
@@ -54,9 +53,6 @@ pkg_setup() {
 			die
 		fi
 	fi
-
-	use java && use amd64 && ewarn "Ignoring USE=\"java\" in amd64"
-	use python && use ppc && ewarn "Ignore USE=\"python\" in ppc"
 }
 
 check_java_config() {
@@ -76,19 +72,15 @@ src_unpack() {
 src_compile() {
 	filter-flags -ffast-math
 
-	if use java && ! use amd64; then
+	if use java; then
 		check_java_config
 	fi
 
 	local myconf
 	use tcltk && myconf="--with-tcl"
-	if use python && ! use ppc; then
-		myconf="$myconf --with-python"
-	fi
+	use python && myconf="$myconf --with-python"
 	use perl && myconf="$myconf --with-perl"
-	if use java && ! use amd64; then
-		myconf="$myconf --with-java"
-	fi
+	use java && myconf="$myconf --with-java"
 	use ssl && myconf="$myconf --with-openssl"
 	use nls && myconf="$myconf --enable-nls"
 	use libg++ && myconf="$myconf --with-CXX"
@@ -119,7 +111,8 @@ src_compile() {
 src_install() {
 	addwrite "/usr/share/man/man3/Pg.3pm"
 
-	if use perl; then
+	if use perl
+	then
 		mv ${S}/src/pl/plperl/Makefile ${S}/src/pl/plperl/Makefile_orig
 		sed -e "s:(INST_DYNAMIC) /usr/lib:(INST_DYNAMIC) ${D}/usr/lib:" \
 			${S}/src/pl/plperl/Makefile_orig > ${S}/src/pl/plperl/Makefile
@@ -136,7 +129,7 @@ src_install() {
 	dodoc COPYRIGHT HISTORY INSTALL README register.txt
 	dodoc contrib/adddepend/*
 
-	if use java && ! use amd64; then
+	if use java; then
 		dojar ${D}/usr/share/postgresql/java/postgresql.jar
 		rm ${D}/usr/share/postgresql/java/postgresql.jar
 	fi
@@ -207,7 +200,7 @@ pkg_config() {
 				cat /proc/sys/kernel/sem | sed -e "s/\t${SEM_IDX}/\t${SEM_IDX_MIN}/" > /proc/sys/kernel/sem
 			fi
 		fi
-		sudo -u postgres /usr/bin/initdb --pgdata ${PG_DIR}/data
+		su postgres -c "/usr/bin/initdb --pgdata ${PG_DIR}/data"
 
 		if [ "${ARCH}" = "hppa" ]; then
 			if [ ! `sysctl kernel.sem | awk '{ print $6 }'` -eq ${SEM_IDX} ] ; then
