@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/micq/Attic/micq-0.4.12.ebuild,v 1.1 2004/12/03 16:09:24 rizzo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/micq/Attic/micq-0.4.12.ebuild,v 1.2 2005/02/22 16:13:49 usata Exp $
 
 IUSE="tcltk ssl"
 
