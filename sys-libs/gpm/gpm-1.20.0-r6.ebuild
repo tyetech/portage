@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/gpm/Attic/gpm-1.20.0-r6.ebuild,v 1.2 2003/02/08 21:06:04 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/gpm/Attic/gpm-1.20.0-r6.ebuild,v 1.3 2003/02/13 16:49:18 vapier Exp $
 
 IUSE=""
 

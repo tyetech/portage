@@ -1,7 +1,7 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
 #        Chad Huneycutt <chad.huneycutt@acm.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/gdbm/Attic/gdbm-1.8.0-r5.ebuild,v 1.15 2003/02/09 18:51:40 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/gdbm/Attic/gdbm-1.8.0-r5.ebuild,v 1.16 2003/02/13 16:48:31 vapier Exp $
 
 inherit gnuconfig
 
