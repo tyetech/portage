@@ -1,7 +1,6 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/checkpassword/Attic/checkpassword-0.90.ebuild,v 1.1 2001/05/12 16:29:26 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/checkpassword/Attic/checkpassword-0.90.ebuild,v 1.2 2002/07/11 06:30:47 drobbins Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}

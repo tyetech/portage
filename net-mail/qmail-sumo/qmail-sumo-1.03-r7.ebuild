@@ -1,7 +1,6 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Geert Bevin <gbevin@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/qmail-sumo/Attic/qmail-sumo-1.03-r7.ebuild,v 1.1 2002/01/30 13:36:48 gbevin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/qmail-sumo/Attic/qmail-sumo-1.03-r7.ebuild,v 1.2 2002/07/11 06:30:47 drobbins Exp $
 
 S=${WORKDIR}
 DESCRIPTION="Qmail - merge this package to merge all qmail packages"
