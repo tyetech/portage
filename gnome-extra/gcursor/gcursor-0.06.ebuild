@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gcursor/Attic/gcursor-0.06.ebuild,v 1.4 2004/10/04 16:32:48 slarti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gcursor/Attic/gcursor-0.06.ebuild,v 1.5 2005/01/31 15:02:52 gustavoz Exp $
 
 inherit gnome2
 
