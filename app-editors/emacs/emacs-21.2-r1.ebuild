@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-21.2-r1.ebuild,v 1.9 2002/10/16 23:17:19 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-21.2-r1.ebuild,v 1.10 2002/12/09 04:17:38 manson Exp $
 
 IUSE="X nls motif"
 
@@ -27,7 +27,7 @@ PROVIDE="virtual/emacs"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc sparc64"
+KEYWORDS="x86 ppc sparc "
 
 src_compile() {
 	local myconf
