@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/aoi/Attic/aoi-1.4.ebuild,v 1.1 2003/05/15 09:34:25 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/aoi/Attic/aoi-1.4.ebuild,v 1.2 2003/09/06 23:56:38 msterret Exp $
 
 inherit java-pkg
 
@@ -37,7 +37,7 @@ src_install() {
 		mv ${WORKDIR}/AoI\ Manual/ ${WORKDIR}/aoi_manual/
 		dohtml -r ${WORKDIR}/aoi_manual/
 	fi
-	java-pkg_dojar ArtOfIllusion.jar 
+	java-pkg_dojar ArtOfIllusion.jar
 	JARDESTTREE="lib/Plugins"
 	java-pkg_dojar Plugins/*.jar
 }
