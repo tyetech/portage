@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/zynaddsubfx/Attic/zynaddsubfx-1.4.2.ebuild,v 1.3 2003/09/20 10:58:25 jje Exp $ 
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/zynaddsubfx/Attic/zynaddsubfx-1.4.3.ebuild,v 1.1 2003/09/20 10:58:25 jje Exp $ 
 
 MY_P=ZynAddSubFX-${PV}
 DESCRIPTION="ZynAddSubFX is a opensource software synthesizer."
