@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpc/Attic/mpc-0.11.1.ebuild,v 1.2 2004/07/01 10:59:11 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpc/Attic/mpc-0.11.1.ebuild,v 1.3 2004/07/12 07:39:25 eradicator Exp $
 
 IUSE=""
 
@@ -8,7 +8,7 @@ DESCRIPTION="A commandline client for Music Player Daemon (media-sound/mpd)"
 SRC_URI="mirror://sourceforge/musicpd/${P}.tar.gz"
 HOMEPAGE="http://www.musicpd.org"
 
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~sparc ~amd64"
 SLOT="0"
 LICENSE="GPL-2"
 
