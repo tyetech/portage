@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/hermes/Attic/hermes-1.3.2-r2.ebuild,v 1.12 2003/09/06 23:59:48 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/hermes/Attic/hermes-1.3.2-r2.ebuild,v 1.13 2003/09/29 17:27:55 agriffis Exp $
 
 inherit gnuconfig
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://hermes.terminal.at"
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="x86 ppc sparc ~alpha ~mips amd64"
+KEYWORDS="x86 ppc sparc alpha ~mips amd64"
 
 DEPEND="sys-devel/libtool
 	sys-devel/automake
