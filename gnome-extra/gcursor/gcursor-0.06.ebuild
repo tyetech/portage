@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gcursor/Attic/gcursor-0.06.ebuild,v 1.3 2004/08/30 10:22:22 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gcursor/Attic/gcursor-0.06.ebuild,v 1.4 2004/10/04 16:32:48 slarti Exp $
 
 inherit gnome2
 
@@ -11,7 +11,7 @@ LICENSE="GPL-2"
 
 IUSE=""
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~amd64"
 
 RDEPEND=">=dev-libs/glib-2
 	>=x11-libs/gtk+-2
