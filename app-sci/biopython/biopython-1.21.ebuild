@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/biopython/Attic/biopython-1.21.ebuild,v 1.3 2003/09/08 07:24:58 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/biopython/Attic/biopython-1.21.ebuild,v 1.4 2003/12/31 02:47:08 george Exp $
 
 IUSE=""
 
@@ -16,7 +16,7 @@ DEPEND=">=dev-lang/python-2.0
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha"
+KEYWORDS="x86 ~ppc ~sparc ~alpha"
 
 src_compile() {
 	python setup.py build || die
