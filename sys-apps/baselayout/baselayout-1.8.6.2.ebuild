@@ -1,10 +1,10 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.6.0.ebuild,v 1.2 2003/01/07 06:08:35 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.6.2.ebuild,v 1.1 2003/01/15 01:19:22 azarah Exp $
 
 IUSE="bootstrap build"
 
-SV="1.4.3.0"
+SV="1.4.3.2"
 SVREV=""
 # SysvInit version
 SVIV="2.84"
@@ -422,7 +422,7 @@ pkg_postinst() {
 	defaltmerge
 	# We dont want to create devices if this is not a bootstrap and devfs
 	# is used, as this was the cause for all the devfs problems we had
-	if [ "${altmerge}" -eq "0" ]
+	if [ "${altmerge}" -eq "0" -a ! -e ${ROOT}/dev/.devfsd ]
 	then
 		cd ${ROOT}/dev
 		# These devices are also needed by many people and should be included
