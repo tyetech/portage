@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/ncurses/Attic/ncurses-5.2.20020511-r2.ebuild,v 1.1 2002/09/03 21:11:29 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/ncurses/Attic/ncurses-5.2.20020511-r2.ebuild,v 1.2 2002/09/14 15:51:26 bjb Exp $
 
 inherit flag-o-matic
 
@@ -20,7 +20,7 @@ HOMEPAGE="http://www.gnu.org/software/ncurses/ncurses.html"
 
 LICENSE="MIT"
 SLOT="5"
-KEYWORDS="x86 ppc sparc sparc64"
+KEYWORDS="x86 ppc sparc sparc64 alpha"
 
 DEPEND="virtual/glibc
 	sys-apps/bzip2"

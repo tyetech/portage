@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/gpm/Attic/gpm-1.20.0-r3.ebuild,v 1.6 2002/09/11 14:16:09 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/gpm/Attic/gpm-1.20.0-r3.ebuild,v 1.7 2002/09/14 15:51:26 bjb Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Console-based mouse driver"
@@ -12,7 +12,7 @@ DEPEND=">=sys-libs/ncurses-5.2
 	
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc sparc64"
+KEYWORDS="x86 ppc sparc sparc64 alpha"
 
 src_compile() {
 	#this little hack turns off EMACS byte compilation.  Really don't want
