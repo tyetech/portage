@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hal/Attic/hal-0.4.2.ebuild,v 1.3 2004/12/20 09:31:34 joem Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hal/Attic/hal-0.4.2-r1.ebuild,v 1.1 2004/12/22 17:51:30 foser Exp $
 
 inherit eutils python
 
@@ -38,6 +38,10 @@ src_unpack() {
 	epatch ${FILESDIR}/${PN}-0.4.1-old_storage_policy.patch
 	# fix floppy drives be shown
 	epatch ${FILESDIR}/${PN}-0.4.0-allow-floppy-drives.patch
+	# fix for some odd cdromdrives giving misinformation
+	epatch ${FILESDIR}/${P}-cdrom_media_check.patch
+	# fix possible fstab sync crash
+	epatch ${FILESDIR}/${P}-fstab_sync_crash.patch
 
 }
 
