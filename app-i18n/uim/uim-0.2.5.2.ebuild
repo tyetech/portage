@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/uim/Attic/uim-0.2.1.ebuild,v 1.2 2004/01/06 08:41:36 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/uim/Attic/uim-0.2.5.2.ebuild,v 1.1 2004/01/24 19:29:11 usata Exp $
 
 IUSE="gtk nls debug"
 
@@ -10,12 +10,15 @@ SRC_URI="http://freedesktop.org/Software/UimDownload/${P}.tar.gz"
 
 LICENSE="GPL-2 | BSD"
 SLOT="0"
-KEYWORDS="x86 alpha"
+KEYWORDS="~x86 ~alpha"
 
 S="${WORKDIR}/${P}"
 
 DEPEND="${RDEPEND}
-	>=sys-apps/sed-4"
+	dev-lang/perl
+	dev-perl/XML-Parser
+	>=sys-apps/sed-4
+	nls? ( sys-devel/gettext )"
 RDEPEND="gtk? ( >=x11-libs/gtk+-2 )"
 
 # for debugging use
@@ -54,6 +57,15 @@ src_install () {
 	make DESTDIR=${D} install || die
 
 	dodoc ABOUT-NLS AUTHORS ChangeLog INSTALL* NEWS README*
+}
+
+pkg_postinst() {
+
+	einfo
+	einfo "To use uim-anthy you should emerge app-i18n/anthy or app-i18n/anthy-ss."
+	einfo "To use uim-skk you should emerge app-i18n/skk-jisyo."
+	einfo "To use uim-prime you should emerge app-i18n/prime."
+	einfo
 }
 
 pkg_postrm() {
