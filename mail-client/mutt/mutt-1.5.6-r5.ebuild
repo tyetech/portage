@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.6-r2.ebuild,v 1.16 2004/11/24 14:55:14 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.6-r5.ebuild,v 1.1 2004/11/24 14:55:14 agriffis Exp $
 
 inherit eutils flag-o-matic
 IUSE="cjk ssl nls slang crypt imap mbox nntp vanilla"
@@ -9,8 +9,9 @@ edit_threads_patch="patch-1.5.5.1.cd.edit_threads.9.5-gentoo.bz2"
 compressed_patch="patch-${PV}.rr.compressed.gz"
 nntp_patch="patch-${PV}.vvv.nntp-gentoo-r2.bz2"
 mbox_hook_patch="patch-${PV}.dw.mbox-hook.1"
-maildir_header_cache_patch="mutt-cvs-maildir-header-cache.16"
+header_cache_patch="patch-${PV}.tg.hcache.11"
 pgp_timeout_patch="patch-${PV}.dw.pgp-timeout.1"
+auto_decode_patch="patch-${PV}.ddm.pgp-auto-decode.1"
 
 DESCRIPTION="a small but very powerful text-based mail client"
 HOMEPAGE="http://www.mutt.org"
@@ -20,8 +21,9 @@ SRC_URI="ftp://ftp.mutt.org/mutt/devel/mutt-${PV}i.tar.gz
 		http://mutt.kiev.ua/download/${P}/${compressed_patch}
 		http://www.woolridge.ca/mutt/patches/${mbox_hook_patch}
 		nntp? ( mirror://gentoo/${nntp_patch} )
-		http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/${maildir_header_cache_patch}
+		http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/${header_cache_patch}
 		http://www.woolridge.ca/mutt/patches/${pgp_timeout_patch}
+		http://www.pizzashack.org/mutt/${auto_decode_patch}
 	)"
 #	nntp? ( http://mutt.kiev.ua/download/${P}/${nntp_patch} )
 #	http://cedricduval.free.fr/mutt/patches/download/${edit_threads_patch}
@@ -37,7 +39,7 @@ DEPEND="${RDEPEND}
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc ~sparc alpha ~hppa ia64 ~amd64 ~mips ppc64 ppc-macos"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~ia64 ~amd64 ~mips ~ppc64 ~ppc-macos"
 
 
 pkg_setup() {
@@ -57,12 +59,13 @@ src_unpack() {
 		epatch ${DISTDIR}/${compressed_patch}
 		epatch ${DISTDIR}/${edit_threads_patch}
 		epatch ${DISTDIR}/${mbox_hook_patch}
-		epatch ${DISTDIR}/${maildir_header_cache_patch}
+		epatch ${DISTDIR}/${header_cache_patch}
 		epatch ${DISTDIR}/${pgp_timeout_patch}
+		epatch ${DISTDIR}/${auto_decode_patch}
 		use nntp && epatch ${DISTDIR}/${nntp_patch}
 
 		# The following steps are necessary for the nntp patch and the
-		# maildir_header_cache_patch
+		# header_cache_patch
 		aclocal -I m4					|| die "aclocal failed"
 		autoheader						|| die "autoheader failed"
 		make -C m4 -f Makefile.am.in	|| die "make in m4 failed"
