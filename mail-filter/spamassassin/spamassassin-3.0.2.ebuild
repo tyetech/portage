@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spamassassin/Attic/spamassassin-3.0.0-r1.ebuild,v 1.4 2004/12/20 11:07:54 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spamassassin/Attic/spamassassin-3.0.2.ebuild,v 1.1 2004/12/20 11:07:54 mcummings Exp $
 
 inherit perl-module
 
@@ -19,6 +19,7 @@ IUSE="berkdb qmail ssl doc"
 
 DEPEND=">=dev-lang/perl-5.8.2-r1
 	>=dev-perl/PodParser-1.22
+	dev-perl/MIME-Base64
 	>=dev-perl/HTML-Parser-3.31
 	>=dev-perl/Net-DNS-0.34
 	dev-perl/Digest-SHA1
@@ -98,7 +99,7 @@ src_append_doc() {
 src_compile() {
 	# Add Gentoo tag to make it easier for the upstream devs to spot
 	# possible modifications or patches.
-	version_tag="g${PV/*_/}${PR/r0/}"
+	version_tag="g${PV:6}${PR}"
 	version_str="${PV//_/-}-${version_tag}"
 
 	# Create the Gentoo config file before Makefile.PL is called so it
@@ -158,6 +159,7 @@ src_install () {
 	fperms 755 /etc/init.d/spamd
 	insinto /etc/conf.d
 	newins ${FILESDIR}/3.0.0-spamd.conf spamd
+	dosym /etc/mail/spamassassin /etc/spamassassin
 
 	if use doc; then
 		dodoc spamd/PROTOCOL
@@ -176,12 +178,13 @@ pkg_postinst() {
 	fi
 
 	if has_version "mail-filter/razor"; then
-		if ! has_version "<=net-mail/razor-2.40"; then
-			ewarn "You have $(best_version mail-filter/razor) installed but SpamAssassin"
-			ewarn "requires at least version 2.40, version 2.61 or later is recommended."
-		elif ! has_version ">=net-mail/razor-2.61"; then
-			ewarn "You have $(best_version mail-filter/razor) installed but SpamAssassin"
-			ewarn "recommends at least version 2.61."
+		if ! has_version ">=mail-filter/razor-2.61"; then
+				ewarn "You have $(best_version mail-filter/razor) installed but SpamAssassin"
+				if has_version "<mail-filter/razor-2.40"; then
+					ewarn "requires at least version 2.40, version 2.61 or later is recommended."
+				else
+					ewarn "recommends at least version 2.61."
+				fi
 		fi
 	fi
 
