@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-ximian/Attic/openoffice-ximian-1.3.5.ebuild,v 1.3 2004/10/12 14:06:10 suka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice-ximian/Attic/openoffice-ximian-1.3.5.ebuild,v 1.4 2004/10/23 13:18:19 suka Exp $
 
 # Notes:
 #
@@ -367,6 +367,7 @@ src_compile() {
 	filter-flags "-fprefetch-loop-arrays"
 	filter-flags "-fno-default-inline"
 	filter-flags "-fstack-protector"
+	filter-flags "-ftracer"
 	append-flags "-fno-strict-aliasing"
 	replace-flags "-O3" "-O2"
 	replace-flags "-Os" "-O2"
