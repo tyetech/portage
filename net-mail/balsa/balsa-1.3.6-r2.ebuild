@@ -1,6 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later  
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/balsa/Attic/balsa-1.4.0.ebuild,v 1.1 2002/08/19 19:59:49 stroke Exp $
+# Distributed under the terms of the GNU General Public License, v2 or later
+# Modified by Riccardo Persichetti (ricpersi@libero.it)
+# /space/gentoo/cvsroot/gentoo-x86/net-mail/balsa/balsa-1.3.5-r1.ebuild,v 1.2 2002/05/23 06:50:16 seemant Exp
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Balsa: email client for GNOME"
@@ -9,7 +10,7 @@ HOMEPAGE="http://www.balsa.net"
 
 SLOT="1"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="x86 sparc sparc64"
 
 DEPEND="=dev-libs/glib-1.2*
 	=x11-libs/gtk+-1.2*
@@ -22,8 +23,15 @@ DEPEND="=dev-libs/glib-1.2*
 	ssl? ( dev-libs/openssl )
 	cups? ( >=gnome-base/gnome-print-0.30 )
 	perl? ( >=dev-libs/libpcre-3.4 )
-	spell? ( >=app-text/pspell-0.11.2 )
+	spell? ( >=app-text/aspell-0.50 )
 	gtkhtml? ( >=gnome-extra/gtkhtml-0.16.1 )"
+
+src_unpack() {
+	 unpack ${P}.tar.bz2
+	# this patch is from Riccardo Persichetti
+	# (ricpersi@libero.it) to make balsa compile
+	patch -p0 < ${FILESDIR}/${P}-gentoo.patch || die
+}
 
 src_compile() {
 	local myconf
@@ -33,11 +41,16 @@ src_compile() {
 	use perl && myconf="${myconf} --enable-pcre"
 	use spell && myconf="${myconf} --enable-all"
 
-	myconf="${myconf} --with-mailpath=/var/mail --enable-threads"
+	libmutt/configure --prefix=/usr \
+		--host=${CHOST} \
+		--with-mailpath=/var/mail || die "configure libmutt failed"
+
+	myconf="${myconf} --enable-threads"
 
 	econf ${myconf} || die "configure balsa failed"
 	emake || die "emake failed"
 }
+
 
 
 src_install () {
