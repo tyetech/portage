@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/linesrv/Attic/linesrv-2.1.6-r1.ebuild,v 1.2 2002/05/27 17:27:39 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/linesrv/Attic/linesrv-2.1.6-r1.ebuild,v 1.3 2002/07/08 18:19:22 phoenix Exp $
 
 DESCRIPTION="Client/Server system to control the Internet link of a masquerading server"
 HOMEPAGE="http://linecontrol.sourceforge.net"
@@ -13,6 +13,7 @@ DEPEND="virtual/glibc pam? ( >=sys-libs/pam-0.75 )"
 RDEPEND="virtual/glibc net-www/apache"
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="x86"
 
 [ -z "$HTTPD_ROOT" ] && HTTPD_ROOT=/home/httpd
 
