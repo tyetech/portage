@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ettercap/Attic/ettercap-0.6.10-r1.ebuild,v 1.3 2003/09/05 23:44:49 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ettercap/Attic/ettercap-0.6.10-r1.ebuild,v 1.4 2004/01/06 04:04:25 weeve Exp $
 
 inherit flag-o-matic
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://ettercap.sourceforge.net"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~sparc ~alpha ~ppc"
+KEYWORDS="x86 sparc ~alpha ~ppc"
 
 RDEPEND="virtual/glibc
 	ncurses? ( sys-libs/ncurses )
