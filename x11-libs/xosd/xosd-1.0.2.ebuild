@@ -1,6 +1,6 @@
-# Copyright 2002 Gentoo Technologies, Inc.
+# Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $ Header: $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xosd/Attic/xosd-1.0.2.ebuild,v 1.7 2002/12/19 18:06:13 aliz Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Library for overlaying text/glyphs in X-Windows \
@@ -8,17 +8,12 @@ X-On-Screen-Display plus binary for sending text from command line."
 HOMEPAGE="http://www.ignavus.net/"
 SRC_URI="http://www.ignavus.net/${P}.tar.gz"
 
+IUSE=""
 DEPEND="virtual/x11"
-
+RDEPEND=${DEPEND}
 SLOT="1"
-LICENSE="GPL"
+LICENSE="GPL-2"
 KEYWORDS="x86 sparc "
-
-#src_unpack() {
-#	unpack ${A}
-#	cd ${S}
-#	patch -p0 < ${FILESDIR}/${P}-Makefile-gentoo.diff
-#}
 
 src_compile() {
 	econf || die

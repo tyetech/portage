@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xosd/Attic/xosd-2.0.0.ebuild,v 1.4 2002/12/19 18:06:13 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xosd/Attic/xosd-2.0.1.ebuild,v 1.1 2002/12/19 18:06:13 aliz Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Library for overlaying text/glyphs in X-Windows \
@@ -16,7 +16,6 @@ LICENSE="GPL-2"
 KEYWORDS="~x86 ~sparc "
 
 src_install () {
-	cd ${S}
 	insinto /usr/include
 	doins src/xosd.h
 	into /usr
