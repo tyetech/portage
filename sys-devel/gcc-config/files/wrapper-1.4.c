@@ -1,8 +1,8 @@
 /*
- * Copyright 1999-2003 Gentoo Technologies, Inc.
+ * Copyright 1999-2004 Gentoo Foundation
  * Distributed under the terms of the GNU General Public License v2
  * Author: Martin Schlemmer <azarah@gentoo.org>
- * $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc-config/files/Attic/wrapper-1.4.c,v 1.2 2004/07/18 04:44:54 dragonheart Exp $
+ * $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc-config/files/Attic/wrapper-1.4.c,v 1.3 2004/09/28 01:57:58 swegener Exp $
  */
 
 #define _REENTRANT
