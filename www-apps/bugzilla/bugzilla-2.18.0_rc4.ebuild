@@ -1,9 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/bugzilla/Attic/bugzilla-2.18.0_rc3.ebuild,v 1.3 2005/01/19 13:28:24 stuart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/bugzilla/Attic/bugzilla-2.18.0_rc4.ebuild,v 1.1 2005/01/19 13:28:24 stuart Exp $
 
-inherit webapp
-MY_P=${P/.0_/}
+inherit eutils webapp
+
+MY_PV=${PV/.0_rc4/}rc3
+MY_P=${PN}-${MY_PV}
 S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Bugzilla is the Bug-Tracking System from the Mozilla project"
@@ -11,7 +13,7 @@ SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/webtools/${MY_P}.tar.gz"
 HOMEPAGE="http://www.bugzilla.org"
 
 LICENSE="MPL-1.1 NPL-1.1"
-KEYWORDS="~x86 ppc ~sparc"
+KEYWORDS="~x86 ~ppc ~sparc"
 
 IUSE="apache2"
 
@@ -39,6 +41,12 @@ RDEPEND=">=dev-db/mysql-3.23.41
 	dev-perl/XML-Parser
 	apache2? ( >=net-www/apache-2.0 )
 	!apache2? ( =net-www/apache-1* )"
+
+src_unpack () {
+	unpack ${A}
+	cd ${S}
+	epatch ${FILESDIR}/CAN-2004-1061.patch
+}
 
 src_install () {
 	webapp_src_preinst
