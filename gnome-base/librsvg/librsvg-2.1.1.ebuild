@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/librsvg/Attic/librsvg-2.1.1.ebuild,v 1.3 2002/11/28 01:42:43 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/librsvg/Attic/librsvg-2.1.1.ebuild,v 1.4 2002/12/03 14:37:48 nall Exp $
 
 inherit gnome2 debug
 
@@ -8,7 +8,7 @@ S=${WORKDIR}/${P}
 DESCRIPTION="rendering svg library"
 HOMEPAGE="http://www.gnome.org/"
 SLOT="2"
-KEYWORDS="x86"
+KEYWORDS="x86 ~ppc"
 LICENSE="GPL-2 LGPL-2.1"
 
 RDEPEND=">=dev-libs/glib-2.0.4
