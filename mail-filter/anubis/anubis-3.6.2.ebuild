@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/anubis/Attic/anubis-3.6.2.ebuild,v 1.1 2004/06/03 07:00:48 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/anubis/Attic/anubis-3.6.2.ebuild,v 1.2 2004/06/24 22:20:01 agriffis Exp $
 
 DESCRIPTION="GNU Anubis is an outgoing mail processor."
 HOMEPAGE="http://www.gnu.org/software/anubis/"

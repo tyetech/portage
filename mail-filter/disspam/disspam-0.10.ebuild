@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/disspam/Attic/disspam-0.10.ebuild,v 1.1 2004/06/03 07:06:07 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/disspam/Attic/disspam-0.10.ebuild,v 1.2 2004/06/24 22:20:45 agriffis Exp $
 
 S=${WORKDIR}/disspam
 DESCRIPTION="A Perl script that removes spam from POP3 mailboxes based on RBLs."
