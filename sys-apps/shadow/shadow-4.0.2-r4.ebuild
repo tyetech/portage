@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-4.0.3.ebuild,v 1.3 2002/04/08 14:50:50 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-4.0.2-r4.ebuild,v 1.1 2002/04/08 14:50:50 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Utilities to deal with user accounts"
