@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libelf/Attic/libelf-0.7.0.ebuild,v 1.6 2002/10/04 05:15:41 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libelf/Attic/libelf-0.7.0.ebuild,v 1.7 2002/10/05 05:39:11 drobbins Exp $
+
+IUSE="nls"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A ELF object file access library"
