@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/alternate/Attic/alternate-2.11a.ebuild,v 1.4 2004/12/16 05:18:04 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/alternate/Attic/alternate-2.11a.ebuild,v 1.5 2005/01/01 16:45:38 eradicator Exp $
 
 inherit vim-plugin
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/zoomwin/Attic/zoomwin-17.ebuild,v 1.6 2004/09/05 22:29:39 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/zoomwin/Attic/zoomwin-17.ebuild,v 1.7 2005/01/01 16:56:52 eradicator Exp $
 
 inherit vim-plugin
 

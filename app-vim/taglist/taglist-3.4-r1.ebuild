@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/taglist/Attic/taglist-3.4-r1.ebuild,v 1.5 2004/10/19 09:58:38 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/taglist/Attic/taglist-3.4-r1.ebuild,v 1.6 2005/01/01 16:54:24 eradicator Exp $
 
 inherit vim-plugin eutils
 
