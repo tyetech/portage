@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/apel/Attic/apel-10.4.ebuild,v 1.4 2003/09/08 04:13:52 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/apel/Attic/apel-10.4.ebuild,v 1.5 2004/06/01 14:09:04 vapier Exp $
 
 inherit elisp
 
