@@ -1,7 +1,9 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/koffice/Attic/koffice-1.2_rc1.ebuild,v 1.2 2002/08/14 11:19:12 pvdabeel Exp $
-inherit kde-base
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/koffice/Attic/koffice-1.2_rc1.ebuild,v 1.3 2002/08/21 23:01:58 verwilst Exp $
+inherit kde-base flag-o-matic
+
+filter-flags "-fomit-frame-pointer"
 
 need-kde 3
 
