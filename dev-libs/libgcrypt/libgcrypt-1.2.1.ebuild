@@ -1,14 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libgcrypt/Attic/libgcrypt-1.1.92.ebuild,v 1.6 2005/01/12 14:46:12 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libgcrypt/Attic/libgcrypt-1.2.1.ebuild,v 1.1 2005/01/12 14:46:12 dragonheart Exp $
+
+inherit eutils
 
 DESCRIPTION="general purpose crypto library based on the code used in GnuPG"
 HOMEPAGE="http://www.gnupg.org/"
-SRC_URI="ftp://ftp.gnupg.org/gcrypt/alpha/${PN}/${P}.tar.gz"
+SRC_URI="ftp://ftp.gnupg.org/gcrypt/libgcrypt/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="x86 ~amd64 ~sparc"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sparc ~x86"
 IUSE="nls"
 
 DEPEND="dev-libs/libgpg-error"
@@ -24,7 +26,10 @@ src_install() {
 	dodoc AUTHORS BUGS ChangeLog COPYING* NEWS README* THANKS TODO VERSION
 
 	# backwards compat symlinks
-	ln -s libgcrypt.so.11 ${D}/usr/lib/libgcrypt.so.7
-	ln -s libgcrypt-pth.so.11 ${D}/usr/lib/libgcrypt-pth.so.7
-	ln -s libgcrypt-pthread.so.11 ${D}/usr/lib/libgcrypt-pthread.so.7
+	if ! use ppc-macos
+	then
+		dosym libgcrypt.so.11 /usr/lib/libgcrypt.so.7
+		dosym libgcrypt-pth.so.11 /usr/lib/libgcrypt-pth.so.7
+		dosym libgcrypt-pthread.so.11 /usr/lib/libgcrypt-pthread.so.7
+	fi
 }
