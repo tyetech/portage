@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmap/Attic/nmap-3.30.ebuild,v 1.10 2004/06/24 22:13:34 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmap/Attic/nmap-3.30.ebuild,v 1.11 2004/07/01 20:11:51 squinky86 Exp $
 
 inherit gcc eutils
 
@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 KEYWORDS="x86 ppc sparc alpha hppa amd64"
 IUSE="gtk gnome"
 
-DEPEND="virtual/glibc
+DEPEND="virtual/libc
 	gtk? ( =x11-libs/gtk+-1.2* )"
 
 src_compile() {
