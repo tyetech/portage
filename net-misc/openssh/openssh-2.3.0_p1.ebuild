@@ -1,9 +1,9 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/openssh/Attic/openssh-2.2.0_p1.ebuild,v 1.3 2000/11/02 08:31:53 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/openssh/Attic/openssh-2.3.0_p1.ebuild,v 1.1 2000/11/22 09:08:46 jerry Exp $
 
-P=openssh-2.2.0p1
+P=openssh-2.3.0p1
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
 DESCRIPTION="Port of OpenBSD's free SSH release"
@@ -34,8 +34,12 @@ src_install() {
     try make manpages install-files DESTDIR=${D} 
     prepman
     dodoc ChangeLog COPYING.* CREDITS OVERVIEW README* TODO UPGRADING
+    cd ${O}/files
     dodir /etc/rc.d/init.d/
-    cp ${O}/files/sshd ${D}/etc/rc.d/init.d/sshd
+    insinto /etc/rc.d/init.d
+    doins sshd
+    insinto /etc/pam.d
+    donewins sshd.pam sshd
 }
 
 pkg_config() {
