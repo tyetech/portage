@@ -1,9 +1,9 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.6.1.ebuild,v 1.4 2004/01/23 16:59:06 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/development-sources/Attic/development-sources-2.6.1.ebuild,v 1.5 2004/04/12 16:36:22 aliz Exp $
 
 K_NOUSENAME="yes"
-
+IUSE=""
 ETYPE="sources"
 inherit kernel-2
 detect_version
