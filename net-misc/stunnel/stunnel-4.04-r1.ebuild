@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/stunnel/Attic/stunnel-4.04-r1.ebuild,v 1.8 2004/04/27 21:48:37 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/stunnel/Attic/stunnel-4.04-r1.ebuild,v 1.9 2004/06/25 03:12:18 agriffis Exp $
 
 inherit eutils
 
