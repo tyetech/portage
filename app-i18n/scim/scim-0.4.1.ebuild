@@ -1,12 +1,12 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim/Attic/scim-0.4.1.ebuild,v 1.3 2003/06/11 00:26:45 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim/Attic/scim-0.4.1.ebuild,v 1.4 2003/07/07 10:59:40 liquidx Exp $
 
 inherit gnome2
 
 DESCRIPTION="Smart Common Input Method (SCIM) is a Input Method (IM) development platform"
-HOMEPAGE="http://www.gnuchina.org/~suzhe/scim/"
-SRC_URI="http://www.gnuchina.org/~suzhe/scim/sources/${P}.tar.gz"
+HOMEPAGE="http://www.turbolinux.com.cn/~suzhe/scim/"
+SRC_URI="http://www.turbolinux.com.cn/~suzhe/scim/sources/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
