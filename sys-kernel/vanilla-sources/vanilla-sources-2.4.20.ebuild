@@ -1,11 +1,11 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.4.20.ebuild,v 1.8 2003/11/16 19:14:04 iggy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.4.20.ebuild,v 1.9 2003/11/18 18:09:50 iggy Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 OKV=2.4.20
 KV=2.4.20
-EXTRAVERSION=""
+EXTRAVERSION=" "
 S=${WORKDIR}/linux-${KV}
 ETYPE="sources"
 inherit kernel
