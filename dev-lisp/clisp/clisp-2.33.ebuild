@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/clisp/Attic/clisp-2.33.ebuild,v 1.1 2004/03/21 07:15:01 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/clisp/Attic/clisp-2.33.ebuild,v 1.2 2004/03/24 04:42:03 mkennedy Exp $
 
 inherit flag-o-matic common-lisp-common
 
@@ -47,7 +47,7 @@ DEPEND="dev-libs/libsigsegv
 	pcre? ( dev-libs/libpcre )"
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="~x86"
+KEYWORDS="x86"
 
 src_unpack() {
 	unpack ${A}
