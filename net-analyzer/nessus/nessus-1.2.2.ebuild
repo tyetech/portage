@@ -1,7 +1,6 @@
 # Copyright 2000-2002 Achim Gottinger
 # Distributed under the GPL by Gentoo Technologies, Inc.
-# Author: Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus/Attic/nessus-1.2.2.ebuild,v 1.1 2002/07/02 13:31:24 blocke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus/Attic/nessus-1.2.2.ebuild,v 1.2 2002/07/11 06:30:43 drobbins Exp $
 
 
 S=${WORKDIR}
