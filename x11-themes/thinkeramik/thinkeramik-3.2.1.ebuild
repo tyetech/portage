@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/thinkeramik/Attic/thinkeramik-3.2.1.ebuild,v 1.3 2004/06/04 16:00:01 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/thinkeramik/Attic/thinkeramik-3.2.1.ebuild,v 1.4 2004/06/05 18:01:34 carlo Exp $
 
 inherit kde
 need-kde 3.2
@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~amd64"
 
 src_compile()
 {
