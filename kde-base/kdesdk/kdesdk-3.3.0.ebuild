@@ -1,11 +1,11 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdesdk/Attic/kdesdk-3.3.0.ebuild,v 1.1 2004/08/19 15:25:21 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdesdk/Attic/kdesdk-3.3.0.ebuild,v 1.2 2004/08/27 22:56:24 weeve Exp $
 inherit kde-dist
 
 IUSE=""
 DESCRIPTION="KDE SDK: kbabel, ..."
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~sparc"
 
 DEPEND="!dev-util/kcachegrind
 	x86? ( >=dev-util/calltree-0.9.1 )
