@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/yencode/yencode-0.46.ebuild,v 1.14 2004/06/19 02:01:09 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/yencode/yencode-0.46.ebuild,v 1.15 2004/06/25 00:27:34 agriffis Exp $
 
 DESCRIPTION="yEnc encoder/decoder package"
 HOMEPAGE="http://www.yencode.org"

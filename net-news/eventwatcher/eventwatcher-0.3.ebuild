@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/eventwatcher/Attic/eventwatcher-0.3.ebuild,v 1.2 2004/04/13 11:33:05 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/eventwatcher/Attic/eventwatcher-0.3.ebuild,v 1.3 2004/06/25 00:24:58 agriffis Exp $
 
 inherit kde
 need-kde 3
