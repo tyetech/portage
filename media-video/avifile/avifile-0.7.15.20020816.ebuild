@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avifile/Attic/avifile-0.7.15.20020816.ebuild,v 1.2 2002/10/04 05:55:28 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avifile/Attic/avifile-0.7.15.20020816.ebuild,v 1.3 2002/10/05 05:39:16 drobbins Exp $
+
+IUSE="nas avi sdl kde oggvorbis 3dnow qt"
 
 inherit libtool
 
