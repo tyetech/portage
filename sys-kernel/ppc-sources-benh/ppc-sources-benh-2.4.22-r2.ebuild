@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc-sources-benh/Attic/ppc-sources-benh-2.4.22-r2.ebuild,v 1.6 2003/12/02 08:08:13 iggy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ppc-sources-benh/Attic/ppc-sources-benh-2.4.22-r2.ebuild,v 1.7 2004/01/08 19:19:20 plasmaroo Exp $
 
 IUSE=""
 
