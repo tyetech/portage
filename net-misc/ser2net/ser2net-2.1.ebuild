@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ser2net/Attic/ser2net-2.1.ebuild,v 1.3 2004/06/25 00:10:42 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ser2net/Attic/ser2net-2.1.ebuild,v 1.4 2004/12/15 22:17:54 hansmi Exp $
 
 DESCRIPTION="Serial To Network Proxy"
 SRC_URI="mirror://sourceforge/ser2net/${P}.tar.gz"
 HOMEPAGE="http://sourceforge.net/projects/ser2net"
 
-KEYWORDS="x86 sparc"
+KEYWORDS="x86 sparc ~ppc"
 SLOT="0"
 LICENSE="GPL-2"
 
