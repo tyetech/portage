@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/zaptel/Attic/zaptel-1.0.1.ebuild,v 1.1 2004/10/26 01:42:03 stkn Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/zaptel/Attic/zaptel-1.0.1.ebuild,v 1.2 2005/01/05 01:49:19 stkn Exp $
 
 IUSE="devfs26"
 
