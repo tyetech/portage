@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-headers/Attic/linux-headers-2.4.21.ebuild,v 1.13 2003/11/16 18:26:58 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-headers/Attic/linux-headers-2.4.21-r1.ebuild,v 1.1 2003/11/16 18:26:58 kumba Exp $
 
 
 OKV=${PV/_/-}
@@ -52,6 +52,15 @@ src_unpack() {
 	if [ -n "`use sparc`" ]; then
 		epatch ${FILESDIR}/bigendian-byteorder-fix.patch
 	fi
+
+
+	# This patch fixes an issue involving the use of gcc's -ansi flag and the __u64 datatype.
+	# It only patches asm-i386, so we only apply it if x86.  Unknown if this is needed for other archs.
+	# Closes Bug #32246
+	if [ -n "`use x86`" ]; then
+		epatch ${FILESDIR}/${PN}-strict-ansi-fix.patch
+	fi
+
 
 	# Do Stuff
 	kernel_universal_unpack
