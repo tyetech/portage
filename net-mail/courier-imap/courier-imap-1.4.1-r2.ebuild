@@ -1,13 +1,14 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/courier-imap/Attic/courier-imap-1.3.8.ebuild,v 1.5 2001/09/03 21:37:00 g2boojum Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/courier-imap/Attic/courier-imap-1.4.1-r2.ebuild,v 1.1 2002/02/21 19:17:21 g2boojum Exp $
 
-A=${P}.tar.gz
 S=${WORKDIR}/${P}
 DESCRIPTION="An IMAP daemon designed specifically for maildirs"
-SRC_URI="http://download.sourceforge.net/courier/${A}"
+SRC_URI="http://ftp1.sourceforge.net/courier/${P}.tar.gz"
 HOMEPAGE="http://www.courier-mta.org/"
+
+PROVIDE="virtual/imap"
 
 DEPEND="virtual/glibc sys-devel/perl sys-apps/procps
         >=sys-libs/pam-0.75
@@ -50,22 +51,58 @@ src_compile() {
 	if [ -z "`use pam`" ] ; then
 	    myconf="$myconf --without-authpam"
 	fi
-	try ./configure --sysconfdir=/etc/courier-imap --prefix=/usr \
+	./configure --sysconfdir=/etc/courier-imap --prefix=/usr \
 	--bindir=/usr/sbin --libexecdir=/usr/lib/courier-imap \
 	--localstatedir=/var/lib/courier-imap --mandir=/usr/share/man \
 	--with-authdaemonvar=/var/lib/courier-imap/authdaemon \
-	--disable-root-check $myconf
-    try make
+	--disable-root-check $myconf || die
+
+	cd ${S}/imap
+	cp imapd-ssl.dist imapd-ssl.dist.old
+	sed -e "s:TLS_CERTFILE=/usr/share/imapd.pem:TLS_CERTFILE=/etc/courier-imap/imapd.pem:g" imapd-ssl.dist.old > imapd-ssl.dist
+
+	cd ${S}
+	emake || die
 }
 
 src_install () {
+	dodir /var/lib/courier-imap
 	mkdir -p ${D}/etc/pam.d
 	make install DESTDIR=${D}
+	# avoid name collisions in /usr/sbin wrt imapd and pop3d
+	cd ${D}/usr/sbin
+	for name in imapd pop3d
+	do
+		mv ${name} "courier-${name}"
+	done
+	# hack /usr/lib/courier-imap/foo.rc to use ${MAILDIR} instead of 'Maildir',
+	# and to use /usr/sbin/courier-foo names.
+	cd ${D}/usr/lib/courier-imap
+	local service
+	for service in imapd pop3d
+	do
+		local type
+		for type in "" "-ssl"
+		do
+			local file
+			file="${service}${type}.rc"
+			cp ${file} ${file}.orig
+			sed -e 's/Maildir/${MAILDIR}/' \
+			    -e "s/\/usr\/sbin\/${service}/\/usr\/sbin\/courier-${service}/" \
+				${file}.orig > ${file}
+		done
+	done
 	cd ${D}/etc/courier-imap
 	local x
-	for x in pop3d pop3d-ssl imapd imapd-ssl
+	for x in pop3d pop3d-ssl imapd imapd-ssl authdaemonrc
 	do
 		mv ${x}.dist ${x}
+	done
+	# add a value for ${MAILDIR} to /etc/courier-imap/imapd
+	for service in imapd pop3d
+	do
+		echo -e '\n#Hardwire a value for ${MAILDIR}' >> imapd
+		echo 'MAILDIR=.maildir' >> imapd
 	done
 	cd ${D}/usr/sbin
 	for x in *
@@ -86,8 +123,9 @@ src_install () {
 		sed -e 's#/lib/security/##g' ${x}.orig > ${x}
 		rm ${x}.orig
 	done
-	exeinto /etc/rc.d/init.d
-	doexe ${FILESDIR}/courier-imap*
+	exeinto /etc/init.d
+	newexe ${FILESDIR}/courier-imap-rc6 courier-imap
+	newexe ${FILESDIR}/courier-imap-ssl-rc6 courier-imap-ssl
 	rm ${D}/usr/sbin/mkimapdcert
 	exeinto /usr/sbin
 	doexe ${FILESDIR}/mkimapdcert	
@@ -95,6 +133,3 @@ src_install () {
 	doins ${FILEDIR}/pam.d-imap
 }
 
-pkg_config() {
-    ${ROOT}/usr/sbin/rc-update add courier-imap 
-}
