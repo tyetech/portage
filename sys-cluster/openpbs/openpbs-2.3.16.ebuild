@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openpbs/Attic/openpbs-2.3.16.ebuild,v 1.9 2004/06/14 01:01:35 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openpbs/Attic/openpbs-2.3.16.ebuild,v 1.10 2004/06/24 22:40:43 agriffis Exp $
 
 NAME=`echo ${P} | sed -e "s|openpbs-|OpenPBS_|; y|.|_|"`
 B=${NAME}.tar.gz

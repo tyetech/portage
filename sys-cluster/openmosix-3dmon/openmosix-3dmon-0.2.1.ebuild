@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openmosix-3dmon/Attic/openmosix-3dmon-0.2.1.ebuild,v 1.2 2004/04/27 21:44:04 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openmosix-3dmon/Attic/openmosix-3dmon-0.2.1.ebuild,v 1.3 2004/06/24 22:39:39 agriffis Exp $
 
 inherit eutils
 

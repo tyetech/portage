@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/feedbackd-agent/Attic/feedbackd-agent-0.3.1.ebuild,v 1.1 2004/06/08 23:34:40 tantive Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/feedbackd-agent/Attic/feedbackd-agent-0.3.1.ebuild,v 1.2 2004/06/24 22:37:28 agriffis Exp $
 
 inherit eutils
 
