@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/nucleo/Attic/nucleo-0.1_p20041130.ebuild,v 1.2 2004/12/03 10:58:25 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/nucleo/Attic/nucleo-0.1_p20041130.ebuild,v 1.3 2005/02/10 08:39:16 usata Exp $
 
 inherit eutils
 
@@ -18,7 +18,7 @@ DEPEND="virtual/x11
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ppc"
 
 S="${WORKDIR}/${P/_p*/}"
 

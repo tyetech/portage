@@ -1,13 +1,13 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/nucleo/Attic/nucleo-0.1-r1.ebuild,v 1.5 2005/02/10 08:39:16 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/nucleo/Attic/nucleo-0.1_p20041216.ebuild,v 1.1 2005/02/10 08:39:16 usata Exp $
+
+inherit eutils
 
 IUSE=""
 
-DATE="20040721"
-
 DESCRIPTION="Nucleo is some library for metisse"
-SRC_URI="http://insitu.lri.fr/~chapuis/software/metisse/${P}-${DATE}.tar.bz2"
+SRC_URI="http://insitu.lri.fr/~chapuis/software/metisse/${P/_p/-}.tar.bz2"
 HOMEPAGE="http://insitu.lri.fr/~chapuis/metisse"
 
 DEPEND="virtual/x11
@@ -18,7 +18,15 @@ DEPEND="virtual/x11
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="x86 ppc"
+KEYWORDS="~x86 ~ppc"
+
+S="${WORKDIR}/${P/_p*/}"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}/nucleo/gl/texture
+	epatch ${FILESDIR}/${P/_p*/}-nv.patch
+}
 
 src_compile() {
 	econf || die "configure failed"
