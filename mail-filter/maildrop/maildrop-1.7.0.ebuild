@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/maildrop/Attic/maildrop-1.7.0.ebuild,v 1.4 2004/09/20 07:40:04 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/maildrop/Attic/maildrop-1.7.0.ebuild,v 1.5 2004/12/13 23:50:45 ticho Exp $
 
 IUSE="mysql ldap gdbm berkdb"
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/courier/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~sparc ~alpha ~amd64"
+KEYWORDS="x86 ~sparc ~alpha ~amd64"
 
 DEPEND="dev-lang/perl
 	virtual/mta
