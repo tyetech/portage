@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.14-r2.ebuild,v 1.3 2003/10/11 03:01:40 tseng Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.14-r2.ebuild,v 1.4 2003/10/13 15:56:31 tseng Exp $
 
 IUSE="kde gnome nls xinerama truetype cjk"
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://fluxbox.sf.net"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc sparc hppa mips ~amd64"
+KEYWORDS="x86 ~ppc sparc hppa mips amd64"
 
 mydoc="ChangeLog COPYING NEWS"
 if pkg-config xft
