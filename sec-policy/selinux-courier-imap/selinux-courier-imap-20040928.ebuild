@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-courier-imap/Attic/selinux-courier-imap-20040928.ebuild,v 1.2 2004/10/28 09:31:27 kaiowas Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-courier-imap/Attic/selinux-courier-imap-20040928.ebuild,v 1.3 2005/01/06 12:50:04 kaiowas Exp $
 
 inherit selinux-policy
 
