@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.30.ebuild,v 1.6 2004/06/24 22:33:42 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.30.ebuild,v 1.7 2004/10/28 06:50:26 lu_zero Exp $
 
 inherit flag-o-matic eutils
 replace-flags -march=pentium4 -march=pentium3
@@ -14,7 +14,7 @@ HOMEPAGE="http://www.blender.org/"
 SRC_URI="http://download.blender.org/source/${P}.tar.bz2"
 
 SLOT="0"
-LICENSE="GPL-2 | BL"
+LICENSE="|| (GPL-2 BL)"
 KEYWORDS="~x86 ~ppc"
 
 DEPEND="virtual/x11
