@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/crypt++/Attic/crypt++-2.91.ebuild,v 1.4 2004/05/11 04:00:31 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/crypt++/Attic/crypt++-2.91.ebuild,v 1.5 2004/06/15 08:21:31 kloeri Exp $
 
 inherit elisp
 
@@ -14,8 +14,6 @@ SLOT="0"
 KEYWORDS="x86 amd64 ~sparc"
 
 DEPEND="virtual/emacs"
-
-S="${WORKDIR}/${P}"
 
 SITEFILE=50crypt++-gentoo.el
 
