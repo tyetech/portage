@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/blackbox/Attic/blackbox-0.65.0_beta5.ebuild,v 1.1 2002/08/09 14:11:11 spider Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/blackbox/Attic/blackbox-0.65.0_beta5.ebuild,v 1.2 2002/08/14 15:27:51 murphy Exp $
 
 inherit commonbox
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://blackboxwm.sf.net/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc"
+KEYWORDS="x86 ppc sparc sparc64"
 
 mydoc="AUTHORS LICENSE README ChangeLog* TODO*"
 
