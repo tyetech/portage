@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/netwox/Attic/netwox-5.6.0.ebuild,v 1.7 2004/07/12 11:21:11 eldad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/netwox/Attic/netwox-5.6.0.ebuild,v 1.8 2005/01/13 05:51:50 dragonheart Exp $
 
 DESCRIPTION="Toolbox of over 400 utilities for testing Ethernet/IP networks"
 HOMEPAGE="http://www.laurentconstantin.com/en/netw/netwox/"
