@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.5.9.ebuild,v 1.8 2003/10/05 20:58:19 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.5.9.ebuild,v 1.9 2003/10/14 21:24:59 azarah Exp $
 
 IUSE="bootstrap build"
 
@@ -139,7 +139,7 @@ defaltmerge() {
 	# (because it conflicts with some makefiles)
 	local ROOT=""
 	ROOT="`cat ${T}/ROOT`"
-	if [ -z "`use bootstrap`" -a -z "`use build`" -a -e ${ROOT}/dev/.devfsd ]
+	if [ -e ${ROOT}/dev/.devfsd ]
 	then
 		# We're installing to a system that has devfs enabled; don't create device
 		# nodes.
