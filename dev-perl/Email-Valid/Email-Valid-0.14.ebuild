@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Email-Valid/Attic/Email-Valid-0.14.ebuild,v 1.1 2003/05/09 22:29:04 rac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Email-Valid/Attic/Email-Valid-0.14.ebuild,v 1.2 2003/06/08 04:01:41 rac Exp $
 
 inherit perl-module
 
@@ -10,6 +10,7 @@ HOMEPAGE="http://www.cpan.org/modules/by-module/EMail/${P}.readme"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~alpha ~sparc"
 LICENSE="GPL-2 | Artistic"
+IUSE=""
 DEPEND="${DEPEND}
 		dev-perl/MailTools
         dev-perl/Net-DNS"
