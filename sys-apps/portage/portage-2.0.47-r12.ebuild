@@ -1,5 +1,5 @@
 # Distributed under the terms of the GNU General Public License v2 
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.47-r11.ebuild,v 1.2 2003/03/27 07:15:25 carpaski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.47-r12.ebuild,v 1.1 2003/03/28 05:23:40 carpaski Exp $
 
 IUSE="build"
 
