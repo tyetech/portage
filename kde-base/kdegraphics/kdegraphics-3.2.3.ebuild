@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdegraphics/Attic/kdegraphics-3.2.3.ebuild,v 1.1 2004/06/10 12:34:22 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdegraphics/Attic/kdegraphics-3.2.3.ebuild,v 1.2 2004/06/11 18:00:40 caleb Exp $
 
 inherit kde-dist eutils
 
@@ -24,6 +24,7 @@ RDEPEND="${DEPEND}
 
 src_unpack() {
 	kde_src_unpack
+	epatch ${FILESDIR}/${P}-gcc34-compile.patch
 }
 
 src_compile() {
