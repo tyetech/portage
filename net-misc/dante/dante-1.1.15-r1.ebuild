@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dante/Attic/dante-1.1.15-r1.ebuild,v 1.1 2005/02/22 18:45:03 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dante/Attic/dante-1.1.15-r1.ebuild,v 1.2 2005/03/20 23:15:08 mrness Exp $
 
 inherit gcc fixheadtails eutils
 
@@ -41,6 +41,7 @@ src_unpack() {
 }
 
 src_compile() {
+	libtoolize --copy --force
 	econf \
 		`use_enable debug` \
 		`use_enable tcpd libwrap` \
