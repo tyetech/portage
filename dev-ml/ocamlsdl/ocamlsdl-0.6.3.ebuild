@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/ocamlsdl/Attic/ocamlsdl-0.6.3.ebuild,v 1.1 2004/02/12 00:00:30 mattam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/ocamlsdl/Attic/ocamlsdl-0.6.3.ebuild,v 1.2 2004/06/25 00:02:40 agriffis Exp $
 
 DESCRIPTION="OCaml SDL Bindings"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/ulex/Attic/ulex-0.2.ebuild,v 1.3 2004/04/25 21:02:21 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/ulex/Attic/ulex-0.2.ebuild,v 1.4 2004/06/25 00:04:05 agriffis Exp $
 
 inherit eutils
 

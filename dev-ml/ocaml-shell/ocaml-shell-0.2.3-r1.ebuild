@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/ocaml-shell/Attic/ocaml-shell-0.2.3-r1.ebuild,v 1.4 2004/03/13 19:51:28 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/ocaml-shell/Attic/ocaml-shell-0.2.3-r1.ebuild,v 1.5 2004/06/25 00:02:51 agriffis Exp $
 
 DESCRIPTION="O'Caml modules for running shell commands and pipelines"
 HOMEPAGE="http://www.ocaml-programming.de/packages/documentation/shell/"
