@@ -1,6 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-plugins/Attic/nessus-plugins-2.2.0.ebuild,v 1.3 2005/01/28 02:04:39 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-plugins/Attic/nessus-plugins-2.2.2a.ebuild,v 1.1 2005/01/28 02:04:39 dragonheart Exp $
+
+inherit toolchain-funcs
 
 S=${WORKDIR}/${PN}
 DESCRIPTION="A remote security scanner for Linux (nessus-plugins)"
@@ -13,17 +15,14 @@ LICENSE="GPL-2"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64 ~ppc64"
 
 src_compile() {
-	econf || die "configure failed"
-	emake || die "emake failed"
+	export CC=$(tc-getCC)
+	econf || die
+	emake || die
 }
 
 src_install() {
-	make \
-		prefix=${D}/usr \
-		sysconfdir=${D}/etc \
-		localstatedir=${D}/var/lib \
-		mandir=${D}/usr/share/man \
+	emake \
+		DESTDIR=${D} \
 		install || die "make install failed"
-	cd ${S}
 	dodoc docs/*.txt plugins/accounts/accounts.txt
 }
