@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/swfdec/Attic/swfdec-0.2.2.ebuild,v 1.7 2004/07/14 20:30:26 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/swfdec/Attic/swfdec-0.2.2.ebuild,v 1.8 2005/03/23 16:18:18 seemant Exp $
 
 inherit eutils
 
@@ -18,7 +18,7 @@ DEPEND=">=x11-libs/gtk+-2.0
 		gnome-base/gnome-libs
 		>=sys-libs/zlib-1.1.4
 		media-sound/madplay
-		mozilla? ( >=net-www/mozilla-1.0.0 )"
+		mozilla? ( >=www-client/mozilla-1.0.0 )"
 #RDEPEND=""
 
 src_unpack() {
