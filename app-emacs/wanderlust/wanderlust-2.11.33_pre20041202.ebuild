@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/wanderlust/Attic/wanderlust-2.11.33_pre20041106.ebuild,v 1.1 2004/11/07 15:30:53 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/wanderlust/Attic/wanderlust-2.11.33_pre20041202.ebuild,v 1.1 2004/12/02 10:57:05 usata Exp $
 
 inherit elisp
 
@@ -15,16 +15,15 @@ SRC_URI="mirror://gentoo/${MY_P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-# Please do not mark it stable since this is merely a CVS snapshot
+# Please do not mark it stable since this is a CVS snapshot
 KEYWORDS="~x86 ~alpha ~sparc ~ppc ~ppc-macos"
 
-DEPEND="virtual/emacs
-	>=app-emacs/apel-10.6
+DEPEND=">=app-emacs/apel-10.6
 	virtual/flim
 	virtual/semi
 	!app-emacs/wanderlust-cvs"
 
-S="${WORKDIR}/wl"
+S="${WORKDIR}/${PN}"
 
 src_compile() {
 	use ssl && echo "(setq wl-install-utils t)" >> WL-CFG
