@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/hppa-dev-sources/Attic/hppa-dev-sources-2.6.7_p1.ebuild,v 1.3 2004/06/29 22:43:22 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/hppa-dev-sources/Attic/hppa-dev-sources-2.6.7_p1-r2.ebuild,v 1.1 2004/07/09 19:39:15 gmsoft Exp $
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
 ETYPE="sources"
@@ -27,5 +27,7 @@ src_unpack() {
 
 	epatch ${DISTDIR}/patch-${OKV}-pa${PATCH_LEVEL}.gz
 	epatch ${FILESDIR}/ncr53c8xx.diff
+	epatch ${FILESDIR}/CAN-2004-0626-death_packet.patch
+	epatch ${FILESDIR}/CAN-2004-0497.patch
 
 }
