@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: 
-inherit kde
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/thinkeramik/Attic/thinkeramik-2.8.1.ebuild,v 1.7 2004/08/14 13:57:01 swegener Exp $
 
+inherit kde
 need-kde 3.1
 
 DESCRIPTION="A cool kde style modified from keramik"

@@ -1,6 +1,7 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: 
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/lush/Attic/lush-0.1.0.ebuild,v 1.7 2004/08/14 13:55:50 swegener Exp $
+
 inherit kde
 need-kde 3
 
