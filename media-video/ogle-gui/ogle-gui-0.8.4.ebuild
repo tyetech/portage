@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ogle-gui/Attic/ogle-gui-0.8.4.ebuild,v 1.6 2003/09/07 00:08:13 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ogle-gui/Attic/ogle-gui-0.8.4.ebuild,v 1.7 2003/09/10 22:36:00 msterret Exp $
 
 IUSE="nls"
 
@@ -36,7 +36,7 @@ src_compile() {
 	CFLAGS="${CFLAGS} -I/usr/include/libxml2/libxml"
 
 	econf ${myconf} || die
-  	emake || die
+	emake || die
 
 }
 
