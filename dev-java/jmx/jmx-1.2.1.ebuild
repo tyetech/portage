@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jmx/Attic/jmx-1.2.1.ebuild,v 1.7 2004/10/17 07:22:11 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jmx/Attic/jmx-1.2.1.ebuild,v 1.8 2004/11/03 11:31:43 axxo Exp $
 
 inherit java-pkg
 
@@ -12,6 +12,7 @@ SLOT="0"
 KEYWORDS="x86 ~ppc ~amd64"
 IUSE="jikes doc"
 DEPEND=">=virtual/jdk-1.4
+		app-arch/unzip
 		sys-apps/sed"
 RDEPEND=">=virtual/jre-1.4"
 RESTRICT="fetch"

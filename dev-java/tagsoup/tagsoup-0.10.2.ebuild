@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/tagsoup/Attic/tagsoup-0.10.2.ebuild,v 1.4 2004/10/22 10:24:18 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/tagsoup/Attic/tagsoup-0.10.2.ebuild,v 1.5 2004/11/03 11:38:50 axxo Exp $
 
 inherit java-pkg
 
@@ -15,6 +15,7 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 IUSE="doc"
 DEPEND=">=virtual/jdk-1.4
+		app-arch/unzip
 		dev-java/ant"
 RDEPEND=">=virtual/jre-1.4"
 
