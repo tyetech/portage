@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/file/Attic/file-4.02.ebuild,v 1.14 2004/06/28 16:07:10 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/file/Attic/file-4.02.ebuild,v 1.15 2004/06/30 15:50:36 agriffis Exp $
 
 inherit flag-o-matic
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://gentoo/${P}.tar.gz"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="x86 ppc sparc alpha hppa amd64"
-IUSE=""
+IUSE="build"
 
 DEPEND="virtual/libc"
 
