@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.6.1.ebuild,v 1.1 2004/04/20 20:04:46 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/nautilus/Attic/nautilus-2.6.1.ebuild,v 1.2 2004/04/27 21:12:10 agriffis Exp $
 
-inherit gnome2
+inherit gnome2 eutils
 
 DESCRIPTION="A filemanager for the Gnome2 desktop"
 HOMEPAGE="http://www.gnome.org/projects/nautilus/"
