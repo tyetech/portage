@@ -1,38 +1,33 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/global/Attic/global-4.5.3.ebuild,v 1.4 2004/06/25 02:33:43 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/global/Attic/global-4.7.2.ebuild,v 1.1 2004/07/02 21:17:32 seemant Exp $
 
 IUSE="ssl postgres"
 
 DESCRIPTION="Global can find the locations of specified object in C, C++, Yacc, Java and assembler source files."
 HOMEPAGE="http://www.gnu.org/software/global/"
-LICENSE="GPL-2"
-SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
+SRC_URI="ftp://ftp.gnu.org/gnu/${PN}/${P}.tar.gz"
 
-KEYWORDS="~x86"
 SLOT="0"
+LICENSE="GPL-2"
+KEYWORDS="~x86 ~sparc ~mips"
 
 DEPEND=">=sys-libs/glibc-2.2
 	postgres? ( >=dev-db/postgresql-7.1 )
 	ssl? ( >=dev-libs/openssl-0.9.6-r1 )"
 
 src_compile() {
+	local myconf
 
-	# Patch configure to add -lssl when using postgresql and ssl
-	if use postgres && use ssl
-	then
-		sed -i "s/-lcrypt/-lcrypt -lssl/" configure
+	if use postgres; then
+		myconf="--with-postgres=/usr"
+		if use ssl; then
+			# Patch configure to add -lssl when using postgresql and ssl
+			sed -i 's/-lcrypt/-lcrypt -lssl/' configure || die 'sed failed'
+		fi
 	fi
 
-	myconf="--host=${CHOST} \
-		--prefix=/usr \
-		--infodir=/usr/share/info \
-		--mandir=/usr/share/man" || die "./configure failed"
-
-	use postgres && myconf="${myconf} --with-postgres=/usr"
-
-	./configure ${myconf} || die "./configure failed"
-
+	econf || die "econf failed"
 	emake || die
 }
 
