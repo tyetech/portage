@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/meld/Attic/meld-0.8.2.ebuild,v 1.2 2003/07/06 00:06:56 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/meld/Attic/meld-0.8.5.ebuild,v 1.1 2003/09/02 12:41:11 liquidx Exp $
 
 DESCRIPTION="A graphical (GNOME 2) diff and merge tool"
 HOMEPAGE="http://meld.sourceforge.net/"
