@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/chipmunksystem/Attic/chipmunksystem-20031105-r1.ebuild,v 1.4 2004/07/01 11:50:13 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/chipmunksystem/Attic/chipmunksystem-20031105-r2.ebuild,v 1.1 2004/10/31 19:43:21 ribosome Exp $
+
+inherit toolchain-funcs
 
 DESCRIPTION="Chipmunk System - circuit schematic and simulation environment"
 
@@ -41,61 +43,61 @@ src_compile() {
 	local COMPILING_ERROR
 	COMPILING_ERROR="Compiling of ${P} FAILED"
 	cd ${WORKDIR}
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-e 's:^LIB .*:LIB = \$\(LIBDIR\)/libp2c.a:' \
 		-i psys/src/Makefile || die "sed failed in psys/src"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-i log/src/ana/Makefile || die "sed failed in log/src/ana"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux:' \
 		-e 's:^LIBX11.*:LIBX11 = -lX11 -L/usr/X11R6/lib:' \
 		-e "s:^LOGLIBDIR.*:LOGLIBDIR = /usr/share/${P}/lib:" \
 		-e 's:^LIBDIR.*:LIBDIR = ../lib:' \
 		-e 's:^LIBP2C.*:LIBP2C = ../../lib/libp2c.a:' \
 		-i log/src/Makefile || die "sed failed in log/src"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux:' \
 		-e 's:^LIBX11.*:LIBX11 = -lX11 -L/usr/X11R6/lib:' \
 		-e 's:^LIBP2C.*:LIBP2C = ../lib/libp2c.a:' \
 		-i view/Makefile || die "sed failed in view"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux:' \
 		-e 's:^LIBX11.*:LIBX11 = -lX11 -L/usr/X11R6/lib:' \
 		-e 's:^LIBP2C.*:LIBP2C = ../../lib/libp2c.a:' \
 		-i until/V1.2/Makefile || die "sed failed in until/V1.2"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-e 's:^LIBX11.*:LIBX11 = -lX11 -L/usr/X11R6/lib:' \
 		-e 's:^LIBP2C.*:LIBP2C = ../lib/libp2c.a:' \
 		-i wol/Makefile || die "sed failed in wol"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-i wolcomp/Makefile || die "sed failed in wolcomp"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-i netcmp/Makefile || die "sed failed in netcmp"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-e 's:^LIBX11.*:LIBX11 = -lX11 -L/usr/X11R6/lib:' \
 		-i mosis/Makefile || die "sed failed in mosis"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CFLAGS.*:CFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-i util/boxify/Makefile || die "sed failed in util/boxify"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CFLAGS.*:CFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-i util/boxify/trapes/Makefile || die "sed failed in util/boxify/trapes"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CFLAGS.*:CFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-i util/cleancif/Makefile || die "sed failed in util/cleancif"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CFLAGS.*:CFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-i util/sctomat/Makefile || die "sed failed in util/sctomat"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CFLAGS.*:CFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-i util/spc-tools/sf/Makefile || die "sed failed in util/spc-tools/sf"
-	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = gcc ${CFLAGS}:" \
+	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
 		-e 's:^CFLAGS.*:CFLAGS = -DBSD -Dlinux -DF_OK=0:' \
 		-i util/spc-tools/ss/Makefile || die "sed failed in util/spc-tools/ss"
 
