@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/hfsutils/Attic/hfsutils-3.2.6-r3.ebuild,v 1.4 2004/04/27 21:51:55 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/hfsutils/Attic/hfsutils-3.2.6-r3.ebuild,v 1.5 2004/06/24 22:51:25 agriffis Exp $
 
 inherit eutils
 
