@@ -1,12 +1,15 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc. Distributed under the terms
 # of the GNU General Public License, v2 or later 
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.8.ebuild,v 1.1 2002/06/27 17:28:15 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.10.ebuild,v 1.1 2002/07/06 05:35:41 drobbins Exp $
  
 S=${WORKDIR}/${P}
 SLOT="0"
 DESCRIPTION="Portage ports system"
 SRC_URI=""
 HOMEPAGE="http://www.gentoo.org"
+KEYWORDS="*"
+LICENSE="GPL-2"
+
 #We need this if/then/else clause for compatibility with stuff that doesn't know !build?
 if [ "`use build`" ]
 then
@@ -149,6 +152,8 @@ pkg_postinst() {
 			cd ..
 		done
 		echo ">>> Database upgrade complete."
+		#remove old virtual directory to prevent virtual deps from getting messed-up
+		[ -d ${ROOT}var/db/pkg/virtual ] && rm -rf ${ROOT}var/db/pkg/virtual
 	fi
 
 	#fix cache (could contain staleness)
