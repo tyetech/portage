@@ -1,7 +1,7 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
 # Maintainer: Martin Schlemmer <azarah@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.0.12.ebuild,v 1.1 2003/01/05 12:25:57 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.0.12.ebuild,v 1.2 2003/02/13 09:16:13 vapier Exp $
 
 IUSE="nls libgda gb evo python bonobo guile perl"
 
