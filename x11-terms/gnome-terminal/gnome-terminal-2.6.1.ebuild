@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/gnome-terminal/Attic/gnome-terminal-2.6.1.ebuild,v 1.10 2004/10/01 06:57:19 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/gnome-terminal/Attic/gnome-terminal-2.6.1.ebuild,v 1.11 2005/01/08 23:38:02 slarti Exp $
 
 inherit gnome2 eutils
 
