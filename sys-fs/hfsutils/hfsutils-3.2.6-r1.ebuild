@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/hfsutils/Attic/hfsutils-3.2.6-r1.ebuild,v 1.4 2004/06/30 17:10:12 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/hfsutils/Attic/hfsutils-3.2.6-r1.ebuild,v 1.5 2005/02/05 21:20:43 hansmi Exp $
 
 DESCRIPTION="HFS FS Access utils"
 HOMEPAGE="http://www.mars.org/home/rob/proj/hfs/"
