@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xaos/Attic/xaos-3.1.ebuild,v 1.10 2004/10/05 10:27:45 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xaos/Attic/xaos-3.1.ebuild,v 1.11 2004/12/03 22:46:57 slarti Exp $
 
 inherit eutils
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/xaos/${MY_P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc ~amd64 -sparc"
+KEYWORDS="x86 ppc amd64 -sparc"
 
 DEPEND="X? ( virtual/x11 )
 	svga? ( >=media-libs/svgalib-1.4.3 )
