@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/lxdvdrip/Attic/lxdvdrip-1.20_pre1-r1.ebuild,v 1.2 2004/11/30 22:13:34 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/lxdvdrip/Attic/lxdvdrip-1.20_pre1-r1.ebuild,v 1.3 2005/01/27 20:15:30 luckyduck Exp $
 
 inherit eutils
 
