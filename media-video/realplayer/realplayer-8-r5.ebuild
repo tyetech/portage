@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/realplayer/Attic/realplayer-8-r5.ebuild,v 1.1 2003/02/10 02:25:52 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/realplayer/Attic/realplayer-8-r5.ebuild,v 1.2 2003/02/10 03:04:04 seemant Exp $
 
 inherit nsplugins kde
 
@@ -119,6 +119,10 @@ src_install () {
 		insinto /usr/share/gnome/apps/Multimedia
 		doins ${FILESDIR}/realplayer.desktop
 	fi
+
+	cp rp7mini.xpm realplayer.xpm
+	insinto /usr/share/pixmaps/mini
+	doins realplayer.xpm
 
 	# Mimetypes - Intentionally left blank (for now)
 	# Better not use the provided scripts from Real, they are outdated 
