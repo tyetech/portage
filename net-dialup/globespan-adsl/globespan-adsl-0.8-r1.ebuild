@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/globespan-adsl/Attic/globespan-adsl-0.8-r1.ebuild,v 1.1 2003/12/13 06:36:34 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/globespan-adsl/Attic/globespan-adsl-0.8-r1.ebuild,v 1.2 2004/01/12 18:31:39 nerdboy Exp $
 
 IUSE="tcltk"
 
