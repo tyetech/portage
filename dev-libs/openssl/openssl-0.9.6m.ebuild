@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/openssl/Attic/openssl-0.9.6k.ebuild,v 1.8 2004/02/22 20:09:09 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/openssl/Attic/openssl-0.9.6m.ebuild,v 1.1 2004/03/17 17:19:01 aliz Exp $
 
 inherit eutils
 
@@ -13,14 +13,14 @@ RDEPEND="virtual/glibc"
 DEPEND="${RDEPEND} >=dev-lang/perl-5"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 ppc alpha sparc mips hppa -amd64"
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~mips ~hppa -amd64"
 IUSE=""
 
 if [ "$PROFILE_ARCH" = "sparc" -a "`uname -m`" = "sparc64" ]; then
 	SSH_TARGET="linux-sparcv8"
 fi
 
-if [ "`uname -m`" = "parisc" -o "`uname -m`" = "parisc64" ]; then
+if [ "`uname -m`" = "hppa" -o "`uname -m`" = "parisc64" ]; then
 	SSH_TARGET="linux-parisc"
 fi
 
@@ -32,7 +32,7 @@ esac
 src_unpack() {
 	unpack ${A} ; cd ${S}
 
-	epatch ${FILESDIR}/${PN}-0.9.6i-gentoo.diff
+	epatch ${FILESDIR}/${P}-gentoo.diff
 
 	if [ "${ARCH}" = "mips" ]
 	then
@@ -93,3 +93,14 @@ src_install() {
 	fperms a+x /usr/lib/pkgconfig #34088
 }
 
+pkg_postinst() {
+	local BN_H="${ROOT}$(gcc-config -L)/include/openssl/bn.h"
+	# Breaks things one some boxen, bug #13795.  The problem is that
+	# if we have a 'gcc fixed' version in $(gcc-config -L) from 0.9.6,
+	# then breaks as it was defined as 'int BN_mod(...)' and in 0.9.7 it
+	# is a define with BN_div(...) - <azarah@gentoo.org> (24 Sep 2003)
+	if [ -f "${BN_H}" ] && [ -n "$(grep '^int[[:space:]]*BN_mod(' "${BN_H}")" ]
+	then
+		rm -f "${BN_H}"
+	fi
+}
