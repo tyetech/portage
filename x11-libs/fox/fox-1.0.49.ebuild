@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/fox/Attic/fox-1.0.49.ebuild,v 1.4 2004/03/24 04:19:34 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/fox/Attic/fox-1.0.49.ebuild,v 1.5 2004/04/10 21:23:56 dholm Exp $
 
 IUSE="cups opengl"
 S=${WORKDIR}/${P}
@@ -9,7 +9,7 @@ SRC_URI="http://www.fox-toolkit.org/ftp/${P}.tar.gz"
 HOMEPAGE="http://www.fox-toolkit.org"
 
 SLOT="0"
-KEYWORDS="~x86 ~sparc alpha ia64 hppa amd64"
+KEYWORDS="~x86 ~sparc alpha ia64 hppa amd64 ~ppc"
 LICENSE="GPL-2"
 
 DEPEND="virtual/glibc
