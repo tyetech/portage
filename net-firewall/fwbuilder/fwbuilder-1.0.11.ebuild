@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/fwbuilder/Attic/fwbuilder-1.0.11.ebuild,v 1.6 2004/02/09 05:38:32 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/fwbuilder/Attic/fwbuilder-1.0.11.ebuild,v 1.7 2004/04/27 18:21:05 agriffis Exp $
+
+inherit flag-o-matic
 
 DESCRIPTION="A firewall GUI"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
