@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/cgoban2/Attic/cgoban2-2.6.1.ebuild,v 1.2 2004/06/08 22:46:47 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/cgoban2/Attic/cgoban2-2.6.1.ebuild,v 1.3 2004/06/24 22:15:56 agriffis Exp $
 
 inherit games
 

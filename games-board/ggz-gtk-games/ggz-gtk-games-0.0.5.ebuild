@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/ggz-gtk-games/Attic/ggz-gtk-games-0.0.5.ebuild,v 1.5 2004/06/03 22:41:46 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/ggz-gtk-games/Attic/ggz-gtk-games-0.0.5.ebuild,v 1.6 2004/06/24 22:16:51 agriffis Exp $
 
 DESCRIPTION="These are the gtk versions of the games made by GGZ Gaming Zone"
 HOMEPAGE="http://ggz.sourceforge.net/"

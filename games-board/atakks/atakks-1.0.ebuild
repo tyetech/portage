@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/atakks/atakks-1.0.ebuild,v 1.2 2004/06/03 14:27:04 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/atakks/atakks-1.0.ebuild,v 1.3 2004/06/24 22:15:35 agriffis Exp $
 
 inherit eutils games
 

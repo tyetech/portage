@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/gnuchess-book/Attic/gnuchess-book-1.00.ebuild,v 1.2 2004/05/02 01:58:56 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/gnuchess-book/Attic/gnuchess-book-1.00.ebuild,v 1.3 2004/06/24 22:17:55 agriffis Exp $
 
 inherit games
 
