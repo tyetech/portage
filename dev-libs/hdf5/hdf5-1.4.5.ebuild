@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/hdf5/Attic/hdf5-1.4.5.ebuild,v 1.2 2003/08/24 21:39:21 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/hdf5/Attic/hdf5-1.4.5.ebuild,v 1.3 2004/01/07 07:23:03 george Exp $
 
 DESCRIPTION="HDF5 is a general purpose library and file format for storing scientific data."
 SRC_URI="ftp://ftp.ncsa.uiuc.edu/HDF/HDF5/current/src/${P}-post2.tar.gz"
