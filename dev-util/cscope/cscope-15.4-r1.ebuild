@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cscope/Attic/cscope-15.4-r1.ebuild,v 1.1 2003/11/15 18:29:15 jbms Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cscope/Attic/cscope-15.4-r1.ebuild,v 1.2 2004/02/22 22:32:45 agriffis Exp $
 
 inherit gnuconfig elisp-common
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://cscope.sourceforge.net"
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="~x86 -ppc -sparc -alpha -hppa -mips -arm"
+KEYWORDS="~x86 -ppc -sparc -alpha -hppa -mips "
 
 IUSE="emacs"
 
