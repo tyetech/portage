@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libical-moz/Attic/libical-moz-0.23.ebuild,v 1.9 2004/06/05 18:20:46 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libical-moz/Attic/libical-moz-0.23.ebuild,v 1.10 2004/06/24 23:12:43 agriffis Exp $
 
 S=${WORKDIR}/libical-0.23-moz
 DESCRIPTION="libical is used by the mozilla calendar component"

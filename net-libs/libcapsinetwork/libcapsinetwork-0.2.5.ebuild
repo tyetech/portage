@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libcapsinetwork/Attic/libcapsinetwork-0.2.5.ebuild,v 1.2 2004/04/18 20:21:32 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libcapsinetwork/Attic/libcapsinetwork-0.2.5.ebuild,v 1.3 2004/06/24 23:12:00 agriffis Exp $
 
 inherit flag-o-matic
 
