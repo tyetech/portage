@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.22-r10.ebuild,v 1.2 2004/02/18 21:48:46 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.22-r10.ebuild,v 1.3 2004/02/23 10:48:55 kumba Exp $
 
 
 # Version Data
@@ -49,17 +49,17 @@ src_unpack() {
 	# Patch arch/mips/Makefile for gcc (Pass -mips3/-mips4 for r4k/r5k cpus)
 	epatch ${FILESDIR}/mipscvs-${OKV}-makefile-fix.patch
 
-	# do_brk fix (Fixes exploit that hit several debian servers)
-	epatch ${FILESDIR}/do_brk_fix.patch
-
-	# mremap fix (Possibly Exploitable)
-	epatch ${FILESDIR}/mremap-fix-try2.patch
-
 	# MIPS RTC Fixes (Fixes memleaks, backport from 2.4.24)
 	epatch ${FILESDIR}/rtc-fixes.patch
 
-	# do_munmap fix (Possibly Exploitable)
-	epatch ${FILESDIR}/do_munmap-fix.patch
+	# Security Fixes
+	echo -e ""
+	ebegin "Applying Security Fixes"
+		epatch ${FILESDIR}/CAN-2003-0961-do_brk.patch
+		epatch ${FILESDIR}/CAN-2003-0985-mremap.patch
+		epatch ${FILESDIR}/CAN-2004-0010-ncpfs.patch
+		epatch ${FILESDIR}/CAN-2004-0077-do_munmap.patch
+	eend
 
 	# Cobalt Patches
 	if [ "${PROFILE_ARCH}" = "cobalt" ]; then
