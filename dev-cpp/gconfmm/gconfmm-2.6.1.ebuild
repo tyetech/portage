@@ -1,11 +1,10 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/gconfmm/Attic/gconfmm-2.6.1.ebuild,v 1.1 2004/05/09 16:06:05 khai Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/gconfmm/Attic/gconfmm-2.6.1.ebuild,v 1.2 2004/05/09 16:25:12 khai Exp $
 
 inherit gnome2
 
 DESCRIPTION="C++ bindings for GConf"
-SRC_URI="ftp://ftp.gnome.org/pub/GNOME/sources/gconfmm/2.6/${P}.tar.bz2"
 HOMEPAGE="http://gtkmm.sourceforge.net/"
 
 IUSE=""
