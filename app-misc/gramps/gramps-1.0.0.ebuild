@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/gramps/Attic/gramps-0.9.2.ebuild,v 1.5 2003/09/05 12:10:36 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/gramps/Attic/gramps-1.0.0.ebuild,v 1.1 2004/02/14 13:01:40 liquidx Exp $
 
 inherit gnome2
 
@@ -14,8 +14,8 @@ LICENSE="GPL-2"
 KEYWORDS="~x86"
 
 RDEPEND=">=dev-lang/python-2.2
-	>=dev-python/pygtk-1.99
-	>=dev-python/gnome-python-1.99
+	>=dev-python/pygtk-1.99.14
+	>=dev-python/gnome-python-1.99.14
 	>=gnome-base/gnome-vfs-2.0
 	>=dev-python/pyxml-0.7.1
 	>=dev-python/Imaging-1.1.3
@@ -23,9 +23,18 @@ RDEPEND=">=dev-lang/python-2.2
 
 DEPEND="${RDEPEND}
 	dev-lang/swig
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	app-text/scrollkeeper"
 
 DOCS="COPYING NEWS README TODO"
+MAKEOPTS="${MAKEOPTS} -j1"
+pkg_setup() {
+	if ! python -c "import gtk.glade" 2>&1 > /dev/null ; then
+		eerror "You need to install pygtk with libglade support. Try:"
+		eerror "USE='gnome' emerge pygtk gramps"
+		die "libglade support missing from pygtk"
+	fi
+}
 
 src_install() {
 	gnome2_src_install
