@@ -1,7 +1,6 @@
- 
-# Copyright 2003 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/neoportallibrary/Attic/neoportallibrary-0.9b.ebuild,v 1.2 2003/06/23 06:12:55 kutsuya Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/neoportallibrary/Attic/neoportallibrary-0.9b.ebuild,v 1.3 2003/09/08 06:53:31 msterret Exp $
 
 inherit zproduct
 P_NEW="NeoPortalLibrary-${PV}"
