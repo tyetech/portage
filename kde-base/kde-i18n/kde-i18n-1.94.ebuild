@@ -1,0 +1,36 @@
+# Copyright 1999-2000 Gentoo Technologies, Inc.
+# Distributed under the terms of the GNU General Public License, v2 or later
+# Author Achim Gottinger <achim@gentoo.org>
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kde-i18n/Attic/kde-i18n-1.94.ebuild,v 1.1 2000/09/17 12:15:08 achim Exp $
+
+A=kde-i18n.tar.bz2
+S=${WORKDIR}/kde-i18n
+DESCRIPTION="KDE 2Beta - libs"
+SRC_URI="http://download.sourceforge.net/mirrors/kde/unstable/distribution/2.0Beta5/tar/src/"${A}
+HOMEPAGE="http://www.kde.org/"
+
+src_unpack () {
+  unpack ${A}
+  cd ${S}
+  rm -r ca
+
+}
+src_compile() {
+    try ./configure --prefix=/opt/kde --host=${CHOST} --with-ssl-dir=/usr \
+		--with-qt-dir=/usr/lib/qt-x11-2.2.0 \
+		--with-qt-includes=/usr/lib/qt-x11-2.2.0/include \
+		--with-qt-libs=/usr/lib/qt-x11-2.2.0/lib
+    cp Makefile Makefile.orig
+    sed -e "s:br ca cy:br cy:" Makefile.orig > Makefile
+    try make
+}
+
+src_install() {
+  try make install prefix=${D}/opt/kde bindir=${D}/opt/kde/bin
+  dodoc COPYING highscore
+  docinto html
+  dodoc highscore.html
+}
+
+
+
