@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/control-center/Attic/control-center-2.0.1.1.ebuild,v 1.3 2002/09/21 12:09:35 bjb Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/control-center/Attic/control-center-2.0.1.1.ebuild,v 1.4 2002/10/04 05:33:07 vapier Exp $
 
 inherit gnome2
 
