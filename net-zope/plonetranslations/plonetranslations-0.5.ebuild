@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/plonetranslations/Attic/plonetranslations-0.1.ebuild,v 1.3 2004/09/11 22:32:33 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/plonetranslations/Attic/plonetranslations-0.5.ebuild,v 1.1 2004/09/11 22:32:33 lanius Exp $
 
 inherit zproduct
 
