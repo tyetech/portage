@@ -1,9 +1,9 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Dan Armak <danarmak@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/autoconf.eclass,v 1.1 2001/09/28 19:25:33 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/autoconf.eclass,v 1.2 2001/09/28 19:30:09 danarmak Exp $
 # The autoconf eclass merely adds autconf/automake deps.
-. /usr/portage/inherit.eclass || die
+. /usr/portage/eclass/inherit.eclass || die
 inherit virtual || die
 ECLASS=autoconf
 
