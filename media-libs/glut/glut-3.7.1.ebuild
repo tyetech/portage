@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/glut/Attic/glut-3.7.1.ebuild,v 1.11 2003/09/06 23:59:48 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/glut/Attic/glut-3.7.1.ebuild,v 1.12 2003/11/24 19:28:46 agriffis Exp $
 
 inherit libtool
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.opengl.org/developers/documentation/glut/"
 
 SLOT="0"
 LICENSE="X11 | GPL-2"
-KEYWORDS="x86 ~ppc sparc alpha amd64 hppa"
+KEYWORDS="x86 ~ppc sparc alpha amd64 hppa ia64"
 
 DEPEND="virtual/opengl
 	virtual/glu"
