@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/glib/Attic/glib-2.4.4.ebuild,v 1.9 2004/09/16 01:48:51 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/glib/Attic/glib-2.4.4.ebuild,v 1.10 2004/09/16 01:49:52 pvdabeel Exp $
 
 inherit libtool
 
@@ -22,6 +22,8 @@ RDEPEND="virtual/libc"
 src_compile() {
 
 	if use macos; then
+		glibtoolize
+	elif use ppc-macos; then
 		glibtoolize
 	else
 		elibtoolize
