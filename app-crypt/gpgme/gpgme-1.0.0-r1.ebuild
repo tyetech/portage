@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gpgme/Attic/gpgme-1.0.0-r1.ebuild,v 1.1 2004/10/03 01:46:57 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gpgme/Attic/gpgme-1.0.0-r1.ebuild,v 1.2 2004/10/03 10:08:38 dragonheart Exp $
 
 inherit eutils
 
@@ -66,7 +66,7 @@ src_compile() {
 		--with-pth=yes \
 		`use_enable smime test` \
 		|| die "econf failed"
-	emake || die
+	emake CFLAGS="${CFLAGS} -I../assuan/"  || die
 }
 
 src_test() {
