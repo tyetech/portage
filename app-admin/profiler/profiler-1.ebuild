@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/profiler/Attic/profiler-1.ebuild,v 1.7 2004/10/05 02:58:11 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/profiler/Attic/profiler-1.ebuild,v 1.8 2004/10/16 23:06:48 axxo Exp $
+
+inherit java-pkg
 
 DESCRIPTION="provides 3D visual representation of file system statistics"
 HOMEPAGE="http://visualversion.com/profiler/"
@@ -21,5 +23,5 @@ src_unpack() {
 
 src_install() {
 	dobin ${FILESDIR}/profiler
-	dojar ${A}
+	java-pkg_dojar ${A}
 }
