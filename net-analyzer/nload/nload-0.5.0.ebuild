@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nload/Attic/nload-0.5.0.ebuild,v 1.1 2002/09/03 08:34:46 mkennedy Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nload/Attic/nload-0.5.0.ebuild,v 1.2 2002/10/04 05:59:11 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="console application which monitors network traffic and bandwidth usage in real time"

@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nbaudit/Attic/nbaudit-1.0.ebuild,v 1.10 2002/09/23 19:59:21 vapier Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nbaudit/Attic/nbaudit-1.0.ebuild,v 1.11 2002/10/04 05:58:47 vapier Exp $
 
 
 # Its officially called nat10 but the name conflicts with other projects

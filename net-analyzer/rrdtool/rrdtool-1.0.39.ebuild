@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.0.39.ebuild,v 1.3 2002/09/17 00:45:39 mcummings Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.0.39.ebuild,v 1.4 2002/10/04 05:59:27 vapier Exp $
 
 inherit perl-module
 
