@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Class-ISA/Attic/Class-ISA-0.32.ebuild,v 1.3 2004/02/20 21:53:40 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Class-ISA/Attic/Class-ISA-0.32.ebuild,v 1.4 2004/02/26 04:53:43 kumba Exp $
 
 inherit perl-module
 
@@ -10,7 +10,7 @@ SRC_URI="http://search.cpan.org/CPAN/authors/id/S/SB/SBURKE/${P}.tar.gz"
 
 LICENSE="Artistic | GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~sparc ~alpha hppa amd64"
+KEYWORDS="x86 ~ppc ~sparc ~alpha hppa amd64 ~mips"
 
 DEPEND="dev-perl/Test-Simple
 	dev-perl/Class-ISA
