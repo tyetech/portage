@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-BaseDir/Attic/File-BaseDir-0.02.ebuild,v 1.7 2004/10/16 23:57:21 rac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-BaseDir/Attic/File-BaseDir-0.02.ebuild,v 1.8 2004/12/13 05:39:20 weeve Exp $
 
 inherit perl-module
 
@@ -9,5 +9,5 @@ SRC_URI="http://search.cpan.org/CPAN/authors/id/P/PA/PARDUS/${PN}/${P}.tar.gz"
 HOMEPAGE="http://search.cpan.org/CPAN/authors/id/P/PA/PARDUS/${PN}/${P}.readme"
 SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
-KEYWORDS="x86 ~sparc ppc"
+KEYWORDS="x86 sparc ppc"
 IUSE=""
