@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/equate/Attic/equate-0.0.4.20040522.ebuild,v 1.2 2004/06/24 21:58:07 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/equate/Attic/equate-0.0.4.20040710.ebuild,v 1.1 2004/07/12 12:35:24 vapier Exp $
 
 inherit enlightenment
 
