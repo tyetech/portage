@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ksymoops/Attic/ksymoops-2.4.7.ebuild,v 1.8 2004/07/15 03:51:32 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ksymoops/Attic/ksymoops-2.4.7.ebuild,v 1.9 2005/03/17 00:59:38 r3pek Exp $
 
 DESCRIPTION="Utility to decode a kernel oops, or other kernel call traces."
 SRC_URI="ftp://ftp.kernel.org/pub/linux/utils/kernel/ksymoops/v2.4/${P}.tar.gz"
