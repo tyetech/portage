@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-7.60_alpha4.ebuild,v 1.2 2004/12/05 10:34:31 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-7.60_alpha4.ebuild,v 1.3 2005/02/08 17:57:53 lanius Exp $
 
 IUSE="static spell"
 

@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-7.54-r1.ebuild,v 1.4 2005/02/08 17:57:53 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-7.54-r2.ebuild,v 1.1 2005/02/08 17:57:53 lanius Exp $
 
 IUSE="static spell"
 
-OPERAVER="7.54-20041210"
-OPERAFTPDIR="754u1"
+OPERAVER="7.54-20050131"
+OPERAFTPDIR="754u2"
 
 S=${WORKDIR}/${A/.tar.bz2/}
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://www.opera.com/linux/"
 # that's an ugly workaround for the broken src_uri syntax
 SRC_URI="
 	x86? ( static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/i386/static/${PN}-${OPERAVER}.1-static-qt.i386-en.tar.bz2 ) )
-	x86? ( !static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/i386/${PN}-${OPERAVER}.5-shared-qt.i386-en.tar.bz2 ) )
+	x86? ( !static? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/i386/shared/${PN}-${OPERAVER}.5-shared-qt.i386-en.tar.bz2 ) )
 	amd64? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/i386/static/${PN}-${OPERAVER}.1-static-qt.i386-en.tar.bz2 )
 	ppc? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/ppc/static/${PN}-${OPERAVER}.1-static-qt.ppc-en.tar.bz2 )
 	sparc? ( mirror://opera/linux/${OPERAFTPDIR}/final/en/sparc/static/${PN}-${OPERAVER}.1-static-qt.sparc-en.tar.bz2 )"
@@ -53,7 +53,7 @@ RDEPEND="virtual/x11
 
 SLOT="0"
 LICENSE="OPERA"
-KEYWORDS="x86 ~ppc sparc amd64"
+KEYWORDS="x86 ~ppc ~sparc amd64"
 
 src_unpack() {
 	unpack ${A}
