@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: initial version by Ron Simpkin doobedoobedo@quake3world.com
+# $Header: /usr/local/ssd/gentoo-x86/output/games-kids/cvs-repo/gentoo-x86/games-kids/gcompris/Attic/gcompris-3.2.ebuild,v 1.6 2004/02/20 07:08:51 vapier Exp $
 
 inherit games
 
