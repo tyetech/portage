@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Paul Fleischer <proguy@proguy.dk>
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/epplet-base/Attic/epplet-base-0.5.ebuild,v 1.5 2002/07/08 21:31:05 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/epplet-base/Attic/epplet-base-0.5.ebuild,v 1.6 2002/07/11 06:30:57 drobbins Exp $
 
 S="${WORKDIR}/Epplets-${PV}"
 

@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Joe Bormolini <lordjoe@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbkeysconf/Attic/bbkeysconf-1.3-r3.ebuild,v 1.7 2002/07/08 21:31:05 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbkeysconf/Attic/bbkeysconf-1.3-r3.ebuild,v 1.8 2002/07/11 06:30:57 drobbins Exp $
 
 inherit kde base || die		# note: base is intended to override kde!
 
