@@ -1,17 +1,24 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/gputils/Attic/gputils-0.11.8.ebuild,v 1.3 2004/03/05 02:49:45 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/gputils/Attic/gputils-0.12.0.ebuild,v 1.1 2004/03/05 02:49:45 dragonheart Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Collection of tools including assembler, linker and librarian for PIC microcontrollers"
 SRC_URI="mirror://sourceforge/gputils/${P}.tar.gz"
 HOMEPAGE="http://gputils.sourceforge.net/"
+RESTRICT="nomirror"
 
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~sparc"
 
-DEPEND="virtual/glibc"
+DEPEND="virtual/glibc
+	sys-devel/gcc
+	sys-devel/flex
+	sys-devel/bison"
+
+RDEPEND="virtual/glibc"
+
 
 src_compile() {
 	econf || die
