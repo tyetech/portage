@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/ut2004/Attic/ut2004-3236-r1.ebuild,v 1.4 2004/07/09 23:52:29 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/ut2004/Attic/ut2004-3323.ebuild,v 1.1 2004/09/14 21:41:35 wolf31o2 Exp $
 
 inherit games
 
-MY_P="${PN}-lnxpatch${PV}-1.tar.bz2"
+MY_P="${PN}-lnxpatch${PV}.tar.bz2"
 DESCRIPTION="Unreal Tournament 2004 - follow-up to the 2003  multi-player first-person shooter"
 HOMEPAGE="http://www.unrealtournament2004.com/"
 SRC_URI="http://ftp4.3dgamers.com/pub/3dgamers/games/unrealtourn2k4/${MY_P}
@@ -183,7 +183,7 @@ src_install() {
 
 	# creating .loki/installed links
 	mkdir -p ${D}/root/.loki/installed
-	dosym .manifest/${PN}.xml /root/.loki/installed/${PN}.xml
+	dosym ${dir}/.manifest/${PN}.xml /root/.loki/installed/${PN}.xml
 
 	games_make_wrapper ut2004 ./ut2004 ${dir}
 
