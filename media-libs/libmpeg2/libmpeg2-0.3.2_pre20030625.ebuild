@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmpeg2/Attic/libmpeg2-0.3.2_pre20030625.ebuild,v 1.4 2004/03/19 07:56:04 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmpeg2/Attic/libmpeg2-0.3.2_pre20030625.ebuild,v 1.5 2004/03/24 14:30:03 weeve Exp $
 
 IUSE="sdl X"
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://libmpeg2.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~sparc ~ppc ~alpha amd64"
+KEYWORDS="x86 sparc ~ppc ~alpha amd64"
 
 DEPEND="sdl? ( media-libs/libsdl )
 	X? ( virtual/x11 )"
