@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bblaunch/bblaunch-0.0.3.ebuild,v 1.9 2004/07/03 13:51:05 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bblaunch/bblaunch-0.0.3.ebuild,v 1.10 2004/07/15 00:49:59 agriffis Exp $
+
+inherit eutils
 
 IUSE=""
 DESCRIPTION="An application launcher for Blackbox type window managers"
