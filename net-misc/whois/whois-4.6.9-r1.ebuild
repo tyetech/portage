@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/whois/Attic/whois-4.6.6-r2.ebuild,v 1.10 2004/07/01 22:11:22 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/whois/Attic/whois-4.6.9-r1.ebuild,v 1.1 2004/07/13 18:24:19 seemant Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="http://www.linux.it/~md/software/${MY_P}.tar.gz"
 HOMEPAGE="http://www.linux.it/~md/software/"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc ~mips hppa ia64 alpha"
+KEYWORDS="~x86 ~ppc ~sparc mips hppa ~ia64 ~alpha amd64"
 
 DEPEND=">=sys-apps/sed-4
 	>=dev-lang/perl-5"
@@ -20,16 +20,16 @@ RDEPEND="virtual/libc"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	sed -i "s/-O2/$CFLAGS/" Makefile
+	sed -i -e "s/-O2/$CFLAGS/" Makefile
 
 	use nls && ( \
 		cd po
-		sed -i "s:/usr/bin/install:install:" Makefile
+		sed -i -e "s:/usr/bin/install:install:" Makefile
 	) || ( \
-		sed -i "s:cd po.*::" Makefile
+		sed -i -e "s:cd po.*::" Makefile
 	)
 
-	epatch ${FILESDIR}/${P}-gentoo-security-2.patch
+	epatch ${FILESDIR}/${P}-gentoo-security.patch || die
 }
 
 src_compile() {

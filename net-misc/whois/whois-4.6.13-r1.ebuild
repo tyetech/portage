@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/whois/Attic/whois-4.6.13.ebuild,v 1.5 2004/07/01 22:11:22 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/whois/Attic/whois-4.6.13-r1.ebuild,v 1.1 2004/07/13 18:24:19 seemant Exp $
 
 inherit eutils
 
