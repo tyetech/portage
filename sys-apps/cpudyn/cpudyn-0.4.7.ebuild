@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/cpudyn/Attic/cpudyn-0.4.7.ebuild,v 1.2 2003/11/02 06:11:14 trance Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/cpudyn/Attic/cpudyn-0.4.7.ebuild,v 1.3 2003/12/02 18:22:13 robbat2 Exp $
 
 DESCRIPTION="A daemon to control laptop power consumption via cpufreq and disk standby"
 HOMEPAGE="http://mnm.uib.es/~gallir/${PN}/"
@@ -20,6 +20,7 @@ src_install() {
 	exeinto /etc/init.d
 	newexe ${FILESDIR}/cpudyn.init cpudyn
 	insinto /etc/conf.d
+	cat ${FILESDIR}/cpudyn.conf.extra >>debian/cpudyn.conf
 	newins debian/cpudyn.conf cpudyn
 
 	into /usr
