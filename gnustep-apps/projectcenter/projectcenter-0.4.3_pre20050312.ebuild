@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/projectcenter/Attic/projectcenter-0.4.1_pre20050106.ebuild,v 1.1 2005/01/10 16:28:36 fafhrd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/projectcenter/Attic/projectcenter-0.4.3_pre20050312.ebuild,v 1.1 2005/03/17 21:08:48 fafhrd Exp $
 
 ECVS_CVS_COMMAND="cvs -q"
 ECVS_SERVER="savannah.gnu.org:/cvsroot/gnustep"

@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/projectcenter/Attic/projectcenter-0.4.1_pre20041203.ebuild,v 1.3 2005/01/10 16:28:36 fafhrd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/easydiff/Attic/easydiff-0.3.1_pre20050312.ebuild,v 1.1 2005/03/17 21:00:52 fafhrd Exp $
 
 ECVS_CVS_COMMAND="cvs -q"
 ECVS_SERVER="savannah.gnu.org:/cvsroot/gnustep"
 ECVS_USER="anoncvs"
 ECVS_AUTH="ext"
-ECVS_MODULE="gnustep/dev-apps/${PN/projectc/ProjectC}"
+ECVS_MODULE="gnustep/dev-apps/${PN/easyd/EasyD}"
 ECVS_CO_OPTS="-P -D ${PV/*_pre}"
 ECVS_UP_OPTS="-dP -D ${PV/*_pre}"
 ECVS_TOP_DIR="${DISTDIR}/cvs-src/savannah.gnu.org-gnustep"
@@ -14,22 +14,17 @@ inherit gnustep cvs
 
 S=${WORKDIR}/${ECVS_MODULE}
 
-DESCRIPTION="An IDE for GNUstep."
-HOMEPAGE="http://www.gnustep.org/experience/ProjectCenter.html"
+DESCRIPTION="GNUstep app that lets you easily see the differences between two text files."
+HOMEPAGE="http://www.collaboration-world.com/easydiff/"
 
 KEYWORDS="~x86 ~ppc"
 LICENSE="GPL-2"
 SLOT="0"
 
+IUSE="${IUSE}"
 DEPEND="${GS_DEPEND}"
 RDEPEND="${GS_RDEPEND}
-	>=sys-devel/gdb-6.0"
+	dev-util/cvs"
 
-egnustep_install_domain "System"
-
-src_unpack() {
-	cvs_src_unpack
-	egnustep_env
-	cd ${S}
-}
+egnustep_install_domain "Local"
 
