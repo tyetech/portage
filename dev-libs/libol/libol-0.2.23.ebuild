@@ -1,19 +1,18 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libol/Attic/libol-0.3.3.ebuild,v 1.4 2002/10/25 17:33:41 woodchip Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libol/Attic/libol-0.2.23.ebuild,v 1.13 2002/10/25 17:33:41 woodchip Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Support library for syslog-ng"
-SRC_URI="http://www.balabit.hu/downloads/libol/0.3/${P}.tar.gz"
+SRC_URI="http://www.balabit.hu/downloads/libol/0.2/${P}.tar.gz"
 HOMEPAGE="http://www.balabit.hu/en/products/syslog-ng/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~sparc ~sparc64"
+KEYWORDS="x86 ppc sparc sparc64"
+IUSE=""
 
 DEPEND="virtual/glibc"
-RDEPEND=""
-IUSE=""
 
 src_compile() {
 	econf \
