@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ngrep/Attic/ngrep-1.41.ebuild,v 1.2 2003/09/05 23:40:10 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ngrep/Attic/ngrep-1.41.ebuild,v 1.3 2003/11/02 22:20:53 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A grep for network layers"
@@ -15,6 +15,13 @@ RDEPEND="virtual/glibc"
 SLOT="0"
 LICENSE="as-is"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha"
+
+src_unpack() {
+	unpack ${A}
+
+	cd ${S}
+	epatch ${FILESDIR}/${P}-fix-HAVE_DUMB_UDPHDR-test.patch
+}
 
 src_compile() {
 
