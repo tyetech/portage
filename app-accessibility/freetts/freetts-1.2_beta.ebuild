@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/freetts/Attic/freetts-1.2_beta.ebuild,v 1.10 2004/10/19 20:37:24 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/freetts/Attic/freetts-1.2_beta.ebuild,v 1.11 2005/01/01 10:48:38 eradicator Exp $
 
 inherit java-pkg eutils
 
