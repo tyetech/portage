@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/bash-completion-config/Attic/bash-completion-config-0.3.ebuild,v 1.5 2004/11/04 13:35:57 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/bash-completion-config/Attic/bash-completion-config-0.5.ebuild,v 1.1 2004/11/10 12:58:33 ka0ttic Exp $
 
 MY_PN="bashcomp-config"
 MY_P="${MY_PN}-${PV}"
@@ -8,11 +8,11 @@ S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="Utility to easily add/remove bash-completions to your environment"
 HOMEPAGE="http://developer.berlios.de/projects/bashcomp-config/"
-SRC_URI="ftp://ftp.berlios.de/pub/${MY_PN}/${MY_P}.tar.bz2"
+SRC_URI="http://download.berlios.de/${MY_PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~s390 ~x86 ~mips ~sparc ~ppc ~ppc-macos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~s390 ~x86 ~mips ~sparc ~ppc ~ppc-macos ~ppc64"
 IUSE=""
 
 RDEPEND=">=app-shells/bash-2.05"
