@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/dosbox/Attic/dosbox-0.61.ebuild,v 1.2 2004/02/04 02:56:03 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/dosbox/Attic/dosbox-0.61.ebuild,v 1.3 2004/02/11 02:55:42 vapier Exp $
 
 inherit games
 
@@ -33,7 +33,7 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
-	dodoc AUTHORS ChangeLog INSTALL NEWS README THANKS || die "dodoc failed"
+	make DESTDIR=${D} install || die "make install failed"
+	dodoc AUTHORS ChangeLog INSTALL NEWS README THANKS
 	prepgamesdirs
 }
