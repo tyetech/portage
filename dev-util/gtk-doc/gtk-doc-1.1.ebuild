@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gtk-doc/Attic/gtk-doc-1.1.ebuild,v 1.17 2004/05/30 23:37:04 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gtk-doc/Attic/gtk-doc-1.1.ebuild,v 1.18 2004/06/25 03:15:57 agriffis Exp $
 
 inherit gnome.org
 
