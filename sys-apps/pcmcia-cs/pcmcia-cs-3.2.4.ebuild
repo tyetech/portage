@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pcmcia-cs/Attic/pcmcia-cs-3.2.4.ebuild,v 1.1 2003/03/04 23:01:54 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pcmcia-cs/Attic/pcmcia-cs-3.2.4.ebuild,v 1.2 2003/03/05 17:53:34 latexer Exp $
 
 inherit eutils
 
@@ -12,6 +12,7 @@ SRC_URI="mirror://sourceforge/pcmcia-cs/${P}.tar.gz
 	http://airsnort.shmoo.com/${P}-orinoco-patch.diff"
 
 HOMEPAGE="http://pcmcia-cs.sourceforge.net"
+IUSE="trusted build apm pnp nocardbus"
 DEPEND="sys-kernel/linux-headers"
 RDEPEND=""
 SLOT="0"
