@@ -1,6 +1,8 @@
 # Copyright 2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tleds/Attic/tleds-1.05_beta11.ebuild,v 1.3 2002/08/14 12:12:29 murphy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tleds/Attic/tleds-1.05_beta11.ebuild,v 1.4 2002/10/05 05:39:18 drobbins Exp $
+
+IUSE="X"
 
 MY_P=${P/_/}
 S=${WORKDIR}/${MY_P/eta11/}

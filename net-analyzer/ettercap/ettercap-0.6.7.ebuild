@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ettercap/Attic/ettercap-0.6.7.ebuild,v 1.4 2002/10/04 05:58:13 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ettercap/Attic/ettercap-0.6.7.ebuild,v 1.5 2002/10/05 05:39:17 drobbins Exp $
+
+IUSE="ssl"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Ettercap is a multipurpose sniffer/interceptor/logger for switched LAN."
