@@ -1,17 +1,16 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-dev-sources/Attic/gentoo-dev-sources-2.6.3_rc3.ebuild,v 1.3 2004/02/17 02:51:17 brad_mssw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-dev-sources/Attic/gentoo-dev-sources-2.6.3.ebuild,v 1.1 2004/02/18 18:09:35 johnm Exp $
 
 ETYPE="sources"
 inherit kernel-2
 detect_version
 
 #version of gentoo patchset
-#3.22 is next :)
-GPV=2.20
+GPV=3.22
 GPV_SRC="mirror://gentoo/genpatches-${KV_MAJOR}.${KV_MINOR}-${GPV}.tar.bz2"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="x86 ~amd64"
 
 UNIPATCH_LIST="${DISTDIR}/genpatches-${KV_MAJOR}.${KV_MINOR}-${GPV}.tar.bz2"
 UNIPATCH_DOCS="${WORKDIR}/patches/genpatches-${KV_MAJOR}.${KV_MINOR}-${GPV}/README"
