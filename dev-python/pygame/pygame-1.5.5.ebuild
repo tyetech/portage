@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pygame/Attic/pygame-1.5.5.ebuild,v 1.8 2004/05/04 11:24:35 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pygame/Attic/pygame-1.5.5.ebuild,v 1.9 2004/06/25 03:16:56 agriffis Exp $
 
 DESCRIPTION="python bindings to sdl and other libs that facilitate game production"
 SRC_URI="http://www.pygame.org/ftp/${P}.tar.gz"
