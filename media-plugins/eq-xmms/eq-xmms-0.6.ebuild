@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/eq-xmms/Attic/eq-xmms-0.6.ebuild,v 1.1 2004/06/28 19:09:52 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/eq-xmms/Attic/eq-xmms-0.6.ebuild,v 1.2 2004/06/28 19:10:22 eradicator Exp $
 
 IUSE=""
 
