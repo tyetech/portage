@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.8.0-r1.ebuild,v 1.1 2004/10/12 22:24:36 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.8.0-r1.ebuild,v 1.2 2004/11/04 20:46:56 agriffis Exp $
 
 S=${WORKDIR}
 DESCRIPTION="Meta package for the GNOME desktop"
@@ -11,7 +11,7 @@ SLOT="2.0"
 IUSE="accessibility cdr dvdr hal"
 # when unmasking for an arch
 # double check none of the deps are still masked !
-KEYWORDS="~x86 ~ppc ~sparc ~amd64 ~mips ~hppa"
+KEYWORDS="~x86 ~ppc ~sparc ~amd64 ~mips ~hppa ~ia64"
 
 RDEPEND="!gnome-base/gnome-core
 
