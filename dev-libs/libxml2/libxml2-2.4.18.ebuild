@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>,  Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libxml2/Attic/libxml2-2.4.15.ebuild,v 1.1 2002/02/17 13:57:28 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libxml2/Attic/libxml2-2.4.18.ebuild,v 1.1 2002/03/21 10:16:32 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="libxml"
@@ -25,6 +25,15 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR=${D} \
+		DOCS_DIR=/usr/share/doc/${PF}/python \
+		EXAMPLE_DIR=/usr/share/doc/${PF}/python/example \
+		BASE_DIR=/usr/share/doc \
+		DOC_MODULE=${PF} \
+		EXAMPLES_DIR=/usr/share/doc/${PF}/example \
+		TARGET_DIR=/usr/share/doc/${PF}/html \
+		install || die
+	
 	dodoc AUTHORS COPYING* ChangeLog NEWS README
 }
+
