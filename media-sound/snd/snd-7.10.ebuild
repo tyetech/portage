@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/snd/Attic/snd-7.4.ebuild,v 1.8 2005/03/13 22:00:32 luckyduck Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/snd/Attic/snd-7.10.ebuild,v 1.1 2005/03/13 22:00:32 luckyduck Exp $
 
 IUSE="esd motif guile X gtk ruby alsa"
 
