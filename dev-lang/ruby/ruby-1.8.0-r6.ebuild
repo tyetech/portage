@@ -1,14 +1,15 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.1-r1.ebuild,v 1.2 2004/02/22 19:57:00 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/ruby/Attic/ruby-1.8.0-r6.ebuild,v 1.1 2004/04/10 06:41:55 usata Exp $
 
 IUSE="socks5 tcltk cjk"
 
-ONIGURUMA="onigd20031224"
+ONIGURUMA="onigd20040316"
 
 inherit flag-o-matic alternatives eutils gnuconfig
 filter-flags -fomit-frame-pointer
 
+S=${WORKDIR}/${P%_pre*}
 DESCRIPTION="An object-oriented scripting language"
 HOMEPAGE="http://www.ruby-lang.org/"
 SRC_URI="mirror://ruby/${PV%.*}/${P/_pre/-preview}.tar.gz
@@ -28,8 +29,7 @@ DEPEND=">=sys-libs/glibc-2.1.3
 	>=dev-ruby/ruby-config-0.2"
 RDEPEND="${DEPEND}
 	!=dev-lang/ruby-cvs-${SLOT}*"
-
-S=${WORKDIR}/${P%_pre*}
+PROVIDE="virtual/ruby"
 
 src_unpack() {
 	unpack ${A}
@@ -41,7 +41,7 @@ src_unpack() {
 	fi
 
 	# Enable build on alpha EV67
-	if use alpha; then
+	if [ "${ARCH}" = "alpha" ] ; then
 		gnuconfig_update || die "gnuconfig_update failed"
 	fi
 }
