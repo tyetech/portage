@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/springgraph/springgraph-79.ebuild,v 1.2 2004/01/05 01:59:24 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/springgraph/springgraph-79.ebuild,v 1.3 2004/01/05 02:00:37 robbat2 Exp $
 
 DESCRIPTION="Generate spring graphs from graphviz input files"
 HOMEPAGE="http://www.chaosreigns.com/code/springgraph"
