@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/make/Attic/make-3.80.ebuild,v 1.10 2003/09/05 02:07:39 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/make/Attic/make-3.80.ebuild,v 1.11 2003/09/17 19:04:40 avenj Exp $
 
 IUSE="nls static build"
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.gnu.org/software/make/make.html"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86 ppc sparc alpha hppa arm mips"
+KEYWORDS="amd64 x86 ppc sparc alpha hppa arm mips ia64"
 
 DEPEND="virtual/glibc nls? ( sys-devel/gettext )"
 RDEPEND="virtual/glibc"
