@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdif/sdif-3.8.6.ebuild,v 1.3 2004/11/11 09:48:25 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdif/sdif-3.8.6.ebuild,v 1.4 2004/12/19 05:23:35 eradicator Exp $
 
 IUSE="doc threads ftruncate debug"
 
@@ -17,7 +17,7 @@ SRC_URI="http://www.ircam.fr/anasyn/sdif/download/${MY_P}.tar.gz
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 
 DEPEND=""
 
