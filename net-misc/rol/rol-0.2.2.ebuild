@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rol/Attic/rol-0.2.2.ebuild,v 1.1 2003/03/12 02:02:04 sethbc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rol/Attic/rol-0.2.2.ebuild,v 1.2 2003/03/12 02:12:09 sethbc Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://unknown-days.com/rol/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 S="${WORKDIR}/${P}"
 
