@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/pikdev/Attic/pikdev-0.6.5b.ebuild,v 1.1 2004/05/30 22:18:22 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/pikdev/Attic/pikdev-0.6.5b.ebuild,v 1.2 2004/06/24 22:08:31 agriffis Exp $
 
 inherit kde
 need-kde 3

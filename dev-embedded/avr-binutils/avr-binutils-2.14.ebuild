@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/avr-binutils/Attic/avr-binutils-2.14.ebuild,v 1.3 2004/03/15 02:15:08 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/avr-binutils/Attic/avr-binutils-2.14.ebuild,v 1.4 2004/06/24 22:05:37 agriffis Exp $
 
 IUSE="nls"
 
