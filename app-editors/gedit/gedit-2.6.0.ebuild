@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/gedit/Attic/gedit-2.6.0.ebuild,v 1.3 2004/05/25 22:16:28 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/gedit/Attic/gedit-2.6.0.ebuild,v 1.4 2004/05/29 03:43:38 pvdabeel Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 SLOT="0"
 
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc ~alpha ~sparc hppa ~amd64 ~ia64 ~mips"
+KEYWORDS="x86 ppc ~alpha ~sparc hppa ~amd64 ~ia64 ~mips"
 IUSE="spell"
 
 RDEPEND=">=gnome-base/libglade-2
