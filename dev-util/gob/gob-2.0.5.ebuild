@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gob/Attic/gob-2.0.5.ebuild,v 1.2 2003/04/23 16:23:48 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gob/Attic/gob-2.0.5.ebuild,v 1.3 2003/05/22 13:18:19 foser Exp $
 
 MY_P=${PN}2-${PV}
 S=${WORKDIR}/${MY_P}
@@ -10,7 +10,7 @@ HOMEPAGE="http://www.5z.com/jirka/gob.html"
 
 SLOT="2"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~sparc"
+KEYWORDS="x86 ~sparc"
 
 RDEPEND=">=dev-libs/glib-2.0*
 	dev-libs/popt"
