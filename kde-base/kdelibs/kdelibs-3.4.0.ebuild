@@ -1,8 +1,9 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.4.0.ebuild,v 1.4 2005/03/15 17:44:45 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.4.0.ebuild,v 1.5 2005/03/17 15:01:32 greg_g Exp $
 
 inherit kde eutils
+set-qtdir 3
 set-kdedir 3.4
 
 DESCRIPTION="KDE libraries needed by all kde programs"
