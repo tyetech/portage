@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51_pre19.ebuild,v 1.2 2004/08/16 20:39:41 carpaski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.51_pre20.ebuild,v 1.1 2004/08/17 01:20:34 carpaski Exp $
 
 IUSE="build multilib selinux"
 
@@ -52,7 +52,6 @@ check_multilib() {
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	patch -p0 < ${FILESDIR}/${PF}.diff || die "Failed to patch"
 }
 
 src_compile() {
