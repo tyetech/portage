@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsoup/Attic/libsoup-1.99.20.ebuild,v 1.1 2003/05/07 11:18:18 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsoup/Attic/libsoup-1.99.23.ebuild,v 1.1 2003/06/10 13:50:53 liquidx Exp $
 
 #IUSE="ssl"
 IUSE=""
