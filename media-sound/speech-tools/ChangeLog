@@ -1,6 +1,9 @@
 # ChangeLog for media-sound/speech-tools
 # Copyright 2000-2004 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/speech-tools/Attic/ChangeLog,v 1.3 2004/02/19 03:58:07 augustus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/speech-tools/Attic/ChangeLog,v 1.4 2004/02/25 18:18:46 bazik Exp $
+
+  25 Feb 2004; Sven Blumenstein <bazik@gentoo.org> speech-tools-1.2.3.ebuild:
+  Broken on sparc, see bug 41329.
 
   18 Feb 2004; <augustus@gentoo.org> speech-tools-1.2.3.ebuild:
   Added amd64 to keywords. festival works fine on AMD64. Marked stable since
