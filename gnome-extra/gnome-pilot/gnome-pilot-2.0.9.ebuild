@@ -1,14 +1,13 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-pilot/Attic/gnome-pilot-2.0.1.ebuild,v 1.1 2003/03/14 01:49:03 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-pilot/Attic/gnome-pilot-2.0.9.ebuild,v 1.1 2003/05/22 11:34:29 liquidx Exp $
 
-inherit gnome2 eutils
+inherit gnome.org gnome2 eutils
 
 IUSE=""
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Gnome Pilot apps"
-SRC_URI="ftp://ftp.gnome.org/pub/GNOME/sources/gnome-pilot/2.0/${P}.tar.bz2"
 HOMEPAGE="http://www.gnome.org/gnome-pilot/"
 
 SLOT="0"
@@ -36,10 +35,10 @@ src_unpack() {
 	cd ${S}
 
 	# hackaround b0rked with pilot-link detection <liquidx@gentoo.org>
-	epatch ${FILESDIR}/gnome-pilot-2.0.1-pisock.patch
+	# epatch ${FILESDIR}/gnome-pilot-2.0.1-pisock.patch
 	# USB patch from Mandrake.  Allows gnome-pilot to watch /dev/pilot even
 	# when it does not yet exist (because of using devfs).
-	epatch ${FILESDIR}/gnome-pilot-0.1.70-usb.patch
+	# patch -p1 < ${FILESDIR}/gnome-pilot-0.1.70-usb.patch
 
 }
 
