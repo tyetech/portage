@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellmwho/Attic/gkrellmwho-0.4.ebuild,v 1.8 2004/01/20 15:52:04 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gkrellmwho/Attic/gkrellmwho-0.4.ebuild,v 1.9 2004/03/26 23:10:05 aliz Exp $
 
-S=${WORKDIR}/${P}
+IUSE=""
 DESCRIPTION="GKrellM plugin which displays users logged in"
 SRC_URI="http://web.wt.net/~billw/gkrellm/Plugins/${P}.tar.gz"
 HOMEPAGE="http://web.wt.net/~billw/gkrellm/Plugins"

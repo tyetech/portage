@@ -1,11 +1,10 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmnet/Attic/wmnet-1.06.ebuild,v 1.12 2004/03/19 10:04:28 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmnet/Attic/wmnet-1.06.ebuild,v 1.13 2004/03/26 23:10:10 aliz Exp $
 
 inherit eutils
 
-S=${WORKDIR}/${P}
-
+IUSE=""
 DESCRIPTION="WMnet is a dock.app network monitor"
 SRC_URI="http://www.digitalkaos.net/linux/wmnet/download/${P}.tar.gz"
 HOMEPAGE="http://http://www.digitalkaos.net/linux/wmnet/"

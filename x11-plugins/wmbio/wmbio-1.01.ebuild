@@ -1,7 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmbio/Attic/wmbio-1.01.ebuild,v 1.3 2004/01/25 22:35:20 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmbio/Attic/wmbio-1.01.ebuild,v 1.4 2004/03/26 23:10:07 aliz Exp $
 
+IUSE=""
 S=${WORKDIR}/wmbio/src
 DESCRIPTION="a Window Maker applet that shows your biorhythm"
 SRC_URI="mirror://sourceforge/wmbio/${P}.tar.gz"
