@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Pod-Escapes/Attic/Pod-Escapes-1.04.ebuild,v 1.6 2004/10/16 23:57:23 rac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Pod-Escapes/Attic/Pod-Escapes-1.04.ebuild,v 1.7 2004/10/19 07:53:45 absinthe Exp $
 
 inherit perl-module
 
@@ -13,5 +13,5 @@ SRC_URI="mirror://cpan/authors/id/S/SB/SBURKE/${P}.tar.gz"
 SRC_TEST="do"
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
-KEYWORDS="x86 ~amd64 ~ppc sparc ~alpha"
+KEYWORDS="x86 amd64 ~ppc sparc ~alpha"
 IUSE=""
