@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sip/Attic/sip-4.0_rc4.ebuild,v 1.2 2004/06/23 16:29:25 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sip/Attic/sip-4.0.ebuild,v 1.1 2004/06/23 16:29:25 carlo Exp $
 
 inherit distutils
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://gentoo/${MY_P}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64"
-IUSE=""
+IUSE="doc"
 
 DEPEND="virtual/glibc
 	x11-libs/qt
@@ -32,5 +32,10 @@ src_compile(){
 
 src_install() {
 	einstall DESTDIR=${D} || die
-	dodoc ChangeLog LICENS NEWS README THANKS TODO
+	dodoc ChangeLog LICENSE NEWS README THANKS TODO
+	if use doc ; then dohtml doc/* ; fi
+}
+
+pkg_postinst() {
+	einfo "Please note, that you have to emerge PyQt again, when upgrading from sip-3.x."
 }
