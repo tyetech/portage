@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-1.15s-r2.ebuild,v 1.4 2005/03/19 14:06:14 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-1.15v.ebuild,v 1.1 2005/03/19 14:06:14 chainsaw Exp $
 
-IUSE="static 16bit"
+IUSE="static 16bit esd"
 
 inherit eutils flag-o-matic
 
@@ -10,11 +10,11 @@ S="${WORKDIR}/sv7"
 
 DESCRIPTION="Musepack audio compression tools"
 HOMEPAGE="http://www.musepack.net"
-SRC_URI="http://www.saunalahti.fi/grimmel/musepack.net/source/mpcsv7-src-${PV}.tar.gz"
+SRC_URI="http://files.musepack.net/source/mpcsv7-src-${PV}.tar.bz2"
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
 RDEPEND="media-sound/esound
 	 media-libs/id3lib"
@@ -27,17 +27,15 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	# Cosmetic changes mainly to allow using of custom CFLAGS
 	epatch ${FILESDIR}/${P}-Makefile.patch
-
-	# Get rid of -mpreferred-stack-boundary=2 as it breaks amd64
-	sed -i 's:-mpreferred-stack-boundary=2::' Makefile
+	epatch ${FILESDIR}/${P}-gcc4.patch
 
 	sed -i 's/#define USE_IRIX_AUDIO/#undef USE_IRIX_AUDIO/' mpp.h
 
 	if ! use esd ; then
 		sed -i 's/#define USE_ESD_AUDIO/#undef USE_ESD_AUDIO/' mpp.h
-		sed -i 's/LDADD   += -lesd/#LDADD   += -lesd/' Makefile
+	else
+		sed -i 's/#LDADD   += -lesd/LDADD   += -lesd/' Makefile
 	fi
 
 	if ! use x86 ; then
@@ -50,11 +48,11 @@ src_unpack() {
 src_compile() {
 	filter-flags "-fprefetch-loop-arrays"
 	filter-flags "-mfpmath=sse" "-mfpmath=sse,387"
-	use static && export BLDSTATIC=1
-	emake mppenc mppdec replaygain tagger || die
+	use static && export BLD_STATIC=1
+	ARCH= emake mppenc mppdec replaygain || die
 }
 
 src_install() {
-	dobin mppenc mppdec replaygain tagger
+	dobin mppenc mppdec replaygain
 	dodoc COPYING* README doc/ChangeLog doc/MANUAL.TXT doc/NEWS doc/SV7.txt doc/TODO*
 }
