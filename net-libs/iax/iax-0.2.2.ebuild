@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/iax/iax-0.2.2.ebuild,v 1.5 2004/07/01 22:25:02 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/iax/iax-0.2.2.ebuild,v 1.6 2004/07/15 00:50:11 agriffis Exp $
 
 IUSE=""
 
@@ -11,8 +11,6 @@ DEPEND="virtual/libc"
 RDEPEND="virtual/libc"
 SLOT="0"
 SRC_URI="http://www.digium.com/pub/libiax/${P}.tar.gz"
-
-S=${WORKDIR}/${P}
 
 D_PREFIX=/usr
 
