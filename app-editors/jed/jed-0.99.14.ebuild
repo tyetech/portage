@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Your Name <your email>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/jed/Attic/jed-0.99.14.ebuild,v 1.1 2001/07/03 14:41:37 g2boojum Exp $
+# Author Grant Goodyear <g2boojum@gentoo.org>
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/jed/Attic/jed-0.99.14.ebuild,v 1.2 2001/07/03 14:42:53 g2boojum Exp $
 
 #P=
 P0=${PN}-B0.99-14
