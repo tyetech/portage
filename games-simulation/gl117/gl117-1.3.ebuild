@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/gl117/Attic/gl117-1.3.ebuild,v 1.2 2004/06/13 19:52:51 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/gl117/Attic/gl117-1.3.ebuild,v 1.3 2004/06/25 03:21:32 agriffis Exp $
 
 inherit games eutils
 
