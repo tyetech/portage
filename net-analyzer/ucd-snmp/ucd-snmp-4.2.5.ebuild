@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ucd-snmp/Attic/ucd-snmp-4.2.5.ebuild,v 1.6 2002/12/09 04:33:09 manson Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ucd-snmp/Attic/ucd-snmp-4.2.5.ebuild,v 1.7 2003/02/13 13:52:15 vapier Exp $
 
 IUSE="ssl ipv6 tcpd"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/lcrzoex/Attic/lcrzoex-4.16.0.ebuild,v 1.2 2002/12/09 04:33:08 manson Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/lcrzoex/Attic/lcrzoex-4.16.0.ebuild,v 1.3 2003/02/13 13:42:29 vapier Exp $
 
 S=${WORKDIR}/${P}-src
 DESCRIPTION="Toolbox of over 400 utilities for testing Ethernet/IP networks"
