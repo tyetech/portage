@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avidemux/Attic/avidemux-0.9_pre28.ebuild,v 1.3 2003/01/20 22:19:39 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avidemux/Attic/avidemux-0.9_pre30.ebuild,v 1.1 2003/01/20 22:19:39 mholzer Exp $
 
 inherit eutils
 
@@ -29,16 +29,15 @@ src_unpack() {
 
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/ADM_vidVlad.cpp.diff.gz
+	ls -la
+	epatch ${FILESDIR}/ASM_vidDeintAsm.cpp.diff.gz 
+	epatch ${FILESDIR}/gui_filter.diff.gz 
 
 }
 
-
 src_compile() {
-
 	econf --disable-warnings
 	emake || die
-
 }
 
 src_install() {

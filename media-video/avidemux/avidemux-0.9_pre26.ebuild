@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avidemux/Attic/avidemux-0.9_pre26.ebuild,v 1.2 2003/01/09 22:46:47 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avidemux/Attic/avidemux-0.9_pre26.ebuild,v 1.3 2003/01/20 22:19:39 mholzer Exp $
+
+inherit eutils
 
 MY_P="${P/_/}"
 DESCRIPTION="Great Video editing/encoding tool"
@@ -25,8 +27,9 @@ DEPEND="virtual/x11
 	>=media-video/mjpegtools-1.6.0-r3"
 
 src_unpack() {
-	unpack ${MY_P}.tgz || die
-	gunzip -c ${FILESDIR}/ADM_vidFont.cpp.diff.gz | patch ${S}/avidemux/ADM_video/ADM_vidFont.cpp || die
+	unpack ${A} 
+	cd ${S}
+	epatch ${FILESDIR}/ADM_vidFont.cpp.diff.gz
 }
 
 src_compile() {
