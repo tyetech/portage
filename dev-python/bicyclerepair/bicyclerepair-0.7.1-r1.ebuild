@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/bicyclerepair/Attic/bicyclerepair-0.7.1-r1.ebuild,v 1.3 2004/06/25 01:26:16 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/bicyclerepair/Attic/bicyclerepair-0.7.1-r1.ebuild,v 1.4 2005/02/12 10:50:48 kloeri Exp $
 
 inherit distutils
 mydoc="NEWS DESIGN"
