@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/tiobench/Attic/tiobench-0.3.3-r1.ebuild,v 1.6 2004/12/18 19:00:58 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/tiobench/Attic/tiobench-0.3.3-r1.ebuild,v 1.7 2005/01/01 12:06:26 eradicator Exp $
 
 DESCRIPTION="Portable, robust, fully-threaded I/O benchmark program"
 HOMEPAGE="http://tiobench.sourceforge.net/"
