@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/acme/Attic/acme-2.4.1.ebuild,v 1.1 2003/11/07 08:46:07 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/acme/Attic/acme-2.4.2.ebuild,v 1.1 2003/11/23 13:48:41 foser Exp $
 
 inherit gnome2
 
