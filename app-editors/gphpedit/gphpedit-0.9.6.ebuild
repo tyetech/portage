@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/gphpedit/Attic/gphpedit-0.9.6.ebuild,v 1.4 2004/10/17 18:14:15 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/gphpedit/Attic/gphpedit-0.9.6.ebuild,v 1.5 2005/01/01 13:26:44 eradicator Exp $
 
 inherit gnome2
 
