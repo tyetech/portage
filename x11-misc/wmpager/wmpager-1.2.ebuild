@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header :$
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wmpager/Attic/wmpager-1.2.ebuild,v 1.4 2002/10/28 06:52:24 rphillips Exp $
 
 S=${WORKDIR}/${P}
 HOMEPAGE="http://wmpager.sourceforge.net/"
