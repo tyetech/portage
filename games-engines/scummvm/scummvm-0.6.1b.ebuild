@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-engines/cvs-repo/gentoo-x86/games-engines/scummvm/Attic/scummvm-0.6.1b.ebuild,v 1.3 2004/09/25 23:35:32 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-engines/cvs-repo/gentoo-x86/games-engines/scummvm/Attic/scummvm-0.6.1b.ebuild,v 1.4 2005/01/20 06:57:34 mr_bones_ Exp $
 
 inherit fixheadtails eutils games
 
