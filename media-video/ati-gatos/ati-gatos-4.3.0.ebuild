@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ati-gatos/Attic/ati-gatos-4.3.0.ebuild,v 1.2 2004/01/14 00:58:02 battousai Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ati-gatos/Attic/ati-gatos-4.3.0.ebuild,v 1.3 2004/01/14 01:10:18 battousai Exp $
 
 inherit eutils
 
@@ -33,7 +33,6 @@ src_compile() {
 
 	# Makefile fixes
 	fix_makefile
-
 	emake DESTDIR=${D} || die "Problem compiling GATOS drivers."
 }
 
