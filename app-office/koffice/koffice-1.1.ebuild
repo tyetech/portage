@@ -1,9 +1,9 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Dan Armak <danarmak@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/koffice/Attic/koffice-1.1.ebuild,v 1.4 2001/10/03 17:10:16 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/koffice/Attic/koffice-1.1.ebuild,v 1.5 2001/10/05 13:34:41 danarmak Exp $
 . /usr/portage/eclass/inherit.eclass || die
-inherit kde-base kde-objprelink || die
+inherit kde-base || die
 
 DESCRIPTION="KDE ${PV} - KOffice"
 
