@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Jerry Alexandratos <jerry@gentoo.org>
 # Modified by $HOME/.maildir by Craig Joly <craig@taipan.mudshark.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/incoming/cvs-repo/gentoo-x86/incoming/Attic/procmail-3.21.ebuild,v 1.2 2001/08/13 18:38:34 danarmak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/procmail/Attic/procmail-3.21.ebuild,v 1.1 2001/08/28 22:32:13 lamer Exp $
 
 A=${P}.tar.gz
 S=${WORKDIR}/${P}
@@ -23,7 +23,7 @@ src_compile() {
 	cp authenticate.c authenticate.c.orig
 	sed -e "s:/\*#define MAILSPOOLHOME \"/.mail\":#define MAILSPOOLHOME \"/.maildir/\":" authenticate.c.orig > authenticate.c
 	cd ${S}
-    try make
+   emake || die
 }
 
 src_install () {
