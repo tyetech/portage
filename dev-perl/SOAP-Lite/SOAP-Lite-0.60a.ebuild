@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/SOAP-Lite/Attic/SOAP-Lite-0.60a.ebuild,v 1.3 2004/06/25 00:59:24 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/SOAP-Lite/Attic/SOAP-Lite-0.60a.ebuild,v 1.4 2004/07/14 20:27:48 agriffis Exp $
 
-IUSE=""
+IUSE="jabber ssl"
 
 inherit perl-module
 
