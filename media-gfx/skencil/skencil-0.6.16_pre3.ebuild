@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/skencil/Attic/skencil-0.6.16_pre3.ebuild,v 1.3 2004/06/24 22:49:58 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/skencil/Attic/skencil-0.6.16_pre3.ebuild,v 1.4 2004/07/19 22:11:31 kloeri Exp $
 
 IUSE="nls"
 S=${WORKDIR}/${P/_/}
 DESCRIPTION="Interactive X11 vector drawing program"
 SRC_URI="http://sketch.sourceforge.net/files/src/sketch/${P/_/}.tar.gz"
 HOMEPAGE="http://sketch.sourceforge.net/"
-DEPEND=">=dev-python/Imaging-1.1.2-r1
+DEPEND=">=dev-python/imaging-1.1.2-r1
 	dev-python/reportlab
 	dev-lang/tk"
 RDEPEND="nls? ( sys-devel/gettext )"
