@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-headers/Attic/mips-headers-2.4.22-r1.ebuild,v 1.8 2003/11/20 07:43:38 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-headers/Attic/mips-headers-2.4.22-r1.ebuild,v 1.9 2004/02/06 18:18:27 iggy Exp $
 
 ETYPE="headers"
 inherit kernel
