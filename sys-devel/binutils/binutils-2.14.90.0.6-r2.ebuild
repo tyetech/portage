@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/binutils/Attic/binutils-2.14.90.0.4.1-r1.ebuild,v 1.3 2003/09/01 19:22:43 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/binutils/Attic/binutils-2.14.90.0.6-r2.ebuild,v 1.1 2003/09/01 19:22:43 azarah Exp $
 
 IUSE="nls bootstrap build"
 
@@ -20,7 +20,7 @@ HOMEPAGE="http://sources.redhat.com/binutils/"
 
 SLOT="0"
 LICENSE="GPL-2 | LGPL-2"
-KEYWORDS="~amd64 -x86 -ppc -alpha -sparc mips -hppa -arm"
+KEYWORDS="~amd64 ~x86 ~ppc ~alpha ~sparc ~mips ~hppa ~arm"
 
 DEPEND="virtual/glibc
 	>=sys-apps/portage-2.0.21
@@ -45,24 +45,16 @@ src_unpack() {
 	cd ${S}
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-glibc21.patch
 	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-sparc-nonpic.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-eh-frame-ro.patch
+	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.6-eh-frame-ro.patch
 	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-ltconfig-multilib.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-cfi.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-pie.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-ppc-bigplt.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-pt-gnu-stack.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-gas-execstack.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-cfi2.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-pie2.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-ppc64-ctors.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-ppc64-prelink.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-cfi3.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-cfi4.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-gas-pred.patch
-	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-pni.patch
+# Might think of adding the Prescott stuff later on
+#	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.4-pni.patch
+# This one cause failures in sash and util-linux-2.12 (bug #27330)
+#	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.5-place-orphan.patch
+	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.5-s390-pie.patch
+	epatch ${FILESDIR}/2.14/${PN}-2.14.90.0.5-ppc64-pie.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-x86_64-testsuite.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.10-x86_64-gotpcrel.patch
-	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-s390-file-loc.patch
 	epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.18-testsuite-Wall-fixes.patch
 	# There is a bug in binutils 2.14.* which causes a segfault in certain
 	# circumstances when linking. This bug does not exist in binutils 2.11.*.
@@ -77,12 +69,6 @@ src_unpack() {
 
 	use x86 &> /dev/null \
 		&& epatch ${FILESDIR}/2.13/${PN}-2.13.90.0.20-array-sects-compat.patch
-
-	# Fixes a MIPS issue in which the dynamic relocation table in OpenSSL libs
-	# gets broken because the GOT entry count is too low
-	if [ "${ARCH}" = "mips" ]; then
-		epatch ${FILESDIR}/2.14/${PN}-mips-openssl-got-fix.patch
-	fi
 
 	# Libtool is broken (Redhat).
 	for x in ${S}/opcodes/Makefile.{am,in}
