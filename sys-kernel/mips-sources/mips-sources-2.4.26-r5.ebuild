@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.26-r4.ebuild,v 1.1 2004/07/13 09:28:43 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.4.26-r5.ebuild,v 1.1 2004/08/01 08:11:29 kumba Exp $
 
 
 # Version Data
@@ -53,7 +53,8 @@ src_unpack() {
 	echo -e ""
 	ebegin "Applying Security Fixes"
 		epatch ${FILESDIR}/CAN-2004-0394-panic.patch
-		epatch ${FILESDIR}/CAN-2004-0495-2.4-sparse.patch
+		epatch ${FILESDIR}/CAN-2004-0495-2.4-sparse.patch.bz2
+		epatch ${FILESDIR}/CAN-2004-0497-attr_gid.patch
 		epatch ${FILESDIR}/CAN-2004-0535-2.4-e1000.patch
 	eend
 
