@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/omake/Attic/omake-0.9.3.ebuild,v 1.1 2004/10/19 07:48:37 mattam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/omake/Attic/omake-0.9.4.ebuild,v 1.1 2005/02/06 15:41:33 mattam Exp $
 
 EXTRAPV="-2"
 DESCRIPTION="Make replacement"
