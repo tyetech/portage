@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01_alpha14.ebuild,v 1.5 2003/10/01 09:27:33 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01_alpha14.ebuild,v 1.6 2004/01/07 03:25:32 pylon Exp $
 
 inherit eutils
 
