@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libggi/Attic/libggi-2.0.1-r1.ebuild,v 1.5 2003/07/18 21:55:44 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libggi/Attic/libggi-2.0.1-r1.ebuild,v 1.6 2003/09/06 23:59:48 msterret Exp $
 
 IUSE="X aalib svga fbcon directfb"
 
@@ -37,7 +37,7 @@ src_compile() {
 
 	use svga \
 		|| myconf="${myconf} --disable-svga --disable-vgagl"
-	
+
 	use fbcon \
 		&& myconf="${myconf} --enable-fbdev"
 
