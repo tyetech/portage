@@ -1,22 +1,33 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/debianutils/Attic/debianutils-1.16.ebuild,v 1.14 2003/02/13 15:52:01 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/debianutils/Attic/debianutils-1.16.7.ebuild,v 1.1 2003/03/26 23:04:29 seemant Exp $
+
+IUSE="static build"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A selection of tools from Debian"
 SRC_URI="http://ftp.debian.org/debian/pool/main/d/${PN}/${PN}_${PV}.tar.gz"
 HOMEPAGE="http://packages.debian.org/unstable/base/debianutils.html"
-KEYWORDS="x86 ppc sparc alpha"
+
 SLOT="0"
 LICENSE="GPL-2 BSD SMAIL"
-IUSE="static build"
+KEYWORDS="x86 ppc sparc alpha mips hppa arm"
 
 DEPEND="virtual/glibc"
 
+RDEPEND="sys-apps/bzip2"
+
 src_unpack() {
 	unpack ${A}
+	
 	cd ${S}
-	patch -p0 < ${FILESDIR}/${P}-Makefile-gentoo.diff
+
+	# Make installkernel and mkboot more Gentoo friendly
+	# <azarah@gentoo.org> (25 Sep 2002)
+	epatch ${FILESDIR}/${P}-gentoo.patch
+
+	# Patch savelog to use bzip2 compression instead of gzip
+	epatch ${FILESDIR}/${PN}-compress.patch
 }
 
 src_compile() {
@@ -38,9 +49,13 @@ src_install() {
 		insopts -m755
 		exeinto /usr/sbin
 		doexe savelog
+		dosbin installkernel
+		into /usr
+		dosbin mkboot
 		
 		into /usr
-		doman mktemp.1 readlink.1 tempfile.1 run-parts.8 savelog.8
+		doman mktemp.1 readlink.1 tempfile.1 run-parts.8 savelog.8 \
+			installkernel.8 mkboot.8
 			
 		cd debian
 		dodoc changelog control copyright
