@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/taglib/Attic/taglib-1.1.ebuild,v 1.7 2004/08/12 22:23:27 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/taglib/Attic/taglib-1.1.ebuild,v 1.8 2005/01/21 19:39:02 pylon Exp $
 
 inherit flag-o-matic
 
