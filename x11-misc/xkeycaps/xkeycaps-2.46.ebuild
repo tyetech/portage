@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xkeycaps/xkeycaps-2.46.ebuild,v 1.5 2002/08/14 23:44:15 murphy Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xkeycaps/xkeycaps-2.46.ebuild,v 1.6 2002/10/04 06:44:15 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="GUI frontend to xmodmap"
