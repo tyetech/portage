@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/atlas-c++/Attic/atlas-c++-0.4.4.ebuild,v 1.12 2004/07/14 18:49:15 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/atlas-c++/Attic/atlas-c++-0.4.4.ebuild,v 1.13 2005/02/04 07:45:47 dholm Exp $
 
 MY_PN="Atlas-C++"
 MY_P=${MY_PN}-${PV}
