@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdepim/Attic/kdepim-3.1.2-r1.ebuild,v 1.5 2003/09/06 23:54:21 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdepim/Attic/kdepim-3.1.2-r1.ebuild,v 1.6 2003/09/11 01:16:25 msterret Exp $
 inherit kde-dist
 
 IUSE="pda"
@@ -18,9 +18,9 @@ use pda && myconf="$myconf --with-extra-includes=/usr/include/libpisock" && PATC
 # reported by doctomoe on ppc
 MAKEOPTS="$MAKEOPTS -j1"
 src_compile() {
-        use pda && rm -f configure configure.in
-		kde_src_compile myconf configure
-		kde_src_compile make
+	use pda && rm -f configure configure.in
+	kde_src_compile myconf configure
+	kde_src_compile make
 }
 
 src_install() {
