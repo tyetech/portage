@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/remind/Attic/remind-03.00.22.ebuild,v 1.2 2004/04/11 15:22:06 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/remind/Attic/remind-03.00.22.ebuild,v 1.3 2004/05/21 19:32:58 jhuebel Exp $
 
 DESCRIPTION="Ridiculously functional reminder program"
 HOMEPAGE="http://www.roaringpenguin.com/products/remind/"
 SRC_URI="http://www.roaringpenguin.com/products/remind/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 ~amd64"
 IUSE=""
 
 src_install() {
