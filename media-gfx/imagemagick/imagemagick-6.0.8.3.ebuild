@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/imagemagick/Attic/imagemagick-6.0.7.1.ebuild,v 1.11 2004/09/21 20:47:29 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/imagemagick/Attic/imagemagick-6.0.8.3.ebuild,v 1.1 2004/09/21 20:47:29 sekretarz Exp $
 
 inherit libtool flag-o-matic eutils
 
@@ -15,7 +15,7 @@ SRC_URI="ftp://ftp.imagemagick.org/pub/${MY_PN}/${MY_P2}.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha hppa amd64 ~mips ~ppc64 ia64"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~amd64 ~mips ~ppc64 ia64"
 IUSE="X cups jpeg lcms mpeg png truetype tiff xml2 wmf jbig perl graphviz"
 
 DEPEND=">=sys-apps/sed-4
@@ -71,7 +71,7 @@ src_compile() {
 
 src_install() {
 	make DESTDIR=${D} install
-	mydoc="*.txt"
+	mydoc="*.txt www/*"
 
 	rm -f ${D}/usr/share/ImageMagick/*.txt
 
