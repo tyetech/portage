@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.3.ebuild,v 1.3 2004/04/26 15:07:19 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.3.ebuild,v 1.4 2004/06/23 15:58:42 usata Exp $
 
 inherit flag-o-matic
 
@@ -17,7 +17,7 @@ SLOT="0"
 IUSE="spell"
 # TeXmacs 1.0.X -> stable release, TeXmacs 1.0.X.Y -> development release
 # 1.0.3 and 1.0.3-r* is from stable branch at the moment
-KEYWORDS="x86 ~ppc"
+KEYWORDS="x86 ppc"
 
 RDEPEND="virtual/tetex
 	>=dev-util/guile-1.4
