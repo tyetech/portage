@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/gnome-system-tools/Attic/gnome-system-tools-0.33.0.ebuild,v 1.1 2004/05/26 07:45:53 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/gnome-system-tools/Attic/gnome-system-tools-0.33.0.ebuild,v 1.2 2004/05/26 10:50:22 leonardop Exp $
 
 inherit gnome2
 
@@ -14,7 +14,6 @@ KEYWORDS="~x86"
 
 RDEPEND="net-misc/openssh
 	sys-apps/shadow
-	sys-libs/cracklib
 	>=gnome-base/libgnomeui-1.109
 	>=gnome-base/libglade-1.99.5
 	>=gnome-base/gconf-2.2
