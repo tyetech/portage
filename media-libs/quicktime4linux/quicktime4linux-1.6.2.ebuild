@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/quicktime4linux/Attic/quicktime4linux-1.6.2.ebuild,v 1.9 2004/07/14 20:24:34 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/quicktime4linux/Attic/quicktime4linux-1.6.2.ebuild,v 1.10 2005/01/16 16:57:57 luckyduck Exp $
 
 inherit flag-o-matic eutils
 
