@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/fidelio/Attic/fidelio-1.0_beta1.ebuild,v 1.3 2003/09/07 00:17:34 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/fidelio/Attic/fidelio-1.0_beta1.ebuild,v 1.4 2004/03/01 06:26:58 eradicator Exp $
 
 IUSE="nls esd"
 S=${WORKDIR}/${P/_beta1/b1}

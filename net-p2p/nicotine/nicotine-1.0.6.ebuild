@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/nicotine/Attic/nicotine-1.0.6.ebuild,v 1.2 2003/12/20 10:14:36 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/nicotine/Attic/nicotine-1.0.6.ebuild,v 1.3 2004/03/01 06:26:59 eradicator Exp $
 
 inherit distutils
 

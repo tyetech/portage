@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gnut/Attic/gnut-0.4.28.ebuild,v 1.10 2003/09/08 20:32:41 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gnut/Attic/gnut-0.4.28.ebuild,v 1.11 2004/03/01 06:26:59 eradicator Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Text-mode gnutella client"

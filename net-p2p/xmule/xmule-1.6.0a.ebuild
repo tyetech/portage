@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/xmule/Attic/xmule-1.6.0a.ebuild,v 1.5 2003/12/06 16:19:17 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/xmule/Attic/xmule-1.6.0a.ebuild,v 1.6 2004/03/01 06:26:59 eradicator Exp $
 
 MY_P=${P//a}
 S=${WORKDIR}/${MY_P}
