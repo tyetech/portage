@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/publicfile/Attic/publicfile-0.52.ebuild,v 1.14 2004/04/06 10:55:48 method Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/publicfile/Attic/publicfile-0.52.ebuild,v 1.15 2004/06/25 01:10:38 agriffis Exp $
 
 IUSE="selinux"
 S=${WORKDIR}/${P}

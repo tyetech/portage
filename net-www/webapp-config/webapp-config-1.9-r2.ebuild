@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/webapp-config/Attic/webapp-config-1.9-r2.ebuild,v 1.3 2004/06/11 08:57:47 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/webapp-config/Attic/webapp-config-1.9-r2.ebuild,v 1.4 2004/06/25 01:16:01 agriffis Exp $
 
 DESCRIPTION="Gentoo's installer for web-based applications"
 HOMEPAGE="http://www.gentoo.org/"

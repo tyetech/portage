@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mod_scgi/Attic/mod_scgi-1.2_alpha1.ebuild,v 1.4 2003/09/06 01:54:08 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mod_scgi/Attic/mod_scgi-1.2_alpha1.ebuild,v 1.5 2004/06/25 01:03:55 agriffis Exp $
 
 apachedir='1'
 apache=''

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/wwwoffle/Attic/wwwoffle-2.7h.ebuild,v 1.9 2004/06/06 00:13:44 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/wwwoffle/Attic/wwwoffle-2.7h.ebuild,v 1.10 2004/06/25 01:16:53 agriffis Exp $
 
 DESCRIPTION="wwwoffle = WWW Offline Explorer, an adv. caching proxy especially suitable for nonpermanent (e.g. dialup) Internet connections"
 

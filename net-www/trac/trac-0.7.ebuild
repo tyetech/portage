@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/trac/Attic/trac-0.7.ebuild,v 1.2 2004/05/26 14:13:03 stuart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/trac/Attic/trac-0.7.ebuild,v 1.3 2004/06/25 01:14:26 agriffis Exp $
 
 inherit webapp
 

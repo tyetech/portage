@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/curator/Attic/curator-2.0.ebuild,v 1.9 2004/06/08 10:11:38 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/curator/Attic/curator-2.0.ebuild,v 1.10 2004/06/25 00:50:53 agriffis Exp $
 
 MY_P=curator-2.0
 S=${WORKDIR}/curator

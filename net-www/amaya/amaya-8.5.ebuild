@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/amaya/Attic/amaya-8.5.ebuild,v 1.3 2004/06/15 03:23:46 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/amaya/Attic/amaya-8.5.ebuild,v 1.4 2004/06/25 00:48:33 agriffis Exp $
 
 inherit libtool
 

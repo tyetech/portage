@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/straw/Attic/straw-0.22.ebuild,v 1.1 2004/02/18 14:20:12 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/straw/Attic/straw-0.22.ebuild,v 1.2 2004/06/25 01:13:13 agriffis Exp $
 
 inherit gnome2 python distutils
 

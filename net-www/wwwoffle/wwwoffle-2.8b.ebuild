@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/wwwoffle/Attic/wwwoffle-2.8b.ebuild,v 1.5 2004/06/18 02:42:35 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/wwwoffle/Attic/wwwoffle-2.8b.ebuild,v 1.6 2004/06/25 01:16:53 agriffis Exp $
 
 inherit eutils
 

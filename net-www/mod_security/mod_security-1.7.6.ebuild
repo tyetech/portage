@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mod_security/Attic/mod_security-1.7.6.ebuild,v 1.2 2004/06/04 23:11:16 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mod_security/Attic/mod_security-1.7.6.ebuild,v 1.3 2004/06/25 01:04:06 agriffis Exp $
 
 DESCRIPTION="Intrusion Detection System for apache"
 HOMEPAGE="http://www.modsecurity.org"

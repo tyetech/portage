@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/squidalyser/Attic/squidalyser-0.2.55.ebuild,v 1.8 2004/06/11 11:53:02 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/squidalyser/Attic/squidalyser-0.2.55.ebuild,v 1.9 2004/06/25 01:12:43 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mod_log_sql/Attic/mod_log_sql-1.98.ebuild,v 1.2 2004/06/14 02:16:47 zul Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mod_log_sql/Attic/mod_log_sql-1.98.ebuild,v 1.3 2004/06/25 01:02:32 agriffis Exp $
 
 inherit eutils
 
