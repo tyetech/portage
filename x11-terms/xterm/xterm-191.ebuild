@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-191.ebuild,v 1.9 2004/06/24 23:23:18 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-191.ebuild,v 1.10 2004/06/26 08:10:53 seemant Exp $
 
 inherit eutils flag-o-matic
 
@@ -44,7 +44,6 @@ src_compile() {
 		--enable-broken-st \
 		--enable-load-vt-fonts \
 		--enable-i18n \
-		--enable-luit \
 		--enable-wide-chars \
 		--enable-doublechars \
 		--enable-warnings \
