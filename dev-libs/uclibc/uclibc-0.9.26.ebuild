@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/uclibc/Attic/uclibc-0.9.25-r1.ebuild,v 1.1 2004/01/04 05:32:52 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/uclibc/Attic/uclibc-0.9.26.ebuild,v 1.1 2004/01/04 06:04:53 solar Exp $
 
 inherit eutils
 
