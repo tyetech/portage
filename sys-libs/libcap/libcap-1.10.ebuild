@@ -1,8 +1,8 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/libcap/Attic/libcap-1.10.ebuild,v 1.7 2003/09/28 10:31:35 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/libcap/Attic/libcap-1.10.ebuild,v 1.8 2003/09/30 03:20:16 vapier Exp $
 
-inherit base
+inherit base flag-o-matic
 
 DESCRIPTION="POSIX 1003.1e capabilities"
 HOMEPAGE="http://linux.kernel.org/pub/linux/libs/security/linux-privs/"
@@ -27,9 +27,9 @@ src_unpack() {
 	epatch ${FILESDIR}/${PF}-python.patch
 }
 
-PYTHONVER="`python -V 2>&1 | sed 's/^Python //'|sed 's/\([0-9]*\.[0-9]*\).*/\1/'`"
-
 src_compile() {
+	PYTHONVER="`python -V 2>&1 | sed 's/^Python //'|sed 's/\([0-9]*\.[0-9]*\).*/\1/'`"
+	filter-flags -fPIC
 	local myflags
 	myflags=""
 	if [ "`use python`" ]; then
@@ -44,6 +44,7 @@ src_compile() {
 }
 
 src_install() {
+	PYTHONVER="`python -V 2>&1 | sed 's/^Python //'|sed 's/\([0-9]*\.[0-9]*\).*/\1/'`"
 	local myflags
 	myflags=""
 	if [ "`use python`" ]; then
