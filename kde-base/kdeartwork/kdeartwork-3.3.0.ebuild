@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork/Attic/kdeartwork-3.3.0.ebuild,v 1.4 2004/08/27 22:56:24 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork/Attic/kdeartwork-3.3.0.ebuild,v 1.5 2004/08/30 15:45:01 pvdabeel Exp $
 
 inherit kde-dist eutils
 
 DESCRIPTION="KDE artwork package"
 
-KEYWORDS="~x86 ~amd64 ~sparc"
+KEYWORDS="~x86 ~amd64 ~sparc ppc"
 IUSE="opengl"
 
 DEPEND="opengl? ( virtual/opengl )
