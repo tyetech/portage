@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-0.9.0.ebuild,v 1.7 2004/07/26 22:38:13 stkn Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-0.9.0.ebuild,v 1.8 2005/01/25 05:17:44 iggy Exp $
 
 IUSE="alsa doc gtk mmx mysql nopri nozaptel"
 
