@@ -1,12 +1,12 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/eclipse-sdk/Attic/eclipse-sdk-3.0.0_rc2.ebuild,v 1.2 2004/06/22 14:17:26 karltk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/eclipse-sdk/Attic/eclipse-sdk-3.0.0_rc3.ebuild,v 1.1 2004/06/22 14:17:26 karltk Exp $
 
 inherit eutils
 
 DESCRIPTION="Eclipse Tools Platform"
 HOMEPAGE="http://www.eclipse.org/"
-SRC_URI="http://download2.eclipse.org/downloads/drops/S-3.0RC2-200406111814/eclipse-sourceBuild-srcIncluded-3.0RC2.zip"
+SRC_URI="http://download2.eclipse.org/downloads/drops/S-3.0RC3-200406192000/eclipse-sourceBuild-srcIncluded-3.0RC3.zip"
 IUSE="gtk motif gnome kde mozilla jikes"
 SLOT="3"
 LICENSE="CPL-1.0"

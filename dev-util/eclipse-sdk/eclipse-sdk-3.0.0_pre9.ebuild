@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/eclipse-sdk/Attic/eclipse-sdk-3.0.0_pre9.ebuild,v 1.3 2004/06/01 23:07:54 karltk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/eclipse-sdk/Attic/eclipse-sdk-3.0.0_pre9.ebuild,v 1.4 2004/06/22 14:17:26 karltk Exp $
 
 inherit eutils
 
@@ -270,7 +270,7 @@ src_install() {
 		unzip -o -q result/linux-gtk-${ARCH}-sdk.zip -d ${D}/usr/lib
 	fi
 	if use motif ; then
-		[ -f result/linux-gtk-${ARCH}-sdk.zip ] || die "motif zip bundle was not build properly!"
+		[ -f result/linux-motif-${ARCH}-sdk.zip ] || die "motif zip bundle was not build properly!"
 		unzip -o -q result/linux-motif-${ARCH}-sdk.zip -d ${D}/usr/lib
 	fi
 
