@@ -1,11 +1,12 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/powertweak/Attic/powertweak-0.1.17-r2.ebuild,v 1.5 2002/10/04 03:44:41 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/powertweak/Attic/powertweak-0.1.17-r2.ebuild,v 1.6 2002/10/18 13:31:45 aliz Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Powertweak"
 SRC_URI="http://powertweak.sourceforge.net/files/${P}.tar.bz2"
 HOMEPAGE="http://powertweak.sourceforge.net"
+IUSE=""
 
 SLOT="0"
 LICENSE="GPL-2"
