@@ -1,11 +1,12 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/qt-dcgui/Attic/qt-dcgui-0.2_rc5.ebuild,v 1.1 2003/01/10 17:09:49 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dclib/Attic/dclib-0.2.1.ebuild,v 1.1 2003/01/21 03:33:21 vapier Exp $
 
-MY_P="${P/qt-/}"
-MY_P="${MY_P/_/}"
+inherit gcc
+
+MY_P="${P/_/}"
 S="${WORKDIR}/${MY_P}"
-DESCRIPTION="Qt based client for DirectConnect"
+DESCRIPTION="Library for the Qt client for DirectConnect"
 HOMEPAGE="http://dc.ketelhot.de/"
 SRC_URI="http://download.berlios.de/dcgui/${MY_P}.tar.bz2"
 
@@ -13,17 +14,16 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc"
 
-DEPEND="=x11-libs/qt-3*
-	>=dev-libs/libxml2-2.4.22
-	~net-p2p/dclib-${PV}"
+DEPEND=">=sys-apps/bzip2-1.0.2
+        >=dev-libs/libxml2-2.4.22"
 
 src_compile() {
 	export CPPFLAGS="${CXXFLAGS} -I/usr/include/libxml2/libxml"
-
-	econf --with-libdc=/usr \
-		--with-qt-dir=/usr/qt/3 \
-		|| die
-	make || die
+	if [ `gcc-major-version` == 2 ] ; then
+		patch -p0 < ${FILESDIR}/${P}-gcc2.patch || die
+	fi
+	econf || die
+	emake || die
 }
 
 src_install() {
