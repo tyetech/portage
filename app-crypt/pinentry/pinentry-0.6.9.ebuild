@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/pinentry/Attic/pinentry-0.6.9.ebuild,v 1.1 2003/09/21 23:38:15 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/pinentry/Attic/pinentry-0.6.9.ebuild,v 1.2 2004/03/13 21:50:29 mr_bones_ Exp $
 
 DESCRIPTION="collection of simple PIN or passphrase entry dialogs which utilize the Assuan protocol"
 HOMEPAGE="http://www.gnupg.org/aegypten/"

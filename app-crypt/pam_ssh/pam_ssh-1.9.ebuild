@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/pam_ssh/Attic/pam_ssh-1.9.ebuild,v 1.2 2004/03/13 21:50:29 mr_bones_ Exp $
 
 DESCRIPTION="Uses ssh-agent to provide single sign-on"
 HOMEPAGE="http://pam-ssh.sourceforge.net/"
