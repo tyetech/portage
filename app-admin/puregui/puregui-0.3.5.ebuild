@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/puregui/Attic/puregui-0.3.5.ebuild,v 1.18 2004/06/24 21:35:30 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/puregui/Attic/puregui-0.3.5.ebuild,v 1.19 2005/01/01 11:20:40 eradicator Exp $
 
 S=${WORKDIR}/${PN}
 DESCRIPTION="A GUI to Configure Pure-FTPD"

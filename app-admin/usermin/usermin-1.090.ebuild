@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/usermin/Attic/usermin-1.090.ebuild,v 1.5 2004/10/09 19:00:26 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/usermin/Attic/usermin-1.090.ebuild,v 1.6 2005/01/01 11:33:41 eradicator Exp $
 
 inherit eutils
 
