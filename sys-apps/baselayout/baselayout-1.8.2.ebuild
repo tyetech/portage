@@ -1,30 +1,30 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.0.ebuild,v 1.3 2002/08/18 16:41:05 murphy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.8.2.ebuild,v 1.1 2002/08/25 19:12:55 azarah Exp $
 
-SV="1.3.7"
+SV="1.3.9"
 SVREV=""
 #sysvinit version
 SVIV="2.84"
+
 S=${WORKDIR}/rc-scripts-${SV}
 S2=${WORKDIR}/sysvinit-${SVIV}/src
 DESCRIPTION="Base layout for Gentoo Linux filesystem (incl. initscripts and sysvinit)"
 SRC_URI="ftp://ftp.cistron.nl/pub/people/miquels/software/sysvinit-${SVIV}.tar.gz
-	ftp://unsite.unc.edu/pub/Linux/system/daemons/init/sysvinit-${SVIV}.tar.gz"
+	ftp://unsite.unc.edu/pub/Linux/system/daemons/init/sysvinit-${SVIV}.tar.gz
+	http://www.ibiblio.org/gentoo/distfiles/termcap.bz2"
 #	http://www.ibiblio.org/gentoo/distfiles/rc-scripts-${SV}.tar.bz2"
 HOMEPAGE="http://www.gentoo.org"
-KEYWORDS="x86 ppc sparc sparc64"
-LICENSE="GPL-2"
 
+LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="x86 ppc sparc sparc64"
 
 DEPEND="sys-kernel/linux-headers"
-RDEPEND=""
-#baselayout shouldn't have any runtime dependencies.  it creates circular deps fast.
-#if [ -z "`use build`" ]
-#then
-#	RDEPEND="sys-apps/kbd"
-#fi
+
+# This version need awk and wc in /bin, so add it with this dummy depend.
+RDEPEND="${DEPEND}
+	!<sys-apps/gawk-3.1.0-r3"
 
 #This ebuild needs to be merged "live".  You can't simply make a package of it and merge it later.
 
@@ -49,10 +49,13 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack ${A}
+	unpack sysvinit-${SVIV}.tar.gz
 
 	echo ">>> Unpacking rc-scripts-${SV}${SVREV}.tar.bz2"
 	tar -jxf ${FILESDIR}/rc-scripts-${SV}${SVREV}.tar.bz2 || die
+
+	echo ">>> Unpacking termcap.bz2"
+	bzip2 -dc ${DISTDIR}/termcap.bz2 > ${WORKDIR}/termcap || die
 
 	#fix CFLAGS for sysvinit stuff
 	cd ${S2}
@@ -68,7 +71,7 @@ src_unpack() {
 	fi
 	
 	# Fix Sparc specific stuff
-	if [ "${ARCH}" == "sparc" -o "${ARCH}" == "sparc64" ]; then
+	if [ "${ARCH}" = "sparc" -o "${ARCH}" = "sparc64" ]; then
 		cd ${S}/etc
 		cp rc.conf rc.conf.orig
 		sed -e 's:KEYMAP="us":KEYMAP="sun":' rc.conf.orig >rc.conf || die
@@ -98,22 +101,12 @@ src_compile() {
 	fi
 }
 
-#adds ".keep" files so that dirs aren't auto-cleaned
-keepdir() {
-	dodir $*
-	local x
-	for x in $*
-	do
-		touch ${D}/${x}/.keep
-	done
-}
-
 defaltmerge() {
 	#define the "altmerge" variable.
 	altmerge=0
 	#special ${T}/ROOT hack because ROOT gets automatically unset during src_install()
 	#(because it conflicts with some makefiles)
-	local ROOT
+	local ROOT=""
 	ROOT="`cat ${T}/ROOT`"
 	if [ -z "`use bootstrap`" ] && [ -z "`use build`" ] &&  [ -e ${ROOT}/dev/.devfsd ]
 	then
@@ -126,7 +119,7 @@ defaltmerge() {
 
 src_install()
 {
-	local foo
+	local foo=""
 	defaltmerge
 	keepdir /sbin
 	exeinto /sbin
@@ -207,7 +200,10 @@ src_install()
 	chown root.uucp ${D}/var/lock
 	chmod 775 ${D}/var/lock
 	insopts -m0644
-	
+
+	# bug #5359 (FHS complience)
+	keepdir /etc/opt
+
 	insinto /etc
 	ln -s ../proc/filesystems ${D}/etc/filesystems
 	for foo in hourly daily weekly monthly
@@ -227,9 +223,8 @@ src_install()
 	[ -f ${ROOT}/etc/passwd ] && rm -f ${D}/etc/passwd
 	[ -f ${ROOT}/etc/shadow ] && rm -f ${D}/etc/shadow
 
-#	dodir /etc/X11
-#	exeinto /etc/X11
-#	doexe ${S}/sbin/startDM.sh
+	insinto /etc
+	doins ${WORKDIR}/termcap
 
 	keepdir /lib/dev-state
 	if [ $altmerge -eq 1 ]
@@ -283,7 +278,7 @@ src_install()
 		[ -f $foo ] && doins $foo
 	done
 	#/etc/conf.d/net.ppp* should only be readible by root
-#	chmod 0600 ${D}/etc/conf.d/net.ppp*
+	chmod 0600 ${D}/etc/conf.d/net.ppp*
 
 	#this seems the best place for templates .. any ideas ?
 	#NB: if we move this, then $TEMPLATEDIR in net.ppp0 need to be updated as well
@@ -298,7 +293,7 @@ src_install()
 		[ -f $foo ] && doexe $foo
 	done
 	#/etc/init.d/net.ppp* should only be readible by root
-	chmod 0600 ${D}/etc/init.d/net.ppp*
+#	chmod 0600 ${D}/etc/init.d/net.ppp*
 
 	#these moved from /etc/init.d/ to /sbin to help newb systems
 	#from breaking
@@ -328,7 +323,7 @@ src_install()
 	[ "$ROOT" = "/" ] && return
 	
 	#set up default runlevel symlinks
-	local bar
+	local bar=""
 	for foo in default boot nonetwork single
 	do
 		keepdir /etc/runlevels/${foo}
@@ -373,8 +368,27 @@ pkg_postinst() {
 	then
 		cd ${ROOT}/dev
 		#These devices are also needed by many people and should be included
-		echo "Making device nodes (this could take a minute or so...)"
-		${ROOT}/usr/sbin/MAKEDEV generic-i386
+		einfo "Making device nodes (this could take a minute or so...)"
+		
+		case ${ARCH} in
+			x86)
+				einfo "Using generic-i386 to make device nodes..."
+				${ROOT}/usr/sbin/MAKEDEV generic-i386
+				;;
+			ppc)
+				einfo "Using generic-powerpc to make device nodes..."
+				${ROOT}/usr/sbin/MAKEDEV generic-powerpc
+				;;
+			sparc|sparc64)
+				einfo "Using generic-sparc to make device nodes..."
+				${ROOT}/usr/sbin/MAKEDEV generic-sparc
+				;;
+			*)
+				einfo "Using generic-i386 to make device nodes..."
+				${ROOT}/usr/sbin/MAKEDEV generic-i386
+				;;
+		esac
+		
 		${ROOT}/usr/sbin/MAKEDEV sg
 		${ROOT}/usr/sbin/MAKEDEV scd
 		${ROOT}/usr/sbin/MAKEDEV rtc 
@@ -409,7 +423,7 @@ EOF
 		fi
 	fi
 	#we should only install empty files if these files don't already exist.
-	local x
+	local x=""
 	for x in log/lastlog run/utmp log/wtmp
 	do
 		[ -e ${ROOT}/var/${x} ] || touch ${ROOT}/var/${x}
@@ -433,7 +447,8 @@ EOF
 	# not to quit properly on reboot, and causes a fsck of / on next reboot.
 	if [ "$ROOT" = "/" ] && [ -z "`use bootstrap`" ] && [ -z "`use build`" ]
 	then
-		/sbin/init U &>/dev/null
+		#do not return an error if this fails
+		/sbin/init U &>/dev/null || :
 	fi
 }
 
