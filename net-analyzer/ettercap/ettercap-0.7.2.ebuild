@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ettercap/Attic/ettercap-0.7.0.ebuild,v 1.12 2005/01/08 08:45:40 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ettercap/Attic/ettercap-0.7.2.ebuild,v 1.1 2005/01/08 08:45:40 dragonheart Exp $
 
 # the actual version is "NG-0.7.0" but I suppose portage people will not be
 # happy with it (as for the 0.6.b version), so let's set it to "0.7.0".
-# since 'ettercap NG' has to be intended as an upgrade to 0.6.x serie and not as
+# since 'ettercap NG' has to be intended as an upgrade to 0.6.x series and not as
 # a new project or branch, this will be fine...
 
 inherit flag-o-matic
@@ -18,7 +18,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 sparc ppc hppa alpha"
+KEYWORDS="~x86 ~sparc ~ppc ~hppa ~alpha ~amd64"
 IUSE="ssl ncurses gtk debug"
 
 # libtool is needed because it provides libltdl (needed for plugins)
@@ -38,7 +38,7 @@ DEPEND=">=sys-apps/sed-4.0.5
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	sed -i 's:exec_prefix="/usr/local":exec_prefix="$prefix":' configure
+	#sed -i 's:exec_prefix="/usr/local":exec_prefix="$prefix":' configure
 }
 
 src_compile() {
