@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php/Attic/php-4.3.4.ebuild,v 1.2 2003/11/13 15:44:51 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php/Attic/php-4.3.4.ebuild,v 1.3 2004/01/08 04:13:44 robbat2 Exp $
 
 PHPSAPI="cli"
 inherit php eutils
