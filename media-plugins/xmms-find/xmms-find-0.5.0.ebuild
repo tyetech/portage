@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-find/Attic/xmms-find-0.5.0.ebuild,v 1.1 2004/07/03 21:39:07 fvdpol Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-find/Attic/xmms-find-0.5.0.ebuild,v 1.2 2004/07/03 23:09:37 weeve Exp $
 
 inherit eutils
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/xmmsfind/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~sparc"
 
 DEPEND=">=media-sound/xmms-1.2.8"
 
