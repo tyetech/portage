@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice/Attic/openoffice-1.1.1.ebuild,v 1.7 2004/04/11 20:51:33 suka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/openoffice/Attic/openoffice-1.1.1.ebuild,v 1.8 2004/04/16 09:05:21 pauldv Exp $
 
 # IMPORTANT:  This is extremely alpha!!!
 
@@ -210,6 +210,7 @@ oo_setup() {
 
 	unset LANGUAGE
 	unset LANG
+	unset LC_ALL
 
 	export NEW_GCC="0"
 
