@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r9.ebuild,v 1.2 2003/11/18 22:32:28 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/glibc/Attic/glibc-2.3.2-r7.ebuild,v 1.4 2003/11/18 22:32:28 gmsoft Exp $
 
 IUSE="nls pic build nptl"
 
@@ -34,7 +34,7 @@ strip-flags
 export CFLAGS="${CFLAGS//-O?} -O2"
 export CXXFLAGS="${CFLAGS}"
 
-BRANCH_UPDATE="20031115"
+BRANCH_UPDATE="20031010"
 
 # Minimum kernel version for --enable-kernel
 export MIN_KV="2.4.1"
@@ -50,10 +50,12 @@ SRC_URI="http://ftp.gnu.org/gnu/glibc/glibc-${MY_PV}.tar.bz2
 	ftp://sources.redhat.com/pub/glibc/snapshots/glibc-${MY_PV}.tar.bz2
 	http://ftp.gnu.org/gnu/glibc/glibc-linuxthreads-${MY_PV}.tar.bz2
 	ftp://sources.redhat.com/pub/glibc/snapshots/glibc-linuxthreads-${MY_PV}.tar.bz2
-	mirror://gentoo/${P}-branch-update-${BRANCH_UPDATE}.patch.bz2"
+	mirror://gentoo/${P}-branch-update-${BRANCH_UPDATE}.patch.bz2
+	hppa? ( mirror://gentoo/${P}-hppa-patches-p1.tar.bz2 )"
 HOMEPAGE="http://www.gnu.org/software/libc/libc.html"
 
-KEYWORDS="~x86 ~sparc ~amd64 -hppa ~alpha"
+KEYWORDS="-* ~hppa"
+# Is 99% compadible, just some .a's bork
 SLOT="2.2"
 LICENSE="LGPL-2"
 
@@ -145,7 +147,7 @@ use_nptl() {
 					return 0
 				fi
 				;;
-			"alpha"|"amd64"|"mips"|"ppc"|"sparc")
+			"alpha"|"amd64"|"mips"|"ppc")
 				return 0
 				;;
 			*)
@@ -228,15 +230,14 @@ pkg_setup() {
 			echo "yes"
 		fi
 
+		echo
+
 	elif use nptl &> /dev/null
 	then
-		echo
 		# Just tell the user not to expect too much ...
 		ewarn "You have \"nptl\" in your USE, but your kernel version or"
 		ewarn "architecture does not support it!"
 	fi
-
-	echo
 }
 
 src_unpack() {
@@ -251,6 +252,7 @@ src_unpack() {
 	# Extract our threads package ...
 	if (! use_nptl) && [ -z "${BRANCH_UPDATE}" ]
 	then
+		# The branch update have this already included ...
 		unpack glibc-linuxthreads-${MY_PV}.tar.bz2
 	fi
 
@@ -265,25 +267,6 @@ src_unpack() {
 	else
 		epatch ${FILESDIR}/2.3.2/${P}-redhat-linuxthreads-fixes.patch
 	fi
-
-	# To circumvent problems with propolice __guard and
-	# __guard_setup__stack_smash_handler
-	#
-	#  http://www.gentoo.org/proj/en/hardened/etdyn-ssp.xml
-	if [ "${ARCH}" != "hppa" -a "${ARCH}" != "hppa64" ]
-	then
-		cd ${S}; epatch ${FILESDIR}/${PV}/${P}-propolice-guard-functions-v2.patch
-	fi
-
-	# With latest versions of glibc, a lot of apps failed on a PaX enabled
-	# system with:
-	#
-	#  cannot enable executable stack as shared object requires: Permission denied
-	#
-	# This is due to PaX 'exec-protecting' the stack, and ld.so then trying
-	# to make the stack executable due to some libraries not containing the
-	# PT_GNU_STACK section.  Bug #32960.  <azarah@gentoo.org> (12 Nov 2003).
-	epatch ${FILESDIR}/2.3.2/${PN}-2.3.2-dl_execstack-PaX-support.patch
 
 	# This next patch fixes a test that will timeout due to ReiserFS' slow handling of sparse files
 #	cd ${S}/io; epatch ${FILESDIR}/glibc-2.2.2-test-lfs-timeout.patch
@@ -325,10 +308,6 @@ src_unpack() {
 	#
 	cd ${S}; epatch ${FILESDIR}/${PV}/${P}-fix-omitted-operand-in-mathinline_h.patch
 
-	# We do not want name_insert() in iconvconfig.c to be defined inside
-	# write_output() as it causes issues with PaX.
-	cd ${S}; epatch ${FILESDIR}/${PV}/${P}-iconvconfig-name_insert.patch
-
 	# A few patches only for the MIPS platform.  Descriptions of what they
 	# do can be found in the patch headers.
 	# <tuxus@gentoo.org> thx <dragon@gentoo.org> (11 Jan 2003)
@@ -346,15 +325,10 @@ src_unpack() {
 
 	if [ "${ARCH}" = "alpha" ]
 	then
-		cd ${S}
 		# Fix compatability with compaq compilers by ifdef'ing out some
 		# 2.3.2 additions.
 		# <taviso@gentoo.org> (14 Jun 2003).
-		epatch ${FILESDIR}/2.3.2/${P}-decc-compaq.patch
-
-		# Fix compilation with >=gcc-3.2.3 (01 Nov 2003 agriffis)
-		epatch ${FILESDIR}/2.3.2/${P}-alpha-pwrite.patch
-		epatch ${FILESDIR}/2.3.2/${P}-alpha-crti.patch
+		cd ${S}; epatch ${FILESDIR}/2.3.2/${P}-decc-compaq.patch
 	fi
 
 	if [ "${ARCH}" = "amd64" ]
@@ -372,7 +346,30 @@ src_unpack() {
 		#
 		cd ${S}; epatch ${FILESDIR}/2.3.2/${P}-ia64-LOAD_ARGS-fixup.patch
 	fi
+	if [ "${ARCH}" = "hppa" ]
+	then
+		cd ${WORKDIR}
+		unpack ${P}-hppa-patches-p1.tar.bz2
+		cd ${S}
+		EPATCH_EXCLUDE="010_hppa_misc.patch 030_hppa_sysdep1.patch 040_hppa_sysdep2.patch 050_hppa_sysdep3.patch"
+		#EPATCH_SUFFIX="patch" epatch ${WORKDIR}/${P}-hppa-patches/
+		#Small workaround for bug 33636
+		for i in $EPATCH_EXCLUDE
+		do
+			rm ${WORKDIR}/${P}-hppa-patches/$i
+		done
+		for i in ${WORKDIR}/${P}-hppa-patches/*
+		do
+			einfo Applying `basename $i`...
+			patch -p1 < $i
+		done
 
+
+	fi
+
+	# Quick fix for borkage with sys-libs/pwdb, xfree, etc.
+	cp -f ${FILESDIR}/2.3.2/sysmacros.h \
+		${S}/sysdeps/unix/sysv/linux/sys/sysmacros.h
 
 	# Fix permissions on some of the scripts
 	chmod u+x ${S}/scripts/*.sh
@@ -430,7 +427,7 @@ src_compile() {
 		                       --enable-kernel=${MIN_NPTL_KV} \
 		                       --with-headers=${kernelheaders}"
 	else
-		myconf="${myconf} --without-__thread \
+		myconf="${myconf} --without-tls --without-__thread \
 		                  --enable-add-ons=linuxthreads"
 
 		# If we build for the build system we use the kernel headers from the target
