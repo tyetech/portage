@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/predict/Attic/predict-2.2.1.ebuild,v 1.9 2003/12/08 08:10:21 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/predict/Attic/predict-2.2.1.ebuild,v 1.10 2004/04/19 12:13:51 phosphan Exp $
 
 DESCRIPTION="Satellite tracking and orbital prediction."
 HOMEPAGE="http://www.qsl.net/kd2bd/predict.html"
@@ -8,6 +8,7 @@ SRC_URI="http://www.amsat.org/amsat/ftp/software/Linux/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
+IUSE="xforms gtk nls"
 KEYWORDS="x86 ~ppc"
 
 DEPEND="sys-libs/ncurses
