@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/tor/Attic/tor-0.0.8.ebuild,v 1.1 2004/10/06 13:56:46 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/tor/Attic/tor-0.0.8.1.ebuild,v 1.1 2004/10/18 02:37:14 latexer Exp $
 
 MY_P=${P/_rc/rc}
 DESCRIPTION="Anonymizing overlay network for TCP"
