@@ -1,8 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/grip/Attic/grip-3.1.8.ebuild,v 1.3 2004/04/02 09:36:39 eradicator Exp $
-
-inherit eutils
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/grip/Attic/grip-3.1.10.ebuild,v 1.1 2004/04/24 09:13:21 eradicator Exp $
 
 DESCRIPTION="GTK+ based Audio CD Player/Ripper."
 HOMEPAGE="http://www.nostatic.org/grip"
@@ -25,15 +23,7 @@ DEPEND=">=x11-libs/gtk+-2.2
 
 IUSE="nls oggvorbis"
 SLOT="0"
-KEYWORDS="~x86 ~ppc alpha ~amd64 ~hppa ~sparc"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-
-	# AMD64 SMP Crash Fix, submitted by Brian Silverthorn <bcs26@cornell.edu>
-	epatch ${FILESDIR}/${P}-statuscheck-lp64.patch
-}
+KEYWORDS="~x86 ~ppc ~alpha ~amd64 ~hppa ~sparc"
 
 src_compile() {
 	econf --disable-dependency-tracking `use_enable nls` || die
