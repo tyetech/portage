@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-1.8.ebuild,v 1.4 2004/06/24 22:56:28 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-1.8.ebuild,v 1.5 2004/07/15 03:47:42 agriffis Exp $
 
 DESCRIPTION="Gentoo autokernel script"
 HOMEPAGE="http://www.gentoo.org"
@@ -12,8 +12,6 @@ KEYWORDS="x86 -ppc"
 IUSE=""
 
 DEPEND=""
-
-S=${WORKDIR}/${P}
 
 
 src_install() {
