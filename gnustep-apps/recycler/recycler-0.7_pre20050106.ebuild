@@ -1,14 +1,14 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/recycler/Attic/recycler-0.7_pre20040928.ebuild,v 1.3 2004/11/12 03:51:36 fafhrd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/recycler/Attic/recycler-0.7_pre20050106.ebuild,v 1.1 2005/01/10 16:28:52 fafhrd Exp $
 
 ECVS_CVS_COMMAND="cvs -q"
 ECVS_SERVER="savannah.gnu.org:/cvsroot/gnustep"
 ECVS_USER="anoncvs"
 ECVS_AUTH="ext"
 ECVS_MODULE="gnustep/usr-apps/gworkspace/${PN/r/R}"
-ECVS_CO_OPTS="-D ${PV/*_pre}"
-ECVS_UP_OPTS="-D ${PV/*_pre}"
+ECVS_CO_OPTS="-P -D ${PV/*_pre}"
+ECVS_UP_OPTS="-dP -D ${PV/*_pre}"
 ECVS_TOP_DIR="${DISTDIR}/cvs-src/savannah.gnu.org-gnustep"
 inherit gnustep cvs
 
