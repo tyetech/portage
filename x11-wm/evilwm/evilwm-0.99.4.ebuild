@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/evilwm/Attic/evilwm-0.99.4.ebuild,v 1.6 2003/11/28 15:27:00 obz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/evilwm/Attic/evilwm-0.99.4.ebuild,v 1.7 2004/01/09 22:13:38 aether Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A minimalist, no frills window manager for X."
