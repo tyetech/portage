@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/prime/Attic/prime-0.8.3_rc1.ebuild,v 1.1 2004/06/02 18:56:29 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/prime/Attic/prime-0.8.3.ebuild,v 1.1 2004/06/06 17:55:24 usata Exp $
 
 inherit ruby
 
