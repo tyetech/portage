@@ -1,18 +1,21 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/alsa-lib/Attic/alsa-lib-1.0.7.ebuild,v 1.5 2005/01/02 06:24:55 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/alsa-lib/Attic/alsa-lib-1.0.8_rc1.ebuild,v 1.1 2005/01/02 06:24:55 eradicator Exp $
 
 IUSE="static jack doc"
 
 inherit libtool eutils
 
+MY_P="${P/_rc/rc}"
+S="${WORKDIR}/${MY_P}"
+
 DESCRIPTION="Advanced Linux Sound Architecture Library"
 HOMEPAGE="http://www.alsa-project.org/"
-SRC_URI="mirror://alsaproject/lib/${P}.tar.bz2"
+SRC_URI="mirror://alsaproject/lib/${MY_P}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2 LGPL-2.1"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 
 RDEPEND="virtual/alsa
 	>=media-sound/alsa-headers-${PV}"
@@ -22,22 +25,22 @@ DEPEND="${RDEPEND}
 
 PDEPEND="jack? ( =media-plugins/alsa-jack-${PV}* )"
 
-src_unpack() {
-	unpack ${A}
-
-	if use static; then
-		mv ${S} ${S}.static
-		unpack ${A}
-
-		cd ${S}.static
-		epatch ${FILESDIR}/${P}-pcm_wait.patch
-		elibtoolize
-	fi
-
-	cd ${S}
-	epatch ${FILESDIR}/${P}-pcm_wait.patch
-	elibtoolize
-}
+#src_unpack() {
+#	unpack ${A}
+#
+#	if use static; then
+#		mv ${S} ${S}.static
+#		unpack ${A}
+#
+#		cd ${S}.static
+#		epatch ${FILESDIR}/${P}-pcm_wait.patch
+#		elibtoolize
+#	fi
+#
+#	cd ${S}
+#	epatch ${FILESDIR}/${P}-pcm_wait.patch
+#	elibtoolize
+#}
 
 src_compile() {
 	local myconf=""
@@ -45,7 +48,7 @@ src_compile() {
 	# needed to avoid gcc looping internaly
 	use hppa && export CFLAGS="-O1 -pipe"
 
-	econf --enable-static=no --enable-shared=yes || die
+	econf $(use_enable static) --enable-shared=yes || die
 	emake || die
 
 	if use doc; then
@@ -53,11 +56,11 @@ src_compile() {
 	fi
 
 	# Can't do both according to alsa docs and bug #48233
-	if use static; then
-		cd ${S}.static
-		econf --enable-static=yes --enable-shared=no || die
-		emake || die
-	fi
+#	if use static; then
+#		cd ${S}.static
+#		econf --enable-static=yes --enable-shared=no || die
+#		emake || die
+#	fi
 }
 
 src_install() {
@@ -68,10 +71,10 @@ src_install() {
 	dodoc ChangeLog COPYING TODO
 	use doc && dohtml -r doc/doxygen/html/*
 
-	if use static; then
-		cd ${S}.static
-		make DESTDIR="${D}" install || die "make install failed"
-	fi
+#	if use static; then
+#		cd ${S}.static
+#		make DESTDIR="${D}" install || die "make install failed"
+#	fi
 }
 
 pkg_postinst() {
