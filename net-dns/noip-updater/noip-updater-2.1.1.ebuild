@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/noip-updater/Attic/noip-updater-2.1.1.ebuild,v 1.1 2004/04/18 00:03:15 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/noip-updater/Attic/noip-updater-2.1.1.ebuild,v 1.2 2004/06/05 16:23:31 kloeri Exp $
 
 inherit eutils
 
@@ -15,7 +15,7 @@ PATCHES="${FILESDIR}/${MY_P}.patch"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~mips ~amd64 ~ia64 ~ppc64"
+KEYWORDS="~x86 ~ppc ~sparc alpha ~hppa ~mips ~amd64 ~ia64 ~ppc64"
 
 RDEPEND="virtual/glibc"
 
