@@ -1,11 +1,11 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/hardened-dev-sources/Attic/hardened-dev-sources-2.6.4.ebuild,v 1.5 2004/03/15 21:40:52 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/hardened-dev-sources/Attic/hardened-dev-sources-2.6.4.ebuild,v 1.6 2004/04/14 07:14:07 aliz Exp $
 
 ETYPE="sources"
 inherit kernel-2
 detect_version
-
+IUSE=""
 
 AVC_PAX_VER="2.6.4"
 NETRAND_CORE_VER="2.6.3"
