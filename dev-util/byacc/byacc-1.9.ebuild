@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/byacc/Attic/byacc-1.9.ebuild,v 1.9 2004/07/14 22:36:57 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/byacc/Attic/byacc-1.9.ebuild,v 1.10 2005/02/26 08:10:50 corsair Exp $
 
 inherit eutils
 
