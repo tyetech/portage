@@ -1,9 +1,9 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/rebase/Attic/rebase-412.ebuild,v 1.2 2005/01/02 01:55:00 j4rg0n Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/rebase/Attic/rebase-412.ebuild,v 1.3 2005/01/02 15:23:10 ribosome Exp $
 
 DESCRIPTION="A restriction enzyme database"
-HOMEPAGE="http://${PN}.neb.com"
+HOMEPAGE="http://rebase.neb.com"
 SRC_URI="mirror://gentoo/${P}.tar.bz2"
 LICENSE="public-domain"
 
