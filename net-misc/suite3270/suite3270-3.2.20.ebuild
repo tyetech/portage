@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/suite3270/Attic/suite3270-3.2.20.ebuild,v 1.1 2003/07/28 04:01:54 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/suite3270/Attic/suite3270-3.2.20.ebuild,v 1.2 2003/09/05 22:01:49 msterret Exp $
 
 IUSE="tcltk X"
 
@@ -14,7 +14,7 @@ LICENSE="GPL-2"
 KEYWORDS="~x86"
 
 DEPEND="X? ( virtual/x11 )
-		tcltk? ( dev-lang/tcl ) 
+		tcltk? ( dev-lang/tcl )
 		sys-libs/ncurses
 		sys-libs/readline"
 
