@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvclock/Attic/nvclock-0.7-r1.ebuild,v 1.3 2004/06/25 00:46:52 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvclock/Attic/nvclock-0.7-r1.ebuild,v 1.4 2004/07/01 08:41:01 eradicator Exp $
 
 inherit eutils
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="x86"
 IUSE="gtk qt"
 
-DEPEND="virtual/glibc
+DEPEND="virtual/libc
 	sys-devel/autoconf
 	gtk? ( =x11-libs/gtk+-2* )
 	qt? ( x11-libs/qt )"

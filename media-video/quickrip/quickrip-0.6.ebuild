@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/quickrip/Attic/quickrip-0.6.ebuild,v 1.8 2004/06/25 00:48:48 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/quickrip/Attic/quickrip-0.6.ebuild,v 1.9 2004/07/01 08:41:33 eradicator Exp $
 
 inherit eutils
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="x86 -ppc -mips"
 IUSE=""
 
-DEPEND="virtual/glibc
+DEPEND="virtual/libc
 	>=dev-lang/python-2.2
 	>=x11-libs/qt-3.1
 	>=dev-python/PyQt-3.5
