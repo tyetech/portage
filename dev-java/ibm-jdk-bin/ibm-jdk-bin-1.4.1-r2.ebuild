@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jdk-bin/Attic/ibm-jdk-bin-1.4.1-r2.ebuild,v 1.4 2004/07/02 04:20:23 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jdk-bin/Attic/ibm-jdk-bin-1.4.1-r2.ebuild,v 1.5 2004/07/14 01:59:34 agriffis Exp $
 
-IUSE="doc javacomm"
+IUSE="X doc javacomm"
 
 inherit java nsplugins
 
