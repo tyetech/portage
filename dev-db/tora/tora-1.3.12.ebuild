@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/tora/Attic/tora-1.3.12.ebuild,v 1.3 2003/12/10 07:30:42 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/tora/Attic/tora-1.3.12.ebuild,v 1.4 2004/01/21 02:20:23 rizzo Exp $
 
 IUSE="kde oci8"
 DESCRIPTION="TOra - Toolkit For Oracle"
