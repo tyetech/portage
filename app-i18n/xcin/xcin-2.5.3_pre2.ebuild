@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/xcin/Attic/xcin-2.5.3_pre2.ebuild,v 1.9 2004/05/03 10:23:14 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/xcin/Attic/xcin-2.5.3_pre2.ebuild,v 1.10 2004/06/21 15:51:56 usata Exp $
 
 inherit eutils
 
@@ -32,8 +32,8 @@ src_unpack() {
 
 	# gcc3.2 changed the way we deal with -I. So until the configure script
 	# is updated we need this hack as a work around.
-	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/${PF}/gentoo-xcin.patch
-	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/${P}-db3.patch
+	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/${P}-gentoo.patch
+	EPATCH_OPTS="-d ${S}" epatch ${FILESDIR}/${PN}-db3.patch
 }
 
 src_compile() {
