@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gnomemeeting/Attic/gnomemeeting-1.0.2-r1.ebuild,v 1.1 2004/12/22 02:45:46 obz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gnomemeeting/Attic/gnomemeeting-1.0.2-r1.ebuild,v 1.2 2005/01/09 00:26:51 stkn Exp $
 
 inherit gnome2 eutils
 
