@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libebml/Attic/libebml-0.7.2.ebuild,v 1.7 2005/02/27 14:35:58 mholzer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libebml/Attic/libebml-0.7.3.ebuild,v 1.1 2005/02/27 14:35:58 mholzer Exp $
 
 IUSE=""
 
@@ -20,7 +20,7 @@ src_unpack() {
 	unpack ${A}
 
 	cd ${S}
-	epatch ${FILESDIR}/libebml-shared.patch
+	epatch ${FILESDIR}/libebml-shared2.patch
 }
 
 src_compile() {
