@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/pdumpfs/Attic/pdumpfs-0.6.ebuild,v 1.7 2004/06/25 23:53:36 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/pdumpfs/Attic/pdumpfs-1.1.ebuild,v 1.1 2004/07/12 22:48:37 matsuu Exp $
 
 DESCRIPTION="a daily backup system similar to Plan9's dumpfs"
 HOMEPAGE="http://www.namazu.org/~satoru/pdumpfs/"
@@ -8,24 +8,27 @@ SRC_URI="http://www.namazu.org/~satoru/pdumpfs/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86 ~amd64 ~ppc ~sparc"
 IUSE="cjk"
 
-DEPEND="virtual/libc"
-RDEPEND="virtual/ruby"
+DEPEND="virtual/ruby"
+
+src_compile() {
+	make pdumpfs || die "make pdumpfs failed"
+	make check || die "make check failed"
+}
 
 src_install() {
 	dobin pdumpfs || die
-	dosed 's:/usr/local:/usr:g' /usr/bin/pdumpfs
 
 	doman man/man8/pdumpfs.8
+	dohtml -r doc/*
 
 	if use cjk; then
-		iconv -f iso-2022-jp -t euc-jp man/ja/man8/pdumpfs.8 > ${T}/pdumpfs.8
 		insinto /usr/share/man/ja/man8
-		doins ${T}/pdumpfs.8
+		doins man/ja/man8/pdumpfs.8
+		dohtml pdumpfs-ja.html
 	fi
 
-	dodoc ChangeLog
-	dohtml *.html
+	dodoc ChangeLog README
 }
