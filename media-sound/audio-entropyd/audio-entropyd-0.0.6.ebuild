@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/audio-entropyd/Attic/audio-entropyd-0.0.6.ebuild,v 1.5 2004/04/08 00:39:58 pebenito Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/audio-entropyd/Attic/audio-entropyd-0.0.6.ebuild,v 1.6 2004/05/07 20:21:07 tseng Exp $
 
 DESCRIPTION="Audio-entropyd generates entropy-data for the /dev/random device."
 HOMEPAGE="http://www.vanheusden.com/aed/"
@@ -13,8 +13,6 @@ DEPEND="virtual/glibc"
 RDEPEND="${DEPEND}
 	>=sys-apps/sed-4
 	selinux? ( sec-policy/selinux-audio-entropyd )"
-
-S=${WORKDIR}/${P}
 
 src_unpack() {
 	unpack ${A}
