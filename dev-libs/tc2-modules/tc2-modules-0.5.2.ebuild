@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/tc2-modules/Attic/tc2-modules-0.5.0.ebuild,v 1.3 2004/02/28 14:28:48 zypher Exp $
+# $Header $
 
 IUSE="static"
 
@@ -13,7 +13,7 @@ SLOT="0"
 LICENSE="OpenSoftware"
 KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~mips ~amd64 ~ia64"
 
-DEPEND=">=dev-libs/tc2-0.5.0"
+DEPEND=">=dev-libs/tc2-0.5.6"
 
 
 src_compile() {
