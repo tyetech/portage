@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Heaer: $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/arson/Attic/arson-0.9.7.ebuild,v 1.2 2002/11/25 05:06:50 agenkin Exp $
 
 IUSE="oggvorbis"
 
