@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-daemontools/Attic/selinux-daemontools-20041022.ebuild,v 1.2 2004/10/28 09:24:57 kaiowas Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-daemontools/Attic/selinux-daemontools-20041111.ebuild,v 1.1 2004/11/13 19:40:14 kaiowas Exp $
 
 inherit selinux-policy
 
