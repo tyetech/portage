@@ -1,6 +1,6 @@
-# ChangeLog for app-games/monopd
+# ChangeLog for games-server/monopd
 # Copyright 2002-2003 Gentoo Technologies, Inc.; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-server/cvs-repo/gentoo-x86/games-server/monopd/ChangeLog,v 1.1 2003/09/10 05:51:11 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-server/cvs-repo/gentoo-x86/games-server/monopd/ChangeLog,v 1.2 2003/09/10 15:49:37 vapier Exp $
 
 *monopd-0.8.2-r1 (25 Aug 2003)
 
