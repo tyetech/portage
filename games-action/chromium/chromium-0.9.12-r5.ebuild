@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/chromium/Attic/chromium-0.9.12-r5.ebuild,v 1.7 2004/06/24 21:53:14 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/chromium/Attic/chromium-0.9.12-r5.ebuild,v 1.8 2004/06/30 02:32:13 mr_bones_ Exp $
 
 inherit flag-o-matic eutils games
 
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="x86 ppc amd64 ~sparc"
 IUSE="qt sdl oggvorbis"
 
-RDEPEND="virtual/glibc
+RDEPEND="virtual/libc
 	|| (
 		sdl? ( media-libs/libsdl
 			media-libs/smpeg )
