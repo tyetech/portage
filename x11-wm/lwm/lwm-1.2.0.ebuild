@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/lwm/Attic/lwm-1.2.0.ebuild,v 1.5 2004/07/15 01:14:02 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/lwm/Attic/lwm-1.2.0.ebuild,v 1.6 2004/10/09 19:35:34 usata Exp $
 
 IUSE="motif"
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://www.jfc.org.uk/software/lwm.html"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 sparc ppc"
+KEYWORDS="x86 sparc ppc"
 
 DEPEND="motif? ( x11-libs/openmotif >=sys-apps/sed-4 )
 	virtual/x11"
