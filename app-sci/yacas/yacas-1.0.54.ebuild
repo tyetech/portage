@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/yacas/Attic/yacas-1.0.54.ebuild,v 1.1 2003/07/10 01:38:46 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/yacas/Attic/yacas-1.0.54.ebuild,v 1.2 2004/04/20 00:55:07 dholm Exp $
 
 IUSE=""
 
