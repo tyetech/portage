@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/hostap-driver/Attic/hostap-driver-0.2.5-r1.ebuild,v 1.5 2005/01/03 11:04:49 brix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/hostap-driver/Attic/hostap-driver-0.3.3.ebuild,v 1.1 2005/01/03 11:04:49 brix Exp $
 
 inherit toolchain-funcs pcmcia kernel-mod eutils
 
@@ -9,16 +9,15 @@ HOMEPAGE="http://hostap.epitest.fi"
 SRC_URI="${SRC_URI} http://hostap.epitest.fi/releases/${P}.tar.gz"
 LICENSE="GPL-2"
 
-KEYWORDS="x86 ppc"
+KEYWORDS="~x86 ~ppc"
 IUSE=""
 SLOT="0"
 
-DEPEND="!net-wireless/hostap
-		virtual/linux-sources
+DEPEND="virtual/linux-sources
 		sys-apps/sed"
 RDEPEND=">=net-wireless/wireless-tools-25"
 
-src_unpack() {
+pkg_setup() {
 	if ! kernel-mod_configoption_present NET_RADIO
 	then
 		eerror ""
@@ -29,17 +28,19 @@ src_unpack() {
 	fi
 
 	kernel-mod_check_modules_supported
+}
 
+src_unpack() {
 	unpack ${A}
 
-	## set compiler
+	# set compiler
 	sed -i -e "s:gcc:$(tc-getCC):" ${S}/Makefile
 
 	# unpack the pcmcia-cs sources if needed
 	pcmcia_src_unpack
 
 	cd ${S}
-	epatch "${FILESDIR}/${P}.firmware.diff.bz2"
+	epatch ${FILESDIR}/${P}-firmware.patch
 
 	# fix for new coreutils (#31801)
 	sed -i "s:tail -1:tail -n 1:" ${S}/Makefile
@@ -47,7 +48,7 @@ src_unpack() {
 	# set correct pcmcia path (PCMCIA_VERSION gets set from pcmcia_src_unpack)
 	if [ -n "${PCMCIA_VERSION}" ]
 	then
-		sed -i "s:^PCMCIA_PATH=:PCMCIA_PATH=${PCMCIA_SOURCE_DIR}:" ${S}/Makefile
+		sed -i "s:^\(PCMCIA_PATH\)=:\1=${PCMCIA_SOURCE_DIR}:" ${S}/Makefile
 	fi
 
 	# install to /lib/modules/${KV}/net
@@ -126,6 +127,7 @@ pkg_postinst() {
 	ewarn "Please note that this installation of HostAP contains support"
 	ewarn "for downloading binary firmware images into the non-volatile"
 	ewarn "(permanent) flash memory of wireless LAN cards."
+	ewarn ""
 	ewarn "Albeit being a great feature, this can lead to A DEAD CARD"
 	ewarn "when inappropriately used (e.g. wrong firmware)."
 	ewarn ""
