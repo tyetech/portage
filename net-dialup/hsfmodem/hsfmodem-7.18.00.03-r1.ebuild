@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/hsfmodem/Attic/hsfmodem-7.18.00.03-r1.ebuild,v 1.1 2005/03/16 21:02:59 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/hsfmodem/Attic/hsfmodem-7.18.00.03-r1.ebuild,v 1.2 2005/03/17 06:35:10 mrness Exp $
 
 inherit eutils
 
@@ -33,7 +33,6 @@ src_unpack() {
 
 	cd $MY_ARCH_S
 	epatch ${FILESDIR}/${P}-nvminstall.patch
-	epatch ${FILESDIR}/${P}-export_symbol.patch
 }
 
 src_compile() {
