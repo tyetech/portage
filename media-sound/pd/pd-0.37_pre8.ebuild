@@ -1,18 +1,18 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pd/Attic/pd-0.35.0-r1.ebuild,v 1.5 2003/08/03 02:54:04 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pd/Attic/pd-0.37_pre8.ebuild,v 1.1 2003/08/16 08:53:07 jje Exp $
 
 # Miller Puckette uses nonstandard versioning scheme that we have to crunch
-MY_P=`echo ${P} | sed 's/\.\([0-9]\+\)$/-\1/'`
+MY_P=${P/_pre/-test}
 S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="real-time music and multimedia environment"
 HOMEPAGE="http://www-crca.ucsd.edu/~msp/software.html"
-SRC_URI="http://www-crca.ucsd.edu/~msp/Software/${MY_P}.linux.tar.gz"
+SRC_URI="http://www-crca.ucsd.edu/~msp/Software/${MY_P}.src.tar.gz"
 
 LICENSE="BSD | as-is"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 IUSE="X alsa"
 
 DEPEND=">=dev-lang/tcl-8.3.3
@@ -23,11 +23,11 @@ DEPEND=">=dev-lang/tcl-8.3.3
 src_unpack() {
 	unpack ${A}
 
-	cd ${S} || die
-	epatch ${FILESDIR}/${PF}.patch
+#	cd ${S} || die
+#	epatch ${FILESDIR}/${PF}.patch
 
-	cd src || die
-	autoconf || die
+#	cd src || die
+#	autoconf || die
 }
 
 src_compile() {
