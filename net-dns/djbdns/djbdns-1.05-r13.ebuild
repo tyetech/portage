@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/djbdns/Attic/djbdns-1.05-r13.ebuild,v 1.2 2004/06/24 22:34:07 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/djbdns/Attic/djbdns-1.05-r13.ebuild,v 1.3 2004/07/14 23:22:53 agriffis Exp $
 
-IUSE="ipv6 static fwdzone roundrobin multipleip aliaschain semanticfix cnamefix doc"
+IUSE="aliaschain cnamefix doc fwdzone ipv6 multipleip roundrobin semanticfix"
 
 inherit eutils
 
