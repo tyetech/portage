@@ -1,8 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/gftp/Attic/gftp-2.0.16-r1.ebuild,v 1.10 2005/02/04 18:58:47 joem Exp $
-
-inherit eutils
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/gftp/Attic/gftp-2.0.18.ebuild,v 1.1 2005/02/04 18:58:47 joem Exp $
 
 DESCRIPTION="Gnome based FTP Client"
 SRC_URI="http://www.gftp.org/${P}.tar.bz2"
@@ -10,7 +8,7 @@ HOMEPAGE="http://www.gftp.org"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc -amd64"
+KEYWORDS="~x86 ~ppc ~sparc -amd64 ~ppc64"
 IUSE="nls gtk gtk2 ssl"
 
 DEPEND="virtual/x11
@@ -23,16 +21,6 @@ DEPEND="virtual/x11
 		=dev-libs/glib-1.2* )"
 
 #RDEPEND="nls? ( sys-devel/gettext )"
-
-src_unpack() {
-
-	unpack ${A}
-
-	cd ${S}/lib
-	# fix problem in #34475
-	epatch ${FILESDIR}/${P}-ipv6_fix.patch
-
-}
 
 src_compile() {
 	local myconf
@@ -63,9 +51,9 @@ src_compile() {
 }
 
 src_install() {
-	einstall || die
+	make DESTDIR=${D} install || die
 
-	dodoc COPYING ChangeLog AUTHORS README* THANKS \
-		TODO docs/USERS-GUIDE NEWS
+	dodoc COPYING ChangeLog README* THANKS \
+		TODO docs/USERS-GUIDE
 
 }

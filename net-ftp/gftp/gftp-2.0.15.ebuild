@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/gftp/Attic/gftp-2.0.15.ebuild,v 1.12 2004/10/04 22:46:11 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/gftp/Attic/gftp-2.0.15.ebuild,v 1.13 2005/02/04 18:58:47 joem Exp $
 
 inherit eutils
 
