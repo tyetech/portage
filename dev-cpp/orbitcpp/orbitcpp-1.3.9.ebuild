@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/orbitcpp/Attic/orbitcpp-1.3.6.ebuild,v 1.3 2004/06/12 02:53:57 khai Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/orbitcpp/Attic/orbitcpp-1.3.9.ebuild,v 1.1 2004/06/12 02:53:57 khai Exp $
 
 inherit gnome.org
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://orbitcpp.sourceforge.net/"
 LICENSE="LGPL-2.1"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc ~sparc"
 IUSE=""
 
 RDEPEND=">=gnome-base/ORBit2-2.5
@@ -20,7 +20,7 @@ DEPEND="${RDEPEND}
 
 src_compile() {
 	econf || die
-	emake || die
+	emake -j1 || die
 }
 
 src_install() {
