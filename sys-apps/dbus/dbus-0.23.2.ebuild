@@ -1,9 +1,9 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/dbus/Attic/dbus-0.23-r1.ebuild,v 1.3 2005/01/21 04:35:39 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/dbus/Attic/dbus-0.23.2.ebuild,v 1.1 2005/03/02 23:49:25 foser Exp $
 
 # because of the experimental nature debug by default
-inherit debug eutils mono python
+inherit debug eutils mono python multilib
 
 # FIXME : fix docs
 #IUSE="X gtk qt python mono doc xml2"
@@ -15,7 +15,7 @@ SRC_URI="http://dbus.freedesktop.org/releases/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="|| ( GPL-2 AFL-2.1 )"
-KEYWORDS="~x86 ~ppc ~amd64 ~ppc64 ~ia64"
+KEYWORDS="~x86 ~ppc ~amd64 ~ppc64 ~ia64 ~sparc"
 
 RDEPEND=">=dev-libs/glib-2
 	xml2? ( >=dev-libs/libxml2-2.6 )
@@ -24,10 +24,10 @@ RDEPEND=">=dev-libs/glib-2
 	gtk? ( >=x11-libs/gtk+-2 )
 	python? ( >=dev-lang/python-2.2
 		>=dev-python/pyrex-0.9 )
+	qt? ( >=x11-libs/qt-3 )
 	!ppc64? (
 		mono? ( >=dev-dotnet/mono-0.95 )
-	)
-	qt? ( >=x11-libs/qt-3 )"
+	)"
 
 
 DEPEND="${RDEPEND}
@@ -39,10 +39,25 @@ DEPEND="${RDEPEND}
 #	java? ( sys-devel/gcc )
 
 src_unpack() {
+
 	unpack ${A}
 	cd ${S}
 
-	epatch ${FILESDIR}/${P}-qt.patch
+	epatch ${FILESDIR}/${PN}-0.23-qt.patch
+	# add missing include (#78617)
+	epatch ${FILESDIR}/${PN}-0.23-fd_set.patch
+	# workaround mono lib versioning (#81794)
+	epatch ${FILESDIR}/${P}-version_fix.patch
+
+	# It stupidly tries to install python stuff to platform-independent
+	# libdir
+	epatch ${FILESDIR}/dbus-0.23-pyexecdir.patch
+
+	# Don't rerun auto*
+	sleep 1
+	touch ${S}/python/Makefile.in
+	sleep 1
+	touch ${S}/configure
 }
 
 src_compile() {
@@ -56,7 +71,7 @@ src_compile() {
 	fi
 
 	econf \
-		`use_enable X x` \
+		`use_with X x` \
 		`use_enable gtk` \
 		`use_enable qt` \
 		`use_enable python` \
