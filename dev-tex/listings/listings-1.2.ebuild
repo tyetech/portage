@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/listings/Attic/listings-1.2.ebuild,v 1.3 2004/10/05 06:52:30 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/listings/Attic/listings-1.2.ebuild,v 1.4 2005/02/05 10:34:34 hansmi Exp $
 
 inherit latex-package
 
