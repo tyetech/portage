@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/bash-completion/Attic/bash-completion-20040101-r1.ebuild,v 1.3 2004/02/21 00:40:28 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/bash-completion/Attic/bash-completion-20040210-r1.ebuild,v 1.1 2004/02/27 18:48:46 joker Exp $
 
 S=${WORKDIR}/${PN/-/_}
 DESCRIPTION="Programmable Completion for bash (includes emerge and ebuild commands)."
@@ -49,7 +49,9 @@ pkg_postinst() {
 	fi
 
 	for bcfile in /etc/bash_completion.d/{unrar,harbour,isql,larch,lilypond,p4,ri}
+
 	do
+
 		[ -f "${bcfile}" -a ! -L "${bcfile}" ] && moved="${bcfile##*/} ${moved}"
 	done
 	if [ -n "${moved}" ]
