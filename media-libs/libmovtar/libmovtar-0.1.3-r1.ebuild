@@ -1,12 +1,11 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmovtar/Attic/libmovtar-0.1.3-r1.ebuild,v 1.11 2004/06/24 23:12:12 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmovtar/Attic/libmovtar-0.1.3-r1.ebuild,v 1.12 2004/07/14 20:11:13 agriffis Exp $
 
 IUSE="mmx"
 
 inherit libtool
 
-S=${WORKDIR}/${P}
 DESCRIPTION="Movtar tools and library for MJPEG video"
 SRC_URI="http://download.sourceforge.net/mjpeg/${P}.tar.gz"
 HOMEPAGE="http://mjpeg.sourceforge.net/"
