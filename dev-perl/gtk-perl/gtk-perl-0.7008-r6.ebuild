@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/gtk-perl/Attic/gtk-perl-0.7008-r6.ebuild,v 1.3 2002/11/05 23:28:49 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/gtk-perl/Attic/gtk-perl-0.7008-r6.ebuild,v 1.4 2002/12/09 04:21:11 manson Exp $
 
 inherit perl-module
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.perl.org/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc sparc64 alpha"
+KEYWORDS="x86 ppc sparc  alpha"
 
 DEPEND="${DEPEND}
 	media-libs/gdk-pixbuf
