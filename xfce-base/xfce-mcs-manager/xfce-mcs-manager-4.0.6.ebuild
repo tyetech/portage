@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce-mcs-manager/Attic/xfce-mcs-manager-4.0.6.ebuild,v 1.9 2004/11/04 23:10:20 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce-mcs-manager/Attic/xfce-mcs-manager-4.0.6.ebuild,v 1.10 2005/01/02 16:08:44 bcowan Exp $
 
 DESCRIPTION="Libraries for XFCE4"
 HOMEPAGE="http://www.xfce.org/"
