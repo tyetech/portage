@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kde-i18n/Attic/kde-i18n-3.2.2.ebuild,v 1.5 2004/05/24 03:07:05 dostrow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kde-i18n/Attic/kde-i18n-3.2.2.ebuild,v 1.6 2004/06/24 22:13:01 agriffis Exp $
 
 inherit kde
 MY_PV=${PV}

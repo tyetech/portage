@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kde/Attic/kde-3.2.2.ebuild,v 1.6 2004/06/01 21:33:44 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kde/Attic/kde-3.2.2.ebuild,v 1.7 2004/06/24 22:11:44 agriffis Exp $
 
 DESCRIPTION="KDE 3.2 - merge this to pull in all non-developer kde-base/* packages"
 HOMEPAGE="http://www.kde.org/"
