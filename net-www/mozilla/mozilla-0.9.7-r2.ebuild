@@ -1,7 +1,7 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Martin Schlemmer <azarah@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mozilla/Attic/mozilla-0.9.7.ebuild,v 1.3 2002/01/30 18:08:27 karltk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mozilla/Attic/mozilla-0.9.7-r2.ebuild,v 1.1 2002/02/03 07:31:59 azarah Exp $
 
 S=${WORKDIR}/mozilla
 DESCRIPTION="The Mozilla Web Browser"
@@ -17,8 +17,7 @@ RDEPEND=">=gnome-base/ORBit-0.5.10-r1
 	app-arch/zip
 	app-arch/unzip
 	x11-libs/gtk+
-	java?  ( virtual/jdk )
-	"
+	java?  ( virtual/jdk )"
 #	gtk?   ( x11-libs/gtk+ )
 #	mozqt? ( x11-libs/qt )"
 
@@ -35,7 +34,20 @@ export BUILD_OFFICIAL=1
 [ "`use ssl`" ] && export MOZ_PSM=1
 
 # do we build java support for the NSS stuff ?
+# NOTE: this is broken for the moment
 #[ "`use java`" ] && export NS_USE_JDK=1
+
+
+src_unpack() {
+
+	unpack ${A}
+
+	# This is ONLY for Mozilla version 0.9.7
+	# and fixes a bug where Mozilla did not always wanted to
+	# post forms in certain cases.
+	cd ${S}
+	patch -p1 < ${FILESDIR}/mozilla-${PV}-post.patch || die
+}
 
 src_compile() {
 
