@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-session/Attic/gnome-session-2.0.0.ebuild,v 1.3 2002/07/15 13:31:35 stroke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-session/Attic/gnome-session-2.0.2.ebuild,v 1.1 2002/07/15 13:31:35 stroke Exp $
 
 # Do _NOT_ strip symbols in the build! Need both lines for Portage 1.8.9+
 DEBUG="yes"
@@ -8,7 +8,6 @@ RESTRICT="nostrip"
 # force debug information
 CFLAGS="${CFLAGS} -g"
 CXXFLAGS="${CXXFLAGS} -g"
-
 
 S=${WORKDIR}/${P}
 DESCRIPTION="the Gnome2 session manager"
@@ -19,10 +18,10 @@ KEYWORDS="x86"
 LICENSE="GPL-2 LGPL-2.1 FDL-1.1"
 
 
-RDEPEND=">=dev-libs/glib-2.0.0
-	>=x11-libs/gtk+-2.0.0
+RDEPEND=">=dev-libs/glib-2.0.4
+	>=x11-libs/gtk+-2.0.5
 	>=gnome-base/libgnomeui-2.0.0
-	>=gnome-base/libgnomecanvas-2.0.0
+	>=gnome-base/libgnomecanvas-2.0.1
 	>=sys-devel/gettext-0.10.40
 	>=sys-apps/tcp-wrappers-7.6"
 
