@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gob/Attic/gob-2.0.6.ebuild,v 1.12 2005/01/31 04:16:50 joem Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gob/Attic/gob-2.0.11.ebuild,v 1.1 2005/01/31 04:16:50 joem Exp $
 
 inherit gnome2
 
@@ -14,11 +14,12 @@ IUSE=""
 
 SLOT="2"
 LICENSE="GPL-2"
-KEYWORDS="x86 sparc hppa amd64 ppc alpha ia64"
+KEYWORDS="~x86 ~sparc ~hppa ~amd64 ~ppc ~alpha ~ia64"
 
-RDEPEND=">=dev-libs/glib-2.0*"
+RDEPEND=">=dev-libs/glib-2.0"
 
 DEPEND="${RDEPEND}
+	dev-util/pkgconfig
 	sys-devel/flex"
 
 DOCS="AUTHORS COPYING.generated-code ChangeLog NEWS README TODO"
