@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.9-r4.ebuild,v 1.1 2004/11/27 00:45:16 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.9-r4.ebuild,v 1.2 2004/11/27 12:35:04 kumba Exp $
 
 
 # Version Data
@@ -31,7 +31,7 @@ inherit kernel eutils
 HOMEPAGE="http://www.linux-mips.org/"
 SLOT="${OKV}"
 PROVIDE="virtual/linux-sources"
-KEYWORDS="-*"
+KEYWORDS="-* ~mips"
 IUSE="cobalt ip30 livecd"
 #IUSE="cobalt ip30 ip27 livecd"
 
