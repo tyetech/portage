@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/prelude-nids/Attic/prelude-nids-0.8.6.ebuild,v 1.6 2004/07/01 20:14:52 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/prelude-nids/Attic/prelude-nids-0.8.6.ebuild,v 1.7 2004/07/14 08:31:36 eldad Exp $
 
 inherit flag-o-matic
 
@@ -21,13 +21,12 @@ DEPEND="virtual/libc
 
 src_compile() {
 	local myconf
-	export MAKEOPTS=""	# Doesn't compile if you using make -j
 
 	use doc && myconf="${myconf} --enable-gtk-doc" || myconf="${myconf} --enable-gtk-doc=no"
 	use debug && append-flags -O -ggdb
 
 	econf ${myconf} || die "econf failed"
-	emake || die "emake failed"
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
