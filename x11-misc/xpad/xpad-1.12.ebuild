@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xpad/Attic/xpad-1.12.ebuild,v 1.1 2003/10/06 07:00:29 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xpad/Attic/xpad-1.12.ebuild,v 1.2 2004/01/05 13:09:50 weeve Exp $
 
 IUSE=""
 
