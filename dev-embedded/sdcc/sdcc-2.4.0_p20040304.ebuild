@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/sdcc/Attic/sdcc-2.4.0_p20040304.ebuild,v 1.3 2004/03/30 14:05:29 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/sdcc/Attic/sdcc-2.4.0_p20040304.ebuild,v 1.4 2004/04/03 03:16:56 dragonheart Exp $
 
 S=${WORKDIR}/${PN}
 MY_PV=${PV/*_p/}
@@ -19,10 +19,10 @@ DEPEND="virtual/glibc
 	sys-devel/libtool
 	sys-apps/grep
 	sys-devel/bison
-	doc? ( dev-tex/latex2html )
-	doc? ( app-text/tetex )
-	doc? ( app-office/lyx )
-	doc? ( sys-apps/sed )"
+	doc? ( dev-tex/latex2html
+		app-text/tetex )
+		>=app-office/lyx-1.3.4
+		sys-apps/sed )"
 
 RDEPEND="virtual/glibc"
 
@@ -30,8 +30,7 @@ src_compile() {
 	econf || die "Configure failed"
 	emake || die "Make failed"
 	use doc && {
-		echo -e "\n\n" | emake -C doc
-		# || die "Making documentation failed"
+		emake -C doc || die "Making documentation failed"
 	}
 }
 
