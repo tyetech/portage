@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gail/Attic/gail-1.6.2.ebuild,v 1.1 2004/04/22 19:26:49 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gail/Attic/gail-1.6.2.ebuild,v 1.2 2004/04/28 17:45:53 eradicator Exp $
 
 inherit gnome2
 
-IUSE="${IUSE}"
+IUSE=""
 
 DESCRIPTION="Accessibility support for Gtk+ and libgnomecanvas"
 HOMEPAGE="http://developer.gnome.org/projects/gap"
