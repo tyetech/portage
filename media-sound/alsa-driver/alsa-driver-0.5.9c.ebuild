@@ -1,9 +1,8 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-0.5.9b.ebuild,v 1.2 2000/08/25 15:10:23 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-0.5.9c.ebuild,v 1.1 2000/09/10 17:16:18 achim Exp $
 
-P=alsa-driver-0.5.9b
 A=${P}.tar.bz2
 S=${WORKDIR}/${P}
 DESCRIPTION="Advanced Linux Sound Architecture / Drivers"
@@ -50,5 +49,6 @@ pkg_postinst() {
         /usr/sbin/snddevices
     fi
 }
+
 
 
