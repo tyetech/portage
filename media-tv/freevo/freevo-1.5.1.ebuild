@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/freevo/Attic/freevo-1.5.1.ebuild,v 1.1 2004/09/11 17:49:08 iggy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/freevo/Attic/freevo-1.5.1.ebuild,v 1.2 2004/10/31 17:01:30 iggy Exp $
 
 inherit distutils
 
@@ -12,7 +12,7 @@ RESTRICT="nomirror"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="x86 ~amd64"
 
 DEPEND="${DEPEND}
 	>=dev-python/pygame-1.5.6
