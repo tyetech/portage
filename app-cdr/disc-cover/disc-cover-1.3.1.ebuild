@@ -1,6 +1,6 @@
-# Copyright 2002 Author Felix Kurth <felix@fkurth.de>
+# Copyright 2002 Felix Kurth <felix@fkurth.de>
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/disc-cover/Attic/disc-cover-1.3.1.ebuild,v 1.3 2002/06/19 00:30:10 agenkin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/disc-cover/Attic/disc-cover-1.3.1.ebuild,v 1.4 2002/06/19 00:30:31 agenkin Exp $
 
 DESCRIPTION="Creates CD-Covers via Latex by fetching cd-info from freedb.org or local file"
 HOMEPAGE="http://www.liacs.nl/~jvhemert/disc-cover/"
