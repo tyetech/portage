@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/ipchains/Attic/ipchains-1.3.10-r1.ebuild,v 1.2 2004/03/20 07:34:37 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/ipchains/Attic/ipchains-1.3.10-r1.ebuild,v 1.3 2004/06/24 22:40:25 agriffis Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="legacy Linux firewall/packet mangling tools"
