@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/postfix/Attic/postfix-2.0.9.ebuild,v 1.6 2003/09/05 08:38:49 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/postfix/Attic/postfix-2.0.9.ebuild,v 1.7 2004/01/14 20:38:12 max Exp $
 
 inherit eutils
 
