@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/clientcookie/Attic/clientcookie-0.4.19.ebuild,v 1.3 2004/06/27 18:09:35 pythonhead Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/clientcookie/Attic/clientcookie-0.4.19.ebuild,v 1.4 2005/02/12 11:36:16 kloeri Exp $
 
 inherit distutils
 
