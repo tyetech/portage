@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/lirc/Attic/lirc-0.7.0_pre7-r1.ebuild,v 1.4 2004/09/26 18:31:14 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/lirc/Attic/lirc-0.7.0.ebuild,v 1.1 2004/11/17 14:05:05 lanius Exp $
 
-inherit eutils kmod
+inherit eutils kernel-mod
 
 DESCRIPTION="LIRC is a package that allows you to decode and send infra-red \
 	signals of many (but not all) commonly used remote controls."
@@ -46,20 +46,25 @@ KEYWORDS="~x86 ~ppc ~alpha ~ia64 ~amd64 ~ppc64"
 
 DEPEND="virtual/linux-sources"
 
-MY_P=${P/_/}
-
-SRC_URI="http://lirc.sourceforge.net/software/snapshots/${MY_P}.tar.bz2
+SRC_URI="mirror://sourceforge/lirc/${P}.tar.bz2
 	http://www.hardeman.nu/~david/lirc/broken-out/01-add-2.6-devfs-and-sysfs-to-lirc_dev.patch"
 
-S=${WORKDIR}/${MY_P}
+pkg_setup() {
+	kernel-mod_check_modules_supported
+}
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${DISTDIR}/01-add-2.6-devfs-and-sysfs-to-lirc_dev.patch
-	use streamzap && epatch ${FILESDIR}/lirc-0.7.0_pre7-streamzap.patch.bz2
-	epatch ${FILESDIR}/${P}-configure.patch
+	use streamzap && epatch ${FILESDIR}/lirc-0.7.0-streamzap.patch.bz2
+	epatch ${FILESDIR}/${P}-configure.in.patch
 	sed	-i -e "s:-O2 -g:${CFLAGS}:" configure configure.in
+
+	kernel-mod_getversion
+	if [ ${KV_MINOR} -gt 5 ] && [ ${KV_PATCH} -gt 5 ]
+	then
+		sed -i 's:SUBDIRS=:M=:g' ${S}/Makefile
+	fi
 }
 
 src_compile() {
@@ -72,6 +77,14 @@ src_compile() {
 		sed -i -e "s:lirc_parallel::" drivers/Makefile
 	fi
 
+	# Patch bad configure for /usr/src/linux
+	sed -si "s|/usr/src/kernel\-source\-\`uname \-r\` /usr/src/linux\-\`uname \-r\` ||" \
+		acinclude.m4 aclocal.m4 configure || die "/usr/src/linux sed failed"
+
+	kernel-mod_getversion
+	sed -si "s|\`uname \-r\`|${KV_VERSION_FULL}|" configure configure.in setup.sh || \
+		die "/lib/modules sed failed"
+
 	unset ARCH
 	econf \
 		--disable-manage-devices \
@@ -79,11 +92,6 @@ src_compile() {
 		--with-syslog=LOG_DAEMON \
 		--enable-sandboxed \
 		${LIRC_OPTS} || die "./configure failed"
-
-	drivers=`cat drivers/Makefile | grep "^SUBDIRS ="`
-	if is_kernel 2 6 && ! is_koutput && [ "$drivers" != "SUBDIRS = " ]; then
-		kmod_make_linux_writable
-	fi
 
 	emake || die
 
@@ -112,8 +120,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	/usr/sbin/update-modules
-
 	einfo
 	einfo "The lirc Linux Infrared Remote Control Package has been"
 	einfo "merged, please read the documentation, and if necessary"
@@ -123,4 +129,8 @@ pkg_postinst() {
 	einfo "ebuild (source) and set the LIRC_OPTS environment"
 	einfo "variable to your needs."
 	einfo
+
+	einfo "Checking kernel module dependencies"
+	test -r "${ROOT}/usr/src/linux/System.map" && \
+		depmod -ae -F "${ROOT}/usr/src/linux/System.map" -b "${ROOT}" -r ${KV}
 }
