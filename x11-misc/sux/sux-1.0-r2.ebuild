@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/sux/Attic/sux-1.0-r2.ebuild,v 1.1 2004/09/04 10:10:55 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/sux/Attic/sux-1.0-r2.ebuild,v 1.2 2004/09/04 23:17:07 dholm Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://fgouget.free.fr/sux/sux"
 LICENSE="X11"
 SLOT="0"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~ppc"
 IUSE=""
 S=${WORKDIR}
 
