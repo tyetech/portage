@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/bio2jack/Attic/bio2jack-0.3-r1.ebuild,v 1.1 2004/09/28 06:45:47 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/bio2jack/Attic/bio2jack-0.3-r1.ebuild,v 1.2 2004/09/28 06:56:55 eradicator Exp $
 
 inherit libtool
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/bio2jack/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~x86 ~ppc ~amd64 ~sparc"
 IUSE=""
 RDEPEND=">=media-sound/jack-audio-connection-kit-0.80"
 
