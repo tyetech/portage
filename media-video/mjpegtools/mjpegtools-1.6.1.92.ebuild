@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mjpegtools/Attic/mjpegtools-1.6.1.92.ebuild,v 1.1 2004/01/16 17:18:59 wmertens Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mjpegtools/Attic/mjpegtools-1.6.1.92.ebuild,v 1.2 2004/02/24 19:53:57 mr_bones_ Exp $
 
 inherit flag-o-matic gcc
 
