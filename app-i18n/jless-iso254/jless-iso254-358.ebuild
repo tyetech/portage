@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/jless-iso254/Attic/jless-iso254-358.ebuild,v 1.13 2004/06/28 01:47:21 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/jless-iso254/Attic/jless-iso254-358.ebuild,v 1.14 2004/07/13 03:41:55 tgall Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://gnu/less/${LESS_P}.tar.gz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha"
+KEYWORDS="x86 ppc sparc alpha ppc64"
 IUSE=""
 
 DEPEND="virtual/libc
