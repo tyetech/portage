@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/docbook-sgml-dtd/Attic/docbook-sgml-dtd-4.2.ebuild,v 1.5 2003/07/23 17:21:46 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/docbook-sgml-dtd/Attic/docbook-sgml-dtd-4.2.ebuild,v 1.6 2004/01/09 23:28:11 agriffis Exp $
 
 inherit sgml-catalog
 
@@ -17,7 +17,7 @@ RDEPEND="app-text/sgml-common"
 
 SLOT="4.2"
 
-KEYWORDS="x86 ~ppc ~sparc ~alpha hppa"
+KEYWORDS="x86 ~ppc ~sparc alpha hppa"
 src_unpack() {
 	mkdir ${S}
 	cd ${S}
