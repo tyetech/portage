@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg321/Attic/mpg321-0.2.10-r1.ebuild,v 1.5 2003/01/14 18:08:43 nall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg321/Attic/mpg321-0.2.10-r1.ebuild,v 1.6 2003/02/13 13:16:45 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Free MP3 player, drop-in replacement for mpg123"

@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.7-r16.ebuild,v 1.3 2003/01/31 06:50:18 bcowan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms/Attic/xmms-1.2.7-r16.ebuild,v 1.4 2003/02/13 13:21:43 vapier Exp $
 
 IUSE="xml nls esd gnome opengl mmx oggvorbis 3dnow mikmod directfb"
 

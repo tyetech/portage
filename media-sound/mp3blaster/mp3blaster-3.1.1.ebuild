@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3blaster/Attic/mp3blaster-3.1.1.ebuild,v 1.9 2003/01/05 18:44:15 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3blaster/Attic/mp3blaster-3.1.1.ebuild,v 1.10 2003/02/13 13:16:13 vapier Exp $
 
 DESCRIPTION="Command line MP3 player."
 HOMEPAGE="http://www.stack.nl/~brama/mp3blaster/"

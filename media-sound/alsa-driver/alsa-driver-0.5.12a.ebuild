@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-0.5.12a.ebuild,v 1.12 2003/01/16 23:21:48 wwoods Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-0.5.12a.ebuild,v 1.13 2003/02/13 13:05:20 vapier Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Advanced Linux Sound Architecture modules"
