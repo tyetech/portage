@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/twiki/Attic/twiki-20030201.ebuild,v 1.5 2004/06/01 21:48:11 mholzer Exp $ 
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/twiki/Attic/twiki-20030201.ebuild,v 1.6 2004/06/01 21:50:42 mholzer Exp $
 
 inherit webapp-apache
 
