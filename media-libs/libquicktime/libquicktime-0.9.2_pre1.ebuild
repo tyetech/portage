@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libquicktime/Attic/libquicktime-0.9.2_pre1.ebuild,v 1.20 2004/06/24 23:13:38 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libquicktime/Attic/libquicktime-0.9.2_pre1.ebuild,v 1.21 2004/07/14 20:13:38 agriffis Exp $
 
 inherit libtool eutils
 
@@ -14,7 +14,7 @@ LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="x86 ~alpha ~ppc"
 
-IUSE="oggvorbis png jpeg gtk"
+IUSE="gtk jpeg mmx oggvorbis png"
 
 DEPEND=">=sys-apps/sed-4.0.5
 	media-libs/libdv
