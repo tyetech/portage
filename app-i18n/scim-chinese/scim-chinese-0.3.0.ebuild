@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-chinese/Attic/scim-chinese-0.3.0.ebuild,v 1.3 2004/06/24 21:53:36 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-chinese/Attic/scim-chinese-0.3.0.ebuild,v 1.4 2004/06/26 10:23:25 usata Exp $
 
 inherit gnome2
 
@@ -11,7 +11,7 @@ SRC_URI="http://freedesktop.org/~suzhe/${PN}/${P}.tar.gz"
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="x86 ~ppc"
 
 DEPEND="virtual/x11
 	>=app-i18n/scim-0.9.0"
