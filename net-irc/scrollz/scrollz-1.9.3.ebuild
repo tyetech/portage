@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/scrollz/Attic/scrollz-1.9.3.ebuild,v 1.5 2004/10/19 12:30:07 absinthe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/scrollz/Attic/scrollz-1.9.3.ebuild,v 1.6 2005/01/01 08:09:37 swegener Exp $
 
 MY_P=ScrollZ-${PV}
 
