@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/obexftp/Attic/obexftp-0.10.4.ebuild,v 1.2 2004/11/27 02:05:07 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/obexftp/Attic/obexftp-0.10.4.ebuild,v 1.3 2005/01/03 22:32:29 ticho Exp $
 
 DESCRIPTION="File transfer over OBEX for mobile phones"
 SRC_URI="mirror://sourceforge/openobex/${P}.tar.gz"
