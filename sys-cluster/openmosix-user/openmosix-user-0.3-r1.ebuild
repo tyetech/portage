@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openmosix-user/Attic/openmosix-user-0.3-r1.ebuild,v 1.5 2003/09/06 22:05:25 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openmosix-user/Attic/openmosix-user-0.3-r1.ebuild,v 1.6 2003/09/10 04:38:48 msterret Exp $
 
 S=${WORKDIR}/openmosix-tools-${PV}
 DESCRIPTION="User-land utilities for openMosix process migration (clustering) software"
@@ -79,7 +79,7 @@ src_install() {
 	if test -e /etc/openmosix.map; then
 	    einfo "Seems you already have a openmosix.map file, using it.";
 	elif test -e /etc/mosix.map; then
-        	cp /etc/mosix.map ${WORKDIR}/openmosix.map;
+		cp /etc/mosix.map ${WORKDIR}/openmosix.map;
 		doins ${WORKDIR}/openmosix.map;
 	else
 		doins ${FILESDIR}/openmosix.map;
