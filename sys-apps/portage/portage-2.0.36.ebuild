@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc. 
 # Distributed under the terms of the GNU General Public License v2 
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.34.ebuild,v 1.1 2002/09/01 18:32:04 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.0.36.ebuild,v 1.1 2002/09/04 17:09:09 drobbins Exp $
 
 # If the old /lib/sandbox.so is in /etc/ld.so.preload, it can
 # cause everything to segfault !!
@@ -44,7 +44,7 @@ src_install() {
 		doins make.globals make.conf
 		;;
 	esac
-
+	doins etc-update.conf
 	#python modules
 	cd ${S}/src/python-missingos
 	chmod +x setup.py
@@ -72,6 +72,8 @@ src_install() {
 	dosym ../lib/portage/bin/pkgmerge /usr/sbin/pkgmerge
 	dosym ../lib/portage/bin/ebuild /usr/sbin/ebuild
 	dosym ../lib/portage/bin/ebuild.sh /usr/sbin/ebuild.sh
+	dosym ../lib/portage/bin/etc-update /usr/sbin/etc-update
+	
 	#dosym /usr/lib/portage/bin/portage-maintain /usr/sbin/portage-maintain
 	dosym ../lib/portage/bin/env-update /usr/sbin/env-update
 	dosym ../lib/portage/bin/xpak /usr/bin/xpak
