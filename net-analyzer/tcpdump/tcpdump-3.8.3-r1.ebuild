@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcpdump/Attic/tcpdump-3.8.3-r1.ebuild,v 1.7 2004/04/05 07:10:36 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcpdump/Attic/tcpdump-3.8.3-r1.ebuild,v 1.8 2004/04/05 07:24:01 vapier Exp $
 
 inherit flag-o-matic
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/tcpdump/${P}.tar.gz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha ~mips hppa ia64 amd64"
+KEYWORDS="x86 ppc sparc alpha mips hppa ia64 amd64"
 IUSE="ssl"
 
 DEPEND=">=net-libs/libpcap-0.8.3-r1
