@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gle/Attic/gle-3.0.1-r1.ebuild,v 1.6 2001/04/28 05:25:55 achim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gle/Attic/gle-3.0.1-r1.ebuild,v 1.7 2001/06/09 13:46:28 achim Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="GL extrusion library"
@@ -9,8 +9,9 @@ SRC_URI="http://www.linas.org/gle/gle-3.0.1.tar.gz"
 HOMEPAGE="http://www.linas.org/gle"
 
 DEPEND="virtual/glibc
-        virtual/opengl 
+        virtual/opengl
 	virtual/glu
+        virtual/glut
         virtual/x11"
 
 src_compile() {
