@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/dialog/Attic/dialog-0.9_beta20031207.ebuild,v 1.12 2004/10/23 07:41:23 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/dialog/Attic/dialog-0.9_beta20031207.ebuild,v 1.13 2005/01/22 15:02:48 gongloo Exp $
 
 inherit eutils
 
