@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skk-jisyo-extra/Attic/skk-jisyo-extra-200309.ebuild,v 1.1 2003/09/01 16:31:07 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skk-jisyo-extra/Attic/skk-jisyo-extra-200309.ebuild,v 1.2 2004/01/04 10:43:35 usata Exp $
 
 IUSE=""
 
