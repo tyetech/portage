@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/uudeview/Attic/uudeview-0.5.20.ebuild,v 1.4 2004/04/19 15:12:09 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/uudeview/Attic/uudeview-0.5.20.ebuild,v 1.5 2004/06/02 16:05:52 agriffis Exp $
 
 IUSE="X tcltk debug"
 
@@ -22,7 +22,7 @@ src_compile() {
 
 	local myconf
 
-	if [ "`use debug`" ]; then
+	if use debug; then
 		myconf="--disable-optimize"
 	else
 		myconf="--enable-optimize"
