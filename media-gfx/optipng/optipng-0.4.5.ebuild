@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/optipng/Attic/optipng-0.4.5.ebuild,v 1.9 2004/12/29 15:22:54 slarti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/optipng/Attic/optipng-0.4.5.ebuild,v 1.10 2005/01/13 23:49:08 taviso Exp $
 
 inherit eutils flag-o-matic
 
