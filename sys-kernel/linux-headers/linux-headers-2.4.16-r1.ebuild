@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-sources/Attic/linux-sources-2.4.16-r1.ebuild,v 1.2 2001/12/15 03:26:52 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-headers/Attic/linux-headers-2.4.16-r1.ebuild,v 1.1 2001/12/15 03:26:52 drobbins Exp $
 
 #OKV=original kernel version, KV=patched kernel version.  They can be the same.
 
