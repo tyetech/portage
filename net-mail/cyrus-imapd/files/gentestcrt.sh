@@ -1,5 +1,5 @@
 #!/bin/sh
-## $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/cyrus-imapd/files/Attic/gentestcrt.sh,v 1.1 2002/10/11 14:51:49 raker Exp $
+## $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/cyrus-imapd/files/Attic/gentestcrt.sh,v 1.2 2004/07/18 04:02:23 dragonheart Exp $
 ##
 ##  gentestcrt -- Create self-signed test certificate
 ##  (C) 2001 Jean-Michel Dault <jmdault@mandrakesoft.com> and Mandrakesoft
