@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/nget/Attic/nget-0.24.2.ebuild,v 1.3 2004/06/25 00:26:11 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/nget/Attic/nget-0.24.2.ebuild,v 1.4 2004/07/01 22:39:00 eradicator Exp $
 
 NPVER=20011209
 DESCRIPTION="Network utility to retrieve files from an NNTP news server"
@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 KEYWORDS="x86"
 IUSE="static debug"
 
-RDEPEND="virtual/glibc"
+RDEPEND="virtual/libc"
 DEPEND="${RDEPEND}
 	dev-libs/popt"
 
