@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Dan Armak <danarmak@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/lyx/Attic/lyx-1.2.0.20020705.ebuild,v 1.4 2002/07/08 04:08:44 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/lyx/Attic/lyx-1.2.0.20020705.ebuild,v 1.5 2002/07/11 06:30:17 drobbins Exp $
 
 S=${WORKDIR}/lyx-devel
 DESCRIPTION="LyX is an WYSIWYM frontend for LaTeX"
