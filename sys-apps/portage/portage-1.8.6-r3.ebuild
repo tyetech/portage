@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc. Distributed under the terms
 # of the GNU General Public License, v2 or later 
 # Author: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-1.8.6-r1.ebuild,v 1.1 2002/01/24 18:19:33 gbevin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-1.8.6-r3.ebuild,v 1.1 2002/01/28 23:04:31 gbevin Exp $
  
 S=${WORKDIR}/${P}-${PR}
 DESCRIPTION="Portage ports system"
