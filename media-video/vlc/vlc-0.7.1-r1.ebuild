@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.7.1-r1.ebuild,v 1.5 2004/06/16 09:50:57 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.7.1-r1.ebuild,v 1.6 2004/06/25 00:52:18 agriffis Exp $
 
 inherit libtool gcc eutils
 

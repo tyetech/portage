@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.8.20040222.ebuild,v 1.3 2004/03/26 20:48:59 kanaka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.8.20040222.ebuild,v 1.4 2004/06/25 00:40:23 agriffis Exp $
 
 inherit eutils flag-o-matic
 

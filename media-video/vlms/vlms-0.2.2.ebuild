@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlms/Attic/vlms-0.2.2.ebuild,v 1.5 2004/06/16 09:46:05 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlms/Attic/vlms-0.2.2.ebuild,v 1.6 2004/06/25 00:52:29 agriffis Exp $
 
 DESCRIPTION="The VideoLAN mini-server"
 HOMEPAGE="http://www.videolan.org/vlms/"

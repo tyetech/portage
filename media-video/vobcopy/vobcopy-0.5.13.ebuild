@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vobcopy/Attic/vobcopy-0.5.13.ebuild,v 1.4 2004/04/14 18:29:38 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vobcopy/Attic/vobcopy-0.5.13.ebuild,v 1.5 2004/06/25 00:53:01 agriffis Exp $
 
 DESCRIPTION="copies DVD .vob files to harddisk, decrypting them on the way"
 HOMEPAGE="http://lpn.rnbhq.org/"

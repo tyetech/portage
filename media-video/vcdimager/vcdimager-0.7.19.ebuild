@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vcdimager/Attic/vcdimager-0.7.19.ebuild,v 1.11 2004/05/12 09:45:28 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vcdimager/Attic/vcdimager-0.7.19.ebuild,v 1.12 2004/06/25 00:51:56 agriffis Exp $
 
 DESCRIPTION="GNU VCDimager"
 HOMEPAGE="http://www.vcdimager.org/"
