@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-themes/Attic/gnome-themes-2.2.2-r1.ebuild,v 1.6 2003/09/23 16:15:31 darkspecter Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-themes/Attic/gnome-themes-2.2.2-r1.ebuild,v 1.7 2003/12/11 15:22:41 liquidx Exp $
 
 # FIXME : the engines in here should probably be disabled and done in seperate ebuilds
 
@@ -22,6 +22,6 @@ RDEPEND=">=x11-libs/gtk+-2
 
 DEPEND=">=dev-util/pkgconfig-0.12.0
 	>=dev-util/intltool-0.23
-	!x11-theme/gtk-themes"
+	!x11-themes/gtk-themes"
 
 DOCS="AUTHORS COPY* README INSTALL NEWS ChangeLog"
