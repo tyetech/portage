@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/ibm-acpi/Attic/ibm-acpi-0.4.ebuild,v 1.3 2004/11/15 18:16:54 brix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/ibm-acpi/Attic/ibm-acpi-0.4.ebuild,v 1.4 2004/11/15 18:23:37 brix Exp $
 
 inherit kernel-mod
 
@@ -26,7 +26,7 @@ pkg_setup() {
 		DIE=1
 	fi
 
-	if ! egrep "^CONFIG_ACPI=[ym]" ${ROOT}/usr/src/linux/.config >/dev/null
+	if ! kernel-mod_configoption_present ACPI
 	then
 		eerror ""
 		eerror "${PN} requires an ACPI (CONFIG_ACPI) enabled kernel."
