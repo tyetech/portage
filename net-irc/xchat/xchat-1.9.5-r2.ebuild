@@ -1,9 +1,10 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/xchat/Attic/xchat-1.9.4.ebuild,v 1.2 2002/11/05 16:31:47 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/xchat/Attic/xchat-1.9.5-r2.ebuild,v 1.1 2002/11/21 01:03:07 foser Exp $
+
+inherit eutils
 
 IUSE="perl gnome ssl gtk python mmx ipv6 nls kde" 
-
 S=${WORKDIR}/${P}
 DESCRIPTION="X-Chat is a graphical IRC client for UNIX operating systems."
 SRC_URI="http://www.xchat.org/files/source/1.9/${P}.tar.bz2"
@@ -11,7 +12,7 @@ HOMEPAGE="http://www.xchat.org/"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="x86 ppc sparc sparc64"
+KEYWORDS="~x86 ~ppc ~sparc ~sparc64"
 
 RDEPEND=">=dev-libs/glib-2.0.4
 	>=x11-libs/gtk+-2.0.5
@@ -25,11 +26,15 @@ RDEPEND=">=dev-libs/glib-2.0.4
 DEPEND="${RDEPEND}
 	nls? ( >=sys-devel/gettext-0.10.38 )"
 
-
 # From the xchat 1.9.3 README_FIRST file:
 # (one of the) REMAINING PROBLEMS:
 # * can't compile with gnome, panel and zvt support *
 # stroke 
+
+src_unpack() {
+	unpack ${A}
+	epatch ${FILESDIR}/${P}-private-logging.patch
+}
 
 src_compile() {
 
@@ -80,22 +85,10 @@ src_compile() {
 
 src_install() {
 	# some magic to create a menu entry for xchat 2	
-	sed -e "s:Exec=xchat:Exec=xchat-2:" -e "s:Name=X-Chat:Name=X-Chat 2:" xchat.desktop > xchat-2.desktop
-
-	use kde && insinto ${KDEDIR}/share/applnk/Internet \
-		|| insinto /usr/share/gnome/apps/Internet
-	doins xchat-2.desktop	
+	mv xchat.desktop xchat.desktop.old
+	sed -e "s:Exec=xchat:Exec=xchat-2:" -e "s:Name=XChat IRC:Name=XChat 2 IRC:" xchat.desktop.old > xchat.desktop
 
 	einstall install || die "Install failed"
-
-	# we prefer our own launcher
-	rm ${D}/etc/X11/applnk/Internet/xchat.desktop
-	rmdir -p ${D}/etc/X11/applnk/Internet
-
-	use python &&
-	(	dosym /usr/lib/xchat/plugins/python.so-2 /usr/lib/xchat/plugins/python.so )
-	use perl &&
-	(	dosym /usr/lib/xchat/plugins/perl.so-2 /usr/lib/xchat/plugins/perl.so  )
 
 	dodoc AUTHORS COPYING ChangeLog README
 }
