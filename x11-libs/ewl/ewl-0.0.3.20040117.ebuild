@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/ewl/Attic/ewl-0.0.3.20040110.ebuild,v 1.1 2004/01/11 22:38:02 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/ewl/Attic/ewl-0.0.3.20040117.ebuild,v 1.1 2004/01/20 02:03:22 vapier Exp $
 
 EHACKAUTOGEN=y
 inherit enlightenment flag-o-matic
