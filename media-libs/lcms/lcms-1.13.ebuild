@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/lcms/Attic/lcms-1.13.ebuild,v 1.3 2004/12/01 10:14:52 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/lcms/Attic/lcms-1.13.ebuild,v 1.4 2004/12/29 21:02:57 morfic Exp $
 
 inherit libtool gnuconfig
 
@@ -26,6 +26,7 @@ src_unpack() {
 
 	# an updated config.sub for the uclibc env
 	gnuconfig_update || die
+	elibtoolize  || die "elibtoolize failed"
 
 	# fix build on amd64
 	cd ${S}
