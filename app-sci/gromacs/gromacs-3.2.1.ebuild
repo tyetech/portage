@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/gromacs/Attic/gromacs-3.2.1.ebuild,v 1.1 2004/04/02 23:53:52 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/gromacs/Attic/gromacs-3.2.1.ebuild,v 1.2 2004/04/22 21:10:52 kugelfang Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.gromacs.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 
 #mpi is a local USE flag now
 #May become official when situation with mpich is cleared (now the only mpi implementation awailable is lam-mpi)
