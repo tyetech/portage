@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mplayerplug-in/Attic/mplayerplug-in-0.91.ebuild,v 1.8 2004/11/06 00:11:45 chriswhite Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/mplayerplug-in/Attic/mplayerplug-in-0.91.ebuild,v 1.9 2005/02/19 07:06:04 josejx Exp $
 
 IUSE=""
 
