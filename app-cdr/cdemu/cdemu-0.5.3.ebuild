@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc., 2002-2003 Mike Frysinger
+# Copyright 1999-2004 Gentoo Foundation, 2002-2003 Mike Frysinger
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdemu/Attic/cdemu-0.5.3.ebuild,v 1.3 2004/06/06 14:52:46 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdemu/Attic/cdemu-0.5.3.ebuild,v 1.4 2004/06/25 03:20:31 agriffis Exp $
 
 inherit gcc python
 
