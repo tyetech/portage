@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/Attic/openbox-3.0_alpha4.ebuild,v 1.1 2003/08/02 10:55:14 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/Attic/openbox-3.0_alpha4.ebuild,v 1.2 2003/08/02 12:19:46 seemant Exp $
 
 IUSE="nls"
 
@@ -23,6 +23,12 @@ src_compile() {
 
 src_install () {
 	make DESTDIR=${D} install || die
+
+	# Add a file for the DM's to recognise it:
+	echo "/usr/bin/openbox3" > ob3.xsession
+	exeinto /etc/X11/Sessions
+	newexe ob3.xsession openbox3
+	
 	dodoc README AUTHORS ChangeLog TODO
 }
 
