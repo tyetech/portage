@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-mp3cue/Attic/xmms-mp3cue-0.94.ebuild,v 1.4 2004/04/08 07:39:58 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-mp3cue/Attic/xmms-mp3cue-0.94.ebuild,v 1.5 2004/06/24 23:43:34 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythbrowser/Attic/mythbrowser-0.15.ebuild,v 1.1 2004/06/01 17:10:05 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythbrowser/Attic/mythbrowser-0.15.ebuild,v 1.2 2004/06/24 23:32:55 agriffis Exp $
 
 inherit flag-o-matic
 

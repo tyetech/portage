@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-itouch/Attic/xmms-itouch-0.1.2-r1.ebuild,v 1.6 2004/06/18 04:43:01 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-itouch/Attic/xmms-itouch-0.1.2-r1.ebuild,v 1.7 2004/06/24 23:41:18 agriffis Exp $
 
 IUSE="nls"
 

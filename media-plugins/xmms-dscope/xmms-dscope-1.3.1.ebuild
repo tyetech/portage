@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-dscope/Attic/xmms-dscope-1.3.1.ebuild,v 1.8 2004/06/18 06:20:07 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-dscope/Attic/xmms-dscope-1.3.1.ebuild,v 1.9 2004/06/24 23:38:39 agriffis Exp $
 
 inherit eutils
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/alsa-jack/Attic/alsa-jack-1.0.3b.ebuild,v 1.8 2004/06/13 08:09:21 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/alsa-jack/Attic/alsa-jack-1.0.3b.ebuild,v 1.9 2004/06/24 23:26:42 agriffis Exp $
 
 IUSE=""
 
