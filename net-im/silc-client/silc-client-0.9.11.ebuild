@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/silc-client/Attic/silc-client-0.9.11.ebuild,v 1.7 2003/09/05 23:58:58 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/silc-client/Attic/silc-client-0.9.11.ebuild,v 1.8 2004/01/03 04:11:28 zul Exp $
 
 inherit libtool
 
