@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-common/Attic/gnome-common-1.2.4-r3.ebuild,v 1.14 2003/09/11 01:15:30 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-common/Attic/gnome-common-1.2.4-r3.ebuild,v 1.15 2003/10/19 21:15:38 leonardop Exp $
 
 inherit flag-o-matic
 # Do _NOT_ strip symbols in the build!
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.gnome.org/"
 SRC_URI="ftp://ftp.gnome.org/pub/gnome/sources/${PN}/1.2/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-SLOT="1"
+SLOT="2"
 KEYWORDS="x86 ppc sparc alpha hppa amd64"
 
 RDEPEND=">=dev-libs/glib-2.0.0"
