@@ -1,53 +1,74 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0-r4.ebuild,v 1.14 2003/11/03 15:34:34 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/coreutils/Attic/coreutils-5.0.91-r2.ebuild,v 1.1 2003/12/08 11:55:12 seemant Exp $
 
-inherit eutils
+inherit eutils flag-o-matic
 
-IUSE="nls build acl static"
+IUSE="nls build acl selinux static"
 
-PATCH_VER=1.7
+PATCH_VER="1.4"
+PATCHDIR=${WORKDIR}/patch
 
-S="${WORKDIR}/${P}"
+S=${WORKDIR}/${P}
 DESCRIPTION="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)"
 HOMEPAGE="http://www.gnu.org/software/coreutils/"
-SRC_URI="http://ftp.gnu.org/pub/gnu/coreutils/${P}.tar.bz2
-	mirror://gentoo/${PN}-gentoo-${PATCH_VER}.tar.bz2"
+SRC_URI="mirror://gnu/coreutils/${P}.tar.bz2
+	mirror://coreutils/${P}.tar.bz2
+	mirror://gentoo/${P}-gentoo-${PATCH_VER}.tar.bz2
+	http://dev.gentoo.org/~seemant/extras/${P}-gentoo-${PATCH_VER}.tar.bz2"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64 ppc ~sparc alpha hppa ~arm ~mips ia64"
+KEYWORDS="~x86 ppc ~sparc alpha hppa ~arm ~mips ia64 amd64"
 
-DEPEND=">=sys-apps/portage-2.0.49
-	sys-devel/automake
+DEPEND="virtual/glibc
+	>=sys-apps/portage-2.0.49
+	>=sys-devel/automake-1.7.6
+	>=sys-devel/m4-1.4-r1
 	sys-devel/autoconf
+	sys-apps/help2man
 	nls? ( sys-devel/gettext )
-	acl? ( sys-apps/acl )"
+	acl? ( sys-apps/acl )
+	selinux? ( sys-libs/libselinux )"
 
-RDEPEND=""
-
-PATCHDIR=${WORKDIR}/patch
+RDEPEND="selinux? ( sys-libs/libselinux )"
 
 src_unpack() {
 	unpack ${A}
+
 	cd ${S}
 
-	# HPPA and ARM platforms do not work well with the uname patch
-	# (see below about it)
-	if use hppa || use arm
+	if use acl && use selinux
 	then
-		mv ${PATCHDIR}/004* ${PATCHDIR}/excluded
+		ewarn "Both ACL and SELINUX are not supported together!"
+		ewarn "Will Select SELINUX instead"
+	fi
+
+	# ARM platform does not work well with the uname patch
+	# (see below about it)
+	if use arm
+	then
+		mv ${PATCHDIR}/003* ${PATCHDIR}/excluded
 	fi
 
 	# Apply the ACL patches. 
 	# WARNING: These CONFLICT with the SELINUX patches
 	if use acl
 	then
-		if [ -z "`use nls`" ] ; then
+#
+# This one also needs porting like the rest, but its a bit more involved,
+# so I will leave it for somebody that use i18n that can actually test it.
+#
+#		if [ -z "`use nls`" ] ; then
 			mv ${PATCHDIR}/acl/004* ${PATCHDIR}/excluded
-		fi
-		mv ${PATCHDIR}/001* ${PATCHDIR}/excluded
-		EPATCH_SUFFIX="patch" epatch ${PATCHDIR}/acl
+#		fi
+
+		# This test do seem to be fixed in another way, the acl guys
+		# can just verify please ...
+		mv ${PATCHDIR}/acl/006* ${PATCHDIR}/excluded
+
+		use selinux || mv ${PATCHDIR}/{001*,002*} ${PATCHDIR}/excluded
+		use selinux || EPATCH_SUFFIX="patch" epatch ${PATCHDIR}/acl
 	fi
 
 	# patch to remove Stallman's su/wheel group rant (which doesn't apply,
@@ -57,6 +78,8 @@ src_unpack() {
 	# Patch to add processor specific info to the uname output
 
 	EPATCH_SUFFIX="patch" epatch ${PATCHDIR}
+
+	use selinux && EPATCH_SUFFIX="patch" epatch ${PATCHDIR}/selinux
 }
 
 src_compile() {
@@ -65,15 +88,23 @@ src_compile() {
 
 	if use acl
 	then
-		if [ -z "`which cvs 2>/dev/null`" ]
+		if [ -z "`use selinux`" ]
 		then
-			# Fix issues with gettext's autopoint if cvs is not installed,
-			# bug #28920.
-			export AUTOPOINT="/bin/true"
+			if [ -z "`which cvs 2>/dev/null`" ]
+			then
+				# Fix issues with gettext's autopoint if cvs is not installed,
+				# bug #28920.
+				export AUTOPOINT="/bin/true"
+			fi
+			mv m4/inttypes.m4 m4/inttypes-eggert.m4
 		fi
-		mv m4/inttypes.m4 m4/inttypes-eggert.m4
-		autoreconf --force --install || die
 	fi
+
+	aclocal -I ${S}/m4 || die
+	autoconf || die
+	automake || die
+
+	append-flags "-fPIC"
 
 	econf \
 		--bindir=/bin \
