@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/joe/Attic/joe-3.1.ebuild,v 1.1 2004/10/13 17:57:23 tomk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/joe/Attic/joe-3.1-r1.ebuild,v 1.1 2004/11/22 13:32:11 tomk Exp $
 
 inherit flag-o-matic
 
@@ -19,6 +19,8 @@ PROVIDE="virtual/editor"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+	# Fix for non-critical buffer overflow, bug #71129
+	epatch ${FILESDIR}/${P}-overflow.patch || die "epatch failed"
 	# Fix bug #50271 (joe 3.0 documentation doesn't reflect new config file location)
 	sed -e 's:${prefix}/etc/joerc:@sysconfdir@/joe/joerc:' -i joerc.in
 	for i in jmacsrc.in jpicorc.in jstarrc.in rjoerc.in joe.1.in
@@ -36,7 +38,7 @@ src_compile() {
 }
 
 src_install() {
-	einstall || die
+	make install DESTDIR=${D} || die "make install failed"
 	dodoc ChangeLog HINTS INFO LIST NEWS README README.cvs TODO
 }
 
