@@ -1,6 +1,8 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/windowmaker/Attic/windowmaker-0.80.2-r1.ebuild,v 1.3 2003/09/04 07:35:27 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/windowmaker/Attic/windowmaker-0.80.2-r1.ebuild,v 1.4 2004/04/27 21:48:03 agriffis Exp $
+
+inherit eutils
 
 IUSE="gif nls png kde oss jpeg gnome"
 

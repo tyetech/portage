@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/ctwm/Attic/ctwm-3.6-r1.ebuild,v 1.3 2004/04/27 16:55:12 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/ctwm/Attic/ctwm-3.6-r1.ebuild,v 1.4 2004/04/27 21:33:36 agriffis Exp $
+
+inherit eutils
 
 IUSE=""
 

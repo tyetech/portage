@@ -1,6 +1,8 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/flwm/Attic/flwm-1.00-r4.ebuild,v 1.2 2003/09/04 04:35:39 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/flwm/Attic/flwm-1.00-r4.ebuild,v 1.3 2004/04/27 21:34:33 agriffis Exp $
+
+inherit eutils
 
 IUSE="opengl"
 
