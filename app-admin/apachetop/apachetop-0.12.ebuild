@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/apachetop/Attic/apachetop-0.12.ebuild,v 1.6 2004/07/15 20:32:50 tigger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/apachetop/Attic/apachetop-0.12.ebuild,v 1.7 2004/07/18 20:38:29 weeve Exp $
 
 DESCRIPTION="A realtime Apache log analyzer"
 HOMEPAGE="http://clueful.shagged.org/apachetop/"
@@ -10,7 +10,7 @@ IUSE="apache2 fam pcre"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~sparc ~mips"
+KEYWORDS="x86 sparc ~mips"
 
 DEPEND="sys-apps/sed"
 RDEPEND="sys-libs/libtermcap-compat
