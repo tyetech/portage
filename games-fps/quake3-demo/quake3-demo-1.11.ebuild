@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/quake3-demo/quake3-demo-1.11.ebuild,v 1.7 2004/04/12 21:34:31 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/quake3-demo/quake3-demo-1.11.ebuild,v 1.8 2004/06/24 22:44:45 agriffis Exp $
 
 inherit games
 
