@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/colt/Attic/colt-1.1.0.ebuild,v 1.2 2004/06/24 22:19:53 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/colt/Attic/colt-1.1.0.ebuild,v 1.3 2004/06/27 17:04:40 zx Exp $
 
 inherit java-pkg
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://www-itg.lbl.gov/~hoschek/colt/"
 LICENSE="colt"
 IUSE="doc jikes"
 SLOT="0"
-KEYWORDS="~x86 ~sparc"
+KEYWORDS="x86 ~sparc"
 
 DEPEND=">=virtual/jdk-1.4
 		dev-java/ant
