@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/pan/Attic/pan-0.13.3.ebuild,v 1.5 2004/03/08 11:31:21 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/pan/Attic/pan-0.13.3.ebuild,v 1.6 2004/06/10 00:52:55 agriffis Exp $
 
 IUSE="nls spell"
 
