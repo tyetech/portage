@@ -1,7 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/equate/Attic/equate-9999.ebuild,v 1.1 2004/10/22 12:41:33 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/equate/Attic/equate-9999.ebuild,v 1.2 2004/10/22 12:42:16 vapier Exp $
 
+ECVS_MODULE="misc/equate"
 inherit enlightenment
 
 DESCRIPTION="simple themeable calculator built off of ewl"
