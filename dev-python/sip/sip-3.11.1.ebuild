@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sip/Attic/sip-3.11.ebuild,v 1.1 2004/09/21 13:12:33 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sip/Attic/sip-3.11.1.ebuild,v 1.1 2004/09/24 22:50:51 carlo Exp $
 
 inherit distutils
 
