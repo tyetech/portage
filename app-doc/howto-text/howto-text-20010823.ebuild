@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Parag Mehta <pm@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/howto-text/Attic/howto-text-20010823.ebuild,v 1.3 2002/04/27 04:46:33 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/howto-text/Attic/howto-text-20010823.ebuild,v 1.4 2002/07/11 06:30:11 drobbins Exp $
 
 MY_P="Linux-HOWTOs-${PV}"
 S=${WORKDIR}/${MY_P}
