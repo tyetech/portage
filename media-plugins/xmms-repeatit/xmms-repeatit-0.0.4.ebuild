@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-repeatit/Attic/xmms-repeatit-0.0.4.ebuild,v 1.3 2004/09/14 07:12:38 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-repeatit/Attic/xmms-repeatit-0.0.4.ebuild,v 1.4 2004/09/23 07:41:55 eradicator Exp $
 
 IUSE=""
 
@@ -14,7 +14,7 @@ SRC_URI="http://dev.gentoo.org/~squinky86/files/${MY_P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc ~amd64"
+KEYWORDS="x86 ~ppc ~amd64 ~sparc"
 DEPEND="media-sound/xmms"
 
 src_unpack() {
