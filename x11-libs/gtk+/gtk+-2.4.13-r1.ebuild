@@ -1,33 +1,34 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.4.4.ebuild,v 1.11 2004/10/01 06:17:16 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.4.13-r1.ebuild,v 1.1 2004/11/21 23:09:22 foser Exp $
 
 inherit libtool flag-o-matic eutils
 
 DESCRIPTION="Gimp ToolKit +"
 HOMEPAGE="http://www.gtk.org/"
 SRC_URI="ftp://ftp.gtk.org/pub/gtk/v2.4/${P}.tar.bz2
+	mirror://gentoo/gtk+-2.4-smoothscroll-r1.patch
 	amd64? ( http://dev.gentoo.org/~lv/gtk+-2.4.1-lib64.patch.bz2 )"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="x86 ppc sparc mips alpha ~arm hppa amd64 ~ia64 ppc64"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64"
 IUSE="doc tiff jpeg"
 
 RDEPEND="virtual/x11
 	>=dev-libs/glib-2.4
 	>=dev-libs/atk-1.0.1
 	>=x11-libs/pango-1.4
-	>=media-libs/libpng-1.2.1
 	x11-misc/shared-mime-info
+	>=media-libs/libpng-1.2.1
 	jpeg? ( >=media-libs/jpeg-6b-r2 )
 	tiff? ( >=media-libs/tiff-3.5.7 )"
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.12.0
 	sys-devel/autoconf
+	>=sys-devel/automake-1.7.9
 	doc? ( >=dev-util/gtk-doc-1 )"
-
 
 src_unpack() {
 
@@ -39,8 +40,10 @@ src_unpack() {
 	epatch ${FILESDIR}/gtk+-2.0.6-exportsymbols.patch
 	# beautifying patch for disabled icons
 	epatch ${FILESDIR}/${PN}-2.2.1-disable_icons_smooth_alpha.patch
-	# define a sensible default icon theme
-	epatch ${FILESDIR}/${PN}-2.4.1-define_sensible_icon_theme.patch
+	# add smoothscroll support for usability reasons
+	# http://bugzilla.gnome.org/show_bug.cgi?id=103811
+	epatch ${DISTDIR}/${PN}-2.4-smoothscroll-r1.patch
+
 	# use an arch-specific config directory so that 32bit and 64bit versions
 	# dont clash on multilib systems
 	use amd64 && epatch ${DISTDIR}/gtk+-2.4.1-lib64.patch.bz2
