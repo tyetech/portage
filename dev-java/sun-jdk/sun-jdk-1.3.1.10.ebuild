@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.3.1.10.ebuild,v 1.5 2004/07/02 04:23:56 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.3.1.10.ebuild,v 1.6 2004/07/14 13:20:42 agriffis Exp $
 
-IUSE="doc"
+IUSE="doc mozilla"
 
 inherit java nsplugins
 
