@@ -1,10 +1,9 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pcmcia-cs/Attic/pcmcia-cs-3.2.4.ebuild,v 1.10 2004/07/09 22:27:01 lv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pcmcia-cs/Attic/pcmcia-cs-3.2.4.ebuild,v 1.11 2004/07/15 02:03:37 agriffis Exp $
 
 inherit eutils
 
-S=${WORKDIR}/${P}
 OV="orinoco-0.13b"
 
 DESCRIPTION="PCMCIA tools for Linux"
