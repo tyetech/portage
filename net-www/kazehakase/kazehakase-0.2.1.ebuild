@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/kazehakase/Attic/kazehakase-0.2.1.ebuild,v 1.2 2004/11/18 18:37:15 nakano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/kazehakase/Attic/kazehakase-0.2.1.ebuild,v 1.3 2005/01/02 19:15:29 matsuu Exp $
 
 IUSE="migemo estraier thumbnail"
 
