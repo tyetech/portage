@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gdb/Attic/gdb-6.1.ebuild,v 1.2 2004/05/28 16:29:29 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gdb/Attic/gdb-6.1.ebuild,v 1.3 2004/05/30 01:35:27 gmsoft Exp $
 
 inherit flag-o-matic eutils
 
@@ -20,6 +20,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch ${FILESDIR}/gdb-6.1-ppc64-01.patch
+	epatch ${FILESDIR}/gdb-6.1-hppa.patch
 }
 
 src_compile() {
