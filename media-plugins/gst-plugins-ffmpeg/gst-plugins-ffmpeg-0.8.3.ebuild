@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-ffmpeg/Attic/gst-plugins-ffmpeg-0.8.2-r1.ebuild,v 1.2 2004/12/12 18:11:29 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-ffmpeg/Attic/gst-plugins-ffmpeg-0.8.3.ebuild,v 1.1 2004/12/29 14:06:12 foser Exp $
 
 inherit flag-o-matic
 
@@ -21,18 +21,8 @@ IUSE=""
 
 S=${WORKDIR}/${MY_P}
 
-DEPEND=">=media-libs/gstreamer-0.8
+DEPEND=">=media-libs/gstreamer-0.8.4
 	dev-util/pkgconfig"
-
-src_unpack() {
-
-	unpack ${A}
-
-	cd ${S}
-	# Use ffmpeg pixel-aspect-ratio if available
-	epatch ${FILESDIR}/${P}-par_fixes.patch
-
-}
 
 src_compile() {
 
