@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/edictionary/Attic/edictionary-1.2.ebuild,v 1.2 2004/05/05 08:50:19 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/edictionary/Attic/edictionary-1.2.ebuild,v 1.3 2004/06/24 21:40:02 agriffis Exp $
 
 MY_PN="edict"
 MY_P="${MY_PN}-${PV}"

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/stardict/Attic/stardict-2.4.1.ebuild,v 1.4 2004/06/15 08:03:47 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/stardict/Attic/stardict-2.4.1.ebuild,v 1.5 2004/06/24 21:45:23 agriffis Exp $
 
 inherit gnome2
 

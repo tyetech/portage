@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/migemo-dict/migemo-dict-200309.ebuild,v 1.7 2004/05/22 18:36:24 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/migemo-dict/migemo-dict-200309.ebuild,v 1.8 2004/06/24 21:44:50 agriffis Exp $
 
 IUSE=""
 

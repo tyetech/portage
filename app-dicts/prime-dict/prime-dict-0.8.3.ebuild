@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/prime-dict/Attic/prime-dict-0.8.3.ebuild,v 1.1 2004/06/02 18:38:09 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/prime-dict/Attic/prime-dict-0.8.3.ebuild,v 1.2 2004/06/24 21:45:01 agriffis Exp $
 
 inherit ruby
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/pydict/Attic/pydict-0.2.5.1.ebuild,v 1.8 2004/05/31 18:17:14 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/pydict/Attic/pydict-0.2.5.1.ebuild,v 1.9 2004/06/24 21:45:11 agriffis Exp $
 
 DESCRIPTION="Chinese-English / English-Chinese dictionary"
 HOMEPAGE="http://sourceforge.net/projects/pydict"
