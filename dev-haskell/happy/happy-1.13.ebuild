@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-haskell/cvs-repo/gentoo-x86/dev-haskell/happy/Attic/happy-1.13.ebuild,v 1.3 2004/01/06 12:18:12 kosmikus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-haskell/cvs-repo/gentoo-x86/dev-haskell/happy/Attic/happy-1.13.ebuild,v 1.4 2004/06/24 22:15:05 agriffis Exp $
 
 DESCRIPTION="A yacc-like parser generator for Haskell"
 HOMEPAGE="http://haskell.org/happy/"
