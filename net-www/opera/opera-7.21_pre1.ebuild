@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-7.20_beta9.ebuild,v 1.1 2003/09/06 11:33:54 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/opera/Attic/opera-7.21_pre1.ebuild,v 1.1 2003/10/04 17:08:25 lanius Exp $
 
 # Here, like in the other .ebuilds, the static version is
 # forced for simplicity's sake
@@ -21,22 +21,14 @@ RDEPEND="virtual/x11
 KEYWORDS="~x86 ~ppc ~sparc"
 SLOT="0"
 
-if [ `use x86` ]; then
-	ARCH="i386"
-elif [ `use ppc` ]; then
-	ARCH="ppc"
-elif [ `use sparc` ]; then
-	ARCH="sparc"
-fi
-
-OPERAVER="7.20-20030905"
+OPERAVER="7.21-20031002"
 OPERATYPE="1-static-qt"
 
-SRC_URI="x86? ( http://snapshot.opera.com/unix/7.20-Beta-9/intel-linux/${PN}-${OPERAVER}.${OPERATYPE}.${ARCH}.tar.bz2 )
-	ppc? ( http://snapshot.opera.com/unix/7.20-Beta-9/ppc-linux/${PN}-${OPERAVER}.${OPERATYPE}.${ARCH}.tar.bz2 )
-	sparc? ( http://snapshot.opera.com/unix/7.20-Beta-9/sparc-linux/${PN}-${OPERAVER}.${OPERATYPE}.${ARCH}.tar.bz2 )"
+SRC_URI="x86? ( http://snapshot.opera.com/unix/7.21-Preview-1/intel-linux/${PN}-${OPERAVER}.${OPERATYPE}.i386.tar.bz2 )
+	ppc? ( http://snapshot.opera.com/unix/7.21-Preview-1/ppc-linux/${PN}-${OPERAVER}.${OPERATYPE}.ppc.tar.bz2 )
+	sparc? ( http://snapshot.opera.com/unix/7.21-Preview-1/sparc-linux/${PN}-${OPERAVER}.${OPERATYPE}.sparc.tar.bz2 )"
 
-S=${WORKDIR}/opera-${OPERAVER}.${OPERATYPE}.${ARCH}
+S=${WORKDIR}/${A/.tar.bz2/}
 
 src_unpack() {
 	unpack ${A}
@@ -54,6 +46,9 @@ src_unpack() {
 	       -e 's:#\(LD_PRELOAD=.*libawt.so\):\1:' \
 	       -e 's:#\(OPERA_FORCE_JAVA_ENABLED=\):\1:' \
 	       -e 's:#\(export LD_PRELOAD OPERA_FORCE_JAVA_ENABLED\):\1:' \
+		   -e 's:chop "${DESTDIR}" "str_localdirexec"::' \
+		   -e 's:chop "${DESTDIR}" "str_localdirshare"::' \
+		   -e 's:chop "${DESTDIR}" "str_localdirplugin"::' \
 	       install.sh || die
 }
 
