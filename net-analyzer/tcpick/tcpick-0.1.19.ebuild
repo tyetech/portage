@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcpick/Attic/tcpick-0.1.19.ebuild,v 1.2 2004/06/24 22:20:27 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcpick/Attic/tcpick-0.1.19.ebuild,v 1.3 2004/07/01 20:24:18 squinky86 Exp $
 
 DESCRIPTION="TCP Stream Sniffer and Connection Tracker"
 HOMEPAGE="http://tcpick.sourceforge.net/"
@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="~x86"
 
 IUSE=""
-DEPEND="virtual/glibc
+DEPEND="virtual/libc
 	>=net-libs/libpcap-0.7.2"
 
 src_install() {
