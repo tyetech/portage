@@ -1,6 +1,6 @@
-# Copyright 1999-2002 Gentoo Technologies, Inc.
+# Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iftop/Attic/iftop-0.11.ebuild,v 1.1 2003/02/13 10:19:02 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iftop/Attic/iftop-0.11.ebuild,v 1.2 2003/02/13 20:15:53 vapier Exp $
 
 IUSE=""
 
