@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/spiralmodular/Attic/spiralmodular-0.2.1.ebuild,v 1.8 2004/03/21 03:49:50 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/spiralmodular/Attic/spiralmodular-0.2.1.ebuild,v 1.9 2004/04/17 18:25:29 eradicator Exp $
 
 inherit eutils
 
-IUSE="jack"
+IUSE=""
 
 DESCRIPTION="SSM is a object oriented modular softsynth/ sequencer/ sampler."
 HOMEPAGE="http://www.pawfal.org/Software/SSM/"
@@ -15,8 +15,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86"
 
-DEPEND=">=x11-libs/fltk-1.1 \
-	virtual/jack \
+DEPEND=">=x11-libs/fltk-1.1
+	virtual/jack
 	media-libs/ladspa-sdk"
 
 src_unpack() {
