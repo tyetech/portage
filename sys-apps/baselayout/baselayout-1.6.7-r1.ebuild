@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Maintainer: System Team <system@gentoo.org>
 # Author: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.6.7.ebuild,v 1.4 2001/12/08 16:14:18 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.6.7-r1.ebuild,v 1.1 2001/12/08 22:37:35 woodchip Exp $
 
-SV=1.2.1
+SV=1.2.2
 S=${WORKDIR}/rc-scripts-${SV}
 DESCRIPTION="Base layout for Gentoo Linux filesystem (incl. initscripts)"
 SRC_URI="http://www.ibiblio.org/gentoo/distfiles/rc-scripts-${SV}.tar.bz2"
@@ -16,9 +16,12 @@ RDEPEND=">=sys-apps/devfsd-1.3.20"
 #This ebuild needs to be merged "live".  You can't simply make a package of it and merge it later.
 
 src_compile() {
-	cp ${S}/init.d/runscript.c ${T}
+	cp ${S}/sbin/runscript.c ${T}
+	cp ${S}/sbin/start-stop-daemon.c ${T}
+
 	cd ${T}
-	gcc ${CFLAGS} runscript.c -o runscript
+	gcc ${CFLAGS} runscript.c -o runscript || die "cant compile runscript.c"
+	gcc ${CFLAGS} start-stop-daemon.c -o start-stop-daemon || die "cant compile start-stop-daemon.c"
 	echo ${ROOT} > ${T}/ROOT
 }
 
@@ -54,6 +57,7 @@ src_install()
 	keepdir /sbin
 	exeinto /sbin
 	doexe ${T}/runscript
+	doexe ${T}/start-stop-daemon
 
 	keepdir /usr
 	keepdir /usr/bin
@@ -215,8 +219,6 @@ src_install()
 	insinto /etc/ppp
 	doins ${S}/etc/ppp/chat-default
 
-	#not the greatest location for this file; should move it on cvs at some	point
-	rm ${S}/init.d/runscript.c
 	dodir /etc/init.d
 	exeinto /etc/init.d
 	for foo in ${S}/init.d/*
