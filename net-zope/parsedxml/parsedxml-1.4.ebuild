@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/parsedxml/Attic/parsedxml-1.4.ebuild,v 1.2 2004/10/14 20:17:34 radek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/parsedxml/Attic/parsedxml-1.4.ebuild,v 1.3 2004/10/23 22:38:19 lanius Exp $
 
 inherit zproduct
 
@@ -8,7 +8,7 @@ DESCRIPTION="XML objects for Zope."
 HOMEPAGE="http://www.infrae.com/download/ParsedXML"
 SRC_URI="${HOMEPAGE}/${PV}/ParsedXML-${PV}.tgz"
 LICENSE="ZPL"
-KEYWORDS="x86"
+KEYWORDS="x86 ~ppc"
 IUSE=""
 RDEPEND=">=dev-python/pyxml-0.8.3
 	${RDEPEND}"
