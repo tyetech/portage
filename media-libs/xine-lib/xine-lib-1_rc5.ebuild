@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1_rc5.ebuild,v 1.5 2004/06/26 20:15:17 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1_rc5.ebuild,v 1.6 2004/06/29 14:58:38 mholzer Exp $
 
 inherit eutils flag-o-matic gcc libtool
 
@@ -81,6 +81,7 @@ src_compile() {
 	filter-flags -fstack-protector
 	filter-flags -fPIC
 	filter-flags -fforce-addr
+	[ "`gcc-fullversion`" == "3.4.0" ] && append-flags -fno-web #49509
 
 	# fix build errors with sse2
 	if use x86 ; then
