@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gai/Attic/gai-0.5.0_pre6.ebuild,v 1.3 2004/01/11 01:18:50 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gai/Attic/gai-0.5.5.ebuild,v 1.1 2004/05/09 18:49:03 lordvan Exp $
 
 IUSE="opengl gnome"
 
