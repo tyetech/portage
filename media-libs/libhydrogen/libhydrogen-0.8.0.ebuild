@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libhydrogen/Attic/libhydrogen-0.7.4.ebuild,v 1.1 2003/03/09 02:34:46 jje Exp $
+# $Header: 
+
+inherit libtool
 
 DESCRIPTION="Linux Drum Machine - Libary"
 HOMEPAGE="http://hydrogen.sourceforge.net"
@@ -8,7 +10,7 @@ SRC_URI="http://unc.dl.sourceforge.net/sourceforge/hydrogen/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 S="${WORKDIR}/${P}"
 
@@ -18,6 +20,14 @@ DEPEND="virtual/x11 \
         virtual/jack"
 
 src_compile() {
+        einfo "Reconfiguring..."
+        export WANT_AUTOCONF_2_5=1
+        aclocal
+        autoconf
+        automake
+
+        elibtoolize
+
 	econf
 	emake || die
 }
