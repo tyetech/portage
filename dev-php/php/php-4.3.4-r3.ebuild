@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php/Attic/php-4.3.4-r3.ebuild,v 1.1 2004/01/16 20:37:04 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php/Attic/php-4.3.4-r3.ebuild,v 1.2 2004/01/24 12:31:25 gustavoz Exp $
 
 PHPSAPI="cli"
 inherit php-sapi eutils
 
 DESCRIPTION="PHP Shell Interpreter"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~sparc alpha hppa amd64 ia64"
+KEYWORDS="x86 ~ppc sparc alpha hppa amd64 ia64"
 
 src_compile() {
 	myconf="${myconf} \
