@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/xblockout/Attic/xblockout-1.1.2.ebuild,v 1.6 2004/07/01 05:24:56 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/xblockout/Attic/xblockout-1.1.2.ebuild,v 1.7 2004/07/02 09:38:09 mr_bones_ Exp $
 
 inherit games
 
@@ -23,6 +23,7 @@ S="${WORKDIR}/xbl-${PV}"
 src_unpack() {
 	unpack ${A}
 	sed -i \
+		-e "s:-lm:-lm -L/usr/X11R6/lib -lX11:" \
 		-e "s:-g$:${CFLAGS}:" ${S}/Makefile.in \
 			|| die "sed Makefile.in failed"
 }
