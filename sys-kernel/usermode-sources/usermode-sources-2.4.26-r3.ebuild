@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/usermode-sources/Attic/usermode-sources-2.4.26-r2.ebuild,v 1.1 2004/06/29 17:28:39 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/usermode-sources/Attic/usermode-sources-2.4.26-r3.ebuild,v 1.1 2004/07/09 17:29:11 plasmaroo Exp $
 
 ETYPE="sources"
 inherit kernel eutils
@@ -14,7 +14,7 @@ HOMEPAGE="http://www.kernel.org/ http://user-mode-linux.sourceforge.net"
 LICENSE="GPL-2"
 SLOT="${PV}-${PR}"
 KEYWORDS="~x86 -ppc"
-EXTRAVERSION="-uml1"
+EXTRAVERSION="-uml1-${PR}"
 RESTRICT="nomirror"
 
 # console-tools is needed to solve the loadkeys fiasco.
@@ -32,6 +32,7 @@ src_unpack() {
 	epatch ${DISTDIR}/${UML_PATCH}.bz2
 	epatch ${FILESDIR}/${P}.CAN-2004-0394.patch || die "Failed to add the CAN-2004-0394 patch!"
 	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0495.patch || die "Failed to add the CAN-2004-0495 patch!"
+	epatch ${FILESDIR}/${PN}.CAN-2004-0497.patch || die "Failed to add the CAN-2004-0497 patch!"
 	epatch ${FILESDIR}/${PN}-2.4.CAN-2004-0535.patch || die "Failed to add the CAN-2004-0535 patch!"
 	epatch ${FILESDIR}/${PN}-2.4.FPULockup-53804.patch || die "Failed to apply FPU-lockup patch!"
 	kernel_universal_unpack
