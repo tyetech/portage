@@ -1,6 +1,8 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmikmod/Attic/libmikmod-3.1.10.ebuild,v 1.8 2002/10/04 05:48:47 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmikmod/Attic/libmikmod-3.1.10.ebuild,v 1.9 2002/10/05 05:39:15 drobbins Exp $
+
+IUSE="oss esd alsa"
 
 S=${WORKDIR}/${P}
 DESCRIPTION="A library to play a wide range of module formats"
