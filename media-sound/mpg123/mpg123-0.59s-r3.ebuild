@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg123/Attic/mpg123-0.59s-r3.ebuild,v 1.7 2004/06/01 18:24:05 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg123/Attic/mpg123-0.59s-r3.ebuild,v 1.8 2004/06/06 20:58:10 weeve Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.mpg123.de/mpg123/${PN}-pre${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 ~ia64 ~amd64 ~ppc ~sparc ~alpha ~hppa ~mips"
+KEYWORDS="x86 ~ia64 ~amd64 ~ppc sparc ~alpha ~hppa ~mips"
 
 RDEPEND="virtual/glibc
 	 esd? ( media-sound/esound )
