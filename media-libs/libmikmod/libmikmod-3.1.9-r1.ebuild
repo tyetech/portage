@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmikmod/Attic/libmikmod-3.1.9-r1.ebuild,v 1.3 2000/09/15 20:09:02 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmikmod/Attic/libmikmod-3.1.9-r1.ebuild,v 1.4 2000/10/23 11:27:15 achim Exp $
 
 P=libmikmod-3.1.9
 A=${P}.tar.gz
@@ -15,7 +15,8 @@ src_unpack() {
 
 src_compile() {                           
   cd ${S}
-  try ./configure --host=${CHOST} --prefix=/usr
+  try ./configure --host=${CHOST} --prefix=/usr \
+	--enable-alsa --enable-esd --enable-oss
   try make
 }
 
