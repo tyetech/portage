@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/unace/Attic/unace-1.2b.ebuild,v 1.6 2003/09/26 21:07:35 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/unace/Attic/unace-1.2b.ebuild,v 1.7 2004/03/12 11:11:07 mr_bones_ Exp $
 
 S="${WORKDIR}/${PN}"
 DESCRIPTION="ACE unarchiver"
