@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
-# Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/zsh/Attic/zsh-4.0.6-r1.ebuild,v 1.1 2002/08/29 15:44:13 phoenix Exp $
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/zsh/Attic/zsh-4.0.6-r1.ebuild,v 1.2 2002/10/04 05:02:51 vapier Exp $
 
 DESCRIPTION="UNIX Shell similar to the Korn shell"
 SRC_URI="ftp://ftp.zsh.org/pub/${P}.tar.gz"
