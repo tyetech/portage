@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3splt/Attic/mp3splt-1.9.ebuild,v 1.3 2004/01/18 08:49:21 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mp3splt/Attic/mp3splt-2.0.ebuild,v 1.1 2004/01/18 08:49:21 seemant Exp $
 
 IUSE=""
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/mp3splt/${P}-src.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~mips ~amd64"
 
 DEPEND="media-libs/libogg
 	media-libs/libvorbis
