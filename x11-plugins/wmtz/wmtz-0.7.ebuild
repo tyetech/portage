@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmtz/wmtz-0.7.ebuild,v 1.6 2004/04/07 12:26:58 pyrania Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmtz/wmtz-0.7.ebuild,v 1.7 2004/04/12 16:42:32 aliz Exp $
+
+inherit eutils
 
 IUSE=""
 DESCRIPTION="dockapp that shows the time in multiple timezones."
