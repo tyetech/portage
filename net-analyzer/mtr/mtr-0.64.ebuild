@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.64.ebuild,v 1.9 2004/12/19 11:09:23 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mtr/Attic/mtr-0.64.ebuild,v 1.10 2005/01/31 17:11:56 gustavoz Exp $
 
 inherit eutils flag-o-matic
 
