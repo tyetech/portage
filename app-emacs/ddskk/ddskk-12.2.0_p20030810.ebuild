@@ -1,19 +1,20 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/ddskk/Attic/ddskk-12.2.0.ebuild,v 1.3 2003/12/08 22:56:54 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/ddskk/Attic/ddskk-12.2.0_p20030810.ebuild,v 1.1 2003/12/08 22:56:54 usata Exp $
 
 inherit elisp
 
 IUSE=""
 
-MY_P=${PN}-${PV/_/}
+MY_P="${PN}-${PV/*_p/}"
 
 DESCRIPTION="SKK is one of Japanese input methods on Emacs"
-SRC_URI="http://openlab.ring.gr.jp/skk/maintrunk/${MY_P}.tar.bz2"
+SRC_URI="http://openlab.ring.gr.jp/skk/maintrunk/${MY_P}.tar.gz
+	mirror://gentoo/${MY_P}.tar.gz"
 HOMEPAGE="http://openlab.ring.gr.jp/skk/"
 
 LICENSE="GPL-2"
-KEYWORDS="x86 alpha sparc ppc"
+KEYWORDS="~x86 ~alpha ~sparc ~ppc"
 SLOT="0"
 
 DEPEND=">=sys-apps/sed-4
