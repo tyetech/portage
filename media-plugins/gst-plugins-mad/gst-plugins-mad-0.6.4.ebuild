@@ -1,11 +1,11 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-mad/Attic/gst-plugins-mad-0.6.4.ebuild,v 1.9 2004/03/17 00:26:11 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-mad/Attic/gst-plugins-mad-0.6.4.ebuild,v 1.10 2004/05/04 02:24:59 eradicator Exp $
 
 inherit gst-plugins
 
 KEYWORDS="x86 ppc sparc alpha hppa amd64 ia64 ~mips"
 
 IUSE=""
-DEPEND="media-sound/mad"
+DEPEND="media-sound/madplay"
 
