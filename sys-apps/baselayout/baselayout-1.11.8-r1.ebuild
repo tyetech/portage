@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.8.ebuild,v 1.2 2005/01/12 16:25:03 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.8-r1.ebuild,v 1.1 2005/01/12 16:25:03 agriffis Exp $
 
-inherit flag-o-matic eutils toolchain-funcs
+inherit flag-o-matic eutils toolchain-funcs multilib
 
 SV=1.6.8		# rc-scripts version
 SVREV=			# rc-scripts rev
@@ -110,16 +110,16 @@ unkdir() {
 }
 
 src_install() {
-	local libdir=$(get_libdir) other_libdir
-	[[ ${libdir} = "lib" ]] \
-		&& other_libdir="lib64" \
-		|| other_libdir="lib"
+	local dir libdirs libdirs_env
 
 	# This directory is to stash away things that will be used in
 	# pkg_postinst; it's needed first for kdir to function
 	dodir /usr/share/baselayout
 
 	einfo "Creating directories..."
+	kdir /usr
+	kdir /usr/local
+	kdir /usr/X11R6/
 	kdir /boot
 	kdir /dev
 	kdir /dev/pts
@@ -135,13 +135,12 @@ src_install() {
 	kdir /etc/modules.d
 	kdir /etc/opt
 	kdir /home
-	kdir /${libdir}
-	kdir /${libdir}/dev-state
-	kdir /${libdir}/udev-state
-	kdir /${libdir}/rcscripts/awk
-	kdir /${libdir}/rcscripts/sh
-	dodir /${libdir}/rcscripts/net.modules.d	# .keep file messes up net.lo
-	dodir /${libdir}/rcscripts/net.modules.d/helpers.d
+	kdir /lib/dev-state
+	kdir /lib/udev-state
+	kdir /lib/rcscripts/awk
+	kdir /lib/rcscripts/sh
+	dodir /lib/rcscripts/net.modules.d	# .keep file messes up net.lo
+	dodir /lib/rcscripts/net.modules.d/helpers.d
 	kdir /mnt
 	kdir -m 0700 /mnt/cdrom
 	kdir -m 0700 /mnt/floppy
@@ -151,15 +150,12 @@ src_install() {
 	kdir -m 0700 /root
 	kdir /sbin
 	kdir /sys	# for 2.6 kernels
-	kdir /usr
 	kdir /usr/bin
 	kdir /usr/include
 	kdir /usr/include/asm
 	kdir /usr/include/linux
-	kdir /usr/${libdir}
 	kdir /usr/local/bin
 	kdir /usr/local/games
-	kdir /usr/local/lib
 	kdir /usr/local/sbin
 	kdir /usr/local/share
 	kdir /usr/local/share/doc
@@ -174,7 +170,6 @@ src_install() {
 	kdir /usr/src
 	kdir /usr/X11R6/include/GL
 	kdir /usr/X11R6/include/X11
-	kdir /usr/X11R6/${libdir}
 	kdir /usr/X11R6/man
 	kdir /usr/X11R6/share
 	kdir -m 1777 /tmp
@@ -188,15 +183,26 @@ src_install() {
 	kdir /var/state
 	kdir -m 1777 /var/tmp
 
-	# Symlinks so that LSB compliant apps work
-	# /lib64 is especially required since its the default place for ld.so
-	if [[ ${ARCH} = ppc64 ]] || [[ ${ARCH} = amd64 ]] ; then
-		dosym ${libdir} /${other_libdir}
-		dosym ${libdir} /usr/${other_libdir}
-		dosym ${libdir} /usr/X11R6/${other_libdir}
-		# this will eventually exist, so remember to fix it Travis...
-		#dosym ../X11R6/lib64/X11 /usr/lib64/X11
-	fi
+	# Jeremy Huddleston <eradicator@gentoo.org>
+	# For multilib, we want to make sure that all our multilibdirs exist
+	# and make lib even if it's not listed as one (like on amd64/ppc64
+	# which sometimes has lib32/lib64 instead of lib/lib64).
+	# lib should NOT be a symlink to one of the other libdirs.
+	# Old systems with symlinks won't be affected by this change, as the
+	# symlinks already exist and won't get removed, but new systems will
+	# be setup properly.
+	#
+	# I'll be making a script to convert existing systems from symlink to
+	# nosymlink and putting it in /usr/portage/scripts.
+	libdirs=$(get_all_libdirs)
+	: ${libdirs:=lib}	# it isn't that we don't trust multilib.eclass...
+	for dir in libdirs; do
+		kdir /${dir}
+		kdir /usr/${dir}
+		kdir /usr/local/${dir}
+		kdir /usr/X11R6/${dir}
+		libdirs_env="${libdirs_env:+$libdirs_env:}/${dir}:/usr/${dir}:/usr/local/${dir}"
+	done
 
 	# FHS compatibility symlinks stuff
 	dosym /var/tmp /usr/tmp
@@ -234,6 +240,9 @@ src_install() {
 	doins ${S}/etc/modules.d/*
 	insinto /etc/skel
 	find ${S}/etc/skel -type f -maxdepth 1 -print0 | xargs --null doins
+
+	# List all the multilib libdirs in /etc/env/04multilib
+	echo "LDPATH=\"${libdirs_env}\"" > ${D}/etc/env.d/04multilib
 
 	# As of baselayout-1.10-1-r1, sysvinit is its own package again, and
 	# provides the inittab itself
