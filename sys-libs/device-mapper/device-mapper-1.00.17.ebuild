@@ -1,14 +1,15 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/device-mapper/Attic/device-mapper-1.00.17.ebuild,v 1.7 2004/09/03 19:14:07 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/device-mapper/Attic/device-mapper-1.00.17.ebuild,v 1.8 2004/11/14 16:00:10 max Exp $
 
 DESCRIPTION="Device mapper ioctl library for use with LVM2 utilities."
 HOMEPAGE="http://sources.redhat.com/dm/"
-SRC_URI="ftp://sources.redhat.com/pub/dm/${PN}.${PV}.tgz"
+SRC_URI="ftp://sources.redhat.com/pub/dm/old/${PN}.${PV}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="x86 ppc ~sparc amd64 ppc64"
+IUSE=""
 
 DEPEND="virtual/linux-sources"
 
