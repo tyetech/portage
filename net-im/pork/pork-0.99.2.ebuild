@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pork/Attic/pork-0.99.0.ebuild,v 1.1 2003/07/08 18:25:56 lostlogic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pork/Attic/pork-0.99.2.ebuild,v 1.1 2003/11/20 01:14:00 lostlogic Exp $
 
 IUSE=""
 
