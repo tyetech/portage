@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/slune/Attic/slune-0.6.1.ebuild,v 1.7 2004/06/02 01:16:41 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/slune/Attic/slune-0.6.1.ebuild,v 1.8 2004/06/24 21:59:15 agriffis Exp $
 
 inherit distutils
 

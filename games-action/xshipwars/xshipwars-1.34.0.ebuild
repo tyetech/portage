@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/xshipwars/Attic/xshipwars-1.34.0.ebuild,v 1.6 2004/06/03 05:49:31 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/xshipwars/Attic/xshipwars-1.34.0.ebuild,v 1.7 2004/06/24 22:01:04 agriffis Exp $
 
 inherit gcc eutils games
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/d2x/Attic/d2x-0.2.5.ebuild,v 1.5 2004/06/03 07:50:38 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/d2x/Attic/d2x-0.2.5.ebuild,v 1.6 2004/06/24 21:54:04 agriffis Exp $
 
 inherit flag-o-matic eutils games
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/heroes/Attic/heroes-0.21.ebuild,v 1.6 2004/06/03 06:17:35 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/heroes/Attic/heroes-0.21.ebuild,v 1.7 2004/06/24 21:56:08 agriffis Exp $
 
 inherit games
 

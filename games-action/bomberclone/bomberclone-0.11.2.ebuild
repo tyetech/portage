@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/bomberclone/Attic/bomberclone-0.11.2.ebuild,v 1.2 2004/03/16 16:03:39 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/bomberclone/Attic/bomberclone-0.11.2.ebuild,v 1.3 2004/06/24 21:52:37 agriffis Exp $
 
 inherit games
 
