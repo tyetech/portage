@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/emacs-w3m/Attic/emacs-w3m-1.4.1.ebuild,v 1.1 2004/07/08 16:49:20 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/emacs-w3m/Attic/emacs-w3m-1.4.3.ebuild,v 1.1 2004/08/17 13:06:57 usata Exp $
 
 inherit elisp
 
