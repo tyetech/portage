@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/rsbac-dev-sources/Attic/rsbac-dev-sources-2.6.7.ebuild,v 1.1 2004/06/29 00:08:39 kang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/rsbac-dev-sources/Attic/rsbac-dev-sources-2.6.7-r1.ebuild,v 1.1 2004/06/30 20:48:19 kang Exp $
 
 IUSE=""
 ETYPE="sources"
@@ -16,7 +16,9 @@ RGPV=7.1
 RGPV_SRC="mirror://rsbac-patches-${KV_MAJOR}.${KV_MINOR}-${RGPV}.tar.bz2"
 
 UNIPATCH_STRICTORDER="yes"
-UNIPATCH_LIST="${DISTDIR}/rsbac-patches-${KV_MAJOR}.${KV_MINOR}-${RGPV}.tar.bz2"
+UNIPATCH_LIST="${FILESDIR}/${PN}-iptables-dos.patch
+	${DISTDIR}/rsbac-patches-${KV_MAJOR}.${KV_MINOR}-${RGPV}.tar.bz2
+	${FILESDIR}/${PN}-v1.2.3-3.patch"
 UNIPATCH_DOCS="${WORKDIR}/patches/rsbac-patches-${KV_MAJOR}.${KV_MINOR}-${RGPV}/0000_README"
 
 HOMEPAGE="http://hardened.gentoo.org/rsbac/"
