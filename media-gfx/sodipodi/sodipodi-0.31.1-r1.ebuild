@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sodipodi/Attic/sodipodi-0.31.1-r1.ebuild,v 1.2 2003/03/30 22:24:27 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sodipodi/Attic/sodipodi-0.31.1-r1.ebuild,v 1.3 2003/03/31 23:19:04 foser Exp $
 
 inherit gnome2
 
@@ -20,7 +20,7 @@ RDEPEND=">=x11-libs/gtk+-2.2.1
 	dev-libs/popt
 	sys-libs/zlib
 	media-libs/libpng
-	gnome? ( =gnome-base/libgnomeprintui-2.2* )"
+	gnome? ( =gnome-base/libgnomeprintui-1.116* )"
 
 DEPEND="${RDEPEND}
 	sys-devel/gettext
