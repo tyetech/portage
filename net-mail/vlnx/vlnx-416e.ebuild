@@ -1,7 +1,7 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
 # Script Revised by Parag Mehta <pm@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vlnx/Attic/vlnx-416e.ebuild,v 1.8 2003/04/19 23:20:51 prez Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vlnx/Attic/vlnx-416e.ebuild,v 1.9 2003/04/19 23:39:00 prez Exp $
 
 DAT_VER=4228
 
@@ -16,7 +16,7 @@ SLOT="0"
 LICENSE="VirusScan"
 KEYWORDS="x86 ~sparc"
 RESTRICT="nostrip"
-PROVIDES="virtual/virus"
+PROVIDES="virtual/antivirus"
 DEPEND=""
 RDEPEND="sys-libs/lib-compat"
 
