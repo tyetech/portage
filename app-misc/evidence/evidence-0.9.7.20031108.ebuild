@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/evidence/Attic/evidence-0.9.7.20031101.ebuild,v 1.1 2003/11/03 18:10:17 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/evidence/Attic/evidence-0.9.7.20031108.ebuild,v 1.1 2003/11/09 18:31:55 vapier Exp $
 
 inherit enlightenment eutils flag-o-matic
 
@@ -37,7 +37,11 @@ src_compile() {
 	# if we turn this on evas gets turned off (bad !)
 	#use gnome && MY_ECONF="${MY_ECONF} --enable-canvas-gnomecanvas"
 
+#		`use_enable gnome backend-gnomevfs2`
+#		`use_enable kde backend-kio`
 	export MY_ECONF="
+		--enable-ecore-ipc
+		--enable-canvas-evas2
 		--disable-backend-efsd
 		--enable-extra-themes
 		--enable-extra-iconsets
@@ -46,8 +50,6 @@ src_compile() {
 		`use_enable mad libmad`
 		`use_enable oggvorbis plugin-vorbis`
 		`use_enable truetype plugin-ttf`
-		`use_enable kde backend-kio`
-		`use_enable gnome backend-gnomevfs2`
 		`use_enable debug`
 		"
 	enlightenment_src_compile
