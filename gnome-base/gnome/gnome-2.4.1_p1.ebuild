@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.4.1_p1.ebuild,v 1.5 2004/01/08 13:17:53 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.4.1_p1.ebuild,v 1.6 2004/01/08 14:27:08 foser Exp $
 
 S=${WORKDIR}
 DESCRIPTION="Meta package for the GNOME desktop."
@@ -42,7 +42,7 @@ RDEPEND="!gnome-base/gnome-core
 	>=media-libs/libart_lgpl-2.3.16
 
 	>=gnome-base/libbonobo-2.4.2
-	>=gnome-base/libbonoboui-2.4.1
+	>=gnome-base/libbonoboui-2.4.3
 	>=gnome-base/libglade-2.0.1
 	>=gnome-base/libgnome-2.4
 	>=gnome-base/libgnomecanvas-2.4
