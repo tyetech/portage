@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/netperf/Attic/netperf-2.2.4.ebuild,v 1.10 2004/07/27 00:18:39 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/netperf/Attic/netperf-2.2.4.ebuild,v 1.11 2004/08/03 11:58:31 dholm Exp $
 
 inherit flag-o-matic
 
@@ -16,7 +16,7 @@ SRC_URI="ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/${MY_P}.tar.gz"
 HOMEPAGE="http://www.netperf.org/"
 LICENSE="netperf"
 SLOT="0"
-KEYWORDS="x86 sparc ia64 alpha amd64 ppc64 macos"
+KEYWORDS="x86 sparc ia64 alpha amd64 ppc64 macos ~ppc"
 
 IUSE="ipv6"
 

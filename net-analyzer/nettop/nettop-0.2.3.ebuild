@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nettop/Attic/nettop-0.2.3.ebuild,v 1.4 2004/07/10 11:54:12 eldad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nettop/Attic/nettop-0.2.3.ebuild,v 1.5 2004/08/03 12:00:20 dholm Exp $
 
 IUSE=""
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://srparish.net/software/"
 
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS="x86 ~sparc"
+KEYWORDS="x86 ~sparc ~ppc"
 
 DEPEND="sys-libs/slang
 	    net-libs/libpcap"
