@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xfree/files/4.3.0/Attic/xfs.conf.d,v 1.2 2004/03/06 04:20:10 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xfree/files/4.3.0/Attic/xfs.conf.d,v 1.3 2004/07/15 01:03:31 agriffis Exp $
 
 # Config file for /etc/init.d/xfs
 
