@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/xfig/Attic/xfig-3.2.3d-r1.ebuild,v 1.9 2003/08/07 03:48:53 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/xfig/Attic/xfig-3.2.3d-r1.ebuild,v 1.10 2004/06/05 10:43:31 kloeri Exp $
 
 inherit eutils
 
