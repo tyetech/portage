@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ddd/Attic/ddd-3.3.1-r3.ebuild,v 1.12 2004/07/14 23:11:56 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ddd/Attic/ddd-3.3.1-r3.ebuild,v 1.13 2005/03/14 19:32:21 gustavoz Exp $
 
 inherit eutils
 
