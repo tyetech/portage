@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gnunet/Attic/gnunet-0.4.6.ebuild,v 1.2 2002/08/27 16:47:07 rphillips Exp $
 
 S="${WORKDIR}/GNUnet-${PV}"
 DESCRIPTION="GNUnet is an anonymous, distributed, reputation based network."
