@@ -1,8 +1,8 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/gnome-terminal/Attic/gnome-terminal-2.2.1-r1.ebuild,v 1.1 2003/05/17 16:25:53 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/gnome-terminal/Attic/gnome-terminal-2.2.1-r1.ebuild,v 1.2 2003/05/17 16:31:27 foser Exp $
 
-inherit gnome2 eutils debug
+inherit gnome2 eutils
 
 S=${WORKDIR}/${P}
 DESCRIPTION="The Gnome Terminal"
