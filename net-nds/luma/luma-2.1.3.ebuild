@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/luma/Attic/luma-2.1.ebuild,v 1.1 2005/03/02 20:23:02 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/luma/Attic/luma-2.1.3.ebuild,v 1.1 2005/03/16 17:12:50 carlo Exp $
 
 inherit eutils
 
@@ -36,4 +36,5 @@ src_install() {
 
 	dodir /usr
 	python install.py --prefix=${D}/usr
+	make_desktop_entry "luma" Luma "/usr/share/luma/icons/luma-128.png" "System;Qt"
 }
