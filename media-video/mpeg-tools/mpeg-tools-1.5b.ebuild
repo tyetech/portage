@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mpeg-tools/Attic/mpeg-tools-1.5b.ebuild,v 1.7 2002/04/27 12:19:21 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mpeg-tools/Attic/mpeg-tools-1.5b.ebuild,v 1.8 2002/07/11 06:30:42 drobbins Exp $
 
 
 MY_PN=mpeg_encode

@@ -1,7 +1,6 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Author Achim Gottinger <achim@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gqmpeg/Attic/gqmpeg-0.9.0.ebuild,v 1.3 2002/05/27 17:27:38 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gqmpeg/Attic/gqmpeg-0.9.0.ebuild,v 1.4 2002/07/11 06:30:40 drobbins Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="front end to various audio players, including mpg123"

@@ -1,7 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# Maintainer: Martin Schlemmer <azarah@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-0.60-r6.ebuild,v 1.5 2002/05/23 06:50:14 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-0.60-r6.ebuild,v 1.6 2002/07/11 06:30:42 drobbins Exp $
 
 # Handle PREversions as well
 MY_PV=${PV/_/}
