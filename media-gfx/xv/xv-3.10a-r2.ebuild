@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/xv/Attic/xv-3.10a-r2.ebuild,v 1.10 2002/10/18 20:50:24 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/xv/Attic/xv-3.10a-r2.ebuild,v 1.11 2002/10/18 20:59:13 vapier Exp $
 
 IUSE="png"
 
@@ -19,6 +19,7 @@ DEPEND="virtual/x11
 	media-libs/tiff
 	media-libs/libpng
 	>=sys-libs/zlib-1.1.4 )"
+RDEPEND="${DEPEND}"
 
 PATCHDIR=${WORKDIR}/patches
 
