@@ -1,29 +1,30 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/pango/Attic/pango-1.2.5-r1.ebuild,v 1.11 2004/06/24 22:07:05 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/pango/Attic/pango-1.4.1.ebuild,v 1.1 2004/08/07 12:32:55 foser Exp $
 
 inherit gnome2 eutils
 
 DESCRIPTION="Text rendering and layout library"
 HOMEPAGE="http://www.pango.org/"
-SRC_URI="ftp://ftp.gtk.org/pub/gtk/v2.2/${P}.tar.bz2"
+SRC_URI="ftp://ftp.gtk.org/pub/gtk/v2.4/${P}.tar.bz2"
 
-LICENSE="LGPL-2.1"
+LICENSE="LGPL-2 FTL"
 SLOT="0"
-KEYWORDS="x86 ppc alpha sparc hppa amd64 ia64 mips"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64"
 IUSE="doc"
 
 RDEPEND="virtual/x11
 	virtual/xft
-	>=dev-libs/glib-2.1.3
-	>=media-libs/fontconfig-2
-	>=media-libs/freetype-2.1.2-r2"
+	>=dev-libs/glib-2.4
+	>=media-libs/fontconfig-1.0.1
+	>=media-libs/freetype-2"
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.12.0
-	doc? ( >=dev-util/gtk-doc-0.10 )"
+	doc? ( >=dev-util/gtk-doc-1 )"
 
 src_unpack() {
+
 	unpack ${A}
 
 	cd ${S}
@@ -31,13 +32,9 @@ src_unpack() {
 	epatch ${FILESDIR}/pango-1.0.99.020606-xfonts.patch
 	epatch ${FILESDIR}/${PN}-1.2.2-slighthint.patch
 
-	# Fix Thai font shaper (#29567)
-	cd ${S}/modules/thai
-	epatch ${FILESDIR}/${P}-thai_shaper_fix.patch
-
 }
 
-DOCS="AUTHORS ChangeLog COPYING README INSTALL NEWS TODO*"
+DOCS="AUTHORS ChangeLog README INSTALL NEWS TODO*"
 
 src_install() {
 
@@ -52,3 +49,5 @@ pkg_postinst() {
 	pango-querymodules > /etc/pango/pango.modules
 
 }
+
+USE_DESTDIR="1"
