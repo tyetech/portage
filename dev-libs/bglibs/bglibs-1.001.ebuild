@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/bglibs/Attic/bglibs-1.001.ebuild,v 1.3 2002/08/10 05:36:55 carpaski Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/bglibs/Attic/bglibs-1.001.ebuild,v 1.4 2002/08/14 11:52:27 murphy Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Bruce Guenters library package"
@@ -9,7 +9,7 @@ SRC_URI="http://untroubled.org/bglibs/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86"
+KEYWORDS="x86 sparc sparc64"
 
 DEPEND="virtual/glibc"
 
