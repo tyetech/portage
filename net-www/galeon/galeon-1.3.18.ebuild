@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/galeon/Attic/galeon-1.3.18.ebuild,v 1.3 2004/12/22 23:55:26 hanno Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/galeon/Attic/galeon-1.3.18.ebuild,v 1.4 2005/01/17 00:56:51 hanno Exp $
 
 inherit gnome2 debug libtool eutils
 
