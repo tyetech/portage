@@ -1,8 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libpcre/Attic/libpcre-4.2-r1.ebuild,v 1.11 2004/03/28 01:30:32 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libpcre/Attic/libpcre-4.2-r1.ebuild,v 1.12 2004/04/06 03:02:03 vapier Exp $
 
-inherit libtool
+inherit libtool flag-o-matic
 
 S=${WORKDIR}/pcre-${PV}
 DESCRIPTION="Perl-compatible regular expression library"
