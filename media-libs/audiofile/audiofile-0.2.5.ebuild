@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/audiofile/Attic/audiofile-0.2.4.ebuild,v 1.2 2004/01/04 11:18:21 jje Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/audiofile/Attic/audiofile-0.2.5.ebuild,v 1.1 2004/01/04 11:18:21 jje Exp $
 
 inherit libtool gnuconfig
 
