@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ghostscript/Attic/ghostscript-7.07.1-r2.ebuild,v 1.11 2004/08/04 16:10:14 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ghostscript/Attic/ghostscript-7.07.1-r4.ebuild,v 1.1 2004/08/04 16:10:14 lanius Exp $
 
 inherit flag-o-matic eutils gcc
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/espgs/espgs-${PV}-source.tar.bz2
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS="~ia64 ~x86 -ppc ~sparc ~alpha ~hppa ~amd64 ~mips ~ppc64"
-IUSE="X cups cjk emacs"
+IUSE="X cups cjk emacs truetype"
 
 DEPEND="virtual/libc
 	>=media-libs/jpeg-6b
@@ -25,7 +25,8 @@ DEPEND="virtual/libc
 		media-fonts/kochi-substitute
 		media-fonts/baekmuk-fonts )
 	cups? ( net-print/cups )
-	!virtual/ghostscript"
+	!virtual/ghostscript
+	truetype? ( media-libs/fontconfig )"
 
 S=${WORKDIR}/espgs-${PV}
 
@@ -41,6 +42,9 @@ src_unpack() {
 		epatch ${FILESDIR}/gs7.05.6-cjk.diff.bz2
 		epatch ${FILESDIR}/gs7.05.6-kochi-substitute.patch
 	fi
+
+	# add fontconfig support
+	use truetype && epatch ${FILESDIR}/gs7.07.1-fontconfig-rh.patch.bz2
 
 	# man page patch from absinthe@pobox.com (Dylan Carlson) bug #14150
 	epatch ${FILESDIR}/ghostscript-7.05.6.man.patch
@@ -80,6 +84,7 @@ src_compile() {
 		replace-flags -O? -O2
 	fi
 
+	autoconf
 	econf ${myconf} || die "econf failed"
 	make || die "make failed"
 
@@ -117,5 +122,9 @@ src_install() {
 	# Install ijs
 	cd ${S}/ijs
 	dodir /usr/bin /usr/include /usr/lib
-	einstall install_prefix=${D}
+	# This is broken - there are not even a 'install_prefix'
+	# anywhere in ${S}/ijs ...
+	#einstall install_prefix=${D}
+	einstall
+	dosed "s:^prefix=.*:prefix=/usr:" /usr/bin/ijs-config
 }
