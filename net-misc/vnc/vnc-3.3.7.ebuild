@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/vnc/Attic/vnc-3.3.7.ebuild,v 1.12 2004/06/15 05:26:51 kugelfang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/vnc/Attic/vnc-3.3.7.ebuild,v 1.13 2004/06/25 00:18:37 agriffis Exp $
 
 inherit eutils
 

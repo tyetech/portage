@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ssh/Attic/ssh-3.2.9.1.ebuild,v 1.5 2004/06/21 01:04:41 humpback Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ssh/Attic/ssh-3.2.9.1.ebuild,v 1.6 2004/06/25 00:13:21 agriffis Exp $
 
 inherit gnuconfig
 

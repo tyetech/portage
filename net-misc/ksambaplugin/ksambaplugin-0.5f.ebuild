@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ksambaplugin/Attic/ksambaplugin-0.5f.ebuild,v 1.3 2004/01/19 13:36:28 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ksambaplugin/Attic/ksambaplugin-0.5f.ebuild,v 1.4 2004/06/24 23:52:47 agriffis Exp $
 
 inherit kde
 need-kde 3

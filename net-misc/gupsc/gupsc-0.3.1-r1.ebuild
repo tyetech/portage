@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gupsc/Attic/gupsc-0.3.1-r1.ebuild,v 1.11 2003/09/05 22:01:48 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gupsc/Attic/gupsc-0.3.1-r1.ebuild,v 1.12 2004/06/24 23:47:26 agriffis Exp $
 
 IUSE=""
 S=${WORKDIR}/${P}

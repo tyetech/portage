@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/sock/sock-1.1.ebuild,v 1.8 2003/02/13 15:07:55 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/sock/sock-1.1.ebuild,v 1.9 2004/06/25 00:13:11 agriffis Exp $
 
 S=${WORKDIR}/${P}
 
