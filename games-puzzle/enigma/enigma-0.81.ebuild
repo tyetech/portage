@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/enigma/Attic/enigma-0.81.ebuild,v 1.10 2004/05/12 09:02:45 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/enigma/Attic/enigma-0.81.ebuild,v 1.11 2004/06/24 23:03:50 agriffis Exp $
 
 inherit games
 
