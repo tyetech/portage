@@ -1,7 +1,7 @@
 # Copyright 1999-2001 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author: Daniel Robbins <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/gawk/Attic/gawk-3.1.0.ebuild,v 1.2 2001/12/21 16:05:55 drobbins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/gawk/Attic/gawk-3.1.0.ebuild,v 1.3 2001/12/21 20:47:26 azarah Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="GNU awk pattern-matching language"
@@ -19,6 +19,7 @@ src_install() {
 	cd ${D}/usr/bin
 	rm gawk
 	ln -s gawk-${PV} gawk
+	cd ${S}
 	if [ -z "`use build`" ] 
 	then
 		dosym gawk.1.gz /usr/share/man/man1/awk.1.gz
