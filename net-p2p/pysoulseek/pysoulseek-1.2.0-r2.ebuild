@@ -1,16 +1,14 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/pysoulseek/Attic/pysoulseek-1.2.0_pre3.ebuild,v 1.1 2003/05/13 22:23:13 vladimir Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/pysoulseek/Attic/pysoulseek-1.2.0-r2.ebuild,v 1.1 2003/06/10 05:56:53 vladimir Exp $
 
 IUSE="oggvorbis hyriand"
-
 inherit eutils distutils
-
 MY_PN="${PN/soulseek/slsk}"
 MY_PV="${PV/_/}"
 
 #MY_HV=${PV#*.*.*.}
-MY_HV=1.3
+MY_HV=5
 
 MY_P=${MY_PN}-${MY_PV%.${MY_HV}}
 
