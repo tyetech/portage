@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/bzflag/Attic/bzflag-2.0.0.20050117.ebuild,v 1.2 2005/01/27 13:16:38 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/bzflag/Attic/bzflag-2.0.0.20050117.ebuild,v 1.3 2005/02/05 03:35:41 mr_bones_ Exp $
 
 inherit flag-o-matic games
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/bzflag/${P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
-IUSE="dedicated adns"
+IUSE="adns dedicated kerberos"
 
 RDEPEND="virtual/libc
 	!dedicated? ( virtual/opengl media-libs/libsdl )
