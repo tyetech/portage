@@ -1,9 +1,8 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libzvt/Attic/libzvt-2.0.0.ebuild,v 1.7 2003/09/07 00:23:28 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libzvt/Attic/libzvt-2.0.0.ebuild,v 1.8 2004/06/17 01:45:13 mr_bones_ Exp $
 
-inherit debug
-inherit libtool
+inherit debug libtool
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Zed's Virtual Terminal Library"
