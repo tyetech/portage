@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/slashem/Attic/slashem-0.0.648.ebuild,v 1.6 2004/03/31 06:33:28 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/slashem/Attic/slashem-0.0.648.ebuild,v 1.7 2004/06/24 23:14:13 agriffis Exp $
 
 inherit eutils flag-o-matic games
 
