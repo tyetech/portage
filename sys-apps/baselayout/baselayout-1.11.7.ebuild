@@ -1,10 +1,10 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.10.3.ebuild,v 1.9 2004/10/28 15:44:24 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.11.7.ebuild,v 1.1 2004/12/04 03:58:10 agriffis Exp $
 
 inherit flag-o-matic eutils toolchain-funcs
 
-SV=1.5.2 		# rc-scripts version
+SV=1.6.7		# rc-scripts version
 SVREV=			# rc-scripts rev
 
 S="${WORKDIR}/rc-scripts-${SV}${SVREV}"
@@ -15,7 +15,7 @@ SRC_URI="mirror://gentoo/rc-scripts-${SV}${SVREV}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64 ~s390"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="bootstrap build livecd static uclibc"
 
 # This version of baselayout needs gawk in /bin, but as we do not have
@@ -25,14 +25,13 @@ RDEPEND=">=sys-apps/sysvinit-2.84
 	!build? ( !bootstrap? (
 		>=sys-apps/gawk-3.1.1-r2
 		>=sys-apps/util-linux-2.11z-r6
+		>=sys-apps/coreutils-5.2.1
+		>=app-shells/bash-3.0-r7
 	) )"
 DEPEND="virtual/os-headers"
 
 src_unpack() {
 	unpack ${A}
-
-	# Let glibc handle nscd #43076
-	rm ${S}/init.d/nscd
 
 	# Fix Sparc specific stuff
 	if [[ ${ARCH} == sparc ]]; then
@@ -124,6 +123,7 @@ src_install() {
 	kdir /etc/cron.monthly
 	kdir /etc/cron.weekly
 	kdir /etc/env.d
+	dodir /etc/init.d			# .keep file might mess up init.d stuff
 	kdir /etc/modules.autoload.d
 	kdir /etc/modules.d
 	kdir /etc/opt
@@ -138,11 +138,15 @@ src_install() {
 		kdir /lib/dev-state
 		kdir /lib/udev-state
 	fi
+	kdir /lib/rcscripts/awk
+	kdir /lib/rcscripts/sh
+	dodir /lib/rcscripts/net.modules.d	# .keep file messes up net.lo
+	dodir /lib/rcscripts/net.modules.d/helpers.d
 	kdir /mnt
 	kdir -m 0700 /mnt/cdrom
 	kdir -m 0700 /mnt/floppy
 	kdir /opt
-	kdir -o root -g uucp -m0775 /var/lock
+	kdir -o root -g uucp -m0755 /var/lock
 	kdir /proc
 	kdir -m 0700 /root
 	kdir /sbin
@@ -184,6 +188,7 @@ src_install() {
 	kdir /usr/X11R6/share
 	kdir -m 1777 /tmp
 	kdir /var
+	dodir /var/db/pkg			# .keep file messes up Portage
 	kdir /var/lib/misc
 	kdir /var/lock/subsys
 	kdir /var/log/news
@@ -191,9 +196,6 @@ src_install() {
 	kdir /var/spool
 	kdir /var/state
 	kdir -m 1777 /var/tmp
-
-	dodir /etc/init.d	# .keep file might mess up init.d stuff
-	dodir /var/db/pkg	# .keep file messes up Portage
 
 	# Symlinks so that LSB compliant apps work
 	# /lib64 is especially required since its the default place for ld.so
@@ -221,16 +223,12 @@ src_install() {
 	fi
 
 	# FHS compatibility symlinks stuff
-	dosym ../var/tmp /usr/tmp
-	dosym share/man /usr/man
-	dosym share/doc /usr/doc
-	dosym share/info /usr/info
+	dosym /var/tmp /usr/tmp
 	dosym ../../share/info	/usr/X11R6/share/info
-	dosym ../X11R6/include/X11 /usr/include/X11
-	dosym ../X11R6/include/GL /usr/include/GL
-	dosym ../X11R6/lib/X11 /usr/lib/X11
+	dosym /usr/X11R6/include/X11 /usr/include/X11
+	dosym /usr/X11R6/include/GL /usr/include/GL
+	dosym /usr/X11R6/lib/X11 /usr/lib/X11
 	dosym share/man /usr/local/man
-	dosym share/doc	/usr/local/doc
 
 	#
 	# Setup files in /etc
@@ -241,10 +239,15 @@ src_install() {
 	insinto /etc
 	find ${S}/etc -type f -maxdepth 1 -print0 | xargs --null doins
 
+	# Install some files to /usr/share/baselayout instead of /etc to keep from
+	# (1) overwriting the user's settings, (2) screwing things up when
+	# attempting to merge files, (3) accidentally packaging up personal files
+	# with quickpkg
 	fperms 0600 /etc/shadow
+	mv ${D}/etc/{passwd,shadow,group,fstab,hosts} ${D}/usr/share/baselayout
 
-	exeinto /etc/init.d
-	doexe ${S}/init.d/*
+	cp -P ${S}/init.d/* ${D}/etc/init.d
+	chmod a+x ${D}/etc/init.d/*
 	insinto /etc/conf.d
 	doins ${S}/etc/conf.d/*
 	insinto /etc/env.d
@@ -256,15 +259,9 @@ src_install() {
 	insinto /etc/skel
 	find ${S}/etc/skel -type f -maxdepth 1 -print0 | xargs --null doins
 
-	rm -f ${D}/etc/{conf,init}.d/net.ppp*	# now ships with net-dialup/ppp
-
 	# As of baselayout-1.10-1-r1, sysvinit is its own package again, and
 	# provides the inittab itself
 	rm -f ${D}/etc/inittab
-
-	# We do not want to overwrite the user's settings during
-	# bootstrap;  put this somewhere for safekeeping until pkg_postinst
-	mv ${D}/etc/hosts ${D}/usr/share/baselayout
 
 	# Stash the rc-lists for use during pkg_postinst
 	cp -r ${S}/rc-lists ${D}/usr/share/baselayout
@@ -316,7 +313,9 @@ src_install() {
 	dosym ../../sbin/functions.sh /etc/init.d/functions.sh
 
 	#
-	# Setup files in /lib/rcsripts/sh
+	# Setup files in /lib/rcscripts
+	# These are support files for other things in baselayout that needn't be
+	# under CONFIG_PROTECTed /etc
 	#
 	cd ${S}/sbin
 	exeinto /lib/rcscripts/sh
@@ -336,6 +335,13 @@ src_install() {
 		insinto /lib/rcscripts/awk
 		doins ${S}/src/awk/*.awk
 	fi
+
+	# Original design had these in /etc/net.modules.d but that is too
+	# problematic with CONFIG_PROTECT
+	insinto /lib/rcscripts/net.modules.d
+	doins ${S}/lib/rcscripts/net.modules.d/*
+	insinto /lib/rcscripts/net.modules.d/helpers.d
+	doins ${S}/lib/rcscripts/net.modules.d/helpers.d/*
 
 	#
 	# Install baselayout documentation
@@ -445,6 +451,17 @@ pkg_postinst() {
 		cp ${ROOT}/usr/share/baselayout/hosts ${ROOT}/etc
 	fi
 
+	# Touching /etc/passwd and /etc/shadow after install can be fatal, as many
+	# new users do not update them properly...  see src_install() for why they
+	# are in /usr/share/baselayout/
+	for x in passwd shadow group fstab ; do
+		if [[ -e ${ROOT}/etc/${x} ]] ; then
+			touch "${ROOT}/etc/${x}"
+		else
+			cp "${ROOT}/usr/share/baselayout/${x}" "${ROOT}/etc/${x}"
+		fi
+	done
+
 	# Under what circumstances would mtab be a symlink?  It would be
 	# nice if there were an explanatory comment here
 	if [[ -L ${ROOT}/etc/mtab ]]; then
@@ -463,14 +480,6 @@ pkg_postinst() {
 		install -m 0664 -g utmp /dev/null "${ROOT}/var/run/utmp"
 	[[ -e ${ROOT}/var/log/wtmp ]] || \
 		install -m 0664 -g utmp /dev/null "${ROOT}/var/log/wtmp"
-
-	# Touching /etc/passwd and /etc/shadow after install can be fatal, as many
-	# new users do not update them properly.  thus remove all ._cfg files if
-	# we are not busy with a bootstrap.
-	if ! use build && ! use bootstrap; then
-		einfo "Removing invalid backup copies of critical config files..."
-		rm -f "${ROOT}"/etc/._cfg????_{passwd,shadow,group,fstab}
-	fi
 
 	# Reload init to fix unmounting problems of / on next reboot.
 	# This is really needed, as without the new version of init cause init
@@ -514,4 +523,17 @@ pkg_postinst() {
 	einfo
 	einfo "  # etc-update"
 	echo
+
+	for f in /etc/init.d/net.eth*; do
+		[[ -L ${f} ]] && continue
+		echo
+		einfo "WARNING: You have older net.eth* files in ${ROOT}/etc/init.d/"
+		einfo "They need to be converted to symlinks to net.lo.  If you haven't"
+		einfo "made personal changes to those files, you can update with the"
+		einfo "following command:"
+		einfo
+		einfo "  # /bin/ls /etc/init.d/net.eth* | xargs -n1 ln -sfvn net.lo"
+		echo
+		break
+	done
 }
