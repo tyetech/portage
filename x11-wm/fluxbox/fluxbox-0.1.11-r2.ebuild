@@ -1,13 +1,14 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.11.ebuild,v 1.1 2002/09/04 12:18:42 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-0.1.11-r2.ebuild,v 1.1 2002/09/10 09:12:47 seemant Exp $
 
 inherit commonbox flag-o-matic
 
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Window manager based on Blackbox and pwm -- has tabs."
-SRC_URI="http://download.sourceforge.net/${PN}/${P}.tar.gz"
+SRC_URI="http://download.sourceforge.net/${PN}/${P}.tar.gz
+	http://fluxbox.sourceforge.net/download/patches/${P}-bugfix1.patch"
 HOMEPAGE="http://fluxbox.sf.net"
 
 LICENSE="GPL-2"
@@ -22,9 +23,11 @@ export WANT_AUTOCONF_2_5=1
 
 src_unpack() {
 
-	commonbox_src_unpack
+	unpack ${P}.tar.gz
+
 	cd ${S}
-	patch -p1 < ${FILESDIR}/${PN}-vano-gentoo.patch
+	patch -p1 < ${FILESDIR}/${PN}-vano-gentoo.patch || die
+	patch -p1 < ${DISTDIR}/${P}-bugfix1.patch || die
 }
 
 src_compile() {
@@ -32,7 +35,8 @@ src_compile() {
 	commonbox_src_compile
 
 	cd data
-	make init
+	make \
+		pkgdatadir=/usr/share/commonbox init
 }
 
 
