@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/enlightenment/Attic/enlightenment-0.16.5-r4.ebuild,v 1.8 2002/08/13 01:39:22 gerk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/enlightenment/Attic/enlightenment-0.16.5-r4.ebuild,v 1.9 2002/08/14 15:45:39 murphy Exp $
 
 S=${WORKDIR}/${P}
 DESCRIPTION="Enlightenment Window Manager"
@@ -8,7 +8,7 @@ SRC_URI="ftp://ftp.enlightenment.org/enlightenment/enlightenment/${P}.tar.gz"
 HOMEPAGE="http://www.enlightenment.org/"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 ppc"
+KEYWORDS="x86 ppc sparc sparc64"
 
 DEPEND=">=media-libs/fnlib-0.5
 	>=media-sound/esound-0.2.19
