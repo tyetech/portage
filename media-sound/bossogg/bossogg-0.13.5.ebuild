@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bossogg/Attic/bossogg-0.13.5.ebuild,v 1.2 2004/04/08 08:09:35 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bossogg/Attic/bossogg-0.13.5.ebuild,v 1.3 2004/04/17 16:36:06 eradicator Exp $
+
+inherit eutils
 
 IUSE="oggvorbis mad"
 
