@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/ximian-artwork/Attic/ximian-artwork-0.2.26.0.6.1-r1.ebuild,v 1.7 2004/06/24 02:25:47 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/ximian-artwork/Attic/ximian-artwork-0.2.26.0.6.1-r1.ebuild,v 1.8 2004/06/24 23:38:36 agriffis Exp $
 
 inherit eutils rpm
 

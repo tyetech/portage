@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/korilla/Attic/korilla-1.3.4.ebuild,v 1.2 2004/03/20 01:41:10 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/korilla/Attic/korilla-1.3.4.ebuild,v 1.3 2004/06/24 23:34:07 agriffis Exp $
 
 inherit kde # not kde-base since we don't need c++ deps
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gtk-engines-thinice/Attic/gtk-engines-thinice-2.0.2-r1.ebuild,v 1.12 2004/05/14 02:41:39 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gtk-engines-thinice/Attic/gtk-engines-thinice-2.0.2-r1.ebuild,v 1.13 2004/06/24 23:32:30 agriffis Exp $
 
 inherit gtk-engines2
 
