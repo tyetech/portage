@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-server/cvs-repo/gentoo-x86/games-server/halflife-ns/files/Attic/hlds-ns.conf.d,v 1.1 2003/09/10 05:51:11 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-server/cvs-repo/gentoo-x86/games-server/halflife-ns/files/Attic/hlds-ns.conf.d,v 1.2 2004/07/14 22:19:12 agriffis Exp $
 
 # to find out more options, read these 2 files:
 # GENTOO_DIR/ns/readme.txt
