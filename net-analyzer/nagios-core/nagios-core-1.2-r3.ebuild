@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-core/Attic/nagios-core-1.2-r3.ebuild,v 1.7 2004/11/22 19:53:06 eldad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-core/Attic/nagios-core-1.2-r3.ebuild,v 1.8 2005/03/01 09:21:44 eldad Exp $
 
 inherit eutils
 
