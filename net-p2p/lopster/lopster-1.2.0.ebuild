@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/lopster/Attic/lopster-1.2.0.ebuild,v 1.10 2004/10/04 22:00:13 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/lopster/Attic/lopster-1.2.0.ebuild,v 1.11 2005/02/25 03:09:46 squinky86 Exp $
 
 IUSE="nls"
 
