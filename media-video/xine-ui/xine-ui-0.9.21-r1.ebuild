@@ -1,6 +1,8 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xine-ui/Attic/xine-ui-0.9.21.ebuild,v 1.12 2004/03/29 01:05:22 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xine-ui/Attic/xine-ui-0.9.21-r1.ebuild,v 1.1 2004/04/13 13:33:20 phosphan Exp $
+
+inherit eutils
 
 DESCRIPTION="Skinned front end for Xine movie player."
 HOMEPAGE="http://xine.sourceforge.net/"
@@ -22,7 +24,6 @@ IUSE="X gnome nls directfb lirc"
 SLOT="0"
 KEYWORDS="x86 ~ppc ~sparc"
 
-S=${WORKDIR}/${P}
 SRC_URI="mirror://sourceforge/xine/${P}.tar.gz"
 RESTRICT="nomirror"
 
@@ -32,6 +33,7 @@ src_unpack() {
 	cd ${S}
 
 	#patch -p1 < ${FILESDIR}/xine-ui-configure.patch || die "patch failed"
+	epatch "${FILESDIR}/symlink-bug.patch"
 	epatch ${FILESDIR}/true-false.patch
 
 	use directfb || ( \
