@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1_rc6.ebuild,v 1.19 2005/01/05 11:35:37 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1_rc6-r1.ebuild,v 1.1 2005/01/05 11:35:37 eradicator Exp $
 
 inherit eutils flag-o-matic gcc libtool
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/xine/${PN}-${PV/_/-}${MY_PKG_SUFFIX}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="1"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="arts esd avi nls dvd aalib X directfb oggvorbis alsa gnome sdl speex theora ipv6 altivec"
 
 RDEPEND="oggvorbis? ( media-libs/libvorbis )
@@ -34,6 +34,8 @@ RDEPEND="oggvorbis? ( media-libs/libvorbis )
 	theora? ( media-libs/libtheora )
 	speex? ( media-libs/speex )"
 DEPEND="${RDEPEND}
+	>=sys-devel/automake-1.7
+	>=sys-devel/autoconf-2.59
 	nls? ( sys-devel/gettext )"
 
 S=${WORKDIR}/${PN}-${PV/_/-}${MY_PKG_SUFFIX}
@@ -59,9 +61,6 @@ src_unpack() {
 	# force 32 bit userland
 	[ ${ARCH} = "sparc" ] && epatch ${FILESDIR}/${P}-configure-sparc.patch
 
-	# bug #40317
-	elibtoolize
-
 	# Fix building on amd64, #49569
 	#use amd64 && epatch ${FILESDIR}/configure-64bit-define.patch
 
@@ -69,7 +68,20 @@ src_unpack() {
 	epatch ${FILESDIR}/${P}-mmx.patch
 
 	# Fix detection of hppa2.0 and hppa1.1 CHOST
-	use hppa && sed -e 's/hppa-/hppa*-linux-/' -i ${S}/configure
+	use hppa && sed -e 's/hppa-/hppa*-linux-/' -i ${S}/configure.ac
+
+	# Fix security bug #74475
+	epatch ${FILESDIR}/djb_demux_aiff.patch
+
+	# Makefile.ams and configure.ac get patched, so we need to rerun
+	# autotools
+	export WANT_AUTOCONF=2.5
+	export WANT_AUTOMAKE=1.7
+	aclocal -I m4
+	libtoolize --copy --force
+	autoheader
+	automake -a -f -c
+	autoconf
 }
 
 src_compile() {
