@@ -1,6 +1,6 @@
 # Copyright 1999-2003 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgd/Attic/libgd-2.0.11.ebuild,v 1.2 2003/02/23 14:58:34 dragon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgd/Attic/libgd-2.0.11.ebuild,v 1.3 2003/03/20 01:19:21 gmsoft Exp $
 
 inherit eutils libtool
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.boutell.com/gd/"
 
 SLOT="0"
 LICENSE="as-is | BSD"
-KEYWORDS="~x86 ~ppc ~sparc ~mips"
+KEYWORDS="~x86 ~ppc ~sparc ~mips ~hppa"
 IUSE="X gif pic"
 
 DEPEND=">=media-libs/jpeg-6b
