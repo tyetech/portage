@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/mapson/Attic/mapson-3.0.ebuild,v 1.1 2004/09/06 22:58:42 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/mapson/Attic/mapson-3.0.ebuild,v 1.2 2004/09/06 23:06:52 ticho Exp $
 
 DESCRIPTION="A challenge/response-based white-list spam filter"
 HOMEPAGE="http://mapson.sourceforge.net/"
@@ -10,7 +10,7 @@ SLOT="0"
 KEYWORDS="~x86"
 
 IUSE="debug"
-DEPEND="virtual/glibc
+DEPEND="virtual/libc
 	virtual/mta"
 
 src_compile() {
