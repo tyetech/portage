@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ntop/Attic/ntop-2.2c.ebuild,v 1.7 2004/04/27 21:13:26 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ntop/Attic/ntop-2.2c.ebuild,v 1.8 2004/06/09 18:17:04 agriffis Exp $
 
 inherit eutils
 
