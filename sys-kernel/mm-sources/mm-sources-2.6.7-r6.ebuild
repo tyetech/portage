@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.6-r4.ebuild,v 1.3 2004/06/24 22:59:18 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.7-r6.ebuild,v 1.1 2004/07/06 21:34:48 lostlogic Exp $
 
 UNIPATCH_LIST="${DISTDIR}/${KV}.bz2"
 K_PREPATCHED="yes"
