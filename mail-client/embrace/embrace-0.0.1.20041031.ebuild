@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/embrace/Attic/embrace-0.0.1.20041016.ebuild,v 1.2 2004/10/22 12:46:37 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/embrace/Attic/embrace-0.0.1.20041031.ebuild,v 1.1 2004/11/02 04:52:10 vapier Exp $
 
 inherit enlightenment
 
