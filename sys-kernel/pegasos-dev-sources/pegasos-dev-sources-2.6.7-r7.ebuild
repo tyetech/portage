@@ -1,13 +1,13 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/pegasos-dev-sources/Attic/pegasos-dev-sources-2.6.7-r1.ebuild,v 1.3 2004/07/15 03:59:37 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/pegasos-dev-sources/Attic/pegasos-dev-sources-2.6.7-r7.ebuild,v 1.1 2004/08/13 10:15:14 dholm Exp $
 
 ETYPE="sources"
 inherit kernel-2
 detect_version
 
 # Version of gentoo patchset
-GPV=7.3
+GPV=7.7
 GPV_SRC="mirror://gentoo/pegpatches-${KV_MAJOR}.${KV_MINOR}-${GPV}.tar.bz2"
 
 KEYWORDS="ppc"
