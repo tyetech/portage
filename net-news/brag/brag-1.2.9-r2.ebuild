@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/brag/Attic/brag-1.2.9-r2.ebuild,v 1.4 2004/03/20 07:32:10 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/brag/Attic/brag-1.2.9-r2.ebuild,v 1.5 2004/05/12 03:32:28 weeve Exp $
 
 IUSE=""
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://brag.sourceforge.net"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~sparc"
 
 RDEPEND="dev-lang/tcl
 	net-news/yencode
