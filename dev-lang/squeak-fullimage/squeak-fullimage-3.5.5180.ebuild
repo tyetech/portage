@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/squeak-vm/Attic/squeak-vm-3.5.5180.ebuild,v 1.4 2004/03/14 02:40:38 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/squeak-fullimage/Attic/squeak-fullimage-3.5.5180.ebuild,v 1.1 2004/04/28 16:19:19 jhhudso Exp $
 
 MAJOR=3
 MINOR=5
@@ -24,6 +24,8 @@ SLOT="${MM}"
 KEYWORDS="~x86"
 
 IUSE="mozilla"
+
+PROVIDE="virtual/squeak-image"
 
 DEPEND=""
 
