@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ethereal/Attic/ethereal-0.9.16-r1.ebuild,v 1.1 2003/12/01 10:40:04 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ethereal/Attic/ethereal-0.9.16-r1.ebuild,v 1.2 2004/01/05 13:05:18 weeve Exp $
 
 IUSE="adns gtk ipv6 snmp ssl gtk2"
 inherit libtool
