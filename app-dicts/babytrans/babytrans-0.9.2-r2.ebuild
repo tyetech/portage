@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/babytrans/babytrans-0.9.2-r2.ebuild,v 1.2 2004/09/22 04:13:43 angusyoung Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/babytrans/babytrans-0.9.2-r2.ebuild,v 1.3 2004/09/22 20:01:59 angusyoung Exp $
 
 inherit eutils
 
@@ -14,7 +14,7 @@ IUSE=""
 
 RDEPEND="=x11-libs/gtk+-1.2*
 	=dev-libs/glib-1.2*
-	>=app-dicts/babytrans-en-0.1"
+	>=app-dicts/babytrans-en"
 
 src_unpack() {
 	unpack ${A}
