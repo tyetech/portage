@@ -1,6 +1,6 @@
-# Copyright 1999-2003 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/speedtouch/Attic/speedtouch-1.1.ebuild,v 1.8 2003/09/07 00:09:22 msterret Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/speedtouch/Attic/speedtouch-1.1.ebuild,v 1.9 2004/06/09 20:59:14 agriffis Exp $
 
 DESCRIPTION="GPL Driver for the Alcatel Speedtouch USB under *nix"
 HOMEPAGE="http://speedtouch.sf.net/"
@@ -16,7 +16,7 @@ RDEPEND=">=net-dialup/ppp-2.4.1"
 src_compile() {
 	local myconf
 
-	[ `use debug` ] && myconf="--enable-debug"
+	use debug && myconf="--enable-debug"
 	use static && myconf="${myconf} --enable-static"
 
 	sed 's/^C$/#&/' < configure > configure.new
