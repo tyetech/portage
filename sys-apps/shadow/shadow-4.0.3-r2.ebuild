@@ -1,8 +1,12 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-4.0.3-r1.ebuild,v 1.1 2002/10/19 09:31:05 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/shadow/Attic/shadow-4.0.3-r2.ebuild,v 1.1 2002/10/20 15:16:51 azarah Exp $
+
+IUSE=""
 
 inherit libtool
+
+FORCE_SYSTEMAUTH_UPDATE="no"
 
 S="${WORKDIR}/${P}"
 HOMEPAGE="http://shadow.pld.org.pl/"
@@ -33,7 +37,7 @@ src_unpack() {
 	# pam_xauth for one, is then never used.  This should close bug #8831.
 	#
 	# <azarah@gentoo.org> (19 Oct 2002)
-	cd ${S}; patch -p1 < ${FILESDIR}/${P}-su-pam_open_session.patch || die
+	cd ${S}; patch -p1 < ${FILESDIR}/${P}-su-pam_open_session.patch-v2 || die
 }
 
 src_compile() {
@@ -64,7 +68,7 @@ src_install() {
 		install || die "install problem"
 
 	#do not install this login, but rather the one from
-	#util-linux, as this one have a serious root exploit
+	#pam-login, as this one have a serious root exploit
 	#with pam_limits in use.
 	rm ${D}/bin/login
 
@@ -93,7 +97,10 @@ src_install() {
 #	insopts -m0644 ; doins ${FILESDIR}/login.defs
 	insinto /etc/pam.d ; insopts -m0644
 	cd ${FILESDIR}/pam.d
-	doins *
+	for x in *
+	do
+		[ -f ${x} ] && doins ${x}
+	done
 	newins system-auth system-auth.new
 	newins shadow chage
 	newins shadow chsh
@@ -105,11 +112,12 @@ src_install() {
 	# the manpage install is beyond my comprehension, and also broken.
 	# just do it over.
 	rm -rf ${D}/usr/share/man/*
-	for q in man/*.[0-9]
+	for x in man/*.[0-9]
 	do
-		local dir="${D}/usr/share/man/man${q##*.}"
-		mkdir -p $dir
-		cp $q $dir
+		[ -f ${x} ] || continue
+		local dir="${D}/usr/share/man/man${x##*.}"
+		mkdir -p ${dir}
+		cp ${x} ${dir}
 	done
 	
 	#dont install the manpage, since we dont use
@@ -122,18 +130,17 @@ src_install() {
 	dodoc HOWTO LSM README.* *.txt
 
 	# Fix sparc serial console
-	if [ "${ARCH}" == "sparc" -o "${ARCH}" == "sparc64" ]; then
-		cd ${D}/etc
-		cp securetty securetty.orig
+	if [ "${ARCH}" = "sparc" -o "${ARCH}" = "sparc64" ]
+	then
 		# ttyS0 and its devfsd counterpart (Sparc serial port "A")
-		sed -e 's:\(vc/1\)$:tts/0\n\1:' \
-			-e 's:\(tty1\)$:ttyS0\n\1:' \
-			securetty.orig > securetty || die
-		rm securetty.orig
+		dosed 's:\(vc/1\)$:tts/0\n\1:' /etc/securetty
+		dosed 's:\(tty1\)$:ttyS0\n\1:' /etc/securetty
 	fi
 }
 
 pkg_postinst() {
+	[ "${FORCE_SYSTEMAUTH_UPDATE}" != "yes" ] && return 0
+	
 	echo
 	echo "****************************************************"
 	echo "   Due to a security issue, ${ROOT}etc/pam.d/system-auth "
@@ -142,10 +149,10 @@ pkg_postinst() {
 	echo "   ${ROOT}etc/pam.d/system-auth.bak"
 	echo "****************************************************"
 	echo
-	local CHECK1=`md5sum ${ROOT}/etc/pam.d/system-auth | cut -d ' ' -f 1`
-	local CHECK2=`md5sum ${ROOT}/etc/pam.d/system-auth.new | cut -d ' ' -f 1`
+	local CHECK1="$(md5sum ${ROOT}/etc/pam.d/system-auth | cut -d ' ' -f 1)"
+	local CHECK2="$(md5sum ${ROOT}/etc/pam.d/system-auth.new | cut -d ' ' -f 1)"
 
-	if [ "$CHECK1" != "$CHECK2" ];
+	if [ "${CHECK1}" != "${CHECK2}" ];
 	then
 		cp -a ${ROOT}/etc/pam.d/system-auth \
 	              ${ROOT}/etc/pam.d/system-auth.bak;
