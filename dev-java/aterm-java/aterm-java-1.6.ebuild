@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/aterm-java/Attic/aterm-java-1.6.ebuild,v 1.2 2004/07/20 12:20:04 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/aterm-java/Attic/aterm-java-1.6.ebuild,v 1.3 2004/07/20 19:51:11 karltk Exp $
 
 inherit java-pkg
 
