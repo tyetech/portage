@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/plone/Attic/plone-2.0.4.ebuild,v 1.1 2004/09/11 22:34:33 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/plone/Attic/plone-2.0.4.ebuild,v 1.2 2004/09/12 21:31:05 mr_bones_ Exp $
 
 SLOT="2.0"
 
