@@ -1,7 +1,7 @@
 # Copyright 1999-2000 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Daniel Robbins et al <drobbins@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/devfsd/Attic/devfsd-1.3.20.ebuild,v 1.2 2001/12/02 07:57:06 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/devfsd/Attic/devfsd-1.3.20.ebuild,v 1.3 2001/12/02 08:01:59 azarah Exp $
 
 S=${WORKDIR}/${PN}
 DESCRIPTION="Daemon for the Linux Device Filesystem"
@@ -34,7 +34,8 @@ src_install() {
   	dodir /sbin /usr/share/man /etc
 	make PREFIX=${D} install || die
 
-# It gets started by /sbin/init now ....
+# It gets started by /sbin/init now (rc6), and there is
+# support via older versions and the profiles for rc5 .....
 # 	exeinto /etc/rc.d/init.d
 #	doexe ${FILESDIR}/devfsd
 
