@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprint/Attic/libgnomeprint-2.10.0.ebuild,v 1.1 2005/03/09 07:32:54 joem Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprint/Attic/libgnomeprint-2.10.0.ebuild,v 1.2 2005/03/09 16:02:27 foser Exp $
 
 inherit gnome2
 
@@ -21,7 +21,7 @@ RDEPEND=">=dev-libs/glib-2
 	>=dev-libs/libxml2-2.4.23
 	>=media-libs/freetype-2.0.5
 	cups? ( >=net-print/cups-1.1.20
-		net-print/libgnomecups )"
+		>=net-print/libgnomecups-0.2 )"
 
 DEPEND="${RDEPEND}
 	sys-devel/gettext
