@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.1.2.ebuild,v 1.6 2002/12/06 23:11:47 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.1.2.ebuild,v 1.7 2003/02/04 06:01:48 spider Exp $
 
 IUSE="tiff doc jpeg directfb"
 
@@ -47,7 +47,7 @@ src_compile() {
 	use doc && myconf="${myconf} --enable-gtk-doc" || myconf="${myconf} --disable-gtk-doc"
 	use jpeg ||  myconf="${myconf} --without-libjpeg"
 	use tiff ||  myconf="${myconf} --without-libtiff"
-	if [ -n "$DEBUG" ]; then
+	if [ -n "$DEBUGBUILD" ]; then
 		myconf="${myconf}  --enable-debug"
 	fi
 		
