@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/openslp/Attic/openslp-1.0.11.ebuild,v 1.17 2005/03/18 04:40:28 kugelfang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/openslp/Attic/openslp-1.0.11.ebuild,v 1.18 2005/03/18 11:54:06 liquidx Exp $
 
 inherit gnuconfig
 
@@ -33,4 +33,8 @@ src_install() {
 	dohtml -r .
 	exeinto /etc/init.d
 	newexe ${FILESDIR}/slpd-init slpd
+}
+
+src_test() {
+	return
 }
