@@ -1,17 +1,18 @@
 # Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/mathomatic/Attic/mathomatic-11.1c.ebuild,v 1.1 2004/05/20 13:31:38 xtv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-sci/cvs-repo/gentoo-x86/app-sci/mathomatic/Attic/mathomatic-11.1c.ebuild,v 1.2 2004/05/28 15:40:59 vapier Exp $
+
+inherit eutils
 
 DESCRIPTION="Mathomatic - Algebraic Manipulator"
 HOMEPAGE="http://www.mathomatic.com/"
 SRC_URI="http://www.panix.com/~gesslein/${P}.tgz"
+
 LICENSE="LGPL-2"
-
 SLOT="0"
-
 KEYWORDS="~x86"
-
 IUSE="icc"
+
 DEPEND="sys-libs/readline \
 	sys-libs/ncurses \
 	icc? ( dev-lang/icc )"
