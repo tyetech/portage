@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/cuyo/Attic/cuyo-1.8.5.ebuild,v 1.2 2004/12/01 08:22:51 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/cuyo/Attic/cuyo-1.8.5.ebuild,v 1.3 2004/12/02 01:46:04 mr_bones_ Exp $
 
 inherit kde-functions games
 
@@ -30,7 +30,7 @@ src_unpack() {
 }
 
 src_compile() {
-	need-qt 3
+	set-qtdir 3
 	export PATH="${QTDIR}/bin:${PATH}" # bug #70861
 	egamesconf \
 		--with-qt \
