@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation and Pieter Van den Abeele
+# Copyright 1999-2005 Gentoo Foundation and Pieter Van den Abeele
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/coriander/Attic/coriander-1.0.0_pre3.ebuild,v 1.1 2004/08/09 18:01:52 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/coriander/Attic/coriander-1.0.0_pre3.ebuild,v 1.2 2005/01/25 19:52:38 corsair Exp $
 
 DESCRIPTION="coriander makes the apple isight video4linux compatible"
 HOMEPAGE="http://sourceforge.net/projects/coriander/"
