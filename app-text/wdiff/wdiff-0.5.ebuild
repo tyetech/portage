@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/wdiff/Attic/wdiff-0.5.ebuild,v 1.6 2004/06/21 18:11:59 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/wdiff/Attic/wdiff-0.5.ebuild,v 1.7 2004/06/24 22:55:35 agriffis Exp $
 
 inherit eutils
 

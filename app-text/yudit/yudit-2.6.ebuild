@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/yudit/Attic/yudit-2.6.ebuild,v 1.12 2004/03/12 09:18:44 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/yudit/Attic/yudit-2.6.ebuild,v 1.13 2004/06/24 22:59:18 agriffis Exp $
 
 DESCRIPTION="free (Y)unicode text editor for all unices"
 SRC_URI="http://yudit.org/download/${P}.tar.gz"

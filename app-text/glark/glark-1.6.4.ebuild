@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/glark/Attic/glark-1.6.4.ebuild,v 1.5 2004/04/11 16:51:57 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/glark/Attic/glark-1.6.4.ebuild,v 1.6 2004/06/24 22:36:48 agriffis Exp $
 
 DESCRIPTION="File searcher"
 HOMEPAGE="http://glark.sf.net"

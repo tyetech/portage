@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ots/Attic/ots-0.4.1.ebuild,v 1.4 2004/04/29 00:15:14 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ots/Attic/ots-0.4.1.ebuild,v 1.5 2004/06/24 22:46:39 agriffis Exp $
 
 IUSE="doc"
 

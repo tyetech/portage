@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/lv/Attic/lv-4.50.ebuild,v 1.2 2004/01/05 06:19:56 nakano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/lv/Attic/lv-4.50.ebuild,v 1.3 2004/06/24 22:43:38 agriffis Exp $
 
 MY_P=${PN}${PV//./}
 DESCRIPTION="Powerful Multilingual File Viewer"

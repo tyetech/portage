@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/jadetex/Attic/jadetex-3.12.ebuild,v 1.21 2004/04/15 02:58:23 geoman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/jadetex/Attic/jadetex-3.12.ebuild,v 1.22 2004/06/24 22:41:49 agriffis Exp $
 
 IUSE=""
 
