@@ -1,6 +1,6 @@
-# Copyright 2004-2004 Gentoo Technologies, Inc.
+# Copyright 1999-2004 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ardour/Attic/ardour-0.9_beta10.ebuild,v 1.2 2004/04/02 10:34:24 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ardour/Attic/ardour-0.9_beta10.ebuild,v 1.3 2004/04/02 10:35:16 eradicator Exp $
 
 IUSE="nls ardour-ksi"
 
