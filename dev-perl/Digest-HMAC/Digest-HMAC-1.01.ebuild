@@ -1,6 +1,6 @@
 # Copyright 1999-2002 Gentoo Technologies, Inc.
 # Distributed under the terms of the GNU General Public License, v2 or later
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Digest-HMAC/Attic/Digest-HMAC-1.01.ebuild,v 1.3 2002/07/27 18:27:15 aliz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Digest-HMAC/Attic/Digest-HMAC-1.01.ebuild,v 1.4 2002/07/31 12:48:28 cselkirk Exp $
 
 inherit perl-module
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://search.cpan.org/doc/GAAS/${P}/README"
 
 SLOT="0"
 LICENSE="Artistic | GPL-2"
-KEYWORDS="x86"
+KEYWORDS="x86 ppc"
 
 mydoc="rfc*.txt"
 
