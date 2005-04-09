@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-notes/Attic/xfce4-notes-0.10.0.ebuild,v 1.5 2005/03/12 20:31:15 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-notes/Attic/xfce4-notes-0.10.0.ebuild,v 1.6 2005/04/09 22:50:18 bcowan Exp $
 
 DESCRIPTION="Xfce4 panel sticky notes plugin"
 KEYWORDS="~alpha amd64 arm hppa ia64 ~mips ppc ~ppc64 sparc x86"
