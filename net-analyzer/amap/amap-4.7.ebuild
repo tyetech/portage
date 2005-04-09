@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/amap/Attic/amap-4.7.ebuild,v 1.7 2005/04/08 17:44:39 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/amap/Attic/amap-4.7.ebuild,v 1.8 2005/04/09 08:29:02 corsair Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://packetstormsecurity.nl/groups/thc/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ia64 ppc ~ppc64 sparc x86"
+KEYWORDS="amd64 ia64 ppc ppc64 sparc x86"
 IUSE="ssl"
 
 DEPEND="virtual/libc
