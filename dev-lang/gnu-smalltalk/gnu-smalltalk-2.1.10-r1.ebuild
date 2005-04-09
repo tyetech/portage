@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/gnu-smalltalk/Attic/gnu-smalltalk-2.1.8.ebuild,v 1.3 2004/08/18 21:58:15 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/gnu-smalltalk/Attic/gnu-smalltalk-2.1.10-r1.ebuild,v 1.1 2005/04/09 19:16:28 mkennedy Exp $
 
 inherit elisp-common flag-o-matic eutils gcc
 
@@ -27,20 +27,23 @@ SITEFILE=50gnu-smalltalk-gentoo.el
 
 src_unpack() {
 	unpack ${A}
-	epatch ${FILESDIR}/${PV}-gst-package-mktemp-gentoo.patch
+	epatch ${FILESDIR}/${PV}-gst-image-temp.patch
+	if has_version '>=dev-lang/gnu-smalltalk-2.1.8'; then
+		einfo "You already have a gnu-smalltalk version installed"
+		einfo "We set correct values for SMALLTALKIMAGE and SMALLTALKKERNEL during compilation"
+		sed -i "s:getenv\ (\"SMALLTALK_KERNEL\"):\"${D}/usr/share/smalltalk\":" ${S}/libgst/lib.c
+		sed -i "s:getenv\ (\"SMALLTALK_IMAGE\"):\"${D}/usr/share/smalltalk\":" ${S}/libgst/lib.c
+	fi
 }
 
 src_compile() {
 	local myconf=""
-
-	if use tclk; then
+	if use tcltk; then
 		myconf="
 		`use_with tcltk tcl=/usr/lib` \
 		`use_with tcltk tk=/usr/lib`"
 	fi
-
 	replace-flags '-O3' '-O2'
-
 	econf \
 		`use_with emacs emacs` \
 		`use_with readline readline` \
@@ -48,18 +51,24 @@ src_compile() {
 		`use_enable gtk gtk` \
 		${myconf} \
 		|| die
-
 	emake || die "emake failed"
+	if use emacs; then
+		emacs --batch -f batch-byte-compile --no-site-file --no-init-file *.el
+	fi
 }
 
 src_install() {
-	make DESTDIR=${D} lispdir=/usr/share/emacs/site-lisp/gnu-smalltalk install || die
+	make DESTDIR=${D} lispdir=${D}/usr/share/emacs/site-lisp/gnu-smalltalk install || die
 	rm -rf ${D}/usr/include/sigsegv.h \
 		${D}/usr/include/snprintfv \
 		${D}/usr/share/aclocal/snprintfv.m4
 	dodoc AUTHORS COPYING* ChangeLog NEWS PATCHES README THANKS TODO
-	use emacs && elisp-site-file-install ${FILESDIR}/${SITEFILE}
-
+	rm -rf ${D}/var
+	if use emacs; then
+		elisp-install ${PN} *.el *.elc
+		elisp-site-file-install ${FILESDIR}/${SITEFILE}
+	fi
+	chmod a+r ${D}/usr/share/smalltalk/packages.xml
 }
 
 pkg_postinst() {
