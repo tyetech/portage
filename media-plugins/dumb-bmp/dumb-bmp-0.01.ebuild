@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/dumb-bmp/Attic/dumb-bmp-0.01.ebuild,v 1.2 2005/04/09 10:03:08 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/dumb-bmp/Attic/dumb-bmp-0.01.ebuild,v 1.3 2005/04/09 13:33:15 mr_bones_ Exp $
 
 inherit flag-o-matic
 
@@ -20,7 +20,7 @@ DEPEND="media-sound/beep-media-player
 
 src_compile() {
 	append-flags -fPIC
-	
+
 	# use our own CFLAGS
 	sed -i "s/CFLAGS :=.*/CFLAGS := ${CFLAGS}/" Makefile.inc
 
