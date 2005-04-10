@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/emotion/Attic/emotion-9999.ebuild,v 1.3 2005/04/10 03:34:47 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/emotion/Attic/emotion-0.0.1.002.ebuild,v 1.1 2005/04/10 03:34:47 vapier Exp $
 
 EHACKAUTOGEN=yes
 inherit enlightenment
