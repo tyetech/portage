@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-lml2/Attic/cl-lml2-1.5.0.ebuild,v 1.3 2004/06/24 23:46:35 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-lml2/Attic/cl-lml2-1.5.3.ebuild,v 1.1 2005/04/10 20:40:11 mkennedy Exp $
 
 inherit common-lisp eutils
 
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.b9.com/lml2/lml2-${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
 
 DEPEND="dev-lisp/common-lisp-controller
@@ -22,9 +22,8 @@ S=${WORKDIR}/lml2-${PV}
 
 src_unpack() {
 	unpack ${A}
-	# minor format argument fix (sent to kmr@debian.org Wed Feb 11 2004)
-	epatch ${FILESDIR}/${PV}-gentoo.patch
 }
+
 src_install() {
 	common-lisp-install *.lisp lml2.asd
 	common-lisp-system-symlink
