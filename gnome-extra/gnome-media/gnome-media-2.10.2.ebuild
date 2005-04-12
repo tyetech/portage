@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-media/Attic/gnome-media-2.10.1.ebuild,v 1.1 2005/04/12 16:37:40 joem Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-media/Attic/gnome-media-2.10.2.ebuild,v 1.1 2005/04/12 16:53:15 joem Exp $
 
 inherit gnome2
 
