@@ -1,6 +1,6 @@
-	# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libpqpp/Attic/libpqpp-4.0-r5.ebuild,v 1.1 2005/04/13 20:05:53 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libpqpp/Attic/libpqpp-4.0-r5.ebuild,v 1.2 2005/04/13 20:06:33 eradicator Exp $
 
 inherit eutils toolchain-funcs multilib
 
