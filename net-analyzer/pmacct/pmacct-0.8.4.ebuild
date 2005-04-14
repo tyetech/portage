@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pmacct/Attic/pmacct-0.8.1_p1.ebuild,v 1.1 2005/02/23 10:41:59 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pmacct/Attic/pmacct-0.8.4.ebuild,v 1.1 2005/04/14 13:41:11 vanquirius Exp $
 
 MY_P="${P%_*}"
 S="${WORKDIR}/${MY_P}"
