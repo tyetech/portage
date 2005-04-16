@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre6-r1.ebuild,v 1.9 2005/04/16 13:44:48 luckyduck Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_pre6-r4.ebuild,v 1.1 2005/04/16 14:48:44 luckyduck Exp $
 
 inherit eutils flag-o-matic kernel-mod
 
