@@ -1,16 +1,18 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.3.1.ebuild,v 1.2 2005/04/12 11:01:19 voxus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.2.5-r2.ebuild,v 1.1 2005/04/17 12:32:57 voxus Exp $
 
 inherit eutils gnuconfig libtool
 
-IUSE="ssl ipv6 doc selinux idn caps threads"
+IUSE="ssl ipv6 doc dlz postgres berkdb bind-mysql mysql odbc ldap selinux \
+	idn threads"
 
 DESCRIPTION="BIND - Berkeley Internet Name Domain - Name Server"
-SRC_URI="ftp://ftp.isc.org/isc/bind9/${PV}/${P}.tar.gz"
+SRC_URI="ftp://ftp.isc.org/isc/bind9/${PV}/${P}.tar.gz
+	dlz? ( http://dev.gentoo.org/~voxus/dlz/dlz-${PV}.patch.bz2 )"
 HOMEPAGE="http://www.isc.org/products/BIND/bind9.html"
 
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~amd64 ~ppc64"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~amd64 ~ppc64 ~mips"
 
 LICENSE="as-is"
 SLOT="0"
@@ -18,7 +20,9 @@ SLOT="0"
 DEPEND="sys-apps/groff
 	sys-devel/autoconf
 	>=sys-apps/sed-4
-	ssl? ( >=dev-libs/openssl-0.9.6g )"
+	ssl? ( >=dev-libs/openssl-0.9.6g )
+	mysql? ( >=dev-db/mysql-4 )
+	ldap? ( net-nds/openldap )"
 
 RDEPEND="${DEPEND}
 	selinux? ( sec-policy/selinux-bind )"
@@ -34,12 +38,25 @@ src_unpack() {
 		       ${i}
 	done
 
+	if use dlz; then
+		epatch ${DISTDIR}/dlz-${PV}.patch.bz2
+		epatch ${FILESDIR}/${P}-berkdb_fix.patch
+	fi
+
+	if use bind-mysql; then
+		if use dlz; then
+			epatch ${FILESDIR}/${P}-dlz-mysql.patch
+		else
+			epatch ${FILESDIR}/${P}-mysql.patch
+		fi
+	fi
+
 	if use idn; then
 		epatch ${S}/contrib/idn/idnkit-1.0-src/patch/bind9/${P}-patch
 	fi
 
 	cp ${FILESDIR}/named.rc6 ${T}
-	cd ${T} && epatch ${FILESDIR}/named.rc6-pid_fix
+	cd ${T} && epatch ${FILESDIR}/named.rc6-smart_pid_fix
 
 	gnuconfig_update
 
@@ -55,14 +72,22 @@ src_compile() {
 	local myconf=""
 
 	use ssl && myconf="${myconf} --with-openssl"
-	use caps || myconf="${myconf} --disable-linux-caps"
+	use dlz && {
+		myconf="${myconf} --with-dlz-filesystem --with-dlz-stub"
+		use postgres && myconf="${myconf} --with-dlz-postgres"
+		use mysql && myconf="${myconf} --with-dlz-mysql"
+		use berkdb && myconf="${myconf} --with-dlz-bdb"
+		use ldap  && myconf="${myconf} --with-dlz-ldap"
+		use odbc  && myconf="${myconf} --with-dlz-odbc"
+	}
+
+	use threads && myconf="${myconf} --enable-linux-caps --enable-threads"
 
 	econf \
 		--sysconfdir=/etc/bind \
 		--localstatedir=/var \
-		--with-libtool \
-		`use_enable threads` \
 		`use_enable ipv6` \
+		--with-libtool \
 		${myconf} || die "econf failed"
 
 	emake -j1 || die "failed to compile bind"
@@ -156,10 +181,29 @@ pkg_postinst() {
 	echo
 	einfo "	zone "com" IN { type delegation-only; };"
 	einfo "	zone "net" IN { type delegation-only; };"
+
+	if use dlz && use mysql; then
+		echo
+		ewarn ""
+		einfo "MySQL uses thread local storage in its C api. Thus MySQL"
+		einfo "requires that each thread of an application execute a MySQL"
+		einfo "\"thread initialization\" to setup the thread local storage."
+		einfo "This is impossible to do safely while staying within the DLZ"
+		einfo "driver API. This is a limitation caused by MySQL, and not the"
+		einfo "DLZ API."
+		ewarn "Because of this BIND MUST only run with a single thread when"
+		ewarn "using the MySQL driver."
+		echo
+	fi
+
+	echo
+	ewarn "BIND >=9.2.5 makes the priority argument to MX records mandatory"
+	ewarn "when it was previously optional.  If the priority is missing, BIND"
+	ewarn "won't load the zone file at all."
+	echo
 }
 
 pkg_config() {
-
 	CHROOT=`sed -n 's/^[[:blank:]]\?CHROOT="\([^"]\+\)"/\1/p' /etc/conf.d/named 2>/dev/null`
 	EXISTS="no"
 
@@ -199,3 +243,4 @@ pkg_config() {
 		einfo
 	fi
 }
+
