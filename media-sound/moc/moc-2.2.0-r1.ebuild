@@ -1,8 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/moc/Attic/moc-2.1.4.ebuild,v 1.1 2005/01/21 18:33:10 luckyduck Exp $
-
-IUSE="oggvorbis mad oss"
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/moc/Attic/moc-2.2.0-r1.ebuild,v 1.1 2005/04/18 19:13:29 luckyduck Exp $
 
 inherit eutils
 
@@ -12,17 +10,21 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 sparc x86"
+KEYWORDS="~amd64 ~sparc ~x86"
+IUSE="flac mad oss vorbis"
 
 DEPEND="media-libs/libao
+	media-libs/libsndfile
 	sys-libs/ncurses
-	oggvorbis? ( media-libs/libvorbis )
-	mad? ( media-libs/libmad sys-libs/zlib media-libs/libid3tag )"
+	flac? ( media-libs/flac )
+	mad? ( media-libs/libmad sys-libs/zlib media-libs/libid3tag )
+	vorbis? ( media-libs/libvorbis )"
 
 src_compile() {
 	local myconf
-	use oggvorbis || myconf="--without-ogg"
+	use flac || myconf="${myconf} --without-flac"
 	use mad || myconf="${myconf} --without-mp3"
+	use vorbis || myconf="--without-ogg"
 	use oss || myconf="${myconf} --without-oss"
 
 	econf ${myconf} || die "./configure failed"
@@ -32,7 +34,9 @@ src_compile() {
 src_install () {
 	make DESTDIR="${D}" install || die "make install failed"
 	dodoc AUTHORS ChangeLog NEWS README TODO
+}
 
-	# the binary was renamed to mocp in version 2
-	dosym /usr/bin/mocp /usr/bin/moc
+pkg_postinst() {
+	einfo "The binary was renamed due to conflicts with moc"
+	einfo "from the QT project. Its new name is mocp."
 }
