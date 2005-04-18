@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cdstatus/cdstatus-0.94a.ebuild,v 1.9 2004/09/29 03:21:43 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cdstatus/cdstatus-0.94a.ebuild,v 1.10 2005/04/18 20:37:36 luckyduck Exp $
 
 inherit eutils
 
