@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/scons/Attic/scons-0.96.ebuild,v 1.3 2005/04/01 05:40:23 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/scons/Attic/scons-0.96.ebuild,v 1.4 2005/04/21 19:11:02 hansmi Exp $
 
 inherit python distutils
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.scons.org"
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~mips amd64 ~ia64"
+KEYWORDS="~x86 ppc ~sparc ~alpha ~hppa ~mips amd64 ~ia64"
 IUSE=""
 
 DEPEND=">=dev-lang/python-2.0"
