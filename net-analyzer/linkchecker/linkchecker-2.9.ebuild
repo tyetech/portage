@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/linkchecker/Attic/linkchecker-2.7.ebuild,v 1.1 2005/03/31 14:24:12 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/linkchecker/Attic/linkchecker-2.9.ebuild,v 1.1 2005/04/23 13:16:59 ka0ttic Exp $
 
 IUSE=""
 
