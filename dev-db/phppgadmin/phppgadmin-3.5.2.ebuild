@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/phppgadmin/Attic/phppgadmin-3.5.2.ebuild,v 1.1 2005/03/02 18:43:43 nakano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/phppgadmin/Attic/phppgadmin-3.5.2.ebuild,v 1.2 2005/04/23 15:20:27 mholzer Exp $
 
 inherit eutils webapp
 
@@ -13,7 +13,6 @@ S="${WORKDIR}/${MY_PN}"
 
 DESCRIPTION="Web-based administration for Postgres database in php"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
-RESTRICT="nomirror"
 HOMEPAGE="http://phppgadmin.sourceforge.net/"
 
 LICENSE="GPL-2"
