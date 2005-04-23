@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metisse/Attic/metisse-0.3.5.ebuild,v 1.3 2005/04/16 16:16:13 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metisse/Attic/metisse-0.3.5.ebuild,v 1.4 2005/04/23 00:36:46 hansmi Exp $
 
 # fc is broken
 IUSE="truetype xv opengl"
@@ -17,7 +17,7 @@ RDEPEND="${DEPEND}
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ~ppc -amd64"
+KEYWORDS="x86 ppc -amd64"
 
 src_compile() {
 	local myconf
