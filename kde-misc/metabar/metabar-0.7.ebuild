@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/metabar/Attic/metabar-0.7.ebuild,v 1.3 2005/04/05 22:23:15 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/metabar/Attic/metabar-0.7.ebuild,v 1.4 2005/04/23 19:07:03 weeve Exp $
 
 inherit kde
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/metabar/${P}.tar.gz"
 SLOT="0"
 
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~sparc"
 IUSE=""
 
 DEPEND="|| ( kde-base/konqueror >=kde-base/kdebase-3.4 )"
