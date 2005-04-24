@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.12_rc1.ebuild,v 1.2 2005/03/26 07:18:16 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.12_rc2.ebuild,v 1.1 2005/04/24 03:00:45 kumba Exp $
 
 
 # INCLUDED:
 # 1) linux sources from kernel.org
-# 2) linux-mips.org CVS snapshot diff from 20 Mar 2005
+# 2) linux-mips.org CVS snapshot diff from 23 Apr 2005
 # 3) Generic Fixes
 # 4) Security fixes
 # 5) Patch for IP30 Octane Support		(http://helios.et.put.poznan.pl/~sskowron/ip30/)
@@ -19,9 +19,9 @@
 
 # Version Data
 OKV=${PV/_/-}
-CVSDATE="20050320"			# Date of diff between kernel.org and lmo CVS
-SECPATCHVER="1.11"			# Tarball version for security patches
-GENPATCHVER="1.7"			# Tarball version for generic patches
+CVSDATE="20050423"			# Date of diff between kernel.org and lmo CVS
+SECPATCHVER="1.12"			# Tarball version for security patches
+GENPATCHVER="1.8"			# Tarball version for generic patches
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
 USERC="yes"				# If set to "yes", then attempt to use an RC kernel
@@ -31,16 +31,17 @@ S="${WORKDIR}/linux-${OKV}-${CVSDATE}"
 MIPS_PATCHES="${WORKDIR}/mips-patches"
 MIPS_SECURITY="${WORKDIR}/security"
 
-# Inherit Eclasses 
+# Inherit Eclasses
 ETYPE="sources"
 inherit kernel eutils
 
 # Portage Vars
-HOMEPAGE="http://www.linux-mips.org/"
+HOMEPAGE="http://www.linux-mips.org/ http://www.gentoo.org/"
 SLOT="${OKV}"
 PROVIDE="virtual/linux-sources"
 KEYWORDS="-* ~mips"
-IUSE="cobalt ip28 ip30 livecd nptl"
+IUSE="cobalt ip27 ip28 ip30 livecd"
+
 
 # If USERC == "yes", use a release candidate kernel (2.6.X-rcY)
 if [ "${USERC}" = "yes" ]; then
@@ -86,38 +87,56 @@ err_only_one_arch_allowed() {
 # Hope the user isn't crazy enough to try using combinations of these flags.
 # Only use one machine-specific flag at a time for each type of desired machine-support.
 #
-# Affected machines:	ip30 ip28
-# Not Affected:		cobalt ip32
+# Affected machines:	ip27 ip28 ip30
+# Not Affected:		cobalt ip22 ip32
 pkg_setup() {
 	local arch_is_selected="no"
 
+	# See if we're using IP27 (Origin)
+	if use ip27; then
+		if [ "${arch_is_selected}" = "no" ]; then
+			echo -e ""
+			einfo "IP27 support can be considered a game of Russian Roulette.  It'll work"
+			einfo "great for some but not for others.  It also uses some rather horrible"
+			einfo "hacks to get going -- hopefully these will be repaired in the future."
+			echo -e ""
+			ewarn "Please keep all kittens and any other small, cute, and fluffy creatures"
+			ewarn "away from an IP27 Box running these sources.  Failure to do so may cause"
+			ewarn "the IP27 to consume the hapless creature.  Consider this your only"
+			ewarn "warning regarding the experimental nature of this particular machine."
+			echo -e ""
+			arch_is_selected="yes"
+		else
+			err_only_one_arch_allowed
+		fi
+	fi
+
+
 	# See if we're using IP28 (Indigo2 Impact R10000)
 	if use ip28; then
-		eerror "!!! IP28 Support not available for this release"
-		die
-#//		if [ "${arch_is_selected}" = "no" ]; then
-#//			echo -e ""
-#//			einfo "Support for the Indigo2 Impact R10000 is probably even more experimental"
-#//			einfo "than Octane support.  If you seriously do not have a clue in the world about"
-#//			einfo "what you are doing, what an IP28 is, what a mips is, or even what gentoo is,"
-#//			einfo "then stop now, and return to regularly scheduled x86 programming.  Consider"
-#//			einfo "this the warning that you are about to venture into no-man's land with a"
-#//			einfo "machine that is barely supported, likely very unstable, and may very well"
-#//			einfo "eat your grandmother's pet cat Fluffy."
-#//			echo -e ""
-#//			einfo "That said, support for this system REQUIRES that you use the ip28 cascade"
-#//			einfo "profile (default-linux/mips/mips64/ip28/XXXX.Y), because a very special"
-#//			einfo "patch is used on the system gcc, kernel-gcc (gcc-mips64) and the kernel"
-#//			einfo "itself in order to support this machine.  These patches will only be applied"
-#//			einfo "if \"ip28\" is defined in USE, which the profile sets.  Other things to keep"
-#//			einfo "in mind are that this system can only be netbooted (no arcboot support),"
-#//			einfo "requires a full 64-bit kernel, serial-console only (Impact graphics not"
-#//			einfo "supported yet), and _nothing_ is guaranteed to work smoothly."
-#//			echo -e ""
-#//			arch_is_selected="yes"
-#//		else
-#//			err_only_one_arch_allowed
-#//		fi
+		if [ "${arch_is_selected}" = "no" ]; then
+			echo -e ""
+			einfo "Support for the Indigo2 Impact R10000 is probably even more experimental"
+			einfo "than Octane support.  If you seriously do not have a clue in the world about"
+			einfo "what you are doing, what an IP28 is, what a mips is, or even what gentoo is,"
+			einfo "then stop now, and return to regularly scheduled x86 programming.  Consider"
+			einfo "this the warning that you are about to venture into no-man's land with a"
+			einfo "machine that is barely supported, likely very unstable, and may very well"
+			einfo "eat your grandmother's pet cat Fluffy."
+			echo -e ""
+			ewarn "That said, support for this system REQUIRES that you use the ip28 cascade"
+			ewarn "profile (default-linux/mips/mips64/ip28/XXXX.Y), because a very special"
+			ewarn "patch is used on the system gcc, kernel-gcc (gcc-mips64) and the kernel"
+			ewarn "itself in order to support this machine.  These patches will only be applied"
+			ewarn "if \"ip28\" is defined in USE, which the profile sets.  Other things to keep"
+			ewarn "in mind are that this system can only be netbooted (no arcboot support),"
+			ewarn "requires a full 64-bit kernel, serial-console only (Impact graphics not"
+			ewarn "supported yet), and _nothing_ is guaranteed to work smoothly."
+			echo -e ""
+			arch_is_selected="yes"
+		else
+			err_only_one_arch_allowed
+		fi
 	fi
 
 
@@ -167,20 +186,24 @@ pkg_setup() {
 do_generic_patches() {
 	echo -e ""
 	ebegin ">>> Generic Patches"
+		# IP22 Patches
+		epatch ${MIPS_PATCHES}/misc-2.6.11-ip22-chk-consoleout-is-serial.patch
+
 		# IP32 Patches (Safe for non-IP32 use)
 		epatch ${MIPS_PATCHES}/misc-2.6.12-ip32-onion2-gbefb-fixes.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.10-ip32-tweak-makefile.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.11-ip32-mace-is-always-eth0.patch
 
 		# Cobalt Patches (Safe for non-Cobalt use)
 		epatch ${MIPS_PATCHES}/misc-2.6.12-cobalt-bits.patch
 
 		# Generic
 		epatch ${MIPS_PATCHES}/misc-2.6.11-ths-mips-tweaks.patch
-		epatch ${MIPS_PATCHES}/misc-2.6.11-add-ramdisk-back.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.12-pdh-mips-tweaks.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.12-add-ramdisk-back.patch
 		epatch ${MIPS_PATCHES}/misc-2.6-mips-iomap-functions.patch
-		epatch ${MIPS_PATCHES}/misc-2.6.11-smptlb-64bit-fix.patch
 		epatch ${MIPS_PATCHES}/misc-2.6.12-seccomp-no-default.patch
-
+		epatch ${MIPS_PATCHES}/misc-2.6.11-add-byteorder-to-proc.patch
 
 		# Ugly Hacks (Long Story, ask about it on IRC if you really want to know)
 		if ! use ip30 and ! use ip28; then
@@ -199,20 +222,13 @@ do_sekret_patches() {
 		epatch ${MIPS_PATCHES}/misc-2.6-livecd-partitioned-cdroms.patch
 	fi
 	# /* EXPERIMENTAL - DO NOT USE IN PRODUCTION KERNELS */
-
-	# Insanity knows no bounds
-	if use nptl; then
-		echo -e ""
-		einfo ">>> Let the insanity begin ..."
-		epatch ${MIPS_PATCHES}/misc-2.6.12-nptl-support.patch
-	fi
 }
 
 
 do_security_patches() {
 	echo -e ""
 	ebegin ">>> Applying Security Fixes"
-		einfo "None to Apply!"
+		epatch ${MIPS_SECURITY}/security-2.6-nfsacl-remote-nfs.patch
 	eend
 }
 
@@ -227,25 +243,42 @@ do_security_patches() {
 # another machine type and therefore produce unwanted side-effects.  We therefore enforce 
 # this by checking if an arch patch has already been applied, and if so, error out.
 
+# SGI Origin (IP27)
+do_ip27_support() {
+	echo -e ""
+	einfo ">>> Patching kernel for SGI Origin (IP27) support ..."
+	epatch ${MIPS_PATCHES}/misc-2.6.11-ip27-horrible-hacks_may-eat-kittens.patch
+}
+
 # SGI Indigo2 Impact R10000 (IP28)
-#// do_ip28_support() {
-#//	echo -e ""
-#//	einfo ">>> Patching kernel for SGI Indigo2 Impact R10000 (IP28) support ..."
-#//	epatch ${MIPS_PATCHES}/misc-2.6.10-rc2-ip28-i2_impact-support.patch
-#//	epatch ${MIPS_PATCHES}/misc-2.6.10-rc2-ip28-c_r4k-tweak.patch
-#//	mv ${WORKDIR}/linux-${OKV}-${CVSDATE} ${WORKDIR}/linux-${OKV}-${CVSDATE}.ip28
-#//	S="${S}.ip28"
-#// }
+do_ip28_support() {
+	echo -e ""
+	einfo ">>> Patching kernel for SGI Indigo2 Impact R10000 (IP28) support ..."
+	epatch ${MIPS_PATCHES}/misc-2.6.12-rc2-ip28-i2_impact-support.patch
+}
 
 
 # SGI Octane 'Speedracer' (IP30)
 do_ip30_support() {
 	echo -e ""
 	einfo ">>> Patching kernel for SGI Octane (IP30) support ..."
-	epatch ${MIPS_PATCHES}/misc-2.6.12-rc1-ip30-octane-support.patch
-#//	epatch ${MIPS_PATCHES}/misc-2.6.11-cgs-ioc3-eth-dow.patch
-	mv ${WORKDIR}/linux-${OKV}-${CVSDATE} ${WORKDIR}/linux-${OKV}-${CVSDATE}.ip30
-	S="${S}.ip30"
+	epatch ${MIPS_PATCHES}/misc-2.6.12-rc2-ip30-octane-support.patch
+}
+
+
+
+#//------------------------------------------------------------------------------
+
+
+
+# Renames source trees for the few machines that we have separate patches for
+rename_source_tree() {
+	if [ ! -z "${1}" ]; then
+		if use ${1}; then
+			mv ${S} ${S}.${1}
+			S="${S}.${1}"
+		fi
+	fi
 }
 
 
@@ -277,9 +310,9 @@ src_unpack() {
 	do_generic_patches
 
 	# Machine-specific patches
+	use ip27	&& do_ip27_support
 	use ip28	&& do_ip28_support
 	use ip30	&& do_ip30_support
-	use cobalt	&& do_cobalt_support
 
 	# Patches for experimental use
 	do_sekret_patches
@@ -290,6 +323,15 @@ src_unpack() {
 
 	# All done, resume normal portage work
 	kernel_universal_unpack
+}
+
+
+src_install() {
+	use ip27	&& rename_source_tree ip27
+	use ip28	&& rename_source_tree ip28
+	use ip30	&& rename_source_tree ip30
+
+	kernel_src_install
 }
 
 

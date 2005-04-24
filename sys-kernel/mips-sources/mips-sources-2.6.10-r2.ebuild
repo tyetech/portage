@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.10-r1.ebuild,v 1.2 2005/02/06 18:48:40 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.10-r2.ebuild,v 1.1 2005/04/24 03:00:45 kumba Exp $
 
 
 # INCLUDED:
@@ -21,21 +21,23 @@
 # Version Data
 OKV=${PV/_/-}
 CVSDATE="20050115"			# Date of diff between kernel.org and lmo CVS
-SECPATCHVER="1.10"			# Tarball version for security patches
-GENPATCHVER="1.6"			# Tarball version for generic patches
+SECPATCHVER="1.12"			# Tarball version for security patches
+GENPATCHVER="1.8"			# Tarball version for generic patches
 EXTRAVERSION="-mipscvs-${CVSDATE}"
 KV="${OKV}${EXTRAVERSION}"
 USERC="no"				# If set to "yes", then it will attempt to use an RC kernel
 
-# Sources dir
+# Directories
 S="${WORKDIR}/linux-${OKV}-${CVSDATE}"
+MIPS_PATCHES="${WORKDIR}/mips-patches"
+MIPS_SECURITY="${WORKDIR}/security"
 
-# Eclass stuff
+# Inherit Eclasses
 ETYPE="sources"
 inherit kernel eutils
 
-# Misc. stuff
-HOMEPAGE="http://www.linux-mips.org/"
+# Portage Vars
+HOMEPAGE="http://www.linux-mips.org/ http://www.gentoo.org/"
 SLOT="${OKV}"
 PROVIDE="virtual/linux-sources"
 KEYWORDS="-* ~mips"
@@ -172,18 +174,19 @@ do_generic_patches() {
 	echo -e ""
 	ebegin ">>> Generic Patches"
 		# IP32 Patches (Safe for non-IP32 use)
-		epatch ${WORKDIR}/mips-patches/misc-2.6.10-ip32-onion2-gbefb-fixes.patch
-		epatch ${WORKDIR}/mips-patches/misc-2.6.10-ip32-tweak-makefile.patch
-		epatch ${WORKDIR}/mips-patches/misc-2.6.10-ths-mips-tweaks.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.10-ip32-onion2-gbefb-fixes.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.10-ip32-tweak-makefile.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.10-ths-mips-tweaks.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.12-pdh-mips-tweaks.patch
 
 		# Generic
-		epatch ${WORKDIR}/mips-patches/misc-2.6-fix-prologue-error.patch
-		epatch ${WORKDIR}/mips-patches/misc-2.6.10-add-ramdisk-back.patch
-		epatch ${WORKDIR}/mips-patches/misc-2.6-mips-iomap-functions.patch
+		epatch ${MIPS_PATCHES}/misc-2.6-fix-prologue-error.patch
+		epatch ${MIPS_PATCHES}/misc-2.6.10-add-ramdisk-back.patch
+		epatch ${MIPS_PATCHES}/misc-2.6-mips-iomap-functions.patch
 
 		# Ugly Hacks (Long Story, ask about it on IRC if you really want to know)
 		if ! use ip30 and ! use ip28; then
-			epatch ${WORKDIR}/mips-patches/misc-2.6-ugly-wrong-kphysaddr-hack.patch
+			epatch ${MIPS_PATCHES}/misc-2.6-ugly-wrong-kphysaddr-hack.patch
 		fi
 	eend
 }
@@ -195,7 +198,7 @@ do_sekret_patches() {
 	# /* EXPERIMENTAL - DO NOT USE IN PRODUCTION KERNELS */
 	# Patches used in building LiveCDs
 	if use livecd; then
-		epatch ${WORKDIR}/mips-patches/misc-2.6-livecd-partitioned-cdroms.patch
+		epatch ${MIPS_PATCHES}/misc-2.6-livecd-partitioned-cdroms.patch
 	fi
 	# /* EXPERIMENTAL - DO NOT USE IN PRODUCTION KERNELS */
 }
@@ -204,13 +207,34 @@ do_sekret_patches() {
 do_security_patches() {
 	echo -e ""
 	ebegin ">>> Applying Security Fixes"
-		epatch ${WORKDIR}/security/CAN-2004-0883-2.6.9-smbfs_remote_overflows.patch
-		epatch ${WORKDIR}/security/CAN-2004-1056-2.6.9-dos_drm.patch
-		epatch ${WORKDIR}/security/CAN-2004-1235-2.6-uselib_priv_escalation.patch
-		epatch ${WORKDIR}/security/CAN-2005-0001-2.6.10-prereq-grsec_mult_kern_adv.patch
-		epatch ${WORKDIR}/security/CAN-2005-0001-2.6.10-i386_smp_page_fault_handler.patch
-		epatch ${WORKDIR}/security/security-2.6.10-lsm-local_priv_elevate_flaw.patch
-		epatch ${WORKDIR}/security/security-2.6-nfs-client-o_direct-error.patch
+		epatch ${MIPS_SECURITY}/CAN-2004-0883-2.6.9-smbfs_remote_overflows.patch
+		epatch ${MIPS_SECURITY}/CAN-2004-1056-2.6.9-dos_drm.patch
+		epatch ${MIPS_SECURITY}/CAN-2004-1235-2.6-uselib_priv_escalation.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0001-2.6.10-prereq-grsec_mult_kern_adv.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0001-2.6.10-i386_smp_page_fault_handler.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0207-2.6-nfs-client-o_direct.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0209-2.6-keep-frag-queues-private.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0210-2.6-netfilter-dos.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0384-2.6-ppp-dos.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0400-2.6-ext2-mem-leak.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0449-2.6-ip_fragment-reset_ip_summed.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0529-2.6-proc_file_read-sign-comp.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0530-2.6-copy_from_read_buf-sign-chk.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0531-2.6-atm-copy_to_user-sign-chk.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0532-2.6-reiserfs_file_write-64bit-types.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0736-2.6-sys_epoll_wait-int-ovrflw.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0749-2.6-load_elf_library-dos.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0750-2.6-af_bluetooth_local_root.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0815-2.6-iso9660-range-chk.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0839-2.6-unrestricted-n_mouse-line.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0867-2.6-sysfs_write_file-int-ovrflw.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0916-2.6-is_hugepage_only_range.patch
+		epatch ${MIPS_SECURITY}/CAN-2005-0937-2.6-futex-deadlock.patch
+		epatch ${MIPS_SECURITY}/security-2.6.10-lsm-local_priv_elevate_flaw.patch
+		epatch ${MIPS_SECURITY}/security-2.6-local-dos-tmpfs.patch
+		epatch ${MIPS_SECURITY}/security-2.6.10-rose-scsi_tape-vulns.patch
+		epatch ${MIPS_SECURITY}/security-2.6-ntfs-dos.patch
+		epatch ${MIPS_SECURITY}/security-2.6-nfsacl-remote-nfs.patch
 	eend
 }
 
@@ -229,10 +253,8 @@ do_security_patches() {
 do_ip28_support() {
 	echo -e ""
 	einfo ">>> Patching kernel for SGI Indigo2 Impact R10000 (IP28) support ..."
-	epatch ${WORKDIR}/mips-patches/misc-2.6.10-rc2-ip28-i2_impact-support.patch
-	epatch ${WORKDIR}/mips-patches/misc-2.6.10-rc2-ip28-c_r4k-tweak.patch
-	mv ${WORKDIR}/linux-${OKV}-${CVSDATE} ${WORKDIR}/linux-${OKV}-${CVSDATE}.ip28
-	S="${S}.ip28"
+	epatch ${MIPS_PATCHES}/misc-2.6.10-rc2-ip28-i2_impact-support.patch
+	epatch ${MIPS_PATCHES}/misc-2.6.10-rc2-ip28-c_r4k-tweak.patch
 }
 
 
@@ -240,9 +262,7 @@ do_ip28_support() {
 do_ip30_support() {
 	echo -e ""
 	einfo ">>> Patching kernel for SGI Octane (IP30) support ..."
-	epatch ${WORKDIR}/mips-patches/misc-2.6.10-rc2-ip30-octane-support.patch
-	mv ${WORKDIR}/linux-${OKV}-${CVSDATE} ${WORKDIR}/linux-${OKV}-${CVSDATE}.ip30
-	S="${S}.ip30"
+	epatch ${MIPS_PATCHES}/misc-2.6.10-rc2-ip30-octane-support.patch
 }
 
 
@@ -250,9 +270,23 @@ do_ip30_support() {
 do_cobalt_support() {
 	echo -e ""
 	einfo ">>> Patching kernel for Cobalt support ..."
-	epatch ${WORKDIR}/mips-patches/misc-2.6.9-cobalt-support.patch
-	mv ${WORKDIR}/linux-${OKV}-${CVSDATE} ${WORKDIR}/linux-${OKV}-${CVSDATE}.cobalt
-	S="${S}.cobalt"
+	epatch ${MIPS_PATCHES}/misc-2.6.9-cobalt-support.patch
+}
+
+
+
+#//------------------------------------------------------------------------------
+
+
+
+# Renames source trees for the few machines that we have separate patches for
+rename_source_tree() {
+	if [ ! -z "${1}" ]; then
+		if use ${1}; then
+			mv ${S} ${S}.${1}
+			S="${S}.${1}"
+		fi
+	fi
 }
 
 
@@ -270,14 +304,14 @@ src_unpack() {
 	# If USERC == "yes", use a release candidate kernel (2.6.x-rcy)
 	if [ "${USERC}" = "yes" ]; then
 		echo -e ""
-		einfo ">>> Applying ${OKV} patch ..."
+		einfo ">>> linux-${STABLEVER} --> linux-${OKV} ..."
 		epatch ${WORKDIR}/patch-${OKV}
 	fi
 
 
 	# Update the vanilla sources with linux-mips CVS changes
 	echo -e ""
-	einfo ">>> Applying mipscvs-${CVSDATE} patch ..."
+	einfo ">>> linux-${OKV} --> linux-${OKV}-${CVSDATE} patch ..."
 	epatch ${WORKDIR}/mipscvs-${OKV}-${CVSDATE}.diff
 
 	# Generic patches we always include
@@ -297,6 +331,15 @@ src_unpack() {
 
 	# All done, resume normal portage work
 	kernel_universal_unpack
+}
+
+
+src_install() {
+	use ip28	&& rename_source_tree ip28
+	use ip30	&& rename_source_tree ip30
+	use cobalt	&& rename_source_tree cobalt
+
+	kernel_src_install
 }
 
 
