@@ -1,22 +1,23 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Exception-Class/Attic/Exception-Class-1.14-r1.ebuild,v 1.9 2005/04/25 15:02:14 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Exception-Class/Attic/Exception-Class-1.21.ebuild,v 1.1 2005/04/25 15:02:14 mcummings Exp $
 
 myconf='INSTALLDIRS=vendor'
 inherit perl-module
 
 DESCRIPTION="Exception::Class module for perl"
-SRC_URI="http://www.cpan.org/modules/by-module/Exception/${P}.tar.gz"
+SRC_URI="mirror://cpan/authors/id/D/DR/DROLSKY/${P}.tar.gz"
 HOMEPAGE="http://www.cpan.org/modules/by-module/Exception/${P}.readme"
 IUSE=""
 SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
-KEYWORDS="x86 amd64 ppc sparc alpha"
+KEYWORDS="~x86 ~amd64 ~ppc ~sparc ~alpha"
+SRC_TEST="do"
 
 DEPEND="${DEPEND}
-	>=dev-lang/perl-5.8.0-r12
+	dev-perl/module-build
 	>=dev-perl/Class-Data-Inheritable-0.02
-	>=dev-perl/Devel-StackTrace-1.01
+	>=dev-perl/Devel-StackTrace-1.11
 	>=dev-perl/Test-Simple-0.47"
 
 export OPTIMIZE="$CFLAGS"

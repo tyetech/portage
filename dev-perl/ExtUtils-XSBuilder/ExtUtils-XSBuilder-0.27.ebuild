@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/ExtUtils-XSBuilder/Attic/ExtUtils-XSBuilder-0.25.ebuild,v 1.4 2005/04/25 15:09:54 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/ExtUtils-XSBuilder/Attic/ExtUtils-XSBuilder-0.27.ebuild,v 1.1 2005/04/25 15:09:54 mcummings Exp $
 
 inherit perl-module
 
