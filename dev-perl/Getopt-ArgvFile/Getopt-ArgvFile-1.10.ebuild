@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Getopt-ArgvFile/Attic/Getopt-ArgvFile-1.08.ebuild,v 1.5 2005/04/25 16:44:48 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Getopt-ArgvFile/Attic/Getopt-ArgvFile-1.10.ebuild,v 1.1 2005/04/25 16:44:48 mcummings Exp $
 
 inherit perl-module
 
@@ -10,5 +10,5 @@ HOMEPAGE="http://search.cpan.org/jstenzel/${P}/"
 SLOT="0"
 LICENSE="GPL-2"
 SRC_TEST="do"
-KEYWORDS="x86 ppc sparc"
+KEYWORDS="~x86 ~ppc ~sparc"
 IUSE=""
