@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/numeric/Attic/numeric-23.0.ebuild,v 1.5 2005/01/21 16:49:57 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/numeric/Attic/numeric-23.8.ebuild,v 1.1 2005/04/25 17:20:49 carlo Exp $
 
-inherit distutils
+inherit distutils eutils
 
-MY_P=${P/n/N}
+MY_P=Numeric-${PV}
 S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Numerical Python adds a fast, compact, multidimensional array language facility to Python."
@@ -13,7 +13,7 @@ HOMEPAGE="http://www.pfdubois.com/numpy/"
 
 IUSE=""
 SLOT="0"
-KEYWORDS="x86 ~ppc ~sparc ~alpha"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86"
 LICENSE="as-is"
 
 # 2.1 gave sandbox violations see #21
@@ -29,7 +29,3 @@ src_install() {
 	doins Demo/NumTut/*
 
 }
-
-
-
-
