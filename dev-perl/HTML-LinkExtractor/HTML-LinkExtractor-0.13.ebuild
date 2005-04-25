@@ -1,15 +1,15 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTML-LinkExtractor/Attic/HTML-LinkExtractor-0.11.ebuild,v 1.5 2005/04/25 17:25:54 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTML-LinkExtractor/Attic/HTML-LinkExtractor-0.13.ebuild,v 1.1 2005/04/25 17:25:54 mcummings Exp $
 
 inherit perl-module
 
 DESCRIPTION="A bare-bones HTML parser, similar to HTML::Parser, but with a couple important distinctions."
 HOMEPAGE="http://www.cpan.org/modules/by-module/HTML/${P}.readme"
-SRC_URI="http://www.cpan.org/modules/by-module/HTML/${P}.tar.gz"
+SRC_URI="mirror://cpan/authors/id/P/PO/PODMASTER/${P}.tar.gz"
 IUSE=""
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="x86 amd64 ~ppc"
+KEYWORDS="~x86 ~sparc ~amd64 ~ppc ~ppc64"
 
-DEPEND=">=dev-perl/HTML-TokeParser-Simple-2"
+DEPEND="dev-perl/HTML-Parser"
