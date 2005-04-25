@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ftester/Attic/ftester-0.9.ebuild,v 1.3 2004/07/09 20:11:46 eldad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ftester/Attic/ftester-0.9.ebuild,v 1.4 2005/04/25 01:17:15 vanquirius Exp $
 
 DESCRIPTION="Ftester - Firewall and Intrusion Detection System testing tool"
 HOMEPAGE="http://ftester.sourceforge.net
