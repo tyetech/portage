@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.9_p20050226-r4.ebuild,v 1.5 2005/04/25 21:37:12 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-0.4.9_p20050226-r5.ebuild,v 1.1 2005/04/26 01:21:53 eradicator Exp $
 
 inherit eutils flag-o-matic gcc multilib toolchain-funcs
 
@@ -18,9 +18,8 @@ LICENSE="GPL-2"
 SLOT="0"
 # ~alpha need to test aac useflag
 # ~ia64 ~arm ~mips ~hppa 
-KEYWORDS="~x86 ~ppc ~sparc ~amd64 ~ppc64"
-IUSE="aac altivec debug doc ieee1394 a52 encode imlib mmx ogg vorbis oss threads
-truetype v4l xvid dts network zlib sdl"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+IUSE="aac altivec debug doc ieee1394 a52 encode imlib mmx ogg vorbis oss threads truetype v4l xvid dts network zlib sdl"
 
 # Theora support has switch but there's no oggtheora.c sourcefile...
 
@@ -37,7 +36,7 @@ DEPEND="imlib? ( media-libs/imlib2 )
 	zlib? ( sys-libs/zlib )
 	dts? ( media-libs/libdts )
 	ieee1394? ( media-plugins/libdc1394
-		sys-libs/libraw1394 )"
+	            sys-libs/libraw1394 )"
 
 src_unpack() {
 	unpack ${A} || die
@@ -49,10 +48,6 @@ src_unpack() {
 	# Fix building with gcc4
 	epatch ${FILESDIR}/${P}-gcc4.patch
 
-	# make a52bin actually compile... adds the needed external lib
-	# and makes fprintf -> av_log like it's supposed to be...
-	epatch ${FILESDIR}/gentoo-${PN}001.patch
-
 	#ffmpeg doesn'g use libtool, so the condition for PIC code
 	#is __PIC__, not PIC.
 	sed -i -e 's/#\(\(.*def *\)\|\(.*defined *\)\|\(.*defined(*\)\)PIC/#\1__PIC__/' \
@@ -61,13 +56,9 @@ src_unpack() {
 		libavcodec/common.h \
 		|| die "sed failed (__PIC__)"
 
-	#fixup liba52 to respect the --disable-mmx configure option
-	sed -i -e 's/#ifdef ARCH_X86/#ifdef HAVE_MMX/' \
-		libavcodec/liba52/resample.c \
-		|| die "sed failed (HAVE_MMX)"
-
 	epatch ${FILESDIR}/${PN}-libdir-pic.patch
-	epatch ${FILESDIR}/${PN}-configure-extralibs.patch
+	epatch ${FILESDIR}/${PN}-a52.patch
+	epatch ${FILESDIR}/${PN}-missing_links.patch
 
 	cd ${S}
 	cp -R ${S_BASE} ${S_STATIC}
@@ -93,7 +84,7 @@ src_compile() {
 		$(use_enable altivec) \
 		$(use_enable debug) \
 		$(use_enable encode mp3lame) \
-		$(use_enable a52) $(use_enable a52 a52bin) \
+		$(use_enable a52) --disable-a52bin \
 		$(use_enable oss audio-oss) \
 		$(use_enable v4l) \
 		$(use_enable ieee1394 dv1394) $(use_enable ieee1394 dc1394) \
@@ -105,7 +96,7 @@ src_compile() {
 		$(use_enable network) \
 		$(use_enable zlib) \
 		$(use_enable sdl ffplay) \
-		$(use_enable aac faad) $(use_enable aac faac) $(use_enable aac faadbin) \
+		$(use_enable aac faad) $(use_enable aac faac) --disable-faadbin \
 		--enable-gpl \
 		--enable-pp \
 		--disable-opts"
