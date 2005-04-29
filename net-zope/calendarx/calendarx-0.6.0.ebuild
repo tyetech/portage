@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/calendarx/Attic/calendarx-0.6.0.ebuild,v 1.1 2005/04/22 18:05:59 radek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/calendarx/Attic/calendarx-0.6.0.ebuild,v 1.2 2005/04/29 14:36:11 luckyduck Exp $
 
 inherit zproduct
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}//CalendarX-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND="=net-zope/plone-2.0*"
