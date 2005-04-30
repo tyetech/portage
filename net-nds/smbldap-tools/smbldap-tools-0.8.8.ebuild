@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/smbldap-tools/Attic/smbldap-tools-0.8.7.ebuild,v 1.2 2005/04/30 16:25:48 satya Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/smbldap-tools/Attic/smbldap-tools-0.8.8.ebuild,v 1.1 2005/04/30 16:25:48 satya Exp $
 
 
 inherit eutils
@@ -32,21 +32,21 @@ src_install() {
 	local sbin_dir="${prefix}/sbin/"
 	local sbin_ln_dir="/usr/sbin/"
 	local script_list="${MY_PN}-*"
-	#legacy install 
+	#legacy install
 	cd ${S}
 	make install prefix=${D}/${prefix} sysconfdir=${D}/${sysconfdir}
-	#libs 
+	#libs
 	exeinto /etc/samba ; doexe smbldap_tools.pm
 	eval `perl '-V:installarchlib'`
 	dodir ${installarchlib}
 	dosym /etc/samba/smbldap_tools.pm ${installarchlib}
 	dosym /etc/samba/smbldap_tools.pm ${sbin_dir}
-	#scripts 
+	#scripts
 	dodir ${sbin_ln_dir}
 	for script in ${script_list}; do
 		dosym ${sbin_dir}/${script} ${sbin_ln_dir}/${script}
 	done
-	#docs 
+	#docs
 	dodoc CONTRIBUTORS COPYING ChangeLog FILES INFRA INSTALL README TODO
 }
 
