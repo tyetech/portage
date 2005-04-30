@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/xdebug/Attic/xdebug-2.0.0_beta2.ebuild,v 1.4 2005/03/20 18:45:39 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/xdebug/Attic/xdebug-2.0.0_beta2.ebuild,v 1.5 2005/04/30 10:16:36 dholm Exp $
 
 PHP_EXT_ZENDEXT="yes"
 PHP_EXT_PECL_PKG="xdebug"
@@ -18,7 +18,7 @@ SRC_URI="http://xdebug.org/files/${MY_P}.tgz"
 S="${WORKDIR}/${MY_P}"
 SLOT="0"
 LICENSE="Xdebug"
-KEYWORDS="~x86 ~sparc"
+KEYWORDS="~x86 ~sparc ~ppc"
 DEPEND="${DEPEND}
 	libedit? ( dev-libs/libedit )"
 
