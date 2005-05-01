@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mmsv2/Attic/mmsv2-1.0.1.ebuild,v 1.2 2005/04/20 22:57:04 arj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mmsv2/Attic/mmsv2-1.0.1.ebuild,v 1.3 2005/05/01 21:04:11 arj Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="http://mms.sunsite.dk/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="x86 amd64"
 IUSE="debug lirc svga sdl dvb xine"
 
 RDEPEND="media-libs/imlib2
