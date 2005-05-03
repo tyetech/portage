@@ -1,12 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/silc-server/Attic/silc-server-0.9.19.ebuild,v 1.2 2005/05/03 20:15:36 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/silc-server/Attic/silc-server-0.9.20.ebuild,v 1.1 2005/05/03 20:15:36 swegener Exp $
 
 inherit eutils
 
-MY_P="${P}p1"
 DESCRIPTION="Server for Secure Internet Live Conferencing"
-SRC_URI="http://www.silcnet.org/download/server/sources/${MY_P}.tar.bz2"
+SRC_URI="http://www.silcnet.org/download/server/sources/${P}.tar.bz2"
 HOMEPAGE="http://silcnet.org/"
 
 SLOT="0"
@@ -18,24 +17,19 @@ DEPEND="!<=net-im/silc-toolkit-0.9.12-r1
 	!<=net-im/silc-client-1.0.1"
 
 src_compile() {
-	local toolkit_conf=""
-	has_version '>=net-im/silc-toolkit-0.9.13' && { \
-		toolkit_conf="${toolkit_conf} --with-silc-libs=/usr$(get_libdir) --with-silc-includes=/usr/include/silc-toolkit"
-		toolkit_conf="${toolkit_conf} --with-simdir=/usr/lib/silc-toolkit"
-	} || \
-		toolkit_conf="${toolkit_conf} --with-simdir=/usr/lib/${PN}"
-
-	econf ${toolkit_conf} \
+	econf \
 		--sysconfdir=/etc/silc \
 		--with-docdir=/usr/share/doc/${PF} \
 		--with-helpdir=/usr/share/${PN}/help \
 		--with-logsdir=/var/log/${PN} \
 		--with-mandir=/usr/share/man \
 		--with-silcd-pid-file=/var/run/silcd.pid \
+		--with-simdir=/usr/$(get_libdir)/${PN} \
+		--without-silc-libs \
 		$(use_enable ipv6) \
 		$(use_enable debug) \
 		|| die "econf failed"
-	emake -j1 all || die "emake failed"
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
@@ -52,8 +46,7 @@ src_install() {
 		${D}/usr/include \
 		${D}/etc/silc/silcd.{pub,prv}
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/silcd.rc6 silcd
+	newinitd ${FILESDIR}/silcd.rc6 silcd
 
 	sed -i \
 		-e 's:10.2.1.6:0.0.0.0:' \
@@ -70,10 +63,10 @@ pkg_postinst() {
 		silcd -C ${ROOT}etc/silc
 	fi
 
-	echo
+	ewarn
 	ewarn "Configuration and server keys have been moved to /etc/silc, please check"
 	ewarn "your files."
-	echo
+	ewarn
 	ewarn "Initscript name has changed from silc-server to silcd in this version."
-	echo
+	ewarn
 }

@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/silc-server/Attic/silc-server-0.9.18.ebuild,v 1.3 2005/04/07 13:37:22 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/silc-server/Attic/silc-server-0.9.18.ebuild,v 1.4 2005/05/03 20:15:36 swegener Exp $
 
 inherit eutils
 
@@ -24,8 +24,8 @@ src_compile() {
 		--with-logsdir=/var/log/${PN} \
 		--with-simdir=/usr/lib/${PN} \
 		--with-mandir=/usr/share/man \
-		`use_enable ipv6` \
-		`use_enable debug` \
+		$(use_enable ipv6) \
+		$(use_enable debug) \
 		|| die "econf failed"
 	emake -j1 all || die "emake failed"
 }
