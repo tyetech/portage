@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-headers/Attic/alsa-headers-1.0.9_rc2.ebuild,v 1.1 2005/03/31 04:07:42 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-headers/Attic/alsa-headers-1.0.9_rc3.ebuild,v 1.1 2005/05/05 17:37:35 eradicator Exp $
 
 inherit eutils
 
