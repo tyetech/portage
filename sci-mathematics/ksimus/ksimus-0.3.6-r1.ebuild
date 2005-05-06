@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/ksimus/Attic/ksimus-0.3.6-r1.ebuild,v 1.2 2005/03/13 21:39:58 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/ksimus/Attic/ksimus-0.3.6-r1.ebuild,v 1.3 2005/05/06 17:12:22 dholm Exp $
 
 inherit kde eutils
 
@@ -14,7 +14,7 @@ SRC_URI="http://ksimus.berlios.de/download/ksimus-3-${PV}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 ~ppc"
 IUSE=""
 
 DEPEND=">=sys-apps/sed-4
