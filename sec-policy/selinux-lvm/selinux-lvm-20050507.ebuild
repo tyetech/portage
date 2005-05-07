@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-lvm/Attic/selinux-lvm-20050408.ebuild,v 1.1 2005/04/23 18:24:29 kaiowas Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-lvm/Attic/selinux-lvm-20050507.ebuild,v 1.1 2005/05/07 11:55:08 kaiowas Exp $
 
 inherit selinux-policy
 
