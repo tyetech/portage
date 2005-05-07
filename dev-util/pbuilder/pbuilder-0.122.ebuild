@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/pbuilder/Attic/pbuilder-0.122.ebuild,v 1.1 2005/02/24 17:23:35 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/pbuilder/Attic/pbuilder-0.122.ebuild,v 1.2 2005/05/07 16:46:32 dholm Exp $
 
 DESCRIPTION="personal package builder for Debian packages"
 HOMEPAGE="http://packages.qa.debian.org/p/pbuilder.html"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~sparc ~amd64"
+KEYWORDS="~x86 ~sparc ~amd64 ~ppc"
 SRC_URI="mirror://debian/pool/main/p/pbuilder/pbuilder_${PV}.tar.gz"
 
 S=${WORKDIR}/${PN}
