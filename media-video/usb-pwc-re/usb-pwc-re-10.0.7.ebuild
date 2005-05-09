@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/usb-pwc-re/Attic/usb-pwc-re-10.0.7.ebuild,v 1.2 2005/05/02 08:03:20 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/usb-pwc-re/Attic/usb-pwc-re-10.0.7.ebuild,v 1.3 2005/05/09 10:00:45 phosphan Exp $
 
 
 inherit linux-info toolchain-funcs eutils
@@ -13,7 +13,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc64 ~amd64"
 IUSE=""
-DEPEND=""
+DEPEND="sys-kernel/linux-headers"
+RDEPEND=""
+
 S=${WORKDIR}/pwc-${PV}
 
 src_compile() {
