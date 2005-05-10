@@ -1,17 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/pykota/Attic/pykota-20050126.ebuild,v 1.1 2005/01/26 17:50:12 satya Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/pykota/Attic/pykota-1.22_p1548.ebuild,v 1.1 2005/05/10 11:55:24 satya Exp $
 
+#==============================================================================
 inherit python eutils distutils
-
-MY_P=${P/-/_}
+#--------------------------------------------------------------------------
 DESCRIPTION="PyKota - Python print Quota for CUPS, LPRng and BSD printer servers"
-SRC_URI="http://www.gentoo.org/~satya/packages/pykota/${MY_P}.tar.bz2"
+SRC_URI="http://www.gentoo.org/~satya/packages/pykota/${P}.tar.gz"
 HOMEPAGE="http://www.librelogiciel.com/software/PyKota/Presentation/action_Presentation"
 LICENSE="GPL-2"
-
+#--------------------------------------------------------------------------
 IUSE="ldap postgres snmp xml xml2"
-
+#--------------------------------------------------------------------------
 DEPEND="dev-lang/python
 	dev-python/egenix-mx-base
 	postgres? ( dev-db/postgresql dev-db/pygresql )
@@ -19,12 +19,12 @@ DEPEND="dev-lang/python
 	snmp?     ( net-analyzer/net-snmp dev-python/pysnmp )
 	xml?      ( dev-python/jaxml )
 	xml2?     ( dev-python/jaxml ) "
-
+#--------------------------------------------------------------------------
 KEYWORDS="~x86"
 SLOT="0"
-
-S="${WORKDIR}/${MY_P}"
-
+#--------------------------------------------------------------------------
+#S="${WORKDIR}/${MY_P}"
+#==============================================================================
 src_unpack() {
 	unpack ${A}
 	cd ${S}
@@ -34,6 +34,7 @@ src_unpack() {
 		setup.py.ORIG > setup.py
 	rm -rf `find . -iname CVS -type d` 2>/dev/null
 }
+#==============================================================================
 src_install() {
 	mkdir -p ${D}/etc/${PN}
 	python_version
