@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/kuroo/Attic/kuroo-0.54.0.ebuild,v 1.1 2005/03/15 18:11:27 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/kuroo/Attic/kuroo-0.60.0.ebuild,v 1.1 2005/05/10 16:36:15 cryos Exp $
 
 inherit kde
 
@@ -15,6 +15,7 @@ IUSE=""
 
 RDEPEND="app-portage/gentoolkit
 	app-portage/esearch
+	app-portage/genlop
 	!app-portage/guitoo"
 
 need-kde 3.2
