@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/gnome-sharp/Attic/gnome-sharp-1.0.8.ebuild,v 1.3 2005/05/03 22:29:41 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/gnome-sharp/Attic/gnome-sharp-1.0.8.ebuild,v 1.4 2005/05/12 12:36:16 dertobi123 Exp $
 
 inherit gtk-sharp-component
 
 SLOT="1"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="x86 ppc"
 IUSE=""
 
 # FIXME
