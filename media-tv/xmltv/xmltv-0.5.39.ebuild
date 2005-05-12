@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.35.ebuild,v 1.3 2005/01/21 08:35:43 cardoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xmltv/Attic/xmltv-0.5.39.ebuild,v 1.1 2005/05/12 06:24:42 cardoe Exp $
 
 inherit perl-module
 
@@ -22,6 +22,7 @@ KEYWORDS="~x86 ~amd64 ~ppc"
 #  tv_grab_uk_rt:      Alternate Britain listings grabber
 #  tv_grab_uk_bleb:    Fast alternative grabber for the UK
 #  tv_grab_it:         Italy listings grabber
+#  tv_grab_it_lt:      Alternative grabber for Italy
 #  tv_grab_na_icons:   Downloads icons from Zap2IT
 #  tv_grab_na_dd:      Alternate American listings grabber
 #  tv_grab_nz:         New Zealand listings grabber
@@ -34,6 +35,7 @@ KEYWORDS="~x86 ~amd64 ~ppc"
 #  tv_grab_jp:         Japan listings grabber
 #  tv_grab_de_tvtoday: Germany listings grabber
 #  tv_grab_se:         Sweden listings grabber
+#  tv_grab_se_swedb:   New grabber for Sweden
 #  tv_grab_fr:         France listings grabber
 #  tv_check:           Graphical front-end for listings data
 #  tv_pick_cgi:        CGI front-end for listings data
@@ -57,6 +59,7 @@ RDEPEND=">=dev-perl/libwww-perl-5.65
 	>=dev-perl/Term-ProgressBar-2.03
 	dev-perl/Compress-Zlib
 	dev-perl/Unicode-String
+	dev-perl/TermReadKey
 	>=dev-lang/perl-5.6.1"
 
 DEPEND="${RDEPEND}
@@ -139,6 +142,10 @@ if [ -z "${XMLTV_OPTS}" ] || has tv_pick_cgi ${XMLTV_OPTS} ; then
 	newdepend dev-perl/CGI
 fi
 
+if [ -z "${XMLTV_OPTS}" ] || has tv_grab_se_swedb ${XMLTV_OPTS} ; then
+	newdepend dev-perl/HTTP-Cache-Transparent
+fi
+
 make_config() {
 	if [ -z "${XMLTV_OPTS}" ] ; then
 		# No customization needed, build everything (default)
@@ -155,6 +162,8 @@ make_config() {
 	has tv_grab_uk_bleb ${XMLTV_OPTS}    >&/dev/null && echo "yes" || echo "no"
 	# Enable Italy
 	has tv_grab_it ${XMLTV_OPTS}         >&/dev/null && echo "yes" || echo "no"
+	# Enable Alternate Italy
+	has tv_grab_it_lt ${XMLTV_OPTS}         >&/dev/null && echo "yes" || echo "no"
 	# Enable North America using DataDirect
 	has tv_grab_na_dd ${XMLTV_OPTS}      >&/dev/null && echo "yes" || echo "no"
 	# Enable North America channel icons
@@ -179,12 +188,12 @@ make_config() {
 	has tv_grab_de_tvtoday ${XMLTV_OPTS} >&/dev/null && echo "yes" || echo "no"
 	# Enable Sweden
 	has tv_grab_se ${XMLTV_OPTS}         >&/dev/null && echo "yes" || echo "no"
+	# Enable Sweden 2
+	has tv_grab_se_swedb ${XMLTV_OPTS}   >&/dev/null && echo "yes" || echo "no"
 	# Enable France
 	has tv_grab_fr ${XMLTV_OPTS}         >&/dev/null && echo "yes" || echo "no"
 	# Enable Norway
 	has tv_grab_no ${XMLTV_OPTS}         >&/dev/null && echo "yes" || echo "no"
-#	# Enable Portugal
-#	has tv_grab_pt ${XMLTV_OPTS}         >&/dev/null && echo "yes" || echo "no"
 	# Enable GUI checking.
 	has tv_check ${XMLTV_OPTS}           >&/dev/null && echo "yes" || echo "no"
 	# Enable CGI support
