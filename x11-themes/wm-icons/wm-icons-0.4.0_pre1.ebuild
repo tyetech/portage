@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/wm-icons/Attic/wm-icons-0.4.0_pre1.ebuild,v 1.7 2004/07/15 01:07:11 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/wm-icons/Attic/wm-icons-0.4.0_pre1.ebuild,v 1.8 2005/05/13 08:53:41 taviso Exp $
 
 inherit gnuconfig
 
