@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1.0-r2.ebuild,v 1.10 2005/05/09 02:46:01 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1.0-r2.ebuild,v 1.11 2005/05/15 02:03:46 flameeyes Exp $
 
-inherit eutils flag-o-matic gcc libtool
+inherit eutils flag-o-matic toolchain-funcs libtool
 
 # This should normally be empty string, unless a release has a suffix.
 MY_PKG_SUFFIX=""
