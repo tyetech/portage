@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim/Attic/gaim-1.3.0.ebuild,v 1.8 2005/05/14 10:59:26 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim/Attic/gaim-1.3.0.ebuild,v 1.9 2005/05/15 22:54:20 rizzo Exp $
 
-inherit flag-o-matic eutils gcc debug
+inherit flag-o-matic eutils toolchain-funcs debug
 
 DESCRIPTION="GTK Instant Messenger client"
 HOMEPAGE="http://gaim.sourceforge.net/"
