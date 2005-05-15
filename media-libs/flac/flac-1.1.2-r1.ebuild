@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/flac/Attic/flac-1.1.2-r1.ebuild,v 1.3 2005/05/07 01:09:22 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/flac/Attic/flac-1.1.2-r1.ebuild,v 1.4 2005/05/15 02:22:05 flameeyes Exp $
 
-inherit libtool eutils flag-o-matic gcc
+inherit libtool eutils flag-o-matic
 
 DESCRIPTION="free lossless audio encoder which includes an XMMS plugin"
 HOMEPAGE="http://flac.sourceforge.net/"
