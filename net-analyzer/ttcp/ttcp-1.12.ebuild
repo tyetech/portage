@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ttcp/ttcp-1.12.ebuild,v 1.9 2005/02/24 16:48:24 j4rg0n Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ttcp/ttcp-1.12.ebuild,v 1.10 2005/05/16 01:17:06 vanquirius Exp $
 
-inherit gcc eutils
+inherit toolchain-funcs eutils
 
 IUSE=""
 DESCRIPTION="Tool to test TCP and UDP throughput"
@@ -21,7 +21,7 @@ src_unpack() {
 }
 
 src_compile() {
-	$(gcc-getCC) ${CFLAGS} -o ttcp sgi-ttcp.c || die "compile failed"
+	$(tc-getCC) ${CFLAGS} -o ttcp sgi-ttcp.c || die "compile failed"
 }
 
 src_install() {
