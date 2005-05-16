@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/grisbi/Attic/grisbi-0.5.5.ebuild,v 1.3 2005/05/10 11:39:23 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/grisbi/Attic/grisbi-0.5.6.ebuild,v 1.1 2005/05/16 12:39:59 seemant Exp $
 
 inherit eutils
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64 ~sparc"
 
 DEPEND="dev-libs/libxml2
-	>=x11-libs/gtk+-2
+	>=x11-libs/gtk+-2.2.0
 	ofx? ( >=dev-libs/libofx-0.7.0 )"
 
 RDEPEND="${DEPEND}
@@ -36,35 +36,34 @@ pkg_setup() {
 }
 
 src_unpack() {
-
 	unpack ${A}; cd ${S}
 
 	# Apply location patchs
 	ebegin "Applying Gentoo documentation location patch"
 	for i in \
 		`find ./ -name 'Makefile.*'` \
-		`find ./ -name 'grisbi-manuel.html'`
+		`find ./ -name 'grisbi-manuel/html'`
 			do
 				sed -i "s;doc/grisbi/help;doc/${PF}/help;g" ${i}
 			done
 	eend 0
-	# Patch for new unicode package (utf8 -> utf8x)
 	epatch ${FILESDIR}/${P}-latex-unicode.patch
 }
 
 src_compile() {
 
-	local myconf
-	myconf="`use_enable nls`"
-	myconf="${myconf} `use_with ofx`"
+	econf \
+		$(use_with ofx) \
+		$(use_enable nls) || die
 
-	econf ${myconf} || die "configure failed"
 	emake || die
 }
 
 src_install() {
 	einstall || die
 	dodoc AUTHORS COPYING ChangeLog NEWS README
+	insinto /usr/share/applications
+	doins ${FILESDIR}/grisbi.desktop
 }
 
 pkg_postinst() {
