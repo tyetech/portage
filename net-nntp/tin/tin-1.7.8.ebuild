@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/tin/Attic/tin-1.7.7-r1.ebuild,v 1.2 2005/05/16 17:01:24 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/tin/Attic/tin-1.7.8.ebuild,v 1.1 2005/05/16 17:01:25 swegener Exp $
 
 inherit eutils versionator
 
