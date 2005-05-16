@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmbluecpu/Attic/wmbluecpu-0.4.ebuild,v 1.6 2004/11/24 05:05:35 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmbluecpu/Attic/wmbluecpu-0.4.ebuild,v 1.7 2005/05/16 10:07:43 s4t4n Exp $
 
 IUSE=""
 
