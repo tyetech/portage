@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ircservices/Attic/ircservices-5.0.51.ebuild,v 1.2 2005/05/16 15:36:11 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ircservices/Attic/ircservices-5.0.53.ebuild,v 1.1 2005/05/16 15:36:11 swegener Exp $
 
 inherit eutils fixheadtails flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.esper.net/${PN}/${P}.tar.gz
 	mirror://gentoo/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~x86 ~ppc"
 IUSE=""
 
 DEPEND=""
