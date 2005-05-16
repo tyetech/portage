@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-spamassassin/Attic/selinux-spamassassin-20050502.ebuild,v 1.1 2005/05/05 19:09:31 kaiowas Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-spamassassin/Attic/selinux-spamassassin-20050516.ebuild,v 1.1 2005/05/16 09:35:14 kaiowas Exp $
 
 inherit selinux-policy
 
