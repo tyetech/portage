@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/liblockfile/Attic/liblockfile-1.03-r2.ebuild,v 1.4 2005/05/18 10:56:10 ferdy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/liblockfile/Attic/liblockfile-1.06.ebuild,v 1.1 2005/05/18 10:56:10 ferdy Exp $
 
-inherit eutils gcc multilib
+inherit eutils multilib
 
 DESCRIPTION="Implements functions designed to lock the standard mailboxes."
 SRC_URI="mirror://debian/pool/main/libl/${PN}/${PN}_${PV}.tar.gz"
@@ -12,18 +12,8 @@ DEPEND="virtual/libc"
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ia64 amd64 ~mips ~ppc64"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
-
-src_unpack() {
-	unpack ${A}
-
-	if [ "`gcc-major-version`" -gt 3 ] || \
-	   [ "`gcc-major-version`" -eq 3 -a "`gcc-minor-version`" -ge 3 ]
-	then
-		cd ${S}; epatch ${FILESDIR}/${P}-gcc33.patch
-	fi
-}
 
 src_compile() {
 	econf --with-mailgroup=mail --enable-shared || die
