@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.52.4.ebuild,v 1.2 2005/05/17 08:32:58 luckyduck Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.52.5.ebuild,v 1.1 2005/05/19 20:38:09 luckyduck Exp $
 
 inherit perl-module eutils
 
