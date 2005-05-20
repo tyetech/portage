@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/entice/Attic/entice-0.9.3.002.ebuild,v 1.1 2005/04/10 03:40:17 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/entice/Attic/entice-0.9.3.003.ebuild,v 1.1 2005/05/20 03:25:43 vapier Exp $
 
 inherit enlightenment
 
