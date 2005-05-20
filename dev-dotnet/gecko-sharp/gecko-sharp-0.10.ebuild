@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/gecko-sharp/Attic/gecko-sharp-0.10.ebuild,v 1.1 2005/05/19 17:04:23 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/gecko-sharp/Attic/gecko-sharp-0.10.ebuild,v 1.2 2005/05/20 19:55:26 latexer Exp $
 
 inherit mono
 
@@ -18,7 +18,7 @@ IUSE=""
 S=${WORKDIR}/${MY_P}
 
 DEPEND=">=dev-lang/mono-1.0
-	>=dev-dotnet/gtk-sharp-2.5.5
+	>=dev-dotnet/gtk-sharp-1.9.2
 	www-client/mozilla"
 
 src_compile() {
