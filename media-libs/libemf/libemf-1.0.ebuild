@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libemf/Attic/libemf-1.0.ebuild,v 1.12 2005/05/17 07:29:22 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libemf/Attic/libemf-1.0.ebuild,v 1.13 2005/05/21 08:53:55 corsair Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="LGPL-2.1 GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc ~amd64 ~sparc"
+KEYWORDS="x86 ppc ~amd64 ~sparc ~ppc64"
 IUSE=""
 
 DEPEND=""
