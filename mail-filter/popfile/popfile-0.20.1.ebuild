@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/popfile/Attic/popfile-0.20.1.ebuild,v 1.3 2004/09/25 17:50:35 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/popfile/Attic/popfile-0.20.1.ebuild,v 1.4 2005/05/24 15:56:00 mcummings Exp $
 
 IUSE=""
 
