@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avidemux/Attic/avidemux-2.0.38_rc3-r1.ebuild,v 1.2 2005/05/12 14:34:40 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avidemux/Attic/avidemux-2.0.40.ebuild,v 1.1 2005/05/25 11:07:43 flameeyes Exp $
 
 inherit eutils flag-o-matic
 
 MY_P=${P/_/}
-PATCHLEVEL="3"
+PATCHLEVEL="5"
 
 DESCRIPTION="Great Video editing/encoding tool"
 HOMEPAGE="http://fixounet.free.fr/avidemux/"
@@ -15,7 +15,7 @@ SRC_URI="http://download.berlios.de/${PN}/${MY_P}.tar.gz
 LICENSE="GPL-2"
 SLOT="2"
 KEYWORDS="~x86 ~ppc ~amd64"
-IUSE="a52 aac alsa altivec arts encode mad mmx nls vorbis sdl truetype xvid xv oss"
+IUSE="a52 aac alsa altivec arts encode mad nls vorbis sdl truetype xvid xv oss"
 
 RDEPEND="xv? ( virtual/x11 )
 	a52? ( >=media-libs/a52dec-0.7.4 )
@@ -50,20 +50,21 @@ src_unpack() {
 	unpack ${A}
 	cd ${S} || die
 
-	# This is no more needed from ffad2-2.0-r6
-	EPATCH_EXCLUDE="00_all_faadfix.patch"
-	EPATCH_SUFFIX="patch" epatch ${WORKDIR}/${PV}/patches/
+	# 00_all_faadfix.patch: more needed from ffad2-2.0-r6
+	# 02_all_eq2_patch.patch, 02_all_suse.patch
+	# from upstream, applied as .39.
+	EPATCH_EXCLUDE="00_all_faadfix.patch 02_all_eq2_patch.patch 02_all_suse.patch"
+	EPATCH_SUFFIX="patch" epatch ${WORKDIR}/2.0.38/patches/
 
-	cp ${WORKDIR}/${PV}/m4/* ${S}/m4 || die "cp m4 failed"
+	cp ${WORKDIR}/2.0.38/m4/* ${S}/m4 || die "cp m4 failed"
 
-	make -f Makefile.dist || die "autotools failed."
+	gmake -f Makefile.dist || die "autotools failed."
 }
 
 src_compile() {
 	econf \
 		$(use_enable nls) \
 		$(use_enable altivec) \
-		$(use_enable mmx) \
 		$(use_enable xv) \
 		$(use_with mad libmad) \
 		$(use_with arts) \
@@ -78,7 +79,8 @@ src_compile() {
 		$(use_with encode lame) \
 		--disable-warnings --disable-dependency-tracking \
 		${myconf} || die "configure failed"
-	make || die "make failed"
+
+	emake || die "emake failed"
 }
 
 src_install() {
