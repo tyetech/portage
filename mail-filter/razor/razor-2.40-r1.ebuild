@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/razor/Attic/razor-2.40-r1.ebuild,v 1.6 2004/10/19 20:59:04 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/razor/Attic/razor-2.40-r1.ebuild,v 1.7 2005/05/25 15:30:22 mcummings Exp $
 
 inherit perl-module eutils
 IUSE=""
