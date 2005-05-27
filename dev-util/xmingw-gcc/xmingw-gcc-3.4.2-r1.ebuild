@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/xmingw-gcc/Attic/xmingw-gcc-3.4.1.ebuild,v 1.2 2005/02/09 12:57:22 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/xmingw-gcc/Attic/xmingw-gcc-3.4.2-r1.ebuild,v 1.1 2005/05/27 17:33:38 cretin Exp $
 
 MY_P=${P/xmingw-/}
 S=${WORKDIR}/${MY_P}
-MINGW_PATCH=gcc-3.4.1-20040711-1-src.diff.gz
-RUNTIME=mingw-runtime-3.3
-W32API=w32api-2.5
+MINGW_PATCH=gcc-3.4.2-20040916-1-src.diff.gz
+RUNTIME=mingw-runtime-3.7
+W32API=w32api-3.2
 
 DESCRIPTION="The GNU Compiler Collection - i386-mingw32msvc-gcc only"
 HOMEPAGE="http://www.gnu.org/software/gcc/gcc.html"
@@ -17,8 +17,8 @@ SRC_URI="ftp://gcc.gnu.org/pub/gcc/releases/${MY_P}/${MY_P}.tar.bz2
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86"
-IUSE=""
+KEYWORDS="~x86 ~amd64"
+IUSE="fortran gcj debug nocxx"
 
 DEPEND="dev-util/xmingw-binutils"
 
@@ -37,12 +37,27 @@ src_unpack() {
 src_compile() {
 	export PATH=$PATH:/opt/xmingw/bin:/opt/xmingw/i386-mingw32msvc/bin
 	unset CFLAGS CXXFLAGS
+	myconf=""
 	if has_version dev-util/xmingw-runtime \
 	&& has_version dev-util/xmingw-w32api
 	then
-		lang=c,c++
+		lang=c
+		use nocxx || lang="${lang},c++"
+		use fortran && lang="${lang},f77"
+
+		if use gcj; then
+			lang=${lang},java
+			myconf="${myconf} --enable-libgcj --disable-libgcj-debug --disable-java-awt \
+				--enable-java-gc=boehm --enable-interpreter --enable-hash-sychronization"
+		fi
 	else
 		lang=c
+	fi
+
+	if use debug; then
+		myconf="${myconf} --enable-debug"
+	else
+		myconf="${myconf} --disable-debug"
 	fi
 
 	./configure \
@@ -59,6 +74,7 @@ src_compile() {
 		--enable-sjlj-exceptions \
 		--without-x \
 		--without-newlib \
+		${myconf} \
 			|| die "configure failed"
 
 	emake || die "emake failed"
@@ -67,4 +83,5 @@ src_compile() {
 src_install() {
 	export PATH=$PATH:/opt/xmingw/bin:/opt/xmingw/i386-mingw32msvc/bin
 	make DESTDIR="${D}" install || die "make install failed"
+	doenvd ${FILESDIR}/05xmingw
 }
