@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/windowlab/Attic/windowlab-1.29.ebuild,v 1.1 2005/05/22 15:11:56 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/windowlab/Attic/windowlab-1.30.ebuild,v 1.1 2005/05/28 18:43:03 usata Exp $
 
 IUSE=""
 
