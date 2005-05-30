@@ -1,6 +1,6 @@
-# Copyright 2005-2005 Gentoo Foundation
+# Copyright 1999 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/liblscp/Attic/liblscp-0.2.9.ebuild,v 1.1 2005/05/29 23:25:56 fvdpol Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/liblscp/Attic/liblscp-0.2.9.ebuild,v 1.2 2005/05/30 19:51:48 mr_bones_ Exp $
 
 inherit eutils
 
