@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/lopster/Attic/lopster-1.2.2-r1.ebuild,v 1.1 2005/02/25 03:09:46 squinky86 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/lopster/Attic/lopster-1.2.2-r1.ebuild,v 1.2 2005/05/30 22:02:54 sekretarz Exp $
 
 inherit eutils
 
@@ -27,11 +27,11 @@ src_unpack() {
 	unpack ${A}
 	epatch ${FILESDIR}/${PV}-bugfixes-1.patch
 	cd ${S}
+	export WANT_AUTOCONF=2.5
+	./autogen.sh
 }
 
 src_compile() {
-	./autogen.sh
-
 	econf \
 		--with-pthread \
 		--with-zlib \
