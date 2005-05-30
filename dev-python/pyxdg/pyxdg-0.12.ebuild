@@ -1,17 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyxdg/Attic/pyxdg-0.8.ebuild,v 1.3 2005/05/10 16:05:36 blauwers Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyxdg/Attic/pyxdg-0.12.ebuild,v 1.1 2005/05/30 15:42:45 lanius Exp $
 
 inherit distutils
 
 DESCRIPTION="a python module to deal with freedesktop.org specifications."
-SRC_URI="http://www.freedesktop.org/software/pyxdg/releases/${P}.tar.gz"
+SRC_URI="http://www.freedesktop.org/~lanius/${P}.tar.gz"
 HOMEPAGE="http://pyxdg.freedesktop.org/"
 LICENSE="LGPL-2"
 
 DEPEND="virtual/python"
 SLOT="0"
-KEYWORDS="x86 ppc amd64"
+KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
 
 src_install () {
