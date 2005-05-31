@@ -1,23 +1,23 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp-print/Attic/gimp-print-5.0.0_beta2.ebuild,v 1.2 2005/02/20 19:22:14 lanius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp-print/Attic/gimp-print-5.0.0_beta4.ebuild,v 1.1 2005/05/31 22:40:53 lanius Exp $
 
 inherit flag-o-matic libtool
 
 IUSE="cups foomaticdb gtk nls readline"
 
-MY_P=${P/_/-}
+MY_P=gutenprint-5.0.0-beta4
 
 DESCRIPTION="Gimp Print Drivers"
 HOMEPAGE="http://gimp-print.sourceforge.net"
-KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa ~amd64"
+KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa ~amd64 ~ppc64"
 SRC_URI="mirror://sourceforge/gimp-print/${MY_P}.tar.bz2"
 
 DEPEND="cups? ( >=net-print/cups-1.1.14 )
 	media-gfx/imagemagick
 	virtual/ghostscript
 	sys-libs/readline
-	gtk? ( =x11-libs/gtk+-1.2* )
+	gtk? ( x11-libs/gtk+ )
 	dev-lang/perl
 	foomaticdb? ( net-print/foomatic-db-engine )"
 
@@ -49,12 +49,11 @@ src_compile() {
 		myconf="${myconf} --without-cups"
 	fi
 
-	# disable for now, it does not work correctly
-	#if use cups && use ppds; then
-	#	myconf="${myconf} --enable-cups-ppds --enable-cups-level3-ppds"
-	#else
-	#	myconf="${myconf} --disable-cups-ppds"
-	#fi
+	if use cups && use ppds; then
+		myconf="${myconf} --enable-cups-ppds --enable-cups-level3-ppds"
+	else
+		myconf="${myconf} --disable-cups-ppds"
+	fi
 
 	use foomaticdb \
 		&& myconf="${myconf} --with-foomatic3" \
@@ -70,7 +69,7 @@ src_compile() {
 		$myconf || die
 
 	# IJS Patch
-	sed -i -e "s/<ijs/<ijs\/ijs/g" src/ghost/ijsgimpprint.c
+	sed -i -e "s/<ijs/<ijs\/ijs/g" src/ghost/ijsgutenprint.c
 
 	emake || die "compile problem"
 }
@@ -78,13 +77,13 @@ src_compile() {
 src_install () {
 	make install DESTDIR=${D} || die
 
-	exeinto /usr/share/gimp-print
+	exeinto /usr/share/gutenprint
 	doexe test/{unprint,pcl-unprint,bjc-unprint,parse-escp2,escp2-weavetest,run-testdither,run-weavetest,testdither}
 
 	dodoc AUTHORS COPYING ChangeLog NEWS README \
 		doc/users_guide/users-guide.ps doc/users_guide/users-guide.pdf \
-		${D}/usr/share/gimp-print/doc/gimpprint.ps
+		${D}/usr/share/gutenprint/doc/gutenprint.pdf
 	dohtml doc/FAQ.html
 	dohtml -r doc/users_guide/html doc/developer/developer-html
-	rm -fR ${D}/usr/share/gimp-print/doc
+	rm -fR ${D}/usr/share/gutenprint/doc
 }
