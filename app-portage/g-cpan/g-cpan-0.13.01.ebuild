@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/g-cpan/Attic/g-cpan-0.13.ebuild,v 1.3 2005/05/25 12:12:57 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/g-cpan/Attic/g-cpan-0.13.01.ebuild,v 1.1 2005/06/01 20:38:21 mcummings Exp $
 
 DESCRIPTION="g-cpan: generate and install CPAN modules using portage"
 HOMEPAGE="http://dev.gentoo.org/~mcummings/"
@@ -34,4 +34,5 @@ src_install() {
 	cp ${S}/man/g-cpan.pl.1 ${D}/usr/share/man/man1/
 	dodoc Changes
 	dosym /usr/bin/g-cpan.pl /usr/bin/g-cpan
+	dosym /usr/share/man/man1/g-cpan.pl.1.gz /usr/share/man/man1/g-cpan.1.gz
 }
