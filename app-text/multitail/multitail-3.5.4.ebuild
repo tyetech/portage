@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/multitail/Attic/multitail-3.4.1.ebuild,v 1.5 2005/01/20 15:57:26 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/multitail/Attic/multitail-3.5.4.ebuild,v 1.1 2005/06/03 17:11:21 ka0ttic Exp $
 
 inherit flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.vanheusden.com/multitail/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ~ia64 ~amd64 ~ppc sparc"
+KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86"
 IUSE="debug"
 
 DEPEND="virtual/libc
@@ -19,7 +19,8 @@ DEPEND="virtual/libc
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	# tail: '-100lf' option is obsolete; use '-f-n 100' since this will be removed in the future
+	# tail: '-100lf' option is obsolete; use '-f-n 100'
+	# since this will be removed in the future
 	sed -i 's/-%dlf/-fn%d/' mt.c || die "sed mt.c failed"
 }
 
