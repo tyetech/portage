@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/gauche/Attic/gauche-0.8.1.ebuild,v 1.7 2005/04/01 04:00:35 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/gauche/Attic/gauche-0.8.4.ebuild,v 1.1 2005/06/04 10:23:37 hattya Exp $
 
 inherit eutils flag-o-matic
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://gauche.sf.net/"
 SRC_URI="mirror://sourceforge/gauche/${MY_P}.tgz"
 
 LICENSE="BSD"
-KEYWORDS="x86 ~ppc ia64 ~sparc"
+KEYWORDS="~ia64 ~ppc ~sparc ~x86"
 SLOT="0"
 S="${WORKDIR}/${MY_P}"
 
@@ -25,6 +25,7 @@ src_unpack() {
 
 	cd ${S}
 	epatch ${FILESDIR}/${PN}-gdbm-gentoo.diff
+	epatch ${FILESDIR}/${PN}-aclocal.m4-cc.diff
 	autoconf
 
 }
