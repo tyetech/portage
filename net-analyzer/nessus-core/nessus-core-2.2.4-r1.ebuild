@@ -1,9 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.2.4-r1.ebuild,v 1.1 2005/06/02 15:44:55 omkhar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.2.4-r1.ebuild,v 1.2 2005/06/04 20:58:58 swegener Exp $
 
-inherit toolchain-funcs
-inherit eutils
+inherit toolchain-funcs eutils
 
 DESCRIPTION="A remote security scanner for Linux (nessus-core)"
 HOMEPAGE="http://www.nessus.org/"
