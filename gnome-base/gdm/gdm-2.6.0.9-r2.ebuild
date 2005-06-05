@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.6.0.9.ebuild,v 1.1 2005/04/25 22:27:42 foser Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.6.0.9-r2.ebuild,v 1.1 2005/06/05 15:05:46 foser Exp $
 
 inherit gnome2 eutils
 
@@ -55,6 +55,10 @@ src_unpack() {
 	cd ${S}
 	# remove unneeded linker directive for selinux (#41022)
 	epatch ${FILESDIR}/${PN}-2.4.4-selinux_remove_attr.patch
+	# fix ipv6 flag (#90991)
+	epatch ${FILESDIR}/${P}-ipv6_config.patch
+
+	autoconf || die
 
 }
 

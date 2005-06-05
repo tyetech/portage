@@ -1,23 +1,25 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.4.4.7-r1.ebuild,v 1.13 2005/01/08 23:57:29 slarti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.6.0.9-r3.ebuild,v 1.1 2005/06/05 15:05:46 foser Exp $
 
-inherit gnome2 eutils
+inherit gnome2 eutils pam
 
 DESCRIPTION="GNOME2 Display Manager"
 HOMEPAGE="http://www.jirka.org/gdm.html"
+
 LICENSE="GPL-2"
-
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha hppa amd64 ~ia64 mips ~ppc64"
-IUSE="tcpd xinerama selinux"
-SRC_URI="${SRC_URI}
-	mirror://gentoo/gentoo-gdm-theme.tar.bz2
-	mirror://gentoo/gentoo-gdm-theme-r1.tar.bz2"
-MY_V="${PV%.*}"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~amd64 ~ia64 ~mips ~ppc64"
+IUSE="tcpd xinerama selinux ipv6 pam"
 
-RDEPEND=">=sys-libs/pam-0.72
-	>=x11-libs/gtk+-2
+SRC_URI="${SRC_URI}
+	mirror://gentoo/gentoo-gdm-theme-r2.tar.bz2"
+MY_V="${PV%.*}-openpam"
+
+RDEPEND="pam? ( virtual/pam )
+	!pam? ( sys-apps/shadow )
+	>=x11-libs/pango-1.4.1
+	>=x11-libs/gtk+-2.4
 	>=gnome-base/libglade-2
 	>=gnome-base/librsvg-2
 	>=media-libs/libart_lgpl-2.3.11
@@ -35,11 +37,16 @@ DEPEND="${RDEPEND}
 
 G2CONF="${G2CONF} \
 	--sysconfdir=/etc/X11 \
+	--localstatedir=/var \
 	--with-pam-prefix=/etc \
 	--with-xdmcp \
+	`use_enable ipv6` \
 	`use_with tcpd tcp-wrappers` \
 	`use_with xinerama` \
 	`use_with selinux`"
+
+use pam && G2CONF="${G2CONF} --with-pam-prefix=/etc --enable-authentication=pam" \
+	|| G2CONF="${G2CONF} --enable-console-helper=no --enable-authentication-scheme=shadow"
 
 src_unpack() {
 
@@ -47,13 +54,24 @@ src_unpack() {
 
 	cd ${S}
 	# remove unneeded linker directive for selinux (#41022)
-	epatch ${FILESDIR}/${PN}-${MY_V}-selinux_remove_attr.patch
+	epatch ${FILESDIR}/${PN}-2.4.4-selinux_remove_attr.patch
+	# fix ipv6 config
+	epatch ${FILESDIR}/${P}-ipv6_config.patch
+
+	autoconf || die
 
 }
 
 src_install() {
 
-	gnome2_src_install PAM_PREFIX=${D}/etc sysconfdir=${D}/etc/X11
+	local pam_prefix
+
+	use pam && pam_prefix="PAM_PREFIX=${D}/etc"
+
+	gnome2_src_install \
+		${pam_prefix} \
+		sysconfdir=${D}/etc/X11 \
+		localstatedir=${D}/var
 
 	# gdm-binary should be gdm to work with our init (#5598)
 	rm -f ${D}/usr/bin/gdm
@@ -61,9 +79,10 @@ src_install() {
 	dosym /usr/bin/gdm /usr/bin/gdm-binary
 
 	# log, etc.
-	dodir /var/lib/gdm
-	chown gdm:gdm ${D}/var/lib/gdm
-	chmod 750 ${D}/var/lib/gdm
+	keepdir /var/log/gdm
+	keepdir /var/gdm
+	chown root:gdm ${D}/var/gdm
+	chmod 1770 ${D}/var/gdm
 
 	# use our own session script
 	rm -f ${D}/etc/X11/gdm/Xsession
@@ -77,31 +96,16 @@ src_install() {
 	# We replace the pam stuff by our own
 	rm -f ${D}/etc/pam.d/gdm
 
-	# pam startup
-	dodir /etc/pam.d
-	insinto /etc/pam.d
-	doins ${FILESDIR}/${MY_V}/pam.d/gdm
-	doins ${FILESDIR}/${MY_V}/pam.d/gdmconfig
-	doins ${FILESDIR}/${MY_V}/pam.d/gdm-autologin
-
-	# pam security
-	dodir /etc/security/console.apps
-	insinto /etc/security/console.apps
-	doins ${FILESDIR}/${MY_V}/security/console.apps/gdmconfig
+	dopamd ${FILESDIR}/${MY_V}/pam.d/*
+	dopamsecurity console.apps ${FILESDIR}/${MY_V}/security/console.apps/gdmconfig
 
 	# use graphical greeter local
 	dosed "s:#Greeter=/usr/bin/gdmlogin:Greeter=/usr/bin/gdmgreeter:" /etc/X11/gdm/gdm.conf
-	# use Gentoo theme
-	dosed "s:#GraphicalTheme=circles:GraphicalTheme=gentoo-cow:" /etc/X11/gdm/gdm.conf
-
-	# kn_IN segfaults when using the language selector on sparc
-	use sparc && dosed "s:Kannada:#Kannada:" /etc/X11/gdm/locale.alias
 
 	# Move Gentoo theme in
-	mv ${WORKDIR}/gentoo-cow  ${D}/usr/share/gdm/themes
-	mv ${WORKDIR}/gentoo-emergence  ${D}/usr/share/gdm/themes
+	mv ${WORKDIR}/gentoo-*  ${D}/usr/share/gdm/themes
 
-	dodoc ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README* TODO
+	dodoc AUTHORS ChangeLog INSTALL NEWS README* TODO
 
 }
 
@@ -110,11 +114,11 @@ pkg_postinst() {
 	gnome2_pkg_postinst
 
 	# Soft restart, assumes Gentoo defaults for file locations
-	FIFOFILE=/var/lib/gdm/.gdminfo
+	FIFOFILE=/var/gdm/.gdmfifo
 	PIDFILE=/var/run/gdm.pid
 	if [ -w ${FIFOFILE} ] ; then
 		if [ -f ${PIDFILE} ] ; then
-			if [ kill -0 `cat ${PIDFILE}` ] ; then
+			if kill -0 `cat ${PIDFILE}`; then
 				(echo;echo SOFT_RESTART) >> ${FIFOFILE}
 			fi
 		fi
