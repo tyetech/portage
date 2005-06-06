@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythdvd/Attic/mythdvd-0.17.ebuild,v 1.2 2005/05/05 23:15:06 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythdvd/Attic/mythdvd-0.17.ebuild,v 1.3 2005/06/06 08:54:48 cardoe Exp $
 
 inherit myth
 
@@ -18,7 +18,7 @@ DEPEND=">=sys-apps/sed-4
 	media-libs/libdvdread
 	transcode? ( media-video/transcode )
 	|| ( media-video/mplayer media-video/xine-ui media-video/ogle )
-	|| ( ~media-tv/mythtv-${PV} ~media-tv/mythfrontend-${PV} )"
+	~media-tv/mythtv-${PV}"
 
 setup_pro() {
 	return 0
