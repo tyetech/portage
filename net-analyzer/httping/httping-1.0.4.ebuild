@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/httping/Attic/httping-1.0.4.ebuild,v 1.1 2005/05/07 21:28:09 vanquirius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/httping/Attic/httping-1.0.4.ebuild,v 1.2 2005/06/08 05:29:31 redhatter Exp $
 
 DESCRIPTION="http protocol ping-like program"
 HOMEPAGE="http://www.vanheusden.com/httping/"
@@ -8,7 +8,7 @@ SRC_URI="http://www.vanheusden.com/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~ppc64 ~hppa ~amd64"
+KEYWORDS="~x86 ~ppc ~ppc64 ~hppa ~amd64 ~mips"
 IUSE="ssl"
 
 DEPEND=">=sys-libs/ncurses-5"
