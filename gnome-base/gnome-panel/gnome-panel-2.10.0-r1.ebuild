@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-panel/Attic/gnome-panel-2.10.0.ebuild,v 1.8 2005/06/08 16:13:05 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-panel/Attic/gnome-panel-2.10.0-r1.ebuild,v 1.1 2005/06/09 11:58:01 foser Exp $
 
 inherit gnome2 eutils
 
