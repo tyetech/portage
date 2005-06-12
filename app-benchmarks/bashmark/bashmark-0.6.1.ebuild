@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/bashmark/Attic/bashmark-0.6.ebuild,v 1.1 2005/03/30 18:50:17 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/bashmark/Attic/bashmark-0.6.1.ebuild,v 1.1 2005/06/12 18:29:01 genstef Exp $
 
 DESCRIPTION="Geno's cross platform benchmarking suite"
 HOMEPAGE="http://bashmark.coders-net.de"
