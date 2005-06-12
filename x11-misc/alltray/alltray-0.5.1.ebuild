@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/alltray/Attic/alltray-0.5.1.ebuild,v 1.2 2005/05/16 17:51:29 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/alltray/Attic/alltray-0.5.1.ebuild,v 1.3 2005/06/12 22:52:45 swegener Exp $
 
 inherit versionator
 
@@ -19,7 +19,7 @@ RDEPEND=">=x11-libs/gtk+-2.4"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}"/${MY_P}
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
