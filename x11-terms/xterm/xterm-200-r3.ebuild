@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-202.ebuild,v 1.2 2005/05/13 21:10:34 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-200-r3.ebuild,v 1.1 2005/06/13 11:16:07 seemant Exp $
 
 inherit eutils flag-o-matic
 
@@ -10,17 +10,12 @@ SRC_URI="ftp://invisible-island.net/${PN}/${P}.tgz"
 
 LICENSE="X11"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
-IUSE="truetype Xaw3d unicode"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 sparc x86"
+IUSE="truetype Xaw3d unicode toolbar"
 
 DEPEND="virtual/x11
 	virtual/utempter
 	Xaw3d? ( x11-libs/Xaw3d )"
-
-src_unpack() {
-	unpack ${A}; cd ${S}
-	epatch ${FILESDIR}/${PN}-no-toolbar-by-default.patch
-}
 
 src_compile() {
 
@@ -46,11 +41,10 @@ src_compile() {
 		--enable-tcap-query \
 		--enable-logging \
 		--enable-dabbrev \
-		--enable-toolbar \
 		`use_enable truetype freetype` \
 		`use_enable unicode luit` `use_enable unicode mini-luit` \
 		`use_with Xaw3d` \
-		|| die
+		`use_enable toolbar` || die
 
 	emake || die
 }
@@ -67,6 +61,10 @@ src_install() {
 
 	# restore the navy blue
 	sed -i "s:blue2$:blue:" ${D}/etc/X11/app-defaults/XTerm-color
+
+	# Fix for bug #91453 at Thomas Dickey's suggestion:
+	echo "*allowWindowOps: 	false" >> ${D}/etc/X11/app-defaults/XTerm
+	echo "*allowWindowOps: 	false" >> ${D}/etc/X11/app-defaults/UXTerm
 }
 
 pkg_preinst() {
@@ -76,14 +74,11 @@ pkg_preinst() {
 	touch ${ROOT}/usr/share/terminfo/x/x*
 }
 
-
 pkg_postinst() {
 	echo
-	einfo "Xterm is now built with toolbar support enabled.  The 'toolbar'"
-	einfo "USE flag is gone away from this release onwards.  In order to run"
-	einfo "xterm with the toolbar, please see the manpage or the ChangeLog"
-	einfo "in /usr/share/doc/${PF}"
+	ewarn "Please make SURE to run etc-update, as that is where the latest"
+	ewarn "security fix is made"
 	echo
-	epause
+	epause 5
 	ebeep
 }
