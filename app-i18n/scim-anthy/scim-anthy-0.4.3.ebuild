@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-anthy/Attic/scim-anthy-0.4.0.ebuild,v 1.1 2005/05/15 17:55:51 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-anthy/Attic/scim-anthy-0.4.3.ebuild,v 1.1 2005/06/13 04:53:24 usata Exp $
 
 DESCRIPTION="Japanese input method Anthy IMEngine for SCIM"
 HOMEPAGE="http://scim-imengine.sourceforge.jp/index.cgi?cmd=view;name=SCIMAnthy"
-SRC_URI="mirror://sourceforge.jp/scim-imengine/14708/${P}.tar.gz"
+SRC_URI="mirror://sourceforge.jp/scim-imengine/15013/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
