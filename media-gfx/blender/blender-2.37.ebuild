@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.37.ebuild,v 1.3 2005/06/14 13:56:53 fmccor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.37.ebuild,v 1.4 2005/06/16 18:15:02 lu_zero Exp $
 
 inherit flag-o-matic eutils python
 
@@ -47,7 +47,6 @@ src_unpack() {
 src_compile() {
 	local myconf=""
 
-	replace-flags -march=pentium4 -march=pentium3
 	scons -q
 
 	# SDL Support
