@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mrtg/Attic/mrtg-2.12.1.ebuild,v 1.1 2005/05/29 00:15:43 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/mrtg/Attic/mrtg-2.12.1.ebuild,v 1.2 2005/06/19 18:24:49 vanquirius Exp $
 
 DESCRIPTION="A tool to monitor the traffic load on network-links"
 HOMEPAGE="http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/"
@@ -32,4 +32,10 @@ src_install () {
 		prepalldocs
 		dohtml -r doc/*.html images/*
 	fi
+}
+
+pkg_postinst(){
+	einfo "You must configure mrtg before being able to run it. Try cfgmaker."
+	einfo "The following thread may be useful:"
+	einfo "http://forums.gentoo.org/viewtopic-t-105862.html"
 }
