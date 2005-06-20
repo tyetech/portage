@@ -1,18 +1,19 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt/Attic/qt-4.0.0_rc1.ebuild,v 1.3 2005/06/14 18:48:48 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt/Attic/qt-4.0.0_rc1-r3.ebuild,v 1.1 2005/06/20 20:01:59 caleb Exp $
 
 inherit eutils flag-o-matic
 
 SRCTYPE="opensource-desktop"
-#SNAPSHOT="20050603"
-SNAPSHOT=""
+SNAPSHOT="20050620"
+#SNAPSHOT=""
 DESCRIPTION="QT version ${PV}"
 HOMEPAGE="http://www.trolltech.com/"
 
-#SRC_URI="ftp://ftp.trolltech.com/qt/snapshots/qt-x11-${SRCTYPE}-${PV}-snapshot-${SNAPSHOT}.tar.bz2"
-SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV/_rc1/-rc1}.tar.bz2"
-S=${WORKDIR}/qt-x11-${SRCTYPE}-${PV/_rc1/-rc1}
+SRC_URI="ftp://ftp.trolltech.com/qt/snapshots/qt-x11-${SRCTYPE}-${PV/_rc1/}-snapshot-${SNAPSHOT}.tar.bz2"
+#SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV/_rc1/-rc1}.tar.bz2"
+#S=${WORKDIR}/qt-x11-${SRCTYPE}-${PV/_rc1/-rc1}
+S=${WORKDIR}/qt-x11-${SRCTYPE}-${PV/_rc1/}-snapshot-${SNAPSHOT}
 
 LICENSE="|| ( QPL-1.0 GPL-2 )"
 SLOT="4"
@@ -34,15 +35,17 @@ DEPEND="virtual/x11 virtual/xft >=media-libs/freetype-2
 
 pkg_setup() {
 	QTBASEDIR=/usr/$(get_libdir)/qt4
-	QTPREFIXDIR=${S}
+	QTPREFIXDIR=/usr/$(get_libdir)/qt4
 	QTBINDIR=/usr/bin
 	QTLIBDIR=/usr/$(get_libdir)/qt4
-	QTDOCDIR=/usr/share/qt4/doc
 	QTDATADIR=/usr/share/qt4
+	QTDOCDIR=${QTDATADIR}/doc
 	QTHEADERDIR=/usr/include/qt4
-	QTPLUGINDIR=/usr/$(get_libdir)/qt4/plugins
+	QTPLUGINDIR=${QTLIBDIR}/plugins
 	QTSYSCONFDIR=/etc/qt4
-	QTTRANSDIR=/usr/share/qt4/translations
+	QTTRANSDIR=${QTDATADIR}/translations
+	QTEXAMPLESDIR=${QTDATADIR}/examples
+	QTDEMOSDIR=${QTDATADIR}/demos
 
 	PLATFORM=$(qt_mkspecs_dir)
 }
@@ -73,11 +76,11 @@ src_unpack() {
 
 	cd mkspecs/$(qt_mkspecs_dir)
 	# set c/xxflags and ldflags
-	strip-flags
 
-	# Qt4 moc does not work with -O3, unfortunately.
+	# Don't let the user go too overboard with flags.  If you really want to, uncomment
+	# out the line below and give 'er a whirl.
+	strip-flags
 	replace-flags -O3 -O2
-	filter-flags -finline-functions
 
 	sed -i -e "s:QMAKE_CFLAGS_RELEASE.*=.*:QMAKE_CFLAGS_RELEASE=${CFLAGS}:" \
 		-e "s:QMAKE_CXXFLAGS_RELEASE.*=.*:QMAKE_CXXFLAGS_RELEASE=${CXXFLAGS}:" \
@@ -86,7 +89,7 @@ src_unpack() {
 	cd ${S}
 
 	epatch ${FILESDIR}/qt4-rpath.patch
-	epatch ${FILESDIR}/qt4b2r3_nomkdir.patch
+	epatch ${FILESDIR}/qt4rc1_nomkdir.patch
 
 	sed -i -e "s:CFG_REDUCE_EXPORTS=auto:CFG_REDUCE_EXPORTS=no:" configure
 }
@@ -127,9 +130,13 @@ src_compile() {
 		-platform ${PLATFORM} -xplatform ${PLATFORM} \
 		-prefix ${QTPREFIXDIR} -bindir ${QTBINDIR} -libdir ${QTLIBDIR} -datadir ${QTDATADIR} \
 		-docdir ${QTDOCDIR} -headerdir ${QTHEADERDIR} -plugindir ${QTPLUGINDIR} \
-		-sysconfdir ${QTSYSCONFDIR} -translationdir ${QTTRANSDIR} ${myconf} || die
+		-sysconfdir ${QTSYSCONFDIR} -translationdir ${QTTRANSDIR} \
+		-examplesdir ${QTEXAMPLESDIR} -demosdir ${QTDEMOSDIR} ${myconf} || die
 
 	emake sub-tools-all-ordered || die
+	if use examples; then
+		emake sub-examples-all-ordered || die
+	fi
 }
 
 src_install() {
@@ -137,21 +144,21 @@ src_install() {
 	export PATH="${S}/bin:${PATH}"
 	export LD_LIBRARY_PATH="${S}/lib:${LD_LIBRARY_PATH}"
 
-	# make INSTALL_ROOT=${D} sub-demos-install_subtargets-ordered sub-examples-install_subtargets-ordered || die
-	# make INSTALL_ROOT=${D} install_qmake sub-tools-install_subtargets-ordered || die
-	# Using install_qmake forces lots of other things to build.  Bypass it for now.
-
 	make INSTALL_ROOT=${D} sub-tools-install_subtargets-ordered || die
+
 	if use examples; then
-		dodir ${QTDATADIR}/examples
-		cp -a ${S}/examples/* ${D}/${QTDATADIR}/examples
-		dodir ${QTDATADIR}/demos
-		cp -a ${S}/demos/* ${D}/${QTDATADIR}/demos
+		make INSTALL_ROOT=${D} sub-examples-install_subtargets || die
 	fi
 
-	#install -c ${S}/bin/qmake ${D}${QTBINDIR}/qmake
 	make INSTALL_ROOT=${D} install_qmake || die
 	make INSTALL_ROOT=${D} install_mkspecs || die
+
+	if use doc; then
+		make INSTALL_ROOT=${D} install_htmldocs || die
+	fi
+
+	# The QtAssistant header files aren't installed..not sure why
+	cp -a ${S}/include/QtAssistant ${D}/${QTHEADERDIR}/QtAssistant
 
 	# Fix symlink
 	cd ${D}/${QTDATADIR}/mkspecs
@@ -161,17 +168,10 @@ src_install() {
 
 	mkdir -p ${D}/${QTSYSCONFDIR}
 
-	if use doc; then
-		make INSTALL_ROOT=${D} install_htmldocs || die
-	fi
-
-	sed -i -e "s:${S}/lib:${QTLIBDIR}:g" ${D}/${QTLIBDIR}/*.la
-	sed -i -e "s:${S}/lib:${QTLIBDIR}:g" ${D}/${QTLIBDIR}/*.prl
-	sed -i -e "s:${S}/lib:${QTLIBDIR}:g" ${D}/${QTLIBDIR}/pkgconfig/*.pc
-	sed -i -e "s:${S}:${QTBASEDIR}:g" ${D}/${QTLIBDIR}/pkgconfig/*.pc
-
-	# Don't need to install stray linguist files
-	rm -rf ${D}/${DATADIR}/phrasebooks/linguist
+	#sed -i -e "s:${S}/lib:${QTLIBDIR}:g" ${D}/${QTLIBDIR}/*.la
+	#sed -i -e "s:${S}/lib:${QTLIBDIR}:g" ${D}/${QTLIBDIR}/*.prl
+	#sed -i -e "s:${S}/lib:${QTLIBDIR}:g" ${D}/${QTLIBDIR}/pkgconfig/*.pc
+	#sed -i -e "s:${S}:${QTBASEDIR}:g" ${D}/${QTLIBDIR}/pkgconfig/*.pc
 
 	# List all the multilib libdirs
 	local libdirs
