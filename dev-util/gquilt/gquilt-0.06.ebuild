@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gquilt/Attic/gquilt-0.06.ebuild,v 1.1 2005/06/20 13:25:54 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gquilt/Attic/gquilt-0.06.ebuild,v 1.2 2005/06/20 13:28:50 ka0ttic Exp $
 
 inherit eutils
 
@@ -14,7 +14,7 @@ KEYWORDS="~x86"
 IUSE=""
 
 RDEPEND="dev-util/quilt
-	dev-python/pygtk"
+	>=dev-python/pygtk-2"
 
 src_unpack() {
 	unpack ${A}
