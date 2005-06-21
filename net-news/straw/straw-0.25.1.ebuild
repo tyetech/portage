@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/straw/Attic/straw-0.25.1.ebuild,v 1.1 2005/03/18 14:22:07 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/straw/Attic/straw-0.25.1.ebuild,v 1.2 2005/06/21 13:52:53 foser Exp $
 
 inherit gnome2 python distutils virtualx
 
@@ -10,7 +10,7 @@ SRC_URI="http://savannah.nongnu.org/download/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="x86 ~ppc ~amd64"
 IUSE=""
 
 DEPEND=">=dev-lang/python-2.2.3-r3"
