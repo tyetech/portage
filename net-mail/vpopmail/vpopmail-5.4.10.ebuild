@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vpopmail/Attic/vpopmail-5.4.9-r1.ebuild,v 1.6 2005/05/05 22:40:10 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vpopmail/Attic/vpopmail-5.4.10.ebuild,v 1.1 2005/06/21 21:27:41 anarchy Exp $
 
-inherit eutils gnuconfig fixheadtails flag-o-matic
+inherit eutils gnuconfig fixheadtails
 
 # TODO: all ldap, sybase support
 #MY_PV=${PV/_/-}
@@ -57,7 +57,8 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	epatch ${FILESDIR}/${P}-access.violation.patch || die "failed to patch."
+	epatch ${FILESDIR}/${PN}-5.4.9-access.violation.patch || die "failed to patch."
+	epatch ${FILESDIR}/${PN}-fPIC.patch || die "failed to patch Makefiles."
 	sed -i \
 		's|Maildir|.maildir|g' \
 		vchkpw.c vconvert.c vdelivermail.c \
@@ -97,8 +98,6 @@ src_compile() {
 		&& myopts="${myopts} --enable-clear-passwd=y" \
 		|| myopts="${myopts} --enable-clear-passwd=n"
 
-	use amd64 && append-flags -fPIC
-
 	econf \
 		${myopts} \
 		--sbindir=/usr/sbin \
@@ -124,7 +123,11 @@ src_compile() {
 	# TCPRULES for relaying is now considered obsolete, use relay-ctrl instead
 	#--enable-tcprules-prog=/usr/bin/tcprules --enable-tcpserver-file=/etc/tcp.smtp \
 	#--enable-roaming-users=y --enable-relay-clear-minutes=60 \
-	#--disable-rebuild-tcpserver-file \	
+	#--disable-rebuild-tcpserver-file \
+
+	# Copy compile from automake-1.6 
+	cp /usr/share/automake-1.6/compile ./ || die "failed to copy file"
+
 	emake || die "Make failed."
 }
 
