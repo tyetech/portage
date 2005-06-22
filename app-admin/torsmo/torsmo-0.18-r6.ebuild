@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/torsmo/Attic/torsmo-0.18-r5.ebuild,v 1.1 2005/06/21 11:01:17 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/torsmo/Attic/torsmo-0.18-r6.ebuild,v 1.1 2005/06/22 11:00:55 dragonheart Exp $
 
 inherit eutils
 
