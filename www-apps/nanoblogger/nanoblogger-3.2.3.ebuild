@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/nanoblogger/Attic/nanoblogger-3.2.ebuild,v 1.2 2005/06/08 08:45:46 dholm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/nanoblogger/nanoblogger-3.2.3.ebuild,v 1.1 2005/06/23 10:34:31 ka0ttic Exp $
 
-inherit bash-completion eutils
+inherit bash-completion
 
 DESCRIPTION="Small and simple weblog engine written in Bash for the command-line"
 HOMEPAGE="http://nanoblogger.sourceforge.net/"
@@ -19,9 +19,9 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	sed -i \
-		-e 's|^\(BASE_DIR=\).*$|\1"/usr/share/nanoblogger"|' \
-		-e 's|"$BASE_DIR"/\(nb\.conf\)|/etc/\1|' \
-		-e "s|\$BASE_DIR.*\(nano.*html\)|/usr/share/doc/${PF}/html/\1|" \
+		-e 's|^\(NB_BASE_DIR=\).*$|\1"/usr/share/nanoblogger"|' \
+		-e 's|"$NB_BASE_DIR/\(nb\.conf\)"|"/etc/\1"|g' \
+		-e "s|\$NB_BASE_DIR.*\(nano.*html\)|/usr/share/doc/${PF}/html/\1|" \
 			nb || die "sed nb failed"
 }
 
@@ -49,5 +49,15 @@ pkg_postinst() {
 	einfo "nanoblogger (with the -b switch), you can set a default value in your"
 	einfo "~/.nb.conf.  For example:"
 	einfo '   BLOG_DIR="$HOME/public_html/blog"'
+	einfo
+	einfo "If you are upgrading nanoblogger from a previous version, follow"
+	einfo "these directions (as stated in the manual):"
+	einfo "    1. create a new weblog directory using nanoblogger (skip configuration):"
+	einfo "      nb [-b blog_dir] -a"
+	einfo "    2. copy old data directry to new weblog:"
+	einfo "      cp -r [old_blog_dir]/data [newblog_dir]"
+	einfo "    3. edit new blog.conf to your liking and rebuild weblog:"
+	einfo "      nb [-b blog_dir] --configure -u all"
+	echo
 	bash-completion_pkg_postinst
 }
