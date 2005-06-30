@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-fs/cvs-repo/gentoo-x86/net-fs/netatalk/Attic/netatalk-2.0.1.ebuild,v 1.2 2004/12/12 21:52:24 rphillips Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-fs/cvs-repo/gentoo-x86/net-fs/netatalk/Attic/netatalk-2.0.1.ebuild,v 1.3 2005/06/30 23:56:56 flameeyes Exp $
 
 inherit eutils flag-o-matic
 IUSE="ssl pam tcpd slp cups kerberos krb4 afs debug"
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 HOMEPAGE="http://netatalk.sourceforge.net"
 
 SLOT="0"
-LICENSE="GPL-2"
+LICENSE="BSD"
 KEYWORDS="~x86 ~ppc"
 
 RDEPEND="sys-apps/shadow
@@ -46,7 +46,7 @@ src_compile() {
 			${S}/distrib/initscripts/rc.atalk.gentoo.tmpl
 	fi
 
-	# This is a fix to add -z,now to the linkflags for libraries and 
+	# This is a fix to add -z,now to the linkflags for libraries and
 	# to stop the braindead makefiles upstream hands us from running
 	# rc-update and causing an access violation
 	sed -i -e 's/^\(@USE_GENTOO_TRUE@[[:space:]]\+-rc-update add atalk default[[:space:]]*\)/#\1/' \
