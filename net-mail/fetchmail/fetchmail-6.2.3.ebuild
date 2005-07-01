@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/fetchmail/Attic/fetchmail-6.2.3.ebuild,v 1.8 2004/11/03 04:24:04 psi29a Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/fetchmail/Attic/fetchmail-6.2.3.ebuild,v 1.9 2005/07/01 16:38:17 ticho Exp $
 
 IUSE="ssl nls ipv6"
 
