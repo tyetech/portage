@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/ebook.eclass,v 1.23 2005/07/06 20:20:03 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/ebook.eclass,v 1.24 2005/07/06 20:23:20 agriffis Exp $
 #
 # Author Francisco Gimeno <kikov@fco-gimeno.com>
 # Mantainer José Alberto Suárez López <bass@gentoo.org>
@@ -9,7 +9,6 @@
 # The ebook eclass defines some default functions and variables to 
 # install ebooks. 
 
-INHERITED="$INHERITED $ECLASS"
 HOMEPAGE="http://lidn.sourceforge.net"
 
 IUSE="kde"

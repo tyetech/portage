@@ -1,8 +1,7 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/mozilla-launcher.eclass,v 1.7 2005/07/06 20:20:04 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/mozilla-launcher.eclass,v 1.8 2005/07/06 20:23:20 agriffis Exp $
 
-INHERITED="$INHERITED $ECLASS"
 
 # update_mozilla_launcher_symlinks
 # --------------------------------
