@@ -1,10 +1,9 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/mozconfig.eclass,v 1.11 2005/07/02 03:19:12 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/mozconfig.eclass,v 1.12 2005/07/06 20:20:04 agriffis Exp $
 #
 # mozconfig.eclass: the new mozilla.eclass
 
-ECLASS=mozconfig
 INHERITED="$INHERITED $ECLASS"
 
 IUSE="java gnome ldap debug xinerama xprint moznoxft"

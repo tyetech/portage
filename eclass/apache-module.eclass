@@ -1,8 +1,7 @@
 # Copyright 2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License, v2 or later
 # Author Michael Tindal <urilith@gentoo.org>
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/apache-module.eclass,v 1.9 2005/06/04 18:13:05 vericgar Exp $
-ECLASS=apache-module
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/apache-module.eclass,v 1.10 2005/07/06 20:20:03 agriffis Exp $
 INHERITED="$INHERITED $ECLASS"
 
 inherit depend.apache

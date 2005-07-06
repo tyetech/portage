@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/iiimf.eclass,v 1.10 2005/03/30 17:00:35 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/iiimf.eclass,v 1.11 2005/07/06 20:20:03 agriffis Exp $
 #
 # Author: Mamoru KOMACHI <usata@gentoo.org>
 #
@@ -8,7 +8,6 @@
 # libraries, servers, clients and modules within the Portage system.
 #
 
-ECLASS=iiimf
 INHERITED="$INHERITED $ECLASS"
 EXPORT_FUNCTIONS src_compile src_install
 
