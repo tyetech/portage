@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse/Attic/seahorse-0.7.5.ebuild,v 1.7 2005/01/01 12:38:43 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse/Attic/seahorse-0.7.5.ebuild,v 1.8 2005/07/07 00:47:59 agriffis Exp $
 
 inherit gnome2 eutils
 
@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 DOCS="AUTHORS ChangeLog NEWS README TODO THANKS"
-IUSE="doc"
+IUSE=""
 
 
 src_unpack() {
