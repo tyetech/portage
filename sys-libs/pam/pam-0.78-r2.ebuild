@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/pam/Attic/pam-0.78-r2.ebuild,v 1.18 2005/07/07 19:46:03 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/pam/Attic/pam-0.78-r2.ebuild,v 1.19 2005/07/07 22:05:18 vapier Exp $
 
 FORCE_SYSTEMAUTH_UPDATE="no"
 
@@ -203,7 +203,6 @@ src_compile() {
 			--host=${CHOST} \
 			--enable-static \
 			--disable-shared \
-			--host=${CHOST} \
 			--with-pic \
 			--disable-threads \
 			--with-threads=none \
