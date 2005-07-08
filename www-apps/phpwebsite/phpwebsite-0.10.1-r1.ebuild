@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/phpwebsite/Attic/phpwebsite-0.10.1.ebuild,v 1.4 2005/07/08 12:33:47 rl03 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/phpwebsite/Attic/phpwebsite-0.10.1-r1.ebuild,v 1.1 2005/07/08 12:37:18 rl03 Exp $
 
 inherit eutils webapp
 
