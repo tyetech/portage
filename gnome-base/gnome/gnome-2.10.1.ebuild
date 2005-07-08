@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.10.1_pre0.ebuild,v 1.5 2005/07/01 22:02:04 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome/Attic/gnome-2.10.1.ebuild,v 1.1 2005/07/08 10:56:19 leonardop Exp $
 
 DESCRIPTION="Meta package for the GNOME desktop"
 HOMEPAGE="http://www.gnome.org/"
@@ -9,6 +9,7 @@ LICENSE="as-is"
 SLOT="2.0"
 # when unmasking for an arch
 # double check none of the deps are still masked !
+# Before marking stable, check out bug #95548
 KEYWORDS="~x86 ~ppc ~amd64 ~sparc ~ppc64"
 IUSE="accessibility cdr dvdr hal"
 
@@ -19,12 +20,12 @@ RDEPEND="!gnome-base/gnome-core
 	>=dev-libs/glib-2.6.4
 	>=dev-libs/atk-1.9.1
 	>=x11-libs/gtk+-2.6.7
-	>=x11-libs/pango-1.8
+	>=x11-libs/pango-1.8.1
 
-	>=dev-libs/libxml2-2.6.17
-	>=dev-libs/libxslt-1.1.12
+	>=dev-libs/libxml2-2.6.19
+	>=dev-libs/libxslt-1.1.14
 
-	>=x11-libs/libxklavier-2.0
+	>=x11-libs/libxklavier-2
 	>=media-libs/audiofile-0.2.6-r1
 	>=media-sound/esound-0.2.34
 	>=gnome-base/gnome-mime-data-2.4.2
@@ -53,18 +54,18 @@ RDEPEND="!gnome-base/gnome-core
 	>=media-libs/gstreamer-0.8.9
 	>=media-libs/gst-plugins-0.8.8
 	>=gnome-extra/gnome-media-2.10.2
-	>=media-video/totem-1.0.2
-	>=media-sound/sound-juicer-2.10
+	>=media-video/totem-1.0.1
+	>=media-sound/sound-juicer-2.10.1
 
 	>=media-gfx/eog-2.10
-	!mips? ( >=www-client/epiphany-1.6.3 )
+	!mips? ( >=www-client/epiphany-1.6.2 )
 	>=app-arch/file-roller-2.10.2
 	>=gnome-extra/gcalctool-5.5.42
 	>=gnome-extra/gconf-editor-2.10
 	>=gnome-base/gdm-2.6.0.9
 	>=app-editors/gedit-2.10.2
 
-	>=app-text/ggv-2.8.3
+	>=app-text/ggv-2.8.4
 	>=app-text/gpdf-2.10
 
 	>=gnome-base/gnome-session-2.10
@@ -87,7 +88,7 @@ RDEPEND="!gnome-base/gnome-core
 	>=gnome-base/libgnomeprintui-2.10.2
 
 	>=gnome-extra/gnome-utils-2.10.1
-	>=gnome-extra/gnome-games-2.10
+	>=gnome-extra/gnome-games-2.10.1
 
 	>=gnome-base/libgtop-2.10.1
 	>=gnome-extra/gnome-system-monitor-2.10.1
@@ -99,7 +100,7 @@ RDEPEND="!gnome-base/gnome-core
 	>=x11-libs/startup-notification-0.8
 
 	>=gnome-extra/yelp-2.6.5
-	>=x11-libs/vte-0.11.12
+	>=x11-libs/vte-0.11.13
 	>=gnome-extra/zenity-2.10
 	>=net-analyzer/gnome-netstatus-2.10
 
@@ -108,11 +109,11 @@ RDEPEND="!gnome-base/gnome-core
 
 	hal? ( >=gnome-base/gnome-volume-manager-1.2.1 )
 
-	>=gnome-extra/evolution-data-server-1.2.1
-	>=mail-client/evolution-2.2.1
-	>=gnome-extra/evolution-webcal-2.2.0
-	>=gnome-extra/gal-2.4.1
-	>=gnome-extra/libgtkhtml-3.6.1
+	>=gnome-extra/evolution-data-server-1.2.2
+	>=mail-client/evolution-2.2.2
+	>=gnome-extra/evolution-webcal-2.2.1
+	>=gnome-extra/gal-2.4.2
+	=gnome-extra/libgtkhtml-2.6.3
 
 	>=net-misc/vino-2.10
 
