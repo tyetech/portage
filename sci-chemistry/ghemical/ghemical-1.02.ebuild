@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/ghemical/Attic/ghemical-1.02.ebuild,v 1.2 2005/07/09 00:20:11 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/ghemical/Attic/ghemical-1.02.ebuild,v 1.3 2005/07/09 05:06:57 spyderous Exp $
 
 inherit eutils
 
@@ -36,8 +36,8 @@ src_compile() {
 	./configure \
 		--prefix=/usr \
 		$(use_enable mpqc) \
-		$(use_enable gtk) ||die
-	emake || die "Configure failed"
+		$(use_enable gtk) || die "Configure failed"
+	emake || die "Make failed"
 }
 
 src_install() {
