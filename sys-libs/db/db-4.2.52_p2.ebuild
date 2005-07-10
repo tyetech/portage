@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/db/Attic/db-4.2.52_p2.ebuild,v 1.25 2005/07/02 18:09:12 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/db/Attic/db-4.2.52_p2.ebuild,v 1.26 2005/07/10 20:59:39 swegener Exp $
 
 inherit eutils gnuconfig db
 
@@ -88,7 +88,7 @@ src_compile() {
 		--host=${CHOST} \
 		${myconf} || die "configure failed"
 
-	emake || make || die "make failed"
+	emake -j1 || die "make failed"
 }
 
 src_install() {
