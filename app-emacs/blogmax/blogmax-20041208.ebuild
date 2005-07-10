@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/blogmax/blogmax-20041208.ebuild,v 1.2 2005/07/01 18:14:57 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/blogmax/blogmax-20041208.ebuild,v 1.3 2005/07/10 00:45:19 swegener Exp $
 
 inherit elisp
 
@@ -12,8 +12,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 DEPEND="virtual/emacs"
-
-S=${WORKDIR}/${P}
 
 src_unpack() {
 	unpack ${A}; rm -f *.elc
