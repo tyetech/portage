@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-calculators/cvs-repo/gentoo-x86/sci-calculators/qalculate-kde/Attic/qalculate-kde-0.8.0.ebuild,v 1.1 2005/06/05 15:25:13 ribosome Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-calculators/cvs-repo/gentoo-x86/sci-calculators/qalculate-kde/Attic/qalculate-kde-0.8.0.ebuild,v 1.2 2005/07/10 01:27:59 weeve Exp $
 
 inherit kde
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/qalculate/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~sparc ~x86"
 IUSE=""
 
 DEPEND="sci-libs/libqalculate
