@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.2.4-r1.ebuild,v 1.9 2005/07/02 18:29:36 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-core/Attic/nessus-core-2.2.4-r1.ebuild,v 1.10 2005/07/11 21:05:32 swegener Exp $
 
 inherit toolchain-funcs eutils gnuconfig
 
@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.nessus.org/pub/nessus/nessus-${PV}/src/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 ~ppc ppc64 sparc x86"
-IUSE="X tcpd gtk2 debug"
+IUSE="X tcpd gtk2 debug prelude"
 DEPEND="=net-analyzer/nessus-libraries-${PV}
 	=net-analyzer/libnasl-${PV}
 	tcpd? ( sys-apps/tcp-wrappers )
