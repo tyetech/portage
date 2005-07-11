@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jre-bin/Attic/sun-jre-bin-1.5.0.04.ebuild,v 1.2 2005/06/28 13:06:55 axxo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jre-bin/Attic/sun-jre-bin-1.5.0.04.ebuild,v 1.3 2005/07/11 13:20:24 axxo Exp $
 
 inherit java eutils
 
@@ -22,9 +22,9 @@ HOMEPAGE="http://java.sun.com/j2se/"
 SRC_URI="x86? ( $x86file ) amd64? ( $amd64file )"
 SLOT="1.5"
 LICENSE="sun-bcla-java-vm"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 -*"
 RESTRICT="fetch"
-IUSE="mozilla"
+IUSE="browserplugin mozilla"
 
 DEPEND=">=dev-java/java-config-1.2
 	sys-apps/sed"
@@ -97,7 +97,7 @@ src_install() {
 	dodoc COPYRIGHT LICENSE README
 	dohtml Welcome.html
 
-	if use mozilla; then
+	if use browserplugin || use mozilla; then
 		local plugin_dir="ns7-gcc29"
 		if has_version '>=gcc-3*' ; then
 			plugin_dir="ns7"
@@ -175,4 +175,10 @@ pkg_postinst() {
 	echo
 	eerror "Some parts of Sun's JRE require virtual/x11 and virtual/lpr to be installed."
 	eerror "Be careful which Java libraries you attempt to use."
+
+	if ! use browserplugin && use mozilla; then
+		ewarn
+		ewarn "The 'mozilla' useflag to enable the java browser plugin for applets"
+		ewarn "has been renamed to 'browserplugin' please update your USE"
+	fi
 }
