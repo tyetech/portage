@@ -1,6 +1,6 @@
 # Copyright 2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/qt3.eclass,v 1.3 2005/07/09 22:39:15 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/qt3.eclass,v 1.4 2005/07/11 15:08:06 swegener Exp $
 #
 # Author Caleb Tennis <caleb@gentoo.org>
 #
@@ -58,7 +58,7 @@ qt_min_version_list() {
 				fi
 			done
 			;;
-		*)    
+		*)
 			die "qt_min_version called with invalid parameter: \"$1\""
 			;;
 	esac
