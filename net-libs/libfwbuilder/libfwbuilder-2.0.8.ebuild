@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libfwbuilder/Attic/libfwbuilder-2.0.7.ebuild,v 1.3 2005/07/11 10:55:37 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libfwbuilder/Attic/libfwbuilder-2.0.8.ebuild,v 1.1 2005/07/11 10:55:37 carlo Exp $
 
 DESCRIPTION="Firewall Builder 2.0 API library and compiler framework"
 HOMEPAGE="http://www.fwbuilder.org/"
