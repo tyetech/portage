@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-cgi/Attic/php-cgi-4.4.0.ebuild,v 1.1 2005/07/11 14:49:06 sebastian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-cgi/Attic/php-cgi-4.4.0.ebuild,v 1.2 2005/07/12 09:04:56 sebastian Exp $
 
 PHPSAPI="cgi"
 inherit php-sapi eutils
@@ -8,7 +8,7 @@ inherit php-sapi eutils
 DESCRIPTION="PHP CGI"
 SLOT="0"
 IUSE="${IUSE} force-cgi-redirect"
-KEYWORDS="~x86 ~sparc ~alpha ~hppa ~ppc ~ia64 ~amd64 ~mips"
+KEYWORDS="x86 ~sparc ~alpha ~hppa ~ppc ~ia64 ~amd64 ~mips"
 
 # for this revision only
 PDEPEND=">=${PHP_PROVIDER_PKG}-4.3.11"
