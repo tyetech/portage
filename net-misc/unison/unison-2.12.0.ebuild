@@ -1,16 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/unison/Attic/unison-2.10.2.ebuild,v 1.3 2005/02/18 11:03:35 mattam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/unison/Attic/unison-2.12.0.ebuild,v 1.1 2005/07/12 22:37:16 mattam Exp $
 
 inherit eutils
 
-IUSE="gtk gtk2"
+IUSE="gtk gtk2 static debug"
 
 DESCRIPTION="Two-way cross-platform file synchronizer"
 HOMEPAGE="http://www.cis.upenn.edu/~bcpierce/unison/"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="x86 ppc ~amd64"
 
 DEPEND=">=dev-lang/ocaml-3.04
 	gtk? ( gtk2? ( >=dev-ml/lablgtk-2.2 ) !gtk2? ( =dev-ml/lablgtk-1.2* ) )"
@@ -18,11 +18,9 @@ DEPEND=">=dev-lang/ocaml-3.04
 RDEPEND="gtk? ( gtk2? ( >=dev-ml/lablgtk-2.2 ) !gtk2? ( =dev-ml/lablgtk-1.2* )
 || ( net-misc/x11-ssh-askpass net-misc/gtk2-ssh-askpass ) )"
 
-SRC_URI="http://www.cis.upenn.edu/~bcpierce/unison/download/beta-test/${P}/${P}.tar.gz"
-
-pkg_setup() {
-	ewarn "This is a beta release, use at your very own risk"
-}
+SRC_URI="http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/${P}.tar.gz
+doc? ( http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/${P}-manual.pdf
+	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/stable/${P}-manual.html )"
 
 src_unpack() {
 	unpack ${P}.tar.gz
@@ -33,7 +31,15 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf
+	local myconf="THREADS=true"
+
+	if use static; then
+		myconf="$myconf STATIC=true"
+	fi
+
+	if use debug; then
+		myconf="$myconf DEBUGGING=true"
+	fi
 
 	if use gtk; then
 		if use gtk2; then
@@ -45,13 +51,19 @@ src_compile() {
 		myconf="$myconf UISTYLE=text"
 	fi
 
-	make $myconf CFLAGS="" || die
+	make $myconf CFLAGS="" || die "error making unsion"
 }
 
 src_install () {
 	# install manually, since it's just too much
 	# work to force the Makefile to do the right thing.
-	dobin unison
+	cd src
+	dobin unison || die
 	dodoc BUGS.txt CONTRIB COPYING INSTALL NEWS \
-	      README ROADMAP.txt TODO.txt
+	      README ROADMAP.txt TODO.txt || die
+
+	if use doc; then
+		dohtml ${DISTDIR}/${P}-manual.html || die
+		dodoc ${DISTDIR}/${P}-manual.pdf || die
+	fi
 }

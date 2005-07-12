@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/unison/Attic/unison-2.12.2.ebuild,v 1.2 2005/03/15 14:16:15 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/unison/Attic/unison-2.13.0.ebuild,v 1.1 2005/07/12 22:37:16 mattam Exp $
 
 inherit eutils
 
-IUSE="gtk gtk2 doc"
+IUSE="gtk gtk2 doc static debug"
 
 DESCRIPTION="Two-way cross-platform file synchronizer"
 HOMEPAGE="http://www.cis.upenn.edu/~bcpierce/unison/"
@@ -13,14 +13,14 @@ SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 
 DEPEND=">=dev-lang/ocaml-3.04
-	gtk? ( gtk2? ( >=dev-ml/lablgtk-2.2 ) !gtk2? ( =dev-ml/lablgtk-1.2* ) )
-	doc? ( www-client/lynx >=dev-tex/hevea-1.07 virtual/tetex virtual/ghostscript )"
+	gtk? ( gtk2? ( >=dev-ml/lablgtk-2.2 ) !gtk2? ( =dev-ml/lablgtk-1.2* ) )"
 
 RDEPEND="gtk? ( gtk2? ( >=dev-ml/lablgtk-2.2 ) !gtk2? ( =dev-ml/lablgtk-1.2* )
 || ( net-misc/x11-ssh-askpass net-misc/gtk2-ssh-askpass ) )"
 
-#SRC_URI="http://www.cis.upenn.edu/~bcpierce/unison/download/beta-test/${P}/${P}.tar.gz"
-SRC_URI="http://www.cis.upenn.edu/~bcpierce/unison/download/resources/developers-only/${P}.tar.gz"
+SRC_URI="http://www.cis.upenn.edu/~bcpierce/unison/download/releases/beta/${P}.tar.gz
+doc? ( http://www.cis.upenn.edu/~bcpierce/unison/download/releases/beta/${P}-manual.pdf
+	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/beta/${P}-manual.html )"
 
 pkg_setup() {
 	ewarn "This is a beta release, use at your very own risk"
@@ -31,11 +31,19 @@ src_unpack() {
 
 	# Fix for coreutils change of tail syntax
 	cd ${S}
-	sed -i -e 's/tail -1/tail -n 1/' src/Makefile.OCaml
+	sed -i -e 's/tail -1/tail -n 1/' Makefile.OCaml
 }
 
 src_compile() {
-	local myconf
+	local myconf="THREADS=true"
+
+	if use static; then
+		myconf="$myconf STATIC=true"
+	fi
+
+	if use debug; then
+		myconf="$myconf DEBUGGING=true"
+	fi
 
 	if use gtk; then
 		if use gtk2; then
@@ -48,28 +56,17 @@ src_compile() {
 	fi
 
 	make $myconf CFLAGS="" || die "error making unsion"
-	if use doc; then
-		make -C doc || die "error making doc"
-	fi
 }
 
 src_install () {
 	# install manually, since it's just too much
 	# work to force the Makefile to do the right thing.
-	cd src
 	dobin unison || die
 	dodoc BUGS.txt CONTRIB COPYING INSTALL NEWS \
 	      README ROADMAP.txt TODO.txt || die
-	cd ..
+
 	if use doc; then
-		cd doc
-		dodoc unison-manual.ps || die
-		doinfo unison-manual.info* || die
-		dohtml *.html || die
-		insinto /usr/share/doc/${PF}
-		doins unison-manual.pdf || die
-		cd ../icons
-		dohtml Unison.gif
-		cd ..
+		dohtml ${DISTDIR}/${P}-manual.html || die
+		dodoc ${DISTDIR}/${P}-manual.pdf || die
 	fi
 }
