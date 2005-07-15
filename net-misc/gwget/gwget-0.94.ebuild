@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gwget/Attic/gwget-0.94.ebuild,v 1.2 2005/05/20 19:04:32 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gwget/Attic/gwget-0.94.ebuild,v 1.3 2005/07/15 21:26:42 agriffis Exp $
 
 inherit eutils gnome2 libtool
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://gnome.org/projects/gwget/"
 SRC_URI="http://ftp.gnome.org/pub/GNOME/sources/${PN}/${PV}/${P}.tar.bz2"
 LICENSE="GPL-2"
 
-IUSE="doc epiphany"
+IUSE="epiphany"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~amd64"
 
