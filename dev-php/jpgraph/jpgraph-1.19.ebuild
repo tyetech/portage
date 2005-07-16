@@ -1,22 +1,20 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/jpgraph/Attic/jpgraph-1.12.2.ebuild,v 1.15 2005/07/03 08:22:53 sebastian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/jpgraph/Attic/jpgraph-1.19.ebuild,v 1.1 2005/07/16 14:08:14 sebastian Exp $
 
 inherit php-lib
 
 DESCRIPTION="fully OO graph drawing library for PHP"
 HOMEPAGE="http://www.aditus.nu/jpgraph/"
-SRC_URI="http://www.aditus.nu/jpgraph/downloads/${P}.tar.gz"
+SRC_URI="http://members.chello.se/jpgraph/jpgdownloads/${P}.tar.gz"
 
 LICENSE="QPL-1.0"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc alpha ~amd64"
+KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64"
 IUSE=""
 
-DEPEND="$DEPEND
-	=dev-php/php-4*"
-RDEPEND="virtual/php
-	>=media-libs/gd-1.8"
+DEPEND="$DEPEND =dev-php/php-4*"
+RDEPEND="virtual/php"
 
 JPGRAPH_CACHE_DIR="/var/cache/jpgraph"
 
@@ -64,7 +62,7 @@ src_install() {
 	php-lib_src_install src `cd src ; find . -type f -print`
 
 	# install documentation
-	dodoc README src/Changelog
+	dodoc README QPL.txt
 	dohtml -r docs/*
 
 	# setup the cache dir
