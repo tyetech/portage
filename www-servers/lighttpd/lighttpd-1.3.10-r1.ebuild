@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.3.10-r1.ebuild,v 1.4 2005/07/02 12:44:23 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.3.10-r1.ebuild,v 1.5 2005/07/17 11:57:52 ka0ttic Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.lighttpd.net/download/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~amd64"
+KEYWORDS="~amd64 ~ppc x86"
 IUSE="mysql ssl php xattr ldap"
 
 RDEPEND="virtual/libc
