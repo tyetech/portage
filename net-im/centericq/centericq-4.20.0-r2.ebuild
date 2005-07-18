@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centericq/Attic/centericq-4.20.0-r1.ebuild,v 1.4 2005/05/01 18:13:41 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centericq/Attic/centericq-4.20.0-r2.ebuild,v 1.1 2005/07/18 16:34:37 wschlich Exp $
 
 inherit eutils
 
@@ -26,6 +26,9 @@ RDEPEND="${DEPEND}
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+
+	# security fix, see CAN-2005-1914 -- from CenterICQ CVS, 20050718
+	epatch ${FILESDIR}/${P}.CAN-2005-1914.patch.bz2
 
 	use amd64 && epatch ${FILESDIR}/${PN}-amd64.patch
 }
