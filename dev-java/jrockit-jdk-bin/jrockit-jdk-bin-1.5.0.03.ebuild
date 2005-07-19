@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jrockit-jdk-bin/Attic/jrockit-jdk-bin-5.0.ebuild,v 1.5 2005/07/19 12:39:30 axxo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jrockit-jdk-bin/Attic/jrockit-jdk-bin-1.5.0.03.ebuild,v 1.1 2005/07/19 14:22:26 axxo Exp $
 
 # WARNING: This is the default VM on ia64, so treat this ebuild
 # with proper care.
@@ -12,8 +12,8 @@ inherit java
 
 DESCRIPTION="BEA WebLogic's J2SE Development Kit, version 5.0"
 HOMEPAGE="http://commerce.bea.com/downloads/weblogicjrockit/5.0/jr_50.jsp"
-SRC_URI="ia64? ( jrockit-jdk1.5.0-linux-ipf.bin )
-	x86? ( jrockit-jdk1.5.0-linux-ia32.bin )"
+SRC_URI="ia64? ( jrockit-25.2.0-jdk1.5.0_03-linux-ipf.bin )
+	x86? ( jrockit-25.2.0-jdk1.5.0_03-linux-ia32.bin )"
 
 LICENSE="jrockit"
 SLOT="1.5"
@@ -60,6 +60,7 @@ src_install() {
 
 pkg_postinst () {
 	# Set as default VM if none exists
+	java_pkg_postinst
 	einfo "Please review the license agreement in /usr/doc/${P}/LICENSE"
 	einfo "If you do not agree to the terms of this license, please uninstall this package"
 }
