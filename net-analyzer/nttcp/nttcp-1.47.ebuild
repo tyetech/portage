@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nttcp/Attic/nttcp-1.47.ebuild,v 1.8 2005/05/16 00:54:19 vanquirius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nttcp/Attic/nttcp-1.47.ebuild,v 1.9 2005/07/19 15:32:25 dholm Exp $
 
 inherit toolchain-funcs
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.leo.org/~elmar/nttcp/${P}.tar.gz"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="x86 ~alpha ~amd64 ia64"
+KEYWORDS="~alpha ~amd64 ia64 ~ppc x86"
 IUSE=""
 
 DEPEND="virtual/libc"
