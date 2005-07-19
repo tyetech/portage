@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/cryptcat/Attic/cryptcat-20031202.ebuild,v 1.9 2004/11/20 03:21:24 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/cryptcat/Attic/cryptcat-20031202.ebuild,v 1.10 2005/07/19 13:03:41 dholm Exp $
 
 inherit eutils toolchain-funcs
 
@@ -13,7 +13,7 @@ SRC_URI="http://farm9.org/Cryptcat/${MY_P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 sparc x86"
+KEYWORDS="~amd64 ~ppc sparc x86"
 IUSE=""
 
 DEPEND="virtual/libc"
