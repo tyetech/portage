@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vserver-sources/Attic/vserver-sources-2.0_rc8.ebuild,v 1.1 2005/07/17 08:01:35 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vserver-sources/Attic/vserver-sources-2.0_rc8.ebuild,v 1.2 2005/07/20 06:14:04 hollow Exp $
 
 ETYPE="sources"
 CKV="2.6.12"
@@ -20,4 +20,5 @@ DESCRIPTION="Full sources including gentoo and Linux-VServerpatchsets for the ${
 HOMEPAGE="http://dev.gentoo.org/~hollow/vserver"
 SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI} ${HOMEPAGE}/patches/${PF}.tar.bz2"
 
-UNIPATCH_LIST="${DISTDIR}/${PF}.tar.bz2"
+UNIPATCH_STRICTORDER=1
+UNIPATCH_LIST="${DISTDIR}/${PF}.tar.bz2 ${FILESDIR}/delta-locks-fix02.diff"
