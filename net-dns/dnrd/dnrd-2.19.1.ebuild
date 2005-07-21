@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/dnrd/Attic/dnrd-2.18.ebuild,v 1.1 2005/01/11 05:49:28 chriswhite Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/dnrd/Attic/dnrd-2.19.1.ebuild,v 1.1 2005/07/21 15:11:48 chriswhite Exp $
 
-inherit gnuconfig
+inherit gnuconfig eutils
 
 DESCRIPTION="A caching DNS proxy server"
 HOMEPAGE="http://dnrd.sourceforge.net/"
@@ -32,4 +32,9 @@ src_install() {
 
 	doinitd ${FILESDIR}/dnrd
 	newconfd ${FILESDIR}/dnrd.conf dnrd
+}
+
+pkg_postinst() {
+	enewgroup dnrd
+	enewuser dnrd -1 /bin/false /etc/dnrd dnrd
 }
