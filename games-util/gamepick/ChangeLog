@@ -1,0 +1,8 @@
+# ChangeLog for games-util/gamepick
+# Copyright 1999-2005 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /usr/local/ssd/gentoo-x86/output/games-util/cvs-repo/gentoo-x86/games-util/gamepick/ChangeLog,v 1.1 2005/07/22 04:20:46 vapier Exp $
+
+*gamepick-0.30 (22 Jul 2005)
+
+  22 Jul 2005; Mike Frysinger <vapier@gentoo.org> :
+  Initial import.  Ebuild submitted by gentoo_lan #76501.
