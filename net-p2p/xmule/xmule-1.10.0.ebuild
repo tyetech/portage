@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/xmule/Attic/xmule-1.10.0.ebuild,v 1.2 2005/06/12 12:15:20 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/xmule/Attic/xmule-1.10.0.ebuild,v 1.3 2005/07/27 21:32:38 sekretarz Exp $
 
 inherit wxwidgets eutils
 
@@ -24,6 +24,9 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	sed -i 's/@datadir@/${DESTDIR}@datadir@/' Makefile.in || die
+
+	epatch ${FILESDIR}/${P}-crypto-gentoo.patch
+	autoreconf
 }
 
 src_compile () {
