@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/uim/Attic/uim-0.4.7.1.ebuild,v 1.1 2005/07/18 10:30:16 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/uim/Attic/uim-0.4.8_alpha1.ebuild,v 1.1 2005/07/28 15:32:51 usata Exp $
 
-inherit eutils kde-functions
+inherit eutils kde-functions flag-o-matic
 
 MY_P="${P/_/}"
 S="${WORKDIR}/${MY_P}"
@@ -55,11 +55,11 @@ src_unpack() {
 
 src_compile() {
 	local myconf
+	use qt && set-qtdir 3
 	if use immqt || use immqt-bc ; then
 		myconf="${myconf} --with-qt-immodule"
-		export CPPFLAGS="${CPPFLAGS} -I${S}/qt"
+		export CPPFLAGS="${CPPFLAGS} -DQT_THREAD_SUPPORT"
 	fi
-	use qt && set-qtdir 3
 
 	myconf="${myconf}
 		$(use_enable nls)
@@ -96,6 +96,7 @@ pkg_postinst() {
 	ewarn "New input method switcher has been introduced. You need to set"
 	ewarn
 	ewarn "% GTK_IM_MODULE=uim ; export GTK_IM_MODULE"
+	ewarn "% QT_IM_MODULE=uim ; export QT_IM_MODULE"
 	ewarn "% XMODIFIERS=@im=uim ; export XMODIFIERS"
 	ewarn
 	ewarn "If you would like to use uim-anthy as default input method, put"
