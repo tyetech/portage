@@ -1,17 +1,16 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/ldapdns/Attic/ldapdns-2.05.ebuild,v 1.7 2005/07/29 21:03:11 vanquirius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/ldapdns/Attic/ldapdns-2.06.ebuild,v 1.1 2005/07/29 21:03:11 vanquirius Exp $
 
 inherit eutils
 
 DESCRIPTION="A tiny, fast authoritative nameserver that queries LDAP and can be updated instantly"
-SRC_URI="http://www.nimh.org/dl/${P}.tar.gz"
 HOMEPAGE="http://www.nimh.org/code/ldapdns/"
-IUSE=""
-
-SLOT="0"
+SRC_URI="http://www.nimh.org/dl/${P}.tar.gz"
 LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~x86"
+IUSE=""
 
 DEPEND="virtual/libc
 	>=net-nds/openldap-2"
@@ -19,25 +18,30 @@ RDEPEND="${DEPEND}
 	>=sys-process/daemontools-0.70
 	sys-apps/ucspi-tcp"
 
+pkg_setup() {
+	enewgroup nofiles
+	enewuser ldapdns -1 /bin/false /nonexistent nofiles
+	enewuser dnslog -1 /bin/false /nonexistent nofiles
+}
+
+src_unpack() {
+	unpack ${A}; cd ${S}
+	epatch ${FILESDIR}/${P}-gentoo.patch
+}
+
 src_compile() {
 	local myconf="--prefix=/usr "
 
 	cd ${S}
 	./configure ${myconf}
-	emake || die "Compilation failed"
+	emake || die
 }
 
 src_install() {
-	einstall || die "Installation failed"
-
-
-	dodoc AUTHORS CHANGELOG FAQ INSTALL  COPYING NEWS README* TODO
+	einstall || die
+	dodoc AUTHORS CHANGELOG FAQ INSTALL COPYING NEWS README* TODO
 }
 
 pkg_postinst() {
-	enewgroup nofiles
-	enewuser ldapdns -1 /bin/false /nonexistent nofiles
-	enewuser dnslog -1 /bin/false /nonexistent nofiles
-
 	einfo "Read the readme.configure and use ldapdns-conf to setup"
 }
