@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/SmarTagger/Attic/SmarTagger-0.1.ebuild,v 1.4 2004/11/11 10:07:21 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/SmarTagger/Attic/SmarTagger-0.1.ebuild,v 1.5 2005/07/30 20:01:17 swegener Exp $
 
 IUSE=""
 
@@ -18,10 +18,8 @@ RDEPEND="dev-lang/perl
 	dev-perl/MP3-Info"
 
 src_install() {
-	exeinto /usr/bin
-	doexe SmarTagger
-
-	dosym /usr/bin/SmarTagger /usr/bin/smartagger
+	dobin SmarTagger
+	dosym SmarTagger /usr/bin/smartagger
 
 	dodoc INSTALL README TODO
 	newdoc changelog ChangeLog
