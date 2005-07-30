@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeedu/Attic/kdeedu-3.4.2.ebuild,v 1.1 2005/07/28 12:55:51 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeedu/Attic/kdeedu-3.4.2.ebuild,v 1.2 2005/07/30 14:10:00 danarmak Exp $
 
 inherit kde-dist
 
 DESCRIPTION="KDE educational apps"
 
-KEYWORDS="~amd64 ~hppa ~ia64 ~mips ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND=""
