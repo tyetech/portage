@@ -1,20 +1,21 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/adzapper/Attic/adzapper-20050106.ebuild,v 1.1 2005/04/22 19:15:11 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/adzapper/Attic/adzapper-20050712.ebuild,v 1.1 2005/07/30 07:28:22 mrness Exp $
+
+MY_P=${P/zapper/zap}
 
 DESCRIPTION="Redirector for squid that intercepts advertising, page counters and some web bugs"
 HOMEPAGE="http://adzapper.sourceforge.net/"
-
-MY_P=${P/zapper/zap}
-S="${WORKDIR}/adzap"
-
 SRC_URI="http://adzapper.sourceforge.net/${MY_P}.tar.gz"
+
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND="net-proxy/squid"
+
+S="${WORKDIR}/adzap"
 
 src_unpack() {
 	unpack ${A}
