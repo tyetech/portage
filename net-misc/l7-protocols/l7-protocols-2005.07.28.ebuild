@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/l7-protocols/Attic/l7-protocols-2005.02.06.ebuild,v 1.2 2005/03/23 09:39:16 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/l7-protocols/Attic/l7-protocols-2005.07.28.ebuild,v 1.1 2005/07/30 10:25:16 dragonheart Exp $
 
 inherit toolchain-funcs
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/l7-filter/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 S=${WORKDIR}/${MY_P}
 
 RDEPEND="net-misc/l7-filter"
@@ -30,12 +30,12 @@ src_compile() {
 # NOTE Testing mechanism is currently broken:
 #  stack smashing attack in function main()
 
-#src_test() {
-#	cd testing
-#	find ${S} -name \*.pat -print -exec ./test_match.sh {} \; \
-#		-exec ./timeit.sh {} \; || die "failed tests"
-#	einfo "patterns past testing"
-#}
+src_test() {
+	cd testing
+	find ${S} -name \*.pat -print -exec ./test_match.sh {} \; \
+		-exec ./timeit.sh {} \; || die "failed tests"
+	einfo "patterns past testing"
+}
 
 src_install() {
 
@@ -45,7 +45,7 @@ src_install() {
 	cd ${S}
 
 	dodoc README CHANGELOG HOWTO WANTED
-	newdoc weakpatterns/README README.weakpatterns
+	newdoc README.weakpatterns
 	newdoc extra/README README.extra
 	newdoc file_types/README README.file_types
 	newdoc malware/README README.malware
