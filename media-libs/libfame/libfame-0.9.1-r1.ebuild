@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libfame/libfame-0.9.1-r1.ebuild,v 1.19 2005/07/19 23:45:43 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libfame/libfame-0.9.1-r1.ebuild,v 1.20 2005/08/01 12:52:41 flameeyes Exp $
 
 inherit flag-o-matic toolchain-funcs eutils
 
-PATCHLEVEL="1"
+PATCHLEVEL="2"
 DESCRIPTION="MPEG-1 and MPEG-4 video encoding library"
 HOMEPAGE="http://fame.sourceforge.net/"
 SRC_URI="mirror://sourceforge/fame/${P}.tar.gz
