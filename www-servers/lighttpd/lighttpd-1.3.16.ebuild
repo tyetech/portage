@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.3.14-r1.ebuild,v 1.2 2005/07/17 11:57:52 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.3.16.ebuild,v 1.1 2005/08/02 13:17:59 ka0ttic Exp $
 
 inherit eutils
 
@@ -40,10 +40,9 @@ src_unpack() {
 	cd ${S}
 	epatch ${FILESDIR}/${PN}-1.3.11-gentoo.diff
 	epatch ${FILESDIR}/${PN}-1.3.13-no-mysql-means-no-mysql.diff
-	epatch ${FILESDIR}/${PN}-1.3.13-zope-deserves-lovins-too.diff
-	epatch ${FILESDIR}/${PN}-1.3.13-valid-user.diff
 	epatch ${FILESDIR}/${PN}-1.3.13-ldap-binddn.diff
 	use php && epatch ${FILESDIR}/${PN}-1.3.13-php.diff
+	epatch ${FILESDIR}/${P}-zope-deserves-lovins-too.diff
 }
 
 src_compile() {
