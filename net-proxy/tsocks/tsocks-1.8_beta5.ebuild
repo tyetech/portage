@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/tsocks/Attic/tsocks-1.8_beta5.ebuild,v 1.4 2005/07/30 09:21:01 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/tsocks/Attic/tsocks-1.8_beta5.ebuild,v 1.5 2005/08/02 15:15:53 gustavoz Exp $
 
 inherit multilib
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/tsocks/${PN}-${PV/_}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~ppc ppc64 ~sparc x86"
+KEYWORDS="alpha amd64 ~ppc ppc64 sparc x86"
 IUSE=""
 
 S=${WORKDIR}/tsocks-1.8
