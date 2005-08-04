@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/scite/Attic/scite-1.6.1.ebuild,v 1.10 2005/01/01 13:34:02 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/scite/Attic/scite-1.61.ebuild,v 1.1 2005/08/04 17:15:11 pythonhead Exp $
 
 inherit toolchain-funcs
 
@@ -9,7 +9,7 @@ DESCRIPTION="A very powerful editor for programmers"
 HOMEPAGE="http://www.scintilla.org"
 SRC_URI="mirror://sourceforge/scintilla/${PN}${MY_PV}.tgz"
 
-LICENSE="PYTHON"
+LICENSE="Scintilla"
 SLOT="0"
 KEYWORDS="ppc sparc x86"
 IUSE="gtk2 lua"
