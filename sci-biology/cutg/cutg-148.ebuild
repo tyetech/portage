@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/cutg/Attic/cutg-147.ebuild,v 1.1 2005/06/19 00:38:11 ribosome Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/cutg/Attic/cutg-148.ebuild,v 1.1 2005/08/06 19:13:09 ribosome Exp $
 
 DESCRIPTION="Codon usage tables calculated from GenBank"
 HOMEPAGE="http://www.kazusa.or.jp/codon/"
@@ -22,7 +22,7 @@ src_compile() {
 		mkdir CODONS
 		echo
 		einfo "Indexing CUTG for usage with EMBOSS."
-		EMBOSS_DATA=. cutgextract -auto -directory ${S} || die \
+		EMBOSS_DATA="." cutgextract -auto -directory ${S} || die \
 			"Indexing CUTG failed."
 		echo
 	fi
@@ -30,15 +30,17 @@ src_compile() {
 
 src_install() {
 	if ! use minimal; then
-		mkdir -p ${D}/usr/share/${PN}
-		mv *.codon *.spsum ${D}/usr/share/${PN}
+		mkdir -p ${D}usr/share/${PN}
+		mv *.codon *.spsum ${D}usr/share/${PN} || die \
+			"Installing raw CUTG database failed."
 	fi
 	dodoc README
 	if use emboss; then
-		mkdir -p ${D}/usr/share/EMBOSS/data/CODONS
+		mkdir -p ${D}usr/share/EMBOSS/data/CODONS
 		cd CODONS
 		for file in *; do
-			mv ${file} ${D}/usr/share/EMBOSS/data/CODONS
+			mv ${file} ${D}usr/share/EMBOSS/data/CODONS || die \
+				"Installing the EMBOSS-indexed database failed."
 		done
 	fi
 }
