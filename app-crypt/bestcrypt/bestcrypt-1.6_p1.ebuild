@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/bestcrypt/Attic/bestcrypt-1.6_p1.ebuild,v 1.3 2005/06/20 13:37:37 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/bestcrypt/Attic/bestcrypt-1.6_p1.ebuild,v 1.4 2005/08/07 11:27:44 dragonheart Exp $
 
 inherit flag-o-matic eutils linux-mod toolchain-funcs
 
@@ -112,4 +112,7 @@ pkg_postinst() {
 	if [ -e "${ROOT}/dev/.devfsd" ]; then
 		killall -HUP devfsd
 	fi
+
+	einfo
+	linux-mod_pkg_postinst
 }

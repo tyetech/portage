@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/bestcrypt/Attic/bestcrypt-1.6_p1-r1.ebuild,v 1.3 2005/08/07 11:27:44 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/bestcrypt/Attic/bestcrypt-1.5_p11.ebuild,v 1.1 2005/08/07 11:27:44 dragonheart Exp $
 
 inherit flag-o-matic eutils linux-mod toolchain-funcs
 
@@ -31,27 +31,30 @@ MODULE_NAMES="bc(block:${S}/mod)
 		bc_gost(block:${S}/mod/gost)
 		bc_idea(block:${S}/mod/idea)
 		bc_rijn(block:${S}/mod/rijn)
-		bc_twofish(block:${S}/mod/twofish)
 		bc_serpent(block:${S}/mod/serpent)
-		bc_rc6(block:${S}/mod/rc6)"
+		bc_rc6(block:${S}/mod/rc6)
+		bc_twofish(block:${S}/mod/twofish)"
 
 src_unpack() {
-	unpack ${A}
-	epatch ${FILESDIR}/${P}-makefile_fix.patch
+	unpack "BestCrypt-${PV/_p/-}.tar.gz"
+	cd "${S}"
 
 	if use x86;
 	then
-		epatch bcrypt-rc6-serpent.diff
+		epatch "${DISTDIR}"/bcrypt-rc6-serpent.diff.gz
 	else
-		epatch bcrypt-rc6-serpent-c.diff
+		epatch "${DISTDIR}"/bcrypt-rc6-serpent-c.diff.gz
 	fi
+
+	epatch "${FILESDIR}/${P}"-makefile_fix.patch
 }
 
 src_compile() {
+
 	filter-flags -fforce-addr
 
-	emake -C kgsha EXTRA_CXXFLAGS="${CXXFLAGS} -fPIC" || die "library compile failed"
-	emake -C src EXTRA_CFLAGS="${CFLAGS} -I../kgsha256" || die "bctool compile failed"
+	emake -C kgsha EXTRA_CXXFLAGS="${CXXFLAGS}" || die "library compile failed"
+	emake -C src EXTRA_CFLAGS="${CFLAGS}" || die "bctool compile failed"
 
 	# Don't put stack protection in the kernel - it just is bad
 	append-flags -fno-stack-protector-all -fno-stack-protector
