@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monotone/Attic/monotone-0.21.ebuild,v 1.1 2005/07/19 06:17:26 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monotone/Attic/monotone-0.21-r1.ebuild,v 1.1 2005/08/09 02:19:18 leonardop Exp $
 
-inherit flag-o-matic
+inherit elisp-common flag-o-matic
 
 DESCRIPTION="Monotone Distributed Version Control System"
 HOMEPAGE="http://www.venge.net/monotone/"
@@ -12,14 +12,18 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 
-IUSE="doc ipv6 nls"
+IUSE="doc emacs ipv6 nls"
 
 RDEPEND=">=dev-libs/boost-1.32"
 
 DEPEND="${RDEPEND}
 	>=sys-devel/gcc-3.2
+	emacs? ( virtual/emacs )
 	nls? ( >=sys-devel/gettext-0.12.1 )
 	doc? ( sys-apps/texinfo )"
+
+SITEFILE="30monotone-gentoo.el"
+
 
 src_compile() {
 	local myconf="$(use_enable nls) $(use_enable ipv6)"
@@ -31,7 +35,10 @@ src_compile() {
 
 	econf ${myconf} || die "configure failed"
 	emake || die "emake failed"
+
 	use doc && make html
+
+	use emacs && elisp-compile contrib/*.el
 }
 
 src_test() {
@@ -41,16 +48,22 @@ src_test() {
 src_install() {
 	make DESTDIR="${D}" install || die
 
-	if use doc
-	then
+	if use doc; then
 		dohtml -r html/*
 		dohtml -r figures
+	fi
+
+	if use emacs; then
+		elisp-install ${PN} contrib/*.{el,elc}
+		elisp-site-file-install ${FILESDIR}/${SITEFILE}
 	fi
 
 	dodoc ABOUT-NLS AUTHORS ChangeLog NEWS README* UPGRADE
 }
 
 pkg_postinst() {
+	use emacs && elisp-site-regen
+
 	einfo
 	einfo "If you are upgrading from:"
 	einfo "  - 0.20 or earlier: you need to run 'db migrate' against each of"
@@ -63,4 +76,8 @@ pkg_postinst() {
 	einfo "For instructions to upgrade from previous versions, please read"
 	einfo "/usr/share/doc/${PF}/UPGRADE.gz"
 	einfo
+}
+
+pkg_postrm() {
+	use emacs && elisp-site-regen
 }
