@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/kismet/Attic/kismet-2005.08.1.ebuild,v 1.2 2005/08/16 17:00:12 brix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/kismet/Attic/kismet-2005.08.1.ebuild,v 1.3 2005/08/16 21:34:23 anarchy Exp $
 
 inherit linux-info
 
@@ -14,7 +14,7 @@ SRC_URI="http://www.kismetwireless.net/code/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="~amd64 ppc x86"
 IUSE="gps ncurses"
 
 RDEPEND="net-wireless/wireless-tools
