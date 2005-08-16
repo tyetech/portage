@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/skype/Attic/skype-1.1.0.20.ebuild,v 1.2 2005/07/25 17:49:09 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/skype/Attic/skype-1.2.0.11-r1.ebuild,v 1.1 2005/08/16 14:15:19 humpback Exp $
 
 inherit eutils qt3
 
@@ -42,7 +42,7 @@ src_unpack() {
 src_install() {
 	## Install the wrapper script
 	mv skype skype.bin
-	cp ${FILESDIR}/sDaemonWrapper skype
+	cp ${FILESDIR}/sDaemonWrapper-r1 skype
 
 	dodir /opt/${PN}
 	exeopts -m0755
