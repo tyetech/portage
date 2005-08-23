@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/boinc/Attic/boinc-4.32.ebuild,v 1.5 2005/08/20 15:15:06 cryos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/boinc/Attic/boinc-4.32.ebuild,v 1.6 2005/08/23 14:26:19 cryos Exp $
 
 inherit eutils
 
@@ -66,7 +66,7 @@ src_install() {
 
 pkg_preinst() {
 	enewgroup boinc
-	enewuser boinc -1 /bin/false /var/lib/boinc boinc
+	enewuser boinc -1 -1 /var/lib/boinc boinc
 }
 
 pkg_postinst() {
