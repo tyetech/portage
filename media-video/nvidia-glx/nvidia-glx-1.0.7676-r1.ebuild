@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.7667.ebuild,v 1.2 2005/07/20 11:15:54 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-glx/Attic/nvidia-glx-1.0.7676-r1.ebuild,v 1.1 2005/08/23 23:32:46 eradicator Exp $
 
 inherit eutils multilib versionator
 
@@ -25,7 +25,7 @@ IUSE="dlloader"
 
 RDEPEND="virtual/libc
 	virtual/x11
-	>=x11-base/opengl-update-2.2.0
+	eselect-opengl
 	~media-video/nvidia-kernel-${PV}
 	!app-emulation/emul-linux-x86-nvidia"
 
@@ -221,12 +221,10 @@ pkg_preinst() {
 
 pkg_postinst() {
 	#switch to the nvidia implementation
-	if [[ ${ROOT} == "/" ]] ; then
-		/usr/sbin/opengl-update nvidia
-	fi
+	/usr/bin/eselect opengl set nvidia
 
 	echo
-	einfo "To use the Nvidia GLX, run \"opengl-update nvidia\""
+	einfo "To use the Nvidia GLX, run \"eselect opengl set nvidia\""
 	echo
 	einfo "You may also be interested in media-video/nvidia-settings"
 	echo
@@ -268,5 +266,5 @@ want_tls() {
 }
 
 pkg_postrm() {
-	opengl-update --use-old xorg-x11
+	/usr/bin/eselect opengl set --use-old xorg-x11
 }
