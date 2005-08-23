@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/pxes/Attic/pxes-0.9.ebuild,v 1.8 2005/05/18 20:08:48 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/pxes/Attic/pxes-0.9.ebuild,v 1.9 2005/08/23 19:26:05 wolf31o2 Exp $
 
 inherit perl-module
 
@@ -42,7 +42,7 @@ src_install() {
 	dodir ${dir}
 	cd ${Ddir}
 	cp -r ${S}/stock ${Ddir} || die "Copying files"
-	cp -a ${S}/tftpboot ${D} || die "Copying tftpboot"
+	cp -pPR ${S}/tftpboot ${D} || die "Copying tftpboot"
 	dodoc Documentation/ChangeLog
 	dohtml -r Documentation/html/*
 	cd ${WORKDIR}/pxesconfig-${PV}
