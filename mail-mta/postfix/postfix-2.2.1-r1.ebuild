@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/postfix/Attic/postfix-2.2.1-r1.ebuild,v 1.1 2005/03/22 18:33:13 langthang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/postfix/Attic/postfix-2.2.1-r1.ebuild,v 1.2 2005/08/23 13:30:18 ticho Exp $
 
 inherit eutils ssl-cert toolchain-funcs flag-o-matic
 IUSE="ipv6 pam ldap mysql postgres ssl sasl mailwrapper mbox nis vda selinux hardened"
@@ -48,7 +48,7 @@ group_user_check() {
 	einfo "checking for postdrop group...	create if missing."
 	enewgroup postdrop 208
 	einfo "checking for postfix user...		create if missing."
-	enewuser postfix 207 /bin/false /var/spool/postfix postfix
+	enewuser postfix 207 -1 /var/spool/postfix postfix
 }
 
 pkg_setup() {
