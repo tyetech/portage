@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ntop/Attic/ntop-3.1.ebuild,v 1.6 2005/07/29 23:53:20 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ntop/Attic/ntop-3.1.ebuild,v 1.7 2005/08/23 13:44:24 ka0ttic Exp $
 
 inherit gnuconfig eutils
 
@@ -30,7 +30,7 @@ DEPEND="virtual/libc
 
 pkg_setup() {
 	enewgroup ntop
-	enewuser ntop -1 /bin/false /var/lib/ntop ntop
+	enewuser ntop -1 -1 /var/lib/ntop ntop
 }
 
 src_unpack() {
