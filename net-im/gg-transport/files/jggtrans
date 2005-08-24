@@ -1,0 +1,18 @@
+#!/sbin/runscript
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gg-transport/files/Attic/jggtrans,v 1.1 2005/08/24 23:22:33 humpback Exp $
+
+depend() {
+	need net jabber-server
+}
+
+start() {
+	ebegin "Starting Jabber GG Transport"
+	/usr/sbin/jggtrans -u jabber -g jabber /etc/jabber/jggtrans.xml
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping Jabber GG Transport"
+	killall jggtrans
+	eend 0
+}
