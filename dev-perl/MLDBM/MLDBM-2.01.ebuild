@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/MLDBM/MLDBM-2.01.ebuild,v 1.11 2005/04/07 20:40:59 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/MLDBM/MLDBM-2.01.ebuild,v 1.12 2005/08/25 23:29:22 agriffis Exp $
 
 inherit perl-module
 
@@ -10,5 +10,5 @@ HOMEPAGE="http://search.cpan.org/~gsar/${P}/"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="x86 amd64 ppc sparc alpha s390"
+KEYWORDS="alpha amd64 ~ia64 ppc s390 sparc x86"
 IUSE=""
