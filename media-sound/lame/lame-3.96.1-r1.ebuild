@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lame/Attic/lame-3.96.1-r1.ebuild,v 1.1 2005/08/25 12:03:19 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lame/Attic/lame-3.96.1-r1.ebuild,v 1.2 2005/08/25 13:03:08 swegener Exp $
 
 inherit flag-o-matic toolchain-funcs eutils
 
@@ -58,7 +58,7 @@ src_compile() {
 		$(use_enable debug debug norm) \
 		$(use_enable gtk mp3x) \
 		${myconf} || die "econf failed"
-	
+
 	# Parallel make isn't happy
 	emake -j1 || die "emake failed"
 }
