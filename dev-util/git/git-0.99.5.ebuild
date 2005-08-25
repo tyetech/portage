@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/git/Attic/git-0.99.4.ebuild,v 1.2 2005/08/25 09:56:33 r3pek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/git/Attic/git-0.99.5.ebuild,v 1.1 2005/08/25 09:56:33 r3pek Exp $
 
 DESCRIPTION="GIT - the stupid content tracker"
 HOMEPAGE="http://kernel.org/pub/software/scm/git/"
@@ -10,13 +10,13 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64 ~ppc ~sparc"
 IUSE="mozsha1 ppcsha1 doc"
+S="${WORKDIR}/${PN}-core-${PV}"
 
 DEPEND="dev-libs/openssl
 		sys-libs/zlib
 		net-misc/curl
 		!app-misc/git
 		doc? ( >=app-text/asciidoc-7.0.1 app-text/xmlto )"
-S="${WORKDIR}/${PN}-core-${PV}"
 
 src_unpack() {
 	unpack ${A}
@@ -42,7 +42,7 @@ src_compile() {
 }
 
 src_install() {
-	make dest=${D} prefix=/usr install || die "make install failed"
+	make DESTDIR=${D} prefix=/usr install || die "make install failed"
 	dodoc README COPYING
 
 	if use doc; then
