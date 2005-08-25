@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/mknfonts/Attic/mknfonts-0.5.ebuild,v 1.12 2005/05/06 17:01:22 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/mknfonts/Attic/mknfonts-0.5.ebuild,v 1.13 2005/08/25 18:46:23 swegener Exp $
 
 inherit eutils gnustep
 
@@ -12,7 +12,7 @@ KEYWORDS="x86 ppc sparc ~alpha amd64"
 SLOT="0"
 LICENSE="GPL-2"
 
-IUSE="${IUSE}"
+IUSE=""
 DEPEND="gnustep-base/gnustep-gui
 	>=media-libs/freetype-2.1"
 RDEPEND="${DEPEND}"
