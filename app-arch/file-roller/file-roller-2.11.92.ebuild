@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/file-roller/Attic/file-roller-2.11.91.ebuild,v 1.1 2005/08/18 21:59:35 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/file-roller/Attic/file-roller-2.11.92.ebuild,v 1.1 2005/08/26 01:40:49 allanonjl Exp $
 
 inherit eutils gnome2
 
