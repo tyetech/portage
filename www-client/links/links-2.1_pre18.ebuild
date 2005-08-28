@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/links/Attic/links-2.1_pre17-r2.ebuild,v 1.2 2005/06/09 01:14:43 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/links/Attic/links-2.1_pre18.ebuild,v 1.1 2005/08/28 22:14:40 vanquirius Exp $
 
 inherit eutils toolchain-funcs
 
@@ -9,12 +9,13 @@ HOMEPAGE="http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/"
 # To handle pre-version ...
 MY_P="${P/_/}"
 S="${WORKDIR}/${MY_P}"
-SRC_URI="${HOMEPAGE}/download/${MY_P}.tar.bz2
-	mirror://gentoo/${MY_P}-utf8.diff.bz2"
+SRC_URI="ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/links/${MY_P}.tar.bz2
+	http://dev.gentoo.org/~vanquirius/files/${MY_P}-utf8.diff.bz2"
+	# mirror://gentoo/${MY_P}-utf8.diff.bz2"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~ppc-macos ~s390 ~sparc ~x86 ~sh"
 IUSE="directfb ssl javascript png X gpm tiff fbcon svga jpeg unicode livecd"
 
 # Note: if X or fbcon usegflag are enabled, links will be built in graphic
@@ -53,14 +54,12 @@ DEPEND="${RDEPEND}
 PROVIDE="virtual/textbrowser"
 
 pkg_setup (){
-
 	if ! use gpm && use fbcon ; then
 		einfo
 		einfo "gpm has been installed since you have included fbcon in your USE flags."
 		einfo "The links framebuffer driver requires gpm in order to compile."
 		einfo
 	fi
-
 }
 
 src_unpack (){
@@ -68,7 +67,6 @@ src_unpack (){
 
 	if use unicode ; then
 		epatch ${WORKDIR}/${MY_P}-utf8.diff
-		epatch ${FILESDIR}/${P}-auth.patch
 		export LANG=C
 		cd ${S}/intl && ./gen-intl && cd .. || die "gen-intl filed"
 	fi
@@ -131,7 +129,6 @@ src_install (){
 
 
 pkg_postinst() {
-
 	if use svga
 	then
 		einfo "You had the svga USE flag enabled, but for security reasons"
