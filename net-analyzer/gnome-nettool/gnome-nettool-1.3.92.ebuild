@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/gnome-nettool/Attic/gnome-nettool-1.3.91.ebuild,v 1.1 2005/08/22 02:06:01 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/gnome-nettool/Attic/gnome-nettool-1.3.92.ebuild,v 1.1 2005/08/28 22:50:37 allanonjl Exp $
 
 inherit gnome2
 
