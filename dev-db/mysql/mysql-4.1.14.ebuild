@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-4.1.13-r1.ebuild,v 1.5 2005/08/29 12:55:19 vivo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-4.1.14.ebuild,v 1.1 2005/08/29 12:55:19 vivo Exp $
 
 inherit eutils gnuconfig flag-o-matic versionator
 
@@ -126,16 +126,18 @@ src_unpack() {
 	# get the software to autoreconf as distributed - too many missing files
 	epatch "${FILESDIR}/${PN}-4.1.9-thrssl.patch"
 
+	# FIXED upstrem in 4.1.14
 	# PIC fixes
 	# bug #42968
-	epatch "${FILESDIR}/035_x86_asm-pic-fixes-r1.patch"
+	#epatch "${FILESDIR}/035_x86_asm-pic-fixes-r3.patch"
 
 	if use tcpd; then
 		epatch "${FILESDIR}/${PN}-4.0.14-r1-tcpd-vars-fix.diff"
 	fi
 
+	# FIXED upstrem in 4.1.14
 	# avoid error running src_test and not enabling geometry USE flag
-	useq geometry || epatch "${FILESDIR}/${PN}-test-myisam-geometry.patch"
+	#useq geometry || epatch "${FILESDIR}/${PN}-test-myisam-geometry.patch"
 
 	for d in ${S} ${S}/innobase; do
 		cd ${d}
