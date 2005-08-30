@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.11.3.ebuild,v 1.1 2005/08/28 16:00:45 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.11.3.ebuild,v 1.2 2005/08/30 12:52:08 leonardop Exp $
 
 inherit eutils gnome2
 
@@ -46,7 +46,7 @@ src_unpack() {
 	# cleanliness is ... (#68698)
 	epatch ${FILESDIR}/${PN}-2.8.0-ditch_ancient_pics.patch
 
-	# Remove unnecessary esaund/audofile checks and implement the
+	# Remove unnecessary esound/audofile checks and implement the
 	# --without-jpeg switch
 	epatch ${FILESDIR}/${PN}-2.10.1-gentoo.patch
 
