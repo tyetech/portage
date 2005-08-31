@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vserver-sources/Attic/vserver-sources-2.0.ebuild,v 1.1 2005/08/08 19:09:42 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vserver-sources/Attic/vserver-sources-2.0.1_pre2.ebuild,v 1.1 2005/08/31 07:22:48 hollow Exp $
 
 ETYPE="sources"
-CKV="2.6.12"
+CKV="2.6.13"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="11"
+K_GENPATCHES_VER="1"
 
 K_USEPV=1
 K_NOSETEXTRAVERSION=1
