@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/matroxset/matroxset-0.4.ebuild,v 1.1 2004/09/29 21:08:05 kanaka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/matroxset/matroxset-0.4.ebuild,v 1.2 2005/09/01 14:55:38 kanaka Exp $
 
 IUSE=""
 
@@ -13,7 +13,7 @@ DEPEND="virtual/libc
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="x86 ~ppc ~amd64"
 
 src_compile() {
 	cd ${S}
