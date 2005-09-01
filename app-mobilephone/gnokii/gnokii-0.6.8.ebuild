@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/gnokii/Attic/gnokii-0.6.7-r1.ebuild,v 1.9 2005/09/01 17:01:52 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/gnokii/Attic/gnokii-0.6.8.ebuild,v 1.1 2005/09/01 17:01:52 mrness Exp $
 
 inherit eutils flag-o-matic linux-info
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.gnokii.org/download/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="nls X bluetooth irda sms postgres mysql"
 
 RDEPEND="X? ( =x11-libs/gtk+-1.2* )
@@ -46,10 +46,7 @@ src_compile() {
 		--disable-unix98test \
 		|| die "configure failed"
 
-	emake -j1 || die "make failed"
-
-	if use sms
-	then
+	if use sms ; then
 		cd ${S}/smsd
 
 		if use postgres; then
@@ -60,6 +57,8 @@ src_compile() {
 			emake libfile.la || die "smsd make failed"
 		fi
 	fi
+
+	emake -j1 || die "make failed"
 }
 
 src_install() {
