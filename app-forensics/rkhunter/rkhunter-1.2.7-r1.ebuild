@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-forensics/cvs-repo/gentoo-x86/app-forensics/rkhunter/Attic/rkhunter-1.2.3-r1.ebuild,v 1.5 2005/04/25 19:25:43 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-forensics/cvs-repo/gentoo-x86/app-forensics/rkhunter/Attic/rkhunter-1.2.7-r1.ebuild,v 1.1 2005/09/02 09:58:35 ka0ttic Exp $
 
 inherit eutils bash-completion
 
@@ -10,7 +10,7 @@ SRC_URI="http://downloads.rootkit.nl/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc alpha amd64 sparc"
+KEYWORDS="alpha amd64 mips ppc sparc x86"
 IUSE=""
 
 DEPEND="app-arch/tar
@@ -24,8 +24,7 @@ S="${WORKDIR}/${PN}/files"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${P}-fix-insecure-tmp-creation.diff
-	epatch ${FILESDIR}/${P}-specify-logfile.patch
+	epatch ${FILESDIR}/${PN}-1.2.3-specify-logfile.patch
 	epatch ${FILESDIR}/${PN}-1.2.1-create-tmpdir.diff
 }
 
