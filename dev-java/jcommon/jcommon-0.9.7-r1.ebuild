@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jcommon/Attic/jcommon-0.9.7-r1.ebuild,v 1.4 2005/08/18 18:49:34 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jcommon/Attic/jcommon-0.9.7-r1.ebuild,v 1.5 2005/09/03 21:38:23 betelgeuse Exp $
 
 inherit java-pkg
 
@@ -32,7 +32,7 @@ src_compile() {
 
 src_install() {
 	java-pkg_newjar ${P}.jar ${PN}.jar
-	dodoc README.txt licence-LGPL.txt
+	dodoc README.txt
 	use doc && java-pkg_dohtml -r javadoc
 }
 
