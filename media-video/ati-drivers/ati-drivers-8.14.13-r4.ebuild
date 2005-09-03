@@ -1,21 +1,21 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ati-drivers/Attic/ati-drivers-8.8.25-r3.ebuild,v 1.8 2005/04/18 06:49:42 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ati-drivers/Attic/ati-drivers-8.14.13-r4.ebuild,v 1.1 2005/09/03 22:29:45 eradicator Exp $
 
-IUSE=""
+IUSE="opengl dlloader"
 
-inherit eutils rpm multilib linux-info linux-mod
+inherit eutils rpm multilib linux-info linux-mod toolchain-funcs
 
 DESCRIPTION="Ati precompiled drivers for r350, r300, r250 and r200 chipsets"
 HOMEPAGE="http://www.ati.com"
 SRC_URI="x86? ( http://www2.ati.com/drivers/linux/fglrx_6_8_0-${PV}-1.i386.rpm )
-	 amd64? ( http://www2.ati.com/drivers/linux/fglrx64_6_8_0-${PV}-1.x86_64.rpm )"
+	 amd64? ( http://www2.ati.com/drivers/linux/64bit/fglrx64_6_8_0-${PV}-1.x86_64.rpm )"
 
 LICENSE="ATI"
-KEYWORDS="-* x86 ~amd64"
+KEYWORDS="-* ~amd64 ~x86"
 
 RDEPEND=">=x11-base/xorg-x11-6.8.0
-	 >=x11-base/opengl-update-2.1_pre1"
+	 app-admin/eselect-opengl"
 
 DEPEND=">=virtual/linux-sources-2.4
 	${RDEPEND}"
@@ -28,6 +28,30 @@ RESTRICT="nostrip multilib-pkg-force"
 pkg_setup(){
 	#check kernel and sets up KV_OBJ
 	linux-mod_pkg_setup
+
+	ebegin "Checking for MTRR support enabled"
+	linux_chkconfig_present MTRR
+	eend $?
+	if [[ $? -ne 0 ]] ; then
+	ewarn "You don't have MTRR support enabled, the direct rendering"
+	ewarn "will not work."
+	fi
+
+	ebegin "Checking for AGP support enabled"
+	linux_chkconfig_present AGP
+	eend $?
+	if [[ $? -ne 0 ]] ; then
+	ewarn "You don't have AGP support enabled, the direct rendering"
+	ewarn "will not work."
+	fi
+	ebegin "Checking for DRM support disabled"
+	! linux_chkconfig_present DRM
+	eend $?
+	if [[ $? -ne 0 ]] ; then
+	ewarn "You have DRM support enabled, the direct rendering"
+	ewarn "will not work."
+	fi
+
 	# Set up X11 implementation
 	X11_IMPLEM_P="$(best_version virtual/x11)"
 	X11_IMPLEM="${X11_IMPLEM_P%-[0-9]*}"
@@ -47,11 +71,15 @@ src_unpack() {
 
 	if kernel_is 2 6
 	then
-		#epatch ${FILESDIR}/fglrx-2.6.10-pci_get_class.patch
-		epatch ${FILESDIR}/8.08-kernel-2.6.10.patch
-		epatch ${FILESDIR}/fglrx-2.6-pagetable.patch
+		epatch ${FILESDIR}/fglrx-2.6.12-pci_name.patch
+		epatch ${FILESDIR}/fglrx-2.6.12-inter_module_get.patch
+		epatch ${FILESDIR}/fglrx-8.14.13-alt-2.6.12-agp.patch
 	fi
 	epatch ${FILESDIR}/8.8.25-via-amd64.patch
+	epatch ${FILESDIR}/8.8.25-smp.patch
+	epatch ${FILESDIR}/ioctl32.patch
+	epatch ${FILESDIR}/p1.patch
+
 	rm -rf ${WORKDIR}/usr/X11R6/bin/fgl_glxgears
 }
 
@@ -66,11 +94,11 @@ src_compile() {
 		export _POSIX2_VERSION="199209"
 		if use_m ;
 		then
-			make -C ${KV_DIR} M="`pwd`" modules || \
-				ewarn "DRM module not built"
+			make -C ${KV_DIR} M="`pwd`" GCC_VER_MAJ=$(gcc-major-version) \
+				modules || ewarn "DRM module not built"
 		else
-			make -C ${KV_DIR} SUBDIRS="`pwd`" modules || \
-				ewarn "DRM module not built"
+			make -C ${KV_DIR} SUBDIRS="`pwd`" GCC_VER_MAJ=$(gcc-major-version) \
+				modules || ewarn "DRM module not built"
 		fi
 		set_arch_to_portage
 	else
@@ -133,7 +161,8 @@ src_install() {
 	doexe usr/X11R6/bin/*
 
 	#ati custom stuff
-	cp -a ${WORKDIR}/usr/include ${D}/usr/include
+	insinto /usr
+	doins -r ${WORKDIR}/usr/include
 }
 
 src_install-libs() {
@@ -162,12 +191,13 @@ src_install-libs() {
 
 	# same as the xorg implementation
 	dosym ../${X11_IMPLEM}/extensions ${ATI_ROOT}/extensions
-	#Workaround 
+	#Workaround
+	if use opengl ; then
 	sed -e "s:libdir=.*:libdir=${ATI_ROOT}/lib:" \
 		/usr/${inslibdir}/opengl/${X11_IMPLEM}/lib/libGL.la \
 		> $D/${ATI_ROOT}/lib/libGL.la
 	dosym ../${X11_IMPLEM}/include ${ATI_ROOT}/include
-
+	fi
 	# X and DRI driver
 	if has_version ">=x11-base/xorg-x11-6.8.0-r4"
 	then
@@ -179,40 +209,60 @@ src_install-libs() {
 	local X11_LIB_DIR="${X11_DIR}${inslibdir}"
 
 	exeinto ${X11_LIB_DIR}/modules/drivers
-	doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.o
+	if use !dlloader ; then
+		doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.o
+	else
+		einfo "Adapting fglrx_drv to dlloader..."
+		gcc -shared -o ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.so \
+					   ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.o \
+					   -Xlinker -L/usr/lib/modules -Xlinker -R/usr/lib/modules \
+					   -Xlinker -L/usr/lib/modules/linux -Xlinker -R/usr/lib/modules/linux \
+					   -Xlinker -L/usr/lib/modules/extensions -Xlinker -R/usr/lib/modules/extensions \
+					   -lfbdevhw -lglx -lfglrxdrm -ldrm -lxaa -lramdac -ldri -lfb -lint10 -lvgahw -li2c -lddc -lvbe
+		doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/drivers/fglrx_drv.so
+	fi
+
 	exeinto ${X11_LIB_DIR}/modules/dri
 	doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/dri/fglrx_dri.so
+	doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/dri/atiogl_a_dri.so
+
 	exeinto ${X11_LIB_DIR}/modules/linux
-	doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.a
+	if use !dlloader ; then
+		doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.a
+	else
+		einfo "Adapting libfglrxdrm to dlloader..."
+		ar x ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.a
+		gcc -shared -o ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.so \
+			module.o FireGLdrm.o
+		rm module.o FireGLdrm.o
+		doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/linux/libfglrxdrm.so
+	fi
 	cp -a ${WORKDIR}/usr/X11R6/${pkglibdir}/libfglrx_gamma.* \
 			${D}/${X11_LIB_DIR}
 	#Not the best place
 	insinto ${X11_DIR}/include/X11/extensions
 	doins ${WORKDIR}/usr/X11R6/include/X11/extensions/fglrx_gamma.h
 
-	exeinto ${X11_LIB_DIR}/modules/dri
-	doexe ${WORKDIR}/usr/X11R6/${pkglibdir}/modules/dri/fglrx_dri.so
 }
 
 
 pkg_postinst() {
-# Ebuild shouldn't do this automatically, just tell the user to do it,
-# otherwise it messes up livecd/gamecd stuff ...  (drobbins, 1 May 2003)
-#	if [ "${ROOT}" = "/" ]
-#	then
-#		/usr/sbin/opengl-update ati
-#	fi
+	/usr/bin/eselect opengl set --use-old ati
 
 	echo
 	einfo "To switch to ATI OpenGL, run \"opengl-update ati\""
 	einfo "To change your XF86Config you can use the bundled \"fglrxconfig\""
-	echo
-	ewarn "***"
-	ewarn "If you are experiencing problems with memory allocation try to add"
-	ewarn "this line to in your X11 configuration file:"
-	ewarn "		Option \"KernelModuleParm\"  \"agplock=0\" "
-	ewarn "That should solve the hangups you could have with Neverwinter Nights"
-	ewarn "***"
+	if use !opengl ; then
+	ewarn "You don't have the opengl useflag enabled, you won't be able to build"
+	ewarn "opengl applications nor use opengl driver features, if that isn't"
+	ewarn "the intended behaviour please add opengl to your useflag and issue"
+	ewarn "# emerge -Nu ati-drivers"
+	fi
 	# DRM module
 	update-modules
 }
+
+pkg_postrm() {
+	/usr/bin/eselect opengl set --use-old xorg-x11
+}
+
