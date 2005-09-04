@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-finespectrum/Attic/xmms-finespectrum-1.0.1_alpha1.ebuild,v 1.10 2005/05/09 04:47:10 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/xmms-finespectrum/Attic/xmms-finespectrum-1.0.1_alpha1.ebuild,v 1.11 2005/09/04 00:05:23 flameeyes Exp $
 
 IUSE=""
 
@@ -26,6 +26,6 @@ src_unpack() {
 
 src_install() {
 	make DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog COPYING INSTALL NEWS README TODO
+	dodoc AUTHORS ChangeLog NEWS README TODO
 	dohtml README.html
 }
