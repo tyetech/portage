@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/mpich/Attic/mpich-1.2.6-r2.ebuild,v 1.1 2005/07/05 23:02:27 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/mpich/Attic/mpich-1.2.6-r3.ebuild,v 1.1 2005/09/05 13:48:40 tantive Exp $
 
 inherit eutils
 
@@ -107,9 +107,15 @@ src_install() {
 	# We dont have a real DESTDIR, so we have to fix all the files
 	dosed /usr/bin/mpirun /usr/bin/mpiman /usr/sbin/tstmachines
 	dosed /usr/sbin/chkserv /usr/sbin/chp4_servs
+	dosed /usr/bin/clog2TOslog2 /usr/bin/clog2print
+	dosed /usr/bin/clogTOslog2 /usr/bin/clogprint
+	dosed /usr/bin/jumpshot /usr/bin/logconvertor
 	dosed /usr/bin/mpicc /usr/bin/mpiCC /usr/bin/logviewer
+	dosed /usr/bin/mpicxx
 	dosed /usr/bin/mpireconfig /usr/bin/mpireconfig.dat
 	dosed /usr/bin/mpereconfig /usr/bin/mpereconfig.dat
+	dosed /usr/bin/rlogTOslog2 /usr/bin/rlogprint
+	dosed /usr/bin/slog2navigator /usr/bin/slog2print
 
 	dosed /usr/share/mpich/examples1/Makefile
 	dosed /usr/share/mpich/examples2/Makefile
