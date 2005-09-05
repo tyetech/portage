@@ -1,6 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/f-prot/Attic/f-prot-4.5.4-r1.ebuild,v 1.4 2005/08/13 16:38:12 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/f-prot/Attic/f-prot-4.6.1.ebuild,v 1.1 2005/09/05 17:50:15 ticho Exp $
+
+inherit eutils
 
 IUSE="emul-linux-x86"
 
@@ -20,13 +22,19 @@ PROVIDE="virtual/antivirus"
 
 SLOT="0"
 LICENSE="F-PROT"
-KEYWORDS="x86 -ppc -sparc ~amd64"
+KEYWORDS="~amd64 -ppc -sparc ~x86"
 
-src_install ()
-{
+src_unpack() {
+	unpack ${A}
 	cd ${S}
 
-	dobin f-prot.sh
+	epatch ${FILESDIR}/check-updates.pl.diff || die "epatch failed"
+}
+
+src_install() {
+	cd ${S}
+
+	dobin ${FILESDIR}/f-prot.sh
 	dosym /usr/bin/f-prot.sh /usr/bin/f-prot
 
 	dodir /opt/f-prot/tools /var/tmp/f-prot
@@ -34,6 +42,11 @@ src_install ()
 
 	insinto /opt/f-prot
 	insopts -m 755
+
+	newins etc/f-prot.conf.default f-prot.conf
+	dodir /etc
+	dosym /opt/f-prot/f-prot.conf /etc/f-prot.conf
+
 	doins f-prot
 	insopts -m 644
 	doins *.DEF ENGLISH.TX0
@@ -45,8 +58,6 @@ src_install ()
 	insinto /opt/f-prot/tools
 	insopts -m 755
 	doins tools/check-updates.pl
-
-	dosed "s:/usr/local/f-prot:/opt/f-prot:g" /usr/bin/f-prot.sh /opt/f-prot/tools/check-updates.pl
 }
 
 pkg_postinst() {
