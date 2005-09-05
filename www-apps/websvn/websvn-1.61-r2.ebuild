@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/websvn/Attic/websvn-1.61-r1.ebuild,v 1.3 2005/09/05 10:19:43 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/websvn/Attic/websvn-1.61-r2.ebuild,v 1.1 2005/09/05 10:19:43 uberlord Exp $
 
 inherit eutils webapp
 
@@ -23,7 +23,8 @@ src_unpack() {
 	unpack "${A}"
 	cd "${S}"
 
-	epatch "${FILESDIR}/websvn-1.61-r1.patch"
+	epatch "${FILESDIR}/${PN}-${PV}-r1.patch"
+	epatch "${FILESDIR}/${PN}-${PV}-r2.patch"
 }
 
 src_compile() {
