@@ -1,9 +1,15 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xdm/Attic/xdm-0.99.1.ebuild,v 1.1 2005/09/05 05:11:28 joshuabaergen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xdm/Attic/xdm-0.99.1_pre20050905.ebuild,v 1.1 2005/09/06 15:58:42 joshuabaergen Exp $
+
+inherit versionator
 
 # Must be before x-modular eclass is inherited
 SNAPSHOT="yes"
+
+# Fix ${S} for pre ebuilds
+MY_P="${PN}-$(get_version_component_range 1-3)"
+S="${WORKDIR}/${MY_P}"
 
 inherit x-modular pam
 
