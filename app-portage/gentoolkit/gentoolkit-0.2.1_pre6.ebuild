@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.1_pre4.ebuild,v 1.4 2005/08/14 03:51:21 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.1_pre6.ebuild,v 1.1 2005/09/09 03:35:25 fuzzyray Exp $
 
 inherit eutils
 
@@ -12,8 +12,6 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-# Previous KEYWORDS:
-# KEYWORDS="~x86 ~ppc ~sparc ~mips ~alpha ~arm ~hppa ~amd64 ~ia64 ~ppc64 ~s390 ~ppc-macos"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~x86"
 
 DEPEND=">=sys-apps/portage-2.0.51_pre21
@@ -21,7 +19,7 @@ DEPEND=">=sys-apps/portage-2.0.51_pre21
 	>=dev-util/dialog-0.7
 	>=dev-lang/perl-5.6
 	>=sys-apps/grep-2.4
-	sys-apps/debianutils"
+	userland_GNU? ( sys-apps/debianutils )"
 
 src_install() {
 	make DESTDIR=${D} install-gentoolkit || die
