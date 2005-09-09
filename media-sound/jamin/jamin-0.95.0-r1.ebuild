@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jamin/Attic/jamin-0.95.0-r1.ebuild,v 1.3 2005/06/09 00:55:57 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jamin/Attic/jamin-0.95.0-r1.ebuild,v 1.4 2005/09/09 13:05:41 flameeyes Exp $
 
 inherit eutils
 
@@ -25,5 +25,5 @@ DEPEND=">=media-sound/jack-audio-connection-kit-0.80.0
 
 src_install() {
 	make install DESTDIR=${D} || die "make install failed"
-	dodoc AUTHORS ChangeLog INSTALL NEWS README TODO
+	dodoc AUTHORS ChangeLog NEWS README TODO
 }
