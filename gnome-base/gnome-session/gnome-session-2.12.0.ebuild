@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-session/Attic/gnome-session-2.11.91.ebuild,v 1.4 2005/08/29 02:52:40 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-session/Attic/gnome-session-2.12.0.ebuild,v 1.1 2005/09/10 02:55:46 allanonjl Exp $
 
 inherit eutils gnome2
 
