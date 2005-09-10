@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-themes/Attic/gnome-themes-2.11.92.ebuild,v 1.1 2005/08/29 00:03:12 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-themes/Attic/gnome-themes-2.12.0.ebuild,v 1.1 2005/09/10 03:50:57 dang Exp $
 
 inherit gnome2
 
