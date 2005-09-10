@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/prewikka/Attic/prewikka-0.9.0_rc8.ebuild,v 1.1 2005/07/19 10:08:27 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/prewikka/Attic/prewikka-0.9.0_rc12.ebuild,v 1.1 2005/09/10 02:35:51 vanquirius Exp $
 
 inherit versionator distutils
 
@@ -11,7 +11,7 @@ SRC_URI="http://www.prelude-ids.org/download/releases/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=dev-lang/python-2.3
