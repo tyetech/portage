@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-utils/Attic/gnome-utils-2.11.92.ebuild,v 1.1 2005/08/29 00:20:44 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-utils/Attic/gnome-utils-2.12.0.ebuild,v 1.1 2005/09/10 04:03:21 dang Exp $
 
 inherit eutils gnome2
 
