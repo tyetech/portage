@@ -1,10 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ant-core/Attic/ant-core-1.6.2-r4.ebuild,v 1.2 2005/09/10 15:00:01 axxo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ant-core/Attic/ant-core-1.6.5-r2.ebuild,v 1.1 2005/09/11 11:26:42 axxo Exp $
 
-inherit java-pkg eutils
+inherit java-pkg eutils toolchain-funcs
 
 MY_PN=${PN/-core}
+
+MY_PV=${PV/_/}
 
 DESCRIPTION="Java-based build tool similar to 'make' that uses XML configuration files."
 HOMEPAGE="http://ant.apache.org/"
@@ -12,26 +14,22 @@ SRC_URI="mirror://apache/ant/source/apache-${MY_PN}-${PV}-src.tar.bz2"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="x86 amd64 ppc sparc ppc64"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc source"
 
 DEPEND="virtual/libc
 	!<dev-java/ant-1.5.4-r2
+	>=virtual/jdk-1.4
 	!<dev-java/ant-tasks-${PV}
-	source? ( app-arch/zip )
-	>=virtual/jdk-1.4"
+	source? ( app-arch/zip )"
 RDEPEND=">=virtual/jdk-1.4
-	>=dev-java/java-config-1.2"
+	 >=dev-java/java-config-1.2"
 
-S="${WORKDIR}/apache-ant-${PV}"
+S="${WORKDIR}/apache-ant-${MY_PV}"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-
-	# also see #77365 and
-	# http://sourceforge.net/mailarchive/forum.php?thread_id=6173225&forum_id=12628
-	epatch ${FILESDIR}/${PV}-scp.patch
 
 	# Patch build.sh to die with non-zero exit code in case of errors.
 	# This patch may be useful for all ant versions.
@@ -40,7 +38,7 @@ src_unpack() {
 
 src_compile() {
 	addwrite "/proc/self/maps"
-	if [ `arch` == "ppc" ] ; then
+	if [[ $(tc-arch) == "ppc" ]] ; then
 		# We're compiling _ON_ PPC
 		export THREADS_FLAG="green"
 	fi
@@ -56,7 +54,7 @@ src_compile() {
 }
 
 src_install() {
-	newbin ${FILESDIR}/${PV}-ant ant || die "failed to install wrapper"
+	newbin ${FILESDIR}/${PV/_*}-ant ant || die "failed to install wrapper"
 
 	dodir /usr/share/${PN}/bin
 	for each in antRun runant.pl runant.py complete-ant-cmd.pl ; do
