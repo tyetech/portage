@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/pysoulseek/Attic/pysoulseek-1.2.6.ebuild,v 1.5 2005/09/06 22:17:56 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/pysoulseek/Attic/pysoulseek-1.2.6.ebuild,v 1.6 2005/09/11 12:31:44 gmsoft Exp $
 
 inherit eutils distutils
 
@@ -17,7 +17,7 @@ SRC_URI="http://www.sensi.org/~ak/pyslsk/${MY_P}.tar.gz "
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~hppa ppc sparc x86"
+KEYWORDS="amd64 hppa ppc sparc x86"
 
 DEPEND=">=dev-lang/python-2.1
 	=dev-python/wxpython-2.4*
