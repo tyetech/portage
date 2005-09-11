@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/evolution-exchange/Attic/evolution-exchange-2.3.8.ebuild,v 1.2 2005/09/04 00:16:24 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/evolution-exchange/Attic/evolution-exchange-2.4.0.ebuild,v 1.1 2005/09/11 03:25:13 allanonjl Exp $
 
 inherit gnome2 eutils
 
