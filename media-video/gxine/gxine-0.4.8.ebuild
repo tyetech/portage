@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gxine/Attic/gxine-0.4.6.ebuild,v 1.3 2005/09/10 14:05:49 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gxine/Attic/gxine-0.4.8.ebuild,v 1.1 2005/09/12 08:50:29 flameeyes Exp $
 
 inherit eutils nsplugins fdo-mime
 
@@ -29,9 +29,6 @@ SRC_URI="mirror://sourceforge/xine/${P}.tar.gz"
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-
-	epatch ${FILESDIR}/${P}-literals.patch
-	epatch ${FILESDIR}/${P}-mkstemp.patch
 
 	# Fix icon as per icon theme specs.
 	sed -i -e 's:gxine-logo.png:gxine:' ${S}/gxine.desktop
