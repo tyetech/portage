@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/lopster/Attic/lopster-1.2.2-r2.ebuild,v 1.1 2005/09/06 22:08:22 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/lopster/Attic/lopster-1.2.2-r2.ebuild,v 1.2 2005/09/12 18:07:46 mkay Exp $
 
 inherit eutils
 
@@ -35,7 +35,6 @@ src_unpack() {
 src_compile() {
 	econf \
 		--with-pthread \
-		--with-zlib \
 		`use_enable nls` \
 		`use_with zlib` \
 		`use_with flac` \
