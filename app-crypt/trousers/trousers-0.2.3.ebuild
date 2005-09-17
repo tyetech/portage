@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/trousers/Attic/trousers-0.2.0.ebuild,v 1.2 2005/08/23 21:46:35 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/trousers/Attic/trousers-0.2.3.ebuild,v 1.1 2005/09/17 13:39:17 dragonheart Exp $
 
-inherit eutils linux-info
+inherit eutils linux-info autotools
 
 DESCRIPTION="An open-source TCG Software Stack (TSS) v1.1 implementation"
 HOMEPAGE="http://trousers.sf.net"
@@ -14,8 +14,6 @@ IUSE="doc"
 
 RDEPEND="virtual/libc
 	>=dev-libs/glib-2
-	dev-libs/atk
-	x11-libs/pango
 	>=x11-libs/gtk+-2
 	>=dev-libs/openssl-0.9.7"
 
@@ -65,6 +63,9 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}/dist
 	epatch ${FILESDIR}/${P}-nouseradd.patch
+	cd ${S}
+	epatch ${FILESDIR}/${P}-ldadd.patch
+	eautoreconf
 }
 
 src_install() {
