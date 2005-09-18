@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-1.3.1-r2.ebuild,v 1.1 2005/09/11 12:12:17 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-1.3.1-r2.ebuild,v 1.2 2005/09/18 16:11:29 flameeyes Exp $
 
 inherit kde eutils
 
@@ -46,7 +46,8 @@ DEPEND="${DEPEND}
 
 need-kde 3.3
 
-PATCHES="${FILESDIR}/${P}-gst-alsaagain.patch"
+PATCHES="${FILESDIR}/${P}-gst-alsaagain.patch
+	${FILESDIR}/${P}-qt-3.3.5.patch"
 
 pkg_setup() {
 	if use arts && ! use xine && ! use gstreamer; then
