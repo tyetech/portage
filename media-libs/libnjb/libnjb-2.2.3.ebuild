@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libnjb/Attic/libnjb-2.2.1.ebuild,v 1.1 2005/08/24 22:31:59 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libnjb/Attic/libnjb-2.2.3.ebuild,v 1.1 2005/09/19 21:01:22 axxo Exp $
 
 inherit eutils
 
