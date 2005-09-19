@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/chipmunksystem/Attic/chipmunksystem-20031105-r2.ebuild,v 1.3 2005/08/24 07:58:50 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/chipmunksystem/Attic/chipmunksystem-20031105-r3.ebuild,v 1.1 2005/09/19 22:25:40 ribosome Exp $
 
 inherit toolchain-funcs
 
@@ -44,7 +44,7 @@ src_compile() {
 	COMPILING_ERROR="Compiling of ${P} FAILED"
 	cd ${WORKDIR}
 	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
-		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux -DF_OK=0:' \
+		-e 's:^CHIPMUNKFLAGS.*:CHIPMUNKFLAGS = -DBSD -Dlinux -DF_OK=0 -DFONTLIB=\\"/usr/lib\\" -DPSLIB=\\"/usr/lib\\":' \
 		-e 's:^LIB .*:LIB = \$\(LIBDIR\)/libp2c.a:' \
 		-i psys/src/Makefile || die "sed failed in psys/src"
 	sed -e "s:^CHIPMUNKCC.*:CHIPMUNKCC = $(tc-getCC) ${CFLAGS}:" \
