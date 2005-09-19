@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mldonkey/Attic/mldonkey-2.6.0.ebuild,v 1.3 2005/07/25 21:22:32 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/mldonkey/Attic/mldonkey-2.6.0.ebuild,v 1.4 2005/09/19 00:42:32 swegener Exp $
 
 inherit eutils
 
@@ -52,7 +52,7 @@ src_unpack() {
 
 src_compile() {
 	myconf="";
-	if use gtk || use gkt2; then
+	if use gtk || use gtk2; then
 		myconf="--enable-gui"
 	fi;
 	econf \
