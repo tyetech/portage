@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-keyring-manager/Attic/gnome-keyring-manager-2.12.0.ebuild,v 1.1 2005/09/10 01:50:32 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-keyring-manager/Attic/gnome-keyring-manager-2.12.0.ebuild,v 1.2 2005/09/20 19:30:09 gustavoz Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~x86 ~amd64 ~sparc"
 IUSE="static"
 
 RDEPEND=">=x11-libs/gtk+-2.6
