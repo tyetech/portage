@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmbscan/nmbscan-1.2.4.ebuild,v 1.2 2005/09/21 20:10:52 wschlich Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmbscan/nmbscan-1.2.4.ebuild,v 1.3 2005/09/21 20:29:35 wschlich Exp $
 
 inherit eutils
 
@@ -25,6 +25,7 @@ RDEPEND="app-shells/bash
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+	epatch "${FILESDIR}/${P}-head.diff"
 }
 
 src_compile() {
