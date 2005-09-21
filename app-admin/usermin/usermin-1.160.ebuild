@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/usermin/Attic/usermin-1.150.ebuild,v 1.1 2005/09/03 23:22:35 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/usermin/Attic/usermin-1.160.ebuild,v 1.1 2005/09/21 23:51:31 eradicator Exp $
 
 IUSE="ssl"
 
@@ -12,15 +12,16 @@ SRC_URI="mirror://sourceforge/webadmin/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~hppa ~ppc ~ppc64 sparc x86"
 
 DEPEND="dev-lang/perl"
 
 RDEPEND="${DEPEND}
 	 sys-process/lsof
-	 dev-perl/Authen-PAM
-	 virtual/pam
 	 ssl? ( dev-perl/Net-SSLeay )"
+
+#	 pam? ( dev-perl/Authen-PAM )
+
 
 src_unpack() {
 	unpack ${A}
@@ -71,7 +72,7 @@ src_install() {
 	${D}/usr/libexec/usermin/setup.sh > ${T}/usermin-setup.out 2>&1 || die "Failed to create initial usermin configuration."
 
 	# Fixup the config files to use their real locations
-	sed -i -e 's:^pidfile=.*$:pidfile=${ROOT}/var/run/usermin.pid:' ${D}/etc/usermin/miniserv.conf
+	sed -i -e "s:^pidfile=.*$:pidfile=${ROOT}/var/run/usermin.pid:" ${D}/etc/usermin/miniserv.conf
 	find ${D}/etc/usermin -type f | xargs sed -i -e "s:${D}:${ROOT}:g"
 
 	# Cleanup from the config script
