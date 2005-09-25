@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/digikamimageplugins/Attic/digikamimageplugins-0.8.0_beta1.ebuild,v 1.1 2005/09/16 23:14:53 cryos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/digikamimageplugins/Attic/digikamimageplugins-0.8.0_beta2.ebuild,v 1.1 2005/09/25 19:54:54 carlo Exp $
 
 inherit kde
 
