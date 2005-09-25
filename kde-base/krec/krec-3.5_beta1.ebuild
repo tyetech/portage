@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/krec/Attic/krec-3.5_beta1.ebuild,v 1.2 2005/09/25 10:21:02 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/krec/Attic/krec-3.5_beta1.ebuild,v 1.3 2005/09/25 19:34:45 flameeyes Exp $
 
 KMNAME=kdemultimedia
 MAXKDEVER=$PV
@@ -24,6 +24,7 @@ KMCOPYLIB="libartsgui_kde arts/gui/kde/
 KMEXTRACTONLY="
 	arts/
 	kioslave/audiocd/configure.in.in"
+KMCOMPILEONLY="arts/gui/"
 
 pkg_setup() {
 	if ! useq arts; then
