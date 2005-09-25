@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/artsplugin-mpg123/Attic/artsplugin-mpg123-3.4.1.ebuild,v 1.9 2005/09/12 17:00:00 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/artsplugin-mpg123/Attic/artsplugin-mpg123-3.4.1.ebuild,v 1.10 2005/09/25 11:57:10 flameeyes Exp $
 
 KMNAME=kdemultimedia
 KMMODULE=mpg123_artsplugin
@@ -18,4 +18,6 @@ pkg_setup() {
 		die
 	fi
 }
+
+PATCHES="${FILESDIR}/artsplugin-mpg123-mcpu.patch"
 
