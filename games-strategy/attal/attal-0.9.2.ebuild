@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/attal/Attic/attal-0.9.2.ebuild,v 1.5 2005/07/07 04:38:09 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/attal/Attic/attal-0.9.2.ebuild,v 1.6 2005/09/26 18:23:27 wolf31o2 Exp $
 
-inherit games eutils flag-o-matic
+inherit eutils flag-o-matic games
 
 MY_P="${PN}-src-${PV}"
 DESCRIPTION="turn-based strategy game project"
