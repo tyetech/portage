@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cmake/Attic/cmake-2.2.0.ebuild,v 1.1 2005/08/20 11:45:19 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cmake/Attic/cmake-2.2.0-r1.ebuild,v 1.1 2005/09/26 10:37:03 dragonheart Exp $
 
-inherit debug flag-o-matic qt3
+inherit debug flag-o-matic qt3 toolchain-funcs eutils
 
 SHORT_PV=2.2
 
@@ -16,6 +16,15 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~mips ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND="virtual/libc"
+
+src_unpack() {
+	unpack ${A}
+	epatch ${FILESDIR}/${P}-rpath-fix.patch
+	sed -i -e "s:g++:$(tc-getCXX):" \
+		${S}/Modules/CMakeCXXInformation.cmake
+	sed -i -e "s:gcc:$(tc-getCC):" \
+		${S}/Modules/CMakeCInformation.cmake
+}
 
 src_compile() {
 	strip-flags
