@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gift-gnutella/Attic/gift-gnutella-0.0.10.ebuild,v 1.3 2005/05/30 22:25:47 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gift-gnutella/Attic/gift-gnutella-0.0.10.ebuild,v 1.4 2005/09/27 13:07:40 metalgod Exp $
 
 inherit eutils
 
@@ -27,7 +27,7 @@ src_compile() {
 
 src_install() {
 	einstall giftconfdir=${D}/etc/giFT \
-		 plugindir=${D}/usr/lib/giFT \
+		 plugindir=${D}/usr/$(get_libdir)/giFT \
 		 datadir=${D}/usr/share \
 		 giftperldir=${D}/usr/bin \
 		 libgiftincdir=${D}/usr/include/libgift || die "Install failed"
