@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/glib/Attic/glib-2.8.1.ebuild,v 1.1 2005/08/25 01:16:56 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/glib/Attic/glib-2.8.2.ebuild,v 1.1 2005/09/27 01:45:19 leonardop Exp $
 
 inherit gnome.org libtool eutils flag-o-matic debug
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://www.gtk.org/"
 LICENSE="LGPL-2"
 SLOT="2"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sparc ~x86"
-IUSE="debug doc hardened static"
+IUSE="debug doc hardened"
 
 DEPEND=">=dev-util/pkgconfig-0.14
 	>=sys-devel/gettext-0.11
@@ -34,8 +34,11 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf="--with-threads=posix $(use_enable static) \
-		$(use_enable doc gtk-doc) $(use_enable debug)"
+	local myconf="--with-threads=posix \
+		$(use_enable doc gtk-doc)"
+
+	# --disable-debug is not recommended for production use
+	use debug && myconf="${myconf} --enable-debug=yes"
 
 	epunt_cxx
 
