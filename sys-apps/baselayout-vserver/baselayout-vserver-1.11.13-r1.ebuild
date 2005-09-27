@@ -1,18 +1,21 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout-vserver/Attic/baselayout-vserver-1.12.0_pre8-r1.ebuild,v 1.1 2005/09/04 18:25:28 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout-vserver/Attic/baselayout-vserver-1.11.13-r1.ebuild,v 1.1 2005/09/27 13:36:23 hollow Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
+SV=1.6.13		# rc-scripts version
+SVREV=			# rc-scripts rev
+
+S="${WORKDIR}/rc-scripts-${SV}${SVREV}-vserver"
 DESCRIPTION="Filesystem baselayout and init scripts for Linux-VServer"
-HOMEPAGE="http://www.gentoo.org/"
-SRC_URI="http://dev.gentoo.org/~hollow/vserver/baselayout/${P}.tar.bz2
-	http://dev.gentoo.org/~phreak/vserver/baselayout/${P}.tar.bz2"
+HOMEPAGE="http://dev.gentoo.org/~hollow/vserver"
+SRC_URI="${HOMEPAGE}/baselayout/rc-scripts-${SV}${SVREV}-vserver.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE="bootstrap build static"
+IUSE="bootstrap build fakelog static"
 
 # This version of baselayout needs gawk in /bin, but as we do not have
 # a c++ compiler during bootstrap, we cannot depend on it if "bootstrap"
@@ -22,31 +25,24 @@ RDEPEND=">=sys-apps/sysvinit-2.84
 		>=sys-libs/readline-5.0-r1
 		>=app-shells/bash-3.0-r10
 		>=sys-apps/coreutils-5.2.1
-	) )"
-DEPEND="virtual/os-headers
-	>=sys-apps/portage-2.0.51"
+	) )
+	!sys-apps/baselayout
+	!sys-apps/baselayout-lite"
+DEPEND="virtual/os-headers"
 PROVIDE="virtual/baselayout"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# Whitelist fixes
-	epatch "${FILESDIR}/${P}-whitelist-fixes.patch"
-
-	# Use correct path to filefuncs.so on multilib systems
-	sed -i -e "s:/lib/rcscripts:/$(get_libdir)/rcscripts:" \
-		${S}/src/awk/{cachedepends,genenviron}.awk || die
+	epatch ${FILESDIR}/${P}-init-timeout-fix.patch
 }
 
 src_compile() {
 	use static && append-ldflags -static
 
-	make -C "${S}"/src \
-		CC="$(tc-getCC)" \
-		LD="$(tc-getCC) ${LDFLAGS}" \
-		CFLAGS="${CFLAGS}" \
-		LIBDIR=$(get_libdir) || die
+	make -C "${S}"/src CC="$(tc-getCC)" LD="$(tc-getCC) ${LDFLAGS}" \
+		CFLAGS="${CFLAGS}" || die
 }
 
 # This is a temporary workaround until bug 9849 is completely solved
@@ -80,11 +76,18 @@ EOF
 # aren't listed in CONTENTS, unfortunately.
 unkdir() {
 	einfo "Running unkdir to workaround bug 9849"
-	find ${D} -depth -type d -exec rmdir {} \; 2>/dev/null
+	find "${D}" -depth -type d -exec rmdir {} \; 2>/dev/null
 	if [[ $? == 127 ]]; then
 		ewarn "Problem running unkdir: find command not found"
 	fi
 }
+
+# Same as kdir above, but for symlinks #103618
+ksym() {
+	echo "ln -s '$1' '${ROOT}/$2' &> /dev/null || ewarn '  unable to symlink $2 to $1' " \
+		>> "${D}"/usr/share/baselayout/mklinks.sh
+}
+
 
 src_install() {
 	local dir libdirs libdirs_env rcscripts_dir
@@ -108,8 +111,11 @@ src_install() {
 	: ${libdirs:=lib}	# it isn't that we don't trust multilib.eclass...
 
 	# This should be /lib/rcscripts, but we have to support old profiles too.
-	# <hollow@gentoo.org> We don't support old things anyway
-	rcscripts_dir="/lib/rcscripts"
+	if [[ ${SYMLINK_LIB} == "yes" ]]; then
+		rcscripts_dir="/$(get_abi_LIBDIR ${DEFAULT_ABI})/rcscripts"
+	else
+		rcscripts_dir="/lib/rcscripts"
+	fi
 
 	einfo "Creating directories..."
 	kdir /usr
@@ -133,6 +139,7 @@ src_install() {
 	kdir /proc
 	kdir -m 0700 /root
 	kdir /sbin
+	kdir /sys	# for 2.6 kernels
 	kdir /usr/bin
 	kdir /usr/include
 	kdir /usr/include/asm
@@ -170,9 +177,17 @@ src_install() {
 		kdir /usr/local/${dir}
 	done
 
+	# Ugly compatibility with stupid ebuilds and old profiles symlinks
+	if [[ ${SYMLINK_LIB} == "yes" ]] ; then
+		rm -r "${D}"/{lib,usr/lib,usr/local/lib} &> /dev/null
+		dosym $(get_abi_LIBDIR ${DEFAULT_ABI}) /lib
+		dosym $(get_abi_LIBDIR ${DEFAULT_ABI}) /usr/lib
+		dosym $(get_abi_LIBDIR ${DEFAULT_ABI}) /usr/local/lib
+	fi
+
 	# FHS compatibility symlinks stuff
-	dosym /var/tmp /usr/tmp
-	dosym share/man /usr/local/man
+	ksym /var/tmp /usr/tmp
+	ksym share/man /usr/local/man
 
 	#
 	# Setup files in /etc
@@ -186,16 +201,32 @@ src_install() {
 	# attempting to merge files, (3) accidentally packaging up personal files
 	# with quickpkg
 	fperms 0600 /etc/shadow
-	mv "${D}"/etc/{passwd,shadow,group,hosts} "${D}"/usr/share/baselayout
+	mv "${D}"/etc/{passwd,shadow,group,hosts,issue.devfix} "${D}"/usr/share/baselayout
 
-	# doinitd doesnt respect symlinks
-	dodir /etc/init.d
-	cp -P "${S}"/init.d/* "${D}"/etc/init.d/ || die "doinitd"
-	#doinitd "${S}"/init.d/* || die "doinitd"
-	doconfd "${S}"/etc/conf.d/* || die "doconfd"
-	doenvd "${S}"/etc/env.d/* || die "doenvd"
+	insopts -m0755
+	insinto /etc/init.d
+	doins ${S}/init.d/*
+	use fakelog && newins ${FILESDIR}/fakelog.initd fakelog
 
-	# List all the multilib libdirs in /etc/env/04multilib (only if they're 
+	# link dummy init scripts
+	cd ${D}/etc/init.d
+	for i in checkfs checkroot clock consolefont localmount modules net netmount; do
+		ln -sf dummy $i
+	done
+
+	insinto /etc/conf.d
+	doins ${S}/etc/conf.d/*
+
+	insinto /etc/env.d
+	doins ${S}/etc/env.d/*
+
+	# Special-case uglyness... For people updating from lib32 -> lib amd64
+	# profiles, keep lib32 in the search path while it's around
+	if has_multilib_profile && [ -d /lib32 -o -d /usr/lib32 ] && ! hasq lib32 ${libdirs}; then
+		libdirs_env="${libdirs_env}:/lib32:/usr/lib32:/usr/local/lib32"
+	fi
+
+	# List all the multilib libdirs in /etc/env/04multilib (only if they're
 	# actually different from the normal
 	if has_multilib_profile || [[ $(get_libdir) != "lib" || -n ${CONF_MULTILIBDIR} ]]; then
 		echo "LDPATH=\"${libdirs_env}\"" > ${D}/etc/env.d/04multilib
@@ -203,14 +234,14 @@ src_install() {
 
 	# As of baselayout-1.10-1-r1, sysvinit is its own package again, and
 	# provides the inittab itself
-	# <hollow@gentoo.org> We provide our own though...
+	# <hollow@gentoo.org> We need our own inittab for vservers here
 	#rm -f "${D}"/etc/inittab
 
 	# Stash the rc-lists for use during pkg_postinst
 	cp -r "${S}"/rc-lists "${D}"/usr/share/baselayout
 
 	# rc-scripts version for testing of features that *should* be present
-	echo "Gentoo Base System version ${PV}" > ${D}/etc/gentoo-release
+	echo "Gentoo Base System version ${SV}" > ${D}/etc/gentoo-release
 
 	#
 	# Setup files related to /dev
@@ -279,20 +310,24 @@ src_install() {
 	#
 	# Install baselayout utilities
 	#
-	cd "${S}"/src
+	cd ${S}/src
 	make DESTDIR="${D}" install || die
 
-	# Normal baselayout does this in pkg_postinst, but we keep it here because
-	# (1) devices will show up in CONTENTS
-	# (2) we just create devices if either build or bootstrap is ins USE
-	# (3) it is not likely that anyone uses devfsd or udev inside a vserver
-	#
-	# However the most common cases are that people are either updating
-	# baselayout or installing from scratch.  In both cases there is no difference
-	# to pkg_postinst as we only create devices when build or bootstrap is in USE.
+	# Normal baselayout generate devices in pkg_postinst(), but we keep
+	# it here because
+	# (1) devices would show up in CONTENTS
+	# (2) we just generate the devices if either build or bootstrap is useflags
+	# (3) it is not likely that anyone uses devfsd inside a vserver (nor udev)
+	# The most common cases are that people are either updating
+	# baselayout or installing from scratch.  In the installation case,
+	# it's no different to have here instead of pkg_postinst().  Nor is
+	# it in the update case, as neither build nor bootstrap will be in
+	# the active use flags.
+
 	if use build || use bootstrap; then
 		cd ${D}/dev || die
-		ebegin "Populating /dev with safe device nodes..."
+
+		ebegin "Making and populating /dev with safe device nodes..."
 		./MAKEDEV generic-vserver
 		eend $? || die
 	fi
@@ -308,21 +343,22 @@ pkg_postinst() {
 	einfo "Creating directories and .keep files."
 	einfo "Some of these might fail if they're read-only mounted"
 	einfo "filesystems, for example /dev or /proc.  That's okay!"
-	source ${ROOT}/usr/share/baselayout/mkdirs.sh
+	source "${ROOT}"/usr/share/baselayout/mkdirs.sh
+	source "${ROOT}"/usr/share/baselayout/mklinks.sh
 
 	# Set up default runlevel symlinks
 	# This used to be done in src_install but required knowledge of ${ROOT},
 	# which meant that it was effectively broken for binary installs.
-	if [[ -z $(/bin/ls "${ROOT}"/etc/runlevels 2>/dev/null) ]]; then
+	if [[ -z $(/bin/ls ${ROOT}/etc/runlevels 2>/dev/null) ]]; then
 		for x in boot default; do
 			einfo "Creating default runlevel symlinks for ${x}"
-			mkdir -p "${ROOT}"/etc/runlevels/${x}
-			for y in $(<"${ROOT}"/usr/share/baselayout/rc-lists/${x}); do
+			mkdir -p ${ROOT}/etc/runlevels/${x}
+			for y in $(<${ROOT}/usr/share/baselayout/rc-lists/${x}); do
 				if [[ ! -e ${ROOT}/etc/init.d/${y} ]]; then
 					ewarn "init.d/${y} not found -- ignoring"
 				else
-					ln -sfn /etc/init.d/${y} \
-						"${ROOT}"/etc/runlevels/${x}/${y}
+					ln -sfn ${ROOT}/etc/init.d/${y} \
+						${ROOT}/etc/runlevels/${x}/${y}
 				fi
 			done
 		done
@@ -337,7 +373,7 @@ pkg_postinst() {
 	# Touching /etc/passwd and /etc/shadow after install can be fatal, as many
 	# new users do not update them properly...  see src_install() for why they
 	# are in /usr/share/baselayout/
-	for x in passwd shadow group ; do
+	for x in passwd shadow group; do
 		if [[ -e ${ROOT}/etc/${x} ]] ; then
 			touch "${ROOT}/etc/${x}"
 		else
@@ -391,7 +427,7 @@ pkg_postinst() {
 	# write it here so that the new version is immediately in the file
 	# (without waiting for the user to do etc-update)
 	rm -f ${ROOT}/etc/._cfg????_gentoo-release
-	echo "Gentoo Base System version ${PV}" > ${ROOT}/etc/gentoo-release
+	echo "Gentoo Base System version ${SV}" > ${ROOT}/etc/gentoo-release
 
 	echo
 	einfo "Please be sure to update all pending '._cfg*' files in /etc,"
