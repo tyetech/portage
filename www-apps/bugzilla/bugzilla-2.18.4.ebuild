@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/bugzilla/Attic/bugzilla-2.18.3.ebuild,v 1.6 2005/10/01 16:00:59 rl03 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/bugzilla/Attic/bugzilla-2.18.4.ebuild,v 1.1 2005/10/01 16:00:59 rl03 Exp $
 
 inherit webapp
 
@@ -9,11 +9,11 @@ SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/webtools/${P}.tar.gz"
 HOMEPAGE="http://www.bugzilla.org"
 
 LICENSE="MPL-1.1 NPL-1.1"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 IUSE="apache2"
 
-# See http://www.bugzilla.org/docs216/html/stepbystep.html to verify dependancies
+# See http://www.bugzilla.org/docs218/html/stepbystep.html to verify dependancies
 # updated list of deps: http://www.bugzilla.org/releases/2.18/release-notes.html
 # removed deps:	dev-perl/MIME-tools
 RDEPEND=">=dev-db/mysql-3.23.41
