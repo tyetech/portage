@@ -1,17 +1,18 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/tkdvd/Attic/tkdvd-3.4.ebuild,v 1.2 2005/06/26 18:33:36 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/tkdvd/Attic/tkdvd-3.8.1.ebuild,v 1.1 2005/10/02 18:40:44 metalgod Exp $
 
 DESCRIPTION="A Tcl/Tk GUI for dvd+rw-tools"
 HOMEPAGE="http://regis.damongeot.free.fr/tkdvd/"
-SRC_URI="http://regis.damongeot.free.fr/tkdvd/dl/TkDVD-3.4.tar.gz"
+SRC_URI="http://regis.damongeot.free.fr/tkdvd/dl/TkDVD-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND="app-cdr/dvd+rw-tools
-	 dev-lang/tcl"
+	 dev-lang/tcl
+	 dev-lang/tk"
 
 S=${WORKDIR}/TkDVD
 
