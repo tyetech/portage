@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/sound-juicer/Attic/sound-juicer-2.12.0.ebuild,v 1.2 2005/09/18 18:21:14 compnerd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/sound-juicer/Attic/sound-juicer-2.12.2.ebuild,v 1.1 2005/10/03 03:32:34 leonardop Exp $
 
 inherit gnome2
 
