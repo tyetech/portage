@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/jbigkit/Attic/jbigkit-1.6-r1.ebuild,v 1.2 2005/10/01 14:48:07 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/jbigkit/Attic/jbigkit-1.6-r1.ebuild,v 1.3 2005/10/04 00:37:02 vapier Exp $
 
 inherit eutils multilib
 
@@ -24,6 +24,10 @@ src_unpack() {
 	epatch "${FILESDIR}"/${P}-build.patch
 	epatch "${FILESDIR}"/${P}-shared-lib.patch
 	echo "UNAME = `uname -s`" > uname.mk
+}
+
+src_test() {
+	LD_LIBRARY_PATH=${S}/libjbig make test || die "make test failed"
 }
 
 src_install() {
