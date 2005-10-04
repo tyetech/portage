@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metacity/Attic/metacity-2.12.0.ebuild,v 1.1 2005/09/07 00:21:03 leonardop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metacity/Attic/metacity-2.12.1.ebuild,v 1.1 2005/10/04 01:38:42 leonardop Exp $
 
 inherit eutils gnome2
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://www.gnome.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
-IUSE="static xinerama"
+IUSE="xinerama"
 
 # not parallel-safe; see bug #14405
 MAKEOPTS="${MAKEOPTS} -j1"
@@ -35,7 +35,6 @@ DOCS="AUTHORS ChangeLog HACKING NEWS README *.txt doc/*.txt"
 pkg_setup() {
 	# Compositor is too unreliable
 	G2CONF="$(use_enable xinerama) \
-		$(use_enable static) \
 		--disable-compositor"
 }
 
