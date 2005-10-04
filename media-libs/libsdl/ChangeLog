@@ -1,6 +1,10 @@
 # ChangeLog for media-libs/libsdl
 # Copyright 1999-2005 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsdl/ChangeLog,v 1.89 2005/09/29 09:47:26 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsdl/ChangeLog,v 1.90 2005/10/04 23:33:43 vapier Exp $
+
+  04 Oct 2005; Mike Frysinger <vapier@gentoo.org>
+  +files/libsdl-1.2.9-PIC-yuv-mmx.patch, libsdl-1.2.9-r1.ebuild:
+  Add another patch to fix PIC breakage in the SDL_yuv_mmx code.
 
 *libsdl-1.2.9-r1 (29 Sep 2005)
 
