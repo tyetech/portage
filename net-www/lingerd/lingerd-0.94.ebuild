@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/lingerd/Attic/lingerd-0.94.ebuild,v 1.14 2005/09/20 01:39:06 cryos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/lingerd/Attic/lingerd-0.94.ebuild,v 1.15 2005/10/07 18:01:26 gustavoz Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://images.iagora.com/media/software/lingerd/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 ~sparc x86"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND=">=sys-apps/sed-4"
