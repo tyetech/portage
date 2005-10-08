@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sguil-sensor/Attic/sguil-sensor-0.5.3.ebuild,v 1.1 2005/10/08 14:04:11 strerror Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sguil-sensor/Attic/sguil-sensor-0.5.3.ebuild,v 1.2 2005/10/08 21:19:32 swegener Exp $
 
 inherit eutils
 
@@ -40,7 +40,6 @@ pkg_setup() {
 	fi
 	enewgroup sguil
 	enewuser sguil -1 -1 /var/lib/sguil sguil
-	
 }
 
 src_unpack() {
