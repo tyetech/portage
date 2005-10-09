@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTML_Template_Sigma/Attic/PEAR-HTML_Template_Sigma-1.1.2-r1.ebuild,v 1.3 2005/09/11 17:12:42 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTML_Template_Sigma/Attic/PEAR-HTML_Template_Sigma-1.1.3.ebuild,v 1.1 2005/10/09 09:41:03 sebastian Exp $
 
 inherit php-pear-r1
 
