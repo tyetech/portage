@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/moto4lin/Attic/moto4lin-0.3.ebuild,v 1.3 2005/09/19 20:05:18 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/moto4lin/Attic/moto4lin-0.3.ebuild,v 1.4 2005/10/10 19:23:24 mrness Exp $
 
 DESCRIPTION="Moto4lin is file manager and seem editor for Motorola P2K phones"
 HOMEPAGE="http://moto4lin.sourceforge.net/"
@@ -24,6 +24,6 @@ src_compile() {
 }
 
 src_install() {
-	make INSTALL_ROOT=${D} install || die "install failed"
-	dodoc ChangeLog README INSTALL
+	make INSTALL_ROOT=${D} install || die "make install failed"
+	dodoc ChangeLog README
 }
