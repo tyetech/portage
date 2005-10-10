@@ -1,14 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/mol/Attic/mol-0.9.71_pre1-r2.ebuild,v 1.2 2005/08/06 21:05:49 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/mol/Attic/mol-0.9.71_pre2.ebuild,v 1.1 2005/10/10 02:14:13 josejx Exp $
 
 inherit flag-o-matic eutils linux-mod
 
 DESCRIPTION="MOL (Mac-on-Linux) lets PPC users run MacOS (X) under Linux (rsync snapshot)"
 HOMEPAGE="http://www.maconlinux.org/"
-SRC_URI="mirror://gentoo/${P}.tar.bz2
-		 mirror://gentoo/bootx.gz
-		 mirror://gentoo/mol-pciproxy.patch.bz2"
+SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -40,34 +38,7 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-
 	cd ${S}
-	epatch ${FILESDIR}/${PN}-module-fix.patch
-	epatch ${FILESDIR}/${P}-nopriority.patch
-
-	# Fixes bug 79428
-	epatch ${FILESDIR}/${P}-linux-2.6.9.patch
-
-	# Adds big filesystem (>2Gb) image support, bug #80098
-	epatch ${FILESDIR}/${P}-big-filesystem.patch
-
-	# Fixes bug tmp-offset access violation
-	epatch ${FILESDIR}/${P}-tmp-offset.patch
-
-	# dhcp config fix and show dchpd messages on starting mol
-	sed -i "s:#ddns-update-style:ddns-update-style:g" Doc/config/dhcpd-mol.conf || die
-	sed -i "s:DHCPD\ -q\ -cf:DHCPD\ -cf:g" Doc/config/tunconfig || die
-
-	# Add tiger support to MOL
-	epatch ${FILESDIR}/${PN}-tiger.patch
-
-	# Add new bootloader
-	# Boot loader courtesy of http://www-user.rkrk.uni-kl.de/~nissler/mol/
-	cp ${WORKDIR}/bootx ${S}/libimport/drivers/bootx
-	cp ${WORKDIR}/bootx ${S}/mollib/drivers/bootx
-
-	# PCI Proxy Patch
-	epatch ${WORKDIR}/${PN}-pciproxy.patch
 	# PCI Debugging Patch
 	if use debug; then
 		epatch ${FILESDIR}/${PN}-pciproxy-dump.patch
@@ -76,6 +47,8 @@ src_unpack() {
 
 src_compile() {
 	filter-flags -fsigned-char
+	append-flags -D_FILE_OFFSET_BITS=64
+	append-flags -D_LARGE_FILES
 
 	export KERNEL_SOURCE="/usr/src/${FK}"
 	export LDFLAGS=""
