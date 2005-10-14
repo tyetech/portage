@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-NamespaceSupport/Attic/XML-NamespaceSupport-1.09.ebuild,v 1.3 2005/10/03 12:09:59 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-NamespaceSupport/Attic/XML-NamespaceSupport-1.09.ebuild,v 1.4 2005/10/14 01:35:30 agriffis Exp $
 
 inherit perl-module
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://search.cpan.org/~rberjon/${P}"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="~alpha ~amd64 ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="alpha ~amd64 ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 SRC_TEST="do"
