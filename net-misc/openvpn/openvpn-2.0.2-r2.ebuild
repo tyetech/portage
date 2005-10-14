@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/openvpn/Attic/openvpn-2.0.2-r1.ebuild,v 1.2 2005/10/14 10:50:06 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/openvpn/Attic/openvpn-2.0.2-r2.ebuild,v 1.1 2005/10/14 11:37:59 uberlord Exp $
 
 inherit eutils gnuconfig multilib
 
