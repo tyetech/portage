@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cogito/Attic/cogito-0.13.ebuild,v 1.5 2005/08/26 22:33:04 ferdy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cogito/Attic/cogito-0.15.1.ebuild,v 1.1 2005/10/15 22:26:28 ferdy Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://kernel.org/pub/software/scm/cogito/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~x86"
+KEYWORDS="~alpha ~amd64 ~mips ~ppc ~x86"
 IUSE="doc"
 
 DEPEND="dev-libs/openssl
@@ -25,10 +25,11 @@ RDEPEND="net-misc/rsync
 src_compile() {
 	emake || die "emake failed"
 
-	if use doc; then
-		cd ${S}/Documentation
-		sed -i -e "/^MAN7_TXT/s/git.txt/#git.txt/g" Makefile
-		make || die "make documentation failed"
+	if use doc ; then
+		#epatch "${FILESDIR}/${P}-doc.patch"
+		sed -i -e "/^docdir=/s:cogito:${PF}:" \
+			${S}/Documentation/Makefile || die "sed failed (Documentation)"
+		emake -C Documentation || die "make documentation failed"
 	fi
 }
 
@@ -36,7 +37,12 @@ src_install() {
 	make install DESTDIR="${D}" prefix="/usr" || die "install failed"
 	dodoc README* VERSION COPYING
 
-	if use doc; then
+	if use doc ; then
 		doman Documentation/*.1 Documentation/*.7
+		dodir /usr/share/doc/${PF}/html
+		cp Documentation/*.html ${D}/usr/share/doc/${PF}/html/
 	fi
+
+	dodir /usr/share/doc/${PF}/contrib
+	cp ${S}/contrib/* ${D}/usr/share/doc/${PF}/contrib
 }
