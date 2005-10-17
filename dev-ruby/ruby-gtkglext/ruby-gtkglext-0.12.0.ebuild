@@ -1,11 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-gtkglext/Attic/ruby-gtkglext-0.12.0.ebuild,v 1.4 2005/10/03 13:54:46 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-gtkglext/Attic/ruby-gtkglext-0.12.0.ebuild,v 1.5 2005/10/17 12:34:55 agriffis Exp $
 
 inherit ruby ruby-gnome2
 
 DESCRIPTION="Ruby GtkGLExt bindings"
-KEYWORDS="alpha ~ia64 ~ppc ~sparc x86" 	# dropped ~ia64
+KEYWORDS="alpha ia64 ~ppc ~sparc x86"
 IUSE=""
 DEPEND=">=x11-libs/gtkglext-1.0.3
 	>=x11-libs/gtk+-2
