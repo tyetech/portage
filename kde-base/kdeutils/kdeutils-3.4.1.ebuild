@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeutils/Attic/kdeutils-3.4.1.ebuild,v 1.8 2005/08/25 17:10:21 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeutils/Attic/kdeutils-3.4.1.ebuild,v 1.9 2005/10/17 23:25:20 agriffis Exp $
 
 inherit kde-dist
 
 DESCRIPTION="KDE utilities"
 
-KEYWORDS="~alpha amd64 hppa ia64 ~mips ppc sparc x86"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc sparc x86"
 IUSE="crypt snmp"
 
 DEPEND="~kde-base/kdebase-${PV}
