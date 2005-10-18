@@ -1,28 +1,27 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/em8300-libraries/Attic/em8300-libraries-0.15.0_pre20050310.ebuild,v 1.1 2005/03/10 22:40:07 arj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/em8300-libraries/Attic/em8300-libraries-0.15.1.ebuild,v 1.1 2005/10/18 14:43:39 arj Exp $
 
 inherit flag-o-matic
 
 DESCRIPTION="em8300 (RealMagic Hollywood+/Creative DXR3) video decoder card libraries"
 HOMEPAGE="http://dxr3.sourceforge.net"
-PDATE="20050310"
-SRC_URI="mirror://gentoo/em8300-${PDATE}.tar.bz2
-	http://dev.gentoo.org/~arj/files/em8300-${PDATE}.tar.bz2"
+SRC_URI="mirror://sourceforge/dxr3/${P/-libraries/}.tar.gz"
 
-DEPEND="=media-video/em8300-modules-0.15*
+DEPEND="media-video/em8300-modules
 	gtk? ( x11-libs/gtk+ )"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="gtk"
-
-S="${WORKDIR}/em8300-${PDATE}"
 
 src_unpack () {
 
 	unpack ${A}
+
+	cd ${WORKDIR}
+	mv ${A/.tar.gz/} ${P}
 
 	cd ${S}
 	#Eliminate extra compiling and prune out some disk space usage
