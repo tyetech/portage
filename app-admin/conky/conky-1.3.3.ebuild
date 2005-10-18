@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conky/Attic/conky-1.3.2.ebuild,v 1.1 2005/10/17 19:21:31 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conky/Attic/conky-1.3.3.ebuild,v 1.1 2005/10/18 11:57:09 dragonheart Exp $
 
 inherit eutils
 
@@ -68,7 +68,4 @@ pkg_postinst() {
 	einfo
 	ewarn "Conky doesn't work with window managers that"
 	ewarn "take control over root window such as Gnome's nautilus."
-	ewarn
-	ewarn "Please note that METAR support has been removed since 1.2"
-	ewarn
 }
