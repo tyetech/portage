@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xedit/Attic/xedit-0.99.0.ebuild,v 1.4 2005/09/28 02:59:41 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xedit/Attic/xedit-0.99.0.ebuild,v 1.5 2005/10/19 03:00:44 geoman Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -8,7 +8,7 @@
 inherit x-modular
 
 DESCRIPTION="X.Org xedit application"
-KEYWORDS="~sparc ~x86"
+KEYWORDS="~mips ~sparc ~x86"
 # As of 20050927, we should be able to make xprint optional
 #IUSE="xprint"
 RDEPEND="x11-libs/libXprintUtil
