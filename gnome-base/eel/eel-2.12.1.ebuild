@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/eel/Attic/eel-2.12.1.ebuild,v 1.2 2005/10/11 13:18:37 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/eel/Attic/eel-2.12.1.ebuild,v 1.3 2005/10/19 18:51:22 seemant Exp $
 
 inherit virtualx gnome2
 
@@ -39,5 +39,7 @@ src_test() {
 	if hasq userpriv $FEATURES;
 	then
 		Xmake check || die "make check failed"
+	else
+		einfo "Not running tests without userpriv"
 	fi
 }
