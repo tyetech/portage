@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xdm/Attic/xdm-0.99.1_pre20051014.ebuild,v 1.1 2005/10/14 18:51:04 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xdm/Attic/xdm-0.99.1_pre20051014.ebuild,v 1.2 2005/10/19 02:31:26 geoman Exp $
 
 inherit versionator
 
@@ -10,7 +10,7 @@ inherit versionator
 inherit x-modular pam
 
 DESCRIPTION="X.Org xdm application"
-KEYWORDS="~amd64 ~arm ~ppc ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~mips ~ppc ~s390 ~sh ~sparc ~x86"
 IUSE="xprint ipv6 pam"
 RDEPEND="x11-libs/libXdmcp
 	x11-libs/libXaw
