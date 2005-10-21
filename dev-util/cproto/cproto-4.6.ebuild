@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cproto/Attic/cproto-4.6.ebuild,v 1.7 2004/08/25 02:22:24 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cproto/Attic/cproto-4.6.ebuild,v 1.8 2005/10/21 21:58:51 george Exp $
 
 IUSE=""
 
