@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mozilla-thunderbird/Attic/mozilla-thunderbird-1.0.6-r4.ebuild,v 1.2 2005/08/03 13:55:55 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mozilla-thunderbird/Attic/mozilla-thunderbird-1.0.7-r1.ebuild,v 1.1 2005/10/22 14:52:14 anarchy Exp $
 
 unset ALLOWED_FLAGS  # stupid extra-functions.sh ... bug 49179
 inherit flag-o-matic toolchain-funcs eutils mozconfig mozilla-launcher makeedit multilib
@@ -60,7 +60,7 @@ src_unpack() {
 	####################################
 
 	# GCC4 compile fix, bug #87800
-	epatch ${FILESDIR}/${P}-gcc4.patch
+	epatch ${FILESDIR}/${P}-gcc-4.0.2.patch
 
 	# patch out ft caching code since the API changed between releases of
 	# freetype; this enables freetype-2.1.8+ compat.
