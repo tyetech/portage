@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/hessian/Attic/hessian-2.1.12.ebuild,v 1.2 2005/10/21 14:32:40 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/hessian/Attic/hessian-3.0.8-r1.ebuild,v 1.1 2005/10/22 20:33:13 betelgeuse Exp $
 
 inherit java-pkg
 
@@ -9,27 +9,31 @@ HOMEPAGE="http://www.caucho.com/hessian/"
 SRC_URI="http://www.caucho.com/hessian/download/${P}-src.jar"
 
 LICENSE="Apache-1.1"
-SLOT="2.1"
+SLOT="3.0.8"
 KEYWORDS="~x86"
 IUSE="doc jikes source"
 
-DEPEND=">=virtual/jdk-1.4
-		jikes? ( dev-java/jikes )
-		source? ( app-arch/zip )
-		dev-java/ant-core"
 RDEPEND=">=virtual/jre-1.4
 		=dev-java/servletapi-2.3*"
 
-src_unpack() {
-	jar xvf ${DISTDIR}/${A}
+DEPEND=">=virtual/jdk-1.4
+		app-arch/unzip
+		jikes? ( dev-java/jikes )
+		source? ( app-arch/zip )
+		dev-java/ant-core
+		${RDEPEND}"
 
-	# We need to move things around a bit
-	mkdir -p ${S}/src
-	mv com ${S}/src
+src_unpack() {
+	mkdir -p ${P}/src
+	unzip -qq -d ${S}/src ${DISTDIR}/${A}
+
+	# They package stuff from burlap in here
+	# Burlap is a separate protocol
+	rm -fr ${S}/src/com/caucho/burlap
 
 	cd ${S}
 	# No included ant script! Bad Java developer, bad!
-	cp ${FILESDIR}/build-${PVR}.xml build.xml
+	cp ${FILESDIR}/build-${PV}.xml build.xml
 
 	# Populate classpath
 	echo "classpath=$(java-pkg_getjars servletapi-2.3)" >> build.properties
