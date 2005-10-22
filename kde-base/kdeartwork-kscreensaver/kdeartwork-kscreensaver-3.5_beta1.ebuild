@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork-kscreensaver/Attic/kdeartwork-kscreensaver-3.5_beta1.ebuild,v 1.2 2005/09/25 10:14:05 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork-kscreensaver/Attic/kdeartwork-kscreensaver-3.5_beta1.ebuild,v 1.3 2005/10/22 06:40:00 halcy0n Exp $
 
 KMMODULE=kscreensaver
 KMNAME=kdeartwork
@@ -9,7 +9,7 @@ KM_DEPRANGE="$PV $MAXKDEVER"
 inherit kde-meta
 
 DESCRIPTION="Extra screensavers for kde"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="opengl xscreensaver"
 DEPEND="$(deprange-dual $PV $MAXKDEVER kde-base/kscreensaver)
 	media-libs/libart_lgpl
