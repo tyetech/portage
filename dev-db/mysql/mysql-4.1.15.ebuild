@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-4.1.15.ebuild,v 1.2 2005/10/22 16:51:04 vivo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-4.1.15.ebuild,v 1.3 2005/10/24 17:00:19 vivo Exp $
 
 inherit eutils gnuconfig flag-o-matic versionator
 
@@ -41,7 +41,7 @@ if version_is_at_least "4.1.3" ; then
 	# 2005-09-29
 	#   geometry has been removed due to repeated compile problems _without_ it.
 	#   From now on it will be *always* enabled
-	#   if you need to compile *without it* take a look at 
+	#   if you need to compile *without it* take a look at
 	#	http://lists.mysql.com/internals/29559
 	IUSE="${IUSE} cluster utf8 extraengine"
 fi
@@ -65,8 +65,9 @@ mysql_upgrade_warning() {
 	ewarn "If you're upgrading from MySQL-3.x to 4.0, or 4.0.x to 4.1.x, you"
 	ewarn "must recompile the other packages on your system that link with"
 	ewarn "libmysqlclient after the upgrade completes.  To obtain such a list"
-	ewarn "of packages for your system, you may use 'revdep-rebuild' from"
-	ewarn "app-portage/gentoolkit."
+	ewarn "of packages for your system, you may use:"
+	ewarn "revdep-rebuild --library=libmysqlclient.so.12"
+	ewarn "from app-portage/gentoolkit."
 	ewarn ""
 	ewarn "the value of \"innodb_log_file_size\" into /etc/mysql/my.cnf file "
 	ewarn "has changed size from \"8M\" to \"5M\"."
@@ -110,7 +111,7 @@ pkg_setup() {
 
 	if [[ -z $MYSQL_STRAIGHT_UPGRADE ]] ; then
 		mysql_get_datadir
-		local local curversion="dev-db/${PN}-${PV%.*}"
+		local curversion="dev-db/${PN}-${PV%.*}"
 		local oldversion="$(best_version dev-db/mysql)"
 		oldversion=${oldversion%.*}
 
@@ -161,6 +162,7 @@ src_unpack() {
 
 	epatch ${MY_PATCH_SOURCE}/010_all_my-print-defaults-r0.patch || die
 	epatch ${MY_PATCH_SOURCE}/030_all_thrssl-r1.patch || die
+	epatch ${MY_PATCH_SOURCE}/035_x86_asm-pic-fixes-r7.patch || die
 	epatch ${MY_PATCH_SOURCE}/040_all_tcpd-vars-fix.patch || die
 
 	for d in ${S} ${S}/innobase; do
@@ -257,6 +259,7 @@ src_compile() {
 		for i in ${minimal_exclude_list}; do
 			myconf="${myconf} --with-${i}"
 		done
+
 		if useq static ; then
 			myconf="${myconf} --without-raid"
 			ewarn "disabling raid support, has problem with static"
@@ -290,7 +293,7 @@ src_compile() {
 		fi
 
 		if version_is_at_least "4.1.3" ; then
-			myconf="${myconf} -with-geometry"
+			myconf="${myconf} --with-geometry"
 			#myconf="${myconf} $(use_with geometry)"
 			myconf="${myconf} $(use_with cluster ndbcluster)"
 		fi
@@ -446,12 +449,13 @@ src_install() {
 	        chown -R mysql:mysql "${D}/${DATADIR}"
 		fi
 
-		#diropts "-m0755"
-		#dodir "/var/log/mysql"
+		diropts "-m0755"
+		dodir "/var/log/mysql"
+		# the following files fails with FEATURES="collision-protect"
 		#touch ${D}/var/log/mysql/mysql.{log,err}
 		#chmod 0660 ${D}/var/log/mysql/mysql.{log,err}
-		#keepdir "/var/log/mysql"
-		#chown -R mysql:mysql "${D}/var/log/mysql"
+		keepdir "/var/log/mysql"
+		chown -R mysql:mysql "${D}/var/log/mysql"
 
 		diropts "-m0755"
 		dodir "/var/run/mysqld"
@@ -497,6 +501,21 @@ pkg_postinst() {
 	mysql_upgrade_warning
 	einfo "InnoDB is not optional as of MySQL-4.0.24, at the request of upstream."
 }
+
+pkg_postinst() {
+	# mind at FEATURES=collision-protect before to remove this
+	#empty dirs...
+	[ -d "${ROOT}/var/log/mysql" ] \
+		|| install -d -m0755 -o mysql -g mysql ${ROOT}/var/log/mysql
+
+	#secure the logfiles... does this bother anybody?
+	touch ${ROOT}/var/log/mysql/mysql.{log,err}
+	chown mysql:mysql ${ROOT}/var/log/mysql/mysql*
+	chmod 0660 ${ROOT}/var/log/mysql/mysql*
+	# secure some directories
+	chmod 0750 ${ROOT}/var/log/mysql
+}
+
 
 pkg_config() {
 	mysql_get_datadir
@@ -596,19 +615,5 @@ pkg_config() {
 	kill $( cat ${ROOT}/var/run/mysqld/mysqld.pid )
 	rm  "${sqltmp}"
 	einfo "done"
-}
-
-pkg_postinst() {
-	# mind at FEATURES=collision-protect before to remove this
-	#empty dirs...
-	[ -d "${ROOT}/var/log/mysql" ] \
-		|| install -d -m0755 -o mysql -g mysql ${ROOT}/var/log/mysql
-
-	#secure the logfiles... does this bother anybody?
-	touch ${ROOT}/var/log/mysql/mysql.{log,err}
-	chown mysql:mysql ${ROOT}/var/log/mysql/mysql*
-	chmod 0660 ${ROOT}/var/log/mysql/mysql*
-	# secure some directories
-	chmod 0750 ${ROOT}/var/log/mysql
 }
 

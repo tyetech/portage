@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-5.0.13_rc.ebuild,v 1.8 2005/10/24 17:00:19 vivo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-5.0.15.ebuild,v 1.1 2005/10/24 17:00:19 vivo Exp $
 
 inherit eutils flag-o-matic versionator
 
@@ -63,7 +63,7 @@ mysql_upgrade_warning() {
 	ewarn "must recompile the other packages on your system that link with"
 	ewarn "libmysqlclient after the upgrade completes.  To obtain such a list"
 	ewarn "of packages for your system, you may use:"
-	ewarn "revdep-rebuild --soname=libmysqlclient.so.14"
+	ewarn "revdep-rebuild --library=libmysqlclient.so.14"
 	ewarn "from app-portage/gentoolkit."
 	ewarn ""
 	ewarn "the value of \"innodb_log_file_size\" into /etc/mysql/my.cnf file "
@@ -260,11 +260,17 @@ src_compile() {
 	# these are things we exclude from a minimal build
 	# note that the server actually does get built and installed
 	# but we then delete it before packaging.
-	local minimal_exclude_list="server embedded-server extra-tools innodb raid"
+	local minimal_exclude_list="server embedded-server extra-tools innodb"
 	if ! useq minimal; then
 		for i in ${minimal_exclude_list}; do
 			myconf="${myconf} --with-${i}"
 		done
+		if useq static ; then
+			myconf="${myconf} --without-raid"
+			ewarn "disabling raid support, has problem with static"
+		else
+			myconf="${myconf} --with-raid"
+		fi
 
 		if ! version_is_at_least "5.0_alpha" ; then
 			if version_is_at_least "4.1_alpha" && useq utf8; then
@@ -365,9 +371,9 @@ src_test() {
 		local retstatus
 		addpredict /this-dir-does-not-exist/t9.MYI
 
-		version_is_at_least "5.0.6_beta" \
-		&& make test-force \
-		|| make test
+		version_is_at_least "5.0.15" \
+		&& make test-force-pl \
+		|| make test-pl
 		retstatus=$?
 
 		# to be sure ;)
@@ -449,12 +455,13 @@ src_install() {
 	        chown -R mysql:mysql "${D}/${DATADIR}"
 		fi
 
-		#diropts "-m0755"
-		#dodir "/var/log/mysql"
+		diropts "-m0755"
+		dodir "/var/log/mysql"
+		# the following files fails with FEATURES="collision-protect"
 		#touch ${D}/var/log/mysql/mysql.{log,err}
 		#chmod 0660 ${D}/var/log/mysql/mysql.{log,err}
-		#keepdir "/var/log/mysql"
-		#chown -R mysql:mysql "${D}/var/log/mysql"
+		keepdir "/var/log/mysql"
+		chown -R mysql:mysql "${D}/var/log/mysql"
 
 		diropts "-m0755"
 		dodir "/var/run/mysqld"
@@ -499,6 +506,20 @@ pkg_postinst() {
 
 	mysql_upgrade_warning
 	einfo "InnoDB is not optional as of MySQL-4.0.24, at the request of upstream."
+}
+
+pkg_postinst() {
+	# mind at FEATURES=collision-protect before to remove this
+	#empty dirs...
+	[ -d "${ROOT}/var/log/mysql" ] \
+		|| install -d -m0755 -o mysql -g mysql ${ROOT}/var/log/mysql
+
+	#secure the logfiles... does this bother anybody?
+	touch ${ROOT}/var/log/mysql/mysql.{log,err}
+	chown mysql:mysql ${ROOT}/var/log/mysql/mysql*
+	chmod 0660 ${ROOT}/var/log/mysql/mysql*
+	# secure some directories
+	chmod 0750 ${ROOT}/var/log/mysql
 }
 
 pkg_config() {
@@ -599,19 +620,5 @@ pkg_config() {
 	kill $( cat ${ROOT}/var/run/mysqld/mysqld.pid )
 	rm  "${sqltmp}"
 	einfo "done"
-}
-
-pkg_postinst() {
-	# mind at FEATURES=collision-protect before to remove this
-	#empty dirs...
-	[ -d "${ROOT}/var/log/mysql" ] \
-		|| install -d -m0755 -o mysql -g mysql ${ROOT}/var/log/mysql
-
-	#secure the logfiles... does this bother anybody?
-	touch ${ROOT}/var/log/mysql/mysql.{log,err}
-	chown mysql:mysql ${ROOT}/var/log/mysql/mysql*
-	chmod 0660 ${ROOT}/var/log/mysql/mysql*
-	# secure some directories
-	chmod 0750 ${ROOT}/var/log/mysql
 }
 
