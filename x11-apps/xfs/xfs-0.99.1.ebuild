@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xfs/Attic/xfs-0.99.1.ebuild,v 1.1 2005/10/20 00:45:22 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xfs/Attic/xfs-0.99.1.ebuild,v 1.2 2005/10/31 21:43:12 dang Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -8,7 +8,7 @@
 inherit x-modular
 
 DESCRIPTION="X.Org xfs application"
-KEYWORDS="~arm ~mips ~s390 ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~mips ~s390 ~sparc ~x86"
 IUSE="ipv6"
 RDEPEND="x11-libs/libFS
 	x11-libs/libXfont"
