@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xrestop/Attic/xrestop-0.3.ebuild,v 1.8 2005/10/13 23:53:34 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xrestop/Attic/xrestop-0.3.ebuild,v 1.9 2005/11/01 00:01:09 nelchael Exp $
 
 IUSE=""
 
@@ -16,5 +16,5 @@ DEPEND="virtual/x11"
 
 src_install () {
 	make DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog INSTALL  NEWS README COPYING
+	dodoc AUTHORS ChangeLog NEWS README
 }
