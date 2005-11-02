@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.4.0-r4.ebuild,v 1.1 2005/10/29 22:16:12 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/mod_php/Attic/mod_php-4.3.11-r3.ebuild,v 1.1 2005/11/02 22:13:28 chtekk Exp $
 
 IUSE="apache2"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 
 detectapache() {
 	# DO NOT REPLICATE THIS IN ANY OTHER PACKAGE WITHOUT PORTAGE DEVS PERMISSION
@@ -50,7 +50,7 @@ SLOT="${APACHEVER}"
 [ "${APACHEVER}" -eq '2' ] && USE_APACHE2='2' || USE_APACHE2=''
 
 PHPSAPI="apache${APACHEVER}"
-#SRC_URI_BASE="http://downloads.php.net/ilia/" # for RC only
+SRC_URI_BASE="http://downloads.php.net/ilia/" # for RC only
 
 # BIG FAT WARNING!
 # the php eclass requires the PHPSAPI setting!
@@ -67,7 +67,7 @@ DEPEND="${DEPEND} ${DEPEND_EXTRA}"
 RDEPEND="${RDEPEND} ${DEPEND_EXTRA}"
 IUSE="${IUSE} debug"
 # for this revision only
-PDEPEND=">=${PHP_PROVIDER_PKG}-4.4.0"
+PDEPEND=">=${PHP_PROVIDER_PKG}-4.3.11"
 PROVIDE="${PROVIDE} virtual/httpd-php"
 
 # fixed PCRE library for security issues, bug #102373
@@ -91,28 +91,43 @@ src_unpack() {
 	# second revision as the apache2 stuff was resolved upstream
 	epatch ${FILESDIR}/mod_php-4.3.5-apache1security.diff
 
+	# Bug 88756
+	use flash && epatch ${FILESDIR}/php-4.3.11-flash.patch
+
+	# Bug 88795
+	use gmp && epatch ${FILESDIR}/php-4.3.11-gmp.patch
+
 	# stop php from activing the apache config, as we will do that ourselves
 	for i in configure sapi/apache/config.m4 sapi/apache2filter/config.m4 sapi/apache2handler/config.m4; do
 		sed -i.orig -e 's,-i -a -n php4,-i -n php4,g' $i
 	done
 
 	# fix imap symlink creation, bug #105351
-	use imap && epatch ${FILESDIR}/php4.4.0-imap-symlink.diff
+	use imap && epatch ${FILESDIR}/php4.3.11-imap-symlink.diff
 
 	# patch to fix pspell extension, bug #99312 (new patch by upstream)
-	use spell && epatch "${FILESDIR}/php4.4.0-pspell-ext-segf.patch"
+	use spell && epatch "${FILESDIR}/php4.3.11-pspell-ext-segf.patch"
 
 	# patch to fix safe_mode bypass in GD extension, bug #109669
 	if use gd || use gd-external ; then
-		epatch "${FILESDIR}/php4.4.0-gd_safe_mode.patch"
+		epatch "${FILESDIR}/php4.3.11-gd_safe_mode.patch"
 	fi
 
+	# patch fo fix safe_mode bypass in CURL extension, bug #111032
+	use curl && epatch "${FILESDIR}/php4.3.11-curl_safemode.patch"
+
+	# patch $GLOBALS overwrite vulnerability, bug #111011 and bug #111014
+	epatch "${FILESDIR}/php4.3.11-globals_overwrite.patch"
+
+	# patch phpinfo() XSS vulnerability, bug #111015
+	epatch "${FILESDIR}/php4.3.11-phpinfo_xss.patch"
+
 	# patch open_basedir directory bypass, bug #102943
-	epatch "${FILESDIR}/php4.4.0-fopen_wrappers.patch"
+	epatch "${FILESDIR}/php4.3.11-fopen_wrappers.patch"
 
 	# patch to fix session.save_path segfault and other issues in
 	# the apache2handler SAPI, bug #107602
-	epatch "${FILESDIR}/php4.4.0-session_save_path-segf.patch"
+	epatch "${FILESDIR}/php4.3.11-session_save_path-segf.patch"
 
 	# we need to unpack the files here, the eclass doesn't handle this
 	cd ${WORKDIR}
@@ -120,7 +135,7 @@ src_unpack() {
 	cd ${S}
 
 	# patch to fix PCRE library security issues, bug #102373
-	epatch ${FILESDIR}/php4.4.0-pcre-security.patch
+	epatch ${FILESDIR}/php4.3.11-pcre-security.patch
 
 	# sobstitute the bundled PCRE library with a fixed version for bug #102373
 	einfo "Updating bundled PCRE library"
@@ -138,11 +153,8 @@ src_compile() {
 		esac;
 	fi
 
-	# use apache2
+	#use apache2 \
 	myconf="${myconf} --with-apxs${USE_APACHE2}=/usr/sbin/apxs${USE_APACHE2}"
-
-	# Do not build CLI SAPI module.
-	myconf="${myconf} --disable-cli --without-pear"
 
 	php-sapi_src_compile
 }

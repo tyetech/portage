@@ -1,17 +1,17 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-cgi/Attic/php-cgi-4.3.11-r3.ebuild,v 1.1 2005/10/29 22:16:13 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/php-cgi/Attic/php-cgi-4.4.0-r4.ebuild,v 1.1 2005/11/02 22:11:28 chtekk Exp $
 
 PHPSAPI="cgi"
 inherit php-sapi eutils
 
 DESCRIPTION="PHP CGI"
 SLOT="0"
-IUSE="force-cgi-redirect"
+IUSE="fastcgi force-cgi-redirect"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~sparc ~x86"
 
 # for this revision only
-PDEPEND=">=${PHP_PROVIDER_PKG}-4.3.11"
+PDEPEND=">=${PHP_PROVIDER_PKG}-4.4.0"
 PROVIDE="${PROVIDE} virtual/httpd-php"
 
 # fixed PCRE library for security issues, bug #102373
@@ -20,29 +20,32 @@ SRC_URI="${SRC_URI} http://gentoo.longitekk.com/php-pcrelib-new-secpatch.tar.bz2
 src_unpack() {
 	php-sapi_src_unpack
 
-	# Bug 88756
-	use flash && epatch "${FILESDIR}/php-4.3.11-flash.patch"
-
-	# Bug 88795
-	use gmp && epatch "${FILESDIR}/php-4.3.11-gmp.patch"
-
 	# fix imap symlink creation, bug #105351
-	use imap && epatch "${FILESDIR}/php4.3.11-imap-symlink.diff"
+	use imap && epatch "${FILESDIR}/php4.4.0-imap-symlink.diff"
 
 	# patch to fix pspell extension, bug #99312 (new patch by upstream)
-	use spell && epatch "${FILESDIR}/php4.3.11-pspell-ext-segf.patch"
+	use spell && epatch "${FILESDIR}/php4.4.0-pspell-ext-segf.patch"
 
 	# patch to fix safe_mode bypass in GD extension, bug #109669
 	if use gd || use gd-external ; then
-		epatch "${FILESDIR}/php4.3.11-gd_safe_mode.patch"
+		epatch "${FILESDIR}/php4.4.0-gd_safe_mode.patch"
 	fi
 
+	# patch fo fix safe_mode bypass in CURL extension, bug #111032
+	use curl && epatch "${FILESDIR}/php4.4.0-curl_safemode.patch"
+
+	# patch $GLOBALS overwrite vulnerability, bug #111011 and bug #111014
+	epatch "${FILESDIR}/php4.4.0-globals_overwrite.patch"
+
+	# patch phpinfo() XSS vulnerability, bug #111015
+	epatch "${FILESDIR}/php4.4.0-phpinfo_xss.patch"
+
 	# patch open_basedir directory bypass, bug #102943
-	epatch "${FILESDIR}/php4.3.11-fopen_wrappers.patch"
+	epatch "${FILESDIR}/php4.4.0-fopen_wrappers.patch"
 
 	# patch to fix session.save_path segfault and other issues in
 	# the apache2handler SAPI, bug #107602
-	epatch "${FILESDIR}/php4.3.11-session_save_path-segf.patch"
+	epatch "${FILESDIR}/php4.4.0-session_save_path-segf.patch"
 
 	# we need to unpack the files here, the eclass doesn't handle this
 	cd "${WORKDIR}"
@@ -50,7 +53,7 @@ src_unpack() {
 	cd "${S}"
 
 	# patch to fix PCRE library security issues, bug #102373
-	epatch "${FILESDIR}/php4.3.11-pcre-security.patch"
+	epatch "${FILESDIR}/php4.4.0-pcre-security.patch"
 
 	# sobstitute the bundled PCRE library with a fixed version for bug #102373
 	einfo "Updating bundled PCRE library"
@@ -58,11 +61,11 @@ src_unpack() {
 }
 
 src_compile() {
-	# CLI needed to build stuff
-	myconf="${myconf} \
-		--enable-cgi \
-		--enable-cli \
-		--enable-fastcgi"
+	myconf="${myconf} --enable-cgi --disable-cli"
+
+	if use fastcgi; then
+		myconf="${myconf} --enable-fastcgi"
+	fi
 
 	if use force-cgi-redirect; then
 		myconf="${myconf} --enable-force-cgi-redirect"
@@ -75,7 +78,6 @@ src_install() {
 	PHP_INSTALLTARGETS="install"
 	php-sapi_src_install
 
-	rm -f "${D}/usr/bin/php"
 	# rename binary
 	newbin "${S}/sapi/cgi/php" php-cgi
 }
