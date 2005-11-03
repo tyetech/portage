@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/graphviz/Attic/graphviz-1.16-r1.ebuild,v 1.2 2005/10/28 15:01:55 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/graphviz/Attic/graphviz-1.16-r1.ebuild,v 1.3 2005/11/03 12:41:59 lu_zero Exp $
 
 inherit gnuconfig eutils flag-o-matic
 
@@ -72,4 +72,8 @@ src_install() {
 
 	dohtml -r .
 	dodoc doc/*.pdf doc/Dot.ref
+}
+
+pkg_postinst() {
+	dot -c
 }
