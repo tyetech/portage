@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/jove/Attic/jove-4.16.0.65.3.ebuild,v 1.2 2005/05/04 06:03:07 wormo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/jove/Attic/jove-4.16.0.65.4.ebuild,v 1.1 2005/11/03 13:25:46 seemant Exp $
 
 inherit eutils
 
