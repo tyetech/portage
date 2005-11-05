@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/dspam-web/Attic/dspam-web-3.4.0.ebuild,v 1.4 2005/11/05 15:53:55 st_lim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/dspam-web/Attic/dspam-web-3.4.9.ebuild,v 1.1 2005/11/05 15:53:55 st_lim Exp $
 
 inherit webapp eutils
 
@@ -12,7 +12,7 @@ SRC_URI="http://dspam.nuclearelephant.com/sources/${MY_P}.tar.gz"
 
 HOMEPAGE="http://dspam.nuclearelephant.com/"
 LICENSE="GPL-2"
-DEPEND=">=mail-filter/dspam-3.2_rc3
+DEPEND=">=mail-filter/dspam-${PV}
 	>=net-www/apache-1.3
 	>=dev-lang/perl-5.8.2
 	>=dev-perl/GD-2.0

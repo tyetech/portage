@@ -1,18 +1,19 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/dspam-web/Attic/dspam-web-3.4.0.ebuild,v 1.4 2005/11/05 15:53:55 st_lim Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/dspam-web/Attic/dspam-web-3.6_rc3.ebuild,v 1.1 2005/11/05 15:53:55 st_lim Exp $
 
 inherit webapp eutils
 
 MY_PN=${PN/-web/}
-MY_P=${MY_PN}-${PV}
+MY_PV=${PV/_/.}
+MY_P=${MY_PN}-${MY_PV}
 
 DESCRIPTION="Web based administration and user controls for dspam"
 SRC_URI="http://dspam.nuclearelephant.com/sources/${MY_P}.tar.gz"
 
 HOMEPAGE="http://dspam.nuclearelephant.com/"
 LICENSE="GPL-2"
-DEPEND=">=mail-filter/dspam-3.2_rc3
+DEPEND=">=mail-filter/dspam-${PV}
 	>=net-www/apache-1.3
 	>=dev-lang/perl-5.8.2
 	>=dev-perl/GD-2.0
@@ -21,35 +22,40 @@ DEPEND=">=mail-filter/dspam-3.2_rc3
 	dev-perl/GDTextUtil"
 KEYWORDS="~x86 ~ppc ~amd64"
 S=${WORKDIR}/${MY_P}
-HOMEDIR=/etc/mail/dspam
 IUSE="debug large-domain mysql neural oci8 postgres sqlite sqlite3 virtual-users"
+
+# some FHS-like structure
+HOMEDIR="/var/spool/dspam"
+CONFDIR="/etc/mail/dspam"
+LOGDIR="/var/log/dspam"
 
 src_compile() {
 	local myconf
 
 	myconf="${myconf} --enable-long-username"
+	myconf="${myconf} --with-delivery-agent=/usr/bin/procmail"
 	use large-domain && myconf="${myconf} --enable-large-scale" ||\
 	    myconf="${myconf} --enable-domain-scale"
 
-	myconf="${myconf} --with-dspam-mode=4755"
-	myconf="${myconf} --with-dspam-owner=dspam"
-	myconf="${myconf} --with-dspam-group=dspam"
-	myconf="${myconf} --sysconfdir=${HOMEDIR}"
-	myconf="${myconf} --with-logdir=${LOGDIR}"
-	use virtual-users || myconf="${myconf} --with-dspam-home=${HOMEDIR}"
+	myconf="${myconf} --with-dspam-home=${HOMEDIR}"
+	myconf="${myconf} --sysconfdir=${CONFDIR}"
+	use virtual-users || myconf="${myconf} --enable-homedir"
 
 	# enables support for debugging (touch /etc/dspam/.debug to turn on)
 	# optional: even MORE debugging output, use with extreme caution!
 	use debug && myconf="${myconf} --enable-debug --enable-verbose-debug"
 
 	# select storage driver
-	if use mysql; then
+	if use sqlite ; then
+		myconf="${myconf} --with-storage-driver=sqlite_drv"
+		myconf="${myconf} --enable-virtual-users"
+	elif use mysql; then
 		myconf="${myconf} --with-storage-driver=mysql_drv"
 		myconf="${myconf} --with-mysql-includes=/usr/include/mysql"
 		myconf="${myconf} --with-mysql-libraries=/usr/lib/mysql"
 		myconf="${myconf} --enable-preferences-extension"
 
-		if has_version sys-kernel/linux26-headers; then
+		if has_version ">sys-kernel/linux-headers-2.6"; then
 			myconf="${myconf} --enable-daemon"
 		fi
 
@@ -62,7 +68,7 @@ src_compile() {
 		myconf="${myconf} --with-pgsql-libraries=/usr/lib/postgresql"
 		myconf="${myconf} --enable-preferences-extension"
 
-		if has_version sys-kernel/linux26-headers; then
+		if has_version ">sys-kernel/linux-headers-2.6"; then
 			myconf="${myconf} --enable-daemon"
 		fi
 
@@ -79,31 +85,25 @@ src_compile() {
 		if (expr ${ORACLE_HOME/*\/} : 10 1>/dev/null 2>&1); then
 			myconf="${myconf} --with-oracle-version=10"
 		fi
-	elif use sqlite3 ; then
-		myconf="${myconf} --with-storage-driver=sqlite3_drv"
-		myconf="${myconf} --enable-virtual-users"
-	elif use sqlite ; then
-		myconf="${myconf} --with-storage-driver=sqlite_drv"
-		myconf="${myconf} --enable-virtual-users"
 	else
 		myconf="${myconf} --with-storage-driver=libdb4_drv"
 	fi
 
 	econf ${myconf} || die
-	cd ${S}/cgi
+	cd ${S}/webui
 	make
 }
 
 src_install () {
-	cd ${S}/cgi
+	cd ${S}/webui
 	webapp_src_preinst
 
 	sed -e 's,/var/dspam,/etc/mail/dspam,' \
 		-e 's,/usr/local,/usr,' \
-		-i admin.cgi
+		-i ${S}/webui/cgi-bin/admin.cgi
 	sed -e 's,/var/dspam,/etc/mail/dspam,' \
 		-e 's,/usr/local,/usr,' \
-		-i dspam.cgi
+		-i ${S}/webui/cgi-bin/dspam.cgi
 
 	insinto ${MY_HTDOCSDIR}
 	insopts -m644 -o apache -g apache
@@ -118,7 +118,7 @@ src_install () {
 	newins ${FILESDIR}/htpasswd .htpasswd
 
 	insopts -m755 -o apache -g apache
-	doins *.cgi
+	doins ${S}/webui/cgi-bin/*.cgi
 
 	for CGI_SCRIPT in admin.cgi  admingraph.cgi  dspam.cgi  graph.cgi; do
 		webapp_runbycgibin perl ${MY_HTDOCSDIR}/${CGI_SCRIPT}
