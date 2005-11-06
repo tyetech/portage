@@ -1,6 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/hddtemp/Attic/hddtemp-0.3_beta12.ebuild,v 1.5 2005/09/22 03:25:02 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/hddtemp/Attic/hddtemp-0.3_beta14.ebuild,v 1.1 2005/11/06 12:20:48 spock Exp $
+
+inherit eutils
 
 MY_P=${P/_beta/-beta}
 
@@ -10,8 +12,8 @@ SRC_URI="http://www.guzu.net/linux/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ppc sparc ~amd64"
-IUSE=""
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+IUSE="nls"
 
 DEPEND="virtual/libc
 	net-misc/wget"
@@ -20,6 +22,7 @@ S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A} ; cd ${S}
+#	epatch ${FILESDIR}/${P}-setsid.patch
 
 	ebegin "Trying to download the latest hddtemp.db file"
 	wget -q --timeout=10 http://www.guzu.net/linux/hddtemp.db
@@ -31,8 +34,8 @@ src_compile() {
 
 	myconf="--with-db-path=/usr/share/hddtemp/hddtemp.db"
 	# disabling nls breaks compiling
-	#use nls || myconf="--disable-nls ${myconf}"
-	econf $myconf || die
+	use nls || myconf="--disable-nls ${myconf}"
+	econf ${myconf} || die
 	emake || die
 }
 
