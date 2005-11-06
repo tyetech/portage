@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pysqlite/Attic/pysqlite-2.0.3.ebuild,v 1.2 2005/08/26 03:41:05 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pysqlite/Attic/pysqlite-2.0.5.ebuild,v 1.1 2005/11/06 00:30:01 liquidx Exp $
 
 inherit distutils
 
