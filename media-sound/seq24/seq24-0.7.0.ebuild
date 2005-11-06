@@ -1,21 +1,26 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/seq24/Attic/seq24-0.5.1.ebuild,v 1.3 2005/01/06 00:59:21 fvdpol Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/seq24/Attic/seq24-0.7.0.ebuild,v 1.1 2005/11/06 03:59:56 matsuu Exp $
 
-IUSE=""
-
+IUSE="jack"
 DESCRIPTION="Seq24 is a loop based MIDI sequencer with focus on live performances."
 HOMEPAGE="http://www.filter24.org/seq24/"
 SRC_URI="http://www.filter24.org/seq24/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 amd64 ~ppc"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 DEPEND=">=media-libs/alsa-lib-0.9.0
-	=dev-cpp/gtkmm-1.2*"
+	=dev-cpp/gtkmm-2.2*
+	jack? ( >=media-sound/jack-audio-connection-kit-0.90.0 )"
+
+src_compile() {
+	econf $(use_enable jack jack-support) || die
+	emake || die
+}
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog README RTC SEQ24
 }
