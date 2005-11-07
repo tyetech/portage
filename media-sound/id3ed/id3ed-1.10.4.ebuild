@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/id3ed/id3ed-1.10.4.ebuild,v 1.13 2005/04/24 03:06:17 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/id3ed/id3ed-1.10.4.ebuild,v 1.14 2005/11/07 11:06:11 flameeyes Exp $
 
 IUSE=""
 
@@ -24,5 +24,5 @@ src_install() {
 	dodir /usr/bin /usr/share/man/man1
 	einstall || die
 
-	dodoc README ChangeLog INSTALL
+	dodoc README ChangeLog
 }
