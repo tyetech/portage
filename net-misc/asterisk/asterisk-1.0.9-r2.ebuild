@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.9-r1.ebuild,v 1.6 2005/10/28 23:06:23 stkn Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.9-r2.ebuild,v 1.1 2005/11/08 15:35:21 stkn Exp $
 
 inherit eutils perl-module
 
@@ -281,6 +281,9 @@ src_unpack() {
 	if has_version ">=dev-db/freetds-0.6.3"; then
 		epatch ${FILESDIR}/1.0.0/${P}-freetds.diff
 	fi
+
+	# security fix, bug #11836
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.9-vmail.cgi.patch
 }
 
 src_compile() {
