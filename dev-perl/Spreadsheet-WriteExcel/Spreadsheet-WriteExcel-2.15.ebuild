@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Spreadsheet-WriteExcel/Attic/Spreadsheet-WriteExcel-2.13.ebuild,v 1.2 2005/05/25 13:52:07 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Spreadsheet-WriteExcel/Attic/Spreadsheet-WriteExcel-2.15.ebuild,v 1.1 2005/11/09 09:26:58 chriswhite Exp $
 
 inherit perl-module
 
 DESCRIPTION="Write cross-platform Excel binary file."
 SRC_URI="mirror://cpan/authors/id/J/JM/JMCNAMARA/${P}.tar.gz"
-HOMEPAGE="http://search.cpan.org/~jmcnamara/${P}/"
+HOMEPAGE="http://search.cpan.org/~jmcnamara/Spreadsheet-WriteExcel-2.15/"
 
 SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
