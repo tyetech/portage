@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/bestcrypt/Attic/bestcrypt-1.6_p2.ebuild,v 1.1 2005/11/10 19:19:02 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/bestcrypt/Attic/bestcrypt-1.6_p2-r1.ebuild,v 1.1 2005/11/12 10:02:43 dragonheart Exp $
 
 inherit flag-o-matic eutils linux-mod toolchain-funcs
 
@@ -38,6 +38,7 @@ MODULE_NAMES="bc(block:"${S}"/mod)
 src_unpack() {
 	unpack ${A}
 	epatch "${FILESDIR}"/${P}-makefile_fix.patch
+	epatch "${FILESDIR}"/${P}-path.patch
 
 	if use x86;
 	then
