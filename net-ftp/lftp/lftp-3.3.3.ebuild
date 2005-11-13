@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/lftp/Attic/lftp-3.2.1.ebuild,v 1.5 2005/08/16 05:12:05 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/lftp/Attic/lftp-3.3.3.ebuild,v 1.1 2005/11/13 12:35:48 dragonheart Exp $
 
 DESCRIPTION="A sophisticated ftp/http client, file transfer program"
 HOMEPAGE="http://ftp.yars.free.net/projects/lftp/"
@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}
 
 
 src_compile() {
-	local myconf="`use_enable nls`"
+	local myconf="$(use_enable nls)"
 
 	if use ssl && use gnutls ; then
 		myconf="${myconf} --without-openssl"
