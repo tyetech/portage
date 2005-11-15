@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/openswan/Attic/openswan-2.1.5.ebuild,v 1.6 2005/07/15 10:44:27 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/openswan/Attic/openswan-2.4.2.ebuild,v 1.1 2005/11/15 03:07:16 pfeifer Exp $
 
 inherit eutils
 
@@ -8,12 +8,12 @@ MY_P=${P/_p/_kb}
 S=${WORKDIR}/${MY_P}
 DESCRIPTION="Open Source implementation of IPsec for the Linux operating system (was SuperFreeS/WAN)."
 HOMEPAGE="http://www.openswan.org/"
-SRC_URI="http://www.openswan.org/code/${MY_P}.tar.gz
+SRC_URI="http://www.openswan.org/download/${MY_P}.tar.gz
 	mirror://gentoo/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* x86 amd64 ~ppc"
+KEYWORDS="-* ~x86 ~amd64 ~ppc"
 IUSE=""
 
 DEPEND="!net-misc/strongswan
@@ -29,7 +29,7 @@ check_version_h() {
 	then
 		eerror "Please verify that your /usr/src/linux symlink is pointing"
 		eerror "to your current kernel sources, and that you have a running kernel"
-		die "/usr/src/linux symlink not setup!"
+		die "/usr/src/linux symlink not setup or kernel tree has not been configured!"
 	fi
 }
 
@@ -118,7 +118,6 @@ src_install() {
 		INC_MANDIR=share/man \
 		install || die
 
-	dodoc INSTALL CREDITS BUGS CHANGES README doc/*
 	dosym /etc/ipsec/ipsec.d /etc/ipsec.d
 
 	exeinto /etc/init.d/
