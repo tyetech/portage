@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0_pre20051111.ebuild,v 1.1 2005/11/11 16:15:33 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0_pre20051115.ebuild,v 1.1 2005/11/15 22:43:25 wolf31o2 Exp $
 
 inherit eutils
 
