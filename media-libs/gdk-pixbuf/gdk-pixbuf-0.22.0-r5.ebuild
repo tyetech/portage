@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gdk-pixbuf/Attic/gdk-pixbuf-0.22.0-r4.ebuild,v 1.2 2005/04/29 01:13:48 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gdk-pixbuf/Attic/gdk-pixbuf-0.22.0-r5.ebuild,v 1.1 2005/11/15 16:27:41 leonardop Exp $
 
 inherit virtualx libtool gnome.org eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gtk.org/"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="alpha amd64 ~arm hppa ~ia64 ~mips ppc ppc64 sparc x86"
 IUSE="doc mmx"
 
 RDEPEND="media-libs/jpeg
@@ -27,6 +27,7 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
 	epatch "${FILESDIR}"/${P}-m4.patch
 	# security fix (#64230)
 	epatch "${FILESDIR}"/${P}-bmp_secure.patch
