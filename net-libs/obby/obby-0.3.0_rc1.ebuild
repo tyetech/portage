@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/obby/Attic/obby-0.3.0_rc1.ebuild,v 1.1 2005/11/16 03:25:45 humpback Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/obby/Attic/obby-0.3.0_rc1.ebuild,v 1.2 2005/11/16 16:18:00 mr_bones_ Exp $
 
 MY_P=${P/_rc/rc}
 S=${WORKDIR}/${MY_P}
@@ -21,7 +21,7 @@ DEPEND=">=net-libs/net6-1.1.0
 RDEPEND=""
 
 src_compile() {
-	
+
 	local myconf
 	myconf="${myconf} --disable-tests"
 	use howl && myconf="${myconf} --with-howl"
