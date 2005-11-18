@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monotone/Attic/monotone-0.19.ebuild,v 1.3 2005/06/17 20:09:26 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monotone/Attic/monotone-0.19.ebuild,v 1.4 2005/11/18 02:24:44 leonardop Exp $
 
 inherit flag-o-matic
 
@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ppc x86"
 
 IUSE="doc ipv6 nls"
 
-RDEPEND=">=dev-libs/boost-1.31"
+RDEPEND=">=dev-libs/boost-1.32"
 
 DEPEND="${RDEPEND}
 	>=sys-devel/gcc-3.2
