@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kscope/Attic/kscope-1.2.0.ebuild,v 1.4 2005/11/11 22:57:42 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kscope/Attic/kscope-1.2.0.ebuild,v 1.5 2005/11/19 23:51:09 malc Exp $
 
 inherit kde
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/kscope/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc sparc x86"
 IUSE=""
 
 RDEPEND="dev-util/ctags
