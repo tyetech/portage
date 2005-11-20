@@ -1,15 +1,15 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_mono/Attic/mod_mono-1.0.6-r1.ebuild,v 1.4 2005/07/09 15:45:24 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_mono/Attic/mod_mono-1.1.10-r1.ebuild,v 1.1 2005/11/20 05:13:11 ramereth Exp $
 
 inherit apache-module
 
 DESCRIPTION="Apache module for Mono"
 HOMEPAGE="http://www.go-mono.com/"
-SRC_URI="http://www.go-mono.com/archive/${PV}/${P}.tar.gz"
+SRC_URI="http://www.go-mono.com/sources/${PN}/${P}.tar.gz"
 LICENSE="Apache-1.1"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~amd64"
 IUSE="apache2"
 DEPEND=">=dev-lang/mono-1.0
 		>=dev-dotnet/xsp-${PV}"
@@ -37,13 +37,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	local apxs
-	useq apache2 && apxs="${APXS2}"
-	useq apache2 || apxs="${APXS1}"
-
-	econf \
-		--with-apxs=${apxs} \
-		--with-apr-config=/usr/bin/apr-config || die "econf failed"
+	econf || die "econf failed"
 
 	emake || die "emake failed"
 }
