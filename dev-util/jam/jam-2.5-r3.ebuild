@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/jam/Attic/jam-2.5-r2.ebuild,v 1.2 2005/09/03 08:31:26 chriswhite Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/jam/Attic/jam-2.5-r3.ebuild,v 1.1 2005/11/20 22:31:17 chriswhite Exp $
 
 inherit eutils
 
