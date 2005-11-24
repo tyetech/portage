@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/adodb-ext/Attic/adodb-ext-503.ebuild,v 1.1 2005/11/24 19:26:30 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/adodb-ext/Attic/adodb-ext-503.ebuild,v 1.2 2005/11/24 21:11:26 chtekk Exp $
 
 PHP_EXT_INI="yes"
 PHP_EXT_NAME="adodb"
@@ -30,7 +30,7 @@ need_php_by_category
 src_install() {
 	php-ext-source-r1_src_install
 
-	insinto ${PHP_EXT_SHARED_DIR}
+	insinto "${PHP_EXT_SHARED_DIR}"
 	doins test-adodb.php
 	dodoc-php CREDITS README.txt
 }
