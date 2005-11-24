@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/eaccelerator/Attic/eaccelerator-0.9.3.ebuild,v 1.7 2005/11/24 20:24:06 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/eaccelerator/Attic/eaccelerator-0.9.3.ebuild,v 1.8 2005/11/24 21:21:48 chtekk Exp $
 
 PHP_EXT_ZENDEXT="yes"
 PHP_EXT_NAME="eaccelerator"
@@ -29,8 +29,9 @@ HTTPD_GROUP="apache"
 need_php_by_category
 
 pkg_setup() {
-	require_php_sapi_from cgi apache apache2
+	has_php
 
+	require_php_sapi_from cgi apache apache2
 	require_php_with_use zlib
 }
 
