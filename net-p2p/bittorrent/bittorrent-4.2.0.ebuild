@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bittorrent/Attic/bittorrent-4.1.6-r1.ebuild,v 1.3 2005/10/25 14:57:33 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bittorrent/Attic/bittorrent-4.2.0.ebuild,v 1.1 2005/11/27 20:26:38 sekretarz Exp $
 
 inherit distutils fdo-mime eutils
 
@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 	dev-python/dnspython"
 PROVIDE="virtual/bittorrent"
 
-DOCS="TRACKERLESS.txt LICENSE.txt"
+DOCS="TRACKERLESS.txt LICENSE.txt public.key"
 PYTHON_MODNAME="BitTorrent"
 
 src_unpack() {
@@ -47,36 +47,17 @@ src_install() {
 		rm ${D}/usr/bin/bittorrent
 	fi
 	dohtml redirdonate.html
-	dodir etc
-	cp -pPR /etc/mailcap ${D}/etc/
 
-	mv ${D}/usr/share/doc/${P}/{credits-l10n.txt,credits.txt} \
-		${D}/usr/share/doc/${PF}
-	rm -rf ${D}/usr/share/doc/${P}
+	mv ${S}/{credits-l10n.txt,credits.txt} \
+		${D}/usr/share/doc/${P}
 	mv ${D}/usr/share/doc/${PF} ${D}/usr/share/doc/${P}
-
-
-	MAILCAP_STRING="application/x-bittorrent; /usr/bin/bittorrent '%s'; test=test -n \"\$DISPLAY\""
-
-	if use gtk; then
-		if [ -n "`grep 'application/x-bittorrent' ${D}/etc/mailcap`" ]; then
-			# replace bittorrent entry if it already exists
-			einfo "updating bittorrent mime info"
-			sed -i "s,application/x-bittorrent;.*,${MAILCAP_STRING}," ${D}/etc/mailcap
-		else
-			# add bittorrent entry if it doesn't exist
-			einfo "adding bittorrent mime info"
-			echo "${MAILCAP_STRING}" >> ${D}/etc/mailcap
-		fi
-	else
-		# get rid of any reference to the not-installed gui version
-		sed -i '/btdownloadgui/d' ${D}/etc/mailcap
-	fi
 
 	if use gtk ; then
 		cp ${D}/usr/share/pixmaps/${MY_P}/bittorrent.ico ${D}/usr/share/pixmaps/
 		make_desktop_entry "bittorrent" "BitTorrent" \
-			/usr/share/pixmaps/bittorrent.ico "Network" "/usr/bin/"
+			/usr/share/pixmaps/bittorrent.ico "Network"
+		echo "MimeType=application/x-bittorrent" \
+			>> ${D}/usr/share/applications/bittorrent-${PN}.desktop
 	fi
 
 	insinto /etc/conf.d
