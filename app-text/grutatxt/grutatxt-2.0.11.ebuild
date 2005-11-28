@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/grutatxt/grutatxt-2.0.11.ebuild,v 1.2 2005/05/30 19:47:33 wormo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/grutatxt/grutatxt-2.0.11.ebuild,v 1.3 2005/11/28 12:10:51 mcummings Exp $
 
-inherit perl-module
+inherit perl-app
 
 MY_PN="Grutatxt"
 MY_P=${MY_PN}-${PV}
