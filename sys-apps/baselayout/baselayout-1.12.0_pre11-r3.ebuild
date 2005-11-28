@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.0_pre11.ebuild,v 1.1 2005/11/23 16:01:48 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.0_pre11-r3.ebuild,v 1.1 2005/11/28 12:14:17 uberlord Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
@@ -32,6 +32,11 @@ PROVIDE="virtual/baselayout"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
+	# Critical network fixes
+	epatch "${FILESDIR}/${P}-net.patch"
+	epatch "${FILESDIR}/${P}-net2.patch"
+	epatch "${FILESDIR}/${P}-net3.patch"
 
 	# Setup unicode defaults for silly unicode users
 	if use unicode ; then
