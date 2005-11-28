@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/cstools/cstools-3.42.ebuild,v 1.4 2005/08/09 23:11:22 metalgod Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/cstools/cstools-3.42.ebuild,v 1.5 2005/11/28 12:08:12 mcummings Exp $
 
-inherit perl-module
+inherit perl-app
 
 MY_P="Cstools-${PV}"
 DESCRIPTION="A charset conversion tool cstocs and two convenience Perl modules for Czech language."

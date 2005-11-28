@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/nkf/Attic/nkf-2.0.5-r1.ebuild,v 1.9 2005/08/23 03:19:02 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/nkf/Attic/nkf-2.0.5-r1.ebuild,v 1.10 2005/11/28 12:08:04 mcummings Exp $
 
-inherit toolchain-funcs eutils perl-module distutils
+inherit toolchain-funcs eutils perl-app distutils
 
 MY_P="${PN}${PV//./}"
 DESCRIPTION="Network Kanji code conversion Filter with UTF-8/16 support"
