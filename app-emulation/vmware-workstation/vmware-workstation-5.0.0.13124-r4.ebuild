@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-5.0.0.13124-r3.ebuild,v 1.2 2005/11/28 14:13:52 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-5.0.0.13124-r4.ebuild,v 1.1 2005/11/28 22:35:56 wolf31o2 Exp $
 
 # Unlike many other binary packages the user doesn't need to agree to a licence
 # to download VMWare. The agreeing to a licence is part of the configure step
@@ -9,7 +9,7 @@
 inherit eutils
 
 S=${WORKDIR}/vmware-distrib
-ANY_ANY="vmware-any-any-update94"
+ANY_ANY="vmware-any-any-update96"
 NP="VMware-workstation-5.0.0-13124"
 DESCRIPTION="Emulate a complete PC on your PC without the usual performance overhead of most emulators"
 HOMEPAGE="http://www.vmware.com/products/desktop/ws_features.html"
@@ -30,7 +30,7 @@ SRC_URI="http://vmware-svca.www.conxion.com/software/wkst/${NP}.tar.gz
 LICENSE="vmware"
 IUSE=""
 SLOT="0"
-KEYWORDS="-* x86 amd64"
+KEYWORDS="-* amd64 x86"
 RESTRICT="nostrip"
 
 DEPEND="${RDEPEND} virtual/os-headers"
@@ -39,6 +39,7 @@ DEPEND="${RDEPEND} virtual/os-headers"
 RDEPEND="sys-libs/glibc
 	amd64? ( app-emulation/emul-linux-x86-xlibs )
 	virtual/x11
+	!app-emulation/vmware-player
 	>=dev-lang/perl-5
 	sys-apps/pciutils"
 
@@ -60,7 +61,7 @@ src_unpack() {
 	mv -f ${ANY_ANY}/*.tar ${S}/lib/modules/source/
 	cd ${S}/${ANY_ANY}
 	chmod 755 ../lib/bin/vmware ../bin/vmnet-bridge ../lib/bin/vmware-vmx ../lib/bin-debug/vmware-vmx
-	# vmware any93 still doesn't patch the vmware binary
+	# vmware any96 still doesn't patch the vmware binary
 	#./update vmware ../lib/bin/vmware || die
 	#./update bridge ../bin/vmnet-bridge || die
 	#./update vmx ../lib/bin/vmware-vmx || die
