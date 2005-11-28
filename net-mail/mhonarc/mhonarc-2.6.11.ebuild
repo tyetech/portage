@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mhonarc/mhonarc-2.6.11.ebuild,v 1.2 2005/07/09 22:59:48 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/mhonarc/mhonarc-2.6.11.ebuild,v 1.3 2005/11/28 13:08:48 mcummings Exp $
 
-inherit perl-module
+inherit perl-app
 
 IUSE=""
 
