@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyro/Attic/pyro-3.3-r1.ebuild,v 1.5 2005/09/17 18:55:52 lucass Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyro/Attic/pyro-3.5.ebuild,v 1.1 2005/12/02 10:42:29 liquidx Exp $
 
 inherit distutils eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/pyro/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="x86 ~ppc ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND="virtual/python"
@@ -20,7 +20,8 @@ S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
-	epatch ${FILESDIR}/${P}-unattend.patch
+	cd ${S}
+	epatch ${FILESDIR}/${PN}-3.4-unattend.patch
 }
 
 src_install() {
