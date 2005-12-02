@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cogito/Attic/cogito-0.16_rc1.ebuild,v 1.1 2005/11/12 22:11:55 ferdy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cogito/Attic/cogito-0.16.ebuild,v 1.1 2005/12/02 10:38:45 ferdy Exp $
 
 inherit eutils
 
-MY_P=${P//_}
+MY_P=${P//_/}
 
 DESCRIPTION="The GIT scripted toolkit"
 HOMEPAGE="http://kernel.org/pub/software/scm/cogito/"
