@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk-app_ldap/Attic/asterisk-app_ldap-0.9.9_p2.ebuild,v 1.3 2005/12/05 17:18:37 stkn Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk-app_ldap/Attic/asterisk-app_ldap-1.0_rc5.ebuild,v 1.1 2005/12/05 17:18:37 stkn Exp $
 
 inherit eutils
 
@@ -8,28 +8,27 @@ MY_PN="app_ldap"
 
 DESCRIPTION="Asterisk application plugin to do lookups in a LDAP directory"
 HOMEPAGE="http://www.mezzo.net/asterisk/"
-SRC_URI="http://www.mezzo.net/asterisk/${MY_PN}-${PV/_p/.}.tgz"
+SRC_URI="http://www.mezzo.net/asterisk/${MY_PN}-${PV/_/}.tgz"
 
 IUSE=""
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc x86"
+KEYWORDS="~x86 ~ppc"
 
 # depends on iconv support
 DEPEND="sys-libs/glibc
 	>=net-nds/openldap-2.0.0
-	>=net-misc/asterisk-1.0.7-r1
-	!>=net-misc/asterisk-1.2.0"
+	>=net-misc/asterisk-1.0.7-r1"
 
-S=${WORKDIR}/${MY_PN}
+S=${WORKDIR}/${MY_PN}-${PV/_/}
 
 src_unpack() {
 	unpack ${A}
 
 	cd ${S}
 	# use asterisk-config...
-	epatch ${FILESDIR}/${MY_PN}-0.9.9-astcfg.diff
+	epatch ${FILESDIR}/${MY_PN}-1.0_rc5-gentoo.diff
 }
 
 src_compile() {
