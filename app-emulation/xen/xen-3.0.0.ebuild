@@ -1,13 +1,14 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen/Attic/xen-3.0.0_pre20051128-r1.ebuild,v 1.1 2005/11/30 22:23:24 chrb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen/Attic/xen-3.0.0.ebuild,v 1.1 2005/12/06 15:12:41 chrb Exp $
 
 inherit mount-boot flag-o-matic
 
 DESCRIPTION="The Xen virtual machine monitor and Xend daemon"
 HOMEPAGE="http://xen.sourceforge.net"
-DATE="20051128"
-SRC_URI="mirror://gentoo/xen-unstable-${DATE}.tar.bz2"
+DATE="20051206"
+MY_P="xen-3.0-testing-${DATE}"
+SRC_URI="mirror://gentoo/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -29,7 +30,7 @@ DEPEND="sys-apps/iproute2
 	)
 	sys-devel/dev86"
 
-S="${WORKDIR}/xen-unstable-${DATE}"
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
