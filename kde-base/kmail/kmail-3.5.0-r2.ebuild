@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kmail/Attic/kmail-3.5.0-r1.ebuild,v 1.1 2005/12/05 16:46:04 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kmail/Attic/kmail-3.5.0-r2.ebuild,v 1.1 2005/12/07 15:10:00 greg_g Exp $
 
 KMNAME=kdepim
 MAXKDEVER=$PV
