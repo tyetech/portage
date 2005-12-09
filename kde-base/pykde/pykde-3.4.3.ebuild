@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/pykde/Attic/pykde-3.4.3.ebuild,v 1.1 2005/12/09 22:25:07 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/pykde/Attic/pykde-3.4.3.ebuild,v 1.2 2005/12/09 22:26:34 carlo Exp $
 
 KMNAME=kdebindings
 KMMODULE=python
@@ -50,7 +50,7 @@ src_install() {
 
 	dodoc AUTHORS ChangeLog NEWS README THANKS
 	use doc && dohtml -r doc/*
-	if use examples ; then 
+	if use examples ; then
 		cp -r examples ${D}/usr/share/doc/${PF}
 		cp -r templates ${D}/usr/share/doc/${PF}
 	fi
