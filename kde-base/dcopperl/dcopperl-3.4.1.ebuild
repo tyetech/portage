@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/dcopperl/Attic/dcopperl-3.4.1.ebuild,v 1.8 2005/11/28 12:19:36 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/dcopperl/Attic/dcopperl-3.4.1.ebuild,v 1.9 2005/12/09 10:17:24 josejx Exp $
 
 KMNAME=kdebindings
 KM_MAKEFILESREV=1
@@ -9,7 +9,7 @@ KM_DEPRANGE="$PV $MAXKDEVER"
 inherit perl-app kde-meta
 
 DESCRIPTION="Perl bindings for DCOP"
-KEYWORDS="amd64 ~ppc sparc x86"
+KEYWORDS="amd64 ppc sparc x86"
 IUSE=""
 DEPEND="dev-lang/perl"
 PATCHES="$FILESDIR/no-gtk-glib-check.diff
