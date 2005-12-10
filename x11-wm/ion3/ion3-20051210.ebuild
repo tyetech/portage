@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/ion3/Attic/ion3-20051023-r1.ebuild,v 1.1 2005/10/26 12:00:12 twp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/ion3/Attic/ion3-20051210.ebuild,v 1.1 2005/12/10 22:31:44 twp Exp $
 
 inherit eutils
 
@@ -19,8 +19,6 @@ DEPEND="virtual/x11
 S=${WORKDIR}/${MY_PN}
 
 src_compile() {
-
-	epatch ${FILESDIR}/${PF}.patch
 
 	autoreconf -i
 
