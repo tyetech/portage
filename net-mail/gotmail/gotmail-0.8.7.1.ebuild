@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/gotmail/Attic/gotmail-0.8.2-r1.ebuild,v 1.1 2005/05/22 11:46:45 axxo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/gotmail/Attic/gotmail-0.8.7.1.ebuild,v 1.1 2005/12/11 12:22:55 ticho Exp $
 
 inherit eutils
 
@@ -10,23 +10,21 @@ SRC_URI="mirror://sourceforge/gotmail/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc amd64"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND="virtual/libc
 	net-misc/curl
 	dev-perl/URI
-	dev-perl/libnet"
+	dev-perl/libnet
+	app-arch/gzip"
 
-src_unpack() {
-	unpack ${A}
-	epatch ${FILESDIR}/${P}-newlogin.patch
+src_compile() {
+	make || die
 }
-
-src_compile () { :; }
 
 src_install() {
 	dobin gotmail || die
 	dodoc ChangeLog README sample.gotmailrc
-	doman gotmail.1
+	doman gotmail.1.gz
 }
