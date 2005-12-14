@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/mesa-progs/Attic/mesa-progs-6.4.1.ebuild,v 1.1 2005/12/14 15:57:07 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/mesa-progs/Attic/mesa-progs-6.4.1.ebuild,v 1.2 2005/12/14 17:24:22 fmccor Exp $
 
 inherit toolchain-funcs
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/mesa3d/${LIB_P}.tar.bz2
 	mirror://sourceforge/mesa3d/${PROG_P}.tar.bz2"
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~sparc ~x86"
 IUSE=""
 
 DEPEND="virtual/glut
