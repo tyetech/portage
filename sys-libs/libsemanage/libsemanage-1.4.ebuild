@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/libsemanage/Attic/libsemanage-1.4.ebuild,v 1.1 2005/12/09 00:49:52 pebenito Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/libsemanage/Attic/libsemanage-1.4.ebuild,v 1.2 2005/12/15 22:01:56 pebenito Exp $
 
 IUSE=""
 
@@ -16,8 +16,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc ~sparc ~amd64 ~mips"
 
-DEPEND=">=sys-libs/libsepol-${SEPOL_VER}
-	>=sys-libs/libselinux-${SELNX_VER}"
+DEPEND="=sys-libs/libsepol-${SEPOL_VER}*
+	=sys-libs/libselinux-${SELNX_VER}*"
 
 src_unpack() {
 	unpack ${A}
