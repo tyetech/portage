@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1.1.1-r1.ebuild,v 1.12 2005/11/29 00:05:40 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xine-lib/Attic/xine-lib-1.1.1-r3.ebuild,v 1.1 2005/12/16 18:05:41 flameeyes Exp $
 
 inherit eutils flag-o-matic toolchain-funcs libtool autotools
 
@@ -22,7 +22,6 @@ IUSE="aalib libcaca arts cle266 esd win32codecs nls dvd X directfb vorbis alsa
 gnome sdl speex theora ipv6 altivec opengl aac fbcon xv xvmc nvidia i8x0
 samba dxr3 vidix mng flac oss v4l xinerama vcd a52 mad imagemagick dts asf
 ffmpeg debug"
-RESTRICT="nostrip"
 
 RDEPEND="vorbis? ( media-libs/libvorbis )
 	X? ( || ( (
@@ -57,7 +56,7 @@ RDEPEND="vorbis? ( media-libs/libvorbis )
 	mad? ( media-libs/libmad )
 	imagemagick? ( media-gfx/imagemagick )
 	dts? ( media-libs/libdts )
-	ffmpeg? ( >=media-video/ffmpeg-0.4.9_p20051120 )
+	ffmpeg? ( ~media-video/ffmpeg-0.4.9_p20051120 )
 	!=media-libs/xine-lib-0.9.13*"
 
 DEPEND="${RDEPEND}
@@ -90,6 +89,9 @@ src_unpack() {
 
 	AT_M4DIR="m4" eautoreconf
 	elibtoolize
+
+	cd "${S}/src/libffmpeg"
+	epatch "${FILESDIR}/CVE-2005-4048.patch"
 }
 
 # check for the X11 path for a given library
