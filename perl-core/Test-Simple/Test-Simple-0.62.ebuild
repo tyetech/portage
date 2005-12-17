@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/Test-Simple/Attic/Test-Simple-0.62.ebuild,v 1.1 2005/12/03 13:12:49 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/Test-Simple/Attic/Test-Simple-0.62.ebuild,v 1.2 2005/12/17 02:32:06 chriswhite Exp $
 
 inherit perl-module
 
@@ -14,8 +14,6 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~spar
 
 mydoc="rfc*.txt"
 myconf="INSTALLDIRS=vendor"
-DEPEND=">=dev-lang/perl-5.8.0-r12
-		!dev-perl/Test-Builder-Tester
-		>=perl-core/Test-Harness-2.03"
+DEPEND=">=dev-lang/perl-5.8.0-r12"
 
 SRC_TEST="do"
