@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/rxvt-unicode/Attic/rxvt-unicode-5.8.ebuild,v 1.1 2005/12/17 02:31:47 ciaranm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/rxvt-unicode/Attic/rxvt-unicode-5.9.ebuild,v 1.1 2005/12/17 21:56:59 ciaranm Exp $
 
 inherit flag-o-matic
 
