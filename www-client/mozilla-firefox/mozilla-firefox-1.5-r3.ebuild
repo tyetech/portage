@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-1.5-r2.ebuild,v 1.2 2005/12/15 19:21:33 hansmi Exp ${PV}_rc3-r2.ebuild,v 1.1 2005/11/26 04:20:32 anarchy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-1.5-r3.ebuild,v 1.1 2005/12/18 02:10:52 anarchy Exp ${PV}_rc3-r2.ebuild,v 1.1 2005/11/26 04:20:32 anarchy Exp $
 
 unset ALLOWED_FLAGS  # stupid extra-functions.sh ... bug 49179
 MOZ_FREETYPE2="no"   # Need to disable for newer .. remove here and in mozconfig
@@ -157,6 +157,8 @@ src_compile() {
 	CFLAGS=${CFLAGS/-fstack-protector/}
 	CXXFLAGS=${CXXFLAGS/-fstack-protector-all/}
 	CXXFLAGS=${CXXFLAGS/-fstack-protector/}
+
+	append-flags -freorder-blocks -fno-reorder-functions
 
 	####################################
 	#
