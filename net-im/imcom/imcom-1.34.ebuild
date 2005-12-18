@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/imcom/imcom-1.33.ebuild,v 1.9 2005/12/18 03:56:11 lordvan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/imcom/imcom-1.34.ebuild,v 1.1 2005/12/18 03:56:11 lordvan Exp $
 
 SRC_URI="http://nafai.dyndns.org/files/${P}.tar.gz"
 #SRC_URI="http://nafai.dyndns.org/files/imcom-betas/${PN}-${MYVER}.tar.gz"
@@ -12,7 +12,7 @@ DEPEND=">=dev-lang/python-2.2
 
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS="x86 ~ppc sparc ~amd64"
+KEYWORDS="~x86 ~ppc ~sparc ~amd64"
 IUSE=""
 
 src_compile() {
