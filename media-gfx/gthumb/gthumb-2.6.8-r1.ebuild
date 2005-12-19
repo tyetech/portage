@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gthumb/Attic/gthumb-2.6.8-r1.ebuild,v 1.1 2005/12/04 23:44:10 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gthumb/Attic/gthumb-2.6.8-r1.ebuild,v 1.2 2005/12/19 10:59:35 corsair Exp $
 
 inherit gnome2 eutils autotools
 
@@ -10,7 +10,7 @@ LICENSE="GPL-2"
 
 IUSE="jpeg tiff png gphoto2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~x86"
 
 # FIXME : configure switches, no autodetection
 
