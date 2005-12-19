@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng-modules/Attic/linux-wlan-ng-modules-0.2.2.ebuild,v 1.2 2005/10/15 23:06:49 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng-modules/Attic/linux-wlan-ng-modules-0.2.2.ebuild,v 1.3 2005/12/19 10:52:35 betelgeuse Exp $
 
 inherit eutils linux-mod
 
@@ -11,7 +11,7 @@ DESCRIPTION="Kernel modules for Prism2/2.5/3 based 802.11b wireless LAN products
 HOMEPAGE="http://linux-wlan.org"
 SRC_URI="ftp://ftp.linux-wlan.org/pub/linux-wlan-ng/${MY_P}.tar.bz2"
 
-LICENSE="MPL-1.1"
+LICENSE="|| ( GPL-2 MPL-1.1 )"
 SLOT="0"
 KEYWORDS="~ppc ~x86"
 

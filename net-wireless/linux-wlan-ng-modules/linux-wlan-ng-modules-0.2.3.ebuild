@@ -1,10 +1,11 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng-modules/Attic/linux-wlan-ng-modules-0.2.2-r1.ebuild,v 1.4 2005/12/19 10:52:35 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng-modules/Attic/linux-wlan-ng-modules-0.2.3.ebuild,v 1.1 2005/12/19 10:52:35 betelgeuse Exp $
 
 inherit eutils linux-mod
 
-MY_P=${P/-modules/}
+MY_PN=${PN/-modules/}
+MY_P=${MY_PN}-${PV}
 S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Kernel modules for Prism2/2.5/3 based 802.11b wireless LAN products"
@@ -19,6 +20,18 @@ IUSE="debug pci pcmcia plx usb"
 
 BUILD_TARGETS="default"
 BUILD_PARAMS="WLAN_SRC=${S}/src"
+
+show_deprecated_message() {
+	if use pci || use plx || use pcmcia; then
+		einfo ""
+		einfo "You really should try other alternatives for prism support."
+		einfo "For example the hostap-driver or orinoco drivers should work"
+		einfo "with your wireless card. Support for pci, plx and pcmcia drivers"
+		einfo "will most likely be removed in the near future. If the alternatives"
+		einfo "don't work for you, please report this to betelgeuse@gentoo.org."
+		einfo ""
+	fi
+}
 
 pkg_setup() {
 	# We have to put this to the global scope inside the function or it will be
@@ -42,6 +55,7 @@ pkg_setup() {
 		MODULE_NAMES="${MODULE_NAMES} prism2_usb(net/wireless:${S}/src/prism2/driver)"
 	fi
 
+	show_deprecated_message
 	linux-mod_pkg_setup
 }
 
@@ -63,7 +77,6 @@ src_unpack() {
 
 	cd ${S}
 	epatch ${FILESDIR}/${MY_P}-module_param.patch
-	epatch ${FILESDIR}/${PV}-kernel-2.6.14.patch
 
 	cp ${S}/config.in ${config}
 
@@ -97,4 +110,8 @@ src_compile() {
 	emake || die "emake mkmeta failed"
 
 	linux-mod_src_compile
+}
+
+pkg_postinst() {
+	show_deprecated_message
 }
