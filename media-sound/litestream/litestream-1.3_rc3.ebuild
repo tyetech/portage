@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/litestream/litestream-1.3_rc3.ebuild,v 1.1 2005/12/17 11:33:29 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/litestream/litestream-1.3_rc3.ebuild,v 1.2 2005/12/19 22:52:52 mr_bones_ Exp $
 
 IUSE=""
 
@@ -30,7 +30,7 @@ src_unpack() {
 
 src_compile() {
 	append-flags "-DNO_VARARGS"
-	
+
 	emake CC=$(tc-getCC) OPTFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" || die
 }
 
