@@ -1,8 +1,8 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.2.11.ebuild,v 1.3 2005/08/23 16:38:44 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.2.12.ebuild,v 1.1 2005/12/19 22:54:37 vanquirius Exp $
 
-inherit perl-module flag-o-matic gnuconfig eutils
+inherit perl-module flag-o-matic gnuconfig eutils multilib
 
 DESCRIPTION="A system to store and display time-series data"
 HOMEPAGE="http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/"
@@ -10,31 +10,35 @@ SRC_URI="http://people.ee.ethz.ch/~oetiker/webtools/${PN}/pub/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc perl python tcltk"
 
 RDEPEND="tcltk? ( dev-lang/tcl )
 	>=sys-libs/zlib-1.2.1
 	>=media-libs/freetype-2.1.5
 	>=media-libs/libart_lgpl-2.3.16
-	>=media-libs/libpng-1.2.5
-	>=media-libs/gd-1.8.3"
+	>=media-libs/libpng-1.2.5"
 
 DEPEND="${RDEPEND}
 	perl? ( dev-lang/perl )
 	python? ( dev-lang/python )
-	sys-apps/gawk
-	>=dev-libs/cgilib-0.5"
+	sys-apps/gawk"
 
 TCLVER=""
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	sed -i -e 's:<rrd_\(.*\)>:"../../src/rrd_\1":g' \
 		bindings/tcl/tclrrd.c || die "sed failed"
 	sed -i -e 's:-lrrd_private:-ltcl -lrrd:' \
 		bindings/tcl/Makefile.* || die "sed failed"
+	sed -i -e 's:python_PROGRAMS:pyexec_PROGRAMS:' \
+		bindings/python/Makefile.* || die "sed failed"
+	sed -i -e 's:\$TCL_PACKAGE_PATH:${TCL_PACKAGE_PATH%% *}:' \
+		configure.ac
+	libtoolize --copy --force
+	autoreconf
 }
 
 pkg_setup() {
@@ -49,7 +53,7 @@ src_compile() {
 	myconf="--datadir=/usr/share --enable-shared"
 
 	use tcltk \
-		&& myconf="${myconf} --with-tcllib=/usr/lib" \
+		&& myconf="${myconf} --with-tcllib=/usr/$(get_libdir)" \
 		|| myconf="${myconf} --without-tcllib"
 
 	use python || myconf="${myconf} --disable-python"
@@ -67,8 +71,8 @@ src_compile() {
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 
-	rm -fr ${D}/usr/examples
-	rm -fr ${D}/usr/shared
+	rm -fr "${D}"/usr/examples
+	rm -fr "${D}"/usr/shared
 
 	if use doc ; then
 		dohtml doc/*.html
@@ -86,18 +90,18 @@ src_install() {
 		perl-module_src_install || die
 
 		# remove duplicate installation into /usr/lib/perl
-		rm -Rf ${D}/usr/lib/perl
+		rm -Rf "${D}"/usr/lib/perl
 	fi
 
 	if use tcltk ; then
-		mv ${S}/bindings/tcl/tclrrd.so ${S}/bindings/tcl/tclrrd${PV}.so
-		insinto /usr/lib/tcl${TCL_VER}/tclrrd${PV}
-		doins ${S}/bindings/tcl/tclrrd${PV}.so
+		mv "${S}"/bindings/tcl/tclrrd.so "${S}"/bindings/tcl/tclrrd${PV}.so
+		insinto /usr/$(get_libdir)/tcl${TCL_VER}/tclrrd${PV}
+		doins "${S}"/bindings/tcl/tclrrd${PV}.so
 		echo "package ifneeded Rrd ${PV} [list load [file join \$$dir .. tclrrd${PV}.so]]" \
-			>> ${D}/usr/lib/tcl${TCL_VER}/tclrrd${PV}/pkgIndex.tcl
+			>> "${D}"/usr/$(get_libdir)/tcl${TCL_VER}/tclrrd${PV}/pkgIndex.tcl
 	fi
 
-	dodoc COPY* CONTR* README TODO
+	dodoc CONTRIBUTORS README TODO
 }
 
 pkg_preinst() {
