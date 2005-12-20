@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.17.ebuild,v 1.1 2005/12/19 14:32:40 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.17.ebuild,v 1.2 2005/12/20 08:21:58 phosphan Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.sane-project.org/"
 RDEPEND=">=media-libs/jpeg-6b
 	amd64? ( sys-libs/libieee1284 )
 	x86? ( sys-libs/libieee1284 )
-	usb? ( dev-libs/libusb )
+	usb? ( >=dev-libs/libusb-0.1.8 )
 	gphoto2? ( media-libs/libgphoto2 )
 	v4l? ( sys-kernel/linux-headers )"
 
