@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/lft/Attic/lft-2.31.ebuild,v 1.5 2005/08/02 05:28:06 vanquirius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/lft/Attic/lft-2.31.ebuild,v 1.6 2005/12/25 15:02:36 flameeyes Exp $
 
 inherit flag-o-matic
 
@@ -17,7 +17,7 @@ DEPEND="virtual/libpcap"
 
 src_compile() {
 	# avoid suid related security issues.
-	append-ldflags -Wl,-z,now
+	append-ldflags $(bindnow-flags)
 
 	econf || die
 	emake || die

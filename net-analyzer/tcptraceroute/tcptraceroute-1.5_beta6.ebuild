@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptraceroute/Attic/tcptraceroute-1.5_beta6.ebuild,v 1.7 2005/07/07 19:12:52 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptraceroute/Attic/tcptraceroute-1.5_beta6.ebuild,v 1.8 2005/12/25 15:05:06 flameeyes Exp $
 
 inherit flag-o-matic
 
@@ -21,7 +21,7 @@ DEPEND="virtual/libpcap
 	net-libs/libnet"
 
 src_compile() {
-	append-ldflags -Wl,-z,now
+	append-ldflags $(bindnow-flags)
 
 	econf || die
 	emake || die
