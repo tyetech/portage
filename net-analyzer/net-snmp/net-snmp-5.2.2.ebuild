@@ -1,12 +1,12 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.3.20050624.ebuild,v 1.3 2005/09/02 12:34:09 ka0ttic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.2.2.ebuild,v 1.1 2005/12/26 21:58:10 vanquirius Exp $
 
 inherit eutils fixheadtails perl-module
 
 DESCRIPTION="Software for generating and retrieving SNMP data"
 HOMEPAGE="http://net-snmp.sourceforge.net/"
-SRC_URI="mirror://gentoo/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="as-is BSD"
 SLOT="0"
@@ -40,11 +40,13 @@ DEPEND="${DEPEND}
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
+
+	epatch "${FILESDIR}"/${PN}-5.2.2-conf-elf-rpm-bz2.patch
 
 	if use lm_sensors; then
 		if use x86 || use amd64; then
-			epatch ${FILESDIR}/${PN}-lm_sensors.patch
+			epatch "${FILESDIR}"/${PN}-lm_sensors.patch
 		else
 			eerror "Unfortunatly you are trying to enable lm_sensors support for an unsupported arch."
 			eerror "please check the availability of sys-apps/lm_sensors - if it is available on"
@@ -54,9 +56,6 @@ src_unpack() {
 	fi
 
 	# bugs 68467 and 68254
-	sed -i -e \
-		's/^NSC_AGENTLIBS="@AGENTLIBS@"/NSC_AGENTLIBS="@AGENTLIBS@ @WRAPLIBS@"/' \
-		net-snmp-config.in || die "sed net-snmp-config.in"
 	sed -i -e 's;embed_perl="yes",;embed_perl=$enableval,;' configure.in \
 		|| die "sed configure.in failed"
 	# Insecure run-path - bug 103776
@@ -145,26 +144,26 @@ src_install () {
 
 	keepdir /etc/snmp /var/lib/net-snmp
 
-	newinitd ${FILESDIR}/snmpd-5.1.rc6 snmpd || die
-	newconfd ${FILESDIR}/snmpd-5.1.conf snmpd || die
+	newinitd "${FILESDIR}"/snmpd-5.1.rc6 snmpd || die
+	newconfd "${FILESDIR}"/snmpd-5.1.conf snmpd || die
 
 	# snmptrapd can use the same rc script just slightly modified
 	sed -e 's/net-snmpd/snmptrapd/g' \
 		-e 's/snmpd/snmptrapd/g' \
 		-e 's/SNMPD/SNMPTRAPD/g' \
-		${D}/etc/init.d/snmpd > ${D}/etc/init.d/snmptrapd || \
+		"${D}"/etc/init.d/snmpd > "${D}"/etc/init.d/snmptrapd || \
 			die "failed to create snmptrapd init script"
-	chmod 0755 ${D}/etc/init.d/snmptrapd
+	chmod 0755 "${D}"/etc/init.d/snmptrapd
 
-	newconfd ${FILESDIR}/snmptrapd.conf snmptrapd || die
+	newconfd "${FILESDIR}"/snmptrapd.conf snmptrapd || die
 
 	# Remove everything, keeping only the snmpd, snmptrapd, MIBs, libs, and includes.
 	if use minimal; then
 		einfo "USE=minimal is set. Cleaning up excess cruft for a embedded/minimal/server only install."
-		rm -rf ${D}/usr/bin/{encode_keychange,snmp{get,getnext,set,usm,walk,bulkwalk,table,trap,bulkget,translate,status,delta,test,df,vacm,netstat,inform}}
-		rm -rf ${D}/usr/share/snmp/snmpconf-data ${D}/usr/share/snmp/*.conf
-		rm -rf ${D}/usr/bin/{net-snmp-config,fixproc,traptoemail} ${D}/usr/bin/snmpc{heck,onf}
-		find ${D} -name '*.pl' -exec rm -f '{}' \;
-		use ipv6 || rm -rf ${D}/usr/share/snmp/mibs/IPV6*
+		rm -rf "${D}"/usr/bin/{encode_keychange,snmp{get,getnext,set,usm,walk,bulkwalk,table,trap,bulkget,translate,status,delta,test,df,vacm,netstat,inform}}
+		rm -rf "${D}"/usr/share/snmp/snmpconf-data "${D}"/usr/share/snmp/*.conf
+		rm -rf "${D}"/usr/bin/{net-snmp-config,fixproc,traptoemail} "${D}"/usr/bin/snmpc{heck,onf}
+		find "${D}" -name '*.pl' -exec rm -f '{}' \;
+		use ipv6 || rm -rf "${D}"/usr/share/snmp/mibs/IPV6*
 	fi
 }

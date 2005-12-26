@@ -1,12 +1,14 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.3.20050624-r1.ebuild,v 1.1 2005/11/26 13:41:21 strerror Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.3_rc2.ebuild,v 1.1 2005/12/26 21:58:10 vanquirius Exp $
 
 inherit eutils fixheadtails perl-module
 
+MY_P="${P/_rc/.rc}"
 DESCRIPTION="Software for generating and retrieving SNMP data"
 HOMEPAGE="http://net-snmp.sourceforge.net/"
-SRC_URI="mirror://gentoo/${P}.tar.gz"
+#SRC_URI="mirror://gentoo/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="as-is BSD"
 SLOT="0"
@@ -38,13 +40,15 @@ DEPEND="${DEPEND}
 	>=sys-apps/sed-4
 	doc? ( app-doc/doxygen )"
 
+S="${WORKDIR}/${MY_P}"
+
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
 	if use lm_sensors; then
 		if use x86 || use amd64; then
-			epatch ${FILESDIR}/${PN}-lm_sensors.patch
+			epatch "${FILESDIR}"/${PN}-lm_sensors.patch
 		else
 			eerror "Unfortunatly you are trying to enable lm_sensors support for an unsupported arch."
 			eerror "please check the availability of sys-apps/lm_sensors - if it is available on"
