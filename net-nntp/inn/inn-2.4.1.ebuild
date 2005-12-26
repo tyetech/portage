@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/inn/Attic/inn-2.4.1.ebuild,v 1.4 2005/12/25 15:22:59 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/inn/Attic/inn-2.4.1.ebuild,v 1.5 2005/12/26 06:56:18 mr_bones_ Exp $
 
 inherit fixheadtails ssl-cert eutils libtool flag-o-matic
 
@@ -49,7 +49,7 @@ src_unpack() {
 
 src_compile() {
 	append-ldflags $(bindnow-flags)
-	
+
 	econf \
 		--prefix=/usr/lib/news \
 		--mandir=/usr/share/man \
