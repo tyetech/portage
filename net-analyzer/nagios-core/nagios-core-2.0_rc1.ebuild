@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-core/Attic/nagios-core-2.0b_p5.ebuild,v 1.2 2005/12/17 21:04:35 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-core/Attic/nagios-core-2.0_rc1.ebuild,v 1.1 2005/12/27 22:23:03 ramereth Exp $
 
 inherit eutils apache-module toolchain-funcs
 
-MY_P=${PN/-core}-${PV/_p}
+MY_P=${PN/-core}-${PV/_}
 DESCRIPTION="Nagios Core - Check daemon, CGIs, docs"
 HOMEPAGE="http://www.nagios.org/"
 SRC_URI="mirror://sourceforge/nagios/${MY_P}.tar.gz"
@@ -220,6 +220,9 @@ pkg_postinst() {
 	einfo
 	ewarn "Use /usr/nagios/contrib/convertcfg for configuration file conversion"
 	einfo
+	einfo "Due to a mixup on how the ebuilds were versioned in portage, this"
+	einfo "upgrade might look like a downgrade. I needed to re-align the version"
+	einfo "numbering to be correct. Sorry for any confusion that may have caused."
 }
 
 pkg_prerm() {
