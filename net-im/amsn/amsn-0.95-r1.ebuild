@@ -1,10 +1,10 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/amsn/Attic/amsn-0.95-r1.ebuild,v 1.1 2005/12/28 02:46:59 gothgirl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/amsn/Attic/amsn-0.95-r1.ebuild,v 1.2 2005/12/29 13:32:45 gothgirl Exp $
 
 #S="${WORKDIR}/${P/./_}"
 DESCRIPTION="Alvaro's Messenger client for MSN"
-SRC_URI="mirror://sourceforge/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 HOMEPAGE="http://amsn.sourceforge.net"
 
 IUSE="gnome kde imlib xmms"
