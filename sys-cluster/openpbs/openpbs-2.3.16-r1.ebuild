@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openpbs/Attic/openpbs-2.3.16-r1.ebuild,v 1.13 2005/09/05 13:26:52 tantive Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/openpbs/Attic/openpbs-2.3.16-r1.ebuild,v 1.14 2005/12/29 00:35:45 tantive Exp $
 
 inherit eutils
 
@@ -37,7 +37,7 @@ src_unpack() {
 	# apply a patch I made for gcc3. 
 	# maybe this should be done with sed but I'm too lazy
 	epatch ${FILESDIR}/makedepend-sh-gcc3.patch
-	epatch ${FILESDIR}/${PF}-errno-fixup.patch
+	epatch ${FILESDIR}/openpbs-${PV}-errno-fixup.patch
 	# this thing doesn't use make install, but rather it's own install script
 	# fix it here so the install dirs are set to the ${D} directory
 	cd buildutils
