@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/bfilter/Attic/bfilter-0.10.1.ebuild,v 1.1 2005/11/20 05:55:23 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/bfilter/Attic/bfilter-0.10.1.ebuild,v 1.2 2005/12/31 16:28:10 mrness Exp $
 
 inherit eutils
 
@@ -15,7 +15,7 @@ IUSE="X debug"
 
 RDEPEND="sys-libs/zlib
 	dev-libs/ace
-	=dev-libs/libsigc++-1.2*
+	=dev-libs/libsigc++-2.0*
 	X? ( =dev-cpp/gtkmm-2.4* )"
 DEPEND="${RDEPEND}
 	dev-util/scons
