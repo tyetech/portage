@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-tbnl/Attic/cl-tbnl-0.9.2.ebuild,v 1.1 2006/01/01 00:16:44 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-tbnl/Attic/cl-tbnl-0.9.3.ebuild,v 1.1 2006/01/02 06:53:00 mkennedy Exp $
 
 inherit common-lisp
 
