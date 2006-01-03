@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0.20060102.ebuild,v 1.1 2006/01/03 00:34:18 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0.20060102.ebuild,v 1.2 2006/01/03 11:13:58 dragonheart Exp $
 
 inherit eutils flag-o-matic
 
@@ -61,7 +61,7 @@ RDEPEND="xvid? ( >=media-libs/xvid-0.9.0 )
 	jpeg? ( media-libs/jpeg )
 	libcaca? ( media-libs/libcaca )
 	lirc? ( app-misc/lirc )
-	lzo? ( dev-libs/lzo )
+	lzo? ( =dev-libs/lzo-1* )
 	mad? ( media-libs/libmad )
 	nas? ( media-libs/nas )
 	nls? ( sys-devel/gettext )
