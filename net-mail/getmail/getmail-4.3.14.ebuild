@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/getmail/Attic/getmail-4.3.14.ebuild,v 1.2 2005/12/12 10:37:59 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/getmail/Attic/getmail-4.3.14.ebuild,v 1.3 2006/01/03 17:18:50 ticho Exp $
 
 inherit distutils
 
