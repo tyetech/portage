@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-4.5.2.8848-r10.ebuild,v 1.1 2005/12/19 17:14:21 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/vmware-workstation/Attic/vmware-workstation-4.5.3.19414.ebuild,v 1.1 2006/01/03 15:27:12 wolf31o2 Exp $
 
 # Unlike many other binary packages the user doesn't need to agree to a licence
 # to download VMWare. The agreeing to a licence is part of the configure step
@@ -9,8 +9,8 @@
 inherit eutils
 
 S=${WORKDIR}/vmware-distrib
-ANY_ANY="vmware-any-any-update96"
-NP="VMware-workstation-4.5.2-8848"
+#ANY_ANY="vmware-any-any-update96"
+NP="VMware-workstation-4.5.3-19414"
 DESCRIPTION="Emulate a complete PC on your PC without the usual performance overhead of most emulators"
 HOMEPAGE="http://www.vmware.com/products/desktop/ws_features.html"
 SRC_URI="http://vmware-svca.www.conxion.com/software/wkst/${NP}.tar.gz
@@ -22,11 +22,12 @@ SRC_URI="http://vmware-svca.www.conxion.com/software/wkst/${NP}.tar.gz
 	http://vmware-heva.www.conxion.com/software/wkst/${NP}.tar.gz
 	http://vmware.wespe.de/software/wkst/${NP}.tar.gz
 	ftp://vmware.wespe.de/pub/software/wkst/${NP}.tar.gz
-	http://ftp.cvut.cz/vmware/${ANY_ANY}.tar.gz
-	http://ftp.cvut.cz/vmware/obselete/${ANY_ANY}.tar.gz
-	http://knihovny.cvut.cz/ftp/pub/vmware/${ANY_ANY}.tar.gz
-	http://knihovny.cvut.cz/ftp/pub/vmware/obselete/${ANY_ANY}.tar.gz
 	mirror://gentoo/vmware.png"
+#	http://ftp.cvut.cz/vmware/${ANY_ANY}.tar.gz
+#	http://ftp.cvut.cz/vmware/obselete/${ANY_ANY}.tar.gz
+#	http://knihovny.cvut.cz/ftp/pub/vmware/${ANY_ANY}.tar.gz
+#	http://knihovny.cvut.cz/ftp/pub/vmware/obselete/${ANY_ANY}.tar.gz
+#	mirror://gentoo/vmware.png"
 
 LICENSE="vmware"
 IUSE=""
@@ -59,15 +60,15 @@ src_unpack() {
 	# Patch to resolve problems with VMware finding its distributed libraries.
 	# Patch submitted to bug #59035 by Georgi Georgiev <chutz@gg3.net>
 	epatch ${FILESDIR}/${P}-librarypath.patch
-	unpack ${ANY_ANY}.tar.gz
-	mv -f ${ANY_ANY}/*.tar ${S}/lib/modules/source/
-	cd ${S}/${ANY_ANY}
-	chmod 755 ../lib/bin/vmware ../bin/vmnet-bridge ../lib/bin/vmware-vmx ../lib/bin-debug/vmware-vmx
+#	unpack ${ANY_ANY}.tar.gz
+#	mv -f ${ANY_ANY}/*.tar ${S}/lib/modules/source/
+#	cd ${S}/${ANY_ANY}
+#	chmod 755 ../lib/bin/vmware ../bin/vmnet-bridge ../lib/bin/vmware-vmx ../lib/bin-debug/vmware-vmx
 	# vmware any96 still doesn't patch the vmware binary
 	#./update vmware ../lib/bin/vmware || die
-	./update bridge ../bin/vmnet-bridge || die
-	./update vmx ../lib/bin/vmware-vmx || die
-	./update vmxdebug ../lib/bin-debug/vmware-vmx || die
+#	./update bridge ../bin/vmnet-bridge || die
+#	./update vmx ../lib/bin/vmware-vmx || die
+#	./update vmxdebug ../lib/bin-debug/vmware-vmx || die
 }
 
 src_install() {
@@ -211,8 +212,9 @@ pkg_postinst() {
 	done
 
 	einfo
-	einfo "You need to run ${dir}/bin/vmware-config.pl to complete the install."
-	einfo
+	einfo "You need to run ${dir}/bin/vmware-config.pl"
+	einfo "to complete the install."
+	echo
 	einfo "For VMware Add-Ons just visit"
 	einfo "http://www.vmware.com/download/downloadaddons.html"
 	einfo
@@ -229,7 +231,6 @@ pkg_postinst() {
 	echo
 	ewarn "VMWare allows for the potential of overwriting files as root.  Only"
 	ewarn "give VMWare access to trusted individuals."
-	#ewarn "For users of glibc-2.3.x, vmware-nat support is *still* broken on 2.6.x"
 }
 
 pkg_postrm() {
