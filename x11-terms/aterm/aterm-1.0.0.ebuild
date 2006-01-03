@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/aterm/Attic/aterm-1.0.0.ebuild,v 1.3 2005/12/25 15:41:31 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/aterm/Attic/aterm-1.0.0.ebuild,v 1.4 2006/01/03 21:21:40 sekretarz Exp $
 
 inherit flag-o-matic
 
@@ -13,9 +13,21 @@ SLOT="0"
 KEYWORDS="~amd64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="cjk xgetdefault"
 
-DEPEND="media-libs/jpeg
+RDEPEND="media-libs/jpeg
 		media-libs/libpng
-		virtual/x11"
+		|| ( ( x11-libs/libX11
+				x11-libs/libXext
+				x11-libs/libICE
+				)
+				virtual/x11
+		)"
+
+DEPEND="${RDEPEND}
+		|| ( ( x11-libs/libXt
+				x11-proto/xproto
+				)
+				virtual/x11
+			)"
 
 src_compile() {
 	local myconf
