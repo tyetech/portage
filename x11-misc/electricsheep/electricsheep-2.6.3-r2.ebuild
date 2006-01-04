@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/electricsheep/Attic/electricsheep-2.6.3-r1.ebuild,v 1.3 2005/12/20 22:24:27 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/electricsheep/Attic/electricsheep-2.6.3-r2.ebuild,v 1.1 2006/01/04 22:29:39 dragonheart Exp $
 
 inherit eutils flag-o-matic kde-functions
 
@@ -20,7 +20,6 @@ RDEPEND="|| ( ( x11-libs/libXv
 	)
 	dev-libs/expat
 	net-misc/curl
-	media-gfx/xloadimage
 	media-libs/jpeg
 	media-libs/libpng
 	media-libs/libsdl
@@ -47,6 +46,7 @@ src_unpack() {
 	# macro PIC.
 	sed -i -e 's/def PIC/def __PIC__/' ${S}/mpeg2dec/src/cpu_accel.c
 	epatch ${FILESDIR}/${P}-cflagsfix.patch
+	epatch ${FILESDIR}/${P}-xloadimg.patch
 }
 
 # Also detects and ties in sys-libs/slang, media-libs/aalib media-libs/svgalib and nas
