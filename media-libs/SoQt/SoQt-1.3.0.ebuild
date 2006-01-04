@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/SoQt/Attic/SoQt-1.3.0.ebuild,v 1.1 2006/01/04 17:20:47 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/SoQt/Attic/SoQt-1.3.0.ebuild,v 1.2 2006/01/04 20:52:01 carlo Exp $
 
 inherit eutils
 
@@ -14,7 +14,7 @@ LICENSE="|| ( GPL-2 PEL )"
 KEYWORDS="~x86"
 IUSE="doc"
 
-DEPEND="=x11-libs/qt-3*
+RDEPEND="=x11-libs/qt-3*
 	>=media-libs/coin-2.4.4"
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )"
