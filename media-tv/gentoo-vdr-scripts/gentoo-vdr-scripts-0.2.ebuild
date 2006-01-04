@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/gentoo-vdr-scripts/Attic/gentoo-vdr-scripts-0.2.ebuild,v 1.1 2006/01/03 15:32:55 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/gentoo-vdr-scripts/Attic/gentoo-vdr-scripts-0.2.ebuild,v 1.2 2006/01/04 00:13:45 zzam Exp $
 
 inherit eutils
 
@@ -14,7 +14,8 @@ SLOT="0"
 
 KEYWORDS="~amd64 ~ppc ~x86"
 
-DEPEND="nvram? ( x86? ( sys-power/nvram-wakeup ) )"
+RDEPEND="nvram? ( x86? ( sys-power/nvram-wakeup ) )
+		app-admin/sudo"
 
 VDR_HOME=/var/vdr
 
