@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-audio-connection-kit/Attic/jack-audio-connection-kit-0.98.1-r1.ebuild,v 1.9 2005/02/17 12:16:25 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-audio-connection-kit/Attic/jack-audio-connection-kit-0.98.1-r1.ebuild,v 1.10 2006/01/07 01:30:42 vapier Exp $
 
 IUSE="doc debug jack-tmpfs caps"
 
