@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/drbd/Attic/drbd-0.7.11.ebuild,v 1.3 2005/09/01 12:02:58 xmerlin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/drbd/Attic/drbd-0.7.11.ebuild,v 1.4 2006/01/09 03:31:06 xmerlin Exp $
 
 inherit eutils versionator linux-mod
 
