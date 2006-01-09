@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spamassassin/Attic/spamassassin-3.0.4.ebuild,v 1.12 2005/12/30 10:46:13 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spamassassin/Attic/spamassassin-3.0.4.ebuild,v 1.13 2006/01/09 16:45:04 mcummings Exp $
 
 inherit perl-module
 
