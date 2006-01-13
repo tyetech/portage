@@ -1,8 +1,8 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/swh-plugins/Attic/swh-plugins-0.4.7.ebuild,v 1.6 2005/09/04 00:04:01 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/swh-plugins/Attic/swh-plugins-0.4.14.ebuild,v 1.1 2006/01/13 16:20:33 fvdpol Exp $
 
-inherit eutils
+inherit flag-o-matic eutils
 
 IUSE=""
 DESCRIPTION="Large collection of LADSPA audio plugins/effects"
@@ -11,18 +11,31 @@ SRC_URI="http://plugin.org.uk/releases/${PV}/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 amd64 ~ppc"
+KEYWORDS="~amd64 ~ppc ~x86 ~ppc-macos"
 
 DEPEND="media-libs/ladspa-sdk
+	dev-util/pkgconfig
 	sci-libs/fftw
 	>=sys-apps/sed-4"
 
 src_unpack() {
 	unpack ${A} || die
 
+	use amd64 && append-flags -fPIC
+	use ppc && append-flags -fPIC
+	use ppc-macos && append-flags -fPIC
+	use ppc-macos && append-ldflags -lintl -lsystem -lm
+
 	cd ${S}
 	sed -i '/MACHINE=/s/.*/MACHINE=""/' configure
 }
+
+src_compile() {
+	use ppc-macos && myconf="${myconf} --enable-darwin"
+	econf ${myconf} || die "configure failed"
+	make || die "make failed"
+}
+
 src_install() {
 	make DESTDIR=${D} install || die
 	dodoc AUTHORS ChangeLog README TODO || die
