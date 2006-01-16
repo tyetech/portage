@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libextractor/Attic/libextractor-0.2.2.ebuild,v 1.4 2005/12/26 12:22:25 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libextractor/Attic/libextractor-0.2.2.ebuild,v 1.5 2006/01/16 23:06:11 mkay Exp $
 
 inherit libtool eutils
 
