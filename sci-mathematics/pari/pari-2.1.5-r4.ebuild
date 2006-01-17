@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/pari/Attic/pari-2.1.5-r4.ebuild,v 1.3 2005/11/08 14:01:07 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/pari/Attic/pari-2.1.5-r4.ebuild,v 1.4 2006/01/17 10:11:00 mcummings Exp $
 
 inherit eutils flag-o-matic
 
