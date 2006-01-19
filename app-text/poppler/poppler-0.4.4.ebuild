@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/poppler/Attic/poppler-0.4.3-r2.ebuild,v 1.2 2006/01/04 06:13:57 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/poppler/Attic/poppler-0.4.4.ebuild,v 1.1 2006/01/19 19:10:52 dang Exp $
 
 inherit eutils autotools
 
@@ -16,11 +16,12 @@ IUSE="jpeg zlib cairo"
 
 RDEPEND=">=media-libs/freetype-2.1.8
 	media-libs/fontconfig
-	virtual/ghostscript
 	cairo? ( >=x11-libs/cairo-0.5 )
 	jpeg? ( >=media-libs/jpeg-6b )
 	zlib? ( sys-libs/zlib )
-	!<app-text/xpdf-3.01-r4"
+	!app-text/pdftohtml
+	!<app-text/xpdf-3.01-r4
+	virtual/ghostscript"
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
@@ -29,8 +30,11 @@ DEPEND="${RDEPEND}
 src_unpack(){
 	unpack ${A}
 	cd ${S}
+	epatch ${WORKDIR}/${P}-utils.patch
 	epatch ${FILESDIR}/poppler-0.4.1-cairo-ft.patch
-	epatch ${DISTDIR}/${P}-utils.patch.gz
+	epatch ${FILESDIR}/${P}-bug117481.patch
+	epatch ${FILESDIR}/${PN}-0.4.3-pdf2xml.patch
+	epatch ${FILESDIR}/${P}-cairo-lines.patch
 	eautoreconf
 }
 
@@ -46,5 +50,5 @@ src_compile() {
 
 src_install() {
 	make DESTDIR=${D} install || die
-	dodoc README AUTHORS ChangeLog NEWS README-XPDF TODO
+	dodoc README AUTHORS ChangeLog NEWS README-XPDF TODO pdf2xml.dtd
 }
