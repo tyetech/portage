@@ -1,9 +1,10 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/stardict-jmdict-en-ja/Attic/stardict-jmdict-en-ja-2.4.2.ebuild,v 1.8 2005/08/02 20:19:24 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/stardict-jmdict-en-ja/stardict-jmdict-en-ja-2.4.2-r1.ebuild,v 1.1 2006/01/19 13:08:53 truedfx Exp $
 
 FROM_LANG="English"
 TO_LANG="Japanese"
+DICT_PREFIX="jmdict-"
 
 inherit stardict
 
