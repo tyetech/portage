@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-12.5.5.ebuild,v 1.1 2006/01/20 16:20:37 cryos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-12.5.6.ebuild,v 1.1 2006/01/20 17:56:43 cryos Exp $
 
 inherit eutils
 
