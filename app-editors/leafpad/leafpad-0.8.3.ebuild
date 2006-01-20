@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/leafpad/Attic/leafpad-0.8.3.ebuild,v 1.2 2005/10/24 08:15:19 taviso Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/leafpad/Attic/leafpad-0.8.3.ebuild,v 1.3 2006/01/20 21:01:53 taviso Exp $
 
 inherit eutils
 
