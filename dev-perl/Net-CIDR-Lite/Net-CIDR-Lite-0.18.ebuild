@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Net-CIDR-Lite/Attic/Net-CIDR-Lite-0.18.ebuild,v 1.4 2006/01/15 11:29:09 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Net-CIDR-Lite/Attic/Net-CIDR-Lite-0.18.ebuild,v 1.5 2006/01/21 21:33:43 corsair Exp $
 
 inherit perl-module
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://search.cpan.org/~dougw/${P}/"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="~alpha ~amd64 ppc ~ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ppc ppc64 sparc x86"
 IUSE=""
 
 mydoc="TODO"
