@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvb/Attic/libdvb-0.5.5.1-r1.ebuild,v 1.4 2005/12/13 11:37:30 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvb/Attic/libdvb-0.5.5.1-r1.ebuild,v 1.5 2006/01/21 13:54:27 zzam Exp $
 
 inherit eutils
 
