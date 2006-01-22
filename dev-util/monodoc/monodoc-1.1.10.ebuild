@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodoc/Attic/monodoc-1.1.10.ebuild,v 1.4 2006/01/22 01:30:00 compnerd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodoc/Attic/monodoc-1.1.10.ebuild,v 1.5 2006/01/22 09:51:25 dertobi123 Exp $
 
 inherit mono multilib
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.go-mono.com"
 SRC_URI="http://www.go-mono.com/sources/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="~amd64 ppc x86"
 IUSE=""
 DEPEND=">=dev-lang/mono-1.0"
 
