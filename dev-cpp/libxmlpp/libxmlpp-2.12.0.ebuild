@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libxmlpp/Attic/libxmlpp-2.12.0.ebuild,v 1.4 2006/01/22 17:01:21 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libxmlpp/Attic/libxmlpp-2.12.0.ebuild,v 1.5 2006/01/22 20:41:45 dang Exp $
 
 inherit gnome2 eutils
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://gnome/sources/libxml++/${PV%.*}/${MY_P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="2.6"
-KEYWORDS="~alpha ~amd64 ~hppa ~mips ppc sparc x86"
+KEYWORDS="~alpha amd64 ~hppa ~mips ppc sparc x86"
 IUSE="doc"
 
 RDEPEND=">=dev-libs/libxml2-2.6.1
