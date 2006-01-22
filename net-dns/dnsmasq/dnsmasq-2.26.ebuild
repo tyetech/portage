@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.25.ebuild,v 1.1 2006/01/21 06:12:08 avenj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/dnsmasq/Attic/dnsmasq-2.26.ebuild,v 1.1 2006/01/22 14:30:53 avenj Exp $
 
 inherit eutils toolchain-funcs
 
