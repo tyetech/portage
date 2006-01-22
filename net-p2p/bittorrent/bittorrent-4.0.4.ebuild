@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bittorrent/Attic/bittorrent-4.0.4.ebuild,v 1.4 2005/09/25 22:30:09 mkay Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bittorrent/Attic/bittorrent-4.0.4.ebuild,v 1.5 2006/01/22 10:20:07 mkay Exp $
 
 inherit distutils
 
