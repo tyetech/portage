@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-3.3.11_pre3.ebuild,v 1.1 2006/01/12 17:01:40 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-3.3.11_pre4.ebuild,v 1.1 2006/01/24 18:58:53 wolf31o2 Exp $
 
 VERSION_DMAP='1.00.17'
 VERSION_DMRAID='1.0.0.rc9'
