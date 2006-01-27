@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/qpage/Attic/qpage-3.3.ebuild,v 1.8 2006/01/27 16:27:10 chutzpah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/qpage/Attic/qpage-3.3.ebuild,v 1.9 2006/01/27 16:58:38 chutzpah Exp $
 
 inherit eutils
 
-DESCRIPTION="Sends messages to an alphanumeric pager"
+DESCRIPTION="Sends messages to an alphanumeric pager via TAP protocol."
 HOMEPAGE="http://www.qpage.org/"
 SRC_URI="http://www.qpage.org/download/${P}.tar.Z"
 
