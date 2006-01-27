@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/gnomevfs-sharp/Attic/gnomevfs-sharp-2.6.0.ebuild,v 1.1 2005/11/08 04:05:31 latexer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/gnomevfs-sharp/Attic/gnomevfs-sharp-2.8.0.ebuild,v 1.1 2006/01/27 02:46:33 latexer Exp $
 
 inherit gtk-sharp-component
 
