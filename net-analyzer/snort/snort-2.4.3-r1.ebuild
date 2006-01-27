@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/snort/Attic/snort-2.4.1-r1.ebuild,v 1.1 2005/10/08 13:55:12 strerror Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/snort/Attic/snort-2.4.3-r1.ebuild,v 1.1 2006/01/27 18:06:39 vanquirius Exp $
 
 inherit eutils flag-o-matic autotools
 
@@ -9,6 +9,7 @@ HOMEPAGE="http://www.snort.org/"
 SRC_URI="http://www.snort.org/dl/current/${P}.tar.gz
 	mirror://gentoo/snort-2.4.0-genpatches.tar.bz2
 	http://www.snort.org/pub-bin/downloads.cgi/Download/comm_rules/Community-Rules.tar.gz
+	http://www.snort.org/pub-bin/downloads.cgi/Download/vrt_pr/snortrules-pr-2.4.tar.gz
 	snortsam? ( mirror://gentoo/snortsam-20050110.tar.gz )"
 
 LICENSE="GPL-2"
@@ -124,9 +125,9 @@ src_install() {
 	fowners snort:snort /var/log/snort
 	fperms 0770 /var/log/snort
 
-	# install community rules
+	# install rules
 	dodir /etc/snort/rules
-	mv ${WORKDIR}/rules/* "${D}/etc/snort/rules/"
+	mv "${WORKDIR}"/rules/* "${D}/etc/snort/rules/"
 }
 
 pkg_postinst() {
@@ -142,7 +143,7 @@ pkg_postinst() {
 		use odbc && einfo "SQL tables need to be created - look at /usr/share/doc/${PF}/schemas/"
 		einfo
 		einfo "Also, read the following Gentoo forums article:"
-		einfo '   http://forums.gentoo.org/viewtopic.php?t=78718'
+		einfo '   http://forums.gentoo.org/viewtopic-t-399801.html'
 	fi
 	einfo
 	ewarn "Only a basic set of rules was installed."
