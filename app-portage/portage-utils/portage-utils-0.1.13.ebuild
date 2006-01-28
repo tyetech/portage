@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/portage-utils/Attic/portage-utils-0.1.11.ebuild,v 1.2 2006/01/28 21:44:33 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/portage-utils/Attic/portage-utils-0.1.13.ebuild,v 1.1 2006/01/28 21:44:33 solar Exp $
 
 inherit toolchain-funcs
 
