@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.8.10.ebuild,v 1.2 2006/01/14 20:30:38 dang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.8.11.ebuild,v 1.1 2006/01/29 17:31:34 allanonjl Exp $
 
 inherit gnome.org flag-o-matic eutils debug
 
@@ -83,9 +83,6 @@ src_unpack() {
 	# use an arch-specific config directory so that 32bit and 64bit versions
 	# dont clash on multilib systems
 	has_multilib_profile && epatch "${FILESDIR}"/${PN}-2.8.0-multilib.patch
-
-	# fix tests, see #118722
-	epatch "${FILESDIR}"/${PN}-gdk-pixbuf-testfix.patch
 
 	# and this line is just here to make building emul-linux-x86-gtklibs a bit
 	# easier, so even this should be amd64 specific.
