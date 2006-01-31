@@ -1,13 +1,13 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libX11/Attic/libX11-1.0.0.ebuild,v 1.3 2006/01/11 06:22:03 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libX11/Attic/libX11-1.0.0.ebuild,v 1.4 2006/01/31 13:15:38 killerfox Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
 inherit x-modular
 
 DESCRIPTION="X.Org X11 library"
-KEYWORDS="~alpha ~amd64 ~arm ~mips ~ppc ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~s390 ~sh ~sparc ~x86"
 IUSE="ipv6"
 RDEPEND="x11-libs/xtrans
 	x11-libs/libXau
