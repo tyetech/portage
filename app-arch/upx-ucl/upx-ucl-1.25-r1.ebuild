@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/upx-ucl/Attic/upx-ucl-1.25.ebuild,v 1.3 2006/01/31 02:33:04 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/upx-ucl/Attic/upx-ucl-1.25-r1.ebuild,v 1.1 2006/01/31 02:33:04 solar Exp $
 
 MY_P=${P/-ucl/}
 S=${WORKDIR}/${MY_P}
@@ -17,6 +17,14 @@ IUSE=""
 DEPEND=">=dev-libs/ucl-1.02
 	>=dev-lang/perl-5.6
 	!app-arch/upx"
+
+RDEPEND=">=dev-libs/ucl-1.02 !app-arch/upx"
+
+src_unpack() {
+	unpack ${A}
+	cd ${S}
+	epatch "${FILESDIR}"/${PN}-${PV}-pie.patch
+}
 
 src_compile() {
 	make -C src UCLDIR=/usr CFLAGS_O="${CFLAGS}" || die "Failed compiling"
