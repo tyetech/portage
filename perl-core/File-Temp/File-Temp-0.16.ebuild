@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/File-Temp/Attic/File-Temp-0.16.ebuild,v 1.8 2006/01/21 22:04:29 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/File-Temp/Attic/File-Temp-0.16.ebuild,v 1.9 2006/01/31 19:46:36 agriffis Exp $
 
 inherit perl-module
 
@@ -11,5 +11,5 @@ SRC_TEST="do"
 
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 hppa ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="alpha ~amd64 hppa ~ia64 ppc ppc64 sparc x86"
 IUSE=""
