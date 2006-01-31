@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/tripwire/Attic/tripwire-2.3.1.2-r1.ebuild,v 1.9 2006/01/29 15:39:26 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/tripwire/Attic/tripwire-2.3.1.2-r1.ebuild,v 1.10 2006/01/31 02:12:15 mr_bones_ Exp $
 
 inherit eutils flag-o-matic
 
@@ -32,7 +32,7 @@ src_unpack() {
 	unpack tripwire-${TW_VER}.tar.gz
 	unpack twpol.txt.gz
 	cd ${S}
-	
+
 	# some patches ive collected/made for tripwire
 	# mostly from mandrake, some from other sources
 	epatch ${FILESDIR}/tripwire-2.3.0-50-rfc822.patch
