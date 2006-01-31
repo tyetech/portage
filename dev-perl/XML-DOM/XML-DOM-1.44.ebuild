@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-DOM/Attic/XML-DOM-1.44.ebuild,v 1.4 2006/01/21 21:38:40 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-DOM/Attic/XML-DOM-1.44.ebuild,v 1.5 2006/01/31 21:55:43 agriffis Exp $
 
 inherit perl-module
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://search.cpan.org/~tjmather/${P}/"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="~alpha ~amd64 ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="alpha ~amd64 ~ia64 ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND="${DEPEND}
