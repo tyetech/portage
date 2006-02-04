@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-gtk/Attic/ruby-gtk-0.30.ebuild,v 1.9 2004/07/14 22:08:51 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-gtk/Attic/ruby-gtk-0.30.ebuild,v 1.10 2006/02/04 15:07:15 solar Exp $
 
 S=${WORKDIR}/ruby-gnome-all-${PV}/gtk
 DESCRIPTION="Ruby Gtk+ bindings"
