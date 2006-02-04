@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/eruby/Attic/eruby-1.0.4.ebuild,v 1.6 2004/07/07 00:25:10 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/eruby/Attic/eruby-1.0.4.ebuild,v 1.7 2006/02/04 15:03:50 solar Exp $
 
 IUSE=""
 
