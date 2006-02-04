@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/isdn4k-utils/Attic/isdn4k-utils-3.8_pre20050821.ebuild,v 1.3 2005/12/26 15:11:30 sbriesen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/isdn4k-utils/Attic/isdn4k-utils-3.8_pre20050821.ebuild,v 1.4 2006/02/04 21:14:17 sbriesen Exp $
 
 inherit eutils multilib gnuconfig linux-info
 
@@ -29,15 +29,15 @@ DEPEND="virtual/linux-sources
 	sys-libs/ncurses
 	sys-libs/gdbm
 	dev-lang/tcl
-	X? ( virtual/x11 )
 	eurofile? ( net-ftp/ftpbase )
 	ipppd? ( mschap? ( dev-libs/openssl ) )
 	ipppd? ( activefilter? ( >=virtual/libpcap-0.9.3 ) )"
+#	X? ( virtual/x11 )
 
 RDEPEND="${DEPEND}
 	virtual/modutils
-	ipppd? ( net-dialup/ppp )
-	pcmcia? ( virtual/pcmcia )"
+	ipppd? ( net-dialup/ppp )"
+#	pcmcia? ( virtual/pcmcia )
 
 S="${WORKDIR}/${MY_P}"
 
