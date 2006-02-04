@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mysql-ruby/Attic/mysql-ruby-2.5.2.ebuild,v 1.2 2005/06/26 18:48:46 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mysql-ruby/Attic/mysql-ruby-2.5.2.ebuild,v 1.3 2006/02/04 15:04:14 solar Exp $
 
 inherit ruby
 
