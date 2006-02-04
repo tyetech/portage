@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/netkit-base/netkit-base-0.17-r8.ebuild,v 1.13 2005/04/17 05:38:52 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/netkit-base/netkit-base-0.17-r8.ebuild,v 1.14 2006/02/04 20:37:23 vapier Exp $
 
 inherit eutils
 
@@ -19,10 +19,7 @@ PROVIDE="virtual/inetd"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	# Note that epatch will intelligently patch architecture specific
-	# patches as well
-	epatch "${FILESDIR}"
+	epatch "${FILESDIR}"/*.patch
 }
 
 src_compile() {
