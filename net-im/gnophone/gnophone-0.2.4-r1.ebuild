@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gnophone/Attic/gnophone-0.2.4-r1.ebuild,v 1.8 2005/03/23 16:18:32 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gnophone/Attic/gnophone-0.2.4-r1.ebuild,v 1.9 2006/02/04 23:41:12 dragonheart Exp $
 
 inherit eutils
 
@@ -32,6 +32,8 @@ src_unpack() {
 	cd ${S}
 	epatch ${FILESDIR}/${P}-raw2h.c.patch
 	epatch ${FILESDIR}/${P}-mkdtmf.c.patch
+	epatch ${FILESDIR}/${P}-casecompile.patch
+	epatch ${FILESDIR}/${P}-audio-phone-compilefault.patch
 }
 
 src_compile() {
