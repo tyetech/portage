@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/sary-ruby/Attic/sary-ruby-1.1.0.1.ebuild,v 1.3 2005/02/12 08:07:52 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/sary-ruby/Attic/sary-ruby-1.1.0.1.ebuild,v 1.4 2006/02/04 15:10:18 solar Exp $
 
 inherit ruby
 
