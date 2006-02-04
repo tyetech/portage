@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/klamav/Attic/klamav-0.30.3.ebuild,v 1.1 2005/10/06 00:59:12 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/klamav/Attic/klamav-0.30.3.ebuild,v 1.2 2006/02/04 10:51:54 centic Exp $
 
 inherit kde
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc x86"
 IUSE=""
 
 DEPEND="app-antivirus/clamav"
