@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/sandbox/Attic/sandbox-1.2.17.ebuild,v 1.1 2005/12/05 21:33:13 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/sandbox/Attic/sandbox-1.2.17.ebuild,v 1.2 2006/02/06 12:31:23 azarah Exp $
 
 #
 # don't monkey with this ebuild unless contacting portage devs.
@@ -108,6 +108,7 @@ src_install() {
 	fowners root:portage /var/log/sandbox
 	fperms 0770 /var/log/sandbox
 
+	cd ${S}
 	dodoc AUTHORS ChangeLog NEWS README
 }
 
