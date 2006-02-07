@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/confcache/Attic/confcache-0.4.ebuild,v 1.1 2006/02/02 13:12:55 ferringb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/confcache/Attic/confcache-0.4.1.ebuild,v 1.1 2006/02/07 18:56:48 ferringb Exp $
 
 inherit distutils
 
