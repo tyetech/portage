@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/wordnet/Attic/wordnet-2.1.ebuild,v 1.2 2006/02/06 16:46:11 arj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/wordnet/Attic/wordnet-2.1.ebuild,v 1.3 2006/02/07 22:45:19 arj Exp $
 
 inherit eutils
 
@@ -18,7 +18,7 @@ src_unpack() {
 	unpack $A
 	epatch $FILESDIR/Wordnet-2.1-dict-location.patch
 	cd WordNet-2.1
-	epatch $FILESDIR/Wordnet-2.1-compile-fix.patch
+	epatch $FILESDIR/Wordnet-2.1-compile-fix-new.patch
 }
 
 src_compile() {
