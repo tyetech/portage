@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-x11/Attic/xorg-x11-7.0-r1.ebuild,v 1.9 2006/02/06 23:41:23 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-x11/Attic/xorg-x11-7.0-r1.ebuild,v 1.10 2006/02/07 00:08:21 spyderous Exp $
 
 inherit eutils
 
@@ -465,7 +465,6 @@ pkg_preinst() {
 		mkdir -p "${IMAGE}/etc/X11"
 		sed "/ModulePath/d" ${XORGCONF}	> ${IMAGE}${XORGCONF}
 		sed -i "/RgbPath/d" ${IMAGE}${XORGCONF}
-		sed -i "/XkbRules/d" ${IMAGE}${XORGCONF}
 	fi
 }
 
