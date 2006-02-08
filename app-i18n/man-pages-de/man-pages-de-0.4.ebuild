@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/man-pages-de/Attic/man-pages-de-0.4.ebuild,v 1.3 2006/02/08 01:04:44 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/man-pages-de/Attic/man-pages-de-0.4.ebuild,v 1.4 2006/02/08 01:05:17 vapier Exp $
 
 DESCRIPTION="A somewhat comprehensive collection of Linux german man page translations"
 HOMEPAGE="http://www.infodrom.org/projects/manpages-de/"
