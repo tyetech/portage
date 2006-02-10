@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-tables/Attic/scim-tables-0.5.4.ebuild,v 1.2 2006/02/10 19:29:06 liquidx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-tables/Attic/scim-tables-0.5.6.ebuild,v 1.1 2006/02/10 19:29:06 liquidx Exp $
 
 inherit kde-functions
 
