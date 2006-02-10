@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/sylpheed-claws/Attic/sylpheed-claws-2.0.0_rc4.ebuild,v 1.1 2006/01/25 16:24:13 genone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/sylpheed-claws/Attic/sylpheed-claws-2.0.0.ebuild,v 1.1 2006/02/10 18:06:18 genone Exp $
 
 IUSE="gnome dillo crypt spell ssl ldap ipv6 pda clamav xface kde imap spamassassin doc"
 
