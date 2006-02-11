@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/tcsh/Attic/tcsh-6.14-r3.ebuild,v 1.9 2006/02/07 04:27:53 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/tcsh/Attic/tcsh-6.14-r3.ebuild,v 1.10 2006/02/11 12:58:17 grobian Exp $
 
 inherit eutils
 
@@ -45,8 +45,6 @@ src_install() {
 	doins \
 		"${WORKDIR}"/gentoo/csh.cshrc \
 		"${WORKDIR}"/gentoo/csh.login
-
-	insinto /etc/skel
 
 	insinto /etc/profile.d
 	doins \
