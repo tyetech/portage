@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/swatch/swatch-3.1.ebuild,v 1.8 2005/11/28 12:06:51 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/swatch/swatch-3.1.ebuild,v 1.9 2006/02/11 21:05:00 mcummings Exp $
 
 inherit perl-app
 
@@ -18,4 +18,4 @@ DEPEND="${DEPEND}
 	dev-perl/Date-Calc
 	dev-perl/TimeDate
 	dev-perl/File-Tail
-	>=perl-core/Time-HiRes-1.12"
+	>=virtual/perl-Time-HiRes-1.12"
