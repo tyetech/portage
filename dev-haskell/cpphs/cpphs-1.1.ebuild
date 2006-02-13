@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-haskell/cvs-repo/gentoo-x86/dev-haskell/cpphs/Attic/cpphs-1.1.ebuild,v 1.1 2006/02/11 02:08:18 dcoutts Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-haskell/cvs-repo/gentoo-x86/dev-haskell/cpphs/Attic/cpphs-1.1.ebuild,v 1.2 2006/02/13 23:48:48 dcoutts Exp $
 
-CABAL_FEATURES="bin"
+CABAL_FEATURES=""
 inherit eutils haskell-cabal
 
 DESCRIPTION="A liberalised cpp-a-like preprocessor for Haskell"
