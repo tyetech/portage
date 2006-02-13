@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/PatchReader/Attic/PatchReader-0.9.5.ebuild,v 1.9 2006/02/06 20:33:39 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/PatchReader/Attic/PatchReader-0.9.5.ebuild,v 1.10 2006/02/13 13:53:10 mcummings Exp $
 
 inherit perl-module
 
@@ -14,5 +14,5 @@ SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
 KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
 
-DEPEND="perl-core/File-Temp"
+DEPEND="virtual/perl-File-Temp"
 IUSE=""
