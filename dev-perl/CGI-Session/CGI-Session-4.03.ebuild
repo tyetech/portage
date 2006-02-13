@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/CGI-Session/Attic/CGI-Session-4.03.ebuild,v 1.3 2006/02/04 11:05:40 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/CGI-Session/Attic/CGI-Session-4.03.ebuild,v 1.4 2006/02/13 10:44:18 mcummings Exp $
 
 inherit perl-module
 
@@ -15,4 +15,4 @@ IUSE=""
 
 SRC_TEST="do"
 
-DEPEND="perl-core/Digest-MD5"
+DEPEND="virtual/perl-Digest-MD5"
