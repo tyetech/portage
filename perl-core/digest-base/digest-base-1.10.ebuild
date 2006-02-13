@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/digest-base/Attic/digest-base-1.10.ebuild,v 1.9 2005/10/10 07:42:18 hardave Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/digest-base/Attic/digest-base-1.10.ebuild,v 1.10 2006/02/13 15:07:48 mcummings Exp $
 
 inherit perl-module
 
@@ -19,4 +19,4 @@ IUSE=""
 
 mydoc="rfc*.txt"
 
-DEPEND="perl-core/MIME-Base64"
+DEPEND="virtual/perl-MIME-Base64"
