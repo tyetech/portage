@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/axiom/Attic/axiom-3.9.ebuild,v 1.3 2006/01/22 14:19:41 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/axiom/Attic/axiom-3.9.ebuild,v 1.4 2006/02/14 18:30:54 plasmaroo Exp $
 
 inherit eutils
 
@@ -13,8 +13,11 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
 
-DEPEND="virtual/x11
-	virtual/tetex"
+DEPEND="virtual/tetex
+	|| (
+		x11-libs/libXaw
+		virtual/x11
+	)"
 
 S="${WORKDIR}/axiom"
 
