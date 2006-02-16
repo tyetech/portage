@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-6.4.2.ebuild,v 1.5 2006/02/14 20:29:12 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-6.4.2-r1.ebuild,v 1.1 2006/02/16 04:30:02 spyderous Exp $
 
 inherit eutils toolchain-funcs multilib flag-o-matic
 
@@ -87,6 +87,8 @@ src_unpack() {
 	epatch ${FILESDIR}/6.4-dont-install-gles-headers.patch
 	epatch ${FILESDIR}/change-default-dri-driver-dir.patch
 	epatch ${FILESDIR}/6.4-multilib-fix.patch
+	epatch ${FILESDIR}/64bit-fix-have-dix-config.patch
+	epatch ${FILESDIR}/64bit-fix-indirect-vertex-array.patch
 
 	# Set default dri drivers directory
 	echo "DEFINES += -DDEFAULT_DRIVER_DIR='\"/usr/$(get_libdir)/xorg/modules/dri\"'" >> ${HOSTCONF}
