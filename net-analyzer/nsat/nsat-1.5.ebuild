@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nsat/nsat-1.5.ebuild,v 1.12 2006/01/22 13:24:27 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nsat/nsat-1.5.ebuild,v 1.13 2006/02/15 23:37:24 jokey Exp $
 
 inherit eutils
 
@@ -15,7 +15,7 @@ IUSE="X"
 
 RDEPEND="X? ( || ( x11-libs/libX11 virtual/x11 )
 				dev-lang/tk )
-	virtual/libpcap"
+	net-libs/libpcap"
 
 DEPEND="$RDEPEND >=sys-devel/autoconf-2.58"
 
