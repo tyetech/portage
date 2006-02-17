@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/noweb/Attic/noweb-2.9-r3.ebuild,v 1.12 2005/01/01 16:27:47 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/noweb/Attic/noweb-2.9-r6.ebuild,v 1.1 2006/02/17 12:25:03 ehmsen Exp $
 
 inherit eutils
 
@@ -12,12 +12,13 @@ LICENSE="freedist"
 DESCRIPTION="a literate programming tool, lighter than web"
 
 SLOT="0"
-IUSE=""
-KEYWORDS="x86 ppc sparc alpha amd64"
+IUSE="icon"
+KEYWORDS="~x86 ~sparc ~alpha ~amd64"	# will test ppc later
 
 DEPEND="sys-devel/gcc
 	virtual/tetex
-	sys-apps/gawk
+	icon? ( dev-lang/icon )
+	!icon? ( sys-apps/gawk )
 	sys-apps/debianutils"
 
 src_unpack() {
@@ -29,23 +30,28 @@ src_unpack() {
 
 	# make touch only touches the files required, not the whole
 	# tree as with find . -type f | xargs touch <obz@gentoo.org>
-	#make touch
+	#make touch || die "make touch failed."
 
 }
 
 src_compile() {
+	local libsrc
+	use icon && libsrc="icon" || libsrc="awk"
+
 	# noweb tries to use notangle and noweb; see bug #50429
-	( cd c; emake CFLAGS="${CFLAGS}" LIBSRC="awk" ) || die
+	( cd c; emake CFLAGS="${CFLAGS}" LIBSRC="$libsrc" ) || die
 	export PATH="${PATH}:${T}"
-	emake BIN=${T} LIB=${T} LIBSRC="awk" install-code \
+	emake BIN=${T} LIB=${T} LIBSRC="$libsrc" install-code \
 		|| die "make temporal install failed."
 
-	emake CFLAGS="${CFLAGS}" LIBSRC="awk" || die
+	emake CFLAGS="${CFLAGS}" LIBSRC="$libsrc" || die
 }
 
 src_install () {
-	make DESTDIR=${D} LIBSRC="awk" install || die
-	[ -x /usr/bin/nawk ] || dosym /usr/bin/gawk /usr/bin/nawk
+	local libsrc
+	use icon && libsrc="icon" || libsrc="awk"
+	make DESTDIR=${D} LIBSRC="$libsrc" install || die
+	use icon || [ -x /usr/bin/nawk ] || dosym /usr/bin/gawk /usr/bin/nawk
 
 	# fix man pages to be LFH compliant
 	mv ${D}/usr/man ${D}/usr/share
