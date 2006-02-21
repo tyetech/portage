@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/online-bookmarks/Attic/online-bookmarks-0.6.1c.ebuild,v 1.1 2005/10/25 21:30:12 rl03 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/online-bookmarks/Attic/online-bookmarks-0.6.4b.ebuild,v 1.1 2006/02/21 22:28:51 rl03 Exp $
 
 inherit webapp
 
@@ -13,10 +13,13 @@ SRC_URI="http://www.frech.ch/online-bookmarks/download/${P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~x86 ~ppc"
 
-IUSE=""
+IUSE="mysql"
 
-RDEPEND="virtual/httpd-php
-	dev-db/mysql"
+RDEPEND=">=virtual/httpd-php-4.3.0
+	mysql? ( dev-db/mysql )
+	dev-php/PEAR-Auth
+	dev-php/PEAR-DB
+"
 
 src_compile() {
 	einfo "Nothing to compile"
