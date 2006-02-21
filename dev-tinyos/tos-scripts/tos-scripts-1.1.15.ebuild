@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tinyos/cvs-repo/gentoo-x86/dev-tinyos/tos-scripts/Attic/tos-scripts-1.1.15.ebuild,v 1.1 2006/02/12 17:52:21 sanchan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tinyos/cvs-repo/gentoo-x86/dev-tinyos/tos-scripts/Attic/tos-scripts-1.1.15.ebuild,v 1.2 2006/02/21 21:06:23 sanchan Exp $
 
 inherit eutils java-utils
 
@@ -20,8 +20,6 @@ RDEPEND=">=dev-tinyos/ncc-1.1.15
 	>=dev-java/ibm-jdk-bin-1.4.0"
 
 S=${WORKDIR}/${MY_P}-${PV}${CVS_MONTH}${CVS_YEAR}cvs/tools
-
-RESTRICT=stricter
 
 pkg_setup() {
 	if [ -z "${TOSROOT}" ]
