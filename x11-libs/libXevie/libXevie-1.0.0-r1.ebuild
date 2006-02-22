@@ -1,23 +1,23 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libXrandr/Attic/libXrandr-1.1.0.2.ebuild,v 1.5 2006/02/14 22:38:18 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libXevie/Attic/libXevie-1.0.0-r1.ebuild,v 1.1 2006/02/22 04:29:45 joshuabaergen Exp $
 
 # Must be before x-modular eclass is inherited
-#SNAPSHOT="yes"
+SNAPSHOT="yes"
 
 inherit x-modular
 
-DESCRIPTION="X.Org Xrandr library"
+DESCRIPTION="X.Org Xevie library"
 #HOMEPAGE="http://foo.bar.com/"
 #SRC_URI="ftp://foo.bar.com/${P}.tar.bz2"
 #LICENSE=""
 #SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 #IUSE="X gnome"
 RDEPEND="x11-libs/libX11
 	x11-libs/libXext
-	x11-libs/libXrender
-	x11-proto/randrproto
 	x11-proto/xproto"
 DEPEND="${RDEPEND}
-	x11-proto/renderproto"
+	x11-proto/xextproto"
+
+PATCHES="${FILESDIR}/fix_shadow_manpages.patch"
