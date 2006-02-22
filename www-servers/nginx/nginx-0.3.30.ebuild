@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/nginx/Attic/nginx-0.3.29-r1.ebuild,v 1.1 2006/02/22 12:01:07 voxus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/nginx/Attic/nginx-0.3.30.ebuild,v 1.1 2006/02/22 19:46:11 voxus Exp $
 
 inherit eutils
 
@@ -18,13 +18,6 @@ DEPEND="dev-lang/perl
 	ssl? ( dev-libs/openssl )
 	zlib? ( sys-libs/zlib )
 	perl? ( >=dev-lang/perl-5.8 )"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S} || die
-
-	epatch ${FILESDIR}/${P}-hardened.patch
-}
 
 src_compile() {
 	local myconf
