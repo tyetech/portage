@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/pine/Attic/pine-4.64-r2.ebuild,v 1.1 2006/02/03 19:22:10 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/pine/Attic/pine-4.64-r3.ebuild,v 1.1 2006/02/23 05:50:01 ticho Exp $
 
 inherit eutils
 
