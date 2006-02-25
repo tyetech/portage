@@ -1,8 +1,8 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-1.4.0.5.ebuild,v 1.15 2005/12/03 20:08:44 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-1.4.0.5.ebuild,v 1.16 2006/02/25 01:53:29 allanonjl Exp $
 
-DESCRIPTION="gnome-applets"
+DESCRIPTION="Applets for the Gnome1 Desktop and Panel"
 HOMEPAGE="http://www.gnome.org/"
 SRC_URI="ftp://ftp.gnome.org/pub/GNOME/stable/sources/${PN}/${P}.tar.bz2"
 
