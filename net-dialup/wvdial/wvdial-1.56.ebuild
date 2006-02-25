@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/wvdial/Attic/wvdial-1.55.ebuild,v 1.1 2006/02/03 20:36:11 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/wvdial/Attic/wvdial-1.56.ebuild,v 1.1 2006/02/25 07:10:11 mrness Exp $
 
 inherit eutils
 
