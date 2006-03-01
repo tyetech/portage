@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/aircrack/Attic/aircrack-2.41-r1.ebuild,v 1.3 2006/02/20 22:21:23 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/aircrack/Attic/aircrack-2.41-r1.ebuild,v 1.4 2006/03/01 17:08:15 vanquirius Exp $
 
 inherit toolchain-funcs eutils
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://gentoo/${MY_P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc x86"
 IUSE=""
 
 DEPEND="virtual/libc
