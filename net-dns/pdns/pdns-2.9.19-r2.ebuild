@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/pdns/Attic/pdns-2.9.19-r1.ebuild,v 1.1 2006/01/20 19:03:54 wschlich Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/pdns/Attic/pdns-2.9.19-r2.ebuild,v 1.1 2006/03/01 22:28:38 swegener Exp $
 
 inherit eutils
 
@@ -30,6 +30,7 @@ src_unpack() {
 
 	epatch "${FILESDIR}"/2.9.18-default-mysql-options.patch
 	epatch "${FILESDIR}"/2.9.19-ldap-fix.patch
+	epatch "${FILESDIR}"/2.9.19-slash-support.patch
 }
 
 src_compile() {
