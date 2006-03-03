@@ -1,12 +1,13 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen/Attic/xen-3.0.1-r2.ebuild,v 1.1 2006/03/02 11:43:49 chrb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen/Attic/xen-9029-r1.ebuild,v 1.1 2006/03/03 12:20:56 chrb Exp $
 
 inherit mount-boot flag-o-matic
 
 DESCRIPTION="The Xen virtual machine monitor and Xend daemon"
 HOMEPAGE="http://xen.sourceforge.net"
-SRC_URI="http://www.cl.cam.ac.uk/Research/SRG/netos/xen/downloads/xen-3.0.1-src.tgz"
+MY_P="xen-unstable-${PV}"
+SRC_URI="mirror://gentoo/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -29,6 +30,8 @@ DEPEND="sys-apps/iproute2
 	sys-devel/dev86
 	|| ( sys-fs/udev sys-apps/hotplug )"
 
+S="${WORKDIR}/${MY_P}"
+
 src_unpack() {
 	unpack ${A}
 	# if the user *really* wants to use their own custom-cflags, let them
@@ -47,6 +50,8 @@ src_unpack() {
 		# odd fixes
 		sed -e "s/int mode/int mode=-1/" -i ${S}/tools/misc/xc_shadow.c
 	fi
+
+	cat ${FILESDIR}/gentoo-makefile-targets >> ${S}/Makefile
 }
 
 src_compile() {
@@ -64,8 +69,7 @@ src_compile() {
 	fi
 	filter-flags -fPIE -fstack-protector
 
-	make ${myopt} -C xen || die "compiling xen failed"
-	make ${myopt} -C tools || die "compiling tools failed"
+	make ${myopt} gentoo-compile || die "compile failed"
 
 	if use doc; then
 		sh ./docs/check_pkgs || die "package check failed"
@@ -74,18 +78,16 @@ src_compile() {
 }
 
 src_install() {
-	local myopt
+	local myopt="XEN_PYTHON_NATIVE_INSTALL=1"
+
 	if use pae; then
 		myopt="${myopt} XEN_TARGET_X86_PAE=y"
 	fi
 
-	make DESTDIR=${D} ${myopt} -C xen install || die "installing xen failed"
-	make DESTDIR=${D} ${myopt} XEN_PYTHON_NATIVE_INSTALL=1 -C tools install \
-	    || die "installing tools failed"
+	make DESTDIR=${D} ${myopt} gentoo-install || die "install xen failed"
 
 	if use doc; then
-		make DESTDIR=${D} -C docs install \
-			|| die "installing docs failed"
+		make DESTDIR=${D} -C docs install || die "installing docs failed"
 		# Rename doc/xen to the Gentoo-style doc/xen-x.y
 		mv ${D}/usr/share/doc/{${PN},${PF}}
 	fi
@@ -103,13 +105,24 @@ src_install() {
 	dodir /var/run/xenstored
 	dodir /var/lib/xenstored
 	dodir /var/xen/dump
+
+	# for upstream change tracking
+	dodoc ${S}/XEN-VERSION
+
 }
 
 pkg_postinst() {
 	einfo "Please visit the Xen and Gentoo wiki:"
 	einfo "http://gentoo-wiki.com/HOWTO_Xen_and_Gentoo"
+
+	einfo ""
+	einfo "This is a snapshot of the xen-unstable tree."
+	einfo "Please report bugs in xen itself (and not the packaging) to"
+	einfo "bugzilla.xensource.com"
+
 	if use pae; then
 		einfo ""
 		einfo "This is a PAE build of Xen. It will *only* boot PAE kernels!"
 	fi
+
 }
