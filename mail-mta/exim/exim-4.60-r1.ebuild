@@ -1,18 +1,18 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/exim/Attic/exim-4.52.ebuild,v 1.3 2005/10/02 03:16:35 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/exim/Attic/exim-4.60-r1.ebuild,v 1.1 2006/03/05 22:46:30 peitolm Exp $
 
 inherit eutils
 
-IUSE="tcpd ssl postgres mysql ldap pam exiscan-acl mailwrapper lmtp ipv6 sasl dnsdb perl mbox X exiscan nis syslog spf srs"
+IUSE="tcpd ssl postgres mysql ldap pam exiscan-acl mailwrapper lmtp ipv6 sasl dnsdb perl mbx X exiscan nis syslog spf srs gnutls sqlite"
 
 DESCRIPTION="A highly configurable, drop-in replacement for sendmail"
-SRC_URI="ftp://ftp.exim.org/pub/exim/exim4/${P}.tar.bz2"
+SRC_URI="ftp://ftp.exim.org/pub/exim/exim4/${P}.tar.bz2 mirror://gentoo/exiscan.conf"
 HOMEPAGE="http://www.exim.org/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 PROVIDE="virtual/mta"
 DEPEND=">=sys-apps/sed-4.0.5
@@ -21,13 +21,21 @@ DEPEND=">=sys-apps/sed-4.0.5
 	pam? ( >=sys-libs/pam-0.75 )
 	tcpd? ( sys-apps/tcp-wrappers )
 	ssl? ( >=dev-libs/openssl-0.9.6 )
+	gnutls? ( net-libs/gnutls )
 	ldap? ( >=net-nds/openldap-2.0.7 )
 	mysql? ( >=dev-db/mysql-3.23.28 )
 	postgres? ( >=dev-db/postgresql-7 )
 	sasl? ( >=dev-libs/cyrus-sasl-2.1.14 )
 	spf? ( >=mail-filter/libspf2-1.2.5-r1 )
 	srs? ( mail-filter/libsrs_alt )
-	X? ( virtual/x11 )"
+	X? ( || ( (	x11-proto/xproto
+			x11-libs/libX11
+			x11-libs/libXmu
+			x11-libs/libXt
+			x11-libs/libXaw )
+		virtual/x11 )
+	)
+	sqlite? ( dev-db/sqlite )"
 	# added X check for #57206
 RDEPEND="${DEPEND}
 	mailwrapper? ( >=net-mail/mailwrapper-0.2 )
@@ -56,8 +64,8 @@ src_unpack() {
 		-e "s:# AUTH_CRAM_MD5=yes:AUTH_CRAM_MD5=yes:" \
 		-e "s:# AUTH_PLAINTEXT=yes:AUTH_PLAINTEXT=yes:" \
 		-e "s:BIN_DIRECTORY=/usr/exim/bin:BIN_DIRECTORY=/usr/sbin:" \
-		-e "s:COMPRESS_COMMAND=/opt/gnu/bin/gzip:COMPRESS_COMMAND=/bin/gzip:" \
-		-e "s:ZCAT_COMMAND=/opt/gnu/bin/zcat:ZCAT_COMMAND=/bin/zcat:" \
+		-e "s:COMPRESS_COMMAND=/usr/bin/gzip:COMPRESS_COMMAND=/bin/gzip:" \
+		-e "s:ZCAT_COMMAND=/usr/bin/zcat:ZCAT_COMMAND=/bin/zcat:" \
 		-e "s:CONFIGURE_FILE=/usr/exim/configure:CONFIGURE_FILE=/etc/exim/exim.conf:" \
 		-e "s:EXIM_MONITOR=eximon.bin:# EXIM_MONITOR=eximon.bin:" \
 		-e "s:# INFO_DIRECTORY=/usr/local/info:INFO_DIRECTORY=/usr/share/info:" \
@@ -102,7 +110,8 @@ src_unpack() {
 	if use perl; then
 		sed -i "s:# EXIM_PERL=perl.o:EXIM_PERL=perl.o:" Makefile
 	fi
-	if use mbox; then
+	# mbox useflag renamed, see bug 110741
+	if use mbx; then
 		sed -i "s:# SUPPORT_MBX=yes:SUPPORT_MBX=yes:" Makefile
 	fi
 	if use pam; then
@@ -110,8 +119,8 @@ src_unpack() {
 		myconf="${myconf} -lpam"
 	fi
 	if use sasl; then
-		sed -i "s:# CYRUS_SASLAUTHD_SOCKET=/var/state/saslauthd/mux:CYRUS_SASLAUTHD_SOCKET=/var/lib/sasl2/mux:" \
-		Makefile
+		sed -i "s:# CYRUS_SASLAUTHD_SOCKET=/var/state/saslauthd/mux:CYRUS_SASLAUTHD_SOCKET=/var/lib/sasl2/mux:"  Makefile
+		sed -i "s:# AUTH_CYRUS_SASL=yes:AUTH_CYRUS_SASL=yes:" Makefile
 		myconf="${myconf} -lsasl2"
 	fi
 	if use tcpd; then
@@ -134,8 +143,15 @@ src_unpack() {
 	cd ${S}
 	if use ssl; then
 		sed -i \
-			-e "s:# \(SUPPORT_TLS=yes\):\1:" \
-			-e "s:# \(TLS_LIBS=-lssl -lcrypto\):\1:" Local/Makefile
+			-e "s:# \(SUPPORT_TLS=yes\):\1:" Local/Makefile
+		if use gnutls; then
+			sed -i \
+				-e "s:# \(USE_GNUTLS=yes\):\1:" \
+				-e "s:# \(TLS_LIBS=-lgnutls -ltasn1 -lgcrypt\):\1:" Local/Makefile
+		else
+			sed -i \
+				-e "s:# \(TLS_LIBS=-lssl -lcrypto\):\1:" Local/Makefile
+		fi
 	fi
 
 	LOOKUP_INCLUDE=
@@ -160,14 +176,18 @@ src_unpack() {
 		LOOKUP_INCLUDE="$LOOKUP_INCLUDE -I/usr/include/postgresql"
 		LOOKUP_LIBS="$LOOKUP_LIBS -lpq"
 	fi
-
+	if use sqlite; then
+		sed -i "s:# LOOKUP_SQLITE=yes: LOOKUP_SQLITE=yes:" Local/Makefile
+		LOOKUP_INCLUDE="$LOOKUP_INCLUDE -I/usr/include/sqlite"
+		LOOKUP_LIBS="$LOOKUP_LIBS -lsqlite3"
+	fi
 	if [ -n "$LOOKUP_INCLUDE" ]; then
 		sed -i "s:# LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include:LOOKUP_INCLUDE=$LOOKUP_INCLUDE:" \
 			Local/Makefile
 	fi
 
 	if [ -n "$LOOKUP_LIBS" ]; then
-		sed -i "s:# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lgds:LOOKUP_LIBS=$LOOKUP_LIBS:" \
+		sed -i "s:# LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lgds -lsqlite3:LOOKUP_LIBS=$LOOKUP_LIBS:" \
 			Local/Makefile
 	fi
 
@@ -228,7 +248,7 @@ src_install () {
 
 	exeinto /usr/sbin
 	for i in exicyclog exim_dbmbuild exim_dumpdb exim_fixdb exim_lock \
-		exim_tidydb exinext exiwhat exigrep eximstats exiqsumm \
+		exim_tidydb exinext exiwhat exigrep eximstats exiqsumm exiqgrep \
 		convert4r3 convert4r4 exipick
 	do
 		doexe $i
@@ -250,9 +270,12 @@ src_install () {
 		doins ${FILESDIR}/exiscan.conf
 	fi
 
-	# INSTALL a pam.d file for SMTP AUTH that works with gentoo's pam
-	insinto /etc/pam.d
-	newins ${FILESDIR}/pam.d-exim exim
+	if use pam
+	then
+		# INSTALL a pam.d file for SMTP AUTH that works with gentoo's pam
+		insinto /etc/pam.d
+		newins ${FILESDIR}/pam.d-exim exim
+	fi
 
 	exeinto /etc/init.d
 	newexe ${FILESDIR}/exim.rc6 exim
