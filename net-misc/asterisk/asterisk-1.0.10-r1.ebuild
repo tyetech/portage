@@ -1,24 +1,25 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.9-r2.ebuild,v 1.4 2006/03/06 03:45:05 stkn Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.0.10-r1.ebuild,v 1.1 2006/03/06 04:41:15 rajiv Exp $
 
 inherit eutils perl-app
 
 ADDONS_VERSION="1.0.9"
-BRI_VERSION="0.2.0-RC8n"
+BRI_VERSION="0.2.0-RC8q"
 
 DESCRIPTION="Asterisk: A Modular Open Source PBX System"
 HOMEPAGE="http://www.asterisk.org/"
-SRC_URI="ftp://ftp.digium.com/pub/telephony/${PN}/old-releases/${P}.tar.gz
-	 ftp://ftp.digium.com/pub/telephony/${PN}/old-releases/${PN}-addons-${ADDONS_VERSION}.tar.gz
+SRC_URI="http://ftp1.digium.com/pub/telephony/${PN}/old-releases/${P}.tar.gz
+	 http://ftp1.digium.com/pub/telephony/${PN}/old-releases/${PN}-addons-${ADDONS_VERSION}.tar.gz
 	 bri? ( http://www.junghanns.net/downloads/bristuff-${BRI_VERSION}.tar.gz )"
 
 S_ADDONS=${WORKDIR}/${PN}-addons-${ADDONS_VERSION}
+S_BRI=${WORKDIR}/bristuff-${BRI_VERSION}
 
-IUSE="alsa doc gtk mmx mysql pri zaptel debug postgres vmdbmysql vmdbpostgres bri hardened speex resperl"
+IUSE="alsa bri debug doc gtk hardened mmx mysql mysqlfriends postgres pri resperl speex ukcid vmdbmysql vmdbpostgres zaptel"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~sparc ~hppa ~amd64 ~ppc"
+KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
 
 DEPEND="dev-libs/newt
 	dev-libs/openssl
@@ -28,16 +29,17 @@ DEPEND="dev-libs/newt
 	gtk? ( =x11-libs/gtk+-1.2* )
 	pri? ( >=net-libs/libpri-1.0.9 )
 	bri? ( >=net-libs/libpri-1.0.9
-		>=net-misc/zaptel-1.0.9 )
+		>=net-misc/zaptel-1.0.10 )
 	alsa? ( media-libs/alsa-lib )
 	mysql? ( dev-db/mysql )
 	speex? ( media-libs/speex )
-	zaptel? ( >=net-misc/zaptel-1.0.9 )
+	zaptel? ( >=net-misc/zaptel-1.0.10 )
 	postgres? ( dev-db/postgresql )
 	vmdbmysql? ( dev-db/mysql )
+	mysqlfriends? ( dev-db/mysql )
 	vmdbpostgres? ( dev-db/postgresql )
 	resperl? ( dev-lang/perl
-		   >=net-misc/zaptel-1.0.9 )"
+		   >=net-misc/zaptel-1.0.10 )"
 
 pkg_setup() {
 	local n
@@ -108,6 +110,12 @@ pkg_setup() {
 			die "Libpri without bri support detected"
 		fi
 	fi
+
+	# check if zaptel has been built with ukcid
+	if use ukcid && ! built_with_use net-misc/zaptel ukcid; then
+		eerror "Re-emerge zaptel with ukcid useflag enabled!"
+		die "Zaptel missing ukcid support"
+	fi
 }
 
 src_unpack() {
@@ -124,7 +132,7 @@ src_unpack() {
 
 	# mark adsi functions as weak references, things will blow
 	# on hardened otherwise (bug #100697 and #85655)
-	epatch ${FILESDIR}/1.0.0/${PN}-1.0.9-weak-references.diff
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.10-weak-references.diff
 
 	# gsm codec still uses -fomit-frame-pointer, and other codecs have their
 	# own flags. We only change the arch.
@@ -233,6 +241,16 @@ src_unpack() {
 	fi
 
 	#
+	# MySQL friends support
+	#
+	if use mysqlfriends; then
+		einfo "Enabling MySQL friends support for SIP and IAX"
+		sed -i  -e "s:^\(USE_MYSQL_FRIENDS\)=.*:\1=1:" \
+			-e "s:^\(USE_SIP_MYSQL_FRIENDS\)=.*:\1=1:" \
+			channels/Makefile
+	fi
+
+	#
 	# asterisk add-ons
 	#
 	cd ${S_ADDONS}
@@ -249,7 +267,11 @@ src_unpack() {
 		cd ${S}
 		einfo "Patching asterisk w/ BRI stuff"
 
-		epatch ${WORKDIR}/bristuff-${BRI_VERSION}/patches/asterisk.patch
+		# remove after new patch has been released
+		sed -i -e "s:^\([+-]\)1\.0\.9:\11.0.10:" \
+			${S_BRI}/patches/asterisk.patch
+
+		epatch ${S_BRI}/patches/asterisk.patch
 	fi
 
 	#
@@ -274,16 +296,21 @@ src_unpack() {
 	# user (start-stop-daemons --chguid breaks realtime priority support)
 	epatch ${FILESDIR}/1.0.0/${PN}-1.0.8-initgroups.diff
 
-	# fix segfault on amd64 and possibly other 64bit systems (#105762)
-	epatch ${FILESDIR}/1.0.0/${PN}-1.0.8-ptr64fix.diff
+	# UK callerid patch, adds support for british-telecoms callerid to x100p cards
+	# see http://www.lusyn.com/asterisk/patches.html for more information
+	use ukcid && \
+		epatch ${FILESDIR}/1.0.0/${PN}-1.0.9-ukcid.patch
 
 	# needed for >=freetds-0.63
 	if has_version ">=dev-db/freetds-0.63"; then
-		epatch ${FILESDIR}/1.0.0/${P}-freetds.diff
+		epatch ${FILESDIR}/1.0.0/${PN}-1.0.9-freetds.diff
 	fi
 
-	# security fix, bug #11836
-	epatch ${FILESDIR}/1.0.0/${PN}-1.0.9-vmail.cgi.patch
+	# security fix, bug #111836
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.10-vmail.cgi.patch
+
+	# patch for mISDN
+	epatch ${FILESDIR}/1.0.0/${PN}-1.0.10-misdn.patch
 }
 
 src_compile() {
