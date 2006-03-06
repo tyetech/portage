@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libopendaap/libopendaap-0.4.0.ebuild,v 1.6 2006/01/04 18:50:10 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libopendaap/libopendaap-0.4.0.ebuild,v 1.7 2006/03/06 16:16:52 flameeyes Exp $
 
 IUSE=""
 
@@ -12,7 +12,6 @@ HOMEPAGE="http://crazney.net/programs/itunes/libopendaap.html"
 SLOT="0"
 LICENSE="crazney APSL-2"
 KEYWORDS="amd64 ppc sparc x86"
-DEPEND="virtual/libc"
 
 src_install() {
 	make DESTDIR="${D}" install || die
