@@ -1,6 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdl-image/Attic/sdl-image-1.2.4.ebuild,v 1.4 2006/03/04 21:19:37 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdl-image/Attic/sdl-image-1.2.4.ebuild,v 1.5 2006/03/07 05:38:02 mr_bones_ Exp $
+
+inherit flag-o-matic
 
 MY_P="${P/sdl-/SDL_}"
 DESCRIPTION="image file loading library"
@@ -21,6 +23,7 @@ DEPEND="sys-libs/zlib
 S="${WORKDIR}/${MY_P}"
 
 src_compile() {
+	filter-flags *k6* #bug #120554
 	econf \
 		--disable-dependency-tracking \
 		$(use_enable gif) \
