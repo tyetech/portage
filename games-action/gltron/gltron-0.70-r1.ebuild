@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/gltron/gltron-0.70-r1.ebuild,v 1.2 2006/01/13 22:08:59 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/gltron/gltron-0.70-r1.ebuild,v 1.3 2006/03/09 18:14:39 tupone Exp $
 
 inherit eutils games
 
@@ -43,5 +43,7 @@ src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 	dodoc ChangeLog README
 	dohtml *.html
+	doicon ${FILESDIR}/${PN}.png
+	make_desktop_entry ${PN} GLtron ${PN}.png
 	prepgamesdirs
 }
