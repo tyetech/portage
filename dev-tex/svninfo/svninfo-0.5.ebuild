@@ -1,8 +1,8 @@
 # Copyright 2005-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/svninfo/Attic/svninfo-0.5.ebuild,v 1.1 2006/03/03 18:40:57 nattfodd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/svninfo/Attic/svninfo-0.5.ebuild,v 1.2 2006/03/09 12:30:35 ehmsen Exp $
 
-inherit latex-package
+inherit latex-package eutils
 
 LICENSE="LPPL-1.2"
 DESCRIPTION="A LaTeX module to acces SVN version info"
