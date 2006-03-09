@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_suphp/Attic/mod_suphp-0.6.0.ebuild,v 1.5 2005/10/01 10:13:32 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_suphp/Attic/mod_suphp-0.6.0.ebuild,v 1.6 2006/03/09 20:03:09 chtekk Exp $
 
 inherit apache-module eutils
 
