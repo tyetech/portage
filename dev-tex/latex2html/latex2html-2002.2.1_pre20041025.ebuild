@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/latex2html/Attic/latex2html-2002.2.1_pre20041025.ebuild,v 1.13 2006/02/21 18:49:41 nattfodd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/latex2html/Attic/latex2html-2002.2.1_pre20041025.ebuild,v 1.14 2006/03/09 12:45:03 ehmsen Exp $
 
 inherit eutils
 
@@ -75,7 +75,7 @@ src_install() {
 	insinto /usr/lib/latex2html
 	newins cfgcache.pm.bak cfgcache.pm
 
-	dodoc BUGS Changes FAQ INSTALL LICENSE MANIFEST README* TODO
+	dodoc BUGS Changes FAQ LICENSE MANIFEST README* TODO
 
 	# make /usr/share/latex2html sticky
 	keepdir /usr/share/latex2html
