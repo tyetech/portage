@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/xcircuit/Attic/xcircuit-3.4.18.ebuild,v 1.1 2006/03/10 23:47:43 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/xcircuit/Attic/xcircuit-3.4.18.ebuild,v 1.2 2006/03/10 23:49:34 plasmaroo Exp $
 
 DESCRIPTION="Circuit drawing and schematic capture program."
 SRC_URI="http://opencircuitdesign.com/xcircuit/archive/${P}.tgz"
@@ -9,7 +9,7 @@ HOMEPAGE="http://opencircuitdesign.com/xcircuit"
 KEYWORDS="~x86 ~ppc ~amd64"
 SLOT="0"
 LICENSE="GPL-2"
-IUSE="tcltk"
+IUSE=""
 
 DEPEND="virtual/ghostscript
 	dev-lang/tk
