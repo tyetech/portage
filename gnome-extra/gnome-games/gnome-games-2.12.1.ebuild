@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-games/Attic/gnome-games-2.12.1.ebuild,v 1.1 2005/10/07 01:29:08 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-games/Attic/gnome-games-2.12.1.ebuild,v 1.2 2006/03/15 00:41:34 allanonjl Exp $
 
 inherit eutils gnome2
 
@@ -52,6 +52,8 @@ src_unpack() {
 	epatch ${FILESDIR}/${PN}-2.12.0-no_lazy_bindings.patch
 
 	epatch ${FILESDIR}/${PN}-2.11.4-nohowl.patch
+
+	gnome2_omf_fix
 
 	autoconf || die "autoconf failed"
 }
