@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-zaphistory/Attic/vdr-zaphistory-0.0.2.ebuild,v 1.1 2006/03/09 06:04:28 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-zaphistory/Attic/vdr-zaphistory-0.9.2.ebuild,v 1.1 2006/03/15 19:24:35 zzam Exp $
 
 inherit vdr-plugin
 
@@ -14,4 +14,5 @@ LICENSE="GPL-2"
 
 KEYWORDS="~x86"
 
-DEPEND=">=media-video/vdr-1.3.40"
+DEPEND=">=media-video/vdr-1.3.34"
+
