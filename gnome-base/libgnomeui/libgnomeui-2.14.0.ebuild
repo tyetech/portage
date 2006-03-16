@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.13.90.ebuild,v 1.1 2006/03/14 20:06:46 joem Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeui/Attic/libgnomeui-2.14.0.ebuild,v 1.1 2006/03/16 08:21:09 joem Exp $
 
 inherit eutils gnome2
 
