@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-util/cvs-repo/gentoo-x86/games-util/showeq/Attic/showeq-5.0.0.18.ebuild,v 1.5 2006/01/28 07:24:55 joshuabaergen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-util/cvs-repo/gentoo-x86/games-util/showeq/Attic/showeq-5.0.0.18.ebuild,v 1.6 2006/03/17 21:22:45 tupone Exp $
 
 inherit kde games
 
