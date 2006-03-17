@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mt-daapd/Attic/mt-daapd-0.3.0_pre20060307.ebuild,v 1.1 2006/03/07 11:11:07 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mt-daapd/Attic/mt-daapd-0.3.0_pre20060313.ebuild,v 1.1 2006/03/17 00:33:36 flameeyes Exp $
 
 inherit eutils flag-o-matic base
 
@@ -32,8 +32,6 @@ DEPEND="sys-libs/zlib
 		avahi? ( net-dns/avahi ) )
 	vorbis? ( media-libs/libvorbis )
 	flac? ( media-libs/flac )"
-
-PATCHES="${FILESDIR}/${MY_P}-segfault.patch"
 
 pkg_setup() {
 	if use howl && use avahi && ! built_with_use net-dns/avahi howl-compat; then
