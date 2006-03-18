@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/gnopernicus/Attic/gnopernicus-0.10.9.ebuild,v 1.11 2005/08/23 02:19:22 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/gnopernicus/Attic/gnopernicus-0.10.9.ebuild,v 1.12 2006/03/18 12:56:40 allanonjl Exp $
 
 inherit gnome2
 
@@ -24,7 +24,6 @@ RDEPEND=">=gnome-base/gconf-2.6.1
 	>=app-accessibility/gnome-speech-0.3.5
 	>=app-accessibility/gnome-mag-0.11.7
 	>=gnome-extra/libgail-gnome-1.0
-	virtual/x11
 	brltty? ( >=app-accessibility/brltty-3.6 )"
 
 DEPEND="${RDEPEND}
