@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libesmtp/Attic/libesmtp-1.0.4.ebuild,v 1.1 2006/03/18 01:20:54 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libesmtp/Attic/libesmtp-1.0.4.ebuild,v 1.2 2006/03/18 10:46:23 ticho Exp $
 
 inherit toolchain-funcs eutils
 
@@ -15,7 +15,7 @@ DEPEND=">=sys-devel/libtool-1.4.1
 
 IUSE="ssl debug"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
 
 src_compile() {
 	local myconf
