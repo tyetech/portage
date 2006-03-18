@@ -1,0 +1,26 @@
+# Copyright 1999-2006 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/bumprace/Attic/bumprace-1.5.1.ebuild,v 1.1 2006/03/18 11:05:14 tupone Exp $
+
+inherit games
+
+DESCRIPTION="simple arcade racing game"
+HOMEPAGE="http://www.linux-games.com/bumprace/"
+SRC_URI="http://user.cs.tu-berlin.de/~karlb/${PN}/${P}.tar.gz"
+
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~ppc ~sparc ~x86"
+IUSE=""
+
+DEPEND=">=media-libs/libsdl-1.1.5
+	media-libs/sdl-mixer
+	media-libs/jpeg
+	media-libs/sdl-image"
+
+src_install() {
+	make DESTDIR=${D} install
+	dodoc AUTHORS ChangeLog FAQ README || die "installing docs failed"
+
+	prepgamesdirs
+}
