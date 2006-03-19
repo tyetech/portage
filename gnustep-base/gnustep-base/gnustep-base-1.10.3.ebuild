@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-base/Attic/gnustep-base-1.10.3.ebuild,v 1.7 2005/12/26 19:35:45 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-base/Attic/gnustep-base-1.10.3.ebuild,v 1.8 2006/03/19 14:37:51 grobian Exp $
 
 inherit gnustep
 
