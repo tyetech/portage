@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/busybox/Attic/busybox-1.00-r4.ebuild,v 1.18 2006/03/19 08:16:07 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/busybox/Attic/busybox-1.00-r4.ebuild,v 1.19 2006/03/19 08:16:47 vapier Exp $
 
 inherit eutils
 
