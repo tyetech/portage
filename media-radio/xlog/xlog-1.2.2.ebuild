@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/xlog/Attic/xlog-1.2.2.ebuild,v 1.1 2005/08/10 05:29:15 killsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/xlog/Attic/xlog-1.2.2.ebuild,v 1.2 2006/03/19 22:39:47 joshuabaergen Exp $
 
 inherit gnome2
 
@@ -14,7 +14,6 @@ KEYWORDS="~x86 ~ppc"
 IUSE=""
 
 RDEPEND="virtual/libc
-	virtual/x11
 	>=gnome-base/libgnomeprint-2.4.0
 	>=x11-libs/gtk+-2.4.0-r1
 	>=media-libs/hamlib-1.2.4"
