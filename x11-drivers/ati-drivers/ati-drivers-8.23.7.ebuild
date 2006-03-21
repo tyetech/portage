@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.23.7.ebuild,v 1.2 2006/03/21 01:01:10 anarchy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.23.7.ebuild,v 1.3 2006/03/21 01:05:35 anarchy Exp $
 
 IUSE="opengl"
 
-inherit eutils rpm multilib linux-info linux-mod toolchain-funcs
+inherit eutils rpm multilib linux-mod linux-info toolchain-funcs
 
 DESCRIPTION="Ati precompiled drivers for r350, r300, r250 and r200 chipsets"
 HOMEPAGE="http://www.ati.com"
