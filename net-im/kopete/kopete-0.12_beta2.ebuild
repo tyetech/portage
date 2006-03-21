@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/kopete/Attic/kopete-0.12_alpha1-r1.ebuild,v 1.1 2006/03/05 22:00:38 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/kopete/Attic/kopete-0.12_beta2.ebuild,v 1.1 2006/03/21 11:59:59 flameeyes Exp $
 
 inherit kde eutils
 
@@ -52,8 +52,7 @@ need-kde 3.4
 
 src_unpack() {
 	kde_src_unpack
-	epatch "${FILESDIR}/${P}-xscreensaver.patch"
-	epatch "${FILESDIR}/${PN}-3.5.x-msn-filetransfer.patch"
+	epatch "${FILESDIR}/${PN}-0.12_alpha1-xscreensaver.patch"
 	rm -f ${S}/configure
 }
 
@@ -62,8 +61,8 @@ src_compile() {
 	# Maybe we can enable it in the future.
 	# The nowlistening plugin has xmms support.
 	local myconf="$(use_enable sametime sametime-plugin)
-	              $(use_with xmms) --without-external-libgadu
-	              $(use_with xscreensaver)"
+		$(use_with xmms) --without-external-libgadu
+		$(use_with xscreensaver)"
 
 	kde_src_compile
 }
