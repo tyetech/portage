@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/nginx/Attic/nginx-0.3.34.ebuild,v 1.1 2006/03/22 19:40:26 voxus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/nginx/Attic/nginx-0.3.35.ebuild,v 1.1 2006/03/23 09:51:28 voxus Exp $
 
 inherit eutils
 
