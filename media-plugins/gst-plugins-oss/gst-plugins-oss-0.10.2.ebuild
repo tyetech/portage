@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-oss/Attic/gst-plugins-oss-0.10.2.ebuild,v 1.4 2006/03/23 18:17:40 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-oss/Attic/gst-plugins-oss-0.10.2.ebuild,v 1.5 2006/03/25 00:12:13 agriffis Exp $
 
 inherit gst-plugins-good
 
-KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~ia64 ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND="virtual/os-headers"
