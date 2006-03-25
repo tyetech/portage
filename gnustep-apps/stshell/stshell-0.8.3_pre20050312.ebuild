@@ -1,20 +1,15 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/stshell/Attic/stshell-0.8.3_pre20050312.ebuild,v 1.2 2005/08/25 18:57:12 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/stshell/Attic/stshell-0.8.3_pre20050312.ebuild,v 1.3 2006/03/25 22:48:02 grobian Exp $
 
-ECVS_CVS_COMMAND="cvs -q"
-ECVS_SERVER="savannah.gnu.org:/cvsroot/gnustep"
-ECVS_USER="anoncvs"
-ECVS_AUTH="ext"
-ECVS_MODULE="gnustep/dev-libs/StepTalk/Examples/${PN/sts/S}"
-ECVS_CO_OPTS="-P -D ${PV/*_pre}"
-ECVS_UP_OPTS="-dP -D ${PV/*_pre}"
-ECVS_TOP_DIR="${DISTDIR}/cvs-src/savannah.gnu.org-gnustep"
-inherit gnustep cvs
+inherit gnustep subversion
 
-S=${WORKDIR}/${ECVS_MODULE}
+ESVN_OPTIONS="-r{${PV/*_pre}}"
+ESVN_REPO_URI="http://svn.gna.org/svn/gnustep/libs/steptalk/trunk/Examples/Shell"
+ESVN_STORE_DIR="${DISTDIR}/svn-src/svn.gna.org-gnustep/libs/steptalk/trunk"
+ESVN_PROJECT=Examples
 
-DESCRIPTION="An interactive shell for StepTalk."
+DESCRIPTION="An interactive shell for StepTalk"
 HOMEPAGE="http://www.gnustep.org/experience/StepTalk.html"
 
 KEYWORDS="~x86 ~ppc"
