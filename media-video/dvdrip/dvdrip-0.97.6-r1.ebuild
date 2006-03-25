@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.97.6.ebuild,v 1.8 2006/03/25 04:11:06 morfic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.97.6-r1.ebuild,v 1.1 2006/03/25 20:00:56 morfic Exp $
 
 
 inherit perl-module eutils flag-o-matic
@@ -17,7 +17,7 @@ LICENSE="Artistic GPL-2"
 SLOT="0"
 # ~ppc needs subtitleripper
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-IUSE="cdr gnome xvid rar mplayer ogg fping subtitles"
+IUSE="cdr gnome xvid rar mplayer ogg subtitles"
 
 DEPEND="gnome? ( gnome-extra/gtkhtml )
 	cdr? ( >=media-video/vcdimager-0.7.19
@@ -35,7 +35,7 @@ DEPEND="gnome? ( gnome-extra/gtkhtml )
 	virtual/perl-Storable
 	dev-perl/Event"
 RDEPEND="${DEPEND}
-	fping? ( >=net-analyzer/fping-2.3 )
+	>=net-analyzer/fping-2.3
 	ogg? ( >=media-sound/ogmtools-1.000 )
 	subtitles? ( media-video/subtitleripper )
 	>=media-video/lsdvd-0.15
@@ -55,7 +55,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	filter-flags "-ftracer"
-	epatch ${FILESDIR}/${P}-fix_nptl_workaround.patch
+	epatch ${FILESDIR}/${PN}-fix_nptl_workaround.patch
 	sed -i -e 's:cc :$(CC) :' src/Makefile || die "sed failed"
 }
 
@@ -64,5 +64,4 @@ src_install() {
 	make_desktop_entry dvdrip dvd::rip dvdrip.xpm Video
 
 	perl-module_src_install
-	use fping || rm ${D}/usr/bin/dvdrip-master
 }

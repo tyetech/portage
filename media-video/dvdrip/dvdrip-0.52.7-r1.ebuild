@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.52.6.ebuild,v 1.5 2006/03/25 04:11:06 morfic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.52.7-r1.ebuild,v 1.1 2006/03/25 20:00:56 morfic Exp $
 
 inherit perl-module eutils flag-o-matic
 
@@ -17,9 +17,8 @@ SRC_URI="http://www.exit1.org/${PN}/${MY_URL}/${MY_P}.tar.gz"
 
 LICENSE="Artistic GPL-2"
 SLOT="0"
-# ~ppc needs subtitleripper
 KEYWORDS="~x86 ~amd64 ~ppc"
-IUSE="cdr gnome xvid rar mplayer ogg fping subtitles"
+IUSE="cdr gnome xvid rar mplayer ogg subtitles"
 
 DEPEND="gnome? ( gnome-extra/gtkhtml )
 	cdr? ( >=media-video/vcdimager-0.7.19
@@ -35,7 +34,7 @@ DEPEND="gnome? ( gnome-extra/gtkhtml )
 	perl-core/Storable
 	dev-perl/Event"
 RDEPEND="${DEPEND}
-	fping? ( >=net-analyzer/fping-2.3 )
+	 >=net-analyzer/fping-2.3
 	ogg? ( >=media-sound/ogmtools-1.000 )
 	subtitles? ( media-video/subtitleripper )
 	virtual/eject
@@ -62,5 +61,4 @@ src_install() {
 	make_desktop_entry dvdrip dvd::rip dvdrip.xpm Video
 
 	perl-module_src_install
-	use fping || rm ${D}/usr/bin/dvdrip-master
 }
