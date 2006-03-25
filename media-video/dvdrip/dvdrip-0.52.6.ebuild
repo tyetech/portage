@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.52.6.ebuild,v 1.4 2006/03/25 03:36:19 morfic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdrip/Attic/dvdrip-0.52.6.ebuild,v 1.5 2006/03/25 04:11:06 morfic Exp $
 
 inherit perl-module eutils flag-o-matic
 
@@ -62,5 +62,5 @@ src_install() {
 	make_desktop_entry dvdrip dvd::rip dvdrip.xpm Video
 
 	perl-module_src_install
-	! fping? && rm ${D}/usr/bin/dvdrip-master
+	use fping || rm ${D}/usr/bin/dvdrip-master
 }
