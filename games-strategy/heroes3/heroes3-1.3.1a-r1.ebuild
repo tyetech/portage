@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/heroes3/Attic/heroes3-1.3.1a-r1.ebuild,v 1.7 2005/10/21 18:15:48 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/heroes3/Attic/heroes3-1.3.1a-r1.ebuild,v 1.8 2006/03/27 14:01:23 wolf31o2 Exp $
 
 # 	[x] Base Install Required (+4 MB) 
 #	[x] Scenarios (+7 MB)
@@ -95,8 +95,7 @@ src_install() {
 }
 
 pkg_postinst() {
+	games_pkg_postinst
 	einfo "To play the game run:"
 	einfo " heroes3"
-
-	games_pkg_postinst
 }
