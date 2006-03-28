@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdl-image/Attic/sdl-image-1.2.4.ebuild,v 1.5 2006/03/07 05:38:02 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdl-image/Attic/sdl-image-1.2.4.ebuild,v 1.6 2006/03/28 05:12:10 vapier Exp $
 
 inherit flag-o-matic
 
@@ -20,10 +20,9 @@ DEPEND="sys-libs/zlib
 	jpeg? ( >=media-libs/jpeg-6b )
 	tiff? ( media-libs/tiff )"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_compile() {
-	filter-flags *k6* #bug #120554
 	econf \
 		--disable-dependency-tracking \
 		$(use_enable gif) \
