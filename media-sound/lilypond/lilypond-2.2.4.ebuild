@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lilypond/Attic/lilypond-2.2.4.ebuild,v 1.7 2006/03/28 00:11:13 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lilypond/Attic/lilypond-2.2.4.ebuild,v 1.8 2006/03/29 17:31:00 agriffis Exp $
 
 inherit versionator
 
@@ -41,7 +41,7 @@ src_unpack() {
 		xargs -0r sed -i '
 			s/--pfa --pfb/--formats=PFA,PFB/;
 			s/--pfa/--formats=PFA/;
-			s/--pfa/--formats=PFA/'
+			s/--pfb/--formats=PFB/'
 }
 
 src_compile() {
