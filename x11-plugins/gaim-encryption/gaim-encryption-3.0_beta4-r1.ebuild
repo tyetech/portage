@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gaim-encryption/Attic/gaim-encryption-3.0_beta3.ebuild,v 1.3 2006/01/30 17:44:00 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/gaim-encryption/Attic/gaim-encryption-3.0_beta4-r1.ebuild,v 1.1 2006/03/29 18:45:54 gothgirl Exp $
 
-inherit flag-o-matic debug multilib
+inherit flag-o-matic debug eutils
 
 MY_PV="${PV/_beta/beta}"
 MY_P="${PN}-${MY_PV}"
@@ -18,22 +18,22 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=net-im/gaim-1.0.1
-		>=dev-libs/nss-3.9.2-r2"
+		>=dev-libs/nss-3.11"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
+	epatch "${FILESDIR}/${MY_P}-configure.patch"
+	epatch "${FILESDIR}/${MY_P}-encrypt.patch"
+	libtoolize --force --copy || die "failed running libtoolize"
+	aclocal || die "failed running aclocal"
+	WANT_AUTOCONF="2.59" autoconf || die "failed to run autoconf"
 }
 
 src_compile() {
 	strip-flags
 	replace-flags -O? -O2
-	econf \
-		--with-nspr-includes=/usr/include/nspr \
-		--with-nss-includes=/usr/include/nss \
-		--with-nspr-libs=/usr/$(get_libdir)/nspr \
-		--with-nss-libs=/usr/$(get_libdir)/nss\
-		|| die "Configuration failed"
+	econf || die "failed running configure"
 	emake -j1 || die "Make failed"
 }
 
