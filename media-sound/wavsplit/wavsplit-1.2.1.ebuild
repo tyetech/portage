@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/wavsplit/Attic/wavsplit-1.2.1.ebuild,v 1.2 2005/09/04 10:41:26 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/wavsplit/Attic/wavsplit-1.2.1.ebuild,v 1.3 2006/03/30 05:22:37 chriswhite Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 #-sparc, -amd64: 1.0: "Only supports PCM wave format" error message.
-KEYWORDS="~x86 -sparc -amd64"
+KEYWORDS="x86 -sparc -amd64"
 IUSE=""
 DEPEND=""
 
