@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/sim/Attic/sim-0.9.4_pre060131-r1.ebuild,v 1.2 2006/02/01 00:39:04 wormo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/sim/Attic/sim-0.9.4_pre060131-r1.ebuild,v 1.3 2006/03/30 10:50:52 pva Exp $
 
 inherit kde-functions eutils debug flag-o-matic libtool
 
@@ -23,11 +23,13 @@ RDEPEND="kde? ( kde-base/kdelibs
 		         spell? ( app-text/aspell ) )
 		 ssl? ( dev-libs/openssl )
 		 dev-libs/libxml2
-		 dev-libs/libxslt"
+		 dev-libs/libxslt
+		 || ( x11-libs/libXScrnSaver virtual/x11 )"
 
 DEPEND="${RDEPEND}
 	sys-devel/flex
-	app-arch/zip"
+	app-arch/zip
+	|| ( x11-proto/scrnsaverproto virtual/x11 )"
 
 S=${WORKDIR}/${PN}-${myver}
 
