@@ -1,8 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/dlm-headers/Attic/dlm-headers-1.01.00.ebuild,v 1.4 2006/03/29 18:47:06 corsair Exp $
-
-inherit eutils linux-mod
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/dlm-headers/Attic/dlm-headers-1.01.00.ebuild,v 1.5 2006/03/30 15:35:13 xmerlin Exp $
 
 MY_P="cluster-${PV}"
 
