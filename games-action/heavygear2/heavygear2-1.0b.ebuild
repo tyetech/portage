@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/heavygear2/heavygear2-1.0b.ebuild,v 1.12 2006/03/24 21:19:11 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/heavygear2/heavygear2-1.0b.ebuild,v 1.13 2006/03/31 20:19:43 wolf31o2 Exp $
 
 inherit eutils games
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://lokigames/hg2/hg2-${PV}-cdrom-x86.run"
 LICENSE="LOKI-EULA"
 SLOT="0"
 KEYWORDS="x86"
-RESTRICT="nostrip"
+RESTRICT="strip"
 
 DEPEND="games-util/loki_patch"
 RDEPEND="${DEPEND}
