@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/nwn-data/Attic/nwn-data-1.29.ebuild,v 1.12 2006/01/31 20:10:25 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/nwn-data/Attic/nwn-data-1.29.ebuild,v 1.13 2006/03/31 21:37:23 wolf31o2 Exp $
 
 inherit eutils games
 
@@ -28,7 +28,7 @@ LICENSE="NWN-EULA"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nowin sou hou"
-RESTRICT="nostrip nomirror"
+RESTRICT="strip mirror"
 
 RDEPEND="virtual/opengl
 	>=media-libs/libsdl-1.2.5
