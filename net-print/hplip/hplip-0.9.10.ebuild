@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/hplip/Attic/hplip-0.9.9.ebuild,v 1.2 2006/04/01 17:33:45 vanquirius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/hplip/Attic/hplip-0.9.10.ebuild,v 1.1 2006/04/01 17:33:45 vanquirius Exp $
 
 inherit eutils
 
