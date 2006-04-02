@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xfd/Attic/xfd-1.0.1.ebuild,v 1.3 2006/02/14 21:16:03 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xfd/Attic/xfd-1.0.1.ebuild,v 1.4 2006/04/02 21:08:15 exg Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -8,7 +8,7 @@
 inherit x-modular
 
 DESCRIPTION="X.Org xfd application"
-KEYWORDS="~amd64 ~arm ~mips ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS="~amd64 ~arm ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 IUSE="xprint"
 RDEPEND="=media-libs/freetype-2*
 	media-libs/fontconfig
