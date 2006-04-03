@@ -1,12 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ardour/Attic/ardour-0.99.2.ebuild,v 1.1 2006/02/21 19:29:57 eldad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ardour/Attic/ardour-0.99.2.ebuild,v 1.2 2006/04/03 17:30:54 halcy0n Exp $
 
 inherit eutils
 
 DESCRIPTION="multi-track hard disk recording software"
 HOMEPAGE="http://ardour.org/"
-SRC_URI="http://ardour.org/releases/${P/_/}.tar.bz2"
+SRC_URI="http://ardour.org/files/releases/${P/_/}.tar.bz2"
 RESTRICT="nomirror"
 
 LICENSE="GPL-2"
