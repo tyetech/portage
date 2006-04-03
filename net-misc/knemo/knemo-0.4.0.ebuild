@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/knemo/Attic/knemo-0.4.0.ebuild,v 1.1 2006/04/03 13:38:53 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/knemo/Attic/knemo-0.4.0.ebuild,v 1.2 2006/04/03 23:12:10 carlo Exp $
 
 inherit kde eutils
 
@@ -16,14 +16,6 @@ IUSE="wifi"
 RDEPEND="kernel_linux? ( sys-apps/net-tools )
 	wifi? ( net-wireless/wireless-tools )"
 need-kde 3.4
-
-#PATCHES="${FILESDIR}/${P}-linkquality.patch
-#	${FILESDIR}/${P}-gcc41.patch"
-
-src_unpack() {
-	kde_src_unpack
-	rm configure
-}
 
 pkg_postinst() {
 	echo
