@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/net-server/Attic/net-server-0.87.ebuild,v 1.8 2005/08/26 01:14:44 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/net-server/Attic/net-server-0.87.ebuild,v 1.9 2006/04/04 09:30:56 mcummings Exp $
 
 inherit perl-module
 
