@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation.
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-weatherng/Attic/vdr-weatherng-0.0.8_pre2.ebuild,v 1.2 2006/03/21 22:23:26 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-weatherng/Attic/vdr-weatherng-0.0.8_pre2.ebuild,v 1.3 2006/04/06 19:51:59 swegener Exp $
 
 inherit vdr-plugin
 
