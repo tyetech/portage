@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/lcms/Attic/lcms-1.13-r2.ebuild,v 1.2 2006/01/13 22:58:47 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/lcms/Attic/lcms-1.13-r2.ebuild,v 1.3 2006/04/07 22:39:21 vapier Exp $
 
-inherit libtool gnuconfig
+inherit libtool
 
 DESCRIPTION="A lightweight, speed optimized color management engine"
 HOMEPAGE="http://www.littlecms.com/"
