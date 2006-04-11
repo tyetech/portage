@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mpqc/Attic/mpqc-2.3.0.ebuild,v 1.4 2006/04/11 16:43:40 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mpqc/Attic/mpqc-2.3.1.ebuild,v 1.1 2006/04/11 16:43:40 markusle Exp $
 
 inherit fortran
 
