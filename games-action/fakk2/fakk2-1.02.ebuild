@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/fakk2/fakk2-1.02.ebuild,v 1.12 2006/03/31 20:19:10 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/fakk2/fakk2-1.02.ebuild,v 1.13 2006/04/13 19:45:25 wolf31o2 Exp $
 
 inherit eutils games
 
@@ -20,16 +20,16 @@ RDEPEND="${DEPEND}
 
 S=${WORKDIR}
 
+GAMES_CHECK_LICENSE="yes"
 dir=${GAMES_PREFIX_OPT}/${PN}
 Ddir=${D}/${dir}
 
 pkg_setup() {
-	check_license LOKI-EULA
+	games_pkg_setup
 	if use nocd ; then
 		ewarn "The installed game takes about 378MB of space!"
 	fi
 	cdrom_get_cds fakk
-	games_pkg_setup
 }
 
 src_install() {
