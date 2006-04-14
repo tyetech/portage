@@ -1,15 +1,15 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/spca5xx/Attic/spca5xx-20050701.ebuild,v 1.3 2005/09/05 23:03:52 kingtaco Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/spca5xx/Attic/spca5xx-20060402.ebuild,v 1.1 2006/04/14 15:54:11 kingtaco Exp $
 
 inherit linux-mod
 
 DESCRIPTION="spca5xx driver for webcams."
-HOMEPAGE="http://spca50x.sourceforge.net/spca50x.php"
+HOMEPAGE="http://mxhaard.free.fr/spca5xx.html"
 SRC_URI="http://mxhaard.free.fr/spca50x/Download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 RESTRICT=""
 DEPEND=""
@@ -27,5 +27,4 @@ src_unpack() {
 src_install() {
 	dodoc CHANGELOG INSTALL README
 	linux-mod_src_install
-	ewarn "Warning:  The module name has been changed from spca50x to spca5xx."
 }
