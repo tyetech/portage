@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Technologies, Inc.
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/kguitar/Attic/kguitar-0.5.ebuild,v 1.1 2006/04/14 23:52:46 eldad Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/kguitar/Attic/kguitar-0.5.ebuild,v 1.2 2006/04/14 23:56:08 eldad Exp $
 
 inherit kde
 
