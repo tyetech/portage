@@ -1,8 +1,8 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/loop-aes/Attic/loop-aes-3.0b.ebuild,v 1.2 2005/02/05 06:28:07 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/loop-aes/Attic/loop-aes-3.1d.ebuild,v 1.1 2006/04/14 22:23:34 genstef Exp $
 
-inherit linux-mod
+inherit linux-mod eutils
 
 MY_P="${PN/aes/AES}-v${PV}"
 DESCRIPTION="Linux kernel module to encrypt local file systems and disk partitions with AES cipher."
@@ -11,17 +11,23 @@ SRC_URI="mirror://sourceforge/loop-aes/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE=""
-KEYWORDS="~x86"
+IUSE="keyscrub"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 S=${WORKDIR}/${MY_P}
 
 CONFIG_CHECK="!BLK_DEV_LOOP"
 MODULE_NAMES="loop(block:)"
-BUILD_PARAMS="LINUX_SOURCE=${KV_DIR} MODINST=n RUNDM=n"
 BUILD_TARGETS="all"
 
+RDEPEND=">=sys-apps/util-linux-2.12r"
+
 pkg_setup() {
+	if ! built_with_use sys-apps/util-linux crypt; then
+		eerror "loop-aes needs >=util-linux-2.12q-r1 compiled with crypt use-flag enabled!"
+		die "util-linux without crypt detected"
+	fi
+
 	linux-mod_pkg_setup
 
 	if ! linux_chkconfig_present KMOD && \
@@ -32,6 +38,9 @@ pkg_setup() {
 		ewarn "(CONFIG_KERNELD in kernels 2.0 or CONFIG_KMOD in newer)"
 		ewarn ""
 	fi
+
+	BUILD_PARAMS="LINUX_SOURCE=${KV_DIR} MODINST=n RUNDM=n"
+	use keyscrub && BUILD_PARAMS="${BUILD_PARAMS} KEYSCRUB=y"
 }
 
 src_unpack () {
@@ -48,10 +57,7 @@ src_install() {
 pkg_postinst() {
 	linux-mod_pkg_postinst
 
-	ewarn ""
-	ewarn "Note, that you will need >=util-linux-2.12p compiled with crypt"
-	ewarn "in USE flag enabled in order to use this module."
-	ewarn ""
+	einfo ""
 	einfo "For more instructions take a look at examples in"
 	einfo "/usr/share/doc/${PF}/README.gz"
 	einfo ""
