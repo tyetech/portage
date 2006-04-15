@@ -1,11 +1,11 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/noad/Attic/noad-0.6.0-r2.ebuild,v 1.3 2006/03/31 17:42:53 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/noad/Attic/noad-0.6.0-r2.ebuild,v 1.4 2006/04/15 08:59:03 zzam Exp $
 
 inherit eutils
 
 DESCRIPTION="Mark commercial Breaks in VDR records"
-HOMEPAGE="http://www.rgob.com/members/theNoad/"
+HOMEPAGE="http://www.freepgs.com/noad/"
 SRC_URI="http://www.freepgs.com/${PN}/${P}.tar.bz2
 		mirror://vdrfiles/${PN}/${P}.tar.bz2"
 
