@@ -1,10 +1,11 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-1.5-r2.ebuild,v 1.1 2006/01/08 16:18:27 anarchy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-1.5.0.2.ebuild,v 1.1 2006/04/15 15:02:38 anarchy Exp $
 
 inherit eutils mozilla-launcher multilib mozextension
 
-LANGS="ar ca cs da de el es-AR es-ES fi fr he it ja ko nb-NO nl pl pt-BR ro ru sk sl sv-SE tr zh-CN zh-TW"
+LANGS="ar ca cs da de el en-GB es-AR es-ES fi fr ga-IE he hu it ja ko mk nb-NO nl pl pt-BR ro ru sk sl sv-SE tr zh-CN zh-TW"
+SHORTLANGS="es-ES ga-IE nb-NO sv-SE"
 
 DESCRIPTION="Firefox Web Browser"
 SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${PV}/linux-i686/en-US/firefox-${PV}.tar.gz"
@@ -12,7 +13,11 @@ HOMEPAGE="http://www.mozilla.org/projects/firefox"
 RESTRICT="nostrip"
 
 for X in ${LANGS} ; do
-	SRC_URI="${SRC_URI} linguas_${X}? ( http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${PV}/linux-i686/xpi/${X}.xpi )"
+	SRC_URI="${SRC_URI} linguas_${X/-/_}? ( mirror://gentoo/firefox-${X}-${PV}.xpi )"
+done
+
+for X in ${SHORTLANGS} ; do
+	SRC_URI="${SRC_URI} linguas_${X%%-*}? ( mirror://gentoo/firefox-${X}-${PV}.xpi )"
 done
 
 KEYWORDS="-* ~amd64 ~x86"
@@ -48,12 +53,34 @@ pkg_setup() {
 	has_multilib_profile && ABI="x86"
 }
 
+linguas() {
+	linguas=
+	local LANG
+	for LANG in ${LINGUAS}; do
+		if hasq ${LANG} ${LANGS//-/_} en; then
+			hasq ${LANG//_/-} ${linguas} || \
+				linguas="${linguas} ${LANG//_/-}"
+			continue
+		else
+			local SLANG
+			for SLANG in ${SHORTLANGS}; do
+				if [[ ${LANG} == ${SLANG%%-*} ]]; then
+					hasq ${SLANG} ${linguas} || \
+						linguas="${linguas} ${SLANG}"
+					continue 2
+				fi
+			done
+		fi
+		ewarn "Sorry, but mozilla-firefox does not support the ${LANG} LINGUA"
+	done
+}
+
 src_unpack() {
 	unpack firefox-${PV}.tar.gz
 
-	strip-linguas ${LANGS} en
-	for X in ${LINGUAS/en}; do
-		xpi_unpack ${X}.xpi
+	linguas
+	for X in ${linguas}; do
+		[[ ${X} != en ]] && xpi_unpack firefox-${X}-${PV}.xpi
 	done
 }
 
@@ -65,18 +92,18 @@ src_install() {
 	touch ${S}/extensions/talkback@mozilla.org/chrome.manifest
 	mv ${S} ${D}${MOZILLA_FIVE_HOME}
 
-	# Locale support
-	strip-linguas ${LANGS} en
-	for X in ${LINGUAS/en}; do
-		xpi_install ${WORKDIR}/${X}
+	linguas
+	for X in ${linguas}; do
+		[[ ${X} != en ]] && xpi_install ${WORKDIR}/firefox-${X}-${PV}
 	done
 
-	if [ -n ${LINGUAS%% *} ] && [ "${LINGUAS%% *}" != "en" ]; then
-		ebegin "Setting default locale to ${LINGUAS%% *}"
-		sed -i "s:pref(\"general.useragent.locale\", \"en-US\"):pref(\"general.useragent.locale\", \"${LINGUAS%% *}\"):" \
+	local LANG=${linguas%% *}
+	if [[ ${LANG} != "" && ${LANG} != "en" ]]; then
+		ebegin "Setting default locale to ${LANG}"
+		sed -i "s:pref(\"general.useragent.locale\", \"en-US\"):pref(\"general.useragent.locale\", \"${LANG}\"):" \
 			${D}${MOZILLA_FIVE_HOME}/defaults/pref/firefox.js \
 			${D}${MOZILLA_FIVE_HOME}/defaults/pref/firefox-l10n.js
-		eend $? || die "sed failed to changed locale"
+		eend $? || die "sed failed to change locale"
 	fi
 
 	# Create /usr/bin/firefox-bin
