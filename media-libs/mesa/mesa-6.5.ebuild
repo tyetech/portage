@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-6.5.ebuild,v 1.7 2006/04/16 20:21:31 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-6.5.ebuild,v 1.8 2006/04/16 20:35:55 spyderous Exp $
 
 inherit eutils toolchain-funcs multilib flag-o-matic portability
 
@@ -50,7 +50,7 @@ DEPEND="${RDEPEND}
 	x11-proto/xextproto
 	!hppa? ( x11-proto/xf86driproto )
 	x11-proto/xf86vidmodeproto
-	>=x11-proto/glproto-1.4-r1
+	>=x11-proto/glproto-1.4.4
 	motif? ( x11-proto/printproto )"
 
 PROVIDE="virtual/opengl virtual/glu"
