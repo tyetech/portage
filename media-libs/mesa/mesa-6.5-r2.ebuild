@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-6.5-r2.ebuild,v 1.3 2006/04/16 20:01:31 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-6.5-r2.ebuild,v 1.4 2006/04/16 20:02:31 spyderous Exp $
 
 inherit eutils toolchain-funcs multilib flag-o-matic portability
 
@@ -68,6 +68,8 @@ pkg_setup() {
 		strip-flags
 		append-flags -g
 	fi
+
+	append-flags -fno-strict-aliasing
 
 	if [[ ${KERNEL} == "FreeBSD" ]]; then
 		CONFIG="freebsd"
