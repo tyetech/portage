@@ -1,13 +1,13 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/hardened-sources/Attic/hardened-sources-2.4.32-r1.ebuild,v 1.2 2006/01/27 01:24:24 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/hardened-sources/Attic/hardened-sources-2.4.32-r3.ebuild,v 1.1 2006/04/17 02:37:10 solar Exp $
 
 IUSE="rsbac"
 ETYPE="sources"
 inherit kernel-2
 detect_version
 RDEPEND=""
-HGPV=32.1
+HGPV=32.3
 HGPV_SRC="mirror://gentoo/hardened-patches-${KV_MAJOR}.${KV_MINOR}-${HGPV}.tar.bz2"
 
 UNIPATCH_STRICTORDER="yes"
@@ -19,7 +19,7 @@ UNIPATCH_DOCS="${WORKDIR}/patches/hardened-patches-${KV_MAJOR}.${KV_MINOR}-${HGP
 DESCRIPTION="Hardened sources for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
 
 SRC_URI="${KERNEL_URI} ${HGPV_SRC}"
-KEYWORDS="x86"
+KEYWORDS="~x86"
 
 pkg_setup() {
 	if use rsbac; then
@@ -29,6 +29,7 @@ pkg_setup() {
 		UNIPATCH_EXCLUDE="${UNIPATCH_EXCLUDE}
 		4*.patch"
 	fi
+	:
 }
 pkg_postinst() {
 	postinst_sources
