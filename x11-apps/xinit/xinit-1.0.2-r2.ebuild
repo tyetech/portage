@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/Attic/xinit-1.0.2-r1.ebuild,v 1.1 2006/04/20 05:30:14 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/Attic/xinit-1.0.2-r2.ebuild,v 1.1 2006/04/20 06:27:09 spyderous Exp $
 
 # Must be before x-modular eclass is inherited
 # This is enabled due to modified Makefile.am from the patches
@@ -39,5 +39,6 @@ src_install() {
 	exeinto /etc/X11/xinit
 	doexe ${FILESDIR}/xinitrc
 	newinitd ${FILESDIR}/xdm.start xdm
+	newconfd ${FILESDIR}/xdm.confd xdm
 	newpamd ${FILESDIR}/xserver.pamd xserver
 }
