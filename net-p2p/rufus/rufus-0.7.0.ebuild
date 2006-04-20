@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/rufus/Attic/rufus-0.7.0.ebuild,v 1.4 2006/04/20 04:08:33 tsunam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/rufus/Attic/rufus-0.7.0.ebuild,v 1.5 2006/04/20 04:24:50 tsunam Exp $
 
 inherit distutils
 
@@ -20,7 +20,8 @@ DEPEND="${RDEPEND}
 RDEPEND=">=dev-lang/python-2.4.0
 	>=dev-python/wxpython-2.6.1.0
 	=dev-python/pyopenssl-0.6
-	dev-libs/openssl"
+	dev-libs/openssl
+	!virtual/bittorrent"
 
 PROVIDE="virtual/bittorrent"
 
