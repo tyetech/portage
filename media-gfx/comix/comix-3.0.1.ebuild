@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/comix/Attic/comix-2.8-r3.ebuild,v 1.2 2006/03/25 16:07:29 vanquirius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/comix/Attic/comix-3.0.1.ebuild,v 1.1 2006/04/21 22:20:51 vanquirius Exp $
 
 inherit toolchain-funcs gnome2
 
