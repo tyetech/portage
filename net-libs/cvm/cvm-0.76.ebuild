@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/cvm/cvm-0.76.ebuild,v 1.5 2006/04/22 05:20:04 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/cvm/cvm-0.76.ebuild,v 1.6 2006/04/22 09:44:41 robbat2 Exp $
 
 inherit toolchain-funcs eutils
 
@@ -18,7 +18,9 @@ RDEPEND="virtual/libc
 DEPEND="${RDEPEND}
 		>=dev-libs/bglibs-1.041
 		mysql? ( dev-db/mysql )
-		postgres? ( dev-db/postgresql )"
+		postgres? ( dev-db/postgresql )
+		test? ( app-editors/vim )"
+# some of the testcases use ex/vi/xxd
 
 src_unpack() {
 	unpack ${A}
