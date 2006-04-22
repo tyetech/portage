@@ -1,6 +1,6 @@
-#Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/exo/Attic/exo-0.3.1.6_beta1.ebuild,v 1.1 2006/04/20 05:31:42 dostrow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/exo/Attic/exo-0.3.1.6_beta1.ebuild,v 1.2 2006/04/22 23:50:08 mr_bones_ Exp $
 
 inherit xfce44 versionator
 
