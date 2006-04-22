@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/anthy/Attic/anthy-6700b.ebuild,v 1.7 2005/08/23 03:17:39 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/anthy/Attic/anthy-6700b.ebuild,v 1.8 2006/04/22 14:38:02 hattya Exp $
 
 inherit elisp-common eutils
 
@@ -17,8 +17,6 @@ SLOT="0"
 
 DEPEND="emacs? ( virtual/emacs )
 	!app-i18n/anthy-ss"
-
-MAKEOPTS="${MAKEOPTS} -j1"
 
 src_unpack() {
 
@@ -51,7 +49,7 @@ src_compile() {
 	fi
 
 	econf ${myconf} || die
-	emake || die
+	emake -j1 || die
 
 }
 
