@@ -1,9 +1,9 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc/Attic/gcc-3.4.6-r1.ebuild,v 1.2 2006/04/18 16:18:35 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc/Attic/gcc-3.4.6-r1.ebuild,v 1.3 2006/04/23 06:11:01 vapier Exp $
 
 MAN_VER=""
-PATCH_VER="1.1"
+PATCH_VER="1.2"
 UCLIBC_VER="1.1"
 UCLIBC_GCC_VER="3.4.5"
 PIE_VER="8.7.9"
