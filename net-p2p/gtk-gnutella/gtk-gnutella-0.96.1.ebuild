@@ -1,17 +1,13 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gtk-gnutella/Attic/gtk-gnutella-0.96_beta.ebuild,v 1.1 2006/01/28 12:53:50 mkay Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gtk-gnutella/Attic/gtk-gnutella-0.96.1.ebuild,v 1.1 2006/04/23 04:39:01 squinky86 Exp $
 
 inherit eutils
 
 IUSE="gnome nls dbus"
 
 DESCRIPTION="A GTK+ Gnutella client"
-
-MY_P=${P/_beta/b}
-S=${WORKDIR}/${MY_P}
-
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 RESTRICT="nomirror"
 HOMEPAGE="http://gtk-gnutella.sourceforge.net/"
 
