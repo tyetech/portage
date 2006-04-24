@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/mpich/Attic/mpich-1.2.7_p1.ebuild,v 1.1 2005/11/07 01:46:50 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/mpich/Attic/mpich-1.2.7_p1.ebuild,v 1.2 2006/04/24 20:54:15 spyderous Exp $
 
 inherit eutils
 
@@ -70,7 +70,7 @@ src_compile() {
 		--mandir=/usr/share/man \
 		--prefix=/usr \
 		--datadir=/usr/share/mpich || die
-	emake || die
+	emake -j1 || die
 }
 
 src_install() {
