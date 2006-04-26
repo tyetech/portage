@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-scheme/cvs-repo/gentoo-x86/dev-scheme/gauche-gl/Attic/gauche-gl-0.4.1.ebuild,v 1.2 2006/04/22 15:19:15 hattya Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-scheme/cvs-repo/gentoo-x86/dev-scheme/gauche-gl/Attic/gauche-gl-0.4.1.ebuild,v 1.3 2006/04/26 12:53:47 hattya Exp $
 
 inherit eutils flag-o-matic
 
@@ -48,7 +48,7 @@ src_install() {
 	insinto $(gauche-config --syslibdir)/gl
 	doins lib/gl/simple-image.scm
 
-	dodoc README ChangeLog INSTALL* COPYING
+	dodoc README ChangeLog
 
 	docinto examples
 	dodoc examples/*.scm
