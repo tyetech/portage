@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTML-TableExtract/Attic/HTML-TableExtract-1.10.ebuild,v 1.6 2005/11/27 22:43:29 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTML-TableExtract/Attic/HTML-TableExtract-1.10.ebuild,v 1.7 2006/04/26 20:33:09 mcummings Exp $
 
 inherit perl-module
 
