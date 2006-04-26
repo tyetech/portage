@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/ecb/Attic/ecb-2.32.ebuild,v 1.1 2006/01/26 20:11:08 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/ecb/Attic/ecb-2.32.ebuild,v 1.2 2006/04/26 16:49:42 mkennedy Exp $
 
 inherit elisp
 
@@ -44,7 +44,8 @@ src_compile() {
 }
 
 src_install() {
-	elisp-install ${PN} *.el *.elc
+	elisp-install ${PN} *.{el,elc}
+	cp -r ecb-images ${D}/${SITELISP}/${PN}/
 	elisp-site-file-install ${FILESDIR}/70ecb-gentoo.el
 	dodoc NEWS README RELEASE_NOTES
 	doinfo info-help/ecb.info*
