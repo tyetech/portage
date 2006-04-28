@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-1.0.2.ebuild,v 1.7 2006/04/12 19:07:55 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-1.0.2.ebuild,v 1.8 2006/04/28 21:24:25 mr_bones_ Exp $
 
 inherit eutils toolchain-funcs flag-o-matic games
 
@@ -26,6 +26,13 @@ DEPEND=">=media-libs/libsdl-1.2.7
 	sys-libs/zlib"
 
 S=${WORKDIR}/${PN}-${MY_PV}
+
+pkg_setup() {
+	if ! built_with_use -o media-libs/sdl-mixer vorbis oggvorbis ; then
+		die "Please emerge sdlmixer with USE=vorbis"
+	fi
+	games_pkg_setup
+}
 
 src_unpack() {
 	unpack "${A}"
