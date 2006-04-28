@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vserver-sources/Attic/vserver-sources-2.1.0-r2.ebuild,v 1.1 2006/04/16 18:16:58 phreak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vserver-sources/Attic/vserver-sources-2.0.1-r4.ebuild,v 1.1 2006/04/28 06:41:08 hollow Exp $
 
 ETYPE="sources"
 CKV="2.6.15"
@@ -15,7 +15,7 @@ MY_PN=${PN/-sources/-patches}
 inherit kernel-2
 detect_version
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 DESCRIPTION="Full sources including gentoo and Linux-VServer patchsets for the ${KV_MAJOR}.${KV_MINOR} kernel tree"
