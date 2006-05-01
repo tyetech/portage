@@ -1,6 +1,7 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-pvrinput/Attic/vdr-pvrinput-0.1.1.ebuild,v 1.1 2006/05/01 10:27:36 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-pvrinput/Attic/vdr-pvrinput-0.1.1.ebuild,v 1.2 2006/05/01 12:47:41 hd_brummy Exp $
+
 inherit vdr-plugin
 
 DESCRIPTION="Plugin to use a PVR* card as input device for VDR"
