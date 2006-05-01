@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/python-ldap/Attic/python-ldap-2.0.6.ebuild,v 1.7 2005/07/02 23:36:45 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/python-ldap/Attic/python-ldap-2.2.0.ebuild,v 1.1 2006/05/01 13:45:30 carlo Exp $
 
 inherit distutils
 
@@ -14,12 +14,12 @@ SRC_URI="mirror://sourceforge/python-ldap/${P}.tar.gz
 HOMEPAGE="http://python-ldap.sourceforge.net/"
 
 DEPEND="virtual/python
-	>=net-nds/openldap-2.0.11
+	>=net-nds/openldap-2.2
 	sasl? ( dev-libs/cyrus-sasl )"
 
 SLOT="0"
 LICENSE="PYTHON"
-KEYWORDS="alpha ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
 IUSE="doc sasl ssl"
 
 PYTHON_MODNAME="ldap"
@@ -28,8 +28,8 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 	cp setup.cfg setup.cfg.orig
-	sed -e "s:^library_dirs =.*:library_dirs = /usr/lib /usr/lib/sasl2:" \
-		-e "s:^include_dirs =.*:include_dirs = /usr/include:" \
+	sed -e "s:^library_dirs =.*:library_dirs = ${ROOT}/usr/lib ${ROOT}/usr/lib/sasl2:" \
+		-e "s:^include_dirs =.*:include_dirs = ${ROOT}/usr/include:" \
 		-i setup.cfg || die "error fixing setup.cfg"
 
 	local mylibs="ldap"
