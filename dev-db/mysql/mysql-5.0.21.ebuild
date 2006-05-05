@@ -1,15 +1,15 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-5.1.7_beta.ebuild,v 1.7 2006/05/05 19:51:40 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql/Attic/mysql-5.0.21.ebuild,v 1.1 2006/05/05 19:51:40 chtekk Exp $
 
 # Leave this empty
 MYSQL_VERSION_ID=""
 # Set the patchset revision to use, must be either empty or a decimal number
-MYSQL_PATCHSET_REV="1"
+MYSQL_PATCHSET_REV="2"
 
 inherit mysql
 
-KEYWORDS="-*"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 
 src_test() {
 	cd "${S}"
