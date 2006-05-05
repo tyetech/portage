@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.5.1.ebuild,v 1.1 2006/05/05 09:24:37 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.5.1.ebuild,v 1.2 2006/05/05 19:58:41 flameeyes Exp $
 
 inherit eutils toolchain-funcs flag-o-matic
 
@@ -22,8 +22,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	[[ $(gcc-major-version)$(gcc-minor-version) -ge "41" ]] && \
-		epatch "${FILESDIR}/${P}-build.patch"
+	epatch "${FILESDIR}/${P}-template.patch"
 }
 
 src_compile() {
