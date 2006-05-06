@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/banshee/Attic/banshee-0.10.9-r1.ebuild,v 1.5 2006/05/06 21:15:53 metalgod Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/banshee/Attic/banshee-0.10.10.ebuild,v 1.1 2006/05/06 21:15:53 metalgod Exp $
 
 inherit eutils gnome2 mono
 
@@ -36,7 +36,7 @@ RDEPEND=">=dev-lang/mono-1.1.13
 	>=media-plugins/gst-plugins-cdparanoia-0.10.0
 	>=media-libs/musicbrainz-2.1.1
 	real? ( media-video/realplayer )
-	njb? ( >=dev-dotnet/njb-sharp-0.2.2 )
+	njb? ( >=dev-dotnet/njb-sharp-0.3.0 )
 	daap? ( >=net-dns/avahi-0.6.9 )
 	>=dev-libs/glib-2.0
 	>=gnome-base/libgnomeui-2.0
@@ -88,8 +88,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	epatch ${FILESDIR}/${P}-statusbar-duration-count.patch
-	epatch ${FILESDIR}/${P}-event-reduction.patch
+	epatch ${FILESDIR}/${PN}-0.10.9-statusbar-duration-count.patch
 }
 
 src_compile() {
