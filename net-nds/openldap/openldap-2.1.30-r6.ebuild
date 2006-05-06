@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/openldap/Attic/openldap-2.1.30-r6.ebuild,v 1.8 2005/12/13 23:16:15 ferdy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/openldap/Attic/openldap-2.1.30-r6.ebuild,v 1.9 2006/05/06 13:18:56 jokey Exp $
 
 inherit eutils
 
