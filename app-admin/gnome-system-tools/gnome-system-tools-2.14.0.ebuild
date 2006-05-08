@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/gnome-system-tools/Attic/gnome-system-tools-2.14.0.ebuild,v 1.1 2006/03/17 21:00:09 joem Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/gnome-system-tools/Attic/gnome-system-tools-2.14.0.ebuild,v 1.2 2006/05/08 03:27:04 dang Exp $
 
-inherit gnome2 eutils
+inherit gnome2 eutils autotools
 
 DESCRIPTION="Tools aimed to make easy the administration of UNIX systems"
 HOMEPAGE="http://www.gnome.org/projects/gst/"
@@ -42,8 +42,8 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack ${A}
-	cd ${S}
+	gnome2_src_unpack
 
-	gnome2_omf_fix
+	epatch ${FILESDIR}/${P}-as-needed.patch
+	eautoreconf
 }
