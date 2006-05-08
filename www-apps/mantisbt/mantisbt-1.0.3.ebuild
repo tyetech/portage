@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/mantisbt/Attic/mantisbt-1.0.3.ebuild,v 1.1 2006/05/08 19:16:06 rl03 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/mantisbt/Attic/mantisbt-1.0.3.ebuild,v 1.2 2006/05/08 19:58:09 dertobi123 Exp $
 
 inherit webapp
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/mantis-${PV}.tar.gz"
 
 S=${WORKDIR}/mantis-${PV}
 
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ppc ~x86"
 
 RDEPEND="
 	mysql? ( >=dev-db/mysql-3.23.32 )
