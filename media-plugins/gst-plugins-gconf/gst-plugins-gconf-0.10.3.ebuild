@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-gconf/Attic/gst-plugins-gconf-0.10.3.ebuild,v 1.1 2006/05/05 09:38:15 zaheerm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-gconf/Attic/gst-plugins-gconf-0.10.3.ebuild,v 1.2 2006/05/11 02:06:16 tcort Exp $
 
 inherit gnome2 gst-plugins-good gst-plugins10
 
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=gnome-base/gconf-2.0
