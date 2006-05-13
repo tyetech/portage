@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kttsd/Attic/kttsd-3.5.2.ebuild,v 1.3 2006/05/01 13:49:37 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kttsd/Attic/kttsd-3.5.2.ebuild,v 1.4 2006/05/13 01:13:38 carlo Exp $
 KMNAME=kdeaccessibility
 MAXKDEVER=$PV
 KM_DEPRANGE="$PV $MAXKDEVER"
@@ -23,6 +23,7 @@ RDEPEND="${DEPEND}
 	     app-accessibility/freetts )"
 
 pkg_setup() {
+	kde_pkg_setup
 	if ! use arts && ! use alsa && ! use gstreamer && ! use akode ; then
 		ewarn "No audio backend chosen. Defaulting to media-libs/akode."
 	fi
