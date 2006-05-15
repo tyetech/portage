@@ -1,12 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/gjdoc/Attic/gjdoc-0.7.7.ebuild,v 1.4 2006/02/06 09:30:16 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/gjdoc/Attic/gjdoc-0.7.7.ebuild,v 1.5 2006/05/15 07:36:41 betelgeuse Exp $
 
 inherit java-pkg
 
 DESCRIPTION="A javadoc compatible Java source documentation generator."
 HOMEPAGE="http://www.gnu.org/software/cp-tools/"
-SRC_URI="ftp://ftp.gnu.org/gnu/classpath/${P}.tar.gz"
+SRC_URI="mirror://gnu/classpath/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
