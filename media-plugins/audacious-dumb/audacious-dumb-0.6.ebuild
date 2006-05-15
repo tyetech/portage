@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/audacious-dumb/Attic/audacious-dumb-0.6.ebuild,v 1.1 2006/05/08 10:11:21 joker Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/audacious-dumb/Attic/audacious-dumb-0.6.ebuild,v 1.2 2006/05/15 12:03:41 joker Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.netswarm.net/misc/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 
