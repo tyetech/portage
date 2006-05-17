@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/knetfilter/Attic/knetfilter-3.3.0.ebuild,v 1.4 2005/05/11 09:12:35 greg_g Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/knetfilter/Attic/knetfilter-3.3.0.ebuild,v 1.5 2006/05/17 16:58:25 chutzpah Exp $
 
 inherit kde
 
