@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sussen/Attic/sussen-0.21.ebuild,v 1.1 2006/05/17 11:15:40 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sussen/Attic/sussen-0.21.ebuild,v 1.2 2006/05/17 11:41:53 pva Exp $
 
 inherit gnome2 mono autotools
 
@@ -17,7 +17,6 @@ RDEPEND="=dev-lang/mono-1.1*
 	>=dev-dotnet/gnome-sharp-2.4
 	>=dev-dotnet/gconf-sharp-2.4
 	>=dev-dotnet/glade-sharp-2.4
-	>=dev-dotnet/gconf-sharp-2.4
 	gnome-base/gnome-panel"
 
 DEPEND="${RDEPEND}
