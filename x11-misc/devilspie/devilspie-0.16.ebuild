@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/devilspie/Attic/devilspie-0.16.ebuild,v 1.4 2006/04/16 22:58:11 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/devilspie/Attic/devilspie-0.16.ebuild,v 1.5 2006/05/18 16:10:53 chutzpah Exp $
 
 inherit eutils
 
@@ -32,6 +32,7 @@ src_unpack() {
 
 	epatch "${FILESDIR}/${P}-README.patch"
 	cp "${FILESDIR}/SYNTAX-${PV}" SYNTAX
+	sed -ri '/G(|DK|TK)_DISABLE_DEPRECATED/ d' src/Makefile.{in,am}
 
 }
 
