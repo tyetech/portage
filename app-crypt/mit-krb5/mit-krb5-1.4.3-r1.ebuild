@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.4.3-r1.ebuild,v 1.1 2006/05/21 20:41:16 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.4.3-r1.ebuild,v 1.2 2006/05/21 20:48:09 seemant Exp $
 
 inherit eutils flag-o-matic versionator
 
@@ -32,7 +32,7 @@ src_unpack() {
 	unpack ${MY_P}-signed.tar; tar zxf ${MY_P}.tar.gz; cd ${S}
 	epatch ${FILESDIR}/${PN}-lazyldflags.patch
 	epatch ${FILESDIR}/${PN}-robustgnu.patch
-	epatch ${FILESDIR}/${PN}-robust.patch
+	epatch ${FILESDIR}/${PN}-pthreads.patch
 	epatch ${FILESDIR}/${PN}-setupterm.patch
 }
 
