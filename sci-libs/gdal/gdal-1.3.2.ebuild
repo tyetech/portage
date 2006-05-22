@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/gdal/Attic/gdal-1.3.1.ebuild,v 1.9 2006/05/22 06:52:51 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/gdal/Attic/gdal-1.3.2.ebuild,v 1.1 2006/05/22 06:52:51 nerdboy Exp $
 
 inherit eutils libtool gnuconfig distutils toolchain-funcs
 
-IUSE="jpeg png geos gif jpeg2k netcdf hdf hdf5 python postgres \
+IUSE="jpeg png geos gif jpeg2k netcdf hdf hdf5 python ruby postgres \
 	odbc sqlite ogdi fits gml doc debug"
 
 DESCRIPTION="GDAL is a translator library for raster geospatial data formats (includes OGR support)"
@@ -17,6 +17,9 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 # need to get these arches updated on several libs first
 #KEYWORDS="~alpha ~hppa ~ppc64"
 
+#USE_RUBY="1.7"
+#RUBY_ECONF="--with-rubydir=/usr/$(get_libdir)/ruby/site_ruby"
+
 DEPEND=">=sys-libs/zlib-1.1.4
 	>=media-libs/tiff-3.7.0
 	sci-libs/libgeotiff
@@ -24,6 +27,8 @@ DEPEND=">=sys-libs/zlib-1.1.4
 	gif? ( media-libs/giflib )
 	png? ( media-libs/libpng )
 	python? ( dev-lang/python )
+	ruby? ( >=dev-lang/ruby-1.8.4.20060226
+		>=dev-lang/swig-1.3.28 )
 	fits? ( sci-libs/cfitsio )
 	ogdi? ( sci-libs/ogdi )
 	gml? ( dev-libs/xerces-c )
@@ -42,7 +47,8 @@ DEPEND=">=sys-libs/zlib-1.1.4
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${P}-installpathfix.patch || die "installpath patch failed"
+	epatch ${FILESDIR}/${P}-destdir.patch || die "epatch failed"
+	epatch ${FILESDIR}/${P}-ruby-install.patch || die "epatch failed"
 	if [ $(gcc-major-version) -eq 4 ] ; then
 	    epatch ${FILESDIR}/${PN}-gcc4.patch || die "gcc4 patch failed"
 	fi
@@ -63,10 +69,10 @@ src_unpack() {
 src_compile() {
 	distutils_python_version
 
-	pkg_conf="--enable-static=no --enable-shared=yes \
+	pkg_conf="--enable-static=no --enable-shared=yes --with-pic \
 		--with-libgrass=no"
 
-	use_conf="$(use_with jpeg) $(use_with png) \
+	use_conf="$(use_with jpeg) $(use_with png) $(use_with ruby) \
 	    $(use_with postgres pg) $(use_with fits cfitsio) \
 	    $(use_with netcdf) $(use_with hdf hdf4) $(use_with geos) \
 	    $(use_with sqlite) $(use_with jpeg2k jasper) $(use_with odbc) \
@@ -104,7 +110,12 @@ src_compile() {
 
 	econf ${pkg_conf} ${use_conf} || die "econf failed"
 	# parallel makes fail on the ogr stuff (C++, what can I say?)
-	emake  || die "emake failed"
+	emake || die "emake failed"
+	if useq ruby ; then
+	    cd ${S}/swig
+	    make build || die "make ruby failed"
+	    cd ${S}
+	fi
 	if useq doc ; then
 	    emake docs || die "emake docs failed"
 	fi
