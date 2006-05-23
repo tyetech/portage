@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/tetex/Attic/tetex-3.0_p1-r3.ebuild,v 1.3 2006/04/14 20:08:55 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/tetex/Attic/tetex-3.0_p1-r3.ebuild,v 1.4 2006/05/23 20:34:03 ehmsen Exp $
 
 inherit tetex-3 flag-o-matic versionator virtualx
 
@@ -49,6 +49,9 @@ src_unpack() {
 
 	# bug 126918
 	epatch ${FILESDIR}/${P}-create-empty-files.patch
+
+	# bug 94901
+	epatch ${FILESDIR}/${P}-dvipdfm-timezone.patch
 
 	# Construct a Gentoo site texmf directory
 	# that overlays the upstream supplied
