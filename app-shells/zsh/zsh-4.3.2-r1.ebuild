@@ -1,19 +1,18 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/zsh/Attic/zsh-4.2.5.ebuild,v 1.11 2006/05/25 17:40:49 merlin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/zsh/Attic/zsh-4.3.2-r1.ebuild,v 1.1 2006/05/25 17:40:49 merlin Exp $
 
 inherit eutils multilib
 
 DESCRIPTION="UNIX Shell similar to the Korn shell"
 HOMEPAGE="http://www.zsh.org/"
 SRC_URI="ftp://ftp.zsh.org/pub/${P}.tar.bz2
-	linguas_ja? ( http://www.ono.org/software/dist/${PN}-4.2.4-euc-0.3.patch.gz )
 	doc? ( ftp://ftp.zsh.org/pub/${P}-doc.tar.bz2 )"
 
 LICENSE="ZSH"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ~ppc-macos sparc x86"
-IUSE="maildir ncurses static doc pcre cap"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc-macos ~sparc ~x86"
+IUSE="maildir ncurses static doc pcre cap unicode"
 
 RDEPEND="pcre? ( >=dev-libs/libpcre-3.9 )
 	cap? ( sys-libs/libcap )
@@ -26,9 +25,7 @@ src_unpack() {
 	unpack ${P}.tar.bz2
 	use doc && unpack ${P}-doc.tar.bz2
 	cd ${S}
-	epatch ${FILESDIR}/${PN}-4.2.1-gentoo.diff
 	epatch ${FILESDIR}/${PN}-init.d-gentoo.diff
-	use linguas_ja && epatch ${DISTDIR}/${PN}-4.2.4-euc-0.3.patch.gz
 	cd ${S}/Doc
 	ln -sf . man1
 	# fix zshall problem with soelim
@@ -65,6 +62,7 @@ src_compile() {
 		$(use_enable maildir maildir-support) \
 		$(use_enable pcre) \
 		$(use_enable cap) \
+		$(use_enable unicode multibyte) \
 		${myconf} || die "configure failed"
 
 	if use static ; then
@@ -76,13 +74,6 @@ src_compile() {
 		# avoid linking to libs in /usr/lib, see Bug #27064
 		sed -i -e "/LIBS/s%-lpcre%/usr/lib/libpcre.a%" \
 			Makefile || die
-	fi
-
-	# hack for Darwin8 broken poll()
-	if use ppc-macos ; then
-		sed -i -e "s/define HAVE_POLL_H/undef HAVE_POLL_H/g" \
-			-e "s/define HAVE_POLL/undef HAVE_POLL/g" \
-			config.h
 	fi
 
 	# emake still b0rks
@@ -102,6 +93,7 @@ src_install() {
 		libdir=${D}/usr/$(get_libdir) \
 		fndir=${D}/usr/share/zsh/${PV%_*}/functions \
 		sitefndir=${D}/usr/share/zsh/site-functions \
+		scriptdir=${D}/usr/share/zsh/${PV%_*}/scripts \
 		install.bin install.man install.modules \
 		install.info install.fns || die "make install failed"
 

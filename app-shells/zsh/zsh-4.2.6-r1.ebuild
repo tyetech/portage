@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/zsh/Attic/zsh-4.2.5.ebuild,v 1.11 2006/05/25 17:40:49 merlin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/zsh/Attic/zsh-4.2.6-r1.ebuild,v 1.1 2006/05/25 17:40:49 merlin Exp $
 
 inherit eutils multilib
 
@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.zsh.org/pub/${P}.tar.bz2
 
 LICENSE="ZSH"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ~ppc-macos sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc-macos ~sparc ~x86"
 IUSE="maildir ncurses static doc pcre cap"
 
 RDEPEND="pcre? ( >=dev-libs/libpcre-3.9 )
@@ -26,7 +26,6 @@ src_unpack() {
 	unpack ${P}.tar.bz2
 	use doc && unpack ${P}-doc.tar.bz2
 	cd ${S}
-	epatch ${FILESDIR}/${PN}-4.2.1-gentoo.diff
 	epatch ${FILESDIR}/${PN}-init.d-gentoo.diff
 	use linguas_ja && epatch ${DISTDIR}/${PN}-4.2.4-euc-0.3.patch.gz
 	cd ${S}/Doc
@@ -76,13 +75,6 @@ src_compile() {
 		# avoid linking to libs in /usr/lib, see Bug #27064
 		sed -i -e "/LIBS/s%-lpcre%/usr/lib/libpcre.a%" \
 			Makefile || die
-	fi
-
-	# hack for Darwin8 broken poll()
-	if use ppc-macos ; then
-		sed -i -e "s/define HAVE_POLL_H/undef HAVE_POLL_H/g" \
-			-e "s/define HAVE_POLL/undef HAVE_POLL/g" \
-			config.h
 	fi
 
 	# emake still b0rks
