@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/plotutils/Attic/plotutils-2.4.1-r3.ebuild,v 1.14 2005/12/13 05:34:09 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/plotutils/Attic/plotutils-2.4.1-r3.ebuild,v 1.15 2006/05/25 13:11:50 merlin Exp $
 
 inherit libtool eutils flag-o-matic
 
