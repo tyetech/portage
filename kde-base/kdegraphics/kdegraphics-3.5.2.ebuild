@@ -1,12 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdegraphics/Attic/kdegraphics-3.5.2.ebuild,v 1.7 2006/05/26 04:06:49 tsunam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdegraphics/Attic/kdegraphics-3.5.2.ebuild,v 1.8 2006/05/26 21:42:43 corsair Exp $
 
 inherit kde-dist eutils
 
 DESCRIPTION="KDE graphics-related apps"
 
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ppc64 ~sparc x86"
 IUSE="gphoto2 imlib openexr opengl pdf povray scanner tetex"
 
 DEPEND="~kde-base/kdebase-${PV}
