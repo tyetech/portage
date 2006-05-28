@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ggv/Attic/ggv-2.12.0.ebuild,v 1.1 2006/01/19 15:08:07 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ggv/Attic/ggv-2.12.0.ebuild,v 1.2 2006/05/28 14:14:58 carlo Exp $
 
 inherit gnome2
 
@@ -25,7 +25,7 @@ DEPEND="${RDEPEND}
 	app-text/scrollkeeper
 	>=dev-util/intltool-0.30"
 
-PROVIDE="virtual/psviewer"
+
 
 DOCS="AUTHORS ChangeLog MAINTAINERS NEWS README"
 
