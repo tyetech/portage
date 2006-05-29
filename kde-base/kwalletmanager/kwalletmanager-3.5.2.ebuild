@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kwalletmanager/Attic/kwalletmanager-3.5.2.ebuild,v 1.6 2006/05/26 17:14:33 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kwalletmanager/Attic/kwalletmanager-3.5.2.ebuild,v 1.7 2006/05/29 22:14:06 weeve Exp $
 
 KMNAME=kdeutils
 KMMODULE=kwallet
@@ -9,5 +9,5 @@ KM_DEPRANGE="$PV $MAXKDEVER"
 inherit kde-meta eutils
 
 DESCRIPTION="KDE Wallet Management Tool"
-KEYWORDS="~alpha amd64 ~ia64 ~ppc ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~ia64 ~ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
