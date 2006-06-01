@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkdeedu/Attic/libkdeedu-3.5.2.ebuild,v 1.8 2006/06/01 05:01:00 tcort Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkdeedu/Attic/libkdeedu-3.5.2.ebuild,v 1.9 2006/06/01 20:48:58 flameeyes Exp $
 KMNAME=kdeedu
-MAXKDEVER=$PV
+MAXKDEVER=3.5.3
 KM_DEPRANGE="$PV $MAXKDEVER"
 inherit kde-meta
 
