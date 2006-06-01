@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgpod/Attic/libgpod-0.3.2-r1.ebuild,v 1.3 2006/05/23 11:50:59 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgpod/Attic/libgpod-0.3.2-r1.ebuild,v 1.4 2006/06/01 16:53:15 tester Exp $
 
 inherit eutils
 
@@ -72,8 +72,9 @@ src_install() {
 		cd ${S}/bindings/python
 
 		insinto $(python -c 'import distutils.sysconfig;print distutils.sysconfig.get_python_lib()')
-		doins ${S}/bindings/python/_gpod.so
 		doins ${S}/bindings/python/gpod.py
+		insinto $(python -c 'import distutils.sysconfig;print distutils.sysconfig.get_python_lib(1)')
+		doins ${S}/bindings/python/_gpod.so
 	fi
 }
 
