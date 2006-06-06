@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/pbbuttonsd/Attic/pbbuttonsd-0.7.5.ebuild,v 1.2 2006/05/27 17:55:03 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/pbbuttonsd/Attic/pbbuttonsd-0.7.5.ebuild,v 1.3 2006/06/06 17:15:28 lu_zero Exp $
 
 inherit eutils flag-o-matic
 
@@ -43,6 +43,7 @@ src_compile() {
 
 src_install() {
 	dodir /etc/power
+	use ibam && dodir /var/lib/ibam
 	make DESTDIR=${D} install || die "failed to install"
 	exeinto /etc/init.d
 	newexe ${FILESDIR}/pbbuttonsd.rc6 pbbuttonsd
