@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation and Pieter Van den Abeele
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/coriander/Attic/coriander-2.0.0_pre5.ebuild,v 1.2 2006/06/08 20:08:28 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/coriander/Attic/coriander-2.0.0_pre6.ebuild,v 1.1 2006/06/08 20:08:28 seemant Exp $
 
 MY_P=${P/_/-}
 
@@ -16,7 +16,7 @@ IUSE="ffmpeg"
 S=${WORKDIR}/${MY_P}
 
 
-RDEPEND="=media-libs/libdc1394-2.0.0_pre6*
+RDEPEND="=media-libs/libdc1394-2.0.0_pre7*
 	ffmpeg? ( media-video/ffmpeg )
 	media-libs/libsdl
 	gnome-base/libgnomeui
