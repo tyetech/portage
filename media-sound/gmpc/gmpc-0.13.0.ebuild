@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gmpc/Attic/gmpc-0.13.0.ebuild,v 1.1 2006/03/27 06:37:02 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gmpc/Attic/gmpc-0.13.0.ebuild,v 1.2 2006/06/09 10:59:48 ticho Exp $
 
-IUSE=""
+IUSE="gnome"
 
 DESCRIPTION="A Gnome client for the Music Player Daemon."
 HOMEPAGE="http://cms.qballcow.nl/index.php?page=Gnome_Music_Player_Client"
