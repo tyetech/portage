@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/rp-pppoe/Attic/rp-pppoe-3.8.ebuild,v 1.4 2006/06/09 12:10:51 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/rp-pppoe/Attic/rp-pppoe-3.8.ebuild,v 1.5 2006/06/10 09:23:19 hansmi Exp $
 
 inherit eutils flag-o-matic
 
@@ -11,7 +11,7 @@ SRC_URI="http://www.roaringpenguin.com/penguin/pppoe/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ~ppc ppc64 ~sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~mips ppc ppc64 ~sh sparc x86"
 IUSE="X"
 
 DEPEND="net-dialup/ppp
