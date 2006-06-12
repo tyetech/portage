@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Finance-Quote/Attic/Finance-Quote-1.11.ebuild,v 1.1 2006/01/16 15:35:33 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Finance-Quote/Attic/Finance-Quote-1.11.ebuild,v 1.2 2006/06/12 15:24:56 mcummings Exp $
 
 inherit perl-module eutils
 
@@ -12,7 +12,7 @@ IUSE=""
 
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc sparc ~x86"
 
 SRC_TEST="do"
 
