@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/tenshi/Attic/tenshi-0.5.ebuild,v 1.2 2006/06/17 09:35:18 lcars Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/tenshi/Attic/tenshi-0.5.ebuild,v 1.3 2006/06/17 09:41:25 lcars Exp $
 
 inherit eutils
 
@@ -16,12 +16,6 @@ IUSE=""
 
 RDEPEND="dev-lang/perl
 	sys-apps/coreutils"
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	sed -i -e "s/COPYING//g" Makefile
-}
 
 pkg_setup() {
 	enewgroup tenshi
