@@ -1,7 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/knetscan/Attic/knetscan-1.0.ebuild,v 1.13 2006/04/19 04:29:12 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/knetscan/Attic/knetscan-1.0.ebuild,v 1.14 2006/06/19 21:45:05 genstef Exp $
 
+ARTS_REQUIRED="yes"
 inherit kde eutils
 
 DESCRIPTION="KDE frontend for nmap, ping, whois and traceroute"
