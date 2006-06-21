@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/man-pages-ja/Attic/man-pages-ja-20041115.ebuild,v 1.3 2006/05/25 21:44:51 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/man-pages-ja/Attic/man-pages-ja-20041115.ebuild,v 1.4 2006/06/21 17:25:42 vapier Exp $
 
 MY_P="man-pages-ja-${PV}"
 GENTOO_MAN_P="portage-${P/man-/man}"
@@ -17,7 +17,7 @@ IUSE=""
 
 DEPEND="!>=sys-apps/groff-1.19
 	=sys-apps/groff-1.18*
-	sys-apps/man"
+	virtual/man"
 
 S=${WORKDIR}/${MY_P}
 
