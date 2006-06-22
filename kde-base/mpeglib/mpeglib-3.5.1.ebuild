@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/mpeglib/Attic/mpeglib-3.5.1.ebuild,v 1.9 2006/06/01 21:05:10 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/mpeglib/Attic/mpeglib-3.5.1.ebuild,v 1.10 2006/06/22 13:04:51 flameeyes Exp $
 
 KMNAME=kdemultimedia
 MAXKDEVER=3.5.3
@@ -26,4 +26,7 @@ DEPEND="${RDEPEND}
 			x11-proto/xextproto
 		) virtual/x11 )"
 
-myconf="--with-cdparanoia --enable-cdparanoia"
+src_compile() {
+	myconf="--with-cdparanoia --enable-cdparanoia"
+	kde-meta_src_compile
+}
