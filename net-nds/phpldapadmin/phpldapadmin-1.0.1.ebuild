@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/phpldapadmin/Attic/phpldapadmin-1.0.1.ebuild,v 1.1 2006/05/13 15:44:00 rl03 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/phpldapadmin/Attic/phpldapadmin-1.0.1.ebuild,v 1.2 2006/06/24 19:26:22 chtekk Exp $
 
 inherit webapp depend.php
 
@@ -16,7 +16,7 @@ need_php5
 
 pkg_setup() {
 	webapp_pkg_setup
-	require_php_with_use ldap pcre
+	require_php_with_use ldap pcre session xml
 }
 
 src_unpack() {
