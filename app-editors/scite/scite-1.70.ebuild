@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/scite/Attic/scite-1.67.ebuild,v 1.2 2006/06/26 19:47:13 pythonhead Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/scite/Attic/scite-1.70.ebuild,v 1.1 2006/06/26 19:47:13 pythonhead Exp $
 
 inherit toolchain-funcs
 
