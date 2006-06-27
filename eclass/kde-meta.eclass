@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kde-meta.eclass,v 1.78 2006/06/27 11:00:06 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kde-meta.eclass,v 1.79 2006/06/27 13:28:40 flameeyes Exp $
 #
 # Author Dan Armak <danarmak@gentoo.org>
 # Simone Gotti <motaboy@gentoo.org>
@@ -334,7 +334,7 @@ function kde-meta_src_unpack() {
 		# Note that KMTARPARAMS is also used by an ebuild
 		tar -xpf $TARFILE $KMTARPARAMS $extractlist	2> /dev/null
 
-		unpack ${A/${TARBALL}/}
+		[[ -n ${A/${TARBALL}/} ]] && unpack ${A/${TARBALL}/}
 
 		# Avoid syncing if possible
 		# No idea what the above comment means...
