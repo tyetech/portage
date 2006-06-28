@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/vzctl/Attic/vzctl-3.0.10.ebuild,v 1.3 2006/06/28 14:39:09 phreak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/vzctl/Attic/vzctl-3.0.10-r1.ebuild,v 1.1 2006/06/28 14:39:09 phreak Exp $
 
 inherit eutils
 
