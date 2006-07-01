@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wininfo/wininfo-0.7.ebuild,v 1.8 2006/01/21 13:46:48 nelchael Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wininfo/wininfo-0.7.ebuild,v 1.9 2006/07/01 19:12:13 nelchael Exp $
 
 IUSE=""
 
@@ -13,9 +13,7 @@ KEYWORDS="~amd64 ~ppc x86"
 DEPEND=">=x11-libs/gtk+-2"
 
 src_install() {
+	emake DESTDIR=${D} install
 
-	dobin src/wininfo
-
-	newman wininfo.man wininfo.1
 	dodoc ABOUT-NLS AUTHORS NEWS README
 }
