@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/sancho-bin/Attic/sancho-bin-0.9.4.56.ebuild,v 1.3 2006/06/06 21:06:25 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/sancho-bin/Attic/sancho-bin-0.9.4.56.ebuild,v 1.4 2006/07/04 14:28:43 squinky86 Exp $
 
 MY_P=${P/-bin/}
 MY_P=${MY_P%.*}-${MY_P##*.}
@@ -44,6 +44,9 @@ src_install() {
 
 	dodir /etc/env.d
 	echo -e "PATH=/opt/sancho\n" > ${D}/etc/env.d/20sancho
+
+	insinto /etc/revdep-rebuild
+	doins ${FILESDIR}/50-${PN}
 }
 
 pkg_postinst() {
