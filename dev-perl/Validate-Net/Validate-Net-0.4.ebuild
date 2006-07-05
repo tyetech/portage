@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Validate-Net/Attic/Validate-Net-0.4.ebuild,v 1.10 2006/02/13 14:12:16 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Validate-Net/Attic/Validate-Net-0.4.ebuild,v 1.11 2006/07/05 13:00:52 ian Exp $
 
 inherit perl-module
 
@@ -16,3 +16,4 @@ IUSE=""
 DEPEND="virtual/perl-Test-Simple
 	dev-perl/Class-Default
 	dev-perl/Class-Inspector"
+RDEPEND="${DEPEND}"
