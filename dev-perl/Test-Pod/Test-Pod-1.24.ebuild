@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Test-Pod/Attic/Test-Pod-1.24.ebuild,v 1.3 2006/06/29 23:41:07 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Test-Pod/Attic/Test-Pod-1.24.ebuild,v 1.4 2006/07/05 10:30:05 ian Exp $
 
 inherit perl-module
 
@@ -17,3 +17,4 @@ IUSE=""
 DEPEND="dev-perl/Pod-Simple
 	|| ( 	>=virtual/perl-Test-Simple-0.62
 		( <virtual/perl-Test-Simple-0.62 dev-perl/Test-Builder-Tester ) )"
+RDEPEND="${DEPEND}"
