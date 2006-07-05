@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Text-Aspell/Attic/Text-Aspell-0.04.ebuild,v 1.10 2006/02/04 01:17:45 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Text-Aspell/Attic/Text-Aspell-0.04.ebuild,v 1.11 2006/07/05 11:13:05 ian Exp $
 
 inherit perl-module
 
@@ -16,3 +16,4 @@ IUSE=""
 SRC_TEST="do"
 
 DEPEND="app-text/aspell"
+RDEPEND="${DEPEND}"
