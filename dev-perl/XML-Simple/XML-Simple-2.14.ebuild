@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-Simple/Attic/XML-Simple-2.14.ebuild,v 1.13 2006/07/05 05:53:20 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/XML-Simple/Attic/XML-Simple-2.14.ebuild,v 1.14 2006/07/05 13:54:58 ian Exp $
 
 inherit perl-module
 
@@ -17,5 +17,6 @@ DEPEND="virtual/perl-Storable
 	dev-perl/XML-SAX
 	>=dev-perl/XML-NamespaceSupport-1.04
 	>=dev-perl/XML-Parser-2.30"
+RDEPEND="${DEPEND}"
 
 SRC_TEST="do"
