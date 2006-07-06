@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/ati-drivers-extra/Attic/ati-drivers-extra-8.26.18.ebuild,v 1.1 2006/07/06 13:22:30 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/ati-drivers-extra/Attic/ati-drivers-extra-8.26.18.ebuild,v 1.2 2006/07/06 13:32:24 lu_zero Exp $
 
 IUSE="qt3"
 
@@ -24,7 +24,7 @@ src_unpack() {
 	local OLDBIN="/usr/X11R6/bin"
 
 	cd ${WORKDIR}
-	use x86 && MY_P="ati-driver-installer-${PV}-i386.run"
+	use x86 && MY_P="ati-driver-installer-${PV}-x86.run"
 	use amd64 && MY_P="ati-driver-installer-${PV}-x86_64.run"
 
 	ebegin "Unpacking Ati drivers"
