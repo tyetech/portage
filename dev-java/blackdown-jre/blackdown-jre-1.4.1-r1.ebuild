@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/blackdown-jre/Attic/blackdown-jre-1.4.1-r1.ebuild,v 1.17 2006/07/03 13:19:34 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/blackdown-jre/Attic/blackdown-jre-1.4.1-r1.ebuild,v 1.18 2006/07/06 11:19:53 nelchael Exp $
 
 inherit java toolchain-funcs
 
@@ -25,7 +25,6 @@ DEPEND="
 RDEPEND="${DEPEND}
 	sparc? ( >=sys-devel/gcc-3.2 )
 	amd64? ( >=sys-devel/gcc-3.2 )"
-PROVIDE="virtual/jre"
 SLOT="0"
 LICENSE="sun-bcla-java-vm"
 KEYWORDS="x86 sparc amd64 -*"
