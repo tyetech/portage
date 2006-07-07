@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kde.eclass,v 1.171 2006/06/27 11:44:22 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/kde.eclass,v 1.172 2006/07/07 17:01:39 carlo Exp $
 #
 # Author Dan Armak <danarmak@gentoo.org>
 #
@@ -342,7 +342,7 @@ kde_src_install() {
 	shift
 	done
 
-	if [[ -n ${KDEBASE} ]] ; then
+	if [[ -n ${KDEBASE} ]] && [[ "${PN}" != "arts" ]] ; then
 		# work around bug #97196
 		mv ${D}/usr/share/doc/* "${D}/$(kde-config --expandvars --install html)/../"
 	fi
