@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/magic/Attic/magic-7.1-r5.ebuild,v 1.2 2005/09/21 15:14:01 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/magic/Attic/magic-7.1-r5.ebuild,v 1.3 2006/07/08 17:09:39 wormo Exp $
 
 inherit eutils flag-o-matic
 
