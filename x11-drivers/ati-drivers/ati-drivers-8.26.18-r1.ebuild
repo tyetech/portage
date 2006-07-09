@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.26.18-r1.ebuild,v 1.1 2006/07/06 13:04:05 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.26.18-r1.ebuild,v 1.2 2006/07/09 17:24:02 lu_zero Exp $
 
 IUSE="acpi doc opengl"
 
@@ -224,7 +224,7 @@ src_install() {
 	#apps, man pages, and conf files
 	exeinto /opt/ati/bin
 	doexe ${ARCH_DIR}/usr/X11R6/bin/*
-	if use acpid
+	if use acpi
 	then
 		exeinto /opt/ati/sbin
 		doexe ${ARCH_DIR}/usr/sbin/*
