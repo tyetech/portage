@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/ggz-gtk-client/Attic/ggz-gtk-client-0.0.5.ebuild,v 1.4 2004/06/24 22:16:40 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/ggz-gtk-client/Attic/ggz-gtk-client-0.0.5.ebuild,v 1.5 2006/07/09 01:42:22 wormo Exp $
 
 DESCRIPTION="The gtk client for GGZ Gaming Zone"
 HOMEPAGE="http://ggz.sourceforge.net/"
