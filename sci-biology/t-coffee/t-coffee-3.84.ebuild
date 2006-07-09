@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/t-coffee/Attic/t-coffee-3.84.ebuild,v 1.2 2006/03/16 21:44:32 ribosome Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/t-coffee/Attic/t-coffee-3.84.ebuild,v 1.3 2006/07/09 07:18:21 dberkholz Exp $
 
 inherit toolchain-funcs flag-o-matic
 
@@ -11,7 +11,7 @@ SRC_URI="http://igs-server.cnrs-mrs.fr/~cnotred/Packages/T-COFFEE_distribution_V
 
 SLOT="0"
 IUSE=""
-KEYWORDS="~ppc ~x86"
+KEYWORDS="ppc x86"
 
 RESTRICT="nomirror"
 
