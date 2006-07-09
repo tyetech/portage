@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xmessage/Attic/xmessage-1.0.1.ebuild,v 1.6 2006/06/30 18:17:47 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xmessage/Attic/xmessage-1.0.1.ebuild,v 1.7 2006/07/09 19:49:06 pylon Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -8,7 +8,7 @@
 inherit x-modular
 
 DESCRIPTION="X.Org xmessage application"
-KEYWORDS="amd64 ~arm ~mips ~ppc ppc64 ~s390 ~sparc x86 ~x86-fbsd"
+KEYWORDS="amd64 ~arm ~mips ppc ppc64 ~s390 ~sparc x86 ~x86-fbsd"
 IUSE="xprint"
 RDEPEND="x11-libs/libXaw"
 DEPEND="${RDEPEND}"
