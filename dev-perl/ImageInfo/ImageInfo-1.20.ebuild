@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/ImageInfo/Attic/ImageInfo-1.20.ebuild,v 1.3 2006/07/04 11:32:31 ian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/ImageInfo/Attic/ImageInfo-1.20.ebuild,v 1.4 2006/07/10 16:17:43 agriffis Exp $
 
 inherit perl-module
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.cpan.org/modules/by-module/Image/${MY_P}.readme"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 sparc ~x86"
+KEYWORDS="~alpha ~amd64 ia64 ~ppc ~ppc64 sparc ~x86"
 IUSE=""
 
 DEPEND="dev-perl/module-build
