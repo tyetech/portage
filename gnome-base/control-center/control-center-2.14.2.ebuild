@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/control-center/Attic/control-center-2.14.2.ebuild,v 1.1 2006/06/30 17:54:45 allanonjl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/control-center/Attic/control-center-2.14.2.ebuild,v 1.2 2006/07/10 20:55:36 gustavoz Exp $
 
 inherit eutils gnome2 autotools
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 sparc ~x86"
 IUSE="alsa eds gstreamer"
 
 RDEPEND=">=gnome-base/gnome-vfs-2.2
