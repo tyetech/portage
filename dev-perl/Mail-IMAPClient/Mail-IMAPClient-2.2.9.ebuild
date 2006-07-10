@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Mail-IMAPClient/Attic/Mail-IMAPClient-2.2.9.ebuild,v 1.13 2006/07/04 11:54:11 ian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Mail-IMAPClient/Attic/Mail-IMAPClient-2.2.9.ebuild,v 1.14 2006/07/10 16:47:47 agriffis Exp $
 
 inherit perl-module eutils
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://www.cpan.org/modules/by-module/Mail/${P}.readme"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="~alpha amd64 ~ia64 ~ppc ~s390 sparc x86"
+KEYWORDS="~alpha amd64 ia64 ~ppc ~s390 sparc x86"
 IUSE=""
 
 # Tests are not enabled for this package intentionally. They require
