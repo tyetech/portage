@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-headers/Attic/linux-headers-2.4.21.ebuild,v 1.31 2006/02/27 20:01:09 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-headers/Attic/linux-headers-2.4.21.ebuild,v 1.32 2006/07/12 16:20:39 kugelfang Exp $
 
 ETYPE="headers"
 inherit eutils kernel
-IUSE=""
+IUSE="gcc64"
 OKV=${PV/_/-}
 KV="${OKV}"
 S=${WORKDIR}/linux-${OKV}
