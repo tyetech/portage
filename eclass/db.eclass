@@ -1,7 +1,9 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/db.eclass,v 1.26 2006/05/21 10:21:09 pauldv Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/db.eclass,v 1.27 2006/07/13 13:11:14 pauldv Exp $
 # This is a common location for functions used in the sys-libs/db ebuilds
+#
+# Bugs: pauldv@gentoo.org
 
 IUSE="doc"
 
