@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/glew/Attic/glew-1.3.4.ebuild,v 1.3 2006/04/19 19:02:23 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/glew/Attic/glew-1.3.4.ebuild,v 1.4 2006/07/13 13:38:53 agriffis Exp $
 
 inherit eutils multilib
 
@@ -12,7 +12,7 @@ LICENSE="BSD GLX SGI-B GPL-2"
 
 IUSE=""
 SLOT="0"
-KEYWORDS="amd64 ~ia64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ia64 ~ppc ~sparc ~x86"
 
 RDEPEND="virtual/opengl
 	virtual/glu"
