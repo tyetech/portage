@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/boinc/Attic/boinc-5.5.6.ebuild,v 1.3 2006/07/15 20:31:13 cryos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/boinc/Attic/boinc-5.5.6.ebuild,v 1.4 2006/07/15 23:24:47 cryos Exp $
 
 inherit eutils
 
@@ -63,7 +63,8 @@ src_compile() {
 	# Make it link to the compiled libs, not the installed ones
 	sed -e "s|LDFLAGS = |LDFLAGS = -L../lib |g" -i */Makefile || \
 		die "sed failed"
-	emake || die "emake failed"
+	# Force -j1 - bug 136374.
+	emake -j1 || die "emake failed"
 }
 
 src_install() {
