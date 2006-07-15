@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/pccts/pccts-1.33.33.ebuild,v 1.18 2006/07/15 03:21:00 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/pccts/pccts-1.33.33.ebuild,v 1.19 2006/07/15 07:21:30 vapier Exp $
 
 inherit eutils
 
@@ -48,7 +48,7 @@ src_install() {
 
 	# sorcerer includes
 	insinto /usr/include/pccts/sorcerer
-	doins sorcerer/h/*.{h,c,cpp} || die
+	doins sorcerer/h/*.h || die
 
 	# sorcerer libraries
 	insinto /usr/include/pccts/sorcerer/lib
