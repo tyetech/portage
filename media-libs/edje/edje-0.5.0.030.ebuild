@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/edje/Attic/edje-9999.ebuild,v 1.6 2006/07/16 05:29:42 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/edje/Attic/edje-0.5.0.030.ebuild,v 1.1 2006/07/16 05:29:42 vapier Exp $
 
 inherit enlightenment
 
