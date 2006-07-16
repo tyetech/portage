@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-backgrounds/Attic/gnome-backgrounds-2.14.2.1.ebuild,v 1.4 2006/07/14 17:37:56 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-backgrounds/Attic/gnome-backgrounds-2.14.2.1.ebuild,v 1.5 2006/07/16 11:49:23 dertobi123 Exp $
 
 inherit eutils gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ppc ~ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm hppa ~ia64 ~mips ppc ~ppc64 sparc x86"
 IUSE=""
 
 RDEPEND=""
