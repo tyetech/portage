@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/ciphire-mail/Attic/ciphire-mail-1.1.015.ebuild,v 1.6 2006/03/03 13:59:35 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/ciphire-mail/Attic/ciphire-mail-1.1.015.ebuild,v 1.7 2006/07/19 09:42:56 azarah Exp $
 
 inherit eutils qt3
 
@@ -11,7 +11,7 @@ SRC_URI="${P}-linux-i686.tar.gz
 	amd64? ( ciphire-redir64.so )"
 LICENSE="Ciphire"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="-* amd64 x86"
 RESTRICT="nostrip fetch nomirror"
 IUSE="X gnome kde"
 
