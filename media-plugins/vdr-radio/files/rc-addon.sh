@@ -1,8 +1,10 @@
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-radio/files/rc-addon.sh,v 1.1 2006/01/09 21:45:42 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-radio/files/rc-addon.sh,v 1.2 2006/07/22 19:57:21 hd_brummy Exp $
 #
 # rc-addon plugin-startup-skript for vdr-radio
 # 
+# This sript is called by gentoo-vdr-scripts on start of VDR
 
+# Set default DIR to the background picture
 RADIO_BACKGROUND_DIR=/usr/share/vdr/radio
 
 plugin_pre_vdr_start() {
