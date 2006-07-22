@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/werken-xpath/werken-xpath-0.9.4_beta-r1.ebuild,v 1.1 2006/07/19 21:39:07 nelchael Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/werken-xpath/werken-xpath-0.9.4_beta-r1.ebuild,v 1.2 2006/07/22 20:45:07 nelchael Exp $
 
 inherit java-pkg-2 java-ant-2 eutils versionator
 
@@ -27,7 +27,7 @@ RDEPEND=">=virtual/jre-1.4
 
 S="${WORKDIR}/${MY_PN}"
 
-ant_src_unpack() {
+src_unpack() {
 	unpack ${A}
 	cd ${S}
 
