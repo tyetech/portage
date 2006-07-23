@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/iverilog/Attic/iverilog-0.8.2.ebuild,v 1.3 2006/07/23 00:12:37 wormo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/iverilog/Attic/iverilog-0.8.2.ebuild,v 1.4 2006/07/23 14:18:10 kingtaco Exp $
 
 inherit multilib eutils
 
@@ -14,7 +14,7 @@ DEPEND="dev-util/gperf"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~x86"
+KEYWORDS="amd64 ppc ~x86"
 IUSE=""
 
 src_unpack() {
