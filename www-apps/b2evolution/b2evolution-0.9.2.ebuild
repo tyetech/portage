@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/b2evolution/Attic/b2evolution-0.9.2.ebuild,v 1.1 2006/05/30 17:48:45 dsd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/b2evolution/Attic/b2evolution-0.9.2.ebuild,v 1.2 2006/07/24 16:04:01 dsd Exp $
 
 inherit webapp eutils
 
@@ -32,6 +32,7 @@ src_install() {
 
 	# Identify the configuration files that this app uses
 	# User can want to make changes to these!
+	webapp_configfile ${MY_HTDOCSDIR}/conf/_config.php
 	webapp_serverowned ${MY_HTDOCSDIR}/conf/_config.php
 	webapp_serverowned ${MY_HTDOCSDIR}
 
