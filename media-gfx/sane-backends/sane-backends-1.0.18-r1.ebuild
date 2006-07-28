@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.17.ebuild,v 1.8 2006/07/28 09:12:14 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sane-backends/Attic/sane-backends-1.0.18-r1.ebuild,v 1.1 2006/07/28 09:12:14 phosphan Exp $
 
 inherit eutils
 
@@ -19,29 +19,31 @@ RDEPEND=">=media-libs/jpeg-6b
 DEPEND="${RDEPEND}
 	>=sys-apps/sed-4"
 
-BROTHERMFCPATCHVER="1.0.16"
+BROTHERMFCPATCHVER="1.0.18"
 BROTHERMFCDRIVER="sane-${BROTHERMFCPATCHVER}-brother-driver.diff"
 
-SRC_URI="ftp://ftp.sane-project.org/pub/sane/${P}/${P}.tar.gz
+# Could not access via ftp on 2006-07-20
+SRC_URI="http://alioth.debian.org/download.php/1669/sane-backends-1.0.18.tar.gz
+	ftp://ftp.sane-project.org/pub/sane/${P}/${P}.tar.gz
 	ftp://ftp.sane-project.org/pub/sane/old-versions/${P}/${P}.tar.gz
 	usb? ( mirror://gentoo/${BROTHERMFCDRIVER}.bz2
 		http://dev.gentoo.org/~phosphan/${BROTHERMFCDRIVER}.bz2 )"
 SLOT="0"
 LICENSE="GPL-2 public-domain"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 # To enable specific backends, define SANE_BACKENDS with the backends you want
 # in those:
 # 
-#         abaton agfafocus apple artec as6e avision bh canon
-#         canon630u coolscan coolscan2 dc25 dmc
-#         epson fujitsu genesys gt68xx hp leo lexmark matsushita microtek
-#         microtek2 mustek mustek_usb nec pie plustek
-#         plustek_pp ricoh s9036 sceptre sharp
-#         sp15c st400 tamarack test teco1 teco2 teco3 umax umax_pp umax1220u
-#         artec_eplus48u ma1509 ibm hp5400 u12 snapscan niash sm3840 hp4200
-#         sm3600
-#
+# abaton agfafocus apple artec as6e avision bh brother canon 
+# canon630u coolscan coolscan2 dc25 dmc 
+# epson fujitsu genesys gt68xx hp leo lexmark matsushita microtek 
+# microtek2 mustek mustek_usb nec pie pixma plustek 
+# plustek_pp ricoh s9036 sceptre sharp 
+# sp15c st400 tamarack test teco1 teco2 teco3 umax umax_pp umax1220u 
+# artec_eplus48u ma1509 ibm hp5400 u12 snapscan niash sm3840 hp4200 
+# sm3600 hp3500 stv680"
+
 # Note that some backends has specific dependencies which make the compilation
 # fail because not supported on your current platform.
 
@@ -81,16 +83,13 @@ src_unpack() {
 	#only generate the .ps and not the fonts
 	sed -i -e 's:$(DVIPS) sane.dvi -o sane.ps:$(DVIPS) sane.dvi -M1 -o sane.ps:' \
 		doc/Makefile.in
-	#compile errors when using NDEBUG otherwise
-	sed -i -e 's:function_name:__FUNCTION__:g' backend/artec_eplus48u.c \
-		|| die "function_name fix failed"
 
 	if use usb; then
 		epatch ${WORKDIR}/${BROTHERMFCDRIVER}
 		sed -e 's/bh canon/bh brother canon/' -i configure || \
 			die "could not add 'brother' to backend list"
 	fi
-
+	epatch ${FILESDIR}/scsi-udev-rule.patch
 }
 
 src_compile() {
@@ -112,10 +111,12 @@ src_compile() {
 }
 
 src_install () {
-	einstall docdir=${D}/usr/share/doc/${PF}
+	make INSTALL_LOCKPATH="" DESTDIR="${D}" install \
+		docdir=/usr/share/doc/${PF}
 	keepdir /var/lib/lock/sane
 	fowners root:scanner /var/lib/lock/sane
 	fperms g+w /var/lib/lock/sane
+	dodir /etc/env.d
 	if use usb; then
 		cd tools/hotplug
 		insinto /etc/hotplug/usb
@@ -123,13 +124,15 @@ src_install () {
 		doins libsane.usermap
 		doexe libusbscanner
 		newdoc README README.hotplug
+		echo >> ${D}/etc/env.d/30sane "USB_DEVFS_PATH=/dev/bus/usb"
 		cd ../..
 	fi
+	cd tools/udev
+	dodir /etc/udev/rules.d
+	insinto /etc/udev/rules.d
+	newins libsane.rules 99-libsane.rules
+	cd ../..
 
 	dodoc NEWS AUTHORS LICENSE ChangeLog* README README.linux
-
-	echo "SANE_CONFIG_DIR=/etc/sane.d" > 30sane
-	insinto /etc/env.d
-	doins 30sane
-
+	echo "SANE_CONFIG_DIR=/etc/sane.d" >> ${D}/etc/env.d/30sane
 }
