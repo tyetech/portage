@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/bsdtar/Attic/bsdtar-1.2.53-r1.ebuild,v 1.1 2006/06/18 00:31:40 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/bsdtar/Attic/bsdtar-1.2.53-r1.ebuild,v 1.2 2006/07/30 14:43:57 flameeyes Exp $
 
 inherit eutils autotools
 
@@ -54,7 +54,7 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	# Create tar symlink for FreeBSD
 	if [[ ${CHOST} == *-freebsd* ]]; then
