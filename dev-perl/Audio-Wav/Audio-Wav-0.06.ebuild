@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Audio-Wav/Attic/Audio-Wav-0.06.ebuild,v 1.1 2006/04/24 00:28:16 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Audio-Wav/Attic/Audio-Wav-0.06.ebuild,v 1.2 2006/08/04 22:29:49 mcummings Exp $
 
 inherit perl-module
 
@@ -12,3 +12,5 @@ SLOT="0"
 LICENSE="Artistic"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86"
 IUSE=""
+DEPEND="dev-lang/perl"
+RDEPEND="${DEPEND}"
