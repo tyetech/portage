@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-Flat/Attic/File-Flat-0.8.ebuild,v 1.12 2006/07/04 08:37:31 ian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-Flat/Attic/File-Flat-0.8.ebuild,v 1.13 2006/08/05 03:40:26 mcummings Exp $
 
 inherit perl-module
 
@@ -15,5 +15,7 @@ IUSE=""
 
 DEPEND="dev-perl/Class-Autouse
 	virtual/perl-File-Spec
-	dev-perl/Class-Inspector"
+	dev-perl/Class-Inspector
+	dev-lang/perl"
 RDEPEND="${DEPEND}"
+
