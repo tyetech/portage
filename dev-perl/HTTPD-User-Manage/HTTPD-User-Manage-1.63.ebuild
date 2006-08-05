@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTTPD-User-Manage/Attic/HTTPD-User-Manage-1.63.ebuild,v 1.3 2006/07/10 16:05:57 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/HTTPD-User-Manage/Attic/HTTPD-User-Manage-1.63.ebuild,v 1.4 2006/08/05 04:38:42 mcummings Exp $
 
 inherit perl-module
 
@@ -12,3 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="ia64 sparc ~x86"
 IUSE=""
+
+
+DEPEND="dev-lang/perl"
+RDEPEND="${DEPEND}"
