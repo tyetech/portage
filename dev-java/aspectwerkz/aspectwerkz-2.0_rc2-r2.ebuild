@@ -1,16 +1,17 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/aspectwerkz/Attic/aspectwerkz-2.0_rc2.ebuild,v 1.7 2006/08/05 16:56:06 nichoj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/aspectwerkz/Attic/aspectwerkz-2.0_rc2-r2.ebuild,v 1.1 2006/08/05 16:56:06 nichoj Exp $
 
-inherit java-pkg eutils
+inherit java-pkg-2 eutils
+# no java-ant-2 required since we patch build.xml to contain target/source
 
 DESCRIPTION="AspectWerkz is a dynamic, lightweight and high-performant AOP/AOSD framework for Java."
 SRC_URI="http://dist.codehaus.org/${PN}/distributions/${P/_rc/.RC}.zip"
 HOMEPAGE="http://aspectwerkz.codehaus.org"
 LICENSE="LGPL-2.1"
 SLOT="2"
-KEYWORDS="amd64 ~ppc x86"
-RDEPEND=">=virtual/jre-1.4
+KEYWORDS="~x86 ~amd64 ~ppc"
+RDEPEND=">=virtual/jre-1.3
 	=dev-java/asm-1.5*
 	dev-java/bcel
 	dev-java/concurrent-util
@@ -20,13 +21,21 @@ RDEPEND=">=virtual/jre-1.4
 	>=dev-java/junitperf-1.9.1
 	dev-java/trove
 	~dev-java/qdox-20050104"
-DEPEND=">=virtual/jdk-1.4
+DEPEND="java5? ( >=virtual/jdk-1.5 )
+	!java5? ( >=virtual/jdk-1.3 )
 	${RDEPEND}
 	>=dev-java/ant-core-1.5
 	app-arch/unzip
-	jikes? ( >=dev-java/jikes-1.21 )
 	source? ( app-arch/zip )"
-IUSE="jikes source"
+IUSE="java5 source"
+
+# Explicitily set JDK depends for java-utils-2 to parse
+# because it isn't smart with use flags yet
+if use java5; then
+	JAVA_PKG_NV_DEPEND=">=virtual/jdk-1.5"
+else
+	JAVA_PKG_NV_DEPEND=">=virtual/jdk-1.4"
+fi
 
 S=${WORKDIR}/aw_2_0_2
 
@@ -35,6 +44,7 @@ src_unpack() {
 
 	cd ${S}
 	epatch ${FILESDIR}/${P}-gentoo.patch
+	epatch ${FILESDIR}/${P}-jdk15.patch
 
 	find . -name '*.jar' -exec rm {} \; || die
 	cd ${S}/lib
@@ -51,9 +61,9 @@ src_unpack() {
 }
 
 src_compile() {
-	local antflags="dist"
-	use jikes && antflags="${antflags} -Dbuild.compiler=jikes"
-	ant ${antflags} || die "failed to build"
+	local antflags
+	use "!java5" && antflags="-Dnojdk15=true"
+	eant ${antflags} dist || die "eant failed"
 }
 
 src_install() {

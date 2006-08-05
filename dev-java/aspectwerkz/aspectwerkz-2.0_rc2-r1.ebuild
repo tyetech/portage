@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/aspectwerkz/Attic/aspectwerkz-2.0_rc2-r1.ebuild,v 1.3 2006/07/27 12:32:23 nelchael Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/aspectwerkz/Attic/aspectwerkz-2.0_rc2-r1.ebuild,v 1.4 2006/08/05 16:56:06 nichoj Exp $
 
 inherit java-pkg-2 java-ant-2 eutils
 
@@ -19,7 +19,7 @@ RDEPEND=">=virtual/jre-1.5
 	dev-java/jrexx
 	>=dev-java/junitperf-1.9.1
 	dev-java/trove
-	=dev-java/qdox-20050104"
+	~dev-java/qdox-20050104"
 DEPEND=">=virtual/jdk-1.5
 	${RDEPEND}
 	>=dev-java/ant-core-1.5
