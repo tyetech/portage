@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Unix-Syslog/Attic/Unix-Syslog-0.100-r1.ebuild,v 1.12 2005/09/17 00:46:34 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Unix-Syslog/Attic/Unix-Syslog-0.100-r1.ebuild,v 1.13 2006/08/06 00:56:26 mcummings Exp $
 
 inherit perl-module
 
@@ -12,3 +12,7 @@ SLOT="0"
 LICENSE="Artistic"
 KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
 IUSE=""
+
+
+DEPEND="dev-lang/perl"
+RDEPEND="${DEPEND}"
