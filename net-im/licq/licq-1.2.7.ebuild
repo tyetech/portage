@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/licq/Attic/licq-1.2.7.ebuild,v 1.20 2006/06/24 00:29:47 cardoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/licq/Attic/licq-1.2.7.ebuild,v 1.21 2006/08/14 15:33:29 genstef Exp $
 
 inherit eutils kde-functions
 
@@ -143,5 +143,5 @@ src_install() {
 	dodoc README licq_rms.conf
 
 	# fixes bug #22136
-	rm -fR ${D}/var
+	rm -fR ${D}/$(echo ${D} | awk -F / '{print $2}')
 }
