@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.5.0.07-r2.ebuild,v 1.3 2006/08/16 08:10:11 nichoj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.5.0.08.ebuild,v 1.1 2006/08/16 08:10:11 nichoj Exp $
 
 inherit java-vm-2 eutils
 
@@ -8,15 +8,17 @@ MY_PVL=${PV%.*}_${PV##*.}
 MY_PVA=${PV//./_}
 S="${WORKDIR}/jdk${MY_PVL}"
 
+X86_AT="jdk-${MY_PVA}-dlj-linux-i586.bin"
+AMD64_AT="jdk-${MY_PVA}-dlj-linux-amd64.bin"
 if use x86; then
-	At=jdk-${MY_PVA}-distro-linux-i586.bin
+	At=${X86_AT}
 elif use amd64; then
-	At=jdk-${MY_PVA}-distro-linux-amd64.bin
+	At=${AMD64_AT}
 fi
 DESCRIPTION="Sun's J2SE Development Kit, version ${PV}"
 HOMEPAGE="http://java.sun.com/j2se/1.5.0/"
-SRC_URI="x86? ( http://download.java.net/dlj/binaries/jdk-${MY_PVA}-distro-linux-i586.bin )
-		amd64? ( http://download.java.net/dlj/binaries/jdk-${MY_PVA}-distro-linux-amd64.bin )"
+SRC_URI="x86? ( http://download.java.net/dlj/binaries/${X86_AT} )
+		amd64? ( http://download.java.net/dlj/binaries/${AMD64_AT} )"
 SLOT="1.5"
 LICENSE="dlj-1.1"
 KEYWORDS="~x86 ~amd64 -*"
