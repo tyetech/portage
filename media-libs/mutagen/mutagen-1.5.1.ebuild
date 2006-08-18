@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mutagen/Attic/mutagen-1.5.1.ebuild,v 1.5 2006/08/16 03:40:04 tsunam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mutagen/Attic/mutagen-1.5.1.ebuild,v 1.6 2006/08/18 20:53:50 dertobi123 Exp $
 
 inherit distutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.sacredchao.net/~piman/software/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~ppc sparc x86"
+KEYWORDS="alpha amd64 ppc sparc x86"
 IUSE="test"
 
 DEPEND="test? (
