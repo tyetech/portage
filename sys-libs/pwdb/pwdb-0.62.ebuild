@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/pwdb/pwdb-0.62.ebuild,v 1.25 2006/06/27 20:45:13 kanaka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/pwdb/pwdb-0.62.ebuild,v 1.26 2006/08/20 21:18:11 vapier Exp $
 
-inherit eutils flag-o-matic
+inherit eutils flag-o-matic toolchain-funcs
 
 DESCRIPTION="Password database"
 HOMEPAGE="http://packages.gentoo.org/ebuilds/?pwdb-${PVR}"
