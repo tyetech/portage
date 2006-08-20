@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Time-modules/Attic/Time-modules-2003.1126.ebuild,v 1.11 2006/08/06 00:39:39 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Time-modules/Attic/Time-modules-2003.1126.ebuild,v 1.12 2006/08/20 01:24:11 mcummings Exp $
 
 inherit perl-module
 
@@ -18,4 +18,3 @@ SRC_TEST="do"
 
 
 DEPEND="dev-lang/perl"
-RDEPEND="${DEPEND}"

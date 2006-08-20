@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Params-Util/Attic/Params-Util-0.11.ebuild,v 1.8 2006/08/18 01:04:34 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Params-Util/Attic/Params-Util-0.11.ebuild,v 1.9 2006/08/20 01:20:28 mcummings Exp $
 
 inherit perl-module
 
@@ -17,5 +17,3 @@ SRC_TEST="do"
 
 DEPEND=">=virtual/perl-Scalar-List-Utils-1.11
 	dev-lang/perl"
-RDEPEND="${DEPEND}"
-
