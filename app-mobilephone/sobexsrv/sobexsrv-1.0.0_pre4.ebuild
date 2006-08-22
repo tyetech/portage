@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/sobexsrv/Attic/sobexsrv-1.0.0_pre4.ebuild,v 1.7 2006/07/16 15:16:40 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/sobexsrv/Attic/sobexsrv-1.0.0_pre4.ebuild,v 1.8 2006/08/22 04:18:18 joker Exp $
 
 inherit eutils
 
@@ -65,6 +65,6 @@ pkg_postinst() {
 	einfo "Execute the following commands to enable suid:"
 	echo
 	einfo "chown root:sobexsrv /usr/bin/sobexsrv"
-	einfo "chmod 2710 /usr/bin/sobexsrv"
+	einfo "chmod 4710 /usr/bin/sobexsrv"
 	echo
 }
