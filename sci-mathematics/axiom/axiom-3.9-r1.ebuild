@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/axiom/Attic/axiom-3.9-r1.ebuild,v 1.2 2006/03/18 21:34:05 plasmaroo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/axiom/Attic/axiom-3.9-r1.ebuild,v 1.3 2006/08/25 11:12:08 metalgod Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://axiom.axiom-developer.org/axiom-website/DOWNLOADS/axiom-Sept2005
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="virtual/tetex
