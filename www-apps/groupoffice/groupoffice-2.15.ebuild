@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/groupoffice/Attic/groupoffice-2.15.ebuild,v 1.1 2006/08/01 15:35:32 rl03 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/groupoffice/Attic/groupoffice-2.15.ebuild,v 1.2 2006/08/30 07:39:14 blubb Exp $
 
 inherit eutils webapp
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://group-office.sourceforge.net/"
 SRC_URI="mirror://sourceforge/group-office/${PN}-com-${PV}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~alpha ~amd64 ~sparc"
+KEYWORDS="~alpha amd64 ~ppc ~sparc ~x86"
 IUSE=""
 DEPEND="virtual/php
 	>=dev-db/mysql-4.0
