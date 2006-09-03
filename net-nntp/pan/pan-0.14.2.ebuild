@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/pan/Attic/pan-0.14.2.ebuild,v 1.3 2006/08/09 18:13:09 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/pan/Attic/pan-0.14.2.ebuild,v 1.4 2006/09/03 20:21:13 wolf31o2 Exp $
 
-inherit libtool
+inherit eutils libtool
 
 IUSE="nls spell"
 
