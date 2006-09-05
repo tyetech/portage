@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/squashfs-tools/Attic/squashfs-tools-3.1.ebuild,v 1.2 2006/09/05 16:27:52 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/squashfs-tools/Attic/squashfs-tools-3.1_p2.ebuild,v 1.1 2006/09/05 16:27:52 wolf31o2 Exp $
 
 inherit toolchain-funcs
 
