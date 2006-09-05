@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/eel/Attic/eel-1.0.2-r3.ebuild,v 1.17 2005/01/08 23:18:46 slarti Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/eel/Attic/eel-1.0.2-r3.ebuild,v 1.18 2006/09/05 01:47:08 kumba Exp $
 
 DESCRIPTION="EEL libraries for GNOME"
 HOMEPAGE="http://www.gnome.org/"
@@ -8,7 +8,7 @@ SRC_URI="ftp://ftp.gnome.org/pub/GNOME/stable/sources/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="1"
-KEYWORDS="x86 ppc sparc arm"
+KEYWORDS="arm ppc sparc x86"
 IUSE="nls"
 
 RDEPEND=">=media-libs/freetype-2.0.1

@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-common/Attic/gnome-common-2.12.0.ebuild,v 1.10 2006/09/03 06:00:36 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-common/Attic/gnome-common-2.12.0.ebuild,v 1.11 2006/09/05 01:54:01 kumba Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2"
 SLOT="3"
-KEYWORDS="~alpha amd64 arm hppa ~ia64 ~mips ppc ppc64 sh sparc x86"
+KEYWORDS="~alpha amd64 arm hppa ~ia64 ppc ppc64 sh sparc x86"
 IUSE=""
 
 DEPEND=""
