@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/oops/Attic/oops-1.5.24_pre20050503-r1.ebuild,v 1.4 2006/05/19 23:21:01 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/oops/Attic/oops-1.5.24_pre20050503-r1.ebuild,v 1.5 2006/09/06 05:48:04 mrness Exp $
 
 inherit eutils flag-o-matic
 
@@ -36,6 +36,7 @@ src_unpack() {
 	cd "${S}"
 	epatch "${WORKDIR}/${P}.patch"
 	epatch "${FILESDIR}/${P/_*}-textrel.patch"
+	epatch "${FILESDIR}/${P/_*}-pthread-rwlock.patch"
 	epatch "${FILESDIR}/modules-as-needed.patch"
 	sed -i -e 's:/usr/local/lib/libpcre:/usr/lib/libpcre:g' configure
 	sed -i -e 's:y\.tab\.h:y.tab.c:' src/Makefile.in
