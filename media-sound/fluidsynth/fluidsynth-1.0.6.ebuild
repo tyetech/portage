@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/fluidsynth/Attic/fluidsynth-1.0.6.ebuild,v 1.1 2005/07/11 19:41:43 fvdpol Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/fluidsynth/Attic/fluidsynth-1.0.6.ebuild,v 1.2 2006/09/06 06:39:33 wormo Exp $
 
 IUSE="alsa jack sse ladcca static"
 
