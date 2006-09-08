@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mlt/Attic/mlt-0.2.2.ebuild,v 1.3 2006/09/02 23:24:42 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mlt/Attic/mlt-0.2.2.ebuild,v 1.4 2006/09/08 19:26:39 corsair Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/mlt/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="dv xml jack gtk sdl vorbis sox quicktime mmx lame xine lame ogg theora xine"
 
 DEPEND="media-video/ffmpeg
