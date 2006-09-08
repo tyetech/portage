@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/linux-identd/linux-identd-1.3.ebuild,v 1.11 2006/09/08 00:13:07 seemant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/linux-identd/linux-identd-1.3.ebuild,v 1.12 2006/09/08 18:06:27 seemant Exp $
 
-IUSE=""
+IUSE="xinetd"
 DESCRIPTION="A real IDENT daemon for linux."
 HOMEPAGE="http://www.fukt.bth.se/~per/identd"
 SRC_URI="http://www.fukt.bth.se/~per/identd/${P}.tar.gz"
