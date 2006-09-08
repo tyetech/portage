@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.42a.ebuild,v 1.3 2006/08/15 11:42:24 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.42a.ebuild,v 1.4 2006/09/08 20:13:31 tcort Exp $
 
 inherit multilib flag-o-matic eutils python
 
@@ -14,7 +14,7 @@ SRC_URI="http://download.blender.org/source/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="|| ( GPL-2 BL )"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 
 RDEPEND="
