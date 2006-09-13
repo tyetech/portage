@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-xvideo/Attic/gst-plugins-xvideo-0.10.4-r1.ebuild,v 1.13 2006/09/04 06:21:16 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-xvideo/Attic/gst-plugins-xvideo-0.10.4-r1.ebuild,v 1.14 2006/09/13 19:57:50 agriffis Exp $
 
 inherit gst-plugins-base
 
-KEYWORDS="alpha amd64 arm hppa ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86"
 
 IUSE=""
 RDEPEND=">=media-libs/gst-plugins-base-0.10.4
