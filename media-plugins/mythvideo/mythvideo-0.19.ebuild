@@ -1,15 +1,11 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythvideo/Attic/mythvideo-0.19.ebuild,v 1.4 2006/06/06 03:36:50 halcy0n Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythvideo/Attic/mythvideo-0.19.ebuild,v 1.5 2006/09/14 05:38:04 cardoe Exp $
 
 inherit eutils mythtv-plugins
 
 DESCRIPTION="Video player module for MythTV."
-HOMEPAGE="http://www.mythtv.org/"
-SRC_URI="http://www.mythtv.org/mc/mythplugins-${PV}.tar.bz2"
 IUSE=""
-LICENSE="GPL-2"
-SLOT="0"
 KEYWORDS="~amd64 ppc ~x86"
 
 RDEPEND="dev-perl/libwww-perl
