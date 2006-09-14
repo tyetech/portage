@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt/Attic/qt-3.3.4-r8.ebuild,v 1.18 2006/07/09 06:04:31 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt/Attic/qt-3.3.4-r8.ebuild,v 1.19 2006/09/14 14:21:59 caleb Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
@@ -33,7 +33,7 @@ DEPEND="|| ( ( x11-libs/libXcursor
 	media-libs/libpng
 	media-libs/jpeg
 	media-libs/libmng
-	>=media-libs/freetype-2
+	=media-libs/freetype-2.1*
 	nas? ( >=media-libs/nas-1.5 )
 	mysql? ( dev-db/mysql )
 	firebird? ( dev-db/firebird )
