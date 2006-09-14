@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythbrowser/Attic/mythbrowser-0.19.ebuild,v 1.4 2006/09/14 06:06:23 cardoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythbrowser/Attic/mythbrowser-0.20.ebuild,v 1.1 2006/09/14 06:06:23 cardoe Exp $
 
-inherit mythtv-plugins kde-functions multilib eutils
+inherit mythtv-plugins kde-functions multilib
 
 DESCRIPTION="Web browser module for MythTV."
 IUSE=""
@@ -13,8 +13,6 @@ DEPEND="${RDEPEND}"
 
 src_unpack() {
 	mythtv-plugins_src_unpack
-
-	epatch "${FILESDIR}"/mythbrowser-kde-3.5.patch
 
 	set-kdedir
 	echo "INCLUDEPATH += ${KDEDIR}/include" >> settings.pro
