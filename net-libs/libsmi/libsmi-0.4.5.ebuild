@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsmi/Attic/libsmi-0.4.2.ebuild,v 1.3 2006/09/15 06:26:43 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsmi/Attic/libsmi-0.4.5.ebuild,v 1.1 2006/09/15 06:26:43 robbat2 Exp $
 
 DESCRIPTION="A Library to Access SMI MIB Information"
 SRC_URI="ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PN}/${P}.tar.gz"
