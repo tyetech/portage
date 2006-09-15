@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/phobiaii/phobiaii-1.1.ebuild,v 1.9 2006/06/23 05:15:51 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/phobiaii/phobiaii-1.1.ebuild,v 1.10 2006/09/15 19:26:13 wolf31o2 Exp $
 
 inherit games
 
@@ -30,6 +30,10 @@ src_install() {
 
 	dodir "${GAMES_PREFIX_OPT}"/${PN}
 	mv * "${D}/${GAMES_PREFIX_OPT}"/${PN}/
+
+	dosed ":GAMES_PREFIX_OPT:${GAMES_PREFIX_OPT}:" \
+		${GAMES_BINDIR}/phobiaII || die "sed"
+
 
 	dogamesbin "${FILESDIR}"/phobiaII || die "dogamesbin failed"
 	prepgamesdirs
