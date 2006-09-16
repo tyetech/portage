@@ -1,6 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/libdbi-drivers/Attic/libdbi-drivers-0.8.1-r1.ebuild,v 1.3 2006/06/11 09:52:53 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/libdbi-drivers/Attic/libdbi-drivers-0.8.1-r1.ebuild,v 1.4 2006/09/16 18:38:51 robbat2 Exp $
+
+inherit eutils
 
 DESCRIPTION="The libdbi-drivers project maintains drivers for libdbi."
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
