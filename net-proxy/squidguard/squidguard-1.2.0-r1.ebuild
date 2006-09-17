@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squidguard/Attic/squidguard-1.2.0-r1.ebuild,v 1.5 2006/09/17 18:04:44 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squidguard/Attic/squidguard-1.2.0-r1.ebuild,v 1.6 2006/09/17 18:10:13 mrness Exp $
 
 inherit eutils autotools
 
@@ -23,7 +23,7 @@ S="${WORKDIR}/squidGuard-${PV}"
 
 src_unpack() {
 	unpack ${A} || die "unpack problem"
-#die
+
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-db4.patch"
 	eautoconf
