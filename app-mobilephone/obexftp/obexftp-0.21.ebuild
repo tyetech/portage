@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/obexftp/Attic/obexftp-0.21.ebuild,v 1.3 2006/09/17 13:58:58 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/obexftp/Attic/obexftp-0.21.ebuild,v 1.4 2006/09/22 10:27:50 mrness Exp $
 
 inherit eutils perl-module flag-o-matic autotools
 
@@ -27,7 +27,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${P}-sdp-detection.patch"
 
 	cd "${S}"
-	eautoreconf
+	eautoconf
 }
 
 src_compile() {
