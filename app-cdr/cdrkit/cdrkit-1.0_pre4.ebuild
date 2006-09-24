@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrkit/Attic/cdrkit-1.0_pre4.ebuild,v 1.4 2006/09/12 23:30:58 wormo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrkit/Attic/cdrkit-1.0_pre4.ebuild,v 1.5 2006/09/24 13:42:40 pylon Exp $
 
 inherit eutils toolchain-funcs
 
@@ -47,4 +47,8 @@ src_install() {
 
 	cd ${S}/doc/READMEs
 	dodoc README*
+
+	cd ${S}
+	insinto /etc/default
+	newins cdrecord/wodim.dfl wodim
 }
