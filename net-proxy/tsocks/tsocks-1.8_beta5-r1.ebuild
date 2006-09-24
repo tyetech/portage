@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/tsocks/Attic/tsocks-1.8_beta5-r1.ebuild,v 1.2 2006/09/20 18:18:39 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/tsocks/Attic/tsocks-1.8_beta5-r1.ebuild,v 1.3 2006/09/24 09:15:38 hansmi Exp $
 
 inherit multilib eutils autotools toolchain-funcs
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/tsocks/${PN}-${PV/_}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ppc ~ppc64 ~sparc x86 ~x86-fbsd"
 IUSE=""
 
 S="${WORKDIR}/${P%%_*}"
