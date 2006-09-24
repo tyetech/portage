@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/esound/Attic/esound-0.2.36-r1.ebuild,v 1.18 2006/07/19 00:02:27 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/esound/Attic/esound-0.2.36-r1.ebuild,v 1.19 2006/09/24 15:09:56 seemant Exp $
 
 inherit libtool gnome.org eutils autotools
 
@@ -35,6 +35,7 @@ src_unpack() {
 	epatch "${FILESDIR}/${P}-mode_t.patch"
 	epatch "${FILESDIR}/${P}-asneeded.patch"
 
+	export WANT_AUTOMAKE=1.8
 	eautomake
 
 	elibtoolize
