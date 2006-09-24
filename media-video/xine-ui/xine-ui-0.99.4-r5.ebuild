@@ -1,6 +1,9 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xine-ui/Attic/xine-ui-0.99.4-r5.ebuild,v 1.12 2006/07/09 05:25:17 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xine-ui/Attic/xine-ui-0.99.4-r5.ebuild,v 1.13 2006/09/24 17:45:23 flameeyes Exp $
+
+WANT_AUTOCONF=latest
+WANT_AUTOMAKE=latest
 
 inherit eutils toolchain-funcs flag-o-matic autotools
 
