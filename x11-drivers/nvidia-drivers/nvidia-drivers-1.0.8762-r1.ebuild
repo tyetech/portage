@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-1.0.8762-r1.ebuild,v 1.3 2006/08/08 04:03:51 tsunam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-1.0.8762-r1.ebuild,v 1.4 2006/09/25 14:09:57 wolf31o2 Exp $
 
 inherit eutils multilib versionator linux-mod
 
@@ -131,6 +131,9 @@ src_unpack() {
 
 		# If greater than 2.6.5 use M= instead of SUBDIR=
 		cd ${S}; convert_to_m Makefile.kbuild
+
+		# Patch the Makefile to not warn about nvidia-installer
+		epatch ${FILESDIR}/NVIDIA_glx-makefile.patch
 	fi
 }
 

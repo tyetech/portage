@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-1.0.8762.ebuild,v 1.4 2006/09/25 14:09:57 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-1.0.9625.ebuild,v 1.1 2006/09/25 14:09:57 wolf31o2 Exp $
 
 inherit eutils multilib versionator linux-mod
 
@@ -26,7 +26,6 @@ RESTRICT="nostrip multilib-pkg-force"
 DEPEND="kernel_linux? ( virtual/linux-sources )"
 RDEPEND="kernel_linux? ( virtual/modutils )
 	 || ( x11-base/xorg-server virtual/x11 )
-	 !>=x11-base/xorg-server-1.0.99
 	 || ( media-libs/mesa virtual/x11 )
 	 app-admin/eselect-opengl
 	 kernel_linux? ( !media-video/nvidia-kernel )
@@ -107,7 +106,7 @@ src_unpack() {
 		unpack ${A}
 	fi
 
-	# Patchs go below here, add breif description
+	# Patches go below here, add breif description
 	use x86-fbsd \
 		&& cd "${WORKDIR}/${NV_PACKAGE}${PKG_V}/doc" \
 		|| cd "${WORKDIR}/${NV_PACKAGE}${PKG_V}"
@@ -117,6 +116,9 @@ src_unpack() {
 	epatch ${FILESDIR}/NVIDIA_glx-glheader.patch
 
 	if ! use x86-fbsd; then
+		# Zander kernel patches
+		# None yet.
+
 		# Quiet down warnings the user do not need to see
 		sed -i \
 			-e 's:-Wpointer-arith::g' \
