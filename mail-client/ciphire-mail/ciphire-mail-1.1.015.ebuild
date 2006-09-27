@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/ciphire-mail/Attic/ciphire-mail-1.1.015.ebuild,v 1.7 2006/07/19 09:42:56 azarah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/ciphire-mail/Attic/ciphire-mail-1.1.015.ebuild,v 1.8 2006/09/27 03:30:48 vapier Exp $
 
 inherit eutils qt3
 
@@ -44,7 +44,7 @@ pkg_nofetch() {
 
 pkg_setup() {
 	if ( [[ -d /usr/local/ciphire ]] || type -p ciphire-ctl &>/dev/null ) && \
-	   ! portageq has_version / ciphire-mail ; then
+	   ! has_version / ciphire-mail ; then
 		echo
 		einfo "If you have previously had Ciphire Mail manually installed,"
 		einfo "please uninstall it first (from dir you installed it):"
