@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/bos/Attic/bos-1.1.ebuild,v 1.3 2006/01/06 23:28:43 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/bos/Attic/bos-1.1.ebuild,v 1.4 2006/09/28 21:34:13 nyhm Exp $
 
-inherit games
+inherit eutils games
 
 MY_P=${PN}_${PV/./_}
 DESCRIPTION="Invasion - Battle of Survival is a real-time strategy game using the Stratagus game engine"
