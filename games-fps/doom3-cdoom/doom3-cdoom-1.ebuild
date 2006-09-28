@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/doom3-cdoom/Attic/doom3-cdoom-1.ebuild,v 1.3 2006/09/19 15:44:00 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/doom3-cdoom/Attic/doom3-cdoom-1.ebuild,v 1.4 2006/09/28 21:01:50 nyhm Exp $
 
-inherit games
+inherit eutils games
 
 MOD="cdoom"
 DESCRIPTION="Doom 1 conversion for Doom 3"
