@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.4.2.12.ebuild,v 1.3 2006/07/29 19:24:05 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.4.2.12.ebuild,v 1.4 2006/09/28 02:23:38 nichoj Exp $
 
 inherit java-vm-2 eutils
 
@@ -22,9 +22,7 @@ KEYWORDS="-* ~x86"
 RESTRICT="fetch"
 IUSE="X alsa doc nsplugin jce"
 
-DEPEND=">=dev-java/java-config-1.1.5
-	sys-apps/sed
-	app-arch/unzip"
+DEPEND="app-arch/unzip"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
 	doc? ( =dev-java/java-sdk-docs-1.4.2* )
