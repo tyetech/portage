@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/rsibreak/Attic/rsibreak-0.7.0.ebuild,v 1.4 2006/10/01 17:35:37 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/rsibreak/Attic/rsibreak-0.7.0.ebuild,v 1.5 2006/10/01 17:38:55 flameeyes Exp $
 
 USE_KEG_PACKAGING="yes"
 
@@ -30,10 +30,7 @@ RDEPEND="|| ( (
 		) <virtual/x11-7 )"
 
 DEPEND="${RDEPEND}
-	|| ( (
-			x11-proto/xproto
-			x11-proto/scrnsaverproto
-		) <virtual/x11-7 )"
+	|| ( x11-proto/scrnsaverproto <virtual/x11-7 )"
 
 need-kde 3.3
 
