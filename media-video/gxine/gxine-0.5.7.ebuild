@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gxine/Attic/gxine-0.5.7.ebuild,v 1.6 2006/09/21 03:05:28 chutzpah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gxine/Attic/gxine-0.5.7.ebuild,v 1.7 2006/10/01 17:44:23 flameeyes Exp $
 
 inherit eutils nsplugins fdo-mime libtool
 
@@ -28,8 +28,6 @@ DEPEND="${RDEPEND}
 			x11-libs/libX11
 			x11-libs/libXt
 			x11-libs/libXaw
-			x11-proto/xproto
-			x11-proto/xextproto
 			xinerama? ( x11-proto/xineramaproto )
 		) <virtual/x11-7 )"
 
