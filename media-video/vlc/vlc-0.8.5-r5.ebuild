@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.8.5-r5.ebuild,v 1.6 2006/09/22 23:53:00 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.8.5-r5.ebuild,v 1.7 2006/10/01 17:58:37 flameeyes Exp $
 
 WANT_AUTOMAKE=latest
 WANT_AUTOCONF=latest
@@ -105,12 +105,7 @@ RDEPEND="
 		)"
 
 DEPEND="${RDEPEND}
-	X? ( || ( (
-			x11-proto/xproto
-			x11-proto/xextproto
-			xinerama? ( x11-proto/xineramaproto )
-		) <virtual/x11-7 )
-	)
+	X? ( xinerama? ( || ( x11-proto/xineramaproto <virtual/x11-7 ) ) )
 	dev-util/pkgconfig"
 
 S="${WORKDIR}/${MY_P}"
