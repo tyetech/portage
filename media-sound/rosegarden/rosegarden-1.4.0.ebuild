@@ -1,6 +1,6 @@
-x# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rosegarden/Attic/rosegarden-1.4.0.ebuild,v 1.1 2006/10/03 00:12:28 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rosegarden/Attic/rosegarden-1.4.0.ebuild,v 1.2 2006/10/03 00:13:43 carlo Exp $
 
 inherit kde eutils flag-o-matic
 
