@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/zope/Attic/zope-2.9.5.ebuild,v 1.1 2006/10/02 16:27:21 radek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/zope/Attic/zope-2.9.5.ebuild,v 1.2 2006/10/03 11:53:33 radek Exp $
 
 inherit eutils multilib
 
@@ -59,10 +59,6 @@ src_install() {
 
 	# copy the init script skeleton to skel directory of our installation
 	cp ${FILESDIR}/zope.initd ${D}/${ZSERVDIR}/skel/zope.initd
-
-	epatch ${FILESDIR}/2.9/${P}_logerror.patch
-	pwd
-	sleep 15
 }
 
 pkg_postinst() {
