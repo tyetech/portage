@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/qtsharp/Attic/qtsharp-3.5.0.ebuild,v 1.5 2006/07/25 09:31:20 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/qtsharp/Attic/qtsharp-3.5.0.ebuild,v 1.6 2006/10/03 13:16:02 flameeyes Exp $
 
 KMNAME=kdebindings
 KM_MAKEFILESREV=1
-MAXKDEVER=3.5.4
+MAXKDEVER=3.5.5
 KM_DEPRANGE="$PV $MAXKDEVER"
 inherit kde-meta
 
