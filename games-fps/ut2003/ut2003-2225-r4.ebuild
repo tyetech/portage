@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/ut2003/ut2003-2225-r4.ebuild,v 1.9 2006/03/31 21:25:24 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/ut2003/ut2003-2225-r4.ebuild,v 1.10 2006/10/03 20:25:01 wolf31o2 Exp $
 
 inherit eutils games
 
-DESCRIPTION="Unreal Tournament 2003 - Sequel to the 1999 Game of the Year multi-player first-person shooter"
+DESCRIPTION="Sequel to the 1999 Game of the Year multi-player first-person shooter"
 HOMEPAGE="http://www.unrealtournament2003.com/"
 SRC_URI="ftp://ftp.infogrames.net/misc/ut2003/ut2003lnx_patch2225.tar.tar"
 
