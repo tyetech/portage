@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ipcad/ipcad-3.7.ebuild,v 1.6 2006/09/04 06:02:42 tsunam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ipcad/ipcad-3.7.ebuild,v 1.7 2006/10/04 04:31:44 pva Exp $
 
 inherit eutils
 
@@ -35,7 +35,7 @@ src_install() {
 	insopts -m0600
 	newins ipcad.conf.default ipcad.conf
 
-	dodir /var/ipcad/run
+	keepdir /var/ipcad/run
 
 	doman ipcad.8 ipcad.conf.5
 
