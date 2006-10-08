@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/rioutil/Attic/rioutil-1.4.4.ebuild,v 1.11 2005/04/22 09:03:10 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/rioutil/Attic/rioutil-1.4.4.ebuild,v 1.12 2006/10/08 11:15:11 jokey Exp $
 
 inherit eutils
 
@@ -18,17 +18,18 @@ DEPEND="sys-libs/zlib
 	dev-libs/libusb"
 
 src_unpack() {
-	unpack ${A} || die 'Failed to unpack!'
+	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-26headers.patch"
+	epatch "${FILESDIR}/${PN}-gcc4.1.1.patch"
 }
 
 src_compile() {
-	econf --with-usbdevfs || die
-	emake || die "emake failure"
+	econf --with-usbdevfs || die "econf failed"
+	emake || die "emake failed"
 }
 
 src_install() {
 	einstall || die
-	dodoc AUTHORS ChangeLog INSTALL NEWS README TODO
+	dodoc AUTHORS ChangeLog NEWS README TODO
 }
