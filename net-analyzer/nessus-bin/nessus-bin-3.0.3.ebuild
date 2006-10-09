@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-bin/Attic/nessus-bin-3.0.2.ebuild,v 1.3 2006/10/09 11:55:08 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nessus-bin/Attic/nessus-bin-3.0.3.ebuild,v 1.1 2006/10/09 11:55:08 jokey Exp $
 
 inherit rpm
 
-MY_P="Nessus-${PV}-suse9.3.i586"
+MY_P="Nessus-${PV}-suse10.0.i586"
 # We are using SuSE's binary
 
 DESCRIPTION="A remote security scanner for Linux"
