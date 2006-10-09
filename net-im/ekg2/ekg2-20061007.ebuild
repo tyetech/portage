@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/ekg2/Attic/ekg2-20051202.ebuild,v 1.3 2006/10/09 20:09:09 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/ekg2/Attic/ekg2-20061007.ebuild,v 1.1 2006/10/09 20:09:09 sekretarz Exp $
 
 DESCRIPTION="Text based Instant Messenger client that supports many protocols like Jabber and Gadu-Gadu"
 HOMEPAGE="http://www.ekg2.org/"
