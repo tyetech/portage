@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-6.5.1-r2.ebuild,v 1.1 2006/10/09 02:01:41 dberkholz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-6.5.1-r2.ebuild,v 1.2 2006/10/11 02:26:49 dberkholz Exp $
 
 inherit eutils toolchain-funcs multilib flag-o-matic portability
 
@@ -37,6 +37,7 @@ IUSE="${IUSE_VIDEO_CARDS}
 	nptl
 	xcb"
 
+RESTRICT="stricter"
 RDEPEND="dev-libs/expat
 	x11-libs/libX11
 	x11-libs/libXext
