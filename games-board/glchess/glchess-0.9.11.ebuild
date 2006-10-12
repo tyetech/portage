@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/glchess/Attic/glchess-0.9.11.ebuild,v 1.1 2006/10/04 18:54:14 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/glchess/Attic/glchess-0.9.11.ebuild,v 1.2 2006/10/12 08:45:50 mr_bones_ Exp $
 
 inherit distutils games
 
@@ -14,7 +14,8 @@ KEYWORDS="~amd64 x86"
 IUSE="nls"
 
 DEPEND="dev-python/pygtkglext
-	dev-python/imaging"
+	dev-python/imaging
+	sys-apps/dbus"
 
 DOCS="BUGS"
 
