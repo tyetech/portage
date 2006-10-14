@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/iiimf.eclass,v 1.13 2006/10/14 09:55:06 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/iiimf.eclass,v 1.14 2006/10/14 10:19:09 flameeyes Exp $
 #
 # Author: Mamoru KOMACHI <usata@gentoo.org>
 #
@@ -32,6 +32,9 @@ KEYWORDS="~x86"
 IUSE="debug"
 
 S="${WORKDIR}/${IMSDK}/${PN}"
+
+RDEPEND=""
+DEPEND="dev-util/pkgconfig"
 
 iiimf_src_compile() {
 
