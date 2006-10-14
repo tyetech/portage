@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/fahrenheit/Attic/fahrenheit-0.1.ebuild,v 1.4 2006/07/23 01:19:15 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/fahrenheit/Attic/fahrenheit-0.1.ebuild,v 1.5 2006/10/14 11:26:00 flameeyes Exp $
 
 inherit kde
 
@@ -15,10 +15,3 @@ KEYWORDS="~x86 ~amd64 ~ppc ~sparc"
 IUSE=""
 
 need-kde 3.2
-
-src_unpack() {
-	kde_src_unpack
-
-	rm -rf "${S}/admin" "${S}/configure"
-	ln -s "${WORKDIR}/admin" "${S}/admin"
-}
