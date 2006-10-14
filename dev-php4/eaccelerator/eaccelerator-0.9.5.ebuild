@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/eaccelerator/Attic/eaccelerator-0.9.5.ebuild,v 1.2 2006/10/14 22:10:54 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/eaccelerator/Attic/eaccelerator-0.9.5.ebuild,v 1.3 2006/10/14 22:55:00 chtekk Exp $
 
 PHP_EXT_NAME="eaccelerator"
 PHP_EXT_INI="yes"
@@ -42,7 +42,7 @@ pkg_setup() {
 src_compile() {
 	has_php
 
-	my_conf="--enable-eaccelerator=shared"
+	my_conf="--enable-eaccelerator=shared --with-eaccelerator-userid=`id -u ${HTTPD_USER}`"
 
 	use contentcache && my_conf="${my_conf} --with-eaccelerator-content-caching"
 	use debug && my_conf="${my_conf} --with-eaccelerator-debug"
