@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Sub-Uplevel/Attic/Sub-Uplevel-0.09.ebuild,v 1.12 2006/08/05 23:07:20 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Sub-Uplevel/Attic/Sub-Uplevel-0.09.ebuild,v 1.13 2006/10/15 19:19:19 mcummings Exp $
 
 inherit perl-module
 
@@ -15,4 +15,3 @@ IUSE=""
 
 
 DEPEND="dev-lang/perl"
-RDEPEND="${DEPEND}"
