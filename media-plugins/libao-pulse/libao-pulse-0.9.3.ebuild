@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/libao-pulse/Attic/libao-pulse-0.9.3.ebuild,v 1.5 2006/10/10 04:41:54 tsunam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/libao-pulse/Attic/libao-pulse-0.9.3.ebuild,v 1.6 2006/10/16 04:24:06 agriffis Exp $
 
 DESCRIPTION="libao output driver for PulseAudio"
 HOMEPAGE="http://0pointer.de/lennart/projects/libao-pulse/"
@@ -8,7 +8,7 @@ SRC_URI="http://0pointer.de/lennart/projects/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
 
 IUSE=""
 
