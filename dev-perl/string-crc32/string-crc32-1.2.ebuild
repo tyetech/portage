@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/string-crc32/Attic/string-crc32-1.2.ebuild,v 1.18 2006/08/06 03:09:57 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/string-crc32/Attic/string-crc32-1.2.ebuild,v 1.19 2006/10/20 17:55:59 mcummings Exp $
 
 inherit perl-module
 
@@ -17,4 +17,3 @@ IUSE=""
 
 
 DEPEND="dev-lang/perl"
-RDEPEND="${DEPEND}"
