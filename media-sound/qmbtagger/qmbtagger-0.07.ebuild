@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qmbtagger/Attic/qmbtagger-0.07.ebuild,v 1.7 2006/10/02 23:10:43 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qmbtagger/Attic/qmbtagger-0.07.ebuild,v 1.8 2006/10/20 11:43:12 flameeyes Exp $
 
 inherit eutils kde-functions
 
@@ -18,7 +18,7 @@ DEPEND="
 	media-libs/flac
 	media-libs/id3lib
 	media-libs/musicbrainz
-	media-sound/madplay
+	media-libs/libmad
 	ogg? ( media-sound/vorbis-tools )"
 
 src_unpack() {
