@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/mirage/Attic/mirage-0.8.ebuild,v 1.2 2006/10/20 23:39:45 omp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/mirage/Attic/mirage-0.8.1.ebuild,v 1.1 2006/10/20 23:39:45 omp Exp $
 
 inherit distutils
 
