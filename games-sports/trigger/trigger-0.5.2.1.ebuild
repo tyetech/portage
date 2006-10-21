@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-sports/cvs-repo/gentoo-x86/games-sports/trigger/trigger-0.5.2.1.ebuild,v 1.1 2006/10/20 22:57:17 nyhm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-sports/cvs-repo/gentoo-x86/games-sports/trigger/trigger-0.5.2.1.ebuild,v 1.2 2006/10/21 22:52:08 mr_bones_ Exp $
 
 inherit eutils games
 
@@ -33,7 +33,7 @@ S=${WORKDIR}/${P}-src
 
 src_compile() {
 	egamesconf --datadir="${GAMES_DATADIR}/${PN}" || die
-	jam -q ${MAKEOPTS} || die "jam failed"
+	jam -qa || die "jam failed"
 }
 
 src_install() {
