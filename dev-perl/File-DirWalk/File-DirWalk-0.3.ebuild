@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-DirWalk/Attic/File-DirWalk-0.3.ebuild,v 1.3 2006/10/15 10:15:22 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/File-DirWalk/Attic/File-DirWalk-0.3.ebuild,v 1.4 2006/10/21 14:08:51 dertobi123 Exp $
 
 inherit perl-module
 
@@ -11,7 +11,7 @@ SRC_TEST="do"
 
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="amd64 ia64 ~ppc sparc ~x86"
+KEYWORDS="amd64 ia64 ppc sparc ~x86"
 IUSE=""
 
 
