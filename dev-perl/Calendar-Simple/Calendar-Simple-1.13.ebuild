@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Calendar-Simple/Attic/Calendar-Simple-1.13.ebuild,v 1.5 2006/08/06 18:57:16 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Calendar-Simple/Attic/Calendar-Simple-1.13.ebuild,v 1.6 2006/10/21 15:59:24 mcummings Exp $
 
 inherit perl-module
 
@@ -19,7 +19,4 @@ DEPEND=">=dev-perl/module-build-0.28
 		test? ( dev-perl/Test-Pod
 		dev-perl/Test-Pod-Coverage )
 		dev-lang/perl"
-RDEPEND=">=dev-perl/module-build-0.28
-		test? ( dev-perl/Test-Pod
-		dev-perl/Test-Pod-Coverage )
-		dev-lang/perl"
+RDEPEND="dev-lang/perl"
