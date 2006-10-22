@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/pymol/Attic/pymol-0.98.ebuild,v 1.5 2006/09/19 13:42:16 dberkholz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/pymol/Attic/pymol-0.98.ebuild,v 1.6 2006/10/22 18:43:38 ribosome Exp $
 
 inherit distutils eutils multilib
 
@@ -20,6 +20,10 @@ DEPEND="dev-lang/python
 	media-libs/libpng
 	sys-libs/zlib
 	media-libs/glut"
+
+pkg_setup() {
+	distutils_python_tkinter
+}
 
 src_unpack() {
 	unpack ${A}
