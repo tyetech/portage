@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/freedoko/Attic/freedoko-0.7.3.ebuild,v 1.1 2006/10/09 17:04:33 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/freedoko/Attic/freedoko-0.7.3.ebuild,v 1.2 2006/10/22 22:10:28 mr_bones_ Exp $
 
 inherit eutils games
 
@@ -25,7 +25,7 @@ RDEPEND="net? ( net-libs/gnet )
 
 DEPEND="${RDEPEND}
 	app-arch/unzip
-	doc? ( app-text/tetex )
+	doc? ( virtual/tetex )
 	app-text/dos2unix"
 
 S=${WORKDIR}/FreeDoko_${PV}
