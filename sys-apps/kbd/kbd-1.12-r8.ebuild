@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/kbd/kbd-1.12-r8.ebuild,v 1.1 2006/08/24 13:57:25 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/kbd/kbd-1.12-r8.ebuild,v 1.2 2006/10/23 15:19:25 gustavoz Exp $
 
 inherit eutils toolchain-funcs
 
@@ -76,6 +76,9 @@ src_unpack() {
 
 	# cross-compile fails for powerpc targets bug #133856
 	epatch "${FILESDIR}"/${P}-xcompile.patch
+
+	# sparc newer headers lack asm/kbio.h
+	epatch "${FILESDIR}"/${P}-kbio.patch
 }
 
 src_compile() {
