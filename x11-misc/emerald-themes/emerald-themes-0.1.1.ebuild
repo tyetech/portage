@@ -1,14 +1,14 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/emerald-themes/Attic/emerald-themes-0.1.1.ebuild,v 1.1 2006/10/22 22:15:29 tsunam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/emerald-themes/Attic/emerald-themes-0.1.1.ebuild,v 1.2 2006/10/24 02:19:20 tsunam Exp $
 
 inherit autotools
 
 DESCRIPTION="Beryl Window Decorator Themes"
 HOMEPAGE="http://beryl-project.org"
-SRC_URI="http://distfiles.xgl-coffee.org/${PN}/${P}.tar.bz2"
+SRC_URI="http://distfiles.gentoo-xeffects.org/${PN}/${P}.tar.bz2"
 
-LICENSE="X11"
+LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
