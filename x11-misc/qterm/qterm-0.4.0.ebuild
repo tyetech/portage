@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/qterm/Attic/qterm-0.4.0.ebuild,v 1.3 2006/10/29 16:01:04 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/qterm/Attic/qterm-0.4.0.ebuild,v 1.4 2006/10/29 21:03:05 ticho Exp $
 
 inherit kde-functions eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://qterm.sourceforge.net/"
 SRC_URI="mirror://sourceforge/qterm/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc x86"
 IUSE="arts esd ssl"
 
 DEPEND=">=media-sound/esound-0.2.22
