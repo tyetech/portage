@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-vfs/Attic/gnome-vfs-2.16.1.ebuild,v 1.3 2006/10/21 22:45:30 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-vfs/Attic/gnome-vfs-2.16.1.ebuild,v 1.4 2006/10/29 16:46:40 cardoe Exp $
 
 inherit eutils gnome2 autotools
 
@@ -21,7 +21,7 @@ RDEPEND=">=gnome-base/gconf-2
 	virtual/fam
 	gnome-base/gnome-mime-data
 	>=x11-misc/shared-mime-info-0.14
-	>=sys-apps/dbus-0.32
+	|| ( >=dev-libs/dbus-glib-0.71 >=sys-apps/dbus-0.32 )
 	samba? ( >=net-fs/samba-3 )
 	gnutls?	(
 				net-libs/gnutls
