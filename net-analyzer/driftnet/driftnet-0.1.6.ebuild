@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/driftnet/Attic/driftnet-0.1.6.ebuild,v 1.20 2006/02/15 22:02:06 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/driftnet/Attic/driftnet-0.1.6.ebuild,v 1.21 2006/10/31 21:18:00 jokey Exp $
 
 inherit eutils flag-o-matic
 
@@ -23,6 +23,9 @@ DEPEND="media-libs/jpeg
 
 RDEPEND="${DEPEND}
 	virtual/mpg123"
+
+DEPEND="${DEPEND}
+	dev-util/pkgconfig"
 
 src_unpack() {
 	unpack ${A}
