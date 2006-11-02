@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/openvz-sources/Attic/openvz-sources-026.015-r2.ebuild,v 1.2 2006/11/02 18:47:11 phreak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/openvz-sources/Attic/openvz-sources-026.020.ebuild,v 1.1 2006/11/02 18:47:11 phreak Exp $
 
 ETYPE="sources"
 CKV="2.6.16"
