@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/dar/Attic/dar-2.2.6.ebuild,v 1.5 2006/11/03 04:15:11 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/dar/Attic/dar-2.3.2.ebuild,v 1.1 2006/11/03 04:15:11 matsuu Exp $
 
 inherit flag-o-matic
 
@@ -9,9 +9,9 @@ HOMEPAGE="http://dar.linux.free.fr/"
 SRC_URI="mirror://sourceforge/dar/${P}.tar.gz"
 
 LICENSE="GPL-2"
-SLOT="0"
-KEYWORDS="amd64 ppc sparc x86"
-IUSE="acl dar32 dar64 doc examples nls ssl static"
+SLOT="4"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+IUSE="acl dar32 dar64 doc nls ssl"
 
 DEPEND=">=sys-libs/zlib-1.2.3
 	>=app-arch/bzip2-1.0.2
@@ -38,26 +38,16 @@ src_compile() {
 	use dar32 && myconf="${myconf} --enable-mode=32"
 	use dar64 && myconf="${myconf} --enable-mode=64"
 	use doc || myconf="${myconf} --disable-build-html"
-	use examples && myconf="${myconf} --enable-examples"
+	# use examples && myconf="${myconf} --enable-examples"
 	use nls || myconf="${myconf} --disable-nls"
 	use ssl || myconf="${myconf} --disable-libcrypto-linking"
-	use static || myconf="${myconf} --enable-static=no --disable-dar-static"
 
 	econf ${myconf} || die
 	emake || die
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" pkgdatadir=/usr/share/doc/${PF}/html install || die
 
-	rm "${D}"/usr/share/dar/{[A-Z]*,*.html}
-
-	dodoc AUTHORS BUGS ChangeLog NEWS README THANKS TODO
-	dodoc doc/{COMMAND_LINE,FAQ,FEATURES,GOOD_BACKUP_PRACTICE,LIMITATIONS}
-	dodoc doc/{LINKS,NOTES,TUTORIAL}
-	dohtml doc/api_tutorial.html doc/mini-howto/*.html
-
-	if use doc ; then
-		dohtml doc/html/*
-	fi
+	dodoc AUTHORS ChangeLog NEWS README THANKS TODO
 }
