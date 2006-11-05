@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/ttf-sil-charis/Attic/ttf-sil-charis-4.0.2.ebuild,v 1.3 2006/11/05 10:48:32 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/ttf-sil-charis/Attic/ttf-sil-charis-4.0.2.ebuild,v 1.4 2006/11/05 13:37:56 fmccor Exp $
 
 inherit font versionator
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://scripts.sil.org/CharisSILfont"
 SRC_URI="mirror://gentoo/${P}.tgz"
 LICENSE="OFL"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc"
 IUSE="X doc"
 
 DOCS="FONTLOG.txt OFL.txt OFL-FAQ.txt README.txt"
