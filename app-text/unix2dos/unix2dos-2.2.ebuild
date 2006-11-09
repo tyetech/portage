@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/unix2dos/Attic/unix2dos-2.2.ebuild,v 1.23 2006/11/09 06:04:11 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/unix2dos/Attic/unix2dos-2.2.ebuild,v 1.24 2006/11/09 06:05:11 vapier Exp $
 
 inherit eutils toolchain-funcs
 
