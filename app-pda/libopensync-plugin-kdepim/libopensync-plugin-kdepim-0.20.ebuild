@@ -1,19 +1,29 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/libopensync-plugin-google-calendar/Attic/libopensync-plugin-google-calendar-0.19.ebuild,v 1.2 2006/11/10 18:46:16 peper Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/libopensync-plugin-kdepim/Attic/libopensync-plugin-kdepim-0.20.ebuild,v 1.1 2006/11/10 18:48:23 peper Exp $
 
-DESCRIPTION="OpenSync Google Calendar Plugin"
+inherit qt3
+
+DESCRIPTION="OpenSync Kdepim Plugin"
 HOMEPAGE="http://www.opensync.org/"
 SRC_URI="http://dev.gentooexperimental.org/~peper/distfiles/${P}.tar.gz"
 
 KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="GPL-2"
-IUSE=""
+IUSE="arts"
 
 DEPEND="=app-pda/libopensync-${PV}*
-	dev-python/httplib2"
+	kde-base/libkcal"
 RDEPEND="${DEPEND}"
+
+# interactive and broken
+RESTRICT="test"
+
+src_compile() {
+	econf $(use_with arts)
+	emake || die "emake failed"
+}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
