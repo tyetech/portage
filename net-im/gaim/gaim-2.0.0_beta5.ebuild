@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim/Attic/gaim-2.0.0_beta5.ebuild,v 1.1 2006/11/11 15:55:59 gothgirl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/gaim/Attic/gaim-2.0.0_beta5.ebuild,v 1.2 2006/11/11 20:29:15 tester Exp $
 
 inherit flag-o-matic eutils toolchain-funcs debug multilib mono autotools perl-app gnome2
 
@@ -142,7 +142,7 @@ pkg_setup() {
 src_unpack() {
 	gnome2_src_unpack
 	epatch "${FILESDIR}"/"${P}"-dbus.patch
-	eautoreconf
+	eautomake
 }
 
 src_compile() {
