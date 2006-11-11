@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libpqpp/Attic/libpqpp-4.0-r4.ebuild,v 1.10 2005/04/13 20:05:53 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libpqpp/Attic/libpqpp-4.0-r4.ebuild,v 1.11 2006/11/11 02:19:53 dev-zero Exp $
 
 inherit eutils
 IUSE=""
@@ -8,7 +8,7 @@ MY_P=${P/pp/++}
 DESCRIPTION="C++ wrapper for the libpq Postgresql library"
 HOMEPAGE="http://gborg.postgresql.org/"
 SRC_URI="ftp://gborg.postgresql.org/pub/libpqpp/stable/${MY_P}.tar.gz"
-LICENSE="LGPL-2.1"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="sparc x86"
 
