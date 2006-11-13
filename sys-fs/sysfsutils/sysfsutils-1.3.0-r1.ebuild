@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/sysfsutils/Attic/sysfsutils-1.3.0-r1.ebuild,v 1.3 2006/07/09 00:00:55 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/sysfsutils/Attic/sysfsutils-1.3.0-r1.ebuild,v 1.4 2006/11/13 20:21:25 vapier Exp $
 
-inherit eutils libtool
+inherit toolchain-funcs libtool
 
 DESCRIPTION="System Utilities Based on Sysfs"
 HOMEPAGE="http://linux-diag.sourceforge.net/Sysfsutils.html"
