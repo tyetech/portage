@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.5.5-r5.ebuild,v 1.9 2006/11/16 13:29:01 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-3.5.5-r5.ebuild,v 1.10 2006/11/17 18:36:35 flameeyes Exp $
 
 inherit kde flag-o-matic eutils multilib
 set-kdedir 3.5
@@ -38,7 +38,7 @@ RDEPEND="$(qt_min_version 3.3.3)
 	kerberos? ( virtual/krb5 )
 	jpeg2k? ( media-libs/jasper )
 	openexr? ( >=media-libs/openexr-1.2.2-r2 )
-	zeroconf? ( net-misc/mDNSResponder )
+	zeroconf? (	!avahi? ( net-misc/mDNSResponder !kde-base/kdnssd ) )
 	fam? ( virtual/fam )
 	virtual/ghostscript
 	utempter? ( sys-libs/libutempter )
