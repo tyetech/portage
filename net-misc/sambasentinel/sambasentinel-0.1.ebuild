@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/sambasentinel/Attic/sambasentinel-0.1.ebuild,v 1.8 2005/07/30 18:31:08 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/sambasentinel/Attic/sambasentinel-0.1.ebuild,v 1.9 2006/11/22 20:23:19 beandog Exp $
 
 DESCRIPTION="SambaSentinel is a GTK frontend to smbstatus"
 HOMEPAGE="http://kling.mine.nu/sambasentinel.htm"
