@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/vmware-mod.eclass,v 1.5 2006/10/17 09:15:07 ikelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/vmware-mod.eclass,v 1.6 2006/11/22 17:16:14 wolf31o2 Exp $
 
 
 # Ensure vmware comes before linux-mod since we want linux-mod's pkg_preinst and
@@ -72,6 +72,7 @@ vmware-mod_src_unpack() {
 		# rm getversion.pl
 		EPATCH_SUFFIX="patch"
 		epatch "${FILESDIR}"/patches
+		[[ -d "${FILESDIR}"/patches/${mod} ]] && epatch "${FILESDIR}"/patches/${mod}
 		convert_to_m "${S}"/${mod}-only/Makefile
 	done
 }
