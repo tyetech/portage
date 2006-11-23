@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk-addons/Attic/asterisk-addons-1.2.4.ebuild,v 1.2 2006/10/03 18:56:14 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk-addons/Attic/asterisk-addons-1.2.4.ebuild,v 1.3 2006/11/23 20:36:56 vivo Exp $
 
 IUSE="elibc_uclibc mysql sqlite h323"
 
@@ -22,7 +22,7 @@ LICENSE="GPL-2"
 KEYWORDS="~sparc ~x86"
 
 DEPEND=">=net-misc/asterisk-1.2.0
-	mysql? ( dev-db/mysql )"
+	mysql? ( virtual/mysql )"
 
 pkg_setup() {
 	local n dosleep=0
