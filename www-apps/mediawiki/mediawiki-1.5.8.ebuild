@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/mediawiki/Attic/mediawiki-1.5.8.ebuild,v 1.3 2006/08/30 14:52:36 tchiwam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/mediawiki/Attic/mediawiki-1.5.8.ebuild,v 1.4 2006/11/23 17:17:48 vivo Exp $
 
 inherit webapp depend.php
 
@@ -17,7 +17,7 @@ S="${WORKDIR}/${P/.0_/}"
 DEPEND="math? ( >=dev-lang/ocaml-3.0.6 )"
 
 RDEPEND="
-		>=dev-db/mysql-4
+		>=virtual/mysql-4.0
 		math? (
 			virtual/tetex
 			virtual/ghostscript

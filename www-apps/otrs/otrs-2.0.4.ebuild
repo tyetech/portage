@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/otrs/Attic/otrs-2.0.4.ebuild,v 1.6 2006/10/20 02:45:53 rl03 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/otrs/Attic/otrs-2.0.4.ebuild,v 1.7 2006/11/23 17:22:59 vivo Exp $
 
 inherit webapp eutils
 
@@ -36,7 +36,7 @@ RDEPEND="
 	${DEPEND}
 	virtual/mta
 	ldap? ( dev-perl/perl-ldap net-nds/openldap )
-	mysql? ( =dev-db/mysql-4* dev-perl/DBD-mysql )
+	mysql? ( >=virtual/mysql-4.0 dev-perl/DBD-mysql )
 	postgres? ( dev-db/postgresql dev-perl/DBD-Pg )
 	apache2? ( >=net-www/apache-2
 		fastcgi? ( dev-perl/FCGI net-www/mod_fastcgi )
