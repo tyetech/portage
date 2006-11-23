@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/motion/Attic/motion-3.2.4.ebuild,v 1.3 2006/10/21 20:44:37 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/motion/Attic/motion-3.2.4.ebuild,v 1.4 2006/11/23 15:54:29 vivo Exp $
 
 inherit eutils
 
@@ -15,7 +15,7 @@ DEPEND="virtual/libc
 		sys-libs/zlib
 		media-libs/jpeg
 		ffmpeg? ( media-video/ffmpeg )
-		mysql? ( dev-db/mysql )
+		mysql? ( virtual/mysql )
 		postgres? ( dev-db/postgresql )"
 
 src_compile() {
