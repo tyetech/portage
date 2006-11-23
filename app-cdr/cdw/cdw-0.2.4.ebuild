@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdw/Attic/cdw-0.2.4.ebuild,v 1.7 2006/10/22 22:03:44 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdw/Attic/cdw-0.2.4.ebuild,v 1.8 2006/11/23 15:26:29 vivo Exp $
 
 inherit eutils
 
@@ -22,7 +22,7 @@ RDEPEND="virtual/cdrtools
 	sys-libs/zlib
 	vorbis? ( media-libs/libvorbis )
 	sqlite? ( dev-db/sqlite )
-	mysql? ( dev-db/mysql )
+	mysql? ( virtual/mysql )
 	encode? ( media-sound/lame )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )
