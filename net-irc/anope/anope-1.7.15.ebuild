@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/anope/Attic/anope-1.7.15.ebuild,v 1.1 2006/08/29 22:54:17 gurligebis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/anope/Attic/anope-1.7.15.ebuild,v 1.2 2006/11/23 17:26:15 vivo Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="mysql"
 
-DEPEND="mysql? ( dev-db/mysql )"
+DEPEND="mysql? ( virtual/mysql )"
 
 INSTALL_DIR="/opt/anope"
 
