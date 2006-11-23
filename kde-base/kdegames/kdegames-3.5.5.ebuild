@@ -1,12 +1,12 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdegames/Attic/kdegames-3.5.5.ebuild,v 1.5 2006/11/16 03:16:39 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdegames/Attic/kdegames-3.5.5.ebuild,v 1.6 2006/11/23 10:07:20 gmsoft Exp $
 
 inherit kde-dist
 
 DESCRIPTION="KDE games (not just solitaire ;-)"
 
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ppc ~ppc64 sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ~ppc64 sparc x86"
 IUSE=""
 
 # For backgrounds in kpat.
