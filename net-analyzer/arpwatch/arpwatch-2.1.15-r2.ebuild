@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/arpwatch/Attic/arpwatch-2.1.15-r2.ebuild,v 1.5 2006/11/17 16:37:18 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/arpwatch/Attic/arpwatch-2.1.15-r2.ebuild,v 1.6 2006/11/23 19:49:19 blubb Exp $
 
 inherit eutils versionator
 
@@ -14,7 +14,7 @@ SRC_URI="ftp://ftp.ee.lbl.gov/${MY_P}.tar.gz
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 hppa ppc sparc x86"
+KEYWORDS="amd64 hppa ppc sparc x86"
 IUSE="selinux"
 
 DEPEND="virtual/libpcap
