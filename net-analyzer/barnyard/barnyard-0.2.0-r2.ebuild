@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/barnyard/Attic/barnyard-0.2.0-r2.ebuild,v 1.3 2006/02/15 21:54:12 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/barnyard/Attic/barnyard-0.2.0-r2.ebuild,v 1.4 2006/11/23 19:44:04 vivo Exp $
 
 inherit eutils
 
@@ -17,7 +17,7 @@ IUSE="mysql postgres sguil"
 DEPEND="virtual/libc
 	net-libs/libpcap
 	postgres? ( >=dev-db/postgresql-7.2 )
-	mysql? ( >=dev-db/mysql-3.23.26 )"
+	mysql? ( virtual/mysql )"
 
 RDEPEND="${DEPEND}
 	net-analyzer/snort"
