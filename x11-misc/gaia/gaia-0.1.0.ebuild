@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gaia/Attic/gaia-0.1.0.ebuild,v 1.3 2006/11/23 20:17:44 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gaia/Attic/gaia-0.1.0.ebuild,v 1.4 2006/11/24 07:50:32 opfer Exp $
 
-inherit eutils libtool
+inherit libtool
 
 DESCRIPTION="opensource 3D interface to the planet, based on Google Earth data"
 HOMEPAGE="http://gaia.serezhkin.com/"
@@ -24,8 +24,7 @@ RDEPEND="media-libs/jpeg
 	doc? ( app-doc/doxygen )"
 
 DEPEND="${RDEPEND}
-	dev-util/scons
-	>=sys-apps/sed-4"
+	dev-util/scons"
 
 src_unpack() {
 	unpack ${A}
