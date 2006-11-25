@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/ezc-PersistentObject/Attic/ezc-PersistentObject-1.1.ebuild,v 1.4 2006/10/02 09:25:22 gmsoft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/ezc-PersistentObject/Attic/ezc-PersistentObject-1.1.ebuild,v 1.5 2006/11/25 22:38:57 kloeri Exp $
 
 inherit php-ezc
 
 DESCRIPTION="This eZ component allows you to store an arbitrary data structures to a fixed database table."
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
