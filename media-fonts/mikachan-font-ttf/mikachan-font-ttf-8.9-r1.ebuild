@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/mikachan-font-ttf/Attic/mikachan-font-ttf-8.9-r1.ebuild,v 1.7 2006/11/26 21:45:37 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/mikachan-font-ttf/Attic/mikachan-font-ttf-8.9-r1.ebuild,v 1.8 2006/11/26 23:35:11 malc Exp $
 
 inherit font
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://mikachan-font.com/"
 
 LICENSE="free-noncomm"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 S="${WORKDIR}"
