@@ -1,6 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork-styles/Attic/kdeartwork-styles-3.5.5.ebuild,v 1.6 2006/11/26 22:52:32 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork-styles/Attic/kdeartwork-styles-3.5.5.ebuild,v 1.7 2006/11/28 01:23:23 flameeyes Exp $
+
+ARTS_REQUIRED="never"
 
 KMMODULE=styles
 KMNAME=kdeartwork
