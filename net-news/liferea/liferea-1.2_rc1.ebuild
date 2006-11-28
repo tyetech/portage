@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/liferea/Attic/liferea-1.2_rc1.ebuild,v 1.4 2006/11/28 19:04:43 dang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/liferea/Attic/liferea-1.2_rc1.ebuild,v 1.5 2006/11/28 20:51:54 dang Exp $
 
 inherit gnome2 flag-o-matic eutils autotools
 
-MY_P=${PN}-1.2-RC1
+MY_P=${P/_rc/-RC}
 DESCRIPTION="News Aggregator for RDF/RSS/CDF/Atom/Echo/etc feeds"
 HOMEPAGE="http://liferea.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
