@@ -1,6 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/ridge/Attic/ridge-0.3.2.ebuild,v 1.4 2006/09/24 21:11:14 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/ridge/Attic/ridge-0.3.2.ebuild,v 1.5 2006/11/28 00:34:45 flameeyes Exp $
+
+ARTS_REQUIRED="never"
 
 inherit kde
 
@@ -14,6 +16,5 @@ KEYWORDS="~amd64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND="|| ( kde-base/kwin kde-base/kdebase )"
-RDEPEND="${DEPEND}"
 
 need-kde 3.2
