@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/librss/Attic/librss-3.5.0.ebuild,v 1.20 2006/10/03 13:04:34 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/librss/Attic/librss-3.5.0.ebuild,v 1.21 2006/12/01 20:06:27 flameeyes Exp $
 
 KMNAME=kdenetwork
 MAXKDEVER=3.5.5
@@ -9,4 +9,4 @@ inherit kde-meta eutils
 
 DESCRIPTION="KDE rss library"
 KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd"
-IUSE=""
+IUSE="kdehiddenvisibility"

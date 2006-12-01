@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kxkb/Attic/kxkb-3.5.2.ebuild,v 1.17 2006/09/03 14:14:39 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kxkb/Attic/kxkb-3.5.2.ebuild,v 1.18 2006/12/01 20:04:51 flameeyes Exp $
 
 KMNAME=kdebase
 MAXKDEVER=$PV
@@ -12,7 +12,7 @@ SRC_URI="${SRC_URI}
 
 DESCRIPTION="Kxkb is a KControl module and frontend for X11 keyboard extension, allowing the user to configure and switch between keyboard mappings."
 KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd"
-IUSE=""
+IUSE="kdehiddenvisibility"
 
 RDEPEND="${RDEPEND}
 	|| ( (
