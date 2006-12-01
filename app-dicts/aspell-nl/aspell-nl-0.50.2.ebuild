@@ -1,9 +1,12 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/aspell-nl/aspell-nl-0.50.2.ebuild,v 1.5 2005/01/01 12:44:05 eradicator Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/aspell-nl/aspell-nl-0.50.2.ebuild,v 1.6 2006/12/01 01:40:14 kevquinn Exp $
 
 ASPELL_LANG="Dutch"
 
+inherit aspell-dict
+
 LICENSE="freedist"
 
-inherit aspell-dict
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86"
+
