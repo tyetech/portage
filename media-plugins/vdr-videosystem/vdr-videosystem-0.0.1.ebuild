@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-videosystem/vdr-videosystem-0.0.1.ebuild,v 1.1 2006/05/15 08:26:33 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-videosystem/vdr-videosystem-0.0.1.ebuild,v 1.2 2006/12/03 15:05:06 zzam Exp $
 
 inherit vdr-plugin
 
@@ -14,4 +14,6 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND=">=media-video/vdr-1.3.18"
+
+PATCHES="${FILESDIR}/${P}-uint64.diff"
 
