@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jakarta-regexp/Attic/jakarta-regexp-1.4.ebuild,v 1.5 2006/12/03 18:18:25 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jakarta-regexp/jakarta-regexp-1.4-r1.ebuild,v 1.1 2006/12/03 18:18:25 betelgeuse Exp $
 
 inherit java-pkg-2 java-ant-2
 
