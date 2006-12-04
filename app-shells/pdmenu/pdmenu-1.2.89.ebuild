@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/pdmenu/Attic/pdmenu-1.2.89.ebuild,v 1.5 2006/12/04 18:09:09 eroyf Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/pdmenu/Attic/pdmenu-1.2.89.ebuild,v 1.6 2006/12/04 18:22:55 eroyf Exp $
 
 DESCRIPTION="A simple console menu program"
 HOMEPAGE="http://www.kitenet.net/programs/pdmenu/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://debian/pool/main/p/pdmenu/pdmenu_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha mips x86"
+KEYWORDS="alpha ~ia64 mips x86"
 IUSE="nls gpm examples"
 RESTRICT="test"
 
