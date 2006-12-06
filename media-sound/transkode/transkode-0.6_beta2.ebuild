@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/transkode/Attic/transkode-0.6_beta2.ebuild,v 1.2 2006/12/03 18:33:44 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/transkode/Attic/transkode-0.6_beta2.ebuild,v 1.3 2006/12/06 12:37:04 flameeyes Exp $
 
 ARTS_REQUIRED="never"
 
@@ -18,7 +18,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="wavpack amarok"
+IUSE="amarok shorten wavpack"
 
 RDEPEND="media-libs/taglib
 	amarok? ( media-sound/amarok )"
