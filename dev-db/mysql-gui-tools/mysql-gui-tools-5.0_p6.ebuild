@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-gui-tools/Attic/mysql-gui-tools-5.0_p6.ebuild,v 1.1 2006/11/27 09:30:40 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-gui-tools/Attic/mysql-gui-tools-5.0_p6.ebuild,v 1.2 2006/12/13 22:59:45 swegener Exp $
 
 GCONF_DEBUG="no"
 
@@ -40,6 +40,7 @@ src_unpack() {
 	gnome2_src_unpack
 	cd "${S}"
 
+	epatch "${FILESDIR}"/${P}-i18n-fix.patch
 	epatch "${FILESDIR}"/${P}-lua-modules.patch
 }
 
