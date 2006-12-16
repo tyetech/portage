@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.2.11-r2.ebuild,v 1.9 2006/11/27 23:33:26 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.2.11-r2.ebuild,v 1.10 2006/12/16 13:18:46 cedk Exp $
 
 inherit perl-module flag-o-matic gnuconfig eutils multilib
 
@@ -56,7 +56,7 @@ src_compile() {
 	if use tcl ; then
 		myconf="${myconf} --with-tcllib=/usr/$(get_libdir)"
 	else
-		myconf="${myconf} --without-tcllib"
+		myconf="${myconf} --disable-tcl"
 	fi
 
 	use python || myconf="${myconf} --disable-python"
