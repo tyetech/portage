@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgphoto2/Attic/libgphoto2-2.2.1-r1.ebuild,v 1.9 2006/12/18 11:01:04 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgphoto2/Attic/libgphoto2-2.2.1-r1.ebuild,v 1.10 2006/12/18 17:29:24 zzam Exp $
 
 inherit libtool eutils autotools
 
@@ -21,7 +21,8 @@ RDEPEND="usb? (
 		>=sys-apps/usbutils-0.11-r2
 	)
 	exif? ( >=media-libs/libexif-0.5.9 )
-	hal? ( >=sys-apps/hal-0.5 )"
+	hal? ( >=sys-apps/hal-0.5 )
+	sys-devel/libtool"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	doc? ( dev-util/gtk-doc
