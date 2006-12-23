@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/aspell-be/aspell-be-0.01.ebuild,v 1.3 2006/12/01 01:24:53 kevquinn Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/aspell-be/aspell-be-0.01.ebuild,v 1.4 2006/12/23 17:07:47 kevquinn Exp $
 
 ASPELL_LANG="Belarusian"
 
-inherit aspell-dict
+inherit eutils aspell-dict
 
 LICENSE="GPL-2"
 
