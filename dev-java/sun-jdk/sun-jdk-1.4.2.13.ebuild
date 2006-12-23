@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.4.2.13.ebuild,v 1.1 2006/11/23 00:01:27 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.4.2.13.ebuild,v 1.2 2006/12/23 17:50:19 ticho Exp $
 
 JAVA_SUPPORTS_GENERATION_1="true"
 inherit java-vm-2 eutils
@@ -19,7 +19,7 @@ SRC_URI="${At}
 		jce? ( ${jce_policy} )"
 SLOT="1.4"
 LICENSE="sun-bcla-java-vm"
-KEYWORDS="-* ~x86"
+KEYWORDS="-* x86"
 RESTRICT="fetch"
 IUSE="X alsa doc examples nsplugin jce"
 
