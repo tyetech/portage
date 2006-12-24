@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/omnibook/Attic/omnibook-20060817-r1.ebuild,v 1.1 2006/12/20 09:30:10 s4t4n Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/omnibook/Attic/omnibook-20060817-r1.ebuild,v 1.2 2006/12/24 08:13:26 s4t4n Exp $
 
 inherit linux-mod eutils
 
@@ -11,7 +11,7 @@ DESCRIPTION="Linux kernel module for (but not limited to) HP Omnibook support"
 HOMEPAGE="http://www.sourceforge.net/projects/omnibook"
 SRC_URI="mirror://sourceforge/omnibook/${MY_P}.tar.gz"
 LICENSE="GPL-2"
-KEYWORDS="~x86 -ppc"
+KEYWORDS="x86 -ppc"
 IUSE=""
 S=${WORKDIR}/${MY_P}
 
