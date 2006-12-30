@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/localizer/Attic/localizer-1.0.0-r1.ebuild,v 1.9 2006/01/27 02:37:45 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-zope/cvs-repo/gentoo-x86/net-zope/localizer/Attic/localizer-1.0.0-r1.ebuild,v 1.10 2006/12/30 02:21:41 mr_bones_ Exp $
 
 inherit zproduct
 
@@ -9,6 +9,7 @@ HOMEPAGE="http://www.localizer.org"
 SRC_URI="mirror://sourceforge/lleu/Localizer-${PV}.tgz"
 
 LICENSE="GPL-2"
+KEYWORDS="x86 ~ppc"
 
 DEPEND=""
 
