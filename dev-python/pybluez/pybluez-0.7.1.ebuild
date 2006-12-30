@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pybluez/Attic/pybluez-0.7.1.ebuild,v 1.2 2006/10/26 18:54:52 peper Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pybluez/Attic/pybluez-0.7.1.ebuild,v 1.3 2006/12/30 01:21:42 dev-zero Exp $
 
 inherit distutils python
 
@@ -13,8 +13,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~ppc ~x86"
 IUSE="doc"
 
-RDEPEND=">=dev-lang/python-2.3
-	>=net-wireless/bluez-libs-2.10"
+DEPEND=">=net-wireless/bluez-libs-2.10"
+RDEPEND="${DEPEND}"
 
 PYTHON_MODNAME="pybluez"
 
