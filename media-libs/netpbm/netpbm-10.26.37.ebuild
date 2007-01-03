@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/netpbm/Attic/netpbm-10.26.37.ebuild,v 1.1 2007/01/03 03:19:36 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/netpbm/Attic/netpbm-10.26.37.ebuild,v 1.2 2007/01/03 04:18:18 vapier Exp $
 
 inherit flag-o-matic toolchain-funcs eutils multilib
 
@@ -49,6 +49,7 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}"/netpbm-10.30-build.patch
+	epatch "${FILESDIR}"/netpbm-10.26.37-headers.patch
 
 	rm -f configure
 	cp Makefile.config.in Makefile.config
