@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/w3m/Attic/w3m-0.5.1-r4.ebuild,v 1.6 2006/12/28 21:28:49 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/w3m/Attic/w3m-0.5.1-r4.ebuild,v 1.7 2007/01/03 01:01:15 truedfx Exp $
 
 inherit eutils
 
@@ -96,7 +96,7 @@ src_compile() {
 		--with-editor=/usr/bin/nano \
 		--with-mailer=/bin/mail \
 		--with-browser=/usr/bin/mozilla \
-		--with-termlib=ncurses \
+		--with-termlib=curses \
 		--enable-image=${imageval:-no} \
 		--with-imagelib="${imagelibval:-no}" \
 		--with-migemo="${migemo_command}" \
