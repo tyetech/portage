@@ -1,8 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/wm-icons/Attic/wm-icons-0.3.0.ebuild,v 1.10 2006/05/19 18:06:55 corsair Exp $
-
-inherit gnuconfig
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/wm-icons/Attic/wm-icons-0.3.0.ebuild,v 1.11 2007/01/04 19:45:32 flameeyes Exp $
 
 DESCRIPTION="A Large Assortment of Beutiful Themed Icons, Created with FVWM in mind"
 
@@ -22,12 +20,11 @@ RDEPEND="${DEPEND}"
 src_unpack() {
 	unpack ${A}
 	sed -i 's#$(bindir)/wm-icons-config#true#g' ${S}/Makefile.in
-	gnuconfig_update
 }
 
 src_compile() {
 	econf --enable-all-sets --enable-icondir=/usr/share/icons/wm-icons || die "econf failed"
-	emake
+	emake || die "emake failed"
 }
 
 src_install() {
