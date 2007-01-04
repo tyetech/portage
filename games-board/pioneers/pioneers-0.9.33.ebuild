@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/pioneers/Attic/pioneers-0.9.33.ebuild,v 1.1 2006/03/31 01:12:07 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/pioneers/Attic/pioneers-0.9.33.ebuild,v 1.2 2007/01/04 22:50:44 nyhm Exp $
 
-inherit eutils gnome2 debug
+inherit eutils gnome2
 
 MY_P="pioneers-${PV}"
 DESCRIPTION="A clone of the popular board game The Settlers of Catan"
