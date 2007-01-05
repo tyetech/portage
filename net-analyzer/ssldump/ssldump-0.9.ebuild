@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ssldump/Attic/ssldump-0.9.ebuild,v 1.14 2006/09/24 07:40:00 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ssldump/Attic/ssldump-0.9.ebuild,v 1.15 2007/01/05 09:55:15 flameeyes Exp $
 
-inherit gnuconfig eutils
+inherit eutils
 
 IUSE="ssl"
 
@@ -28,7 +28,6 @@ src_unpack() {
 }
 
 src_compile() {
-	gnuconfig_update
 
 	econf `use_with ssl crypto` || die
 	emake || die
