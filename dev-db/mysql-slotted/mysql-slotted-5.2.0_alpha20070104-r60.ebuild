@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-community/Attic/mysql-community-5.1.15_alpha20061231-r60.ebuild,v 1.2 2007/01/05 00:20:07 vivo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-slotted/Attic/mysql-slotted-5.2.0_alpha20070104-r60.ebuild,v 1.1 2007/01/05 00:23:16 vivo Exp $
 
 MY_EXTRAS_VER="latest"
 SERVER_URI="mirror://gentoo/MySQL-${PV%.*}/mysql-${PV//_alpha/-bk-}.tar.bz2"
@@ -9,7 +9,7 @@ PBXT_VERSION="0.9.73-beta"
 inherit mysql
 
 #REMEMBER!!!: update also eclass/mysql*.eclass prior to commit
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 arm hppa ia64 ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
 
 src_test() {
 
@@ -41,7 +41,7 @@ src_test() {
 
 		useq "extraengine" && mysql_disable_test "federated" "fail with extraengine"
 
-		mysql_disable_test "view" "Already fixed: fail because now we are in year 2007"
+		mysql_disable_test "view" "FIXME: fail because now we are in year 2007"
 
 		# from Makefile.am:
 		retstatus=1
