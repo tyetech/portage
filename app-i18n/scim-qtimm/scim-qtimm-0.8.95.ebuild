@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-qtimm/Attic/scim-qtimm-0.8.95.ebuild,v 1.4 2005/07/31 08:48:53 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-qtimm/Attic/scim-qtimm-0.8.95.ebuild,v 1.5 2007/01/05 16:31:01 flameeyes Exp $
 
 inherit kde-functions
 
@@ -49,9 +49,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo
-	einfo "After you emerged ${PN}, use right click to switch immodules for Qt."
-	einfo "If you would like to use ${PN} as default instead of XIM, set"
-	einfo "	% export QT_IM_MODULE=scim"
-	einfo
+	elog
+	elog "After you emerged ${PN}, use right click to switch immodules for Qt."
+	elog "If you would like to use ${PN} as default instead of XIM, set"
+	elog "	% export QT_IM_MODULE=scim"
+	elog
 }
