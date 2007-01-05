@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/grip/Attic/grip-3.3.0.ebuild,v 1.14 2006/11/17 13:25:54 drizzt Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/grip/Attic/grip-3.3.0.ebuild,v 1.15 2007/01/05 07:08:49 flameeyes Exp $
 
-inherit gnuconfig flag-o-matic eutils toolchain-funcs
+inherit flag-o-matic eutils toolchain-funcs
 
 IUSE="nls vorbis"
 
