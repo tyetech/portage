@@ -1,7 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.1-r2.ebuild,v 1.2 2007/01/05 19:41:46 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.1-r2.ebuild,v 1.3 2007/01/06 09:58:05 alonbl Exp $
 
+WANT_AUTOCONF='latest'
 WANT_AUTOMAKE='latest'
 
 inherit eutils flag-o-matic autotools
