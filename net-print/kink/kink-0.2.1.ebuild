@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/kink/Attic/kink-0.2.1.ebuild,v 1.4 2005/02/05 17:09:43 cryos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/kink/Attic/kink-0.2.1.ebuild,v 1.5 2007/01/06 19:10:30 cryos Exp $
 
 inherit kde eutils
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="x86 amd64 ~ppc"
 IUSE=""
 
-DEPEND=">=net-print/libinklevel-0.6"
+DEPEND="<=net-print/libinklevel-0.6.5"
 need-kde 3.1
 
 src_unpack() {
