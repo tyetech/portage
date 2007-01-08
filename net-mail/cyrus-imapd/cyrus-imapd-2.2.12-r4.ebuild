@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/cyrus-imapd/Attic/cyrus-imapd-2.2.12-r4.ebuild,v 1.9 2007/01/05 08:56:43 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/cyrus-imapd/Attic/cyrus-imapd-2.2.12-r4.ebuild,v 1.10 2007/01/08 15:31:33 flameeyes Exp $
 
-inherit eutils ssl-cert fixheadtails
+inherit eutils ssl-cert fixheadtails pam
 
 DESCRIPTION="The Cyrus IMAP Server."
 HOMEPAGE="http://asg.web.cmu.edu/cyrus/imapd/"
