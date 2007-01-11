@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/hibernate/Attic/hibernate-3.1.3.ebuild,v 1.1 2007/01/11 00:24:31 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/hibernate/Attic/hibernate-3.1.3.ebuild,v 1.2 2007/01/11 19:13:59 betelgeuse Exp $
 
 inherit java-pkg-2 java-ant-2 eutils
 
@@ -31,7 +31,6 @@ COMMON_DEPEND="
 	dev-java/sun-jacc-api
 	dev-java/jgroups
 	>=dev-java/xerces-2.7"
-#	dev-java/jdbc2-stdext
 RDEPEND=">=virtual/jre-1.4
 	${COMMON_DEPEND}"
 # FIXME doesn't like  Java 1.6's JDBC API
@@ -53,11 +52,12 @@ src_unpack() {
 		src/org/hibernate/cache/TreeCache.java \
 		src/org/hibernate/cache/TreeCacheProvider.java
 
+	rm -v *.jar
 	cd lib
-	rm *.jar
+	rm -v *.jar
 
 	local JAR_PACKAGES="asm-2 c3p0 commons-collections
-		commons-logging dom4j-1 ehcache jaxen-1.1 jdbc2-stdext
+		commons-logging dom4j-1 ehcache jaxen-1.1
 		log4j oscache proxool swarmcache-1.0 xerces-2 jgroups"
 	for PACKAGE in ${JAR_PACKAGES}; do
 		java-pkg_jar-from ${PACKAGE}
