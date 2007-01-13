@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/sessreg/Attic/sessreg-1.0.0.ebuild,v 1.16 2006/10/10 23:55:18 dberkholz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/sessreg/Attic/sessreg-1.0.0.ebuild,v 1.17 2007/01/13 00:05:27 joshuabaergen Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -14,4 +14,5 @@ RESTRICT="mirror"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
+	x11-libs/libX11
 	x11-proto/xproto"
