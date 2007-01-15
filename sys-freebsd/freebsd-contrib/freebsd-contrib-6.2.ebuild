@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-freebsd/cvs-repo/gentoo-x86/sys-freebsd/freebsd-contrib/Attic/freebsd-contrib-6.2_rc2.ebuild,v 1.1 2006/12/29 15:16:21 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-freebsd/cvs-repo/gentoo-x86/sys-freebsd/freebsd-contrib/Attic/freebsd-contrib-6.2.ebuild,v 1.1 2007/01/15 21:34:58 drizzt Exp $
 
 inherit bsdmk freebsd flag-o-matic
 
