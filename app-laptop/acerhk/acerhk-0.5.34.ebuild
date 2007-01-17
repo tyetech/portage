@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/acerhk/Attic/acerhk-0.5.34.ebuild,v 1.2 2006/11/25 13:21:35 jurek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/acerhk/Attic/acerhk-0.5.34.ebuild,v 1.3 2007/01/17 10:28:47 opfer Exp $
 
 inherit linux-mod
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.informatik.hu-berlin.de/~tauber/acerhk/"
 SRC_URI="http://www.informatik.hu-berlin.de/~tauber/${PN}/archives/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="~x86 -ppc"
+KEYWORDS="-ppc x86"
 IUSE=""
 
 MODULE_NAMES="acerhk(extra:)"
