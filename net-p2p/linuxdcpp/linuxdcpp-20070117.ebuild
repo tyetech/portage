@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/linuxdcpp/Attic/linuxdcpp-20070117.ebuild,v 1.1 2007/01/17 12:40:21 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/linuxdcpp/Attic/linuxdcpp-20070117.ebuild,v 1.2 2007/01/17 19:03:09 armin76 Exp $
 
 inherit eutils
 
@@ -25,7 +25,7 @@ src_compile() {
 	local myconf=""
 	use debug && myconf="${myconf} debug=1"
 
-	scons ${myconf} ${MAKEOPTS} CFLAGS="${CFLAGS}" PREFIX=/usr || die "scons failed"
+	scons ${myconf} ${MAKEOPTS} CXXFLAGS="${CXXFLAGS}" PREFIX=/usr || die "scons failed"
 }
 
 src_install() {
