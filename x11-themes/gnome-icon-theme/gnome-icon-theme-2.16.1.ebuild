@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-icon-theme/Attic/gnome-icon-theme-2.16.1.ebuild,v 1.7 2007/01/14 00:56:51 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gnome-icon-theme/Attic/gnome-icon-theme-2.16.1.ebuild,v 1.8 2007/01/18 23:04:17 jer Exp $
 
 inherit gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm ~hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ~arm hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="x11-themes/hicolor-icon-theme"
