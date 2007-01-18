@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/eel/Attic/eel-2.16.3.ebuild,v 1.8 2007/01/14 01:03:07 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/eel/Attic/eel-2.16.3.ebuild,v 1.9 2007/01/18 23:31:48 jer Exp $
 
 inherit virtualx gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="alpha amd64 arm ~hppa ia64 ppc ppc64 sh sparc x86"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86"
 IUSE=""
 
 RDEPEND=">=media-libs/libart_lgpl-2.3.8
