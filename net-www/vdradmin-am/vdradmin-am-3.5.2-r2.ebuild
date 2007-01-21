@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/vdradmin-am/Attic/vdradmin-am-3.5.2.ebuild,v 1.3 2007/01/06 14:53:38 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/vdradmin-am/Attic/vdradmin-am-3.5.2-r2.ebuild,v 1.1 2007/01/21 13:22:17 zzam Exp $
 
 inherit eutils
 
@@ -8,12 +8,12 @@ DESCRIPTION="WWW Admin for the Video Disk Recorder"
 HOMEPAGE="http://andreas.vdr-developer.org/"
 SRC_URI="http://andreas.vdr-developer.org/download/${P}.tar.bz2"
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 IUSE="unicode"
 
-RDEPEND="dev-lang/perl
+DEPEND="dev-lang/perl
 	dev-perl/Template-Toolkit
 	>=dev-perl/Compress-Zlib-1.2.2
 	media-video/vdr
@@ -21,7 +21,10 @@ RDEPEND="dev-lang/perl
 	dev-perl/Locale-gettext
 	dev-perl/Authen-SASL
 	dev-perl/Digest-HMAC
+	dev-perl/URI
 	unicode? ( sys-devel/gettext )"
+RDEPEND="${DEPEND}"
+
 
 ETC_DIR="/etc/vdradmin"
 LIB_DIR="/usr/share/vdradmin"
@@ -65,8 +68,8 @@ src_install() {
 	insinto ${LIB_DIR}/template
 	doins -r ${S}/template/*
 
-	insinto ${LIB_DIR}/lib
-	doins -r ${S}/lib/*
+	insinto ${LIB_DIR}/lib/Template/Plugin
+	doins -r ${S}/lib/Template/Plugin/JavaScript.pm
 
 	insinto /usr/share/locale/
 	doins -r ${S}/locale/*
@@ -104,6 +107,8 @@ pkg_preinst() {
 		yes "" \
 		  | ${D}/usr/bin/vdradmind.pl --cfgdir ${D}${ETC_DIR} --config \
 		  |sed -e 's/: /: \n/g'
+
+		[[ ${PIPESTATUS[1]} == "0" ]] || die "Failed to create initial configuration."
 
 		elog
 		elog "Created default user/password: gentoo-vdr/gentoo-vdr"
