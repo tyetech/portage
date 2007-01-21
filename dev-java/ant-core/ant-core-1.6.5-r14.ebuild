@@ -1,7 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ant-core/Attic/ant-core-1.6.5-r14.ebuild,v 1.10 2006/12/09 12:52:38 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ant-core/Attic/ant-core-1.6.5-r14.ebuild,v 1.11 2007/01/21 22:19:13 caster Exp $
 
+JAVA_ANT_DISABLE_ANT_CORE_DEP=true
 inherit java-pkg-2 eutils toolchain-funcs java-ant-2
 
 MY_PN=${PN/-core}
