@@ -1,8 +1,11 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.2.6-r1.ebuild,v 1.15 2007/01/05 07:09:32 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/rrdtool/Attic/rrdtool-1.2.18.ebuild,v 1.1 2007/01/24 20:22:15 jokey Exp $
 
-inherit perl-module flag-o-matic eutils multilib
+WANT_AUTOCONF="latest"
+WANT_AUTOMAKE="latest"
+
+inherit perl-module flag-o-matic eutils multilib autotools
 
 DESCRIPTION="A system to store and display time-series data"
 HOMEPAGE="http://people.ee.ethz.ch/~oetiker/webtools/rrdtool/"
@@ -10,30 +13,37 @@ SRC_URI="http://people.ee.ethz.ch/~oetiker/webtools/${PN}/pub/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc sparc x86"
-IUSE="doc perl tcl"
+KEYWORDS="~alpha amd64 arm hppa ia64 ~mips ~ppc ppc64 sh sparc x86"
+IUSE="doc perl python rrdcgi tcl uclibc"
 
-DEPEND="perl? ( dev-lang/perl )
-	sys-apps/gawk
+RDEPEND="tcl? ( dev-lang/tcl )
 	>=sys-libs/zlib-1.2.1
 	>=media-libs/freetype-2.1.5
 	>=media-libs/libart_lgpl-2.3.16
 	>=media-libs/libpng-1.2.5
-	>=media-libs/gd-1.8.3
-	>=dev-libs/cgilib-0.5"
-RDEPEND="tcl? ( dev-lang/tcl )"
+	rrdcgi? ( >=dev-libs/cgilib-0.5 )"
+
+DEPEND="${RDEPEND}
+	perl? ( dev-lang/perl )
+	python? ( dev-lang/python )
+	sys-apps/gawk"
 
 TCLVER=""
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	sed -i -e 's:<rrd_\(.*\)>:"../../src/rrd_\1":g' \
 		bindings/tcl/tclrrd.c || die "sed failed"
 	sed -i -e 's:-lrrd_private:-ltcl -lrrd:' \
 		bindings/tcl/Makefile.* || die "sed failed"
-	sed -i -e 's:^\(LIBDIRS\s*= .*-L\)\.\./src/.libs:\1../../src/.libs/:' \
-		bindings/tcl/Makefile.in || die "sed failed"
+	sed -i -e 's:python_PROGRAMS:pyexec_PROGRAMS:' \
+		bindings/python/Makefile.* || die "sed failed"
+	sed -i -e 's:\$TCL_PACKAGE_PATH:${TCL_PACKAGE_PATH%% *}:' \
+		configure.ac
+	epatch "${FILESDIR}"/${PN}-1.2.15-newstyle-resize.patch
+	use uclibc && epatch "${FILESDIR}"/${PN}-1.2.15-no-man.patch
+	eautoreconf
 }
 
 pkg_setup() {
@@ -50,37 +60,40 @@ src_compile() {
 	if use tcl ; then
 		myconf="${myconf} --with-tcllib=/usr/$(get_libdir)"
 	else
-		myconf="${myconf} --without-tcllib"
+		myconf="${myconf} --disable-tcl"
 	fi
 
+	use python || myconf="${myconf} --disable-python"
+
 	if use perl ; then
-		econf ${myconf} --with-perl-options='PREFIX=/usr INSTALLDIRS=vendor DESTDIR=${D}' || die "econf failed"
+		econf ${myconf} \
+			$(use_enable rrdcgi) \
+			--with-perl-options='PREFIX=/usr INSTALLDIRS=vendor DESTDIR=${D}' || \
+			die "econf failed"
 	else
-		econf ${myconf} --disable-perl || die "econf failed"
+		econf ${myconf} \
+			$(use_enable rrdcgi) \
+			--disable-perl || die "econf failed"
 	fi
 
 	make || die "make failed"
 }
 
 src_install() {
-	einstall || die
+	make DESTDIR="${D}" install || die "make install failed"
 
-	# this package completely ignores mandir settings
-
-
-	rm -rf ${D}/usr/doc
-	rm -rf ${D}/usr/examples
-	rm -rf ${D}/usr/shared
+	rm -fr "${D}"/usr/examples
+	rm -fr "${D}"/usr/shared
 
 	if use doc ; then
-		doman doc/*.1
 		dohtml doc/*.html
 		dodoc doc/*.pod
 		dodoc doc/*.txt
 		insinto /usr/share/doc/${PF}/examples
 		doins examples/*
+		insinto /usr/share/doc/${PF}/contrib
+		doins contrib/*
 	fi
-
 
 	if use perl ; then
 		perlinfo
@@ -88,18 +101,10 @@ src_install() {
 		perl-module_src_install || die
 
 		# remove duplicate installation into /usr/lib/perl
-		rm -Rf ${D}/usr/lib/perl
+		rm -Rf "${D}"/usr/lib/perl
 	fi
 
-	if use tcl ; then
-		mv ${S}/bindings/tcl/tclrrd.so ${S}/bindings/tcl/tclrrd${PV}.so
-		insinto /usr/$(get_libdir)/tcl${TCL_VER}/tclrrd${PV}
-		doins ${S}/bindings/tcl/tclrrd${PV}.so
-		echo "package ifneeded Rrd ${PV} [list load [file join \$$dir .. tclrrd${PV}.so]]" \
-			>> ${D}/usr/$(get_libdir)/tcl${TCL_VER}/tclrrd${PV}/pkgIndex.tcl
-	fi
-
-	dodoc COPY* CONTR* README TODO
+	dodoc CONTRIBUTORS README TODO
 }
 
 pkg_preinst() {
