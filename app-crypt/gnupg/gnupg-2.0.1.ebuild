@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.1.ebuild,v 1.1 2006/12/02 18:12:40 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg/Attic/gnupg-2.0.1.ebuild,v 1.2 2007/01/24 17:05:34 genone Exp $
 
 WANT_AUTOMAKE='latest'
 
@@ -94,7 +94,7 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo
-	einfo "See http://www.gentoo.org/doc/en/gnupg-user.xml for documentation on gnupg"
-	einfo
+	elog
+	elog "See http://www.gentoo.org/doc/en/gnupg-user.xml for documentation on gnupg"
+	elog
 }
