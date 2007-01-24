@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/paludis/Attic/paludis-0.14.0.ebuild,v 1.2 2007/01/03 07:55:04 pioto Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/paludis/Attic/paludis-0.16.0.ebuild,v 1.1 2007/01/24 22:24:25 pioto Exp $
 
 inherit bash-completion eutils flag-o-matic
 
@@ -11,7 +11,6 @@ SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~mips ~ppc ~sparc ~x86"
-#IUSE="contrarius cran doc gems glsa pink qa ruby selinux zsh-completion"
 IUSE="contrarius cran doc glsa pink qa ruby selinux zsh-completion"
 
 COMMON_DEPEND="
@@ -20,16 +19,10 @@ COMMON_DEPEND="
 	qa? ( dev-libs/pcre++ >=dev-libs/libxml2-2.6 app-crypt/gnupg )
 	glsa? ( >=dev-libs/libxml2-2.6 )
 	ruby? ( >=dev-lang/ruby-1.8 )"
-	#gems? (
-	#	dev-libs/libyaml
-	#	dev-ruby/rubygems
-	#)
 
 DEPEND="${COMMON_DEPEND}
 	dev-cpp/libebt
 	>=dev-cpp/libwrapiter-1.0.0
-	>=sys-devel/autoconf-2.59
-	=sys-devel/automake-1.9*
 	doc? ( app-doc/doxygen media-gfx/imagemagick )"
 
 RDEPEND="${COMMON_DEPEND}
@@ -41,6 +34,7 @@ RDEPEND="${COMMON_DEPEND}
 PROVIDE="virtual/portage"
 
 pkg_setup() {
+	# gcc generates bad code...
 	use amd64 && replace-flags -Os -O2
 
 	if is-ldflagq -Wl,--as-needed || is-ldflagq --as-needed ; then
@@ -55,9 +49,8 @@ pkg_setup() {
 }
 
 src_compile() {
-	#local repositories=$(echo default $(usev cran) $(usev gems) | tr -s " "  ,)
-	local repositories=$(echo default $(usev cran) | tr -s " "  ,)
-	local clients=$(echo default $(usev contrarius) | tr -s " "  ,)
+	local repositories=`echo default $(usev cran) | tr -s \  ,`
+	local clients=`echo default $(usev contrarius) | tr -s \  ,`
 	econf \
 		$(use_enable doc doxygen ) \
 		$(use_enable !mips sandbox ) \
