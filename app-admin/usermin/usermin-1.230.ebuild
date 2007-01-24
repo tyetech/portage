@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/usermin/Attic/usermin-1.230.ebuild,v 1.7 2006/10/24 10:48:53 tcort Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/usermin/Attic/usermin-1.230.ebuild,v 1.8 2007/01/24 15:07:40 genone Exp $
 
 IUSE="ssl"
 
@@ -81,8 +81,8 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "To make usermin start at boot time, run: 'rc-update add usermin default'."
-	einfo "Point your web browser to http://localhost:20000 to use usermin."
+	elog "To make usermin start at boot time, run: 'rc-update add usermin default'."
+	elog "Point your web browser to http://localhost:20000 to use usermin."
 }
 
 pkg_prerm() {
