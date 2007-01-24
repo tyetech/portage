@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.0.2.ebuild,v 1.14 2006/09/03 19:47:58 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.0.2.ebuild,v 1.15 2007/01/24 14:07:12 genone Exp $
 
 DESCRIPTION="Modular -config replacement utility"
 HOMEPAGE="http://www.gentoo.org/proj/en/eselect/"
@@ -45,12 +45,10 @@ src_install() {
 
 pkg_postinst() {
 	if use bash-completion ; then
-		echo
-		einfo
-		einfo "To enable command-line completion for eselect, run:"
-		einfo
-		einfo "  eselect bashcomp enable eselect"
-		einfo
-		echo
+		elog
+		elog "To enable command-line completion for eselect, run:"
+		elog
+		elog "  eselect bashcomp enable eselect"
+		elog
 	fi
 }
