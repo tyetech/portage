@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/hibernate/Attic/hibernate-3.0.5-r2.ebuild,v 1.3 2007/01/12 12:53:38 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/hibernate/Attic/hibernate-3.0.5-r2.ebuild,v 1.4 2007/01/24 17:48:47 caster Exp $
 
 inherit java-pkg-2 java-ant-2 eutils
 
@@ -16,7 +16,7 @@ SLOT="3"
 KEYWORDS="~amd64 ~x86"
 
 COMMON_DEPEND="
-	=dev-java/asm-2*
+	=dev-java/asm-2.0*
 	dev-java/c3p0
 	=dev-java/cglib-2.1*
 	dev-java/commons-collections
