@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/jxtray/Attic/jxtray-0.5-r2.ebuild,v 1.3 2007/01/19 21:45:15 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/jxtray/Attic/jxtray-0.5-r2.ebuild,v 1.4 2007/01/25 23:15:08 wltjr Exp $
 
 inherit java-pkg-2
 
@@ -58,7 +58,7 @@ src_unpack() {
 }
 
 src_compile() {
-	eant jar $(use_doc javadocs)
+	eant jar $(use_doc javadoc)
 }
 
 src_install() {
