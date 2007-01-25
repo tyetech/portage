@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-9999.ebuild,v 1.2 2006/12/31 12:56:45 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-9999.ebuild,v 1.3 2007/01/25 19:02:24 flameeyes Exp $
 
 inherit kde subversion
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://amarok.kde.org/"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="-*"
+KEYWORDS=""
 IUSE="aac kde mysql noamazon opengl postgres
 visualization ipod ifp real njb mtp musicbrainz"
 # kde: enables compilation of the konqueror sidebar plugin
