@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qmpdclient/Attic/qmpdclient-1.0.6.2.ebuild,v 1.1 2006/10/21 23:36:54 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qmpdclient/Attic/qmpdclient-1.0.6.2.ebuild,v 1.2 2007/01/26 19:59:38 jer Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://havtknut.tihlde.org/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~x86"
+KEYWORDS="~amd64 hppa ~ppc ~x86"
 IUSE=""
 
 DEPEND=">=x11-libs/qt-4.1"
