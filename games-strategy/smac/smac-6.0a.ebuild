@@ -1,9 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/smac/smac-6.0a.ebuild,v 1.11 2006/12/06 21:03:46 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/smac/smac-6.0a.ebuild,v 1.12 2007/01/26 19:35:23 mr_bones_ Exp $
 
 inherit eutils games
-
 
 DESCRIPTION="Linux port of the popular strategy game from Firaxis"
 HOMEPAGE="http://www.lokigames.com/products/smac/"
