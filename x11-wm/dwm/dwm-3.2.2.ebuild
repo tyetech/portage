@@ -1,11 +1,11 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/dwm/Attic/dwm-3.2.2.ebuild,v 1.1 2007/01/27 14:54:29 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/dwm/Attic/dwm-3.2.2.ebuild,v 1.2 2007/01/28 17:34:58 cedk Exp $
 
 inherit toolchain-funcs
 
 DESCRIPTION="a dynamic window manager for X11"
-HOMEPAGE="http://suckless.org/view/dynamic+window+manager"
+HOMEPAGE="http://dwm.suckless.org/"
 SRC_URI="http://suckless.org/download/${P}.tar.gz"
 
 LICENSE="MIT"
