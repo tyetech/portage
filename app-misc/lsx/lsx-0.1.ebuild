@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/lsx/lsx-0.1.ebuild,v 1.1 2007/01/13 15:17:08 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/lsx/lsx-0.1.ebuild,v 1.2 2007/01/28 05:18:16 genone Exp $
 
 inherit toolchain-funcs
 
@@ -44,5 +44,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo "Run ${PN} with ${PN}-suckless"
+	elog "Run ${PN} with ${PN}-suckless"
 }
