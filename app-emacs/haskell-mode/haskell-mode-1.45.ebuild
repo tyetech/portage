@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/haskell-mode/Attic/haskell-mode-1.45.ebuild,v 1.1 2005/02/20 11:07:38 usata Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/haskell-mode/Attic/haskell-mode-1.45.ebuild,v 1.2 2007/01/28 04:16:00 genone Exp $
 
 inherit elisp
 
@@ -26,5 +26,5 @@ src_install() {
 
 pkg_postinst() {
 	elisp_pkg_postinst
-	einfo "See /usr/share/doc/${P}/html/installation-guide.html"
+	elog "See /usr/share/doc/${P}/html/installation-guide.html"
 }

@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/highline/Attic/highline-4.2.ebuild,v 1.9 2005/06/05 11:40:02 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/highline/Attic/highline-4.2.ebuild,v 1.10 2007/01/28 04:19:06 genone Exp $
 
 inherit elisp
 
@@ -28,7 +28,7 @@ src_install() {
 
 pkg_postinst() {
 	elisp-site-regen
-	einfo "Please see ${SITELISP}/${PN}/highline.el for the complete documentation."
+	elog "Please see ${SITELISP}/${PN}/highline.el for the complete documentation."
 }
 
 pkg_postrm() {
