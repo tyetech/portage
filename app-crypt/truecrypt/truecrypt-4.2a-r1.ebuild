@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/truecrypt/Attic/truecrypt-4.2a-r1.ebuild,v 1.3 2007/01/27 22:08:16 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/truecrypt/Attic/truecrypt-4.2a-r1.ebuild,v 1.4 2007/01/29 09:16:08 opfer Exp $
 
 inherit linux-mod toolchain-funcs
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.truecrypt.org/downloads/truecrypt-${PV}-source-code.tar.gz"
 
 LICENSE="truecrypt-collective-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 x86"
 IUSE=""
 
 DEPEND="virtual/linux-sources
