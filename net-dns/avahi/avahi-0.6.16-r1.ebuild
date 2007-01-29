@@ -1,6 +1,6 @@
 # Copyright 2000-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/avahi/Attic/avahi-0.6.16-r1.ebuild,v 1.7 2007/01/15 19:33:42 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/avahi/Attic/avahi-0.6.16-r1.ebuild,v 1.8 2007/01/29 11:09:41 swegener Exp $
 
 inherit eutils mono python qt3 qt4
 
@@ -48,7 +48,6 @@ RDEPEND=">=dev-libs/libdaemon-0.5
 		dev-python/twisted-web
 	)"
 DEPEND="${RDEPEND}
-	>=sys-devel/autoconf-2.61
 	>=dev-util/pkgconfig-0.9.0
 	doc? (
 		app-doc/doxygen
