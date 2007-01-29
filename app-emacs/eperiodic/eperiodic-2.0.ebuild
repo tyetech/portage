@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/eperiodic/Attic/eperiodic-2.0.ebuild,v 1.1 2006/12/19 06:48:16 opfer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/eperiodic/Attic/eperiodic-2.0.ebuild,v 1.2 2007/01/29 03:16:36 mr_bones_ Exp $
 
 inherit elisp
 
