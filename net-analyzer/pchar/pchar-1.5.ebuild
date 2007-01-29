@@ -1,6 +1,9 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pchar/Attic/pchar-1.5.ebuild,v 1.3 2006/11/01 21:15:57 chutzpah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pchar/Attic/pchar-1.5.ebuild,v 1.4 2007/01/29 20:45:15 chutzpah Exp $
+
+WANT_AUTOMAKE="latest"
+WANT_AUTOCONF="2.1"
 
 inherit eutils autotools
 
