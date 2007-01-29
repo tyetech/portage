@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/krita/Attic/krita-1.6.1.ebuild,v 1.1 2006/12/01 18:03:17 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/krita/Attic/krita-1.6.1.ebuild,v 1.2 2007/01/29 01:56:04 mr_bones_ Exp $
 
 MAXKOFFICEVER=${PV}
 KMNAME=koffice
