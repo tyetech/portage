@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/sbcl/Attic/sbcl-1.0.1.ebuild,v 1.1 2007/01/18 04:09:58 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/sbcl/Attic/sbcl-1.0.1.ebuild,v 1.2 2007/01/29 01:59:08 mr_bones_ Exp $
 
 inherit common-lisp-common-3 eutils flag-o-matic
 
