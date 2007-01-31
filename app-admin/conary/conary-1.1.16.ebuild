@@ -1,6 +1,6 @@
 # Copyright 2006-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conary/Attic/conary-1.1.15.ebuild,v 1.1 2007/01/16 03:56:28 smithj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conary/Attic/conary-1.1.16.ebuild,v 1.1 2007/01/31 02:50:14 smithj Exp $
 
 DESCRIPTION="repository-based system management and package-building tool"
 HOMEPAGE="http://wiki.rpath.com/wiki/Conary"
