@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-9999-r1.ebuild,v 1.2 2007/02/01 20:44:24 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-9999-r1.ebuild,v 1.3 2007/02/01 21:40:55 flameeyes Exp $
 
 inherit kde subversion
 
-ESVN_REPO_URI="svn://anonsvn.kde.org/home/kde/trunk/extragear/multimedia/amarok"
+ESVN_REPO_URI="svn://anonsvn.kde.org/home/kde/branches/stable/extragear/multimedia/amarok"
 ESVN_STORE_DIR="${PORTAGE_ACTUAL_DISTDIR-${DISTDIR}}/svn-src/"
 
 PKG_SUFFIX=""
