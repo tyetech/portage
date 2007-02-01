@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gxine/Attic/gxine-0.5.8.ebuild,v 1.2 2006/10/29 20:04:14 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gxine/Attic/gxine-0.5.11.ebuild,v 1.1 2007/02/01 10:38:19 flameeyes Exp $
 
 inherit eutils nsplugins fdo-mime libtool
 
