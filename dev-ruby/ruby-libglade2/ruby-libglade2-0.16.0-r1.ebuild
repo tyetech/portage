@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-libglade2/Attic/ruby-libglade2-0.16.0-r1.ebuild,v 1.1 2007/01/03 20:46:11 metalgod Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-libglade2/Attic/ruby-libglade2-0.16.0-r1.ebuild,v 1.2 2007/02/03 09:16:45 mr_bones_ Exp $
 
 inherit eutils ruby ruby-gnome2
 
