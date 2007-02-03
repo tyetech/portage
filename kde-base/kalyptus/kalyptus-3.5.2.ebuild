@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kalyptus/Attic/kalyptus-3.5.2.ebuild,v 1.9 2006/09/08 03:20:12 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kalyptus/Attic/kalyptus-3.5.2.ebuild,v 1.10 2007/02/03 09:25:11 mr_bones_ Exp $
 
 KMNAME=kdebindings
 KM_MAKEFILESREV=1
