@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gqmpeg/gqmpeg-0.91.1.ebuild,v 1.3 2006/10/05 08:38:31 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gqmpeg/gqmpeg-0.91.1.ebuild,v 1.4 2007/02/04 20:29:01 aballier Exp $
 
 IUSE="nls gnome"
 
@@ -30,9 +30,9 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die
 
-	dodoc [A-KN-Z]*
+	dodoc AUTHORS ChangeLog FAQ NEWS README SKIN-SPECS SKIN-SPECS-V1 TODO
 
 	use gnome && ( \
 		insinto /usr/share/gnome/apps/Multimedia
