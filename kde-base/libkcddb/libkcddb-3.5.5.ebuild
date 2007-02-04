@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkcddb/Attic/libkcddb-3.5.5.ebuild,v 1.8 2006/12/11 19:07:38 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkcddb/Attic/libkcddb-3.5.5.ebuild,v 1.9 2007/02/04 08:20:50 mr_bones_ Exp $
 
 KMNAME=kdemultimedia
 MAXKDEVER=$PV
