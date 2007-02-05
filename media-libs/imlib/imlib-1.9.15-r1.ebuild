@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/imlib/Attic/imlib-1.9.15-r1.ebuild,v 1.1 2007/02/05 19:27:27 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/imlib/Attic/imlib-1.9.15-r1.ebuild,v 1.2 2007/02/05 19:32:33 drac Exp $
 
 inherit autotools eutils gnome.org
 
@@ -27,7 +27,7 @@ src_unpack() {
 	# Conditionalize gdk functions for bug 40453.
 	# Fix imlib-config for bug 3425.
 	epatch "${FILESDIR}"/${P}.patch
-	
+
 	# Fix security bug 72681.
 	epatch "${FILESDIR}"/${PN}-security.patch
 
