@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/eix/Attic/eix-0.8.5.ebuild,v 1.2 2007/01/24 03:36:25 genone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/eix/Attic/eix-0.8.7.ebuild,v 1.1 2007/02/05 13:09:10 genstef Exp $
 
 DESCRIPTION="Small utility for searching ebuilds with indexing for fast results"
 HOMEPAGE="http://dev.croup.de/proj/eix"
