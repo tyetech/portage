@@ -1,10 +1,11 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/cryptlib/Attic/cryptlib-3.2.2.ebuild,v 1.1 2005/11/02 03:38:45 sbriesen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/cryptlib/Attic/cryptlib-3.3.0-r1.ebuild,v 1.1 2007/02/05 08:53:35 alonbl Exp $
 
 inherit eutils multilib flag-o-matic
 
-MY_PV=${PV//.}
+MY_PV="${PV//.0}"
+MY_PV="${MY_PV//.}"
 
 DESCRIPTION="Powerful security toolkit for adding encryption to software"
 HOMEPAGE="http://www.cs.auckland.ac.nz/~pgut001/cryptlib/"
@@ -14,13 +15,14 @@ SRC_URI="ftp://ftp.franken.de/pub/crypt/cryptlib/cl${MY_PV}.zip
 LICENSE="Sleepycat"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
-IUSE="doc static"
+IUSE="doc odbc"
 
 S="${WORKDIR}"
 
-DEPEND=">=sys-apps/sed-4
+RDEPEND="odbc? ( dev-db/unixODBC )"
+DEPEND="${RDEPEND}
+	>=sys-apps/sed-4
 	app-arch/unzip"
-RDEPEND=""
 
 src_unpack() {
 	# we need the -a option, so we can not use 'unpack'
@@ -33,6 +35,14 @@ src_unpack() {
 
 	# change 'make' to '$(MAKE)'
 	sed -i -e "s:@\?make:\$(MAKE):g" makefile || die "sed makefile failed"
+
+	# NOTICE:
+	# Because of stack execution
+	# assembly parts are disabled.
+	sed -i -e 's:i\[3,4,5,6\]86:___:g' makefile || die "sed makefile failed"
+
+	# fix soname and strip issues
+	epatch "${FILESDIR}/${P}-ld.patch"
 }
 
 src_compile() {
@@ -40,21 +50,21 @@ src_compile() {
 	replace-flags -O  -O2
 	replace-flags -Os -O2
 	replace-flags -O1 -O2
-	local MYCFLAGS="-c -D__UNIX__ -DNDEBUG -I. ${CFLAGS}"
+	append-flags -c -D__UNIX__ -DNDEBUG -I.
+	# QA issue for pthread_yield
+	append-flags -D_GNU_SOURCE
 
-	if use static; then
-		emake -j1 CFLAGS="${MYCFLAGS}" SCFLAGS="${MYCFLAGS} -fPIC" || \
-			die "emake static failed"
-	fi
+	emake -j1 CFLAGS="${CFLAGS}" SCFLAGS="${CFLAGS} -fPIC" || \
+		die "emake static failed"
 
-	emake -j1 shared CFLAGS="${MYCFLAGS}" SCFLAGS="${MYCFLAGS} -fPIC" || \
+	emake -j1 shared CFLAGS="${CFLAGS}" SCFLAGS="${CFLAGS} -fPIC" || \
 		die "emake shared failed"
 }
 
 src_install() {
 	dolib.so "libcl.so.${PV}"
 	dosym "libcl.so.${PV}" "/usr/$(get_libdir)/libcl.so"
-	use static && dolib.a "libcl.a"
+	dolib.a "libcl.a"
 
 	insinto /usr/include
 	doins cryptlib.h
