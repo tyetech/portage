@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/eix/Attic/eix-0.6.4.ebuild,v 1.13 2007/02/06 21:11:45 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/eix/Attic/eix-0.8.8.ebuild,v 1.1 2007/02/06 21:11:45 genstef Exp $
 
 DESCRIPTION="Small utility for searching ebuilds with indexing for fast results"
 HOMEPAGE="http://eix.sourceforge.net"
@@ -8,16 +8,25 @@ SRC_URI="mirror://sourceforge/eix/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 mips ppc ppc-macos ppc64 sparc x86 ~x86-fbsd"
-IUSE=""
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="sqlite"
 
-DEPEND="sys-apps/portage"
+DEPEND="sqlite? ( >=dev-db/sqlite-3 )"
 RDEPEND="${DEPEND}"
+
+src_compile() {
+	econf $(use_with sqlite) || die "econf failed"
+	emake || die "emake failed"
+	src/eix --dump-defaults >eixrc || die "generating eixrc failed"
+}
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dodoc AUTHORS ChangeLog TODO
+
+	insinto /etc
+	doins eixrc
 }
 
 pkg_postinst() {
