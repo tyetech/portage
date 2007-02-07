@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/metasploit/metasploit-2.7.ebuild,v 1.4 2007/02/03 21:57:54 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/metasploit/metasploit-2.7.ebuild,v 1.5 2007/02/07 20:44:41 blubb Exp $
 
 MY_P="${P/metasploit/framework}"
 S="${WORKDIR}/${MY_P}"
@@ -10,7 +10,7 @@ SRC_URI="http://metasploit.com/tools/${MY_P}.tar.gz"
 
 LICENSE="GPL-2 Artistic"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~sparc x86"
+KEYWORDS="amd64 ppc ~sparc x86"
 IUSE=""
 
 RDEPEND="dev-lang/perl
