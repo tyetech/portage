@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/blockrage/blockrage-0.2.3.ebuild,v 1.1 2007/02/06 23:48:12 tupone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/blockrage/blockrage-0.2.3.ebuild,v 1.2 2007/02/08 11:30:01 nyhm Exp $
 
 inherit eutils games
 
@@ -23,7 +23,7 @@ src_unpack() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc ChangeLog KNOWN_BUGS README TODO
 	prepgamesdirs
 }
