@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/xboard/Attic/xboard-4.2.7.ebuild,v 1.14 2006/10/20 22:14:59 tupone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/xboard/Attic/xboard-4.2.7.ebuild,v 1.15 2007/02/08 09:03:09 nyhm Exp $
 
 inherit eutils games
 
