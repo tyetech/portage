@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/specimen/Attic/specimen-0.4.5.ebuild,v 1.5 2005/06/12 12:14:14 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/specimen/Attic/specimen-0.4.5.ebuild,v 1.6 2007/02/11 18:13:43 flameeyes Exp $
 
 DESCRIPTION="A Midi Controllable Audio Sampler"
 HOMEPAGE="http://www.gazuga.net"
@@ -13,7 +13,7 @@ KEYWORDS="-amd64 ~ppc sparc x86"
 IUSE="ladcca debug"
 
 DEPEND="media-sound/jack-audio-connection-kit
-	virtual/alsa
+	media-libs/alsa-lib
 	media-libs/libsamplerate
 	media-libs/libsndfile
 	media-libs/phat
