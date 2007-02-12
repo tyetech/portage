@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sussen/Attic/sussen-0.31.ebuild,v 1.2 2006/10/22 11:33:24 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sussen/Attic/sussen-0.34-r1.ebuild,v 1.1 2007/02/12 19:44:02 pva Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="1.8"
@@ -14,9 +14,9 @@ LICENSE="GPL-2"
 #IUSE="doc gnome web"
 IUSE="doc gnome"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86"
 
-RDEPEND=">=dev-lang/mono-1.1
+RDEPEND="dev-lang/mono
 	gnome? ( >=dev-dotnet/gtk-sharp-2.4
 			 >=dev-dotnet/gnome-sharp-2.4
 			 >=dev-dotnet/gconf-sharp-2.4
@@ -44,11 +44,12 @@ pkg_setup() {
 # functions only when USE="gnome".
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
-	epatch "${FILESDIR}"/sussen-0.31--as-needed.patch
-	eautoreconf
-
+	epatch "${FILESDIR}"/${P}-sussen-out-of-range.patch
+	epatch "${FILESDIR}"/${P}-po-linguas.patch
+	epatch "${FILESDIR}"/${P}-editor-no-definitions.patch
+	eautoconf
 	use gnome && gnome2_omf_fix
 }
 
@@ -67,7 +68,11 @@ src_compile () {
 }
 
 src_install () {
-	make DESTDIR=${D} install || die "Installation failed"
+	make DESTDIR="${D}" install || die "Installation failed"
+
+	# Workaround bug in mono.
+	mkdir "${D}"/usr/share/sussen/xml/schema
+	mv "${D}"/usr/share/sussen/xml/*.xsd "${D}"/usr/share/sussen/xml/schema
 
 	dodoc ${DOCS}
 
