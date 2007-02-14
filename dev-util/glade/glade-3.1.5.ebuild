@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/glade/Attic/glade-3.1.4.ebuild,v 1.2 2007/02/14 04:42:44 compnerd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/glade/Attic/glade-3.1.5.ebuild,v 1.1 2007/02/14 04:42:44 compnerd Exp $
 
 inherit eutils gnome2
 
