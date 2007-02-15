@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/hicolor-icon-theme/Attic/hicolor-icon-theme-0.10.ebuild,v 1.1 2007/02/14 19:12:56 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/hicolor-icon-theme/Attic/hicolor-icon-theme-0.10.ebuild,v 1.2 2007/02/15 22:58:46 dang Exp $
 
 inherit eutils gnome2-utils
 
@@ -15,6 +15,7 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=""
+RESTRICT="binchecks strip"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed."
