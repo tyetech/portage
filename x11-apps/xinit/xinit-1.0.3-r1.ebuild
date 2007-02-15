@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/Attic/xinit-1.0.3-r1.ebuild,v 1.1 2007/01/17 14:56:29 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/Attic/xinit-1.0.3-r1.ebuild,v 1.2 2007/02/15 11:01:04 genstef Exp $
 
 # Must be before x-modular eclass is inherited
 # This is enabled due to modified Makefile.am from the patches
@@ -21,7 +21,7 @@ RDEPEND="x11-apps/xauth
 	x11-apps/xrdb
 	x11-apps/xsm )"
 DEPEND="${RDEPEND}"
-PDEPEND="x11-terms/xterm"
+PDEPEND="!minimal? ( x11-terms/xterm )"
 
 PATCHES="${FILESDIR}/nolisten-tcp-and-black-background.patch
 	${FILESDIR}/gentoo-startx-customization-0.99.4.patch"
