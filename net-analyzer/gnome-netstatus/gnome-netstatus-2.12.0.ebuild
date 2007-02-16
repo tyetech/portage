@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/gnome-netstatus/Attic/gnome-netstatus-2.12.0.ebuild,v 1.12 2006/11/12 04:36:02 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/gnome-netstatus/Attic/gnome-netstatus-2.12.0.ebuild,v 1.13 2007/02/16 21:30:58 dang Exp $
 
 inherit eutils gnome2
 
@@ -33,4 +33,5 @@ src_unpack() {
 	gnome2_src_unpack
 
 	epatch ${FILESDIR}/${PN}-2.10.0-amd64.patch
+	epatch ${FILESDIR}/${P}-gnome-doc-utils.patch
 }
