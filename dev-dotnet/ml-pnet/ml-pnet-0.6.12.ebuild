@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/ml-pnet/Attic/ml-pnet-0.6.12.ebuild,v 1.7 2006/12/10 10:26:49 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/ml-pnet/Attic/ml-pnet-0.6.12.ebuild,v 1.8 2007/02/17 09:08:06 jer Exp $
 
 DESCRIPTION="Mono C# libraries for Portable.NET"
 HOMEPAGE="http://www.dotgnu.org/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://gnu/dotgnu/pnet/${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 X11 )"
 SLOT="0"
-KEYWORDS="amd64 arm ~hppa ia64 ppc x86"
+KEYWORDS="amd64 arm ia64 ppc x86"
 IUSE=""
 
 DEPEND="=dev-dotnet/pnetlib-${PV}*"
