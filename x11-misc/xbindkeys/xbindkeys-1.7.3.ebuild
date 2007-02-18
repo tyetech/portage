@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xbindkeys/Attic/xbindkeys-1.7.3.ebuild,v 1.8 2007/01/10 17:34:37 hkbst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xbindkeys/Attic/xbindkeys-1.7.3.ebuild,v 1.9 2007/02/18 20:55:58 grobian Exp $
 
 IUSE="guile tk"
 
@@ -8,7 +8,7 @@ DESCRIPTION="Tool for launching commands on keystrokes"
 SRC_URI="http://hocwp.free.fr/xbindkeys/${P}.tar.gz"
 HOMEPAGE="http://hocwp.free.fr/xbindkeys/"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc ~ppc-macos ppc64 sparc x86"
+KEYWORDS="amd64 ppc ppc64 sparc x86"
 SLOT="0"
 
 RDEPEND="|| ( x11-libs/libX11 virtual/x11 )
