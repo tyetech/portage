@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/oregano/Attic/oregano-0.60.0.ebuild,v 1.2 2006/11/07 21:44:05 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/oregano/Attic/oregano-0.60.0.ebuild,v 1.3 2007/02/21 20:23:01 calchan Exp $
 
 inherit eutils fdo-mime
 
