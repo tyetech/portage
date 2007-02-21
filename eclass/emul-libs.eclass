@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/emul-libs.eclass,v 1.2 2007/02/21 09:14:13 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/emul-libs.eclass,v 1.3 2007/02/21 09:19:30 blubb Exp $
 
 #
 # Original Author: Simon Stelling <blubb@gentoo.org>
@@ -41,5 +41,5 @@ emul-libs_src_install() {
 	# remove void directories
 	find "${S}" -depth -print0 -type d | xargs -0 rmdir 2&>/dev/null
 
-	cp -dpPR "${S}"/* "${D}"/ || die "copying files failed!"
+	cp -pPR "${S}"/* "${D}"/ || die "copying files failed!"
 }
