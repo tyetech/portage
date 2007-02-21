@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xvid/Attic/xvid-1.1.2.ebuild,v 1.3 2007/02/03 13:53:42 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xvid/Attic/xvid-1.1.2.ebuild,v 1.4 2007/02/21 03:44:39 vapier Exp $
 
 inherit eutils fixheadtails autotools
 
@@ -15,8 +15,12 @@ SLOT="1"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc altivec"
 
-DEPEND="x86? ( >=dev-lang/nasm-0.98.36 )
-	amd64? ( >=dev-lang/yasm-0.5.0 )"
+# once yasm-0.6.0+ comes out, we can switch this to
+# dev-lang/nasm >=dev-lang/yasm-0.6.0
+# and then drop the quotes from section in the noexec-stack.patch
+NASM=">=dev-lang/yasm-0.5.0"
+DEPEND="x86? ( ${NASM} )
+	amd64? ( ${NASM} )"
 RDEPEND=""
 
 S=${WORKDIR}/${MY_P}/build/generic
