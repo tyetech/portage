@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/descent1-maps/descent1-maps-1.0.ebuild,v 1.4 2007/01/10 17:40:29 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/descent1-maps/descent1-maps-1.0.ebuild,v 1.5 2007/02/22 05:17:29 mr_bones_ Exp $
 
 inherit games
 
@@ -16,16 +16,11 @@ DEPEND="|| (
 	games-action/d1x-rebirth
 	games-action/d1x )"
 
-
 src_install () {
-
 	local dir="${GAMES_DATADIR}/d1x"
 	cd "${S}" || die
 
 	# Install map data
-
-	dodir "${dir}"
-
 	insinto "${dir}"
 	for x in *.rdl *.msn; do
 		doins "${x}" || die
