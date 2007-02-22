@@ -1,12 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-session/Attic/xfce4-session-4.4.0.ebuild,v 1.3 2007/01/28 15:28:02 welp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-session/Attic/xfce4-session-4.4.0.ebuild,v 1.4 2007/02/22 04:04:39 nichoj Exp $
 
 inherit xfce44
 
 xfce44
 
 DESCRIPTION="Session manager"
+HOMEPAGE="http://www.xfce.org/projects/xfce4-session/"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="dbus debug gnome"
 
