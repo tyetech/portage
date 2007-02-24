@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irc-client/irc-client-2.10.3_p7.ebuild,v 1.2 2007/01/05 08:48:27 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irc-client/irc-client-2.10.3_p7.ebuild,v 1.3 2007/02/24 13:30:51 nixnut Exp $
 
 
 MY_P=irc${PV/_/}
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.irc.org/irc/server/${MY_P}.tgz"
 LICENSE="GPL-1"
 SLOT="0"
 
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="ppc ~x86"
 IUSE="ipv6"
 
 DEPEND="virtual/libc
