@@ -1,14 +1,14 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rhythmbox/Attic/rhythmbox-0.9.7.ebuild,v 1.4 2007/01/23 04:17:40 joem Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rhythmbox/Attic/rhythmbox-0.9.8.ebuild,v 1.1 2007/02/24 21:16:41 joem Exp $
 
 inherit gnome2 eutils
 
 DESCRIPTION="Music management and playback software for GNOME"
 HOMEPAGE="http://www.rhythmbox.org/"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="vorbis flac mad ipod avahi hal howl daap dbus libnotify lirc musicbrainz
+KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86"
+IUSE="doc vorbis flac mad ipod avahi hal howl daap dbus libnotify lirc musicbrainz
 tagwriting python keyring"
 #I want tagwriting to be on by default in the future. It is just a local flag
 #now because it is still considered experimental by upstream and doesn't work
@@ -25,9 +25,10 @@ RDEPEND=">=x11-libs/gtk+-2.6
 	>=media-video/totem-1.1.5
 	>=x11-libs/libsexy-0.1.5
 	>=gnome-extra/gnome-media-2.14.0
+	>=media-plugins/gst-plugins-cdparanoia-0.10
 	keyring? ( >=gnome-base/gnome-keyring-0.4.9 )
 	musicbrainz? ( >=media-libs/musicbrainz-2.1 )
-	>=net-libs/libsoup-2.2
+	>=net-libs/libsoup-2.2.99
 	hal? ( ipod? ( >=media-libs/libgpod-0.4 )
 			>=sys-apps/hal-0.5 )
 	avahi? ( >=net-dns/avahi-0.6 )
@@ -47,7 +48,7 @@ RDEPEND=">=x11-libs/gtk+-2.6
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	>=dev-util/intltool-0.29
+	>=dev-util/intltool-0.35
 	app-text/scrollkeeper"
 
 MAKEOPTS="${MAKEOPTS} -j1"
