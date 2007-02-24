@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-0.99.4.ebuild,v 1.10 2006/11/16 14:48:49 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-0.99.4.ebuild,v 1.11 2007/02/24 11:33:43 dragonheart Exp $
 
-inherit libtool flag-o-matic eutils autotools
+inherit libtool flag-o-matic eutils
 
 DESCRIPTION="A network protocol analyzer formerly known as ethereal"
 HOMEPAGE="http://www.wireshark.org/"
