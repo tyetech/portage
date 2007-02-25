@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/ZendFramework/Attic/ZendFramework-0.2.0.ebuild,v 1.1 2006/10/31 17:31:20 sebastian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/ZendFramework/Attic/ZendFramework-0.8.0.ebuild,v 1.1 2007/02/25 14:19:37 gurligebis Exp $
 
 inherit php-lib-r1
 
