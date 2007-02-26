@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/cacti-cactid/Attic/cacti-cactid-0.8.6i.ebuild,v 1.1 2007/01/28 15:26:30 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/cacti-cactid/Attic/cacti-cactid-0.8.6i-r1.ebuild,v 1.1 2007/02/26 07:12:50 pva Exp $
 
 WANT_AUTOCONF="latest"
 inherit autotools
@@ -37,8 +37,8 @@ src_compile() {
 
 src_install() {
 	exeinto usr/sbin ; doexe "${S}"/cactid
-	insinto etc/ ; insopts -m0640 -o root -g apache ; doins "${S}"/cactid.conf
-	dodoc CHANGELOG INSTALL README
+	insinto etc/ ; insopts -m0640 -o root ; doins "${S}"/cactid.conf
+	dodoc ChangeLog INSTALL README
 }
 
 pkg_postinst() {
@@ -47,4 +47,11 @@ pkg_postinst() {
 	einfo "read the instructions on how to implement it"
 	einfo
 	einfo "http://cacti.net/cactid_install.php"
+	echo
+	ewarn "/etc/cactid.conf should be readable by webserver, thus after you"
+	ewarn "decide on webserver/webserver group do not forgive to change it's"
+	ewarn "group with the following command:"
+	ewarn
+	ewarn " # chown root:wwwgroup /etc/cactid.conf"
+	echo
 }
