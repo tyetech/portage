@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/imapfilter/Attic/imapfilter-1.2.1-r1.ebuild,v 1.1 2006/04/02 16:09:32 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/imapfilter/Attic/imapfilter-1.3.ebuild,v 1.1 2007/02/28 15:48:04 mabi Exp $
 
 inherit eutils
 
