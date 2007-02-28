@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-22.0.50_pre20050225.ebuild,v 1.6 2006/02/27 19:37:06 mkennedy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs/Attic/emacs-22.0.50_pre20050225.ebuild,v 1.7 2007/02/28 21:55:12 genstef Exp $
 
 inherit elisp-common alternatives flag-o-matic eutils
 
@@ -50,7 +50,7 @@ PROVIDE="virtual/emacs virtual/editor"
 SLOT="22.0.50"
 LICENSE="GPL-2"
 # should run on other arches, but the ebuild is intended for ppc-macos
-KEYWORDS="-* ~ppc-macos"
+KEYWORDS="-*"
 
 DFILE=emacs-${SLOT}.desktop
 
