@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/raidutils/Attic/raidutils-0.0.5.ebuild,v 1.5 2005/06/01 08:49:59 xmerlin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/raidutils/Attic/raidutils-0.0.6-r1.ebuild,v 1.1 2007/02/28 22:59:11 xmerlin Exp $
 
 inherit eutils
 
@@ -20,12 +20,15 @@ RDEPEND=""
 src_unpack () {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/raidutils-0.0.5-i2octl-fixpath.patch || die
+	#epatch ${FILESDIR}/raidutils-0.0.5-i2octl-fixpath.patch || die
+	#epatch ${FILESDIR}/raidutils-0.0.6-gcc41x-compilefix.patch || die
+	epatch ${FILESDIR}/${P}-misc-fixes.patch || die
+	#rm -f include/linux/i2o-dev.h
 }
 
 src_compile() {
 	econf || die
-	emake || die
+	emake -j1 || die
 }
 
 src_install() {
