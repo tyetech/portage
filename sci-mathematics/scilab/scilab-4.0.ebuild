@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/scilab/Attic/scilab-4.0.ebuild,v 1.10 2006/12/02 21:12:51 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/scilab/Attic/scilab-4.0.ebuild,v 1.11 2007/03/01 23:10:55 markusle Exp $
 
 inherit eutils fortran toolchain-funcs multilib autotools java-pkg-opt-2
 
@@ -21,7 +21,6 @@ RDEPEND="virtual/blas
 		media-libs/libpng
 		sys-libs/zlib
 		>=x11-libs/gtk+-2
-		>=x11-libs/libzvt-2
 		x11-libs/vte
 		=gnome-extra/gtkhtml-2*
 	)
