@@ -1,19 +1,14 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-22.0.9999-r2.ebuild,v 1.7 2007/02/08 14:03:45 opfer Exp $
-
-ECVS_AUTH="pserver"
-ECVS_SERVER="cvs.savannah.gnu.org:/sources/emacs"
-ECVS_MODULE="emacs"
-ECVS_BRANCH="HEAD"
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-22.0.95.ebuild,v 1.1 2007/03/02 07:16:59 opfer Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
 
-inherit alternatives autotools cvs elisp-common eutils flag-o-matic
+inherit alternatives autotools elisp-common eutils flag-o-matic
 
 DESCRIPTION="The extensible, customizable, self-documenting real-time display editor"
-SRC_URI=""
+SRC_URI="ftp://alpha.gnu.org/gnu/emacs/pretest/emacs-${PV}.tar.gz"
 HOMEPAGE="http://www.gnu.org/software/emacs/"
 IUSE="alsa aqua gif gnome gtk gzip-el jpeg lesstif motif nls png spell source tiff toolkit-scroll-bars X Xaw3d "
 
@@ -40,20 +35,28 @@ DEPEND="sys-libs/ncurses
 
 PROVIDE="virtual/emacs virtual/editor"
 
-SLOT="22.0.93"
+SLOT="22.0.95"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~ppc-macos ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-S="${WORKDIR}/emacs"
+S="${WORKDIR}/emacs-${PV}"
 
 src_unpack() {
-	cvs_src_unpack
-	cd ${S}
-	epatch "${FILESDIR}/emacs-subdirs-el-gentoo.diff"
-	use ppc-macos && epatch "${FILESDIR}/emacs-cvs-21.3.50-nofink.diff"
+	unpack ${A}
+
+	cd "${S}"
 	sed -i -e "s:/usr/lib/crtbegin.o:$(`tc-getCC` -print-file-name=crtbegin.o):g" \
 		-e "s:/usr/lib/crtend.o:$(`tc-getCC` -print-file-name=crtend.o):g" \
 		"${S}"/src/s/freebsd.h || die "unable to sed freebsd.h settings"
+	if ! use gzip-el; then
+		# Emacs' build system automatically detects the gzip binary and compresses
+		# el files.	 We don't want that so confuse it with a wrong binary name
+		sed -i -e "s/ gzip/ PrEvEnTcOmPrEsSiOn/" configure.in || die "unable to sed configure.in"
+	fi
+
 	epatch "${FILESDIR}/${PN}-freebsd-sparc.patch"
+	epatch "${FILESDIR}/emacs-subdirs-el-gentoo.diff"
+	use ppc-macos && epatch "${FILESDIR}/emacs-cvs-21.3.50-nofink.diff"
+
 	eautoreconf
 }
 
@@ -167,8 +170,6 @@ EOF
 		find ${D} -type f -name \*.el.gz -print0 |xargs -0 gunzip
 	fi
 	dodoc BUGS ChangeLog README
-
-	make_desktop_entry emacs Emacs /usr/share/emacs/${SLOT}/etc/images/icons/emacs_48.png	editors
 }
 
 update-alternatives() {
@@ -185,7 +186,7 @@ update-alternatives() {
 
 	for j in emacs emacsclient etags ctags
 	do
-		alternatives_auto_makesym "/usr/share/man/man1/$j.1.${suffix}" "/usr/share/man/man1/$j.emacs-*"
+		alternatives_auto_makesym "/usr/share/man/man1/$j.1${suffix}" "/usr/share/man/man1/$j.emacs-*"
 	done
 }
 
