@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_jk/Attic/mod_jk-1.2.20.ebuild,v 1.6 2007/02/03 19:20:49 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_jk/Attic/mod_jk-1.2.20-r1.ebuild,v 1.1 2007/03/04 23:06:43 wltjr Exp $
 
 inherit apache-module autotools
 
