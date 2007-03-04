@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/toolchain-funcs.eclass,v 1.66 2007/02/16 00:12:02 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/toolchain-funcs.eclass,v 1.67 2007/03/04 21:03:58 vapier Exp $
 #
-# Author: Toolchain Ninjas <toolchain@gentoo.org>
+# Maintainer: Toolchain Ninjas <toolchain@gentoo.org>
 #
 # This eclass contains (or should) functions to get common info
 # about the toolchain (libc/compiler/binutils/etc...)
