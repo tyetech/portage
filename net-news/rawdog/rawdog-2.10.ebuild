@@ -1,6 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/rawdog/Attic/rawdog-2.10.ebuild,v 1.1 2006/09/07 18:20:01 lucass Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/rawdog/Attic/rawdog-2.10.ebuild,v 1.2 2007/03/04 18:34:23 lucass Exp $
+
+NEED_PYTHON=2.2
 
 inherit distutils
 
