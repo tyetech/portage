@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/php/Attic/php-5.1.6-r8.ebuild,v 1.1 2006/10/27 12:17:35 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/php/Attic/php-5.1.6-r11.ebuild,v 1.1 2007/03/05 02:14:43 chtekk Exp $
 
 CGI_SAPI_USE="discard-path force-cgi-redirect"
 APACHE2_SAPI_USE="concurrentmodphp threads"
@@ -20,8 +20,8 @@ MY_PHP_P="php-${MY_PHP_PV}"
 PHP_PACKAGE="1"
 
 # php patch settings, general
-PHP_PATCHSET_REV="4"
-HARDENEDPHP_PATCH="hardening-patch-${MY_PHP_PV}-0.4.15-gentoo-r1.patch.gz"
+PHP_PATCHSET_REV="8"
+SUHOSIN_PATCH="suhosin-patch-${MY_PHP_PV}-0.9.6-gentoo.patch.gz"
 MULTILIB_PATCH="${MY_PHP_PV}/opt/php${MY_PHP_PV}-multilib-search-path.patch"
 # php patch settings, ebuild specific
 FASTBUILD_PATCH="${MY_PHP_PV}/opt/php${MY_PHP_PV}-fastbuild.patch"
@@ -405,6 +405,10 @@ src_install() {
 				;;
 		esac
 	done
+
+	# Install env.d files
+	newenvd "${FILESDIR}/20php5-envd" "20php5"
+	sed -e "s|/lib/|/$(get_libdir)/|g" -i "${D}/etc/env.d/20php5"
 }
 
 pkg_postinst() {
