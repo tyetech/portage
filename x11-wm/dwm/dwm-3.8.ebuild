@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/dwm/Attic/dwm-3.5.ebuild,v 1.1 2007/02/20 20:25:57 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/dwm/Attic/dwm-3.8.ebuild,v 1.1 2007/03/06 23:06:58 cedk Exp $
 
 inherit toolchain-funcs savedconfig
 
