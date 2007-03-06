@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/xcache/Attic/xcache-1.2.0.ebuild,v 1.2 2007/03/06 14:53:06 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/xcache/Attic/xcache-1.2.0.ebuild,v 1.3 2007/03/06 22:15:42 chtekk Exp $
 
 PHP_EXT_NAME="xcache"
 PHP_EXT_INI="yes"
@@ -17,8 +17,7 @@ LICENSE="BSD"
 SLOT="0"
 IUSE=""
 
-DEPEND="!dev-php4/eaccelerator
-		!dev-php4/pecl-apc"
+DEPEND="!dev-php4/eaccelerator !dev-php4/pecl-apc"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
