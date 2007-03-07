@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/dmenu/Attic/dmenu-2.5.ebuild,v 1.1 2007/02/24 19:52:26 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/dmenu/Attic/dmenu-2.8.ebuild,v 1.1 2007/03/07 19:14:21 cedk Exp $
 
 inherit toolchain-funcs savedconfig
 
