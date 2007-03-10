@@ -1,8 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rcairo/Attic/rcairo-1.2.0.ebuild,v 1.8 2007/03/08 19:04:11 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rcairo/Attic/rcairo-1.2.0.ebuild,v 1.9 2007/03/10 14:43:08 rbrown Exp $
 
-RUBY_BUG_145222=yes
 inherit ruby
 
 IUSE="examples"
