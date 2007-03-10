@@ -1,11 +1,11 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/createtorrent/Attic/createtorrent-1.1.3.ebuild,v 1.2 2007/03/10 08:58:25 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/createtorrent/Attic/createtorrent-1.1.3.ebuild,v 1.3 2007/03/10 12:39:18 armin76 Exp $
 
 inherit eutils
 
 DESCRIPTION="Create BitTorrent files easily"
-HOMEPAGE="http://www.creatorrent.com/"
+HOMEPAGE="http://www.createtorrent.com/"
 SRC_URI="http://www.createtorrent.com/${P}.tar.gz"
 
 LICENSE="GPL-2"
