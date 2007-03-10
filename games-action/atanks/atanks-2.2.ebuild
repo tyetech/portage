@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/atanks/Attic/atanks-2.1.ebuild,v 1.1 2007/02/13 01:19:58 nyhm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/atanks/Attic/atanks-2.2.ebuild,v 1.1 2007/03/10 08:46:10 nyhm Exp $
 
 inherit eutils toolchain-funcs games
 
