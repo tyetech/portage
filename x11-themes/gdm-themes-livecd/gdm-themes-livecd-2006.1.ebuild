@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gdm-themes-livecd/gdm-themes-livecd-2006.1.ebuild,v 1.2 2006/09/05 14:52:38 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/gdm-themes-livecd/gdm-themes-livecd-2006.1.ebuild,v 1.4 2007/05/07 18:57:59 wolf31o2 Exp $
 
 DESCRIPTION="Gentoo LiveCD theme for the GDM Greeter"
 HOMEPAGE="http://www.gentoo.org"
@@ -10,7 +10,7 @@ RDEPEND="gnome-base/gdm"
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="alpha amd64 ~ia64 ppc sparc x86"
+KEYWORDS="alpha amd64 ia64 ppc sparc x86"
 IUSE=""
 
 S=${WORKDIR}
