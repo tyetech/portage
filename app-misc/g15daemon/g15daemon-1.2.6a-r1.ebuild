@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/g15daemon/Attic/g15daemon-1.2.6a-r1.ebuild,v 1.3 2007/02/18 19:38:16 rbu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/g15daemon/Attic/g15daemon-1.2.6a-r1.ebuild,v 1.4 2007/03/12 22:11:25 rbu Exp $
 
 inherit eutils linux-info perl-module python multilib
 
 DESCRIPTION="G15daemon takes control of the G15 keyboard, through the linux kernel uinput device driver"
 HOMEPAGE="http://g15daemon.sourceforge.net/"
-SRC_URI="mirror://sourceforge/g15daemon/${P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -66,25 +66,26 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" \
+		docdir=/usr/share/doc/${PF} install || die "make install failed"
 
 	# remove odd docs installed my make
-	rm "${D}/usr/share/doc/${P}/"{LICENSE,README.usage}
-	gzip "${D}/usr/share/doc/${P}/"*
+	rm "${D}/usr/share/doc/${PF}/"{LICENSE,README.usage}
 
-	insinto /usr/share/g15daemon/contrib
+	insinto /usr/share/${PN}/contrib
 	doins contrib/xmodmaprc
 	doins contrib/xmodmap.sh
 	if use perl; then
 		doins contrib/testbindings.pl
 	fi
 
-	newconfd "${FILESDIR}/${P}.confd" g15daemon
-	newinitd "${FILESDIR}/${P}.initd" g15daemon
+	newconfd "${FILESDIR}/${P}.confd" ${PN}
+	newinitd "${FILESDIR}/${P}.initd" ${PN}
 
 	if use perl; then
 		ebegin "Installing Perl Bindings (G15Daemon.pm)"
 		cd "${WORKDIR}/G15Daemon-0.2"
+		docinto perl
 		perl-module_src_install
 	fi
 
@@ -95,13 +96,16 @@ src_install() {
 
 		insinto /usr/$(get_libdir)/python${PYVER}/site-packages/g15daemon
 		doins g15daemon.py
-		newdoc AUTHORS pyg15daemon_AUTHORS
+		docinto python
+		dodoc AUTHORS
 	fi
+
+	prepalldocs
 }
 
 pkg_postinst() {
 	if use python; then
-		python_mod_optimize "/usr/lib/python*/site-packages/g15daemon"
+		python_mod_optimize "${ROOT}/usr/$(get_libdir)/python*/site-packages/g15daemon"
 		echo ""
 	fi
 
@@ -124,6 +128,6 @@ pkg_postinst() {
 
 pkg_postrm() {
 	if use python; then
-		python_mod_cleanup "/usr/lib/python*/site-packages/g15daemon"
+		python_mod_cleanup "/usr/$(get_libdir)/python*/site-packages/g15daemon"
 	fi
 }

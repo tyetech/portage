@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/g15daemon/Attic/g15daemon-1.2.7.ebuild,v 1.2 2007/03/12 22:11:25 rbu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/g15daemon/Attic/g15daemon-1.9.0.ebuild,v 1.1 2007/03/12 22:11:25 rbu Exp $
 
 inherit eutils linux-info perl-module python multilib
 
@@ -14,8 +14,8 @@ KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="perl python"
 
 DEPEND="dev-libs/libusb
-	dev-libs/libdaemon
 	>=dev-libs/libg15-1.2.0
+	>=dev-libs/libg15render-1.2
 	perl? ( >=dev-perl/Inline-0.4 )
 	python? ( dev-lang/python )"
 
@@ -96,6 +96,7 @@ src_install() {
 
 		insinto /usr/$(get_libdir)/python${PYVER}/site-packages/g15daemon
 		doins g15daemon.py
+
 		docinto python
 		dodoc AUTHORS
 	fi
