@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/pioneers/Attic/pioneers-0.9.33.ebuild,v 1.3 2007/02/19 17:39:54 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/pioneers/Attic/pioneers-0.9.33.ebuild,v 1.4 2007/03/12 13:50:22 genone Exp $
 
 inherit eutils gnome2
 
@@ -31,9 +31,9 @@ src_compile() {
 	if use X ; then
 		gnome2_src_compile
 	else
-		einfo
-		einfo "Only building console server"
-		einfo
+		elog
+		elog "Only building console server"
+		elog
 
 		econf ${G2CONF} || die "./configure failure"
 		emake || die "emake failed"
