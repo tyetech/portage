@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-lame/Attic/gst-plugins-lame-0.10.4.ebuild,v 1.3 2007/03/03 07:28:10 metalgod Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-lame/Attic/gst-plugins-lame-0.10.4.ebuild,v 1.4 2007/03/12 08:04:09 opfer Exp $
 
 inherit gst-plugins-ugly
 
-KEYWORDS="amd64 ~ppc ~ppc64 sparc ~x86"
+KEYWORDS="amd64 ~ppc ~ppc64 sparc x86"
 IUSE=""
 
 RDEPEND=">=media-sound/lame-3.95
