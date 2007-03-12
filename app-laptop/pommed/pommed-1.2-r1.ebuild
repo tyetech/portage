@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/pommed/Attic/pommed-1.2-r1.ebuild,v 1.1 2007/03/05 22:28:31 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/pommed/Attic/pommed-1.2-r1.ebuild,v 1.2 2007/03/12 20:57:11 cedk Exp $
 
 inherit eutils toolchain-funcs
 
@@ -25,7 +25,7 @@ DEPEND="sys-apps/pciutils
 		media-libs/audiofile )
 	X? ( x11-libs/libX11 )"
 RDEPEND="${DEPEND}
-	sys-apps/eject"
+	virtual/eject"
 
 src_unpack() {
 	unpack ${A}
