@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/gocr/Attic/gocr-0.40-r2.ebuild,v 1.6 2006/06/06 15:59:04 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/gocr/Attic/gocr-0.40-r2.ebuild,v 1.7 2007/03/13 08:03:42 nattfodd Exp $
 
 inherit eutils
 
