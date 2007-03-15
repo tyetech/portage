@@ -1,13 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/verve/Attic/verve-0.3.5.ebuild,v 1.14 2007/03/12 01:56:08 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/verve/Attic/verve-0.3.5.ebuild,v 1.15 2007/03/15 13:40:41 corsair Exp $
 
 inherit xfce44
 
 xfce44
 
 DESCRIPTION="Command line panel plugin"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ~ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="dbus debug"
 
 RDEPEND=">=xfce-extra/exo-0.3.2
