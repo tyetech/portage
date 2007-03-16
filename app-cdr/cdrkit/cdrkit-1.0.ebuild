@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrkit/Attic/cdrkit-1.0.ebuild,v 1.7 2007/02/12 16:39:09 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrkit/Attic/cdrkit-1.0.ebuild,v 1.8 2007/03/16 15:29:12 pylon Exp $
 
 inherit eutils toolchain-funcs
 
@@ -23,7 +23,7 @@ PROVIDE="virtual/cdrtools"
 src_compile() {
 	cmake \
 		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_C_COMPILER=$(which $(tc-getCC))
+		-DCMAKE_C_COMPILER=$(type -p $(tc-getCC))
 
 	emake || die
 }
