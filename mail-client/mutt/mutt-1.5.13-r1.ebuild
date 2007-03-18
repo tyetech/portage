@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.13-r1.ebuild,v 1.11 2007/03/10 19:22:01 welp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.13-r1.ebuild,v 1.12 2007/03/18 02:12:26 genone Exp $
 
 inherit eutils flag-o-matic autotools
 
@@ -154,8 +154,8 @@ src_install() {
 
 pkg_postinst() {
 	echo
-	einfo "If you are new to mutt you may want to take a look at"
-	einfo "the Gentoo QuickStart Guide to Mutt E-Mail:"
-	einfo "   http://www.gentoo.org/doc/en/guide-to-mutt.xml"
+	elog "If you are new to mutt you may want to take a look at"
+	elog "the Gentoo QuickStart Guide to Mutt E-Mail:"
+	elog "   http://www.gentoo.org/doc/en/guide-to-mutt.xml"
 	echo
 }
