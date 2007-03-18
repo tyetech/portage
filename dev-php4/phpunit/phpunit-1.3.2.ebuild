@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/phpunit/Attic/phpunit-1.3.2.ebuild,v 1.2 2007/03/06 22:07:44 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/phpunit/Attic/phpunit-1.3.2.ebuild,v 1.3 2007/03/18 02:29:51 chtekk Exp $
 
 inherit php-pear-lib-r1
 
@@ -17,3 +17,5 @@ DEPEND="!dev-php5/phpunit"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/PHPUnit-${PV}"
+
+need_php_by_category
