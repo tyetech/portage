@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/phpunit/Attic/phpunit-2.3.6.ebuild,v 1.2 2007/03/18 02:27:55 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/phpunit/Attic/phpunit-3.0.5.ebuild,v 1.1 2007/03/18 02:27:55 chtekk Exp $
 
 inherit php-pear-lib-r1
 
-KEYWORDS="~amd64 ~sparc ~x86"
+KEYWORDS="~x86"
 
 DESCRIPTION="Unit Testing framework for PHP 5."
 HOMEPAGE="http://www.phpunit.de/"
@@ -16,8 +16,9 @@ IUSE=""
 DEPEND="!dev-php4/phpunit"
 RDEPEND="${DEPEND}
 		>=dev-php5/xdebug-2.0.0_rc2
-		>=dev-php/PEAR-Benchmark-1.2.2-r1
-		>=dev-php/PEAR-Log-1.8.7-r1"
+		>=dev-php/PEAR-Image_GraphViz-1.2.1
+		>=dev-php/PEAR-Log-1.8.7-r1
+		>=dev-php/PEAR-Testing_Selenium-0.2.0"
 
 S="${WORKDIR}/PHPUnit-${PV}"
 
