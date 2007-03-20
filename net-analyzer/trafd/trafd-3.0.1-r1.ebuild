@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/trafd/Attic/trafd-3.0.1-r1.ebuild,v 1.1 2006/11/16 20:46:55 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/trafd/Attic/trafd-3.0.1-r1.ebuild,v 1.2 2007/03/20 20:19:23 armin76 Exp $
 
 inherit eutils toolchain-funcs
 
@@ -11,7 +11,7 @@ HOMEPAGE="ftp://ftp.riss-telecom.ru/pub/dev/trafd/"
 
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS="~x86"
+KEYWORDS="x86"
 IUSE=""
 
 # -lbpft -lpcap -lcurses -ltermcap -lfl
