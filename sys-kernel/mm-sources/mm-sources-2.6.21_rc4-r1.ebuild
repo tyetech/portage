@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.20-r2.ebuild,v 1.1 2007/02/19 13:37:07 voxus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mm-sources/Attic/mm-sources-2.6.21_rc4-r1.ebuild,v 1.1 2007/03/20 09:03:28 voxus Exp $
 
 K_PREPATCHED="yes"
 UNIPATCH_STRICTORDER="yes"
