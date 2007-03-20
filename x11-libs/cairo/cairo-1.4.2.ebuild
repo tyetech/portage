@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/cairo/Attic/cairo-1.3.16.ebuild,v 1.1 2007/03/03 15:54:12 cardoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/cairo/Attic/cairo-1.4.2.ebuild,v 1.1 2007/03/20 13:58:44 cardoe Exp $
 
 inherit eutils flag-o-matic libtool
 
 DESCRIPTION="A vector graphics library with cross-device output support"
 HOMEPAGE="http://cairographics.org/"
-SRC_URI="http://cairographics.org/snapshots/${P}.tar.gz"
+SRC_URI="http://cairographics.org/releases/${P}.tar.gz"
 
 LICENSE="|| ( LGPL-2.1 MPL-1.1 )"
 SLOT="0"
