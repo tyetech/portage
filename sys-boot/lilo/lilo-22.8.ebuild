@@ -1,11 +1,11 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/lilo/Attic/lilo-22.7.2-r2.ebuild,v 1.1 2006/09/05 11:26:29 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/lilo/Attic/lilo-22.8.ebuild,v 1.1 2007/03/20 10:46:25 chainsaw Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
 DOLILO_V="0.4"
-IUSE="devmap static minimal pxeserial"
+IUSE="static minimal pxeserial"
 
 DESCRIPTION="Standard Linux boot loader"
 HOMEPAGE="http://lilo.go.dyndns.org/pub/linux/lilo/"
@@ -21,34 +21,20 @@ SLOT="0"
 LICENSE="BSD GPL-2"
 KEYWORDS="-* ~x86 ~amd64"
 
-RDEPEND="devmap? ( >=sys-fs/device-mapper-1.00.08 )"
-DEPEND="${RDEPEND}
-	>=sys-devel/bin86-0.15.5"
+DEPEND=">=sys-devel/bin86-0.15.5"
 
 PROVIDE="virtual/bootloader"
 
 src_unpack() {
-	einfo "If you want to use lilo with device mapper, please enable the"
-	einfo "\"devmap\" USE flag."
-
 	unpack ${MY_P}.tar.gz
-
-	if use devmap; then
-		# devmapper-patch (boot on evms/lvm2)
-		cd ${S}; epatch ${FILESDIR}/${P}-devmapper_gentoo.patch
-	fi
 
 	cd ${S}
 
-	# Fix creating install dirs, bug #39405
-	epatch ${FILESDIR}/${P}-create-install-dirs.patch
 	# Correctly document commandline options -v and -V, bug #43554
 	epatch ${FILESDIR}/${P}-correct-usage-info.patch
 	# Install manpages to correct location, do not rely on incorrect manpath output, bug #117135
-	epatch ${FILESDIR}/${P}-manpath.patch
 	# Do not strip the main binary, it upsets portage, bug #140210
-	epatch ${FILESDIR}/${P}-install-nostrip.patch
-	# Do not build diagnostics when bcc is present; bug #141777
+	# Do not install diag1.img, bug #149887
 	epatch ${FILESDIR}/${P}-makefile.patch
 
 	# this patch is needed when booting PXE and the device you're using 
