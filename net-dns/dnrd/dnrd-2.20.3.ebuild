@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/dnrd/Attic/dnrd-2.20.1.ebuild,v 1.3 2007/01/05 08:47:12 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/dnrd/Attic/dnrd-2.20.3.ebuild,v 1.1 2007/03/22 12:52:32 armin76 Exp $
 
 inherit eutils
 
