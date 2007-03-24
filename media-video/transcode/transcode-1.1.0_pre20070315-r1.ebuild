@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-1.1.0_pre20070315.ebuild,v 1.1 2007/03/16 05:48:25 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-1.1.0_pre20070315-r1.ebuild,v 1.1 2007/03/24 14:55:11 beandog Exp $
 
 WANT_AUTOMAKE=latest
 WANT_AUTOCONF=latest
