@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/hydra/Attic/hydra-5.0.ebuild,v 1.1 2005/11/26 15:01:29 strerror Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/hydra/Attic/hydra-5.4.ebuild,v 1.1 2007/03/24 03:06:46 vanquirius Exp $
 
 DESCRIPTION="Advanced parallized login hacker"
 HOMEPAGE="http://www.thc.org/thc-hydra/"
@@ -17,11 +17,11 @@ DEPEND="gtk? ( >=x11-libs/gtk+-1.2 )
 		=net-libs/libssh-0.11
 	)"
 
-S=${WORKDIR}/${P}-src
+S="${WORKDIR}/${P}-src"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	sed -i "s:-O2:${CFLAGS}:" Makefile.am || die "sed failed"
 }
 
