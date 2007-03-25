@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/celestia/Attic/celestia-1.4.1-r2.ebuild,v 1.4 2007/03/15 19:15:43 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/celestia/Attic/celestia-1.4.1-r2.ebuild,v 1.5 2007/03/25 12:29:11 dertobi123 Exp $
 
 WANT_AUTOMAKE="1.9"
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ppc64 sparc ~x86"
+KEYWORDS="~amd64 ppc ppc64 sparc ~x86"
 IUSE="cairo gnome gtk kde arts threads nls lua"
 
 DEPEND="virtual/glu
