@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-1.0.3_rc2_p20070310-r1.ebuild,v 1.1 2007/03/24 14:32:00 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-1.0.3_rc2_p20070310-r1.ebuild,v 1.2 2007/03/25 11:27:44 aballier Exp $
 
 WANT_AUTOMAKE=latest
 WANT_AUTOCONF=latest
@@ -59,6 +59,7 @@ src_unpack() {
 		"${S}"/Makefile.am "${S}"/docs/Makefile.am "${S}"/docs/html/Makefile.am \
 		"${S}"/docs/release-notes/Makefile.am
 
+	epatch "${FILESDIR}/${P}-libmpeg3.patch"
 	eautoreconf
 }
 
