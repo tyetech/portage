@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/embassy-2.10.eclass,v 1.6 2005/07/30 00:39:02 ribosome Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/Attic/embassy-2.10.eclass,v 1.7 2007/03/26 20:04:34 genstef Exp $
 
 # Author Olivier Fisette <ribosome@gentoo.org>
 
@@ -31,7 +31,7 @@ SLOT="0"
 IUSE="X png"
 
 DEPEND=">=sci-biology/emboss-${EBOV}
-	X? ( virtual/x11 )
+	X? ( x11-libs/libX11 )
 	png? ( sys-libs/zlib
 		media-libs/libpng
 		>=media-libs/gd-1.8
