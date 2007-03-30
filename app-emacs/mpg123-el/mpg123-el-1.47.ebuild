@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/mpg123-el/Attic/mpg123-el-1.47.ebuild,v 1.2 2007/02/09 17:34:57 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/mpg123-el/Attic/mpg123-el-1.47.ebuild,v 1.3 2007/03/30 22:11:08 opfer Exp $
 
 inherit elisp toolchain-funcs
 
@@ -18,7 +18,7 @@ RDEPEND="${DEPEND}
 
 SLOT="0"
 LICENSE="freedist"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc x86"
 
 SITEFILE="50mpg123-el-gentoo.el"
 
