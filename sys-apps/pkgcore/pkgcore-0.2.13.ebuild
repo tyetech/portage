@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.2.11.ebuild,v 1.1 2007/03/28 11:54:13 marienz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.2.13.ebuild,v 1.1 2007/03/30 18:33:52 marienz Exp $
 
 inherit distutils
 
