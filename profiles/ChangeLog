@@ -1,6 +1,9 @@
 # ChangeLog for profile directory
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/profiles/cvs-repo/gentoo-x86/profiles/ChangeLog,v 1.254 2007/03/31 15:16:28 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/profiles/cvs-repo/gentoo-x86/profiles/ChangeLog,v 1.256 2007/04/01 12:38:53 aballier Exp $
+
+  01 Apr 2007; Alexis Ballier <aballier@gentoo.org> package.mask:
+  Mask media-video/ffmpeg-0.4.9_p20070330
 
   31 Mar 2007; Carsten Lohrke <carlo@gentoo.org> package.mask:
   Mask kde-misc/krusader beta releases
