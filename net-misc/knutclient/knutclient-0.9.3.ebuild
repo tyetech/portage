@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/knutclient/Attic/knutclient-0.9.3.ebuild,v 1.2 2007/03/31 14:12:34 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/knutclient/Attic/knutclient-0.9.3.ebuild,v 1.3 2007/04/01 05:47:34 mr_bones_ Exp $
 
 inherit kde
 
