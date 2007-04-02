@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/transfig/Attic/transfig-3.2.5.ebuild,v 1.1 2007/04/02 15:08:08 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/transfig/Attic/transfig-3.2.5.ebuild,v 1.2 2007/04/02 15:17:06 pva Exp $
 
 inherit toolchain-funcs eutils flag-o-matic
 
@@ -58,7 +58,6 @@ src_compile() {
 }
 
 src_install() {
-	einfo ${transfig_conf}
 	make DESTDIR="${D}" \
 		${transfig_conf} install install.man || die
 
