@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/acer_acpi/Attic/acer_acpi-0.3.ebuild,v 1.3 2007/04/04 20:30:47 jurek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/acer_acpi/Attic/acer_acpi-0.4.ebuild,v 1.1 2007/04/04 20:30:47 jurek Exp $
 
 inherit linux-mod
 
