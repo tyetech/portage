@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/kima/Attic/kima-0.6.3.ebuild,v 1.1 2007/01/28 16:55:11 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/kima/Attic/kima-0.7.1.ebuild,v 1.1 2007/04/05 21:09:18 genstef Exp $
 
 inherit kde
 
