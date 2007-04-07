@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc/Attic/gcc-3.4.1-r3.ebuild,v 1.26 2006/10/26 23:57:01 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc/Attic/gcc-3.4.1-r3.ebuild,v 1.27 2007/04/07 04:25:39 vapier Exp $
 
 IUSE="static nls bootstrap build multilib gcj gtk fortran objc hardened n32 n64"
 
@@ -857,8 +857,6 @@ src_install() {
 		dodoc ChangeLog* README
 		docinto ${CCHOST}/libstdc++-v3/html
 		dohtml -r -a css,diff,html,txt,xml docs/html/*
-		cp -f docs/html/17_intro/[A-Z]* \
-			${D}/usr/share/doc/${PF}/${DOCDESTTREE}/17_intro/
 
 		if use gcj
 		then

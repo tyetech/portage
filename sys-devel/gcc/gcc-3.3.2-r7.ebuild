@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc/Attic/gcc-3.3.2-r7.ebuild,v 1.30 2006/10/26 23:57:01 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc/Attic/gcc-3.3.2-r7.ebuild,v 1.31 2007/04/07 04:25:39 vapier Exp $
 
 IUSE="static nls bootstrap java build X multilib gcj"
 
@@ -608,8 +608,6 @@ src_install() {
 		dodoc ChangeLog* README
 		docinto ${CCHOST}/libstdc++-v3/html
 		dohtml -r -a css,diff,html,txt,xml docs/html/*
-		cp -f docs/html/17_intro/[A-Z]* \
-			${D}/usr/share/doc/${PF}/${DOCDESTTREE}/17_intro/
 
 		if use java && use gcj
 		then
