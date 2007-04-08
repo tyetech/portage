@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/exaile/Attic/exaile-0.2.9-r1.ebuild,v 1.1 2007/04/06 22:03:44 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/exaile/Attic/exaile-0.2.9-r1.ebuild,v 1.2 2007/04/08 19:03:24 kloeri Exp $
 
 inherit eutils python toolchain-funcs
 
@@ -23,6 +23,7 @@ RDEPEND=">=dev-python/pygtk-2.8.6
 	>=media-libs/mutagen-1.6
 	dev-python/elementtree
 	>=gnome-base/librsvg-2
+	dev-python/dbus-python
 	libnotify? ( dev-python/notify-python )
 	libsexy? ( dev-python/sexy-python )
 	gnome? ( >=dev-python/gnome-python-extras-2.14
