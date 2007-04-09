@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kviewshell/Attic/kviewshell-3.5.6.ebuild,v 1.2 2007/04/07 14:35:27 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kviewshell/Attic/kviewshell-3.5.6.ebuild,v 1.3 2007/04/09 01:00:51 mr_bones_ Exp $
 
 KMNAME=kdegraphics
 MAXKDEVER=$PV
