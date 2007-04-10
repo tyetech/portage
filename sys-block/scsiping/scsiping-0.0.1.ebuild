@@ -1,13 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/scsiping/scsiping-0.0.1.ebuild,v 1.5 2007/04/10 19:46:33 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/scsiping/scsiping-0.0.1.ebuild,v 1.6 2007/04/10 22:16:48 ticho Exp $
 
 DESCRIPTION="SCSIPing pings a host on the SCSI-chain"
 HOMEPAGE="http://www.vanheusden.com/Linux/"
 SRC_URI="http://www.vanheusden.com/Linux/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE=""
 RDEPEND="virtual/libc"
 DEPEND="${RDEPEND}"
