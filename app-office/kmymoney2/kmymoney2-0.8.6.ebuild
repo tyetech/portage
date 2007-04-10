@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kmymoney2/Attic/kmymoney2-0.8.6.ebuild,v 1.2 2007/04/09 15:55:35 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kmymoney2/Attic/kmymoney2-0.8.6.ebuild,v 1.3 2007/04/10 18:54:37 mr_bones_ Exp $
 
 inherit kde
 
