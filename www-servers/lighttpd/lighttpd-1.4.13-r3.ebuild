@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.13-r2.ebuild,v 1.4 2007/04/10 10:34:20 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.13-r3.ebuild,v 1.1 2007/04/10 10:34:20 robbat2 Exp $
 
 WANT_AUTOCONF=latest
 WANT_AUTOMAKE=latest
@@ -145,7 +145,7 @@ src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 
 	# init script stuff
-	newinitd ${FILESDIR}/lighttpd.initd-1.4.13-r2 lighttpd || die
+	newinitd ${FILESDIR}/lighttpd.initd-1.4.13-r3 lighttpd || die
 	newconfd ${FILESDIR}/lighttpd.confd lighttpd || die
 	use fam && has_version app-admin/fam && \
 		sed -i 's/after famd/need famd/g' "${D}"/etc/init.d/lighttpd
