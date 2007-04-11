@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4_pre1.ebuild,v 1.1 2007/03/10 04:09:39 fuzzyray Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4_pre4.ebuild,v 1.1 2007/04/11 05:03:10 fuzzyray Exp $
 
 inherit eutils python
 
@@ -34,6 +34,9 @@ pkg_postinst() {
 	elog
 	elog "Another alternative to qpkg and equery are the q applets in"
 	elog "app-portage/portage-utils"
+	elog
+	elog "For further information on gentoolkit, please read the gentoolkit"
+	elog "guide: http://www.gentoo.org/doc/en/gentoolkit.xml"
 	elog
 }
 
