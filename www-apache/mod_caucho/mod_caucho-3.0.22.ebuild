@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_caucho/Attic/mod_caucho-3.0.22.ebuild,v 1.5 2007/02/03 13:43:13 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_caucho/Attic/mod_caucho-3.0.22.ebuild,v 1.6 2007/04/13 14:45:38 nelchael Exp $
 
 inherit eutils apache-module autotools
 
@@ -26,6 +26,7 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}/${P}-gentoo.patch"
+	epatch "${FILESDIR}/${P}-ssl.patch"
 	eautoreconf
 	chmod 755 ./configure
 }
