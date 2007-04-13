@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.10-r1.ebuild,v 1.1 2007/04/08 07:30:00 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/baselayout/Attic/baselayout-1.12.9-r2.ebuild,v 1.1 2007/04/13 18:35:33 vapier Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86"
 IUSE="bootstrap build static unicode"
 
 # This version of baselayout needs gawk in /bin, but as we do not have
@@ -31,12 +31,16 @@ RDEPEND="virtual/init
 	!<net-misc/dhcpcd-2.0.0"
 DEPEND="virtual/os-headers
 	>=sys-apps/portage-2.0.51"
-PDEPEND="!build? ( !bootstrap? ( >=sys-apps/module-init-tools-3.2.2-r2 ) )"
+PDEPEND="!build? ( !bootstrap? ( >=sys-apps/module-init-tools-3.2.2-r3 ) )"
 PROVIDE="virtual/baselayout"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
+	epatch "${FILESDIR}/${P}-wireless-deprecate.patch"
+	rm -f man/modules-update.8
+	sed -i 's:modules-update:update-modules:' init.d/modules
 
 	# Setup unicode defaults for silly unicode users
 	if use unicode ; then
@@ -324,7 +328,6 @@ src_install() {
 	cd "${S}"/sbin
 	into /
 	dosbin rc rc-update
-	dosym rc-update /sbin/update-rc
 	# These moved from /etc/init.d/ to /sbin to help newb systems
 	# from breaking
 	dosbin runscript.sh functions.sh
