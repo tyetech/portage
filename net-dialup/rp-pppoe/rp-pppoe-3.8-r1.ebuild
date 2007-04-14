@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/rp-pppoe/Attic/rp-pppoe-3.8.ebuild,v 1.14 2007/03/10 14:22:46 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/rp-pppoe/Attic/rp-pppoe-3.8-r1.ebuild,v 1.1 2007/04/14 07:45:33 mrness Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
