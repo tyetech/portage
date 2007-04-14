@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/nvi/Attic/nvi-1.81.5-r5.ebuild,v 1.9 2007/03/21 16:11:58 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/nvi/Attic/nvi-1.81.5-r6.ebuild,v 1.4 2007/04/14 09:19:56 truedfx Exp $
 
 inherit eutils
 
