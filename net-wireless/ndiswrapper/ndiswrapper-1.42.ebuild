@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/ndiswrapper/Attic/ndiswrapper-1.35.ebuild,v 1.4 2007/04/16 17:44:45 peper Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/ndiswrapper/Attic/ndiswrapper-1.42.ebuild,v 1.1 2007/04/16 17:44:45 peper Exp $
 
-inherit eutils linux-mod
+inherit linux-mod
 
 DESCRIPTION="Wrapper for using Windows drivers for some wireless cards"
 HOMEPAGE="http://ndiswrapper.sourceforge.net/"
@@ -34,10 +34,6 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
-	cd "${S}"
-	# New patch for suspend2 kernels - peper
-	epatch "${FILESDIR}/${PN}-new_suspend2.patch"
-
 	convert_to_m "${S}/driver/Makefile"
 }
 
