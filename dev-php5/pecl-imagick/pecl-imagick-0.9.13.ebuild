@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/pecl-imagick/Attic/pecl-imagick-0.9.11.ebuild,v 1.9 2007/04/17 21:10:15 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/pecl-imagick/Attic/pecl-imagick-0.9.13.ebuild,v 1.1 2007/04/17 21:10:15 chtekk Exp $
 
 PHP_EXT_NAME="imagick"
 PHP_EXT_INI="yes"
