@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bitstormlite/Attic/bitstormlite-0.2h.ebuild,v 1.1 2007/04/16 10:35:26 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bitstormlite/Attic/bitstormlite-0.2i.ebuild,v 1.1 2007/04/18 14:52:38 armin76 Exp $
 
 DESCRIPTION="A light BitTorrent client based on c++ and gtk+."
 HOMEPAGE="http://sourceforge.net/projects/bbom/"
