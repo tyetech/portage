@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.8.6b_beta1.ebuild,v 1.2 2007/04/18 22:01:12 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.8.6b_beta1.ebuild,v 1.3 2007/04/18 23:19:55 aballier Exp $
 
 WANT_AUTOMAKE=latest
 WANT_AUTOCONF=latest
@@ -110,7 +110,7 @@ RDEPEND="
 			opengl? ( virtual/opengl )
 		)
 		directfb? ( dev-libs/DirectFB )
-		upnp? ( >=net-misc/upnp-1.2 )
+		upnp? ( || ( >=net-misc/upnp-1.2 net-misc/libupnp ) )
 		nsplugin? (
 			!seamonkey? ( www-client/mozilla-firefox )
 			seamonkey? ( www-client/seamonkey )
