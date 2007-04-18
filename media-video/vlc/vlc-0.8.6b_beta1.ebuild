@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.8.6b_beta1.ebuild,v 1.1 2007/04/13 16:08:36 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.8.6b_beta1.ebuild,v 1.2 2007/04/18 22:01:12 aballier Exp $
 
 WANT_AUTOMAKE=latest
 WANT_AUTOCONF=latest
@@ -13,7 +13,7 @@ MY_PV="${PV/_/-}"
 MY_PV="${MY_PV/-beta/-test}"
 MY_P="${PN}-${MY_PV}"
 
-PATCHLEVEL="39"
+PATCHLEVEL="41"
 DESCRIPTION="VLC media player - Video player and streamer"
 HOMEPAGE="http://www.videolan.org/vlc/"
 
@@ -56,7 +56,7 @@ RDEPEND="
 			>=media-libs/libmatroska-0.8.0 )
 		mp3? ( media-libs/libmad )
 		a52? ( >=media-libs/a52dec-0.7.4-r3 )
-		dts? ( >=media-libs/libdts-0.0.2-r3 )
+		dts? ( || (  >=media-libs/libdts-0.0.2-r3 media-libs/libdca ) )
 		flac? ( media-libs/libogg
 			>=media-libs/flac-1.1.2 )
 		mpeg? ( >=media-libs/libmpeg2-0.3.2 )
