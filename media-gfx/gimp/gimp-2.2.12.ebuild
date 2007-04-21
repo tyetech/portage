@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp/Attic/gimp-2.2.12.ebuild,v 1.11 2006/09/08 18:04:31 tcort Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp/Attic/gimp-2.2.12.ebuild,v 1.12 2007/04/21 04:34:25 hanno Exp $
 
 inherit flag-o-matic libtool eutils fdo-mime alternatives
 
