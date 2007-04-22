@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/wxperl/Attic/wxperl-0.27.ebuild,v 1.7 2007/01/28 03:06:39 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/wxperl/Attic/wxperl-0.27.ebuild,v 1.8 2007/04/22 21:58:30 dirtyepic Exp $
 
-inherit perl-module eutils wxwidgets
+inherit perl-module wxwidgets
 
 MY_P="Wx-${PV}"
 S=${WORKDIR}/${MY_P}
