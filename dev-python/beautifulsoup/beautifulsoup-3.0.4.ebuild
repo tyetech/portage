@@ -1,6 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/beautifulsoup/Attic/beautifulsoup-3.0.3.ebuild,v 1.4 2007/04/07 17:46:54 the_paya Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/beautifulsoup/Attic/beautifulsoup-3.0.4.ebuild,v 1.1 2007/04/22 08:13:42 lucass Exp $
+
+NEED_PYTHON=2.3
 
 inherit distutils
 
@@ -15,10 +17,6 @@ LICENSE="PSF-2.3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc64 ~x86 ~x86-fbsd"
 IUSE=""
-
-DEPEND=">=dev-lang/python-2.2"
-RDEPEND="${DEPEND}"
-
 
 src_test() {
 	"${python}" BeautifulSoupTests.py || die "tests failed"
