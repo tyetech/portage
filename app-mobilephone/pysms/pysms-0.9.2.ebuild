@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/pysms/Attic/pysms-0.9.2.ebuild,v 1.2 2007/04/23 19:36:37 swegener Exp $
 
 inherit distutils
 
