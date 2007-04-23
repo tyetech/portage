@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/mupen64/Attic/mupen64-0.5-r4.ebuild,v 1.2 2007/04/02 15:23:58 nyhm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-emulation/cvs-repo/gentoo-x86/games-emulation/mupen64/Attic/mupen64-0.5-r4.ebuild,v 1.3 2007/04/23 11:52:52 nyhm Exp $
 
 inherit eutils multilib games
 
@@ -28,6 +28,7 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
+	games_pkg_setup
 	has_multilib_profile && multilib_toolchain_setup x86
 }
 
