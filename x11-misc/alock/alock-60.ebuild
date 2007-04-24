@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/alock/Attic/alock-60.ebuild,v 1.1 2007/01/05 22:15:27 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/alock/Attic/alock-60.ebuild,v 1.2 2007/04/24 16:45:39 ticho Exp $
 
 DESCRIPTION="alock - locks the local X display until a password is entered"
 HOMEPAGE="
@@ -11,7 +11,7 @@ SRC_URI="http://alock.googlecode.com/files/alock-svn-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc"
+KEYWORDS="~ppc ~x86"
 IUSE=""
 
 DEPEND="
