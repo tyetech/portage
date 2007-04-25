@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/php-ext-source-r1.eclass,v 1.8 2007/04/25 18:22:37 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/php-ext-source-r1.eclass,v 1.9 2007/04/25 18:24:37 robbat2 Exp $
 #
 # Author: Tal Peer <coredumb@gentoo.org>
 # Author: Stuart Herbert <stuart@gentoo.org>
@@ -38,9 +38,7 @@ php-ext-source-r1_src_compile() {
 	my_conf="--prefix=${PHPPREFIX} --with-php-config=${PHPCONFIG} ${my_conf}"
 
 	# Create configure out of config.m4
-	if [ "${PHP_EXT_SKIP_PHPIZE}" != 'yes' ]; then
 		${PHPIZE}
-	fi
 
 	# Concurrent PHP Apache2 modules support
 	if has_concurrentmodphp ; then
