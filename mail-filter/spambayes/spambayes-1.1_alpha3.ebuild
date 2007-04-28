@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spambayes/Attic/spambayes-1.1_alpha3.ebuild,v 1.1 2007/01/24 11:49:17 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spambayes/Attic/spambayes-1.1_alpha3.ebuild,v 1.2 2007/04/28 12:40:00 tove Exp $
 
 inherit distutils
 
@@ -29,11 +29,10 @@ src_install() {
 	insinto /usr/share/doc/${PF}/testtools
 	doins testtools/*
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/spambayespop3proxy.rc spambayespop3proxy
+	newinitd "${FILESDIR}"/spambayespop3proxy.rc spambayespop3proxy
 
 	insinto /etc
-	doins ${FILESDIR}/bayescustomize.ini
+	doins "${FILESDIR}"/bayescustomize.ini
 
 	keepdir /var/lib/spambayes
 
