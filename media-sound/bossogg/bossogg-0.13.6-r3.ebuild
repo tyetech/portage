@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bossogg/Attic/bossogg-0.13.6-r3.ebuild,v 1.7 2007/01/08 18:53:14 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bossogg/Attic/bossogg-0.13.6-r3.ebuild,v 1.8 2007/04/28 15:18:16 tove Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -55,7 +55,7 @@ src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 	dodoc README TODO API
 
-	newinitd ${FILESDIR}/bossogg.initd bossogg
+	newinitd "${FILESDIR}"/bossogg.initd bossogg
 }
 
 pkg_postinst() {
