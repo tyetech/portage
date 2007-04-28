@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/ipvsadm/ipvsadm-1.21-r1.ebuild,v 1.12 2006/10/15 11:43:26 xmerlin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/ipvsadm/ipvsadm-1.21-r1.ebuild,v 1.13 2007/04/28 17:47:12 swegener Exp $
 
 inherit linux-info
 
@@ -40,8 +40,7 @@ src_install() {
 
 	doman ipvsadm.8 ipvsadm-save.8 ipvsadm-restore.8
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/ipvsadm-init ipvsadm || die
+	newinitd ${FILESDIR}/ipvsadm-init ipvsadm || die
 	keepdir /var/lib/ipvsadm
 
 	diropts -m 755 -o root -g root
