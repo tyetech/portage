@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/teamspeak2-server-bin/Attic/teamspeak2-server-bin-2.0.19.40.ebuild,v 1.8 2007/02/09 05:26:31 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/teamspeak2-server-bin/Attic/teamspeak2-server-bin-2.0.19.40.ebuild,v 1.9 2007/04/28 17:32:35 swegener Exp $
 
 inherit eutils
 
@@ -36,8 +36,7 @@ src_install() {
 
 	dodoc changelog.txt readme.txt slicense.txt
 
-	exeinto /etc/init.d
-	newexe ${FILESDIR}/teamspeak2-server.rc6 teamspeak2-server
+	newinitd ${FILESDIR}/teamspeak2-server.rc6 teamspeak2-server
 
 	keepdir /var/{lib,log,run}/teamspeak2-server
 	fowners teamspeak2 /var/{lib,log,run}/teamspeak2-server
