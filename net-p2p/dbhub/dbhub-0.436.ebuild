@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dbhub/Attic/dbhub-0.435.ebuild,v 1.1 2007/04/24 16:08:53 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dbhub/Attic/dbhub-0.436.ebuild,v 1.1 2007/04/29 13:49:24 armin76 Exp $
 
 inherit eutils
 
