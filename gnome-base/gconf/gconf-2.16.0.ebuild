@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gconf/Attic/gconf-2.16.0.ebuild,v 1.1 2007/03/23 21:34:07 dang Exp $ 
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gconf/Attic/gconf-2.16.0.ebuild,v 1.2 2007/04/30 01:18:41 dang Exp $
 
 inherit gnome2
 
