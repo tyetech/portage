@@ -1,15 +1,15 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/zentest/Attic/zentest-3.4.2.ebuild,v 1.2 2007/01/05 00:30:50 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/zentest/Attic/zentest-3.5.2.ebuild,v 1.1 2007/05/01 18:15:38 graaff Exp $
 
 inherit ruby gems
+
+MY_P=${P/zentest/ZenTest}
+S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Centralized Ruby extension management system"
 HOMEPAGE="http://rubyforge.org/projects/zentest/"
 LICENSE="Ruby"
-
-MY_P=${P/zentest/ZenTest}
-S=${WORKDIR}/${MY_P}
 
 # The URL depends implicitly on the version, unfortunately. Even if you
 # change the filename on the end, it still downloads the same file.
@@ -21,4 +21,5 @@ IUSE=""
 
 USE_RUBY="ruby18"
 DEPEND="virtual/ruby
-	>=dev-ruby/hoe-1.1.3"
+	>=dev-ruby/rubygems-0.9.1
+	>=dev-ruby/hoe-1.2.0"
