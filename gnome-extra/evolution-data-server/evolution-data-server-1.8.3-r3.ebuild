@@ -1,7 +1,9 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/evolution-data-server/Attic/evolution-data-server-1.10.1.ebuild,v 1.3 2007/04/19 12:07:58 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/evolution-data-server/Attic/evolution-data-server-1.8.3-r3.ebuild,v 1.1 2007/05/01 16:44:48 pva Exp $
 
+WANT_AUTOMAKE="1.9"
+WANT_AUTOCONF="latest"
 inherit db-use eutils flag-o-matic gnome2 autotools
 
 DESCRIPTION="Evolution groupware backend"
@@ -10,9 +12,9 @@ HOMEPAGE="http://www.gnome.org/projects/evolution/"
 LICENSE="LGPL-2 Sleepycat"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="doc ipv6 kerberos keyring krb4 ldap ssl"
+IUSE="doc ipv6 kerberos keyring krb4 ldap nntp ssl"
 
-RDEPEND=">=dev-libs/glib-2.10
+RDEPEND=">=dev-libs/glib-2.4
 	>=gnome-base/libbonobo-2.4.2
 	>=gnome-base/orbit-2.9.8
 	>=gnome-base/libgnomeui-2
@@ -36,20 +38,22 @@ RDEPEND=">=dev-libs/glib-2.10
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.9
-	>=dev-util/intltool-0.35.5
+	>=dev-util/intltool-0.35
 	doc? ( >=dev-util/gtk-doc-1.4 )"
 
+MAKEOPTS="${MAKEOPTS} -j1"
 DOCS="ChangeLog MAINTAINERS NEWS TODO"
 
 RESTRICT="confcache"
 
 pkg_setup() {
-	G2CONF="$(use_with ldap openldap)       \
-		$(use_with kerberos krb5 /usr)      \
-		$(use_enable ssl nss)               \
-		$(use_enable ssl smime)             \
-		$(use_enable ipv6)                  \
-		$(use_enable keyring gnome-keyring) \
+	G2CONF="$(use_with ldap openldap)	\
+		$(use_with kerberos krb5 /usr)	\
+		$(use_enable ssl nss)		\
+		$(use_enable ssl smime)		\
+		$(use_enable ipv6)		\
+		$(use_enable nntp)		\
+		$(use_enable keyring gnome-keyring)		\
 		--with-libdb=/usr/$(get_libdir)"
 
 	if use krb4 && ! built_with_use virtual/krb5 krb4; then
@@ -68,8 +72,7 @@ pkg_setup() {
 src_unpack() {
 	gnome2_src_unpack
 
-	# Fix what ?
-	epatch ${FILESDIR}/${PN}-1.2.0-gentoo_etc_services.patch
+	epatch "${FILESDIR}"/${PN}-1.2.0-gentoo_etc_services.patch
 
 	# Fix broken libdb build
 	epatch "${FILESDIR}"/${PN}-1.7.3-libdb.patch
@@ -77,13 +80,24 @@ src_unpack() {
 	# Resolve symbols at execution time for setgid binaries
 	epatch "${FILESDIR}"/${PN}-no_lazy_bindings.patch
 
+	# exchange-storage --as-needed fixes
+	epatch "${FILESDIR}"/${PN}-1.7.3-exchange-storage.patch
+	epatch "${FILESDIR}"/${PN}-1.7.4-move-subdirs.patch
+
 	# Rewind in camel-disco-diary to fix a crash
 	epatch "${FILESDIR}"/${PN}-1.8.0-camel-rewind.patch
 
-#-------------Upstream GNOME look here -----------------#
+	# Fix non-english contact insertion.  Upstream bug:
+	# http://bugzilla.gnome.org/show_bug.cgi?id=405531
+	epatch "${FILESDIR}"/${P}-category.patch
 
-	# --as-needed fixes
-	epatch "${FILESDIR}"/${PN}-1.9.91-as-needed.patch
+	# Fix DST changes; bug #172835
+	epatch "${FILESDIR}"/${P}-dst.patch.gz
+
+	# Fix vulnerability in APOP authentification; bug #174210
+	epatch "${FILESDIR}"/${PN}-APOP-auth-fix.patch
+
+#-------------Upstream GNOME look here -----------------#
 
 	# fix for dep ordering so we can add libedataserverui to libexchange-storage
 	# we need to do this or: undefined reference to `e_passwords_get_password'
@@ -108,7 +122,7 @@ src_unpack() {
 	# tack on the server.deps Makefile on our last edit
 	sed -i -e 's:calendar/backends/groupwise:server.deps/calendar/Makefile\nserver.deps:' configure.in
 
-	# fix file includes 
+	# fix file includes
 	sed -i -e 's:<backends/groupwise/e-book-backend-groupwise.h>:"server.deps/addressbook/e-book-backend-groupwise.h":' addressbook/libedata-book/e-data-book-factory.c
 
 	# Fix db version for FreeBSD users where -ldb is always db-1
@@ -121,12 +135,19 @@ src_unpack() {
 src_compile() {
 	# Use NSS/NSPR only if 'ssl' is enabled.
 	if use ssl ; then
-		sed -i -e "s|mozilla-nss|nss|
-		s|mozilla-nspr|nspr|" ${S}/configure
-		G2CONF="${G2CONF} --enable-nss=yes"
+		NSS_LIB=/usr/$(get_libdir)/nss
+		NSS_INC=/usr/include/nss
+		NSPR_LIB=/usr/$(get_libdir)/nspr
+		NSPR_INC=/usr/include/nspr
+
+		G2CONF="${G2CONF} \
+			--with-nspr-includes=${NSPR_INC} \
+			--with-nspr-libs=${NSPR_LIB}     \
+			--with-nss-includes=${NSS_INC}   \
+			--with-nss-libs=${NSS_LIB}"
 	else
 		G2CONF="${G2CONF} --without-nspr-libs --without-nspr-includes \
-		--without-nss-libs --without-nss-includes"
+			--without-nss-libs --without-nss-includes"
 	fi
 
 	# /usr/include/db.h is always db-1 on FreeBSD
