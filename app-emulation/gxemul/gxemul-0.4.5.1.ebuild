@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/gxemul/Attic/gxemul-0.4.4.1.ebuild,v 1.1 2007/04/04 19:51:38 drizzt Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/gxemul/Attic/gxemul-0.4.5.1.ebuild,v 1.1 2007/05/02 15:47:13 drizzt Exp $
 
 inherit eutils toolchain-funcs
 
