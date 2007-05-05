@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-xemacs/cvs-repo/gentoo-x86/app-xemacs/prog-modes/Attic/prog-modes-2.07.ebuild,v 1.1 2006/11/12 11:57:12 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-xemacs/cvs-repo/gentoo-x86/app-xemacs/prog-modes/prog-modes-2.10.ebuild,v 1.1 2007/05/05 07:05:47 graaff Exp $
 
 SLOT="0"
 IUSE=""
