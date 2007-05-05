@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/turbokid/Attic/turbokid-0.9.9.ebuild,v 1.1 2007/02/28 00:13:37 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/turbokid/Attic/turbokid-1.0.1.ebuild,v 1.1 2007/05/05 23:33:36 pythonhead Exp $
 
 NEED_PYTHON=2.4
 
