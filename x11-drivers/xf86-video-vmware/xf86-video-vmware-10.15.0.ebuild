@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-vmware/Attic/xf86-video-vmware-10.15.0.ebuild,v 1.2 2007/04/29 06:28:47 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-vmware/Attic/xf86-video-vmware-10.15.0.ebuild,v 1.3 2007/05/05 18:34:19 dang Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -9,7 +9,7 @@ XDPVER=2
 inherit x-modular
 
 DESCRIPTION="VMware SVGA video driver"
-KEYWORDS="~amd64 x86 ~x86-fbsd"
+KEYWORDS="amd64 x86 ~x86-fbsd"
 RDEPEND=">=x11-base/xorg-server-1.0.99.901"
 DEPEND="${RDEPEND}
 	x11-proto/fontsproto
