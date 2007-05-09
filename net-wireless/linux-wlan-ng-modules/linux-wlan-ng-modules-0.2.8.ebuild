@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng-modules/Attic/linux-wlan-ng-modules-0.2.5.ebuild,v 1.1 2006/10/08 19:09:23 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng-modules/linux-wlan-ng-modules-0.2.8.ebuild,v 1.1 2007/05/09 16:30:52 genstef Exp $
 
 inherit eutils linux-mod
 
@@ -50,6 +50,7 @@ src_unpack() {
 	unpack ${A}
 
 	cd ${S}
+	epatch "${FILESDIR}/${MY_PN}-0.2.5-sandbox.patch"
 
 	cp ${S}/config.in ${config}
 
