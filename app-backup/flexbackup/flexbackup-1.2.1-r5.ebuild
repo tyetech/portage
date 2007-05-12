@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/flexbackup/Attic/flexbackup-1.2.1-r4.ebuild,v 1.1 2007/04/15 15:41:51 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/flexbackup/Attic/flexbackup-1.2.1-r5.ebuild,v 1.1 2007/05/12 08:33:02 genstef Exp $
 
 inherit eutils
 
@@ -26,6 +26,7 @@ src_unpack() {
 	epatch "${FILESDIR}"/flexbackup-1.2.1-bash.patch
 	epatch "${FILESDIR}"/flexbackup-1.2.1-mbuffer-switch.patch
 	epatch "${FILESDIR}"/flexbackup-1.2.1-remote-bufftest.patch
+	epatch "${FILESDIR}"/flexbackup-1.2.1-prune.patch
 
 	sed -i \
 		-e '/^\$type = /s:afio:tar:' \
