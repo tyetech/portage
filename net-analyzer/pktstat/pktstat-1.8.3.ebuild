@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pktstat/Attic/pktstat-1.8.3.ebuild,v 1.2 2007/03/20 18:45:51 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pktstat/Attic/pktstat-1.8.3.ebuild,v 1.3 2007/05/13 17:33:33 beandog Exp $
 
 DESCRIPTION="A network monitoring tool, with bandwidth tracking"
 SRC_URI="http://www.adaptive-enterprises.com.au/~d/software/pktstat/${P}.tar.gz"
@@ -8,7 +8,7 @@ HOMEPAGE="http://www.adaptive-enterprises.com.au/~d/software/pktstat/"
 
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE=""
 
 DEPEND="net-libs/libpcap
