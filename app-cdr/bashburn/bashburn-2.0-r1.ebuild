@@ -1,21 +1,22 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/bashburn/Attic/bashburn-1.4.ebuild,v 1.11 2006/09/17 03:38:53 pylon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/bashburn/Attic/bashburn-2.0-r1.ebuild,v 1.1 2007/05/15 00:09:48 mjolnir Exp $
 
+MY_P=BashBurn-${PV}
 
-MY_P=${P//b/B}
 DESCRIPTION="cd burning shell script"
 HOMEPAGE="http://bashburn.sourceforge.net"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc sparc x86"
-IUSE=""
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+IUSE="dvdr"
 
 DEPEND="virtual/libc
 	virtual/cdrtools
 	>=app-cdr/cdrdao-1.1.7
+	dvdr? ( app-cdr/dvd+rw-tools )
 	virtual/mpg123
 	media-sound/lame
 	media-sound/vorbis-tools
@@ -25,24 +26,27 @@ DEPEND="virtual/libc
 
 RDEPEND="app-shells/bash"
 
+S=${WORKDIR}/${MY_P}
+
 src_compile() {
 	echo "Skipping Compile"
 }
 
 src_install() {
-	sed -i "s:export CONFFILE=/etc/bashburnrc:export CONFFILE=/etc/bashburn/bashburnrc:g" BashBurn.sh
-	sed -i "s:ROOTDIR\:.*:ROOTDIR\: /opt/BashBurn:g" bashburnrc
+	sed -i "s:export BBCONFFILE='/etc/bashburnrc':export BBCONFFILE=/etc/bashburn/bashburnrc:g" BashBurn.sh
+	sed -i "s:BBROOTDIR\:.*:BBROOTDIR\: /opt/BashBurn:g" bashburnrc
 
 	dodir /etc/bashburn
 	dodir /opt/BashBurn
 	dodir /usr/bin
 
-	mv {burning,config,convert,menus,misc} ${D}/opt/BashBurn
+	mv {burning,config,convert,func,menus,misc,lang} ${D}/opt/BashBurn
 
 	exeinto /opt/BashBurn
 	doexe BashBurn.sh || die
 	cp bashburnrc ${D}/etc/bashburn
+	fperms 655 /etc/bashburn/bashburnrc
 	ln -sf /opt/BashBurn/BashBurn.sh ${D}/usr/bin/bashburn
 
-	dodoc README HOWTO
+	dodoc README HOWTO FAQ ChangeLog TODO
 }
