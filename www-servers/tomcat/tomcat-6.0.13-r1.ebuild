@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/tomcat/Attic/tomcat-6.0.13.ebuild,v 1.1 2007/05/15 17:04:37 wltjr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/tomcat/Attic/tomcat-6.0.13-r1.ebuild,v 1.1 2007/05/17 21:15:05 wltjr Exp $
 
 WANT_ANT_TASKS="ant-trax"
 
