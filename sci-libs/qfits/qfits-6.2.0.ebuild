@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/qfits/qfits-6.2.0.ebuild,v 1.1 2007/02/23 00:48:16 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/qfits/qfits-6.2.0.ebuild,v 1.2 2007/05/18 15:17:01 bicatali Exp $
 
 inherit eutils
 
@@ -23,5 +23,5 @@ src_unpack() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc README AUTHORS
-	use doc && dohtml html
+	use doc && dohtml html/*
 }
