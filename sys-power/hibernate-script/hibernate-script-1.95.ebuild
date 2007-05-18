@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-power/cvs-repo/gentoo-x86/sys-power/hibernate-script/Attic/hibernate-script-1.95_beta20070504.ebuild,v 1.1 2007/05/04 04:37:01 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-power/cvs-repo/gentoo-x86/sys-power/hibernate-script/Attic/hibernate-script-1.95.ebuild,v 1.1 2007/05/18 20:07:03 alonbl Exp $
 
 inherit eutils
 
