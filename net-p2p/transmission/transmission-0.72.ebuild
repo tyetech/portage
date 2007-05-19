@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/transmission/Attic/transmission-0.72.ebuild,v 1.1 2007/05/01 02:48:00 compnerd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/transmission/Attic/transmission-0.72.ebuild,v 1.2 2007/05/19 16:42:41 welp Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ SRC_URI="http://download.m0k.org/transmission/files/${MY_PN}-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 IUSE="daemon gtk"
 
 RDEPEND="sys-devel/gettext
