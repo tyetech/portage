@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/jbigkit/Attic/jbigkit-1.6.ebuild,v 1.2 2007/02/28 22:13:22 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/jbigkit/Attic/jbigkit-1.6.ebuild,v 1.3 2007/05/19 23:18:24 nerdboy Exp $
 
 inherit eutils
 
