@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-20070414.ebuild,v 1.1 2007/04/16 22:07:29 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-20070519.ebuild,v 1.1 2007/05/20 16:33:10 swegener Exp $
 
 inherit linux-info eutils
 
@@ -28,7 +28,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-grsecurity.patch
+	epatch "${FILESDIR}"/systemtap-20070414-grsecurity.patch
 }
 
 src_install() {
