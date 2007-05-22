@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/prosite/Attic/prosite-20.9.ebuild,v 1.1 2007/04/11 01:13:26 ribosome Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/prosite/Attic/prosite-20.12.ebuild,v 1.1 2007/05/22 00:44:50 ribosome Exp $
 
 DESCRIPTION="A protein families and domains database"
 LICENSE="swiss-prot"
