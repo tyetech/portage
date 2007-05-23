@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kaudiocreator/Attic/kaudiocreator-3.5.7.ebuild,v 1.1 2007/05/22 21:19:50 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kaudiocreator/Attic/kaudiocreator-3.5.7.ebuild,v 1.2 2007/05/23 11:23:00 carlo Exp $
 
 KMNAME=kdemultimedia
 MAXKDEVER=$PV
@@ -24,7 +24,7 @@ KMCOPYLIB="libkcddb libkcddb"
 KMEXTRACTONLY="libkcddb"
 KMCOMPILEONLY="kscd
 	libkcddb/"
-PATCHES="${FILESDIR}/${P}-arts.patch"
+PATCHES="${FILESDIR}/kaudiocreator-3.5.6-arts.patch"
 
 src_compile () {
 	DO_NOT_COMPILE=libkcddb kde-meta_src_compile myconf configure
