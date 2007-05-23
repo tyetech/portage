@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kttsd/Attic/kttsd-3.5.7.ebuild,v 1.1 2007/05/23 01:47:57 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kttsd/Attic/kttsd-3.5.7.ebuild,v 1.2 2007/05/23 11:55:42 carlo Exp $
 KMNAME=kdeaccessibility
 MAXKDEVER=$PV
 KM_DEPRANGE="$PV $MAXKDEVER"
@@ -13,7 +13,7 @@ DEPEND="akode? ( media-libs/akode )
 	alsa? ( media-libs/alsa-lib )
 	gstreamer? ( =media-libs/gstreamer-0.8*
 	             =media-libs/gst-plugins-0.8* )
-	$(deprange-dual 3.5.6 $MAXKDEVER kde-base/kcontrol)
+	$(deprange-dual $PV $MAXKDEVER kde-base/kcontrol)
 	!arts? ( !alsa? ( !gstreamer? ( media-libs/akode ) ) )"
 
 RDEPEND="${DEPEND}
