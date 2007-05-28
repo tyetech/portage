@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-2.6.7.ebuild,v 1.10 2007/01/21 07:32:42 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-2.6.13.ebuild,v 1.1 2007/05/28 05:07:21 mrness Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -12,28 +12,28 @@ S_PV="${PV%.*}"
 S_PL="${PV##*.}"
 S_PL="${S_PL/_rc/-RC}"
 S_PP="${PN}-${S_PV}.STABLE${S_PL}"
-PATCH_VERSION="20070116"
 
 DESCRIPTION="A full-featured web proxy cache"
 HOMEPAGE="http://www.squid-cache.org/"
-SRC_URI="http://www.squid-cache.org/Versions/v2/${S_PV}/${S_PP}.tar.gz
-	mirror://gentoo/${S_PP}-patches-${PATCH_VERSION}.tar.gz"
+SRC_URI="http://www.squid-cache.org/Versions/v2/${S_PV}/${S_PP}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 mips ppc ppc64 sparc x86 ~x86-fbsd"
-IUSE="pam ldap sasl nis ssl snmp selinux logrotate zero-penalty-hit \
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="pam ldap samba sasl nis ssl snmp selinux logrotate qos zero-penalty-hit \
 	pf-transparent ipf-transparent \
 	elibc_uclibc kernel_linux"
 
-RDEPEND="pam? ( virtual/pam )
+DEPEND="pam? ( virtual/pam )
 	ldap? ( >=net-nds/openldap-2.1.26 )
 	ssl? ( >=dev-libs/openssl-0.9.7j )
 	sasl? ( >=dev-libs/cyrus-sasl-2.1.21 )
 	selinux? ( sec-policy/selinux-squid )
 	!x86-fbsd? ( logrotate? ( app-admin/logrotate ) )
-	>=sys-libs/db-4"
-DEPEND="${RDEPEND} dev-lang/perl"
+	>=sys-libs/db-4
+	dev-lang/perl"
+RDEPEND="${DEPEND}
+	samba? ( net-fs/samba )"
 
 S="${WORKDIR}/${S_PP}"
 
@@ -46,10 +46,9 @@ src_unpack() {
 	unpack ${A} || die "unpack failed"
 	cd "${S}" || die "dir ${S} not found"
 
-	# Do bulk patching from squids bug fix list as well as our patches
-	use zero-penalty-hit || rm "${WORKDIR}"/patch/9*ToS_Hit*
-	EPATCH_SUFFIX="patch"
-	epatch "${WORKDIR}/patch"
+	epatch "${FILESDIR}"/${P}-gentoo.patch
+	use zero-penalty-hit && epatch "${FILESDIR}"/${P}-ToS_Hit_ToS_Preserve.patch
+	use qos && epatch "${FILESDIR}"/${P}-qos.patch
 
 	sed -i -e 's%LDFLAGS="-g"%LDFLAGS=""%' configure.in
 
@@ -61,14 +60,19 @@ src_unpack() {
 }
 
 src_compile() {
-	local basic_modules="getpwnam,NCSA,SMB,MSNT,multi-domain-NTLM"
+	local basic_modules="getpwnam,NCSA,MSNT"
+	use samba && basic_modules="SMB,multi-domain-NTLM,${basic_modules}"
 	use ldap && basic_modules="LDAP,${basic_modules}"
 	use pam && basic_modules="PAM,${basic_modules}"
 	use sasl && basic_modules="SASL,${basic_modules}"
 	use nis && ! use elibc_uclibc && basic_modules="YP,${basic_modules}"
 
-	local ext_helpers="ip_user,session,unix_group,wbinfo_group"
+	local ext_helpers="ip_user,session,unix_group"
+	use samba && ext_helpers="wbinfo_group,${ext_helpers}"
 	use ldap && ext_helpers="ldap_group,${ext_helpers}"
+
+	local ntlm_helpers="fakeauth"
+	use samba && ntlm_helpers="SMB,${ntlm_helpers}"
 
 	local myconf=""
 
@@ -107,7 +111,7 @@ src_compile() {
 		--enable-digest-auth-helpers="password" \
 		--enable-basic-auth-helpers="${basic_modules}" \
 		--enable-external-acl-helpers="${ext_helpers}" \
-		--enable-ntlm-auth-helpers="SMB,fakeauth" \
+		--enable-ntlm-auth-helpers="${ntlm_helpers}" \
 		--enable-ident-lookups \
 		--enable-useragent-log \
 		--enable-cache-digests \
@@ -138,7 +142,7 @@ src_install() {
 	fperms 4750 /usr/libexec/squid/ncsa_auth
 	fperms 4750 /usr/libexec/squid/pam_auth
 
-	#some clean ups
+	#some cleanups
 	rm -f "${D}"/usr/bin/Run*
 
 	dodoc CONTRIBUTORS CREDITS ChangeLog QUICKSTART SPONSORS doc/*.txt \
