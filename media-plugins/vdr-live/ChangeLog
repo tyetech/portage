@@ -1,6 +1,10 @@
 # ChangeLog for media-plugins/vdr-live
 # Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-live/ChangeLog,v 1.1 2007/05/29 14:01:03 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-live/ChangeLog,v 1.2 2007/05/29 14:24:40 zzam Exp $
+
+  29 May 2007; Matthias Schwarzott <zzam@gentoo.org> +files/confd,
+  +files/rc-addon.sh:
+  Added plugin configuration
 
 *vdr-live-0.1.0 (29 May 2007)
 
