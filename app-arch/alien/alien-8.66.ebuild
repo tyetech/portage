@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/alien/Attic/alien-8.66.ebuild,v 1.2 2007/05/14 10:39:24 lordvan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/alien/Attic/alien-8.66.ebuild,v 1.3 2007/05/30 20:33:34 mr_bones_ Exp $
 
 inherit perl-app
 
