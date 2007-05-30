@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kapptemplate/Attic/kapptemplate-3.5.6.ebuild,v 1.2 2007/05/24 11:11:19 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kapptemplate/Attic/kapptemplate-3.5.6.ebuild,v 1.3 2007/05/30 20:36:20 mr_bones_ Exp $
 
 ARTS_REQUIRED="no"
 RESTRICT="binchecks strip"
