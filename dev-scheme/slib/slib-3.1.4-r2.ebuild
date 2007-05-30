@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-scheme/cvs-repo/gentoo-x86/dev-scheme/slib/Attic/slib-3.1.4-r2.ebuild,v 1.3 2007/05/29 14:04:41 hkbst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-scheme/cvs-repo/gentoo-x86/dev-scheme/slib/Attic/slib-3.1.4-r2.ebuild,v 1.4 2007/05/30 20:34:56 mr_bones_ Exp $
 
 inherit versionator eutils
 
