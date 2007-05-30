@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.10.11.ebuild,v 1.6 2007/05/30 00:11:02 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.10.11.ebuild,v 1.7 2007/05/30 10:48:15 armin76 Exp $
 
 inherit gnome.org flag-o-matic eutils autotools virtualx
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gtk.org/"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 mips ~ppc ~ppc64 ~sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha ~amd64 ~arm ~hppa ia64 mips ~ppc ~ppc64 ~sh sparc x86 ~x86-fbsd"
 IUSE="debug doc jpeg tiff xinerama"
 
 RDEPEND="x11-libs/libXrender
