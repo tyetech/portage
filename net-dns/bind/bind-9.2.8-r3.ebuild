@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.2.8-r2.ebuild,v 1.4 2007/05/06 08:50:30 genone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.2.8-r3.ebuild,v 1.1 2007/06/02 22:34:48 voxus Exp $
 
 inherit eutils libtool autotools toolchain-funcs flag-o-matic
 
@@ -69,8 +69,8 @@ src_unpack() {
 	WANT_AUTOCONF=2.5 AT_NO_RECURSIVE=1 eautoreconf || die "eautoreconf failed"
 
 	# bug #151839
-	sed \
-		-e 's:<config.h>:<config.h>\n\n#undef SO_BSDCOMPAT:' \
+	sed -e \
+		's:struct isc_socket {:#undef SO_BSDCOMPAT\n\nstruct isc_socket {:' \
 		-i lib/isc/unix/socket.c
 }
 
@@ -167,8 +167,8 @@ src_install() {
 	doins ${FILESDIR}/127.zone
 	newins ${FILESDIR}/localhost.zone-r2 localhost.zone
 
-	newinitd ${FILESDIR}/named.init-r4 named
-	newconfd ${FILESDIR}/named.confd-r1 named
+	newinitd ${FILESDIR}/named.init-r5 named
+	newconfd ${FILESDIR}/named.confd-r2 named
 
 	dosym ../../var/bind/named.ca /var/bind/root.cache
 	dosym ../../var/bind/pri /etc/bind/pri
