@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/onphp/Attic/onphp-0.6.4.ebuild,v 1.4 2007/03/18 15:04:46 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/onphp/Attic/onphp-0.10.1.ebuild,v 1.1 2007/06/02 15:12:47 voxus Exp $
 
 inherit php-lib-r1
 
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="onPHP is the GPL'ed multi-purpose object-oriented PHP framework."
 HOMEPAGE="http://onphp.org/"
