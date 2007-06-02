@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/rlocate/Attic/rlocate-0.5.5.ebuild,v 1.1 2007/01/08 09:34:16 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/rlocate/Attic/rlocate-0.5.5.ebuild,v 1.2 2007/06/02 10:20:29 zzam Exp $
 
 inherit eutils linux-mod
 
@@ -45,4 +45,5 @@ src_install() {
 	newinitd "${FILESDIR}"/rlocated.rc rlocated
 	linux-mod_src_install
 	dodoc AUTHORS ChangeLog* NEWS README
+	keepdir /var/lib/rlocate
 }
