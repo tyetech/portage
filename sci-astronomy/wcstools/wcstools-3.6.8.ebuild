@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/wcstools/Attic/wcstools-3.6.6.ebuild,v 1.1 2007/02/03 17:06:54 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/wcstools/Attic/wcstools-3.6.8.ebuild,v 1.1 2007/06/05 16:35:59 bicatali Exp $
 
 inherit eutils autotools
 
@@ -15,11 +15,12 @@ IUSE=""
 
 src_unpack() {
 	unpack ${A}
-	# fixed some warnings
-	epatch "${FILESDIR}"/${P}-codewarn.patch
+	cd "${S}"
+	# fix a segfault (adapted from fedora)
+	epatch "${FILESDIR}"/${P}-imsetwcs.patch
 	# autotoolization
 	epatch "${FILESDIR}"/${P}-autotools.patch
-	cd "${S}"
+	sed -i -e 's/3.6.x/${PV}/' configure.ac || die "sed failed"
 	eautoreconf
 }
 
@@ -38,6 +39,6 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	doman Man/man1/*
 	dodoc Readme Programs NEWS
-	docinto libwcs
-	dodoc libwcs/{Readme,NEWS}
+	newdoc libwcs/Readme Readme.libwcs
+	newdoc libwcs/NEWS NEWS.libwcs
 }
