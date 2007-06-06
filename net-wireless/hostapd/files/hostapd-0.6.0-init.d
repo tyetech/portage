@@ -1,7 +1,7 @@
 #!/sbin/runscript
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/hostapd/files/Attic/hostapd-0.5.2-init.d,v 1.1 2006/03/20 08:14:51 brix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/hostapd/files/Attic/hostapd-0.6.0-init.d,v 1.1 2007/06/06 20:03:36 gurligebis Exp $
 
 opts="start stop reload"
 
