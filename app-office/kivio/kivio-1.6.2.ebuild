@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kivio/Attic/kivio-1.6.2.ebuild,v 1.1 2007/02/16 11:29:59 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kivio/Attic/kivio-1.6.2.ebuild,v 1.2 2007/06/09 00:13:38 carlo Exp $
 
-MAXKOFFICEVER=${PV}
+MAXKOFFICEVER=1.6.3
 KMNAME=koffice
 inherit kde-meta eutils
 
