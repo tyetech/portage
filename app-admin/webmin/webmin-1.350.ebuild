@@ -1,21 +1,21 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/webmin/Attic/webmin-1.290.ebuild,v 1.11 2007/01/24 15:09:51 genone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/webmin/Attic/webmin-1.350.ebuild,v 1.1 2007/06/09 14:25:50 armin76 Exp $
 
 inherit eutils pam
 
-VM_V="2.611"
+VM_V="3.23"
 
 DESCRIPTION="Webmin, a web-based system administration interface"
 HOMEPAGE="http://www.webmin.com/"
 SRC_URI="webmin-minimal? ( mirror://sourceforge/webadmin/${P}-minimal.tar.gz )
 	 !webmin-minimal? ( mirror://sourceforge/webadmin/${P}.tar.gz
-	                   http://www.webmin.com/download/virtualmin/virtual-server-${VM_V}.wbm.gz )"
+	                   http://www.webmin.com/download/virtualmin/virtual-server-${VM_V}.gpl.wbm.gz )"
 
 LICENSE="BSD"
 SLOT="0"
 # ~mips removed because of broken deps. Bug #86085
-KEYWORDS="alpha amd64 arm hppa ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="apache2 pam postgres ssl webmin-minimal"
 
 DEPEND="dev-lang/perl"
@@ -41,22 +41,16 @@ src_unpack() {
 		epatch "${FILESDIR}"/${PN}-1.270-ldap-useradmin.patch
 
 		# Postfix should modify the last entry of the maps file
-		epatch "${FILESDIR}"/${PN}-1.170-postfix.patch
+		epatch "${FILESDIR}"/${PN}-1.300-postfix.patch
 
-		mv ${WORKDIR}/virtual-server-${VM_V}.wbm ${T}/vs.tar
+		mv ${WORKDIR}/virtual-server-${VM_V}.gpl.wbm ${T}/vs.tar
 		tar -xf ${T}/vs.tar
 
 		# Don't create ${HOME}/cgi-bin on new accounts
-		epatch "${FILESDIR}"/virtual-server-2.60-nocgibin.patch
-
-		# Check if a newly added IP is already active
-		epatch "${FILESDIR}"/virtual-server-2.610-checkip.patch
+		epatch "${FILESDIR}"/virtual-server-3.23-nocgibin.patch
 
 		# Verify Postgres usernames
-		epatch "${FILESDIR}"/virtual-server-2.31-pgsql.patch
-
-		# Fix some all name virtual items
-		epatch "${FILESDIR}"/virtual-server-2.31-namevirtual.patch
+		epatch "${FILESDIR}"/virtual-server-3.23-pgsql.patch
 	fi
 
 	epatch "${FILESDIR}"/${PN}-1.170-setup-nocheck.patch
@@ -131,11 +125,12 @@ pkg_postinst() {
 	crypt=${crypt//\//\\\/}
 	sed -i -e "s/root:XXX/root:${crypt}/" /etc/webmin/miniserv.users
 
-	elog "To make webmin start at boot time, run: 'rc-update add webmin default'."
-	use ssl && elog "Point your web browser to https://localhost:10000 to use webmin."
-	use ssl || elog "Point your web browser to http://localhost:10000 to use webmin."
+	einfo "To make webmin start at boot time, run: 'rc-update add webmin default'."
+	use ssl && einfo "Point your web browser to https://localhost:10000 to use webmin."
+	use ssl || einfo "Point your web browser to http://localhost:10000 to use webmin."
 }
 
 pkg_prerm() {
+	# XXX: this is wrong ... prerm is called during upgrades as well
 	"${ROOT}"/etc/init.d/webmin stop >& /dev/null
 }
