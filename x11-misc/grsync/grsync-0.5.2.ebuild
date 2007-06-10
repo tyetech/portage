@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/grsync/Attic/grsync-0.5.2.ebuild,v 1.2 2007/03/10 19:49:10 welp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/grsync/Attic/grsync-0.5.2.ebuild,v 1.3 2007/06/10 10:08:09 dertobi123 Exp $
 
 inherit eutils gnome2 autotools
 
@@ -8,7 +8,7 @@ DESCRIPTION="A gtk frontend to rsync"
 HOMEPAGE="http://www.opbyte.it/grsync/"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ppc ~x86 ~x86-fbsd"
 IUSE="doc"
 SRC_URI="http://www.opbyte.it/release/${P}.tar.gz"
 
