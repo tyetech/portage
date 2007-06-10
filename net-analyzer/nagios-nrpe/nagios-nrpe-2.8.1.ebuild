@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-nrpe/Attic/nagios-nrpe-2.7.1-r2.ebuild,v 1.1 2007/06/06 08:09:49 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-nrpe/Attic/nagios-nrpe-2.8.1.ebuild,v 1.1 2007/06/10 17:02:37 dertobi123 Exp $
 
 inherit eutils toolchain-funcs
 
