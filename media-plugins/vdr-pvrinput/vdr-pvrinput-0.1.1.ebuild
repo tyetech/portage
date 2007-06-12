@@ -1,8 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-pvrinput/Attic/vdr-pvrinput-0.1.1.ebuild,v 1.5 2006/11/19 13:21:29 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-pvrinput/Attic/vdr-pvrinput-0.1.1.ebuild,v 1.6 2007/06/12 11:35:03 zzam Exp $
 
-inherit vdr-plugin
+inherit vdr-plugin eutils
 
 IUSE=""
 
