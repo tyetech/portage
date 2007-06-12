@@ -1,10 +1,10 @@
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/noad/files/0.6.0-r7/Attic/record-50-noad.sh,v 1.3 2007/04/17 13:02:41 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/noad/files/0.6.0-r7/Attic/record-50-noad.sh,v 1.4 2007/06/12 15:54:56 zzam Exp $
 #
 # Joerg Bornkessel <hd_brummy@gentoo.org>
 # Mathias Schwarzott <zzam@gentoo.org>
 #
 
-source /etc/conf.d/vdraddon.noad
+. /etc/conf.d/vdraddon.noad
 
 CMD="/usr/bin/noad"
 
