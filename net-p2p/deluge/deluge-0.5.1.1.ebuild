@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/deluge/Attic/deluge-0.5.1.ebuild,v 1.1 2007/06/12 11:40:43 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/deluge/Attic/deluge-0.5.1.1.ebuild,v 1.1 2007/06/12 18:14:15 armin76 Exp $
 
 inherit eutils distutils
 
