@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/offlineimap/Attic/offlineimap-4.0.8.ebuild,v 1.4 2006/12/24 10:43:11 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/offlineimap/Attic/offlineimap-4.0.8.ebuild,v 1.5 2007/06/12 12:57:46 genone Exp $
 
 inherit distutils
 
@@ -22,8 +22,8 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo ""
-	einfo "You will need to configure offlineimap by creating ~/.offlineimaprc"
-	einfo "Sample configurations are in /usr/share/doc/${P}/"
-	einfo ""
+	elog ""
+	elog "You will need to configure offlineimap by creating ~/.offlineimaprc"
+	elog "Sample configurations are in /usr/share/doc/${P}/"
+	elog ""
 }
