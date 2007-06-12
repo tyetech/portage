@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/ascal/ascal-0.1.1.ebuild,v 1.1 2007/05/13 11:36:53 tupone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/ascal/ascal-0.1.1.ebuild,v 1.2 2007/06/12 13:02:29 nyhm Exp $
 
-inherit games
+inherit eutils games
 
 DESCRIPTION="A game similar to Draughts but with some really cool enhancements"
 HOMEPAGE="http://ascal.sourceforge.net"
