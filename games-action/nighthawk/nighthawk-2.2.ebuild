@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/nighthawk/nighthawk-2.2.ebuild,v 1.10 2006/10/06 21:55:25 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/nighthawk/nighthawk-2.2.ebuild,v 1.11 2007/06/13 15:00:14 nyhm Exp $
 
 inherit eutils games
 
@@ -18,10 +18,12 @@ DEPEND="x11-libs/libXpm"
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/nighthawk.patch"
+	epatch \
+		"${FILESDIR}"/nighthawk.patch \
+		"${FILESDIR}"/${P}-gcc42.patch
 }
 
 src_install () {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "emake install failed"
 	prepgamesdirs
 }
