@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/outerspace/Attic/outerspace-0.5.63.ebuild,v 1.1 2007/05/27 13:31:14 nyhm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/outerspace/Attic/outerspace-0.5.64.ebuild,v 1.1 2007/06/16 21:02:27 nyhm Exp $
 
 inherit eutils games
 
