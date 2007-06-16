@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/zynaddsubfx/Attic/zynaddsubfx-2.2.1-r2.ebuild,v 1.3 2007/06/16 12:00:35 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/zynaddsubfx/Attic/zynaddsubfx-2.2.1-r3.ebuild,v 1.1 2007/06/16 12:00:35 flameeyes Exp $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 MY_P=ZynAddSubFX-${PV}
 DESCRIPTION="ZynAddSubFX is an opensource software synthesizer."
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/zynaddsubfx/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 #IUSE="oss alsa jack mmx"
 IUSE="oss alsa jack"
@@ -24,7 +24,6 @@ DEPEND=">=x11-libs/fltk-1.1.2
 
 S="${WORKDIR}/${MY_P}"
 
-
 pkg_setup() {
 	if use alsa && ! built_with_use --missing true media-libs/alsa-lib midi; then
 		eerror ""
@@ -36,6 +35,11 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${MY_P}.tar.bz2 || die
+
+	sed -i -e '/CXXFLAGS +=/s:CXXFLAGS +=:override CXXFLAGS +=:' \
+		-e '/export CXXFLAGS/d' \
+		-e '/\$(MAKE) -C UI/s:$: CXXFLAGS="${CXXFLAGS}":' \
+		"${S}/src/Makefile" || die "unable to reset CXXFLAGS overrides."
 }
 
 src_compile() {
@@ -62,6 +66,8 @@ src_compile() {
 		ASM_F2I=${ASM_F2I} \
 		LINUX_MIDIIN=${LINUX_MIDIIN} \
 		LINUX_AUDIOOUT=${LINUX_AUDIOOUT} \
+		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+		CXX="$(tc-getCXX)" \
 		|| die "compile failed"
 	cd ${S}/ExternalPrograms/Spliter
 	./compile.sh
