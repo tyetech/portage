@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.0.10.ebuid,v 1.1 2007/06/17 15:54:29 kugelfang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.0.10.ebuild,v 1.1 2007/06/17 16:06:07 ulm Exp $
 
 inherit eutils
 
