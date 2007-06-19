@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/helpblocks/Attic/helpblocks-1.19.ebuild,v 1.1 2006/11/13 09:41:42 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/helpblocks/Attic/helpblocks-1.19.ebuild,v 1.2 2007/06/19 17:36:21 mrness Exp $
 
 DESCRIPTION="HTML Help Editor for wxWidgets"
 HOMEPAGE="http://www.helpblocks.com/"
@@ -8,7 +8,7 @@ SRC_URI="http://www.helpblocks.com/HelpBlocks-${PV}-i386-gtk2-unicode-suse92.tar
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="-* ~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2
