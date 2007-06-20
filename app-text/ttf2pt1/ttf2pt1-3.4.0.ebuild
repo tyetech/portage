@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ttf2pt1/Attic/ttf2pt1-3.4.0.ebuild,v 1.23 2006/08/15 19:46:49 wormo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ttf2pt1/Attic/ttf2pt1-3.4.0.ebuild,v 1.24 2007/06/20 14:00:17 angelos Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/ttf2pt1/${P}.tgz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 sparc ppc"
+KEYWORDS="~amd64 ppc sparc x86"
 IUSE=""
 
 RDEPEND="virtual/libc
