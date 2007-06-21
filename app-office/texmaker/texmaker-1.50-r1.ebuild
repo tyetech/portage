@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmaker/Attic/texmaker-1.50-r1.ebuild,v 1.3 2007/05/13 08:34:18 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmaker/Attic/texmaker-1.50-r1.ebuild,v 1.4 2007/06/21 14:01:06 gustavoz Exp $
 
 inherit eutils versionator qt4
 
@@ -25,7 +25,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 
-KEYWORDS="~amd64 ~ppc ~sparc x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc sparc x86 ~x86-fbsd"
 
 IUSE=""
 
