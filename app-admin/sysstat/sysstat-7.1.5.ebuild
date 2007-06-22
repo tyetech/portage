@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sysstat/Attic/sysstat-7.1.5.ebuild,v 1.1 2007/06/21 12:57:24 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sysstat/Attic/sysstat-7.1.5.ebuild,v 1.2 2007/06/22 05:31:38 jer Exp $
 
 inherit eutils multilib
 
@@ -21,7 +21,7 @@ src_unpack() {
 	unpack ${A}
 	cd ${S}
 
-	epatch ${FILESDIR}/${P}-strip.patch || die "${P}-strip.patch failed"
+	epatch ${FILESDIR}/${PN}-7.1.4-strip.patch || die "${P}-strip.patch failed"
 }
 
 src_compile() {
