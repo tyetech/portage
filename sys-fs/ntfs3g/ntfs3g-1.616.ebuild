@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-1.328.ebuild,v 1.1 2007/04/03 13:56:09 chutzpah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-1.616.ebuild,v 1.1 2007/06/22 15:20:20 chutzpah Exp $
 
 MY_PN="${PN/3g/-3g}"
 MY_P="${MY_PN}-${PV}"
@@ -11,7 +11,7 @@ SRC_URI="http://www.ntfs-3g.org/${MY_P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="suid"
 
 RDEPEND=">=sys-fs/fuse-2.6.3"
