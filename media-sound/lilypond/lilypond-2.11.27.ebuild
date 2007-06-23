@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lilypond/Attic/lilypond-2.11.27.ebuild,v 1.1 2007/06/22 11:17:11 hkbst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lilypond/Attic/lilypond-2.11.27.ebuild,v 1.2 2007/06/23 16:52:55 flameeyes Exp $
 
-inherit eutils autotools versionator toolchain-funcs elisp-common
+inherit eutils versionator toolchain-funcs elisp-common
 
 DESCRIPTION="GNU Music Typesetter"
 SRC_URI="http://download.linuxaudio.org/lilypond/sources/v$(get_version_component_range 1-2)/${P}.tar.gz"
