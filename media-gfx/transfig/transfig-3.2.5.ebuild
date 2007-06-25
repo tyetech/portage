@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/transfig/Attic/transfig-3.2.5.ebuild,v 1.4 2007/06/24 16:57:12 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/transfig/Attic/transfig-3.2.5.ebuild,v 1.5 2007/06/25 12:53:13 armin76 Exp $
 
 inherit toolchain-funcs eutils flag-o-matic
 
@@ -13,7 +13,7 @@ IUSE=""
 
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="alpha amd64 hppa ia64 ~ppc ~ppc64 ~sparc x86"
 
 RDEPEND="|| ( x11-libs/libXpm virtual/x11 )
 	>=media-libs/jpeg-6
