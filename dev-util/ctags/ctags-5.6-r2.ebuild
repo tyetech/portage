@@ -1,27 +1,32 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ctags/Attic/ctags-5.5.4-r3.ebuild,v 1.7 2007/06/26 20:06:48 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ctags/ctags-5.6-r2.ebuild,v 1.1 2007/06/26 20:06:48 george Exp $
 
 inherit eutils
 
 DESCRIPTION="Exuberant Ctags creates tags files for code browsing in editors"
 HOMEPAGE="http://ctags.sourceforge.net"
-SRC_URI="mirror://sourceforge/ctags/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/ctags/${P}.tar.gz
+	mirror://sourceforge/gnuada/ctags-ada-mode-4.3.3.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE=""
-
+IUSE="ada"
 
 src_unpack() {
 	unpack ${A}
 	cd ${S}
 	epatch "${FILESDIR}/${P}-ebuilds.patch"
-	epatch "${FILESDIR}/${P}-ruby-classes.patch"
-	epatch "${FILESDIR}/${P}-haskell.patch"
-	epatch "${FILESDIR}/${P}-objc.patch"
-	epatch "${FILESDIR}/${P}-vim-c.patch"
+	#epatch "${FILESDIR}/${P}-haskell.patch"
+	#epatch "${FILESDIR}/${P}-objc.patch"
+	epatch "${FILESDIR}/${P}-php5.patch"
+
+	# enabling Ada support
+	if use ada; then
+		cp ${WORKDIR}/ctags-ada-mode-4.3.3/ada.c ${S}
+		epatch "${FILESDIR}/${PN}-ada.patch"
+	fi
 }
 
 src_compile() {

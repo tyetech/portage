@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ctags/Attic/ctags-5.6.ebuild,v 1.3 2007/02/28 22:08:46 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ctags/Attic/ctags-5.6.ebuild,v 1.4 2007/06/26 20:06:48 george Exp $
 
 inherit eutils
 
