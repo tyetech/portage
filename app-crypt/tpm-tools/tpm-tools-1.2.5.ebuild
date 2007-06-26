@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/tpm-tools/Attic/tpm-tools-1.2.5.ebuild,v 1.2 2007/01/12 20:42:19 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/tpm-tools/Attic/tpm-tools-1.2.5.ebuild,v 1.3 2007/06/26 01:34:29 mr_bones_ Exp $
 
 inherit autotools
 
@@ -25,10 +25,10 @@ src_unpack() {
 	cd "${S}"
 
 	# workaround econf "updating config.sub" sandbox violation
-	## (bug #96242 for instance):	
+	## (bug #96242 for instance):
 	#touch config.sub
 
-	# no translation so far -> no need to gettextize it 
+	# no translation so far -> no need to gettextize it
 	# (makes compilation a bit simpler...):
 	sed -i '/^gettextize/d' ./bootstrap.sh
 	sed -i '/\<po\>/d' Makefile.am
