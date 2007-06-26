@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/nginx/Attic/nginx-0.5.26.ebuild,v 1.1 2007/06/17 21:52:21 voxus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/nginx/Attic/nginx-0.5.26.ebuild,v 1.2 2007/06/26 02:57:56 mr_bones_ Exp $
 
 inherit eutils ssl-cert
 
@@ -30,7 +30,7 @@ src_compile() {
 	local myconf
 
 	# threads support is broken atm.
-	# 
+	#
 	# if use threads; then
 	# 	einfo
 	# 	ewarn "threads support is experimental at the moment"
