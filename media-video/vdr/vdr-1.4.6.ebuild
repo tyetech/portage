@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vdr/Attic/vdr-1.4.6.ebuild,v 1.1 2007/03/19 18:05:23 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vdr/Attic/vdr-1.4.6.ebuild,v 1.2 2007/06/26 02:19:32 mr_bones_ Exp $
 
 inherit eutils flag-o-matic multilib
 
@@ -194,7 +194,7 @@ pkg_postinst() {
 	if use setup-plugin; then
 		if ! has_version media-plugins/vdr-setup || \
 			! egrep -q '^setup$' "${ROOT}/etc/conf.d/vdr.plugins"; then
-			
+
 			echo
 			ewarn "You have compiled media-video/vdr with USE=\"setup-plugin\""
 			ewarn "It is very important to emerge media-plugins/vdr-setup now!"
