@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/usbmidi/Attic/usbmidi-1.0.ebuild,v 1.9 2007/02/12 20:13:54 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/usbmidi/Attic/usbmidi-1.0.ebuild,v 1.10 2007/06/26 02:16:23 mr_bones_ Exp $
 
 inherit linux-info
 
@@ -25,7 +25,7 @@ pkg_setup() {
 		eerror "This ebuild is only for 2.4.x kernels."
 		die "Use in-kernel USB MIDI support instead."
 	fi
-}	    
+}
 
 src_install() {
 	insinto /usr/share/usb/ezusbmidi
