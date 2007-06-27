@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/color-theme/Attic/color-theme-6.6.0.ebuild,v 1.2 2007/01/02 21:54:19 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/color-theme/Attic/color-theme-6.6.0.ebuild,v 1.3 2007/06/27 06:09:14 opfer Exp $
 
 inherit elisp eutils
 
@@ -17,7 +17,7 @@ SITEFILE="51${PN}-gentoo.el"
 
 src_unpack() {
 	unpack ${A}
-	rm ${S}/*.elc ${S}/color-theme-autoloads*
+	rm "${S}"/*.elc "${S}"/color-theme-autoloads*
 }
 
 src_install() {
