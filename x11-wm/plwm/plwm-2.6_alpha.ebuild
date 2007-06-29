@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/plwm/Attic/plwm-2.6_alpha.ebuild,v 1.5 2004/06/24 23:44:12 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/plwm/Attic/plwm-2.6_alpha.ebuild,v 1.6 2007/06/29 13:53:58 coldwind Exp $
 
 inherit distutils eutils
 
