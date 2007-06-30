@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/libdomainkeys/Attic/libdomainkeys-0.68-r1.ebuild,v 1.8 2007/06/17 07:13:30 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/libdomainkeys/Attic/libdomainkeys-0.68-r1.ebuild,v 1.9 2007/06/30 18:25:49 armin76 Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/domainkeys/${P}.tar.gz"
 LICENSE="libdomainkeys-1.1"
 
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND=">=sys-devel/libtool-1.4.1-r8
