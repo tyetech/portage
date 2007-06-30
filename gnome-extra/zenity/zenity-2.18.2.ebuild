@@ -1,9 +1,7 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/zenity/Attic/zenity-2.16.2.ebuild,v 1.10 2007/01/21 20:11:36 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/zenity/Attic/zenity-2.18.2.ebuild,v 1.1 2007/06/30 22:29:54 leio Exp $
 
-WANT_AUTOCONF=latest
-WANT_AUTOMAKE=latest
 inherit gnome2 eutils autotools
 
 DESCRIPTION="Tool to display dialogs from the commandline and shell scripts"
@@ -11,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="libnotify"
 
 RDEPEND=">=x11-libs/gtk+-2.10
@@ -26,7 +24,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35
 	>=sys-devel/gettext-0.14
 	>=dev-util/pkgconfig-0.9
-	>=app-text/gnome-doc-utils-0.3.2
+	>=app-text/gnome-doc-utils-0.10.1
 	>=gnome-base/gnome-common-2.12.0"
 
 DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
