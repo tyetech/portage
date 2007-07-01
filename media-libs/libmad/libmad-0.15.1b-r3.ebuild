@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmad/Attic/libmad-0.15.1b-r3.ebuild,v 1.1 2007/07/01 02:33:44 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmad/Attic/libmad-0.15.1b-r3.ebuild,v 1.2 2007/07/01 19:14:41 dirtyepic Exp $
 
 inherit eutils autotools libtool flag-o-matic
 
@@ -20,6 +20,7 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}/libmad-0.15.1b-cflags.patch"
+	epatch "${FILESDIR}/libmad-0.15.1b-cflags-O2.patch"
 
 	eautoreconf
 
