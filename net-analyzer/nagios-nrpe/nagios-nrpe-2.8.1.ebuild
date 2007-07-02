@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-nrpe/Attic/nagios-nrpe-2.8.1.ebuild,v 1.1 2007/06/10 17:02:37 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-nrpe/Attic/nagios-nrpe-2.8.1.ebuild,v 1.2 2007/07/02 14:38:33 peper Exp $
 
 inherit eutils toolchain-funcs
 
@@ -8,7 +8,7 @@ DESCRIPTION="Nagios $PV NRPE - Nagios Remote Plugin Executor"
 HOMEPAGE="http://www.nagios.org/"
 SRC_URI="mirror://sourceforge/nagios/nrpe-${PV}.tar.gz"
 
-RESTRICT="nomirror"
+RESTRICT="mirror"
 LICENSE="GPL-2"
 SLOT="0"
 
