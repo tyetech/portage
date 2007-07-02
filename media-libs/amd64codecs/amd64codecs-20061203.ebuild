@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/amd64codecs/Attic/amd64codecs-20061203.ebuild,v 1.4 2007/02/11 23:56:10 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/amd64codecs/Attic/amd64codecs-20061203.ebuild,v 1.5 2007/07/02 15:07:12 peper Exp $
 
 inherit multilib
 
@@ -11,7 +11,7 @@ LICENSE="as-is"
 SLOT="0"
 KEYWORDS="-* amd64"
 S="${WORKDIR}/essential-amd64-${PV}"
-RESTRICT="nostrip"
+RESTRICT="strip"
 
 src_install() {
 	cd ${S}
