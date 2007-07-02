@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ecryptfs-utils/Attic/ecryptfs-utils-7.ebuild,v 1.1 2006/12/13 00:24:59 masterdriverz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ecryptfs-utils/Attic/ecryptfs-utils-7.ebuild,v 1.2 2007/07/02 15:33:12 peper Exp $
 
 DESCRIPTION="eCryptfs userspace utilities"
 HOMEPAGE="http://www.ecryptfs.org"
@@ -14,7 +14,6 @@ IUSE=""
 DEPEND="sys-apps/keyutils
 	dev-libs/libgcrypt"
 
-RESTRICT="confcache"
 
 src_install(){
 	emake -j1 DESTDIR=${D} install || die
