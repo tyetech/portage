@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/lipstik/Attic/lipstik-2.2.ebuild,v 1.9 2007/02/22 10:36:23 voxus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/lipstik/Attic/lipstik-2.2.ebuild,v 1.10 2007/07/02 15:06:52 peper Exp $
 
 inherit kde
 
@@ -12,7 +12,7 @@ SRC_URI="http://www.kde-look.org/CONTENT/content-files/${KLV}-${P}.tar.bz2"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="amd64 ppc ppc64 sparc x86 ~x86-fbsd"
-RESTRICT="nomirror ${RESTRICT}"
+RESTRICT="mirror ${RESTRICT}"
 
 need-kde 3.3
 
