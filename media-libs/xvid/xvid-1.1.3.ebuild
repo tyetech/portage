@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xvid/Attic/xvid-1.1.3.ebuild,v 1.1 2007/07/03 15:25:38 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/xvid/Attic/xvid-1.1.3.ebuild,v 1.2 2007/07/03 15:54:27 drac Exp $
 
 inherit eutils fixheadtails autotools
 
@@ -59,7 +59,7 @@ src_install() {
 
 	if use examples; then
 		dodoc "${S}"/../../CodingStyle
-		insinto /usr/share/${PN}/examples
+		insinto /usr/share/${PN}
 		doins -r "${S}"/../../examples
 	fi
 }
