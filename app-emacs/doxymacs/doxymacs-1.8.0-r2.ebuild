@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/doxymacs/Attic/doxymacs-1.8.0-r1.ebuild,v 1.1 2007/07/04 09:29:29 opfer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/doxymacs/Attic/doxymacs-1.8.0-r2.ebuild,v 1.1 2007/07/04 17:12:32 ulm Exp $
 
 NEED_EMACS=22
 
@@ -18,7 +18,7 @@ IUSE=""
 DEPEND=">=dev-libs/libxml2-2.6.13"
 RDEPEND="${DEPEND}"
 
-SITEFILE="50doxymacs-gentoo.el"
+SITEFILE=50${PN}-gentoo.el
 DOCS="AUTHORS ChangeLog NEWS README TODO"
 
 src_compile() {
