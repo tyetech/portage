@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sancho/Attic/sancho-2.1-r1.ebuild,v 1.3 2006/04/01 19:04:53 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sancho/Attic/sancho-2.1-r1.ebuild,v 1.4 2007/07/05 11:05:34 hawking Exp $
 
 inherit distutils
 
@@ -18,7 +18,7 @@ DEPEND=">=dev-lang/python-2.3"
 S=${WORKDIR}/${MY_P}
 
 src_install() {
-	mydoc="CHANGES.txt README.txt"
+	DOCS="CHANGES.txt"
 	distutils_src_install
 }
 
