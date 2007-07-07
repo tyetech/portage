@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gwget/Attic/gwget-0.99.ebuild,v 1.1 2007/07/07 10:57:32 eva Exp $ 
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gwget/Attic/gwget-0.99.ebuild,v 1.2 2007/07/07 22:43:15 mr_bones_ Exp $
 
 inherit gnome2
 
