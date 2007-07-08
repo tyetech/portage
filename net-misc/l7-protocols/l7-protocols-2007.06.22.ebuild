@@ -1,8 +1,9 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/l7-protocols/Attic/l7-protocols-2006.12.12.ebuild,v 1.2 2007/01/21 04:55:21 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/l7-protocols/Attic/l7-protocols-2007.06.22.ebuild,v 1.1 2007/07/08 01:09:15 dragonheart Exp $
 
-inherit toolchain-funcs
+inherit fixheadtails toolchain-funcs
+
 
 IUSE=""
 
@@ -15,17 +16,25 @@ SRC_URI="mirror://sourceforge/l7-filter/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 S=${WORKDIR}/${MY_P}
 
+src_unpack() {
+	unpack ${A}
+	sed -i -e "s/gcc.*\-o/$(tc-getCC) ${CFLAGS} -o/g" \
+		-e "s/g++.*\-o/$(tc-getCXX) ${CXXFLAGS} -o/g" "${S}"/testing/Makefile
+	htfix_file "${S}"/testing/*.sh
+}
+
 src_compile() {
-	sed -i -e "s/gcc.*-O2/$(tc-getCC) ${CFLAGS}/g" testing/Makefile
-	sed -i -e 's/-1/-n 1/g' testing/*.sh
 	emake -C testing
 }
 
 # NOTE Testing mechanism is currently broken:
 #  stack smashing attack in function main()
+
+# Is also extraordinarly inefficent getting random data.
+#
 #src_test() {
 #	cd testing
 #	find ${S} -name \*.pat -print -exec ./test_match.sh {} \; \
@@ -38,7 +47,7 @@ src_install() {
 	dodir /usr/share/${PN}
 	cd testing
 	cp -pPR randprintable randchars test_speed match README *.sh ${D}/usr/share/${PN}
-	cd ${S}
+	cd "${S}"
 
 	dodoc README CHANGELOG HOWTO WANTED
 	dodoc README.weakpatterns
@@ -48,7 +57,7 @@ src_install() {
 	newdoc testing/README README.testing
 	rm -rf README CHANGELOG HOWTO LICENSE WANTED */README testing
 
-	make PREFIX=${D} install || die
-	rm ${D}/etc/${PN}/Makefile
-	chown -R root:0 ${D}
+	make PREFIX="${D}" install || die
+	rm "${D}"/etc/${PN}/Makefile
+	chown -R root:0 "${D}"
 }
