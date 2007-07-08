@@ -1,15 +1,14 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/slony1/Attic/slony1-1.1.0-r1.ebuild,v 1.1 2005/07/13 15:17:20 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/slony1/Attic/slony1-1.2.10.ebuild,v 1.1 2007/07/08 01:55:20 nakano Exp $
 
 inherit eutils
 
 IUSE="perl"
-#IUSE="perl snmp"
 
 DESCRIPTION="A replication system for the PostgreSQL Database Management System"
 HOMEPAGE="http://slony.info/"
-SRC_URI="http://developer.postgresql.org/~wieck/slony1/download/${P}.tar.bz2"
+SRC_URI="http://main.slony.info/downloads/1.2/source/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
@@ -17,13 +16,6 @@ KEYWORDS="~amd64 ~ppc ~x86"
 
 DEPEND="dev-db/postgresql
 	perl? ( dev-perl/DBD-Pg )"
-#	snmp? ( >=net-analyzer/net-snmp-5.1 )
-
-src_unpack() {
-	unpack ${A}
-	cd ${S}
-	epatch ${FILESDIR}/slony1_remove_jave.patch
-}
 
 src_compile() {
 	local myconf=""
@@ -31,7 +23,6 @@ src_compile() {
 	myconf="${myconf} --with-pgincludedir=/usr/include/postgresql/pgsql"
 	myconf="${myconf} --with-pgincludeserverdir=/usr/include/postgresql/server"
 	myconf="${myconf} $(use_with perl perltools)"
-	# myconf="${myconf} $(use_with snmp netsnmp)"
 
 	econf ${myconf} || die
 	emake || die
