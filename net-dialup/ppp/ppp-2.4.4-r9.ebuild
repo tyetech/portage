@@ -1,13 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.4-r5.ebuild,v 1.1 2007/05/28 18:30:23 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/ppp/Attic/ppp-2.4.4-r9.ebuild,v 1.1 2007/07/09 07:11:37 mrness Exp $
 
 inherit eutils flag-o-matic toolchain-funcs linux-info
 
 DESCRIPTION="Point-to-Point Protocol (PPP)"
 HOMEPAGE="http://www.samba.org/ppp"
 SRC_URI="ftp://ftp.samba.org/pub/ppp/${P}.tar.gz
-	mirror://gentoo/${P}-patches-20070528.tar.gz
+	mirror://gentoo/${P}-patches-20070614.tar.gz
 	dhcp? ( http://www.netservers.co.uk/gpl/ppp-dhcpc.tgz )"
 
 LICENSE="BSD GPL-2"
@@ -48,6 +48,8 @@ src_unpack() {
 	epatch "${WORKDIR}/patch/mschapv2-initialize-response.patch"
 	epatch "${WORKDIR}/patch/linkpidfile.patch"
 	epatch "${WORKDIR}/patch/qa-fixes.patch"
+	epatch "${WORKDIR}/patch/kill-pg.patch"
+	epatch "${WORKDIR}/patch/auth-fail.patch"
 
 	use eap-tls && {
 		# see http://eaptls.spe.net/index.html for more info
@@ -141,7 +143,12 @@ src_install() {
 		doman ${y}/${y}.8
 		dosbin ${y}/${y}
 	done
-	chmod u+s-w "${D}/usr/sbin/pppd"
+	fperms u+s-w /usr/sbin/pppd
+
+	# Install pppd header files
+	pushd pppd && \
+		make INSTROOT="${D}" install-devel && \
+		popd || die "make install-devel failed"
 
 	dosbin pppd/plugins/rp-pppoe/pppoe-discovery
 
