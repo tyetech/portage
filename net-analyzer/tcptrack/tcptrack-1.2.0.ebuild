@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptrack/Attic/tcptrack-1.2.0.ebuild,v 1.1 2007/05/12 14:08:11 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptrack/Attic/tcptrack-1.2.0.ebuild,v 1.2 2007/07/09 17:28:23 armin76 Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.rhythm.cx/~steve/devel/tcptrack/release/${PV}/source/${P}.ta
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~amd64 ~ppc x86"
 IUSE=""
 
 DEPEND="net-libs/libpcap
