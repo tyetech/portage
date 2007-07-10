@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-epgsearch/Attic/vdr-epgsearch-0.9.17d.ebuild,v 1.3 2007/02/01 10:42:11 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-epgsearch/Attic/vdr-epgsearch-0.9.17d.ebuild,v 1.4 2007/07/10 23:08:59 mr_bones_ Exp $
 
 inherit vdr-plugin
 
@@ -21,4 +21,3 @@ src_unpack() {
 	cd ${S}
 	fix_vdr_libsi_include conflictcheck.c
 }
-

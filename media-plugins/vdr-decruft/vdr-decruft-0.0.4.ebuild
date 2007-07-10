@@ -1,6 +1,6 @@
 # Copyright 2003-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-decruft/Attic/vdr-decruft-0.0.4.ebuild,v 1.3 2006/08/15 13:56:05 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-decruft/Attic/vdr-decruft-0.0.4.ebuild,v 1.4 2007/07/10 23:09:00 mr_bones_ Exp $
 
 IUSE=""
 inherit vdr-plugin eutils
@@ -27,4 +27,3 @@ src_install() {
 	insinto /etc/vdr/plugins
 	doins examples/decruft.conf
 }
-

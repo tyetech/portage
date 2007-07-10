@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-wirbelscan/vdr-wirbelscan-0.0.2.ebuild,v 1.2 2006/12/02 22:15:24 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-wirbelscan/vdr-wirbelscan-0.0.2.ebuild,v 1.3 2007/07/10 23:08:59 mr_bones_ Exp $
 
 inherit vdr-plugin
 
@@ -15,5 +15,3 @@ IUSE=""
 
 DEPEND="media-video/vdr
 	!<media-tv/ivtv-0.8"
-
-
