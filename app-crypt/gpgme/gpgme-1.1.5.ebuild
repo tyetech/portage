@@ -1,8 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gpgme/Attic/gpgme-1.1.5.ebuild,v 1.1 2007/07/10 03:34:40 alonbl Exp $
-
-inherit eutils libtool
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gpgme/Attic/gpgme-1.1.5.ebuild,v 1.2 2007/07/10 03:37:33 alonbl Exp $
 
 DESCRIPTION="GnuPG Made Easy is a library for making GnuPG easier to use"
 HOMEPAGE="http://www.gnupg.org/(en)/related_software/gpgme/index.html"
