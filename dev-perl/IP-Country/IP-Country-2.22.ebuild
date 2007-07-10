@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/IP-Country/Attic/IP-Country-2.22.ebuild,v 1.1 2007/01/02 13:59:25 mcummings Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/IP-Country/Attic/IP-Country-2.22.ebuild,v 1.2 2007/07/10 23:33:29 mr_bones_ Exp $
 
 inherit perl-module
 
@@ -18,4 +18,3 @@ SRC_TEST="do"
 DEPEND="dev-perl/Geography-Countries
 	dev-lang/perl"
 mydoc="TODO"
-
