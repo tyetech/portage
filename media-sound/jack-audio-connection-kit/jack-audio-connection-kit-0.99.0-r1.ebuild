@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-audio-connection-kit/Attic/jack-audio-connection-kit-0.99.0-r1.ebuild,v 1.10 2007/02/28 22:16:44 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-audio-connection-kit/Attic/jack-audio-connection-kit-0.99.0-r1.ebuild,v 1.11 2007/07/11 19:30:24 mr_bones_ Exp $
 
 IUSE="altivec alsa caps doc debug jack-tmpfs oss portaudio"
 
@@ -81,4 +81,3 @@ src_install() {
 
 	rm -rf ${D}/usr/share/doc/${PF}/reference
 }
-

@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/shntool/Attic/shntool-3.0.2.ebuild,v 1.1 2007/04/15 12:00:38 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/shntool/Attic/shntool-3.0.2.ebuild,v 1.2 2007/07/11 19:30:24 mr_bones_ Exp $
 
 IUSE="flac shorten sox wavpack"
 
@@ -21,4 +21,3 @@ src_install () {
 	dodoc doc/*
 	dodoc NEWS README ChangeLog AUTHORS
 }
-

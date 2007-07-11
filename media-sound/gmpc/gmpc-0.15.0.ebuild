@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gmpc/Attic/gmpc-0.15.0.ebuild,v 1.1 2007/05/21 13:15:04 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gmpc/Attic/gmpc-0.15.0.ebuild,v 1.2 2007/07/11 19:30:24 mr_bones_ Exp $
 
 IUSE="gnome session"
 
@@ -33,4 +33,3 @@ src_install() {
 }
 
 DOCS="AUTHORS ChangeLog NEWS README"
-

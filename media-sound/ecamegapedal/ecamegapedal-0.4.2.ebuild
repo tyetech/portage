@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ecamegapedal/Attic/ecamegapedal-0.4.2.ebuild,v 1.9 2005/09/04 10:33:28 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ecamegapedal/Attic/ecamegapedal-0.4.2.ebuild,v 1.10 2007/07/11 19:30:24 mr_bones_ Exp $
 
 DESCRIPTION="Ecamegapedal is a real-time effect processor."
 HOMEPAGE="http://www.wakkanet.fi/~kaiv/ecamegapedal/"
@@ -24,4 +24,3 @@ src_install() {
 	make DESTDIR=${D} install || die
 	dodoc NEWS README TODO
 }
-

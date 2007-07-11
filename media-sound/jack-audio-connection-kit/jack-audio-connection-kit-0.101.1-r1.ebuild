@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-audio-connection-kit/Attic/jack-audio-connection-kit-0.101.1-r1.ebuild,v 1.15 2007/06/29 12:37:29 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-audio-connection-kit/Attic/jack-audio-connection-kit-0.101.1-r1.ebuild,v 1.16 2007/07/11 19:30:24 mr_bones_ Exp $
 
 inherit flag-o-matic eutils multilib linux-info
 
@@ -26,7 +26,6 @@ RDEPEND="dev-util/pkgconfig
 DEPEND="${RDEPEND}
 	doc? ( app-doc/doxygen )
 	netjack? ( dev-util/scons )"
-
 
 pkg_setup() {
 	if ! use sndfile ; then

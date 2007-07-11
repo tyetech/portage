@@ -1,7 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/dir2ogg/Attic/dir2ogg-0.9.3.ebuild,v 1.3 2007/01/21 11:23:37 aballier Exp $
-
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/dir2ogg/Attic/dir2ogg-0.9.3.ebuild,v 1.4 2007/07/11 19:30:23 mr_bones_ Exp $
 
 DESCRIPTION="Converts Mp3, M4a, Wma, and Wav files to Ogg Vorbis format."
 HOMEPAGE="http://badcomputer.org/unix/dir2ogg/"

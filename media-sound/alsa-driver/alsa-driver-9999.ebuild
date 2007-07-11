@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-9999.ebuild,v 1.8 2007/01/30 00:34:06 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-9999.ebuild,v 1.9 2007/07/11 19:30:23 mr_bones_ Exp $
 
 inherit linux-mod flag-o-matic eutils multilib autotools mercurial
 
@@ -131,7 +131,6 @@ src_compile() {
 	ARCH=$(tc-arch)
 	ABI=${myABI}
 }
-
 
 src_install() {
 	emake DESTDIR="${D}" install-modules || die "make install failed"

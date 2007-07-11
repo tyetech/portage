@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/podcatcher/Attic/podcatcher-1.3.7.ebuild,v 1.2 2007/01/14 09:57:11 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/podcatcher/Attic/podcatcher-1.3.7.ebuild,v 1.3 2007/07/11 19:30:23 mr_bones_ Exp $
 
 DESCRIPTION="A podcast client for the command-line written in Ruby."
 HOMEPAGE="http://podcatcher.rubyforge.org/"
@@ -21,4 +21,3 @@ src_install() {
 	dobin podcatcher
 	dodoc README sample.opml sample.pcast
 }
-
