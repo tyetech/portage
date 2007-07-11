@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/dcoppython/Attic/dcoppython-3.5.5.ebuild,v 1.8 2006/12/11 13:51:11 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/dcoppython/Attic/dcoppython-3.5.5.ebuild,v 1.9 2007/07/11 01:08:47 mr_bones_ Exp $
 
 KMNAME=kdebindings
 KM_MAKEFILESREV=1
@@ -25,4 +25,3 @@ src_compile() {
 	myconf="$myconf --prefix=/usr"
 	kde_src_compile configure make
 }
-
