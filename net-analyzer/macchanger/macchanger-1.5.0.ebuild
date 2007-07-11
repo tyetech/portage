@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/macchanger/macchanger-1.5.0.ebuild,v 1.7 2005/09/20 03:18:31 vanquirius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/macchanger/macchanger-1.5.0.ebuild,v 1.8 2007/07/11 23:49:24 mr_bones_ Exp $
 
 DESCRIPTION="Utility for viewing/manipulating the MAC address of network interfaces"
 HOMEPAGE="http://www.alobbs.com/macchanger"
@@ -11,7 +11,6 @@ IUSE=""
 SLOT="0"
 
 DEPEND="virtual/libc"
-
 
 src_compile() {
 	# Shared data is installed below /lib, see Bug #57046

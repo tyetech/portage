@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/snortsam/Attic/snortsam-2.30.ebuild,v 1.5 2007/05/01 22:39:36 genone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/snortsam/Attic/snortsam-2.30.ebuild,v 1.6 2007/07/11 23:49:24 mr_bones_ Exp $
 
 inherit eutils
 
@@ -40,5 +40,3 @@ pkg_postinst() {
 	elog "snortsam for your particular firewall."
 	echo
 }
-
-
