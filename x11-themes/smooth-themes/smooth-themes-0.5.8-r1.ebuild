@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/smooth-themes/Attic/smooth-themes-0.5.8-r1.ebuild,v 1.7 2007/06/16 17:01:23 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/smooth-themes/Attic/smooth-themes-0.5.8-r1.ebuild,v 1.8 2007/07/11 02:54:47 leio Exp $
 
 WANT_AUTOMAKE=1.8
 inherit autotools eutils
@@ -16,7 +16,6 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=">=x11-themes/gtk-engines-2"
-
 
 src_unpack() {
 	unpack "${A}"
