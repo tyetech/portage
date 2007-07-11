@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/snip/snip-0.11.ebuild,v 1.2 2007/04/15 11:05:05 fordfrog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/snip/snip-0.11.ebuild,v 1.3 2007/07/11 19:58:37 mr_bones_ Exp $
 
 JAVA_PKG_IUSE="doc source"
 inherit eutils java-pkg-2 java-ant-2
@@ -37,4 +37,3 @@ src_install() {
 	use doc && java-pkg_dojavadoc javadoc
 	use source && java-pkg_dosrc src/java/com
 }
-

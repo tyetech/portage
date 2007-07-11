@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/eclipse-ecj/Attic/eclipse-ecj-3.1-r13.ebuild,v 1.10 2007/04/25 18:19:35 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/eclipse-ecj/Attic/eclipse-ecj-3.1-r13.ebuild,v 1.11 2007/07/11 19:58:38 mr_bones_ Exp $
 
 inherit eutils java-pkg-2 java-ant-2
 
@@ -39,4 +39,3 @@ src_install() {
 	newins ${FILESDIR}/compiler-settings-${SLOT} ecj-${SLOT}
 
 }
-

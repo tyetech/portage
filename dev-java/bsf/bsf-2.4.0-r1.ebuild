@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/bsf/bsf-2.4.0-r1.ebuild,v 1.1 2007/05/28 23:00:41 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/bsf/bsf-2.4.0-r1.ebuild,v 1.2 2007/07/11 19:58:37 mr_bones_ Exp $
 
 JAVA_PKG_IUSE="doc examples source"
 inherit java-pkg-2 eutils java-ant-2
@@ -54,7 +54,6 @@ src_compile() {
 		antflags="${antflags} -Djacl.present=true"
 		pkgs="${pkgs},jacl"
 	fi
-
 
 	local cp="$(java-pkg_getjars ${pkgs})"
 	eant -Dgentoo.classpath="${cp}" ${antflags} jar

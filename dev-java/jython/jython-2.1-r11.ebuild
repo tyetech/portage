@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jython/jython-2.1-r11.ebuild,v 1.7 2007/04/12 14:02:21 welp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jython/jython-2.1-r11.ebuild,v 1.8 2007/07/11 19:58:38 mr_bones_ Exp $
 
 inherit base java-pkg-2
 
@@ -34,7 +34,6 @@ src_unpack() {
 	# bug #160861
 	rm -rf org/apache
 }
-
 
 src_compile() {
 	local cp="$(java-pkg_getjars jakarta-oro-2.0)"
