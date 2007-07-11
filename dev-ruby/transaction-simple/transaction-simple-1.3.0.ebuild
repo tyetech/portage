@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/transaction-simple/Attic/transaction-simple-1.3.0.ebuild,v 1.5 2006/11/11 17:11:04 peper Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/transaction-simple/Attic/transaction-simple-1.3.0.ebuild,v 1.6 2007/07/11 05:23:08 mr_bones_ Exp $
 
 inherit ruby gems
 
@@ -15,4 +15,3 @@ IUSE=""
 
 USE_RUBY="any"
 DEPEND="virtual/ruby"
-
