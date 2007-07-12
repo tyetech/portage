@@ -1,7 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libjackasyn/libjackasyn-0.13.ebuild,v 1.2 2007/02/13 22:14:50 aballier Exp $
-
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libjackasyn/libjackasyn-0.13.ebuild,v 1.3 2007/07/12 03:10:24 mr_bones_ Exp $
 
 inherit eutils toolchain-funcs
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgpod/Attic/libgpod-0.5.2.ebuild,v 1.4 2007/06/28 17:18:12 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgpod/Attic/libgpod-0.5.2.ebuild,v 1.5 2007/07/12 03:10:24 mr_bones_ Exp $
 
 inherit eutils
 
@@ -55,4 +55,3 @@ src_install() {
 	make DESTDIR=${D} install || die "install failed"
 	dodoc README TROUBLESHOOTING AUTHORS
 }
-
