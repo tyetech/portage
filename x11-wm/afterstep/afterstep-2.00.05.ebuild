@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/afterstep/Attic/afterstep-2.00.05.ebuild,v 1.8 2007/04/28 16:30:49 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/afterstep/Attic/afterstep-2.00.05.ebuild,v 1.9 2007/07/12 03:41:53 mr_bones_ Exp $
 
 inherit flag-o-matic
 
@@ -129,4 +129,3 @@ pkg_postinst() {
 	einfo "http://www.PLiG.org/xwinman/vote.html !"
 	echo
 }
-
