@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/fluxbox-styles-fluxmod/fluxbox-styles-fluxmod-20050128-r1.ebuild,v 1.2 2006/12/07 02:12:14 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/fluxbox-styles-fluxmod/fluxbox-styles-fluxmod-20050128-r1.ebuild,v 1.3 2007/07/12 07:35:24 mr_bones_ Exp $
 
 inherit eutils
 
@@ -55,4 +55,3 @@ pkg_postinst() {
 	einfo
 	epause
 }
-
