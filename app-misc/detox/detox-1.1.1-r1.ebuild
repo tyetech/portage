@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/detox/Attic/detox-1.1.1-r1.ebuild,v 1.7 2006/09/03 19:53:39 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/detox/Attic/detox-1.1.1-r1.ebuild,v 1.8 2007/07/12 03:35:11 mr_bones_ Exp $
 
 inherit eutils
 
@@ -35,4 +35,3 @@ src_install() {
 	rm -f "${D}/etc/detoxrc.sample"
 	dodoc README CHANGES
 }
-
