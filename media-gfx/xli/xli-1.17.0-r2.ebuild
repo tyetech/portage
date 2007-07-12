@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/xli/Attic/xli-1.17.0-r2.ebuild,v 1.12 2006/01/25 04:06:59 spyderous Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/xli/Attic/xli-1.17.0-r2.ebuild,v 1.13 2007/07/12 04:08:47 mr_bones_ Exp $
 
 inherit alternatives eutils
 
@@ -62,7 +62,6 @@ src_compile() {
 
 	emake CDEBUGFLAGS="${CFLAGS}" || die
 }
-
 
 src_install() {
 	into /usr
