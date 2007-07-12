@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-back-xlib/Attic/gnustep-back-xlib-0.11.0.ebuild,v 1.1 2007/03/26 18:44:07 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-back-xlib/Attic/gnustep-back-xlib-0.11.0.ebuild,v 1.2 2007/07/12 16:11:17 mr_bones_ Exp $
 
 inherit gnustep
 
@@ -58,4 +58,3 @@ src_compile() {
 
 	egnustep_make
 }
-

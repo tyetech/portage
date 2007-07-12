@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-gui/Attic/gnustep-gui-0.9.5.ebuild,v 1.8 2006/03/25 08:57:34 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-gui/Attic/gnustep-gui-0.9.5.ebuild,v 1.9 2007/07/12 16:11:17 mr_bones_ Exp $
 
 inherit gnustep
 
@@ -47,4 +47,3 @@ src_compile() {
 
 	egnustep_make || die
 }
-
