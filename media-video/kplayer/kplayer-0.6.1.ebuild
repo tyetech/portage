@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/kplayer/Attic/kplayer-0.6.1.ebuild,v 1.4 2007/05/27 19:11:28 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/kplayer/Attic/kplayer-0.6.1.ebuild,v 1.5 2007/07/12 02:40:42 mr_bones_ Exp $
 
 inherit kde
 
@@ -34,4 +34,3 @@ src_unpack () {
 	done
 	rm -f "${S}/configure"
 }
-
