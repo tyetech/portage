@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/babel/Attic/babel-1.6.ebuild,v 1.3 2007/04/28 16:43:58 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/babel/Attic/babel-1.6.ebuild,v 1.4 2007/07/13 05:48:10 mr_bones_ Exp $
 
 inherit eutils
 
@@ -45,4 +45,3 @@ src_install () {
 	dodoc README.1ST
 
 }
-
