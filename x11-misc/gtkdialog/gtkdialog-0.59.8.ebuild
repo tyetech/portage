@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gtkdialog/Attic/gtkdialog-0.59.8.ebuild,v 1.8 2006/11/02 03:03:58 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gtkdialog/Attic/gtkdialog-0.59.8.ebuild,v 1.9 2007/07/13 05:09:41 mr_bones_ Exp $
 
 inherit eutils
 
@@ -36,4 +36,3 @@ src_install(){
 	fi
 
 }
-
