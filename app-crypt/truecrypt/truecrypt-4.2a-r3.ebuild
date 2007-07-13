@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/truecrypt/Attic/truecrypt-4.2a-r3.ebuild,v 1.2 2007/03/27 12:21:48 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/truecrypt/Attic/truecrypt-4.2a-r3.ebuild,v 1.3 2007/07/13 21:47:34 mr_bones_ Exp $
 
 inherit linux-mod toolchain-funcs
 
@@ -106,4 +106,3 @@ dmcrypt_check() {
 		epause 10
 	fi
 }
-
