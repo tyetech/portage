@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libksnmp/Attic/libksnmp-0.3.ebuild,v 1.4 2006/02/06 00:05:43 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libksnmp/Attic/libksnmp-0.3.ebuild,v 1.5 2007/07/13 07:18:13 mr_bones_ Exp $
 
 inherit kde
 
@@ -18,4 +18,3 @@ DEPEND="net-analyzer/net-snmp"
 need-kde 3.1
 
 PATCHES="${FILESDIR}/${P}-gcc41.patch"
-

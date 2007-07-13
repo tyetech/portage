@@ -1,9 +1,8 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/linc/Attic/linc-0.5.3.ebuild,v 1.13 2004/07/15 01:13:21 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/linc/Attic/linc-0.5.3.ebuild,v 1.14 2007/07/13 07:18:13 mr_bones_ Exp $
 
 IUSE="doc"
-
 
 inherit libtool
 
