@@ -1,9 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/fpc/Attic/fpc-2.0.2.ebuild,v 1.6 2007/03/10 14:43:24 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/fpc/Attic/fpc-2.0.2.ebuild,v 1.7 2007/07/13 06:25:50 mr_bones_ Exp $
 
 inherit eutils
-
 
 PV_BIN="2.0.0"
 S="${WORKDIR}/fpc"
