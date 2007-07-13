@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/fireflier/Attic/fireflier-1.1.6.ebuild,v 1.2 2007/03/02 22:02:10 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/fireflier/Attic/fireflier-1.1.6.ebuild,v 1.3 2007/07/13 07:21:37 mr_bones_ Exp $
 
 inherit eutils kde linux-mod qt3
 
@@ -85,4 +85,3 @@ pkg_postinst () {
 	ewarn "the first time you start fireflierd as otherwise your"
 	ewarn "system will be nearly unusable (no username-resolution!)"
 }
-
