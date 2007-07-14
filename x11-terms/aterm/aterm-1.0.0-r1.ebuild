@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/aterm/Attic/aterm-1.0.0-r1.ebuild,v 1.7 2006/12/07 17:42:50 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/aterm/Attic/aterm-1.0.0-r1.ebuild,v 1.8 2007/07/14 21:54:51 mr_bones_ Exp $
 
 inherit flag-o-matic
 
@@ -77,4 +77,3 @@ pkg_postinst() {
 	ewarn "experiencing problems with transparency in aterm."
 	echo
 }
-
