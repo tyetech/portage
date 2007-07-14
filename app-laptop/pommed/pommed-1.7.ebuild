@@ -1,13 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/pommed/Attic/pommed-1.4.ebuild,v 1.2 2007/05/14 21:31:45 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/pommed/Attic/pommed-1.7.ebuild,v 1.1 2007/07/14 15:33:19 cedk Exp $
 
 inherit eutils toolchain-funcs
 
 DESCRIPTION="Daemon managing special features such as screen and keyboard \
 backlight on Apple MacBook Pro/PowerBook laptops"
 HOMEPAGE="http://technologeek.org/projects/pommed/index.html"
-ALIOTH_NUMBER="1967"
+ALIOTH_NUMBER="2054"
 SRC_URI="http://alioth.debian.org/frs/download.php/${ALIOTH_NUMBER}/${P}.tar.gz"
 
 LICENSE="GPL-2"
