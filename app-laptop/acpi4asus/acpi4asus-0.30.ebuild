@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/acpi4asus/Attic/acpi4asus-0.30.ebuild,v 1.1 2006/06/05 09:25:36 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-laptop/cvs-repo/gentoo-x86/app-laptop/acpi4asus/Attic/acpi4asus-0.30.ebuild,v 1.2 2007/07/15 07:10:12 mr_bones_ Exp $
 
 inherit linux-mod
 
@@ -25,7 +25,6 @@ src_compile() {
 
 	emake -C asus_acpid
 }
-
 
 src_install() {
 	linux-mod_src_install
