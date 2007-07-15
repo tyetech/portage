@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/guile-gtk/guile-gtk-1.2.0.41.ebuild,v 1.6 2007/05/05 17:34:12 hkbst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/guile-gtk/guile-gtk-1.2.0.41.ebuild,v 1.7 2007/07/15 05:53:11 mr_bones_ Exp $
 
 MAJOR_PV=${PV%.[0-9]*.[0-9]*}
 MINOR_PV=${PV#[0-9]*.[0-9]*.}
@@ -12,7 +12,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE=""
-
 
 DEPEND="=dev-scheme/guile-1.6*
 		=x11-libs/gtk+-1.2*"
