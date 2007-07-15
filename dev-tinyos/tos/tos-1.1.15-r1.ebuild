@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tinyos/cvs-repo/gentoo-x86/dev-tinyos/tos/Attic/tos-1.1.15-r1.ebuild,v 1.3 2006/11/14 21:19:06 sanchan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tinyos/cvs-repo/gentoo-x86/dev-tinyos/tos/Attic/tos-1.1.15-r1.ebuild,v 1.4 2007/07/15 02:46:39 mr_bones_ Exp $
 inherit eutils
 
 CVS_MONTH="Dec"
@@ -68,4 +68,3 @@ pkg_postinst() {
 	ebeep 5
 	epause 5
 }
-
