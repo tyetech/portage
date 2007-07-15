@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/gfsview/Attic/gfsview-0.4.2.ebuild,v 1.1 2006/04/05 04:06:15 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/gfsview/Attic/gfsview-0.4.2.ebuild,v 1.2 2007/07/15 02:36:19 mr_bones_ Exp $
 
 inherit eutils
 
@@ -21,5 +21,3 @@ src_install() {
 	make DESTDIR="${D}" install || die "Install failed"
 	dodoc AUTHORS ChangeLog NEWS README TODO
 }
-
-
