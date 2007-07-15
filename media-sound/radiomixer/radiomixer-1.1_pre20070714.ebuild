@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/radiomixer/Attic/radiomixer-1.1_pre20070714.ebuild,v 1.1 2007/07/14 14:15:42 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/radiomixer/Attic/radiomixer-1.1_pre20070714.ebuild,v 1.2 2007/07/15 06:34:48 mr_bones_ Exp $
 
 inherit kde-functions eutils
 
@@ -100,4 +100,3 @@ src_compile() {
 src_install() {
 	dobin bin/radiomixer || die "dobin failed"
 }
-
