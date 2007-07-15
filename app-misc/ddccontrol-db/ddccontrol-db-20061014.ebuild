@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/ddccontrol-db/ddccontrol-db-20061014.ebuild,v 1.2 2007/01/04 08:27:45 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/ddccontrol-db/ddccontrol-db-20061014.ebuild,v 1.3 2007/07/15 12:03:47 nixnut Exp $
 
 DESCRIPTION="DDCControl monitor database"
 HOMEPAGE="http://ddccontrol.sourceforge.net/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/${PN/-db}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~ppc"
+KEYWORDS="~amd64 ppc ~x86"
 IUSE="nls"
 
 RDEPEND="nls? ( sys-devel/gettext )"
