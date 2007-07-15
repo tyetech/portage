@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/pam_p11/Attic/pam_p11-0.1.2.ebuild,v 1.9 2006/11/25 21:42:14 kloeri Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/pam_p11/Attic/pam_p11-0.1.2.ebuild,v 1.10 2007/07/15 02:34:06 mr_bones_ Exp $
 
 inherit pam
 
@@ -25,4 +25,3 @@ src_install() {
 
 	dohtml doc/*.html doc/*.css
 }
-

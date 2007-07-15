@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/pam_userdb/Attic/pam_userdb-0.99.8.0.ebuild,v 1.1 2007/07/08 15:37:36 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/pam_userdb/Attic/pam_userdb-0.99.8.0.ebuild,v 1.2 2007/07/15 02:34:06 mr_bones_ Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -34,7 +34,6 @@ RDEPEND="${RDEPEND}
 	>=sys-libs/db-${BDB_VER}"
 
 S="${WORKDIR}/${MY_P}"
-
 
 src_unpack() {
 	unpack ${A}
