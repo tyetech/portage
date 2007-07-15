@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/ck/Attic/ck-8.0.ebuild,v 1.10 2006/12/12 23:56:33 masterdriverz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/ck/Attic/ck-8.0.ebuild,v 1.11 2007/07/15 03:37:38 mr_bones_ Exp $
 
 MY_P=${PN}${PV}
 S=${WORKDIR}/${MY_P}
@@ -29,5 +29,3 @@ src_install() {
 	dodoc README license.terms
 	einstall || die "Failed to install."
 }
-
-
