@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.10.9.ebuild,v 1.10 2007/07/15 05:53:11 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.10.14.ebuild,v 1.1 2007/07/16 23:53:28 leio Exp $
 
 inherit gnome.org flag-o-matic eutils autotools virtualx
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gtk.org/"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 ~sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="debug doc jpeg tiff xinerama"
 
 RDEPEND="x11-libs/libXrender
@@ -62,11 +62,14 @@ src_unpack() {
 	cd "${S}"
 
 	# Optionalize xinerama support
-	epatch "${FILESDIR}"/${PN}-2.8.10-xinerama.patch
+	epatch "${FILESDIR}/${PN}-2.8.10-xinerama.patch"
+
+	# Make gtk-update-icon-cache check subdirs in it's update check
+	epatch "${FILESDIR}"/${PN}-2.10.11-update-icon-subdirs.patch
 
 	# use an arch-specific config directory so that 32bit and 64bit versions
 	# dont clash on multilib systems
-	has_multilib_profile && epatch "${FILESDIR}"/${PN}-2.8.0-multilib.patch
+	has_multilib_profile && epatch "${FILESDIR}/${PN}-2.8.0-multilib.patch"
 
 	# Revert DND change that makes mozilla products DND broken
 	EPATCH_OPTS="-R" epatch "${FILESDIR}/${PN}-2.10.7-mozilla-dnd-fix.patch"
