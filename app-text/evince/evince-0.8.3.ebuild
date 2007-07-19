@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/evince/Attic/evince-0.8.1.ebuild,v 1.4 2007/07/08 04:16:37 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/evince/Attic/evince-0.8.3.ebuild,v 1.1 2007/07/19 14:24:12 eva Exp $
 
 WANT_AUTOMAKE="1.9"
 inherit eutils gnome2 autotools
@@ -64,18 +64,14 @@ pkg_setup() {
 	fi
 }
 
-src_unpack(){
-	unpack "${A}"
-	cd "${S}"
+src_unpack() {
+	gnome2_src_unpack
 
 	# Fix .desktop file so menu item shows up
 	epatch ${FILESDIR}/${PN}-0.7.1-display-menu.patch
 
 	# Make dbus actually switchable
 	epatch ${FILESDIR}/${PN}-0.6.1-dbus-switch.patch
-
-	# Fix build on fbsd.  Bug #178471
-	epatch "${FILESDIR}"/${P}-freebsd.patch
 
 	cp aclocal.m4 old_macros.m4
 	AT_M4DIR="." eautoreconf
