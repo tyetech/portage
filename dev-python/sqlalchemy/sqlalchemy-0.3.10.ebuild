@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sqlalchemy/Attic/sqlalchemy-0.3.8.ebuild,v 1.1 2007/06/03 18:44:36 lucass Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sqlalchemy/Attic/sqlalchemy-0.3.10.ebuild,v 1.1 2007/07/21 07:05:20 lucass Exp $
 
 NEED_PYTHON=2.4
 
