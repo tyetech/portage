@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/terminus-font/Attic/terminus-font-4.20.ebuild,v 1.11 2007/03/18 12:07:51 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/terminus-font/Attic/terminus-font-4.20.ebuild,v 1.12 2007/07/22 07:44:11 dirtyepic Exp $
 
 DESCRIPTION="A clean fixed font for the console and X11"
 HOMEPAGE="http://www.is-vn.bg/hamster/jimmy-en.html"
@@ -10,9 +10,7 @@ SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 IUSE="X"
 
-DEPEND="sys-apps/gawk
-		dev-lang/perl
-		X? ( || ( x11-apps/bdftopcf virtual/x11 ) )"
+DEPEND="x11-apps/bdftopcf"
 RDEPEND=""
 
 src_compile() {
