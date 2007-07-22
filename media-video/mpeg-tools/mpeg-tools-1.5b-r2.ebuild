@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mpeg-tools/Attic/mpeg-tools-1.5b-r2.ebuild,v 1.6 2007/01/05 20:39:33 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mpeg-tools/Attic/mpeg-tools-1.5b-r2.ebuild,v 1.7 2007/07/22 08:46:49 dberkholz Exp $
 
 inherit eutils
 
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-DEPEND="|| ( x11-libs/libX11 virtual/x11 )
+DEPEND="x11-libs/libX11
 	media-libs/jpeg"
 
 S=${WORKDIR}/${MY_PN}
