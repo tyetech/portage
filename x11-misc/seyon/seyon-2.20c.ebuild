@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/seyon/Attic/seyon-2.20c.ebuild,v 1.9 2007/03/10 00:13:20 omp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/seyon/Attic/seyon-2.20c.ebuild,v 1.10 2007/07/22 03:55:54 dberkholz Exp $
 
 inherit eutils
 
@@ -13,17 +13,15 @@ SLOT="0"
 KEYWORDS="~ppc x86"
 IUSE=""
 
-RDEPEND="|| ( (
-		app-text/rman
-		x11-misc/imake
-		x11-libs/libX11
-		x11-libs/libXmu
-		x11-libs/libXt
-		x11-libs/libXaw
-		x11-libs/libXext
-		x11-libs/libXpm
-		x11-libs/libXp )
-	virtual/x11 )"
+RDEPEND="app-text/rman
+	x11-misc/imake
+	x11-libs/libX11
+	x11-libs/libXmu
+	x11-libs/libXt
+	x11-libs/libXaw
+	x11-libs/libXext
+	x11-libs/libXpm
+	x11-libs/libXp"
 DEPEND="${RDEPEND}"
 
 src_compile() {
