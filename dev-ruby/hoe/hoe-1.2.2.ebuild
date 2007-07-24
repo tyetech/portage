@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/hoe/Attic/hoe-1.2.0.ebuild,v 1.2 2007/04/13 23:33:35 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/hoe/Attic/hoe-1.2.2.ebuild,v 1.1 2007/07/24 07:21:44 graaff Exp $
 
 inherit ruby gems
 
@@ -16,5 +16,5 @@ IUSE=""
 USE_RUBY="ruby18"
 
 DEPEND=">=dev-lang/ruby-1.8.4
-	>=dev-ruby/rake-0.7.1
-	>=dev-ruby/rubyforge-0.4.0"
+	>=dev-ruby/rake-0.7.3
+	>=dev-ruby/rubyforge-0.4.2"
