@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/ifplugd/Attic/ifplugd-0.28-r8.ebuild,v 1.1 2007/03/23 14:15:09 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/ifplugd/Attic/ifplugd-0.28-r8.ebuild,v 1.2 2007/07/26 10:37:21 uberlord Exp $
 
 inherit eutils
 
@@ -16,6 +16,8 @@ IUSE="doc"
 DEPEND="dev-util/pkgconfig
 	doc? ( www-client/lynx )
 	>=dev-libs/libdaemon-0.5"
+RDEPEND=">=dev-libs/libdaemon-0.5
+	>=sys-apps/baselayout-1.12"
 
 src_unpack() {
 	unpack ${A}
