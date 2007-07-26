@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/emacs-w3m/Attic/emacs-w3m-1.4.4.20070704.ebuild,v 1.1 2007/07/17 08:03:48 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/emacs-w3m/Attic/emacs-w3m-1.4.4_p20070726.ebuild,v 1.1 2007/07/26 20:18:03 ulm Exp $
 
 inherit elisp autotools
 
@@ -17,6 +17,8 @@ DEPEND="virtual/w3m"
 RDEPEND="${DEPEND}"
 
 SITEFILE=71${PN}-gentoo.el
+
+S="${WORKDIR}/${PN}"
 
 src_unpack() {
 	unpack ${A}
