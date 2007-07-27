@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/gnome-mag/Attic/gnome-mag-0.14.6.ebuild,v 1.1 2007/07/21 22:30:58 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/gnome-mag/Attic/gnome-mag-0.14.6.ebuild,v 1.2 2007/07/27 03:25:59 mr_bones_ Exp $
 
 inherit virtualx gnome2
 
@@ -45,4 +45,3 @@ src_test() {
 	echo "colorblind/data/colorblind-applet.schemas.in" >> ${S}/po/POTFILES.skip
 	Xmake check || die
 }
-
