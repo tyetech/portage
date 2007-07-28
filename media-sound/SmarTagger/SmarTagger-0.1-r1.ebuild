@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/SmarTagger/SmarTagger-0.1-r1.ebuild,v 1.2 2007/07/28 16:57:23 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/SmarTagger/SmarTagger-0.1-r1.ebuild,v 1.3 2007/07/28 18:54:31 beandog Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://freshmeat.net/redir/smartagger/9680/url_tgz/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 IUSE=""
 
 RDEPEND="dev-lang/perl
