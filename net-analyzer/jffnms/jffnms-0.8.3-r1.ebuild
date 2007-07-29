@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/jffnms/Attic/jffnms-0.8.3-r1.ebuild,v 1.1 2007/02/01 16:37:54 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/jffnms/Attic/jffnms-0.8.3-r1.ebuild,v 1.2 2007/07/29 17:00:36 phreak Exp $
 
 inherit eutils depend.php
 
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="mysql postgres snmp"
 
-DEPEND="net-www/apache
+DEPEND="www-servers/apache
 	net-analyzer/rrdtool
 	media-libs/gd
 	dev-php/PEAR-PEAR
