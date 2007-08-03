@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/minuit/Attic/minuit-5.16.00.ebuild,v 1.1 2007/08/01 19:15:35 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/minuit/Attic/minuit-5.16.00.ebuild,v 1.2 2007/08/03 01:54:11 mr_bones_ Exp $
 
 MY_PN=Minuit2
 
@@ -18,7 +18,6 @@ IUSE="doc"
 DEPEND="doc? ( app-doc/doxygen )"
 
 S=${WORKDIR}/${MY_PN}-${PV}
-
 
 src_compile() {
 	econf || die "econf failed"
