@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/allegrogl/Attic/allegrogl-0.4.1.ebuild,v 1.1 2007/06/29 14:25:14 nyhm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/allegrogl/Attic/allegrogl-0.4.2.ebuild,v 1.1 2007/08/03 19:44:18 nyhm Exp $
 
 MY_PN="alleggl"
 DESCRIPTION="A library to mix OpenGL graphics with Allegro routines"
