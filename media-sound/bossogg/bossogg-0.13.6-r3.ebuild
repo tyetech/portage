@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bossogg/Attic/bossogg-0.13.6-r3.ebuild,v 1.8 2007/04/28 15:18:16 tove Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/bossogg/Attic/bossogg-0.13.6-r3.ebuild,v 1.9 2007/08/03 19:00:06 gustavoz Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -13,7 +13,7 @@ DESCRIPTION="Bossogg Music Server"
 HOMEPAGE="http://bossogg.wishy.org"
 SRC_URI="mirror://sourceforge/bossogg/${P}.tar.gz"
 
-KEYWORDS="~amd64 ~sparc ~x86"
+KEYWORDS="~amd64 sparc ~x86"
 SLOT="0"
 LICENSE="GPL-2"
 
