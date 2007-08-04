@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/postgrey/Attic/postgrey-1.27.ebuild,v 1.7 2007/06/26 18:26:03 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/postgrey/Attic/postgrey-1.30.ebuild,v 1.1 2007/08/04 15:49:22 dertobi123 Exp $
 
 inherit eutils
 
@@ -17,6 +17,7 @@ RDEPEND=">=dev-lang/perl-5.6.0
 	dev-perl/IO-Multiplex
 	dev-perl/BerkeleyDB
 	dev-perl/Net-DNS
+	dev-perl/Parse-Syslog
 	>=sys-libs/db-4.1"
 
 KEYWORDS="~alpha ~amd64 ~ppc64 ~sparc ~x86"
@@ -39,6 +40,9 @@ src_install () {
 	# postgrey binary
 	dosbin ${PN}
 	dosbin contrib/postgreyreport
+
+	# policy-test script
+	dosbin policy-test
 
 	# postgrey data in /etc/postfix
 	insinto /etc/postfix
