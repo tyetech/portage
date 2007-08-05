@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/singular/Attic/singular-3.0.1.2.ebuild,v 1.8 2007/07/13 05:28:09 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/singular/Attic/singular-3.0.1.2.ebuild,v 1.9 2007/08/05 17:20:48 markusle Exp $
 
 inherit eutils flag-o-matic
 
