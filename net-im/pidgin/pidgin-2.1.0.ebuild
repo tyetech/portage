@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.0.1.ebuild,v 1.5 2007/08/03 14:19:09 nyhm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.1.0.ebuild,v 1.1 2007/08/07 02:19:41 tester Exp $
 
 WANT_AUTOMAKE=1.9
 
@@ -15,7 +15,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PV}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="avahi bonjour cjk crypt dbus debug doc eds gadu gnutls gstreamer meanwhile networkmanager nls perl silc startup-notification tcl tk xscreensaver spell ssl qq msn gadu"
+IUSE="avahi bonjour crypt dbus debug doc eds gadu gnutls gstreamer meanwhile networkmanager nls perl silc startup-notification tcl tk xscreensaver spell qq gadu"
 IUSE="${IUSE} gtk sasl ncurses groupwise prediction zephyr" # mono"
 
 RDEPEND="
@@ -36,14 +36,8 @@ RDEPEND="
 		     =media-libs/gst-plugins-good-0.10* )
 	perl? ( >=dev-lang/perl-5.8.2-r1 )
 	gadu?  ( net-libs/libgadu )
-	ssl? (
-		gnutls? ( net-libs/gnutls )
-		!gnutls? ( >=dev-libs/nss-3.11 )
-	)
-	msn? (
-		gnutls? ( net-libs/gnutls )
-		!gnutls? ( >=dev-libs/nss-3.11 )
-	)
+	gnutls? ( net-libs/gnutls )
+	!gnutls? ( >=dev-libs/nss-3.11 )
 	meanwhile? ( net-libs/meanwhile )
 	silc? ( >=net-im/silc-toolkit-0.9.12-r3 )
 	zephyr? ( >=app-crypt/mit-krb5-1.3.6-r1 )
@@ -62,31 +56,43 @@ DEPEND="$RDEPEND
 	dev-util/pkgconfig
 	nls? ( sys-devel/gettext )"
 
-# PDEPEND="crypt? ( >=x11-plugins/gaim-encryption-3.0_beta5 )"
-
 S="${WORKDIR}/${MY_PV}"
 
 # Enable Default protocols
-DYNAMIC_PRPLS="irc,jabber,oscar,yahoo,zephyr,simple"
+DYNAMIC_PRPLS="irc,jabber,oscar,yahoo,zephyr,simple,msn"
 
 # List of plugins yet to be ported (will be removed at some point)
-#   app-accessibility/festival-gaim
-#   net-im/gaim-blogger
 #   net-im/gaim-bnet
-#   net-im/gaim-meanwhile (integrated in gaim)
-#   net-im/gaim-snpp (will soon be net-im/pidgin-snpp)
 #   x11-plugins/autoprofile
-#   x11-plugins/gaim-assistant
-#   x11-plugins/gaim-otr
-#   x11-plugins/gaimosd
 #   x11-plugins/gaim-xfire
+#   x11-plugins/gaim-galago
+#   x11-themes/gaim-smileys (get liquidx to fix it)
+
+# Abandonned
+#   x11-plugins/ignorance
+#   x11-plugins/bangexec
+#   x11-plugins/gaim-assistant
+# Last release in 2004
+#   net-im/gaim-blogger
+#   x11-plugins/gaimosd
+# Last release in 2005
+#   app-accessibility/festival-gaim
+# Merged into something else
+#   net-im/gaim-meanwhile (integrated in gaim)
+#   net-im/gaim-snpp (merged into the plugin pack)
+#   x11-plugins/gaim-slashexec (integrated into plugin pack)
 
 # List of plugins
-#   x11-plugins/pidgin-extprefs
+#   net-im/librvp
 #   x11-plugins/gaim-rhythmbox
 #   x11-plugins/guifications
 #   x11-plugins/pidgin-encryption
+#   x11-plugins/pidgin-extprefs
+#   x11-plugins/pidgin-hotkeys
 #   x11-plugins/pidgin-latex
+#   x11-plugins/pidgin-libnotify
+#   x11-plugins/pidgin-otr
+#   x11-plugins/purple-plugin_pack
 
 print_pidgin_warning() {
 	ewarn
@@ -157,17 +163,6 @@ pkg_setup() {
 
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}/${PN}-2.0.0-cchar_t-undeclared.patch"
-	epatch "${FILESDIR}/pidgin-2.0.1-purple-remote-syntax-fix.patch"
-	epatch "${FILESDIR}/${P}-desktop.patch"
-
-	eautomake
-}
-
 src_compile() {
 	# Stabilize things, for your own good
 	strip-flags
@@ -200,10 +195,6 @@ src_compile() {
 		DYNAMIC_PRPLS="${DYNAMIC_PRPLS},bonjour"
 	fi
 
-	if use msn; then
-		DYNAMIC_PRPLS="${DYNAMIC_PRPLS},msn"
-	fi
-
 	if use groupwise; then
 		DYNAMIC_PRPLS="${DYNAMIC_PRPLS},novell"
 	fi
@@ -212,19 +203,14 @@ src_compile() {
 		DYNAMIC_PRPLS="${DYNAMIC_PRPLS},zephyr"
 	fi
 
-	if use ssl || use msn ; then
-		if use gnutls ; then
-			einfo "Disabling NSS, using GnuTLS"
-			myconf="${myconf} --enable-nss=no --enable-gnutls=yes"
-			myconf="${myconf} --with-gnutls-includes=/usr/include/gnutls"
-			myconf="${myconf} --with-gnutls-libs=/usr/$(get_libdir)"
-		else
-			einfo "Disabling GnuTLS, using NSS"
-			myconf="${myconf} --enable-gnutls=no --enable-nss=yes"
-		fi
+	if use gnutls ; then
+		einfo "Disabling NSS, using GnuTLS"
+		myconf="${myconf} --enable-nss=no --enable-gnutls=yes"
+		myconf="${myconf} --with-gnutls-includes=/usr/include/gnutls"
+		myconf="${myconf} --with-gnutls-libs=/usr/$(get_libdir)"
 	else
-		einfo "No SSL support selected"
-		myconf="${myconf} --enable-gnutls=no --enable-nss=no"
+		einfo "Disabling GnuTLS, using NSS"
+		myconf="${myconf} --enable-gnutls=no --enable-nss=yes"
 	fi
 
 	if use xscreensaver ; then
@@ -232,7 +218,7 @@ src_compile() {
 	fi
 
 	if ! use ncurses && ! use gtk; then
-		myconf="${myconf} --enable-consoleui"
+		myconf="${myconf} --enable-consoleui --disable-gtkui"
 	else
 		myconf="${myconf} $(use_enable ncurses consoleui) $(use_enable gtk gtkui)"
 	fi
