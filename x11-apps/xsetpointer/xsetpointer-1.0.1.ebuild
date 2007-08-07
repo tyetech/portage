@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xsetpointer/Attic/xsetpointer-1.0.1.ebuild,v 1.10 2007/07/03 12:54:15 pylon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xsetpointer/Attic/xsetpointer-1.0.1.ebuild,v 1.11 2007/08/07 13:34:04 gustavoz Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -9,7 +9,7 @@ inherit x-modular
 
 DESCRIPTION="set an X Input device as the main pointer"
 
-KEYWORDS="alpha amd64 arm hppa mips ppc ppc64 s390 sh ~sparc x86"
+KEYWORDS="alpha amd64 arm hppa mips ppc ppc64 s390 sh sparc x86"
 
 RDEPEND="x11-libs/libXi
 	x11-libs/libX11"
