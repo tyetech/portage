@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/debootstrap/Attic/debootstrap-1.0.0.ebuild,v 1.1 2007/06/25 16:45:55 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/debootstrap/Attic/debootstrap-1.0.1.ebuild,v 1.1 2007/08/10 17:29:44 armin76 Exp $
 
 DESCRIPTION="Debian/Ubuntu bootstrap scripts"
 HOMEPAGE="http://packages.qa.debian.org/d/debootstrap.html"
-SRC_URI="http://archive.ubuntu.com/ubuntu/pool/main/d/debootstrap/debootstrap_${PV}.tar.gz mirror://gentoo/devices.tar.gz"
+SRC_URI="mirror://debian/pool/main/d/debootstrap/debootstrap_${PV}.tar.gz mirror://gentoo/devices.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
