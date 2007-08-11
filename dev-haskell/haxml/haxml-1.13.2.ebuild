@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-haskell/cvs-repo/gentoo-x86/dev-haskell/haxml/haxml-1.13.2.ebuild,v 1.6 2007/07/30 16:27:31 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-haskell/cvs-repo/gentoo-x86/dev-haskell/haxml/haxml-1.13.2.ebuild,v 1.7 2007/08/11 15:48:42 beandog Exp $
 
 CABAL_FEATURES="lib bin profile haddock"
 inherit base haskell-cabal
@@ -14,7 +14,7 @@ SRC_URI="http://www.haskell.org/HaXml/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 
-KEYWORDS="~amd64 ~ia64 ppc ppc64 sparc x86"
+KEYWORDS="amd64 ~ia64 ppc ppc64 sparc x86"
 
 IUSE=""
 
