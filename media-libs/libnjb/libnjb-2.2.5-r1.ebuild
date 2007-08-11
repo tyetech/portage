@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libnjb/Attic/libnjb-2.2.5-r1.ebuild,v 1.1 2007/08/10 11:50:00 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libnjb/Attic/libnjb-2.2.5-r1.ebuild,v 1.2 2007/08/11 08:57:57 drac Exp $
 
 inherit eutils libtool
 
@@ -28,5 +28,5 @@ src_install() {
 	dosym ${PN}.so /usr/$(get_libdir)/${PN}.so.0
 	dodoc AUTHORS ChangeLog* FAQ HACKING README
 	insinto /etc/udev/rules.d
-	newins "${FILESDIR}"/${PN}.rules 99-${PN}.rules
+	newins "${FILESDIR}"/${PN}.rules 80-${PN}.rules
 }
