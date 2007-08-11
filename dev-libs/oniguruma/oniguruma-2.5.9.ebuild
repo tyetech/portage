@@ -1,30 +1,23 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/oniguruma/Attic/oniguruma-4.1.1.ebuild,v 1.3 2007/07/21 20:43:33 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/oniguruma/Attic/oniguruma-2.5.9.ebuild,v 1.1 2007/08/11 16:48:18 matsuu Exp $
 
-MY_P="onig-${PV}"
+MY_P="onigd${PV//./_}"
 
 DESCRIPTION="Regular expression library"
 HOMEPAGE="http://www.geocities.jp/kosako3/oniguruma/"
 SRC_URI="http://www.geocities.jp/kosako3/oniguruma/archive/${MY_P}.tar.gz"
 
-LICENSE="BSD"
-
+LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND="virtual/libc"
-
-S=${WORKDIR}/${MY_P}
-
-src_compile() {
-
-	econf || die
-	emake || die
-}
+S="${WORKDIR}/${PN}"
 
 src_install() {
-	make DESTDIR=${D} install || die
+	dodir /usr
+	emake prefix="${D}usr" install || die
+
 	dodoc HISTORY README doc/*
 }
