@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/consolekit/Attic/consolekit-0.2.1.ebuild,v 1.10 2007/08/10 13:10:27 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/consolekit/Attic/consolekit-0.2.1.ebuild,v 1.11 2007/08/11 15:05:27 ticho Exp $
 
 inherit eutils autotools multilib
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://if.only.it.had.one"
 SRC_URI="http://people.freedesktop.org/~mccann/dist/${MY_PN}-${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm ~hppa ia64 ~mips ppc ~ppc64 ~sh sparc ~x86"
+KEYWORDS="alpha amd64 ~arm ~hppa ia64 ~mips ppc ~ppc64 ~sh sparc x86"
 IUSE="debug pam"
 
 # Not parallel make safe
