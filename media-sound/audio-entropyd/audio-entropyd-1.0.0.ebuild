@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/audio-entropyd/Attic/audio-entropyd-1.0.0.ebuild,v 1.2 2007/08/01 21:58:48 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/audio-entropyd/Attic/audio-entropyd-1.0.0.ebuild,v 1.3 2007/08/13 21:14:47 dertobi123 Exp $
 
 inherit toolchain-funcs
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.vanheusden.com/aed/"
 SRC_URI="http://www.vanheusden.com/aed/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ppc ~sparc ~x86"
 IUSE="selinux"
 DEPEND="virtual/libc"
 RDEPEND="${DEPEND}
