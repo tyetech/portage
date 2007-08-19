@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/assp/Attic/assp-1.3.3.1-r1.ebuild,v 1.1 2007/08/17 21:56:39 wltjr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/assp/Attic/assp-1.3.3.1-r2.ebuild,v 1.1 2007/08/19 17:42:58 wltjr Exp $
 
 inherit eutils
 
