@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/matplotlib/Attic/matplotlib-0.90.1.ebuild,v 1.3 2007/08/18 18:32:14 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/matplotlib/Attic/matplotlib-0.90.1.ebuild,v 1.4 2007/08/19 02:17:29 mr_bones_ Exp $
 
 NEED_PYTHON=2.3
 
@@ -34,8 +34,6 @@ DEPEND="|| (
 RDEPEND="${DEPEND}
 	app-text/dvipng
 	media-fonts/ttf-bitstream-vera"
-
-
 
 DOCS="INTERACTIVE API_CHANGES NUMARRAY_ISSUES"
 
