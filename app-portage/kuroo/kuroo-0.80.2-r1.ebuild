@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/kuroo/Attic/kuroo-0.80.2-r1.ebuild,v 1.5 2007/08/14 21:04:20 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/kuroo/Attic/kuroo-0.80.2-r1.ebuild,v 1.6 2007/08/20 16:22:02 philantrop Exp $
 
-inherit kde
+inherit kde eutils
 
 DESCRIPTION="Kuroo is a KDE Portage frontend."
 HOMEPAGE="http://kuroo.org/"
@@ -16,4 +16,12 @@ IUSE=""
 RDEPEND="app-portage/gentoolkit
 	kde-misc/kdiff3
 	|| ( kde-base/kdesu kde-base/kdebase )"
+
 need-kde 3.2
+
+src_unpack() {
+	kde_src_unpack
+
+	# Fix the desktop file for compliance with the spec. Fixes bug 188755.
+	epatch "${FILESDIR}/${PN}-desktop-file.patch"
+}

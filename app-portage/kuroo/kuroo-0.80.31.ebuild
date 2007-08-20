@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/kuroo/Attic/kuroo-0.80.3.ebuild,v 1.2 2007/08/20 16:22:02 philantrop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/kuroo/Attic/kuroo-0.80.31.ebuild,v 1.1 2007/08/20 16:22:02 philantrop Exp $
 
 inherit kde eutils
 
