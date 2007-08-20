@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/pecl-memcache/Attic/pecl-memcache-2.1.0.ebuild,v 1.1 2007/03/06 20:09:14 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php4/cvs-repo/gentoo-x86/dev-php4/pecl-memcache/Attic/pecl-memcache-2.1.2.ebuild,v 1.1 2007/08/20 21:15:00 jokey Exp $
 
 PHP_EXT_NAME="memcache"
 PHP_EXT_INI="yes"
