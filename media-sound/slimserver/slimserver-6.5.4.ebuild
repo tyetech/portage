@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/slimserver/Attic/slimserver-6.5.2.ebuild,v 1.2 2007/06/26 02:16:01 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/slimserver/Attic/slimserver-6.5.4.ebuild,v 1.1 2007/08/21 20:48:57 twp Exp $
 
 inherit eutils
 
