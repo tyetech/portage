@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/clamav/Attic/clamav-0.90.ebuild,v 1.13 2007/03/28 18:17:38 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/clamav/Attic/clamav-0.91.2.ebuild,v 1.1 2007/08/21 09:17:29 ticho Exp $
 
-inherit eutils flag-o-matic fixheadtails
+inherit autotools eutils flag-o-matic fixheadtails
 
 DESCRIPTION="Clam Anti-Virus Scanner"
 HOMEPAGE="http://www.clamav.net/"
@@ -10,14 +10,14 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
-IUSE="bzip2 crypt curl logrotate mailwrapper milter selinux"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="bzip2 crypt logrotate mailwrapper milter nls selinux"
 
 DEPEND="virtual/libc
 	bzip2? ( app-arch/bzip2 )
 	crypt? ( >=dev-libs/gmp-4.1.2 )
-	curl? ( >=net-misc/curl-7.10.0 )
 	milter? ( || ( mail-filter/libmilter mail-mta/sendmail ) )
+	nls? ( sys-devel/gettext )
 	dev-libs/gmp
 	>=sys-libs/zlib-1.2.1-r3
 	>=sys-apps/sed-4"
@@ -43,7 +43,9 @@ pkg_setup() {
 src_unpack() {
 	unpack "${A}"
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-compat.patch
+	epatch "${FILESDIR}"/${PN}-0.90-compat.patch
+	epatch "${FILESDIR}"/${PN}-0.90-nls.patch
+	eautoreconf
 }
 
 src_compile() {
@@ -65,7 +67,7 @@ src_compile() {
 	ht_fix_file configure
 	econf ${myconf} \
 		$(use_enable bzip2) \
-		$(use_with curl libcurl) \
+		$(use_enable nls) \
 		--disable-experimental \
 		--with-dbdir=/var/lib/clamav || die
 	emake || die
@@ -123,12 +125,19 @@ src_install() {
 
 pkg_postinst() {
 	echo
-	ewarn "Warning: clamd and/or freshclam have not been restarted."
-	ewarn "You should restart them to start using new version: /etc/init.d/clamd restart"
-	echo
 	if use milter ; then
 		elog "For simple instructions how to setup the clamav-milter"
 		elog "read /usr/share/doc/${PF}/clamav-milter.README.gentoo.gz"
 		echo
 	fi
+	ewarn "Warning: clamd and/or freshclam have not been restarted."
+	ewarn "You should restart them to start using new version: /etc/init.d/clamd restart"
+	echo
+	ewarn "The soname for libclamav has changed after clamav-0.90."
+	ewarn "If you have upgraded from that or earlier version, it is recommended to run:"
+	ewarn
+	ewarn "revdep-rebuild --library libclamav.so.1"
+	ewarn
+	ewarn "This will fix linking errors caused by this change."
+	echo
 }
