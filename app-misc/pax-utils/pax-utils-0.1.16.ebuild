@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/pax-utils/Attic/pax-utils-0.1.14.ebuild,v 1.3 2007/03/01 12:08:48 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/pax-utils/Attic/pax-utils-0.1.16.ebuild,v 1.1 2007/08/24 22:59:24 solar Exp $
 
 inherit flag-o-matic toolchain-funcs eutils
 
