@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/kasumi/Attic/kasumi-2.1.ebuild,v 1.4 2007/02/07 17:03:07 mabi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/kasumi/Attic/kasumi-2.1.ebuild,v 1.5 2007/08/25 16:42:59 beandog Exp $
 
 DESCRIPTION="Anthy dictionary maintenance tool"
 HOMEPAGE="http://kasumi.sourceforge.jp/"
@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge.jp/${PN}/22183/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc x86 ~x86-fbsd"
 IUSE="nls"
 
 RDEPEND=">=x11-libs/gtk+-2.2
