@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/openexr/Attic/openexr-1.2.2-r2.ebuild,v 1.15 2006/11/07 18:50:13 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/openexr/Attic/openexr-1.2.2-r2.ebuild,v 1.16 2007/08/26 21:46:33 vapier Exp $
 
 WANT_AUTOMAKE=1.7
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://www.openexr.com"
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="alpha amd64 hppa ia64 mips ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 mips ppc ppc64 sh sparc x86 ~x86-fbsd"
 IUSE="doc examples"
 
 RDEPEND="virtual/opengl"
