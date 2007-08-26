@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/worker/Attic/worker-2.14.4.ebuild,v 1.7 2007/07/22 09:46:31 omp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/worker/Attic/worker-2.15.0.ebuild,v 1.1 2007/08/26 18:43:23 dertobi123 Exp $
 
 inherit eutils
 
