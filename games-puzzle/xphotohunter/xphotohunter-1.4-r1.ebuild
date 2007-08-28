@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/xphotohunter/Attic/xphotohunter-1.4-r1.ebuild,v 1.1 2007/05/09 19:15:35 tupone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/xphotohunter/Attic/xphotohunter-1.4-r1.ebuild,v 1.2 2007/08/28 16:51:36 mr_bones_ Exp $
 
 inherit eutils games
 
@@ -13,7 +13,7 @@ SRC_URI="http://micro.ee.nthu.edu.tw/~tomcat/Xphotohunter/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="media-libs/imlib"
