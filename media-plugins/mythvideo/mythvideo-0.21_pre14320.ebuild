@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythvideo/Attic/mythvideo-0.21_pre14320.ebuild,v 1.1 2007/08/27 14:59:21 cardoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythvideo/Attic/mythvideo-0.21_pre14320.ebuild,v 1.2 2007/08/29 19:00:17 cardoe Exp $
 
 inherit mythtv-plugins subversion
 
@@ -13,7 +13,8 @@ RDEPEND="dev-perl/libwww-perl
 	dev-perl/URI
 	dev-perl/XML-Simple
 	mplayer? ( || ( media-video/mplayer media-video/mplayer-bin ) )
-	xine? ( media-video/xine-ui )"
+	xine? ( media-video/xine-ui )
+	sys-apps/eject"
 DEPEND="${RDEPEND}"
 
 src_unpack() {
