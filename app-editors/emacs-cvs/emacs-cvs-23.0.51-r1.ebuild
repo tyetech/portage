@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.0-r6.ebuild,v 1.30 2007/08/25 21:15:10 opfer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs-cvs/Attic/emacs-cvs-23.0.51-r1.ebuild,v 1.1 2007/08/29 06:46:10 ulm Exp $
 
 ECVS_AUTH="pserver"
 ECVS_SERVER="cvs.savannah.gnu.org:/sources/emacs"
 ECVS_MODULE="emacs"
-ECVS_BRANCH="emacs-unicode-2"
-ECVS_LOCALNAME="emacs-unicode"
+ECVS_BRANCH="HEAD"
+ECVS_LOCALNAME="emacs"
 
 WANT_AUTOCONF="2.61"
 WANT_AUTOMAKE="latest"
@@ -19,8 +19,8 @@ SRC_URI=""
 
 LICENSE="GPL-3 FDL-1.2 BSD"
 SLOT="23"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="alsa gif gpm gtk gzip-el hesiod jpeg motif png spell sound source tiff toolkit-scroll-bars X Xaw3d xft xpm"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+IUSE="alsa gif gpm gtk gzip-el hesiod jpeg motif png spell sound source svg tiff toolkit-scroll-bars X Xaw3d xpm"
 RESTRICT="strip"
 
 X_DEPEND="x11-libs/libXmu x11-libs/libXt x11-misc/xbitmaps"
@@ -39,8 +39,8 @@ RDEPEND="sys-libs/ncurses
 		jpeg? ( media-libs/jpeg )
 		tiff? ( media-libs/tiff )
 		png? ( media-libs/libpng )
+		svg? ( >=gnome-base/librsvg-2.0 )
 		xpm? ( x11-libs/libXpm )
-		xft? ( media-libs/fontconfig virtual/xft >=dev-libs/libotf-0.9.4 )
 		gtk? ( =x11-libs/gtk+-2* )
 		!gtk? (
 			Xaw3d? ( x11-libs/Xaw3d )
@@ -101,7 +101,6 @@ src_compile() {
 	strip-flags
 	unset LDFLAGS
 	replace-flags -O[3-9] -O2
-	sed -i -e "s/-lungif/-lgif/g" configure* src/Makefile* || die
 
 	local myconf
 
@@ -116,17 +115,15 @@ src_compile() {
 	fi
 
 	if use X; then
+		myconf="${myconf} --with-x"
+		myconf="${myconf} $(use_with toolkit-scroll-bars)"
+		myconf="${myconf} $(use_with jpeg) $(use_with tiff)"
+		myconf="${myconf} $(use_with gif) $(use_with png)"
+		myconf="${myconf} $(use_with xpm) $(use_with svg rsvg)"
+
 		# GTK+ is the default toolkit if USE=gtk is chosen with other
 		# possibilities. Emacs upstream thinks this should be standard
 		# policy on all distributions
-		myconf="${myconf} --with-x"
-		myconf="${myconf} $(use_with xpm)"
-		myconf="${myconf} $(use_with toolkit-scroll-bars)"
-		myconf="${myconf} $(use_enable xft font-backend)"
-		myconf="${myconf} $(use_with xft freetype)"
-		myconf="${myconf} $(use_with xft)"
-		myconf="${myconf} $(use_with jpeg) $(use_with tiff)"
-		myconf="${myconf} $(use_with gif) $(use_with png)"
 		if use gtk; then
 			echo
 			einfo "Configuring to build with GTK support, disabling all other toolkits"
@@ -199,7 +196,7 @@ src_install () {
 		elisp-site-file-install 00${PN}-${SLOT}-gentoo.el
 	fi
 
-	dodoc AUTHORS BUGS CONTRIBUTE README README.unicode || die "dodoc failed"
+	dodoc AUTHORS BUGS CONTRIBUTE README README.multi-tty || die "dodoc failed"
 }
 
 emacs-infodir-rebuild() {
