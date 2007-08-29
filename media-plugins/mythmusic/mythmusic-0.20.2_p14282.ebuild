@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythmusic/Attic/mythmusic-0.20.2_p14282.ebuild,v 1.1 2007/08/25 23:50:21 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythmusic/Attic/mythmusic-0.20.2_p14282.ebuild,v 1.2 2007/08/29 15:26:35 cardoe Exp $
 
 inherit mythtv-plugins flag-o-matic toolchain-funcs eutils subversion
 
 DESCRIPTION="Music player module for MythTV."
 IUSE="aac cdr fftw sdl"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 
 RDEPEND=">=media-sound/cdparanoia-3.9.8
 	>=media-libs/libmad-0.15.1b
