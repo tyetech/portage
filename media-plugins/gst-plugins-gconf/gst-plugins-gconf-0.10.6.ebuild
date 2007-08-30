@@ -1,26 +1,25 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-gconf/Attic/gst-plugins-gconf-0.10.1.ebuild,v 1.1 2006/01/14 06:58:57 compnerd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-gconf/Attic/gst-plugins-gconf-0.10.6.ebuild,v 1.1 2007/08/30 12:13:17 drac Exp $
 
 inherit gnome2 gst-plugins-good gst-plugins10
 
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-DEPEND=">=gnome-base/gconf-2.0"
+RDEPEND=">=gnome-base/gconf-2
+	>=media-libs/gstreamer-0.10.13
+	>=media-libs/gst-plugins-base-0.10.13"
+DEPEND="${RDEPEND}"
+
 GST_PLUGINS_BUILD="gconf gconftool"
 
 # override eclass
 src_unpack() {
-
-	local makefiles
-
 	unpack ${A}
-
 }
 
 src_compile() {
-
 	gst-plugins-good_src_configure ${@}
 
 	gst-plugins10_find_plugin_dir
@@ -28,10 +27,9 @@ src_compile() {
 
 	cd ${S}/gconf
 	emake || die "compile failure"
-
 }
-src_install() {
 
+src_install() {
 	gst-plugins10_find_plugin_dir
 	einstall || die
 
