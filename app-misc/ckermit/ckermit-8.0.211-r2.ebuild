@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/ckermit/Attic/ckermit-8.0.211-r2.ebuild,v 1.2 2007/09/01 00:25:02 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/ckermit/Attic/ckermit-8.0.211-r2.ebuild,v 1.3 2007/09/01 20:08:12 angelos Exp $
 
 inherit versionator
 
@@ -14,7 +14,7 @@ HOMEPAGE="http://www.kermit-project.org/"
 
 LICENSE="Kermit"
 SLOT="0"
-KEYWORDS="~amd64 ppc ppc64 ~x86"
+KEYWORDS="amd64 ppc ppc64 ~x86"
 IUSE=""
 
 DEPEND=">=sys-libs/ncurses-5.2"
