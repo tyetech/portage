@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gstreamer/Attic/gstreamer-0.10.14.ebuild,v 1.2 2007/08/15 09:03:00 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gstreamer/Attic/gstreamer-0.10.14.ebuild,v 1.3 2007/09/01 07:16:06 drac Exp $
 
 inherit libtool
 
@@ -52,7 +52,7 @@ src_install() {
 	done
 
 	cd "${S}"
-	dodoc AUTHORS ChangeLog DEVEL NEWS README RELEASE REQUIREMENTS TODO
+	dodoc AUTHORS ChangeLog NEWS README RELEASE TODO
 
 	echo "PRELINK_PATH_MASK=/usr/lib/${PN}-${PV_MAJ_MIN}" > 60${PN}-${PV_MAJ_MIN}
 	doenvd 60${PN}-${PV_MAJ_MIN}
