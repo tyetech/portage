@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/lftp/Attic/lftp-3.5.12.ebuild,v 1.1 2007/08/01 21:44:23 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/lftp/Attic/lftp-3.5.12.ebuild,v 1.2 2007/09/01 09:07:27 phreak Exp $
 
 DESCRIPTION="A sophisticated ftp/sftp/http/https client and file transfer program"
 HOMEPAGE="http://lftp.yar.ru/"
-SRC_URI="http://ftp.yars.free.net/pub/source/lftp/${P}.tar.bz2"
+SRC_URI="http://ftp.yars.free.net/pub/source/lftp/old/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
