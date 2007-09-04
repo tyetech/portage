@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/swfdec/Attic/swfdec-0.5.2.ebuild,v 1.1 2007/09/03 15:56:57 pclouds Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/swfdec/Attic/swfdec-0.5.2.ebuild,v 1.2 2007/09/04 21:29:58 mr_bones_ Exp $
 
 inherit eutils versionator
 
@@ -48,7 +48,7 @@ pkg_setup() {
 src_compile() {
 	local myconf
 
-	#--with-audio=[auto/alsa/oss/none]	
+	#--with-audio=[auto/alsa/oss/none]
 	use oss && myconf=" --with-audio=oss"
 
 	econf \
