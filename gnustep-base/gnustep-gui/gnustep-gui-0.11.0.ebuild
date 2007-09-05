@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-gui/Attic/gnustep-gui-0.11.0.ebuild,v 1.3 2007/07/22 10:25:37 dberkholz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-gui/Attic/gnustep-gui-0.11.0.ebuild,v 1.4 2007/09/05 19:36:46 josejx Exp $
 
 inherit gnustep
 
@@ -8,7 +8,7 @@ DESCRIPTION="Library of GUI classes written in Obj-C"
 HOMEPAGE="http://www.gnustep.org/"
 SRC_URI="ftp://ftp.gnustep.org/pub/gnustep/core/${P}.tar.gz"
 
-KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ppc ~sparc ~x86"
 SLOT="0"
 LICENSE="LGPL-2.1"
 
