@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/rsstool/Attic/rsstool-1.0.0_rc3.ebuild,v 1.1 2007/09/03 16:49:34 jsin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/rsstool/Attic/rsstool-1.0.0_rc3-r1.ebuild,v 1.1 2007/09/05 01:23:29 jsin Exp $
 
 inherit versionator eutils
 MY_PV=$(replace_version_separator 3 '')
