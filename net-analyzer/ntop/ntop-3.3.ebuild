@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ntop/Attic/ntop-3.3.ebuild,v 1.2 2007/09/06 09:18:21 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ntop/Attic/ntop-3.3.ebuild,v 1.3 2007/09/06 22:47:48 vapier Exp $
 
 inherit eutils autotools
 
@@ -87,8 +87,9 @@ src_compile() {
 		$(use_with tcpd) \
 		$(use_with zlib) \
 		--with-rrd-home=/usr/lib \
+		--disable-snmp \
 		|| die "configure problem"
-		# $(use_enable snmp) \
+		# $(use_enable snmp)
 	emake || die "compile problem"
 }
 
