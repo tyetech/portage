@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/cyrus-imap-dev/Attic/cyrus-imap-dev-2.2.12.ebuild,v 1.8 2007/09/07 18:58:27 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/cyrus-imap-dev/Attic/cyrus-imap-dev-2.2.13.ebuild,v 1.1 2007/09/07 18:58:27 dertobi123 Exp $
 
 inherit eutils autotools
 
@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/cyrus-imapd-${PV}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64 ppc ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="afs kerberos snmp ssl tcpd"
 
 RDEPEND="virtual/libc
@@ -40,8 +40,6 @@ src_unpack() {
 	if use tcpd ; then
 		epatch "${FILESDIR}/cyrus-imapd-libwrap.patch" || die "patch failed"
 	fi
-
-	epatch "${FILESDIR}"/2.2.10-imapopts.h.patch || die "imapopts.h.patch failed"
 
 	# Recreate configure.
 	export WANT_AUTOCONF="2.5"
