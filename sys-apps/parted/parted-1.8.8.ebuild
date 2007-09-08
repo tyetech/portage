@@ -1,6 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/parted/Attic/parted-1.8.8.ebuild,v 1.3 2007/09/04 21:31:18 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/parted/Attic/parted-1.8.8.ebuild,v 1.4 2007/09/08 16:23:00 dirtyepic Exp $
+
+inherit eutils
 
 DESCRIPTION="Create, destroy, resize, check, copy partitions and file systems"
 HOMEPAGE="http://www.gnu.org/software/parted"
