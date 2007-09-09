@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/vlgothic/Attic/vlgothic-20070507.ebuild,v 1.1 2007/05/09 15:38:24 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/vlgothic/Attic/vlgothic-20070901.ebuild,v 1.1 2007/09/09 05:52:10 matsuu Exp $
 
 inherit font
 
