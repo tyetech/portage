@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-libpng/Attic/gst-plugins-libpng-0.10.6.ebuild,v 1.1 2007/08/30 19:28:17 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-libpng/Attic/gst-plugins-libpng-0.10.6.ebuild,v 1.2 2007/09/09 17:30:32 opfer Exp $
 
 inherit gst-plugins-good
 
 DESCRIPTION="plug-in to encode png images"
 
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc x86"
 IUSE=""
 
 RDEPEND=">=media-libs/libpng-1.2
