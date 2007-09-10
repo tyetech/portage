@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyasn1/Attic/pyasn1-0.0.6a.ebuild,v 1.1 2007/02/24 21:00:12 mjolnir Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyasn1/Attic/pyasn1-0.0.7a.ebuild,v 1.1 2007/09/10 05:19:01 mjolnir Exp $
 
 inherit distutils
 
