@@ -1,10 +1,9 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/gorm/Attic/gorm-1.1.0.ebuild,v 1.3 2007/08/22 16:53:00 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/gorm/Attic/gorm-1.2.1.ebuild,v 1.1 2007/09/10 18:53:49 voyageur Exp $
 
-inherit gnustep
+inherit gnustep-2
 
-IUSE="doc"
 DESCRIPTION="A clone of the NeXTstep Interface Builder application for GNUstep"
 HOMEPAGE="http://www.gnustep.org/experience/Gorm.html"
 SRC_URI="ftp://ftp.gnustep.org/pub/gnustep/dev-apps/${P}.tar.gz"
@@ -12,12 +11,6 @@ SRC_URI="ftp://ftp.gnustep.org/pub/gnustep/dev-apps/${P}.tar.gz"
 KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 LICENSE="GPL-2"
 SLOT="0"
-
-DEPEND="${GS_DEPEND}
-	doc? ( sys-apps/sed )"
-RDEPEND="${GS_RDEPEND}"
-
-egnustep_install_domain "Local"
 
 src_unpack() {
 	unpack ${A}
