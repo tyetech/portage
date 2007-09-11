@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/sparc-utils/sparc-utils-1.9-r4.ebuild,v 1.3 2007/06/06 15:56:02 gustavoz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/sparc-utils/sparc-utils-1.9-r4.ebuild,v 1.4 2007/09/11 19:06:42 drac Exp $
 
 inherit eutils toolchain-funcs
 
@@ -15,7 +15,7 @@ KEYWORDS="-* sparc"
 IUSE=""
 
 DEPEND="virtual/os-headers"
-RDEPEND="sys-apps/setarch"
+RDEPEND="|| ( >=sys-apps/util-linux-2.13-r1 sys-apps/setarch )"
 
 S=${WORKDIR}/${P}.orig
 
