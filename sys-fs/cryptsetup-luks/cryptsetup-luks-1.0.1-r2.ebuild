@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/cryptsetup-luks/Attic/cryptsetup-luks-1.0.1-r2.ebuild,v 1.3 2006/03/30 10:16:09 strerror Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/cryptsetup-luks/Attic/cryptsetup-luks-1.0.1-r2.ebuild,v 1.4 2007/09/14 21:34:31 wolf31o2 Exp $
 
 inherit linux-info eutils flag-o-matic
 
@@ -39,7 +39,6 @@ dm-crypt_check() {
 }
 
 pkg_setup() {
-	linux-info_pkg_setup
 	dm-crypt_check;
 }
 
