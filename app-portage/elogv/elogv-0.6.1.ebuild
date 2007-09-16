@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/elogv/Attic/elogv-0.5.1.ebuild,v 1.5 2007/08/19 22:15:45 fmccor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/elogv/Attic/elogv-0.6.1.ebuild,v 1.1 2007/09/16 19:20:26 opfer Exp $
 
 inherit eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://gechi-overlay.sourceforge.net/?page=elogv"
 SRC_URI="mirror://sourceforge/gechi-overlay/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~ppc ~sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=""
@@ -26,15 +26,18 @@ pkg_setup() {
 	fi
 }
 
+src_compile() {
+	einfo "Nothing to compile"
+}
+
 src_install() {
-	 newbin ${PN}.py ${PN}
-	 dodoc README AUTHORS ChangeLog
+	emake PREFIX=/usr DESTDIR="${D}" install || die "emake install failed"
 }
 
 pkg_postinst() {
 	elog
 	elog "In order to use this software, you need to activate"
-	elog "Portage's elog features.	Required is"
+	elog "Portage's elog features.  Required is"
 	elog "		 PORTAGE_ELOG_SYSTEM=\"save\" "
 	elog "and at least one out of "
 	elog "		 PORTAGE_ELOG_CLASSES=\"warn error info log qa\""
