@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-farsight/Attic/gst-plugins-farsight-0.12.1.ebuild,v 1.1 2007/07/05 15:16:42 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-farsight/Attic/gst-plugins-farsight-0.12.5.ebuild,v 1.1 2007/09/19 07:34:45 tester Exp $
 
 inherit gst-plugins10
 
@@ -17,8 +17,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="jpeg2k gsm jingle msn yahoo"
 #jrtplib
 
-DEPEND=">=media-libs/gstreamer-0.10.11
-	>=media-libs/gst-plugins-base-0.10.11
+DEPEND=">=media-libs/gstreamer-0.10.13
+	>=media-libs/gst-plugins-base-0.10.13
 	dev-libs/libxml2
 	jpeg2k? ( media-libs/jasper )
 	gsm? ( media-sound/gsm )
@@ -32,7 +32,7 @@ RDEPEND="${DEPEND}"
 
 src_compile() {
 	econf \
-		--disable-g729 \
+		--enable-g729 \
 		--disable-jrtplib \
 		$(use_enable jpeg2k jasper) \
 		$(use_enable gsm) \
