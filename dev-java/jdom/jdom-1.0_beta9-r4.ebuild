@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jdom/jdom-1.0_beta9-r4.ebuild,v 1.1 2007/09/16 08:27:50 ali_bush Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jdom/jdom-1.0_beta9-r4.ebuild,v 1.2 2007/09/24 11:12:11 opfer Exp $
 
 JAVA_PKG_IUSE="doc examples source"
 
@@ -15,7 +15,7 @@ SRC_URI="http://www.jdom.org/dist/source/archive/${MY_P}.tar.gz"
 HOMEPAGE="http://www.jdom.org"
 LICENSE="JDOM"
 SLOT="${PV}"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 
 COMMON_DEP="dev-java/saxpath
 		>=dev-java/xerces-2.7"
