@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-calculators/cvs-repo/gentoo-x86/sci-calculators/qalculate-kde/Attic/qalculate-kde-0.9.6.ebuild,v 1.2 2007/07/15 06:05:01 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-calculators/cvs-repo/gentoo-x86/sci-calculators/qalculate-kde/Attic/qalculate-kde-0.9.6.ebuild,v 1.3 2007/09/24 14:48:58 markusle Exp $
 
 myconf="--disable-clntest"
 
@@ -22,6 +22,7 @@ DOCS="AUTHORS ChangeLog NEWS README TODO"
 
 src_unpack() {
 	kde_src_unpack
+	epatch "${FILESDIR}"/${P}-remove-link.patch
 }
 
 need-kde 3.1
