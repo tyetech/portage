@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/STLport/Attic/STLport-5.0.3.ebuild,v 1.6 2007/02/17 22:08:15 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/STLport/Attic/STLport-5.1.3.ebuild,v 1.1 2007/09/25 20:22:27 dev-zero Exp $
 
 inherit eutils versionator eutils toolchain-funcs multilib flag-o-matic
 
-KEYWORDS="~amd64 ~ppc ~ppc64 sparc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 
 DESCRIPTION="C++ STL library"
 HOMEPAGE="http://stlport.sourceforge.net/"
@@ -20,10 +20,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${PN}-5.0.2-gcc41.patch"
-	epatch "${FILESDIR}/${P}-ppc.patch"
-	epatch "${FILESDIR}/${P}-sparc.patch"
-	epatch "${FILESDIR}/${PN}-5.1.0-wrong_russian_currency_name.patch"
+	epatch "${FILESDIR}/${PN}-5.1.2-fix_bashism.patch"
 
 	sed -i \
 		-e 's/\(OPT += \)-O2/\1/' \
@@ -33,12 +30,19 @@ src_unpack() {
 	sed -i \
 		-e 's/_STLP_VENDOR_CSTD::wcsftime/::wcsftime/' \
 		stlport/stl/_cwchar.h || die "sed failed"
-
 }
 
 src_compile() {
-	cat <<- EOF >> stlport/stl_user_config.h
+	# We have to add this to host.h to make sure
+	# that dependencies of STLport use the same settings
+	cat <<- EOF >> stlport/stl/config/host.h
 	#define _STLP_NATIVE_INCLUDE_PATH ../g++-v$(gcc-major-version)
+	/* use pthreads for threading */
+	#define _PTHREADS
+	/* enable largefile support */
+	#define _FILE_OFFSET_BITS 64
+	#define _LARGEFILE_SOURCE
+	#define _LARGEFILE64_SOURCE
 	EOF
 
 	sed -i \
@@ -46,6 +50,7 @@ src_compile() {
 		-e "s|\(CXX :=\) c++|\1 $(tc-getCXX)|" \
 		-e "s|^\(CFLAGS = \)|\1 ${CFLAGS} |" \
 		-e "s|^\(CCFLAGS = \)|\1 ${CFLAGS} |" \
+		-e "s|^\(CPPFLAGS = \)|\1 ${CPPFLAGS} |" \
 		build/Makefiles/gmake/gcc.mak || die "sed failed"
 
 	local myconf
@@ -53,12 +58,10 @@ src_compile() {
 		myconf="${myconf} --with-boost=/usr/include"
 		sed -i \
 			-e 'N;N;N;s:/\**\n\(#define _STLP_USE_BOOST_SUPPORT 1\)*\n\*/:\1:' \
-			stlport/stl_user_config.h
+			stlport/stl/config/user_config.h
 	fi
 
 	cd "${S}/build/lib"
-
-	append-lfs-flags
 
 	# It's not an autoconf script
 	./configure \
@@ -80,6 +83,7 @@ src_compile() {
 		-C build/lib \
 		-f gcc.mak \
 		depend ${targets} || die "Compile failed"
+
 }
 
 src_install() {
@@ -99,11 +103,11 @@ src_test() {
 	cd "${S}/build"
 
 	sed -i \
-		-e "1aLDFLAGS := -L${S}/build/lib/obj/gcc/shared -L${S}/build/lib/obj/gcc/shared-g -L${S}/build/lib/obj/gcc/shared-stlg" \
+		-e "1aLDFLAGS := -L${S}/build/lib/obj/gcc/so -L${S}/build/lib/obj/gcc/so_g -L${S}/build/lib/obj/gcc/so_stlg" \
 		test/unit/gcc.mak || die "sed failed"
 
 	emake -j1 -C test/unit -f gcc.mak || die "emake tests failed"
 
-	export LD_LIBRARY_PATH="./lib/obj/gcc/shared-stlg"
-	./test/unit/obj/gcc/shared-stlg/stl_unit_test || die "unit tests failed"
+	export LD_LIBRARY_PATH="./lib/obj/gcc/so_stlg"
+	./test/unit/obj/gcc/so_stlg/stl_unit_test || die "unit tests failed"
 }
