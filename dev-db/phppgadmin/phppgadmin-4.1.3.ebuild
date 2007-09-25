@@ -1,23 +1,23 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/phppgadmin/Attic/phppgadmin-4.0.1.ebuild,v 1.7 2007/02/04 05:55:06 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/phppgadmin/Attic/phppgadmin-4.1.3.ebuild,v 1.1 2007/09/25 20:45:24 dev-zero Exp $
 
 inherit webapp depend.php
 
 IUSE=""
 
-# This package insists on uppercase letters
 MY_P=phpPgAdmin-${PV}
-S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="Web-based administration for Postgres database in php"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 HOMEPAGE="http://phppgadmin.sourceforge.net/"
 
 LICENSE="GPL-2"
-KEYWORDS="amd64 hppa ppc sparc x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
 
 need_php
+
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	webapp_pkg_setup
