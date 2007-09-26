@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/freemat/Attic/freemat-3.4.ebuild,v 1.2 2007/08/26 13:01:30 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/freemat/Attic/freemat-3.4.ebuild,v 1.3 2007/09/26 10:10:34 bicatali Exp $
 
 inherit eutils flag-o-matic autotools qt4
 
@@ -44,5 +44,5 @@ src_install() {
 
 pkg_postint() {
 	einfo "Initializing freemat data directory"
-	FreeMat -i /usr/share/${MY_P}
+	FreeMat -i "${ROOT}"/usr/share/${MY_P}
 }
