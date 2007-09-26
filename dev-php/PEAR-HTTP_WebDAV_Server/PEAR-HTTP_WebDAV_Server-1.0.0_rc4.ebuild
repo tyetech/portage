@@ -1,11 +1,11 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTTP_WebDAV_Server/PEAR-HTTP_WebDAV_Server-1.0.0_rc4.ebuild,v 1.4 2007/09/25 00:33:49 pylon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-HTTP_WebDAV_Server/PEAR-HTTP_WebDAV_Server-1.0.0_rc4.ebuild,v 1.5 2007/09/26 18:02:34 ranger Exp $
 
 inherit php-pear-r1
 
 DESCRIPTION="WebDAV Server Baseclass."
 LICENSE="PHP"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 hppa ~ia64 ppc ~ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE=""
