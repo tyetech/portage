@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/iwl4965-ucode/Attic/iwl4965-ucode-4.44.15.ebuild,v 1.1 2007/07/11 03:19:53 compnerd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/iwl4965-ucode/Attic/iwl4965-ucode-4.44.1.18.ebuild,v 1.1 2007/09/29 20:49:59 compnerd Exp $
 
 MY_PN="iwlwifi-4965-ucode"
 
@@ -24,6 +24,7 @@ src_compile() {
 
 src_install() {
 	insinto /lib/firmware
-	doins iwlwifi-4965.ucode
-	dodoc *.${PN}
+	doins iwlwifi-4965-1.ucode
+
+	dodoc README*
 }
