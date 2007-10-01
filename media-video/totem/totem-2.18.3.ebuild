@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/totem/Attic/totem-2.18.3.ebuild,v 1.4 2007/09/23 13:15:57 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/totem/Attic/totem-2.18.3.ebuild,v 1.5 2007/10/01 20:46:08 eva Exp $
 
 inherit autotools eutils gnome2 multilib
 
@@ -102,7 +102,7 @@ pkg_setup() {
 	fi
 
 	# use global mozilla plugin dir
-	G2CONF="${G2CONF} MOZILLA_PLUGINDIR=/usr/$(get_libdir)/nsbrowser"
+	G2CONF="${G2CONF} MOZILLA_PLUGINDIR=/usr/$(get_libdir)/nsbrowser/plugins"
 
 	G2CONF="${G2CONF} --disable-vanity --enable-gstreamer --with-dbus"
 
