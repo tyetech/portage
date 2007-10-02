@@ -1,12 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/org-mode/Attic/org-mode-5.01.ebuild,v 1.1 2007/07/03 18:48:18 opfer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/org-mode/Attic/org-mode-5.10b.ebuild,v 1.1 2007/10/02 09:05:58 opfer Exp $
 
 inherit elisp
 
 DESCRIPTION="An Emacs mode for notes and project planning"
-HOMEPAGE="http://staff.science.uva.nl/~dominik/Tools/org/"
-SRC_URI="http://staff.science.uva.nl/~dominik/Tools/org/org-${PV}.tar.gz"
+HOMEPAGE="http://www.orgmode.org/"
+SRC_URI="http://orgmode.org/org-${PV}.tar.gz"
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="0"
