@@ -1,6 +1,6 @@
 # Copyright 1999-2004 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/linux-mod.eclass,v 1.75 2007/10/03 12:53:10 phreak Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/linux-mod.eclass,v 1.76 2007/10/03 12:55:18 phreak Exp $
 
 # Description: This eclass is used to interface with linux-info in such a way
 #              to provide the functionality required and initial functions
@@ -491,6 +491,7 @@ linux-mod_src_compile() {
 
 	BUILD_TARGETS=${BUILD_TARGETS:-clean module}
 	strip_modulenames;
+	cd "${S}"
 	for i in ${MODULE_NAMES}
 	do
 		unset libdir srcdir objdir
