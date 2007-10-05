@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg-pkcs11-scd/Attic/gnupg-pkcs11-scd-0.04.ebuild,v 1.1 2007/06/13 19:43:13 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg-pkcs11-scd/Attic/gnupg-pkcs11-scd-0.05.ebuild,v 1.1 2007/10/05 15:41:13 alonbl Exp $
 
 DESCRIPTION="PKCS#11 support for GnuPG"
 HOMEPAGE="http://gnupg-pkcs11.sourceforge.net"
