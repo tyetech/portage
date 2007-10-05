@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sysstat/Attic/sysstat-8.0.0.ebuild,v 1.4 2007/09/22 04:59:14 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sysstat/Attic/sysstat-8.0.0.ebuild,v 1.5 2007/10/05 20:50:05 jer Exp $
 
 inherit eutils multilib
 
@@ -33,7 +33,7 @@ src_compile() {
 src_install() {
 	keepdir /var/log/sa
 
-	emake DESTDIR=${D} DOC_DIR=/usr/share/doc/${PF} \
+	emake DESTDIR="${D}" DOC_DIR=/usr/share/doc/${PF} \
 		install || die "make install failed"
 
 	newdoc sysstat.crond.sample crontab.example
