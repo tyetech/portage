@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/epix/Attic/epix-1.1.17.ebuild,v 1.2 2007/09/16 13:33:45 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/epix/Attic/epix-1.2.1.ebuild,v 1.1 2007/10/05 02:00:36 markusle Exp $
 
 inherit elisp-common flag-o-matic toolchain-funcs bash-completion
 
@@ -21,14 +21,14 @@ SITEFILE=50${PN}-gentoo.el
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-doc-gentoo.patch
+	epatch "${FILESDIR}"/${PN}-1.1.17-doc-gentoo.patch
 	sed -e 's:doc/${PACKAGE_TARNAME}:doc/${PACKAGE_TARNAME}-${PACKAGE_VERSION}:' \
 	-i configure || die "sed on configure failed"
 }
 
 src_compile() {
 	cd "${S}"
-	econf --with-nolisp || die "configure failed"
+	econf --disable-epix-el || die "configure failed"
 	emake || die "compile failed"
 }
 
