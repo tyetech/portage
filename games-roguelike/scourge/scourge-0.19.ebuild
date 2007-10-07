@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/scourge/Attic/scourge-0.19.ebuild,v 1.1 2007/10/05 17:56:09 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/scourge/Attic/scourge-0.19.ebuild,v 1.2 2007/10/07 21:27:26 mr_bones_ Exp $
 
 inherit autotools eutils wxwidgets games
 
@@ -20,6 +20,7 @@ RDEPEND="virtual/glu
 	media-libs/libsdl
 	media-libs/sdl-net
 	media-libs/sdl-mixer
+	media-libs/sdl-ttf
 	virtual/libintl
 	editor? ( =x11-libs/wxGTK-2.6* )"
 DEPEND="${RDEPEND}
