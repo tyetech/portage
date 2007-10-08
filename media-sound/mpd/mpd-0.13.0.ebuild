@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpd/Attic/mpd-0.13.0.ebuild,v 1.9 2007/08/25 14:16:06 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpd/Attic/mpd-0.13.0.ebuild,v 1.10 2007/10/08 23:49:08 jer Exp $
 
 inherit eutils
 
-DESCRIPTION="A development version of Music Player Daemon (mpd)"
+DESCRIPTION="The Music Player Daemon (mpd)"
 HOMEPAGE="http://www.musicpd.org"
 SRC_URI="http://www.musicpd.org/uploads/files/${P}.tar.bz2"
 
