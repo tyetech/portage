@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/kccmp/Attic/kccmp-0.2.ebuild,v 1.1 2007/10/08 12:00:34 mpagano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/kccmp/Attic/kccmp-0.2.ebuild,v 1.2 2007/10/08 14:04:11 mpagano Exp $
 
 inherit eutils qt3 qt4
 
@@ -29,6 +29,9 @@ src_compile() {
 	else
 		eqmake3
 	fi
+
+	sed -i -e "/^CFLAGS =/s:-g:${CFLAGS}:" \
+		Makefile || die "sed Makefile failed"
 
 	emake || die "emake failed"
 }
