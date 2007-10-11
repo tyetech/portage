@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/epiphany/Attic/epiphany-2.16.3.ebuild,v 1.10 2007/08/02 06:38:59 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/epiphany/Attic/epiphany-2.16.3.ebuild,v 1.11 2007/10/11 22:54:16 eva Exp $
 
 inherit eutils gnome2 multilib
 
@@ -53,7 +53,7 @@ pkg_setup() {
 src_unpack() {
 	gnome2_src_unpack
 
-	epatch ${FILESDIR}/${PN}-1.9.2-broken-firefox.patch
+	epatch "${FILESDIR}"/${PN}-1.9.2-broken-firefox.patch
 }
 
 src_compile() {
