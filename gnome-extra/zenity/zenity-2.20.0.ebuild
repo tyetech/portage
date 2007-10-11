@@ -1,15 +1,15 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/zenity/Attic/zenity-2.18.2.ebuild,v 1.11 2007/10/11 21:58:02 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/zenity/Attic/zenity-2.20.0.ebuild,v 1.1 2007/10/11 21:58:02 eva Exp $
 
-inherit gnome2 eutils autotools
+inherit gnome2
 
 DESCRIPTION="Tool to display dialogs from the commandline and shell scripts"
 HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="libnotify"
 
 RDEPEND=">=x11-libs/gtk+-2.10
@@ -33,9 +33,3 @@ pkg_setup() {
 	G2CONF="${G2CONF} --disable-scrollkeeper $(use_enable libnotify)"
 }
 
-src_unpack() {
-	gnome2_src_unpack
-
-	epatch "${FILESDIR}"/${PN}-2.15.90-libnotify-support.patch
-	eautoreconf
-}

@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/zenity/Attic/zenity-2.16.3.ebuild,v 1.9 2007/07/12 04:19:34 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/zenity/Attic/zenity-2.16.3.ebuild,v 1.10 2007/10/11 21:58:02 eva Exp $
 
 WANT_AUTOCONF=latest
 WANT_AUTOMAKE=latest
@@ -38,6 +38,6 @@ pkg_setup() {
 src_unpack() {
 	gnome2_src_unpack
 
-	epatch ${FILESDIR}/${PN}-2.15.90-libnotify-support.patch
+	epatch "${FILESDIR}"/${PN}-2.15.90-libnotify-support.patch
 	eautoreconf
 }
