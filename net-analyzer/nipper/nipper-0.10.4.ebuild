@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nipper/Attic/nipper-0.10.4.ebuild,v 1.1 2007/08/18 15:00:36 ikelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nipper/Attic/nipper-0.10.4.ebuild,v 1.2 2007/10/12 11:05:43 ikelos Exp $
 
 inherit toolchain-funcs eutils
 
@@ -13,13 +13,11 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=""
-RDEPEND=""
-
-RESTRICT="mirror"
+DEPEND="sys-libs/glibc"
+RDEPEND="sys-libs/glibc"
 
 src_compile() {
-	cd ${S}
+	cd "${S}"
 	$(tc-getCC) ${CFLAGS} ${PN}.c -o${PN}
 }
 
