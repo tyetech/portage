@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0.5_pre2.ebuild,v 1.1 2007/08/29 18:19:20 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0.5_pre4.ebuild,v 1.1 2007/10/12 00:09:59 wolf31o2 Exp $
 
 inherit eutils
 
@@ -9,9 +9,11 @@ HOMEPAGE="http://www.gentoo.org/proj/en/releng/catalyst"
 SRC_URI="mirror://gentoo/${P}.tar.bz2
 	http://dev.gentoo.org/~wolf31o2/${P}.tar.bz2"
 
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+RESTRICT=""
 IUSE="ccache"
 
 DEPEND=""
