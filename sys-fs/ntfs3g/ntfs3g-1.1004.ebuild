@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-1.710.ebuild,v 1.1 2007/07/10 15:02:49 chutzpah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-1.1004.ebuild,v 1.1 2007/10/13 19:58:33 chutzpah Exp $
 
 inherit multilib toolchain-funcs
 
