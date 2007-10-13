@@ -1,16 +1,19 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/ipkg-utils/Attic/ipkg-utils-1.7.ebuild,v 1.8 2007/01/23 15:40:07 genone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/ipkg-utils/ipkg-utils-1.7.050831-r1.ebuild,v 1.1 2007/10/13 01:11:50 seemant Exp $
 
-inherit distutils eutils toolchain-funcs
+inherit distutils eutils toolchain-funcs versionator
+
+MY_P=${PN}-$(get_version_component_range 3)
 
 DESCRIPTION="Tools for working with the ipkg binary package format"
 HOMEPAGE="http://www.openembedded.org/"
-SRC_URI="http://handhelds.org/download/packages/ipkg-utils/${P}.tar.gz"
+SRC_URI="http://handhelds.org/download/packages/ipkg-utils/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 IUSE="minimal"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~hppa ~mips ~ppc ~x86"
+S=${WORKDIR}/${MY_P}
 
 RDEPEND="dev-lang/python
 	!minimal? (
@@ -21,7 +24,9 @@ RDEPEND="dev-lang/python
 DEPEND="${RDEPEND}"
 
 src_unpack() {
-	unpack ${A}; cd ${S}
+	unpack "${A}"; cd "${S}"
+
+	epatch "${FILESDIR}"/${PN}-tar_call_fixes.patch
 
 	sed '/python setup.py build/d' -i Makefile
 
@@ -38,5 +43,10 @@ src_compile() {
 
 src_install() {
 	distutils_src_install
-	use minimal && rm ${D}/usr/bin/ipkg-upload
+	use minimal && rm "${D}"/usr/bin/ipkg-upload
+}
+
+pkg_postinst() {
+	elog "Consider installing sys-apps/fakeroot for use with the ipkg-build command,"
+	elog "that makes it possible to build packages as a normal user."
 }
