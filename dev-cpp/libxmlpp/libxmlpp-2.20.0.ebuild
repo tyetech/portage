@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libxmlpp/Attic/libxmlpp-2.12.0.ebuild,v 1.8 2007/10/14 23:16:31 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libxmlpp/Attic/libxmlpp-2.20.0.ebuild,v 1.1 2007/10/14 23:16:31 eva Exp $
 
 inherit gnome2 eutils
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://gnome/sources/libxml++/${PV%.*}/${MY_P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="2.6"
-KEYWORDS="alpha amd64 hppa ~mips ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc"
 
 RDEPEND=">=dev-libs/libxml2-2.6.1
@@ -27,8 +27,7 @@ MAKEOPTS="${MAKEOPTS} -j1"
 DOCS="AUTHORS ChangeLog NEWS README*"
 
 src_unpack() {
-	unpack ${A}
-	cd "${S}"
+	gnome2_src_unpack
 
 	# don't waste time building the examples
 	sed -i 's/^\(SUBDIRS =.*\)examples\(.*\)$/\1\2/' Makefile.in || \
