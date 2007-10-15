@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/authconfig/Attic/authconfig-5.3.5.ebuild,v 1.4 2006/09/07 04:51:45 dberkholz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/authconfig/Attic/authconfig-5.3.5.ebuild,v 1.5 2007/10/15 09:36:28 dberkholz Exp $
 
 inherit eutils python rpm
 
@@ -9,7 +9,7 @@ inherit eutils python rpm
 RPMREV="1"
 
 DESCRIPTION="Tool for setting up authentication from network services"
-HOMEPAGE="http://fedora.redhat.com/projects/config-tools/"
+HOMEPAGE="http://fedoraproject.org/wiki/SystemConfig/"
 SRC_URI="mirror://fedora/development/source/SRPMS/${P}-${RPMREV}.src.rpm"
 LICENSE="GPL-2"
 SLOT="0"
