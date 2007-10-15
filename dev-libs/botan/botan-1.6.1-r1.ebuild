@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/botan/Attic/botan-1.5.11.ebuild,v 1.4 2007/03/03 22:32:36 genone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/botan/Attic/botan-1.6.1-r1.ebuild,v 1.1 2007/10/15 21:23:47 alonbl Exp $
 
 inherit eutils multilib
 
@@ -55,7 +55,7 @@ src_compile() {
 	if [ "${ARCH}" = "x86" ]; then
 		modules="$modules,mp_ia32,alg_ia32"
 	elif [ "${ARCH}" = "amd64" ]; then
-		modules="$modules,mp_amd64"
+		modules="$modules,mp_amd64,alg_amd64"
 	elif [ "${ARCH}" = "alpha" -o "${ARCH}" = "ia64" -o \
 		"${ARCH}" = "ppc64" -o "${PROFILE_ARCH}" = "mips64"  ]; then
 		modules="$modules,mp_asm64"
@@ -74,7 +74,7 @@ src_compile() {
 	# FIXME: We might actually be on *BSD or OS X...
 	./configure.pl \
 		--noauto gcc-linux-${CHOSTARCH} \
-		--libdir=/usr/$(get_libdir) \
+		--libdir=/$(get_libdir) \
 		--modules=$modules ||
 			die "configure.pl failed"
 	emake "LIB_OPT=${CXXFLAGS}" "MACH_OPT=" || die "emake failed"
