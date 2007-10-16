@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/serdisplib/serdisplib-1.97.5.ebuild,v 1.5 2007/08/11 15:54:37 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/serdisplib/serdisplib-1.97.5.ebuild,v 1.6 2007/10/16 18:45:00 rbu Exp $
 
 inherit eutils
 
@@ -27,7 +27,7 @@ pkg_setup() {
 
 src_compile() {
 	econf \
-		--prefix=${D}/usr \
+		--prefix="${D}/usr" \
 		$(use_enable usb libusb) \
 		|| die "configure failed"
 	emake || die "make failed"
