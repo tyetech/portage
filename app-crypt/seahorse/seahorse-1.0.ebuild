@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse/Attic/seahorse-1.0.ebuild,v 1.7 2007/08/02 04:58:05 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse/Attic/seahorse-1.0.ebuild,v 1.8 2007/10/17 22:11:45 eva Exp $
 
 inherit gnome2 eutils flag-o-matic
 
@@ -77,7 +77,7 @@ pkg_setup() {
 
 src_unpack() {
 	gnome2_src_unpack
-	epatch ${FILESDIR}/${PN}-0.9.10-update-mime.patch
+	epatch "${FILESDIR}"/${PN}-0.9.10-update-mime.patch
 }
 
 src_compile() {
