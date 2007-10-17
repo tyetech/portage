@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/rkward/Attic/rkward-0.4.7a.ebuild,v 1.1 2007/06/01 00:55:22 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/rkward/Attic/rkward-0.4.7a.ebuild,v 1.2 2007/10/17 15:47:07 markusle Exp $
 
 ARTS_REQUIRED="never"
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-lang/R"
+DEPEND="<dev-lang/R-2.6.0"
 RDEPEND="${DEPEND} dev-lang/php"
 
 need-kde 3
