@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/onphp-module/Attic/onphp-module-0.10.6.ebuild,v 1.1 2007/10/14 18:06:52 voxus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/onphp-module/Attic/onphp-module-0.10.7.ebuild,v 1.1 2007/10/20 16:30:22 voxus Exp $
 
 PHP_EXT_NAME="onphp"
 PHP_EXT_INI="yes"
