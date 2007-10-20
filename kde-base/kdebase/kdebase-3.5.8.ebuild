@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebase/Attic/kdebase-3.5.8.ebuild,v 1.2 2007/10/20 12:40:42 philantrop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebase/Attic/kdebase-3.5.8.ebuild,v 1.3 2007/10/20 16:54:31 philantrop Exp $
 
 inherit kde-dist eutils flag-o-matic
 
@@ -169,9 +169,9 @@ EOF
 	rmdir "${D}/${KDEDIR}/share/templates/.source/emptydir"
 
 	if use branding ; then
-		dodir "${PREFIX}/share/services/searchproviders"
-		insinto "${PREFIX}/share/services/searchproviders"
-		doins "${WORKDIR}/patches/*.desktop"
+		dodir "${PREFIX}"/share/services/searchproviders
+		insinto "${PREFIX}"/share/services/searchproviders
+		doins "${WORKDIR}"/patches/*.desktop
 	fi
 }
 
