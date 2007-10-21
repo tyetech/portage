@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg123/Attic/mpg123-0.67.ebuild,v 1.2 2007/09/18 14:41:20 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg123/Attic/mpg123-0.67.ebuild,v 1.3 2007/10/21 15:27:14 chainsaw Exp $
 
-inherit eutils
+inherit eutils autotools
 
 DESCRIPTION="Real Time mp3 player"
 HOMEPAGE="http://www.mpg123.de"
@@ -22,6 +22,13 @@ RDEPEND="alsa? ( media-libs/alsa-lib )
 DEPEND="${RDEPEND}"
 
 PROVIDE="virtual/mpg123"
+
+src_unpack() {
+	unpack "${A}"
+	cd "${S}"
+	epatch "${FILESDIR}/${PV}-no-faltivec.patch"
+	eautoreconf
+}
 
 src_compile() {
 	local audiodev
