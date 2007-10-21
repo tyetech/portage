@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomecanvas/Attic/libgnomecanvas-2.20.0.ebuild,v 1.2 2007/10/21 22:59:05 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomecanvas/Attic/libgnomecanvas-2.20.1.1.ebuild,v 1.1 2007/10/21 22:59:05 eva Exp $
 
 inherit virtualx gnome2
 
