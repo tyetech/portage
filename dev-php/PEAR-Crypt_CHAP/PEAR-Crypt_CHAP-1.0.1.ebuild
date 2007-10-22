@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Crypt_CHAP/Attic/PEAR-Crypt_CHAP-1.0.1.ebuild,v 1.7 2007/10/05 15:47:56 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Crypt_CHAP/Attic/PEAR-Crypt_CHAP-1.0.1.ebuild,v 1.8 2007/10/22 16:35:01 armin76 Exp $
 
 inherit php-pear-r1 depend.php eutils
 
@@ -8,7 +8,7 @@ DESCRIPTION="Generating CHAP packets"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ~ia64 ppc ppc64 ~s390 sparc x86"
+KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 ~s390 sparc x86"
 IUSE=""
 
 pkg_postinst() {
