@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-XML_Util/Attic/PEAR-XML_Util-1.1.4.ebuild,v 1.7 2007/10/05 15:55:36 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-XML_Util/Attic/PEAR-XML_Util-1.1.4.ebuild,v 1.8 2007/10/22 19:12:31 armin76 Exp $
 
 inherit php-pear-r1 depend.php
 
@@ -8,7 +8,7 @@ DESCRIPTION="XML utility class"
 
 LICENSE="PHP"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ~ia64 ppc ppc64 ~s390 ~sh sparc x86"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 ~s390 ~sh sparc x86"
 IUSE=""
 
 pkg_setup() {
