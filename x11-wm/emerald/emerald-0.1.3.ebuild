@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/emerald/Attic/emerald-0.1.3.ebuild,v 1.4 2007/07/12 03:41:52 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/emerald/Attic/emerald-0.1.3.ebuild,v 1.5 2007/10/23 23:15:40 hanno Exp $
 
 inherit gnome2
 
