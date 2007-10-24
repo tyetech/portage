@@ -1,21 +1,30 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/calc/Attic/calc-2.11.9.3.ebuild,v 1.3 2007/10/24 12:50:28 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/calc/calc-2.12.2.2.ebuild,v 1.1 2007/10/24 12:50:28 markusle Exp $
+
+inherit eutils
 
 DESCRIPTION="An arbitrary precision C-like arithmetic system"
 HOMEPAGE="http://www.isthe.com/chongo/tech/comp/calc/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="alpha ~amd64 ~ppc ~ppc-macos x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc-macos ~x86"
 
 IUSE=""
 
 DEPEND=">=sys-libs/ncurses-5.2
 	>=sys-libs/readline-4.2"
 
-RDEPEND=">=sys-apps/less-348"
+RDEPEND="${DEPEND}
+		>=sys-apps/less-348"
+
+src_unpack() {
+	unpack "${A}"
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-libdir-fix.patch
+}
 
 src_compile() {
 	make \
@@ -35,5 +44,5 @@ src_compile() {
 
 src_install() {
 	make T="${D}" install || die
-	dodoc BUGS CHANGES COPYING COPYING-LGPL LIBRARY README
+	dodoc BUGS CHANGES LIBRARY README
 }

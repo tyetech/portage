@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/calc/calc-2.12.1.5.ebuild,v 1.3 2007/08/02 14:04:25 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/calc/calc-2.12.1.5.ebuild,v 1.4 2007/10/24 12:50:28 markusle Exp $
 
 DESCRIPTION="An arbitrary precision C-like arithmetic system"
 HOMEPAGE="http://www.isthe.com/chongo/tech/comp/calc/"
@@ -15,11 +15,12 @@ IUSE=""
 DEPEND=">=sys-libs/ncurses-5.2
 	>=sys-libs/readline-4.2"
 
-RDEPEND=">=sys-apps/less-348"
+RDEPEND="${DEPEND}
+		>=sys-apps/less-348"
 
 src_compile() {
 	make \
-		T=${D} \
+		T="${D}" \
 		DEBUG="${CFLAGS}" \
 		CALCPAGER=less \
 		USE_READLINE="-DUSE_READLINE" \
@@ -34,6 +35,6 @@ src_compile() {
 }
 
 src_install() {
-	make T=${D} install || die
-	dodoc BUGS CHANGES COPYING COPYING-LGPL LIBRARY README
+	make T="${D}" install || die
+	dodoc BUGS CHANGES LIBRARY README
 }
