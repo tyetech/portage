@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/telepathy-mission-control/Attic/telepathy-mission-control-4.41.ebuild,v 1.1 2007/09/22 19:40:47 coldwind Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/telepathy-mission-control/Attic/telepathy-mission-control-4.49.ebuild,v 1.1 2007/10/26 13:27:59 coldwind Exp $
 
 DESCRIPTION="Nokia's implementation of a Telepathy Mission Control"
 HOMEPAGE="http://telepathy.freedesktop.org/wiki/Mission_Control"
