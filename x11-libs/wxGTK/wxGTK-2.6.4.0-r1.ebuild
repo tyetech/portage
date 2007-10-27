@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/wxGTK/Attic/wxGTK-2.6.4.0.ebuild,v 1.4 2007/10/25 04:05:26 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/wxGTK/Attic/wxGTK-2.6.4.0-r1.ebuild,v 1.1 2007/10/27 00:28:41 dirtyepic Exp $
 
 inherit eutils versionator flag-o-matic
 
