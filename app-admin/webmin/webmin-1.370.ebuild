@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/webmin/Attic/webmin-1.370.ebuild,v 1.1 2007/09/21 18:48:25 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/webmin/Attic/webmin-1.370.ebuild,v 1.2 2007/10/28 12:43:28 phreak Exp $
 
 inherit eutils pam
 
@@ -23,7 +23,8 @@ RDEPEND="${DEPEND}
 	ssl? ( dev-perl/Net-SSLeay )
 	postgres? ( dev-perl/DBD-Pg )
 	pam? ( dev-perl/Authen-PAM )
-	dev-perl/XML-Generator"
+	dev-perl/XML-Generator
+	virtual/logger"
 
 src_unpack() {
 	unpack ${A}
