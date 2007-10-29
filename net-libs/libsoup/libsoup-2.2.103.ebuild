@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsoup/Attic/libsoup-2.2.101.ebuild,v 1.1 2007/10/09 03:40:51 leio Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsoup/Attic/libsoup-2.2.103.ebuild,v 1.1 2007/10/29 01:13:57 leio Exp $
 
 inherit gnome2
 
