@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/imediff2/Attic/imediff2-1.1.1.1.ebuild,v 1.2 2007/03/01 22:13:19 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/imediff2/Attic/imediff2-1.1.2.ebuild,v 1.1 2007/10/31 09:34:01 dev-zero Exp $
 
 inherit eutils versionator
 
@@ -15,8 +15,8 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND=""
-RDEPEND=">=dev-lang/python-2.3"
+DEPEND="virtual/python"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
 
