@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centerim/Attic/centerim-4.22.1_p20071003.ebuild,v 1.2 2007/11/02 19:33:06 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centerim/Attic/centerim-4.22.1_p20071022.ebuild,v 1.1 2007/11/02 19:33:06 swegener Exp $
 
 inherit eutils
 
