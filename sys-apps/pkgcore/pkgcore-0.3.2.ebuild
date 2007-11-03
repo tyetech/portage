@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.3.ebuild,v 1.8 2007/06/16 11:20:13 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.3.2.ebuild,v 1.1 2007/11/03 16:05:07 jokey Exp $
 
 inherit distutils eutils
 
@@ -21,13 +21,6 @@ DEPEND="${RDEPEND}
 	doc? ( >=dev-python/docutils-0.4 )"
 
 DOCS="AUTHORS NEWS"
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}/${P}-pmerge-unmerge-ask.patch"
-}
 
 src_compile() {
 	distutils_src_compile
