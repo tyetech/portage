@@ -1,10 +1,10 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libarchive/Attic/libarchive-2.2.5.ebuild,v 1.2 2007/11/03 17:39:02 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libarchive/Attic/libarchive-2.4.0.ebuild,v 1.1 2007/11/04 17:54:42 flameeyes Exp $
 
 inherit eutils autotools toolchain-funcs flag-o-matic
 
-MY_P="${P/_beta/b}"
+MY_P=${P/_beta/b}
 
 DESCRIPTION="BSD tar command"
 HOMEPAGE="http://people.freebsd.org/~kientzle/libarchive/"
@@ -33,7 +33,6 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${PN}-2.1.9-static.patch
 	epatch "${FILESDIR}"/${PN}-2.1.5-acl.patch
 
 	eautoreconf
@@ -41,7 +40,7 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf
+	local myconf=
 
 	if use static || use build ; then
 		myconf="${myconf} --enable-static-bsdtar"
@@ -51,10 +50,11 @@ src_compile() {
 
 	# Upstream doesn't seem to care to fix the problems
 	# and I don't want to continue running after them.
-	append-flags -fno-strict-aliasing
+	#append-flags -fno-strict-aliasing
 
 	econf \
 		--bindir=/bin \
+		--enable-bsdcpio \
 		$(use_enable acl) \
 		$(use_enable xattr) \
 		${myconf} || die "econf failed"
@@ -68,7 +68,10 @@ src_install() {
 	if [[ ${CHOST} == *-freebsd* ]]; then
 		dosym bsdtar /bin/tar
 		dosym bsdtar.1 /usr/share/man/man1/tar.1
+		# We may wish to switch to symlink bsdcpio to cpio too one day
 	fi
+
+	dodoc README NEWS
 
 	if use build; then
 		rm -rf "${D}"/usr
