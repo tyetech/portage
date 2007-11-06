@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libarchive/Attic/libarchive-2.3.5.ebuild,v 1.2 2007/11/03 17:39:02 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libarchive/Attic/libarchive-2.4.0-r1.ebuild,v 1.1 2007/11/06 20:55:47 flameeyes Exp $
 
 inherit eutils autotools toolchain-funcs flag-o-matic
 
@@ -42,10 +42,8 @@ src_unpack() {
 src_compile() {
 	local myconf=
 
-	if use static || use build ; then
-		myconf="${myconf} --enable-static-bsdtar"
-	else
-		myconf="${myconf} --disable-static-bsdtar"
+	if ! use static && ! use build ; then
+		myconf="--enable-bsdtar=shared --enable-bsdcpio=shared"
 	fi
 
 	# Upstream doesn't seem to care to fix the problems
@@ -70,6 +68,8 @@ src_install() {
 		dosym bsdtar.1 /usr/share/man/man1/tar.1
 		# We may wish to switch to symlink bsdcpio to cpio too one day
 	fi
+
+	dodoc README NEWS
 
 	if use build; then
 		rm -rf "${D}"/usr
