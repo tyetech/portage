@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.4-r1.ebuild,v 1.1 2007/11/08 12:51:11 mjolnir Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/net-snmp/Attic/net-snmp-5.4-r1.ebuild,v 1.2 2007/11/08 18:04:50 mr_bones_ Exp $
 
 inherit fixheadtails flag-o-matic perl-module
 
@@ -40,7 +40,7 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}"/${P}-makefile.patch
-	
+
 # For #198346 - from upstream.  Commited 5/7/2007, so 5.4.1+ not affected
 	epatch "${FILESDIR}"/${PN}-maxreps.patch
 
