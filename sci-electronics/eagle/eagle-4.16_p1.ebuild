@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/eagle/Attic/eagle-4.16_p1.ebuild,v 1.5 2007/09/13 01:42:17 nixphoeni Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/eagle/Attic/eagle-4.16_p1.ebuild,v 1.6 2007/11/10 22:52:51 nixphoeni Exp $
 
 inherit eutils
 
@@ -37,7 +37,7 @@ case "${LINGUAS}" in
 esac
 MANFILE=${MANDOC}-${MY_LANG}-${MANVER}.pdf
 MY_P=${PN}-lin-${MY_LANG}-${MY_PV}
-S=${WORKDIR}/${MY_P}
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 
@@ -55,7 +55,7 @@ src_install() {
 
 	# Install the documentation
 	dodoc README doc/*
-	use doc && cp ${MANFILE} ${D}/usr/share/doc/${PF}
+	use doc && cp ${MANFILE} "${D}"/usr/share/doc/${PF}
 	doman man/eagle.1
 	# Remove docs left in INSTALLDIR
 	rm -rf "${D}"/${INSTALLDIR}/{README,install,${MANFILE}} "${D}"/${INSTALLDIR}/doc "${D}"/${INSTALLDIR}/man
@@ -71,7 +71,8 @@ src_install() {
 
 pkg_postinst() {
 
-	elog "Run \`env-update && source /etc/profile\` now to set up the correct paths."
+	elog "Run \`env-update && source /etc/profile\` from within \${ROOT}"
+	elog "now to set up the correct paths."
 	elog "You must first run eagle as root to invoke product registration."
 
 }

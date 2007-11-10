@@ -1,13 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/eagle/Attic/eagle-4.16_p2.ebuild,v 1.5 2007/11/10 22:52:51 nixphoeni Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/eagle/Attic/eagle-4.16_p2-r1.ebuild,v 1.1 2007/11/10 22:52:51 nixphoeni Exp $
 
 inherit eutils
 
 DESCRIPTION="EAGLE Layout Editor"
 HOMEPAGE="http://www.cadsoft.de"
 
-KEYWORDS="~amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="linguas_de doc"
 LICENSE="cadsoft"
 RESTRICT="strip"
@@ -60,15 +60,23 @@ src_install() {
 	# Copy all to INSTALLDIR
 	cp -r . "${D}"/${INSTALLDIR}
 
+	# Install wrapper (suppressing leading tabs)
+	# see bug #188368 or http://www.cadsoft.de/faq.htm#17040701
+	exeinto /usr/bin
+	newexe "${FILESDIR}/eagle_wrapper_script" eagle
+	# Finally, append the path of the eagle binary respecting INSTALLDIR
+	echo "${INSTALLDIR}/bin/eagle" >> "${D}/usr/bin/eagle"
+
 	# Install the documentation
 	dodoc README doc/*
-	use doc && cp ${MANFILE} "${D}"/usr/share/doc/${PF}
 	doman man/eagle.1
+	# Conditionally install the user's manual
+	use doc && cp ${MANFILE} "${D}/usr/share/doc/${PF}"
 	# Remove docs left in INSTALLDIR
-	rm -rf "${D}"/${INSTALLDIR}/{README,install,${MANFILE}} "${D}"/${INSTALLDIR}/doc "${D}"/${INSTALLDIR}/man
+	rm -rf "${D}${INSTALLDIR}/{README,install,${MANFILE}}" "${D}${INSTALLDIR}/doc" "${D}${INSTALLDIR}/man"
 
-	echo -e "PATH=${INSTALLDIR}/bin\nROOTPATH=${INSTALLDIR}/bin\nPRELINK_PATH_MASK=${INSTALLDIR}" > "${S}"/90eagle
-	doenvd "${S}"/90eagle
+	echo -e "ROOTPATH=${INSTALLDIR}/bin\nPRELINK_PATH_MASK=${INSTALLDIR}" > "${S}/90eagle"
+	doenvd "${S}/90eagle"
 
 	# Create desktop entry
 	doicon bin/${PN}.xpm
