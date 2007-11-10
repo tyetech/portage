@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.16.2-r1.ebuild,v 1.9 2007/08/02 05:22:20 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-applets/Attic/gnome-applets-2.16.2-r1.ebuild,v 1.10 2007/11/10 14:45:26 eva Exp $
 
 inherit eutils gnome2 autotools
 
@@ -62,7 +62,7 @@ src_unpack() {
 	gnome2_src_unpack
 
 	epatch "${FILESDIR}/${PN}-2.16.1-dbus-version.patch"
-	epatch ${FILESDIR}/${PN}-2.18.0-acpi-procfs.patch
+	epatch "${FILESDIR}/${PN}-2.18.0-acpi-procfs.patch"
 	use x86-fbsd && epatch "${FILESDIR}"/${P}-malloc.patch
 }
 
