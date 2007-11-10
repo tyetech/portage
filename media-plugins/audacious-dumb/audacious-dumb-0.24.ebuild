@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/audacious-dumb/Attic/audacious-dumb-0.24.ebuild,v 1.4 2007/02/02 14:18:23 joker Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/audacious-dumb/Attic/audacious-dumb-0.24.ebuild,v 1.5 2007/11/10 16:16:59 joker Exp $
 
 DESCRIPTION="Audacious Plug-in for accurate, high-quality IT/XM/S3M/MOD playback"
 HOMEPAGE="http://www.netswarm.net/"
@@ -11,8 +11,8 @@ SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
-# Plugin will stop working after 1.3.0_alpha3 due to API changes
-DEPEND="<=media-sound/audacious-1.3.0_alpha3
+# Plugin will stop working after 1.2 due to API changes
+DEPEND="<=media-sound/audacious-1.2
 	>=media-libs/dumb-0.9.3"
 
 src_install() {
