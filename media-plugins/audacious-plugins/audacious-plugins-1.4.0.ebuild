@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/audacious-plugins/Attic/audacious-plugins-1.4.0_rc1-r2.ebuild,v 1.2 2007/11/03 17:01:49 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/audacious-plugins/Attic/audacious-plugins-1.4.0.ebuild,v 1.1 2007/11/10 16:12:54 chainsaw Exp $
 
 inherit eutils flag-o-matic
 
@@ -22,7 +22,7 @@ RDEPEND="app-arch/unzip
 	>=gnome-base/libglade-2.3.1
 	media-libs/libsamplerate
 	>=media-libs/libcddb-1.2.1
-	>=media-sound/audacious-1.4.0_rc1-r1
+	>=media-sound/audacious-1.4.0
 	>=net-misc/neon-0.26.3
 	>=x11-libs/gtk+-2.6
 	adplug? ( >=dev-cpp/libbinio-1.4 )
