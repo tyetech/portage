@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/misdn/Attic/misdn-1.1.5.ebuild,v 1.1 2007/07/07 10:21:39 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/misdn/misdn-1.1.7.ebuild,v 1.1 2007/11/12 19:14:08 genstef Exp $
 
 inherit eutils linux-mod
 
@@ -119,6 +119,8 @@ src_unpack() {
 	unpack ${A}
 
 	cd "${S}"
+	kernel_is ge 2 6 23 && epatch "${FILESDIR}"/misdn-2.6.23.diff
+
 	if use ecaggressive; then
 		sed -i -e "s:.*#define \(AGGRESSIVE_SUPPRESSOR\):#define \1:m" dsp.h
 	fi
