@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/libbtctl/Attic/libbtctl-0.9.0.ebuild,v 1.2 2007/10/24 15:07:20 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/libbtctl/Attic/libbtctl-0.9.0.ebuild,v 1.3 2007/11/12 21:40:29 drac Exp $
 
 WANT_AUTOMAKE="latest"
 WANT_AUTOCONF="latest"
@@ -12,7 +12,7 @@ HOMEPAGE="http://live.gnome.org/GnomeBluetooth"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ~sparc ~x86"
 IUSE="mono doc"
 
 RDEPEND=">=dev-libs/glib-2
