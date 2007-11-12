@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/clive/Attic/clive-0.3.1.ebuild,v 1.1 2007/11/11 12:11:58 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/clive/Attic/clive-0.3.1.ebuild,v 1.2 2007/11/12 00:24:30 mr_bones_ Exp $
 
 inherit distutils versionator
 
@@ -23,7 +23,6 @@ src_unpack() {
 	# dont install man, we'll use doman
 	sed -i -e "s/data_files = \[.*\]/data_files = []/" setup.py
 }
-
 
 src_install() {
 	distutils_src_install
