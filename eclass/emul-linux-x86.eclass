@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/emul-linux-x86.eclass,v 1.1 2007/11/14 03:42:12 kingtaco Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/emul-linux-x86.eclass,v 1.2 2007/11/14 17:00:21 kingtaco Exp $
 
 #
 # Original Author: Mike Doty <kingtaco@gentoo.org>
@@ -16,7 +16,7 @@ DESCRIPTION="Provides precompiled 32bit libraries"
 HOMEPAGE="http://amd64.gentoo.org/emul/content.xml"
 
 RESTRICT="strip"
-S=${WORKDIR}
+S="${WORKDIR}"
 
 SLOT="0"
 IUSE=""
