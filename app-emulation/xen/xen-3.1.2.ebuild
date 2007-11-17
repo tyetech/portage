@@ -1,16 +1,12 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen/Attic/xen-3.1.1.ebuild,v 1.1 2007/10/15 18:33:40 marineam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen/Attic/xen-3.1.2.ebuild,v 1.1 2007/11/17 00:13:55 marineam Exp $
 
 inherit mount-boot flag-o-matic
 
 DESCRIPTION="The Xen virtual machine monitor"
 HOMEPAGE="http://www.xensource.com/xen/xen/"
-#SRC_URI="http://bits.xensource.com/oss-xen/release/${PV}/src.tgz/xen-${PV}-src.tgz"
-#S="${WORKDIR}/xen-${PV}-src"
-
-# Temporary while we wait on the upstream tarball
-SRC_URI="http://dev.gentoo.org/~marineam/files/xen/xen-${PV}.tgz"
+SRC_URI="mirror://gentoo/xen-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

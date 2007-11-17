@@ -1,13 +1,13 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen-tools/Attic/xen-tools-3.1.0-r2.ebuild,v 1.1 2007/10/23 19:09:08 marineam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen-tools/Attic/xen-tools-3.1.2.ebuild,v 1.1 2007/11/17 00:13:28 marineam Exp $
 
 inherit flag-o-matic eutils multilib
 
 DESCRIPTION="Xend daemon and tools"
 HOMEPAGE="http://www.xensource.com/xen/xen/"
-SRC_URI="http://bits.xensource.com/oss-xen/release/${PV}/src.tgz/xen-${PV}-src.tgz"
-S="${WORKDIR}/xen-${PV}-src"
+SRC_URI="mirror://gentoo/xen-${PV}.tar.gz"
+S="${WORKDIR}/xen-${PV}"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -110,18 +110,8 @@ src_unpack() {
 	# Fix network broadcast on bridged networks
 	epatch "${FILESDIR}/${PN}-3.0.4_p1-network-bridge-broadcast.patch"
 
-	# Also look in python's site packages for xen, as it installs there
-	epatch "${FILESDIR}/${PN}-3.1.0-python-site-packages.patch"
-
 	# Fix building small dumb utility called 'xen-detect' on hardened
 	epatch "${FILESDIR}/${PN}-3.1.0-xen-detect-nopie-fix.patch"
-
-	# Security fix, CVE-2007-4993
-	# https://bugs.gentoo.org/show_bug.cgi?id=193808
-	epatch "${FILESDIR}/${PN}-3.1.0-pygrub-security-fix.patch"
-
-	# Fix an insecure temp file creation, bug #196824, CVE-2007-3919
-	epatch "${FILESDIR}/${PN}-3.1.1-insecure-file-creation-fix.patch"
 }
 
 src_compile() {
