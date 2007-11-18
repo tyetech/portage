@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-weather/Attic/xfce4-weather-0.6.1.ebuild,v 1.2 2007/11/18 11:30:18 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-weather/Attic/xfce4-weather-0.6.2.ebuild,v 1.1 2007/11/18 19:26:45 angelos Exp $
 
 inherit xfce44
 
