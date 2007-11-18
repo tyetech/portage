@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/jabref/Attic/jabref-2.3_beta2.ebuild,v 1.1 2007/10/05 19:48:44 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/jabref/Attic/jabref-2.3.ebuild,v 1.1 2007/11/18 11:54:28 caster Exp $
 
 JAVA_PKG_IUSE="doc"
 inherit eutils java-pkg-2 java-ant-2
@@ -19,7 +19,7 @@ IUSE=""
 CDEPEND="dev-java/spin
 	>=dev-java/glazedlists-1.5.0
 	>=dev-java/antlr-2.7.3
-	>=dev-java/jgoodies-forms-1.0.5
+	>=dev-java/jgoodies-forms-1.1.0
 	>=dev-java/jgoodies-looks-2.0
 	>=dev-java/microba-0.4.3
 	dev-java/jempbox
@@ -40,8 +40,6 @@ src_unpack() {
 	# moves jarbundler definition to where it's needed (not by us)
 	# don't call unjarlib, don't want to absorb deps
 	epatch "${FILESDIR}/${PN}-2.2-build.xml.patch"
-	# support >=jgoodies-forms-1.1.0 - bug #186941 - sent also upstream
-	epatch "${FILESDIR}/${P}-jgoodies-forms.patch"
 
 	mkdir libs
 	mv lib/antlr-3* libs/antlr3.jar
