@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera/Attic/opera-9.50_beta3.ebuild,v 1.2 2007/11/09 17:29:45 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera/Attic/opera-9.50_beta2_p1669.ebuild,v 1.1 2007/11/18 18:06:13 jer Exp $
 
 GCONF_DEBUG="no"
 
@@ -17,8 +17,8 @@ IUSE="qt-static spell gnome elibc_FreeBSD"
 RESTRICT="strip mirror"
 
 O_LNG=""
-O_SUFF="1662"
-O_VER="9.50-20071109"
+O_SUFF="1669"
+O_VER="9.50-20071115"
 
 O_URI="http://snapshot.opera.com/unix/snapshot-${O_SUFF}/"
 
