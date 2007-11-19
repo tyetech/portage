@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qsynth/Attic/qsynth-0.3.1-r1.ebuild,v 1.2 2007/11/19 20:35:16 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qsynth/Attic/qsynth-0.3.1-r1.ebuild,v 1.3 2007/11/19 22:12:06 cla Exp $
 
 inherit qt4 eutils flag-o-matic
 
@@ -11,7 +11,7 @@ LICENSE="GPL-2"
 
 SLOT="0"
 IUSE="debug jack alsa"
-KEYWORDS="amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 
 DEPEND="$(qt4_min_version 4.2)
 	media-sound/fluidsynth"
