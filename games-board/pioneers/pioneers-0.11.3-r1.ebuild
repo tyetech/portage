@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/pioneers/Attic/pioneers-0.11.3.ebuild,v 1.3 2007/11/11 15:12:53 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/pioneers/Attic/pioneers-0.11.3-r1.ebuild,v 1.1 2007/11/20 03:09:06 mr_bones_ Exp $
 
 inherit eutils gnome2
 
@@ -21,6 +21,11 @@ RDEPEND=">=dev-libs/glib-2.6
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	nls? ( sys-devel/gettext )"
+
+src_unpack() {
+	gnome2_src_unpack
+	epatch "${FILESDIR}/${P}-DOS.patch" #bug #198807
+}
 
 src_compile() {
 	gnome2_src_compile $(use_enable nls)
