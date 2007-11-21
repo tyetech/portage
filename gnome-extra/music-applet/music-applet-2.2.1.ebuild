@@ -1,11 +1,11 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/music-applet/Attic/music-applet-2.1.0.ebuild,v 1.3 2007/07/12 04:19:34 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/music-applet/Attic/music-applet-2.2.1.ebuild,v 1.1 2007/11/21 11:37:44 drac Exp $
 
 inherit gnome2
 
 DESCRIPTION="GNOME applet to control various music players"
-HOMEPAGE="http://www.kuliniewicz.org/music-applet/"
+HOMEPAGE="http://www.kuliniewicz.org/music-applet"
 SRC_URI="http://www.kuliniewicz.org/${PN}/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -21,6 +21,5 @@ DEPEND=">=x11-libs/gtk+-2.6
 	>=dev-python/dbus-python-0.80
 	>=dev-libs/dbus-glib-0.71
 	>=dev-python/pygtk-2.6"
-
 RDEPEND="dev-util/pkgconfig
 	dev-util/intltool"
