@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-1.4.9999-r1.ebuild,v 1.2 2007/10/11 16:53:02 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amarok/Attic/amarok-1.4.9999-r2.ebuild,v 1.1 2007/11/23 13:55:00 flameeyes Exp $
 
 inherit kde subversion
 
@@ -16,12 +16,10 @@ LICENSE="GPL-2"
 
 SLOT="0"
 KEYWORDS=""
-IUSE="aac kde mysql amazon opengl postgres
+IUSE="mp4 kde mysql amazon opengl postgres
 visualization ipod ifp real njb mtp musicbrainz daap
 python"
 # kde: enables compilation of the konqueror sidebar plugin
-
-SQLITEVER="3.3.17"
 
 RDEPEND="kde? ( || ( kde-base/konqueror kde-base/kdebase ) )
 	>=media-libs/xine-lib-1.1.2_pre20060328-r8
@@ -31,15 +29,14 @@ RDEPEND="kde? ( || ( kde-base/konqueror kde-base/kdebase ) )
 	opengl? ( virtual/opengl )
 	visualization? ( media-libs/libsdl
 					 =media-plugins/libvisual-plugins-0.4* )
-	ipod? ( >=media-libs/libgpod-0.3 )
-	aac? ( media-libs/libmp4v2 )
+	ipod? ( >=media-libs/libgpod-0.4.2 )
+	mp4? ( media-libs/libmp4v2 )
 	ifp? ( media-libs/libifp )
 	real? ( media-video/realplayer )
 	njb? ( >=media-libs/libnjb-2.2.4 )
 	mtp? ( >=media-libs/libmtp-0.1.1 )
 	musicbrainz? ( media-libs/tunepimp )
-	=dev-lang/ruby-1.8*
-	>=dev-db/sqlite-${SQLITEVER}"
+	=dev-lang/ruby-1.8*"
 
 DEPEND="${RDEPEND}"
 
@@ -51,16 +48,6 @@ RDEPEND="${RDEPEND}
 need-kde 3.3
 
 S="${WORKDIR}/${PN}"
-
-pkg_setup() {
-	if built_with_use ">=dev-db/sqlite-${SQLITEVER}" nothreadsafe; then
-		eerror "SQLite was built without thread safety."
-		eerror "Amarok requires thread safety enabled in SQLite."
-		eerror "Please rebuild >=dev-db/sqlite-${SQLITEVER} with the"
-		eerror "nothreadsafe USE flag disabled."
-		die "SQLite built with nothreadsafe USE flag."
-	fi
-}
 
 src_unpack() {
 	ESVN_UPDATE_CMD="svn update -N" \
@@ -85,7 +72,7 @@ src_compile() {
 				  $(use_with visualization libvisual)
 				  $(use_enable amazon)
 				  $(use_with ipod libgpod)
-				  $(use_with aac mp4v2)
+				  $(use_with mp4 mp4v2)
 				  $(use_with ifp)
 				  $(use_with real helix)
 				  $(use_with njb libnjb)
@@ -94,8 +81,7 @@ src_compile() {
 				  $(use_with daap)
 				  --with-xine
 				  --without-mas
-				  --without-nmm
-				  --without-included-sqlite"
+				  --without-nmm"
 
 	kde_src_compile
 }
