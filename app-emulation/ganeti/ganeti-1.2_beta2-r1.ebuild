@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/ganeti/Attic/ganeti-1.2_beta2.ebuild,v 1.1 2007/11/23 02:03:39 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/ganeti/Attic/ganeti-1.2_beta2-r1.ebuild,v 1.1 2007/11/23 12:44:59 hansmi Exp $
 
 NEED_PYTHON=2.4
 
