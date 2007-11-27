@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/motioneye/Attic/motioneye-1.3-r1.ebuild,v 1.3 2007/07/22 08:47:53 dberkholz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/motioneye/Attic/motioneye-1.3-r1.ebuild,v 1.4 2007/11/27 12:04:16 zzam Exp $
 
 inherit eutils
 
@@ -20,7 +20,6 @@ DEPEND="${RDEPEND}
 	app-text/docbook-sgml-utils"
 
 src_compile() {
-	cd ${S}
 	if use X; then
 		export WITHX='yes'
 	else
