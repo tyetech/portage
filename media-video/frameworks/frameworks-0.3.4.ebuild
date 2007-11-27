@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/frameworks/Attic/frameworks-0.3.4.ebuild,v 1.3 2006/11/09 19:30:04 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/frameworks/Attic/frameworks-0.3.4.ebuild,v 1.4 2007/11/27 12:42:16 zzam Exp $
 
 DESCRIPTION="A small v4l frame capture utility especially suited for stop motion animation."
 SRC_URI="http://www.polycrystal.org/software/frameworks/${P}.tar.gz"
@@ -15,6 +15,6 @@ DEPEND=">=gnome-base/libglade-2
 	>=x11-libs/gtk+-2"
 
 src_install () {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog NEWS README TODO
 }
