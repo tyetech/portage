@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/exaile/Attic/exaile-0.2.11-r1.ebuild,v 1.1 2007/11/25 19:46:07 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/exaile/Attic/exaile-0.2.11-r2.ebuild,v 1.1 2007/11/28 15:42:49 drac Exp $
 
 inherit eutils fdo-mime multilib python
 
