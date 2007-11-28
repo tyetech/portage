@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/tagtool/tagtool-0.12.3.ebuild,v 1.5 2007/11/24 18:50:32 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/tagtool/tagtool-0.12.3.ebuild,v 1.6 2007/11/28 20:45:05 armin76 Exp $
 
 DESCRIPTION="Audio Tag Tool Ogg/Mp3 Tagger"
 HOMEPAGE="http://pwp.netcabo.pt/paol/tagtool"
@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ~sparc x86"
+KEYWORDS="amd64 ppc sparc x86"
 IUSE="vorbis mp3"
 
 DEPEND=">=x11-libs/gtk+-2.4
