@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-vcalendar/Attic/claws-mail-vcalendar-1.98.ebuild,v 1.2 2007/11/29 23:11:45 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-vcalendar/Attic/claws-mail-vcalendar-1.99.ebuild,v 1.1 2007/11/29 23:11:45 ticho Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
-DEPEND=">=mail-client/claws-mail-3.0.0
+DEPEND=">=mail-client/claws-mail-3.1.0
 		>=net-misc/curl-7.9.7"
 
 S="${WORKDIR}/${MY_P}"

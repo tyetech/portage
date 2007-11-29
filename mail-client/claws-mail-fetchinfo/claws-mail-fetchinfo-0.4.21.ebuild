@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-fetchinfo/Attic/claws-mail-fetchinfo-0.4.20.ebuild,v 1.4 2007/11/29 22:47:01 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-fetchinfo/Attic/claws-mail-fetchinfo-0.4.21.ebuild,v 1.1 2007/11/29 22:47:01 ticho Exp $
 
 MY_P="${PN#claws-mail-}-plugin-${PV}"
 
@@ -9,9 +9,9 @@ HOMEPAGE="http://www.claws-mail.org"
 SRC_URI="http://www.claws-mail.org/downloads/plugins/${MY_P}.tar.gz"
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ppc64 x86"
+KEYWORDS="~amd64 ~ppc64 ~x86"
 IUSE=""
-DEPEND=">=mail-client/claws-mail-3.0.0"
+DEPEND=">=mail-client/claws-mail-3.1.0"
 
 S="${WORKDIR}/${MY_P}"
 
