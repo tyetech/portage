@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avidemux/Attic/avidemux-2.4_pre3.ebuild,v 1.3 2007/11/30 21:07:16 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/avidemux/Attic/avidemux-2.4_pre3.ebuild,v 1.4 2007/11/30 21:45:16 drac Exp $
 
 inherit cmake-utils eutils
 
@@ -53,6 +53,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-libdca.patch
+	epatch "${FILESDIR}"/${P}-i18n.patch
 }
 
 src_compile() {
