@@ -1,8 +1,8 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/hugin/Attic/hugin-0.7_beta4.ebuild,v 1.6 2007/10/13 00:06:49 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/hugin/Attic/hugin-0.6.1-r2.ebuild,v 1.1 2007/12/03 16:40:39 maekke Exp $
 
-inherit wxwidgets eutils
+inherit wxwidgets eutils autotools libtool
 
 DESCRIPTION="GUI for the creation & processing of panoramic images"
 HOMEPAGE="http://hugin.sf.net"
@@ -45,6 +45,11 @@ src_unpack() {
 	unpack ${A}
 
 	sed -i -e 's/autopanog\.exe/autopanog/' "${S}"/src/include/hugin/config_defaults.h
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-1_0.6.1-1.1.patch"
+	epatch "${FILESDIR}/${P}-as-needed.patch"
+
+	AT_M4DIR="${S}/m4" eautoreconf
 }
 
 src_compile() {
