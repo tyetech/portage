@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/deluge/Attic/deluge-0.5.7.ebuild,v 1.1 2007/11/28 11:08:13 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/deluge/Attic/deluge-0.5.7.1.ebuild,v 1.1 2007/12/04 16:18:05 armin76 Exp $
 
 inherit eutils distutils flag-o-matic
 
@@ -12,6 +12,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 IUSE="libnotify"
+
+S="${WORKDIR}"/${PN}-torrent-${PV}
 
 DEPEND=">=dev-lang/python-2.3
 	dev-libs/boost"
