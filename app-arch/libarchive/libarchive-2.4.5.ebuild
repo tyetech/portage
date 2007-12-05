@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libarchive/Attic/libarchive-2.4.4.ebuild,v 1.1 2007/12/04 16:24:53 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libarchive/Attic/libarchive-2.4.5.ebuild,v 1.1 2007/12/05 14:51:29 drac Exp $
 
 inherit eutils libtool toolchain-funcs
 
