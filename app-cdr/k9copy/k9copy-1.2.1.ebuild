@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/k9copy/Attic/k9copy-1.2.0.ebuild,v 1.2 2007/12/08 10:58:28 mattepiu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/k9copy/Attic/k9copy-1.2.1.ebuild,v 1.1 2007/12/08 10:58:28 mattepiu Exp $
 
 inherit kde
 
