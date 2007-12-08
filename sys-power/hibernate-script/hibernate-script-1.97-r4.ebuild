@@ -1,24 +1,24 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-power/cvs-repo/gentoo-x86/sys-power/hibernate-script/Attic/hibernate-script-1.95-r3.ebuild,v 1.2 2007/11/12 10:44:17 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-power/cvs-repo/gentoo-x86/sys-power/hibernate-script/hibernate-script-1.97-r4.ebuild,v 1.1 2007/12/08 07:58:04 alonbl Exp $
 
 inherit eutils
 
-PATCH_VERSION="3"
+PATCH_VERSION="5"
 
 DESCRIPTION="Hibernate script supporting multiple suspend methods"
-HOMEPAGE="http://www.suspend2.net/"
-SRC_URI="http://www.suspend2.net/downloads/all/${P}.tar.gz
+HOMEPAGE="http://www.tuxonice.net/"
+SRC_URI="http://www.tuxonice.net/downloads/all/${P}.tar.gz
 	mirror://gentoo/${P}-patches-${PATCH_VERSION}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 
 IUSE="vim-syntax"
 
 DEPEND=""
-RDEPEND=""
+RDEPEND="!<media-gfx/splashutils-1.5.2"
 
 src_unpack() {
 	unpack ${A}
@@ -56,8 +56,8 @@ src_install() {
 
 pkg_postinst() {
 	elog
-	elog "If you run suspend2, you should run the following command to"
-	elog "invalidate suspend images on a clean boot."
+	elog "You should run the following command to invalidate suspend"
+	elog "images on a clean boot."
 	elog
 	elog "  # rc-update add hibernate-cleanup boot"
 	elog
