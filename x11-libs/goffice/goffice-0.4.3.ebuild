@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/goffice/Attic/goffice-0.4.3.ebuild,v 1.1 2007/12/10 23:11:21 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/goffice/Attic/goffice-0.4.3.ebuild,v 1.2 2007/12/11 01:53:52 mr_bones_ Exp $
 
 inherit eutils gnome2 flag-o-matic
 
@@ -66,4 +66,3 @@ src_compile() {
 	filter-flags -ffast-math
 	gnome2_src_compile
 }
-
