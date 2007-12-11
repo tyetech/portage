@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-exec/Attic/vdr-exec-0.0.2.ebuild,v 1.1 2007/12/11 22:51:22 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-exec/Attic/vdr-exec-0.0.2.ebuild,v 1.2 2007/12/11 23:54:32 mr_bones_ Exp $
 
 inherit vdr-plugin
 
@@ -14,4 +14,3 @@ KEYWORDS="~x86"
 IUSE=""
 
 DEPEND="media-video/vdr"
-
