@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/rox-base/cvs-repo/gentoo-x86/rox-base/rox-session/Attic/rox-session-0.29.ebuild,v 1.7 2007/11/29 15:20:44 lack Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/rox-base/cvs-repo/gentoo-x86/rox-base/rox-session/Attic/rox-session-0.29.ebuild,v 1.8 2007/12/14 21:33:46 lack Exp $
 
 ROX_LIB_VER="2.0.0"
 inherit eutils rox
@@ -15,6 +15,7 @@ KEYWORDS="~amd64 ppc x86"
 IUSE=""
 
 RDEPEND=">=dev-python/dbus-python-0.71"
+DEPEND="!rox-base/zeroinstall-injector"
 
 MY_PN="ROX-Session"
 APPNAME=${MY_PN}

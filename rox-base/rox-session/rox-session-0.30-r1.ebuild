@@ -1,8 +1,9 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/rox-base/cvs-repo/gentoo-x86/rox-base/rox-session/Attic/rox-session-0.30.ebuild,v 1.6 2007/12/14 21:33:46 lack Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/rox-base/cvs-repo/gentoo-x86/rox-base/rox-session/Attic/rox-session-0.30-r1.ebuild,v 1.1 2007/12/14 21:33:46 lack Exp $
 
-ROX_LIB_VER="2.0.0"
+ROX_LIB_VER="2.0.4-r1"
+ROX_VER="2.7-r1"
 inherit eutils rox multilib
 
 DESCRIPTION="Rox-Session is a really simple session manager"
@@ -11,11 +12,10 @@ SRC_URI="mirror://sourceforge/rox/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-python/dbus-python-0.71"
-DEPEND="!rox-base/zeroinstall-injector"
 
 MY_PN="ROX-Session"
 APPNAME=${MY_PN}
@@ -27,7 +27,7 @@ pkg_preinst() {
 }
 
 src_install() {
-	rox_src_install
+	rox-0install_src_install
 
 	dobin "${FILESDIR}/rox-start"
 
