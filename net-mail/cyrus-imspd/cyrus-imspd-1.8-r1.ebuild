@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/cyrus-imspd/Attic/cyrus-imspd-1.8.ebuild,v 1.6 2007/12/11 16:34:13 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/cyrus-imspd/Attic/cyrus-imspd-1.8-r1.ebuild,v 1.1 2007/12/16 13:48:30 dertobi123 Exp $
 
 inherit eutils ssl-cert
 
