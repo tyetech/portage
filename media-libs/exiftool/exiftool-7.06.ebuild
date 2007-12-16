@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/exiftool/Attic/exiftool-6.94.ebuild,v 1.1 2007/08/04 10:34:11 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/exiftool/Attic/exiftool-7.06.ebuild,v 1.1 2007/12/16 10:45:10 graaff Exp $
 
 inherit perl-module
 
@@ -13,7 +13,9 @@ LICENSE="Artistic GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
-S=${WORKDIR}/${MY_PN}-${PV}
+S="${WORKDIR}"/${MY_PN}-${PV}
+
+SRC_TEST="do"
 
 src_compile() {
 	perl Makefile.PL DESTDIR="${D}" || die "Invalid Makefile.PL"
@@ -21,7 +23,7 @@ src_compile() {
 }
 
 src_install() {
-	make install || die "Installation failed"
+	emake install || die "Installation failed"
 	fixlocalpod
 	dodoc Changes README
 	dohtml -r html/
