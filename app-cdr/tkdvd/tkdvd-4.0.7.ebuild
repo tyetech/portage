@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/tkdvd/Attic/tkdvd-4.0.4.ebuild,v 1.2 2007/12/16 14:50:00 pylon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/tkdvd/tkdvd-4.0.7.ebuild,v 1.1 2007/12/16 14:50:00 pylon Exp $
 
 DESCRIPTION="A Tcl/Tk GUI for writing DVDs and CDs"
 HOMEPAGE="http://regis.damongeot.free.fr/tkdvd/"
