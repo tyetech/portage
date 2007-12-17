@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libextractor/Attic/libextractor-0.5.18.ebuild,v 1.4 2007/10/14 16:02:08 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libextractor/Attic/libextractor-0.5.18a.ebuild,v 1.1 2007/12/17 19:45:09 armin76 Exp $
 
 inherit libtool
 
