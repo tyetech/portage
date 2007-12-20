@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/joda-time/joda-time-1.5.1.ebuild,v 1.2 2007/12/20 22:49:30 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/joda-time/joda-time-1.5.1.ebuild,v 1.3 2007/12/20 22:54:44 betelgeuse Exp $
 
 JAVA_PKG_IUSE="doc examples source test"
 
@@ -31,6 +31,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	rm -v *.jar || die
+	# https://sourceforge.net/tracker/index.php?func=detail&aid=1855430&group_id=97367&atid=617889
 	epatch "${FILESDIR}/1.5.1-ecj.patch"
 }
 
