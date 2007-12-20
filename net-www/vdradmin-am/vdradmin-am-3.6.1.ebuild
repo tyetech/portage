@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/vdradmin-am/Attic/vdradmin-am-3.6.0_rc.ebuild,v 1.2 2007/12/20 14:38:01 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/vdradmin-am/Attic/vdradmin-am-3.6.1.ebuild,v 1.1 2007/12/20 14:38:01 zzam Exp $
 
 inherit eutils
 
