@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/smb4k/Attic/smb4k-0.8.4.ebuild,v 1.1 2007/07/19 16:25:50 keytoaster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/smb4k/Attic/smb4k-0.9.0.ebuild,v 1.1 2007/12/22 20:13:21 carlo Exp $
 
 inherit kde
 
@@ -16,4 +16,4 @@ IUSE=""
 DEPEND="|| ( kde-base/konqueror kde-base/kdebase )"
 RDEPEND="${DEPEND}
 	net-fs/samba"
-need-kde 3.4
+need-kde 3.5
