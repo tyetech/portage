@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/pinentry/Attic/pinentry-0.7.4.ebuild,v 1.3 2007/12/21 07:27:15 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/pinentry/Attic/pinentry-0.7.4-r1.ebuild,v 1.1 2007/12/22 05:17:11 alonbl Exp $
 
 inherit qt3 multilib eutils flag-o-matic
 
