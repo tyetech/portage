@@ -1,19 +1,20 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/tk/Attic/tk-8.4.15.ebuild,v 1.8 2007/08/25 22:58:16 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/tk/Attic/tk-8.5.0.ebuild,v 1.1 2007/12/22 03:58:06 matsuu Exp $
 
 WANT_AUTOCONF=latest
 WANT_AUTOMAKE=latest
 
 inherit autotools eutils multilib toolchain-funcs
 
+MY_P="${PN}${PV/_beta/b}"
 DESCRIPTION="Tk Widget Set"
-HOMEPAGE="http://dev.scriptics.com/software/tcltk/"
-SRC_URI="mirror://sourceforge/tcl/${PN}${PV}-src.tar.gz"
+HOMEPAGE="http://www.tcl.tk/"
+SRC_URI="mirror://sourceforge/tcl/${MY_P}-src.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="debug threads"
 
 RDEPEND="x11-libs/libX11
@@ -22,7 +23,7 @@ DEPEND="${RDEPEND}
 	x11-libs/libXt
 	x11-proto/xproto"
 
-S=${WORKDIR}/${PN}${PV}
+S="${WORKDIR}/${MY_P}"
 
 pkg_setup() {
 	if use threads ; then
@@ -40,19 +41,10 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/remove-control-v-8.4.9.diff
-	epatch "${FILESDIR}"/${PN}-8.4.9-man.patch
 	epatch "${FILESDIR}"/${PN}-8.4.11-multilib.patch
 
 	# Bug 125971
-	epatch "${FILESDIR}"/${P}-tclm4-soname.patch
-
-	local d
-	for d in */configure ; do
-		cd "${S}"/${d%%/*}
-		EPATCH_SINGLE_MSG="Patching nls cruft in ${d}" \
-		epatch "${FILESDIR}"/tk-configure-LANG.patch
-	done
+	epatch "${FILESDIR}"/${PN}-8.5_alpha6-tclm4-soname.patch
 
 	cd "${S}"/unix
 	eautoreconf
@@ -78,7 +70,7 @@ src_install() {
 	v1=${PV%.*}
 
 	cd "${S}"/unix
-	make DESTDIR="${D}" install || die
+	S= emake DESTDIR="${D}" install || die
 
 	# fix the tkConfig.sh to eliminate refs to the build directory
 	local mylibdir=$(get_libdir) ; mylibdir=${mylibdir//\/}
@@ -102,16 +94,11 @@ src_install() {
 
 	# install symlink for libraries
 	#dosym libtk${v1}.a /usr/${mylibdir}/libtk.a
-	if use debug ; then
-		dosym libtk${v1}g.so /usr/${mylibdir}/libtk${v1}.so
-		dosym libtkstub${v1}g.a /usr/${mylibdir}/libtkstub${v1}.a
-		dosym ../tk${v1}g/pkgIndex.tcl /usr/${mylibdir}/tk${v1}/pkgIndex.tcl
-	fi
 	dosym libtk${v1}.so /usr/${mylibdir}/libtk.so
 	dosym libtkstub${v1}.a /usr/${mylibdir}/libtkstub.a
 
 	dosym wish${v1} /usr/bin/wish
 
 	cd "${S}"
-	dodoc ChangeLog README changes license.terms
+	dodoc ChangeLog* README changes
 }
