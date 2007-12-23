@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/nufw/Attic/nufw-2.2.8.ebuild,v 1.2 2007/12/23 11:47:24 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/nufw/Attic/nufw-2.2.8.ebuild,v 1.3 2007/12/23 12:45:46 cedk Exp $
 
 inherit autotools ssl-cert eutils
 
@@ -97,5 +97,5 @@ src_install() {
 }
 
 pkg_postinst() {
-	docert nufw nuauth
+	install_cert /etc/nufw/{nufw,nuauth}
 }
