@@ -1,12 +1,12 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/zsync/Attic/zsync-0.4.1.ebuild,v 1.1 2005/07/30 17:45:23 karltk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/zsync/Attic/zsync-0.5.ebuild,v 1.1 2007/12/27 14:46:58 armin76 Exp $
 
 DESCRIPTION="Partial/differential file download client over HTTP which uses the rsync algorithm"
 HOMEPAGE="http://zsync.moria.org.uk/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="http://zsync.moria.org.uk/download/${P}.tar.bz2"
+
 LICENSE="Artistic-2"
-DEPEND="virtual/libc"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
