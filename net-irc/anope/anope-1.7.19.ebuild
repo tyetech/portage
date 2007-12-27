@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/anope/Attic/anope-1.7.19.ebuild,v 1.1 2007/09/06 13:16:41 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/anope/Attic/anope-1.7.19.ebuild,v 1.2 2007/12/27 22:25:55 jokey Exp $
 
 inherit eutils
 
@@ -75,8 +75,8 @@ src_install() {
 
 	exeinto ${INSTALL_DIR}
 	doexe src/services
-####	insinto ${INSTALL_DIR}/data
-####	newins data/example.conf services.conf
+	insinto ${INSTALL_DIR}/data
+	newins data/example.conf services.conf.example
 
 	newinitd ${FILESDIR}/anope.initd anope
 	newconfd ${FILESDIR}/anope.confd anope
