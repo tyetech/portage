@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/klamav/Attic/klamav-0.38.ebuild,v 1.6 2006/11/05 10:23:29 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/klamav/Attic/klamav-0.38.ebuild,v 1.7 2007/12/30 12:50:17 mattepiu Exp $
 
 inherit kde
 
@@ -23,7 +23,7 @@ need-kde 3.4
 src_unpack(){
 	kde_src_unpack
 	# Assure a future version won't try to build this.
-	rm -rf ${WORKDIR}/${MY_P}/dazuko* || die "We missed to eradicate some files"
+	rm -rf "${WORKDIR}/${MY_P}/dazuko"* || die "We missed to eradicate some files"
 }
 
 pkg_postinst(){

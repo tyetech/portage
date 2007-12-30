@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/klamav/Attic/klamav-0.41.ebuild,v 1.8 2007/12/30 12:50:17 mattepiu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-antivirus/cvs-repo/gentoo-x86/app-antivirus/klamav/Attic/klamav-0.41.1.ebuild,v 1.1 2007/12/30 12:50:17 mattepiu Exp $
 
 inherit kde
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/klamav/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=">=app-antivirus/clamav-0.90"
@@ -21,7 +21,8 @@ RDEPEND="${DEPEND}"
 
 need-kde 3.4
 
-PATCHES="${FILESDIR}/${P}-cl_loaddbdir.patch"
+PATCHES="${FILESDIR}/${P}-cl_loaddbdir.patch
+	${FILESDIR}/klamav-gentempdesc.patch"
 
 src_unpack(){
 	kde_src_unpack
