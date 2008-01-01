@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/elfkickers/Attic/elfkickers-2.0a-r4.ebuild,v 1.1 2008/01/01 02:21:21 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/elfkickers/Attic/elfkickers-2.0a-r4.ebuild,v 1.2 2008/01/01 14:18:45 mr_bones_ Exp $
 
 inherit eutils multilib
 
@@ -30,7 +30,6 @@ src_unpack() {
 	use x86 && sed -i -e 's:linux/elf.h:elf.h:' ebfc/*.c
 	(cd tiny && make clean)
 }
-
 
 src_compile() {
 	for bits in 32 64; do
