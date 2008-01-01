@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.9.0_alpha20071022.ebuild,v 1.3 2007/11/02 14:39:49 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.9.0_alpha20071022.ebuild,v 1.4 2008/01/01 21:36:41 aballier Exp $
 
 WANT_AUTOMAKE=latest
 WANT_AUTOCONF=latest
@@ -96,7 +96,7 @@ RDEPEND="
 		mp3? ( media-libs/libmad )
 		mpeg? ( >=media-libs/libmpeg2-0.3.2 )
 		musepack? ( media-libs/libmpcdec )
-		musicbrainz? ( media-libs/musicbrainz )
+		musicbrainz? ( =media-libs/musicbrainz-2* )
 		ncurses? ( sys-libs/ncurses )
 		nsplugin? (
 			xulrunner? ( net-libs/xulrunner )
