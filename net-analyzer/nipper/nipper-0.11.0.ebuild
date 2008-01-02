@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nipper/Attic/nipper-0.11.0.ebuild,v 1.1 2008/01/01 14:38:23 ikelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nipper/Attic/nipper-0.11.0.ebuild,v 1.2 2008/01/02 04:24:24 mr_bones_ Exp $
 
 inherit toolchain-funcs eutils
 
@@ -17,7 +17,6 @@ DEPEND=""
 RDEPEND=""
 
 S=${WORKDIR}/${P/_/-}
-
 
 src_install() {
 	dobin ${PN}
