@@ -1,8 +1,11 @@
 # Copyright 2000-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/avahi/Attic/avahi-0.6.21.ebuild,v 1.11 2008/01/03 17:53:10 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/avahi/Attic/avahi-0.6.22-r1.ebuild,v 1.1 2008/01/03 17:53:10 swegener Exp $
 
-inherit eutils mono python qt3 qt4 multilib
+WANT_AUTOMAKE="1.9"
+WANT_AUTOCONF="none"
+
+inherit eutils mono python qt3 qt4 multilib autotools
 
 DESCRIPTION="System which facilitates service discovery on a local network"
 HOMEPAGE="http://avahi.org/"
@@ -97,15 +100,14 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-no-ipv6.patch
-	epatch "${FILESDIR}"/${P}-dbus-compat.patch
-	epatch "${FILESDIR}"/${P}-browse-help.patch
-	epatch "${FILESDIR}"/${P}-service_name_chosen.patch
-	epatch "${FILESDIR}"/${P}-no-browse-domains-segfault.patch
-	epatch "${FILESDIR}"/avahi-start-after-netmount.patch
-	epatch "${FILESDIR}"/avahi-vncviewer.patch
+	epatch "${FILESDIR}"/${P}-vncviewer.patch
+	epatch "${FILESDIR}"/${P}-gobject.patch
+
+	eautomake
 
 	use ipv6 && sed -i -e s/use-ipv6=no/use-ipv6=yes/ avahi-daemon/avahi-daemon.conf
+
+	sed -i -e "s:\\.\\./\\.\\./\\.\\./doc/avahi-docs/html/:../../../doc/${PF}/html/:" doxygen_to_devhelp.xsl
 }
 
 src_compile() {
@@ -148,6 +150,8 @@ src_compile() {
 		${myconf} \
 		|| die "econf failed"
 	emake || die "emake failed"
+
+	use doc && emake avahi.devhelp
 }
 
 src_install() {
@@ -164,6 +168,13 @@ src_install() {
 	fi
 
 	dodoc docs/{AUTHORS,README,TODO}
+
+	if use doc
+	then
+		dohtml -r doxygen/html/.
+		insinto /usr/share/devhelp/books/avahi
+		doins avahi.devhelp
+	fi
 }
 
 pkg_postrm() {
