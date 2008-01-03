@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/tor/Attic/tor-0.1.2.16.ebuild,v 1.6 2007/08/09 17:37:37 rbu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/tor/Attic/tor-0.1.2.18.ebuild,v 1.1 2008/01/03 21:02:50 opfer Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ S="${WORKDIR}/${PN}-${MY_PV}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="debug"
 
 DEPEND="dev-libs/openssl
@@ -38,7 +38,7 @@ src_compile() {
 }
 
 src_install() {
-	newinitd "${FILESDIR}"/tor.initd-r2 tor
+	newinitd "${FILESDIR}"/tor.initd-r3 tor
 	emake DESTDIR="${D}" install || die
 	keepdir /var/{lib,log,run}/tor
 
