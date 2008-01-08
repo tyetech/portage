@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gcolor2/Attic/gcolor2-0.4-r2.ebuild,v 1.7 2007/07/24 14:04:35 dang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gcolor2/Attic/gcolor2-0.4-r2.ebuild,v 1.8 2008/01/08 09:11:39 remi Exp $
 
 inherit eutils
 
@@ -17,7 +17,7 @@ DEPEND=">=x11-libs/gtk+-2.4"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}/src
+	cd ${S}
 	epatch ${FILESDIR}/modular-rgb.patch
 	epatch ${FILESDIR}/${P}-amd64.patch
 }
