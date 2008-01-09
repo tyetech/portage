@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/kismet/Attic/kismet-2007.10.1.ebuild,v 1.1 2007/11/25 07:15:52 cla Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/kismet/Attic/kismet-2007.10.1.ebuild,v 1.2 2008/01/09 19:53:38 maekke Exp $
 
 inherit toolchain-funcs linux-info eutils
 
@@ -14,7 +14,7 @@ SRC_URI="http://www.kismetwireless.net/code/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc x86"
 IUSE="ncurses"
 
 DEPEND="${RDEPEND}"
