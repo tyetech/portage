@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.20.3.ebuild,v 1.1 2008/01/09 21:32:43 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gdm/Attic/gdm-2.20.3.ebuild,v 1.2 2008/01/10 18:24:47 compnerd Exp $
 
 inherit autotools eutils pam gnome2
 
@@ -101,6 +101,9 @@ src_unpack() {
 
 	# Add gksu to gdmsetup menu entry
 	epatch "${FILESDIR}/${PN}-2.20.2-gksu.patch"
+
+	# Fix compile errors
+	epatch "${FILESDIR}/${PN}-2.20.3-logging.patch"
 }
 
 src_install() {
