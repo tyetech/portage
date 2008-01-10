@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/tse3/tse3-0.3.1-r1.ebuild,v 1.3 2008/01/09 20:11:28 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/tse3/tse3-0.3.1-r1.ebuild,v 1.4 2008/01/10 13:58:07 armin76 Exp $
 
 inherit eutils flag-o-matic libtool autotools
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="amd64 ~ppc sparc x86"
 IUSE="alsa oss arts"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
