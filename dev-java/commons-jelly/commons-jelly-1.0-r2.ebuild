@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/commons-jelly/Attic/commons-jelly-1.0-r2.ebuild,v 1.1 2007/03/01 13:39:53 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/commons-jelly/Attic/commons-jelly-1.0-r2.ebuild,v 1.2 2008/01/10 22:19:50 caster Exp $
 
 inherit java-pkg-2 java-ant-2 eutils
 
@@ -27,7 +27,7 @@ RDEPEND=">=virtual/jre-1.4
 	=dev-java/dom4j-1*
 	=dev-java/jaxen-1.1*
 	>=dev-java/xerces-2.7
-	dev-java/junit
+	=dev-java/junit-3.8*
 	dev-java/commons-logging"
 
 DEPEND=">=virtual/jdk-1.4
