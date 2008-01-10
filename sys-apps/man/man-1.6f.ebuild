@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/man/Attic/man-1.6f.ebuild,v 1.1 2008/01/05 01:13:58 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/man/Attic/man-1.6f.ebuild,v 1.2 2008/01/10 09:23:54 vapier Exp $
 
 inherit eutils toolchain-funcs
 
@@ -14,8 +14,9 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~spar
 IUSE="nls"
 
 DEPEND="nls? ( sys-devel/gettext )"
-DEPEND=">=sys-apps/groff-1.18
-	!sys-apps/man-db"
+RDEPEND=">=sys-apps/groff-1.18
+	!sys-apps/man-db
+	!app-arch/lzma"
 PROVIDE="virtual/man"
 
 pkg_setup() {
