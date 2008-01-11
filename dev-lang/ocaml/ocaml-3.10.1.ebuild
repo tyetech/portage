@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/ocaml/Attic/ocaml-3.10.1_rc2.ebuild,v 1.2 2008/01/03 18:04:24 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/ocaml/Attic/ocaml-3.10.1.ebuild,v 1.1 2008/01/11 12:03:51 aballier Exp $
 
 inherit flag-o-matic eutils multilib versionator toolchain-funcs
 
