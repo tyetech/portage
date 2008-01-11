@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.9.0_alpha20080110.ebuild,v 1.1 2008/01/10 22:21:26 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.9.0_alpha20080110.ebuild,v 1.2 2008/01/11 09:40:06 aballier Exp $
 
 WANT_AUTOMAKE=latest
 WANT_AUTOCONF=latest
 
-inherit eutils wxwidgets multilib autotools toolchain-funcs gnome2 nsplugins qt4
+inherit eutils wxwidgets multilib autotools toolchain-funcs gnome2 nsplugins qt4 flag-o-matic
 
 MY_PV="${PV/_/-}"
 MY_PV="${MY_PV/-beta/-test}"
@@ -185,6 +185,10 @@ src_unpack() {
 }
 
 src_compile () {
+
+	# It would fail if -fforce-addr is used due to too few registers...
+	use x86 && filter-flags -fforce-addr
+
 	local XPIDL=""
 	local MOZILLA_CONFIG=""
 
