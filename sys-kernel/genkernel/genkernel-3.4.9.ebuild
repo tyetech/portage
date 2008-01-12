@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-3.4.9_pre12.ebuild,v 1.1 2007/12/27 19:10:13 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/genkernel/Attic/genkernel-3.4.9.ebuild,v 1.1 2008/01/12 00:52:15 wolf31o2 Exp $
 
 inherit bash-completion eutils
 
@@ -15,7 +15,7 @@ DESCRIPTION="Gentoo automatic kernel building scripts"
 HOMEPAGE="http://www.gentoo.org"
 SRC_URI="mirror://gentoo/${P}.tar.bz2
 	mirror://gentoo/${PN}-pkg-${VERSION_PKG}.tar.bz2
-	http://dev.gentoo.org/~wolf31o2/${P}.tar.bz2
+	http://dev.gentoo.org/~wolf31o2/sources/${PN}/${P}.tar.bz2
 	http://dev.gentoo.org/~wolf31o2/sources/${PN}/${PN}-pkg-${VERSION_PKG}.tar.bz2
 	http://people.redhat.com/~heinzm/sw/dmraid/src/dmraid-${VERSION_DMRAID}.tar.bz2
 	http://people.redhat.com/~heinzm/sw/dmraid/src/old/dmraid-${VERSION_DMRAID}.tar.bz2
