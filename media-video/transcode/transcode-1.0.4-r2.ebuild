@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-1.0.4-r2.ebuild,v 1.1 2008/01/08 15:17:15 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-1.0.4-r2.ebuild,v 1.2 2008/01/13 01:38:32 aballier Exp $
 
 WANT_AUTOMAKE="1.8"
 
@@ -43,6 +43,7 @@ RDEPEND="a52? ( >=media-libs/a52dec-0.7.4 )
 		x11-libs/libXv )"
 
 DEPEND="${RDEPEND}
+	dev-util/pkgconfig
 	v4l2? ( >=sys-kernel/linux-headers-2.6.11 )"
 # Make sure the assembler USE flags are unmasked on amd64
 # Remove this once default-linux/amd64/2006.1 is deprecated
