@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/newt/Attic/newt-0.51.6-r1.ebuild,v 1.5 2007/06/26 01:54:41 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/newt/Attic/newt-0.51.6-r1.ebuild,v 1.6 2008/01/15 16:13:35 xmerlin Exp $
 
 inherit python toolchain-funcs eutils flag-o-matic
 
