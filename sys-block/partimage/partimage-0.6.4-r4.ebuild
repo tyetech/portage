@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/partimage/Attic/partimage-0.6.4-r4.ebuild,v 1.15 2007/04/28 13:10:38 tove Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/partimage/Attic/partimage-0.6.4-r4.ebuild,v 1.16 2008/01/15 12:05:20 xmerlin Exp $
 
 WANT_AUTOMAKE="1.8"
 

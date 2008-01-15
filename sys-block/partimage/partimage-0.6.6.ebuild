@@ -1,27 +1,36 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/partimage/Attic/partimage-0.6.4-r3.ebuild,v 1.22 2008/01/15 12:05:20 xmerlin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/partimage/Attic/partimage-0.6.6.ebuild,v 1.1 2008/01/15 12:05:20 xmerlin Exp $
 
-WANT_AUTOMAKE="1.8"
+WANT_AUTOMAKE="1.10"
 
-inherit eutils flag-o-matic autotools
+inherit eutils flag-o-matic pam autotools
 
 DESCRIPTION="Console-based application to efficiently save raw partition data to an image file. Optional encryption/compression support."
 HOMEPAGE="http://www.partimage.org/"
 SRC_URI="mirror://sourceforge/partimage/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="ppc -ppc64 ~sparc x86"
-IUSE="ssl nologin nls"
+KEYWORDS="~x86 ~amd64 ~ppc ~sparc"
+IUSE="ssl nologin nls pam static"
 
-RDEPEND="virtual/libc
+DEPEND="virtual/libc
 	>=sys-libs/zlib-1.1.4
 	>=dev-libs/newt-0.51.6
 	app-arch/bzip2
 	=sys-libs/slang-1*
 	nls? ( sys-devel/gettext )
 	ssl? ( >=dev-libs/openssl-0.9.6g )"
-DEPEND="${RDEPEND}"
+
+RDEPEND="!static? ( virtual/libc
+		>=sys-libs/zlib-1.1.4
+		>=dev-libs/lzo-1.08
+		>=dev-libs/newt-0.51.6
+		app-arch/bzip2
+		=sys-libs/slang-1*
+		nls? ( sys-devel/gettext )		ssl? ( >=dev-libs/openssl-0.9.6g )
+		pam? ( virtual/pam )
+	)"
 
 PARTIMAG_GROUP_GID=91
 PARTIMAG_USER_UID=91
@@ -42,16 +51,20 @@ src_unpack() {
 	cd "${S}"
 
 	# we can do better security ourselves
-	epatch "${FILESDIR}"/${P}-nodumbpermchecks.diff || die
-	epatch "${FILESDIR}"/${P}-chown.patch || die
-	epatch "${FILESDIR}"/${P}-not_install_info.patch || die
-	epatch "${FILESDIR}"/${P}-fixserverargs.diff || die
-	epatch "${FILESDIR}"/${P}-lib64.patch || die
-	epatch "${FILESDIR}"/${P}-fflush-before-re-read-partition-table.patch || die
-	epatch "${FILESDIR}"/${P}-LP64-fixes.patch || die
-	epatch "${FILESDIR}"/${P}-save_all_and_rest_all_actions.patch || die
 	epatch "${FILESDIR}"/${P}-datadir-path.patch || die
+	epatch "${FILESDIR}"/${P}-dont-discard-error-message-in-batch-mode.patch || die
+	epatch "${FILESDIR}"/${PN}-0.6.4-save_file_and_rest_file_actions.patch || die
+	epatch "${FILESDIR}"/${PN}-0.6.4-varargs.patch || die
+	epatch "${FILESDIR}"/${PN}-0.6.4-empty-salt.patch || die
+	epatch "${FILESDIR}"/${PN}-0.6.4-port.patch || die
+	epatch "${FILESDIR}"/${P}-andre-przywara_amd64.patch || die
+	epatch "${FILESDIR}"/${P}-andre-przywara_warnings.patch || die
+	epatch "${FILESDIR}"/${P}-clonezilla_ext3_blocks-per-group.patch || die
+	epatch "${FILESDIR}"/${P}-not_install_info.patch || die
+	epatch "${FILESDIR}"/${P}-chown.patch || die
 	epatch "${FILESDIR}"/${P}-gui.diff || die
+	epatch "${FILESDIR}"/${P}-disable_header_check.patch || die
+	epatch "${FILESDIR}"/${P}-thread-privilege-fix.patch || die
 }
 
 src_compile() {
@@ -60,29 +73,43 @@ src_compile() {
 
 	local myconf
 	use nologin && myconf="${myconf} --disable-login"
-
+	if use static
+	then
+		use pam && ewarn "pam and static compilation are mutually exclusive - using static and ignoring pam"
+	else
+		myconf="${myconf} `use_enable pam`"
+	fi
 	econf \
 		${myconf} \
 		--sysconfdir=/etc \
 		`use_enable ssl` \
-		`use_enable nls`|| die "econf failed"
+		`use_enable nls` \
+		`use_enable static all-static` \
+		|| die "econf failed"
 
-	emake || die
+	emake || die "make failed"
 }
 
 src_install() {
-	einstall \
-		MKINSTALLDIRS=/usr/share/automake-1.8/mkinstalldirs || die
+	emake DESTDIR="${D}" \
+		MKINSTALLDIRS=/usr/share/automake-1.10/mkinstalldirs install || die
 
 	keepdir /var/log/partimage
 
 	insinto /etc/partimaged; doins "${FILESDIR}"/servercert.cnf || die
 
+	# init.d / conf.d
 	newinitd "${FILESDIR}"/${PN}d.init ${PN}d || die
 	newconfd "${FILESDIR}"/${PN}d.conf ${PN}d || die
 
-	doman debian/partimage.1 debian/partimaged.8 "${FILESDIR}"/partimagedusers.5 || die
+	doman doc/en/man/partimage.1 doc/en/man/partimaged.8 doc/en/man/partimagedusers.5
 	dodoc AUTHORS BUGS COPYING ChangeLog INSTALL README* TODO partimage.lsm
+
+	# pam
+	if use pam
+	then
+		newpamd "${FILESDIR}"/partimaged.pam partimaged || die
+	fi
 }
 
 # vars for SSL stuff
@@ -142,6 +169,7 @@ pkg_postinst() {
 		einfo "emerge  --config =${PF}"
 		# force a permmissions fixup
 		partimagesslperms
+		return 0
 	fi
 	chown partimag:0 /etc/partimaged/partimagedusers || die
 }
