@@ -1,6 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/tilda/Attic/tilda-0.09.3.ebuild,v 1.1 2006/06/29 19:16:15 steev Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/tilda/Attic/tilda-0.9.5.ebuild,v 1.1 2008/01/16 11:46:37 steev Exp $
+
+inherit eutils
 
 DESCRIPTION="A drop down terminal, similar to the consoles found in first person shooters"
 HOMEPAGE="http://tilda.sourceforge.net"
@@ -13,9 +15,10 @@ IUSE=""
 
 DEPEND="x11-libs/vte
 	>=dev-libs/glib-2.8.4
-	dev-libs/confuse"
+	dev-libs/confuse
+	dev-util/pkgconfig"
 
 src_install() {
-	emake DESTDIR=${D} install
+	emake DESTDIR="${D}" install
 	dodoc AUTHORS ChangeLog README TODO
 }
