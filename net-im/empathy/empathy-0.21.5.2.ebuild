@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/empathy/Attic/empathy-0.21.2.ebuild,v 1.2 2007/12/04 15:40:14 leio Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/empathy/Attic/empathy-0.21.5.2.ebuild,v 1.1 2008/01/16 22:11:15 coldwind Exp $
 
 inherit gnome2 eutils versionator
 
@@ -13,7 +13,7 @@ SRC_URI="http://ftp.gnome.org/pub/GNOME/sources/${PN}/${MAJOR_V}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="python spell"
+IUSE="python spell test"
 
 RDEPEND=">=dev-libs/dbus-glib-0.51
 	>=dev-libs/glib-2.14.0
@@ -21,8 +21,9 @@ RDEPEND=">=dev-libs/dbus-glib-0.51
 	>=gnome-base/gconf-2
 	>=gnome-base/libglade-2
 	>=gnome-base/gnome-panel-2.10
-	>=net-libs/libtelepathy-0.0.57
-	>=net-im/telepathy-mission-control-4.37
+	>=net-libs/libtelepathy-0.3.1
+	>=net-libs/telepathy-glib-0.7.0
+	>=net-im/telepathy-mission-control-4.55
 	dev-libs/libxml2
 	>=gnome-base/gnome-vfs-2
 	>=gnome-extra/evolution-data-server-1.2
@@ -34,7 +35,8 @@ RDEPEND=">=dev-libs/dbus-glib-0.51
 		>=dev-python/pygtk-2 )"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35.0
-	>=dev-util/pkgconfig-0.12.0"
+	>=dev-util/pkgconfig-0.16
+	test? ( >=dev-libs/check-0.9.4 )"
 
 DOCS="CONTRIBUTORS AUTHORS README"
 
