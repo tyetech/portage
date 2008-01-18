@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/paludis/Attic/paludis-0.26.0_alpha3.ebuild,v 1.7 2008/01/18 13:52:50 peper Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/paludis/Attic/paludis-0.26.0_alpha7.ebuild,v 1.1 2008/01/18 13:52:50 peper Exp $
 
 inherit bash-completion eutils flag-o-matic
 
@@ -15,7 +15,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
 
 COMMON_DEPEND="
 	>=app-admin/eselect-1.0.2
-	<app-admin/eselect-news-20071201
+	>=app-admin/eselect-news-20071201
 	>=app-shells/bash-3
 	qa? ( dev-libs/pcre++ >=dev-libs/libxml2-2.6 app-crypt/gnupg )
 	inquisitio? ( dev-libs/pcre++ )
@@ -31,10 +31,11 @@ DEPEND="${COMMON_DEPEND}
 		|| ( >=app-doc/doxygen-1.5.3 <=app-doc/doxygen-1.5.1 )
 		media-gfx/imagemagick
 	)
-	python? ( <dev-python/epydoc-3.0_beta1 )"
+	python? ( <dev-python/epydoc-3.0_beta1 dev-python/pygments )
+	ruby? ( doc? ( dev-ruby/syntax dev-ruby/allison ) )
+	dev-util/pkgconfig"
 
 RDEPEND="${COMMON_DEPEND}
-	!>=app-shells/bash-3.2_p25
 	net-misc/wget
 	net-misc/rsync
 	sys-apps/sandbox"
@@ -52,6 +53,18 @@ pkg_setup() {
 
 	enewgroup "paludisbuild"
 	enewuser "paludisbuild" "-1" "-1" "/var/tmp/paludis" "paludisbuild"
+
+	FIXED_MAKEOPTS=""
+	m=$(free -m | sed -n -e '/cache:/s,^[^[:digit:]]\+[[:digit:]]\+[^[:digit:]]\+\([[:digit:]]\+\).*,\1,p')
+	j=$(echo "$MAKEOPTS" | sed -n -e 's,.*-j\([[:digit:]]\+\).*,\1,p' )
+	if [[ -n "${m}" ]] && [[ -n "${j}" ]] && (( ${j} > 1 )); then
+		if (( m < j * 512 )) ; then
+			FIXED_MAKEOPTS="-j$(( m / 512 ))"
+			[[ ${FIXED_MAKEOPTS} == "-j0" ]] && FIXED_MAKEOPTS="-j1"
+			ewarn "Your MAKEOPTS -j is too high. To stop the kernel from throwing a hissy fit"
+			ewarn "when g++ eats all your RAM, we'll use ${FIXED_MAKEOPTS} instead."
+		fi
+	fi
 }
 
 src_compile() {
@@ -64,6 +77,7 @@ src_compile() {
 		$(use_enable pink ) \
 		$(use_enable qa ) \
 		$(use_enable ruby ) \
+		$(useq ruby && useq doc && echo --enable-ruby-doc ) \
 		$(use_enable python ) \
 		$(use_enable glsa ) \
 		$(use_enable vim-syntax vim ) \
@@ -75,7 +89,7 @@ src_compile() {
 		--with-environments=${environments} \
 		|| die "econf failed"
 
-	emake || die "emake failed"
+	emake ${FIXED_MAKEOPTS} || die "emake failed"
 }
 
 src_install() {
@@ -84,11 +98,11 @@ src_install() {
 
 	BASH_COMPLETION_NAME="adjutrix" dobashcompletion bash-completion/adjutrix
 	BASH_COMPLETION_NAME="paludis" dobashcompletion bash-completion/paludis
-	BASH_COMPLETION_NAME="accerso" dobashcompletion bash-completion/paludis
-	BASH_COMPLETION_NAME="contrarius" dobashcompletion bash-completion/paludis
-	BASH_COMPLETION_NAME="importare" dobashcompletion bash-completion/paludis
-	BASH_COMPLETION_NAME="instruo" dobashcompletion bash-completion/paludis
-	BASH_COMPLETION_NAME="reconcilio" dobashcompletion bash-completion/paludis
+	BASH_COMPLETION_NAME="accerso" dobashcompletion bash-completion/accerso
+	BASH_COMPLETION_NAME="contrarius" dobashcompletion bash-completion/contrarius
+	BASH_COMPLETION_NAME="importare" dobashcompletion bash-completion/importare
+	BASH_COMPLETION_NAME="instruo" dobashcompletion bash-completion/instruo
+	BASH_COMPLETION_NAME="reconcilio" dobashcompletion bash-completion/reconcilio
 	use qa && \
 		BASH_COMPLETION_NAME="qualudis" \
 		dobashcompletion bash-completion/qualudis
@@ -100,6 +114,9 @@ src_install() {
 		insinto /usr/share/zsh/site-functions
 		doins zsh-completion/_paludis
 		doins zsh-completion/_adjutrix
+		doins zsh-completion/_importare
+		doins zsh-completion/_reconcilio
+		use inquisitio && doins zsh-completion/_inquisitio
 		doins zsh-completion/_paludis_packages
 	fi
 }
@@ -110,4 +127,11 @@ src_test() {
 	export BASH_ENV=/dev/null
 
 	emake check || die "Make check failed"
+}
+
+pkg_postinst() {
+	# Remove the symlink created by app-admin/eselect-news
+	if [[ -L "${ROOT}/var/lib/paludis/news" ]] ; then
+		rm "${ROOT}/var/lib/paludis/news"
+	fi
 }
