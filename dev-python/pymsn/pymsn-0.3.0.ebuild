@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pymsn/Attic/pymsn-0.3.0.ebuild,v 1.2 2008/01/16 22:06:40 coldwind Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pymsn/Attic/pymsn-0.3.0.ebuild,v 1.3 2008/01/19 12:05:53 coldwind Exp $
 
 inherit distutils
 
@@ -24,6 +24,6 @@ DEPEND="
 	>=dev-python/pyopenssl-0.6
 	dev-python/pycrypto
 	>=dev-python/adns-python-1.2.1"
-RDEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
 
 DOCS="AUTHORS NEWS README"
