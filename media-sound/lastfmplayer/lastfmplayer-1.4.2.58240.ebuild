@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lastfmplayer/Attic/lastfmplayer-1.3.1.0.ebuild,v 1.2 2007/08/29 18:30:00 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/lastfmplayer/Attic/lastfmplayer-1.4.2.58240.ebuild,v 1.1 2008/01/19 14:07:17 genstef Exp $
 
 inherit eutils qt4
 
@@ -8,7 +8,7 @@ MY_P="${P/lastfmplayer/last.fm}"
 
 DESCRIPTION="The player allows you to listen to last.fm radio streams"
 HOMEPAGE="http://www.last.fm/help/player"
-SRC_URI="http://static.last.fm/client/Linux/${MY_P}.src.tar.bz2"
+SRC_URI="http://cdn.last.fm/client/src/${MY_P}.src.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -17,16 +17,28 @@ IUSE=""
 RESTRICT="mirror"
 
 DEPEND="$(qt4_min_version 4.2)
+	media-libs/libsamplerate
+	sci-libs/fftw
+	media-libs/libmad
+	media-libs/libgpod
 	media-libs/alsa-lib"
+RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/lastfmplayer-mad-asneeded.patch
+}
+
 src_compile() {
-	eqmake4 LastFM.pro
-	for subdir in src src/libLastFmTools src/httpinput src/mp3transcode \
-			src/output/alsa-playback src/output/portAudio ; do
-		eqmake4 "${subdir}/${subdir##*/}.pro" -o ${subdir}/Makefile
-	done
+#	eqmake4 LastFM.pro
+#	for subdir in src src/httpinput src/mp3transcode \
+#			src/output/alsa-playback src/output/portAudio ; do
+#		eqmake4 "${subdir}/${subdir##*/}.pro" -o ${subdir}/Makefile
+#	done
+	./configure
 	emake || die "emake failed"
 }
 
@@ -36,7 +48,7 @@ src_install() {
 
 	# The root at which the player, data, and cache
 	# are to be installed
-	local destination="/opt/lastfm"
+	local destination="/usr/share/lastfm"
 	cd bin
 
 	# Make ${destination} writable by audio group
