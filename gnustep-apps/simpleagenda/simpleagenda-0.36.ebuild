@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/simpleagenda/Attic/simpleagenda-0.35.ebuild,v 1.1 2008/01/09 12:38:21 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/simpleagenda/Attic/simpleagenda-0.36.ebuild,v 1.1 2008/01/20 15:52:57 voyageur Exp $
 
 inherit eutils gnustep-2
 
