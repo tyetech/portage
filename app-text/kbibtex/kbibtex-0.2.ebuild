@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/kbibtex/Attic/kbibtex-0.2.ebuild,v 1.2 2008/01/20 15:52:49 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/kbibtex/Attic/kbibtex-0.2.ebuild,v 1.3 2008/01/21 03:23:22 mr_bones_ Exp $
 
 inherit kde eutils
 
