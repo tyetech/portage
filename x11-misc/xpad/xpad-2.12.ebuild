@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xpad/Attic/xpad-2.12.ebuild,v 1.2 2007/08/02 13:30:08 uberlord Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xpad/Attic/xpad-2.12.ebuild,v 1.3 2008/01/21 19:22:30 drac Exp $
 
 DESCRIPTION="A GTK+ 2.0 based 'post-it' note system."
 HOMEPAGE="http://xpad.sourceforge.net/"
@@ -18,6 +18,6 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext"
 
 src_install () {
-	make DESTDIR=${D} install || die "install failed"
+	make DESTDIR="${D}" install || die "install failed"
 	dodoc AUTHORS ChangeLog NEWS README THANKS TODO
 }
