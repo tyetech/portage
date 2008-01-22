@@ -1,30 +1,24 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.3.20060816.ebuild,v 1.6 2007/11/07 19:55:28 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.3_p20050816-r1.ebuild,v 1.1 2008/01/22 20:58:35 truedfx Exp $
 
-# detect cvs snapshots; fex. 1.3.20040120
-[[ $PV == *.[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ]]
+# detect cvs snapshots; fex. 1.3_p20040120
+[[ $PV == *_p[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ]]
 (( snapshot = !$? ))
 
-if (( snapshot )); then
-	WANT_AUTOCONF=latest
-	WANT_AUTOMAKE=latest
-	inherit eutils autotools
-else
-	inherit eutils
-fi
+inherit eutils
 
 DESCRIPTION="Extensible window manager using a Lisp-based scripting language"
 HOMEPAGE="http://sawmill.sourceforge.net/"
 if (( snapshot )); then
-	SRC_URI="mirror://gentoo/${P}.tar.bz2"
+	SRC_URI="mirror://gentoo/${P/_p/.}.tar.bz2"
 else
 	SRC_URI="mirror://sourceforge/sawmill/${P}.tar.gz"
 fi
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ia64 ppc ~ppc64 sparc x86"
+KEYWORDS="alpha amd64 ia64 ppc sparc x86"
 IUSE="gnome esd nls audiofile pango"
 
 DEPEND=">=dev-util/pkgconfig-0.12.0
@@ -37,6 +31,9 @@ DEPEND=">=dev-util/pkgconfig-0.12.0
 RDEPEND="${DEPEND}"
 
 if (( snapshot )); then
+	DEPEND="${DEPEND}
+		sys-devel/automake
+		sys-devel/autoconf"
 	S="${WORKDIR}/${PN}"
 fi
 
@@ -44,18 +41,8 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/libtool.patch"
-	# Fix configure warning about being unable
-	# to compile with <Xdbe.h> and <Xrandr.h>
-	epatch "${FILESDIR}"/sawfish-configure-warning.patch
 	# Fix utf8 with xft #121772
-	epatch "${FILESDIR}"/sawfish-xft-menu-utf8.patch
-	# Fix KDE menus
-	epatch "${FILESDIR}"/sawfish-kde-menus.patch
-
-	if (( snapshot )); then
-		eaclocal || die
-		eautoconf || die
-	fi
+	epatch "${FILESDIR}/sawfish-xft-menu-utf8.patch"
 }
 
 src_compile() {
@@ -63,6 +50,12 @@ src_compile() {
 	# else Xft2 borks, <azarah@gentoo.org> (13 Dec 2002)
 	export C_INCLUDE_PATH="${C_INCLUDE_PATH}:/usr/include/freetype2"
 	export CPLUS_INCLUDE_PATH="${CPLUS_INCLUDE_PATH}:/usr/include/freetype2"
+
+	# If this is a snapshot then we need to create the autoconf stuff
+	if (( snapshot )); then
+		aclocal || die "aclocal failed"
+		autoconf || die "autoconf failed"
+	fi
 
 	set -- \
 		--disable-themer \
@@ -108,5 +101,4 @@ src_compile() {
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 	dodoc AUTHORS BUGS ChangeLog DOC FAQ NEWS README THANKS TODO OPTIONS
-	newdoc src/ChangeLog ChangeLog.src
 }
