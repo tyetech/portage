@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/qca/Attic/qca-2.0.0-r2.ebuild,v 1.3 2008/01/23 01:39:24 ingmar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/qca/Attic/qca-2.0.0-r2.ebuild,v 1.4 2008/01/23 12:46:37 ingmar Exp $
 
 EAPI="1"
 
@@ -17,7 +17,7 @@ IUSE="debug doc examples"
 RESTRICT="test"
 
 DEPEND="
-	<app-crypt/qca-1.0-r3
+	!<app-crypt/qca-1.0-r3
 	>=x11-libs/qt-4.2.0:4"
 RDEPEND="${DEPEND}"
 
