@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/axiom/Attic/axiom-200711.ebuild,v 1.1 2008/01/23 16:42:25 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/axiom/Attic/axiom-200711.ebuild,v 1.2 2008/01/23 18:25:44 mr_bones_ Exp $
 
 inherit eutils multilib flag-o-matic
 
@@ -66,4 +66,3 @@ src_install() {
 
 	dodoc changelog readme faq
 }
-
