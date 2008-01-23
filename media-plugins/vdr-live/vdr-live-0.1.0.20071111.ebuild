@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-live/Attic/vdr-live-0.1.0.20071111.ebuild,v 1.1 2007/11/11 16:15:39 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-live/Attic/vdr-live-0.1.0.20071111.ebuild,v 1.2 2008/01/23 20:11:31 zzam Exp $
 
 inherit vdr-plugin versionator
 
@@ -19,7 +19,7 @@ IUSE=""
 
 DEPEND="media-video/vdr
 	>=dev-libs/boost-1.33.0
-	>=dev-libs/tntnet-1.5.3
+	<dev-libs/tntnet-1.6.1
 	>=dev-libs/cxxtools-1.4.3"
 
 S="${WORKDIR}/${VDRPLUGIN}"
