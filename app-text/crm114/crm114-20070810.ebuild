@@ -1,39 +1,37 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/crm114/Attic/crm114-20060118.ebuild,v 1.2 2007/03/04 07:32:53 genone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/crm114/Attic/crm114-20070810.ebuild,v 1.1 2008/01/23 03:26:03 steev Exp $
 
 inherit eutils
-
 IUSE="nls static normalizemime mew mimencode test"
 
-MY_P="${P}-BlameTheReavers.src"
+MY_P="${P}-BlameTheSegfault.src"
 S=${WORKDIR}/${MY_P}
 DESCRIPTION="A powerful text processing tool, mainly used for spam filtering"
 HOMEPAGE="http://crm114.sourceforge.net/"
-SRC_URI="http://crm114.sourceforge.net/${MY_P}.tar.gz"
+SRC_URI="http://crm114.sourceforge.net/tarballs/${MY_P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~amd64"
+KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 
-TREVERS="0.7.2"
+TREVERS="0.7.5"
 
 DEPEND=">=sys-apps/sed-4
 	virtual/libc
 	normalizemime? ( mail-filter/normalizemime )
 	mew? ( app-emacs/mew )
 	mimencode? ( net-mail/metamail )
-	!static? ( >=dev-libs/tre-${TREVERS} )
+	>=dev-libs/tre-${TREVERS}
 	test? ( sys-apps/miscfiles )"
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 
-	epatch ${FILESDIR}/${P}-fataltraptest.patch
 
 	sed -i "s#^CFLAGS.*#CFLAGS+=${CFLAGS}#" Makefile
-
+	sed -i "s#^LDFLAGS.*#LDFLAGS+=${LDFLAGS}#" Makefile
 	if use static ; then
 		sed -i "s#-ltre#-L${S}/tre-${TREVERS}/lib/.libs/ -ltre#g" Makefile
 	else
@@ -55,33 +53,16 @@ src_unpack() {
 			mailfilter.cf
 	fi
 
-	cd ${S}/tre-${TREVERS}
-	chmod +x configure
 }
 
 src_compile() {
-	# Build TRE library.
-	if use static ; then
-		cd ${S}/tre-${TREVERS}
-		econf \
-			$(use_enable nls) \
-			$(use_enable static) \
-			--enable-system-abi \
-			--disable-profile \
-			--disable-agrep \
-			--disable-debug || die
-		emake || die
-	fi
-
-	# Build crm114
 	emake -j1 || die
 }
 
 src_install() {
-	dobin crm114_tre cssutil cssdiff cssmerge
+	dobin crm114 cssutil cssdiff cssmerge
+	dobin cssutil cssdiff cssmerge
 	dobin osbf-util
-	dosym crm114_tre /usr/bin/crm114
-	dosym crm114_tre /usr/bin/crm
 
 	dodoc COLOPHON.txt CRM114_Mailfilter_HOWTO.txt FAQ.txt INTRO.txt
 	dodoc QUICKREF.txt classify_details.txt inoc_passwd.txt
@@ -100,7 +81,7 @@ src_test() {
 }
 
 pkg_postinst() {
-	elog ""
-	elog "The spam-filter CRM files are installed in /usr/share/${PN}."
-	elog ""
+	einfo ""
+	einfo "The spam-filter CRM files are installed in /usr/share/${PN}."
+	einfo ""
 }
