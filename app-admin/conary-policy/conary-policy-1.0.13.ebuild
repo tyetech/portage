@@ -1,6 +1,6 @@
 # Copyright 2006-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conary-policy/Attic/conary-policy-1.0.9.ebuild,v 1.2 2008/01/24 21:40:31 smithj Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conary-policy/Attic/conary-policy-1.0.13.ebuild,v 1.1 2008/01/24 21:40:31 smithj Exp $
 
 DESCRIPTION="distribution policy for the conary package manager"
 HOMEPAGE="http://wiki.rpath.com/wiki/Conary"
