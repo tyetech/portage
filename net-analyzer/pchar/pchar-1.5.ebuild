@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pchar/Attic/pchar-1.5.ebuild,v 1.4 2007/01/29 20:45:15 chutzpah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pchar/Attic/pchar-1.5.ebuild,v 1.5 2008/01/26 01:23:24 chutzpah Exp $
 
 WANT_AUTOMAKE="latest"
 WANT_AUTOCONF="2.1"
@@ -25,11 +25,11 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}"/${P}-snmp.patch
+
+	eautoreconf
 }
 
 src_compile() {
-	eautoreconf
-
 	econf --without-suid \
 		$(use_with ipv6) \
 		$(use_with snmp snmp /usr/lib) \
