@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gavl/Attic/gavl-0.2.7-r1.ebuild,v 1.1 2008/01/25 18:49:10 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gavl/Attic/gavl-0.2.7-r2.ebuild,v 1.1 2008/01/26 06:19:40 drac Exp $
 
 inherit autotools eutils
 
