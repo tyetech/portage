@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/slim/Attic/slim-1.3.0-r1.ebuild,v 1.3 2008/01/27 16:39:26 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/slim/Attic/slim-1.3.0-r1.ebuild,v 1.4 2008/01/27 16:44:32 angelos Exp $
 
 inherit toolchain-funcs pam
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://berlios/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc sparc x86"
+KEYWORDS="amd64 ~ppc sparc x86"
 IUSE="pam"
 
 DEPEND="x11-proto/xproto
