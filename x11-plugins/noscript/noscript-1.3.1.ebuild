@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/noscript/Attic/noscript-1.1.9.ebuild,v 1.1 2007/12/09 15:53:17 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/noscript/Attic/noscript-1.3.1.ebuild,v 1.1 2008/01/28 19:44:57 armin76 Exp $
 
 inherit mozextension multilib
 
