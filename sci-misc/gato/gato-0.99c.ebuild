@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/gato/Attic/gato-0.99.ebuild,v 1.2 2008/01/29 13:34:40 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/gato/Attic/gato-0.99c.ebuild,v 1.1 2008/01/29 13:34:40 markusle Exp $
 
 inherit eutils
 
 MY_P="Gato"
-MY_PV="0.99"
+MY_PV="0.99C"
 
 DESCRIPTION="Graph Animation Toolbox"
 LICENSE="LGPL-2"
@@ -14,7 +14,7 @@ SRC_URI="http://gato.sourceforge.net/Download/${MY_P}-${MY_PV}.tar.gz
 		doc? ( http://gato.sourceforge.net/Download/${MY_P}-Doc-${MY_PV}.tar.gz )"
 
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~x86 ~ppc ~amd64"
 IUSE="doc"
 
 DEPEND=""

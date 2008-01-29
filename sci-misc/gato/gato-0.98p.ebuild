@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/gato/Attic/gato-0.98p.ebuild,v 1.3 2007/08/24 13:29:01 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/gato/Attic/gato-0.98p.ebuild,v 1.4 2008/01/29 13:34:40 markusle Exp $
 
 inherit eutils
 
