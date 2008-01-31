@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/nspr/Attic/nspr-4.7.0_pre20080120.ebuild,v 1.1 2008/01/24 21:50:30 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/nspr/Attic/nspr-4.7.0_pre20080129.ebuild,v 1.1 2008/01/31 11:33:09 armin76 Exp $
 
 inherit eutils multilib
 
