@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-tools/Attic/alsa-tools-1.0.15.ebuild,v 1.3 2008/01/31 16:51:04 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-tools/Attic/alsa-tools-1.0.16_rc1.ebuild,v 1.1 2008/01/31 16:51:04 chainsaw Exp $
 
 WANT_AUTOMAKE="1.9"
 WANT_AUTOCONF="2.5"
