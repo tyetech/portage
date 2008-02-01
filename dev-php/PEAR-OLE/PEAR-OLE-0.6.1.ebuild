@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-OLE/PEAR-OLE-0.6.1.ebuild,v 1.3 2008/01/31 20:16:01 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-OLE/PEAR-OLE-0.6.1.ebuild,v 1.4 2008/02/01 00:38:34 ranger Exp $
 
 inherit php-pear-r1
 
 DESCRIPTION="Package for reading and writing OLE containers"
 LICENSE="PHP-2.02 PHP-3"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm hppa ~ia64 ~ppc ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE=""
