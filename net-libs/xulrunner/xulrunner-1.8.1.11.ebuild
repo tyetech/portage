@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.8.1.11.ebuild,v 1.8 2008/01/23 17:42:26 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.8.1.11.ebuild,v 1.9 2008/02/02 17:38:26 armin76 Exp $
 
 WANT_AUTOCONF="2.1"
 
 inherit flag-o-matic toolchain-funcs eutils makeedit multilib autotools mozconfig-2 java-pkg-opt-2
-PATCH="${P}-patches-0.2"
+PATCH="${P}-patches-0.3"
 
 DESCRIPTION="Mozilla runtime package that can be used to bootstrap XUL+XPCOM applications"
 HOMEPAGE="http://developer.mozilla.org/en/docs/XULRunner"
