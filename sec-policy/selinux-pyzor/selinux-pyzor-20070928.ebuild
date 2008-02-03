@@ -1,6 +1,6 @@
-# Copyright 2006-2007 Gentoo Foundation
+# Copyright 2006-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-pyzor/Attic/selinux-pyzor-20070928.ebuild,v 1.1 2007/11/27 02:45:36 pebenito Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-pyzor/Attic/selinux-pyzor-20070928.ebuild,v 1.2 2008/02/03 01:37:32 pebenito Exp $
 
 MODS="pyzor"
 IUSE=""
@@ -9,4 +9,4 @@ inherit selinux-policy-2
 
 DESCRIPTION="SELinux policy for pyzor"
 
-KEYWORDS="~alpha ~amd64 ~mips ~ppc ~sparc ~x86"
+KEYWORDS="alpha amd64 mips ppc sparc x86"
