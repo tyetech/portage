@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvdcss/Attic/libdvdcss-1.2.9.ebuild,v 1.22 2008/01/11 19:02:03 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvdcss/Attic/libdvdcss-1.2.9.ebuild,v 1.23 2008/02/03 17:10:05 aballier Exp $
 
 inherit eutils autotools flag-o-matic
 
@@ -42,7 +42,8 @@ src_compile() {
 	strip-flags
 
 	# See bug #98854, requires access to fonts cache for TeX
-	use doc && addwrite /var/cache/fonts
+	# No need to use addwrite, just set TeX font cache in the sandbox
+	use doc && export VARTEXFONTS="${T}/fonts"
 
 	econf \
 		--enable-static --enable-shared \
