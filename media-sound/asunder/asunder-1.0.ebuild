@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/asunder/Attic/asunder-1.0.ebuild,v 1.3 2008/02/04 16:34:50 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/asunder/Attic/asunder-1.0.ebuild,v 1.4 2008/02/04 16:38:05 drac Exp $
 
 inherit eutils
 
-DESCRIPTION="Asunder is a graphical CD ripper and encoder"
+DESCRIPTION="a graphical Audio CD ripper and encoder with support for WAV, MP3, OggVorbis and FLAC."
 HOMEPAGE="http://littlesvr.ca/asunder"
 SRC_URI="http://littlesvr.ca/${PN}/releases/${P}.tar.bz2"
 
