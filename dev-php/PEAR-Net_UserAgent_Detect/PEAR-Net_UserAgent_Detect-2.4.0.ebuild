@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Net_UserAgent_Detect/PEAR-Net_UserAgent_Detect-2.4.0.ebuild,v 1.5 2008/02/03 11:14:29 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Net_UserAgent_Detect/PEAR-Net_UserAgent_Detect-2.4.0.ebuild,v 1.6 2008/02/10 14:22:56 nixnut Exp $
 
 inherit php-pear-r1
 
@@ -8,5 +8,5 @@ DESCRIPTION="Net_UserAgent_Detect determines the Web browser, version, and platf
 
 LICENSE="PHP-2.02"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 hppa ~ia64 ~ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha ~amd64 hppa ~ia64 ppc ppc64 ~sparc x86"
 IUSE=""
