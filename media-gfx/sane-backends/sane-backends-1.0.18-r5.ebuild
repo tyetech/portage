@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sane-backends/Attic/sane-backends-1.0.18-r5.ebuild,v 1.2 2008/01/18 14:24:56 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sane-backends/Attic/sane-backends-1.0.18-r5.ebuild,v 1.3 2008/02/11 10:33:11 phosphan Exp $
 
 inherit eutils
 
@@ -138,6 +138,6 @@ src_install () {
 	newins libsane.rules 70-libsane.rules
 	cd ../..
 
-	dodoc NEWS AUTHORS LICENSE ChangeLog* README README.linux
+	dodoc NEWS AUTHORS ChangeLog* README README.linux
 	echo "SANE_CONFIG_DIR=/etc/sane.d" >> "${D}"/etc/env.d/30sane
 }
