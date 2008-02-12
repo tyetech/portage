@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/refbase/Attic/refbase-0.8.0.ebuild,v 1.6 2008/02/12 19:22:36 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/refbase/Attic/refbase-0.9.0.ebuild,v 1.1 2008/02/12 19:22:36 markusle Exp $
 
 inherit depend.apache depend.php webapp
 
