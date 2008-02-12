@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/lua/Attic/lua-5.1.2.ebuild,v 1.3 2008/01/29 21:24:44 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/lua/Attic/lua-5.1.3.ebuild,v 1.1 2008/02/12 21:21:25 mabi Exp $
 
 inherit eutils portability versionator
 
@@ -22,6 +22,9 @@ src_unpack() {
 
 	epatch "${FILESDIR}"/${PN}-${PATCH_PV}-make.patch
 	epatch "${FILESDIR}"/${PN}-${PATCH_PV}-module_paths.patch
+
+	# correct lua versioning (bug #173611)
+	sed -i -e 's/\(LIB_VERSION = \)6:1:1/\16:2:1/' src/Makefile
 
 	sed -i -e 's:\(/README\)\("\):\1.gz\2:g' doc/readme.html
 
@@ -45,8 +48,12 @@ src_compile() {
 	myflags=
 	# what to link to liblua
 	liblibs="-lm"
-	mycflags="${mycflags} -DLUA_USE_LINUX"
-	liblibs="${liblibs} $(dlopen_lib)"
+	if use ppc-macos; then
+		mycflags="${mycflags} -DLUA_USE_MACOSX"
+	else # building for standard linux (and bsd too)
+		mycflags="${mycflags} -DLUA_USE_LINUX"
+		liblibs="${liblibs} $(dlopen_lib)"
+	fi
 
 	# what to link to the executables
 	mylibs=
@@ -77,6 +84,8 @@ src_install() {
 	doins etc/lua.ico
 	insinto /usr/$(get_libdir)/pkgconfig
 	doins etc/lua.pc
+
+	doman doc/lua.1 doc/luac.1
 }
 
 src_test() {
