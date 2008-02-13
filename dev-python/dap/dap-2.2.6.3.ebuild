@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/dap/Attic/dap-2.2.6.3.ebuild,v 1.1 2008/02/13 14:03:14 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/dap/Attic/dap-2.2.6.3.ebuild,v 1.2 2008/02/13 20:30:01 bicatali Exp $
 
 inherit distutils
 
@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="server"
 
 RDEPEND="dev-python/httplib2
-	\server? ( dev-python/paste
+	server? ( dev-python/paste
 			  dev-python/paste
 			  dev-python/pastedeploy
 			  dev-python/pastescript
