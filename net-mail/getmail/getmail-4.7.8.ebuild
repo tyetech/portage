@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/getmail/Attic/getmail-4.6.2.ebuild,v 1.7 2007/01/29 23:29:57 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/getmail/Attic/getmail-4.7.8.ebuild,v 1.1 2008/02/13 21:56:13 ticho Exp $
 
 inherit distutils
 
@@ -11,9 +11,17 @@ SRC_URI="http://pyropus.ca/software/getmail/old-versions/${P}.tar.gz"
 
 SLOT="4"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 
 DEPEND=">=dev-lang/python-2.3.3"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	# getmail.spec is missing due to upstream packaging mistake
+	sed -i -e '/getmail.spec/d' setup.py
+}
 
 src_compile() {
 	distutils_src_compile
@@ -23,19 +31,19 @@ src_install() {
 	distutils_src_install
 
 	if has_version "=net-mail/getmail-3*" ; then
-		mv ${D}/usr/bin/getmail ${D}/usr/bin/getmail4
-		mv ${D}/usr/bin/getmail_maildir ${D}/usr/bin/getmail_maildir4
-		mv ${D}/usr/bin/getmail_mbox ${D}/usr/bin/getmail_mbox4
+		mv "${D}"/usr/bin/getmail "${D}"/usr/bin/getmail4
+		mv "${D}"/usr/bin/getmail_maildir "${D}"/usr/bin/getmail_maildir4
+		mv "${D}"/usr/bin/getmail_mbox "${D}"/usr/bin/getmail_mbox4
 	fi
 
 	# handle docs the gentoo way
+	rm "${D}"/usr/share/doc/${P}/COPYING
 	if [ ${P} != ${PF} ]; then
-		mv ${D}/usr/share/doc/${P} ${D}/usr/share/doc/${PF}
+		mv "${D}"/usr/share/doc/${P} "${D}"/usr/share/doc/${PF}
 	fi
 
-	rm ${D}/usr/share/doc/COPYING
 	dodir /usr/share/doc/${PF}/html
-	mv ${D}/usr/share/doc/${PF}/*.html ${D}/usr/share/doc/${PF}/*.css ${D}/usr/share/doc/${PF}/html
+	mv "${D}"/usr/share/doc/${PF}/*.html "${D}"/usr/share/doc/${PF}/*.css "${D}"/usr/share/doc/${PF}/html
 }
 
 pkg_postinst() {
