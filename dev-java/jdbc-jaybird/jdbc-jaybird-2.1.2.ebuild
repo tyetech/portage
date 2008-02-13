@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jdbc-jaybird/Attic/jdbc-jaybird-2.1.0-r1.ebuild,v 1.9 2008/02/13 20:11:50 wltjr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jdbc-jaybird/Attic/jdbc-jaybird-2.1.2.ebuild,v 1.1 2008/02/13 20:11:50 wltjr Exp $
 
 JAVA_PKG_IUSE="doc source examples test"
 
@@ -13,11 +13,15 @@ SRC_URI="mirror://sourceforge/firebird/${At}.zip"
 LICENSE="LGPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="jni"
+IUSE="jni java5 java6"
 
-RDEPEND=">=virtual/jre-1.4
+RDEPEND="java6? ( =virtual/jre-1.6* )
+	java5? ( =virtual/jre-1.5* )
+	!java6? ( !java5? ( =virtual/jre-1.4* ) )
 	dev-java/log4j"
-DEPEND="|| ( =virtual/jdk-1.5* =virtual/jdk-1.4* )
+DEPEND="java6? ( =virtual/jdk-1.6* )
+	java5? ( =virtual/jdk-1.5* )
+	!java6? ( !java5? ( =virtual/jdk-1.4* ) )
 	app-arch/unzip
 	dev-java/log4j
 	jni? ( dev-java/cpptasks )
@@ -30,16 +34,12 @@ S="${WORKDIR}/client-java"
 
 MY_PN="jaybird"
 
-# The build.xml breaks if -source gets rewritten
-# This ebuild should probably have a java5 use flag
-JAVA_PKG_BSFIX="off"
-
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/archive-xml-${PV}.patch"
-	epatch "${FILESDIR}/compile-xml-${PV}.patch"
+	epatch "${FILESDIR}/archive-xml-2.1.0.patch"
+	epatch "${FILESDIR}/compile_xml-${PV}.patch"
 
 	cd "${S}/lib/"
 	rm -v *.jar
