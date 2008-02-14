@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/madwifi-ng/madwifi-ng-0.9.3.3.ebuild,v 1.6 2008/01/17 04:07:53 steev Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/madwifi-ng/madwifi-ng-0.9.3.3.ebuild,v 1.7 2008/02/14 05:25:13 steev Exp $
 
 inherit linux-mod
 
@@ -51,7 +51,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	cd "${S}"
 	epatch "${FILESDIR}"/${PN}-0.9.3-uudecode-gcda-fix.patch
