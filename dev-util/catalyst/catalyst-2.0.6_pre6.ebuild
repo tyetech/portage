@@ -1,17 +1,32 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0.5.ebuild,v 1.2 2008/01/25 17:38:22 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0.6_pre6.ebuild,v 1.1 2008/02/14 19:23:49 wolf31o2 Exp $
 
-inherit eutils
+# catalyst-9999			-> latest SVN
+# catalyst-9999.REV		-> use SVN REV
+# catalyst-VER			-> normal catalyst release
+
+if [[ ${PV} == 9999* ]]
+then
+	[[ ${PV} == 9999.* ]] && ESVN_UPDATE_CMD="svn up -r ${PV/9999./}"
+	ESVN_REPO_URI="svn://anonsvn.gentoo.org/catalyst/trunk"
+	inherit subversion eutils multilib
+	SRC_URI=""
+	S=${WORKDIR}/trunk
+else
+	inherit eutils multilib
+	SRC_URI="mirror://gentoo/${P}.tar.bz2
+		http://dev.gentoo.org/~wolf31o2/${P}.tar.bz2"
+fi
 
 DESCRIPTION="release metatool used for creating Gentoo releases"
 HOMEPAGE="http://www.gentoo.org/proj/en/releng/catalyst"
-SRC_URI="mirror://gentoo/${P}.tar.bz2
-	http://dev.gentoo.org/~wolf31o2/sources/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
+#KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+#KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 RESTRICT=""
 IUSE="ccache"
 
@@ -38,23 +53,25 @@ pkg_setup() {
 	einfo "on catalyst."
 }
 
+src_unpack() {
+	if [[ ${PV} == 9999* ]] ; then
+		subversion_src_unpack
+	else
+		unpack ${A}
+		cd "${S}"
+	fi
+}
+
 src_install() {
-	insinto /usr/lib/${PN}/arch
-	doins arch/* || die "copying arch/*"
-	insinto /usr/lib/${PN}/modules
-	doins modules/* || die "copying modules/*"
-	insinto /usr/lib/${PN}/livecd/cdtar
-	doins livecd/cdtar/* || die "copying cdtar/*"
-	insinto /usr/lib/${PN}/livecd/files
-	doins livecd/files/* || die "copying files/*"
+	insinto /usr/$(get_libdir)/${PN}
+	exeinto /usr/$(get_libdir)/${PN}
+	doexe catalyst || die "copying catalyst"
+	doins -r arch modules livecd || die "copying files"
 	for x in targets/*; do
-		exeinto /usr/lib/${PN}/$x
+		exeinto /usr/$(get_libdir)/${PN}/$x
 		doexe $x/* || die "copying ${x}"
 	done
-	exeinto /usr/lib/${PN}
-	doexe catalyst || die "copying catalyst"
-	dodir /usr/bin
-	dosym /usr/lib/${PN}/catalyst /usr/bin/catalyst
+	make_wrapper catalyst /usr/$(get_libdir)/${PN}/catalyst
 	insinto /etc/catalyst
 	doins files/catalyst.conf files/catalystrc || die "copying configuration"
 	insinto /usr/share/doc/${PF}/examples
@@ -64,6 +81,8 @@ src_install() {
 	# Here is where we actually enable ccache
 	use ccache && \
 		dosed 's:options="autoresume kern:options="autoresume ccache kern:' \
+		/etc/catalyst/catalyst.conf
+	dosed "s:/usr/lib/catalyst:/usr/$(get_libdir)/catalyst:" \
 		/etc/catalyst/catalyst.conf
 }
 
