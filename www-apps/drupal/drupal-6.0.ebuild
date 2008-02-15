@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/drupal/Attic/drupal-6.0.ebuild,v 1.1 2008/02/15 09:05:41 wrobel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/drupal/Attic/drupal-6.0.ebuild,v 1.2 2008/02/15 09:22:34 wrobel Exp $
 
-inherit webapp eutils
+inherit webapp eutils depend.php
 
 MY_PV=${PV:0:3}.0
 
@@ -14,8 +14,9 @@ LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~ppc ~x86"
 IUSE=""
 
-RDEPEND="virtual/httpd-php
-	 virtual/httpd-cgi"
+RDEPEND="virtual/httpd-cgi"
+
+need_php
 
 src_install() {
 	webapp_src_preinst
