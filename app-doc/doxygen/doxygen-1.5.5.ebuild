@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/doxygen/doxygen-1.5.4.ebuild,v 1.11 2008/02/16 20:24:36 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/doxygen/Attic/doxygen-1.5.5.ebuild,v 1.1 2008/02/16 20:24:36 nerdboy Exp $
 
 inherit eutils flag-o-matic toolchain-funcs qt3 fdo-mime
 
@@ -10,13 +10,14 @@ SRC_URI="ftp://ftp.stack.nl/pub/users/dimitri/${P}.src.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="debug doc nodot qt3 tetex elibc_FreeBSD"
 
 RDEPEND="qt3? ( $(qt_min_version 3.3) )
 	tetex? ( virtual/tetex )
 	dev-lang/python
 	virtual/libiconv
+	media-libs/libpng
 	virtual/ghostscript
 	!nodot? ( >=media-gfx/graphviz-2.6
 		media-libs/freetype )"
@@ -38,9 +39,9 @@ src_unpack() {
 
 	# Ensure we link to -liconv
 	if use elibc_FreeBSD; then
-		for pro in */*.pro.in */*/*.pro.in; do
-			echo "unix:LIBS += -liconv" >> "${pro}"
-		done
+	    for pro in */*.pro.in */*/*.pro.in; do
+		echo "unix:LIBS += -liconv" >> "${pro}"
+	    done
 	fi
 
 	# Consolidate patches, apply FreeBSD configure patch, codepage patch,
@@ -70,16 +71,17 @@ src_compile() {
 	export ECFLAGS="${CFLAGS}" ECXXFLAGS="${CXXFLAGS}" ELDFLAGS="${LDFLAGS}"
 	# set ./configure options (prefix, Qt based wizard, docdir)
 
+	local my_conf=""
 	if use debug; then
-	    local my_conf="--prefix ${D}usr --debug"
+	    my_conf="--prefix ${D}usr --debug"
 	else
-	    local my_conf="--prefix ${D}usr"
+	    my_conf="--prefix ${D}usr"
 	fi
 
 	if use qt3; then
 	    einfo "using QTDIR: '$QTDIR'."
-	    export LD_LIBRARY_PATH=${QTDIR}/$(get_libdir):${LD_LIBRARY_PATH}
-	    export LIBRARY_PATH=${QTDIR}/$(get_libdir):${LIBRARY_PATH}
+	    export LIBRARY_PATH="${QTDIR}/$(get_libdir):${LIBRARY_PATH}"
+	    export LD_LIBRARY_PATH="${QTDIR}/$(get_libdir):${LD_LIBRARY_PATH}"
 	    einfo "using QT LIBRARY_PATH: '$LIBRARY_PATH'."
 	    einfo "using QT LD_LIBRARY_PATH: '$LD_LIBRARY_PATH'."
 	    ./configure ${my_conf} $(use_with qt3 doxywizard) \
@@ -133,7 +135,7 @@ src_install() {
 
 	# pdf and html manuals
 	if use doc; then
-	    insinto /usr/share/doc/${PF}
+	    insinto /usr/share/doc/"${PF}"
 	    if use tetex; then
 		doins latex/doxygen_manual.pdf
 	    fi
