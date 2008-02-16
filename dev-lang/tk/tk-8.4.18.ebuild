@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/tk/Attic/tk-8.4.15-r2.ebuild,v 1.1 2008/02/04 16:28:02 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/tk/tk-8.4.18.ebuild,v 1.1 2008/02/16 04:43:31 matsuu Exp $
 
 WANT_AUTOCONF=latest
 WANT_AUTOMAKE=latest
@@ -45,13 +45,7 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-8.4.11-multilib.patch
 
 	# Bug 125971
-	epatch "${FILESDIR}"/${P}-tclm4-soname.patch
-
-	# Bug 192539
-	epatch "${FILESDIR}"/${PN}-CVE-2007-4851.patch
-
-	# Bug 208464
-	epatch "${FILESDIR}"/${PN}-CVE-2006-4484.patch
+	epatch "${FILESDIR}"/${PN}-8.4.15-tclm4-soname.patch
 
 	local d
 	for d in */configure ; do
