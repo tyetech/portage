@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gnome-mplayer/Attic/gnome-mplayer-0.5.2.ebuild,v 1.2 2007/11/05 20:20:53 dberkholz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gnome-mplayer/Attic/gnome-mplayer-0.6.0.ebuild,v 1.1 2008/02/16 07:22:47 drac Exp $
 
-GCONF_DEBUG="no"
+GCONF_DEBUG=no
 
 inherit gnome2
 
@@ -15,9 +15,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-RDEPEND=">=gnome-base/libgnome-2
-	>=gnome-base/libgnomeui-2
+RDEPEND=">=x11-libs/gtk+-2.12
+	>=dev-libs/glib-2.14
 	>=dev-libs/dbus-glib-0.7
+	>=gnome-base/gconf-2
 	media-video/mplayer"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
