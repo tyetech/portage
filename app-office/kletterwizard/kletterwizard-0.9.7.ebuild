@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kletterwizard/Attic/kletterwizard-0.9.7.ebuild,v 1.6 2008/02/19 01:25:35 ingmar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kletterwizard/Attic/kletterwizard-0.9.7.ebuild,v 1.7 2008/02/19 02:29:18 ingmar Exp $
 
 inherit kde
 
@@ -15,7 +15,7 @@ IUSE="kdeenablefinal"
 
 DEPEND="virtual/tetex
 	|| ( =kde-base/kghostview-3.5* =kde-base/kdegraphics-3.5* )"
-RDEPEND=""
+RDEPEND="${DEPEND}"
 
 need-kde 3.4
 
