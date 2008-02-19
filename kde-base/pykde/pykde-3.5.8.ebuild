@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/pykde/Attic/pykde-3.5.8.ebuild,v 1.5 2008/01/19 02:13:20 ingmar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/pykde/Attic/pykde-3.5.8.ebuild,v 1.6 2008/02/19 04:16:33 ingmar Exp $
 
 KMNAME=kdebindings
 KMMODULE=python
 KM_MAKEFILESREV=1
-MAXKDEVER=$PV
+MAXKDEVER=3.5.9
 KM_DEPRANGE="$PV $MAXKDEVER"
 
 inherit kde-meta distutils
