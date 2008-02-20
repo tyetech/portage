@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/quagga/Attic/quagga-0.98.6-r2.ebuild,v 1.8 2007/06/26 02:34:46 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/quagga/Attic/quagga-0.98.6-r4.ebuild,v 1.1 2008/02/20 05:19:32 mrness Exp $
 
 WANT_AUTOMAKE="latest"
 WANT_AUTOCONF="latest"
@@ -10,11 +10,11 @@ inherit eutils multilib autotools
 DESCRIPTION="A free routing daemon replacing Zebra supporting RIP, OSPF and BGP. Includes OSPFAPI, NET-SNMP and IPV6 support."
 HOMEPAGE="http://quagga.net/"
 SRC_URI="http://www.quagga.net/download/${P}.tar.gz
-	mirror://gentoo/${P}-patches-20070412.tar.gz"
+	mirror://gentoo/${P}-patches-20070912.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 arm hppa ppc s390 sparc x86"
+KEYWORDS="alpha amd64 arm hppa ppc s390 sparc x86"
 IUSE="ipv6 snmp pam tcpmd5 bgpclassless ospfapi realms fix-connected-rt multipath tcp-zebra"
 RESTRICT="userpriv"
 
@@ -25,7 +25,7 @@ RDEPEND="${DEPEND}
 	sys-apps/iproute2"
 
 src_unpack() {
-	unpack ${A} || die "failed to unpack sources"
+	unpack ${A}
 
 	cd "${S}" || die "source dir not found"
 	# Fix security quagga bug 355
@@ -50,6 +50,9 @@ src_unpack() {
 
 	# Realms support (Calin Velea) - http://vcalinus.gemenii.ro/quaggarealms.html
 	use realms && epatch "${WORKDIR}/patch/${P}-realms.diff"
+
+	# Security patches
+	epatch "${WORKDIR}/patch/${P}-backports.patch"
 
 	# regenerate configure and co if we touch .ac or .am files
 	eautoreconf
@@ -93,7 +96,7 @@ src_install() {
 		exampledir="${D}/etc/quagga/samples" \
 		libdir="${D}/usr/$(get_libdir)/quagga" || die "make install failed"
 
-	keepdir /var/run/quagga || die
+	dodir /var/run/quagga || die "failed to install /var/run/quagga"
 
 	local i MY_SERVICES_LIST="zebra ripd ospfd bgpd"
 	use ipv6 && MY_SERVICES_LIST="${MY_SERVICES_LIST} ripngd ospf6d"
@@ -104,10 +107,10 @@ src_install() {
 
 	if use pam; then
 		insinto /etc/pam.d
-		newins "${FILESDIR}/quagga.pam" quagga
+		newins "${FILESDIR}/quagga.pam" quagga || die "failed to install pam.d file"
 	fi
 
-	newenvd "${FILESDIR}/quagga.env" 99quagga
+	newenvd "${FILESDIR}/quagga.env" 99quagga || die "failed to install env file"
 }
 
 pkg_preinst() {
