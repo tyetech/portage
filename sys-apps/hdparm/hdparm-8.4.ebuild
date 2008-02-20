@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hdparm/Attic/hdparm-8.1.ebuild,v 1.1 2008/02/16 22:19:24 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hdparm/Attic/hdparm-8.4.ebuild,v 1.1 2008/02/20 06:17:43 vapier Exp $
 
 inherit toolchain-funcs
 
