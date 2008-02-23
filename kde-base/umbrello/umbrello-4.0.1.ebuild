@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/umbrello/Attic/umbrello-4.0.1.ebuild,v 1.1 2008/02/07 00:10:46 philantrop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/umbrello/Attic/umbrello-4.0.1.ebuild,v 1.2 2008/02/23 17:47:01 ingmar Exp $
 
 EAPI="1"
 
@@ -13,5 +13,5 @@ IUSE="debug htmlhandbook"
 
 COMMONDEPEND="dev-libs/libxml2
 	dev-libs/libxslt"
-DEPEND="${DEPEND} ${COMMONDEPEND}"
-RDEPEND="${RDEPEND} ${COMMONDEPEND}"
+DEPEND="${COMMONDEPEND}"
+RDEPEND="${COMMONDEPEND}"
