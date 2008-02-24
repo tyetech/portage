@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/roxterm/Attic/roxterm-1.10.0.ebuild,v 1.1 2008/02/22 05:25:51 compnerd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/roxterm/Attic/roxterm-1.10.1.ebuild,v 1.1 2008/02/24 00:10:09 compnerd Exp $
 
 inherit eutils
 
