@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/awesome/Attic/awesome-2.2_rc1.ebuild,v 1.1 2008/02/14 16:44:11 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/awesome/Attic/awesome-2.2_rc2.ebuild,v 1.1 2008/02/25 16:51:52 matsuu Exp $
 
 inherit toolchain-funcs eutils
 
