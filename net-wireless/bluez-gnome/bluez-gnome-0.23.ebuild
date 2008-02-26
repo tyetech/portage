@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez-gnome/Attic/bluez-gnome-0.17.ebuild,v 1.7 2008/02/26 16:06:18 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez-gnome/Attic/bluez-gnome-0.23.ebuild,v 1.1 2008/02/26 16:06:18 betelgeuse Exp $
 
 inherit gnome2
 
@@ -10,7 +10,7 @@ SRC_URI="http://bluez.sourceforge.net/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~sparc ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 
 IUSE="gnome"
 COMMON_DEPEND=">=dev-libs/glib-2.0
@@ -27,13 +27,14 @@ DEPEND="
 
 RDEPEND="=net-wireless/bluez-utils-3*
 	gnome? ( gnome-base/nautilus )
-	~app-mobilephone/obex-data-server-0.1
+	>=app-mobilephone/obex-data-server-0.3
 	${COMMON_DEPEND}"
 
 PDEPEND="gnome? ( gnome-extra/gnome-vfs-obexftp )"
 
 G2CONF="--disable-desktop-update
-		--disable-mime-update"
+		--disable-mime-update
+		--disable-icon-update"
 
 DOCS="AUTHORS README NEWS ChangeLog"
 
