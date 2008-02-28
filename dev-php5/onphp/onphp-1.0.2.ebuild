@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/onphp/Attic/onphp-1.0.0.ebuild,v 1.2 2008/01/05 23:14:59 voxus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/onphp/Attic/onphp-1.0.2.ebuild,v 1.1 2008/02/28 19:06:48 voxus Exp $
 
 inherit php-lib-r1
 
