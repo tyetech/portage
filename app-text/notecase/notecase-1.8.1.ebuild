@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/notecase/Attic/notecase-1.7.9.ebuild,v 1.1 2008/02/05 21:32:51 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/notecase/Attic/notecase-1.8.1.ebuild,v 1.1 2008/02/28 10:52:16 armin76 Exp $
 
 inherit eutils fdo-mime
 
