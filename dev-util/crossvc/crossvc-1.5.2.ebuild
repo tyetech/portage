@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/crossvc/Attic/crossvc-1.5.2.ebuild,v 1.4 2008/02/17 10:37:13 opfer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/crossvc/Attic/crossvc-1.5.2.ebuild,v 1.5 2008/02/29 17:59:22 carlo Exp $
 
 inherit kde-functions
 
@@ -45,7 +45,7 @@ src_install() {
 
 	dodir /usr/share/pixmaps
 	cp "${S}"/images/lincvs-16.xpm "${D}"/usr/share/pixmaps/crossvc-16.xpm
-	make_desktop_entry crossvc "CrossVC" crossvc-16.xpm
+	make_desktop_entry crossvc "CrossVC" crossvc-16
 
 	for i in /usr/share/CrossVC/{AppI*,Messages} ; do
 		fperms 644 "${i}"
