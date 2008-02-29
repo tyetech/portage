@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/allegro/Attic/allegro-4.2.2.ebuild,v 1.7 2008/02/26 15:51:44 fmccor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/allegro/Attic/allegro-4.2.2.ebuild,v 1.8 2008/02/29 19:55:00 carlo Exp $
 
 inherit autotools eutils
 
@@ -80,7 +80,7 @@ src_install() {
 		insinto /usr/share/${PN}
 		doins {keyboard,language,setup/setup}.dat || die "doins failed"
 		newicon misc/alex.png ${PN}.png
-		make_desktop_entry ${PN}-setup "Allegro Setup" ${PN}.png "Settings"
+		make_desktop_entry ${PN}-setup "Allegro Setup" ${PN} "Settings"
 	fi
 
 	dodoc AUTHORS CHANGES THANKS readme.txt todo.txt
