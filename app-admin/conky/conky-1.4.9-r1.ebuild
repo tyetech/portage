@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conky/Attic/conky-1.4.9-r1.ebuild,v 1.7 2008/02/06 19:57:34 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conky/Attic/conky-1.4.9-r1.ebuild,v 1.8 2008/03/02 23:59:46 opfer Exp $
 
 inherit eutils
 # used for epause
 
 DESCRIPTION="An advanced, highly configurable system monitor for X"
-HOMEPAGE="http://conky.sf.net"
+HOMEPAGE="http://conky.sourceforge.net/"
 SRC_URI="mirror://sourceforge/conky/${P}.tar.bz2"
 
 LICENSE="BSD"
