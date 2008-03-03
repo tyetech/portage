@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/ocamlweb/Attic/ocamlweb-1.37.ebuild,v 1.4 2008/03/03 23:00:02 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/ocamlweb/Attic/ocamlweb-1.37.ebuild,v 1.5 2008/03/03 23:04:45 aballier Exp $
 
 inherit latex-package eutils
 
@@ -26,6 +26,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-tests.patch"
+	epatch "${FILESDIR}/${P}-strip.patch"
 }
 
 
