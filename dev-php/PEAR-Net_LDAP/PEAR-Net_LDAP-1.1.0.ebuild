@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Net_LDAP/Attic/PEAR-Net_LDAP-1.1.0_alpha2.ebuild,v 1.1 2008/02/11 20:57:55 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Net_LDAP/Attic/PEAR-Net_LDAP-1.1.0.ebuild,v 1.1 2008/03/03 16:56:22 jokey Exp $
 
 inherit php-pear-r1 depend.php
 
