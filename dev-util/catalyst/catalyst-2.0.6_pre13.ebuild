@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0.6_pre9.ebuild,v 1.1 2008/02/21 06:46:58 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0.6_pre13.ebuild,v 1.1 2008/03/05 21:41:18 wolf31o2 Exp $
 
 # catalyst-9999         -> latest SVN
 # catalyst-9999.REV     -> use SVN REV
