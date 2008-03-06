@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/d2x-rebirth/d2x-rebirth-0.50.ebuild,v 1.2 2008/01/25 23:45:58 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/d2x-rebirth/d2x-rebirth-0.50.ebuild,v 1.3 2008/03/06 03:15:20 wolf31o2 Exp $
 
 inherit autotools eutils games
 
@@ -101,8 +101,8 @@ src_install() {
 	doicon "${WORKDIR}/${icon}"
 	make_desktop_entry ${PN}-common "Descent ${DV} Rebirth" "${icon}"
 
-	dodoc AUTHORS ChangeLog COPYING dxx-changelog dxx-readme.txt \
-		NEWS README "${WORKDIR}"/*.txt
+	dodoc AUTHORS ChangeLog dxx-changelog dxx-readme.txt NEWS \
+		README "${WORKDIR}"/*.txt
 
 	prepgamesdirs
 }
