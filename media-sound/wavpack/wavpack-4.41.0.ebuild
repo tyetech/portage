@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/wavpack/Attic/wavpack-4.41.0.ebuild,v 1.11 2008/03/07 07:36:45 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/wavpack/Attic/wavpack-4.41.0.ebuild,v 1.12 2008/03/07 07:39:15 drac Exp $
 
 inherit libtool
 
