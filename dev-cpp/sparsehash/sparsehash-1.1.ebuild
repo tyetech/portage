@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/sparsehash/Attic/sparsehash-1.0.ebuild,v 1.1 2008/01/31 09:03:19 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/sparsehash/sparsehash-1.1.ebuild,v 1.1 2008/03/07 19:02:16 dev-zero Exp $
 
 DESCRIPTION="An extremely memory-efficient hash_map implementation."
 HOMEPAGE="http://code.google.com/p/google-sparsehash/"
