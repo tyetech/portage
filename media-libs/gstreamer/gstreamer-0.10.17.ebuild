@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gstreamer/Attic/gstreamer-0.10.17.ebuild,v 1.2 2008/02/10 17:38:51 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/gstreamer/Attic/gstreamer-0.10.17.ebuild,v 1.3 2008/03/08 19:24:17 tester Exp $
 
 inherit libtool
 
@@ -19,8 +19,8 @@ IUSE="debug nls test"
 
 RDEPEND=">=dev-libs/glib-2.8
 	>=dev-libs/libxml2-2.4.9
-	debug? ( dev-util/valgrind )
-	test? ( >=dev-libs/check-0.9.2 )"
+	>=dev-libs/check-0.9.2
+	debug? ( dev-util/valgrind )"
 DEPEND="${RDEPEND}
 	nls? ( >=sys-devel/gettext-0.11.5 )
 	dev-util/pkgconfig
