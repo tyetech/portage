@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/source-highlight/Attic/source-highlight-2.8.ebuild,v 1.1 2008/02/13 13:24:23 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/source-highlight/Attic/source-highlight-2.8.ebuild,v 1.2 2008/03/11 20:17:49 cla Exp $
 
 inherit bash-completion
 
@@ -8,7 +8,7 @@ DESCRIPTION="Generate highlighted source code as an (x)html document"
 HOMEPAGE="http://www.gnu.org/software/src-highlite/source-highlight.html"
 SRC_URI="mirror://gnu/src-highlite/${P}.tar.gz"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~mips ~ppc ~x86"
+KEYWORDS="~amd64 ~mips ~ppc x86"
 SLOT="0"
 IUSE="doc"
 
