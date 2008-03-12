@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/openfire/Attic/openfire-3.4.1.ebuild,v 1.3 2008/03/12 19:58:04 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/openfire/Attic/openfire-3.4.5.ebuild,v 1.1 2008/03/12 19:58:04 jokey Exp $
 
 inherit eutils java-pkg-2 java-ant-2
 
