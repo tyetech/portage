@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/zangband/Attic/zangband-2.7.4b.ebuild,v 1.6 2008/03/07 20:19:39 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/zangband/Attic/zangband-2.7.4b.ebuild,v 1.7 2008/03/13 17:39:52 wolf31o2 Exp $
 
 inherit games
 
@@ -37,9 +37,9 @@ src_compile() {
 
 src_install() {
 	# Keep some important dirs we want to chmod later
-	keepdir ${GAMES_DATADIR}/zangband/lib/apex \
-		${GAMES_DATADIR}/zangband/lib/user \
-		${GAMES_DATADIR}/zangband/lib/save
+	keepdir "${GAMES_DATADIR}/zangband/lib/apex" \
+		"${GAMES_DATADIR}/zangband/lib/user" \
+		"${GAMES_DATADIR}/zangband/lib/save"
 
 	# Install the basic files but remove unneeded crap
 	make DESTDIR="${D}/${GAMES_DATADIR}"/zangband/ installbase || \
