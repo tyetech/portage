@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit-dev/Attic/gentoolkit-dev-0.2.6.7.ebuild,v 1.1 2008/03/14 03:09:40 fuzzyray Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit-dev/Attic/gentoolkit-dev-0.2.6.8.ebuild,v 1.1 2008/03/14 16:31:16 fuzzyray Exp $
 
 inherit eutils
 
