@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/gruff/Attic/gruff-0.3.0.ebuild,v 1.1 2008/03/13 11:55:53 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/gruff/Attic/gruff-0.3.1.ebuild,v 1.1 2008/03/17 07:13:48 graaff Exp $
 
 inherit gems
 
