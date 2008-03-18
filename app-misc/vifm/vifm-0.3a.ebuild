@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/vifm/Attic/vifm-0.2a.ebuild,v 1.11 2008/03/18 18:36:11 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/vifm/vifm-0.3a.ebuild,v 1.1 2008/03/18 18:36:11 armin76 Exp $
 
 DESCRIPTION="Console file manager with vi/vim-like keybindings"
 HOMEPAGE="http://vifm.sourceforge.net/"
@@ -8,11 +8,11 @@ SRC_URI="mirror://sourceforge/vifm/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS="amd64 ~ppc s390 x86"
+KEYWORDS="~amd64 ~ppc ~s390 ~x86"
 IUSE=""
 DEPEND=">=sys-apps/sed-4.0"
 
-S=${WORKDIR}/${PN}
+S="${WORKDIR}/${P}"
 
 src_unpack() {
 	unpack ${A}
@@ -27,11 +27,6 @@ src_unpack() {
 
 	sed -i -e "s:/usr/local/share/vifm:/usr/share/${P}:g" \
 		config.c
-}
-
-src_compile() {
-	econf || die
-	emake || die
 }
 
 src_install() {
