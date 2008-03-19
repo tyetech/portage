@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/flamerobin/Attic/flamerobin-0.8.1.ebuild,v 1.1 2007/10/18 16:31:26 wltjr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/flamerobin/Attic/flamerobin-0.8.6.ebuild,v 1.1 2008/03/19 19:33:09 wltjr Exp $
 
 inherit eutils wxwidgets
 
