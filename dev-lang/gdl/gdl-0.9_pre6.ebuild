@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/gdl/Attic/gdl-0.9_pre6.ebuild,v 1.1 2007/11/05 11:54:54 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/gdl/Attic/gdl-0.9_pre6.ebuild,v 1.2 2008/03/21 20:43:56 markusle Exp $
 
 inherit eutils flag-o-matic
 
@@ -36,6 +36,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-proj4.patch
+	epatch "${FILESDIR}"/${P}-magick.patch
 }
 
 src_compile() {
