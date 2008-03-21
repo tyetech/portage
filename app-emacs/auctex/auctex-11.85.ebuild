@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/auctex/Attic/auctex-11.85.ebuild,v 1.1 2008/02/11 08:20:09 opfer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/auctex/Attic/auctex-11.85.ebuild,v 1.2 2008/03/21 09:07:34 opfer Exp $
 
 inherit elisp eutils latex-package
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-3 FDL-1.2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc x86"
 IUSE="preview-latex"
 
 DEPEND="virtual/latex-base
