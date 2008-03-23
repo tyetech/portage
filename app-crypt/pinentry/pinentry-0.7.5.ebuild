@@ -1,11 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/pinentry/Attic/pinentry-0.7.3.ebuild,v 1.10 2008/03/23 13:08:32 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/pinentry/Attic/pinentry-0.7.5.ebuild,v 1.1 2008/03/23 13:08:32 swegener Exp $
 
-#WANT_AUTOCONF="2.5"
-#WANT_AUTOMAKE="1.9"
-
-inherit qt3 multilib eutils autotools
+inherit qt3 multilib eutils
 
 DESCRIPTION="Collection of simple PIN or passphrase entry dialogs which utilize the Assuan protocol"
 HOMEPAGE="http://www.gnupg.org/aegypten/"
@@ -13,7 +10,7 @@ SRC_URI="mirror://gnupg/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="gtk ncurses qt3 caps"
 
 DEPEND="gtk? ( =x11-libs/gtk+-2* )
@@ -26,12 +23,8 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/0.7.2-libcap.patch"
-	epatch "${FILESDIR}/0.7.2-info.patch"
-	epatch "${FILESDIR}/${PN}-0.7.2-grab.patch"
+	epatch "${FILESDIR}/${P}-grab.patch"
 	epatch "${FILESDIR}/${PN}-gmem.patch"
-
-	AT_M4DIR="m4" eautoreconf
 }
 
 src_compile() {
