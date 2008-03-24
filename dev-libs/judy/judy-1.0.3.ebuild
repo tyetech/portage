@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/judy/Attic/judy-1.0.3.ebuild,v 1.4 2007/03/01 00:02:29 weeve Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/judy/Attic/judy-1.0.3.ebuild,v 1.5 2008/03/24 17:58:06 coldwind Exp $
 
 inherit eutils libtool
 
@@ -10,7 +10,7 @@ HOMEPAGE="http://judy.sourceforge.net/"
 SRC_URI="mirror://sourceforge/judy/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ppc sparc x86"
+KEYWORDS="amd64 ppc sparc x86"
 IUSE=""
 S=${WORKDIR}/${MY_P}
 
@@ -25,5 +25,5 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die
 }
