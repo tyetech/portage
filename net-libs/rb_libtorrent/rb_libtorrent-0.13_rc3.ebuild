@@ -1,21 +1,19 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/rb_libtorrent/Attic/rb_libtorrent-0.13_pre1912.ebuild,v 1.2 2008/03/11 16:09:22 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/rb_libtorrent/Attic/rb_libtorrent-0.13_rc3.ebuild,v 1.1 2008/03/24 17:55:15 armin76 Exp $
 
-WANT_AUTOCONF="latest"
-WANT_AUTOMAKE="latest"
 inherit eutils autotools
 
-MY_P="${P/rb_/}"
+MY_P=${PN/rb_/}-${PV/_rc/rc}
+S="${WORKDIR}/${MY_P/rc*}"
 
 DESCRIPTION="BitTorrent library written in C++ for *nix."
 HOMEPAGE="http://www.rasterbar.com/products/libtorrent/"
-SRC_URI="mirror://gentoo/${MY_P}.tar.bz2"
-S="${WORKDIR}/${MY_P}"
+SRC_URI="http://libtorrent.org/${MY_P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
 IUSE="debug"
 
 DEPEND="dev-libs/boost
@@ -37,8 +35,6 @@ src_compile() {
 			--with-boost-thread=boost_thread-mt \
 			--with-boost-regex=boost_regex-mt \
 			--with-boost-program_options=boost_program_options-mt"
-
-	AT_M4DIR="m4" eautoreconf
 
 	econf $(use_enable debug) \
 		 ${BOOST_LIBS} \
