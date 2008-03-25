@@ -1,7 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/evolution-data-server/Attic/evolution-data-server-2.22.0.ebuild,v 1.2 2008/03/24 23:07:41 eva Exp $
-
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/evolution-data-server/Attic/evolution-data-server-2.22.0.ebuild,v 1.3 2008/03/25 16:13:58 mr_bones_ Exp $
 
 inherit db-use eutils flag-o-matic gnome2 autotools
 
