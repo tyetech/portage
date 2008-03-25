@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmap/Attic/nmap-4.53.ebuild,v 1.9 2008/03/09 15:53:49 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmap/Attic/nmap-4.53.ebuild,v 1.10 2008/03/25 14:37:07 spock Exp $
 
 inherit eutils flag-o-matic
 
@@ -42,6 +42,8 @@ src_compile() {
 		else
 			myconf="--with-liblua=included"
 		fi
+	else
+		myconf="--without-liblua"
 	fi
 
 	econf \
