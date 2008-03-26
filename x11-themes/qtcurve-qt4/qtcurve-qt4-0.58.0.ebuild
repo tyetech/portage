@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/qtcurve-qt4/Attic/qtcurve-qt4-0.55.3.ebuild,v 1.3 2008/02/25 16:30:57 yngwin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/qtcurve-qt4/Attic/qtcurve-qt4-0.58.0.ebuild,v 1.1 2008/03/26 23:41:20 yngwin Exp $
 
 inherit qt4 cmake-utils
 
