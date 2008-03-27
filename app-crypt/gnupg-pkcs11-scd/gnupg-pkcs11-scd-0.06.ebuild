@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg-pkcs11-scd/Attic/gnupg-pkcs11-scd-0.06.ebuild,v 1.1 2008/01/19 17:12:44 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg-pkcs11-scd/Attic/gnupg-pkcs11-scd-0.06.ebuild,v 1.2 2008/03/27 21:19:52 alonbl Exp $
 
 DESCRIPTION="PKCS#11 support for GnuPG"
 HOMEPAGE="http://gnupg-pkcs11.sourceforge.net"
@@ -16,15 +16,15 @@ RDEPEND=">=dev-libs/libgpg-error-1.3
 	>=dev-libs/openssl-0.9.7
 	>=dev-libs/pkcs11-helper-1.02"
 DEPEND="${RDEPEND}
-	>=dev-libs/libassuan-0.9.2
+	>=dev-libs/libassuan-1.0.4
 	dev-util/pkgconfig"
 
 src_compile() {
-	econf --docdir="/usr/share/doc/${PF}"
-	emake
+	econf --docdir="/usr/share/doc/${PF}" || die
+	emake || die
 }
 
 src_install() {
-	emake install DESTDIR="${D}"
+	emake install DESTDIR="${D}" || die
 	prepalldocs
 }
