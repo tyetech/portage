@@ -1,11 +1,11 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-rsm-cache/Attic/cl-rsm-cache-1.1_beta1.ebuild,v 1.5 2007/02/03 17:42:14 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/cl-rsm-cache/Attic/cl-rsm-cache-1.1_beta1.ebuild,v 1.6 2008/03/27 16:28:14 armin76 Exp $
 
 inherit common-lisp
 
 DESCRIPTION="McIntire's Common Lisp Cache Library"
-HOMEPAGE="http://packages.debian.org/unstable/devel/cl-rsm-cache.html"
+HOMEPAGE="http://packages.debian.org/unstable/devel/cl-rsm-cache"
 SRC_URI="mirror://gentoo/cl-rsm-cache_${PV/_beta/b}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
