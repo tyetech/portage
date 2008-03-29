@@ -1,21 +1,21 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vdr2jpeg/Attic/vdr2jpeg-0.0.11.ebuild,v 1.4 2008/01/13 19:35:13 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vdr2jpeg/Attic/vdr2jpeg-0.1.0.ebuild,v 1.1 2008/03/29 16:35:57 hd_brummy Exp $
 
 inherit eutils
 
 RESTRICT="strip"
 
 DESCRIPTION="Addon needed for XXV - WWW Admin for the Video Disk Recorder"
-HOMEPAGE="http://www.deltab.de/vdr/vdr2jpeg.html"
-SRC_URI="mirror://vdrfiles/${PN}/${P}.tgz"
+HOMEPAGE="http://xxv.berlios.de/content/view/27/42/"
+SRC_URI="http://download.berlios.de/xxv/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=media-video/ffmpeg-0.4.9_p20070330
+DEPEND=">=media-video/ffmpeg-0.4.9_p20080326
 		dev-util/pkgconfig"
 
 src_unpack() {
@@ -23,6 +23,8 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	sed -i "s:usr/local:usr:" Makefile
+
+	epatch "${FILESDIR}/ffmpeg-0.4.9_p20080326-new_header.diff"
 }
 
 src_compile() {
