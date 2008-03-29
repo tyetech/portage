@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/beagle/Attic/beagle-0.3.4.ebuild,v 1.1 2008/03/26 21:49:16 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/beagle/Attic/beagle-0.3.4-r1.ebuild,v 1.1 2008/03/29 14:58:28 cedk Exp $
 
 EAPI=1
 
@@ -52,7 +52,8 @@ RDEPEND="
 	firefox? ( || ( >=www-client/mozilla-firefox-1.5
 			>=www-client/mozilla-firefox-bin-1.5 ) )
 	epiphany? ( >=www-client/epiphany-extensions-2.16 )
-	xscreensaver? ( x11-libs/libXScrnSaver )"
+	xscreensaver? ( x11-libs/libXScrnSaver )
+	dev-libs/libbeagle"
 	# Avahi code is currently experimental
 	#avahi?	(	>=net-dns/avahi-0.6.10 )
 
@@ -63,11 +64,24 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35"
 
 pkg_setup() {
-	local fail="Re-emerge dev-libs/gmime with USE mono."
+	local fail_gmime="Re-emerge dev-libs/gmime with USE mono."
+	local fail_libbeagle="Re-emerge dev-libs/libbeagle with USE=python."
+	local fail_epiphany="Re-emerge www-client/epiphany-extensions with USE=python."
 
 	if ! built_with_use dev-libs/gmime mono; then
-		eerror "${fail}"
-		die "${fail}"
+		eerror "${fail_gmime}"
+		die "${fail_gmime}"
+	fi
+
+	if use epiphany; then
+		if !built_with_use dev-libs/libbeagle python; then
+			eerror "${fail_libbeagle}"
+			die "${fail_libbeagle}"
+		fi
+		if !built_with_use www-client/epiphany-extensions python; then
+			eerror "${fail_epiphany}"
+			die "${fail_epiphany}"
+		fi
 	fi
 
 	enewgroup beagleindex
@@ -77,6 +91,9 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
+	epatch "${FILESDIR}"/${P}-epiphany-extension.patch
+	epatch "${FILESDIR}"/${P}-dbus.patch
 
 	# Multilib fix
 	sed -i -e 's:prefix mono`/lib:libdir mono`:' \
@@ -108,6 +125,8 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed."
+
+	dodoc AUTHORS NEWS README
 
 	declare MOZILLA_FIVE_HOME
 	if use firefox; then
@@ -143,8 +162,6 @@ src_install() {
 			|| die "xpi install for mozilla-thunderbird-bin failed!"
 		fi
 	fi
-
-	dodoc AUTHORS NEWS README
 
 	sed -i -e 's/CRAWL_ENABLED="yes"/CRAWL_ENABLED="no"/' \
 		"${D}"/etc/beagle/crawl-rules/crawl-*
