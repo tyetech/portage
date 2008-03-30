@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/youtube-servicemenu/Attic/youtube-servicemenu-1.3f.ebuild,v 1.2 2008/02/18 23:10:38 ingmar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/youtube-servicemenu/Attic/youtube-servicemenu-1.3j.ebuild,v 1.1 2008/03/30 22:17:36 hanno Exp $
 
 DESCRIPTION="Download YouTube (tm) Videos"
 HOMEPAGE="http://www.kde-apps.org/content/show.php/Get+YouTube+Video+(improved)?content=41456"
