@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Mail-SPF-Query/Attic/Mail-SPF-Query-1.998.ebuild,v 1.11 2007/07/10 23:33:30 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Mail-SPF-Query/Attic/Mail-SPF-Query-1.998.ebuild,v 1.12 2008/03/30 01:43:55 halcy0n Exp $
 
 inherit perl-module
 
@@ -19,5 +19,8 @@ DEPEND=">=dev-perl/Net-DNS-0.46
 		dev-perl/Sys-Hostname-Long
 		dev-perl/URI
 	dev-lang/perl"
+
+RDEPEND="${DEPEND}
+	!mail-filter/libspf2"
 
 mydoc="TODO README sample/*"
