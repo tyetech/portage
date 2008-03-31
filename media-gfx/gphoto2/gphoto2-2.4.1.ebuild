@@ -1,6 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gphoto2/Attic/gphoto2-2.4.1.ebuild,v 1.2 2008/03/31 01:57:41 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gphoto2/Attic/gphoto2-2.4.1.ebuild,v 1.3 2008/03/31 05:17:44 leio Exp $
+
+inherit eutils
 
 DESCRIPTION="free, redistributable digital camera software application"
 HOMEPAGE="http://www.gphoto.org/"
