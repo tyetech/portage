@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/openrc/openrc-9999.ebuild,v 1.18 2008/03/31 16:09:00 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/openrc/openrc-9999.ebuild,v 1.19 2008/03/31 16:23:25 cardoe Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
@@ -110,7 +110,7 @@ add_boot_init_mit_config() {
 	local config=$1 initd=$2
 	if [[ -e ${ROOT}${config} ]] ; then
 		if [[ -n $(sed -e 's:#.*::' -e '/^[[:space:]]*$/d' "${ROOT}"/${config}) ]] ; then
-			maybe_add_boot_init ${initd}
+			add_boot_init ${initd}
 		fi
 	fi
 }
