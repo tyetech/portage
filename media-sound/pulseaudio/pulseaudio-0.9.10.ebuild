@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.9-r53.ebuild,v 1.1 2008/03/08 23:34:01 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.10.ebuild,v 1.1 2008/03/31 14:53:59 flameeyes Exp $
 
 EAPI=1
 
@@ -41,12 +41,10 @@ RDEPEND="X? ( x11-libs/libX11 )
 	)
 	policykit? ( sys-auth/policykit )
 	asyncns? ( net-libs/libasyncns )
-	>=sys-apps/baselayout-2.0_rc5
 	>=sys-devel/libtool-1.5.24" # it's a valid RDEPEND, libltdl.so is used
 DEPEND="${RDEPEND}
 	dev-libs/libatomic_ops
-	dev-util/pkgconfig
-	dev-util/unifdef"
+	dev-util/pkgconfig"
 
 # alsa-utils dep is for the alsasound init.d script (see bug #155707)
 # bluez-utils dep is for the bluetooth init.d script
@@ -75,14 +73,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${PN}-0.9.8-svn2074.patch"
-	epatch "${FILESDIR}/${PN}-0.9.8-polkit.patch"
-	epatch "${FILESDIR}/${PN}-0.9.8-bt-nohal.patch"
-	epatch "${FILESDIR}/${PN}-0.9.8-esoundpath.patch"
-	epatch "${FILESDIR}/${PN}-0.9.8-create-directory.patch"
-	epatch "${FILESDIR}/${P}+ltdl-2.2.patch"
-
-	eautoreconf
+	# eautoreconf
 	elibtoolize
 }
 
@@ -113,6 +104,7 @@ src_compile() {
 		--disable-ltdl-install \
 		--localstatedir=/var \
 		--with-realtime-group=realtime \
+		--disable-per-user-esound-socket \
 		|| die "econf failed"
 	emake || die "emake failed"
 }
@@ -122,18 +114,12 @@ src_install() {
 
 	newconfd "${FILESDIR}/pulseaudio.conf.d" pulseaudio
 
-	use_define() {
-		local define=${2:-$(echo $1 | tr '[:lower:]' '[:upper:]')}
-
-		use "$1" && echo "-D$define" || echo "-U$define"
-	}
-
-	unifdef "${FILESDIR}/pulseaudio.init.d-3" \
-		$(use_define hal) \
-		$(use_define avahi) \
-		$(use_define alsa) \
-		$(use_define bluetooth) \
-		> "${T}/pulseaudio"
+	local neededservices
+	use alsa && neededservices="$neededservices alsasound"
+	use avahi && neededservices="$neededservices avahi-daemon"
+	use hal && neededservices="$neededservices hald"
+	use bluetooth && neededservices="$neededservices bluetooth"
+	[[ -n ${neededservices} ]] && sed -e "s/@neededservices@/need $neededservices/" "${FILESDIR}/pulseaudio.init.d-2" > "${T}/pulseaudio"
 	doinitd "${T}/pulseaudio"
 
 	use avahi && sed -i -e '/module-zeroconf-publish/s:^#::' "${D}/etc/pulse/default.pa"
