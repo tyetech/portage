@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/quassel/Attic/quassel-0.2.0_alpha2.ebuild,v 1.2 2008/03/03 12:32:38 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/quassel/Attic/quassel-0.2.0_alpha4.ebuild,v 1.1 2008/04/01 11:37:17 flameeyes Exp $
 
 EAPI=1
 
@@ -15,7 +15,7 @@ SRC_URI="http://quassel-irc.org/system/files/${MY_P}.tar.bz2"
 
 LICENSE="GPL-3"
 
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 
 SLOT="0"
 
