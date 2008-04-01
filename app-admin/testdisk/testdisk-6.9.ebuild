@@ -1,10 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/testdisk/Attic/testdisk-6.8.ebuild,v 1.1 2007/08/14 11:50:09 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/testdisk/Attic/testdisk-6.9.ebuild,v 1.1 2008/04/01 23:54:25 dragonheart Exp $
 
 inherit eutils flag-o-matic
 
-DESCRIPTION="Multi-platform tool to check and undelete partition, supports reiserfs, ntfs, fat32, ext2/3 and many others. Also includes PhotoRec to recover pictures from digital camera memory."
+DESCRIPTION="Checks and undeletes partitions + PhotoRec, signature based recovery tool"
 HOMEPAGE="http://www.cgsecurity.org/wiki/TestDisk"
 SRC_URI="http://www.cgsecurity.org/${P}.tar.bz2"
 LICENSE="GPL-2"
@@ -15,13 +15,13 @@ IUSE="static reiserfs ntfs jpeg"
 # you MUST use progsreiserfs-0.3.1_rc8 (the last version ever released).
 DEPEND=">=sys-libs/ncurses-5.2
 		jpeg? ( media-libs/jpeg )
-	  	ntfs? ( >=sys-fs/ntfsprogs-1.9.4 )
+	  	ntfs? ( >=sys-fs/ntfsprogs-2.0.0 )
 	  	reiserfs? ( >=sys-fs/progsreiserfs-0.3.1_rc8 )
 	  	>=sys-fs/e2fsprogs-1.35"
 RDEPEND="!static? ( ${DEPEND} )"
 
 src_compile() {
-	local myconf="--without-ewf"
+	local myconf="--without-ewf --enable-sudo"
 	# --with-foo are broken, any use of --with/--without disable the
 	# functionality.
 	# The following variation must be used.
@@ -36,13 +36,13 @@ src_compile() {
 	econf ${myconf} || die
 
 	# perform safety checks for NTFS and REISERFS
-	if useq ntfs && egrep -q 'undef HAVE_LIBNTFS\>' ${S}/config.h ; then
+	if useq ntfs && egrep -q 'undef HAVE_LIBNTFS\>' "${S}"/config.h ; then
 		die "Failed to find NTFS library."
 	fi
-	if useq reiserfs && egrep -q 'undef HAVE_LIBREISERFS\>' ${S}/config.h ; then
+	if useq reiserfs && egrep -q 'undef HAVE_LIBREISERFS\>' "${S}"/config.h ; then
 		die "Failed to find reiserfs library."
 	fi
-	if useq jpeg && egrep -q 'undef HAVE_LIBJPEG\>' ${S}/config.h ; then
+	if useq jpeg && egrep -q 'undef HAVE_LIBJPEG\>' "${S}"/config.h ; then
 		die "Failed to find jpeg library."
 	fi
 
@@ -51,5 +51,5 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	[ "$PF" != "$P" ] && mv ${D}/usr/share/doc/${P} ${D}/usr/share/doc/${PF}
+	[ "$PF" != "$P" ] && mv "${D}"/usr/share/doc/${P} "${D}"/usr/share/doc/${PF}
 }
