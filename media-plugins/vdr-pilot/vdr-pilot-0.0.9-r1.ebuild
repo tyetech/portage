@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-pilot/vdr-pilot-0.0.9-r1.ebuild,v 1.1 2008/04/02 13:49:51 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-pilot/vdr-pilot-0.0.9-r1.ebuild,v 1.2 2008/04/02 16:49:02 mr_bones_ Exp $
 
 IUSE=""
 inherit vdr-plugin eutils
@@ -14,7 +14,6 @@ SLOT="0"
 LICENSE="GPL-2"
 
 DEPEND=">=media-video/vdr-1.4.1"
-
 
 src_unpack() {
 	vdr-plugin_src_unpack unpack
