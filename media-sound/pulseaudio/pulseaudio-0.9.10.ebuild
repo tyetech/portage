@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.10.ebuild,v 1.1 2008/03/31 14:53:59 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.10.ebuild,v 1.2 2008/04/03 19:52:34 flameeyes Exp $
 
 EAPI=1
 
@@ -73,7 +73,9 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	# eautoreconf
+	epatch "${FILESDIR}/${P}-caps.patch"
+
+	eautoreconf
 	elibtoolize
 }
 
