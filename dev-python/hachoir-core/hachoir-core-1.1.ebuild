@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/hachoir-core/Attic/hachoir-core-1.1.ebuild,v 1.1 2008/04/03 16:03:53 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/hachoir-core/Attic/hachoir-core-1.1.ebuild,v 1.2 2008/04/04 20:41:56 cedk Exp $
 
 NEED_PYTHON=2.4
 
@@ -12,7 +12,7 @@ SRC_URI="http://cheeseshop.python.org/packages/source/h/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~ppc ~x86"
 IUSE=""
 
 DEPEND=""
