@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cmt/Attic/cmt-1.20.20070720.ebuild,v 1.2 2008/04/04 11:09:26 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cmt/Attic/cmt-1.20.20080222.ebuild,v 1.1 2008/04/04 11:09:26 bicatali Exp $
 
 inherit elisp-common toolchain-funcs versionator
 
