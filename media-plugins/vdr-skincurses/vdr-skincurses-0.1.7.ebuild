@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-skincurses/Attic/vdr-skincurses-0.1.2.ebuild,v 1.3 2008/04/05 22:27:17 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-skincurses/vdr-skincurses-0.1.7.ebuild,v 1.1 2008/04/05 22:27:17 hd_brummy Exp $
 
 IUSE=""
 
 inherit vdr-plugin
 
-VDR_V=1.5.6
+VDR_V=1.6.0
 
 DESCRIPTION="VDR plugin: show content of menu in a shell window"
 HOMEPAGE="http://www.cadsoft.de/vdr/"
@@ -16,6 +16,6 @@ KEYWORDS="~x86 ~amd64"
 SLOT="0"
 LICENSE="GPL-2"
 
-DEPEND=">=media-video/vdr-1.5.3"
+DEPEND=">=media-video/vdr-1.6.0"
 
 S=${WORKDIR}/vdr-${VDR_V}/PLUGINS/src/${VDRPLUGIN}
