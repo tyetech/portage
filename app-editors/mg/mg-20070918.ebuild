@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/mg/Attic/mg-20070918.ebuild,v 1.4 2008/01/27 10:27:13 opfer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/mg/Attic/mg-20070918.ebuild,v 1.5 2008/04/06 19:00:36 ulm Exp $
 
 DESCRIPTION="Micro GNU/emacs, a port from the BSDs"
 HOMEPAGE="http://www.xs4all.nl/~hanb/software/mg/"
 SRC_URI="http://www.xs4all.nl/~hanb/software/mg/${P}.tar.gz"
 
-LICENSE="public-domain"
+LICENSE="public-domain BSD"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
