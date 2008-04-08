@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/skinenigmang-fonts/Attic/skinenigmang-fonts-20080401.ebuild,v 1.3 2008/04/07 18:43:28 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/skinenigmang-fonts/Attic/skinenigmang-fonts-20080401.ebuild,v 1.4 2008/04/08 16:03:37 mr_bones_ Exp $
 
 S=${WORKDIR}/vdrsymbols
 
@@ -27,4 +27,3 @@ pkg_postinst() {
 	elog "To get nice symbols in VDR's OSD"
 	elog "you need to select the font VDRSymbolsSans."
 }
-
