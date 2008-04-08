@@ -1,12 +1,12 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/extutils-pkgconfig/Attic/extutils-pkgconfig-1.07.ebuild,v 1.13 2007/07/10 23:33:29 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/extutils-pkgconfig/Attic/extutils-pkgconfig-1.07.ebuild,v 1.14 2008/04/08 09:21:37 tove Exp $
 
 inherit perl-module
 
 MY_P=ExtUtils-PkgConfig-${PV}
 S=${WORKDIR}/${MY_P}
-DESCRIPTION="Converts Perl XS code into C code"
+DESCRIPTION="Simplistic perl interface to pkg-config"
 HOMEPAGE="http://search.cpan.org/~rmcfarla/"
 SRC_URI="mirror://cpan/authors/id/R/RM/RMCFARLA/Gtk2-Perl/${MY_P}.tar.gz"
 
@@ -15,4 +15,6 @@ SLOT="0"
 KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
-DEPEND="dev-lang/perl"
+DEPEND="dev-lang/perl
+	dev-util/pkgconfig"
+RDEPEND="${DEPEND}"
