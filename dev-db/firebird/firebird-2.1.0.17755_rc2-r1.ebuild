@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/firebird/Attic/firebird-2.1.0.17755_rc2.ebuild,v 1.1 2008/03/25 19:54:55 wltjr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/firebird/Attic/firebird-2.1.0.17755_rc2-r1.ebuild,v 1.1 2008/04/10 22:59:59 wltjr Exp $
 
 inherit flag-o-matic eutils autotools versionator
 
@@ -195,9 +195,9 @@ src_install() {
 		insinto /etc/xinetd.d
 		newins "${FILESDIR}/${PN}.xinetd.2" ${PN} || die "newins xinetd file failed"
 	else
-		newinitd "${FILESDIR}/${PN}.init.d.2" ${PN}
-		newconfd "${FILESDIR}/firebird.conf.d" ${PN}
-		fperms 640 /etc/conf.d/firebird
+		newinitd "${FILESDIR}/${PN}.init.d" ${PN}
+		newconfd "${FILESDIR}/${PN}.conf.d.2" ${PN}
+		fperms 640 /etc/conf.d/${PN}
 	fi
 	doenvd "${FILESDIR}/70${PN}"
 
