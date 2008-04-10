@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hwdata-gentoo/hwdata-gentoo-0.4.ebuild,v 1.1 2008/04/10 03:52:27 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hwdata-gentoo/hwdata-gentoo-0.4.ebuild,v 1.2 2008/04/10 06:33:32 wolf31o2 Exp $
 
 inherit eutils
 
@@ -31,6 +31,8 @@ src_unpack() {
 				-i "${S}"/Cards || die
 		fi
 	fi
+	cd "${S}"
+	epatch "${FILESDIR}"/${PV}-openchrome.patch
 }
 
 src_install() {
