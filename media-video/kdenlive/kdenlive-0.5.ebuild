@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/kdenlive/Attic/kdenlive-0.5.ebuild,v 1.3 2008/04/11 11:44:22 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/kdenlive/Attic/kdenlive-0.5.ebuild,v 1.4 2008/04/11 13:40:15 aballier Exp $
 
 inherit eutils kde
 
@@ -39,6 +39,7 @@ pkg_setup() {
 src_unpack() {
 	kde_src_unpack
 	epatch "${FILESDIR}/${P}-ffmpegheaders.patch"
+	epatch "${FILESDIR}/${P}-gcc-4.3.patch"
 	rm -f configure
 }
 
