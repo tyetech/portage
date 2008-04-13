@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/hcfpcimodem/Attic/hcfpcimodem-1.12-r1.ebuild,v 1.3 2007/07/15 04:52:33 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/hcfpcimodem/Attic/hcfpcimodem-1.15.ebuild,v 1.1 2008/04/13 11:06:53 mrness Exp $
 
 inherit eutils linux-info
 
@@ -14,7 +14,7 @@ SRC_URI="http://www.linuxant.com/drivers/hcf/full/archive/${P}full/${P}full.tar.
 
 LICENSE="Conexant"
 SLOT="0"
-KEYWORDS="-* x86"
+KEYWORDS="-* ~x86"
 IUSE="doc"
 
 DEPEND="dev-lang/perl
@@ -51,7 +51,7 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 
-	epatch "${FILESDIR}/${P}-implicit-declarations.patch"
+	#epatch "${FILESDIR}/${P}-implicit-declarations.patch"
 }
 
 src_compile() {
@@ -77,6 +77,14 @@ src_install () {
 }
 
 pkg_postinst() {
-	elog "To complete the installation and configuration of your HCF modem,"
-	elog "please run hcfpciconfig."
+	if [ "${ROOT}" = / ]; then
+		elog "To complete the installation and configuration of your HCF modem,"
+		elog "please run hcfpciconfig."
+	fi
+}
+
+pkg_prerm() {
+	if [ "${ROOT}" = / -a -f /etc/init.d/hcfpci ] ; then
+		hcfpciconfig --remove || die "hcfpciconfig --remove failed"
+	fi
 }
