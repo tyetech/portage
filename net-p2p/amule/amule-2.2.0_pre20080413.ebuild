@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/amule/Attic/amule-2.2.0_pre20080407.ebuild,v 1.1 2008/04/08 08:54:02 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/amule/Attic/amule-2.2.0_pre20080413.ebuild,v 1.1 2008/04/14 13:00:41 armin76 Exp $
 
 inherit eutils flag-o-matic wxwidgets autotools
 
