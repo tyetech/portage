@@ -1,6 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/adplug/adplug-2.1.ebuild,v 1.1 2008/04/10 17:20:42 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/adplug/adplug-2.1.ebuild,v 1.2 2008/04/16 16:30:45 drac Exp $
+
+inherit eutils
 
 DESCRIPTION="A free, cross-platform, hardware independent AdLib sound player library"
 HOMEPAGE="http://adplug.sourceforge.net"
@@ -14,6 +16,12 @@ IUSE="debug"
 RDEPEND=">=dev-cpp/libbinio-1.4"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-gcc43.patch
+}
 
 src_compile() {
 	econf --disable-dependency-tracking $(use_enable debug)
