@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/gnome-bluetooth/Attic/gnome-bluetooth-0.11.0.ebuild,v 1.1 2008/02/10 15:21:53 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/gnome-bluetooth/Attic/gnome-bluetooth-0.11.0.ebuild,v 1.2 2008/04/17 19:32:32 jer Exp $
 
 inherit distutils gnome2 eutils multilib autotools
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://live.gnome.org/GnomeBluetooth"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=gnome-base/libgnomeui-2
