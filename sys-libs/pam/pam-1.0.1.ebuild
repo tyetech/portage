@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/pam/Attic/pam-1.0.0-r2.ebuild,v 1.2 2008/04/14 14:01:11 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/pam/Attic/pam-1.0.1.ebuild,v 1.1 2008/04/18 04:18:59 flameeyes Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -106,7 +106,6 @@ src_unpack() {
 
 	epatch "${FILESDIR}/${MY_PN}-0.99.7.0-disable-regenerate-man.patch"
 	epatch "${FILESDIR}/${MY_PN}-0.99.8.1-xtests.patch"
-	epatch "${FILESDIR}/${MY_PN}-1.0.0-set-item.patch"
 
 	AT_M4DIR="m4" eautoreconf
 
