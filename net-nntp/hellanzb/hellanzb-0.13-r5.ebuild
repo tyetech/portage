@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/hellanzb/Attic/hellanzb-0.13-r4.ebuild,v 1.1 2008/04/16 11:09:45 yngwin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/hellanzb/Attic/hellanzb-0.13-r5.ebuild,v 1.1 2008/04/22 12:17:22 yngwin Exp $
 
 inherit distutils eutils
 
