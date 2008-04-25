@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/moccur-edit/Attic/moccur-edit-2.9.ebuild,v 1.1 2008/02/24 13:29:03 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/moccur-edit/moccur-edit-2.11-r1.ebuild,v 1.1 2008/04/25 14:34:48 ulm Exp $
 
 inherit elisp
 
