@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/chemtool/Attic/chemtool-1.6.9-r1.ebuild,v 1.8 2008/04/26 13:03:47 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/chemtool/Attic/chemtool-1.6.11.ebuild,v 1.1 2008/04/26 13:03:47 markusle Exp $
 
 inherit eutils kde-functions
 
@@ -10,16 +10,22 @@ SRC_URI="http://ruby.chemie.uni-freiburg.de/~martin/chemtool/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~x86 ~amd64 ~ppc"
 IUSE="gnome kde nls"
 
-RDEPEND=">=media-gfx/transfig-3.2.3d
+RDEPEND="media-gfx/transfig
 		=x11-libs/gtk+-2*
 		kde? ( =kde-base/kdelibs-3.5* )
-		x86? ( >=media-libs/libemf-1.0 )"
+		x86? ( media-libs/libemf )"
 
 DEPEND="${RDEPEND}
 		dev-util/pkgconfig"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-makefile.patch
+}
 
 src_compile() {
 	local config_opts
@@ -45,7 +51,7 @@ src_compile() {
 		config_opts="${config_opts} --without-gnomedir" ;
 	fi
 
-	econf ${config_opts} \
+	econf ${config_opts} --enable-menu \
 		|| die "./configure failed"
 	emake || die "make failed"
 }
