@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/scgi/scgi-1.2.ebuild,v 1.3 2008/04/28 12:03:57 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/scgi/scgi-1.12.ebuild,v 1.1 2008/04/28 12:03:57 chtekk Exp $
 
 inherit distutils
 
-KEYWORDS="x86 ~ppc"
+KEYWORDS="~amd64 ~hppa ~ppc ~x86"
 
 DESCRIPTION="Replacement for the CGI protocol that is similar to FastCGI."
 HOMEPAGE="http://www.mems-exchange.org/software/scgi/"
