@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/empathy/Attic/empathy-0.21.5.2.ebuild,v 1.2 2008/03/03 22:57:39 coldwind Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/empathy/Attic/empathy-0.23.1.ebuild,v 1.1 2008/05/01 14:56:11 coldwind Exp $
 
 inherit gnome2 eutils versionator
 
@@ -16,16 +16,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE="python spell test"
 
 RDEPEND=">=dev-libs/dbus-glib-0.51
-	>=dev-libs/glib-2.14.0
+	>=dev-libs/glib-2.15.5
 	>=x11-libs/gtk+-2.12.0
 	>=gnome-base/gconf-2
 	>=gnome-base/libglade-2
 	>=gnome-base/gnome-panel-2.10
-	>=net-libs/libtelepathy-0.3.1
-	>=net-libs/telepathy-glib-0.7.0
-	>=net-im/telepathy-mission-control-4.55
+	>=net-libs/telepathy-glib-0.7.3
+	>=net-im/telepathy-mission-control-4.61
 	dev-libs/libxml2
-	>=gnome-base/gnome-vfs-2
 	>=gnome-extra/evolution-data-server-1.2
 	spell? (
 		app-text/aspell
@@ -36,18 +34,26 @@ RDEPEND=">=dev-libs/dbus-glib-0.51
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35.0
 	>=dev-util/pkgconfig-0.16
-	test? ( >=dev-libs/check-0.9.4 )"
+	test? ( >=dev-libs/check-0.9.4 )
+	dev-libs/libxslt
+	virtual/python"
 
-DOCS="CONTRIBUTORS AUTHORS README"
+DOCS="CONTRIBUTORS AUTHORS ChangeLog NEWS README"
 
 pkg_setup() {
-	# NotHere is too broken to be included by default
 	G2CONF="$(use_enable spell aspell)
 		$(use_enable python)
-		--enable-voip=no
+		--enable-voip=yes
 		--enable-megaphone
-		--disable-nothere
+		--enable-nothere
 		--disable-gtk-doc"
+}
+
+src_unpack() {
+	gnome2_src_unpack
+
+	# Remove hard enabled -Werror (see AM_MAINTAINER_MODE), bug 218687
+	sed -i "s:-Werror::g" configure || die "sed failed"
 }
 
 src_install() {
@@ -65,4 +71,7 @@ pkg_postinst() {
 	elog "MSN: net-voip/telepathy-butterfly"
 	elog "Jabber and Gtalk: net-voip/telepathy-gabble"
 	elog "IRC: net-irc/telepathy-idle"
+	elog
+	elog "Additionally, you'll need >=net-voip/telepathy-stream-engine-0.5.0"
+	elog "if you want any voip functionality."
 }
