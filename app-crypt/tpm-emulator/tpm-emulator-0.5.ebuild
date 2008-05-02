@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/tpm-emulator/tpm-emulator-0.5.ebuild,v 1.2 2007/07/13 21:47:34 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/tpm-emulator/tpm-emulator-0.5.ebuild,v 1.3 2008/05/02 15:47:37 alonbl Exp $
 
 inherit toolchain-funcs linux-mod eutils
 
@@ -8,7 +8,7 @@ MY_P=${P/-/_}
 DESCRIPTION="Emulator driver for tpm"
 HOMEPAGE="https://developer.berlios.de/projects/tpm-emulator"
 
-SRC_URI="http://download.berlios.de/tpm-emulator/${MY_P}.tar.gz"
+SRC_URI="mirror://berlios/tpm-emulator/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
