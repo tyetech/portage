@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gimmix/Attic/gimmix-0.4.3.ebuild,v 1.4 2008/04/20 19:11:01 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gimmix/Attic/gimmix-0.4.3.ebuild,v 1.5 2008/05/02 16:04:37 drac Exp $
 
 DESCRIPTION="a graphical music player daemon (MPD) client written in C using GTK2."
 HOMEPAGE="http://gimmix.berlios.de/"
-SRC_URI="http://download.berlios.de/${PN}/${P}.tar.bz2"
+SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
