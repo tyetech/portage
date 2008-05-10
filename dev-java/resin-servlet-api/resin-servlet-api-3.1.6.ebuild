@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/resin-servlet-api/Attic/resin-servlet-api-3.1.3.ebuild,v 1.2 2007/11/10 12:41:21 nelchael Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/resin-servlet-api/Attic/resin-servlet-api-3.1.6.ebuild,v 1.1 2008/05/10 20:04:14 nelchael Exp $
 
 JAVA_PKG_IUSE="source"
 
@@ -34,7 +34,7 @@ src_unpack() {
 	mkdir "${S}/lib"
 
 	cd "${S}"
-	epatch "${WORKDIR}/${PV}/resin-${PV}-build.xml.patch"
+	epatch "${WORKDIR}/${PV}/resin-${PV}-build.xml.patch" || die
 
 }
 
