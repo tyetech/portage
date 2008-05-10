@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ptex/Attic/ptex-3.1.10_p20071203.ebuild,v 1.10 2008/05/10 01:50:44 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ptex/Attic/ptex-3.1.10_p20080414.ebuild,v 1.1 2008/05/10 01:50:44 matsuu Exp $
 
 TETEX_PV=3.0_p1
 
@@ -28,14 +28,14 @@ SRC_URI="${SRC_PATH_TETEX}/${TETEX_SRC}
 	mirror://gentoo/${PN}-3.1.10_p20071122-dviljk-security-fixes.patch.bz2"
 #	mirror://gentoo/tetex-${TETEX_PV}-gentoo.tar.gz
 
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86"
 
 BUILD_DIR="${WORKDIR}/build/usr"
 
 LICENSE="GPL-2 BSD"
 IUSE="X motif Xaw3d neXt iconv unicode"
 
-DEPEND="!app-text/tetex
+RDEPEND="!app-text/tetex
 	!<app-text/ptetex-3.1.9
 	!app-text/dvipdfmx
 	!app-text/xdvik
@@ -51,6 +51,8 @@ DEPEND="!app-text/tetex
 			media-fonts/kochi-substitute
 		)
 	)"
+DEPEND="${RDEPEND}
+	app-arch/unzip"
 
 S="${WORKDIR}/${PTETEX}"
 
@@ -264,6 +266,8 @@ src_install() {
 	dosbin "${FILESDIR}"/texmf-update
 	#einfo "Making ls-R files ..."
 	#TEXMF="${D}"/usr/share/texmf "${D}"/usr/bin/mktexlsr || die
+
+	dodoc ChangeLog* README*
 }
 
 pkg_postinst() {
