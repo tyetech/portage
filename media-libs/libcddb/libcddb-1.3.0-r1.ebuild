@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libcddb/Attic/libcddb-1.3.0-r1.ebuild,v 1.7 2008/04/24 17:36:50 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libcddb/Attic/libcddb-1.3.0-r1.ebuild,v 1.8 2008/05/11 16:28:49 flameeyes Exp $
 
 inherit autotools eutils
 
@@ -15,6 +15,7 @@ IUSE="doc"
 
 RESTRICT="test"
 
+RDEPEND=""
 DEPEND="doc? ( app-doc/doxygen )"
 
 src_unpack() {
