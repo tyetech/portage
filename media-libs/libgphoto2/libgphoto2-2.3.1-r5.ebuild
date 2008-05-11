@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgphoto2/Attic/libgphoto2-2.3.1-r5.ebuild,v 1.1 2007/08/18 15:28:04 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libgphoto2/Attic/libgphoto2-2.3.1-r5.ebuild,v 1.2 2008/05/11 20:10:10 maekke Exp $
 
 # TODO
 # 1. Track upstream bug --disable-docs does not work.
@@ -44,6 +44,7 @@ RDEPEND=">=dev-libs/libusb-0.1.8
 	sys-devel/libtool"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
+	sys-devel/flex
 	doc? ( app-doc/doxygen )"
 
 RDEPEND="${RDEPEND}
