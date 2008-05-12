@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/ktnef/Attic/ktnef-3.5.9.ebuild,v 1.4 2008/05/12 20:02:29 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/ktnef/Attic/ktnef-3.5.9.ebuild,v 1.5 2008/05/12 21:06:40 jer Exp $
 
 KMNAME=kdepim
 EAPI="1"
 inherit kde-meta eutils
 
 DESCRIPTION="KDE Viewer for mail attachments using TNEF format"
-KEYWORDS="alpha ~amd64 ~hppa ia64 ppc ~ppc64 sparc ~x86 ~x86-fbsd"
+KEYWORDS="alpha ~amd64 hppa ia64 ppc ~ppc64 sparc ~x86 ~x86-fbsd"
 IUSE=""
