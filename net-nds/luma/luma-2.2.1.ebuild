@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/luma/Attic/luma-2.2.1.ebuild,v 1.2 2005/10/18 17:32:54 sekretarz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/luma/Attic/luma-2.2.1.ebuild,v 1.3 2008/05/13 18:30:08 hawking Exp $
 
 inherit eutils qt3
 
@@ -30,6 +30,6 @@ src_install() {
 	addpredict "$QTDIR/etc/settings"
 
 	dodir /usr
-	python install.py --prefix=${D}/usr
+	python install.py --prefix="${D}"/usr
 	make_desktop_entry "luma" Luma "/usr/share/luma/icons/luma-128.png" "System;Qt"
 }
