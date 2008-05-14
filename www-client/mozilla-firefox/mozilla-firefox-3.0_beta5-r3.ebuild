@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-3.0_beta5-r2.ebuild,v 1.1 2008/04/28 16:00:21 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/mozilla-firefox/Attic/mozilla-firefox-3.0_beta5-r3.ebuild,v 1.1 2008/05/14 09:25:03 armin76 Exp $
 EAPI="1"
 WANT_AUTOCONF="2.1"
 
@@ -240,12 +240,15 @@ src_install() {
 		[[ ${X} != "en" ]] && xpi_install "${WORKDIR}"/"${MY_P}-${X}"
 	done
 
+	use xulrunner && prefs=preferences || prefs=pref
+	cp "${FILESDIR}"/gentoo-default-prefs.js "${D}"${MOZILLA_FIVE_HOME}/defaults/${prefs}/all-gentoo.js
+
 	local LANG=${linguas%% *}
 	if [[ -n ${LANG} && ${LANG} != "en" ]]; then
 		elog "Setting default locale to ${LANG}"
 		dosed -e "s:general.useragent.locale\", \"en-US\":general.useragent.locale\", \"${LANG}\":" \
-			${MOZILLA_FIVE_HOME}/defaults/preferences/firefox.js \
-			${MOZILLA_FIVE_HOME}/defaults/preferences/firefox-l10n.js || \
+			${MOZILLA_FIVE_HOME}/defaults/${prefs}/firefox.js \
+			${MOZILLA_FIVE_HOME}/defaults/${prefs}/firefox-l10n.js || \
 			die "sed failed to change locale"
 	fi
 
@@ -260,9 +263,6 @@ src_install() {
 			mozilla-firefox-3.0.desktop
 	fi
 
-	dodir ${MOZILLA_FIVE_HOME}/defaults/preferences
-	cp "${FILESDIR}"/gentoo-default-prefs.js "${D}"${MOZILLA_FIVE_HOME}/defaults/preferences/all-gentoo.js
-
 	if use xulrunner; then
 		PKG_CONFIG=`which pkg-config`
 		X_DATE=`date +%Y%m%d`
@@ -272,12 +272,10 @@ src_install() {
 		sed -i -e "s|BuildID=.*$|BuildID=${X_DATE}GentooMozillaFirefox|"	"${D}"${MOZILLA_FIVE_HOME}/application.ini
 		sed -i -e "s|MinVersion=.*$|MinVersion=${XULRUNNER_VERSION}|" "${D}"${MOZILLA_FIVE_HOME}/application.ini
 		sed -i -e "s|MaxVersion=.*$|MaxVersion=${XULRUNNER_VERSION}|" "${D}"${MOZILLA_FIVE_HOME}/application.ini
-		# Create /usr/bin/firefox
-		make_wrapper firefox "/usr/bin/xulrunner-1.9 ${MOZILLA_FIVE_HOME}/application.ini"
-	else
-		# Create /usr/bin/firefox
-		make_wrapper firefox "${MOZILLA_FIVE_HOME}/firefox"
 	fi
+
+	# Create /usr/bin/firefox
+	make_wrapper firefox "${MOZILLA_FIVE_HOME}/firefox"
 }
 
 pkg_postinst() {
