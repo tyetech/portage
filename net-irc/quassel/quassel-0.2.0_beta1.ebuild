@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/quassel/Attic/quassel-0.2.0_alpha4.ebuild,v 1.2 2008/04/05 17:07:53 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/quassel/Attic/quassel-0.2.0_beta1.ebuild,v 1.1 2008/05/15 15:54:49 flameeyes Exp $
 
 EAPI=1
 
@@ -10,7 +10,7 @@ if [[ ${PV} == 9999 ]]; then
 	inherit subversion
 	ESVN_REPO_URI="http://svn.quassel-irc.org/trunk"
 else
-	MY_P="${P/_alpha/-alpha}"
+	MY_P="${P/_/-}"
 	SRC_URI="http://quassel-irc.org/system/files/${MY_P}.tar.bz2"
 	S=${WORKDIR}/${MY_P}
 fi
@@ -64,7 +64,7 @@ src_compile() {
 	use X && BUILD="${BUILD} qtclient"
 
 	eqmake4 ${PN}.pro BUILD="${BUILD}" || die "eqmake4 failed"
-	emake -j1 || die "emake failed"
+	emake || die "emake failed"
 }
 
 src_install() {
@@ -73,6 +73,7 @@ src_install() {
 	use X && targets="${targets} build/targets/quasselclient"
 	dobin $targets  || die "quasselcore install failed"
 
-	dodoc ChangeLog README README.Qtopia dev-notes/paulk-notes.txt \
-		dev-notes/ROADMAP || die "dodoc failed"
+	domenu ${PN}.desktop || die "desktop file install failed"
+
+	dodoc ChangeLog README README.Qtopia || "dodoc failed"
 }
