@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/dar/Attic/dar-2.2.6.ebuild,v 1.5 2006/11/03 04:15:11 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/dar/Attic/dar-2.3.7-r1.ebuild,v 1.1 2008/05/17 01:48:46 matsuu Exp $
 
 inherit flag-o-matic
 
@@ -10,15 +10,18 @@ SRC_URI="mirror://sourceforge/dar/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86"
-IUSE="acl dar32 dar64 doc examples nls ssl static"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+IUSE="acl dar32 dar64 doc nls ssl"
 
-DEPEND=">=sys-libs/zlib-1.2.3
+
+RDEPEND=">=sys-libs/zlib-1.2.3
 	>=app-arch/bzip2-1.0.2
 	acl? ( sys-apps/attr )
-	doc? ( app-doc/doxygen )
-	nls? ( sys-devel/gettext )
+	nls? ( virtual/libintl )
 	ssl? ( dev-libs/openssl )"
+DEPEND="${RDEPEND}
+	nls? ( sys-devel/gettext )
+	doc? ( app-doc/doxygen )"
 
 pkg_setup() {
 	if use dar32 && use dar64 ; then
@@ -26,6 +29,14 @@ pkg_setup() {
 		eerror "Please remove one of them and try the emerge again."
 		die "Please remove dar32 or dar64."
 	fi
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	sed -i -e '/^dist_noinst_DATA/s/$/ macro_tools.hpp/' \
+		-e '/^noinst_HEADERS/s/macro_tools.hpp//' \
+		src/libdar/Makefile* || die
 }
 
 src_compile() {
@@ -38,26 +49,16 @@ src_compile() {
 	use dar32 && myconf="${myconf} --enable-mode=32"
 	use dar64 && myconf="${myconf} --enable-mode=64"
 	use doc || myconf="${myconf} --disable-build-html"
-	use examples && myconf="${myconf} --enable-examples"
+	# use examples && myconf="${myconf} --enable-examples"
 	use nls || myconf="${myconf} --disable-nls"
 	use ssl || myconf="${myconf} --disable-libcrypto-linking"
-	use static || myconf="${myconf} --enable-static=no --disable-dar-static"
 
 	econf ${myconf} || die
 	emake || die
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" pkgdatadir=/usr/share/doc/${PF}/html install || die
 
-	rm "${D}"/usr/share/dar/{[A-Z]*,*.html}
-
-	dodoc AUTHORS BUGS ChangeLog NEWS README THANKS TODO
-	dodoc doc/{COMMAND_LINE,FAQ,FEATURES,GOOD_BACKUP_PRACTICE,LIMITATIONS}
-	dodoc doc/{LINKS,NOTES,TUTORIAL}
-	dohtml doc/api_tutorial.html doc/mini-howto/*.html
-
-	if use doc ; then
-		dohtml doc/html/*
-	fi
+	dodoc AUTHORS ChangeLog NEWS README THANKS TODO
 }
