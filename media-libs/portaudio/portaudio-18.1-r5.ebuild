@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/portaudio/Attic/portaudio-18.1-r5.ebuild,v 1.9 2007/02/28 22:15:41 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/portaudio/Attic/portaudio-18.1-r5.ebuild,v 1.10 2008/05/19 19:18:11 drac Exp $
 
 inherit toolchain-funcs
 
