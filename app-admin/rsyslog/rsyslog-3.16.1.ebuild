@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-3.17.1.ebuild,v 1.2 2008/05/14 20:35:36 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-3.16.1.ebuild,v 1.1 2008/05/19 16:13:44 dev-zero Exp $
 
 inherit eutils versionator
 
@@ -15,20 +15,18 @@ IUSE="debug kerberos dbi mysql postgres relp snmp zlib"
 DEPEND="kerberos? ( virtual/krb5 )
 	dbi? ( dev-db/libdbi )
 	mysql? ( virtual/mysql )
-	postgres? ( dev-db/libpq )
-	relp? ( >=dev-libs/librelp-0.1.1 )
+	postgres? ( virtual/postgresql-base )
+	relp? ( dev-libs/librelp )
 	snmp? ( net-analyzer/net-snmp )
 	zlib? ( sys-libs/zlib )"
 RDEPEND="${DEPEND}"
 
-BRANCH="3-devel"
+BRANCH="3-stable"
 
 src_compile() {
 	# Maintainer notes:
 	# * rsyslog-3 doesn't support single threading anymore
 	# * rfc3195 needs a library
-	# * OpenSSL detection is present in ./configure but nothing
-	#   in the code actually needs it
 	econf \
 		--enable-largefile \
 		--enable-regexp \
@@ -46,12 +44,10 @@ src_compile() {
 		$(use_enable dbi libdbi) \
 		$(use_enable snmp) \
 		--enable-rsyslogd \
-		--enable-mail \
 		$(use_enable relp) \
 		--disable-rfc3195 \
 		--enable-imfile \
-		--disable-imtemplate \
-		--disable-openssl
+		--disable-imtemplate
 	emake || die "emake failed"
 }
 
