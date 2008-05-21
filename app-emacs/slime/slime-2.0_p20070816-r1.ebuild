@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/slime/Attic/slime-2.0_p20070816-r1.ebuild,v 1.3 2008/05/18 20:58:57 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/slime/Attic/slime-2.0_p20070816-r1.ebuild,v 1.4 2008/05/21 17:40:24 ulm Exp $
 
 inherit common-lisp elisp eutils
 
@@ -35,7 +35,8 @@ src_compile() {
 	elisp-comp *.el || die "elisp-comp failed"
 	emake -j1 -C doc slime.info || die "emake slime.info failed"
 	if use doc; then
-		emake -j1 -C doc slime.{ps,pdf} || die "emake doc failed"
+		VARTEXFONTS="${T}"/fonts \
+			emake -j1 -C doc slime.{ps,pdf} || die "emake doc failed"
 	fi
 }
 
