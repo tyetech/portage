@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/onak/onak-0.3.3-r1.ebuild,v 1.1 2007/05/23 14:19:53 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/onak/onak-0.3.3-r1.ebuild,v 1.2 2008/05/21 15:49:17 dev-zero Exp $
 
 DESCRIPTION="onak is an OpenPGP keyserver"
 HOMEPAGE="http://www.earth.li/projectpurple/progs/onak.html"
@@ -10,7 +10,7 @@ SLOT="0"
 KEYWORDS="~x86"
 IUSE="berkdb postgres"
 RDEPEND="berkdb? ( =sys-libs/db-4* )
-	postgres? ( dev-db/postgresql )"
+	postgres? ( virtual/postgresql-server )"
 DEPEND="${RDEPEND}"
 
 src_compile() {
