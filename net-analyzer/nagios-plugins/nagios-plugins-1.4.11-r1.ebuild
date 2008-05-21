@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-plugins/Attic/nagios-plugins-1.4.11-r1.ebuild,v 1.2 2008/05/19 20:08:49 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-plugins/Attic/nagios-plugins-1.4.11-r1.ebuild,v 1.3 2008/05/21 18:09:33 dertobi123 Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -71,7 +71,7 @@ src_compile() {
 
 	econf \
 		$(use_with mysql) \
-		$(use_with postgres) \
+		$(use_with postgres pgsql) \
 		$(use_with ipv6) \
 		${conf} \
 		--host=${CHOST} \
