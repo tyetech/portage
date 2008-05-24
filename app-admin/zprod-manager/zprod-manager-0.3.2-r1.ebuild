@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/zprod-manager/Attic/zprod-manager-0.3.2.ebuild,v 1.1 2008/05/06 21:53:35 tupone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/zprod-manager/Attic/zprod-manager-0.3.2-r1.ebuild,v 1.1 2008/05/24 20:46:26 tupone Exp $
 
 DESCRIPTION="Gentoo Zope Product selection tool"
 SRC_URI=""
