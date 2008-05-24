@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/control-center/Attic/control-center-2.22.1.ebuild,v 1.2 2008/05/24 12:29:14 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/control-center/Attic/control-center-2.22.1.ebuild,v 1.3 2008/05/24 15:45:27 mr_bones_ Exp $
 
 EAPI="1"
 
@@ -93,4 +93,3 @@ pkg_setup() {
 		$(use_enable esd)
 		$(use_enable hal)"
 }
-
