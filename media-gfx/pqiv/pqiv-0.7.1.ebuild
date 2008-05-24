@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pqiv/Attic/pqiv-0.7.ebuild,v 1.1 2008/03/09 14:19:48 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pqiv/Attic/pqiv-0.7.1.ebuild,v 1.1 2008/05/24 11:05:25 drac Exp $
 
 inherit toolchain-funcs
 
