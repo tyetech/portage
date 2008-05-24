@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/audacious-plugins/Attic/audacious-plugins-1.5.0.ebuild,v 1.1 2008/03/14 01:23:25 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/audacious-plugins/Attic/audacious-plugins-1.5.0.ebuild,v 1.2 2008/05/24 00:45:35 chainsaw Exp $
 
 inherit eutils flag-o-matic
 
@@ -99,7 +99,7 @@ src_compile() {
 
 src_install() {
 	make DESTDIR="${D}" install || die
-	dodoc AUTHORS NEWS
+	dodoc AUTHORS
 }
 
 pkg_postinst() {
