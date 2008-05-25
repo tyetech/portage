@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/twisted/Attic/twisted-2.4.0.ebuild,v 1.12 2008/05/25 20:23:51 lordvan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/twisted/Attic/twisted-8.1.0.ebuild,v 1.1 2008/05/25 20:23:51 lordvan Exp $
 
 inherit eutils distutils versionator
 
@@ -8,11 +8,11 @@ MY_P=TwistedCore-${PV}
 
 DESCRIPTION="An asynchronous networking framework written in Python"
 HOMEPAGE="http://www.twistedmatrix.com/"
-SRC_URI="http://tmrc.mit.edu/mirror/twisted/Twisted/$(get_version_component_range 1-2)/${MY_P}.tar.bz2"
+SRC_URI="http://tmrc.mit.edu/mirror/${PN}/Core/$(get_version_component_range 1-2)/${MY_P}.tar.bz2"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="gtk serial crypt"
 
 DEPEND=">=dev-lang/python-2.3
@@ -22,9 +22,9 @@ DEPEND=">=dev-lang/python-2.3
 	gtk? ( >=dev-python/pygtk-1.99 )
 	!dev-python/twisted-docs"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
-DOCS="CREDITS INSTALL NEWS README"
+DOCS="CREDITS NEWS README"
 
 src_unpack() {
 	unpack ${A}
@@ -35,9 +35,6 @@ src_unpack() {
 
 	# Pass valid arguments to "head" in the zsh completion function.
 	epatch "${FILESDIR}/${PN}-2.1.0-zsh-head.patch"
-
-	# Remove a mostly-empty file with a syntax error ("???" placeholder)
-	rm twisted/test/stdio_test_halfclose.py
 }
 
 src_install() {
