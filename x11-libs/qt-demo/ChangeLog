@@ -1,6 +1,9 @@
 # ChangeLog for x11-libs/qt-demo
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-demo/ChangeLog,v 1.1 2008/05/25 14:22:26 ingmar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-demo/ChangeLog,v 1.2 2008/05/25 14:56:10 corsair Exp $
+
+  25 May 2008; Markus Rothe <corsair@gentoo.org> qt-demo-4.4.0.ebuild:
+  Added ~ppc/~ppc64
 
 *qt-demo-4.4.0 (25 May 2008)
 
