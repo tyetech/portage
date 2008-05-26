@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gtkhtml/Attic/gtkhtml-3.18.0.ebuild,v 1.1 2008/03/23 21:59:39 leio Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gtkhtml/Attic/gtkhtml-3.18.2.ebuild,v 1.1 2008/05/26 20:58:27 eva Exp $
 EAPI="1"
 
 inherit gnome2
