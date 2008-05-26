@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/evolution/Attic/evolution-2.22.1.ebuild,v 1.1 2008/04/08 13:51:34 dang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/evolution/Attic/evolution-2.22.2.ebuild,v 1.1 2008/05/26 22:45:59 eva Exp $
 
 inherit gnome2 flag-o-matic
 
