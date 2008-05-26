@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cdparanoia/Attic/cdparanoia-3.10_pre0-r1.ebuild,v 1.8 2008/04/17 17:48:28 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/cdparanoia/Attic/cdparanoia-3.10_pre0-r1.ebuild,v 1.9 2008/05/26 15:49:18 drac Exp $
 
 WANT_AUTOCONF=2.1
 
@@ -15,7 +15,7 @@ SRC_URI="http://downloads.xiph.org/releases/cdparanoia/${MY_P}.src.tgz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
 S=${WORKDIR}/${MY_P}
