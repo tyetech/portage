@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/orca/Attic/orca-2.22.0.ebuild,v 1.1 2008/03/26 22:23:58 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/orca/Attic/orca-2.22.2.ebuild,v 1.1 2008/05/28 21:39:52 eva Exp $
 
 inherit gnome2 python
 
