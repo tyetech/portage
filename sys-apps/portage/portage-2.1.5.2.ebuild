@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.1.5.2.ebuild,v 1.1 2008/05/20 19:23:49 zmedico Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.1.5.2.ebuild,v 1.2 2008/06/01 10:30:18 zmedico Exp $
 
 inherit eutils multilib
 
@@ -24,9 +24,6 @@ RDEPEND=">=dev-lang/python-2.4
 	>=app-misc/pax-utils-0.1.13
 	selinux? ( >=dev-python/python-selinux-2.16 )"
 PDEPEND="
-	doc? (
-		|| ( app-portage/eclass-manpages app-portage/portage-manpages )
-	)
 	!build? (
 		>=net-misc/rsync-2.6.4
 		userland_GNU? ( >=sys-apps/coreutils-6.4 )

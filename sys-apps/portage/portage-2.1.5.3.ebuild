@@ -1,13 +1,13 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.1.4.4.ebuild,v 1.9 2008/06/01 10:30:18 zmedico Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.1.5.3.ebuild,v 1.1 2008/06/01 10:30:18 zmedico Exp $
 
-inherit toolchain-funcs eutils flag-o-matic multilib
+inherit eutils multilib
 
 DESCRIPTION="Portage is the package management and distribution system for Gentoo"
 HOMEPAGE="http://www.gentoo.org/proj/en/portage/index.xml"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 PROVIDE="virtual/portage"
 SLOT="0"
 IUSE="build doc epydoc selinux linguas_pl"
@@ -35,7 +35,7 @@ SRC_ARCHIVES="http://dev.gentoo.org/~zmedico/portage/archives"
 
 PV_PL="2.1.2"
 PATCHVER_PL=""
-TARBALL_PV="2.1.4"
+TARBALL_PV="2.1.5"
 SRC_URI="mirror://gentoo/${PN}-${TARBALL_PV}.tar.bz2
 	${SRC_ARCHIVES}/${PN}-${TARBALL_PV}.tar.bz2
 	linguas_pl? ( mirror://gentoo/${PN}-man-pl-${PV_PL}.tar.bz2
@@ -80,11 +80,7 @@ src_unpack() {
 }
 
 src_compile() {
-	append-lfs-flags
-
 	cd "${S}"/src
-	$(tc-getCC) ${CFLAGS} ${LDFLAGS} -o tbz2tool tbz2tool.c || \
-		die "Failed to build tbz2tool"
 
 	if use doc; then
 		cd "${S}"/doc
@@ -141,7 +137,6 @@ src_install() {
 	fi
 	cd "${S}"/bin
 	doexe *
-	doexe "${S}"/src/tbz2tool
 	dosym newins ${portage_base}/bin/donewins
 
 	local mydir
@@ -165,7 +160,7 @@ src_install() {
 
 	dodir /usr/bin
 	local x
-	for x in ebuild emerge portageq repoman tbz2tool xpak; do
+	for x in ebuild emerge portageq repoman xpak; do
 		dosym ../${libdir}/portage/bin/${x} /usr/bin/${x}
 	done
 
@@ -208,9 +203,7 @@ pkg_preinst() {
 	local portage_base="/usr/$(get_libdir)/portage"
 	if has livecvsportage ${FEATURES} && [ "${ROOT}" = "/" ]; then
 		rm -rf "${D}"/${portage_base}/pym/*
-		mv "${D}"/${portage_base}/bin/tbz2tool "${T}"
 		rm -rf "${D}"/${portage_base}/bin/*
-		mv "${T}"/tbz2tool "${D}"/${portage_base}/bin/
 	fi
 }
 
@@ -233,12 +226,19 @@ pkg_postinst() {
 	# will be identified and removed in postrm.
 	compile_all_python_bytecodes "${ROOT}usr/$(get_libdir)/portage/pym"
 
-	echo "If you have an overlay then you should remove **/files/digest-*" \
-	"files (Manifest1) because they are no longer supported. If earlier" \
-	"versions of portage will be used to generate manifests for your overlay" \
-	"then you should add a file named manifest1_obsolete to the root of the" \
-	"repository in order to disable generation of the" \
-	"Manifest1 digest files." | fmt -w 75 | while read x ; do elog "$x" ; done
+	echo "The metadata-transfer feature is now disabled" \
+		"by default. This disables the \"Updating Portage cache\"" \
+		"routine that used to run at the tail end of each" \
+		"\`emerge --sync\` operation. If you use something" \
+		"like the sqlite module and want to keep all metadata" \
+		"in that format alone (useful for querying), enable" \
+		"FEATURES=\"metadata-transfer\" in make.conf. You should" \
+		"also enable FEATURES=\"metadata-transfer\" if you have" \
+		"any eclasses from PORTDIR_OVERLAY that override eclasses" \
+		"from PORTDIR (in this case, you may have disabled" \
+		"a relevant warning message by setting" \
+		"PORTAGE_ECLASS_WARNING_ENABLE=\"0\" in make.conf)." \
+		| fmt -w 75 | while read x ; do elog "$x" ; done
 
 	portage_docs
 }
