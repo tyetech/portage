@@ -1,6 +1,6 @@
 # Copyright 2008-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-settings-daemon/Attic/gnome-settings-daemon-2.22.1.ebuild,v 1.1 2008/04/07 21:39:13 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-settings-daemon/Attic/gnome-settings-daemon-2.22.1.ebuild,v 1.2 2008/06/01 10:01:02 eva Exp $
 
 inherit autotools eutils gnome2
 
@@ -45,6 +45,6 @@ DEPEND="${RDEPEND}
 		x11-proto/inputproto
 		x11-proto/xproto"
 
-pkg_config() {
+pkg_setup() {
 	G2CONF="${G2CONF} $(use_enable alsa) $(use_enable debug) $(use_enable esd) $(use_enable gstreamer)"
 }
