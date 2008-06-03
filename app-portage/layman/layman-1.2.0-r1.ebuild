@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/layman/Attic/layman-1.2.0.ebuild,v 1.1 2008/06/02 16:13:01 wrobel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/layman/Attic/layman-1.2.0-r1.ebuild,v 1.1 2008/06/03 04:00:48 wrobel Exp $
 
 inherit eutils distutils
 
@@ -46,7 +46,6 @@ src_install() {
 	dohtml doc/layman.8.html
 
 	keepdir /usr/local/portage/layman
-	touch "${D}"/usr/local/portage/layman/make.conf
 }
 
 src_test() {
