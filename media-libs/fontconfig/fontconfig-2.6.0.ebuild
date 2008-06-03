@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/fontconfig/Attic/fontconfig-2.5.92.ebuild,v 1.1 2008/05/25 01:48:30 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/fontconfig/Attic/fontconfig-2.6.0.ebuild,v 1.1 2008/06/03 04:51:40 dirtyepic Exp $
 
-inherit eutils
+inherit eutils libtool
 
 DESCRIPTION="A library for configuring and customizing font access"
 HOMEPAGE="http://fontconfig.org/"
@@ -26,6 +26,10 @@ src_unpack() {
 	cd "${S}"
 
 	epunt_cxx #74077
+	# Neeeded to get a sane .so versionning on fbsd, please dont drop
+	# If you have to run eautoreconf, you can also leave the elibtoolize call as
+	# it will be a no-op.
+	elibtoolize
 }
 
 src_compile() {
