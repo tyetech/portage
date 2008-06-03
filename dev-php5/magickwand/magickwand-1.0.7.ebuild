@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/magickwand/Attic/magickwand-1.0.5.ebuild,v 1.1 2007/10/05 23:43:40 anant Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/magickwand/Attic/magickwand-1.0.7.ebuild,v 1.1 2008/06/03 03:20:33 chtekk Exp $
 
 PHP_EXT_NAME="magickwand"
 PHP_EXT_ZENDEXT="no"
@@ -14,7 +14,7 @@ DESCRIPTION="A native PHP-extension to the ImageMagick MagickWand API."
 HOMEPAGE="http://www.magickwand.org/"
 SRC_URI="http://www.magickwand.org/download/php/${MY_PN}-${PV}.tar.bz2"
 
-LICENSE="GPL-2"
+LICENSE="MagickWand"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
@@ -28,5 +28,5 @@ need_php_by_category
 src_install() {
 	php-ext-source-r1_src_install
 
-	dodoc AUTHOR ChangeLog CREDITS README TODO
+	dodoc-php AUTHOR ChangeLog CREDITS README TODO
 }
