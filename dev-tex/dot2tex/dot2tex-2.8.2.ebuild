@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/dot2tex/Attic/dot2tex-2.8.1.ebuild,v 1.1 2008/05/16 05:26:38 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/dot2tex/Attic/dot2tex-2.8.2.ebuild,v 1.1 2008/06/04 20:12:48 aballier Exp $
 
 inherit distutils
 
