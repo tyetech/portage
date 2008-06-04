@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/fontconfig/Attic/fontconfig-2.5.93-r1.ebuild,v 1.1 2008/06/01 19:48:01 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/fontconfig/Attic/fontconfig-2.6.0-r1.ebuild,v 1.1 2008/06/04 14:06:05 loki_val Exp $
 
 inherit eutils libtool
 
