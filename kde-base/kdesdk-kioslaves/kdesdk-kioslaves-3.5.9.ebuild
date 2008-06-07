@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdesdk-kioslaves/Attic/kdesdk-kioslaves-3.5.9.ebuild,v 1.4 2008/05/18 19:01:22 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdesdk-kioslaves/Attic/kdesdk-kioslaves-3.5.9.ebuild,v 1.5 2008/06/07 20:25:15 jer Exp $
 
 KMNAME=kdesdk
 KMMODULE=kioslave
@@ -8,7 +8,7 @@ EAPI="1"
 inherit kde-meta eutils
 
 DESCRIPTION="kioslaves from kdesdk package: the subversion kioslave"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ppc64 ~sparc x86"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~ppc ppc64 ~sparc x86"
 IUSE="kdehiddenvisibility"
 DEPEND="dev-util/subversion"
 
