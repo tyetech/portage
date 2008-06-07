@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/bacula/Attic/bacula-2.2.8.ebuild,v 1.3 2008/05/21 15:47:13 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.0.ebuild,v 1.1 2008/06/07 15:41:29 wschlich Exp $
 
 #
 # TODO:
@@ -15,6 +15,7 @@
 # - correctly filter unneeded /usr/libexec/bacula/ stuff depending
 #   on selected USE flags, e.g. bacula-clientonly
 # - install bacula-web and/or bweb from bacula-gui package
+# - bacula >=2.4.0 supports --without-qwt -- reflect with USE=qwt
 #
 
 inherit eutils
