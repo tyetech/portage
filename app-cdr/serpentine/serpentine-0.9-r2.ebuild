@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/serpentine/Attic/serpentine-0.9-r1.ebuild,v 1.3 2008/06/08 10:02:14 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/serpentine/Attic/serpentine-0.9-r2.ebuild,v 1.1 2008/06/08 17:44:20 drac Exp $
 
 GCONF_DEBUG=no
 
