@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/orbit/Attic/orbit-2.14.7.ebuild,v 1.11 2008/03/16 21:46:57 leio Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/orbit/Attic/orbit-2.14.13.ebuild,v 1.1 2008/06/08 18:19:40 eva Exp $
 
-inherit gnome2
+inherit gnome2 eutils
 
 MY_P="ORBit2-${PV}"
 PVP=(${PV//[-\._]/ })
@@ -14,14 +14,11 @@ SRC_URI="mirror://gnome/sources/ORBit2/${PVP[0]}.${PVP[1]}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="2"
-KEYWORDS="arm sh"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="doc"
 
 RDEPEND=">=dev-libs/glib-2.8
 	>=dev-libs/libIDL-0.8.2"
-
-# FIXME linc is now integrated, but a block isn't necessary
-# and probably complicated FIXME
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.18
@@ -34,7 +31,7 @@ DOCS="AUTHORS ChangeLog HACKING MAINTAINERS NEWS README* TODO"
 src_unpack() {
 	gnome2_src_unpack
 
-	# Filter out G_DISABLE_DEPRECATED to work with glib-2.16 and be future-proof, bug 213434
+	# Filter out G_DISABLE_DEPRECATED to be future-proof, related to bug 213434
 	sed -i -e '/DISABLE_DEPRECATED/d' \
 		"${S}/linc2/src/Makefile.am" "${S}/linc2/src/Makefile.in"
 
