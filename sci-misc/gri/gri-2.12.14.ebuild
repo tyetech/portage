@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/gri/Attic/gri-2.12.14.ebuild,v 1.4 2007/09/29 13:17:54 philantrop Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/gri/Attic/gri-2.12.14.ebuild,v 1.5 2008/06/09 10:46:40 markusle Exp $
 
 inherit eutils elisp-common
 
@@ -16,7 +16,7 @@ KEYWORDS="amd64 ~ppc x86"
 RESTRICT="test"
 
 DEPEND=">=sci-libs/netcdf-3.5.0
-	virtual/tetex
+	virtual/latex-base
 	media-gfx/imagemagick
 	virtual/ghostscript
 	emacs? ( virtual/emacs )"
