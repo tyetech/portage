@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/btrfs/Attic/btrfs-0.14.ebuild,v 1.2 2008/05/27 18:57:43 lavajoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/btrfs/Attic/btrfs-0.14.ebuild,v 1.3 2008/06/09 17:01:34 lavajoe Exp $
 
 inherit eutils linux-mod
 
@@ -53,6 +53,6 @@ pkg_postinst() {
 	linux-mod_pkg_postinst
 
 	ewarn "WARNING: Btrfs is under heavy development and is not suitable for"
-	ewarn "any uses other than benchmarking and review."
-	ewarn "The Btrfs disk format is not yet finalized."
+	ewarn "         any uses other than benchmarking and review."
+	ewarn "         The Btrfs disk format is not yet finalized."
 }
