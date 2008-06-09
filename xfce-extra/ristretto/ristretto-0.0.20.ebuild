@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/ristretto/Attic/ristretto-0.0.18.ebuild,v 1.1 2008/03/23 17:42:06 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/ristretto/Attic/ristretto-0.0.20.ebuild,v 1.1 2008/06/09 14:55:49 angelos Exp $
 
 inherit xfce44
 
