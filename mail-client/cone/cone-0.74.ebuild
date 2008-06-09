@@ -1,6 +1,8 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/cone/Attic/cone-0.66.ebuild,v 1.1 2006/04/26 20:11:26 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/cone/Attic/cone-0.74.ebuild,v 1.1 2008/06/09 09:27:29 loki_val Exp $
+
+inherit eutils
 
 DESCRIPTION="CONE: COnsole News reader and Emailer"
 HOMEPAGE="http://www.courier-mta.org/cone/"
@@ -11,8 +13,7 @@ SLOT="0"
 KEYWORDS="~ppc ~sparc ~x86"
 IUSE="crypt fam spell"
 
-RDEPEND="virtual/libc
-	>=dev-libs/openssl-0.9.6
+RDEPEND=">=dev-libs/openssl-0.9.6
 	dev-libs/libxml2
 	fam? ( virtual/fam )
 	crypt? ( >=app-crypt/gnupg-1.0.4 )
@@ -20,10 +21,14 @@ RDEPEND="virtual/libc
 DEPEND="${RDEPEND}
 	dev-lang/perl"
 
+src_unpack() {
+	unpack ${A}
+	epatch "${FILESDIR}/${P}-gcc43.patch"
+}
+
 src_install() {
-	make check DESTDIR=${D} || die
-	make install DESTDIR=${D} || die
-	DESTDIR=${D} make install-configure || die
+	emake install DESTDIR="${D}" || die
+	DESTDIR=${D} emake install-configure || die
 
 	dosed "3i export LANG=en_US" /usr/bin/cone
 }
