@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/lsdvd/Attic/lsdvd-0.15.ebuild,v 1.13 2006/10/29 22:55:02 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/lsdvd/Attic/lsdvd-0.15.ebuild,v 1.14 2008/06/10 14:06:57 beandog Exp $
 
 WANT_AUTOMAKE="latest"
 WANT_AUTOCONF="latest"
@@ -9,7 +9,7 @@ inherit eutils autotools
 
 DESCRIPTION="Utility for getting info out of DVDs"
 HOMEPAGE="http://untrepid.com/lsdvd/"
-SRC_URI="mirror://sourceforge/${P}/${P}.tar.gz"
+SRC_URI="mirror://gentoo/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
