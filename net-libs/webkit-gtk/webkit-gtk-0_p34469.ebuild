@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: 
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/webkit-gtk/Attic/webkit-gtk-0_p34469.ebuild,v 1.2 2008/06/11 12:35:49 jokey Exp $
 
 inherit autotools
 
