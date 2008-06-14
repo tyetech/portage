@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-8.2.7.ebuild,v 1.4 2008/06/14 11:49:54 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-7.4.21.ebuild,v 1.1 2008/06/14 11:49:54 dev-zero Exp $
 
 EAPI="1"
 
@@ -16,9 +16,8 @@ SRC_URI="mirror://postgresql/source/v${PV}/postgresql-${PV}.tar.bz2"
 LICENSE="POSTGRESQL"
 SLOT="$(get_version_component_range 1-2)"
 IUSE_LINGUAS="
-	linguas_af linguas_cs linguas_de linguas_es linguas_fa linguas_fr
-	linguas_hr linguas_hu linguas_it linguas_ko linguas_nb linguas_pl
-	linguas_pt_BR linguas_ro linguas_ru linguas_sk linguas_sl linguas_sv
+	linguas_cs linguas_de linguas_es linguas_fr linguas_hr linguas_hu
+	linguas_it linguas_nb linguas_pt_BR linguas_ru linguas_sl linguas_sv
 	linguas_tr linguas_zh_CN linguas_zh_TW"
 IUSE="doc perl python selinux tcl xml nls kernel_linux ${IUSE_LINGUAS}"
 
@@ -43,45 +42,42 @@ S="${WORKDIR}/postgresql-${PV}"
 
 pkg_setup() {
 	enewgroup postgres 70
-	enewuser postgres 70 /bin/bash /var/lib postgres
+	enewuser postgres 70 /bin/bash /var/lib/postgresql postgres
 }
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/postgresql-${SLOT}-common.patch" \
+	epatch "${FILESDIR}/postgresql-${PV}-autoconf.patch" \
+		"${FILESDIR}/postgresql-${SLOT}-vacuum-delay.patch" \
 		"${FILESDIR}/postgresql-${SLOT}-server.patch"
 
 	if hasq test ${FEATURES}; then
-		sed -e "s|/no/such/location|${S}/src/test/regress/tmp_check/no/such/location|g" -i src/test/regress/{input,output}/tablespace.source
-	else
-		echo "all install:" > "${S}/src/test/regress/GNUmakefile"
+		epatch "${FILESDIR}/postgresql-${SLOT}-regress.patch"
 	fi
 
-	eautoconf
+	eautoreconf
 }
 
 src_compile() {
-	# TODO: test if PPC really cannot work with other CFLAGS settings
-	# use ppc && CFLAGS="-pipe -fsigned-char"
 
 	# eval is needed to get along with pg_config quotation of space-rich entities.
 	eval econf "$(/usr/$(get_libdir)/postgresql-${SLOT}/bin/pg_config --configure)" \
-		--disable-thread-safety \
 		$(use_with perl) \
 		$(use_with python) \
 		$(use_with tcl) \
 		--with-includes="/usr/include/postgresql-${SLOT}/" \
+		--with-libs="/usr/$(get_libdir)/postgresql-${SLOT}/$(get_libdir)/" \
 		"$(built_with_use ~dev-db/postgresql-base-${PV} nls && use_enable nls nls "$(wanted_languages)")" \
+		"CFLAGS='${CFLAGS} $(use xml && pkg-config --cflags libxml-2.0)'" \
+		"LIBS='${LIBS} -lpq $(use xml && pkg-config --libs libxml-2.0) -L/usr/$(get_libdir)/postgresql-${SLOT}/$(get_libdir)'" \
 		|| die "configure failed"
 
-	for bd in . contrib $(use xml && echo contrib/xml2); do
+	for bd in . contrib $(use xml && echo contrib/xml) ; do
 		PATH="/usr/$(get_libdir)/postgresql-${SLOT}/bin:${PATH}" \
 			emake -C $bd -j1 LD="$(tc-getLD) $(get_abi_LDFLAGS)" \
-				PGXS=$(/usr/$(get_libdir)/postgresql-${SLOT}/bin/pg_config --pgxs) \
-				PGXS_IN_SERVER=1 PGXS_WITH_SERVER="${S}/src/backend/postgres" \
-				NO_PGXS=0 USE_PGXS=1 docdir=/usr/share/doc/${PF} || die "emake in $bd failed"
+				docdir=/usr/share/doc/${PF} SLOT=${SLOT} || die "emake in $bd failed"
 	done
 }
 
@@ -92,15 +88,14 @@ src_install() {
 			"${S}/src/pl/plperl/GNUmakefile_orig" > "${S}/src/pl/plperl/GNUmakefile"
 	fi
 
-	for bd in . contrib $(use xml && echo contrib/xml2) ; do
+	for bd in . contrib $(use xml && echo contrib/xml) ; do
 		PATH="/usr/$(get_libdir)/postgresql-${SLOT}/bin:${PATH}" \
 			emake install -C $bd -j1 DESTDIR="${D}" \
-				PGXS_IN_SERVER=1 PGXS_WITH_SERVER="${S}/src/backend/postgres" \
-				PGXS=$(/usr/$(get_libdir)/postgresql-${SLOT}/bin/pg_config --pgxs) \
-				NO_PGXS=0 USE_PGXS=1 docdir=/usr/share/doc/${PF} || die "emake install in $bd failed"
+				docdir=/usr/share/doc/${PF} SLOT=${SLOT} || die "emake install in $bd failed"
 	done
-	rm -rf "${D}/usr/share/postgresql-${SLOT}/man/man7/"
-	rm "${D}"/usr/share/postgresql-${SLOT}/man/man1/{clusterdb,create{db,lang,user},drop{db,lang,user},ecpg,pg_{config,dump,dumpall,restore},psql,reindexdb,vacuumdb}.1
+
+	rm -rf "${D}/usr/share/postgresql-${SLOT}/man/man7/" "${D}/usr/share/doc/${PF}/html"
+	rm "${D}"/usr/share/postgresql-${SLOT}/man/man1/{clusterdb,create{db,lang,user},drop{db,lang,user},ecpg,pg_{config,dump,dumpall,restore},psql,vacuumdb,pgtksh,pgtclsh}.1
 
 	dodoc README HISTORY doc/{README.*,TODO,bug.template}
 
@@ -136,9 +131,6 @@ pkg_postinst() {
 	elog
 	elog "emerge --config =${CATEGORY}/${PF}"
 	elog
-	elog "The autovacuum function, which was in contrib, has been moved to the main"
-	elog "PostgreSQL functions starting with 8.1."
-	elog "You can enable it for all clusters in ${ROOT}/etc/postgresql-${SLOT}/postgresql.conf."
 }
 
 pkg_postrm() {

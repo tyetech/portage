@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-8.2.7.ebuild,v 1.4 2008/06/14 11:49:54 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-8.2.9.ebuild,v 1.1 2008/06/14 11:49:54 dev-zero Exp $
 
 EAPI="1"
 
@@ -43,7 +43,7 @@ S="${WORKDIR}/postgresql-${PV}"
 
 pkg_setup() {
 	enewgroup postgres 70
-	enewuser postgres 70 /bin/bash /var/lib postgres
+	enewuser postgres 70 /bin/bash /var/lib/postgresql postgres
 }
 
 src_unpack() {
@@ -99,7 +99,8 @@ src_install() {
 				PGXS=$(/usr/$(get_libdir)/postgresql-${SLOT}/bin/pg_config --pgxs) \
 				NO_PGXS=0 USE_PGXS=1 docdir=/usr/share/doc/${PF} || die "emake install in $bd failed"
 	done
-	rm -rf "${D}/usr/share/postgresql-${SLOT}/man/man7/"
+
+	rm -rf "${D}/usr/share/postgresql-${SLOT}/man/man7/" "${D}/usr/share/doc/${PF}/html"
 	rm "${D}"/usr/share/postgresql-${SLOT}/man/man1/{clusterdb,create{db,lang,user},drop{db,lang,user},ecpg,pg_{config,dump,dumpall,restore},psql,reindexdb,vacuumdb}.1
 
 	dodoc README HISTORY doc/{README.*,TODO,bug.template}
@@ -113,7 +114,8 @@ src_install() {
 	newinitd "${FILESDIR}/postgresql.init-${SLOT}" postgresql-${SLOT} || die "Inserting init.d-file failed"
 	newconfd "${FILESDIR}/postgresql.conf-${SLOT}" postgresql-${SLOT} || die "Inserting conf.d-file failed"
 
-	keepdir /var/run/postgresql
+	# Workaround for paludis
+	[ -f "${ROOT}/var/run/postgresql/.keep" ] || keepdir /var/run/postgresql
 	fperms 0770 /var/run/postgresql
 	fowners postgres:postgres /var/run/postgresql
 }
@@ -138,7 +140,7 @@ pkg_postinst() {
 	elog
 	elog "The autovacuum function, which was in contrib, has been moved to the main"
 	elog "PostgreSQL functions starting with 8.1."
-	elog "You can enable it for all clusters in ${ROOT}/etc/postgresql-${SLOT}/postgresql.conf."
+	elog "You can enable it in the clusters postgresql.conf."
 }
 
 pkg_postrm() {

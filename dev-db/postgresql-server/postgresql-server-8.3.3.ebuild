@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-8.2.7.ebuild,v 1.4 2008/06/14 11:49:54 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-8.3.3.ebuild,v 1.1 2008/06/14 11:49:54 dev-zero Exp $
 
 EAPI="1"
 
@@ -8,7 +8,7 @@ WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="none"
 inherit eutils multilib toolchain-funcs versionator autotools
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 
 DESCRIPTION="PostgreSQL server"
 HOMEPAGE="http://www.postgresql.org/"
@@ -20,7 +20,7 @@ IUSE_LINGUAS="
 	linguas_hr linguas_hu linguas_it linguas_ko linguas_nb linguas_pl
 	linguas_pt_BR linguas_ro linguas_ru linguas_sk linguas_sl linguas_sv
 	linguas_tr linguas_zh_CN linguas_zh_TW"
-IUSE="doc perl python selinux tcl xml nls kernel_linux ${IUSE_LINGUAS}"
+IUSE="doc perl python selinux tcl uuid xml nls kernel_linux ${IUSE_LINGUAS}"
 
 wanted_languages() {
 	for u in ${IUSE_LINGUAS} ; do
@@ -33,6 +33,7 @@ RDEPEND="~dev-db/postgresql-base-${PV}:${SLOT}
 	python? ( >=dev-lang/python-2.2 dev-python/egenix-mx-base )
 	selinux? ( sec-policy/selinux-postgresql )
 	tcl? ( >=dev-lang/tcl-8 )
+	uuid? ( dev-libs/ossp-uuid )
 	xml? ( dev-libs/libxml2 dev-libs/libxslt )"
 DEPEND="${RDEPEND}
 	sys-devel/flex
@@ -43,7 +44,7 @@ S="${WORKDIR}/postgresql-${PV}"
 
 pkg_setup() {
 	enewgroup postgres 70
-	enewuser postgres 70 /bin/bash /var/lib postgres
+	enewuser postgres 70 /bin/bash /var/lib/postgresql postgres
 }
 
 src_unpack() {
@@ -72,6 +73,10 @@ src_compile() {
 		$(use_with perl) \
 		$(use_with python) \
 		$(use_with tcl) \
+		$(use_with xml libxml) \
+		$(use_with xml libxslt) \
+		$(use_with uuid ossp-uuid) \
+		--with-system-tzdata="/usr/share/zoneinfo" \
 		--with-includes="/usr/include/postgresql-${SLOT}/" \
 		"$(built_with_use ~dev-db/postgresql-base-${PV} nls && use_enable nls nls "$(wanted_languages)")" \
 		|| die "configure failed"
@@ -99,7 +104,8 @@ src_install() {
 				PGXS=$(/usr/$(get_libdir)/postgresql-${SLOT}/bin/pg_config --pgxs) \
 				NO_PGXS=0 USE_PGXS=1 docdir=/usr/share/doc/${PF} || die "emake install in $bd failed"
 	done
-	rm -rf "${D}/usr/share/postgresql-${SLOT}/man/man7/"
+
+	rm -rf "${D}/usr/share/postgresql-${SLOT}/man/man7/" "${D}/usr/share/doc/${PF}/html"
 	rm "${D}"/usr/share/postgresql-${SLOT}/man/man1/{clusterdb,create{db,lang,user},drop{db,lang,user},ecpg,pg_{config,dump,dumpall,restore},psql,reindexdb,vacuumdb}.1
 
 	dodoc README HISTORY doc/{README.*,TODO,bug.template}
@@ -138,7 +144,7 @@ pkg_postinst() {
 	elog
 	elog "The autovacuum function, which was in contrib, has been moved to the main"
 	elog "PostgreSQL functions starting with 8.1."
-	elog "You can enable it for all clusters in ${ROOT}/etc/postgresql-${SLOT}/postgresql.conf."
+	elog "You can enable it in the clusters postgresql.conf."
 }
 
 pkg_postrm() {
