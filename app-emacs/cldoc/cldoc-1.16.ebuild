@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/cldoc/cldoc-1.16.ebuild,v 1.2 2008/02/16 15:28:55 opfer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/cldoc/cldoc-1.16.ebuild,v 1.3 2008/06/14 23:22:46 ulm Exp $
 
 inherit elisp
 
@@ -16,5 +16,4 @@ IUSE=""
 
 RDEPEND="app-emacs/slime"
 
-SIMPLE_ELISP=t
 SITEFILE=50${PN}-gentoo.el
