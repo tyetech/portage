@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/conntrack-tools/Attic/conntrack-tools-0.9.7-r1.ebuild,v 1.1 2008/06/14 16:39:38 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/conntrack-tools/Attic/conntrack-tools-0.9.7-r2.ebuild,v 1.1 2008/06/14 19:20:41 cedk Exp $
 
 inherit linux-info eutils
 
@@ -23,6 +23,7 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}/${P}-path_max.patch"
+	epatch "${FILESDIR}/${P}-int_max.patch"
 	sed -i -e '/-Werror \\/d' {.,src,extensions}/Makefile.in
 }
 
