@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/tunepimp/Attic/tunepimp-0.5.3.ebuild,v 1.8 2008/01/02 12:05:46 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/tunepimp/Attic/tunepimp-0.5.3.ebuild,v 1.9 2008/06/14 12:40:44 tgurr Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -50,7 +50,6 @@ src_compile() {
 }
 
 src_install() {
-	cd ${S}
 	make DESTDIR="${D}" install || die "make install failed"
 	dodoc AUTHORS ChangeLog INSTALL README TODO
 	if use python; then
