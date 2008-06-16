@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvdnav/Attic/libdvdnav-0.1.10.ebuild,v 1.17 2008/01/29 21:41:39 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvdnav/Attic/libdvdnav-0.1.10.ebuild,v 1.18 2008/06/16 11:44:03 flameeyes Exp $
 
-inherit eutils
+inherit eutils base autotools
 
 DESCRIPTION="Library for DVD navigation tools"
 HOMEPAGE="http://sourceforge.net/projects/dvd/"
@@ -16,10 +16,25 @@ IUSE=""
 RDEPEND="media-libs/libdvdread"
 DEPEND="${RDEPEND}"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-build.patch
+	"${FILESDIR}"/${P}-dontbuild-examples.patch
+)
+
 src_unpack() {
-	unpack ${A}
+	base_src_unpack
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-build.patch
+
+	eautoreconf
+}
+
+src_compile() {
+	econf \
+		--disable-examples \
+		--disable-dependency-tracking \
+		|| die "econf failed"
+
+	emake || die "emake failed"
 }
 
 src_install () {
