@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/opencv/Attic/opencv-1.0.0.ebuild,v 1.1 2008/06/18 05:24:34 jmglov Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/opencv/Attic/opencv-1.0.0.ebuild,v 1.2 2008/06/18 05:56:40 jmglov Exp $
 
 inherit eutils
 
@@ -57,4 +57,10 @@ src_compile() {
 	econf ${myconf} || die "econf failed"
 
 	emake || die "emake failed"
+}
+
+src_install() {
+	emake DESTDIR="${D}" install
+	dodoc AUTHORS ChangeLog COPYING INSTALL NEWS README THANKS TODO
+	dodoc -r docs
 }
