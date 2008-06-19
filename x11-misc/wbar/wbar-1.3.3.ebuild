@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wbar/wbar-1.3.3.ebuild,v 1.3 2008/03/22 10:43:26 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wbar/wbar-1.3.3.ebuild,v 1.4 2008/06/19 11:12:31 drac Exp $
 
 inherit eutils toolchain-funcs
 
@@ -22,7 +22,8 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-Makefile.patch
+	epatch "${FILESDIR}"/${P}-Makefile.patch \
+		"${FILESDIR}"/${P}-gcc43.patch
 }
 
 src_compile() {
