@@ -1,41 +1,73 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/icecream/Attic/icecream-0.7.14.ebuild,v 1.5 2008/03/30 09:34:35 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/icecream/Attic/icecream-0.9.1.ebuild,v 1.1 2008/06/19 16:29:38 bluebird Exp $
 
 inherit autotools eutils flag-o-matic
 
 MY_P="icecc-${PV}"
-DESCRIPTION="icecc is a program for distributed compiling of C(++) code across several machines based on ideas and code by distcc."
+
+DESCRIPTION="icecc is a program for distributed compiling of C(++) code across several machines; based on distcc"
 HOMEPAGE="http://en.opensuse.org/Icecream"
-SRC_URI="ftp://ftp.suse.com/pub/projects/icecream/${MY_P}.tar.bz2"
+SRC_URI="ftp://ftp.suse.com/pub/projects/${PN}/${MY_P}.tar.bz2"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-DEPEND="virtual/libc"
+IUSE="doc"
 
-S="${WORKDIR}/${PN}"
+RDEPEND="virtual/libc"
+DEPEND="${RDEPEND}
+		doc? ( =kde-base/kdelibs-3.5* )"
+
+S="${WORKDIR}/${MY_P}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${PV}-dont-create-symlinks.patch
-	epatch "${FILESDIR}"/${PV}-conf.d-verbosity.patch
+	epatch "${FILESDIR}/${PV}-dont-create-symlinks.patch"
+	epatch "${FILESDIR}/${PV}-conf.d-verbosity.patch"
 
 	use amd64 && append-flags -fPIC -DPIC
 
 	eautoreconf
 }
 
+src_compile() {
+	econf
+	emake || die "compiling icecc failed"
+
+	# compile manpages...yeah, we need meinproc, ergo kdelibs for this :(
+	if use doc; then
+		cd doc
+		for docfile in *.docbook; do
+			outputfile="${docfile/man-/}"
+			outputfile="${outputfile/.docbook/}"
+
+			meinproc \
+			--stylesheet /usr/kde/3.5/share/apps/ksgmltools2/customization/kde-man.xsl \
+			"${docfile}" && \
+			mv manpage.troff "${outputfile}" || \
+			die "compiling manpages failed"
+		done
+	fi
+}
+
 src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
-	dobin "${FILESDIR}"/icecream-config
-	newconfd suse/sysconfig.icecream icecream
-	doinitd "${FILESDIR}"/icecream
+
+	dosbin "${FILESDIR}"/icecream-config || "install failed"
+
+	newconfd suse/sysconfig.icecream icecream || die "install failed"
+	doinitd "${FILESDIR}"/icecream || die "install failed"
+
 	diropts -m0755
 	keepdir /usr/lib/icecc/bin
-	cd "${WORKDIR}"/mans
-	doman icecc.1  iceccd.1  icecream.7  scheduler.1
+
+	if use doc; then
+		cd doc
+		doman icecc.1 iceccd.1 icecream.7 scheduler.1 || die "doman failed"
+	fi
 }
 
 pkg_postinst() {
@@ -51,14 +83,14 @@ pkg_postinst() {
 		ebeep 2
 	fi
 
-	if [[ ${ROOT} = "/" ]] ; then
-		elog "Scanning for compiler front-ends..."
-		/usr/bin/icecream-config --install-links
-		/usr/bin/icecream-config --install-links ${CHOST}
+	if [[ "${ROOT}" = "/" ]] ; then
+		einfo "Scanning for compiler front-ends..."
+		/usr/sbin/icecream-config --install-links
+		/usr/sbin/icecream-config --install-links "${CHOST}"
 	else
 		ewarn "Install is incomplete; you must run the following command:"
-		ewarn " # icecream-config --install-links ${CHOST}"
-		ewarn "after booting or chrooting to ${ROOT} to complete installation."
+		ewarn " # icecream-config --install-links \"${CHOST}\""
+		ewarn "after booting or chrooting to \"${ROOT}\" to complete installation."
 	fi
 
 	elog
