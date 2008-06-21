@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/camstream/Attic/camstream-20070315.ebuild,v 1.7 2008/06/21 11:42:07 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/camstream/Attic/camstream-20070315.ebuild,v 1.8 2008/06/21 11:57:59 flameeyes Exp $
 
 inherit eutils libtool autotools
 
@@ -17,9 +17,6 @@ IUSE="doc mmx"
 
 RDEPEND="=x11-libs/qt-3*
 		media-libs/alsa-lib"
-DEPEND="${RDEPEND}
-	sys-devel/libtool
-	sys-devel/autoconf"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
