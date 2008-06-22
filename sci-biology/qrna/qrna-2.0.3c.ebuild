@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/qrna/qrna-2.0.3c.ebuild,v 1.10 2008/06/22 19:30:32 je_fro Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/qrna/qrna-2.0.3c.ebuild,v 1.11 2008/06/22 21:36:14 je_fro Exp $
 
 inherit toolchain-funcs
 
@@ -30,7 +30,7 @@ src_compile () {
 
 src_install () {
 	cd "${S}"/src
-	dobin cfgbuild eqrna eqrna_sample main rnamat_main shuffle || die
+	dobin cfgbuild eqrna eqrna_sample main rnamat_main || die
 
 	cd "${S}"
 	dobin scripts/* || die
