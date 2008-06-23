@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/rbot/Attic/rbot-9999-r8.ebuild,v 1.2 2008/06/23 14:51:12 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/rbot/Attic/rbot-9999-r8.ebuild,v 1.3 2008/06/23 15:08:25 flameeyes Exp $
 
 inherit ruby gems eutils
 
@@ -12,7 +12,8 @@ HOMEPAGE="http://ruby-rbot.org/"
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS=""
-IUSE="spell aspell timezone translator shorturl nls dict"
+IUSE="spell aspell timezone translator shorturl nls dict figlet
+	fortune cal host"
 ILINGUAS="zh ru nl de fr it en ja"
 
 for lang in $ILINGUAS; do
