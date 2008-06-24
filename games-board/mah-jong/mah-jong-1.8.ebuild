@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/mah-jong/Attic/mah-jong-1.8.ebuild,v 1.2 2008/02/29 19:00:23 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/mah-jong/Attic/mah-jong-1.8.ebuild,v 1.3 2008/06/24 16:13:18 opfer Exp $
 
 inherit eutils toolchain-funcs games
 
@@ -11,7 +11,7 @@ SRC_URI="http://www.stevens-bradfield.com/MahJong/Source/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc x86"
 IUSE=""
 
 RDEPEND="=x11-libs/gtk+-1.2*"
