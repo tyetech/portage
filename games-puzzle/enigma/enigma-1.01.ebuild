@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/enigma/enigma-1.01.ebuild,v 1.4 2008/06/25 19:05:57 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/enigma/enigma-1.01.ebuild,v 1.5 2008/06/26 18:05:44 mr_bones_ Exp $
 
 inherit autotools eutils games
 
@@ -17,6 +17,7 @@ RDEPEND="media-libs/sdl-ttf
 	media-libs/libsdl
 	media-libs/sdl-mixer
 	media-libs/sdl-image
+	media-libs/libpng
 	dev-libs/xerces-c
 	net-libs/enet
 	nls? ( virtual/libintl )"
