@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptraceroute/tcptraceroute-1.5_beta7-r1.ebuild,v 1.4 2008/06/25 17:16:40 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/tcptraceroute/tcptraceroute-1.5_beta7-r1.ebuild,v 1.5 2008/06/26 16:39:28 nixnut Exp $
 
 inherit flag-o-matic
 
@@ -14,7 +14,7 @@ SRC_URI="http://michael.toren.net/code/tcptraceroute/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~hppa ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND="net-libs/libpcap
