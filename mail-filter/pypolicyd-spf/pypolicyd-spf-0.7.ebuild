@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/pypolicyd-spf/Attic/pypolicyd-spf-0.6.ebuild,v 1.2 2008/02/25 16:50:34 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/pypolicyd-spf/Attic/pypolicyd-spf-0.7.ebuild,v 1.1 2008/06/26 08:36:04 dragonheart Exp $
 
 inherit distutils eutils
 
