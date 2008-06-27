@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmMatrix/wmMatrix-0.2-r1.ebuild,v 1.3 2008/06/26 17:14:19 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmMatrix/wmMatrix-0.2-r1.ebuild,v 1.4 2008/06/27 13:31:23 ranger Exp $
 
 inherit eutils toolchain-funcs multilib
 
@@ -19,7 +19,7 @@ RDEPEND="${CDEPEND}
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ppc ppc64 ~sparc ~x86"
 IUSE=""
 
 src_unpack() {
