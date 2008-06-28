@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/lincity-ng/Attic/lincity-ng-1.1.2.ebuild,v 1.3 2008/06/27 08:50:22 coldwind Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/lincity-ng/Attic/lincity-ng-1.1.2.ebuild,v 1.4 2008/06/28 07:38:17 maekke Exp $
 
 inherit eutils games
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://berlios/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ~sparc x86"
 IUSE=""
 
 RDEPEND="virtual/opengl
