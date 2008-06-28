@@ -1,15 +1,17 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gwhois/Attic/gwhois-20061002.ebuild,v 1.7 2006/11/14 22:33:51 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/gwhois/Attic/gwhois-20080626.ebuild,v 1.1 2008/06/28 11:34:38 wschlich Exp $
 
 inherit eutils
 
+MY_P=${P/_p/.}
+S="${WORKDIR}/${MY_P}"
 DESCRIPTION="generic whois"
 HOMEPAGE="http://gwhois.de/"
-SRC_URI="http://gwhois.de/gwhois/${P/-/_}.tar.gz"
+SRC_URI="http://gwhois.de/gwhois/${MY_P/-/_}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~sparc ~x86"
 IUSE=""
 
 RDEPEND="www-client/lynx
