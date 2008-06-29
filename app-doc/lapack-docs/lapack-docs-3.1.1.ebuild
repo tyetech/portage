@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/lapack-docs/lapack-docs-3.1.1.ebuild,v 1.11 2007/11/21 00:58:36 lavajoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/lapack-docs/lapack-docs-3.1.1.ebuild,v 1.12 2008/06/29 10:47:46 tove Exp $
 
 DESCRIPTION="Documentation reference and man pages for lapack implementations"
 HOMEPAGE="http://www.netlib.org/lapack"
@@ -25,6 +25,6 @@ src_install() {
 		t="${f%%.l}.n"
 		mv "${f}" "${t}"
 	done
-	doman man/manl/* || "doman failed"
+	doman man/manl/* || die "doman failed"
 	dodoc README "${DISTDIR}"/lapackqref.ps || die "dodoc failed"
 }
