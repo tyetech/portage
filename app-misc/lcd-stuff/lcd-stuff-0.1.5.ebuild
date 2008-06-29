@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/lcd-stuff/Attic/lcd-stuff-0.1.3.ebuild,v 1.1 2007/08/08 20:43:02 rbu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/lcd-stuff/Attic/lcd-stuff-0.1.5.ebuild,v 1.1 2008/06/29 12:26:34 rbu Exp $
 
 inherit eutils
 
@@ -25,13 +25,6 @@ DEPEND="${DEPEND}
 
 IUSE="imap mpd mp3 xml rss"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}/${P}-socket-h.patch"
-}
-
 src_compile() {
 	local XMLRSSLIB="$(use_enable rss mrss)"
 	if use rss ; then
@@ -43,8 +36,8 @@ src_compile() {
 
 	econf \
 		$(use_enable imap libetpan) \
-		$(use_enable mpd libmpd) \
-		$(use_enable mp3 taglib_c) \
+		$(use_enable mpd  libmpd)   \
+		$(use_enable mp3  taglib_c) \
 		$XMLRSSLIB \
 		|| die "configure failed"
 
