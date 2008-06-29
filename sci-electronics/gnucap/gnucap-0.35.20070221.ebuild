@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/gnucap/Attic/gnucap-0.35.20070221.ebuild,v 1.3 2008/05/13 07:17:17 calchan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/gnucap/Attic/gnucap-0.35.20070221.ebuild,v 1.4 2008/06/29 08:15:52 tove Exp $
 
 inherit multilib
 
@@ -57,7 +57,7 @@ src_compile () {
 	cd "${S}"/plugins
 	for PLUGIN_DIR in * ; do
 		cd "${S}"/plugins/${PLUGIN_DIR}
-		emake || "Compilation failed"
+		emake || die "Compilation failed"
 	done
 }
 
