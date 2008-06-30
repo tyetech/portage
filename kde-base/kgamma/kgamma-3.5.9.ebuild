@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kgamma/Attic/kgamma-3.5.9.ebuild,v 1.8 2008/06/30 00:29:41 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kgamma/Attic/kgamma-3.5.9.ebuild,v 1.9 2008/06/30 23:35:26 mr_bones_ Exp $
 
 KMNAME=kdegraphics
 EAPI="1"
