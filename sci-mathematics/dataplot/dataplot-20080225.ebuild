@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/dataplot/Attic/dataplot-20080225.ebuild,v 1.3 2008/06/04 17:07:06 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/dataplot/Attic/dataplot-20080225.ebuild,v 1.4 2008/07/01 23:17:05 gentoofan23 Exp $
 
-inherit eutils toolchain-funcs flag-o-matic autotools fortran
+inherit eutils toolchain-funcs autotools fortran
 
 #     DAY         MONTH    YEAR
 MY_PV=${PV:4:2}_${PV:6:2}_${PV:0:4}
