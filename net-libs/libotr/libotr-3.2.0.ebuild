@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libotr/Attic/libotr-2.0.2.ebuild,v 1.5 2007/02/04 20:15:38 welp Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libotr/libotr-3.2.0.ebuild,v 1.1 2008/07/02 15:39:01 tester Exp $
 
 inherit flag-o-matic eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.cypherpunks.ca/otr/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND="dev-libs/libgpg-error
@@ -25,6 +25,6 @@ src_compile() {
 }
 
 src_install() {
-	make install DESTDIR=${D} || die "Install failed"
-	dodoc COPYING ChangeLog README
+	make install DESTDIR="${D}" || die "Install failed"
+	dodoc ChangeLog README
 }
