@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/w32api/Attic/w32api-3.11.ebuild,v 1.1 2008/01/20 03:46:25 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/w32api/Attic/w32api-3.11.ebuild,v 1.2 2008/07/02 21:47:04 vapier Exp $
 
 export CBUILD=${CBUILD:-${CHOST}}
 export CTARGET=${CTARGET:-${CHOST}}
@@ -19,7 +19,7 @@ SRC_URI="mirror://sourceforge/mingw/${P}-src.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE=""
+IUSE="crosscompile_opts_headers-only"
 RESTRICT="strip"
 
 DEPEND=""
