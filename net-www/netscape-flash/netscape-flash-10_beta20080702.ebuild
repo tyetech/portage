@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/netscape-flash/Attic/netscape-flash-10_beta20080515.ebuild,v 1.2 2008/06/17 12:47:45 nelchael Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-www/cvs-repo/gentoo-x86/net-www/netscape-flash/Attic/netscape-flash-10_beta20080702.ebuild,v 1.1 2008/07/03 13:42:46 lack Exp $
 
 inherit nsplugins versionator
 
