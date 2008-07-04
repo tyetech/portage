@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/freeradius/Attic/freeradius-2.0.5.ebuild,v 1.1 2008/07/01 19:56:51 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/freeradius/Attic/freeradius-2.0.5.ebuild,v 1.2 2008/07/04 18:38:07 mrness Exp $
 
 WANT_AUTOMAKE="none"
 
@@ -49,6 +49,7 @@ src_unpack() {
 
 	epatch "${FILESDIR}/${P}-versionless-la-files.patch"
 	epatch "${FILESDIR}/${P}-ssl.patch"
+	epatch "${FILESDIR}/${P}-threads.patch"
 
 	cd "${S}"
 
