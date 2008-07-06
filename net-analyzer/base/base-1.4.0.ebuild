@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/base/Attic/base-1.3.6.ebuild,v 1.1 2007/05/23 07:15:31 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/base/Attic/base-1.4.0.ebuild,v 1.1 2008/07/06 22:09:49 rbu Exp $
 
 inherit webapp versionator eutils depend.apache depend.php
 
@@ -24,35 +24,30 @@ IUSE="gd signatures ${DBTYPES}"
 # when the user has an apache use-flag set.
 want_apache
 
-DEPEND=">=app-arch/tar-1.14
-	>=sys-libs/zlib-1.2.1-r3
-	>=app-arch/gzip-1.3.5-r4
-	>=sys-apps/coreutils-5.2.1-r2
-	>=sys-apps/sed-4.0.9"
+DEPEND=">=sys-libs/zlib-1.2.1-r3"
 RDEPEND="${DEPEND}
-	>=dev-php/adodb-4.68
-	gd? ( || ( >=dev-php4/jpgraph-1.19 >=dev-php5/jpgraph-2.0_beta )
+	dev-php/adodb
+	gd? ( >=dev-php5/jpgraph-2.0_beta
 		>=dev-php/PEAR-PEAR-1.3.6-r1
 		>=dev-php/PEAR-Image_Color-1.0.2
 		>=dev-php/PEAR-Log-1.9.3
 		>=dev-php/PEAR-Numbers_Roman-0.2.0
 		>=dev-php/PEAR-Numbers_Words-0.14.0
 		>=dev-php/PEAR-Image_Canvas-0.2.4
-		>=dev-php/PEAR-Image_Graph-0.7.1
-		>=media-libs/gd-2.0.32 )"
+		>=dev-php/PEAR-Image_Graph-0.7.1 )"
 	# A local database isn't necessary, so only require one when the user
 	# has use-flags set for one of the supported DBs.
 	# Snort can also be installed on a remote system, so don't require it.
 
 # Require PHP.
-need_php
+need_php5
 
 pkg_setup() {
 	webapp_pkg_setup
 
 	# Set the group ownership for /etc/base/base_conf.php so it can be read by
 	# the user's web server.
-	if use apache2 || use apache; then
+	if use apache2 ; then
 		HTTPD_GROUP="apache"
 	else
 		# Set a safe default group.
@@ -79,15 +74,22 @@ pkg_setup() {
 	fi
 
 	# Make sure php was built with the necessary USE flags.
-	require_php_with_use session
-	useq gd && require_gd
-	useq mssql && require_php_with_use mssql
-	useq mysql && require_php_with_use mysql
-	useq postgres && require_php_with_use postgres
+	local flags=session
+	for f in mssql mysql postgres ; do
+		use ${f} && flags="${flags} ${f}"
+	done
+
 	if use oracle && ! built_with_use virtual/php oci8-instant-client ; then
 		ewarn "PHP with oci8-instant-client support not found!"
 		ewarn "It is your responsibility to ensure that PHP will work"
 		ewarn "with commercial Oracle implementation."
+	fi
+
+	if ! PHPCHECKNODIE="yes" require_php_with_use ${flags} || \
+		( use gd && ! PHPCHECKNODIE="yes" require_php_with_any_use gd gd-external ) ; then
+			eerror "Re-emerge ${PHP_PKG} with ${flags} USE flags enabled"
+			use gd && eerror "as well as with either gd or gd-external USE flag enabled."
+			die "Re-emerge ${PHP_PKG} with the above USE flags."
 	fi
 }
 
@@ -101,7 +103,7 @@ src_unpack() {
 	sed -i -e 's:$BASE_urlpath.*:$BASE_urlpath = "/base";:g' \
 		${CONF_OLD}
 
-	sed -i -e 's:$DBlib_path.*:$DBlib_path = "/usr/share/php/adodb";:g' \
+	sed -i -e 's:$DBlib_path.*:$DBlib_path = "/usr/share/php5/adodb";:g' \
 			${CONF_OLD}
 
 	if [[ "${BASE_DBTYPE}" == "postgres" ]]; then
@@ -187,6 +189,8 @@ pkg_postinst() {
 			ewarn "It looks like you are not using Apache"
 			ewarn "as your web server. For BASE to work properly, you will"
 			ewarn "need to change the ownership of ${CONF_DIR}/${CONF_NEW} to"
+			ewarn "root:[www user] To use Apache, add \"apache2\" to"
+			ewarn "your USE flags and re-emerge BASE."
 	fi
 	if [ "${FPERMS}" == "FALSE" ]; then
 			ewarn ""
@@ -207,7 +211,7 @@ pkg_postinst() {
 	elog ""
 	elog "To setup your initial database, direct your web browser to the"
 	elog "location you installed BASE/base_db_setup.php"
-	elog "You can find instructions in /usr/share/doc/${P}/README"
+	elog "You can find instructions in /usr/share/doc/${PF}/README"
 	elog "There is a guide at http://gentoo-wiki.com/HOWTO_Apache2_with_BASE"
 	elog ""
 }
