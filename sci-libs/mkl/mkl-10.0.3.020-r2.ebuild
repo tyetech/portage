@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/mkl/Attic/mkl-10.0.3.020-r1.ebuild,v 1.1 2008/06/23 08:51:56 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/mkl/Attic/mkl-10.0.3.020-r2.ebuild,v 1.1 2008/07/07 23:41:57 bicatali Exp $
 
 inherit eutils toolchain-funcs fortran check-reqs
 
@@ -232,15 +232,15 @@ mkl_add_profile() {
 	insinto ${MKL_LIBDIR}
 	for x in blas cblas lapack; do
 		cat > ${x}-${prof}.pc <<-EOF
-			prefix=/usr
+			prefix=${MKL_DIR}
 			libdir=${MKL_LIBDIR}
-			includedir=${MKL_DIR}/include
+			includedir=\${prefix}/include
 			Name: ${x}
-			Description: Intel(R) Math Kernel Library implementation of ${p}
+			Description: Intel(R) Math Kernel Library implementation of ${x}
 			Version: ${PV}
 			URL: ${HOMEPAGE}
 			Libs: -Wl,--no-as-needed -L\${libdir} ${2} ${3} -lmkl_core ${4} -lpthread
-			Cflags: -I${includedir}
+			Cflags: -I\${includedir}
 		EOF
 		cp eselect.${x} eselect.${x}.${prof}
 		echo "${MKL_LIBDIR}/${x}-${prof}.pc /usr/@LIBDIR@/pkgconfig/${x}.pc" \
@@ -291,7 +291,7 @@ src_install() {
 		|| die "installing mkl failed"
 	insinto ${MKL_DIR}
 	doins -r ${doinsdirs} || die "doins ${doinsdirs} failed"
-	dosym mkl_cblas.h ${MKL_DIR}/include/mkl_cblas.h
+	dosym cblas.h ${MKL_DIR}/include/mkl_cblas.h
 
 	# install blas/lapack profiles
 	mkl_make_generic_profile
