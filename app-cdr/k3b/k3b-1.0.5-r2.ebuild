@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/k3b/Attic/k3b-1.0.3.ebuild,v 1.7 2008/07/07 19:39:26 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/k3b/Attic/k3b-1.0.5-r2.ebuild,v 1.1 2008/07/07 19:39:26 loki_val Exp $
 
 inherit kde eutils
 
@@ -13,17 +13,16 @@ SRC_URI="mirror://sourceforge/k3b/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
-IUSE="alsa css dvdr dvdread encode ffmpeg flac hal kde mp3 musepack musicbrainz
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
+IUSE="alsa css dvdr dvdread encode ffmpeg flac hal mp3 musepack musicbrainz
 	sndfile vcd vorbis emovix"
 
-DEPEND="kde? ( || ( kde-base/kdesu kde-base/kdebase ) )
-	hal? ( dev-libs/dbus-qt3-old sys-apps/hal )
+DEPEND="hal? ( dev-libs/dbus-qt3-old sys-apps/hal )
 	media-libs/libsamplerate
 	media-libs/taglib
 	>=media-sound/cdparanoia-3.9.8
 	sndfile? ( media-libs/libsndfile )
-	ffmpeg? ( <media-video/ffmpeg-0.4.9_p20080326 )
+	ffmpeg? ( >=media-video/ffmpeg-0.4.9_p20080326 )
 	flac? ( media-libs/flac )
 	mp3? ( media-libs/libmad )
 	musepack? ( media-libs/libmpcdec )
@@ -48,6 +47,9 @@ DEPEND="${DEPEND}
 	dev-util/pkgconfig"
 
 need-kde 3.5
+
+PATCHES=(	"${FILESDIR}/k3b-1.0.5-desktop-entry.diff"
+		"${FILESDIR}/k3b-1.0.5-ffmpeg-0.4.9_p20080326-API.patch"	)
 
 I18N="${PN}-i18n-${PV}"
 
@@ -78,8 +80,6 @@ pkg_setup() {
 		die "Missing FLAC C++ bindings."
 	fi
 
-	use kde || elog "You haven't set the kde use flag. k3bsetup won't be installed."
-
 	kde_pkg_setup
 }
 
@@ -101,7 +101,7 @@ src_compile() {
 			--with-external-libsamplerate	\
 			--without-resmgr				\
 			--without-cdrecord-suid-root	\
-			$(use_with kde k3bsetup)		\
+			--without-k3bsetup				\
 			$(use_with hal)					\
 			$(use_with encode lame)			\
 			$(use_with ffmpeg)				\
@@ -133,15 +133,15 @@ src_install() {
 	fi
 }
 
-pkg_preinst() {
-	kde_pkg_preinst
-	use kde || rm "${D}"/usr/share/applications/kde/k3bsetup2.desktop
-}
-
 pkg_postinst() {
+	echo
+	elog "We don't install k3bsetup anymore because Gentoo doesn't need it."
+	elog "If you get warnings on start-up, uncheck the \"Check system"
+	elog "configuration\" option in the \"Misc\" settings window."
+	echo
+
 	local group=cdrom
 	use kernel_linux || group=operator
-	echo
 	elog "Make sure you have proper read/write permissions on the cdrom device(s)."
 	elog "Usually, it is sufficient to be in the ${group} group."
 	echo
