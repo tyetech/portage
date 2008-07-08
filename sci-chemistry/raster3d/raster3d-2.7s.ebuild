@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/raster3d/Attic/raster3d-2.7s.ebuild,v 1.1 2008/07/08 03:06:29 dberkholz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/raster3d/Attic/raster3d-2.7s.ebuild,v 1.2 2008/07/08 03:07:27 dberkholz Exp $
 
 inherit toolchain-funcs fortran
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.bmsc.washington.edu/${PN}/${NAME}_${PV}.tar.gz"
 
 SLOT="0"
 IUSE=""
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 RDEPEND="media-libs/jpeg
 	media-libs/libpng
