@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/emul-linux-x86-java/Attic/emul-linux-x86-java-1.6.0.05.ebuild,v 1.2 2008/03/27 19:34:33 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/emul-linux-x86-java/Attic/emul-linux-x86-java-1.6.0.05.ebuild,v 1.3 2008/07/09 20:08:28 serkan Exp $
 
 inherit versionator pax-utils java-vm-2 eutils
 
@@ -35,7 +35,7 @@ QA_TEXTRELS_amd64="opt/${P}/lib/i386/motif21/libmawt.so
 
 src_unpack() {
 	if [[ ! -r "${DISTDIR}"/${A} ]]; then
-		die "cannot read ${DISTDIR}/${A}. Please check the permission and try again."
+		die "cannot read "${DISTDIR}"/${A}. Please check the permission and try again."
 	fi
 
 	mkdir bundled-jdk
