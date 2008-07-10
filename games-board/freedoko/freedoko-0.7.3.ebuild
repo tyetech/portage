@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/freedoko/Attic/freedoko-0.7.3.ebuild,v 1.7 2008/01/21 07:43:49 nyhm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/freedoko/Attic/freedoko-0.7.3.ebuild,v 1.8 2008/07/10 13:56:56 remi Exp $
 
 inherit eutils games
 
@@ -21,7 +21,7 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="xskatcards kdecards altenburgcards pysolcards net doc"
 
 RDEPEND="net? ( net-libs/gnet )
-	dev-cpp/gtkmm"
+	>=dev-cpp/gtkmm-2.4"
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	dev-util/pkgconfig
