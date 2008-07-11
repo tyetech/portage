@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/google-gadgets/Attic/google-gadgets-0.9.3.ebuild,v 1.1 2008/06/13 23:03:04 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/google-gadgets/Attic/google-gadgets-0.10.0.ebuild,v 1.1 2008/07/11 20:20:31 loki_val Exp $
 
 EAPI=1
 
@@ -48,8 +48,6 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_P}"
 
 RESTRICT="test"
-
-PATCHES=( "${FILESDIR}/${PN}-0.9.2-gcc43-test.patch" )
 
 pkg_setup() {
 	if ! use qt4
