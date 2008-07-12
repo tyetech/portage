@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/mpm/Attic/mpm-2.7.2960.ebuild,v 1.1 2008/02/16 17:57:13 opfer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/mpm/Attic/mpm-2.7.2960.ebuild,v 1.2 2008/07/12 09:09:29 opfer Exp $
 
 inherit eutils cmake-utils
 
@@ -17,7 +17,8 @@ IUSE=""
 DEPEND="net-misc/curl
 		dev-libs/pth
 		www-client/lynx
-		virtual/latex-base"
+		virtual/latex-base
+		!media-sound/mpc"
 
 S="${WORKDIR}/miktex-${MY_PV}"
 
