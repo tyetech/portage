@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/genshi/Attic/genshi-0.4.4.ebuild,v 1.5 2008/06/23 22:33:10 pythonhead Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/genshi/Attic/genshi-0.5.1.ebuild,v 1.1 2008/07/13 02:31:00 pythonhead Exp $
 
 NEED_PYTHON=2.3
 
@@ -20,8 +20,6 @@ DEPEND="dev-python/setuptools"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
-
-DOCS="INSTALL.txt UPGRADE.txt"
 
 src_install() {
 	distutils_src_install
