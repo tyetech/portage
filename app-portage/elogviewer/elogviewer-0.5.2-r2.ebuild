@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/elogviewer/elogviewer-0.5.2-r2.ebuild,v 1.3 2008/05/26 23:20:03 ken69267 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/elogviewer/elogviewer-0.5.2-r2.ebuild,v 1.4 2008/07/14 08:06:02 the_paya Exp $
 
 inherit eutils
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/elogviewer/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~sparc x86"
+KEYWORDS="amd64 ~ppc ~sparc x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=""
