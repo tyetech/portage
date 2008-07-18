@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/tapeutils/tapeutils-0.4.ebuild,v 1.1 2006/06/07 00:43:43 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/tapeutils/tapeutils-0.4.ebuild,v 1.2 2008/07/18 23:04:52 cla Exp $
 
 inherit toolchain-funcs
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.brouhaha.com/~eric/software/tapeutils/"
 SRC_URI="http://www.brouhaha.com/~eric/software/tapeutils/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 src_compile() {
