@@ -1,14 +1,15 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/nxserver-freeedition/Attic/nxserver-freeedition-3.2.0-r2.ebuild,v 1.1 2008/06/16 08:51:39 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/nxserver-freeedition/Attic/nxserver-freeedition-3.2.0.13.ebuild,v 1.1 2008/07/21 15:45:35 voyageur Exp $
 
-inherit eutils
+inherit eutils versionator
 
-MY_PV="${PV}-13"
+MAJOR_PV="$(get_version_component_range 1-3)"
+FULL_PV="${MAJOR_PV}-$(get_version_component_range 4)"
 DESCRIPTION="Free edition NX server from NoMachine"
 HOMEPAGE="http://www.nomachine.com/"
-SRC_URI="amd64? ( http://64.34.161.181/download/${PV}/Linux/FE/nxserver-${MY_PV}.x86_64.tar.gz )
-	x86? ( http://64.34.161.181/download/${PV}/Linux/FE/nxserver-${MY_PV}.i386.tar.gz )"
+SRC_URI="amd64? ( http://64.34.161.181/download/${MAJOR_PV}/Linux/FE/nxserver-${FULL_PV}.x86_64.tar.gz )
+	x86? ( http://64.34.161.181/download/${MAJOR_PV}/Linux/FE/nxserver-${FULL_PV}.i386.tar.gz )"
 
 LICENSE="nomachine"
 SLOT="0"
