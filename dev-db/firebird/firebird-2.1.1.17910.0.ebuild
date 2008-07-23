@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/firebird/Attic/firebird-2.1.0.17798.0-r1.ebuild,v 1.1 2008/06/06 02:43:42 wltjr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/firebird/Attic/firebird-2.1.1.17910.0.ebuild,v 1.1 2008/07/23 22:29:18 wltjr Exp $
 
 inherit flag-o-matic eutils autotools versionator
 
