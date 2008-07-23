@@ -1,11 +1,11 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metacity/Attic/metacity-2.22.0.ebuild,v 1.1 2008/03/21 19:26:51 leio Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/metacity/Attic/metacity-2.22.0.ebuild,v 1.2 2008/07/23 22:36:14 eva Exp $
 
 inherit gnome2
 
 DESCRIPTION="Gnome default windowmanager"
-HOMEPAGE="http://www.gnome.org/"
+HOMEPAGE="http://blogs.gnome.org/metacity/"
 
 LICENSE="GPL-2"
 SLOT="0"
