@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/xblast/xblast-2.10.4.ebuild,v 1.2 2008/07/24 09:59:34 coldwind Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/xblast/xblast-2.10.4.ebuild,v 1.3 2008/07/24 18:13:40 armin76 Exp $
 
 inherit games
 
@@ -22,7 +22,7 @@ SRC_URI="mirror://sourceforge/xblast/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE=""
 
 RDEPEND="x11-libs/libICE
