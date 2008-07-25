@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/paredit/Attic/paredit-21_beta20080429.ebuild,v 1.2 2008/07/06 15:39:51 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/paredit/paredit-21.ebuild,v 1.1 2008/07/25 22:15:32 ulm Exp $
 
 inherit elisp
 
