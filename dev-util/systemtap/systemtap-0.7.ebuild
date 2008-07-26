@@ -1,19 +1,19 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-0.7_p20080621.ebuild,v 1.3 2008/06/21 19:29:12 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-0.7.ebuild,v 1.1 2008/07/26 15:20:59 swegener Exp $
 
-WANT_AUTOCONF="2.5"
-WANT_AUTOMAKE="1.10"
-
-inherit linux-info eutils autotools
+inherit linux-info eutils
 
 DESCRIPTION="A linux trace/probe tool"
 HOMEPAGE="http://sourceware.org/systemtap/"
-if [[ ${PV} = *_p* ]] # is this a snaphot?
+if [[ ${PV} = *_pre* ]] # is this a snaphot?
 then
-	SRC_URI="ftp://sources.redhat.com/pub/${PN}/snapshots/${PN}-${PV/*_p/}.tar.bz2"
+	# see configure.ac to see the version of the snapshot
+	SRC_URI="ftp://sources.redhat.com/pub/${PN}/snapshots/${PN}-${PV/*_pre/}.tar.bz2"
+	S="${WORKDIR}"/src
 else
-	die "Sorry, currently there are only snapshots available." # but they have an internal version (see configure.ac)
+	SRC_URI="ftp://sources.redhat.com/pub/${PN}/releases/${P}.tar.gz"
+	# use default S for releases
 fi
 
 LICENSE="GPL-2"
@@ -27,8 +27,6 @@ DEPEND=">=dev-libs/elfutils-0.122
 RDEPEND="${DEPEND}
 	virtual/linux-sources"
 
-S="${WORKDIR}"/src
-
 CONFIG_CHECK="KPROBES ~RELAY ~DEBUG_FS"
 ERROR_KPROBES="${PN} requires support for KProbes Instrumentation (KPROBES) - this can be enabled in 'Instrumentation Support -> Kprobes'."
 ERROR_RELAY="${PN} works with support for user space relay support (RELAY) - this can be enabled in 'General setup -> Kernel->user space relay support (formerly relayfs)'."
@@ -39,9 +37,6 @@ src_unpack() {
 	cd "${S}"
 
 	epatch "${FILESDIR}"/systemtap-20080119-grsecurity.patch
-	epatch "${FILESDIR}"/systemtap-20080621-as-needed.patch
-
-	eautoreconf
 }
 
 src_compile() {
