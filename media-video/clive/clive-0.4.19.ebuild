@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/clive/Attic/clive-0.4.18.ebuild,v 1.1 2008/07/16 10:43:55 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/clive/Attic/clive-0.4.19.ebuild,v 1.1 2008/07/26 12:49:09 aballier Exp $
 
 # We inherit distutils to get the pkg_* functions for byte compiling python
 inherit versionator distutils
