@@ -1,8 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/gobby/Attic/gobby-0.4.5.ebuild,v 1.6 2007/11/04 06:21:13 pylon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/gobby/Attic/gobby-0.4.5.ebuild,v 1.7 2008/07/27 13:26:50 loki_val Exp $
 
-inherit eutils
+EAPI=1
+
+inherit base eutils
 
 DESCRIPTION="GTK-based collaborative editor"
 HOMEPAGE="http://gobby.0x539.de/"
@@ -12,17 +14,20 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE="avahi gnome"
 
-DEPEND=">=dev-cpp/glibmm-2.6
+RDEPEND=">=dev-cpp/glibmm-2.6
 	>=dev-cpp/gtkmm-2.6
 	>=dev-libs/libsigc++-2.0
 	>=net-libs/obby-0.4.4
 	>=dev-cpp/libxmlpp-2.6
-	>=x11-libs/gtksourceview-1.2.0
+	x11-libs/gtksourceview:1.0
 	gnome? ( gnome-base/gnome-vfs )"
-RDEPEND="${DEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 # There's only one test and it needs X
 RESTRICT="test"
+
+PATCHES=( "${FILESDIR}/${PN}-0.4.5-gcc43.patch" )
 
 pkg_setup() {
 	if use avahi && ! built_with_use net-libs/obby avahi ; then
@@ -34,7 +39,6 @@ pkg_setup() {
 
 src_compile() {
 	econf \
-		--with-gtksourceview$(has_version '>=x11-libs/gtksourceview-1.90' && echo 2) \
 		$(use_with gnome) \
 		 || die "econf failed"
 	emake || die "make failed"
@@ -42,6 +46,5 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-
 	domenu contrib/gobby.desktop
 }
