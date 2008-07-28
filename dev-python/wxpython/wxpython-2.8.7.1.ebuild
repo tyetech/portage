@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/wxpython/Attic/wxpython-2.8.7.1.ebuild,v 1.12 2008/07/28 21:43:11 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/wxpython/Attic/wxpython-2.8.7.1.ebuild,v 1.13 2008/07/28 22:59:02 dirtyepic Exp $
 
 EAPI="1"
 WX_GTK_VER="2.8"
@@ -84,7 +84,7 @@ src_install() {
 
 	for dir in "${D}"/${site_pkgs}/wx-${SLOT}-gtk2-{ansi,unicode}; do
 		if [[ -d ${dir} ]]; then
-			cp -R "${D}"/${site_pkgs}/wxaddons/ ${dir}
+			cp -R "${D}"/${site_pkgs}/wxaddons/ "${dir}"
 			wxaddons_copied=1
 		fi
 	done
