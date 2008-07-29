@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/deluge/Attic/deluge-1.0.0_rc2.ebuild,v 1.2 2008/07/29 13:53:46 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/deluge/Attic/deluge-1.0.0_rc4.ebuild,v 1.1 2008/07/29 13:53:46 armin76 Exp $
 
 inherit eutils distutils flag-o-matic
 
-MY_PV="0.9.02"
+MY_PV="0.9.04"
 MY_P="${PN}-${MY_PV}"
 
 DESCRIPTION="BitTorrent client with a client/server model."
