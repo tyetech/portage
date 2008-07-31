@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/symfony/Attic/symfony-1.0.9.ebuild,v 1.1 2007/12/06 01:24:28 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/symfony/Attic/symfony-1.0.16.ebuild,v 1.1 2008/07/31 20:16:05 wrobel Exp $
 
 inherit php-pear-lib-r1 depend.php
 
@@ -9,7 +9,7 @@ KEYWORDS="~amd64 ~x86"
 DESCRIPTION="Open-source PHP5 professional web framework."
 HOMEPAGE="http://www.symfony-project.com/"
 SRC_URI="http://pear.symfony-project.com/get/${P}.tgz"
-LICENSE="MIT LGPL-2.1 BSD BSD-2"
+LICENSE="MIT LGPL-2.1 BSD BSD-2 FDL-1.2"
 SLOT="0"
 IUSE=""
 
