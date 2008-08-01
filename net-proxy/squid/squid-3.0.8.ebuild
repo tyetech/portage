@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-3.0.6-r2.ebuild,v 1.1 2008/06/22 11:52:08 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-3.0.8.ebuild,v 1.1 2008/08/01 22:13:41 mrness Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -55,7 +55,6 @@ src_unpack() {
 
 	cd "${S}" || die "source dir not found"
 	epatch "${FILESDIR}"/${P}-gentoo.patch
-	epatch "${FILESDIR}"/${P}-lincapver.patch
 	use zero-penalty-hit && epatch "${FILESDIR}"/${P}-adapted-zph.patch
 
 	eautoreconf
