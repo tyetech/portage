@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ftjam/ftjam-2.5.3_rc2.ebuild,v 1.12 2008/03/17 00:28:28 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ftjam/ftjam-2.5.3_rc2.ebuild,v 1.13 2008/08/03 08:35:40 dirtyepic Exp $
 
 inherit eutils versionator
 
@@ -25,6 +25,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/ftjam-2.5.3-nostrip.patch
+	epatch "${FILESDIR}"/ftjam-2.5.3-i-hate-yacc.patch
 }
 
 src_install() {
