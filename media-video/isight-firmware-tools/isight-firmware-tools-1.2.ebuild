@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/isight-firmware-tools/Attic/isight-firmware-tools-1.2.ebuild,v 1.1 2008/08/03 19:27:35 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/isight-firmware-tools/Attic/isight-firmware-tools-1.2.ebuild,v 1.2 2008/08/03 19:39:47 eva Exp $
 
 inherit eutils
 
@@ -15,8 +15,8 @@ IUSE=""
 
 RDEPEND="dev-libs/glib
 	dev-libs/libusb
-	dev-libs/libgcrypt
-	>=sys-apps/hal-0.5.9"
+	dev-libs/libgcrypt"
+#	>=sys-apps/hal-0.5.9"
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35.5
 	sys-apps/texinfo"
