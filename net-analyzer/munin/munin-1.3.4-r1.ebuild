@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/munin/Attic/munin-1.3.4-r1.ebuild,v 1.2 2008/06/24 06:13:18 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/munin/Attic/munin-1.3.4-r1.ebuild,v 1.3 2008/08/05 19:35:39 fmccor Exp $
 
 inherit eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://munin.sourceforge.net"
 SRC_URI="mirror://sourceforge/munin/${PN}_${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~mips ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~mips ~ppc sparc ~x86"
 IUSE="doc minimal irc mysql postgres ssl"
 
 # Upstream's listing of required modules is NOT correct!
