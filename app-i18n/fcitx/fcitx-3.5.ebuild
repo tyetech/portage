@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/fcitx/Attic/fcitx-3.5_pre070703.ebuild,v 1.3 2008/08/08 23:23:54 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/fcitx/Attic/fcitx-3.5.ebuild,v 1.1 2008/08/08 23:23:54 matsuu Exp $
 
 inherit autotools
 
 DESCRIPTION="Free Chinese Input Toy for X. Another Chinese XIM Input Method"
 HOMEPAGE="http://fcitx.net/"
-SRC_URI="http://mirrors.redv.com/fcitx/${P/_pre/-}.tar.bz2"
+SRC_URI="http://mirrors.redv.com/fcitx/${P}-BlackFri.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -27,7 +27,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-asneeded.patch
+	epatch "${FILESDIR}"/${P}_pre070703-asneeded.patch
 	eautomake
 }
 
