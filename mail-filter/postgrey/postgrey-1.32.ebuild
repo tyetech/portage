@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/postgrey/Attic/postgrey-1.31-r2.ebuild,v 1.2 2008/07/21 17:51:55 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/postgrey/Attic/postgrey-1.32.ebuild,v 1.1 2008/08/12 20:40:39 dertobi123 Exp $
 
 inherit eutils
 
