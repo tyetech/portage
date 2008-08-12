@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.2_rc1.ebuild,v 1.3 2008/06/28 18:01:55 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.2_rc8.ebuild,v 1.1 2008/08/12 20:20:44 zmedico Exp $
 
 inherit eutils multilib python
 
@@ -36,7 +36,7 @@ PDEPEND="
 # coreutils-6.4 rdep is for date format in emerge-webrsync #164532
 # rsync-2.6.4 rdep is for the --filter option #167668
 
-SRC_ARCHIVES="http://dev.gentoo.org/~zmedico/portage/archives http://dev.gentoo.org/~genone/distfiles"
+SRC_ARCHIVES="http://dev.gentoo.org/~zmedico/portage/archives"
 
 prefix_src_archives() {
 	local x y
@@ -49,18 +49,19 @@ prefix_src_archives() {
 
 PV_PL="2.1.2"
 PATCHVER_PL=""
-SRC_URI="mirror://gentoo/${P}.tar.bz2
-	$(prefix_src_archives ${P}.tar.bz2)
+TARBALL_PV="2.2_rc1"
+SRC_URI="mirror://gentoo/${PN}-${TARBALL_PV}.tar.bz2
+	$(prefix_src_archives ${PN}-${TARBALL_PV}.tar.bz2)
 	linguas_pl? ( mirror://gentoo/${PN}-man-pl-${PV_PL}.tar.bz2
 		$(prefix_src_archives ${PN}-man-pl-${PV_PL}.tar.bz2) )"
 
-PATCHVER=""
+PATCHVER=${PV}
 if [ -n "${PATCHVER}" ]; then
 	SRC_URI="${SRC_URI} mirror://gentoo/${PN}-${PATCHVER}.patch.bz2
 	$(prefix_src_archives ${PN}-${PATCHVER}.patch.bz2)"
 fi
 
-S="${WORKDIR}"/${P}
+S="${WORKDIR}"/${PN}-${TARBALL_PV}
 S_PL="${WORKDIR}"/${PN}-${PV_PL}
 
 pkg_setup() {
