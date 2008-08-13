@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/puppet/Attic/puppet-0.24.1-r1.ebuild,v 1.1 2008/02/07 16:45:04 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/puppet/Attic/puppet-0.24.5.ebuild,v 1.1 2008/08/13 16:51:00 matsuu Exp $
 
 inherit elisp-common eutils ruby
 
@@ -11,7 +11,7 @@ SRC_URI="http://reductivelabs.com/downloads/${PN}/${P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 IUSE="emacs vim-syntax"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 
 DEPEND="emacs? ( virtual/emacs )"
 RDEPEND="${DEPEND}
@@ -34,8 +34,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-gentoo.patch
-	epatch "${FILESDIR}"/${P}-service.patch
+	epatch "${FILESDIR}/${PN}-0.24.2-gentoo.patch"
 }
 
 src_compile() {
@@ -49,7 +48,9 @@ src_install() {
 	DESTDIR="${D}" erubydoc
 
 	# Installation of init scripts and configuration
-	doinitd conf/gentoo/init.d/puppetmaster
+	# bug #211910
+	#doinitd conf/gentoo/init.d/puppetmaster
+	newinitd "${FILESDIR}"/puppetmaster.init puppetmaster
 	doconfd conf/gentoo/conf.d/puppetmaster
 	doinitd conf/gentoo/init.d/puppet
 	doconfd conf/gentoo/conf.d/puppet
