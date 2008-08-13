@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.2_p1.ebuild,v 1.2 2007/10/09 09:23:15 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/amanda/Attic/amanda-2.5.2_p1.ebuild,v 1.3 2008/08/13 21:13:32 robbat2 Exp $
 
 inherit eutils
 
@@ -109,7 +109,7 @@ pkg_setup() {
 }
 
 src_unpack() {
-	unpack "${A}"
+	unpack ${A}
 
 	# now the real fun
 	amanda_variable_setup
