@@ -1,8 +1,8 @@
 # Copyright 2008-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-settings-daemon/Attic/gnome-settings-daemon-2.22.2.1.ebuild,v 1.7 2008/08/12 13:52:12 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-settings-daemon/Attic/gnome-settings-daemon-2.22.2.1.ebuild,v 1.8 2008/08/14 00:35:50 leio Exp $
 
-inherit autotools eutils gnome2
+inherit eutils gnome2
 
 DESCRIPTION="Gnome Settings Daemon"
 HOMEPAGE="http://www.gnome.org"
