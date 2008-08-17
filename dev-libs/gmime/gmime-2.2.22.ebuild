@@ -1,16 +1,16 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gmime/Attic/gmime-2.2.11.ebuild,v 1.5 2008/08/17 21:02:40 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gmime/Attic/gmime-2.2.22.ebuild,v 1.1 2008/08/17 21:02:40 eva Exp $
 
 inherit gnome2 eutils mono libtool
 
 DESCRIPTION="Utilities for creating and parsing messages using MIME"
-SRC_URI="http://spruce.sourceforge.net/gmime/sources/v${PV%.*}/${P}.tar.gz"
+SRC_URI="http://spruce.sourceforge.net/${PN}/sources/v${PV%.*}/${P}.tar.gz"
 HOMEPAGE="http://spruce.sourceforge.net/gmime/"
 
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="~alpha ~amd64 hppa ~ppc ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc mono"
 
 RDEPEND=">=dev-libs/glib-2
@@ -49,7 +49,7 @@ src_unpack() {
 }
 
 src_compile() {
-	econf $(use_enable mono) $(use_enable doc gtk-doc) || die "configure failed"
+	econf $(use_enable mono) $(use_enable doc gtk-doc)
 	MONO_PATH="${S}" emake -j1 || die "make failed"
 }
 
