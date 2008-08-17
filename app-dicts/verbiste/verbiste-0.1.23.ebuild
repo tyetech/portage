@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/verbiste/Attic/verbiste-0.1.21.ebuild,v 1.3 2008/08/17 15:15:43 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/verbiste/verbiste-0.1.23.ebuild,v 1.1 2008/08/17 15:15:43 tester Exp $
 
 DESCRIPTION="French conjugation system"
 HOMEPAGE="http://sarrazip.com/dev/verbiste.html"
@@ -19,9 +19,6 @@ RDEPEND=">=dev-libs/libxml2-2.4.0
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
-
-#tests fails
-RESTRICT=test
 
 src_compile() {
 	econf \
