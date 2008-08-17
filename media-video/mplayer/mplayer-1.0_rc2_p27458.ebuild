@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_rc2_p27458.ebuild,v 1.2 2008/08/17 14:40:13 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_rc2_p27458.ebuild,v 1.3 2008/08/17 14:50:42 aballier Exp $
 
 EAPI="1"
 
@@ -466,6 +466,7 @@ src_install() {
 		 CONFDIR="${D}/etc/mplayer" \
 		 DATADIR="${D}/usr/share/mplayer" \
 		 MANDIR="${D}/usr/share/man" \
+		 INSTALLSTRIP="" \
 		 install || die "Failed to install MPlayer!"
 
 	dodoc AUTHORS Changelog README etc/codecs.conf
