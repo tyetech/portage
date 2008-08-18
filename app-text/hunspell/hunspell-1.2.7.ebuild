@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/hunspell/Attic/hunspell-1.2.2.ebuild,v 1.2 2008/05/13 20:47:15 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/hunspell/Attic/hunspell-1.2.7.ebuild,v 1.1 2008/08/18 10:31:47 pva Exp $
 
 inherit eutils multilib autotools
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://hunspell.sourceforge.net/"
 
 SLOT="0"
 LICENSE="MPL-1.1 GPL-2 LGPL-2.1"
-IUSE="ncurses readline"
+IUSE="ncurses nls readline"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 DEPEND="readline? ( sys-libs/readline )
@@ -20,19 +20,16 @@ DEPEND="readline? ( sys-libs/readline )
 	sys-devel/gettext"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	sed -i -e 's:tail +:tail -n +:' "${S}"/tests/test.sh ||\
-		die "Failed to fix-up tail for POSIX compliance"
 
 	# Upstream package creates some executables which names are too generic
 	# to be placed in /usr/bin - this patch prefixes them with 'hunspell-'.
 	# It modifies a Makefile.am file, hence eautoreconf.
-	epatch "${FILESDIR}"/${P}-renameexes.patch
-	epatch "${FILESDIR}"/${P}-libtool-2.22.patch
+	epatch "${FILESDIR}"/${PN}-1.2.2-renameexes.patch
 
 	eautoreconf
 }
@@ -41,8 +38,9 @@ src_compile() {
 	# I wanted to put the include files in /usr/include/hunspell
 	# but this means the openoffice build won't find them.
 	econf \
-		$(use_with readline readline) \
+		$(use_enable nls) \
 		$(use_with ncurses ui) \
+		$(use_with readline readline) \
 		|| die "econf failed"
 
 	emake || die "emake failed"
@@ -53,24 +51,6 @@ src_install() {
 	dodoc AUTHORS ChangeLog NEWS README THANKS TODO license.hunspell || die "installing docs failed"
 	# hunspell is derived from myspell
 	dodoc AUTHORS.myspell README.myspell license.myspell || die "installing myspell docs failed"
-
-	# Upstream install has a few problems - rather than try to figure out
-	# what's broken in the build system, just fix things up manually.
-
-	# These are included by hunspell.hxx, but aren't installed by the install
-	# script.
-	insinto /usr/include/hunspell/
-	doins license.myspell license.hunspell config.h
-
-	# These are in the wrong place.
-	mv "${D}"/usr/include/munch.h "${D}"/usr/include/hunspell/munch.h
-	mv "${D}"/usr/include/unmunch.h "${D}"/usr/include/hunspell/unmunch.h
-
-	# Libraries include the version in their name, so make a sensible
-	# default symlink.  They should probably be libhunspell.so.1.1 etc.
-	dodir /usr/$(get_libdir)
-	cd "${D}"/usr/$(get_libdir)
-	ln -s libhunspell-1.2.so.0.0.0 libhunspell.so
 }
 
 pkg_postinst() {
