@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.7b-r1.ebuild,v 1.1 2008/03/03 18:50:54 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/cacti/Attic/cacti-0.8.7b-r3.ebuild,v 1.1 2008/08/19 07:23:10 pva Exp $
 
 inherit eutils webapp depend.apache depend.php
 
@@ -14,7 +14,9 @@ SRC_URI="http://www.cacti.net/downloads/${MY_P}.tar.gz"
 
 # patches
 if [ "${HAS_PATCHES}" == "1" ] ; then
-	UPSTREAM_PATCHES="snmp_auth_none_notice"
+	UPSTREAM_PATCHES="upgrade_from_086k_fix
+					snmp_auth_none_notice
+					reset_each_patch"
 	for i in $UPSTREAM_PATCHES ; do
 		SRC_URI="${SRC_URI} http://www.cacti.net/downloads/patches/${PV/_p*}/${i}.patch"
 	done
