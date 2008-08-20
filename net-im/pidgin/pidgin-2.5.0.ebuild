@@ -1,18 +1,15 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.3.1.ebuild,v 1.7 2008/02/19 19:54:52 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.5.0.ebuild,v 1.1 2008/08/20 10:29:02 tester Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib perl-app gnome2
 
-MY_PV=${P/_beta/beta}
-
-DESCRIPTION="GTK Instant Messenger client"
 HOMEPAGE="http://pidgin.im/"
-SRC_URI="mirror://sourceforge/${PN}/${MY_PV}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ppc ~ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="bonjour dbus debug doc eds gadu gnutls gstreamer meanwhile networkmanager nls perl silc tcl tk spell qq gadu"
 IUSE="${IUSE} gtk sasl ncurses groupwise prediction zephyr" # mono"
 
@@ -30,7 +27,7 @@ RDEPEND="
 		eds? ( gnome-extra/evolution-data-server ) 	)
 	>=dev-libs/glib-2.0
 	gstreamer? ( =media-libs/gstreamer-0.10*
-		     =media-libs/gst-plugins-good-0.10* )
+			 =media-libs/gst-plugins-good-0.10* )
 	perl? ( >=dev-lang/perl-5.8.2-r1 )
 	gadu?  ( net-libs/libgadu )
 	gnutls? ( net-libs/gnutls )
@@ -44,16 +41,16 @@ RDEPEND="
 	dev-libs/libxml2
 	networkmanager? ( net-misc/networkmanager )
 	prediction? ( =dev-db/sqlite-3* )"
+	# Mono support crashes pidgin
 	#mono? ( dev-lang/mono )"
 
 DEPEND="$RDEPEND
 	dev-lang/perl
 	dev-perl/XML-Parser
 	dev-util/pkgconfig
+	gtk? ( x11-proto/scrnsaverproto )
 	doc? ( app-doc/doxygen )
 	nls? ( sys-devel/gettext )"
-
-S="${WORKDIR}/${MY_PV}"
 
 # Enable Default protocols
 DYNAMIC_PRPLS="irc,jabber,oscar,yahoo,simple,msn,myspace"
@@ -72,22 +69,7 @@ DYNAMIC_PRPLS="irc,jabber,oscar,yahoo,simple,msn,myspace"
 #   x11-plugins/purple-plugin_pack
 #   x11-themes/pidgin-smileys
 
-print_pidgin_warning() {
-	ewarn
-	ewarn "If you experience problems with pidgin, file them as bugs with"
-	ewarn "Gentoo's bugzilla, http://bugs.gentoo.org"
-	ewarn
-	ewarn "Be sure to USE=\"debug\" and include a backtrace for any seg"
-	ewarn "faults, see http://developer.pidgin.im/wiki/GetABacktrace for details on"
-	ewarn "backtraces."
-	ewarn
-	ewarn "Please read the pidgin FAQ at http://developer.pidgin.im/wiki/FAQ"
-	ewarn
-}
-
 pkg_setup() {
-	print_pidgin_warning
-
 	if use gadu && built_with_use net-libs/libgadu ssl ; then
 	eerror
 	eerror "You need to rebuild net-libs/libgadu with USE=-ssl in order"
@@ -192,6 +174,7 @@ src_compile() {
 		$(use_enable prediction cap) \
 		$(use_enable networkmanager nm) \
 		$(use_with zephyr krb4) \
+		$(use_enable bonjour avahi) \
 		"--with-dynamic-prpls=${DYNAMIC_PRPLS}" \
 		--disable-mono \
 		--x-includes=/usr/include/X11 \
@@ -208,9 +191,4 @@ src_install() {
 
 	# Remove superfluous desktop file
 	use gtk || rm -rf "${D}/usr/share/applications"
-}
-
-pkg_postinst() {
-	gnome2_pkg_postinst
-	print_pidgin_warning
 }
