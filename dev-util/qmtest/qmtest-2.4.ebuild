@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/qmtest/Attic/qmtest-2.4.ebuild,v 1.3 2008/05/02 17:16:20 kanaka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/qmtest/Attic/qmtest-2.4.ebuild,v 1.4 2008/08/22 23:52:38 gentoofan23 Exp $
 
 inherit distutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.codesourcery.com/public/${PN}/${PF}/${PF}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~mips"
+KEYWORDS="amd64 ~mips ~x86"
 IUSE=""
 
 DEPEND="dev-lang/python"
