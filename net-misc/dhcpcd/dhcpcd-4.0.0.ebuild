@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-4.0.0_rc2.ebuild,v 1.1 2008/07/23 16:24:13 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-4.0.0.ebuild,v 1.1 2008/08/24 20:57:10 armin76 Exp $
 
 EAPI=1
 
