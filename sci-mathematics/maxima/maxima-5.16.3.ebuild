@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/maxima/Attic/maxima-5.16.2.ebuild,v 1.1 2008/08/19 05:19:19 grozin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/maxima/Attic/maxima-5.16.3.ebuild,v 1.1 2008/08/26 05:44:06 grozin Exp $
 inherit eutils elisp-common
 
 DESCRIPTION="Free computer algebra environment based on Macsyma"
