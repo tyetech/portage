@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-scheme/cvs-repo/gentoo-x86/dev-scheme/bigloo/Attic/bigloo-2.7a_p2.ebuild,v 1.5 2007/06/22 10:59:55 hkbst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-scheme/cvs-repo/gentoo-x86/dev-scheme/bigloo/Attic/bigloo-2.7a_p2.ebuild,v 1.6 2008/08/28 17:49:25 ulm Exp $
 
 inherit elisp-common
 
@@ -51,7 +51,7 @@ src_compile() {
 	make || die
 
 	if use emacs; then
-		pushd etc; elisp-comp *.el; popd
+		elisp-compile etc/*.el || die "elisp-compile failed"
 	fi
 }
 
