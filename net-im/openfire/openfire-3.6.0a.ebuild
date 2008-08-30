@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/openfire/Attic/openfire-3.5.1.ebuild,v 1.1 2008/06/11 06:21:41 lordvan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/openfire/Attic/openfire-3.6.0a.ebuild,v 1.1 2008/08/30 18:57:31 jokey Exp $
 
 inherit eutils java-pkg-2 java-ant-2
 
@@ -16,7 +16,7 @@ IUSE="doc"
 
 RDEPEND=">=virtual/jre-1.5"
 DEPEND="net-im/jabber-base
-		dev-java/ant-contrib
+		~dev-java/ant-contrib-1.0_beta2
 		>=virtual/jdk-1.5"
 
 S=${WORKDIR}/${PN}_src
@@ -29,6 +29,10 @@ PROVIDE="virtual/jabber-server"
 pkg_setup() {
 	if [ -f /etc/env.d/98openfire ]; then
 		einfo "This is an upgrade"
+		ewarn "As the plugin API changed, at least these plugins need to be updated also:"
+		ewarn "User Search, IM Gateway, Fastpath, Monitoring"
+		ewarn "hey can be downloaded via Admin Console or at"
+		ewarn "${HOMEPAGE}"
 	else
 		ewarn "If this is an upgrade stop right ( CONTROL-C ) and run the command:"
 		ewarn "echo 'CONFIG_PROTECT=\"/opt/openfire/resources/security/\"' > /etc/env.d/98openfire "
