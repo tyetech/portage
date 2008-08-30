@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/zhu3d/Attic/zhu3d-4.0.4.ebuild,v 1.2 2008/07/27 02:14:31 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/zhu3d/Attic/zhu3d-4.1.2.ebuild,v 1.1 2008/08/30 16:26:19 bicatali Exp $
 
 EAPI=1
 
