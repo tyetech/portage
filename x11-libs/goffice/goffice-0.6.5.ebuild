@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/goffice/Attic/goffice-0.6.2.ebuild,v 1.6 2008/04/21 19:16:50 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/goffice/Attic/goffice-0.6.5.ebuild,v 1.1 2008/09/03 21:56:12 eva Exp $
 
 inherit eutils gnome2 flag-o-matic
 
@@ -9,11 +9,13 @@ HOMEPAGE="http://freshmeat.net/projects/goffice/"
 
 LICENSE="GPL-2"
 SLOT="0.6"
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="doc gnome"
-#cairo support broken and -gtk broken
 
-RDEPEND=">=dev-libs/glib-2.8.0
+# Raising glib dep to 2.14 to drop pcre dependency
+# cairo support broken and -gtk broken
+
+RDEPEND=">=dev-libs/glib-2.14
 	>=gnome-extra/libgsf-1.13.3
 	>=dev-libs/libxml2-2.4.12
 	>=x11-libs/pango-1.8.1
@@ -23,9 +25,7 @@ RDEPEND=">=dev-libs/glib-2.8.0
 	>=x11-libs/cairo-1.2
 	gnome? (
 		>=gnome-base/gconf-2
-		>=gnome-base/libgnomeui-2 )
-	>=dev-libs/libpcre-7"
-# libpcre raised to unicode USE flag
+		>=gnome-base/libgnomeui-2 )"
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.18
@@ -53,28 +53,7 @@ pkg_setup() {
 		diemessage="${diemessage} No SVG support found in cairo."
 	fi
 
-	if ! built_with_use dev-libs/libpcre unicode; then
-		eerror "Please rebuild dev-libs/libpcre with unicode support enabled"
-		eerror "echo \"dev-libs/libpcre unicode\" >> /etc/portage/package.use"
-		eerror "emerge -1 dev-libs/libpcre"
-		diemessage="${diemessage} No unicode support found in libpcre."
-	fi
-
 	[ -n "${diemessage}" ] && die ${diemessage}
-}
-
-src_unpack() {
-	gnome2_src_unpack
-
-	# Fix doc slotting
-	epatch "${FILESDIR}/${PN}-0.6-doc-slot.patch"
-
-	mv "${S}"/docs/reference/html/goffice{,-0.6}.devhelp
-	mv "${S}"/docs/reference/html/goffice{,-0.6}.devhelp2
-	mv "${S}"/docs/reference/goffice{,-0.6}-docs.sgml
-	mv "${S}"/docs/reference/goffice{,-0.6}-overrides.txt
-	mv "${S}"/docs/reference/goffice{,-0.6}-sections.txt
-	mv "${S}"/docs/reference/goffice{,-0.6}.types
 }
 
 src_compile() {
