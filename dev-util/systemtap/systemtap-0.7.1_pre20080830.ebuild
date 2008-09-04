@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-0.7.1_pre20080726.ebuild,v 1.1 2008/07/26 15:20:59 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-0.7.1_pre20080830.ebuild,v 1.1 2008/09/04 10:44:41 swegener Exp $
 
 inherit linux-info eutils
 
