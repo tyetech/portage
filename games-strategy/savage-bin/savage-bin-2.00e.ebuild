@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/savage-bin/savage-bin-2.00e.ebuild,v 1.4 2008/09/05 15:43:44 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/savage-bin/savage-bin-2.00e.ebuild,v 1.5 2008/09/05 21:44:40 mr_bones_ Exp $
 
 inherit games
 
@@ -44,7 +44,7 @@ src_install() {
 	doins -r * || die "doins failed"
 	fperms g+x "${dir}"/silverback.bin || die "fperms failed"
 	dosym /dev/null "${dir}"/scripts.log || die "dosym failed"
-	
+
 	dogamesbin "${T}"/savage
 	make_desktop_entry savage "Savage: The Battle For Newerth"
 
