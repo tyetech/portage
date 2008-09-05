@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.6.3.ebuild,v 1.7 2008/03/19 16:47:38 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/mit-krb5/Attic/mit-krb5-1.6.3.ebuild,v 1.8 2008/09/05 07:32:11 opfer Exp $
 
 inherit eutils flag-o-matic versionator autotools
 
@@ -20,7 +20,7 @@ RDEPEND="!virtual/krb5
 	sys-libs/ss
 	tcl? ( dev-lang/tcl )"
 DEPEND="${RDEPEND}
-	doc? ( virtual/tetex )"
+	doc? ( virtual/latex-base )"
 PROVIDE="virtual/krb5"
 
 S=${WORKDIR}/${MY_P}/src
