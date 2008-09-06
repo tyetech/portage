@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/php/Attic/php-5.2.6-r2.ebuild,v 1.9 2008/07/24 20:44:23 hoffie Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/php/Attic/php-5.2.6-r7.ebuild,v 1.1 2008/09/06 20:48:36 hoffie Exp $
 
 CGI_SAPI_USE="discard-path force-cgi-redirect"
 APACHE2_SAPI_USE="concurrentmodphp threads"
 IUSE="cli cgi ${CGI_SAPI_USE} ${APACHE2_SAPI_USE} fastbuild"
 
-KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 ~s390 ~sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 
 # NOTE: Portage doesn't support setting PROVIDE based on the USE flags
 #		that have been enabled, so we have to PROVIDE everything for now
@@ -20,8 +20,8 @@ MY_PHP_P="php-${MY_PHP_PV}"
 PHP_PACKAGE="1"
 
 # php patch settings, general
-PHP_PATCHSET_REV="2"
-SUHOSIN_PATCH="suhosin-patch-5.2.6-0.9.6.2.patch.gz"
+PHP_PATCHSET_REV="8"
+SUHOSIN_PATCH="suhosin-patch-5.2.6-0.9.6.2-r1.patch.gz"
 MULTILIB_PATCH="${MY_PHP_PV}/opt/multilib-search-path.patch"
 # php patch settings, ebuild specific
 FASTBUILD_PATCH="${MY_PHP_PV}/opt/fastbuild.patch"
@@ -31,6 +31,9 @@ CONCURRENTMODPHP_PATCH="${MY_PHP_PV}/opt/concurrent_apache_modules.patch"
 KOLAB_PATCH="${MY_PHP_PV}/opt/kolab-imap-annotations.patch"
 
 inherit versionator php5_2-sapi apache-module
+
+SRC_URI="http://home.hoffie.info/php-patchset-${PV}-r${PHP_PATCHSET_REV}.tar.bz2
+	${SRC_URI}"
 
 # Suhosin patch support
 [[ -n "${SUHOSIN_PATCH}" ]] && SRC_URI="${SRC_URI} suhosin? ( http://gentoo.longitekk.com/${SUHOSIN_PATCH} )"
@@ -166,9 +169,6 @@ src_unpack() {
 		ext/standard/tests/file/006_error.phpt \
 		ext/standard/tests/file/touch.phpt
 
-	# Workaround for autoconf-2.62 behaviour change, bug 217392
-	sed -re 's:(#ifdef HAVE_CONFIG_H.*):#define _GNU_SOURCE\n\1:' -i ext/posix/posix.c
-
 	# REMOVING BROKEN TESTS:
 	# removing this test as it has been broken for ages and is not easily
 	# fixable (depends on a lot of factors)
@@ -191,6 +191,9 @@ src_unpack() {
 }
 
 src_compile() {
+	# bug 217392 (autconf-2.62 behavior changes)
+	export CFLAGS="${CFLAGS} -D_GNU_SOURCE"
+	export CXXFLAGS="${CXXFLAGS} -D_GNU_SOURCE"
 	if use fastbuild && [[ -n "${FASTBUILD_PATCH}" ]] ; then
 		src_compile_fastbuild
 	else
