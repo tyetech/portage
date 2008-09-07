@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libpcre/Attic/libpcre-7.4-r1.ebuild,v 1.4 2008/02/07 12:30:07 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libpcre/Attic/libpcre-7.8.ebuild,v 1.1 2008/09/07 13:28:55 loki_val Exp $
 
 EAPI=1
 
@@ -14,8 +14,8 @@ SRC_URI="ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/${MY_P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="3"
-KEYWORDS="alpha ~amd64 ~arm ~hppa ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh sparc ~sparc-fbsd x86 ~x86-fbsd"
-IUSE="doc unicode +cxx"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
+IUSE="bzip2 +cxx doc unicode zlib"
 
 DEPEND="dev-util/pkgconfig"
 RDEPEND=""
@@ -29,14 +29,13 @@ src_unpack() {
 }
 
 src_compile() {
-	if use unicode; then
-		myconf="--enable-utf8 --enable-unicode-properties"
-	fi
-	myconf="${myconf} --with-match-limit-recursion=8192"
 	# Enable building of static libs too - grep and others
 	# depend on them being built: bug 164099
-	econf ${myconf} \
+	econf --with-match-limit-recursion=8192 \
+		$(use_enable unicode utf8) $(use_enable unicode unicode-properties) \
 		$(use_enable cxx cpp) \
+		$(use_enable zlib pcregrep-libz) \
+		$(use_enable bzip2 pcregrep-libbz2) \
 		--enable-static \
 		--htmldir=/usr/share/doc/${PF}/html \
 		--docdir=/usr/share/doc/${PF} \
