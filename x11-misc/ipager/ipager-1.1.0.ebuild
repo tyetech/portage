@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/ipager/ipager-1.1.0.ebuild,v 1.2 2008/09/09 03:48:26 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/ipager/ipager-1.1.0.ebuild,v 1.3 2008/09/09 03:58:16 robbat2 Exp $
 
 inherit eutils
 
@@ -31,7 +31,7 @@ src_compile() {
 	CONFIG_OPTS="xinerama=false"
 	use xinerama && CONFIG_OPTS="${CONFIG_OPTS} xinerama=true"
 	# FYI: Passing debug=true only adds -ggdb inside the SConstruct
-	
+
 	scons \
 		--cache-disable \
 		PREFIX="/usr" \
