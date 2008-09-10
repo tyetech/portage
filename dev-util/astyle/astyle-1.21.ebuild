@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/astyle/Attic/astyle-1.21.ebuild,v 1.7 2008/05/24 13:38:45 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/astyle/Attic/astyle-1.21.ebuild,v 1.8 2008/09/10 13:06:01 fmccor Exp $
 
 inherit eutils
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/astyle/astyle_${PV}_linux.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="alpha amd64 ~ppc ~ppc64 sparc x86"
 IUSE="debug libs"
 
 DEPEND=""
