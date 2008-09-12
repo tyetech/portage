@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/psad/Attic/psad-1.4.8.ebuild,v 1.12 2008/09/12 05:03:41 battousai Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/psad/Attic/psad-2.1.4.ebuild,v 1.1 2008/09/12 05:03:41 battousai Exp $
 
 inherit eutils perl-app
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.cipherdyne.org/psad"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 ppc ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 
 DEPEND="${DEPEND}
 	dev-lang/perl"
@@ -25,19 +25,15 @@ RDEPEND="virtual/logger
 	net-misc/whois"
 
 src_compile() {
-	cd "${S}"/Psad
+	cd "${S}"/deps/Net-IPv4Addr
 	SRC_PREP="no" perl-module_src_compile
 	emake test
 
-	cd "${S}"/Net-IPv4Addr
+	cd "${S}"/deps/IPTables-Parse
 	SRC_PREP="no" perl-module_src_compile
 	emake test
 
-	cd "${S}"/IPTables-Parse
-	SRC_PREP="no" perl-module_src_compile
-	emake test
-
-	cd "${S}"/IPTables-ChainMgr
+	cd "${S}"/deps/IPTables-ChainMgr
 	SRC_PREP="no" perl-module_src_compile
 	emake test
 
@@ -54,16 +50,14 @@ src_install() {
 
 	keepdir /var/lib/psad /var/log/psad /var/run/psad /var/lock/subsys/${PN}
 	dodir /etc/psad
-	cd "${S}"/Psad
+
+	cd "${S}"/deps/Net-IPv4Addr
 	perl-module_src_install
 
-	cd "${S}"/Net-IPv4Addr
+	cd "${S}"/deps/IPTables-ChainMgr
 	perl-module_src_install
 
-	cd "${S}"/IPTables-ChainMgr
-	perl-module_src_install
-
-	cd "${S}"/IPTables-Parse
+	cd "${S}"/deps/IPTables-Parse
 	perl-module_src_install
 
 	cd "${S}"
@@ -79,12 +73,12 @@ src_install() {
 	insinto /etc/psad
 	doins *.conf
 	doins psad_*
-	doins auto_dl icmp_types posf signatures pf.os
+	doins auto_dl icmp_types ip_options posf signatures pf.os
 
 	cd "${S}"/init-scripts
 	newinitd psad-init.gentoo psad
 
-	cd "${S}"/snort_rules
+	cd "${S}"/deps/snort_rules
 	dodir /etc/psad/snort_rules
 	insinto /etc/psad/snort_rules
 	doins *.rules
@@ -129,6 +123,11 @@ pkg_postinst() {
 		ewarn "/etc/psad/psad.conf to the following (per examples in psad.conf):"
 		ewarn "		SYSLOG_DAEMON	metalog"
 	fi
+
+	ewarn "NOTE: You need firewall rules to log dropped packets. Otherwise PSAD will"
+	ewarn "not be aware of any port scan attacks. Please see FW_EXAMPLE_RULES in the"
+	ewarn "psad documentation directory (ie /usr/share/doc/${P}) for the criteria and"
+	ewarn "sample rules."
 }
 
 fix_psad_conf() {
@@ -143,7 +142,5 @@ fix_psad_conf() {
 	# Fix up paths
 	sed -i "s:/sbin/syslogd:/usr/sbin/syslogd:g" psad.conf || die "fix_psad_conf failed"
 	sed -i "s:/sbin/syslog-ng:/usr/sbin/syslog-ng:g" psad.conf || die "fix_psad_conf failed"
-	sed -i "s:/bin/uname:/usr/bin/uname:g" psad.conf || die "fix_psad_conf failed"
-	sed -i "s:/bin/mknod:/usr/bin/mknod:g" psad.conf || die "fix_psad_conf failed"
 	sed -i "s:/usr/bin/whois_psad:/usr/bin/whois:g" psad.conf || die "fix_psad_conf failed"
 }
