@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/dictd/Attic/dictd-1.10.11-r1.ebuild,v 1.1 2008/09/12 19:20:55 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/dictd/Attic/dictd-1.10.11-r2.ebuild,v 1.1 2008/09/14 08:59:44 pva Exp $
 
 inherit eutils
 
