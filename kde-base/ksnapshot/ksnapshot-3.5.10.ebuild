@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/ksnapshot/Attic/ksnapshot-3.5.10.ebuild,v 1.1 2008/09/13 23:59:48 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/ksnapshot/Attic/ksnapshot-3.5.10.ebuild,v 1.2 2008/09/14 04:27:34 mr_bones_ Exp $
 
 KMNAME=kdegraphics
 EAPI="1"
