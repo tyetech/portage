@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/horde-webmail/Attic/horde-webmail-1.0.7.ebuild,v 1.2 2008/08/07 18:46:11 wrobel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/horde-webmail/Attic/horde-webmail-1.0.8.ebuild,v 1.1 2008/09/15 14:03:41 wrobel Exp $
 
 HORDE_PN=${PN}
 
