@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jre-bin/Attic/ibm-jre-bin-1.6.0.1.ebuild,v 1.2 2008/05/02 10:40:27 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jre-bin/Attic/ibm-jre-bin-1.6.0.2.ebuild,v 1.1 2008/09/16 09:26:50 caster Exp $
 
 inherit java-vm-2 versionator eutils
 
