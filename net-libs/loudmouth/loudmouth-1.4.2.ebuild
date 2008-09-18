@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/loudmouth/Attic/loudmouth-1.4.2.ebuild,v 1.5 2008/09/13 09:39:22 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/loudmouth/Attic/loudmouth-1.4.2.ebuild,v 1.6 2008/09/18 12:46:25 ranger Exp $
 
 EAPI=1
 
@@ -12,7 +12,7 @@ SRC_URI="http://ftp.imendio.com/pub/imendio/${PN}/src/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 hppa ppc ~ppc64 sparc x86"
+KEYWORDS="amd64 hppa ppc ppc64 sparc x86"
 
 IUSE="+asyncns doc ssl debug test"
 
