@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/empathy/Attic/empathy-2.23.91.ebuild,v 1.1 2008/09/03 13:47:45 coldwind Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/empathy/Attic/empathy-2.23.92.ebuild,v 1.1 2008/09/20 17:49:34 eva Exp $
 
 inherit gnome2
 
