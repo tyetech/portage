@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/calendar/Attic/calendar-1.6.ebuild,v 1.1 2007/11/29 01:52:19 hawking Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/calendar/Attic/calendar-1.7.ebuild,v 1.1 2008/09/20 12:25:46 hawking Exp $
 
 inherit vim-plugin
 
