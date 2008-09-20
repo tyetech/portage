@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/alternate/Attic/alternate-2.15.ebuild,v 1.2 2008/09/20 08:05:29 hawking Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/alternate/alternate-2.18.ebuild,v 1.1 2008/09/20 08:05:29 hawking Exp $
 
 inherit vim-plugin eutils
 
@@ -8,7 +8,7 @@ DESCRIPTION="vim plugin: quickly switch between .c and .h files"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=31"
 
 LICENSE="as-is"
-KEYWORDS="alpha amd64 ia64 mips ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~ia64 ~mips ~ppc ~sparc ~x86"
 IUSE=""
 
 VIM_PLUGIN_HELPTEXT=\
