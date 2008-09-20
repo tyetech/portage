@@ -1,46 +1,43 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/oxine/Attic/oxine-0.6.3-r1.ebuild,v 1.8 2008/04/13 21:27:30 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/oxine/oxine-0.7.1-r1.ebuild,v 1.1 2008/09/20 21:31:01 beandog Exp $
 
 WANT_AUTOMAKE="1.9"
 inherit eutils autotools
 
-MY_P="${PN}-0.6"
-S=${WORKDIR}/${MY_P}
-
-DESCRIPTION="OSD frontend for xine"
+DESCRIPTION="OSD frontend for Xine"
 HOMEPAGE="http://oxine.sourceforge.net/"
-SRC_URI="mirror://sourceforge/oxine/${MY_P}.tar.gz
-	mirror://sourceforge/oxine/${PN}-0_6_0-to-0_6_3.patch"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="amd64 ppc ~ppc64 x86"
 SLOT="0"
-IUSE="X curl debug dvb jpeg nls png polling lirc v4l input_devices_joystick"
+IUSE="X curl debug dvb exif hal joystick jpeg lirc nls png v4l"
 
-RDEPEND="media-libs/xine-lib
+COMMON_DEPEND="media-libs/xine-lib
+	dev-libs/libcdio
 	curl? ( net-misc/curl )
-	input_devices_joystick? ( media-libs/libjsw )
+	hal? ( sys-apps/hal )
+	joystick? ( media-libs/libjsw )
 	jpeg? ( media-gfx/imagemagick
 		media-libs/netpbm
 		media-video/mjpegtools )
 	lirc? ( app-misc/lirc )
-	nls? ( virtual/libintl sys-devel/gettext )
+	nls? ( virtual/libintl
+		sys-devel/gettext )
 	png? ( media-gfx/imagemagick
 		media-libs/netpbm
 		media-video/mjpegtools )
-	X? ( x11-libs/libXext x11-libs/libX11 )
+	X? ( x11-libs/libXext
+		x11-libs/libX11 )"
+RDEPEND="${COMMON_DEPEND}
 	virtual/eject"
-
-DEPEND="${RDEPEND}
+DEPEND="${COMMON_DEPEND}
 	dev-util/pkgconfig"
 
 pkg_setup() {
 
-	# Check for USE flag deps
-	ewarn "Checking USE flags of dependencies .. this may take a moment"
-
 	# Video4Linux support
-	if use v4l && ! built_with_use media-libs/xine-lib v4l ; then
+	if ( use dvb || use v4l ) && ! built_with_use media-libs/xine-lib v4l ; then
 		eerror "Re-emerge xine-lib with the 'v4l' USE flag"
 		REBUILD_DEPS=1
 	fi
@@ -70,6 +67,12 @@ pkg_setup() {
 		REBUILD_DEPS=1
 	fi
 
+	if ! built_with_use media-libs/xine-lib imagemagick ; then
+		eerror "To display its menus, oxine needs xine-lib to be compiled"
+		eerror "with with the 'imagemagick' USE flag"
+		REBUILD_DEPS=1
+	fi
+
 	if [[ ${REBUILD_DEPS} = 1 ]]; then
 		eerror "Check your USE flags, re-emerge the dependencies and then"
 		eerror "emerge this package."
@@ -78,18 +81,7 @@ pkg_setup() {
 
 }
 
-src_unpack() {
-	unpack ${MY_P}.tar.gz
-	cd "${S}"
-	epatch ${DISTDIR}/${PN}-0_6_0-to-0_6_3.patch
-	AT_M4DIR="m4" eautoreconf
-}
-
 src_compile() {
-
-	# Note: Initial testing on amd64 indicates that the build will break
-	# on --disable-curltest or --disable-xinetest so don't enable them
-	# if debug is set.
 
 	# Note on images: Image support will be automatically disabled if
 	# netpbm, imagemagick or mjpegtools is not installed, irregardless
@@ -103,15 +95,16 @@ src_compile() {
 	econf ${myconf} \
 		$( use_with X x ) \
 		$( use_with curl ) \
-		$( use_enable curl curltest ) \
 		$( use_enable debug ) \
 		$( use_enable dvb ) \
-		$( use_enable input_devices_joystick joystick ) \
+		$( use_enable exif ) \
+		$( use_enable hal ) \
+		$( use_enable joystick ) \
 		$( use_enable lirc ) \
 		$( use_enable nls ) \
-		$( use_enable polling ) \
 		$( use_enable v4l ) \
-		--disable-rpath --disable-weather || die "econf died"
+		--disable-extractor \
+		--disable-rpath || die "econf died"
 	emake || die "emake failed"
 }
 
@@ -120,6 +113,6 @@ src_install() {
 	emake DESTDIR="${D}" install || die "emake install died"
 
 	dodoc AUTHORS ChangeLog NEWS README TODO
-	dohtml doc/doc.html
+	dohtml doc/README.html doc/keymapping.pdf
 
 }
