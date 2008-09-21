@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/twiki/Attic/twiki-4.2.0.ebuild,v 1.1 2008/02/24 00:00:38 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/twiki/Attic/twiki-4.2.3.ebuild,v 1.1 2008/09/21 14:31:39 wrobel Exp $
 
 WEBAPP_NO_AUTO_INSTALL="yes"
 
@@ -14,6 +14,7 @@ SRC_URI="http://twiki.org/p/pub/Codev/Release/${MY_PN}-${PV}.tgz"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+RESTRICT="fetch"
 IUSE=""
 
 S="${WORKDIR}"
@@ -36,6 +37,12 @@ RDEPEND=">=app-text/rcs-5.7
 	virtual/perl-Time-Local"
 
 need_httpd_cgi
+
+pkg_nofetch() {
+	einfo "Please download ${MY_PN}_${PV}.tgz from:"
+	einfo "http://twiki.org/cgi-bin/view/Codev/DownloadTWiki"
+	einfo "and move it to ${DISTDIR}"
+}
 
 src_install() {
 	webapp_src_preinst
