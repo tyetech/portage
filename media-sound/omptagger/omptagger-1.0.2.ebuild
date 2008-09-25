@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/omptagger/Attic/omptagger-1.0.ebuild,v 1.3 2007/11/25 13:37:33 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/omptagger/omptagger-1.0.2.ebuild,v 1.1 2008/09/25 09:25:14 omp Exp $
 
 DESCRIPTION="CLI utility for tagging FLAC, Ogg Vorbis and MP3 files"
 HOMEPAGE="http://dev.gentoo.org/~omp/omptagger/"
@@ -8,7 +8,7 @@ SRC_URI="http://dev.gentoo.org/~omp/omptagger/files/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~x86"
+KEYWORDS="~amd64 ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=""
