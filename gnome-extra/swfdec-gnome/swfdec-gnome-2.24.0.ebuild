@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/swfdec-gnome/Attic/swfdec-gnome-2.23.4.ebuild,v 1.1 2008/09/15 19:16:56 dang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/swfdec-gnome/Attic/swfdec-gnome-2.24.0.ebuild,v 1.1 2008/09/27 17:46:47 eva Exp $
 
-inherit gnome2 eutils autotools
+inherit gnome2 eutils
 
 DESCRIPTION="flash player and thumbnailer for GNOME"
 HOMEPAGE="http://swfdec.freedesktop.org/wiki/"
