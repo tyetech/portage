@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/bzr/Attic/bzr-1.7.ebuild,v 1.1 2008/09/24 11:51:01 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/bzr/Attic/bzr-1.7.1.ebuild,v 1.1 2008/10/02 09:54:11 pva Exp $
 
 NEED_PYTHON=2.4
 
