@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-0.7.ebuild,v 1.1 2008/07/26 15:20:59 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-0.7.ebuild,v 1.2 2008/10/04 16:49:04 swegener Exp $
 
 inherit linux-info eutils
 
@@ -8,8 +8,9 @@ DESCRIPTION="A linux trace/probe tool"
 HOMEPAGE="http://sourceware.org/systemtap/"
 if [[ ${PV} = *_pre* ]] # is this a snaphot?
 then
-	# see configure.ac to see the version of the snapshot
-	SRC_URI="ftp://sources.redhat.com/pub/${PN}/snapshots/${PN}-${PV/*_pre/}.tar.bz2"
+	# see configure.ac to get the version of the snapshot
+	SRC_URI="ftp://sources.redhat.com/pub/${PN}/snapshots/${PN}-${PV/*_pre/}.tar.bz2
+		mirror://gentoo/${PN}-${PV/*_pre/}.tar.bz2" # upstream only keeps four snapshot distfiles around
 	S="${WORKDIR}"/src
 else
 	SRC_URI="ftp://sources.redhat.com/pub/${PN}/releases/${P}.tar.gz"
