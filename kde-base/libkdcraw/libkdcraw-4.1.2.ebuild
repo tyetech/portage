@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkdcraw/Attic/libkdcraw-4.1.2.ebuild,v 1.1 2008/10/02 10:41:22 jmbsvicetto Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkdcraw/Attic/libkdcraw-4.1.2.ebuild,v 1.2 2008/10/04 16:45:28 jmbsvicetto Exp $
 
 EAPI="2"
 
@@ -15,8 +15,10 @@ HOMEPAGE="http://www.kipi-plugins.org"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="media-libs/jpeg
+DEPEND="
+	!<media-libs/libkdcraw-0.1.4
+	media-libs/jpeg
 	media-libs/lcms
-	!kdeprefix? ( !media-libs/libkdcraw )"
+"
 RDEPEND="${DEPEND}"
 
