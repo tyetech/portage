@@ -1,9 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-texlive/cvs-repo/gentoo-x86/dev-texlive/texlive-latexrecommended/Attic/texlive-latexrecommended-2007.ebuild,v 1.18 2008/10/02 18:02:56 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-texlive/cvs-repo/gentoo-x86/dev-texlive/texlive-latexrecommended/Attic/texlive-latexrecommended-2007.ebuild,v 1.19 2008/10/04 08:54:52 aballier Exp $
 
 TEXLIVE_MODULES_DEPS="dev-texlive/texlive-latex
-!dev-tex/extsizes
 !dev-tex/xkeyval
 !dev-tex/floatflt
 !dev-tex/listings
