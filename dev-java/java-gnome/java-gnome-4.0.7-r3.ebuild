@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.7-r1.ebuild,v 1.2 2008/10/01 11:35:00 serkan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.7-r3.ebuild,v 1.1 2008/10/05 11:06:46 serkan Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="doc examples source"
@@ -31,6 +31,10 @@ DEPEND="${RDEPEND}
 
 # Needs X11
 RESTRICT="test"
+
+src_prepare() {
+	epatch "${FILESDIR}/${PN}-gtk-214.patch"
+}
 
 src_configure() {
 	# Handwritten in perl so not using econf
