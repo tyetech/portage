@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.6.27_rc9.ebuild,v 1.1 2008/10/07 20:28:55 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-2.6.27.ebuild,v 1.1 2008/10/10 00:53:43 mpagano Exp $
 
 K_NOUSENAME="yes"
 K_NOSETEXTRAVERSION="yes"
@@ -16,5 +16,5 @@ SRC_URI="${KERNEL_URI}"
 KEYWORDS="~alpha ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
-K_EXTRAEWARN="If your system utilizes the e1000e driver DO NOT install and run
-any 2.6.27 kernel.  See bug #238489 for more information"
+K_EXTRAEWARN="The e1000e driver is this kernel version is non-functional but
+will not damage your hardware. See bug #238489 for more information"
