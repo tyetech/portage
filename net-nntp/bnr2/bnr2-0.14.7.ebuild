@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/bnr2/Attic/bnr2-0.14.7.ebuild,v 1.5 2007/07/22 07:59:43 dberkholz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/bnr2/Attic/bnr2-0.14.7.ebuild,v 1.6 2008/10/10 10:52:28 flameeyes Exp $
 
 DESCRIPTION="A great newsreader for alt.binaries.*"
 HOMEPAGE="http://www.bnr2.org/"
@@ -16,6 +16,8 @@ RDEPEND="x11-libs/libXext
 	x11-libs/libSM
 	virtual/libc"
 DEPEND=""
+
+RESTRICT="strip"
 
 S="${WORKDIR}"/BNR2
 
