@@ -1,6 +1,10 @@
 # ChangeLog for sys-kernel/vanilla-sources
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.533 2008/10/10 00:53:43 mpagano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.534 2008/10/12 22:02:14 gentoofan23 Exp $
+
+  12 Oct 2008; Thomas Anderson <gentoofan23@gentoo.org>
+  vanilla-sources-2.6.27.ebuild:
+  Add amd64 keyword, works with some versions of nvidia-drivers
 
 *vanilla-sources-2.6.27 (10 Oct 2008)
 
