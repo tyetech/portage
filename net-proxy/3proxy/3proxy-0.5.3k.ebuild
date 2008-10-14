@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/3proxy/3proxy-0.5.3k.ebuild,v 1.2 2008/10/12 17:27:12 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/3proxy/3proxy-0.5.3k.ebuild,v 1.3 2008/10/14 20:55:04 ranger Exp $
 
 inherit toolchain-funcs eutils
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.security.nnov.ru/soft/3proxy/${PV}/${P}.tgz"
 
 LICENSE="3proxy"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ppc ~x86"
 IUSE=""
 
 DEPEND=""
