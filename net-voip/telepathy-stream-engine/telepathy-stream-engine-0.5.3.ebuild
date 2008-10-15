@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-voip/cvs-repo/gentoo-x86/net-voip/telepathy-stream-engine/Attic/telepathy-stream-engine-0.5.2.ebuild,v 1.3 2008/10/15 19:00:33 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-voip/cvs-repo/gentoo-x86/net-voip/telepathy-stream-engine/Attic/telepathy-stream-engine-0.5.3.ebuild,v 1.1 2008/10/15 19:00:33 tester Exp $
 
 DESCRIPTION="A Telepathy client that handles channels of type 'StreamedMedia'"
 HOMEPAGE="http://telepathy.freedesktop.org/"
