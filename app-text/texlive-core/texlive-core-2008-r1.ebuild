@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/texlive-core/Attic/texlive-core-2008.ebuild,v 1.5 2008/10/16 09:29:23 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/texlive-core/Attic/texlive-core-2008-r1.ebuild,v 1.1 2008/10/16 09:38:53 aballier Exp $
 
 EAPI=1
 
