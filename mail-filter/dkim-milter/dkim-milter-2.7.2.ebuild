@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/dkim-milter/Attic/dkim-milter-2.6.0.ebuild,v 1.1 2008/06/13 12:15:11 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/dkim-milter/Attic/dkim-milter-2.7.2.ebuild,v 1.1 2008/10/16 19:35:35 mrness Exp $
 
 inherit eutils toolchain-funcs
 
