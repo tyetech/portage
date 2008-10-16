@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-core/Attic/nagios-core-3.0.3.ebuild,v 1.2 2008/06/27 20:03:52 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-core/Attic/nagios-core-3.0.4.ebuild,v 1.1 2008/10/16 17:43:23 dertobi123 Exp $
 
 EAPI="1"
 
