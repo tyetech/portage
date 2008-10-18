@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gvfs/Attic/gvfs-0.2.5-r3.ebuild,v 1.5 2008/10/16 18:43:36 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gvfs/Attic/gvfs-0.2.5-r3.ebuild,v 1.6 2008/10/18 11:44:44 yoswink Exp $
 
 inherit bash-completion gnome2 eutils autotools
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 sparc x86"
+KEYWORDS="alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 sparc x86"
 IUSE="avahi cdda doc fuse gnome gphoto2 hal gnome-keyring samba"
 
 RDEPEND=">=dev-libs/glib-2.16
