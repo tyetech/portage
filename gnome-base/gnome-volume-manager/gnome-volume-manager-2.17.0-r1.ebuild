@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-volume-manager/Attic/gnome-volume-manager-2.17.0-r1.ebuild,v 1.10 2008/06/05 11:55:09 remi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-volume-manager/Attic/gnome-volume-manager-2.17.0-r1.ebuild,v 1.11 2008/10/19 10:09:54 eva Exp $
 
 inherit gnome2 eutils autotools
 
@@ -54,6 +54,7 @@ src_unpack() {
 
 	# fix LINGUAS handling, bug #183086
 	intltoolize --force || die "intltoolize failed"
+	eautoreconf
 }
 
 pkg_postinst() {
