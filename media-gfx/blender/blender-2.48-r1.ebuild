@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.48-r1.ebuild,v 1.2 2008/10/16 18:30:17 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.48-r1.ebuild,v 1.3 2008/10/19 14:15:04 maekke Exp $
 
 EAPI="2"
 
@@ -115,6 +115,7 @@ src_compile() {
 src_install() {
 	exeinto /usr/bin/
 	doexe "${WORKDIR}"/install/linux2/blender
+	use player && doexe "${WORKDIR}"/install/linux2/blenderplayer
 
 	dodir /usr/share/${PN}
 
