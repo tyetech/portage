@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/singular/Attic/singular-3.0.3.ebuild,v 1.3 2007/09/25 12:26:50 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/singular/Attic/singular-3.0.4.4.ebuild,v 1.1 2008/10/20 12:30:00 markusle Exp $
 
 inherit eutils elisp-common flag-o-matic autotools multilib
 
@@ -11,8 +11,8 @@ MY_PV_MAJOR=${MY_PV%-*}
 
 DESCRIPTION="Computer algebra system for polynomial computations"
 HOMEPAGE="http://www.singular.uni-kl.de/"
-SRC_URI="http://www.mathematik.uni-kl.de/ftp/pub/Math/Singular/SOURCES/3-0-3/${MY_PV}/${MY_PN}-${MY_PV}.tar.gz
-	http://www.mathematik.uni-kl.de/ftp/pub/Math/Singular/UNIX/${MY_PN}-${MY_PV}-share.tar.gz"
+SRC_URI="http://www.mathematik.uni-kl.de/ftp/pub/Math/Singular/SOURCES/3-0-4/${MY_PN}-${MY_PV}.tar.gz
+	http://www.mathematik.uni-kl.de/ftp/pub/Math/Singular/UNIX/${MY_PN}-3-0-4-2-share.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -24,12 +24,19 @@ DEPEND=">=dev-lang/perl-5.6
 		emacs? ( virtual/emacs )
 		boost? ( dev-libs/boost )"
 
-S="${WORKDIR}"/${MY_PN}-${MY_PV}
+S="${WORKDIR}"/${MY_PN}-${MY_PV_MAJOR}
 SITEFILE=60${PN}-gentoo.el
 
 src_unpack () {
 	unpack ${A}
-	epatch "${FILESDIR}"/${P}-gentoo.diff
+	cd "${S}"
+	epatch "${FILESDIR}"/${PN}-3.0.4.2-gentoo.diff
+	epatch "${FILESDIR}"/${P}-nostrip.patch
+
+	# for some unknown reason this ldflag causes the
+	# build system to choke
+	# NOTE: Look at the source and figure out why
+	filter-ldflags "*hash-style*"
 
 	cd "${S}"/kernel
 	sed -e "s/PFSUBST/${PF}/" -i feResource.cc || \
@@ -50,13 +57,13 @@ src_unpack () {
 }
 
 src_compile() {
-	local myconf="${myconf} --disable-doc --without-MP --with-factory --with-libfac --with-gmp --prefix=${S}"
+	local myconf="${myconf} --disable-doc --without-MP --with-factory --with-libfac --disable-gmp --prefix=${S}"
 	econf $(use_enable emacs) \
 		${myconf} || die "econf failed"
 	emake -j1 || die "make failed"
 
 	if use emacs; then
-		cd "${WORKDIR}"/${MY_PN}/${MY_PV}/emacs/
+		cd "${WORKDIR}"/${MY_PN}/${MY_PV_MAJOR}/emacs/
 		elisp-compile *.el || die "elisp-compile failed"
 	fi
 }
@@ -86,17 +93,20 @@ src_install () {
 	doins *.so || die "failed to install libraries"
 
 	# create symbolic link
-	dosym /usr/bin/${MY_PN}-${MY_PV} /usr/bin/${MY_PN} || \
+	dosym /usr/bin/${MY_PN}-${MY_PV_MAJOR} /usr/bin/${MY_PN} || \
 		die "failed to create symbolic link"
 
 	# install examples
-	cd "${WORKDIR}"/${MY_PN}/${MY_PV}
+	cd "${WORKDIR}"/${MY_PN}/${MY_PV_MAJOR}
 	insinto /usr/share/${PN}/examples
 	doins examples/* || die "failed to install examples"
 
 	# install extended docs
 	if use doc; then
 		dohtml -r html/* || die "failed to install html docs"
+
+		insinto /usr/share/${PN}
+		doins doc/singular.idx || die "failed to install idx file"
 
 		cp info/${PN}.hlp info/${PN}.info &&
 		doinfo info/${PN}.info || \
