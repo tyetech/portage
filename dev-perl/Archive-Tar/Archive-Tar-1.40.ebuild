@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Archive-Tar/Attic/Archive-Tar-1.40.ebuild,v 1.4 2008/10/21 17:14:08 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Archive-Tar/Attic/Archive-Tar-1.40.ebuild,v 1.5 2008/10/22 19:35:34 gmsoft Exp $
 
 MODULE_AUTHOR=KANE
 inherit perl-module
@@ -9,7 +9,7 @@ DESCRIPTION="A Perl module for creation and manipulation of tar files"
 
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
-KEYWORDS="amd64 ppc64 sparc ~x86"
+KEYWORDS="amd64 hppa ppc64 sparc ~x86"
 IUSE="bzip2"
 
 DEPEND=">=dev-perl/IO-Zlib-1.01
