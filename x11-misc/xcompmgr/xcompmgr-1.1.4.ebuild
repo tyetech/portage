@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xcompmgr/Attic/xcompmgr-1.1.4.ebuild,v 1.2 2008/10/14 12:21:42 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xcompmgr/Attic/xcompmgr-1.1.4.ebuild,v 1.3 2008/10/23 15:44:09 mr_bones_ Exp $
 
 inherit x-modular
 
