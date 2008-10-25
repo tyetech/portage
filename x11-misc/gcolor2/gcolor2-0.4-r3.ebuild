@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gcolor2/gcolor2-0.4-r3.ebuild,v 1.7 2008/06/17 09:01:28 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/gcolor2/gcolor2-0.4-r3.ebuild,v 1.8 2008/10/25 11:08:31 eva Exp $
 
 inherit eutils autotools
 
@@ -26,6 +26,7 @@ src_unpack() {
 		"${FILESDIR}"/${P}-amd64.patch \
 		"${FILESDIR}"/${P}-pkg-config-macro.patch
 
+	intltoolize --force || die "intltoolize failed"
 	eautoreconf
 }
 
