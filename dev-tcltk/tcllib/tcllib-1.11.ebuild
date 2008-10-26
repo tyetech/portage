@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/tcllib/Attic/tcllib-1.10.ebuild,v 1.1 2007/12/24 04:02:22 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/tcllib/Attic/tcllib-1.11.ebuild,v 1.1 2008/10/26 11:35:16 mescalinum Exp $
 
 DESCRIPTION="Tcl Standard Library."
 HOMEPAGE="http://www.tcl.tk/software/tcllib/"
