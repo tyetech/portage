@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/evolution-python/Attic/evolution-python-2.24.0.ebuild,v 1.1 2008/10/19 20:39:28 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/evolution-python/Attic/evolution-python-2.24.0.ebuild,v 1.2 2008/10/27 22:47:38 mr_bones_ Exp $
 
 G_PY_PN="gnome-python-desktop"
 G_PY_BINDINGS="evolution evolution_ecal"
@@ -16,4 +16,3 @@ IUSE=""
 RDEPEND=">=gnome-extra/evolution-data-server-1.2
 	!<dev-python/gnome-python-desktop-2.22.0-r10"
 DEPEND="${RDEPEND}"
-
