@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/poppler-bindings/Attic/poppler-bindings-0.8.7.ebuild,v 1.11 2008/10/15 23:13:36 tgurr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/poppler-bindings/Attic/poppler-bindings-0.8.7.ebuild,v 1.12 2008/10/27 05:52:35 vapier Exp $
 
 EAPI="1"
 
@@ -22,7 +22,7 @@ SRC_URI="http://poppler.freedesktop.org/${MY_P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ~ppc64 ~s390 ~sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ~ppc64 s390 sh sparc x86 ~x86-fbsd"
 IUSE="gtk qt3 cairo qt4 test"
 
 RDEPEND="~app-text/poppler-${PV}
