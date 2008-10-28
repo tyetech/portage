@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/preload/Attic/preload-0.6.3-r4.ebuild,v 1.1 2008/10/24 01:38:43 darkside Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/preload/Attic/preload-0.6.3-r5.ebuild,v 1.1 2008/10/28 02:02:14 darkside Exp $
 
 inherit eutils
 
