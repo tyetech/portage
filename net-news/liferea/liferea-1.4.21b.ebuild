@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/liferea/Attic/liferea-1.4.16b.ebuild,v 1.1 2008/06/20 15:50:00 dang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-news/cvs-repo/gentoo-x86/net-news/liferea/Attic/liferea-1.4.21b.ebuild,v 1.1 2008/11/01 17:24:06 dang Exp $
 
-WANT_AUTOMAKE=1.7
+WANT_AUTOMAKE=1.9
 inherit gnome2 eutils autotools
 
 DESCRIPTION="News Aggregator for RDF/RSS/CDF/Atom/Echo/etc feeds"
@@ -15,17 +15,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 # Can't add webkit until there's a masked use flag for it's keyworded
 # webkit
-IUSE="dbus gtkhtml gnutls libnotify lua networkmanager seamonkey xulrunner"
+IUSE="dbus gtkhtml gnutls libnotify lua networkmanager webkit xulrunner"
 
-#	!xulrunner? ( webkit? ( net-libs/webkit-gtk ) )
-#	!xulrunner? ( !webkit? ( seamonkey? ( =www-client/seamonkey-1* ) ) )
-#	!amd64? ( !xulrunner? ( !webkit? ( ( !seamonkey? ( gtkhtml? ( gnome-extra/gtkhtml:2 ) ) ) ) ) )
 RDEPEND="
 	libnotify? ( >=x11-libs/libnotify-0.3.2 )
 	lua? ( >=dev-lang/lua-5.1 )
 	xulrunner? ( net-libs/xulrunner:1.9 )
-	!xulrunner? ( ( seamonkey? ( =www-client/seamonkey-1* ) ) )
-	!amd64? ( !xulrunner? ( !seamonkey? ( gtkhtml? ( gnome-extra/gtkhtml:2 ) ) ) )
+	!xulrunner? ( webkit? ( net-libs/webkit-gtk ) )
+	!amd64? ( !xulrunner? ( !webkit? ( gtkhtml? ( gnome-extra/gtkhtml:2 ) ) ) )
 	>=x11-libs/gtk+-2.8
 	x11-libs/pango
 	>=gnome-base/gconf-2
@@ -52,15 +49,10 @@ pkg_setup() {
 		G2CONF="${G2CONF} --disable-webkit"
 		G2CONF="${G2CONF} --disable-gecko"
 		G2CONF="${G2CONF} --disable-gtkhtml2"
-#    elif use webkit ; then
-#        G2CONF="${G2CONF} --enable-webkit"
-#        G2CONF="${G2CONF} --disable-gecko"
-#        G2CONF="${G2CONF} --disable-xulrunner"
-#        G2CONF="${G2CONF} --disable-gtkhtml2"
-	elif use seamonkey ; then
-		G2CONF="${G2CONF} --enable-gecko=seamonkey"
+	elif use webkit ; then
+		G2CONF="${G2CONF} --enable-webkit"
+		G2CONF="${G2CONF} --disable-gecko"
 		G2CONF="${G2CONF} --disable-xulrunner"
-		G2CONF="${G2CONF} --disable-webkit"
 		G2CONF="${G2CONF} --disable-gtkhtml2"
 	elif use gtkhtml ; then
 		if ! use amd64 ; then
@@ -71,29 +63,31 @@ pkg_setup() {
 		else
 			elog ""
 			elog "gtkhtml is no longer supported on amd64; you will need to "
-			elog "select one of the gecko backends to use liferea.  "
-			elog "Preference is: xulrunner, webkit, then seamonkey."
-			die "You must enable one of the gecko backends or webkit on amd64"
+			elog "select either xulrunner or webkit to use liferea."
+			elog "Preference is: xulrunner, then webkit."
+			die "You must enable xulrunner or webkit on amd64"
 		fi
 	else
 		elog ""
 		elog "You must choose one backend for liferea to work.  Preference is:"
-		elog "xulrunner, webkit, seamonkey, then gtkhtml."
+		elog "xulrunner, webkit, then gtkhtml."
 		die "You must enable on of the backends"
 	fi
 
-	G2CONF="${G2CONF} \
-		$(use_enable dbus) \
-		$(use_enable gnutls) \
-		$(use_enable libnotify) \
-		$(use_enable lua) \
+	G2CONF="${G2CONF}
+		$(use_enable dbus)
+		$(use_enable gnutls)
+		$(use_enable libnotify)
+		$(use_enable lua)
 		$(use_enable networkmanager nm)"
 }
 
 src_unpack() {
 	gnome2_src_unpack
 
-	epatch "${FILESDIR}"/${P}-xulrunner-1.9.patch
+	epatch "${FILESDIR}"/${PN}-1.4.17-xulrunner-1.9.patch
+
+	intltoolize --force || die "intltoolize failed"
 	eautoreconf
 }
 
