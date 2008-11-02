@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/killproc/Attic/killproc-1.12-r2.ebuild,v 1.23 2006/12/08 21:08:24 beu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/killproc/Attic/killproc-1.12-r2.ebuild,v 1.24 2008/11/02 06:18:26 jmbsvicetto Exp $
 
 DESCRIPTION="killproc and assorted tools for boot scripts"
 HOMEPAGE="http://www.suse.de/"
@@ -13,7 +13,7 @@ IUSE=""
 
 src_unpack() {
 	unpack ${A}
-	cd ${S}
+	cd "${S}"
 	sed -i \
 		-e "s:-O2:${CFLAGS}:" \
 		-e "s:-m486::" \
