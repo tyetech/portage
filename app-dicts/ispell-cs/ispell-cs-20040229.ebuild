@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/ispell-cs/Attic/ispell-cs-20040229.ebuild,v 1.4 2008/11/01 11:51:44 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/ispell-cs/Attic/ispell-cs-20040229.ebuild,v 1.5 2008/11/02 19:26:22 welp Exp $
 
 inherit multilib
 
@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.tul.cz/pub/unix/ispell/${MY_P}-${PV}.tar.gz"
 SLOT="0"
 LICENSE="GPL-2"
 IUSE=""
-KEYWORDS="ppc x86 sparc alpha ~mips hppa"
+KEYWORDS="alpha ~amd64 hppa ~mips ppc sparc x86"
 
 DEPEND="dev-lang/perl
 	app-text/ispell"
