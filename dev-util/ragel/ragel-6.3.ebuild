@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ragel/Attic/ragel-6.3.ebuild,v 1.2 2008/10/02 19:11:55 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ragel/Attic/ragel-6.3.ebuild,v 1.3 2008/11/05 13:55:28 lu_zero Exp $
 
 EAPI=2
 
@@ -55,6 +55,7 @@ src_install() {
 	fi
 
 	if use vim-syntax; then
+		insinto /usr/share/vim/vimfiles/syntax
 		doins ragel.vim
 	fi
 }
