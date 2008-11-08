@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libgnomemm/Attic/libgnomemm-2.20.0.ebuild,v 1.2 2008/07/10 15:22:31 remi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libgnomemm/Attic/libgnomemm-2.24.0.ebuild,v 1.1 2008/11/08 23:09:32 eva Exp $
 
 inherit gnome2
 
