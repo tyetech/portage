@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/trac/Attic/trac-0.11.1-r2.ebuild,v 1.1 2008/09/15 11:55:40 wrobel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/trac/Attic/trac-0.11.2.ebuild,v 1.1 2008/11/09 09:35:09 wrobel Exp $
 
 inherit distutils webapp
 
