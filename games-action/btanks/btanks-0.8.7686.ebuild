@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/btanks/Attic/btanks-0.8.7686.ebuild,v 1.1 2008/09/12 14:38:58 nyhm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/btanks/Attic/btanks-0.8.7686.ebuild,v 1.2 2008/11/10 07:46:36 mr_bones_ Exp $
 
 inherit eutils toolchain-funcs games
 
@@ -14,7 +14,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND=">=dev-lang/lua-5.1
-	media-libs/openal
 	media-libs/libsdl
 	media-libs/libvorbis
 	virtual/opengl
