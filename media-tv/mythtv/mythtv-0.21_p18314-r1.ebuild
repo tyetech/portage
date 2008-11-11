@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_p18314.ebuild,v 1.4 2008/10/03 14:46:01 cardoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/mythtv/Attic/mythtv-0.21_p18314-r1.ebuild,v 1.1 2008/11/11 15:46:22 cardoe Exp $
 
 EAPI=1
 inherit flag-o-matic multilib eutils qt3 mythtv toolchain-funcs python confutils
@@ -84,6 +84,9 @@ src_unpack() {
 	# Perl bits need to go into vender_perl and not site_perl
 	sed -e "s:pure_install:pure_install INSTALLDIRS=vendor:" \
 		-i "${S}"/bindings/perl/perl.pro
+	
+	# fix mythflix naming collision
+	epatch "${FILESDIR}"/${PN}-0.21-mythflix-naming-collision.patch
 }
 
 src_compile() {
