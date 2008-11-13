@@ -1,6 +1,6 @@
 # Copyright 2008-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-settings-daemon/Attic/gnome-settings-daemon-2.22.2.1.ebuild,v 1.11 2008/09/26 08:35:21 leio Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/gnome-settings-daemon/Attic/gnome-settings-daemon-2.22.2.1.ebuild,v 1.12 2008/11/13 19:26:45 ranger Exp $
 
 inherit eutils gnome2
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ~ppc64 ~sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 ~sh sparc x86 ~x86-fbsd"
 IUSE="alsa debug esd gstreamer"
 
 RDEPEND=">=dev-libs/dbus-glib-0.74
