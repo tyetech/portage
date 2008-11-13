@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/dlm/Attic/dlm-2.02.00.ebuild,v 1.3 2008/04/10 15:11:22 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/dlm-lib/dlm-lib-2.03.09.ebuild,v 1.1 2008/11/13 19:02:22 xmerlin Exp $
 
-inherit eutils versionator
+inherit eutils linux-mod linux-info versionator
 
 CLUSTER_RELEASE="${PV}"
 MY_P="cluster-${CLUSTER_RELEASE}"
@@ -19,27 +19,25 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND=">=sys-kernel/linux-headers-2.6.23
+DEPEND=">=sys-kernel/linux-headers-2.6.24
 	!sys-cluster/dlm-headers
 	!sys-cluster/dlm-kernel
-	=sys-cluster/dlm-lib-${CLUSTER_RELEASE}*
 	"
 
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/${MY_P}/${PN}"
+S="${WORKDIR}/${MY_P}/${PN/-//}"
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
 	# fix the manual pages have executable bit
-	sed -i -e '
-		/\tinstall -d/s/install/& -m 0755/; t
-		/\tinstall/s/install/& -m 0644/' \
-		man/Makefile || die "failed patching man pages permission"
+	#sed -i -e '
+	#	/\tinstall -d/s/install/& -m 0755/; t
+	#	/\tinstall/s/install/& -m 0644/' \
+	#	man/Makefile || die "failed patching man pages permission"
 
-	epatch "${FILESDIR}"/${P}-include.patch || die
 }
 
 src_compile() {
@@ -48,23 +46,17 @@ src_compile() {
 			--cc=$(tc-getCC) \
 			--cflags="-Wall" \
 			--disable_kernel_check \
-			--release_major="$MAJ_PV" \
-			--release_minor="$MIN_PV" \
+			--kernel_src=${KERNEL_DIR} \
+			--somajor="$MAJ_PV" \
+			--sominor="$MIN_PV" \
 			--cmanlibdir=/usr/lib \
-			--dlmlibdir=/usr/lib \
-			--dlmincdir=/usr/include \
+			--cmanincdir=/usr/include \
 	) || die "configure problem"
 
-	emake clean || die "clean problem"
-	for i in tool man; do
-		emake -C $i || die "compile problem"
-	done
+	#emake clean || die "clean problem"
+	emake -j1 || die "compile problem"
 }
 
 src_install() {
-	for i in tool man; do
-		emake DESTDIR="${D}" -C $i install || die "install problem"
-	done
-
-	dodoc doc/*.txt
+	emake DESTDIR="${D}" install || die "install problem"
 }
