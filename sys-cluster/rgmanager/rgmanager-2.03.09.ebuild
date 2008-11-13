@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/rgmanager/Attic/rgmanager-2.02.00.ebuild,v 1.1 2008/03/17 17:13:59 xmerlin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/rgmanager/rgmanager-2.03.09.ebuild,v 1.1 2008/11/13 19:14:54 xmerlin Exp $
 
 inherit eutils versionator
 
@@ -11,7 +11,7 @@ MAJ_PV="$(get_major_version)"
 MIN_PV="$(get_version_component_range 2).$(get_version_component_range 3)"
 
 DESCRIPTION="Clustered resource group manager"
-HOMEPAGE="http://sources.redhat.com/cluster/"
+HOMEPAGE="http://sources.redhat.com/cluster/wiki/"
 SRC_URI="ftp://sources.redhat.com/pub/cluster/releases/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
@@ -23,6 +23,7 @@ RDEPEND="=sys-cluster/ccs-${CLUSTER_RELEASE}*
 	=sys-cluster/dlm-lib-${CLUSTER_RELEASE}*
 	=sys-cluster/cman-lib-${CLUSTER_RELEASE}*
 	"
+
 DEPEND="${RDEPEND}
 	dev-libs/libxml2
 	=sys-libs/slang-2*
@@ -36,8 +37,8 @@ src_compile() {
 			--cc=$(tc-getCC) \
 			--cflags="-Wall" \
 			--disable_kernel_check \
-			--release_major="$MAJ_PV" \
-			--release_minor="$MIN_PV" \
+			--somajor="$MAJ_PV" \
+			--sominor="$MIN_PV" \
 			--dlmlibdir=/usr/lib \
 			--dlmincdir=/usr/include \
 			--cmanlibdir=/usr/lib \
