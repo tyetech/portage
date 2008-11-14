@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpd/Attic/mpd-0.14_alpha1.ebuild,v 1.3 2008/11/10 16:33:06 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpd/Attic/mpd-0.14_alpha1.ebuild,v 1.4 2008/11/14 11:53:47 aballier Exp $
 
 EAPI=1
 
@@ -93,7 +93,7 @@ src_compile() {
 		$(use_enable alsa) \
 		$(use_enable ao) \
 		$(use_enable audiofile) \
-		$(use_enable curl)
+		$(use_enable curl) \
 		$(use_enable ffmpeg) \
 		$(use_enable flac) \
 		$(use_enable id3) \
