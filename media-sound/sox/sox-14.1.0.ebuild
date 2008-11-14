@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/sox/Attic/sox-14.1.0.ebuild,v 1.7 2008/11/09 17:20:35 klausman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/sox/Attic/sox-14.1.0.ebuild,v 1.8 2008/11/14 09:35:12 aballier Exp $
 
 inherit flag-o-matic eutils
 
@@ -34,6 +34,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-lavc.patch"
+	epatch "${FILESDIR}/${P}-runsox.patch"
 }
 
 src_compile () {
