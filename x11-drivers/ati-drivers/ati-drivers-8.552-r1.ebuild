@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.552.ebuild,v 1.2 2008/11/15 15:27:18 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-8.552-r1.ebuild,v 1.1 2008/11/15 15:27:18 lu_zero Exp $
 
 IUSE="acpi debug"
 
@@ -114,7 +114,7 @@ pkg_setup() {
 	fi
 
 	# Only support xorg-server >=1.1
-	BASE_DIR="${S}/x710"
+	BASE_DIR="${S}/x740"
 
 	# This is used like $(get_libdir) for paths in ati's package.
 	if use amd64 ; then
