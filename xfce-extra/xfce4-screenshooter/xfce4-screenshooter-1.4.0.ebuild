@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-screenshooter/Attic/xfce4-screenshooter-1.3.9.3.ebuild,v 1.1 2008/11/14 17:16:23 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-screenshooter/Attic/xfce4-screenshooter-1.4.0.ebuild,v 1.1 2008/11/15 20:24:58 angelos Exp $
 
 inherit eutils xfce44
 
