@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/bongo/Attic/bongo-20070619.ebuild,v 1.1 2008/08/08 23:20:10 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/bongo/Attic/bongo-20070619-r1.ebuild,v 1.1 2008/11/15 19:38:10 ulm Exp $
 
 NEED_EMACS=22
 
