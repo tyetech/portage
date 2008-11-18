@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cvs2svn/Attic/cvs2svn-2.1.1.ebuild,v 1.3 2008/11/16 16:49:28 klausman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cvs2svn/Attic/cvs2svn-2.1.1.ebuild,v 1.4 2008/11/18 17:57:00 dertobi123 Exp $
 
 inherit distutils
 
@@ -12,7 +12,7 @@ SRC_URI="http://cvs2svn.tigris.org/files/documents/1462/${FILEVER}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~ia64 ~ppc x86"
+KEYWORDS="alpha amd64 ~ia64 ppc x86"
 IUSE=""
 
 DEPEND="dev-lang/python
