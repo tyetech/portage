@@ -1,12 +1,12 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/xsp/Attic/xsp-1.2.3.ebuild,v 1.3 2008/05/30 22:51:22 jurek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/xsp/Attic/xsp-2.0.ebuild,v 1.1 2008/11/19 22:57:41 loki_val Exp $
 
-inherit mono autotools eutils
+inherit mono multilib autotools eutils
 
 DESCRIPTION="XSP ASP.NET host"
 HOMEPAGE="http://www.go-mono.com/"
-SRC_URI="http://www.go-mono.com/sources/${PN}/${P}.tar.gz"
+SRC_URI="http://www.go-mono.com/sources/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -14,8 +14,10 @@ KEYWORDS="~amd64 ~ppc ~x86"
 
 IUSE=""
 
-DEPEND=">=dev-lang/mono-${PV}
-		dev-util/pkgconfig"
+RDEPEND=">=dev-lang/mono-${PV}
+		  =dev-db/sqlite-3*"
+DEPEND="${RDEPEND}
+		>=dev-util/pkgconfig-0.20"
 
 pkg_preinst() {
 	enewgroup aspnet
@@ -27,15 +29,16 @@ pkg_preinst() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
+
 	sed -i -e "s:mkinstalldirs) \$(data:mkinstalldirs) \$(DESTDIR)\$(data:" \
-		-e "s:gif \$(data:gif \$(DESTDIR)\$(data:" \
-		"${S}"/test/2.0/treeview/Makefile.am
+		   -e "s:gif \$(data:gif \$(DESTDIR)\$(data:" \
+	"${S}"/test/2.0/treeview/Makefile.am
 	eautoreconf
 }
 
 src_compile() {
 	econf || die "./configure failed!"
-	emake || {
+	emake -j1 || {
 		echo
 		eerror "If xsp fails to build, try unmerging and re-emerging it."
 		die "make failed"
@@ -44,6 +47,14 @@ src_compile() {
 
 src_install() {
 	make DESTDIR="${D}" install || die
+
+	sed -i -e "s#/usr/lib/#/usr/$(get_libdir)/#" \
+		"${D}"/usr/bin/xsp{,2} \
+		"${D}"/usr/bin/mod-mono-server{,2} \
+		"${D}"/usr/bin/asp-state{,2} \
+		"${D}"/usr/bin/dbsessmgr{,2} \
+	|| die
+
 	newinitd "${FILESDIR}"/${PV}/xsp.initd xsp
 	newinitd "${FILESDIR}"/${PV}/mod-mono-server.initd mod-mono-server
 	newconfd "${FILESDIR}"/${PV}/xsp.confd xsp
