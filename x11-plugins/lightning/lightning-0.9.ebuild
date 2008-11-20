@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/lightning/Attic/lightning-0.9_rc2.ebuild,v 1.2 2008/10/25 21:53:51 pvdabeel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/lightning/Attic/lightning-0.9.ebuild,v 1.1 2008/11/20 20:54:32 armin76 Exp $
 
 WANT_AUTOCONF="2.1"
 
@@ -10,8 +10,7 @@ SBPATCH="mozilla-sunbird-0.8-patches-0.1"
 
 DESCRIPTION="Calendar extension for Mozilla Thunderbird."
 HOMEPAGE="http://www.mozilla.org/projects/calendar/lightning/"
-#SRC_URI="http://releases.mozilla.org/pub/mozilla.org/calendar/sunbird/releases/${PV}/source/${PN}-sunbird-${PV}-source.tar.bz2
-SRC_URI="mirror://gentoo/${PN}-sunbird-${PV}.tar.bz2
+SRC_URI="http://releases.mozilla.org/pub/mozilla.org/calendar/sunbird/releases/${PV}/source/${PN}-sunbird-${PV}-source.tar.bz2
 	mirror://gentoo/${SBPATCH}.tar.bz2"
 
 KEYWORDS="~amd64 ~ppc ~x86"
