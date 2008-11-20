@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/apetag/Attic/apetag-1.10.ebuild,v 1.2 2008/06/29 11:14:41 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/apetag/Attic/apetag-1.10.ebuild,v 1.3 2008/11/20 20:37:10 flameeyes Exp $
 
 inherit eutils toolchain-funcs base
 
@@ -24,7 +24,7 @@ src_unpack() {
 	base_src_unpack
 	sed -i \
 		-e 's,CXXDEBUG,LDFLAGS,g' \
-		Apetag/Makefile \
+		"${S}"/Makefile \
 		|| die "404. Makefile not found."
 }
 
