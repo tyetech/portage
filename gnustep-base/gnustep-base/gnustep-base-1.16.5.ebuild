@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-base/Attic/gnustep-base-1.16.4.ebuild,v 1.1 2008/11/17 13:36:23 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-base/Attic/gnustep-base-1.16.5.ebuild,v 1.1 2008/11/20 15:31:28 voyageur Exp $
 
 EAPI=2
 
