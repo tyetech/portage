@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/decibel-audio-player/Attic/decibel-audio-player-0.11.ebuild,v 1.3 2008/10/24 08:30:23 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/decibel-audio-player/Attic/decibel-audio-player-1.00.ebuild,v 1.1 2008/11/23 12:10:37 aballier Exp $
 
 DESCRIPTION="A GTK+ audio player which aims at being very straightforward to use."
 HOMEPAGE="http://decibel.silent-blade.org"
