@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/orca/Attic/orca-2.22.2.ebuild,v 1.6 2008/08/12 14:02:10 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/orca/Attic/orca-2.24.2.ebuild,v 1.1 2008/11/24 19:44:14 eva Exp $
 
 inherit gnome2 python
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/orca/"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~hppa ia64 ppc ~ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 # liblouis is not in portage yet
@@ -19,13 +19,14 @@ RDEPEND=">=dev-libs/glib-2.10
 	>=gnome-extra/at-spi-1.7.6
 	>=gnome-base/libbonobo-2.14
 	>=dev-lang/python-2.4
+	>=dev-python/pygtk-2.12
 	>=dev-python/gnome-python-2.14
 	>=dev-python/pyorbit-2.14
 	>=app-accessibility/gnome-speech-0.3.10
 	>=app-accessibility/gnome-mag-0.12.5"
 
 DEPEND="${RDEPEND}
-	>=dev-util/intltool-0.35
+	>=dev-util/intltool-0.40
 	>=dev-util/pkgconfig-0.9"
 
 DOCS="AUTHORS ChangeLog MAINTAINERS NEWS README TODO"
@@ -50,6 +51,5 @@ pkg_postinst() {
 
 pkg_postrm() {
 	gnome2_pkg_postrm
-	python_version
-	python_mod_cleanup /usr/$(get_libdir)/python${PYVER}/site-packages/orca
+	python_mod_cleanup /usr/$(get_libdir)/python*/site-packages/orca
 }
