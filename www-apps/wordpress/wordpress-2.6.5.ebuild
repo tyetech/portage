@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/wordpress/Attic/wordpress-2.6.3.ebuild,v 1.1 2008/10/30 15:06:11 wrobel Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/wordpress/Attic/wordpress-2.6.5.ebuild,v 1.1 2008/11/25 22:13:49 dertobi123 Exp $
 
 inherit webapp depend.php
 
