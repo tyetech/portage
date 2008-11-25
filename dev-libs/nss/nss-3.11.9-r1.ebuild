@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/nss/Attic/nss-3.11.9.ebuild,v 1.11 2008/09/26 06:24:41 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/nss/Attic/nss-3.11.9-r1.ebuild,v 1.1 2008/11/25 14:50:17 armin76 Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
@@ -48,6 +48,7 @@ src_compile() {
 		export USE_64=1
 	fi
 	export NSDISTMODE=copy
+	export NSS_ENABLE_ECC=1
 	cd "${S}"/mozilla/security/coreconf
 	emake -j1 BUILD_OPT=1 XCFLAGS="${CFLAGS}" CC="$(tc-getCC)" || die "coreconf make failed"
 	cd "${S}"/mozilla/security/dbm
