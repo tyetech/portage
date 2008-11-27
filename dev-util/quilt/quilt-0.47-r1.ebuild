@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/quilt/Attic/quilt-0.47-r1.ebuild,v 1.1 2008/11/20 15:38:52 mpagano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/quilt/Attic/quilt-0.47-r1.ebuild,v 1.2 2008/11/27 20:01:13 mpagano Exp $
 
 inherit bash-completion eutils
 
@@ -40,7 +40,7 @@ src_unpack() {
 }
 
 src_install() {
-	make BUILD_ROOT="${D}" install || die "make install failed"
+	emake BUILD_ROOT="${D}" install || die "make install failed"
 
 	rm -rf "${D}"/usr/share/doc/${P}
 	dodoc AUTHORS TODO quilt.changes doc/README doc/README.MAIL \
