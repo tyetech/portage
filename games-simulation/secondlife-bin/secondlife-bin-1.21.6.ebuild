@@ -1,16 +1,15 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/secondlife-bin/Attic/secondlife-bin-1.22.1_rc103637.ebuild,v 1.1 2008/11/27 15:35:55 lavajoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/secondlife-bin/Attic/secondlife-bin-1.21.6.ebuild,v 1.1 2008/11/27 16:21:30 lavajoe Exp $
 
-inherit eutils multilib games versionator
+inherit eutils multilib games
 
-MAJOR_VER=$(get_version_component_range 1-3)
-MINOR_VER=$(get_version_component_range 4)
-MY_P="SecondLife-i686-${MAJOR_VER}.${MINOR_VER/rc/}"
+SECONDLIFE_REVISION=99587
+MY_P="SecondLife-i686-${PV}.${SECONDLIFE_REVISION}"
 
 DESCRIPTION="The Second Life (an online, 3D virtual world) viewer"
 HOMEPAGE="http://secondlife.com/"
-SRC_URI="http://release-candidate-secondlife-com.s3.amazonaws.com/${MY_P}.tar.bz2"
+SRC_URI="http://download-secondlife-com.s3.amazonaws.com/${MY_P}.tar.bz2"
 RESTRICT="mirror strip"
 
 LICENSE="GPL-2-with-Linden-Lab-FLOSS-exception"
