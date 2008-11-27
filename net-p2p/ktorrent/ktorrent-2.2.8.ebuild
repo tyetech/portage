@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-2.2.6.ebuild,v 1.1 2008/04/25 15:30:08 yngwin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-2.2.8.ebuild,v 1.1 2008/11/27 20:54:37 scarabeus Exp $
 
 inherit kde
 
