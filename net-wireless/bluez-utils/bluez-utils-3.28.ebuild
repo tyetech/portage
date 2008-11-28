@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez-utils/Attic/bluez-utils-3.28.ebuild,v 1.1 2008/03/09 21:59:59 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez-utils/Attic/bluez-utils-3.28.ebuild,v 1.2 2008/11/28 21:27:45 dev-zero Exp $
 
 inherit autotools multilib eutils
 
@@ -16,6 +16,7 @@ IUSE="alsa cups debug examples gstreamer hal old-daemons test-programs usb"
 
 DEPEND="
 	>=net-wireless/bluez-libs-${PV}
+	!net-wireless/bluez
 	alsa? ( media-libs/alsa-lib )
 	gstreamer? (
 		>=media-libs/gstreamer-0.10
