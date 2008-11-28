@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/eog/Attic/eog-2.24.0.ebuild,v 1.1 2008/10/19 18:57:26 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/eog/Attic/eog-2.24.2.ebuild,v 1.1 2008/11/28 02:02:17 leio Exp $
 
 inherit eutils gnome2
 
@@ -46,7 +46,7 @@ pkg_setup() {
 	G2CONF="${G2CONF}
 		$(use_with exif libjpeg)
 		$(use_with exif libexif)
-		$(use_with dbus dbus-glib-1)
+		$(use_with dbus)
 		$(use_with lcms cms)
 		$(use_enable python)
 		$(use_with xmp)
@@ -57,8 +57,8 @@ pkg_setup() {
 src_unpack() {
 	gnome2_src_unpack
 
-	# Don't fail on unrecognized chunks, bug #237835
-	epatch "${FILESDIR}/${P}-unrecognized-chunks.patch"
+	# Fix documentation with USE="-exif doc"
+	sed 's:-I$(top_srcdir)/plugins \\:\\:g' -i doc/references/Makefile
 }
 
 pkg_postinst() {
