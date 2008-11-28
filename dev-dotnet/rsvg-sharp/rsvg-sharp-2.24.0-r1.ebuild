@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/vte-sharp/Attic/vte-sharp-2.24.0.ebuild,v 1.1 2008/11/26 00:59:44 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/rsvg-sharp/Attic/rsvg-sharp-2.24.0-r1.ebuild,v 1.1 2008/11/28 00:25:03 loki_val Exp $
 
 EAPI=2
 
@@ -13,5 +13,5 @@ KEYWORDS="~x86 ~ppc ~amd64"
 IUSE=""
 
 RDEPEND="=dev-dotnet/gnome-sharp-${PV}*
-	>=x11-libs/vte-0.16.9"
-DEPEND="${RDEPEND} dev-util/pkgconfig"
+	gnome-base/librsvg"
+DEPEND="${RDEPEND}"
