@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mopac7/Attic/mopac7-1.14.ebuild,v 1.1 2008/11/27 19:18:22 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mopac7/Attic/mopac7-1.14.ebuild,v 1.2 2008/11/28 22:57:05 patrick Exp $
 
 WANT_AUTOMAKE="1.8"
 WANT_AUTOCONF="latest"
@@ -51,7 +51,8 @@ src_unpack() {
 }
 
 src_compile() {
-	emake -j1 "${args[@]}" || die "mopac7 failed to build."
+	econf
+	emake -j1 || die "mopac7 failed to build."
 	}
 
 src_install() {
