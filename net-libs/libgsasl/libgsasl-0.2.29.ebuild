@@ -1,19 +1,19 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libgsasl/Attic/libgsasl-0.2.21.ebuild,v 1.3 2007/09/30 21:40:39 ticho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libgsasl/Attic/libgsasl-0.2.29.ebuild,v 1.1 2008/11/29 20:42:41 dertobi123 Exp $
 
 DESCRIPTION="The GNU SASL library"
 HOMEPAGE="http://www.gnu.org/software/gsasl/"
-SRC_URI="http://josefsson.org/gsasl/releases/${P}.tar.gz"
+SRC_URI="ftp://alpha.gnu.org/pub/gnu/gsasl/${P}.tar.gz"
 LICENSE="LGPL-3"
 SLOT="0"
 # TODO: check http://www.gnu.org/software/gsasl/#dependencies for more
 # 	optional external libraries.
+#   * ntlm - libntlm ( http://josefsson.org/libntlm/ )
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
-IUSE="idn kerberos nls static"
+IUSE="idn kerberos nls"
 PROVIDE="virtual/gsasl"
-DEPEND="virtual/libc
-	nls? ( >=sys-devel/gettext-0.16.1 )
+DEPEND="nls? ( >=sys-devel/gettext-0.16.1 )
 	kerberos? ( virtual/krb5 )
 	idn? ( net-dns/libidn )"
 RDEPEND="${DEPEND}
@@ -22,15 +22,14 @@ RDEPEND="${DEPEND}
 src_compile() {
 	econf \
 		$(use_enable kerberos gssapi) \
-		$(use_enable kerberos kerberosv5) \
+		$(use_enable kerberos kerberos_v5) \
 		$(use_with idn stringprep) \
 		$(use_enable nls) \
-		$(use_enable static) \
 	|| die "econf failed"
 	emake || die "emake failed"
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "installation failed"
-	dodoc ABOUT-NLS AUTHORS ChangeLog NEWS README README-alpha THANKS
+	dodoc AUTHORS ChangeLog NEWS README THANKS
 }
