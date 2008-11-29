@@ -1,17 +1,17 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-games/Attic/gnome-games-2.22.2.1.ebuild,v 1.6 2008/08/12 14:13:40 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-games/Attic/gnome-games-2.24.2.ebuild,v 1.1 2008/11/29 19:07:22 eva Exp $
 
 # make sure games is inherited first so that the gnome2
 # functions will be called if they are not overridden
-inherit games games-ggz eutils gnome2 python autotools virtualx
+inherit games games-ggz eutils gnome2 python virtualx
 
 DESCRIPTION="Collection of games for the GNOME desktop"
 HOMEPAGE="http://live.gnome.org/GnomeGames/"
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm ~hppa ia64 ppc ~ppc64 ~sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="artworkextra guile opengl"
 
 RDEPEND=">=gnome-base/libgnomeui-2.16.0
@@ -74,14 +74,9 @@ pkg_setup() {
 src_unpack() {
 	gnome2_src_unpack
 
-	# Resolve symbols at execution time in setgid binaries
-	epatch "${FILESDIR}/${PN}-2.14.0-no_lazy_bindings.patch"
-
 	# disable pyc compiling
 	mv py-compile py-compile.orig
 	ln -s $(type -P true) py-compile
-
-	eautoreconf
 }
 
 src_test() {
