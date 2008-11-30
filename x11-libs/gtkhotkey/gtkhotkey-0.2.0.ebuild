@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtkhotkey/Attic/gtkhotkey-0.2.0.ebuild,v 1.4 2008/11/27 18:32:35 serkan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtkhotkey/Attic/gtkhotkey-0.2.0.ebuild,v 1.5 2008/11/30 14:55:46 serkan Exp $
 
 EAPI="2"
 
@@ -31,6 +31,7 @@ DEPEND="${COMMON_DEPEND}
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-buildfixes.patch
 	eautoreconf
+	sed -i -e "s: install-gtkhotkeydocDATA ::" Makefile.in || die "Patching Makefile.in failed"
 }
 
 src_install() {
