@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/agg/agg-2.5.ebuild,v 1.13 2008/11/01 17:14:05 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/agg/agg-2.5.ebuild,v 1.14 2008/11/30 18:48:35 armin76 Exp $
 
 inherit eutils autotools
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://antigrain.com/"
 SRC_URI="http://antigrain.com/${P}.tar.gz"
 LICENSE="X11"
 SLOT="0"
-KEYWORDS="amd64 ~hppa ppc ~sparc x86 ~x86-fbsd"
+KEYWORDS="amd64 ~hppa ppc sparc x86 ~x86-fbsd"
 IUSE="sdl truetype X"
 
 RDEPEND="sdl? ( >=media-libs/libsdl-1.2.0 )
