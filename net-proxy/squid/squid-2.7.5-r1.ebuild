@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-2.7.5.ebuild,v 1.1 2008/10/19 10:00:35 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-2.7.5-r1.ebuild,v 1.1 2008/11/30 19:20:44 mrness Exp $
 
 WANT_AUTOCONF="latest"
 WANT_AUTOMAKE="latest"
@@ -23,9 +23,9 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="pam ldap samba sasl kerberos nis ssl snmp selinux logrotate \
 	mysql postgres sqlite \
-	qos zero-penalty-hit \
-	pf-transparent ipf-transparent \
-	elibc_uclibc kernel_linux"
+	zero-penalty-hit \
+	pf-transparent ipf-transparent kqueue \
+	elibc_uclibc kernel_linux epoll"
 
 DEPEND="pam? ( virtual/pam )
 	ldap? ( net-nds/openldap )
@@ -45,11 +45,6 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${S_PP}"
 
 pkg_setup() {
-	if use qos; then
-		eerror "qos patch is no longer supported!"
-		eerror "Please remove qos USE flag and use zph* config options instead."
-		die "unsupported USE flags detected"
-	fi
 	if use zero-penalty-hit; then
 		ewarn "This version supports natively IP TOS/Priority mangling,"
 		ewarn "but it does not support zph_preserve_miss_tos."
@@ -101,12 +96,10 @@ src_compile() {
 	fi
 
 	if use kernel_linux; then
-		myconf="${myconf} --enable-linux-netfilter"
-		if kernel_is ge 2 6 && linux_chkconfig_present EPOLL ; then
-			myconf="${myconf} --enable-epoll"
-		fi
+		myconf="${myconf} --enable-linux-netfilter
+			$(use_enable epoll)"
 	elif use kernel_FreeBSD || use kernel_OpenBSD || use kernel_NetBSD ; then
-		myconf="${myconf} --enable-kqueue"
+		myconf="${myconf} $(use_enable kqueue)"
 		if use pf-transparent; then
 			myconf="${myconf} --enable-pf-transparent"
 		elif use ipf-transparent; then
