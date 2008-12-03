@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/pidgin-facebookchat/Attic/pidgin-facebookchat-1.41.ebuild,v 1.1 2008/12/03 08:00:08 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/pidgin-facebookchat/Attic/pidgin-facebookchat-1.41.ebuild,v 1.2 2008/12/03 08:56:42 voyageur Exp $
 
 inherit toolchain-funcs multilib
 
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-RDEPEND="net-im/pidgin"
+RDEPEND=">=net-im/pidgin-2.3.0"
 DEPEND="dev-util/pkgconfig
 	${RDEPEND}"
 
