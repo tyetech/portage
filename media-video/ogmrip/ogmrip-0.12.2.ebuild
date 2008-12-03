@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ogmrip/Attic/ogmrip-0.12.2.ebuild,v 1.1 2008/10/01 06:34:22 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ogmrip/Attic/ogmrip-0.12.2.ebuild,v 1.2 2008/12/03 14:10:05 beandog Exp $
 
 EAPI="2"
 
@@ -66,7 +66,7 @@ pkg_setup() {
 		$(use_enable xvid xvid-support)"
 }
 
-src_configure(){
+src_configure() {
 	gnome2_src_configure
 }
 
