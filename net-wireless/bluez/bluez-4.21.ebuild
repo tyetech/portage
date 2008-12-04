@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez/Attic/bluez-4.19.ebuild,v 1.1 2008/11/28 21:21:35 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez/Attic/bluez-4.21.ebuild,v 1.1 2008/12/04 10:04:22 dev-zero Exp $
 
 inherit autotools multilib eutils
 
