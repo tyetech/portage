@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-prof/Attic/ruby-prof-0.7.1.ebuild,v 1.1 2008/12/01 09:10:22 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-prof/Attic/ruby-prof-0.7.2.ebuild,v 1.1 2008/12/09 14:01:37 flameeyes Exp $
 
 inherit ruby
 
@@ -23,7 +23,7 @@ USE_RUBY="ruby18"
 src_unpack() {
 	ruby_src_unpack
 
-	# The thread testing in 0.7.1 and earlier versions is broken, it
+	# The thread testing in 0.7.2 and earlier versions is broken, it
 	# has to be tested for the next versions, since upstream is
 	# looking for a solution.
 	rm "${S}"/test/thread_test.rb \
@@ -31,7 +31,7 @@ src_unpack() {
 	sed -i -e '/thread_test/d' \
 		test/test_suite.rb || die "unable to remove broken test reference"
 
-	epatch "${FILESDIR}/${P}-fix-amd64.patch"
+	epatch "${FILESDIR}/${P}+glibc-2.8.patch"
 }
 
 src_compile() {
