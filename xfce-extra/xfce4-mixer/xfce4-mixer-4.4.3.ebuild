@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-mixer/Attic/xfce4-mixer-4.4.3.ebuild,v 1.9 2008/12/17 17:40:51 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-mixer/Attic/xfce4-mixer-4.4.3.ebuild,v 1.10 2008/12/17 17:49:37 angelos Exp $
 
 EAPI=1
 
@@ -41,6 +41,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	rm panel-plugin/${PN}.desktop
+	epatch "${FILESDIR}"/${P}-i18n-typo.patch
 }
 
 src_install() {
