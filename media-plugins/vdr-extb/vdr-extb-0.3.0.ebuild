@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-extb/Attic/vdr-extb-0.3.0.ebuild,v 1.2 2008/03/30 12:29:21 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-extb/Attic/vdr-extb-0.3.0.ebuild,v 1.3 2008/12/17 15:08:40 zzam Exp $
 
 inherit vdr-plugin
 
@@ -23,6 +23,7 @@ src_unpack() {
 
 	cd "${WORKDIR}"
 	epatch "${FILESDIR}/${PN}-0.2.9-gentoo.diff"
+	epatch "${FILESDIR}/${P}-gcc4.3.diff"
 }
 
 src_install() {
