@@ -1,10 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.27.7.ebuild,v 1.1 2008/12/09 03:49:36 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.27.9.ebuild,v 1.1 2008/12/17 05:28:27 kumba Exp $
 
 # INCLUDED:
 # 1) linux sources from kernel.org
-# 2) linux-mips.org GIT snapshot diff from 28 Oct 2008
+# 2) linux-mips.org GIT snapshot diff from 12 Dec 2008
 # 3) Generic Fixes
 # 4) Patch for the IOC3 Metadriver (IP27, IP30)
 # 5) Patch for IP30 Support
