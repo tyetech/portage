@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/dox/Attic/dox-1.1.ebuild,v 1.22 2008/12/14 00:06:46 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/dox/Attic/dox-1.1.ebuild,v 1.23 2008/12/17 22:34:07 maekke Exp $
 
 EAPI=1
 
@@ -13,7 +13,7 @@ HOMEPAGE="http://dox.berlios.de/"
 SLOT="0"
 LICENSE="GPL-2"
 IUSE=""
-KEYWORDS="x86 ppc"
+KEYWORDS="~amd64 ppc x86"
 
 DEPEND="www-misc/htdig
 	x11-libs/qt:3"
