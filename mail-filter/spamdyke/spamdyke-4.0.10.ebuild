@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spamdyke/Attic/spamdyke-4.0.7.ebuild,v 1.1 2008/10/30 21:28:34 tupone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spamdyke/Attic/spamdyke-4.0.10.ebuild,v 1.1 2008/12/18 08:00:59 tupone Exp $
 
 EAPI="1"
 
