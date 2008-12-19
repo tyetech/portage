@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gnomoradio/gnomoradio-0.15.1.ebuild,v 1.9 2008/06/29 11:55:15 drac Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gnomoradio/gnomoradio-0.15.1.ebuild,v 1.10 2008/12/19 18:04:30 aballier Exp $
 
 EAPI=1
 
@@ -29,6 +29,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-gcc42.patch
+	epatch "${FILESDIR}"/${P}-gcc43.patch
 }
 
 src_compile() {
