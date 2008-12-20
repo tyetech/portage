@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rspec/Attic/rspec-1.1.11.ebuild,v 1.5 2008/12/14 13:53:49 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rspec/Attic/rspec-1.1.11.ebuild,v 1.6 2008/12/20 18:51:00 maekke Exp $
 
 inherit gems
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://rspec.rubyforge.org/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ppc ~ppc64 ~sparc x86"
 IUSE=""
 
 RDEPEND=">=dev-ruby/hoe-1.8.1"
