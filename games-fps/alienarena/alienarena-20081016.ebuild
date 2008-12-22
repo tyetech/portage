@@ -1,13 +1,13 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/alienarena/Attic/alienarena-20071011.ebuild,v 1.2 2008/01/22 04:46:06 nyhm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/alienarena/Attic/alienarena-20081016.ebuild,v 1.1 2008/12/22 17:20:30 nyhm Exp $
 
-inherit eutils flag-o-matic toolchain-funcs games
+inherit eutils toolchain-funcs games
 
 MY_PN=${PN}${PV:0:4}
 DESCRIPTION="Fast-paced multiplayer deathmatch game"
 HOMEPAGE="http://red.planetarena.org/"
-SRC_URI="http://icculus.org/${PN}/files/${MY_PN}-${PV}-linux.zip"
+SRC_URI="http://icculus.org/${PN}/Files/${MY_PN}-linux${PV}.zip"
 
 LICENSE="GPL-2 free-noncomm"
 SLOT="0"
@@ -15,7 +15,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE="dedicated opengl sdl"
 
 UIRDEPEND="media-libs/jpeg
-	media-libs/libpng
 	virtual/glu
 	virtual/opengl
 	x11-libs/libXxf86dga
@@ -31,37 +30,26 @@ DEPEND="${RDEPEND}
 	!opengl? ( !dedicated? ( ${UIDEPEND} ) )
 	app-arch/unzip"
 
-S=${WORKDIR}/${MY_PN}/source
+S=${WORKDIR}/source
 
 src_unpack() {
 	unpack ${A}
-	cd "${MY_PN}"
-
-	rm -f */*.so *.dll crded crx crx.sdl
-
-	epatch "${FILESDIR}"/${P}-paths.patch
-
-	cd "${S}"
-	sed -i \
-		-e "s:GENTOO_DATADIR:${GAMES_DATADIR}/${PN}:" \
-		-e "s:GENTOO_LIBDIR:$(games_get_libdir)/${PN}:" \
-		unix/sys_unix.c \
-		|| die "sed sys_unix.c"
+	rm -f */*.so
 }
 
 src_compile() {
-	# To avoid audio crackling
-	[[ $(gcc-fullversion) == "4.1.1" ]] && replace-flags -O? -O0
-
 	emake \
 		CC="$(tc-getCC)" \
-		BASE_CFLAGS="${CFLAGS} -Dstricmp=strcasecmp -D_stricmp=strcasecmp -DHAVE_CURL" \
-		OPTIMIZED_CFLAGS= \
-		$(use sdl && echo SDLSOUND=1) \
-		$(use opengl && ! use dedicated && echo BUILD=GAME) \
+		OPTIMIZED_CFLAGS=no \
+		WITH_DATADIR=yes \
+		WITH_LIBDIR=yes \
+		DATADIR="${GAMES_DATADIR}"/${PN} \
+		LIBDIR="$(games_get_libdir)"/${PN} \
+		$(use opengl && use sdl && echo SDLSOUND=yes || echo SDLSOUND=no) \
+		$(use opengl && ! use dedicated && echo BUILD=CLIENT) \
 		$(! use opengl && use dedicated && echo BUILD=DEDICATED) \
 		$(use opengl && use dedicated && echo BUILD=ALL) \
-		$(! use opengl && ! use dedicated && echo BUILD=GAME) \
+		$(use opengl || use dedicated || echo BUILD=CLIENT) \
 		|| die "emake failed"
 }
 
@@ -69,6 +57,8 @@ src_install() {
 	cd release
 	exeinto "$(games_get_libdir)"/${PN}
 	doexe game.so || die "doexe failed"
+	dosym . "$(games_get_libdir)"/${PN}/arena
+	dosym . "$(games_get_libdir)"/${PN}/data1
 
 	if use opengl || ! use dedicated ; then
 		newgamesbin crx ${PN}-oss || die "newgamesbin crx failed"
@@ -76,7 +66,7 @@ src_install() {
 		use sdl || dosym ${PN}-oss "${GAMES_BINDIR}"/${PN}
 	fi
 
-	if use sdl ; then
+	if use opengl && use sdl ; then
 		newgamesbin crx.sdl ${PN}-sdl || die "newgamesbin crx.sdl failed"
 		make_desktop_entry ${PN}-sdl "Alien Arena (SDL audio)"
 		dosym ${PN}-sdl "${GAMES_BINDIR}"/${PN}
@@ -86,10 +76,10 @@ src_install() {
 		newgamesbin crded ${PN}-ded || die "newgamesbin crded failed"
 	fi
 
-	cd "${WORKDIR}/${MY_PN}"
+	cd "${WORKDIR}"
 	insinto "${GAMES_DATADIR}"/${PN}
 	doins -r arena botinfo data1 || die "doins failed"
-	newicon aa.png ${PN}.png || die "newicon"
+	newicon aa.png ${PN}.png || die "newicon failed"
 	dodoc docs/README.txt
 
 	prepgamesdirs
