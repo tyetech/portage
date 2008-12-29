@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/openrc/Attic/openrc-0.4.0.ebuild,v 1.4 2008/12/20 18:54:38 zmedico Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/openrc/Attic/openrc-0.4.1-r1.ebuild,v 1.1 2008/12/29 22:57:50 cardoe Exp $
 
 inherit eutils flag-o-matic multilib toolchain-funcs
 
@@ -63,7 +63,7 @@ src_unpack() {
 		unpack ${A}
 	fi
 	cd "${S}"
-	epatch "${FILESDIR}"/${PV}/*.patch
+	epatch "${FILESDIR}"/0.4.0/*.patch
 }
 
 src_compile() {
