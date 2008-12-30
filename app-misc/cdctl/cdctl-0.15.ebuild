@@ -1,8 +1,8 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/cdctl/cdctl-0.15.ebuild,v 1.19 2008/12/30 19:30:51 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/cdctl/cdctl-0.15.ebuild,v 1.20 2008/12/30 19:32:32 angelos Exp $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="Utility to control your cd/dvd drive"
 HOMEPAGE="http://cdctl.sourceforge.net/"
