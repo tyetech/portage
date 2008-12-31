@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebase-startkde/Attic/kdebase-startkde-3.5.10-r3.ebuild,v 1.1 2008/10/04 20:39:36 cryos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebase-startkde/Attic/kdebase-startkde-3.5.10-r5.ebuild,v 1.1 2008/12/31 02:19:09 jmbsvicetto Exp $
 
 KMNAME=kdebase
 KMNOMODULE=true
@@ -55,18 +55,18 @@ src_install() {
 	doexe startkde
 
 	# startup and shutdown scripts
-	insinto "${KDEDIR}/env"
-	doins "${WORKDIR}/patches/agent-startup.sh"
+	exeinto "${KDEDIR}/env"
+	doexe "${FILESDIR}/agent-startup.sh"
 
 	exeinto "${KDEDIR}/shutdown"
-	doexe "${WORKDIR}/patches/agent-shutdown.sh"
+	doexe "${FILESDIR}/agent-shutdown.sh"
 
 	# freedesktop environment variables
 	cat <<EOF > "${T}/xdg.sh"
 export XDG_CONFIG_DIRS="${KDEDIR}/etc/xdg"
 EOF
-	insinto "${KDEDIR}/env"
-	doins "${T}/xdg.sh"
+	exeinto "${KDEDIR}/env"
+	doexe "${T}/xdg.sh"
 
 	# x11 session script
 	cat <<EOF > "${T}/kde-${SLOT}"
@@ -81,25 +81,6 @@ EOF
 		"${S}/kdm/kfrontend/sessions/kde.desktop.in" > "${T}/kde-${SLOT}.desktop"
 	insinto /usr/share/xsessions
 	doins "${T}/kde-${SLOT}.desktop"
-
-	# kdeglobals needed to make third party apps installed in /usr work
-	cat <<EOF > "${T}/kdeglobals"
-[Directories][\$i]
-dir_lib=/usr/$(get_libdir)
-dir_apps=/usr/share/applnk
-dir_data=/usr/share/apps
-dir_icon=/usr/share/icons
-dir_module=/usr/$(get_libdir)/kde3
-dir_config=/usr/share/config
-dir_kcfg=/usr/share/config.kcfg
-dir_exe=/usr/bin
-dir_mime=/usr/share/mimelnk
-dir_services=/usr/share/services
-dir_servicetypes=/usr/share/servicetypes
-dir_templates=/usr/share/templates
-EOF
-	insinto ${KDEDIR}/share/config
-	doins "${T}/kdeglobals"
 }
 
 pkg_postinst () {
