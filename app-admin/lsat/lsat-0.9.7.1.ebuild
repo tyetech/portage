@@ -1,7 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/lsat/Attic/lsat-0.9.7.1.ebuild,v 1.1 2008/12/29 20:37:14 mpagano Exp $
-
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/lsat/Attic/lsat-0.9.7.1.ebuild,v 1.2 2008/12/31 03:16:37 mr_bones_ Exp $
 
 inherit eutils toolchain-funcs
 
