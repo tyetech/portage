@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/mapm/Attic/mapm-4.9.2.ebuild,v 1.2 2008/12/13 18:01:53 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/mapm/Attic/mapm-4.9.2.ebuild,v 1.3 2008/12/31 03:03:17 darkside Exp $
 
 inherit multilib
 
@@ -10,7 +10,7 @@ SRC_URI="http://www.tc.umn.edu/~ringx004/${P}.tar.gz"
 
 LICENSE="mapm"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND=""
