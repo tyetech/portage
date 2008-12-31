@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/json/Attic/json-1.1.3.ebuild,v 1.1 2008/12/28 10:09:45 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/json/Attic/json-1.1.3.ebuild,v 1.2 2008/12/31 03:23:06 mr_bones_ Exp $
 
 inherit gems
 
@@ -11,4 +11,3 @@ LICENSE="GPL-2"
 KEYWORDS="~x86 ~amd64"
 SLOT="0"
 IUSE=""
-
