@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libxmlpp/Attic/libxmlpp-2.24.0.ebuild,v 1.1 2008/11/17 19:35:01 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libxmlpp/Attic/libxmlpp-2.24.2.ebuild,v 1.1 2009/01/03 15:07:59 eva Exp $
 
 inherit gnome2 eutils
 
