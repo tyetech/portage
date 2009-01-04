@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/glimmer/Attic/glimmer-3.02.ebuild,v 1.3 2008/09/30 20:21:46 darkside Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/glimmer/glimmer-3.02-r1.ebuild,v 1.1 2009/01/04 01:24:22 weaver Exp $
 
 inherit versionator
 
@@ -16,7 +16,8 @@ IUSE=""
 KEYWORDS="~amd64 ~x86"
 
 DEPEND=""
-RDEPEND=""
+RDEPEND="!app-crypt/pkcrack
+	!media-libs/libextractor"
 
 S="${WORKDIR}/${PN}${PV}"
 
