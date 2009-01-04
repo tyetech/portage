@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkworkspace/Attic/libkworkspace-4.1.2-r1.ebuild,v 1.1 2008/11/09 13:40:34 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkworkspace/Attic/libkworkspace-4.1.2-r1.ebuild,v 1.2 2009/01/04 15:10:11 scarabeus Exp $
 
 EAPI="2"
 
@@ -23,4 +23,5 @@ src_prepare() {
 	sed -i \
 		-e "s/^#DONOTINSTALL //" \
 		cmake/modules/CMakeLists.txt || die "sed failed"
+	kde4-meta_src_prepare
 }
