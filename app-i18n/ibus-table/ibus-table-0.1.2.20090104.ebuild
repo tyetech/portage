@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-table/Attic/ibus-table-0.1.2.20090101.ebuild,v 1.1 2009/01/02 16:25:59 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-table/Attic/ibus-table-0.1.2.20090104.ebuild,v 1.1 2009/01/04 13:51:53 matsuu Exp $
 
 inherit eutils python
 
@@ -8,7 +8,7 @@ DESCRIPTION="The Table Engine for IBus Framework"
 HOMEPAGE="http://code.google.com/p/ibus/"
 SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="minimal nls"
