@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/activerecord/Attic/activerecord-2.2.2.ebuild,v 1.3 2009/01/07 15:27:51 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/activerecord/Attic/activerecord-2.2.2.ebuild,v 1.4 2009/01/07 18:09:18 fmccor Exp $
 
 inherit ruby gems
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://rubyforge.org/projects/activerecord/"
 
 LICENSE="MIT"
 SLOT="2.2"
-KEYWORDS="amd64 ~ia64 ~ppc ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="amd64 ~ia64 ~ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE="mysql postgres sqlite sqlite3"
 RESTRICT="test"
 
