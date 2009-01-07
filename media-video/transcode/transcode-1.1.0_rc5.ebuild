@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-1.1.0_rc1.ebuild,v 1.2 2008/10/26 12:52:21 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/transcode/Attic/transcode-1.1.0_rc5.ebuild,v 1.1 2009/01/07 11:52:41 aballier Exp $
 
 WANT_AUTOCONF="2.5"
 WANT_AUTOMAKE="1.10"
@@ -33,7 +33,7 @@ RDEPEND="a52? ( media-libs/a52dec )
 	theora? ( media-libs/libtheora )
 	jpeg? ( media-libs/jpeg )
 	truetype? ( >=media-libs/freetype-2 )
-	>=media-video/ffmpeg-0.4.9_p20080326
+	>=media-video/ffmpeg-0.4.9_p20081014
 	|| ( sys-libs/glibc dev-libs/libiconv )
 	media-libs/libmpeg2
 	x264? ( media-libs/x264 )
@@ -60,7 +60,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	dosed -i -e "s:\$(datadir)/doc/transcode:\$(datadir)/doc/${PF}:" \
+	sed -i -e "s:\$(datadir)/doc/transcode:\$(datadir)/doc/${PF}:" \
 		"${S}"/Makefile.am "${S}"/docs/Makefile.am "${S}"/docs/html/Makefile.am \
 		"${S}"/docs/release-notes/Makefile.am
 
