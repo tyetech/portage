@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/torque/Attic/torque-2.3.0-r1.ebuild,v 1.6 2009/01/08 23:21:21 jsbronder Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/torque/Attic/torque-2.3.6.ebuild,v 1.1 2009/01/08 23:21:21 jsbronder Exp $
 
 inherit flag-o-matic eutils linux-info
 
@@ -11,7 +11,7 @@ SRC_URI="http://www.clusterresources.com/downloads/${PN}/${P}.tar.gz"
 LICENSE="openpbs"
 
 SLOT="0"
-KEYWORDS="alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86"
 IUSE="tk crypt server syslog doc cpusets kernel_linux"
 PROVIDE="virtual/pbs"
 
@@ -32,18 +32,18 @@ RDEPEND="${DEPEND_COMMON}
 	crypt? ( net-misc/openssh )
 	!crypt? ( net-misc/netkit-rsh )"
 
-[ -n "${PBS_SERVER_HOME}" ] || PBS_SERVER_HOME="/var/spool/torque"
-
 pkg_setup() {
-	linux-info_pkg_setup
+	PBS_SERVER_HOME="${PBS_SERVER_HOME:-/var/spool/torque}"
+
 	USE_CPUSETS="--disable-cpusets"
 	if use cpusets; then
-		if use ! kernel_linux; then
+		if ! use kernel_linux; then
 			einfo
 			elog "    Torque currently only has support for cpusets in linux."
 			elog "Assuming you didn't really want this USE flag."
 			einfo
 		else
+			linux-info_pkg_setup
 			einfo
 			elog "    Torque support for cpusets is still in development, you may"
 			elog "wish to disable it for production use."
@@ -57,15 +57,6 @@ pkg_setup() {
 			USE_CPUSETS="--enable-cpusets"
 		fi
 	fi
-}
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	# Pulled from the torque-2.3.0-fixes branch.  Takes care of bug 213279.
-	# Will not be required next version.
-	epatch "${FILESDIR}"/${PV}-fixes_r2031.patch
 }
 
 src_compile() {
@@ -185,12 +176,12 @@ pkg_postinst() {
 # root will be setup as the primary operator/manager, the local machine
 # will be added as a node and we'll create a simple queue, batch.
 pkg_config() {
-	local h="${ROOT}/${PBS_SERVER_HOME}"
+	local h="$(echo "${ROOT}/${PBS_SERVER_HOME}" | sed 's:///*:/:g')"
 	local rc=0
 
 	ebegin "Configuring Torque"
 	[ -n "${PBS_SERVER_NAME}" ] || PBS_SERVER_NAME=$(hostname -f)
-	einfo "Using ${PBS_SERVER_HOME} as the pbs homedir"
+	einfo "Using ${h} as the pbs homedir"
 	einfo "Using ${PBS_SERVER_NAME} as the pbs_server"
 
 	# Check for previous configuration and bail if found.
@@ -208,8 +199,8 @@ pkg_config() {
 
 	if use server; then
 		local qmgr="${ROOT}/usr/bin/qmgr -c"
-		if ! echo "y" | "${ROOT}"/usr/sbin/pbs_server \
-			-d "${ROOT}${PBS_SERVER_HOME}" -t create &>/dev/null; then
+		# pbs_server bails on repeated backslashes.
+		if ! echo "y" | "${ROOT}"/usr/sbin/pbs_server -d "${h}" -t create; then
 			eerror "Failed to start pbs_server"
 			rc=1
 		else
