@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/Attic/openbox-3.4.7.2.ebuild,v 1.8 2008/10/10 09:46:26 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/Attic/openbox-3.4.7.2.ebuild,v 1.9 2009/01/09 15:18:46 remi Exp $
 
 inherit eutils
 
@@ -16,7 +16,7 @@ IUSE="nls startup-notification xinerama"
 RDEPEND=">=dev-libs/glib-2.6
 	>=dev-libs/libxml2-2.0
 	>=media-libs/fontconfig-2
-	virtual/xft
+	x11-libs/libXft
 	x11-libs/libXrandr
 	x11-libs/libXt
 	>=x11-libs/pango-1.8
