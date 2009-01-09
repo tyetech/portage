@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/basemap-data/Attic/basemap-data-0.9.7.ebuild,v 1.1 2008/01/04 18:35:52 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/basemap-data/Attic/basemap-data-0.9.7.ebuild,v 1.2 2009/01/09 19:57:32 patrick Exp $
 
 inherit distutils
 
