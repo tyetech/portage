@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/sword-dtn/Attic/sword-dtn-1.1.ebuild,v 1.1 2008/05/17 02:26:01 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/sword-dtn/sword-dtn-1.0.ebuild,v 1.1 2009/01/10 23:34:54 beandog Exp $
 
 SWORD_MODULE="DTN"
 
