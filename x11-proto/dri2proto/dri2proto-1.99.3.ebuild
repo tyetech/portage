@@ -1,5 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-proto/cvs-repo/gentoo-x86/x11-proto/dri2proto/Attic/dri2proto-1.99.3.ebuild,v 1.2 2009/01/13 02:19:11 dberkholz Exp $
 
 inherit x-modular
 
