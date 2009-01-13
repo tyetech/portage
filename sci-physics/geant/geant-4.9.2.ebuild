@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/geant/Attic/geant-4.9.2.ebuild,v 1.1 2009/01/10 12:13:07 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/geant/Attic/geant-4.9.2.ebuild,v 1.2 2009/01/13 10:11:24 bicatali Exp $
 
 EAPI="2"
 
@@ -29,7 +29,7 @@ LICENSE="geant4"
 SLOT="4"
 KEYWORDS="~amd64 ~hppa ~sparc ~x86"
 IUSE="athena +data dawn debug examples gdml geant3 global minimal +motif
-	+opengl openinventor +raytracerx static +vrml zlib"
+	+opengl openinventor qt4 +raytracerx static +vrml zlib"
 
 DEPEND=">=sci-physics/clhep-2.0.4.2
 	motif? ( x11-libs/openmotif )
