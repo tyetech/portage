@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/crafty/Attic/crafty-22.8.ebuild,v 1.1 2009/01/03 17:48:08 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/crafty/Attic/crafty-22.8.ebuild,v 1.2 2009/01/13 01:43:00 mr_bones_ Exp $
 
 inherit flag-o-matic toolchain-funcs games
 
@@ -65,7 +65,7 @@ src_compile() {
 		fi
 	fi
 	append-flags -DPOSIX -DSKILL
-	emake ${makeopts} crafty-make LDFLAGS="${LDFLAGS} -lpthread" || die "build failed"
+	emake ${makeopts} crafty-make LDFLAGS="${LDFLAGS} -pthread" || die "build failed"
 }
 
 src_install() {
