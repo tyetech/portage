@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ipac-ng/Attic/ipac-ng-1.31-r2.ebuild,v 1.9 2008/05/21 18:49:18 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ipac-ng/Attic/ipac-ng-1.31-r2.ebuild,v 1.10 2009/01/15 05:25:43 jer Exp $
 
 inherit eutils
 
@@ -40,6 +40,7 @@ src_unpack() {
 	epatch "${WORKDIR}"/${P}-iptables-1.3.1.patch
 	epatch "${WORKDIR}"/ipcop-${P}-fetchcounter.patch
 	epatch "${FILESDIR}"/${P}-lable-at-the-end-of-compound.patch
+	epatch "${FILESDIR}"/${P}-strip.patch
 }
 
 src_compile() {
