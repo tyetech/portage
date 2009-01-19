@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/goocanvas/Attic/goocanvas-0.13.ebuild,v 1.1 2009/01/18 21:14:44 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/goocanvas/Attic/goocanvas-0.13.ebuild,v 1.2 2009/01/19 00:28:17 mr_bones_ Exp $
 
 inherit gnome2 libtool
 
@@ -37,4 +37,3 @@ src_unpack() {
 	# Needed for FreeBSD - Please do not remove
 	elibtoolize
 }
-
