@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-games/Attic/gnome-games-2.24.1.1.ebuild,v 1.1 2008/11/03 21:50:18 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-games/Attic/gnome-games-2.24.3.ebuild,v 1.1 2009/01/19 00:12:24 leio Exp $
+
+GCONF_DEBUG="no"
 
 # make sure games is inherited first so that the gnome2
 # functions will be called if they are not overridden
