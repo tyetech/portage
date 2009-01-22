@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gromacs/Attic/gromacs-4.0.2.ebuild,v 1.1 2009/01/04 01:04:00 je_fro Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gromacs/Attic/gromacs-4.0.2.ebuild,v 1.2 2009/01/22 04:14:36 je_fro Exp $
 
 EAPI="1"
 
@@ -32,6 +32,8 @@ DEPEND=">=sci-libs/fftw-3.0.1
 	lapack? ( virtual/lapack )
 	mpi? ( virtual/mpi )
 	xml? ( dev-libs/libxml2 )"
+
+RDEPEND="${DEPEND}"
 
 FORTRAN="g77 gfortran ifc"
 

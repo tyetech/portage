@@ -1,8 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gromacs/Attic/gromacs-3.3.3.ebuild,v 1.2 2009/01/22 04:14:36 je_fro Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gromacs/Attic/gromacs-4.0.3.ebuild,v 1.1 2009/01/22 04:14:36 je_fro Exp $
+
 EAPI="1"
+
 LIBTOOLIZE="true"
+
 inherit autotools eutils flag-o-matic fortran multilib
 
 DESCRIPTION="The ultimate molecular dynamics simulation package"
@@ -60,13 +63,6 @@ src_unpack() {
 	sed -e "s:\$\$libdir:\$\$temp_libdir:" \
 	-i src/tools/Makefile.am \
 	|| die "sed tools/Makefile.am failed"
-
-	# Rename disco manpage to fix bug #210083.
-	sed "s:disco.1:g_disco.1:" \
-	-i "${S}"/man/man1/Makefile.am \
-	|| die "sed failed to rename disco"
-
-	mv "${S}"/man/man1/disco.1 "${S}"/man/man1/g_disco.1
 
 	eautoreconf
 
