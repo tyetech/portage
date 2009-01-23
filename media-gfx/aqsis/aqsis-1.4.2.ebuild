@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/aqsis/Attic/aqsis-1.4.0.ebuild,v 1.2 2008/11/14 18:51:09 coldwind Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/aqsis/Attic/aqsis-1.4.2.ebuild,v 1.1 2009/01/23 19:57:48 maekke Exp $
 
 EAPI="1"
 
