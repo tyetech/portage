@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/eterm/eterm-0.9.5.ebuild,v 1.8 2009/01/10 13:18:27 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/eterm/eterm-0.9.5.ebuild,v 1.9 2009/01/24 11:33:15 aballier Exp $
 
 inherit eutils autotools
 
@@ -16,7 +16,7 @@ else
 		!minimal? ( http://www.eterm.org/download/Eterm-bg-${PV}.tar.gz )
 		mirror://sourceforge/eterm/${MY_P}.tar.gz
 		!minimal? ( mirror://sourceforge/eterm/Eterm-bg-${PV}.tar.gz )"
-	KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 x86-fbsd"
+	KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
 fi
 
 DESCRIPTION="A vt102 terminal emulator for X"
