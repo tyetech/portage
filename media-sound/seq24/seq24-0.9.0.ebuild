@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/seq24/Attic/seq24-0.9.0.ebuild,v 1.1 2008/11/29 13:27:14 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/seq24/Attic/seq24-0.9.0.ebuild,v 1.2 2009/01/25 14:54:45 mescalinum Exp $
 
 EAPI=2
 
@@ -34,4 +34,6 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS ChangeLog README RTC SEQ24
+	doicon src/seq24_32.xpm
+	make_desktop_entry seq24 seq24 seq24_32.xpm
 }
