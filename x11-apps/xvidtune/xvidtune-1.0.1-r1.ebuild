@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xvidtune/Attic/xvidtune-1.0.1-r1.ebuild,v 1.1 2009/01/14 13:32:28 remi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xvidtune/Attic/xvidtune-1.0.1-r1.ebuild,v 1.2 2009/01/25 16:28:16 remi Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -10,7 +10,7 @@ inherit x-modular
 DESCRIPTION="video mode tuner for Xorg"
 
 KEYWORDS="~alpha ~amd64 ~arm ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
-IUSE="xprint"
+IUSE=""
 
 RDEPEND="x11-libs/libXxf86vm
 	x11-libs/libXaw"
