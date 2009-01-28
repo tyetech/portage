@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.2.ebuild,v 1.2 2008/08/11 17:26:35 yngwin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/bacula/Attic/bacula-2.4.4.ebuild,v 1.1 2009/01/28 09:19:28 wschlich Exp $
 
 #
 # TODO:
@@ -148,7 +148,8 @@ src_unpack() {
 	useq bacula-console && useq gnome && epatch "${FILESDIR}/${PV}/${PN}"-gnomesu2gksu.diff
 
 	# apply upstream patches
-	#epatch "${FILESDIR}"/${PV}/${PV}-foo.patch
+	ls "${FILESDIR}"/${PV}/${PV}-*.patch &>/dev/null \
+		&& epatch "${FILESDIR}"/${PV}/${PV}-*.patch
 }
 
 src_compile() {
