@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/nautilusburn-sharp/Attic/nautilusburn-sharp-2.24.0-r5.ebuild,v 1.1 2009/01/05 17:19:15 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-dotnet/cvs-repo/gentoo-x86/dev-dotnet/art-sharp/Attic/art-sharp-2.24.0-r10.ebuild,v 1.1 2009/01/29 22:43:00 loki_val Exp $
 
 EAPI=2
 
@@ -9,7 +9,7 @@ GTK_SHARP_REQUIRED_VERSION="2.12"
 inherit gtk-sharp-module
 
 SLOT="2"
-KEYWORDS="~x86 ~amd64"
+KEYWORDS="~ppc ~x86-fbsd ~x86 ~amd64"
 IUSE=""
 
 RESTRICT="test"
