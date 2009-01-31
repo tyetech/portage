@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/webkit-gtk/Attic/webkit-gtk-0_p40220.ebuild,v 1.1 2009/01/25 19:02:26 jokey Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/webkit-gtk/Attic/webkit-gtk-0_p40220.ebuild,v 1.2 2009/01/31 21:51:04 jokey Exp $
 
 inherit autotools
 
@@ -23,7 +23,6 @@ RDEPEND=">=x11-libs/gtk+-2.8
 	sqlite? ( >=dev-db/sqlite-3 )
 	gstreamer? (
 		>=media-libs/gst-plugins-base-0.10
-		>=gnome-base/gnome-vfs-2.0
 		)
 	soup? ( >=net-libs/libsoup-2.23.1 )
 	xslt? ( dev-libs/libxslt )
