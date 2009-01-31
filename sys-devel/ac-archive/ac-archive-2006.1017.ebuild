@@ -1,8 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/ac-archive/Attic/ac-archive-2006.1017.ebuild,v 1.2 2008/01/17 13:58:49 maekke Exp $
-
-inherit autotools
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/ac-archive/Attic/ac-archive-2006.1017.ebuild,v 1.3 2009/01/31 08:29:52 vapier Exp $
 
 DESCRIPTION="The Autoconf Macro Archive"
 HOMEPAGE="http://ac-archive.sourceforge.net/"
