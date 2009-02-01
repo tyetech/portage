@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/texcm-ttf/texcm-ttf-1.0.ebuild,v 1.12 2008/02/24 12:19:11 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/texcm-ttf/texcm-ttf-1.0.ebuild,v 1.13 2009/02/01 16:52:28 pva Exp $
 
 inherit font
 
@@ -16,6 +16,6 @@ IUSE=""
 DEPEND="app-arch/unzip"
 RDEPEND=""
 
-S="${WORKDIR}/${PN}"
-
+S=${WORKDIR}/${PN}
+FONT_S=${WORKDIR}/${PN}
 FONT_SUFFIX="ttf"
