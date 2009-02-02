@@ -1,9 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-texlive/cvs-repo/gentoo-x86/dev-texlive/texlive-texinfo/Attic/texlive-texinfo-2007.ebuild,v 1.16 2008/09/09 18:40:38 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-texlive/cvs-repo/gentoo-x86/dev-texlive/texlive-texinfo/Attic/texlive-texinfo-2007.ebuild,v 1.17 2009/02/02 07:16:33 aballier Exp $
 
-TEXLIVE_MODULES_DEPS="dev-texlive/texlive-basic
-"
+TEXLIVE_MODULES_DEPS="dev-texlive/texlive-basic dev-texlive/texlive-genericrecommended"
 TEXLIVE_MODULE_CONTENTS="bin-texinfo texinfo collection-texinfo
 "
 inherit texlive-module
