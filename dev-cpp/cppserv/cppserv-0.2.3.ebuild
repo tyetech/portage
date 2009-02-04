@@ -1,6 +1,6 @@
 # Copyright 2008-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/cppserv/Attic/cppserv-0.2.1.ebuild,v 1.1 2009/01/06 05:37:27 iluxa Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/cppserv/Attic/cppserv-0.2.3.ebuild,v 1.1 2009/02/04 19:13:45 iluxa Exp $
 
 inherit eutils apache-module multilib
 
