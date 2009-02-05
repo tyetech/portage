@@ -1,8 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-anthy/Attic/ibus-anthy-0.1.1.20080901.ebuild,v 1.1 2008/09/06 03:27:21 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-hangul/Attic/ibus-hangul-1.1.0.20090205.ebuild,v 1.1 2009/02/05 16:17:26 matsuu Exp $
 
-DESCRIPTION="Japanese input method Anthy IMEngine for IBus Framework"
+inherit python
+
+DESCRIPTION="The Hangul engine for IBus input platform"
 HOMEPAGE="http://code.google.com/p/ibus/"
 SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
 
@@ -11,14 +13,21 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="nls"
 
-RDEPEND="app-i18n/ibus
-	app-i18n/anthy
+RDEPEND=">=app-i18n/ibus-1.1
+	app-i18n/libhangul
 	>=dev-lang/python-2.5
 	nls? ( virtual/libintl )"
 DEPEND="${RDEPEND}
 	dev-lang/swig
 	dev-util/pkgconfig
 	nls? ( >=sys-devel/gettext-0.16.1 )"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	mv py-compile py-compile.orig || die
+	ln -s "$(type -P true)" py-compile || die
+}
 
 src_compile() {
 	econf $(use_enable nls) || die
@@ -37,4 +46,10 @@ pkg_postinst() {
 	elog
 	elog "You should run ibus-setup and enable IM Engines you want to use!"
 	elog
+
+	python_mod_optimize /usr/share/${PN}
+}
+
+pkg_postrm() {
+	python_mod_cleanup /usr/share/${PN}
 }
