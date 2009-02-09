@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgsf/Attic/libgsf-1.14.8.ebuild,v 1.1 2008/08/23 12:03:10 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/libgsf/Attic/libgsf-1.14.11.ebuild,v 1.1 2009/02/09 23:10:03 eva Exp $
 
 inherit eutils gnome2 python multilib
 
@@ -13,7 +13,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-
 IUSE="bzip2 doc gnome python"
 
 RDEPEND="
-	>=dev-libs/glib-2.8
+	>=dev-libs/glib-2.16
 	>=dev-libs/libxml2-2.4.16
 	gnome? ( >=gnome-base/gconf-2
 		>=gnome-base/libbonobo-2
@@ -26,19 +26,19 @@ RDEPEND="
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	>=dev-util/intltool-0.29
+	>=dev-util/intltool-0.35.0
 	doc? ( >=dev-util/gtk-doc-1 )"
 
 PDEPEND="gnome? ( media-gfx/imagemagick )"
 
 DOCS="AUTHORS BUGS ChangeLog HACKING NEWS README TODO"
 
-# FIXME: requires gio-standalone, what is it ?
 pkg_setup() {
 	G2CONF="${G2CONF}
-		--without-gvfs
+		--with-gio
+		--disable-static
 		$(use_with bzip2 bz2)
-		$(use_with gnome)
+		$(use_with gnome gnome-vfs)
 		$(use_with gnome bonobo)
 		$(use_with python)"
 }
@@ -74,7 +74,5 @@ pkg_postinst() {
 
 pkg_postrm() {
 	gnome2_pkg_postrm
-	if use python; then
-		python_mod_cleanup /usr/$(get_libdir)/python*/site-packages/gsf
-	fi
+	python_mod_cleanup /usr/$(get_libdir)/python*/site-packages/gsf
 }
