@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/qbzr/Attic/qbzr-0.9.5.ebuild,v 1.1 2008/11/03 21:18:29 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/qbzr/Attic/qbzr-0.9.7.ebuild,v 1.1 2009/02/09 14:37:10 pva Exp $
 
 NEED_PYTHON=2.4
 
