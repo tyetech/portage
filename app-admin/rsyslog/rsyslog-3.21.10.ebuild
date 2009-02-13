@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-3.21.9.ebuild,v 1.1 2008/12/08 12:53:06 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/rsyslog/Attic/rsyslog-3.21.10.ebuild,v 1.1 2009/02/13 07:49:21 dev-zero Exp $
 
 inherit versionator
 
