@@ -1,12 +1,13 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/isight-firmware-tools/Attic/isight-firmware-tools-1.4.ebuild,v 1.1 2009/02/15 19:11:03 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/isight-firmware-tools/Attic/isight-firmware-tools-1.4.1.ebuild,v 1.1 2009/02/15 19:46:08 eva Exp $
 
-inherit autotools eutils multilib
+inherit autotools eutils multilib versionator
 
+MY_MAJORV=$(get_version_component_range 1-2)
 DESCRIPTION="Extract, load or export firmware for the iSight webcams"
 HOMEPAGE="http://bersace03.free.fr/ift/"
-SRC_URI="http://launchpad.net/${PN}/main/${PV}/+download/${P}.tar.gz"
+SRC_URI="http://launchpad.net/${PN}/main/${MY_MAJORV}/+download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
