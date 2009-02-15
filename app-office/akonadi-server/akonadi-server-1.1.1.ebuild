@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/akonadi-server/Attic/akonadi-server-1.1.1.ebuild,v 1.3 2009/02/01 23:28:06 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/akonadi-server/Attic/akonadi-server-1.1.1.ebuild,v 1.4 2009/02/15 22:02:50 scarabeus Exp $
 
 EAPI="2"
 
@@ -21,6 +21,7 @@ RDEPEND="x11-libs/qt-core:4
 	x11-libs/qt-test:4
 	x11-misc/shared-mime-info"
 DEPEND="${RDEPEND}
+	>=dev-util/cmake-2.6.0
 	dev-libs/boost
 	dev-libs/libxslt
 	>=kde-base/automoc-0.9.88"
