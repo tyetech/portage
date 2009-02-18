@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/kmplayer/Attic/kmplayer-0.11.0a.ebuild,v 1.2 2009/02/13 12:01:21 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/kmplayer/Attic/kmplayer-0.11.0a.ebuild,v 1.3 2009/02/18 10:41:47 scarabeus Exp $
 
 EAPI="2"
 
@@ -29,6 +29,8 @@ RDEPEND="${DEPEND}
 	media-video/mplayer"
 
 S="${WORKDIR}/${MY_P}"
+
+PATCHES=( "$FILESDIR/${PV}-fix_linking.patch" )
 
 src_prepare() {
 	# fixup icon install
