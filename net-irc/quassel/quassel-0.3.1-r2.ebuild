@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/quassel/Attic/quassel-0.3.1-r2.ebuild,v 1.2 2008/12/31 03:39:37 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/quassel/Attic/quassel-0.3.1-r2.ebuild,v 1.3 2009/02/19 11:48:54 scarabeus Exp $
 
 EAPI=1
 
