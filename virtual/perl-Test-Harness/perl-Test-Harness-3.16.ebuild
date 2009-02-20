@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/perl-Test-Harness/Attic/perl-Test-Harness-3.15.ebuild,v 1.1 2009/02/18 10:45:53 tove Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/perl-Test-Harness/Attic/perl-Test-Harness-3.16.ebuild,v 1.1 2009/02/20 06:22:08 tove Exp $
 
 DESCRIPTION="Virtual for Test-Harness"
 HOMEPAGE="http://www.gentoo.org/proj/en/perl/"
