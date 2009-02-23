@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/emacs-daemon/Attic/emacs-daemon-0.11.ebuild,v 1.1 2009/01/14 21:47:13 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/emacs-daemon/Attic/emacs-daemon-0.13.ebuild,v 1.1 2009/02/23 15:31:38 ulm Exp $
 
 inherit elisp
 
@@ -15,7 +15,7 @@ IUSE=""
 
 DEPEND=">=virtual/emacs-23"
 RDEPEND="${DEPEND}
-	>=sys-apps/openrc-0.3.0-r1"
+	>=sys-apps/openrc-0.4"
 
 SITEFILE="10${PN}-gentoo.el"
 
