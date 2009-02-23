@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-1.4.4.ebuild,v 1.6 2008/08/24 13:06:20 corsair Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-strategy/cvs-repo/gentoo-x86/games-strategy/wesnoth/Attic/wesnoth-1.4.4-r1.ebuild,v 1.1 2009/02/23 20:35:55 mr_bones_ Exp $
 
 inherit eutils toolchain-funcs flag-o-matic games
 
@@ -21,8 +21,8 @@ RDEPEND=">=media-libs/libsdl-1.2.7
 		x11-libs/libX11
 		>=media-libs/sdl-mixer-1.2
 		>=media-libs/sdl-image-1.2
-		dev-lang/python
 		>=media-libs/freetype-2 )
+		dev-lang/python
 	nls? ( virtual/libintl )"
 # the configure script is broken and checks for freetype even if
 # it won't be used.  until it's either patched out or upstream fixes
@@ -53,6 +53,7 @@ pkg_setup() {
 
 src_unpack() {
 	unpack ${A}
+	cd "${S}"
 	if use dedicated || use server ; then
 		sed \
 			-e "s:GAMES_BINDIR:${GAMES_BINDIR}:" \
@@ -63,12 +64,12 @@ src_unpack() {
 			|| die "sed failed"
 	fi
 	if ! use nls ; then
-		cd "${S}"
 		sed -i \
 			-e '/^MAN_LANG/d' \
 			doc/man/Makefile.in \
 			|| die "sed failed"
 	fi
+	epatch "${FILESDIR}"/no-python.patch
 }
 
 src_compile() {
@@ -92,7 +93,7 @@ src_compile() {
 		--with-icondir=/usr/share/icons \
 		--with-desktopdir=/usr/share/applications \
 		--docdir=/usr/share/doc/${PF} \
-		--enable-python-install \
+		--disable-python \
 		$(use_enable lite) \
 		$(use_enable static) \
 		$(use_enable editor) \
@@ -107,6 +108,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+	rm -fr "${D}${GAMES_DATADIR}"/wesnoth/data/{ais,campaigns/Descent_Into_Darkness/ais}
 	dodoc changelog
 	if use dedicated || use server; then
 		keepdir "${GAMES_STATEDIR}/run/wesnothd"
