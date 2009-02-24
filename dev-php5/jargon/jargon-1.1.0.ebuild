@@ -1,10 +1,10 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/jargon/Attic/jargon-1.1.0.ebuild,v 1.2 2007/03/17 23:02:17 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/jargon/Attic/jargon-1.1.0.ebuild,v 1.3 2009/02/24 01:49:51 josejx Exp $
 
 inherit php-pear-lib-r1
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 DESCRIPTION="Convenience tools built on top of Creole."
 HOMEPAGE="http://creole.phpdb.org/trac/wiki/"
