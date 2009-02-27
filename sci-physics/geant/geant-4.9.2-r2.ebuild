@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/geant/Attic/geant-4.9.2.ebuild,v 1.2 2009/01/13 10:11:24 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/geant/Attic/geant-4.9.2-r2.ebuild,v 1.1 2009/02/27 15:40:17 bicatali Exp $
 
 EAPI="2"
 
@@ -31,7 +31,7 @@ KEYWORDS="~amd64 ~hppa ~sparc ~x86"
 IUSE="athena +data dawn debug examples gdml geant3 global minimal +motif
 	+opengl openinventor qt4 +raytracerx static +vrml zlib"
 
-DEPEND=">=sci-physics/clhep-2.0.4.2
+RDEPEND=">=sci-physics/clhep-2.0.4.2
 	motif? ( x11-libs/openmotif )
 	athena? ( x11-libs/libXaw )
 	qt4? ( || ( x11-libs/qt:4 x11-libs/qt-gui ) )
@@ -42,7 +42,10 @@ DEPEND=">=sci-physics/clhep-2.0.4.2
 			  qt4? ( || ( x11-libs/qt:4[opengl] x11-libs/qt-opengl ) ) )
 	gdml? ( dev-libs/xerces-c )
 	geant3? ( sci-physics/geant:3 )
-	dawn? ( media-gfx/dawn )"
+	dawn? ( media-gfx/dawn )
+	zlib? ( sys-libs/zlib )"
+
+DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -53,6 +56,9 @@ pkg_setup() {
 }
 
 src_prepare() {
+	# fix bad zlib dependency
+	epatch "${FILESDIR}"/${P}-zlib.patch
+
 	# propagate user's flags.
 	sed -i -e 's/-o/$(LDFLAGS) -o/g' source/GNUmakefile || die
 	sed -i \
@@ -72,6 +78,9 @@ src_prepare() {
 	sed -i \
 		-e 's:$(G4LIB)/$(G4SYSTEM):$(G4TMP):g' \
 		config/common.gmk || die "sed common.gmk failed"
+	sed -i \
+		-e 's:$(G4LIB)/$(G4SYSTEM):$(G4TMP):g' \
+		config/moc.gmk || die "sed moc.gmk failed"
 	sed -i \
 		-e 's:$(G4LIB)/$(G4SYSTEM):$(G4TMP):g' \
 		-e 's:$(G4BIN)/$(G4SYSTEM):$(G4TMP):g' \
@@ -163,7 +172,7 @@ g4_create_env_script() {
 	# detailed data file locations
 	if use data; then
 		G4LEVELGAMMADATA="${G4DATA}/$(basename ${WORKDIR}/PhotonEvaporation*)"
-		G4RADIOACTIVEDATA="${G4DATA}$(basename ${WORKDIR}/RadioactiveDecay*)"
+		G4RADIOACTIVEDATA="${G4DATA}/$(basename ${WORKDIR}/RadioactiveDecay*)"
 		G4LEDATA="${G4DATA}/$(basename ${WORKDIR}/G4EMLOW*)"
 		G4ABLADATA="${G4DATA}/$(basename ${WORKDIR}/G4ABLA*)"
 		G4NEUTRONHPCROSSSECTIONS="${G4DATA}/$(basename ${WORKDIR}/G4NDL*)"
@@ -189,8 +198,10 @@ src_install() {
 	# but install libraries and Geant library tool manually
 	einfo "Installing Geant4 libraries"
 	insinto ${GEANT4_LIBDIR}
+	insopts -m0755
 	doins tmp/*.so || die
 	doins tmp/libname.map || die
+	insopts -m0644
 	if use static; then
 		doins tmp/*.a || die
 	fi
