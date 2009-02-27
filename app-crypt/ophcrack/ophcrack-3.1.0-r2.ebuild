@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/ophcrack/ophcrack-3.1.0-r2.ebuild,v 1.1 2009/02/20 11:20:12 ikelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/ophcrack/ophcrack-3.1.0-r2.ebuild,v 1.2 2009/02/27 21:42:03 tove Exp $
 
 inherit eutils
 
@@ -33,7 +33,7 @@ src_compile() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}" || "Installation failed."
+	emake install DESTDIR="${D}" || die "Installation failed."
 
 	cd "${S}"
 	newicon src/gui/pixmaps/os.xpm ophcrack.xpm
