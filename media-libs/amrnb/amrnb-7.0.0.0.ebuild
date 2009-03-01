@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/amrnb/Attic/amrnb-7.0.0.0.ebuild,v 1.9 2008/05/25 09:03:07 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/amrnb/Attic/amrnb-7.0.0.0.ebuild,v 1.10 2009/03/01 14:06:28 loki_val Exp $
 
 SPEC_VER="26104-700"
 
@@ -15,6 +15,9 @@ KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 RDEPEND=""
 DEPEND="app-arch/unzip"
+
+#Bug 232636
+export LC_ALL=C
 
 src_unpack() {
 	unpack ${P}.tar.bz2
