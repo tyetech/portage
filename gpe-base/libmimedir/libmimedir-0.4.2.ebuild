@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gpe-base/cvs-repo/gentoo-x86/gpe-base/libmimedir/libmimedir-0.4.2.ebuild,v 1.1 2009/03/01 00:16:31 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gpe-base/cvs-repo/gentoo-x86/gpe-base/libmimedir/libmimedir-0.4.2.ebuild,v 1.2 2009/03/01 01:02:15 miknix Exp $
 
 GPE_TARBALL_SUFFIX="gz"
 GPE_MIRROR="http://gpe.linuxtogo.org/download/source"
@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~arm ~amd64 ~x86"
 IUSE="doc"
-DOCS=""
+GPE_DOCS=""
 
 RDEPEND="${RDEPEND}
 	!dev-libs/libmimedir
