@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libyaml/libyaml-0.0.1.ebuild,v 1.4 2009/03/01 16:35:13 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libyaml/libyaml-0.1.2.ebuild,v 1.1 2009/03/01 16:35:13 patrick Exp $
 
 inherit eutils
 
