@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/bomberclone/bomberclone-0.11.8.ebuild,v 1.6 2009/01/14 19:41:30 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/bomberclone/bomberclone-0.11.8.ebuild,v 1.7 2009/03/04 04:20:09 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils games
@@ -21,6 +21,11 @@ DEPEND=">=media-libs/libsdl-1.1.0
 
 src_prepare() {
 	ecvs_clean
+	# bug #260894
+	sed -i \
+		-e 's/ -Werror//' \
+		configure \
+		|| die "sed failed"
 }
 
 src_configure() {
