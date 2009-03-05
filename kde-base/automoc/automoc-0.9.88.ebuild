@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/automoc/Attic/automoc-0.9.88.ebuild,v 1.3 2009/03/01 11:41:57 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/automoc/Attic/automoc-0.9.88.ebuild,v 1.4 2009/03/05 16:04:56 mr_bones_ Exp $
 
 EAPI="2"
 
@@ -28,4 +28,3 @@ src_prepare() {
 		append-flags -pthread
 	fi
 }
-
