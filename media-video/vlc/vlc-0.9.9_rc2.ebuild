@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.9.9_rc.ebuild,v 1.1 2009/02/27 10:46:41 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-0.9.9_rc2.ebuild,v 1.1 2009/03/08 16:04:13 aballier Exp $
 
 EAPI="1"
 
