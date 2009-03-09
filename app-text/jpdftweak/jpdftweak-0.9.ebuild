@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/jpdftweak/jpdftweak-0.9.ebuild,v 1.1 2009/02/21 06:36:20 serkan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/jpdftweak/jpdftweak-0.9.ebuild,v 1.2 2009/03/09 14:17:22 armin76 Exp $
 
 EAPI=2
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/jpdftweak/${PN}-src-${PV}.zip"
 LICENSE="GPL-2"
 SLOT="0"
 RESTRICT=""
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 COMMON_DEPEND="dev-java/itext:0
