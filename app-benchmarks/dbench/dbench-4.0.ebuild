@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/dbench/dbench-4.0.ebuild,v 1.3 2009/03/08 20:54:47 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/dbench/dbench-4.0.ebuild,v 1.4 2009/03/09 12:54:01 flameeyes Exp $
 
 inherit eutils autotools
 
@@ -17,7 +17,6 @@ src_unpack() {
 	cd "${WORKDIR}/${P}"
 	eautoheader
 	eautoconf
-	econf
 	}
 
 src_install() {
