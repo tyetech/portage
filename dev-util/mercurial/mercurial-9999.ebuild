@@ -1,28 +1,29 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/mercurial/Attic/mercurial-1.1.2.ebuild,v 1.3 2009/01/09 00:18:06 nelchael Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/mercurial/Attic/mercurial-9999.ebuild,v 1.1 2009/03/09 20:07:03 nelchael Exp $
 
-inherit bash-completion elisp-common flag-o-matic eutils distutils
+inherit bash-completion elisp-common flag-o-matic eutils distutils mercurial
 
 DESCRIPTION="Scalable distributed SCM"
 HOMEPAGE="http://www.selenic.com/mercurial/"
-SRC_URI="http://www.selenic.com/mercurial/release/${P}.tar.gz"
+EHG_REPO_URI="http://selenic.com/repo/hg"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS=""
 IUSE="bugzilla emacs gpg test tk zsh-completion"
 
 CDEPEND=">=dev-lang/python-2.3"
 RDEPEND="${CDEPEND}
 	bugzilla? ( dev-python/mysql-python )
 	gpg? ( app-crypt/gnupg )
-	tk? ( dev-lang/tk )
 	zsh-completion? ( app-shells/zsh )"
 DEPEND="${CDEPEND}
 	emacs? ( virtual/emacs )
 	test? ( app-arch/unzip
 		dev-python/pygments )"
+
+S="${WORKDIR}/hg"
 
 PYTHON_MODNAME="${PN} hgext"
 SITEFILE="70${PN}-gentoo.el"
@@ -51,7 +52,7 @@ src_install() {
 	fi
 
 	rm -f doc/*.?.txt
-	dodoc CONTRIBUTORS PKG-INFO README doc/*.txt
+	dodoc CONTRIBUTORS README
 	cp hgweb*.cgi "${D}"/usr/share/doc/${PF}/
 
 	dobin contrib/hgk
