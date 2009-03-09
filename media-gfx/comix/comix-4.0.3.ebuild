@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/comix/comix-4.0.3.ebuild,v 1.1 2009/03/07 23:54:26 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/comix/comix-4.0.3.ebuild,v 1.2 2009/03/09 04:22:23 mr_bones_ Exp $
 
 inherit python
 
@@ -15,7 +15,6 @@ RDEPEND=">=dev-python/imaging-1.1.5
 	rar? ( || ( app-arch/unrar app-arch/rar ) )"
 LANGS=" ca cs es fr hr hu id ja ko pl pt_BR ru sv zh_CN zh_TW"
 IUSE="rar $(echo ${LANGS//\ /\ linguas_})"
-
 
 src_unpack() {
 	unpack ${A}
