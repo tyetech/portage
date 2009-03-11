@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/freealut/Attic/freealut-1.0.1.ebuild,v 1.11 2007/01/05 07:08:26 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/freealut/Attic/freealut-1.0.1.ebuild,v 1.12 2009/03/11 20:29:46 tupone Exp $
 
 inherit eutils
 
@@ -14,6 +14,7 @@ KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86"
 IUSE=""
 
 RDEPEND="media-libs/openal"
+DEPEND="${RDEPEND}"
 
 src_compile() {
 	econf \
