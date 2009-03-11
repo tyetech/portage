@@ -1,11 +1,11 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/sunstudioexpress/Attic/sunstudioexpress-2008.11.ebuild,v 1.2 2008/11/16 17:38:22 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/sunstudioexpress/Attic/sunstudioexpress-2008.11.ebuild,v 1.3 2009/03/11 10:52:36 flameeyes Exp $
 
 inherit versionator
 
 MY_PN="StudioExpress"
-MY_TAG="-ii"
+MY_TAG="-v2-ii"
 MY_PV="$(replace_all_version_separators -)"
 MY_P="${MY_PN}-lin-x86-${MY_PV}${MY_TAG}"
 
