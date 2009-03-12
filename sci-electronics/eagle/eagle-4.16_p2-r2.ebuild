@@ -1,10 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/eagle/eagle-4.16_p2-r2.ebuild,v 1.3 2008/10/04 14:19:37 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/eagle/eagle-4.16_p2-r2.ebuild,v 1.4 2009/03/12 16:03:21 nixphoeni Exp $
 
 inherit eutils
 
-DESCRIPTION="EAGLE Layout Editor"
+DESCRIPTION="CadSoft EAGLE schematic and printed circuit board (PCB) layout editor"
 HOMEPAGE="http://www.cadsoft.de"
 
 KEYWORDS="amd64 x86"
