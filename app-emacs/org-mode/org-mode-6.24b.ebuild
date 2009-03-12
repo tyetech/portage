@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/org-mode/Attic/org-mode-6.24.ebuild,v 1.1 2009/03/06 07:22:59 fauli Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/org-mode/Attic/org-mode-6.24b.ebuild,v 1.1 2009/03/12 08:46:38 fauli Exp $
 
 inherit elisp
 
