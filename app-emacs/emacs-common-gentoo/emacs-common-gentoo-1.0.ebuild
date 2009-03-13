@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/emacs-common-gentoo/Attic/emacs-common-gentoo-1.0.ebuild,v 1.4 2009/03/13 12:02:35 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/emacs-common-gentoo/Attic/emacs-common-gentoo-1.0.ebuild,v 1.5 2009/03/13 17:25:25 ulm Exp $
 
 inherit elisp-common eutils fdo-mime gnome2-utils
 
@@ -82,6 +82,7 @@ pkg_postinst() {
 	elisp-site-regen
 
 	if [ ! -e "${ROOT}${SITELISP}/site-start.el" ]; then
+		local line
 		echo
 		while read line; do elog "${line:- }"; done <<-EOF
 		All site initialisation for Gentoo-installed packages is added to
