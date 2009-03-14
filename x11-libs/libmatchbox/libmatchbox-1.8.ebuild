@@ -1,6 +1,6 @@
-# Copyright 2006-2008 Gentoo Foundation
+# Copyright 2006-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libmatchbox/Attic/libmatchbox-1.8.ebuild,v 1.6 2008/02/27 16:55:02 yvasilev Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libmatchbox/Attic/libmatchbox-1.8.ebuild,v 1.7 2009/03/14 04:16:44 solar Exp $
 
 inherit eutils libtool
 
