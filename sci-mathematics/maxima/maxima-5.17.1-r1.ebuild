@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/maxima/Attic/maxima-5.15.0-r1.ebuild,v 1.5 2008/09/03 03:03:38 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/maxima/Attic/maxima-5.17.1-r1.ebuild,v 1.1 2009/03/18 23:50:09 grozin Exp $
 inherit eutils elisp-common
 
 DESCRIPTION="Free computer algebra environment based on Macsyma"
@@ -9,7 +9,8 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2 AECA"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+# ~sparc will be added back after keywording app-emacs/imaxima
+KEYWORDS="~amd64 ~ppc ~x86"
 
 # Supported lisps with readline
 SUPP_RL="gcl clisp"
@@ -27,20 +28,18 @@ for lang in ${LANGS}; do
 	IUSE="${IUSE} linguas_${lang}"
 done
 
-# >=maxima-5.15.0 includes imaxima; it depends on dev-tex/mh
-RDEPEND="!app-emacs/imaxima
-	X? ( x11-misc/xdg-utils
+RDEPEND="X? ( x11-misc/xdg-utils
 		 sci-visualization/gnuplot
 		 tk? ( dev-lang/tk ) )
 	latex? ( || ( dev-texlive/texlive-latexrecommended
 				  >=app-text/tetex-3
 				  app-text/ptex ) )
 	emacs? ( virtual/emacs
-		latex? ( app-emacs/auctex
-				|| ( dev-tex/mh =dev-texlive/texlive-mathextra-2007* ) ) )
+		latex? ( app-emacs/auctex ) )
 	xemacs? ( virtual/xemacs
-		latex? ( app-emacs/auctex
-				|| ( dev-tex/mh =dev-texlive/texlive-mathextra-2007* ) ) )"
+		latex? ( app-emacs/auctex ) )"
+
+PDEPEND="emacs? ( app-emacs/imaxima )"
 
 # create lisp dependencies
 for LISP in ${SUPP_LISPS}; do
@@ -63,6 +62,8 @@ RDEPEND="${RDEPEND}
 DEPEND="${RDEPEND}
 	sys-apps/texinfo"
 
+TEXMF=/usr/share/texmf-site
+
 pkg_setup() {
 	LISPS=""
 
@@ -70,16 +71,17 @@ pkg_setup() {
 		use ${LISP} && LISPS="${LISPS} ${LISP}"
 	done
 
-	if [ -z "${LISPS}" ]; then
-		ewarn "No lisp specified in USE flags, choosing ${DEF_LISP} as default"
-		LISPS="${DEF_LISP}"
-	fi
-
 	RL=""
 
 	for LISP in ${SUPP_NORL}; do
 		use ${LISP} && RL="yes"
 	done
+
+	if [ -z "${LISPS}" ]; then
+		ewarn "No lisp specified in USE flags, choosing ${DEF_LISP} as default"
+		LISPS="${DEF_LISP}"
+		RL="yes"
+	fi
 
 	if use gcl; then
 		if ! built_with_use dev-lisp/gcl ansi; then
@@ -87,44 +89,7 @@ pkg_setup() {
 			die "This package needs gcl with USE=ansi"
 		fi
 		# gcl in the main tree is broken (bug #205803)
-		ewarn "Please use gcl from http://repo.or.cz/w/gentoo-lisp-overlay.git"
-	fi
-
-	# Calculating MAXIMA_TEXMFDIR
-	if use latex; then
-		local TEXMFPATH="$(kpsewhich -var-value=TEXMFSITE)"
-		local TEXMFCONFIGFILE="$(kpsewhich texmf.cnf)"
-
-		if [ -z "${TEXMFPATH}" ]; then
-			eerror "You haven't defined the TEXMFSITE variable in your TeX config."
-			eerror "Please do so in the file ${TEXMFCONFIGFILE:-/var/lib/texmf/web2c/texmf.cnf}"
-			die "Define TEXMFSITE in TeX configuration!"
-		else
-			# go through the colon separated list of directories
-			# (maybe only one) provided in the variable
-			# TEXMFPATH (generated from TEXMFSITE from TeX's config)
-			# and choose only the first entry.
-			# All entries are separated by colons, even when defined
-			# with semi-colons, kpsewhich changes
-			# the output to a generic format, so IFS has to be redefined.
-			local IFS="${IFS}:"
-
-			for strippedpath in ${TEXMFPATH}; do
-				if [ -d ${strippedpath} ]; then
-					MAXIMA_TEXMFDIR="${strippedpath}"
-					break
-				fi
-			done
-
-			# verify if an existing path was chosen to prevent from
-			# installing into the wrong directory
-			if [ -z ${MAXIMA_TEXMFDIR} ]; then
-				eerror "TEXMFSITE does not contain any existing directory."
-				eerror "Please define an existing directory in your TeX config file"
-				eerror "${TEXMFCONFIGFILE:-/var/lib/texmf/web2c/texmf.cnf} or create at least one of the there specified directories"
-				die "TEXMFSITE variable did not contain an existing directory"
-			fi
-		fi
+		ewarn "Please use gcl from the lisp overlay"
 	fi
 
 	if use X && ! built_with_use sci-visualization/gnuplot gd wxwindows; then
@@ -144,11 +109,13 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-no-init-files.patch
 	# remove rmaxima if neither cmucl nor sbcl
 	if [ -z "${RL}" ]; then
-		sed -i \
-			-e '/^@WIN32_FALSE@bin_SCRIPTS/s/rmaxima//' \
-			"${S}"/src/Makefile.in \
+		sed -e '/^@WIN32_FALSE@bin_SCRIPTS/s/rmaxima//' \
+			-i "${S}"/src/Makefile.in \
 			|| die "sed for rmaxima failed"
 	fi
+	# don't install imaxima, since we have a separate package for it
+	sed -i -e '/^SUBDIRS/s/imaxima//' interfaces/emacs/Makefile.in \
+		|| die "sed for imaxima failed"
 }
 
 src_compile() {
@@ -177,7 +144,7 @@ src_compile() {
 		done
 	fi
 
-	econf ${myconf} || die "econf failed"
+	econf ${myconf}
 	emake || die "emake failed"
 }
 
@@ -189,7 +156,7 @@ src_install() {
 		"Science;Math;Education"
 
 	if use latex; then
-		insinto "${MAXIMA_TEXMFDIR}"/tex/latex/emaxima
+		insinto ${TEXMF}/tex/latex/emaxima
 		doins interfaces/emacs/emaxima/emaxima.sty
 	fi
 
@@ -201,13 +168,7 @@ src_install() {
 	dosym ../${PN}/${PV}/doc /usr/share/doc/${PF} || die
 
 	if use emacs; then
-		elisp-site-file-install "${FILESDIR}"/50maxima-gentoo.el
-		# imaxima docs
-		cd interfaces/emacs/imaxima
-		insinto /usr/share/${PN}/${PV}/doc/imaxima
-		doins ChangeLog NEWS README || die "installing imaxima docs failed"
-		insinto /usr/share/${PN}/${PV}/doc/imaxima/imath-example
-		doins imath-example/*.txt || die "installing imaxima docs failed"
+		elisp-site-file-install "${FILESDIR}"/50maxima-gentoo.el || die
 	fi
 }
 
