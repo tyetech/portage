@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/java-virtuals/cvs-repo/gentoo-x86/java-virtuals/jaxp-virtual/Attic/jaxp-virtual-1.4.ebuild,v 1.1 2009/02/05 00:34:14 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/java-virtuals/cvs-repo/gentoo-x86/java-virtuals/jaxp-virtual/Attic/jaxp-virtual-1.4.ebuild,v 1.2 2009/03/20 19:52:00 josejx Exp $
 
 EAPI=1
 
@@ -12,7 +12,7 @@ SRC_URI=""
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
 
 DEPEND=""
