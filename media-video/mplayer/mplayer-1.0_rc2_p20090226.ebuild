@@ -1,23 +1,23 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-20090226.28734.ebuild,v 1.5 2009/03/01 06:00:39 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_rc2_p20090226.ebuild,v 1.1 2009/03/23 16:12:05 beandog Exp $
 
 EAPI="1"
 
 inherit eutils flag-o-matic multilib
 
-# Ugly hack, feel free to fix
 MPLAYER_REVISION=28734
 
-IUSE="3dnow 3dnowext +a52 +aac -aalib +alsa altivec +amrnb +amrwb -arts +ass bidi
-bindist bl +cddb +cdio cdparanoia -cpudetection -custom-cflags -custom-cpuopts
-debug dga +dirac directfb doc +dts +dv dvb +dvd +dvdnav dxr3 +enca +encode esd +faac
-+faad +fbcon +ftp -gif ggi -gtk +iconv ipv6 jack joystick +jpeg kernel_linux ladspa
--libcaca lirc +live lzo +mad +md5sum +mmx mmxext mng +mp2 +mp3 musepack nas
-+nemesi +network openal +opengl oss +png +pnm pulseaudio -pvr +quicktime radio
-+rar +real -realcodecs +rtc -samba +schroedinger +sdl +speex sse sse2 ssse3 svga
-teletext tga +theora +tremor +truetype unicode v4l v4l2 vdpau vidix +vorbis
--win32codecs +X +x264 xanim xinerama +xscreensaver +xv +xvid +xvmc zoran"
+IUSE="3dnow 3dnowext +a52 +aac -aalib +alsa altivec +amrnb +amrwb -arts +ass
+bidi bindist bl +cddb +cdio cdparanoia -cpudetection -custom-cflags
+-custom-cpuopts debug dga +dirac directfb doc +dts +dv dvb +dvd +dvdnav dxr3
++enca +encode esd +faac +faad +fbcon +ftp -gif ggi -gtk +iconv ipv6 jack
+joystick +jpeg kernel_linux ladspa -libcaca lirc +live lzo +mad +md5sum +mmx
+mmxext mng +mp2 +mp3 musepack nas +nemesi +network openal +opengl oss +png +pnm
+pulseaudio -pvr +quicktime radio +rar +real -realcodecs +rtc -samba
++schroedinger +sdl +speex sse sse2 ssse3 svga teletext tga +theora +tremor
++truetype +unicode v4l v4l2 vdpau vidix +vorbis -win32codecs +X +x264 xanim
+xinerama +xscreensaver +xv +xvid +xvmc zoran"
 
 VIDEO_CARDS="s3virge mga tdfx nvidia vesa"
 
@@ -55,13 +55,13 @@ RDEPEND="sys-libs/ncurses
 	amrnb? ( media-libs/amrnb )
 	amrwb? ( media-libs/amrwb )
 	arts? ( kde-base/arts )
-	ass? ( >=media-libs/freetype-2.1
+	ass? ( media-libs/freetype:2
 		media-libs/fontconfig )
 	openal? ( media-libs/openal )
 	bidi? ( dev-libs/fribidi )
 	cdio? ( dev-libs/libcdio )
 	cdparanoia? ( media-sound/cdparanoia )
-	dirac? ( >=media-video/dirac-0.10.0 )
+	dirac? ( media-video/dirac )
 	directfb? ( dev-libs/DirectFB )
 	dga? ( x11-libs/libXxf86dga  )
 	dts? ( media-libs/libdca )
@@ -71,7 +71,7 @@ RDEPEND="sys-libs/ncurses
 		mp2? ( media-sound/twolame )
 		mp3? ( media-sound/lame )
 		faac? ( media-libs/faac )
-		x264? ( >=media-libs/x264-0.0.20080406 )
+		x264? ( >=media-libs/x264-0.0.20081006 )
 		xvid? ( media-libs/xvid )
 		)
 	esd? ( media-sound/esound )
@@ -84,7 +84,7 @@ RDEPEND="sys-libs/ncurses
 		x11-libs/libXxf86vm
 		x11-libs/libXext
 		x11-libs/libXi
-		=x11-libs/gtk+-2* )
+		x11-libs/gtk+:2 )
 	jpeg? ( media-libs/jpeg )
 	ladspa? ( media-libs/ladspa-sdk )
 	libcaca? ( media-libs/libcaca )
@@ -103,13 +103,15 @@ RDEPEND="sys-libs/ncurses
 	samba? ( net-fs/samba )
 	schroedinger? ( media-libs/schroedinger )
 	sdl? ( media-libs/libsdl )
-	speex? ( >=media-libs/speex-1.1.7 )
+	speex? ( media-libs/speex )
 	svga? ( media-libs/svgalib )
 	theora? ( media-libs/libtheora )
-	live? ( >=media-plugins/live-2007.02.20 )
-	truetype? ( >=media-libs/freetype-2.1
+	live? ( media-plugins/live )
+	truetype? ( media-libs/freetype:2
 		media-libs/fontconfig )
-	vdpau? ( >=x11-drivers/nvidia-drivers-180.22 )
+	video_cards_nvidia? (
+		vdpau? ( >=x11-drivers/nvidia-drivers-180.22 )
+	)
 	vidix? ( x11-libs/libXxf86vm
 			 x11-libs/libXext )
 	vorbis? ( media-libs/libvorbis )
@@ -206,15 +208,6 @@ src_unpack() {
 	use svga && unpack "svgalib_helper-${SVGV}-mplayer.tar.bz2"
 
 	cd "${S}"
-
-	# Fix sparc compilation, bug 241110
-	# epatch "${FILESDIR}/mplayer-libavcodec.patch"
-
-	# Fix x264 compilation, bug 240347
-	epatch "${FILESDIR}/mplayer-1.0_rc2_p27725-libx264.patch"
-
-	# Security bug 251017
-	# epatch "${FILESDIR}"/mplayer-1.0_rc2_p28058-demux_vqf.patch
 
 	# Set version #
 	sed -i s/UNKNOWN/${MPLAYER_REVISION}/ "${S}/version.sh"
