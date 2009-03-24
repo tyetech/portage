@@ -1,14 +1,12 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/alexandria/Attic/alexandria-0.6.4_beta1.ebuild,v 1.1 2009/03/12 08:34:06 fauli Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/alexandria/Attic/alexandria-0.6.4.1.ebuild,v 1.1 2009/03/24 19:25:17 fauli Exp $
 
 inherit gnome2 ruby
 
-MY_PV=${PV//_beta/b}
-
 DESCRIPTION="A GNOME application to help you manage your book collection"
 HOMEPAGE="http://alexandria.rubyforge.org/"
-SRC_URI="mirror://rubyforge/${PN}/${PN}-${MY_PV}.tar.gz"
+SRC_URI="mirror://rubyforge/${PN}/${PN}-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,13 +21,12 @@ RDEPEND=">=dev-lang/ruby-1.8.0
 	>=dev-ruby/ruby-libglade2-0.12.0
 	>=dev-ruby/ruby-gconf2-0.12.0
 	>=dev-ruby/imagesize-0.1.1
+	dev-ruby/hpricot
 	evo? ( >=dev-ruby/revolution-0.5 )"
 
 DEPEND=">=dev-lang/ruby-1.8.0
 	app-text/scrollkeeper
 	dev-ruby/rake"
-
-S=${WORKDIR}/${PN}-${MY_PV}
 
 PATCHES=(
 	"${FILESDIR}/${PN}-rakefile.patch"
@@ -71,8 +68,4 @@ pkg_postinst() {
 	elog "  For Z39.50 support and the Library of Congress and"
 	elog "  British Library book proviers:"
 	elog "    dev-ruby/ruby-zoom"
-	echo
-	elog "  For the Amazon book provider:"
-	elog "    dev-ruby/hpricot"
-	echo
 }
