@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/aunit/aunit-2.01.ebuild,v 1.2 2008/01/24 21:33:32 george Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ada/cvs-repo/gentoo-x86/dev-ada/aunit/aunit-2.01.ebuild,v 1.3 2009/03/24 14:34:23 george Exp $
 
 inherit gnat
 
@@ -15,6 +15,7 @@ KEYWORDS="~x86 ~amd64"
 SLOT="0"
 
 DEPEND="virtual/ada"
+RDEPEND="${DEPEND}"
 
 lib_compile() {
 	cd aunit
