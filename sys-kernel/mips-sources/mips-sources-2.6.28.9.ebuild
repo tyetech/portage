@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.27.20.ebuild,v 1.1 2009/03/22 03:34:07 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-2.6.28.9.ebuild,v 1.1 2009/03/24 05:33:37 kumba Exp $
 
 # INCLUDED:
 # 1) linux sources from kernel.org
