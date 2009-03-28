@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/freemind/Attic/freemind-0.9.0_beta20.ebuild,v 1.1 2008/12/20 22:40:05 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/freemind/Attic/freemind-0.9.0_rc3.ebuild,v 1.1 2009/03/28 11:17:59 caster Exp $
 
-EAPI=1
+EAPI=2
 
 # will handle rewriting myself
 JAVA_PKG_BSFIX="off"
@@ -10,6 +10,7 @@ WANT_ANT_TASKS="ant-nodeps ant-trax"
 inherit java-pkg-2 java-ant-2 eutils
 
 MY_PV=${PV//beta/Beta_}
+MY_PV=${MY_PV//rc/RC_}
 
 DESCRIPTION="Mind-mapping software written in Java"
 HOMEPAGE="http://freemind.sourceforge.net"
@@ -20,7 +21,7 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="doc groovy latex pdf svg"
 COMMON_DEP="dev-java/jgoodies-forms:0
 	dev-java/jibx:0
-	>=dev-java/simplyhtml-0.12.3:0
+	>=dev-java/simplyhtml-0.12.5:0
 	dev-java/commons-lang:2.1
 	dev-java/javahelp:0
 	groovy? ( dev-java/groovy:1 )
@@ -38,26 +39,24 @@ RDEPEND=">=virtual/jre-1.4
 
 S="${WORKDIR}/${PN}"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+java_prepare() {
 	# kill the jarbundler taskdef
-	epatch "${FILESDIR}/${PN}-0.9.0_beta15-build.xml.patch"
-
-	local xml
-	for xml in $(find . -name 'build*.xml'); do
-		java-ant_rewrite-classpath ${xml}
-		java-ant_bsfix_one ${xml}
-	done
-	rm -v lib/*.jar lib/*.zip lib/*/*.jar \
-		plugins/*/*.jar plugins/*/*/*.jar || die
+	epatch "${FILESDIR}/${PN}-0.9.0_rc1-build.xml.patch"
 
 	use groovy || rm plugins/build_scripting.xml || die
 	use latex || rm plugins/build_latex.xml || die
 	if ! use pdf && ! use svg ; then
 		rm plugins/build_svg.xml || die
 	fi
+
+	local xml
+	for xml in $(find . -name 'build*.xml'); do
+		java-ant_rewrite-classpath ${xml}
+		java-ant_bsfix_one ${xml}
+	done
+
+	rm -v lib/*.jar lib/*.zip lib/*/*.jar \
+		plugins/*/*.jar plugins/*/*/*.jar || die
 }
 
 src_compile() {
