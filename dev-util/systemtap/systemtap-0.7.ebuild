@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-0.7.ebuild,v 1.3 2008/10/04 16:55:37 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/systemtap/Attic/systemtap-0.7.ebuild,v 1.4 2009/03/29 09:29:34 swegener Exp $
 
 inherit linux-info eutils
 
@@ -41,7 +41,10 @@ src_unpack() {
 }
 
 src_compile() {
-	econf $(use_enable sqlite) || die "econf failed"
+	econf \
+		--disable-docs \
+		$(use_enable sqlite) \
+		|| die "econf failed"
 	emake || die "emake failed"
 }
 
