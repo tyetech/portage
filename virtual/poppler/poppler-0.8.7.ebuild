@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/poppler/Attic/poppler-0.8.7.ebuild,v 1.1 2009/03/29 23:32:53 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/poppler/Attic/poppler-0.8.7.ebuild,v 1.3 2009/04/01 14:50:34 loki_val Exp $
 
 EAPI=2
 
@@ -16,5 +16,4 @@ IUSE=""
 PROPERTIES="virtual"
 
 RDEPEND="~app-text/poppler-${PV}"
-
 DEPEND="${RDEPEND}"

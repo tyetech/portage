@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/poppler-utils/Attic/poppler-utils-0.10.4.ebuild,v 1.1 2009/03/29 23:34:37 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/poppler-utils/Attic/poppler-utils-0.10.4.ebuild,v 1.3 2009/04/01 14:52:14 loki_val Exp $
 
 EAPI=2
 
@@ -15,5 +15,5 @@ IUSE="+abiword"
 
 PROPERTIES="virtual"
 
-RDEPEND="|| ( ~app-text/poppler-utils-${PV}[abiword?] ~app-text/poppler-${PV} )"
+RDEPEND="~app-text/poppler-${PV}"
 DEPEND="${RDEPEND}"
