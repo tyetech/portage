@@ -1,21 +1,22 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodevelop-boo/Attic/monodevelop-boo-1.9.1.ebuild,v 1.1 2008/11/30 12:15:19 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodevelop-boo/Attic/monodevelop-boo-2.0.ebuild,v 1.1 2009/03/30 18:57:05 loki_val Exp $
 
 EAPI=2
 
-inherit autotools eutils mono multilib
+inherit mono multilib
 
 DESCRIPTION="Boo Extension for MonoDevelop"
 HOMEPAGE="http://www.monodevelop.com/"
-SRC_URI="http://www.go-mono.com/sources/${PN}/${P}.tar.bz2"
+SRC_URI="http://ftp.novell.com/pub/mono/sources/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-RDEPEND=">=dev-util/monodevelop-${PV}
+RDEPEND=">=dev-lang/mono-2
+	=dev-util/monodevelop-${PV}*
 	>=dev-lang/boo-0.8.2.2960
 	dev-dotnet/gtksourceview-sharp:1"
 
@@ -42,4 +43,5 @@ src_compile() {
 
 src_install() {
 	emake -j1 DESTDIR="${D}" install || die "install failed"
+	mono_multilib_comply
 }

@@ -1,14 +1,14 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodevelop-debugger-mdb/Attic/monodevelop-debugger-mdb-1.9.3.ebuild,v 1.1 2009/03/17 12:54:48 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodevelop-debugger-gdb/Attic/monodevelop-debugger-gdb-2.0.ebuild,v 1.1 2009/03/30 18:57:47 loki_val Exp $
 
 EAPI=2
 
 inherit mono multilib
 
-DESCRIPTION="MDB Extension for MonoDevelop"
+DESCRIPTION="GDB Extension for MonoDevelop"
 HOMEPAGE="http://www.monodevelop.com/"
-SRC_URI="http://www.go-mono.com/sources/${PN}/${P}.tar.bz2"
+SRC_URI="http://ftp.novell.com/pub/mono/sources/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -17,7 +17,7 @@ IUSE="debug"
 
 RDEPEND=">=dev-lang/mono-2
 	=dev-util/monodevelop-${PV}*
-	 >=dev-util/mono-debugger-2.0"
+	 sys-devel/gdb"
 
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.23"
