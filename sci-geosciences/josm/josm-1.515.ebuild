@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/josm/Attic/josm-1.437.ebuild,v 1.1 2009/03/01 13:42:27 hanno Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/josm/Attic/josm-1.515.ebuild,v 1.1 2009/04/01 12:24:28 hanno Exp $
 
 inherit eutils java-pkg-2
 
