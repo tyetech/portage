@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/dnetc/Attic/dnetc-2.9101.509.ebuild,v 1.1 2009/04/02 01:39:20 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/dnetc/dnetc-2.9103.509.ebuild,v 1.1 2009/04/02 01:45:01 robbat2 Exp $
 
 inherit eutils
 
