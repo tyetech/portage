@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-xgi/Attic/xf86-video-xgi-1.5.0.ebuild,v 1.2 2007/10/22 16:49:45 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-xgi/Attic/xf86-video-xgi-1.5.0.ebuild,v 1.3 2009/04/03 13:41:56 ranger Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -9,7 +9,7 @@ XDPVER=4
 inherit x-modular
 
 DESCRIPTION="XGI video driver"
-KEYWORDS="~x86 ~ppc ~ppc64"
+KEYWORDS="ppc ~ppc64 ~x86"
 RDEPEND=">=x11-base/xorg-server-1.0.99"
 SRC_URI="${SRC_URI}
 		 mirror://gentoo/${P}-bigendian.patch"
