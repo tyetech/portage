@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qtractor/Attic/qtractor-0.4.0.ebuild,v 1.1 2009/03/13 11:55:00 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qtractor/Attic/qtractor-0.4.1.ebuild,v 1.1 2009/04/04 14:46:51 aballier Exp $
 
 EAPI=2
 
