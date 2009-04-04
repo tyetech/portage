@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dhcpv6/Attic/dhcpv6-1.0.20.ebuild,v 1.2 2009/04/04 19:19:15 deathwing00 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dhcpv6/Attic/dhcpv6-1.0.22-r1.ebuild,v 1.1 2009/04/04 19:19:15 deathwing00 Exp $
 
 inherit flag-o-matic
 
@@ -19,6 +19,7 @@ RDEPEND="${DEPEND}"
 src_compile() {
 	use static && append-ldflags -static
 	econf || die
+	epatch "${FILESDIR}/fix-gnusource-collisions.patch"
 	emake || die
 }
 
