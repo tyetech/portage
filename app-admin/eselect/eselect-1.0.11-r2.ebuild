@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.0.11-r2.ebuild,v 1.1 2009/04/08 05:23:54 darkside Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.0.11-r2.ebuild,v 1.2 2009/04/08 05:36:35 darkside Exp $
 
 inherit eutils
 
@@ -30,8 +30,8 @@ src_unpack() {
 
 	cd "${S}"
 	epatch "${FILESDIR}/${P}-fix-paludis-command.patch"
-	pwd
 	epatch "${FILESDIR}/${P}-parent-profiles.patch"
+	epatch "${FILESDIR}/${P}-relative-profiles.patch"
 }
 
 src_compile() {
