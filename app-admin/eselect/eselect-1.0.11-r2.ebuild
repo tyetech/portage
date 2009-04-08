@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.0.11.ebuild,v 1.1 2007/12/01 17:24:08 peper Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.0.11-r2.ebuild,v 1.1 2009/04/08 05:23:54 darkside Exp $
 
 inherit eutils
 
@@ -24,6 +24,15 @@ RDEPEND="sys-apps/sed
 	sys-apps/file"
 
 PDEPEND="vim-syntax? ( app-vim/eselect-syntax )"
+
+src_unpack() {
+	unpack ${A}
+
+	cd "${S}"
+	epatch "${FILESDIR}/${P}-fix-paludis-command.patch"
+	pwd
+	epatch "${FILESDIR}/${P}-parent-profiles.patch"
+}
 
 src_compile() {
 	econf || die "econf failed"
@@ -53,5 +62,10 @@ pkg_postinst() {
 		elog
 		elog "  eselect bashcomp enable eselect"
 		elog
+		elog "to install locally, or"
+		elog
+		elog "  eselect bashcomp enable --global eselect"
+		elog
+		elog "to install system-wide."
 	fi
 }
