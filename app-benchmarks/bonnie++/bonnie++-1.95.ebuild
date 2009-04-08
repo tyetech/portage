@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/bonnie++/bonnie++-1.95.ebuild,v 1.1 2009/03/08 15:56:46 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/bonnie++/bonnie++-1.95.ebuild,v 1.2 2009/04/08 17:04:16 patrick Exp $
 
 inherit eutils
 
@@ -20,6 +20,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch 	"${FILESDIR}/${PN}-1.94-missing_include.patch"
+	epatch "${FILESDIR}/${P}-homepage.patch"
 }
 
 src_compile() {
