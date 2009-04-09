@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/subversion/Attic/subversion-1.6.0.ebuild,v 1.6 2009/04/04 13:45:44 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/subversion/Attic/subversion-1.6.1.ebuild,v 1.1 2009/04/09 19:24:23 arfrever Exp $
 
 EAPI="1"
 
@@ -14,7 +14,7 @@ SRC_URI="http://subversion.tigris.org/downloads/${P/_/-}.tar.bz2"
 
 LICENSE="Subversion"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~ppc64"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~x86"
 IUSE="apache2 berkdb ctypes-python debug doc +dso emacs extras gnome-keyring java kde nls perl python ruby sasl vim-syntax +webdav-neon webdav-serf"
 RESTRICT="test"
 
@@ -26,7 +26,7 @@ CDEPEND=">=dev-db/sqlite-3.4
 	berkdb? ( =sys-libs/db-4* )
 	emacs? ( virtual/emacs )
 	gnome-keyring? ( dev-libs/glib:2 sys-apps/dbus gnome-base/gnome-keyring )
-	kde? ( sys-apps/dbus x11-libs/qt-core x11-libs/qt-dbus x11-libs/qt-gui =kde-base/kdelibs-4* )
+	kde? ( sys-apps/dbus x11-libs/qt-core x11-libs/qt-dbus x11-libs/qt-gui >=kde-base/kdelibs-4 )
 	ruby? ( >=dev-lang/ruby-1.8.2 )
 	sasl? ( dev-libs/cyrus-sasl )
 	webdav-neon? ( >=net-misc/neon-0.28 )
@@ -34,6 +34,7 @@ CDEPEND=">=dev-db/sqlite-3.4
 
 RDEPEND="${CDEPEND}
 	java? ( >=virtual/jre-1.5 )
+	kde? ( kde-base/kwalletd )
 	nls? ( virtual/libintl )
 	perl? ( dev-perl/URI )"
 
@@ -60,6 +61,25 @@ pkg_setup() {
 		die "Enable \"nls\" USE flag"
 	fi
 
+	if use berkdb; then
+		einfo
+		if [[ -z "${SVN_BDB_VERSION}" ]]; then
+			SVN_BDB_VERSION="$(db_ver_to_slot "$(db_findver sys-libs/db 2>/dev/null)")"
+			einfo "SVN_BDB_VERSION variable isn't set. You can set it to enforce using of specific version of Berkeley DB."
+		fi
+		einfo "Using: Berkeley DB ${SVN_BDB_VERSION}"
+		einfo
+
+		local apu_bdb_version="$(scanelf -nq "${ROOT}usr/$(get_libdir)/libaprutil-1.so.0" | grep -Eo "libdb-[[:digit:]]+\.[[:digit:]]+" | sed -e "s/libdb-\(.*\)/\1/")"
+		if [[ -n "${apu_bdb_version}" && "${SVN_BDB_VERSION}" != "${apu_bdb_version}" ]]; then
+			eerror "APR-Util is linked against Berkeley DB ${apu_bdb_version}, but you are trying"
+			eerror "to build Subversion with support for Berkeley DB ${SVN_BDB_VERSION}."
+			eerror "Rebuild dev-libs/apr-util or set SVN_BDB_VERSION=\"${apu_bdb_version}\"."
+			eerror "Aborting to avoid possible run-time crashes."
+			die "Berkeley DB version mismatch"
+		fi
+	fi
+
 	java-pkg-opt-2_pkg_setup
 
 	if ! use webdav-neon && ! use webdav-serf; then
@@ -71,7 +91,7 @@ pkg_setup() {
 		ewarn "  webdav-neon webdav-serf"
 		ewarn
 		ewarn "You can do this by enabling one of these flags in /etc/portage/package.use:"
-		ewarn "    =${CATEGORY}/${PF} webdav-neon webdav-serf"
+		ewarn "    ${CATEGORY}/${PN} webdav-neon webdav-serf"
 		ewarn
 		ebeep
 	fi
@@ -87,16 +107,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
-	epatch "${FILESDIR}/${P}-disable_linking_against_unneeded_libraries.patch"
-
-	# Various fixes which will be included in 1.6.1.
-	epatch "${FILESDIR}/${P}-various_fixes.patch"
-
-	# Fix 2 messages in Polish translation. They will be fixed in 1.6.1.
-	sed -e "7420d;8586d" -i subversion/po/pl.po
-
-	# https://svn.collab.net/viewvc/svn?view=revision&revision=36742
-	sed -e 's/$SVN_APRUTIL_INCLUDES $SVN_DB_INCLUDES/$SVN_DB_INCLUDES $SVN_APRUTIL_INCLUDES/' -i build/ac-macros/berkeley-db.m4
+	epatch "${FILESDIR}/${PN}-1.6.0-disable_linking_against_unneeded_libraries.patch"
 
 	sed -i \
 		-e "s/\(BUILD_RULES=.*\) bdb-test\(.*\)/\1\2/g" \
@@ -117,24 +128,6 @@ src_compile() {
 		myconf="${myconf} --with-swig"
 	else
 		myconf="${myconf} --without-swig"
-	fi
-
-	if use berkdb; then
-		einfo
-		if [[ -z "${SVN_BDB_VERSION}" ]]; then
-			SVN_BDB_VERSION="$(db_ver_to_slot "$(db_findver sys-libs/db 2>/dev/null)")"
-			einfo "SVN_BDB_VERSION variable isn't set. You can set it to enforce using of specific version of Berkeley DB."
-		fi
-		einfo "Using Berkeley DB ${SVN_BDB_VERSION}"
-		einfo
-
-		local apu_bdb_version="$(scanelf -nq "${ROOT}usr/$(get_libdir)/libaprutil-1.so.0" | grep -Eo "libdb-[[:digit:]]+\.[[:digit:]]+" | sed -e "s/libdb-\(.*\)/\1/")"
-		if [[ -n "${apu_bdb_version}" && "${SVN_BDB_VERSION}" != "${apu_bdb_version}" ]]; then
-			eerror "APR-Util is linked against Berkeley DB ${apu_bdb_version}, but you are trying"
-			eerror "to build Subversion with support for Berkeley DB ${SVN_BDB_VERSION}."
-			eerror "Aborting to avoid possible run-time crashes."
-			die "Berkeley DB version mismatch"
-		fi
 	fi
 
 	econf --libdir="/usr/$(get_libdir)" \
@@ -176,7 +169,8 @@ src_compile() {
 		einfo
 		einfo "Building of Subversion SWIG Python bindings"
 		einfo
-		emake swig-py || die "Building of Subversion SWIG Python bindings failed"
+		emake swig_pydir="$(python_get_sitedir)/libsvn" swig_pydir_extra="$(python_get_sitedir)/svn" swig-py \
+			|| die "Building of Subversion SWIG Python bindings failed"
 	fi
 
 	if use perl; then
@@ -232,9 +226,6 @@ src_compile() {
 }
 
 src_install() {
-	python_version
-	PYTHON_DIR=/usr/$(get_libdir)/python${PYVER}
-
 	einfo
 	einfo "Installation of core of Subversion"
 	einfo
@@ -251,14 +242,8 @@ src_install() {
 		einfo
 		einfo "Installation of Subversion SWIG Python bindings"
 		einfo
-		emake -j1 DESTDIR="${D}" DISTUTIL_PARAM="--prefix=${D}" LD_LIBRARY_PATH="-L${D}usr/$(get_libdir)" install-swig-py \
+		emake -j1 DESTDIR="${D}" swig_pydir="$(python_get_sitedir)/libsvn" swig_pydir_extra="$(python_get_sitedir)/svn" install-swig-py \
 			|| die "Installation of Subversion SWIG Python bindings failed"
-
-		# Move Python bindings.
-		dodir "${PYTHON_DIR}/site-packages"
-		mv "${D}usr/$(get_libdir)/svn-python/svn" "${D}${PYTHON_DIR}/site-packages"
-		mv "${D}usr/$(get_libdir)/svn-python/libsvn" "${D}${PYTHON_DIR}/site-packages"
-		rm -fr "${D}usr/$(get_libdir)/svn-python"
 	fi
 
 	if use perl; then
@@ -352,7 +337,7 @@ EOF
 		elisp-install ${PN} contrib/client-side/emacs/{dsvn,psvn}.{el,elc} doc/svn-doc.{el,elc} doc/tools/svnbook.{el,elc} || die "Installation of Emacs modules failed"
 		elisp-install ${PN}/compat contrib/client-side/emacs/vc-svn.{el,elc} || die "Installation of Emacs modules failed"
 		touch "${D}${SITELISP}/${PN}/compat/.nosearch"
-		elisp-site-file-install "${FILESDIR}/1.5.0/70svn-gentoo.el" || die "Installation of Emacs site-init file failed"
+		elisp-site-file-install "${FILESDIR}/70svn-gentoo.el" || die "Installation of Emacs site-init file failed"
 	fi
 	rm -fr contrib/client-side/emacs
 
