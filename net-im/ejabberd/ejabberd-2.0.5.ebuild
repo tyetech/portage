@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/ejabberd/Attic/ejabberd-2.0.2-r1.ebuild,v 1.2 2009/04/09 05:40:39 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/ejabberd/Attic/ejabberd-2.0.5.ebuild,v 1.1 2009/04/09 05:40:39 pva Exp $
 
 inherit eutils multilib
 
@@ -27,6 +27,7 @@ DEPEND=">=net-im/jabber-base-0.01
 	ldap? ( =net-nds/openldap-2* )
 	ssl? ( >=dev-libs/openssl-0.9.8e )
 	zlib? ( sys-libs/zlib )"
+RDEPEND="${DEPEND}"
 
 PROVIDE="virtual/jabber-server"
 
@@ -35,9 +36,6 @@ S=${WORKDIR}/${MY_P}/src
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-
-	# Bug #171427
-	epatch "${FILESDIR}/2.0.0-missing-declaration.patch"
 
 	# get rid of the prefix
 	sed -i -e "s/\\@prefix\\@//" "${S}/Makefile.in" \
@@ -145,7 +143,7 @@ pkg_postinst() {
 	fi
 	elog "===================================================================="
 	elog 'Quick Start Guide:'
-	elog '1) Add output of `hostname -s` to /etc/jabber/ejabberd.cfg line 89'
+	elog '1) Add output of `hostname -f` to /etc/jabber/ejabberd.cfg line 89'
 	elog '   {hosts, ["localhost", "thehost"]}.'
 	elog '2) Add an admin user to /etc/jabber/ejabberd.cfg line 324'
 	elog '   {acl, admin, {user, "theadmin", "thehost"}}.'
