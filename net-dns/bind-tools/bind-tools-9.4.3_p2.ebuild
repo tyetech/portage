@@ -1,11 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.5.1_p1.ebuild,v 1.2 2009/02/11 16:30:59 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.4.3_p2.ebuild,v 1.1 2009/04/11 17:05:45 dertobi123 Exp $
 
 inherit flag-o-matic
 
 MY_PN=${PN//-tools}
-MY_PV=${PV/_p1/-P1}
+MY_PV=${PV/_p2/-P2}
 MY_P="${MY_PN}-${MY_PV}"
 S="${WORKDIR}/${MY_P}"
 DESCRIPTION="bind tools: dig, nslookup, host, nsupdate, dnssec-keygen"
@@ -33,8 +33,6 @@ src_unpack() {
 		cd -
 	}
 
-	epatch "${FILESDIR}"/${PN}-9.5.0_p1-lwconfig.patch
-
 	# bug #151839
 	sed -e \
 		's:struct isc_socket {:#undef SO_BSDCOMPAT\n\nstruct isc_socket {:' \
@@ -47,9 +45,6 @@ src_compile() {
 	use idn  && myconf="${myconf} --with-idn"
 
 	has_version sys-libs/glibc || myconf="${myconf} --with-iconv"
-
-	# bug #227333
-	append-flags -D_GNU_SOURCE
 
 	econf ${myconf} || die "Configure failed"
 
