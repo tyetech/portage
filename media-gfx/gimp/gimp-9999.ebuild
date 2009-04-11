@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp/gimp-9999.ebuild,v 1.19 2009/04/10 23:19:10 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp/gimp-9999.ebuild,v 1.20 2009/04/11 16:16:52 mr_bones_ Exp $
 
 EAPI=2
 
@@ -101,7 +101,6 @@ src_compile() {
 	local AA=
 	emake || die "emake failed"
 }
-
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
