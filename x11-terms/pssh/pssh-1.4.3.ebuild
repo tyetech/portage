@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/pssh/Attic/pssh-1.4.3.ebuild,v 1.1 2009/04/16 21:17:31 jsbronder Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/pssh/Attic/pssh-1.4.3.ebuild,v 1.2 2009/04/17 14:54:18 jsbronder Exp $
 
 NEED_PYTHON=2.4
 
@@ -15,7 +15,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-RDEPEND="net-misc/openssh"
+RDEPEND="net-misc/openssh
+	!net-misc/putty"
 DEPEND="${RDEPEND}
 	dev-python/setuptools"
 
