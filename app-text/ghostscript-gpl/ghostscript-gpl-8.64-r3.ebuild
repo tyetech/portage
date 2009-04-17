@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ghostscript-gpl/Attic/ghostscript-gpl-8.64-r1.ebuild,v 1.2 2009/03/07 18:24:33 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ghostscript-gpl/Attic/ghostscript-gpl-8.64-r3.ebuild,v 1.1 2009/04/17 02:06:23 tgurr Exp $
 
 inherit autotools eutils versionator flag-o-matic
 
@@ -14,7 +14,7 @@ SRC_URI="cjk? ( ftp://ftp.gyve.org/pub/gs-cjk/adobe-cmaps-200406.tar.gz
 		ftp://ftp.gyve.org/pub/gs-cjk/acro5-cmaps-2001.tar.gz )
 	!bindist? ( djvu? ( mirror://sourceforge/djvu/gsdjvu-${GSDJVU_PV}.tar.gz ) )
 	mirror://sourceforge/ghostscript/${MY_P}.tar.bz2
-	mirror://gentoo/${P}-patchset-2.tar.bz2"
+	mirror://gentoo/${P}-patchset-4.tar.bz2"
 
 LICENSE="GPL-2 CPL-1.0"
 SLOT="0"
@@ -82,6 +82,12 @@ src_unpack() {
 	epatch "${WORKDIR}/patches/${PN}-8.64-bitcmyk-regression-r9452.patch"
 	epatch "${WORKDIR}/patches/${PN}-8.64-respect-ldflags-r9461.patch"
 	epatch "${WORKDIR}/patches/${PN}-8.64-respect-ldflags-r9476.patch"
+	epatch "${WORKDIR}/patches/${PN}-8.64-respect-gsc-ldflags.patch" #209803
+
+	# Security fixes
+	epatch "${WORKDIR}/patches/${PN}-8.64-CVE-2009-0583.patch" #261087
+	epatch "${WORKDIR}/patches/${PN}-8.64-CVE-2009-0792.patch" #264594
+	epatch "${WORKDIR}/patches/${PN}-8.64-CVE-2009-0196.patch" #264594
 
 	if use bindist && use djvu ; then
 		ewarn "You have bindist in your USE, djvu support will NOT be compiled!"
