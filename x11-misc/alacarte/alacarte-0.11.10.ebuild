@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/alacarte/Attic/alacarte-0.11.10.ebuild,v 1.2 2009/03/21 11:13:13 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/alacarte/Attic/alacarte-0.11.10.ebuild,v 1.3 2009/04/19 13:15:58 ranger Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
@@ -11,7 +11,7 @@ DESCRIPTION="Simple GNOME menu editor"
 HOMEPAGE="http://www.realistanew.com/projects/alacarte"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ppc ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 SLOT=0
 
