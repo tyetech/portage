@@ -1,10 +1,10 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/wxmaxima/Attic/wxmaxima-0.7.5.ebuild,v 1.4 2008/11/26 21:13:57 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/wxmaxima/wxmaxima-0.8.2.ebuild,v 1.1 2009/04/19 22:09:22 grozin Exp $
 
 WX_GTK_VER="2.8"
-EAPI="1"
-inherit eutils autotools wxwidgets fdo-mime
+EAPI="2"
+inherit wxwidgets fdo-mime
 
 MYP=wxMaxima-${PV}
 
@@ -20,44 +20,31 @@ IUSE="unicode"
 DEPEND=">=dev-libs/libxml2-2.5.0
 	x11-libs/wxGTK:2.8"
 RDEPEND="${DEPEND}
-	sci-visualization/gnuplot
+	sci-visualization/gnuplot[wxwindows]
 	>=sci-mathematics/maxima-5.15.0"
 
 S="${WORKDIR}/${MYP}"
 
-pkg_setup() {
-	if ! built_with_use sci-visualization/gnuplot wxwindows; then
-		elog "To benefit full plotting capability of wxmaxima,"
-		elog "enable the wxwindows USE flag for sci-visualization/gnuplot"
-		epause 5
-	fi
-	wxwidgets_pkg_setup
+src_prepare() {
+	# consistent package names
+	sed -e "s:${datadir}/wxMaxima:${datadir}/${PN}:g" \
+		-i Makefile.in data/Makefile.in || die "sed failed"
+
+	sed -e 's:share/wxMaxima:share/wxmaxima:g' \
+		-i src/wxMaxima.cpp src/wxMaximaFrame.cpp || die "sed failed"
 }
 
-src_compile () {
-
-	# consistent package names
-	sed -i \
-		-e "s:${datadir}/wxMaxima:${datadir}/${PN}:g" \
-		Makefile.in data/Makefile.in || die "sed failed"
-
-	sed -i \
-		-e 's:share/wxMaxima:share/wxmaxima:g' \
-		src/wxMaxima.cpp || die "sed failed"
-
+src_configure() {
 	econf \
 		--enable-dnd \
 		--enable-printing \
 		--with-wx-config=${WX_CONFIG} \
-		$(use_enable unicode unicode-glyphs) \
-		|| die "econf failed"
-
-	emake || die "emake failed"
+		$(use_enable unicode unicode-glyphs)
 }
 
 src_install () {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	doicon wxmaxima.png
+	doicon data/wxmaxima.png
 	make_desktop_entry wxmaxima wxMaxima wxmaxima
 	dodir /usr/share/doc/${PF}
 	dosym /usr/share/${PN}/README /usr/share/doc/${PF}/README
