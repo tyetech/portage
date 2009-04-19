@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rabbitmq-server/Attic/rabbitmq-server-1.5.4.ebuild,v 1.1 2009/04/19 12:42:54 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rabbitmq-server/Attic/rabbitmq-server-1.5.4.ebuild,v 1.2 2009/04/19 16:39:22 mr_bones_ Exp $
 
 inherit eutils
 
@@ -39,4 +39,3 @@ src_install() {
 	# set LOGDIR to /var/log/rabbitmq.log
 	# run as different user?
 }
-

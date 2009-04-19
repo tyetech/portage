@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/orbited/Attic/orbited-0.7.9.ebuild,v 1.1 2009/04/19 12:36:09 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/orbited/Attic/orbited-0.7.9.ebuild,v 1.2 2009/04/19 16:39:04 mr_bones_ Exp $
 
 inherit distutils
 
@@ -26,4 +26,3 @@ src_install() {
 	cp "${FILESDIR}/${PV}/orbited.cfg" "${D}/etc/orbited.cfg" || die "couldn't create config file"
 	newinitd "${FILESDIR}/${PV}/orbited.init" orbited
 }
-
