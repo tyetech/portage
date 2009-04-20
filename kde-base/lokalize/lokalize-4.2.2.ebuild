@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/lokalize/Attic/lokalize-4.2.2.ebuild,v 1.3 2009/04/20 16:25:55 alexxy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/lokalize/Attic/lokalize-4.2.2.ebuild,v 1.4 2009/04/20 16:41:45 alexxy Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~x86"
 IUSE="debug doc"
 
 RDEPEND="${RDEPEND}
-		>=kde-base/kdesdk-strigi-analyzer-${PV}:${SLOT}
+		>=kde-base/kdesdk-strigi-analyzer-${PV}:${SLOT}[kdeprefix=]
 "
 
 src_prepare() {
