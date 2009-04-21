@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/orage/Attic/orage-4.6.0.ebuild,v 1.1 2009/03/10 13:51:02 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/orage/Attic/orage-4.6.1.ebuild,v 1.1 2009/04/21 04:29:24 darkside Exp $
 
-EAPI=1
+EAPI="1"
 
 inherit xfce4
 
