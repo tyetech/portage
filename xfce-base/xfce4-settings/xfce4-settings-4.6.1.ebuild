@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-settings/Attic/xfce4-settings-4.6.0.ebuild,v 1.3 2009/03/22 12:25:33 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-settings/Attic/xfce4-settings-4.6.1.ebuild,v 1.1 2009/04/21 04:26:48 darkside Exp $
 
-EAPI=1
+EAPI="1"
 
 inherit xfce4
 
