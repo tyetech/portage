@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mysql-ruby/Attic/mysql-ruby-2.8.ebuild,v 1.3 2009/01/21 19:18:18 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mysql-ruby/Attic/mysql-ruby-2.8.ebuild,v 1.4 2009/04/23 07:16:10 a3li Exp $
 
 inherit ruby
 
@@ -29,7 +29,7 @@ src_unpack() {
 }
 
 src_compile() {
-	ruby extconf.rb || die
+	/usr/bin/ruby18 extconf.rb || die
 	emake || die
 }
 
