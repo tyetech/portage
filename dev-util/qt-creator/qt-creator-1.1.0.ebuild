@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/qt-creator/Attic/qt-creator-1.1.0.ebuild,v 1.1 2009/04/23 11:54:37 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/qt-creator/Attic/qt-creator-1.1.0.ebuild,v 1.2 2009/04/23 14:06:48 hwoarang Exp $
 
 EAPI="2"
 
@@ -42,7 +42,7 @@ PATCHES=(
 	"${FILESDIR}/docs_gen.patch"
 )
 
-S="${WORKDIR}/creator-mainline-1.1-snapshot-20090422161352"
+S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	qt4_src_prepare
