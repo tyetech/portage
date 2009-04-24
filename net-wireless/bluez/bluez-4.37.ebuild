@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez/Attic/bluez-4.32.ebuild,v 1.2 2009/03/10 21:17:26 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez/Attic/bluez-4.37.ebuild,v 1.1 2009/04/24 07:30:59 dev-zero Exp $
 
 EAPI="2"
 
@@ -29,14 +29,16 @@ CDEPEND="alsa? ( media-libs/alsa-lib )
 	!net-wireless/bluez-libs
 	!net-wireless/bluez-utils"
 DEPEND="sys-devel/flex
-	dev-util/pkgconfig
+	>=dev-util/pkgconfig-0.20
 	doc? ( dev-util/gtk-doc )
 	${CDEPEND}"
 RDEPEND="${CDEPEND}
 	sys-auth/pambase[consolekit]"
 
 src_prepare() {
-	epatch "${FILESDIR}/4.31-as_needed.patch"
+	epatch \
+		"${FILESDIR}/4.31-as_needed.patch" \
+		"${FILESDIR}/4.34-conditional_libsbc.patch"
 
 	if use cups; then
 		epatch "${FILESDIR}/4.18/cups-location.patch"
