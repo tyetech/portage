@@ -1,6 +1,6 @@
 # Copyright 2008-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/arduino/Attic/arduino-0015-r1.ebuild,v 1.1 2009/04/18 16:50:55 nixphoeni Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/arduino/Attic/arduino-0015-r1.ebuild,v 1.2 2009/04/24 22:55:42 nixphoeni Exp $
 
 inherit eutils
 
@@ -45,6 +45,7 @@ src_install() {
 
 		# get rid of libraries provided by other packages
 		rm -f "${D}/usr/share/${P}/lib/RXTXcomm.jar"
+		rm -f "${D}/usr/share/${P}/lib/librxtxSerial.so"
 		rm -f "${D}/usr/share/${P}/lib/antlr.jar"
 
 		# fix the provided arduino script to call out the right libraries
