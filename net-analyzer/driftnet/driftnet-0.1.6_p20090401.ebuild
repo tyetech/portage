@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/driftnet/driftnet-0.1.6_p20090401.ebuild,v 1.1 2009/04/25 13:25:16 rbu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/driftnet/driftnet-0.1.6_p20090401.ebuild,v 1.2 2009/04/26 13:34:59 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils flag-o-matic toolchain-funcs
@@ -24,7 +24,6 @@ DEPEND="${CDEPEND}
 	dev-util/pkgconfig"
 RDEPEND="${CDEPEND}
 	mp3? ( virtual/mpg123 )"
-
 
 src_compile() {
 	export CC=$(tc-getCC)
