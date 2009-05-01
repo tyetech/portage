@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4.1.ebuild,v 1.1 2008/09/04 03:35:22 fuzzyray Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4.3.ebuild,v 1.1 2009/05/01 03:22:55 fuzzyray Exp $
+
+EAPI=2
 
 inherit eutils python
 
@@ -12,13 +14,14 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE="userland_GNU"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 -x86-fbsd"
 
 DEPEND=">=sys-apps/portage-2.1.1_pre1
 	>=dev-lang/python-2.0
 	>=dev-lang/perl-5.6
 	>=sys-apps/grep-2.4
 	userland_GNU? ( sys-apps/debianutils )"
+RDEPEND="$DEPEND"
 
 src_install() {
 	emake DESTDIR="${D}" install-gentoolkit || die "install-gentoolkit failed"
