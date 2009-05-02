@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/microcode-data/Attic/microcode-data-20080910.ebuild,v 1.2 2008/09/17 09:58:26 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/microcode-data/Attic/microcode-data-20090330.ebuild,v 1.1 2009/05/02 12:52:52 armin76 Exp $
 
 DESCRIPTION="Intel IA32 microcode update data"
 HOMEPAGE="http://urbanmyth.org/microcode/"
@@ -14,7 +14,7 @@ IUSE=""
 S=${WORKDIR}
 
 src_install() {
-	insinto /etc
+	insinto /lib/firmware
 	newins microcode-${PV}.dat microcode.dat || die
 }
 
