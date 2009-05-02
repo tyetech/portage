@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centerim/Attic/centerim-4.22.7-r1.ebuild,v 1.3 2009/04/15 19:44:09 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/centerim/Attic/centerim-4.22.7-r1.ebuild,v 1.4 2009/05/02 21:03:56 swegener Exp $
 
 EAPI="2"
 
@@ -75,7 +75,7 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
+src_prepare() {
 	default
 
 	epatch "${FILESDIR}"/${P}-libgadu-CVE-2008-4776.patch
