@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/freepv/Attic/freepv-0.3.0_beta1.ebuild,v 1.1 2009/02/26 13:01:58 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/freepv/Attic/freepv-0.3.0.ebuild,v 1.1 2009/05/02 07:39:49 voyageur Exp $
 
 inherit cmake-utils nsplugins
 
