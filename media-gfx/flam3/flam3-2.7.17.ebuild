@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/flam3/Attic/flam3-2.7.17.ebuild,v 1.1 2009/05/01 18:38:24 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/flam3/Attic/flam3-2.7.17.ebuild,v 1.2 2009/05/04 06:56:33 mr_bones_ Exp $
 
 DESCRIPTION="Tools and a library for creating flame fractal images"
 HOMEPAGE="http://flam3.com/"
@@ -21,4 +21,3 @@ src_install() {
 	emake install DESTDIR="${D}" || die "emake install failed"
 	dodoc README.txt *.flam3 || die "dodoc failed"
 }
-
