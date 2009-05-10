@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-1.0.0_pre2.ebuild,v 1.1 2009/04/17 11:47:13 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/vlc/Attic/vlc-1.0.0_rc1.ebuild,v 1.1 2009/05/10 10:23:27 aballier Exp $
 
 EAPI="1"
 
@@ -83,7 +83,7 @@ RDEPEND="
 		fontconfig? ( media-libs/fontconfig )
 		ggi? ( media-libs/libggi )
 		gnome? ( gnome-base/gnome-vfs )
-		gnutls? ( >=net-libs/gnutls-1.3.3 )
+		gnutls? ( >=net-libs/gnutls-1.7.4 )
 		hal? ( sys-apps/hal )
 		id3tag? ( media-libs/libid3tag
 			sys-libs/zlib )
