@@ -1,19 +1,21 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/epiphany/Attic/epiphany-2.24.2.1.ebuild,v 1.3 2009/01/29 17:03:45 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/epiphany/Attic/epiphany-2.26.1.ebuild,v 1.1 2009/05/10 22:07:57 eva Exp $
 
-inherit gnome2 eutils multilib
+EAPI="2"
+
+inherit gnome2 eutils multilib autotools
 
 DESCRIPTION="GNOME webbrowser based on the mozilla rendering engine"
 HOMEPAGE="http://www.gnome.org/projects/epiphany/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~sparc ~x86"
-IUSE="avahi doc networkmanager python spell xulrunner"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+IUSE="avahi doc networkmanager python spell"
 
 RDEPEND=">=dev-libs/glib-2.18.0
-	>=x11-libs/gtk+-2.14.0
+	>=x11-libs/gtk+-2.16.0
 	>=dev-libs/libxml2-2.6.12
 	>=dev-libs/libxslt-1.1.7
 	>=gnome-base/libglade-2.3.1
@@ -22,19 +24,17 @@ RDEPEND=">=dev-libs/glib-2.18.0
 	>=gnome-base/gnome-desktop-2.9.91
 	>=x11-libs/startup-notification-0.5
 	>=x11-libs/libnotify-0.4
-	>=media-libs/libcanberra-0.3
+	>=media-libs/libcanberra-0.3[gtk]
 	>=dev-libs/dbus-glib-0.71
 	>=gnome-base/gconf-2
 	>=app-text/iso-codes-0.35
 	avahi? ( >=net-dns/avahi-0.6.22 )
 	networkmanager? ( net-misc/networkmanager )
-	!xulrunner? ( =www-client/mozilla-firefox-2* )
-	xulrunner? ( =net-libs/xulrunner-1.8* )
+	=net-libs/xulrunner-1.9*
 	python? (
 		>=dev-lang/python-2.3
 		>=dev-python/pygtk-2.7.1
-		>=dev-python/gnome-python-2.6
-	)
+		>=dev-python/gnome-python-2.6 )
 	spell? ( app-text/enchant )
 	x11-themes/gnome-icon-theme"
 DEPEND="${RDEPEND}
@@ -47,41 +47,43 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS ChangeLog* HACKING MAINTAINERS NEWS README TODO"
 
 pkg_setup() {
-	# FIXME: I'm automagic
-	if ! built_with_use media-libs/libcanberra gtk; then
-		eerror "You need to rebuild media-libs/libcanberra with gtk support."
-		die "Rebuild media-libs/libcanberra with USE='gtk'"
-	fi
-
 	G2CONF="${G2CONF}
 		--disable-scrollkeeper
+		--with-gecko=libxul-embedding
 		--enable-certificate-manager
 		--with-distributor-name=Gentoo
+		--enable-canberra
 		$(use_enable avahi zeroconf)
 		$(use_enable networkmanager network-manager)
 		$(use_enable spell spell-checker)
 		$(use_enable python)"
-
-	if use xulrunner; then
-		G2CONF="${G2CONF} --with-gecko=xulrunner"
-	else
-		G2CONF="${G2CONF} --with-gecko=firefox"
-	fi
 }
 
-src_compile() {
-	addpredict /usr/$(get_libdir)/mozilla-firefox/components/xpti.dat
-	addpredict /usr/$(get_libdir)/mozilla-firefox/components/xpti.dat.tmp
-	addpredict /usr/$(get_libdir)/mozilla-firefox/components/compreg.dat.tmp
+src_prepare() {
+	gnome2_src_prepare
 
-	addpredict /usr/$(get_libdir)/xulrunner/components/xpti.dat
-	addpredict /usr/$(get_libdir)/xulrunner/components/xpti.dat.tmp
-	addpredict /usr/$(get_libdir)/xulrunner/components/compreg.dat.tmp
+	# Fix compilation with xulrunner 1.9.1, bug #263990
+	epatch "${FILESDIR}/${PN}-2.26.0-xulrunner191.patch"
+
+	# Fix libcanberra automagic support, bug #266232
+	epatch "${FILESDIR}/${P}-automagic-libcanberra.patch"
+
+	# Make it libtool-1 compatible
+	rm -v m4/lt* m4/libtool.m4 || die "removing libtool macros failed"
+
+	intltoolize --force --copy --automake || die "intltoolize failed"
+	eautoreconf
+}
+
+src_configure() {
+	addpredict /usr/$(get_libdir)/xulrunner-1.9/components/xpti.dat
+	addpredict /usr/$(get_libdir)/xulrunner-1.9/components/xpti.dat.tmp
+	addpredict /usr/$(get_libdir)/xulrunner-1.9/components/compreg.dat.tmp
 
 	# Why are these write-opened per bug #228589 and bug #253043
 	addpredict /usr/$(get_libdir)/mozilla/components/xpti.dat
 	addpredict /usr/$(get_libdir)/mozilla/components/xpti.dat.tmp
 	addpredict /usr/$(get_libdir)/mozilla/components/compreg.dat.tmp
 
-	gnome2_src_compile
+	gnome2_src_configure
 }
