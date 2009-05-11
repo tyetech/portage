@@ -1,16 +1,16 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cscope/Attic/cscope-15.6-r2.ebuild,v 1.7 2009/03/01 09:41:40 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cscope/cscope-15.7a-r1.ebuild,v 1.1 2009/05/11 20:56:59 ulm Exp $
 
 inherit elisp-common eutils
 
 DESCRIPTION="Interactively examine a C program"
 HOMEPAGE="http://cscope.sourceforge.net/"
-SRC_URI="mirror://sourceforge/cscope/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/cscope/${P}.tar.bz2"
 
 LICENSE="BSD GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc ~sparc-fbsd x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 IUSE="emacs"
 
 RDEPEND=">=sys-libs/ncurses-5.2"
@@ -24,10 +24,8 @@ SITEFILE="50${PN}-gentoo.el"
 
 src_unpack() {
 	unpack ${A}
-
-	# warn users of insecure web frontend, see bug #158831
 	cd "${S}"
-	epatch "${FILESDIR}/${PN}-158831-warning_webscope.patch"
+	epatch "${FILESDIR}/${P}-ocs-sysdir.patch" #269305
 }
 
 src_compile() {
@@ -39,7 +37,7 @@ src_compile() {
 
 	if use emacs ; then
 		cd "${S}"/contrib/xcscope || die
-		elisp-compile *.el || die "elisp-compile failed"
+		elisp-compile *.el || die
 	fi
 }
 
@@ -49,9 +47,8 @@ src_install() {
 
 	if use emacs ; then
 		cd "${S}"/contrib/xcscope || die
-		elisp-install ${PN} *.el *.elc || die "elisp-install failed"
-		elisp-site-file-install "${FILESDIR}/${SITEFILE}" \
-			|| die "elisp-site-file-install failed"
+		elisp-install ${PN} *.el *.elc || die
+		elisp-site-file-install "${FILESDIR}/${SITEFILE}" || die
 		dobin cscope-indexer || die "dobin failed"
 	fi
 
