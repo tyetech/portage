@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-screensaver/Attic/gnome-screensaver-2.24.1.ebuild,v 1.2 2008/11/30 12:10:01 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-screensaver/Attic/gnome-screensaver-2.26.1.ebuild,v 1.1 2009/05/11 22:59:46 eva Exp $
 
-inherit eutils gnome2
+inherit eutils gnome2 multilib
 
 DESCRIPTION="Replaces xscreensaver, integrating with the desktop."
 HOMEPAGE="http://live.gnome.org/GnomeScreensaver"
@@ -33,12 +33,11 @@ RDEPEND=">=gnome-base/gconf-2.6.1
 	x11-libs/libXxf86vm"
 DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.9
-	>=dev-util/intltool-0.35
+	>=dev-util/intltool-0.40
 	doc? (
 		app-text/xmlto
 		~app-text/docbook-xml-dtd-4.1.2
-		~app-text/docbook-xml-dtd-4.4
-	)
+		~app-text/docbook-xml-dtd-4.4 )
 	x11-proto/xextproto
 	x11-proto/randrproto
 	x11-proto/scrnsaverproto
@@ -57,7 +56,7 @@ pkg_setup() {
 		--with-xf86gamma-ext
 		--with-kbd-layout-indicator
 		--with-xscreensaverdir=/usr/share/xscreensaver/config
-		--with-xscreensaverhackdir=/usr/lib/misc/xscreensaver"
+		--with-xscreensaverhackdir=/usr/$(get_libdir)/misc/xscreensaver"
 }
 
 src_install() {
@@ -84,6 +83,12 @@ src_install() {
 
 pkg_postinst() {
 	gnome2_pkg_postinst
+
+	if has_version "<x11-base/xorg-server-1.5.3-r4" ; then
+		ewarn "You have a too old xorg-server installation. This will cause"
+		ewarn "gnome-screensaver to eat up your CPU. Please consider upgrading."
+		echo
+	fi
 
 	if has_version "<x11-misc/xscreensaver-4.22-r2" ; then
 		ewarn "You have xscreensaver installed, you probably want to disable it."
