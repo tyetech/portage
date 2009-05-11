@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/splashutils/Attic/splashutils-1.5.4.3.ebuild,v 1.10 2009/04/12 17:50:42 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/splashutils/Attic/splashutils-1.5.4.3.ebuild,v 1.11 2009/05/11 20:14:15 spock Exp $
 
 EAPI="1"
 
@@ -85,6 +85,7 @@ src_unpack() {
 	fi
 
 	epatch "${FILESDIR}"/splashutils-1.5.4.3-makefile.patch
+	epatch "${FILESDIR}"/splashutils-1.5.4.3-splash_geninitramfs.patch
 
 	cd "${SG}"
 	if has_version ">=sys-apps/openrc-0.4.0"; then
