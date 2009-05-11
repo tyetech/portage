@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-1.15v-r1.ebuild,v 1.3 2008/12/09 03:26:00 darkside Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-1.15v-r1.ebuild,v 1.4 2009/05/11 20:01:20 ssuominen Exp $
 
 IUSE="static 16bit esd"
 
@@ -66,7 +66,7 @@ src_compile() {
 
 	append-flags "-I${S}"
 
-	ARCH= emake CC="$(tc-getCC)" mppenc mppdec replaygain || die
+	ARCH= emake -j1 CC="$(tc-getCC)" mppenc mppdec replaygain || die
 }
 
 src_install() {
