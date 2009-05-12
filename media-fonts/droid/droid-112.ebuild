@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/droid/Attic/droid-112.ebuild,v 1.2 2009/01/14 00:37:23 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/droid/Attic/droid-112.ebuild,v 1.3 2009/05/12 08:41:16 loki_val Exp $
 
 inherit font
 
@@ -19,4 +19,5 @@ S=${WORKDIR}
 FONT_S=${WORKDIR}
 FONT_SUFFIX="ttf"
 
+RDEPEND=""
 DEPEND="app-arch/unzip"
