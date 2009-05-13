@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/uif2iso/Attic/uif2iso-0.1.7.ebuild,v 1.1 2008/11/13 02:52:53 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/uif2iso/uif2iso-0.1.7c.ebuild,v 1.1 2009/05/13 10:16:36 flameeyes Exp $
 
 inherit eutils toolchain-funcs
 
@@ -22,7 +22,7 @@ S="${WORKDIR}/src"
 src_compile() {
 	# Yes we use our own makefile, I'll try to explain this to
 	# upstream _again_.
-	emake CC="$(tc-getCC)" -f "${FILESDIR}/${PV}-Makefile" || die "emake failed"
+	emake CC="$(tc-getCC)" -f "${FILESDIR}/0.1.7-Makefile" || die "emake failed"
 }
 
 src_install() {
