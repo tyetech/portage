@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/audacious/Attic/audacious-2.0_beta1.ebuild,v 1.1 2009/05/12 22:13:32 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/audacious/Attic/audacious-2.0.0.ebuild,v 1.1 2009/05/13 00:16:42 chainsaw Exp $
 
 inherit flag-o-matic
 
@@ -31,7 +31,7 @@ DEPEND="${RDEPEND}
 	>=dev-util/pkgconfig-0.9.0
 	nls? ( dev-util/intltool )"
 
-PDEPEND=">=media-plugins/audacious-plugins-2.0_beta1"
+PDEPEND=">=media-plugins/audacious-plugins-2.0.0"
 
 src_compile() {
 	# This is masked in the portage tree, so I'll save you the
