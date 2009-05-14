@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/kdebluetooth/Attic/kdebluetooth-1.0_beta8-r2.ebuild,v 1.5 2009/05/13 08:35:41 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/kdebluetooth/Attic/kdebluetooth-1.0_beta8-r2.ebuild,v 1.6 2009/05/14 16:01:59 scarabeus Exp $
 
 inherit kde
 
@@ -33,7 +33,8 @@ RDEPEND="${DEPEND}
 need-kde 3.5
 
 PATCHES=(
-	"${FILESDIR}/${P}-gcc43.patch ${FILESDIR}/${P}-bashism.patch"
+	"${FILESDIR}/${P}-gcc43.patch"
+	"${FILESDIR}/${P}-bashism.patch"
 	"${FILESDIR}/${P}-kbluelock.diff"
 )
 
