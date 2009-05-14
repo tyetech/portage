@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-flac/Attic/gst-plugins-flac-0.10.14.ebuild,v 1.3 2009/05/12 20:41:54 fauli Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-flac/Attic/gst-plugins-flac-0.10.14.ebuild,v 1.4 2009/05/14 19:31:30 maekke Exp $
 
 inherit gst-plugins-good
 
-KEYWORDS="alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND=">=media-libs/flac-1.1.3
