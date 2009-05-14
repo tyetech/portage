@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/alacarte/Attic/alacarte-0.11.9.ebuild,v 1.2 2009/03/21 11:13:13 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/alacarte/Attic/alacarte-0.12.1.ebuild,v 1.1 2009/05/14 23:19:01 eva Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
@@ -31,6 +31,8 @@ DEPEND="${common_depends}
 DOCS="AUTHORS ChangeLog NEWS README"
 
 src_prepare() {
+	gnome2_src_prepare
+
 	# disable pyc compiling
 	mv py-compile py-compile.orig
 	ln -s $(type -P true) py-compile
@@ -38,9 +40,8 @@ src_prepare() {
 
 pkg_postinst() {
 	gnome2_pkg_postinst
-	python_version
 	python_need_rebuild
-	python_mod_optimize /usr/$(get_libdir)/python${PYVER}/site-packages/Alacarte
+	python_mod_optimize $(python_get_sitedir)/Alacarte
 }
 
 pkg_postrm() {
