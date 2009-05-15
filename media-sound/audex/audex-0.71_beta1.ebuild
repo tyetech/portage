@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/audex/Attic/audex-0.70_beta1.ebuild,v 1.1 2009/04/30 17:17:40 tgurr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/audex/Attic/audex-0.71_beta1.ebuild,v 1.1 2009/05/15 19:36:43 tgurr Exp $
 
 EAPI="2"
 
