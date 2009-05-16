@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/p3scan/Attic/p3scan-2.3.2.ebuild,v 1.2 2009/04/03 15:52:44 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/p3scan/Attic/p3scan-2.3.2.ebuild,v 1.3 2009/05/16 00:39:52 halcy0n Exp $
 
 EAPI="2"
 
@@ -81,6 +81,6 @@ pkg_postinst() {
 	elog "scannertype, scanner, virusregexp"
 	elog
 	elog "An example scanner script has been installed to:"
-	elog "/usr/share/doc/${PF}/p3scan.sh.gz"
+	elog "/usr/share/doc/${PF}/"
 	echo
 }
