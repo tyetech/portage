@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/yakuake/Attic/yakuake-2.9.5.ebuild,v 1.1 2009/05/13 08:17:46 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/yakuake/Attic/yakuake-2.9.6.ebuild,v 1.1 2009/05/19 14:23:21 scarabeus Exp $
 
 EAPI="2"
 
