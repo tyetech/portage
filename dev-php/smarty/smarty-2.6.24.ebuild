@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/smarty/Attic/smarty-2.6.22.ebuild,v 1.1 2009/02/18 16:50:06 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/smarty/smarty-2.6.24.ebuild,v 1.1 2009/05/20 16:57:24 dertobi123 Exp $
 
 inherit php-lib-r1 eutils
 
