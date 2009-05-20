@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xfsinfo/Attic/xfsinfo-1.0.2.ebuild,v 1.5 2009/05/20 13:34:41 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xfsinfo/Attic/xfsinfo-1.0.2.ebuild,v 1.6 2009/05/20 13:49:52 ranger Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -8,7 +8,7 @@
 inherit x-modular
 
 DESCRIPTION="X font server information utility"
-KEYWORDS="amd64 ~mips ppc ~ppc64 ~sparc x86"
+KEYWORDS="amd64 ~mips ppc ppc64 ~sparc x86"
 IUSE=""
 RDEPEND="x11-libs/libX11
 	x11-libs/libFS"
