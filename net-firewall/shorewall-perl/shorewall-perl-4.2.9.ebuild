@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/shorewall-perl/Attic/shorewall-perl-4.2.6.1.ebuild,v 1.1 2009/03/02 20:52:40 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/shorewall-perl/Attic/shorewall-perl-4.2.9.ebuild,v 1.1 2009/05/24 22:18:48 pva Exp $
 
 inherit versionator
 
