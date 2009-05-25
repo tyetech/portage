@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/gradm/Attic/gradm-2.1.13.200902232204.ebuild,v 1.4 2009/05/25 03:02:05 gengor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/gradm/Attic/gradm-2.1.14.200905131803.ebuild,v 1.1 2009/05/25 03:02:05 gengor Exp $
 
 inherit flag-o-matic toolchain-funcs eutils versionator
 
@@ -12,7 +12,7 @@ SRC_URI="http://dev.gentoo.org/~gengor/distfiles/${CATEGORY}/${PN}/${PN}-${myPV}
 #RESTRICT=primaryuri
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ppc ~ppc64 ~s390 ~sh ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="pam"
 RDEPEND=""
 DEPEND="virtual/libc
@@ -50,5 +50,5 @@ pkg_postinst() {
 
 	ewarn "Be sure to set a password with 'gradm -P' before enabling learning mode"
 	ewarn
-	ewarn "This version of gradm is only supported with a kernel >=2.6.28!"
+	ewarn "This version of gradm is only supported with a kernel >=2.6.29!"
 }
