@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mislav-will_paginate/Attic/mislav-will_paginate-2.3.7.ebuild,v 1.4 2009/05/26 18:27:33 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mislav-will_paginate/Attic/mislav-will_paginate-2.3.9.ebuild,v 1.1 2009/05/26 18:27:33 graaff Exp $
 
 EAPI=2
 
