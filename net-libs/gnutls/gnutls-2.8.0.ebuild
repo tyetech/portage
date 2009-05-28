@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gnutls/Attic/gnutls-2.7.13.ebuild,v 1.1 2009/05/25 18:12:38 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gnutls/Attic/gnutls-2.8.0.ebuild,v 1.1 2009/05/28 17:33:30 arfrever Exp $
 
 EAPI="2"
 
