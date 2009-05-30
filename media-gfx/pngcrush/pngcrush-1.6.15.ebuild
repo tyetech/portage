@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pngcrush/Attic/pngcrush-1.6.15.ebuild,v 1.3 2009/05/14 08:36:38 fauli Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pngcrush/Attic/pngcrush-1.6.15.ebuild,v 1.4 2009/05/30 18:50:07 nixnut Exp $
 
 inherit eutils toolchain-funcs
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/pmt/${P}-nolib.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~ppc x86"
+KEYWORDS="~alpha amd64 ppc x86"
 IUSE=""
 
 DEPEND=">=media-libs/libpng-1.2.31"
