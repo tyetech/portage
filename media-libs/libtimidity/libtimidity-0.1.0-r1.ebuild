@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtimidity/libtimidity-0.1.0-r1.ebuild,v 1.2 2009/06/02 23:14:41 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtimidity/libtimidity-0.1.0-r1.ebuild,v 1.3 2009/06/03 18:38:29 ssuominen Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -26,7 +26,7 @@ src_prepare() {
 	eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	econf \
 		--disable-static \
 		$(use_enable ao) \
