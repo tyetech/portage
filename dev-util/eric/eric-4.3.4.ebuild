@@ -1,17 +1,15 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/eric/Attic/eric-4.3.2.ebuild,v 1.1 2009/04/24 13:40:41 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/eric/Attic/eric-4.3.4.ebuild,v 1.1 2009/06/05 20:58:42 yngwin Exp $
 
 EAPI="2"
-
 NEED_PYTHON=2.4
-
 inherit python eutils
 
 MY_PN=${PN}4
 MY_P=${MY_PN}-${PV}
 DESCRIPTION="A full featured Python IDE that is written in PyQt4 using the QScintilla editor widget"
-HOMEPAGE="http://www.die-offenbachs.de/eric/index.html"
+HOMEPAGE="http://eric-ide.python-projects.org/index.html"
 SRC_URI="mirror://sourceforge/eric-ide/${MY_P}.tar.gz
 	linguas_cs? ( mirror://sourceforge/eric-ide/${MY_PN}-i18n-cs-${PV}.tar.gz )
 	linguas_de? ( mirror://sourceforge/eric-ide/${MY_PN}-i18n-de-${PV}.tar.gz )
@@ -36,9 +34,7 @@ LANGS="cs de es fr ru tr"
 
 python_version
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	#epatch "${FILESDIR}"/4.3.0-paths.patch
 	epatch "${FILESDIR}"/4.2.3-no-interactive.patch
 }
@@ -70,8 +66,8 @@ pkg_postinst() {
 	elog "dev-python/pylint"
 	elog "dev-python/pysvn            (in sunrise overlay atm)"
 	elog
-	elog "This version has a new plugin interface with plugin-autofetch from"
-	elog "the App itself. You may want to check those as well"
+	elog "This version has a plugin interface with plugin-autofetch from"
+	elog "the App itself. You may want to check those as well."
 }
 
 pkg_postrm() {
