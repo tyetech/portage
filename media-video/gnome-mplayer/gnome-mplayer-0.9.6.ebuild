@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gnome-mplayer/Attic/gnome-mplayer-0.9.6.ebuild,v 1.2 2009/06/07 18:58:42 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gnome-mplayer/Attic/gnome-mplayer-0.9.6.ebuild,v 1.3 2009/06/07 19:04:36 klausman Exp $
 
 EAPI=2
 GCONF_DEBUG=no
@@ -12,7 +12,7 @@ SRC_URI="http://${PN}.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~x86"
 IUSE="+alsa gnome ipod +libnotify musicbrainz"
 
 RDEPEND="dev-libs/glib:2
