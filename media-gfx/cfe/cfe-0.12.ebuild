@@ -1,8 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/cfe/cfe-0.12.ebuild,v 1.3 2008/10/14 16:31:05 flameeyes Exp $
-
-WANT_AUTOCONF="2.1"
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/cfe/cfe-0.12.ebuild,v 1.4 2009/06/09 02:17:13 flameeyes Exp $
 
 inherit eutils autotools
 
