@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/spindown/Attic/spindown-0.3.0.ebuild,v 1.1 2009/03/06 16:22:47 wschlich Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/spindown/Attic/spindown-0.4.0.ebuild,v 1.1 2009/06/09 18:07:46 wschlich Exp $
 
 inherit eutils
 
@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-0.2.2-CFLAGS.patch
+	epatch "${FILESDIR}"/${P}-CFLAGS.patch
 }
 
 src_compile() {
