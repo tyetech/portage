@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-freedb/Attic/ruby-freedb-0.5.ebuild,v 1.13 2007/01/21 08:12:55 pclouds Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-freedb/Attic/ruby-freedb-0.5.ebuild,v 1.14 2009/06/13 08:45:41 graaff Exp $
 
 RUBY_BUG_145222=yes
 inherit ruby
@@ -21,7 +21,7 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR=${D} install || die
+	make DESTDIR="${D}" install || die
 	dodoc CHANGELOG README
 	dohtml -r doc/*
 }
