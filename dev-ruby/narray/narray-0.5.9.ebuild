@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/narray/Attic/narray-0.5.9.ebuild,v 1.9 2007/03/15 03:09:02 tgall Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/narray/Attic/narray-0.5.9.ebuild,v 1.10 2009/06/13 09:09:45 graaff Exp $
 
 DESCRIPTION="Numerical N-dimensional Array class"
 HOMEPAGE="http://www.ir.isas.ac.jp/~masa/ruby/index-e.html"
@@ -17,6 +17,6 @@ src_compile() {
 }
 
 src_install() {
-	make exec_prefix=/usr DESTDIR=${D} install || die
+	make exec_prefix=/usr DESTDIR="${D}" install || die
 	dodoc ChangeLog README.* SPEC.*
 }
