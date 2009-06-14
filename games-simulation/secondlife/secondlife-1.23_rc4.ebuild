@@ -1,19 +1,18 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/secondlife/Attic/secondlife-1.23.2_rc2.ebuild,v 1.2 2009/05/27 00:22:33 lavajoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/secondlife/Attic/secondlife-1.23_rc4.ebuild,v 1.1 2009/06/14 19:13:25 lavajoe Exp $
 
 inherit eutils multilib games versionator
 
-SECONDLIFE_REVISION=120719
-SECONDLIFE_RELEASE_DIR=2009/05
+SECONDLIFE_REVISION=123523
 SECONDLIFE_MAJOR_VER=$(get_version_component_range 1-2)
 SECONDLIFE_MINOR_VER=$(get_version_component_range 3)
 SECONDLIFE_MINOR_VER=${SECONDLIFE_MINOR_VER/rc/}
-MY_P="slviewer-src-viewer-${SECONDLIFE_MAJOR_VER}.${SECONDLIFE_MINOR_VER}-r${SECONDLIFE_REVISION}"
+MY_P="slviewer-src-viewer-rc-frozen-${SECONDLIFE_MAJOR_VER}.${SECONDLIFE_MINOR_VER}.${SECONDLIFE_REVISION}"
 
 DESCRIPTION="The Second Life (an online, 3D virtual world) viewer"
 HOMEPAGE="http://secondlife.com/"
-SRC_URI="http://secondlife.com/developers/opensource/downloads/${SECONDLIFE_RELEASE_DIR}/${MY_P}.tar.gz http://secondlife.com/developers/opensource/downloads/${SECONDLIFE_RELEASE_DIR}/slviewer-artwork-viewer-${SECONDLIFE_MAJOR_VER}.${SECONDLIFE_MINOR_VER}-r${SECONDLIFE_REVISION}.zip http://secondlife.com/developers/opensource/downloads/${SECONDLIFE_RELEASE_DIR}/slviewer-linux-libs-viewer-${SECONDLIFE_MAJOR_VER}.${SECONDLIFE_MINOR_VER}-r${SECONDLIFE_REVISION}.tar.gz mirror://sourceforge/xmlrpc-epi/xmlrpc-epi-0.54.tar.gz http://s3.amazonaws.com/viewer-source-downloads/install_pkgs/glh_linear-linux-20080613.tar.bz2"
+SRC_URI="http://automated-builds-secondlife-com.s3.amazonaws.com/viewer-rc-frozen/${MY_P}.tar.gz http://automated-builds-secondlife-com.s3.amazonaws.com/viewer-rc-frozen/slviewer-artwork-viewer-rc-frozen-${SECONDLIFE_MAJOR_VER}.${SECONDLIFE_MINOR_VER}.${SECONDLIFE_REVISION}.zip http://automated-builds-secondlife-com.s3.amazonaws.com/viewer-rc-frozen/slviewer-linux-libs-viewer-rc-frozen-${SECONDLIFE_MAJOR_VER}.${SECONDLIFE_MINOR_VER}.${SECONDLIFE_REVISION}.tar.gz mirror://sourceforge/xmlrpc-epi/xmlrpc-epi-0.54.tar.gz"
 
 LICENSE="GPL-2-with-Linden-Lab-FLOSS-exception Epinions"
 SLOT="0"
@@ -66,6 +65,10 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 
+	# On 64-bit systems, we need to uncomment LL_BAD_OPENAL_DRIVER=x
+	# and comment out the amd64 streaming disable to fix streaming audio.
+	use amd64 && epatch "${FILESDIR}/${P}-amd64-audio-streaming-fix.patch"
+
 	# Fix cmake include path (so it can find xmlrpc includes)
 	epatch "${FILESDIR}/${PN}-fix-cmake-include-path.patch"
 
@@ -80,13 +83,6 @@ src_unpack() {
 
 	# Fix printf format type error
 	epatch "${FILESDIR}/${P}-fix-printf-format-error.patch"
-
-	# Move extra glh include file into place.
-	# NOTE: This is hackish, since it had to be downloaded from the SL site
-	#       separately as part of the batch used when *not* building the
-	#       viewer standalone (this ebuild *does* build it standalone).
-	mv ../indra/llwindow/glh indra/llwindow || die
-	rm -r ../indra || die
 
 	# Add local paths to the xmlrpc-epi cmake files.
 	# NOTE: This lib is downloaded separately, since it is
