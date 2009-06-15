@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-3.0.15.ebuild,v 1.2 2009/06/15 23:42:37 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-3.0.16.ebuild,v 1.1 2009/06/15 23:42:37 mrness Exp $
 
 EAPI="2"
 
@@ -16,8 +16,7 @@ RESTRICT="test" # check if test works in next bump
 
 DESCRIPTION="A full-featured web proxy cache"
 HOMEPAGE="http://www.squid-cache.org/"
-SRC_URI="http://www.squid-cache.org/Versions/v${S_PMV}/${S_PV}/${S_PP}.tar.gz
-	mirror://gentoo/${PN}-3.0.14-chunk-encoding.patch.gz"
+SRC_URI="http://www.squid-cache.org/Versions/v${S_PMV}/${S_PV}/${S_PP}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -61,11 +60,8 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-3-capability.patch
 	epatch "${FILESDIR}"/${P}-gentoo.patch
-	epatch "${FILESDIR}"/${P}-gcc43.patch
 	epatch "${FILESDIR}"/${P}-cross-compile.patch
-	epatch "${WORKDIR}"/${PN}-3.0.14-chunk-encoding.patch
 	use zero-penalty-hit && epatch "${FILESDIR}"/${P}-adapted-zph.patch
-	has_version app-crypt/mit-krb5 || epatch "${FILESDIR}"/${P}-heimdal.patch
 
 	eautoreconf
 }
