@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qpitch/qpitch-1.0.1.ebuild,v 1.1 2009/06/08 13:33:47 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qpitch/qpitch-1.0.1.ebuild,v 1.2 2009/06/15 19:40:33 mr_bones_ Exp $
 
 EAPI="2"
 
@@ -21,4 +21,3 @@ DEPEND="x11-libs/qt-gui:4
 RDEPEND="${DEPEND}"
 
 DOCS="README changelog"
-
