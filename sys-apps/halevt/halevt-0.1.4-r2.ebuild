@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/halevt/Attic/halevt-0.1.4-r1.ebuild,v 1.1 2009/06/17 15:04:53 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/halevt/Attic/halevt-0.1.4-r2.ebuild,v 1.1 2009/06/19 18:41:27 hwoarang Exp $
 
 EAPI="2"
 
