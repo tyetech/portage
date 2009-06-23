@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xkeyboard-config/Attic/xkeyboard-config-1.5.ebuild,v 1.11 2009/06/23 20:13:50 klausman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xkeyboard-config/Attic/xkeyboard-config-1.5.ebuild,v 1.12 2009/06/23 21:23:43 remi Exp $
 
 inherit eutils multilib
 
@@ -15,6 +15,7 @@ SLOT="0"
 IUSE=""
 RDEPEND="!x11-misc/xkbdata"
 DEPEND="${RDEPEND}
+	sys-devel/gettext
 	>=dev-util/intltool-0.30
 	dev-perl/XML-Parser
 	x11-apps/xkbcomp"
