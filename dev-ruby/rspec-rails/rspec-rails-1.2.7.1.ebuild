@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rspec-rails/Attic/rspec-rails-1.2.7.ebuild,v 1.1 2009/06/23 05:13:33 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rspec-rails/Attic/rspec-rails-1.2.7.1.ebuild,v 1.1 2009/06/23 19:19:33 graaff Exp $
 
 inherit gems
 
