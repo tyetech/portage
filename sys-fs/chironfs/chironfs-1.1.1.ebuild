@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/chironfs/chironfs-1.1.1.ebuild,v 1.1 2009/06/24 06:55:22 dragonheart Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/chironfs/chironfs-1.1.1.ebuild,v 1.2 2009/06/24 07:42:53 dragonheart Exp $
 
 DESCRIPTION="Chiron FS - A FUSE based replication filesystem"
 SRC_URI="http://chironfs.googlecode.com/files/${P}.tar.gz"
@@ -14,4 +14,5 @@ DEPEND="sys-fs/fuse"
 
 src_install() {
 	emake DESTDIR="${D}" install || die 'install failure'
+	mv "${D}"/usr/share/doc/${PN} "${D}"/usr/share/doc/${P}
 }
