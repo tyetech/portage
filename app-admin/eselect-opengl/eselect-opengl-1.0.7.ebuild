@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect-opengl/Attic/eselect-opengl-1.0.7.ebuild,v 1.1 2009/06/23 14:23:57 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect-opengl/Attic/eselect-opengl-1.0.7.ebuild,v 1.2 2009/06/24 08:12:26 scarabeus Exp $
 
 inherit multilib
 
@@ -31,7 +31,7 @@ IUSE=""
 EMULTILIB_PKG="true"
 
 DEPEND="app-arch/bzip2"
-RDEPEND=">=app-admin/eselect-1.0.5"
+RDEPEND=">=app-admin/eselect-1.1"
 
 S=${WORKDIR}
 
