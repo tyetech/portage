@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/vuze/Attic/vuze-4.0.0.4.ebuild,v 1.2 2009/02/06 12:06:46 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/vuze/Attic/vuze-4.2.0.2-r1.ebuild,v 1.1 2009/06/24 12:55:49 caster Exp $
 
 EAPI=2
 
@@ -8,33 +8,13 @@ JAVA_PKG_IUSE="source"
 
 inherit eutils fdo-mime java-pkg-2 java-ant-2
 
-MAIN_DIST=Vuze_${PV}_source.zip
-PLUGINS_N=azplugins
-RATING_N=azrating
-UPDATER_N=azupdater
-UPNPAV_N=azupnpav
-PLUGINS_V=2.1.6
-RATING_V=1.3.1
-UPDATER_V=1.8.8
-UPNPAV_V=0.2.2
-PLUGINS_DIST=${PLUGINS_N}_${PLUGINS_V}.jar
-RATING_DIST=${RATING_N}_${RATING_V}.jar
-UPDATER_DIST=${UPDATER_N}_${UPDATER_V}.zip
-UPNPAV_DIST=${UPNPAV_N}_${UPNPAV_V}.zip
-
-ALLPLUGINS_URL="http://azureus.sourceforge.net/plugins"
-
 DESCRIPTION="BitTorrent client in Java, formerly called Azureus"
 HOMEPAGE="http://www.vuze.com/"
-SRC_URI="mirror://sourceforge/azureus/${MAIN_DIST}
-	${ALLPLUGINS_URL}/${PLUGINS_DIST}
-	${ALLPLUGINS_URL}/${RATING_DIST}
-	${ALLPLUGINS_URL}/${UPDATER_DIST}
-	${ALLPLUGINS_URL}/${UPNPAV_DIST}"
+SRC_URI="mirror://sourceforge/azureus/Vuze_${PV}_source.zip"
 LICENSE="GPL-2 BSD"
 
 SLOT="0"
-KEYWORDS="amd64 ~ppc ppc64 x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
 
 # bundles parts of commons-lang, but modified
@@ -53,22 +33,22 @@ DEPEND="${RDEPEND}
 	dev-util/desktop-file-utils
 	>=virtual/jdk-1.5"
 
-JAVA_PKG_FILTER_COMPILER="jikes"
+PDEPEND="~net-p2p/vuze-coreplugins-${PV}"
 
 src_unpack() {
 	mkdir "${S}" && cd "${S}" || die
-	unpack ${MAIN_DIST}
+	default
+}
 
-	cd "${WORKDIR}"
-	mkdir -p plugins/{${PLUGINS_N},${RATING_N},${UPDATER_N},${UPNPAV_N}} || die
-	cp "${DISTDIR}/${PLUGINS_DIST}" plugins/${PLUGINS_N} || die
-	cp "${DISTDIR}/${RATING_DIST}" plugins/${RATING_N} || die
-	cd "${WORKDIR}/plugins/${UPDATER_N}" && unpack ${UPDATER_DIST} || die
-	cd "${WORKDIR}/plugins/${UPNPAV_N}" && unpack ${UPNPAV_DIST} || die
+java_prepare() {
+	# build.xml disappeared from 4.1.0.0 although it was there in 4.0.0.4
+	# hopefully that's just a packaging mistake
+	[[ -f build.xml ]] && die "upstream has build.xml again, don't overwrite"
+	cp "${FILESDIR}/build.xml" . || die "failed to copy build.xml"
 
-	cd "${S}"
-	epatch "${FILESDIR}/patches-4.0.0.4/use-jdk-cipher-only.diff"
-	epatch "${FILESDIR}/patches-4.0.0.4/remove-osx-platform.diff"
+	epatch "${FILESDIR}/patches-4.2.0.0/0001-remove-osx-platform.patch"
+	epatch "${FILESDIR}/patches-4.2.0.0/0002-use-jdk-cipher-only.patch"
+	epatch "${FILESDIR}/patches-4.2.0.0/0003-disable-core-updater.patch"
 
 	### Removes OS X files and entries.
 	rm -rv "org/gudy/azureus2/platform/macosx" \
@@ -113,13 +93,10 @@ src_install() {
 		--pkg_args '--ui=${UI}'
 	dosym vuze /usr/bin/azureus
 
-	insinto /usr/share/${PN}/
-	doins -r "${WORKDIR}/plugins"
-
 	# https://bugs.gentoo.org/show_bug.cgi?id=204132
 	java-pkg_register-environment-variable MOZ_PLUGIN_PATH /usr/lib/nsbrowser/plugins
 
-	doicon "${FILESDIR}/${PN}.png"
+	newicon "${S}"/org/gudy/azureus2/ui/icons/a32.png vuze.png
 	domenu "${FILESDIR}/${PN}.desktop"
 
 	use source && java-pkg_dosrc "${S}"/{com,edu,org}
@@ -135,11 +112,9 @@ pkg_postinst() {
 
 	elog "Vuze has been formerly called Azureus and many references to the old name remain."
 	elog
-	elog "Since version 4.0.0.2, plugins that are normally bundled by upstream"
+	elog "Since version 4.1.0.0, plugins that are normally bundled by upstream"
 	elog "(and auto-installed in each user's ~/.azureus if not bundled)"
-	elog "are now installed into shared plugin directory by the ebuild."
-	elog "Users are recommended to delete the following plugin copies:"
-	elog "~/.azureus/plugins/{${PLUGINS_N},${RATING_N},${UPDATER_N},${UPNPAV_N}}"
+	elog "are now installed into shared plugin directory by the vuze-coreplugins ebuild."
 	elog
 	elog "Vuze may warn that shared plugin dir is not writable, that's fine."
 	elog "It may also attempt to update some these plugins and fail to write."
