@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kscope/Attic/kscope-1.6.2.ebuild,v 1.1 2008/07/25 13:25:20 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kscope/Attic/kscope-1.6.2.ebuild,v 1.2 2009/06/26 11:27:10 scarabeus Exp $
 
 EAPI=1
 ARTS_REQUIRED="never"
@@ -11,7 +11,7 @@ DESCRIPTION="KScope is a KDE front-end to Cscope."
 HOMEPAGE="http://kscope.sourceforge.net/"
 SRC_URI="mirror://sourceforge/kscope/${P}.tar.gz"
 
-SLOT="0"
+SLOT="3.5"
 LICENSE="BSD"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
