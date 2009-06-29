@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/pango/Attic/pango-1.24.1.ebuild,v 1.4 2009/05/13 14:17:42 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/pango/Attic/pango-1.24.3.ebuild,v 1.1 2009/06/29 21:56:11 eva Exp $
 
 EAPI="2"
 
@@ -37,12 +37,7 @@ function multilib_enabled() {
 }
 
 pkg_setup() {
-	# Do NOT build with --disable-debug/--enable-debug=no
-	if use debug ; then
-		G2CONF="${G2CONF} --enable-debug=yes"
-	fi
-
-	G2CONF="${G2CONF} $(use_with X x)"
+	G2CONF="${G2CONF} $(use_with X x) $(use_enable debug)"
 }
 
 src_prepare() {
