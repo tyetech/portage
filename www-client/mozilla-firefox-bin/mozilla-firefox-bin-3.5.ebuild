@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-3.5_rc3.ebuild,v 1.1 2009/06/26 14:02:19 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/mozilla-firefox-bin/Attic/mozilla-firefox-bin-3.5.ebuild,v 1.1 2009/06/30 15:30:59 armin76 Exp $
 EAPI="2"
 
 inherit eutils mozilla-launcher multilib mozextension
