@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-tnef_parse/Attic/claws-mail-tnef_parse-0.3.5.ebuild,v 1.1 2009/07/06 12:38:43 fauli Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-tnef_parse/Attic/claws-mail-tnef_parse-0.3.5.ebuild,v 1.2 2009/07/06 13:14:55 fauli Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-RDEPEND=">=mail-client/claws-mail-3.7.1
+RDEPEND=">=mail-client/claws-mail-3.7.2
 		>=net-misc/curl-7.9.7"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
