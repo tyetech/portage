@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/faac/Attic/faac-1.24-r4.ebuild,v 1.2 2008/11/30 11:08:27 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/faac/Attic/faac-1.24-r4.ebuild,v 1.3 2009/07/10 19:42:29 ssuominen Exp $
 
 inherit libtool eutils autotools
 
@@ -14,7 +14,7 @@ KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND=">=media-libs/libsndfile-1.0.0
-	media-libs/libmp4v2"
+	<media-libs/libmp4v2-1.9.0"
 DEPEND="${RDEPEND}
 	!<media-libs/faad2-2.0-r3"
 
