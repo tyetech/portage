@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/nted/Attic/nted-1.6.0-r1.ebuild,v 1.1 2009/07/01 21:30:19 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/nted/Attic/nted-1.6.1.ebuild,v 1.1 2009/07/11 20:59:08 hwoarang Exp $
 
 EAPI="2"
 
-inherit eutils
+inherit autotools eutils
 
 DESCRIPTION="WYSIWYG score editor for GTK+2"
 HOMEPAGE="http://vsr.informatik.tu-chemnitz.de/staff/jan/nted/nted.xhtml"
@@ -23,7 +23,9 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_prepare() {
-	epatch	"${FILESDIR}/${PN}.desktop.patch"
+	epatch "${FILESDIR}/${PN}.desktop.patch"
+	epatch "${FILESDIR}/makefile_am_ldflags.patch"
+	eautoreconf
 }
 
 src_configure() {
