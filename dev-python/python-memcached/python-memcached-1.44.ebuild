@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/python-memcached/Attic/python-memcached-1.40.ebuild,v 1.3 2007/11/02 21:05:50 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/python-memcached/Attic/python-memcached-1.44.ebuild,v 1.1 2009/07/12 17:13:46 arfrever Exp $
 
 NEED_PYTHON="2.4"
 
