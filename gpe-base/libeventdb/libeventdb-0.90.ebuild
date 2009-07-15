@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gpe-base/cvs-repo/gentoo-x86/gpe-base/libeventdb/libeventdb-0.90.ebuild,v 1.3 2009/07/15 00:30:18 miknix Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gpe-base/cvs-repo/gentoo-x86/gpe-base/libeventdb/libeventdb-0.90.ebuild,v 1.4 2009/07/15 00:55:03 miknix Exp $
 
 GPE_TARBALL_SUFFIX="bz2"
 
-inherit gpe eutils
+inherit gpe eutils autotools
 
 DESCRIPTION="Database access library for GPE calendar"
 
@@ -33,6 +33,8 @@ src_unpack() {
 		sed -i -e 's;SUBDIRS = doc;SUBDIRS = ;' Makefile.am \
 		|| die "sed failed"
 	fi
+
+	eautoreconf
 }
 
 
