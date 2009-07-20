@@ -1,12 +1,12 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-table-translit/Attic/ibus-table-translit-1.1.0.20090601.ebuild,v 1.1 2009/06/01 15:19:21 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-table-xinhua/Attic/ibus-table-xinhua-1.2.0.20090720.ebuild,v 1.1 2009/07/20 16:48:58 matsuu Exp $
 
-DESCRIPTION="The Translit input method on IBus Table"
+DESCRIPTION="The Xin Hua input method on IBus Table"
 HOMEPAGE="http://code.google.com/p/ibus/"
 SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
