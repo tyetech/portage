@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/docbook-xsl-stylesheets/Attic/docbook-xsl-stylesheets-1.74.0.ebuild,v 1.2 2008/10/05 10:11:50 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/docbook-xsl-stylesheets/Attic/docbook-xsl-stylesheets-1.75.2.ebuild,v 1.1 2009/07/21 12:57:06 flameeyes Exp $
 
 DESCRIPTION="XSL Stylesheets for Docbook"
 HOMEPAGE="http://wiki.docbook.org/topic/DocBookXslStylesheets"
@@ -9,13 +9,26 @@ SRC_URI="mirror://sourceforge/docbook/docbook-xsl-${PV}.tar.bz2"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE=""
+IUSE="test"
 
-DEPEND="dev-libs/libxml2
-	dev-libs/libxslt
-	>=app-text/build-docbook-catalog-1.1"
+DEPEND="
+	test? (
+		dev-libs/libxml2
+		dev-libs/libxslt )"
+
+RDEPEND=">=app-text/build-docbook-catalog-1.1"
 
 S=${WORKDIR}/docbook-xsl-${PV}
+
+# Makefile is broken in this release
+RESTRICT=test
+
+# The makefile runs tests, not builds.
+src_compile() { :; }
+
+src_test() {
+	emake check || die "test failed"
+}
 
 src_install() {
 	# Create the installation directory
