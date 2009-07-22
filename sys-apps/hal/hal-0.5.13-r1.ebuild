@@ -1,22 +1,27 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hal/Attic/hal-0.5.11-r4.ebuild,v 1.8 2009/05/16 08:49:29 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hal/Attic/hal-0.5.13-r1.ebuild,v 1.1 2009/07/22 14:54:15 dang Exp $
 
-inherit eutils linux-info autotools flag-o-matic
+EAPI="2"
 
-PATCH_VERSION="3"
+inherit eutils linux-info autotools flag-o-matic multilib
 
+PATCH_VERSION="1"
+
+MY_P=${P/_/}
+S=${WORKDIR}/${MY_P}
+PATCHNAME="${MY_P}-gentoo-patches-${PATCH_VERSION}"
 DESCRIPTION="Hardware Abstraction Layer"
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/hal"
-SRC_URI="http://hal.freedesktop.org/releases/${P/_/}.tar.bz2
-		 http://dev.gentoo.org/~compnerd/files/${PN}/${P}-gentoo-patches-${PATCH_VERSION}.tar.bz2"
+SRC_URI="http://hal.freedesktop.org/releases/${MY_P}.tar.bz2
+	 http://dev.gentoo.org/~dang/files/${PATCHNAME}.tar.bz2"
 
 LICENSE="|| ( GPL-2 AFL-2.0 )"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 
 KERNEL_IUSE="kernel_linux kernel_FreeBSD"
-IUSE="X acpi apm crypt debug dell disk-partition doc laptop selinux ${KERNEL_IUSE}"
+IUSE="X acpi apm crypt consolekit debug dell disk-partition doc laptop policykit selinux ${KERNEL_IUSE}"
 
 RDEPEND=">=dev-libs/dbus-glib-0.61
 		 >=dev-libs/glib-2.14
@@ -32,26 +37,33 @@ RDEPEND=">=dev-libs/dbus-glib-0.61
 		 ia64? ( >=sys-apps/dmidecode-2.7 )
 		 kernel_linux?	(
 							>=sys-fs/udev-117
-							>=sys-apps/util-linux-2.13
+							>=sys-apps/util-linux-2.16
 							>=sys-kernel/linux-headers-2.6.19
 							crypt?	( >=sys-fs/cryptsetup-1.0.5 )
 						)
 		 kernel_FreeBSD? ( >=dev-libs/libvolume_id-0.77 )
 		 x86? ( >=sys-apps/dmidecode-2.7 )
-		 selinux? ( sys-libs/libselinux sec-policy/selinux-hal )"
+		 selinux? ( sys-libs/libselinux sec-policy/selinux-hal )
+		 consolekit?	(
+		 					sys-auth/consolekit[policykit=]
+					)
+		 policykit?	(
+		 					sys-auth/consolekit[policykit]
+							sys-auth/policykit[pam]
+		 			)"
 DEPEND="${RDEPEND}
 		dev-util/pkgconfig
 		>=dev-util/intltool-0.35
-		X? ( >=dev-python/pyxf86config-0.3.34-r1 )
 		doc?	(
 					app-text/xmlto
 					dev-libs/libxml2
 					dev-util/gtk-doc
 					app-text/docbook-sgml-utils
-				)"
-PDEPEND="|| ( =app-misc/hal-info-20080310 =app-misc/hal-info-20080508 )
-		 !gnome-extra/hal-device-manager
-		 laptop? ( >=sys-power/pm-utils-0.99.3 )"
+				)
+		!<gnome-extra/gnome-power-manager-2.24.4-r2"
+PDEPEND=">=app-misc/hal-info-20081219
+	!gnome-extra/hal-device-manager
+	laptop? ( >=sys-power/pm-utils-0.99.3 )"
 
 ## HAL Daemon drops privledges so we need group access to read disks
 HALDAEMON_GROUPS_LINUX="haldaemon,plugdev,disk,cdrom,cdrw,floppy,usb"
@@ -117,27 +129,28 @@ pkg_setup() {
 	fi
 }
 
-S="${WORKDIR}/${PF/-r*/}"
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
+	# Only apply one of the policy patches.  Bug #267042
+	if use policykit ; then
+		rm "${WORKDIR}/${PATCHNAME}/patches/0001-plugdev-dbus-policy.patch"
+	else
+		rm "${WORKDIR}/${PATCHNAME}/patches/0002-policykit-dbus-policy.patch"
+	fi
 
 	EPATCH_MULTI_MSG="Applying Gentoo Patchset ..." \
 	EPATCH_SUFFIX="patch" \
-	EPATCH_SOURCE="${WORKDIR}/${P}-patches/" \
+	EPATCH_SOURCE="${WORKDIR}/${PATCHNAME}/patches/" \
 	EPATCH_FORCE="yes" \
 	epatch
-
-	epatch "${FILESDIR}"/${P}-ppc64.patch
 
 	eautoreconf
 }
 
-src_compile() {
+src_configure() {
 	local acpi="$(use_enable acpi)"
 	local backend=
 	local hardware=
+	local consolekit="$(use_enable consolekit console-kit)"
 
 	append-flags -rdynamic
 
@@ -166,7 +179,11 @@ src_compile() {
 		fi
 
 		hardware="--with-cpufreq --with-usb-csr --with-keymaps"
-		use arm && hardware="$hardware --with-omap"
+		use arm && hardware="$hardware --with-omap --enable-pmu"
+		use ppc && hardware="$hardware --enable-pmu"
+		if use x86 || use amd64; then
+			hardware="$hardware --with-macbook --with-macbookpro"
+		fi
 
 		if use dell ; then
 			hardware="$hardware --with-dell-backlight"
@@ -183,6 +200,13 @@ src_compile() {
 		hardware="$hardware --disable-sonypic"
 	fi
 
+	# Policykit support depends on consolekit support.  Therefore, force on
+	# consolekit, even if it's USE flag is off, if policykit support is on.
+	# This enables packages to USE-depend on hal[policykit?]
+	if use policykit ; then
+		consolekit="--enable-console-kit"
+	fi
+
 	econf --with-backend=${backend} \
 		  --with-os-type=gentoo \
 		  --with-pid-file=/var/run/hald.pid \
@@ -190,22 +214,19 @@ src_compile() {
 		  --with-socket-dir=/var/run/hald \
 		  --enable-umount-helper \
 		  --enable-man-pages \
-		  --disable-policy-kit \
-		  --disable-console-kit \
 		  --disable-acl-management \
 		  --enable-pci \
 		  $(use_enable apm) \
-		  $(use_enable arm pmu) \
 		  $(use_enable debug verbose-mode) \
 		  $(use_enable disk-partition parted) \
 		  $(use_enable doc docbook-docs) \
 		  $(use_enable doc gtk-doc) \
+		  $(use_enable policykit policy-kit) \
+		  ${consolekit} \
 		  --docdir=/usr/share/doc/${PF} \
 		  --localstatedir=/var \
 		  ${acpi} ${hardware} \
 	|| die "configure failed"
-
-	emake || die "make failed"
 }
 
 src_install() {
@@ -213,7 +234,7 @@ src_install() {
 	dodoc AUTHORS ChangeLog NEWS README || die "docs failed"
 
 	# hal umount for unclean unmounts
-	exeinto /lib/udev/
+	exeinto /$(get_libdir)/udev/
 	newexe "${FILESDIR}/hal-unmount.dev" hal_unmount || die "udev helper failed"
 
 	# initscript
@@ -232,16 +253,8 @@ src_install() {
 
 	if use X ; then
 		# New Configuration Snippets
-		dodoc "${WORKDIR}/${PN}-config-examples/"*.fdi || \
+		dodoc "${WORKDIR}/${PATCHNAME}/config-examples/"*.fdi || \
 			die "dodoc X examples failed"
-		dobin "${WORKDIR}/${PN}-config-examples/migrate-xorg-to-fdi.py" || \
-			die "dodoc X migration script failed"
-
-		# Automagic conversion!
-		elog "Migrating xorg.conf Core Keyboard configuration to HAL FDI file"
-		"${WORKDIR}/${PN}-config-examples/migrate-xorg-to-fdi.py" 2> /dev/null \
-			> "${D}/etc/hal/fdi/policy/10-x11-input.fdi" || \
-			ewarn "Failed to migrate your keyboard configuration."
 	fi
 
 	# We now create and keep /media here as both gnome-mount and pmount
@@ -252,8 +265,8 @@ src_install() {
 	# or else hal bombs.
 	keepdir /etc/hal/fdi/{information,policy,preprobe}
 
-	# HAL stores it's fdi cache in /var/lib/cache/hald
-	keepdir /var/lib/cache/hald
+	# HAL stores it's fdi cache in /var/cache/hald
+	keepdir /var/cache/hald
 
 	# HAL keeps its unix socket here
 	keepdir /var/run/hald
@@ -269,7 +282,9 @@ pkg_postinst() {
 	elog "scripts, this should be done like this :"
 	elog "\`rc-update add hald default\`"
 	echo
-	elog "Looking for automounting support? Add yourself to the plugdev group"
+	elog "Access to hal is not protected by either policykit or the plugdev group."
+	elog "If you have problems discovering/configuring hardware, try adding"
+	elog "yourself to plugdev."
 	echo
 	elog "IF you have additional applications which consume ACPI events, you"
 	elog "should consider installing acpid to allow applications to share ACPI"
@@ -290,11 +305,7 @@ pkg_postinst() {
 		echo
 		elog "X Input Hotplugging (if you build xorg-server with the HAL useflag)"
 		elog "reads user specific configuration from /etc/hal/fdi/policy/."
-		if [[ $(cat "${ROOT}etc/hal/fdi/policy/10-x11-input.fdi" | wc -c) -gt 0 ]]
-		then
-			elog "We have converted your existing xorg.conf rules and the FDI is stored"
-			elog "at /etc/hal/fdi/policy/10-x11-input.fdi"
-		fi
+		echo
 		elog "You should remove the Input sections from your xorg.conf once you have"
 		elog "migrated the rules to a HAL fdi file."
 	fi
