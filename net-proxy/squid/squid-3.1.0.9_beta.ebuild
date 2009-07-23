@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-3.1.0.9_beta.ebuild,v 1.1 2009/07/14 06:35:43 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-3.1.0.9_beta.ebuild,v 1.2 2009/07/23 06:57:45 mrness Exp $
 
 EAPI="2"
 
-inherit eutils pam toolchain-funcs linux-info
+inherit eutils pam toolchain-funcs
 
 RESTRICT="test" # check if test works in next bump
 
