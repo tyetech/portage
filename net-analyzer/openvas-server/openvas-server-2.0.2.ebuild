@@ -1,20 +1,20 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/openvas-server/Attic/openvas-server-1.0.2.ebuild,v 1.1 2008/08/29 09:05:59 hanno Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/openvas-server/openvas-server-2.0.2.ebuild,v 1.1 2009/07/24 19:32:56 hanno Exp $
 
 DESCRIPTION="A remote security scanner for Linux (openvas-server)"
 HOMEPAGE="http://www.openvas.org/"
-SRC_URI="http://wald.intevation.org/frs/download.php/485/${P}.tar.gz"
+SRC_URI="http://wald.intevation.org/frs/download.php/593/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="tcpd gtk debug prelude"
 
-DEPEND=">=net-analyzer/openvas-libraries-1.0.2
-	>=net-analyzer/openvas-libnasl-1.0.1
+DEPEND=">=net-analyzer/openvas-libnasl-2.0.1
 	tcpd? ( sys-apps/tcp-wrappers )
 	gtk? ( =x11-libs/gtk+-2* )
 	prelude? ( dev-libs/libprelude )"
+RDEPEND="${DEPEND}"
 
 src_compile() {
 	econf \
@@ -29,7 +29,7 @@ src_install() {
 	einstall || die "einstall failed"
 
 	dodoc TODO CHANGES || die
-	dodoc doc/*.txt doc/ntp/* || die
+	dodoc doc/*.txt || die
 
 	doinitd "${FILESDIR}"/openvasd || die "doinitd failed"
 	keepdir /var/lib/openvas/logs
