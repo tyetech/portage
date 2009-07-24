@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/qtcurve/Attic/qtcurve-0.62.6.ebuild,v 1.1 2009/04/10 01:32:08 yngwin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/qtcurve/Attic/qtcurve-0.67.0.ebuild,v 1.1 2009/07/24 08:47:09 yngwin Exp $
 
 EAPI=1
 
