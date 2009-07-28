@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/radvd/Attic/radvd-1.2.ebuild,v 1.2 2009/04/25 23:13:17 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/radvd/Attic/radvd-1.2.ebuild,v 1.3 2009/07/28 15:02:11 flameeyes Exp $
 
 inherit eutils autotools
 
@@ -30,7 +30,7 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}"/${PN}-1.1-gnu-source.patch
 	epatch "${FILESDIR}"/${PN}-1.1-parallel-make.patch
-	eautomake
+	eautoreconf
 }
 
 src_compile() {
