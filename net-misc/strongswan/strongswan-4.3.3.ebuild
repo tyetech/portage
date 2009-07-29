@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/strongswan/Attic/strongswan-4.2.15.ebuild,v 1.2 2009/06/23 12:33:40 keytoaster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/strongswan/Attic/strongswan-4.3.3.ebuild,v 1.1 2009/07/29 08:33:36 wschlich Exp $
 
 EAPI=2
 inherit eutils linux-info autotools
@@ -18,6 +18,7 @@ IUSE="caps cisco curl debug ldap nat smartcard static xml"
 
 COMMON_DEPEND="!net-misc/openswan
 	dev-libs/gmp
+	dev-libs/libgcrypt
 	caps? ( sys-libs/libcap )
 	curl? ( net-misc/curl )
 	ldap? ( net-nds/openldap )
@@ -31,9 +32,7 @@ RDEPEND="${COMMON_DEPEND}
 	sys-apps/iproute2"
 
 src_prepare() {
-	sed -i -e 's/getline/getline_own/g' src/libfreeswan/optionsfrom.c
-
-	epatch "${FILESDIR}"/${PN}-4.2.7-install.patch
+	epatch "${FILESDIR}"/${PN}-4.3.3-install.patch
 	eautoreconf
 }
 
