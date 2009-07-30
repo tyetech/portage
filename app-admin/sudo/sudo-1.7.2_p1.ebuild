@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sudo/Attic/sudo-1.7.2.ebuild,v 1.1 2009/07/12 17:25:45 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sudo/Attic/sudo-1.7.2_p1.ebuild,v 1.1 2009/07/30 13:36:29 flameeyes Exp $
 
 inherit eutils pam confutils
 
