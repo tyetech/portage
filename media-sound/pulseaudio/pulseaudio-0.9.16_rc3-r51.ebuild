@@ -1,25 +1,23 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.15-r50.ebuild,v 1.1 2009/06/22 10:52:39 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.16_rc3-r51.ebuild,v 1.1 2009/07/30 13:27:22 flameeyes Exp $
 
 EAPI=2
 
 inherit eutils libtool flag-o-matic
 
+MY_P=${P/_rc/-test}
+
 DESCRIPTION="A networked sound server with an advanced plugin system"
 HOMEPAGE="http://www.pulseaudio.org/"
-if [[ ${PV/_rc/} == ${PV} ]]; then
-	SRC_URI="http://0pointer.de/lennart/projects/${PN}/${P}.tar.gz"
-else
-	SRC_URI="http://0pointer.de/public/${P/_rc/-test}.tar.gz"
-fi
+SRC_URI="http://0pointer.de/public/${MY_P}.tar.gz"
 
-S="${WORKDIR}/${P/_rc/-test}"
+S="${WORKDIR}/${MY_P}"
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86"
-IUSE="alsa avahi caps jack lirc oss tcpd X hal dbus libsamplerate gnome bluetooth policykit asyncns +glib test"
+IUSE="alsa avahi caps jack lirc oss tcpd X hal dbus libsamplerate gnome bluetooth policykit asyncns +glib test doc udev"
 
 RDEPEND="X? ( x11-libs/libX11 x11-libs/libSM x11-libs/libICE x11-libs/libXtst )
 	caps? ( sys-libs/libcap )
@@ -45,6 +43,7 @@ RDEPEND="X? ( x11-libs/libX11 x11-libs/libSM x11-libs/libICE x11-libs/libXtst )
 	)
 	policykit? ( sys-auth/policykit )
 	asyncns? ( net-libs/libasyncns )
+	udev? ( >=sys-fs/udev-143 )
 	>=media-libs/audiofile-0.2.6-r1
 	>=media-libs/speex-1.2_beta
 	>=media-libs/libsndfile-1.0.10
@@ -53,6 +52,7 @@ RDEPEND="X? ( x11-libs/libX11 x11-libs/libSM x11-libs/libICE x11-libs/libXtst )
 	>=sys-devel/libtool-2.2.4" # it's a valid RDEPEND, libltdl.so is used
 
 DEPEND="${RDEPEND}
+	doc? ( app-doc/doxygen )
 	X? ( x11-proto/xproto )
 	dev-libs/libatomic_ops
 	dev-util/pkgconfig
@@ -71,14 +71,19 @@ RDEPEND="${RDEPEND}
 
 pkg_setup() {
 	enewgroup audio 18 # Just make sure it exists
-	enewgroup realtime
 	enewgroup pulse-access
 	enewgroup pulse
 	enewuser pulse -1 -1 /var/run/pulse pulse,audio
+
+	if use udev && use hal; then
+		elog "Please note that enabling both udev and hal will build both"
+		elog "discover modules, but only udev will be ued automatically."
+		elog "If you wish to use hal you have to enable it explicitly"
+		elog "or you might just disable the hal USE flag entirely."
+	fi
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-bsd.patch"
 	elibtoolize
 }
 
@@ -86,8 +91,13 @@ src_configure() {
 	# To properly fix CVE-2008-0008
 	append-flags -UNDEBUG
 
+	# It's a binutils bug, once I can find time to fix that I'll add a
+	# proper dependency and fix this up. — flameeyes
 	append-ldflags -Wl,--no-as-needed
 
+	# udev is disabled because we don't have the right version just
+	# yet, and thus we need to avoid it for now. Once we have the
+	# version I'll revbump PA. — flameeyes
 	econf \
 		--enable-largefile \
 		$(use_enable glib glib2) \
@@ -105,18 +115,24 @@ src_configure() {
 		$(use_enable gnome gconf) \
 		$(use_enable libsamplerate samplerate) \
 		$(use_enable bluetooth bluez) \
-		$(use_enable policykit polkit) \
 		$(use_enable X x11) \
 		$(use_enable test default-build-tests) \
 		$(use_with caps) \
+		$(use_enable udev) \
 		--localstatedir=/var \
-		--with-realtime-group=realtime \
 		--disable-per-user-esound-socket \
+		--with-database=gdbm \
 		|| die "econf failed"
+
+	if use doc; then
+		pushd doxygen
+		doxygen doxygen.conf || die
+		popd
+	fi
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
+	emake -j1 DESTDIR="${D}" install || die "make install failed"
 
 	newconfd "${FILESDIR}/pulseaudio.conf.d" pulseaudio
 
@@ -130,6 +146,7 @@ src_install() {
 		$(use_define avahi) \
 		$(use_define alsa) \
 		$(use_define bluetooth) \
+		$(use_define udev) \
 		"${FILESDIR}/pulseaudio.init.d-4" \
 		> "${T}/pulseaudio"
 
@@ -137,8 +154,17 @@ src_install() {
 
 	use avahi && sed -i -e '/module-zeroconf-publish/s:^#::' "${D}/etc/pulse/default.pa"
 
-	dohtml -r doc
-	dodoc README
+	if use hal && !use udev; then
+		sed -i -e 's:-udev:-hal:' "${D}/etc/pulse/default.pa" || die
+	fi
+
+	dodoc README ChangeLog todo || die
+
+	if use doc; then
+		pushd doxygen/html
+		dohtml * || die
+		popd
+	fi
 
 	# Create the state directory
 	diropts -o pulse -g pulse -m0755
@@ -168,11 +194,6 @@ pkg_postinst() {
 	elog "need to enable auth-anonymous for the esound-unix module, or to copy"
 	elog "/var/run/pulse/.esd_auth into each home directory."
 	elog
-	elog "If you want to make use of realtime capabilities of PulseAudio"
-	elog "you should follow the realtime guide to create and set up a realtime"
-	elog "user group: http://www.gentoo.org/proj/en/desktop/sound/realtime.xml"
-	elog "Make sure you also have baselayout installed with pam USE flag"
-	elog "enabled, if you're using the rlimit method."
 	if use bluetooth; then
 		elog
 		elog "The BlueTooth proximity module is not enabled in the default"
