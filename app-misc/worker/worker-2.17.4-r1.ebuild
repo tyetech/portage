@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/worker/Attic/worker-2.17.4.ebuild,v 1.1 2009/06/03 19:30:27 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/worker/Attic/worker-2.17.4-r1.ebuild,v 1.1 2009/07/30 17:59:37 dertobi123 Exp $
 
 inherit eutils
 
@@ -27,5 +27,5 @@ src_install() {
 	einstall || die "make install failed"
 	doman man/worker.1
 	dodoc AUTHORS ChangeLog INSTALL NEWS README README_LARGEFILES THANKS
-	make_desktop_entry ${PN} Worker WorkerIcon "FileManager"
+	make_desktop_entry ${PN} Worker WorkerIcon "System;Utility"
 }
