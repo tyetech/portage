@@ -1,18 +1,19 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/bip/Attic/bip-0.8.0_rc1.ebuild,v 1.1 2009/02/23 22:47:21 hawking Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/bip/Attic/bip-0.8.1.ebuild,v 1.1 2009/07/31 18:51:29 a3li Exp $
 
-MY_PV="${PV/_rc/-rc}"
-MY_P="${PN}-${MY_PV}"
+EAPI="2"
+
+inherit autotools
 
 DESCRIPTION="Multiuser IRC proxy with ssl support"
 HOMEPAGE="http://bip.t1r.net/"
-SRC_URI="http://bip.t1r.net/downloads/${MY_P}.tar.gz"
+SRC_URI="http://bip.t1r.net/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="ssl vim-syntax oidentd"
+IUSE="debug ssl vim-syntax oidentd"
 
 DEPEND="ssl? ( dev-libs/openssl )"
 RDEPEND="${DEPEND}
@@ -20,10 +21,21 @@ RDEPEND="${DEPEND}
 	app-editors/gvim ) )
 	oidentd? ( >=net-misc/oidentd-2.0 )"
 
-S="${WORKDIR}/${MY_P}"
+src_prepare() {
+	# configure broken: --disable-oidentd enables it, too
+	epatch "${FILESDIR}/${P}-configure-oidentd.patch"
+
+	eautoreconf
+}
+
+src_configure() {
+	econf \
+		$(use_enable ssl openssl)\
+		$(use_enable debug)\
+		$(use_enable oidentd)
+}
 
 src_compile() {
-	econf $(use_enable ssl) $(use_enable oidentd)
 	# Parallel make fails.
 	# {C,CXX,LD}FLAGS aren't respected, bug 241030.
 	emake CFLAGS="${CFLAGS}" CPPFLAGS="${CXXFLAGS}" \
