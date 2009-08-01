@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/openttd/Attic/openttd-0.7.1.ebuild,v 1.3 2009/08/01 11:59:43 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-simulation/cvs-repo/gentoo-x86/games-simulation/openttd/Attic/openttd-0.7.2.ebuild,v 1.1 2009/08/01 17:00:49 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils games
