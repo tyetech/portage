@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/nokogiri/Attic/nokogiri-1.2.3.ebuild,v 1.2 2009/06/13 07:50:47 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/nokogiri/Attic/nokogiri-1.3.3.ebuild,v 1.1 2009/08/01 07:39:22 a3li Exp $
 
 inherit gems
 USE_RUBY="ruby18 ruby19"
