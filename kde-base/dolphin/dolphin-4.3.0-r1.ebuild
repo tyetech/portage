@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/dolphin/Attic/dolphin-4.3.0.ebuild,v 1.2 2009/08/03 23:42:23 wired Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/dolphin/Attic/dolphin-4.3.0-r1.ebuild,v 1.1 2009/08/06 14:24:08 tampakrap Exp $
 
 EAPI="2"
 
@@ -16,6 +16,7 @@ DEPEND="
 	>=kde-base/libkonq-${PV}:${SLOT}[kdeprefix=]
 "
 RDEPEND="${DEPEND}
+	>=kde-base/keditfiletype-${PV}:${SLOT}[kdeprefix=]
 	>=kde-base/kfind-${PV}:${SLOT}[kdeprefix=]
 	semantic-desktop? ( >=kde-base/nepomuk-${PV}:${SLOT}[kdeprefix=] )
 "
