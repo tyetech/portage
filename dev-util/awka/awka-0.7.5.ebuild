@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/awka/Attic/awka-0.7.5.ebuild,v 1.11 2009/08/06 17:42:07 vostorga Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/awka/Attic/awka-0.7.5.ebuild,v 1.12 2009/08/06 18:00:28 vostorga Exp $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="An AWK-to-C translator."
 SRC_URI="http://${PN}.sourceforge.net/${P}.tar.gz"
