@@ -1,6 +1,6 @@
-# Copyright 2003-2009 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/nip2/Attic/nip2-7.18.1.ebuild,v 1.1 2009/04/22 17:06:07 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/nip2/Attic/nip2-7.18.2.ebuild,v 1.1 2009/08/07 14:20:44 pva Exp $
 
 EAPI="2"
 inherit eutils autotools fdo-mime versionator
