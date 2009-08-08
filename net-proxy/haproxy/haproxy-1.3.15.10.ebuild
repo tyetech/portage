@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/haproxy/Attic/haproxy-1.3.15.7.ebuild,v 1.1 2009/01/10 11:36:33 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/haproxy/Attic/haproxy-1.3.15.10.ebuild,v 1.1 2009/08/08 09:41:21 mrness Exp $
 
-inherit versionator
+inherit versionator eutils
 
 DESCRIPTION="A TCP/HTTP reverse proxy for high availability environments"
 HOMEPAGE="http://haproxy.1wt.eu"
@@ -15,6 +15,11 @@ IUSE="pcre"
 
 DEPEND="pcre? ( dev-libs/libpcre )"
 RDEPEND="${DEPEND}"
+
+pkg_setup() {
+	enewgroup haproxy
+	enewuser haproxy -1 -1 -1 haproxy
+}
 
 src_compile() {
 	local ARGS="TARGET=linux26"
@@ -37,11 +42,14 @@ src_install() {
 
 pkg_postinst() {
 	if [[ ! -f "${ROOT}/etc/haproxy.cfg" ]] ; then
-		einfo "You need to create /etc/haproxy.cfg before you start haproxy service."
-		if [[ -d "${ROOT}/usr/share/doc/${P}" ]]; then
+		ewarn "You need to create /etc/haproxy.cfg before you start the haproxy service."
+		ewarn "It's best practice to not run haproxy as root, user and group haproxy was therefore created."
+		ewarn "Make use of them with the \"user\" and \"group\" directives."
+
+		if [[ -d "${ROOT}/usr/share/doc/${PF}" ]]; then
 			einfo "Please consult the installed documentation for learning the configuration file's syntax."
 			einfo "The documentation and sample configuration files are installed here:"
-			einfo "   ${ROOT}usr/share/doc/${P}"
+			einfo "   ${ROOT}usr/share/doc/${PF}"
 		fi
 	fi
 }
