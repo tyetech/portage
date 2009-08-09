@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/pykde4/Attic/pykde4-4.2.4-r2.ebuild,v 1.1 2009/06/16 15:27:57 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/pykde4/Attic/pykde4-4.2.4-r3.ebuild,v 1.1 2009/08/09 11:29:12 scarabeus Exp $
 
 EAPI="2"
 
@@ -24,6 +24,7 @@ RDEPEND="${DEPEND}
 "
 PATCHES=(
 	"${FILESDIR}"/pykde4_sip-4.8.patch
+	"${FILESDIR}"/pykde4-installation-fix.patch
 )
 
 src_prepare() {
