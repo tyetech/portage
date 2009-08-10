@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/zim/Attic/zim-0.28.ebuild,v 1.1 2009/07/21 09:58:31 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/zim/Attic/zim-0.28.ebuild,v 1.2 2009/08/10 17:54:54 tove Exp $
 
 inherit eutils fdo-mime perl-module
 
@@ -33,7 +33,7 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${COMMON_DEPEND}
 	dev-perl/extutils-pkgconfig
 	virtual/perl-Module-Build
-	test? ( perl-core/Test-Harness )"
+	test? ( virtual/perl-Test-Harness )"
 
 S=${WORKDIR}/${MY_P}
 
