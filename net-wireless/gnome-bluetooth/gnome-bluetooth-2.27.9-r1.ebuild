@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/gnome-bluetooth/Attic/gnome-bluetooth-2.27.9.ebuild,v 1.1 2009/08/08 11:34:34 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/gnome-bluetooth/Attic/gnome-bluetooth-2.27.9-r1.ebuild,v 1.1 2009/08/12 14:48:01 nirbheek Exp $
 
 EAPI="2"
 
@@ -34,3 +34,9 @@ G2CONF="${G2CONF}
 --disable-desktop-update
 --disable-icon-update
 --disable-introspection"
+
+src_prepare() {
+	# Fix intltoolize broken file, see upstream #577133 and #579464
+	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in \
+		|| die "sed failed"
+}
