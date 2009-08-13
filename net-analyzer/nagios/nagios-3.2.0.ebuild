@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios/Attic/nagios-3.1.2.ebuild,v 1.1 2009/06/25 16:08:48 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios/Attic/nagios-3.2.0.ebuild,v 1.1 2009/08/13 14:51:20 dertobi123 Exp $
 
 inherit multilib
 
