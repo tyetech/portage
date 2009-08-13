@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-9999.ebuild,v 1.11 2009/08/04 04:49:56 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/alsa-driver/Attic/alsa-driver-9999.ebuild,v 1.12 2009/08/13 15:10:27 beandog Exp $
 
 inherit linux-mod flag-o-matic eutils multilib autotools git
 
@@ -107,7 +107,7 @@ src_unpack() {
 	sed -i -e 's:\(.*depmod\):#\1:' "${S}/Makefile"
 
 	cd "${S}"
-	emake -j1 ALSAKERNELDIR="${S}/alsa-kernel" all-deps
+	emake ALSAKERNELDIR="${S}/alsa-kernel" all-deps
 	eaclocal
 	eautoconf
 }
