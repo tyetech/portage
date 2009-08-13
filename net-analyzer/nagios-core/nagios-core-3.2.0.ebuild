@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-core/Attic/nagios-core-3.1.2.ebuild,v 1.2 2009/06/27 21:10:46 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-core/Attic/nagios-core-3.2.0.ebuild,v 1.1 2009/08/13 14:49:54 dertobi123 Exp $
 
 EAPI="2"
 
@@ -72,7 +72,7 @@ src_configure() {
 		--prefix=/usr \
 		--bindir=/usr/sbin \
 		--sbindir=/usr/$(get_libdir)/nagios/cgi-bin \
-		--datarootdir=/usr/share/nagios/htdocs \
+		--datadir=/usr/share/nagios/htdocs \
 		--localstatedir=/var/nagios \
 		--sysconfdir=/etc/nagios \
 		--libexecdir=/usr/$(get_libdir)/nagios/plugins \
