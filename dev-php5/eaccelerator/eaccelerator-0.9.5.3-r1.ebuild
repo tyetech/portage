@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/eaccelerator/Attic/eaccelerator-0.9.5.1.ebuild,v 1.6 2009/05/26 17:00:42 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/eaccelerator/Attic/eaccelerator-0.9.5.3-r1.ebuild,v 1.1 2009/08/14 11:00:24 a3li Exp $
 
 PHP_EXT_NAME="eaccelerator"
 PHP_EXT_INI="yes"
@@ -8,7 +8,7 @@ PHP_EXT_ZENDEXT="yes"
 
 [[ -z "${EACCELERATOR_CACHEDIR}" ]] && EACCELERATOR_CACHEDIR="/var/cache/eaccelerator-php5/"
 
-inherit php-ext-source-r1 eutils depend.apache
+inherit php-ext-source-r1 eutils depend.apache autotools
 
 KEYWORDS="~amd64 ~sparc ~x86"
 
@@ -61,7 +61,14 @@ pkg_setup() {
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-optimize-catch-exceptions.patch
+
+	# Remove the badly broken encoder, already done by upstream in SVN trunk
+	# Also needed for security bug 277293.
+	rm loader.c encoder.{php,c} doc/php/{loader,encoder}.php || die "Cannot remove encoder"
+	epatch "${FILESDIR}/${PN}-remove-encoder.patch"
+
+	eautoconf
+	eautomake
 	php-ext-source-r1_phpize
 }
 
