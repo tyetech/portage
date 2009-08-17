@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/openyahtzee/openyahtzee-1.9.ebuild,v 1.1 2009/08/17 15:50:07 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/openyahtzee/openyahtzee-1.9.ebuild,v 1.2 2009/08/17 20:34:22 mr_bones_ Exp $
 
 EAPI=2
+WX_GTK_VER="2.8"
 inherit wxwidgets games
 
 DESCRIPTION="A full-featured wxWidgets version of the classic dice game Yahtzee"
