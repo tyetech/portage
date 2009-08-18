@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.5.7.ebuild,v 1.3 2009/08/13 21:22:46 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.5.9.ebuild,v 1.1 2009/08/18 21:01:12 tester Exp $
 
 EAPI=2
 
@@ -81,13 +81,6 @@ pkg_setup() {
 		elog "will be built."
 		einfo
 	fi
-}
-
-src_prepare() {
-	epatch "${FILESDIR}"/${PN}-2.5.4-icq.patch
-
-	# Fix intltoolize broken file, see upstream #577133
-	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i "${S}/po/Makefile.in.in" || die "sed failed"
 }
 
 src_configure() {
