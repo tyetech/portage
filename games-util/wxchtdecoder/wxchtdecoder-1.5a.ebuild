@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-util/cvs-repo/gentoo-x86/games-util/wxchtdecoder/wxchtdecoder-1.5a.ebuild,v 1.1 2009/08/18 00:41:16 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-util/cvs-repo/gentoo-x86/games-util/wxchtdecoder/wxchtdecoder-1.5a.ebuild,v 1.2 2009/08/18 00:44:02 mr_bones_ Exp $
 
 EAPI=2
+WX_GTK_VER="2.8"
 inherit wxwidgets
 
 DESCRIPTION="A program to decode .CHT files in Snes9x and ZSNES to plain text"
