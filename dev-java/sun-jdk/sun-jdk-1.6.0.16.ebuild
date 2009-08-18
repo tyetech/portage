@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.6.0.13.ebuild,v 1.4 2009/05/29 20:30:58 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jdk/Attic/sun-jdk-1.6.0.16.ebuild,v 1.1 2009/08/18 10:07:54 caster Exp $
 
 inherit versionator java-vm-2 eutils pax-utils
 
@@ -17,9 +17,9 @@ SRC_URI="x86? ( ${URL_BASE}/${X86_AT} )
 		amd64? ( ${URL_BASE}/${AMD64_AT} )"
 SLOT="1.6"
 LICENSE="dlj-1.1"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 RESTRICT="strip"
-IUSE="X alsa doc examples jce nsplugin odbc"
+IUSE="X alsa derby doc examples jce nsplugin odbc"
 
 QA_TEXTRELS_x86="opt/${P}/jre/lib/i386/motif21/libmawt.so
 	opt/${P}/jre/lib/i386/libdeploy.so
@@ -64,6 +64,8 @@ src_compile() {
 
 src_install() {
 	local dirs="bin include jre lib man"
+
+	use derby && dirs="${dirs} db"
 
 	dodir /opt/${P}
 
