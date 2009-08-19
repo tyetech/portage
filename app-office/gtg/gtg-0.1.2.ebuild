@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/gtg/Attic/gtg-0.1.1.ebuild,v 1.2 2009/04/14 09:46:25 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/gtg/Attic/gtg-0.1.2.ebuild,v 1.1 2009/08/19 01:27:45 leio Exp $
 
 inherit fdo-mime gnome2-utils distutils
 
