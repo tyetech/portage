@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/openmoko-dfu-util/Attic/openmoko-dfu-util-9999.ebuild,v 1.4 2009/08/19 07:41:54 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/openmoko-dfu-util/Attic/openmoko-dfu-util-5484.ebuild,v 1.1 2009/08/19 07:41:54 vapier Exp $
 
 EAPI="2"
 
