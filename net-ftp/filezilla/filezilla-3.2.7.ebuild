@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/filezilla/Attic/filezilla-3.2.6.ebuild,v 1.1 2009/06/28 18:44:55 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/filezilla/Attic/filezilla-3.2.7.ebuild,v 1.1 2009/08/20 09:55:32 voyageur Exp $
 
 EAPI=2
 
@@ -26,7 +26,7 @@ RDEPEND="net-dns/libidn
 	dbus? ( sys-apps/dbus )"
 DEPEND="${RDEPEND}
 	>=sys-devel/libtool-1.4
-	>=net-libs/gnutls-2.0.4
+	>=net-libs/gnutls-2.8.3
 	nls? ( >=sys-devel/gettext-0.11 )
 	test? ( dev-util/cppunit )"
 
