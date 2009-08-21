@@ -1,8 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/telepathy-glib/Attic/telepathy-glib-0.7.31.ebuild,v 1.2 2009/06/18 13:02:44 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/telepathy-glib/Attic/telepathy-glib-0.7.34.ebuild,v 1.1 2009/08/21 21:15:54 tester Exp $
 
-inherit libtool
+EAPI="2"
+
+inherit autotools eutils libtool
 
 DESCRIPTION="GLib bindings for the Telepathy D-Bus protocol."
 HOMEPAGE="http://telepathy.freedesktop.org"
@@ -20,22 +22,16 @@ RDEPEND=">=dev-libs/glib-2.16
 DEPEND="${RDEPEND}
 	dev-libs/libxslt
 	>=dev-util/pkgconfig-0.21
+	dev-util/gtk-doc-am
 	doc? ( >=dev-util/gtk-doc-1.10 )"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	elibtoolize # for sane .so versionning on BSD
-}
-
-src_compile() {
+src_configure() {
 	econf \
 		$(use_enable doc gtk-doc) \
 		$(use_enable debug) \
 		$(use_enable debug backtrace) \
 		$(use_enable debug handle-leak-debug) \
 		|| die "econf failed"
-	emake || die "emake failed"
 }
 
 src_test() {
