@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/idb/Attic/idb-10.1.018.ebuild,v 1.2 2008/10/13 22:15:44 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/idb/Attic/idb-10.1.018.ebuild,v 1.3 2009/08/22 19:14:01 ssuominen Exp $
 
 inherit rpm elisp-common
 
@@ -30,7 +30,7 @@ RESTRICT="strip mirror"
 IUSE="emacs icc ifc"
 
 DEPEND=""
-RDEPEND="virtual/libstdc++
+RDEPEND="=virtual/libstdc++-3*
 	x11-libs/libXft
 	x11-libs/libXt
 	dev-libs/libxml2
