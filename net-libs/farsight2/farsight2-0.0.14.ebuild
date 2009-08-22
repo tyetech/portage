@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/farsight2/Attic/farsight2-0.0.10.ebuild,v 1.4 2009/06/16 07:51:15 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/farsight2/Attic/farsight2-0.0.14.ebuild,v 1.1 2009/08/22 02:42:38 tester Exp $
 
 EAPI="2"
 
@@ -16,15 +16,15 @@ SLOT="0"
 COMMONDEPEND=">=media-libs/gstreamer-0.10.23
 	>=media-libs/gst-plugins-base-0.10.23
 	>=dev-libs/glib-2.16
-	>=net-libs/libnice-0.0.3[gstreamer]
+	>=net-libs/libnice-0.0.9[gstreamer]
 	python? (
+		|| ( >=dev-python/pygobject-2.16 >=dev-python/pygtk-2.12 )
 		>=dev-python/pygobject-2.12
-		>=dev-python/pygtk-2.10
 		>=dev-python/gst-python-0.10.10 )"
 
 RDEPEND="${COMMONDEPEND}
 	>=media-libs/gst-plugins-good-0.10.11
-	>=media-libs/gst-plugins-bad-0.10.11"
+	>=media-libs/gst-plugins-bad-0.10.13"
 
 DEPEND="${COMMONDEPEND}
 	test? ( media-plugins/gst-plugins-vorbis
