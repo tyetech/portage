@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/calibre/Attic/calibre-0.6.5.ebuild,v 1.1 2009/08/07 20:56:20 zmedico Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/calibre/Attic/calibre-0.6.8.ebuild,v 1.1 2009/08/22 03:42:08 zmedico Exp $
 
 EAPI=2
 NEED_PYTHON=2.6
@@ -37,12 +37,11 @@ SHARED_DEPEND=">=dev-lang/python-2.6[sqlite]
 	>=dev-python/pyPdf-1.12
 	|| ( app-text/podofo >=app-text/pdftk-1.12 )
 	>=dev-python/cherrypy-3.0.2-r1
-	>=dev-python/cssutils-0.9.5.1
+	>=dev-python/cssutils-0.9.6_alpha4
 	>=dev-python/odfpy-0.7"
 
 RDEPEND="$SHARED_DEPEND
-	>=dev-python/reportlab-2.1
-	!dev-python/django-tagging"
+	>=dev-python/reportlab-2.1"
 
 DEPEND="$SHARED_DEPEND
 	dev-python/setuptools
