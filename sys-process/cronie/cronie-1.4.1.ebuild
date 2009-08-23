@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-process/cvs-repo/gentoo-x86/sys-process/cronie/Attic/cronie-1.3.ebuild,v 1.2 2009/05/14 16:39:31 bangert Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-process/cvs-repo/gentoo-x86/sys-process/cronie/Attic/cronie-1.4.1.ebuild,v 1.1 2009/08/23 20:12:43 bangert Exp $
 
 EAPI="2"
 
@@ -20,12 +20,8 @@ RDEPEND="${DEPEND}"
 #cronie supports /etc/crontab
 CRON_SYSTEM_CRONTAB="yes"
 
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.2-pathnames.h-fix-SPOOL_DIR.patch"
-}
-
 src_configure() {
-	econf \
+	SPOOL_DIR="/var/spool/cron/crontabs" econf \
 		$(use_with inotify ) \
 		$(use_with pam ) \
 		--with-daemon_username=cron \
@@ -34,7 +30,7 @@ src_configure() {
 }
 
 src_install() {
-	make install DESTDIR="${D}" || die "install failed"
+	emake install DESTDIR="${D}" || die "install failed"
 
 	docrondir
 	fowners root:cron /usr/bin/crontab
