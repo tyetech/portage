@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/exaile/Attic/exaile-0.3.0_alpha3.ebuild,v 1.4 2009/08/23 14:11:35 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/exaile/Attic/exaile-0.3.0_alpha3-r1.ebuild,v 1.1 2009/08/23 14:23:04 ssuominen Exp $
 
 EAPI=2
 inherit eutils fdo-mime multilib python
@@ -61,6 +61,9 @@ src_install() {
 	if use doc; then
 		dohtml -r doc/_build/html/* || die "dohtml failed"
 	fi
+
+	insinto /usr/share/exaile/data
+	doins -r data/migrations || die "doins failed"
 }
 
 pkg_postinst() {
