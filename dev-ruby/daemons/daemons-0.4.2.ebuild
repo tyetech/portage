@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/daemons/Attic/daemons-0.4.2.ebuild,v 1.11 2009/08/23 20:27:08 a3li Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/daemons/Attic/daemons-0.4.2.ebuild,v 1.12 2009/08/24 01:12:47 mr_bones_ Exp $
 
 inherit ruby gems
 
@@ -12,4 +12,3 @@ LICENSE="Ruby"
 SLOT="0"
 KEYWORDS="~amd64 ~ia64 ~ppc64 ~x86"
 IUSE=""
-
