@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-quicklauncher-plugin/Attic/xfce4-quicklauncher-plugin-1.9.4.ebuild,v 1.1 2009/08/25 08:20:36 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/xfce4-quicklauncher-plugin/Attic/xfce4-quicklauncher-plugin-1.9.4.ebuild,v 1.2 2009/08/25 19:29:02 mr_bones_ Exp $
 
 EAUTORECONF=yes
 ELIBTOOLIZE=yes
@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	DOCS="AUTHORS ChangeLog TODO"
-	XFCONF="--disable-dependency-tracking 
+	XFCONF="--disable-dependency-tracking
 		$(use_enable debug)"
 }
 
