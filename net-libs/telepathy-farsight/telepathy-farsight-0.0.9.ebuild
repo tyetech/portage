@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/telepathy-farsight/Attic/telepathy-farsight-0.0.6.ebuild,v 1.1 2009/05/10 21:06:59 ford_prefect Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/telepathy-farsight/Attic/telepathy-farsight-0.0.9.ebuild,v 1.1 2009/08/25 02:22:39 tester Exp $
 
 EAPI="2"
 
@@ -10,17 +10,16 @@ SRC_URI="http://telepathy.freedesktop.org/releases/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~alpha ~amd64 ~x86"
 IUSE="python"
 
 RDEPEND=">=dev-libs/glib-2.16
 	>=sys-apps/dbus-0.60
 	>=dev-libs/dbus-glib-0.60
-	>=net-libs/telepathy-glib-0.7.29
-	>=net-libs/farsight2-0.0.8
+	>=net-libs/telepathy-glib-0.7.34
+	>=net-libs/farsight2-0.0.14
 	python? (
 		>=dev-python/pygobject-2.12.0
-		>=dev-python/pygtk-2.10
 		>=dev-python/gst-python-0.10.10 )"
 
 DEPEND="${RDEPEND}"
