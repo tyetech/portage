@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/gnokii/gnokii-9999.ebuild,v 1.2 2009/08/16 14:09:48 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/gnokii/gnokii-9999.ebuild,v 1.3 2009/08/26 21:09:33 mrness Exp $
 
 EAPI=2
 
@@ -36,7 +36,8 @@ RDEPEND="!app-mobilephone/smstools
 	usb? ( =virtual/libusb-0* )"
 DEPEND="${RDEPEND}
 	irda? ( virtual/os-headers )
-	nls? ( sys-devel/gettext )"
+	nls? ( sys-devel/gettext )
+	dev-util/intltool"
 
 CONFIG_CHECK="UNIX98_PTYS"
 
