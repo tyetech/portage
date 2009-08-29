@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/aria2/Attic/aria2-1.4.1.ebuild,v 1.1 2009/07/17 10:55:29 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/aria2/Attic/aria2-1.5.2.ebuild,v 1.1 2009/08/29 18:18:32 dev-zero Exp $
 
 EAPI="2"
 
@@ -57,8 +57,7 @@ src_configure() {
 		$(use_with sqlite sqlite3) \
 		$(use_enable bittorrent) \
 		$(use_with ares libcares) \
-		${myconf} \
-		|| die "econf failed"
+		${myconf}
 }
 
 src_install() {
