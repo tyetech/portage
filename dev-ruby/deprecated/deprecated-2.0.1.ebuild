@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/deprecated/Attic/deprecated-2.0.1.ebuild,v 1.3 2009/08/26 22:44:52 a3li Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/deprecated/Attic/deprecated-2.0.1.ebuild,v 1.4 2009/08/30 09:49:02 a3li Exp $
 
 EAPI="2"
 inherit ruby
@@ -21,8 +21,8 @@ RDEPEND="dev-lang/ruby"
 
 src_test() {
 	for rb in $USE_RUBY; do
+		[ -n "$(type -p ${rb})" ] || continue
 		ebegin "Testing for ${rb}"
-		[ -x ${rb} ] || continue
 		${rb} setup.rb test || die "test failed"
 		eend $?
 	done
