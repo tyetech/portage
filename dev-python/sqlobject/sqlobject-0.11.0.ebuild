@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sqlobject/Attic/sqlobject-0.10.2.ebuild,v 1.1 2008/06/07 03:40:09 chtekk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sqlobject/Attic/sqlobject-0.11.0.ebuild,v 1.1 2009/09/04 15:50:21 patrick Exp $
 
 NEED_PYTHON=2.3
 
