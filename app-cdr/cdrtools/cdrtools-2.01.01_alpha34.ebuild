@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01.01_alpha34.ebuild,v 1.14 2009/05/28 15:28:35 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01.01_alpha34.ebuild,v 1.15 2009/09/04 16:22:05 billie Exp $
 
 inherit eutils toolchain-funcs flag-o-matic
 
@@ -15,6 +15,7 @@ IUSE="unicode"
 
 DEPEND="!app-cdr/dvdrtools
 	!app-cdr/cdrkit"
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}-2.01.01
 
