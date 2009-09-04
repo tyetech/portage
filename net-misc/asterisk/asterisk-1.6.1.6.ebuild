@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.1.1-r1.ebuild,v 1.1 2009/06/30 16:01:17 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.1.6.ebuild,v 1.1 2009/09/04 11:51:31 chainsaw Exp $
 
 EAPI=1
 inherit eutils autotools
@@ -169,29 +169,14 @@ src_unpack() {
 	epatch "${FILESDIR}"/1.6.1/${PN}-1.6.1-uclibc.patch  || die "patch failed"
 
 	#
-	# try to tame the custom build system a little so make likes it better
-	# patch credit: Diego E. 'Flameeyes' Pettenò <flameeyes@entoo.org>
-	#
-	epatch "${FILESDIR}"/1.6.1/asterisk-1.6.1-parallelmake.patch || die "patch failed"
-
-	#
-	# do not try to pass libraries in ldflags but use libs properly
-	# keeps NET-SNMP configure test from failing horribly on --as-needed
-	# http://bugs.digium.com/view.php?id=14671
-	#
-	epatch "${FILESDIR}"/1.6.1/asterisk-1.6.1-toolcheck-libs-not-ldflags.patch || die "patch failed"
-
-	#
 	# link UW-IMAP with Kerberos5 if necessary
 	#
 	epatch "${FILESDIR}"/1.6.1/asterisk-1.6.1-imap-kerberos.patch || die "patch failed"
 
 	#
-	# resolve the SIP peer instead of a nearby section header, patch by Federico Santulli
-	# https://issues.asterisk.org/view.php?id=15052
-	# https://bugs.gentoo.org/show_bug.cgi?id=275394
+	# compensate for non-standard LUA header paths in Gentoo
 	#
-	epatch "${FILESDIR}/1.6.1/${P}-resolve-peer-not-section-header.patch"
+	epatch "${FILESDIR}"/1.6.1/asterisk-1.6.1.6-lua-includes.patch || die "patch failed"
 
 	AT_M4DIR=autoconf eautoreconf
 
