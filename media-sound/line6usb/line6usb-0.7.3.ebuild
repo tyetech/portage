@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/line6usb/Attic/line6usb-0.7.3.ebuild,v 1.5 2009/07/23 07:53:09 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/line6usb/Attic/line6usb-0.7.3.ebuild,v 1.6 2009/09/06 21:15:09 robbat2 Exp $
 
-inherit linux-mod eutils multilib linux-info
+inherit linux-mod eutils multilib
 
 DESCRIPTION="Experimental USB driver for Line6 PODs and the Variax workbench."
 HOMEPAGE="http://www.tanzband-scream.at/line6/"
