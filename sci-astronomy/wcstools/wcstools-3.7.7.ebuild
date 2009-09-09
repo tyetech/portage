@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/wcstools/Attic/wcstools-3.7.7.ebuild,v 1.2 2009/08/12 19:18:04 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/wcstools/Attic/wcstools-3.7.7.ebuild,v 1.3 2009/09/09 16:06:30 bicatali Exp $
 
 EAPI=2
 inherit eutils autotools
@@ -23,7 +23,7 @@ src_prepare() {
 		-e 's/crlf/wcscrlf/' \
 		-e 's/remap/wcsremap/' \
 		wcstools Makefile.am || die
-	sed -i -e 's/3.7.x/${PV}/' "${S}"/configure.ac || die "sed failed"
+	sed -i -e "s/3.7.x/${PV}/" "${S}"/configure.ac || die "sed failed"
 	eautoreconf
 }
 
