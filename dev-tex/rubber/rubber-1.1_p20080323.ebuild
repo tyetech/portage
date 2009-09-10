@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/rubber/Attic/rubber-1.1_p20080323.ebuild,v 1.2 2009/09/10 16:55:12 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/rubber/Attic/rubber-1.1_p20080323.ebuild,v 1.3 2009/09/10 17:01:16 patrick Exp $
 
 EAPI="2"
+NEED_PYTHON="2.5"
 
 inherit distutils eutils
 
@@ -18,8 +19,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 
-DEPEND=">=dev-lang/python-2.2
-		virtual/latex-base"
+DEPEND="virtual/latex-base"
 
 S=${WORKDIR}/${P/_p*/}
 
