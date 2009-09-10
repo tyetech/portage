@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/Math-BigRat/Attic/Math-BigRat-0.23.ebuild,v 1.1 2009/09/09 11:04:23 tove Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/Math-BigRat/Attic/Math-BigRat-0.24.ebuild,v 1.1 2009/09/10 20:43:29 tove Exp $
 
 EAPI=2
 
