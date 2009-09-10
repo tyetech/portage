@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/vm/Attic/vm-8.0.12-r2.ebuild,v 1.6 2009/09/10 08:32:36 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/vm/Attic/vm-8.0.12-r3.ebuild,v 1.1 2009/09/10 08:32:36 ulm Exp $
 
 inherit elisp eutils
 
@@ -10,14 +10,14 @@ SRC_URI="http://download.savannah.nongnu.org/releases/viewmail/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ppc sparc x86"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
 IUSE="bbdb ssl"
 
 DEPEND="bbdb? ( app-emacs/bbdb )"
 RDEPEND="${DEPEND}
 	ssl? ( net-misc/stunnel )"
 
-SITEFILE="50${PN}-gentoo-8.0.9.el"
+SITEFILE="50${PN}-gentoo.el"
 
 src_unpack() {
 	unpack ${A}
@@ -37,11 +37,11 @@ src_unpack() {
 }
 
 src_compile() {
-	local myconf
-	use bbdb && myconf="--with-other-dirs=${SITELISP}/bbdb"
-	econf --with-emacs="emacs" \
-		--with-pixmapdir="/usr/share/pixmaps/vm" \
-		${myconf} || die "econf failed"
+	econf \
+		--with-emacs="emacs" \
+		--with-pixmapdir="${SITEETC}/${PN}" \
+		$(use bbdb && echo "--with-other-dirs=${SITELISP}/bbdb") \
+		|| die "econf failed"
 	emake || die "emake failed"
 }
 
