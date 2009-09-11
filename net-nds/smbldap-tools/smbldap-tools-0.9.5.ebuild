@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/smbldap-tools/Attic/smbldap-tools-0.9.5.ebuild,v 1.1 2008/06/25 14:55:59 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/smbldap-tools/Attic/smbldap-tools-0.9.5.ebuild,v 1.2 2009/09/11 11:32:37 flameeyes Exp $
 
 inherit eutils
 
@@ -20,7 +20,7 @@ RDEPEND="net-nds/openldap
 	dev-perl/Digest-SHA1
 	dev-perl/Unicode-MapUTF8
 	dev-perl/IO-Socket-SSL"
-DEPEND="${DEPEND}"
+DEPEND="${RDEPEND}"
 
 src_compile() {
 	mkdir man
