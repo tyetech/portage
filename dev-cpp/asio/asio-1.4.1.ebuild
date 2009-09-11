@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/asio/Attic/asio-1.4.1.ebuild,v 1.1 2009/05/12 08:34:26 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/asio/Attic/asio-1.4.1.ebuild,v 1.2 2009/09/11 11:22:52 flameeyes Exp $
 
 EAPI=2
 
@@ -15,7 +15,7 @@ IUSE="doc examples ssl test"
 
 RDEPEND="ssl? ( dev-libs/openssl )
 	>=dev-libs/boost-1.34.1"
-DEPEND="${DEPEND}"
+DEPEND="${RDEPEND}"
 
 src_prepare() {
 	if ! use test; then
