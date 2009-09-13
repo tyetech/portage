@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/iozone/Attic/iozone-3.321.ebuild,v 1.1 2009/03/08 16:21:59 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-benchmarks/cvs-repo/gentoo-x86/app-benchmarks/iozone/Attic/iozone-3.321.ebuild,v 1.2 2009/09/13 22:20:40 patrick Exp $
 
 # TODO
 #        ->   linux-arm            (32bit)   <-
@@ -29,11 +29,6 @@ LICENSE="freedist"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
-
-DEPEND="
-	>=sys-apps/sed-4
-	virtual/libc"
-RDEPEND="virtual/libc"
 
 S=${WORKDIR}/${PN}${PV/./_}
 
