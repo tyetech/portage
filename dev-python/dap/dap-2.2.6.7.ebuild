@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/dap/dap-2.2.6.7.ebuild,v 1.2 2009/09/14 02:45:56 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/dap/dap-2.2.6.7.ebuild,v 1.3 2009/09/14 02:46:21 bicatali Exp $
 
 EAPI=2
 inherit eutils distutils
@@ -30,4 +30,3 @@ src_prepare() {
 		-e "s/'dap.plugins'/'dap','dap.plugins'/" \
 		setup.py  || die
 }
-
