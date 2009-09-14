@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect-python/eselect-python-99999999.ebuild,v 1.1 2009/08/24 00:26:06 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect-python/eselect-python-99999999.ebuild,v 1.2 2009/09/14 18:42:08 arfrever Exp $
 
 EAPI="2"
 
@@ -15,8 +15,9 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-DEPEND=">=app-admin/eselect-1.0.2"
-RDEPEND="${DEPEND}"
+RDEPEND=">=app-admin/eselect-1.0.2"
+DEPEND="${RDEPEND}
+	sys-devel/autoconf"
 
 ESVN_PROJECT="eselect-python"
 ESVN_REPO_URI="https://overlays.gentoo.org/svn/proj/python/projects/eselect-python/trunk"
