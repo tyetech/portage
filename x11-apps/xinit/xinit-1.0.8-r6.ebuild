@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/Attic/xinit-1.0.8-r5.ebuild,v 1.1 2009/09/14 16:19:02 williamh Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/Attic/xinit-1.0.8-r6.ebuild,v 1.1 2009/09/15 00:24:06 williamh Exp $
 
 EAPI="2"
 
@@ -51,7 +51,7 @@ src_install() {
 	exeinto /etc/X11/xinit
 	doexe "${FILESDIR}"/xinitrc || die
 	newinitd "${FILESDIR}"/xdm.initd-3 xdm
-	newinitd "${FILESDIR}"/x-setup.initd-1 x-setup
+	newinitd "${FILESDIR}"/xdm-setup.initd-1 xdm-setup
 	newconfd "${FILESDIR}"/xdm.confd-1 xdm
 	newpamd "${FILESDIR}"/xserver.pamd xserver
 }
