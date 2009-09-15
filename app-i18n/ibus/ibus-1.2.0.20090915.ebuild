@@ -1,9 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus/Attic/ibus-1.2.0.20090812.ebuild,v 1.1 2009/08/13 14:49:08 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus/Attic/ibus-1.2.0.20090915.ebuild,v 1.1 2009/09/15 15:33:24 matsuu Exp $
 
 EAPI="1"
-inherit autotools eutils multilib python
+inherit eutils multilib python
 
 DESCRIPTION="Intelligent Input Bus for Linux / Unix OS"
 HOMEPAGE="http://code.google.com/p/ibus/"
@@ -44,13 +44,9 @@ src_unpack() {
 	cd "${S}"
 	mv py-compile py-compile.orig || die
 	ln -s "$(type -P true)" py-compile || die
-	sed -i -e '/QMAKE/s/$/ "CONFIG+=nostrip"/' client/qt4/Makefile.am || die
-	eautomake
 }
 
 src_compile() {
-	# qt4-immodule won't work
-	# http://code.google.com/p/ibus/issues/detail?id=341
 	econf \
 		$(use_enable doc gtk-doc) \
 		$(use_enable nls) || die
