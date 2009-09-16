@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ogg2mp3/Attic/ogg2mp3-0.5.1.ebuild,v 1.3 2009/07/09 16:55:04 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/ogg2mp3/ogg2mp3-0.6.1.ebuild,v 1.1 2009/09/16 21:56:20 chainsaw Exp $
 
 EAPI=2
 
