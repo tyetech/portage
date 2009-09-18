@@ -1,8 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-games/cvs-repo/gentoo-x86/dev-games/poker-eval/Attic/poker-eval-136.0.ebuild,v 1.1 2009/08/13 00:49:24 mr_bones_ Exp $
-EAPI=2
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-games/cvs-repo/gentoo-x86/dev-games/poker-eval/Attic/poker-eval-136.0.ebuild,v 1.2 2009/09/18 01:52:48 mr_bones_ Exp $
 
+EAPI=2
 inherit eutils
 
 DESCRIPTION="A fast C library for evaluating poker hands"
