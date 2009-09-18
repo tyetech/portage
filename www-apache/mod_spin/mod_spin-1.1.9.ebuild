@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_spin/mod_spin-1.1.7.ebuild,v 1.3 2009/09/18 15:33:57 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_spin/mod_spin-1.1.9.ebuild,v 1.1 2009/09/18 15:33:57 hollow Exp $
 
 inherit apache-module
 
@@ -24,13 +24,6 @@ DEPEND=">=sys-libs/db-4.2
 RDEPEND="${DEPEND}"
 
 need_apache2
-
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	sed -i -e 's:^docs/man/man3/rxv_spin_as_functions.3:# &:g' Makefile.am
-	./buildconf
-}
 
 src_compile() {
 	econf --with-apxs=${APXS} || die "econf failed"
