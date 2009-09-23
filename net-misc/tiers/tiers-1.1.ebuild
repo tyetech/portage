@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/tiers/tiers-1.1.ebuild,v 1.8 2009/02/15 21:46:04 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/tiers/tiers-1.1.ebuild,v 1.9 2009/09/23 19:46:16 patrick Exp $
 
 inherit eutils
 
@@ -13,8 +13,9 @@ LICENSE="BSD as-is"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc x86"
 IUSE=""
-DEPEND="sys-devel/gcc virtual/libc"
-RDEPEND="sys-apps/gawk sci-visualization/gnuplot virtual/libc"
+DEPEND="sys-devel/gcc"
+RDEPEND="sys-apps/gawk 
+	sci-visualization/gnuplot"
 S=${WORKDIR}/${PN}${PV}
 
 src_unpack() {
