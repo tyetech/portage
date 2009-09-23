@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pngtools/Attic/pngtools-0.4.ebuild,v 1.1 2009/06/04 13:37:39 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pngtools/Attic/pngtools-0.4.ebuild,v 1.2 2009/09/23 15:07:04 ssuominen Exp $
 
 inherit eutils
 
@@ -15,8 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND=">=media-libs/libpng-1.2.8-r1
-		virtual/libc"
+DEPEND=">=media-libs/libpng-1.2.8-r1"
 
 src_unpack() {
 	unpack ${A}
