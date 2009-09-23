@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix-agent/Attic/zabbix-agent-1.1.ebuild,v 1.1 2006/06/06 13:03:26 wschlich Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix-agent/Attic/zabbix-agent-1.1.ebuild,v 1.2 2009/09/23 18:26:02 patrick Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
-DEPEND="virtual/libc"
+DEPEND=""
 
 S=${WORKDIR}/${MY_P}-${MY_PV}
 
