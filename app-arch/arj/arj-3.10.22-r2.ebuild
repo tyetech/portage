@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/arj/Attic/arj-3.10.22-r2.ebuild,v 1.8 2009/06/28 17:54:42 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/arj/Attic/arj-3.10.22-r2.ebuild,v 1.9 2009/09/23 15:09:53 patrick Exp $
 
 inherit autotools eutils toolchain-funcs
 
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="amd64 ~ia64 ppc ~ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
-DEPEND="virtual/libc"
+DEPEND=""
 
 src_unpack() {
 	unpack ${A}
