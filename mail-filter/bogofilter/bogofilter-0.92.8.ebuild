@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/bogofilter/Attic/bogofilter-0.92.8.ebuild,v 1.15 2007/07/14 15:28:42 tove Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/bogofilter/Attic/bogofilter-0.92.8.ebuild,v 1.16 2009/09/23 17:51:56 patrick Exp $
 
 DESCRIPTION="Bayesian spam filter designed with fast algorithms, and tuned for speed."
 HOMEPAGE="http://bogofilter.sourceforge.net/"
@@ -11,8 +11,7 @@ SLOT="0"
 KEYWORDS="~mips"
 IUSE="doc"
 
-RDEPEND="virtual/libc
-	>=sys-libs/db-3.2"
+RDEPEND=">=sys-libs/db-3.2"
 DEPEND="${DEPEND}
 	doc? ( app-text/xmlto )"
 
