@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/balsa/balsa-3.5.ebuild,v 1.2 2007/01/10 17:45:49 hkbst Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/balsa/balsa-3.5.ebuild,v 1.3 2009/09/23 19:59:23 patrick Exp $
 
 inherit eutils
 
@@ -20,8 +20,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~ppc"
 
-DEPEND="virtual/libc
-	sys-devel/binutils
+DEPEND="sys-devel/binutils
 	dev-libs/gmp
 	dev-lang/perl
 	x11-libs/gtk+
