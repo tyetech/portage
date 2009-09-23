@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/bluefish/Attic/bluefish-1.3.6.ebuild,v 1.2 2009/08/30 09:14:30 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/bluefish/Attic/bluefish-1.3.7.ebuild,v 1.1 2009/09/23 12:31:43 scarabeus Exp $
 
 EAPI="2"
 
