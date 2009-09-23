@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ngircd/ngircd-13.ebuild,v 1.1 2009/01/25 14:15:16 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/ngircd/ngircd-13.ebuild,v 1.2 2009/09/23 18:44:41 patrick Exp $
 
 inherit eutils
 
@@ -15,8 +15,7 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="zlib tcpd debug ident"
 RESTRICT="test"
 
-DEPEND="virtual/libc
-	zlib? ( sys-libs/zlib )
+DEPEND="zlib? ( sys-libs/zlib )
 	ident? ( net-libs/libident )
 	tcpd? ( sys-apps/tcp-wrappers )
 	>=sys-apps/sed-4"
