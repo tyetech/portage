@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/taskcoach/Attic/taskcoach-0.73.1.ebuild,v 1.1 2009/06/25 19:34:07 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/taskcoach/Attic/taskcoach-0.74.2.ebuild,v 1.1 2009/09/26 19:45:15 caster Exp $
 
 EAPI=1
 
@@ -22,7 +22,8 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-DOCS="CHANGES.txt"
+# disappeared in 0.73.2, maybe will appear again?
+#DOCS="CHANGES.txt"
 
 src_unpack() {
 	distutils_src_unpack
