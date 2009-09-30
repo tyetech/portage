@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-voodoo/Attic/xf86-video-voodoo-1.1.1.ebuild,v 1.9 2009/03/13 16:09:32 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-voodoo/Attic/xf86-video-voodoo-1.1.1.ebuild,v 1.10 2009/09/30 21:21:01 ssuominen Exp $
 
 # Must be before x-modular eclass is inherited
 #SNAPSHOT="yes"
@@ -10,6 +10,8 @@ inherit x-modular
 
 DESCRIPTION="Voodoo video driver"
 KEYWORDS="alpha amd64 ia64 ppc sparc x86 ~x86-fbsd"
+IUSE=""
+
 RDEPEND=">=x11-base/xorg-server-1.0.99"
 DEPEND="${RDEPEND}
 	x11-proto/fontsproto
