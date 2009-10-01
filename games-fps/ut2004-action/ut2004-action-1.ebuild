@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/ut2004-action/ut2004-action-1.ebuild,v 1.1 2007/01/10 17:30:49 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-fps/cvs-repo/gentoo-x86/games-fps/ut2004-action/ut2004-action-1.ebuild,v 1.2 2009/10/01 22:20:03 nyhm Exp $
 
 MOD_DESC="Action movie mod"
 MOD_NAME="Action"
@@ -12,10 +12,8 @@ HOMEPAGE="http://www.ateamproductions.net/"
 SRC_URI="mirror://beyondunreal/mods/aut-r${PV}-msuc.zip"
 
 LICENSE="freedist"
-
 KEYWORDS="~amd64 ~x86"
-
-RDEPEND="${CATEGORY}/${GAME}"
+IUSE="dedicated opengl"
 
 src_unpack() {
 	mkdir -p ${MOD_DIR}
