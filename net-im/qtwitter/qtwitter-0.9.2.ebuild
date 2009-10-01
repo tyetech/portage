@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/qtwitter/Attic/qtwitter-0.9.1.ebuild,v 1.1 2009/09/30 19:52:53 ayoy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/qtwitter/Attic/qtwitter-0.9.2.ebuild,v 1.1 2009/10/01 17:08:15 ayoy Exp $
 
 EAPI="2"
 
