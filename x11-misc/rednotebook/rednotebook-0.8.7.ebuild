@@ -1,10 +1,10 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/rednotebook/Attic/rednotebook-0.8.1.ebuild,v 1.1 2009/07/25 10:49:13 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/rednotebook/Attic/rednotebook-0.8.7.ebuild,v 1.1 2009/10/03 18:29:26 hwoarang Exp $
 
 EAPI="2"
 
-NEED_PYTHON="2.5"
+NEED_PYTHON="2.6"
 inherit distutils
 
 DESCRIPTION="A graphical journal with calendar, templates, tags, keyword searching, and export functionality"
