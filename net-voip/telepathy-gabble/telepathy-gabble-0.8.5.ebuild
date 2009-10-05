@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-voip/cvs-repo/gentoo-x86/net-voip/telepathy-gabble/Attic/telepathy-gabble-0.8.2.ebuild,v 1.3 2009/09/06 11:31:38 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-voip/cvs-repo/gentoo-x86/net-voip/telepathy-gabble/Attic/telepathy-gabble-0.8.5.ebuild,v 1.1 2009/10/05 19:52:24 tester Exp $
 
 EAPI="2"
 
