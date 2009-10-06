@@ -1,7 +1,7 @@
 #!/sbin/runscript
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/files/Attic/xdm-setup.initd-1,v 1.5 2009/09/24 17:07:56 williamh Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/files/Attic/xdm-setup.initd-1,v 1.7 2009/11/14 14:18:43 scarabeus Exp $
 
 depend() {
 	need localmount
@@ -9,6 +9,6 @@ depend() {
 
 start() {
 	if get_bootparam "nox" ; then
-		touch /tmp/.noxdm
+		touch /etc/.noxdm
 	fi
 }
