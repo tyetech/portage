@@ -1,12 +1,12 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/phpldapadmin/Attic/phpldapadmin-1.1.0.5.ebuild,v 1.3 2008/04/03 10:27:45 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/phpldapadmin/Attic/phpldapadmin-1.2.0.4.ebuild,v 1.1 2009/10/09 20:20:46 vostorga Exp $
 
 inherit webapp depend.php
 
 DESCRIPTION="phpLDAPadmin is a web-based tool for managing all aspects of your LDAP server."
 HOMEPAGE="http://phpldapadmin.sourceforge.net"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
