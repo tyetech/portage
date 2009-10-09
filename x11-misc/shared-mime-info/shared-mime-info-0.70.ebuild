@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/shared-mime-info/Attic/shared-mime-info-0.70.ebuild,v 1.1 2009/10/09 10:32:52 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/shared-mime-info/Attic/shared-mime-info-0.70.ebuild,v 1.2 2009/10/09 18:46:00 ssuominen Exp $
 
 EAPI=2
 inherit fdo-mime
@@ -34,4 +34,11 @@ src_install() {
 
 pkg_postinst() {
 	fdo-mime_mime_database_update
+	elog
+	elog "The database format has changed between 0.60 and 0.70."
+	elog "You may need to update all your local databases and caches."
+	elog "To do so, please run the following commands:"
+	elog "(for each user) $ update-mime-database ~/.local/share/mime/"
+	elog "(as root)       # update-mime-database /usr/local/share/mime/"
+	elog
 }
