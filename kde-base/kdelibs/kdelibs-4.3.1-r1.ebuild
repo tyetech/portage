@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-4.3.1.ebuild,v 1.3 2009/09/19 22:04:09 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-4.3.1-r1.ebuild,v 1.1 2009/10/09 16:48:05 scarabeus Exp $
 
 EAPI="2"
 
@@ -111,6 +111,8 @@ PATCHES=(
 	"${FILESDIR}/dist/01_gentoo_set_xdg_menu_prefix.patch"
 	"${FILESDIR}/dist/02_gentoo_append_xdg_config_dirs.patch"
 	"${FILESDIR}/dist/23_solid_no_double_build.patch"
+	"${FILESDIR}/${P}-dom-docimpl-crash.patch"
+	"${FILESDIR}/${PN}-4.3.1-fix-crash-on-konqueror-tabs.patch"
 )
 
 src_prepare() {
