@@ -1,4 +1,4 @@
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-burn/files/0.1.0_pre21/Attic/rc-addon.sh,v 1.4 2009/03/12 02:23:24 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-burn/files/rc-addon.sh,v 1.3 2009/10/10 10:07:21 zzam Exp $
 #
 # rc-addon-script for plugin burn
 #
