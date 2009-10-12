@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/qsoapman/Attic/qsoapman-0.3.ebuild,v 1.9 2008/07/27 21:38:38 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/qsoapman/Attic/qsoapman-0.3.ebuild,v 1.10 2009/10/12 19:08:18 ssuominen Exp $
 
 EAPI=1
 
@@ -35,5 +35,5 @@ src_install () {
 	insinto /usr/share/${PN}
 	doins *.xml
 	dobin bin/qsoapman
-	dodoc AUTHORS BUGS ChangeLog COPYING TODO
+	dodoc AUTHORS BUGS ChangeLog TODO
 }
