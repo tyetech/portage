@@ -1,11 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kscope/kscope-1.9.4.ebuild,v 1.1 2009/10/12 11:47:07 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kscope/kscope-1.9.4.ebuild,v 1.2 2009/10/12 11:50:10 ssuominen Exp $
 
 EAPI=2
 inherit multilib qt4
 
-DESCRIPTION="KScope is a KDE front-end to Cscope."
+DESCRIPTION="Source Editing Environment for KDE"
 HOMEPAGE="http://kscope.sourceforge.net/"
 SRC_URI="mirror://sourceforge/kscope/${P}.tar.gz"
 
