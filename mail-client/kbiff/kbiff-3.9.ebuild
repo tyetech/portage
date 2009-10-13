@@ -1,7 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/kbiff/Attic/kbiff-3.9.ebuild,v 1.1 2009/10/13 19:23:28 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/kbiff/Attic/kbiff-3.9.ebuild,v 1.2 2009/10/13 19:30:37 ssuominen Exp $
 
+ARTS_REQUIRED=never
 EAPI=2
 inherit kde
 
