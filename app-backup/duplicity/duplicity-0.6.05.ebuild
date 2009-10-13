@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.5.14.ebuild,v 1.2 2009/04/07 12:01:20 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.6.05.ebuild,v 1.1 2009/10/13 01:53:25 vanquirius Exp $
 
 inherit distutils
 
