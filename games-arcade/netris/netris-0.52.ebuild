@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/netris/netris-0.52.ebuild,v 1.15 2009/03/10 19:01:00 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/netris/netris-0.52.ebuild,v 1.16 2009/10/15 19:37:50 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils games
@@ -56,7 +56,7 @@ src_prepare() {
 }
 
 src_configure() {
-	./Configure -O || die 'Configure failed'
+	bash ./Configure -O || die 'Configure failed'
 }
 
 src_install() {
