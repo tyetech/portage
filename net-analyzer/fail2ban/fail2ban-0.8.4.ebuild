@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/fail2ban/Attic/fail2ban-0.8.4.ebuild,v 1.1 2009/09/11 13:37:48 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/fail2ban/Attic/fail2ban-0.8.4.ebuild,v 1.2 2009/10/17 04:34:13 darkside Exp $
 
 inherit distutils
 
@@ -15,6 +15,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/python-2.4"
 RDEPEND="${DEPEND}
+	net-misc/whois
 	virtual/mta"
 
 src_install() {
