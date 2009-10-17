@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/babytrans-en2ita/babytrans-en2ita-0.1.ebuild,v 1.3 2007/02/01 15:05:49 blubb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/babytrans-en2ita/babytrans-en2ita-0.1.ebuild,v 1.4 2009/10/17 22:44:22 halcy0n Exp $
 
 MY_P="EngtoIta.dic.gz"
 MY_F="Engtoita.dic"
@@ -34,7 +34,7 @@ src_unpack() {
 }
 
 src_install() {
-	cd ${WORKDIR}
+	cd "${WORKDIR}"
 	insinto /usr/share/babytrans
 	doins ${MY_F} || die "Unable to install file ${MY_F}"
 }

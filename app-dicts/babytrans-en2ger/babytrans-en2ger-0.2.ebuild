@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/babytrans-en2ger/babytrans-en2ger-0.2.ebuild,v 1.6 2005/05/27 18:32:14 angusyoung Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/babytrans-en2ger/babytrans-en2ger-0.2.ebuild,v 1.7 2009/10/17 22:43:25 halcy0n Exp $
 
 MY_P="EngtoGer.dic.gz"
 MY_F="Engtoger.dic"
@@ -34,7 +34,7 @@ src_unpack() {
 }
 
 src_install() {
-	cd ${WORKDIR}
+	cd "${WORKDIR}"
 	insinto /usr/share/babytrans
 	doins ${MY_F} || die "Unable to install file ${MY_F}"
 }
