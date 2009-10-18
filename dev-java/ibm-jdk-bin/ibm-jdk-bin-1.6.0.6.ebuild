@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jdk-bin/Attic/ibm-jdk-bin-1.6.0.4.ebuild,v 1.4 2009/05/29 20:37:25 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/ibm-jdk-bin/Attic/ibm-jdk-bin-1.6.0.6.ebuild,v 1.1 2009/10/18 19:52:15 caster Exp $
 
 inherit java-vm-2 versionator eutils
 
@@ -81,7 +81,7 @@ SRC_URI="
 		ppc64? ( ${PPC64_JAVACOMM_DIST} )
 	)"
 LICENSE="IBM-J1.6"
-KEYWORDS="-* ~amd64 ppc ppc64 ~x86"
+KEYWORDS="-* ~amd64 ~ppc ~ppc64 ~x86"
 RESTRICT="fetch"
 IUSE="X alsa doc examples javacomm nsplugin odbc"
 
