@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/oxygen-icons/Attic/oxygen-icons-4.3.1.ebuild,v 1.3 2009/10/10 10:41:55 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/oxygen-icons/Attic/oxygen-icons-4.3.1.ebuild,v 1.4 2009/10/18 13:11:40 maekke Exp $
 
 EAPI="2"
 
@@ -17,7 +17,7 @@ HOMEPAGE="http://www.oxygen-icons.org/"
 #SRC_URI="mirror://kde/unstable/${PV}/src/${P}.tar.bz2"
 
 LICENSE="LGPL-3"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 x86"
 IUSE=""
 
 # Block conflicting packages
