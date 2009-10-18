@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/kbd/kbd-1.15.1.ebuild,v 1.1 2009/10/11 01:22:48 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/kbd/kbd-1.15.1.ebuild,v 1.2 2009/10/18 18:03:09 vapier Exp $
 
 inherit autotools
 
@@ -21,6 +21,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	eautoreconf # stupid tarball lacks generated autotools
+	sed -i 's:-Werror::' src/Makefile.in
 }
 
 src_compile() {
