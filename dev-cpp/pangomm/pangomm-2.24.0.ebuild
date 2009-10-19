@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/pangomm/Attic/pangomm-2.24.0.ebuild,v 1.8 2009/10/08 21:56:10 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/pangomm/Attic/pangomm-2.24.0.ebuild,v 1.9 2009/10/19 21:56:01 beandog Exp $
 
 EAPI="1"
 
@@ -22,7 +22,7 @@ RDEPEND=">=x11-libs/pango-1.23.0
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-DOCS="AUTHORS CHANGES ChangeLog PORTING NEWS README"
+DOCS="AUTHORS ChangeLog NEWS README"
 
 pkg_setup() {
 	G2CONF="${G2CONF}
