@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irssi-otr/irssi-otr-0.2.ebuild,v 1.4 2009/09/30 14:32:30 cla Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irssi-otr/irssi-otr-0.2.ebuild,v 1.5 2009/10/21 15:40:56 maekke Exp $
 
 inherit cmake-utils eutils
 
@@ -15,7 +15,7 @@ SRC_URI="ftp://download.tuxfamily.org/irssiotr/${PF}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~sparc ~x86"
+KEYWORDS="amd64 ~sparc x86"
 IUSE="debug"
 
 RDEPEND="net-libs/libotr
