@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/kvirc/Attic/kvirc-4.0_pre3437.ebuild,v 1.1 2009/08/30 21:19:59 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/kvirc/Attic/kvirc-4.0_pre3566.ebuild,v 1.1 2009/10/23 19:03:37 arfrever Exp $
 
 EAPI="2"
 
@@ -56,6 +56,7 @@ src_configure() {
 		-DCOEXISTENCE=1
 		-DLIB_SUFFIX=${libdir#lib}
 		-DMANUAL_REVISION=${VERSIO_PRAESENS}
+		-DUSE_ENV_FLAGS=1
 		-DVERBOSE=1
 		$(cmake-utils_use_want audiofile AUDIOFILE)
 		$(cmake-utils_use_want crypt CRYPT)
