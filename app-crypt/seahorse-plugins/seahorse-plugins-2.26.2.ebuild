@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse-plugins/Attic/seahorse-plugins-2.26.2.ebuild,v 1.6 2009/10/18 16:26:09 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse-plugins/Attic/seahorse-plugins-2.26.2.ebuild,v 1.7 2009/10/24 16:58:15 nixnut Exp $
 
 EAPI="2"
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.gnome.org/projects/seahorse/index.html"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="applet debug epiphany gedit libnotify nautilus test"
 
 RDEPEND="
