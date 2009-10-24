@@ -1,11 +1,11 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-3.2.4.ebuild,v 1.2 2009/10/22 10:58:16 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-3.2.5.ebuild,v 1.1 2009/10/24 20:52:19 scarabeus Exp $
 
 EAPI="2"
 
 KDE_LINGUAS="ar be bg ca cs da de el en_GB es et eu fr ga gl hi hne hr hu is it ja
-	km lt mai ms lv nb nds nl nn oc pl pt pt_BR ro ru se sk sl sr sv
+	km lt lv mai ms nb nds nl nn oc pl pt pt_BR ro ru se sk sl sr sv
 	tr uk zh_CN zh_TW"
 inherit kde4-base
 
