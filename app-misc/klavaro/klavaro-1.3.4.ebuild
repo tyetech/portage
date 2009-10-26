@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/klavaro/Attic/klavaro-1.3.0.ebuild,v 1.1 2009/08/30 08:37:44 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/klavaro/Attic/klavaro-1.3.4.ebuild,v 1.1 2009/10/26 14:29:49 scarabeus Exp $
 
 inherit eutils
 
