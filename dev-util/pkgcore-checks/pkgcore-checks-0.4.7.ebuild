@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/pkgcore-checks/Attic/pkgcore-checks-0.4.5.ebuild,v 1.1 2008/11/21 02:17:46 jmbsvicetto Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/pkgcore-checks/Attic/pkgcore-checks-0.4.7.ebuild,v 1.1 2009/10/27 08:04:06 patrick Exp $
 
 inherit distutils
 
