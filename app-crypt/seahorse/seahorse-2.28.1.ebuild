@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse/Attic/seahorse-2.28.1.ebuild,v 1.1 2009/10/29 21:04:49 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/seahorse/Attic/seahorse-2.28.1.ebuild,v 1.2 2009/10/29 21:15:39 eva Exp $
 
 EAPI="2"
 
@@ -73,7 +73,7 @@ src_prepare() {
 
 src_install() {
 	gnome2_src_install
-	find "${D}" name "*.la" -delete || die "remove of la files failed"
+	find "${D}" -name "*.la" -delete || die "remove of la files failed"
 }
 
 pkg_postinst() {
