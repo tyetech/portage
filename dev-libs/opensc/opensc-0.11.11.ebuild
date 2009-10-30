@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/opensc/Attic/opensc-0.11.10-r1.ebuild,v 1.1 2009/10/24 11:08:52 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/opensc/Attic/opensc-0.11.11.ebuild,v 1.1 2009/10/30 17:22:12 arfrever Exp $
 
 EAPI="2"
 
@@ -32,12 +32,12 @@ src_configure() {
 	econf \
 		--docdir="/usr/share/doc/${PF}" \
 		--htmldir="/usr/share/doc/${PF}/html" \
+		$(use_enable doc) \
+		$(use_enable nsplugin) \
 		$(use_enable openct) \
 		$(use_enable pcsc-lite pcsc) \
-		$(use_enable nsplugin) \
-		$(use_enable doc) \
-		--with-plugindir=/usr/$(get_libdir)/nsbrowser/plugins \
-		--with-pinentry="/usr/bin/pinentry"
+		--with-pinentry="/usr/bin/pinentry" \
+		--with-plugindir="/usr/$(get_libdir)/nsbrowser/plugins"
 }
 
 src_install() {
