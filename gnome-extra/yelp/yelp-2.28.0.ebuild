@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/yelp/Attic/yelp-2.28.0.ebuild,v 1.1 2009/10/29 22:24:45 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/yelp/Attic/yelp-2.28.0.ebuild,v 1.2 2009/10/30 16:22:27 mr_bones_ Exp $
 
 EAPI="2"
 
