@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/dwm/Attic/dwm-5.6.1.ebuild,v 1.3 2009/10/24 13:18:42 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/dwm/Attic/dwm-5.6.1.ebuild,v 1.4 2009/10/31 14:21:04 ranger Exp $
 
 inherit toolchain-funcs savedconfig
 
@@ -10,7 +10,7 @@ SRC_URI="http://code.suckless.org/dl/dwm/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ppc ~ppc64 x86 ~x86-fbsd"
+KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd"
 IUSE="xinerama"
 
 DEPEND="x11-libs/libX11
