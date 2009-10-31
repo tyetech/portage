@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/biopython/Attic/biopython-1.52.ebuild,v 1.1 2009/09/23 15:29:53 weaver Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/biopython/Attic/biopython-1.52.ebuild,v 1.2 2009/10/31 17:56:54 maekke Exp $
 
 EAPI="2"
 
@@ -14,7 +14,7 @@ SRC_URI="http://www.biopython.org/DIST/${P}.tar.gz"
 
 SLOT="0"
 IUSE="mysql postgres"
-KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~ppc ~sparc x86"
 
 DEPEND="dev-python/numpy
 	>=dev-python/reportlab-2.0
