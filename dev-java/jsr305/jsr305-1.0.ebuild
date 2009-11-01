@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jsr305/Attic/jsr305-1.0.ebuild,v 1.1 2009/10/31 02:11:19 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jsr305/Attic/jsr305-1.0.ebuild,v 1.2 2009/11/01 08:29:17 mr_bones_ Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="doc source"
@@ -17,7 +17,7 @@ HOMEPAGE="http://code.google.com/p/jsr-305/"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
-IUSE="examples"
+IUSE="examples test"
 
 DEPEND=">=virtual/jdk-1.5
 	app-arch/unzip
