@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jdbc-postgresql/jdbc-postgresql-8.3_p605.ebuild,v 1.1 2009/10/03 21:12:51 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jdbc-postgresql/jdbc-postgresql-8.3_p605.ebuild,v 1.2 2009/11/02 21:56:31 maekke Exp $
 
 EAPI="2"
 JAVA_PKG_IUSE="doc source"
@@ -17,7 +17,7 @@ HOMEPAGE="http://jdbc.postgresql.org/"
 
 LICENSE="POSTGRESQL"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86"
 IUSE="java6 test"
 
 DEPEND=">=dev-java/java-config-2.0.31
