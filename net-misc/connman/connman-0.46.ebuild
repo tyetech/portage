@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/connman/Attic/connman-0.41.ebuild,v 1.1 2009/09/07 10:51:10 dagger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/connman/Attic/connman-0.46.ebuild,v 1.1 2009/11/03 16:13:46 dagger Exp $
 
 EAPI="2"
 
