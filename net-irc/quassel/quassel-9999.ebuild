@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.27 2009/10/30 00:17:28 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/quassel/quassel-9999.ebuild,v 1.28 2009/11/04 16:02:01 scarabeus Exp $
 
 EAPI="2"
 
@@ -25,7 +25,10 @@ RDEPEND="
 		x11-libs/qt-script:4
 		x11-libs/qt-gui:4
 		ayatana? ( dev-libs/libindicate-qt )
-		kde? ( >=kde-base/kdelibs-4.3 )
+		kde? (
+			>=kde-base/kdelibs-4.3
+			ayatana? ( kde-misc/plasma-indicatordisplay )
+		)
 		phonon? ( || ( media-sound/phonon x11-libs/qt-phonon ) )
 		webkit? ( x11-libs/qt-webkit:4 )
 	)
