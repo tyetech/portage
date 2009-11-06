@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-9999-r1.ebuild,v 1.22 2009/10/22 15:04:20 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-9999-r1.ebuild,v 1.23 2009/11/06 12:46:26 aballier Exp $
 
 EAPI=2
 SCM=""
@@ -202,6 +202,7 @@ src_configure() {
 
 	# Misc stuff
 	use hardcoded-tables && myconf="${myconf} --enable-hardcoded-tables"
+	use doc || myconf="${myconf} --disable-doc"
 
 	# Specific workarounds for too-few-registers arch...
 	if [[ $(tc-arch) == "x86" ]]; then
