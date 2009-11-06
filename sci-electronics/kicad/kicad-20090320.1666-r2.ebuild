@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/kicad/Attic/kicad-20090320.1666.ebuild,v 1.3 2009/09/10 15:35:52 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/kicad/Attic/kicad-20090320.1666-r2.ebuild,v 1.1 2009/11/06 16:51:03 calchan Exp $
 
 EAPI="2"
 WX_GTK_VER="2.8"
@@ -18,7 +18,7 @@ SRC_URI="http://dev.gentoo.org/~calchan/distfiles/${PN}-sources-${MY_PV}.tar.lzm
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~ppc ~ppc64 x86"
 IUSE="doc debug examples minimal python"
 
 CDEPEND=">=dev-util/cmake-2.6.0
@@ -33,7 +33,12 @@ RDEPEND="${CDEPEND}
 S="${WORKDIR}/${PN}"
 
 src_prepare() {
-	if ! use doc ; then
+	if use doc ; then
+		# Fix where kicad looks for help files
+		sed -i -e "s/subdirs.Add( wxT( \"kicad\" ) );/subdirs.Add( wxT( \"${PF}\" ) );/" \
+			-e '/subdirs.Add( _T( "help" ) );/d' common/edaappl.cpp \
+			 || die "sed failed"
+	else
 		sed -i -e '/add_subdirectory(kicad-doc)/d' CMakeLists.txt || die "sed failed"
 	fi
 	if ! use examples ; then
@@ -50,10 +55,9 @@ src_configure() {
 	mycmakeargs="${mycmakeargs}
 		-DKICAD_CYRILLIC=ON
 		-DwxUSE_UNICODE=ON
-		-DKICAD_GOST=ON
 		$(cmake-utils_use python KICAD_PYTHON)
-		-DKICAD_DOCS=/usr/share/doc/${P}
-		-DKICAD_HELP=/usr/share/doc/${P}"
+		-DKICAD_DOCS=/usr/share/doc/${PF}
+		-DKICAD_HELP=/usr/share/doc/${PF}"
 
 	cmake-utils_src_configure
 }
@@ -66,7 +70,7 @@ pkg_postinst() {
 		ewarn "- Remove the libraries from the 'Libs and Dir' preferences."
 		ewarn "- Fix the libraries' locations in the 'Libs and Dir' preferences."
 		ewarn "- Emerge kicad without the 'minimal' USE flag."
+		elog
 	fi
-	elog
 	elog "You may want to emerge media-gfx/wings if you want to create 3D models of components."
 }
