@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect-opengl/Attic/eselect-opengl-1.1.0.ebuild,v 1.1 2009/11/07 21:57:07 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect-opengl/Attic/eselect-opengl-1.1.1.ebuild,v 1.1 2009/11/08 21:28:21 scarabeus Exp $
 
 inherit multilib
 
