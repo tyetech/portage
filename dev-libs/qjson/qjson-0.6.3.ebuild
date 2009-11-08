@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/qjson/Attic/qjson-0.6.0.ebuild,v 1.1 2009/08/05 12:12:21 tampakrap Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/qjson/Attic/qjson-0.6.3.ebuild,v 1.1 2009/11/08 17:11:53 ayoy Exp $
 
 EAPI="2"
 
@@ -12,12 +12,13 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~hppa ~x86"
 IUSE="debug doc test"
 
 RDEPEND="x11-libs/qt-core:4"
 DEPEND="${RDEPEND}
-	doc? ( app-doc/doxygen )"
+	doc? ( app-doc/doxygen )
+	test? ( x11-libs/qt-test:4 )"
 
 S="${WORKDIR}/${PN}"
 DOCS=( "${S}/README" )
