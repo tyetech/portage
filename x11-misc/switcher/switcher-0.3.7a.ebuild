@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/switcher/Attic/switcher-0.3.7a.ebuild,v 1.9 2009/11/10 22:40:31 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/switcher/Attic/switcher-0.3.7a.ebuild,v 1.10 2009/11/10 22:41:36 ssuominen Exp $
 
 ARTS_REQUIRED=never
 inherit kde
