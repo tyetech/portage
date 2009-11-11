@@ -1,7 +1,8 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kdoc/kdoc-2.0_alpha54.ebuild,v 1.16 2009/10/17 12:26:59 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kdoc/kdoc-2.0_alpha54.ebuild,v 1.17 2009/11/11 11:54:48 ssuominen Exp $
 
+ARTS_REQUIRED=never
 inherit kde
 
 MY_P=${P/_alph/}
