@@ -1,7 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/kannadic/Attic/kannadic-2.0.3.ebuild,v 1.9 2007/01/05 16:06:50 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-dicts/cvs-repo/gentoo-x86/app-dicts/kannadic/Attic/kannadic-2.0.3.ebuild,v 1.10 2009/11/11 12:01:23 ssuominen Exp $
 
+ARTS_REQUIRED=never
 inherit kde
 
 DESCRIPTION="Canna, Anthy and Dixchange dictionary editor for KDE"
@@ -14,9 +15,8 @@ KEYWORDS="ppc ppc64 ~sparc x86"
 IUSE=""
 
 DEPEND="app-i18n/canna"
-RDEPEND="${DEPEND}"
 
-need-kde 3
+need-kde 3.5
 
 pkg_postinst() {
 	elog
