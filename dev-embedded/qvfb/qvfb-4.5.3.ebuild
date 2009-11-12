@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/qvfb/Attic/qvfb-4.5.1.ebuild,v 1.1 2009/05/26 18:03:14 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/qvfb/Attic/qvfb-4.5.3.ebuild,v 1.1 2009/11/12 15:20:19 yngwin Exp $
 
 EAPI="2"
 inherit qt4-build
