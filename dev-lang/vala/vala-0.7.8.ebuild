@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/vala/Attic/vala-0.7.4.ebuild,v 1.2 2009/07/16 21:29:34 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/vala/Attic/vala-0.7.8.ebuild,v 1.1 2009/11/12 22:47:57 eva Exp $
 
 EAPI=1
 GCONF_DEBUG=no
@@ -12,21 +12,21 @@ HOMEPAGE="http://live.gnome.org/Vala"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~x86"
-IUSE="+vapigen"
-# test
+IUSE="test +vapigen +coverage"
 
+#FIXME: flex and bison are in "base" profile,
+# so why put them into DEPEND ?
 RDEPEND=">=dev-libs/glib-2.12"
 DEPEND="${RDEPEND}
 	sys-devel/flex
 	|| ( sys-devel/bison dev-util/byacc dev-util/yacc )
 	dev-util/pkgconfig
-	dev-libs/libxslt"
-#	test? ( dev-libs/dbus-glib )
-
-# Needs a instance of dbus running wrt #275742.
-RESTRICT="test"
+	dev-libs/libxslt
+	test? ( dev-libs/dbus-glib )"
 
 pkg_setup() {
-	G2CONF="${G2CONF} $(use_enable vapigen)"
+	G2CONF="${G2CONF}
+		$(use_enable vapigen)
+		$(use_enable coverage)"
 	DOCS="AUTHORS ChangeLog MAINTAINERS NEWS README"
 }
