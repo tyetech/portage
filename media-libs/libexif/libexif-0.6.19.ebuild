@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libexif/Attic/libexif-0.6.18.ebuild,v 1.1 2009/10/11 16:47:50 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libexif/Attic/libexif-0.6.19.ebuild,v 1.1 2009/11/14 20:29:26 maekke Exp $
 
 EAPI=2
 inherit eutils libtool
