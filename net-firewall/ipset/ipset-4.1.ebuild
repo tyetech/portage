@@ -1,17 +1,21 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/ipset/Attic/ipset-2.5.0-r1.ebuild,v 1.2 2009/09/06 21:15:43 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/ipset/Attic/ipset-4.1.ebuild,v 1.1 2009/11/14 08:20:30 pva Exp $
+
+EAPI="2"
 
 inherit eutils versionator toolchain-funcs linux-mod
 
 DESCRIPTION="IPset tool for iptables, successor to ippool."
 HOMEPAGE="http://ipset.netfilter.org/"
 SRC_URI="http://ipset.netfilter.org/${P}.tar.bz2"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
-RDEPEND=">=net-firewall/iptables-1.4.1"
+
+RDEPEND=">=net-firewall/iptables-1.4.4"
 DEPEND="${RDEPEND}"
 
 # configurable from outside
@@ -28,19 +32,7 @@ for i in ip_set{,_{setlist,{ip,port,macip}map,{ip,net,ipport,ipportip,ipportnet}
 done
 # sanity
 CONFIG_CHECK="NETFILTER"
-ERROR_CFG="ipset needs netfilter support in your kernel."
-
-src_unpack() {
-	unpack ${A}
-	sed -i \
-		-e 's/KERNELDIR/(KERNELDIR)/g' \
-		-e 's/^(\?KERNEL_\?DIR.*/KERNELDIR ?= /' \
-		-e '/^all::/iV ?= 0' \
-		-e '/^all::/iKBUILD_OUTPUT ?=' \
-		-e '/$(MAKE)/{s/$@/ V=$(V) KBUILD_OUTPUT=$(KBUILD_OUTPUT) modules/}' \
-		"${S}"/kernel/Makefile
-
-}
+ERROR_CFG="ipset requires netfilter support in your kernel."
 
 pkg_setup() {
 	get_version
@@ -64,6 +56,16 @@ pkg_setup() {
 	myconf="${myconf} INCDIR=/usr/include"
 	myconf="${myconf} NO_EXTRA_WARN_FLAGS=yes"
 	export myconf
+}
+
+src_prepare() {
+	sed -i \
+		-e 's/KERNELDIR/(KERNELDIR)/g' \
+		-e 's/^(\?KERNEL_\?DIR.*/KERNELDIR ?= /' \
+		-e '/^all::/iV ?= 0' \
+		-e '/^all::/iKBUILD_OUTPUT ?=' \
+		-e '/$(MAKE)/{s/$@/ V=$(V) KBUILD_OUTPUT=$(KBUILD_OUTPUT) modules/}' \
+		"${S}"/kernel/Makefile
 }
 
 src_compile() {
