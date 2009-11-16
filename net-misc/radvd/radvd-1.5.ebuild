@@ -1,8 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/radvd/Attic/radvd-1.2.ebuild,v 1.3 2009/07/28 15:02:11 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/radvd/Attic/radvd-1.5.ebuild,v 1.1 2009/11/16 09:15:46 wschlich Exp $
 
-inherit eutils autotools
+EAPI=2
+inherit eutils
 
 DESCRIPTION="Linux IPv6 Router Advertisement Daemon"
 HOMEPAGE="http://v6web.litech.org/radvd/"
@@ -25,20 +26,10 @@ pkg_setup() {
 	[[ -d ${ROOT}/var/run/radvd ]] && chown radvd:radvd "${ROOT}"/var/run/radvd
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-1.1-gnu-source.patch
-	epatch "${FILESDIR}"/${PN}-1.1-parallel-make.patch
-	eautoreconf
-}
-
-src_compile() {
+src_configure() {
 	econf \
 		--with-pidfile=/var/run/radvd/radvd.pid \
 		|| die "econf failed"
-
-	emake -j1 || die "emake failed"
 }
 
 src_install() {
