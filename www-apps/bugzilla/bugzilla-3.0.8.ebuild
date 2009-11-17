@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/bugzilla/Attic/bugzilla-3.0.8.ebuild,v 1.5 2009/10/18 17:09:10 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/bugzilla/Attic/bugzilla-3.0.8.ebuild,v 1.6 2009/11/17 16:45:02 ranger Exp $
 
 EAPI="2"
 
@@ -13,7 +13,7 @@ SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/webtools/${P}.tar.gz"
 HOMEPAGE="http://www.bugzilla.org"
 
 LICENSE="MPL-1.1 NPL-1.1"
-KEYWORDS="alpha amd64 ~ia64 ppc ~ppc64 ~sparc x86"
+KEYWORDS="alpha amd64 ~ia64 ppc ppc64 ~sparc x86"
 
 IUSE="modperl extras graphviz mysql postgres"
 
