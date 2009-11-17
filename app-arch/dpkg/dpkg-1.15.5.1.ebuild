@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/dpkg/Attic/dpkg-1.15.5.ebuild,v 1.2 2009/11/17 16:40:20 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/dpkg/Attic/dpkg-1.15.5.1.ebuild,v 1.1 2009/11/17 18:56:22 yvasilev Exp $
 
 inherit eutils multilib autotools
 
