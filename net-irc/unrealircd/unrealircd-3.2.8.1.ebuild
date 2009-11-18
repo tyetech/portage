@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/unrealircd/Attic/unrealircd-3.2.8.1.ebuild,v 1.1 2009/11/14 01:34:34 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/unrealircd/Attic/unrealircd-3.2.8.1.ebuild,v 1.2 2009/11/18 18:20:48 fauli Exp $
 
 EAPI="2"
 
@@ -16,7 +16,7 @@ SRC_URI="http://unrealircd.icedslash.com/${MY_P}.tar.gz
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~mips ~ppc ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~mips ~ppc ~sparc x86 ~x86-fbsd"
 IUSE="curl +hub ipv6 +operoverride +spoof operoverride-verify +prefixaq
 showlistmodes shunnotices ssl topicisnuhost +usermod zlib"
 
