@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-demo/Attic/qt-demo-4.6.0_beta1.ebuild,v 1.1 2009/10/16 16:44:04 wired Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-demo/Attic/qt-demo-4.6.0_rc1.ebuild,v 1.1 2009/11/18 20:48:39 wired Exp $
 
 EAPI="2"
 inherit qt4-build
