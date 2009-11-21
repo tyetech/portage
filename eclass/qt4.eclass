@@ -1,6 +1,6 @@
 # Copyright 2005-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/qt4.eclass,v 1.59 2009/11/10 00:56:29 spatz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/qt4.eclass,v 1.60 2009/11/21 11:44:25 scarabeus Exp $
 
 # @ECLASS: qt4.eclass
 # @MAINTAINER:
@@ -176,8 +176,10 @@ qt4_pkg_setup() {
 # Make sure to specify the full path. This variable is necessary for the
 # src_prepare phase.
 # example:
-# PATCHES="${FILESDIR}/mypatch.patch
-# 	${FILESDIR}/mypatch2.patch"
+# PATCHES=(
+#	"${FILESDIR}/mypatch.patch"
+# 	"${FILESDIR}/mypatch2.patch"
+# )
 #
 # @FUNCTION: qt4_src_prepare
 # @DESCRIPTION:
