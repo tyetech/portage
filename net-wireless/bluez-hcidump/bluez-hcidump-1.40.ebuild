@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez-hcidump/Attic/bluez-hcidump-1.40.ebuild,v 1.1 2007/08/12 09:54:41 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez-hcidump/Attic/bluez-hcidump-1.40.ebuild,v 1.2 2009/11/21 15:21:16 armin76 Exp $
 
 DESCRIPTION="Bluetooth HCI packet analyzer"
 HOMEPAGE="http://bluez.sourceforge.net/"
@@ -8,7 +8,7 @@ SRC_URI="http://bluez.sourceforge.net/download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 IUSE=""
 
