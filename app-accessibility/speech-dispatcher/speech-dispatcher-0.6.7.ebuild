@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/speech-dispatcher/Attic/speech-dispatcher-0.6.7.ebuild,v 1.12 2009/10/24 18:08:51 klausman Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/speech-dispatcher/Attic/speech-dispatcher-0.6.7.ebuild,v 1.13 2009/11/21 17:34:21 maekke Exp $
 
 EAPI="2"
 
@@ -13,7 +13,7 @@ SRC_URI="http://www.freebsoft.org/pub/projects/speechd/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ~hppa ppc ~sparc x86"
+KEYWORDS="alpha amd64 ~hppa ppc ~sparc x86"
 IUSE="alsa +espeak flite nas pulseaudio python"
 
 RDEPEND="dev-libs/dotconf
