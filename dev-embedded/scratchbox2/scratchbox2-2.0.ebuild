@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/scratchbox2/Attic/scratchbox2-2.0.ebuild,v 1.1 2009/11/19 18:40:56 ayoy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/scratchbox2/Attic/scratchbox2-2.0.ebuild,v 1.2 2009/11/22 22:49:53 ayoy Exp $
 
 EAPI="2"
 
@@ -14,7 +14,7 @@ HOMEPAGE="http://www.freedesktop.org/wiki/Software/sbox2"
 SRC_URI="http://cgit.freedesktop.org/${MY_PN}/snapshot/${MY_P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
-SLOT="2"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
