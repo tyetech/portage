@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/liborigin/Attic/liborigin-20090406.ebuild,v 1.1 2009/04/14 11:27:58 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/liborigin/Attic/liborigin-20090406.ebuild,v 1.2 2009/11/23 01:57:11 bicatali Exp $
 
 EAPI=2
 inherit eutils qt4
@@ -19,9 +19,9 @@ KEYWORDS="~amd64 ~x86"
 SLOT="2"
 IUSE="doc"
 
-RDEPEND="dev-libs/boost
-	x11-libs/qt-core:4"
+RDEPEND="dev-libs/boost"
 DEPEND="${RDEPEND}
+	x11-libs/qt-gui:4
 	dev-cpp/tree
 	doc? ( app-doc/doxygen )"
 
