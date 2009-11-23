@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.20.ebuild,v 1.1 2009/11/15 19:05:00 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.21.ebuild,v 1.1 2009/11/23 12:27:28 flameeyes Exp $
 
 EAPI=2
 
@@ -133,13 +133,8 @@ src_test() {
 src_install() {
 	emake DESTDIR="${D}" install || die "make install failed"
 
-	if use X; then
-		dodir /etc/X11/xinit/xinitrc.d
-		ln -s ../../../usr/bin/start-pulseaudio-x11 "${D}"/etc/X11/xinit/xinitrc.d/95-pulseaudio
-	else
-		# Drop the script entirely
-		rm "${D}"/usr/bin/start-pulseaudio-x11
-	fi
+	# Drop the script entirely if X is disabled
+	use X || rm "${D}"/usr/bin/start-pulseaudio-x11
 
 	use avahi && sed -i -e '/module-zeroconf-publish/s:^#::' "${D}/etc/pulse/default.pa"
 
