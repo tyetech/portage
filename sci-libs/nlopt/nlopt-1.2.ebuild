@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/nlopt/Attic/nlopt-1.2.ebuild,v 1.1 2009/11/20 22:12:29 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/nlopt/Attic/nlopt-1.2.ebuild,v 1.2 2009/11/24 13:52:00 markusle Exp $
 
 EAPI=2
 inherit eutils
@@ -27,7 +27,8 @@ src_configure() {
 	fi
 	econf \
 		--enable-shared \
-		$(use_with cxx)
+		$(use_with cxx) \
+		$(use_with octave)
 }
 
 src_install() {
