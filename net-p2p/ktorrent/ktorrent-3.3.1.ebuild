@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-3.3.ebuild,v 1.1 2009/11/10 13:03:39 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-3.3.1.ebuild,v 1.1 2009/11/24 15:28:46 scarabeus Exp $
 
 EAPI="2"
 
