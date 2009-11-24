@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libpcap/Attic/libpcap-1.0.1_pre20090812.ebuild,v 1.1 2009/08/29 21:06:50 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libpcap/Attic/libpcap-1.0.1_pre20090812.ebuild,v 1.2 2009/11/24 23:09:26 vapier Exp $
 
 EAPI=2
 inherit autotools eutils multilib toolchain-funcs
@@ -28,6 +28,7 @@ PROVIDE="virtual/libpcap"
 src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.0.0-cross-linux.patch"
 	epatch "${FILESDIR}/${PN}-1.0.1_pre20090812-poll-cpu-usage.patch"
+	epatch "${FILESDIR}"/${PN}-1.0.1-autoconf.patch #281690
 	echo ${PV} > VERSION # Avoid CVS in version
 	eautoreconf
 }
