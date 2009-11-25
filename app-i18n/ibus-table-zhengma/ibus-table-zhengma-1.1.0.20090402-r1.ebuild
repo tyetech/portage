@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-table-zhengma/Attic/ibus-table-zhengma-1.1.0.20090219.ebuild,v 1.1 2009/02/25 17:14:28 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-table-zhengma/Attic/ibus-table-zhengma-1.1.0.20090402-r1.ebuild,v 1.1 2009/11/25 17:22:54 matsuu Exp $
 
 DESCRIPTION="The ZhengMa for IBus Tables"
 HOMEPAGE="http://code.google.com/p/ibus/"
@@ -23,6 +23,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
+	rm -rf "${D}"usr/share/doc/${PN} || die
 
 	dodoc AUTHORS ChangeLog NEWS README
 }
