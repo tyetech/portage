@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/inkscape/Attic/inkscape-0.47_pre4.ebuild,v 1.1 2009/10/17 15:35:56 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/inkscape/Attic/inkscape-0.47.ebuild,v 1.1 2009/11/25 10:25:21 maekke Exp $
 
 EAPI=2
 inherit gnome2
