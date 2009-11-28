@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/Attic/xinit-1.2.0-r1.ebuild,v 1.1 2009/11/17 08:45:48 remi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xinit/Attic/xinit-1.2.0-r2.ebuild,v 1.1 2009/11/28 21:37:04 remi Exp $
 
 EAPI="2"
 
