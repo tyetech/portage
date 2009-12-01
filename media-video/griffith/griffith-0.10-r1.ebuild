@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/griffith/Attic/griffith-0.10.ebuild,v 1.1 2009/10/05 10:18:18 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/griffith/Attic/griffith-0.10-r1.ebuild,v 1.1 2009/12/01 17:31:27 hwoarang Exp $
 
 EAPI="2"
 
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86 ~x86-fbsd"
 IUSE="csv doc spell"
 
 RDEPEND="dev-python/imaging
-	dev-util/glade:3
+	gnome-base/libglade
 	dev-python/pyxml
 	>=dev-python/pygtk-2.6.1
 	dev-python/pysqlite:2
