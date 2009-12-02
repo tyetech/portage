@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/asymptote/Attic/asymptote-1.87.ebuild,v 1.2 2009/10/02 19:14:51 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/asymptote/Attic/asymptote-1.90.ebuild,v 1.1 2009/12/02 17:20:29 grozin Exp $
 EAPI=2
 inherit eutils autotools elisp-common latex-package multilib python
 
