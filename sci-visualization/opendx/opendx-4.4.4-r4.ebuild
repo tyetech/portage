@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/opendx/Attic/opendx-4.4.4-r3.ebuild,v 1.1 2009/11/27 18:17:00 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/opendx/opendx-4.4.4-r4.ebuild,v 1.1 2009/12/03 20:13:51 bicatali Exp $
 
 EAPI=2
 
