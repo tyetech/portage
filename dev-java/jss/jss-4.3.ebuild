@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jss/jss-4.3.ebuild,v 1.1 2009/11/03 19:45:46 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/jss/jss-4.3.ebuild,v 1.2 2009/12/07 23:08:36 maekke Exp $
 
 inherit base java-pkg-2 versionator
 
@@ -17,7 +17,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="MPL-1.1"
 SLOT="3.4"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="doc examples source"
 
 RDEPEND=">=dev-libs/nspr-4.7
