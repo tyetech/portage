@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/murmur/Attic/murmur-1.2.0_beta2.ebuild,v 1.1 2009/12/08 00:49:05 tgurr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/murmur/Attic/murmur-1.2.0.ebuild,v 1.1 2009/12/11 00:03:20 tgurr Exp $
 
 EAPI="2"
 
