@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/setuptools/Attic/setuptools-0.6.8.ebuild,v 1.9 2009/12/09 18:52:20 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/setuptools/Attic/setuptools-0.6.8-r1.ebuild,v 1.1 2009/12/12 03:25:39 arfrever Exp $
 
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
