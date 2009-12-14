@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/ruby-ng.eclass,v 1.5 2009/12/06 13:01:26 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/ruby-ng.eclass,v 1.6 2009/12/14 12:25:47 a3li Exp $
 #
 # @ECLASS: ruby-ng.eclass
 # @MAINTAINER:
