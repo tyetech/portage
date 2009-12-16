@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-7.7_rc2.ebuild,v 1.3 2009/12/14 17:39:15 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-7.7_rc3.ebuild,v 1.1 2009/12/16 17:58:44 scarabeus Exp $
 
 EAPI="2"
 
