@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/solid/Attic/solid-4.3.4-r1.ebuild,v 1.1 2009/12/07 15:34:47 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/solid/Attic/solid-4.3.4-r2.ebuild,v 1.1 2009/12/16 14:55:51 ssuominen Exp $
 
 EAPI="2"
 
