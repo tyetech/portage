@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/qutim/Attic/qutim-0.2.0-r2.ebuild,v 1.1 2009/12/15 20:46:11 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/qutim/Attic/qutim-0.2.0-r3.ebuild,v 1.1 2009/12/17 14:56:01 hwoarang Exp $
 
 EAPI="2"
 
