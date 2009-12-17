@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/ooextras/Attic/ooextras-20050216.ebuild,v 1.6 2008/02/25 03:02:01 wolf31o2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/ooextras/Attic/ooextras-20050216.ebuild,v 1.7 2009/12/17 10:53:02 ssuominen Exp $
 
 DESCRIPTION="OOExtras: Extra Templates for OpenOffice.org!"
 HOMEPAGE="http://ooextras.sourceforge.net/"
@@ -22,7 +22,7 @@ src_compile() {
 
 src_install() {
 	dodir ${INSTDIR}
-	cp -R -- ${S}/. ${D}/${INSTDIR}/
+	cp -R -- "${S}"/. "${D}"/${INSTDIR}/
 }
 
 pkg_postinst() {
