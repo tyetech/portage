@@ -1,6 +1,9 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/system-tools-backends/Attic/system-tools-backends-2.6.0-r2.ebuild,v 1.1 2009/04/09 22:45:30 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/system-tools-backends/Attic/system-tools-backends-2.8.3.ebuild,v 1.1 2009/12/17 23:17:01 eva Exp $
+
+EAPI="2"
+GCONF_DEBUG="no"
 
 inherit autotools eutils gnome2
 
@@ -18,11 +21,12 @@ RDEPEND="!<app-admin/gnome-system-tools-1.1.91
 	>=dev-libs/glib-2.15.2
 	>=dev-perl/Net-DBus-0.33.4
 	dev-lang/perl
-	policykit? ( >=sys-auth/policykit-0.5 )
+	policykit? ( >=sys-auth/polkit-0.92 )
 	userland_GNU? ( sys-apps/shadow )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	>=dev-util/intltool-0.40"
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
 
@@ -32,35 +36,23 @@ pkg_setup() {
 	enewgroup stb-admin || die "Failed to create stb-admin group"
 }
 
-src_unpack() {
-	gnome2_src_unpack
+src_prepare() {
+	gnome2_src_prepare
 
-	# Fix a typo in services
-	epatch "${FILESDIR}/${P}-services.patch"
-
-	# Fix a distro detection in users to use proper variant
-	# of useradd
-	epatch "${FILESDIR}/${P}-users.patch"
-
-	# Fix automagic policykit dependency
-	epatch "${FILESDIR}/${P}-automagic-polkit.patch"
-
-	# Fix service handling
-	epatch "${FILESDIR}/${P}-handle-services.patch"
-
-	# Clean up pid file
-	epatch "${FILESDIR}/${P}-cleanup-pid-file.patch"
+	# Fix automagic polkit dependency
+	epatch "${FILESDIR}/${PN}-2.8.2-automagic-polkit.patch"
 
 	# Change default permission, only people in stb-admin is allowed
 	# to speak to the dispatcher.
-	epatch "${FILESDIR}/${P}-default-permissions.patch"
+	epatch "${FILESDIR}/${PN}-2.8.2-default-permissions.patch"
 
 	# Apply fix from ubuntu for CVE 2008 4311
-	epatch "${FILESDIR}/${P}-cve-2008-4311.patch"
+	epatch "${FILESDIR}/${PN}-2.8.2-cve-2008-4311.patch"
 
-	# Fix for gcc 4.3
-	epatch "${FILESDIR}/${P}-gcc43.patch"
+	# Apply fix from ubuntu for CVE 2008 6792, bug #270326
+	epatch "${FILESDIR}/${PN}-2.8.2-1ubuntu1.1.patch"
 
+	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
 }
 
