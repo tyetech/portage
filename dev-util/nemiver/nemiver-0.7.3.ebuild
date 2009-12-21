@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/nemiver/Attic/nemiver-0.7.1.ebuild,v 1.2 2009/09/16 22:23:30 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/nemiver/Attic/nemiver-0.7.3.ebuild,v 1.1 2009/12/21 22:11:28 eva Exp $
 
 EAPI="2"
 
@@ -42,10 +42,4 @@ pkg_setup() {
 		--enable-sourceviewmm2
 		--enable-gio
 		--disable-static"
-}
-
-src_prepare() {
-	# Fix intltoolize broken file, see upstream #577133
-	sed "s:'\^\$\$lang\$\$':\^\$\$lang\$\$:g" -i po/Makefile.in.in \
-		|| die "sed failed"
 }
