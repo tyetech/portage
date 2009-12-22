@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/whine/Attic/whine-20091120.ebuild,v 1.2 2009/12/15 17:37:39 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/whine/whine-20091222.ebuild,v 1.1 2009/12/22 15:45:49 ulm Exp $
 
 inherit elisp
 
