@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-rrd/Attic/ruby-rrd-1.1.ebuild,v 1.4 2008/09/27 10:37:38 bluebird Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-rrd/Attic/ruby-rrd-1.1.ebuild,v 1.5 2009/12/24 17:07:59 graaff Exp $
 
 inherit ruby
 
@@ -15,8 +15,8 @@ KEYWORDS="~amd64 ~sparc x86"
 LICENSE="Ruby"
 SLOT="0"
 
-DEPEND="virtual/ruby
-		>=net-analyzer/rrdtool-1.0.47"
+DEPEND=">=net-analyzer/rrdtool-1.0.47"
+RDEPEND="${DEPEND}"
 
 src_unpack() {
 	ruby_src_unpack
