@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/cirkuit/Attic/cirkuit-0.2.2.ebuild,v 1.1 2009/12/25 15:09:22 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/cirkuit/Attic/cirkuit-0.2.2.ebuild,v 1.2 2009/12/26 19:43:11 pva Exp $
 
 EAPI=2
 inherit kde4-base
@@ -19,7 +19,7 @@ RDEPEND="${DEPEND}
 	virtual/latex-base
 	media-libs/netpbm
 	dev-texlive/texlive-pstricks
-	virtual/ghostscript
+	app-text/ghostscript-gpl
 	app-text/ps2eps
 	media-gfx/pdf2svg"
 
