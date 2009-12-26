@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/matplotlib/Attic/matplotlib-0.99.1.1.ebuild,v 1.8 2009/11/12 19:14:40 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/matplotlib/Attic/matplotlib-0.99.1.1.ebuild,v 1.9 2009/12/26 19:40:13 pva Exp $
 
 WX_GTK_VER=2.8
 EAPI=2
@@ -53,7 +53,7 @@ RDEPEND="${CDEPEND}
 	traits? ( dev-python/traits dev-python/configobj )
 	latex?  (
 		virtual/latex-base
-		virtual/ghostscript
+		app-text/ghostscript-gpl
 		app-text/dvipng
 		virtual/poppler-utils
 		|| ( dev-texlive/texlive-fontsrecommended
