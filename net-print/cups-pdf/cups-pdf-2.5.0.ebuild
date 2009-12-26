@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups-pdf/Attic/cups-pdf-2.5.0.ebuild,v 1.2 2009/02/13 15:30:19 tgurr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups-pdf/Attic/cups-pdf-2.5.0.ebuild,v 1.3 2009/12/26 17:42:38 pva Exp $
 
 inherit toolchain-funcs multilib
 
@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND="net-print/cups
-	virtual/ghostscript"
+	app-text/ghostscript-gpl"
 RDEPEND="${DEPEND}"
 
 src_compile() {
