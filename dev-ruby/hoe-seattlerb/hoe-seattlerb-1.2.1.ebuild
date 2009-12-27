@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/hoe-seattlerb/Attic/hoe-seattlerb-1.2.1.ebuild,v 1.1 2009/12/25 16:32:21 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/hoe-seattlerb/Attic/hoe-seattlerb-1.2.1.ebuild,v 1.2 2009/12/27 19:35:36 jer Exp $
 
 EAPI=2
 USE_RUBY="ruby18 ruby19"
@@ -19,7 +19,7 @@ HOMEPAGE="http://seattlerb.rubyforge.org/hoe-seattlerb"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~hppa"
 IUSE=""
 
 ruby_add_rdepend '>=dev-ruby/hoe-2.3.3'
