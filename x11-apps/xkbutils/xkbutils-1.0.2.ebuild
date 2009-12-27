@@ -1,12 +1,12 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xkbutils/Attic/xkbutils-1.0.2.ebuild,v 1.6 2009/12/15 19:16:45 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xkbutils/Attic/xkbutils-1.0.2.ebuild,v 1.7 2009/12/27 17:48:12 josejx Exp $
 
 inherit x-modular
 
 DESCRIPTION="X.Org xkbutils application"
 
-KEYWORDS="alpha amd64 arm ~hppa ia64 ~mips ~ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm ~hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="x11-libs/libxkbfile
