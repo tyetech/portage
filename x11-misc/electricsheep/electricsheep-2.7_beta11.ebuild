@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/electricsheep/electricsheep-2.7_beta11.ebuild,v 1.2 2009/12/28 17:14:29 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/electricsheep/electricsheep-2.7_beta11.ebuild,v 1.3 2009/12/31 18:34:58 maekke Exp $
 
 EAPI=2
 inherit eutils flag-o-matic autotools
@@ -12,7 +12,7 @@ SRC_URI="http://dev.gentooexperimental.org/~dreeevil/electricsheep-2.7_beta11.ta
 IUSE="" #kde gnome
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 x86"
 
 DEPEND="dev-libs/expat
 	>=gnome-base/libglade-2.5.0:2.0
