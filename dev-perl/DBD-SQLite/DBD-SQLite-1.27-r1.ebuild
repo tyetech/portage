@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/DBD-SQLite/Attic/DBD-SQLite-1.27.ebuild,v 1.3 2010/01/01 18:21:36 tove Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/DBD-SQLite/Attic/DBD-SQLite-1.27-r1.ebuild,v 1.1 2010/01/01 18:29:34 tove Exp $
 
 EAPI=2
 
