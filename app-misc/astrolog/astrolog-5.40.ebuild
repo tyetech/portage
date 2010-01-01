@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/astrolog/astrolog-5.40.ebuild,v 1.12 2010/01/01 17:55:10 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/astrolog/astrolog-5.40.ebuild,v 1.13 2010/01/01 17:56:52 ssuominen Exp $
 
 DESCRIPTION="A many featured astrology chart calculation program"
 HOMEPAGE="http://www.astrolog.org/astrolog.htm"
