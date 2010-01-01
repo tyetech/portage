@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/beagle/Attic/beagle-0.3.9-r2.ebuild,v 1.2 2009/09/06 15:43:32 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/beagle/Attic/beagle-0.3.9-r2.ebuild,v 1.3 2010/01/01 17:56:42 scarabeus Exp $
 
 EAPI=2
 
@@ -63,7 +63,7 @@ RDEPEND="!!sci-libs/beagle
 	firefox? (
 			|| (
 				>=www-client/mozilla-firefox-1.5
-				>=www-client/mozilla-firefox-bin-1.5
+				>=www-client/firefox-bin-1.5
 			)
 	)
 	epiphany? (
