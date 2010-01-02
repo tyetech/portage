@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-process/cvs-repo/gentoo-x86/sys-process/psmisc/Attic/psmisc-22.8.ebuild,v 1.1 2009/12/11 11:45:40 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-process/cvs-repo/gentoo-x86/sys-process/psmisc/Attic/psmisc-22.9.ebuild,v 1.1 2010/01/02 10:35:46 ssuominen Exp $
 
 inherit eutils autotools
 
@@ -23,6 +23,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	use nls || epatch "${FILESDIR}"/${PN}-22.5-no-nls.patch #193920
+	sed -i -e '/ACLOCAL_AMFLAGS/d' Makefile.am || die
 	eautoreconf
 }
 
