@@ -1,22 +1,19 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-misc/cvs-repo/gentoo-x86/www-misc/xxv/Attic/xxv-1.2.1402.ebuild,v 1.5 2009/08/16 18:27:55 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-misc/cvs-repo/gentoo-x86/www-misc/xxv/Attic/xxv-1.5.ebuild,v 1.1 2010/01/03 23:09:35 hd_brummy Exp $
 
 EAPI="2"
 
 inherit eutils versionator
 
-#MY_PV=$(get_version_component_range 3)
-#MY_P="${PN}-${MY_PV}"
-
 DESCRIPTION="WWW Admin for the VDR (Video Disk Recorder)"
-HOMEPAGE="http://xxv.berlios.de/content/view/40/1/"
-SRC_URI="http://vdr.websitec.de/download/${PN}/${P}.tgz"
+HOMEPAGE="http://xxv.berlios.de/content/view/45/1/"
+SRC_URI="mirror://berlios/${PN}/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="mplayer themes"
+IUSE="-mplayer themes"
 
 RDEPEND=">=media-video/vdr-1.2.6
 	media-video/vdr2jpeg
@@ -27,17 +24,18 @@ RDEPEND=">=media-video/vdr-1.2.6
 	virtual/perl-Getopt-Long
 	virtual/perl-MIME-Base64
 	virtual/perl-Time-HiRes
-	virtual/perl-IO-Compress
+	perl-core/IO-Compress
 	dev-perl/Config-Tiny
-	dev-perl/Digest-HMAC
-	dev-perl/Encode-Detect
-	dev-perl/GD[png,gif]
 	dev-perl/DateManip
 	dev-perl/DBD-mysql
 	dev-perl/DBI
+	dev-perl/Digest-HMAC
+	dev-perl/Encode-Detect
 	dev-perl/Event
+	dev-perl/Font-TTF
+	dev-perl/GD[png,gif]
 	dev-perl/IO-Socket-INET6
-	dev-perl/JSON
+	dev-perl/JSON-XS
 	dev-perl/Linux-Inotify2
 	dev-perl/Locale-gettext
 	dev-perl/MP3-Info
@@ -45,9 +43,9 @@ RDEPEND=">=media-video/vdr-1.2.6
 	dev-perl/Net-Telnet
 	dev-perl/Net-XMPP
 	dev-perl/Proc-ProcessTable
+	dev-perl/SOAP-Lite
 	dev-perl/TextToHTML
 	dev-perl/Template-Toolkit
-	dev-perl/SOAP-Lite
 	dev-perl/XML-RSS
 	themes? ( >=x11-themes/${PN}-skins-${PV} )"
 
@@ -56,7 +54,7 @@ PDEPEND="mplayer? ( media-video/mplayer )"
 SHAREDIR="/usr/share/${PN}"
 LIBDIR="/usr/lib/${PN}"
 
-DB_VERS="31"
+DB_VERS="32"
 
 db_update_check() {
 
@@ -66,8 +64,12 @@ db_update_check() {
 		echo
 		elog "An update of XXV Database is needed !!!"
 		echo
-		elog "cd ${SHAREDIR}/contrib"
-		elog "run ./update-xxv -h for more info"
+		elog "\tcd ${SHAREDIR}/contrib"
+		echo
+		elog "\tIt is really importend to edit the create-database.sql"
+		elog "\tfor UTF-8 Support changes in Mysql DB !!!"
+		echo
+		elog "\tafter this run ./update-xxv -h for more info"
 		echo
 	else
 		echo
@@ -77,6 +79,7 @@ db_update_check() {
 		elog "do this by:"
 		elog "cd ${SHAREDIR}/contrib"
 		eerror "read the README"
+		elog "For UTF-8 support it is really importend to"
 		elog "edit create-database.sql and run"
 		elog "emerge --config ${PN}"
 		echo
@@ -126,7 +129,7 @@ src_prepare() {
 
 src_install() {
 
-	newinitd "${FILESDIR}"/xxv.utf8-v2 xxv
+	newinitd "${FILESDIR}"/xxv.utf8-v5 xxv
 
 	dobin	bin/xxvd
 
@@ -161,7 +164,7 @@ src_install() {
 
 	cd "${S}"/doc
 	insinto /usr/share/doc/"${P}"
-	doins docu.tmpl CHANGELOG LIESMICH NEWS README TUTORIAL.txt.gz
+	doins docu.tmpl CHANGELOG README
 	fowners vdr:vdr /usr/share/doc/"${P}"
 
 	doman xxvd.1
