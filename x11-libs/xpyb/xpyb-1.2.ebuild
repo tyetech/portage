@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xpyb/Attic/xpyb-1.1.ebuild,v 1.1 2009/09/29 11:24:31 remi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xpyb/Attic/xpyb-1.2.ebuild,v 1.1 2010/01/03 21:32:55 scarabeus Exp $
 
 inherit x-modular
 
@@ -19,6 +19,14 @@ DEPEND="${RDEPEND}
 
 DOCS="NEWS README"
 
+PATCHES=( "${FILESDIR}/0001-.la-file-is-totaly-useless-for-python-bindings-and-c.patch" )
+
 pkg_setup() {
 	CONFIGURE_OPTIONS="$(use_enable selinux xselinux)"
+}
+
+src_unpack() {
+	x-modular_src_unpack
+
+	eautoreconf
 }
