@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.1.11.ebuild,v 1.2 2009/12/12 15:05:34 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.1.12-r1.ebuild,v 1.1 2010/01/04 12:56:16 chainsaw Exp $
 
 EAPI=1
 inherit eutils autotools
@@ -152,6 +152,20 @@ src_unpack() {
 	#
 	epatch "${FILESDIR}"/1.6.1/${PN}-1.6.1.6-bt-line-test.patch || die "patch failed"
 
+	#
+	# allow longer CID field so European phone numbers (which are often longer then USA
+	# numbers) have a better chance of avoiding truncation
+	# https://issues.asterisk.org/view.php?id=16459
+	#
+
+	epatch "${FILESDIR}"/1.6.1/${P}-longer-sip-cid.patch || die "patch failed"
+
+	#
+	# sprinkle some plus signs in strategic locations for maximum parallel make happiness
+	# https://issues.asterisk.org/view.php?id=16489
+	#
+	epatch "${FILESDIR}"/1.6.1/${P}-parallel-make-v2.patch || die "patch failed"
+
 	AT_M4DIR=autoconf eautoreconf
 
 	# parse modules list
@@ -271,7 +285,7 @@ src_compile() {
 		done
 	fi
 
-	emake || die "emake failed"
+	ASTLDFLAGS="${LDFLAGS}" emake || die "emake failed"
 }
 
 src_install() {
@@ -303,6 +317,14 @@ src_install() {
 	insinto /usr/share/doc/${PF}/conf
 	doins "${D}"etc/asterisk/*.conf*
 
+	cd "${D}"
+	for conffile in etc/asterisk/*.*
+	do
+		fowners asterisk:asterisk $conffile
+		fperms 0660 $conffile
+	done
+	cd "${S}"
+
 	# keep directories
 	diropts -m 0770 -o asterisk -g asterisk
 	keepdir	/etc/asterisk
@@ -313,7 +335,7 @@ src_install() {
 	diropts -m 0750 -o asterisk -g asterisk
 	keepdir /var/log/asterisk/{cdr-csv,cdr-custom}
 
-	newinitd "${FILESDIR}"/1.6.1/asterisk.initd asterisk
+	newinitd "${FILESDIR}"/1.6.1/asterisk.initd2 asterisk
 	newconfd "${FILESDIR}"/1.6.0/asterisk.confd asterisk
 
 	# some people like to keep the sources around for custom patching
@@ -351,18 +373,6 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	ebegin "Fixing up permissions"
-		chown -R asterisk:asterisk "${ROOT}"var/log/asterisk
-		chmod -R u=rwX,g=rX,o=     "${ROOT}"var/log/asterisk
-
-		chown asterisk:asterisk "${ROOT}"etc/asterisk/
-		chown asterisk:asterisk "${ROOT}"etc/asterisk/*.adsi
-		chown asterisk:asterisk "${ROOT}"etc/asterisk/extensions.ael
-		chmod u=rwX,g=rwX,o= "${ROOT}"etc/asterisk/
-		chmod u=rwX,g=rwX,o= "${ROOT}"etc/asterisk/*.adsi
-		chmod u=rwX,g=rwX,o= "${ROOT}"etc/asterisk/extensions.ael
-	eend $?
-
 	#
 	# Announcements, warnings, reminders...
 	#
