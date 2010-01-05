@@ -1,10 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-vesa/Attic/xf86-video-vesa-2.1.0.ebuild,v 1.1 2009/01/13 05:55:09 dberkholz Exp $
-
-# Must be before x-modular eclass is inherited
-#SNAPSHOT="yes"
-XDPVER=4
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-vesa/xf86-video-vesa-2.3.0.ebuild,v 1.1 2010/01/05 20:35:10 scarabeus Exp $
 
 inherit x-modular
 
