@@ -1,30 +1,24 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libqxt/Attic/libqxt-0.4-r1.ebuild,v 1.3 2010/01/06 13:03:49 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libqxt/Attic/libqxt-0.5.1.ebuild,v 1.1 2010/01/06 13:03:49 hwoarang Exp $
 
 EAPI=2
 inherit eutils qt4-r2
 
 DESCRIPTION="The Qt eXTension library provides cross-platform utility classes for the Qt toolkit"
 HOMEPAGE="http://libqxt.org/"
-SRC_URI="mirror://sourceforge/libqxt/${P}.tar.gz"
+SRC_URI="http://bitbucket.org/${PN}/${PN}/downloads/${P}.tar.gz"
 
-LICENSE="CPL-1.0"
+LICENSE="|| ( CPL-1.0 LGPL-2.1 )"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="berkdb crypt debug doc sql web"
 
 RDEPEND="x11-libs/qt-gui:4
 	x11-libs/qt-script:4
+	berkdb? ( x11-libs/qt-sql:4 sys-libs/db )
 	sql? ( x11-libs/qt-sql:4 )
-	berkdb? (
-		sys-libs/db
-		x11-libs/qt-sql:4
-	)
-	crypt? (
-		>=dev-libs/openssl-0.9.8
-		x11-libs/qt-core:4[ssl]
-	)
+	crypt? ( >=dev-libs/openssl-0.9.8 x11-libs/qt-core:4[ssl] )
 	web? ( >=dev-libs/fcgi-2.4 )"
 DEPEND="${DEPEND}
 	doc? ( app-doc/doxygen )"
@@ -47,11 +41,6 @@ src_configure() {
 		sed -i "s/qxtbuild/nostrip\ qxtbuild/" "${S}"/src/${i}/${i}.pro
 	done
 	./configure ${myconf} || die "configure failed"
-}
-
-src_compile() {
-	# parallel compilation fails, bug #194730
-	emake -j1 || die "make failed"
 }
 
 src_install() {
