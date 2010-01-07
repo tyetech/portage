@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/electronics-menu/electronics-menu-1.0.ebuild,v 1.1 2009/11/16 21:09:26 calchan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/electronics-menu/electronics-menu-1.0.ebuild,v 1.2 2010/01/07 22:10:25 ssuominen Exp $
 
 EAPI="2"
 
@@ -9,9 +9,10 @@ inherit gnome2-utils
 DESCRIPTION="Creates an \"Electronics\" desktop menu"
 HOMEPAGE="http://www.gpleda.org/"
 SRC_URI="http://geda.seul.org/dist/${P}.tar.gz"
+
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 DEPEND=""
