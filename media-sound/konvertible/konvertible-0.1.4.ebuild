@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/konvertible/Attic/konvertible-0.1.3.ebuild,v 1.1 2009/12/23 21:36:53 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/konvertible/Attic/konvertible-0.1.4.ebuild,v 1.1 2010/01/07 09:45:17 ssuominen Exp $
 
 EAPI=2
 inherit kde4-base
