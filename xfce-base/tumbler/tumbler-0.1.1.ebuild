@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/tumbler/Attic/tumbler-0.1.0.ebuild,v 1.1 2010/01/04 19:58:36 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/tumbler/Attic/tumbler-0.1.1.ebuild,v 1.1 2010/01/07 23:06:51 darkside Exp $
 
 EAPI=2
 inherit xfconf
