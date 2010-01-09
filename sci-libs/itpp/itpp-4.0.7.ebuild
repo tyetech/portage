@@ -1,8 +1,12 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/itpp/Attic/itpp-4.0.3.ebuild,v 1.10 2008/05/18 11:19:40 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/itpp/Attic/itpp-4.0.7.ebuild,v 1.1 2010/01/09 12:29:09 markusle Exp $
 
 inherit fortran flag-o-matic
+
+# we need this to prevent itpp's specialized debug lib
+# (built with USE="debug" set) from being stripped
+RESTRICT="strip"
 
 DESCRIPTION="C++ library of mathematical, signal processing and communication classes and functions"
 LICENSE="GPL-2"
@@ -10,7 +14,7 @@ HOMEPAGE="http://itpp.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="blas debug doc fftw lapack minimal"
 
 RDEPEND="!minimal? ( fftw? ( >=sci-libs/fftw-3.0.0 ) )
@@ -30,6 +34,11 @@ pkg_setup() {
 src_compile() {
 	# turn off performance critical debug code
 	append-flags -DNDEBUG
+
+	# make sure that -g is stripped always since we use
+	# RESTRICT=strip. If debug info is needed please enable
+	# the debug use flag and link against the debug *.so
+	filter-flags -g
 
 	local blas_conf="--without-blas"
 	local lapack_conf="--without-lapack"
