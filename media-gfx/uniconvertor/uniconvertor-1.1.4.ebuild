@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/uniconvertor/Attic/uniconvertor-1.1.0.ebuild,v 1.1 2010/01/10 14:17:36 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/uniconvertor/Attic/uniconvertor-1.1.4.ebuild,v 1.1 2010/01/10 14:20:36 ssuominen Exp $
 
 EAPI=2
 inherit distutils
@@ -26,7 +26,7 @@ src_prepare() {
 	sed -i \
 		-e "s/'GNU_GPL_v2', 'GNU_LGPL_v2', 'COPYRIGHTS',//" \
 		setup.py || die
-	
+
 	distutils_src_prepare
 }
 
