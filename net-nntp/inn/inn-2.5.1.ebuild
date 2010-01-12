@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/inn/Attic/inn-2.5.0.ebuild,v 1.2 2010/01/12 02:08:14 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/inn/Attic/inn-2.5.1.ebuild,v 1.1 2010/01/12 02:08:14 jer Exp $
 
 EAPI="2"
 
