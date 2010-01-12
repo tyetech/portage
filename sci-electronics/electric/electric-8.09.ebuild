@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/electric/electric-8.09.ebuild,v 1.3 2010/01/07 22:10:41 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/electric/electric-8.09.ebuild,v 1.4 2010/01/12 18:49:05 nixnut Exp $
 
 inherit eutils java-pkg-2
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://gnu/electric/${PN}Binary-${PV}.jar"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~x86"
+KEYWORDS="amd64 ppc ~x86"
 IUSE=""
 
 RDEPEND=">=virtual/jre-1.6
