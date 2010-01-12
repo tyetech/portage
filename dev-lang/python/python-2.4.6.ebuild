@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/python/Attic/python-2.4.6.ebuild,v 1.26 2010/01/12 13:52:52 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/python/Attic/python-2.4.6.ebuild,v 1.27 2010/01/12 13:58:31 arfrever Exp $
 
 EAPI="1"
 
-inherit autotools eutils flag-o-matic multilib python toolchain-funcs versionator
+inherit autotools eutils flag-o-matic multilib python toolchain-funcs
 
 MY_P="Python-${PV}"
 S="${WORKDIR}/${MY_P}"
