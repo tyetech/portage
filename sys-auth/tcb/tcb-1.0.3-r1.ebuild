@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/tcb/Attic/tcb-1.0-r1.ebuild,v 1.1 2008/03/27 14:45:01 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/tcb/Attic/tcb-1.0.3-r1.ebuild,v 1.1 2010/01/12 17:59:48 phajdan.jr Exp $
 
 inherit eutils multilib
 
@@ -10,27 +10,40 @@ SRC_URI="ftp://ftp.openwall.com/pub/projects/tcb/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="pam"
 
-DEPEND="pam? ( >=sys-libs/pam-0.75 )"
+DEPEND=">=sys-libs/libxcrypt-2.4
+	pam? ( >=sys-libs/pam-0.75 )"
+RDEPEND="${DEPEND}"
 
 pkg_setup() {
 	for group in auth chkpwd shadow ; do
 		enewgroup ${group}
 	done
+
+	mymakeopts="
+		SLIBDIR=/$(get_libdir)
+		LIBDIR=/usr/$(get_libdir)
+		MANDIR=/usr/share/man
+		DESTDIR='${D}'"
 }
 
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${P}-build.patch
-	sed -i "s:@GENTOO_LIBDIR@:$(get_libdir):" Make.defs
+
+	epatch "${FILESDIR}"/${PN}-1.0.2-build.patch
+	epatch "${FILESDIR}"/${PN}-xcrypt.patch
 	use pam || sed -i '/pam/d' Makefile
 }
 
+src_compile() {
+	emake $mymakeopts || die "emake failed"
+}
+
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake $mymakeopts install || die "emake install failed"
 	dodoc ChangeLog
 }
 
