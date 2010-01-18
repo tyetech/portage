@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/scratchbox-devkit-cputransp/scratchbox-devkit-cputransp-1.0.7.ebuild,v 1.2 2009/11/30 11:05:37 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/scratchbox-devkit-cputransp/scratchbox-devkit-cputransp-1.0.7.ebuild,v 1.3 2010/01/18 05:42:17 tester Exp $
 
 SBOX_GROUP="sbox"
 
@@ -11,6 +11,9 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
 IUSE=""
+
+# Stripping BREAKS scratchbox, it runs in a chroot and is pre-stripped when needed (bug #296294)
+RESTRICT="strip binchecks"
 
 RDEPEND="=dev-embedded/scratchbox-1.0*"
 RDEPEND=""
