@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xvinfo/Attic/xvinfo-1.1.0.ebuild,v 1.7 2010/01/14 22:26:38 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xvinfo/Attic/xvinfo-1.1.0.ebuild,v 1.8 2010/01/18 19:23:30 armin76 Exp $
 
 inherit x-modular
 
 DESCRIPTION="Print out X-Video extension adaptor information"
 
-KEYWORDS="~alpha amd64 arm hppa ~ia64 ~mips ppc ppc64 ~s390 ~sh ~sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 sh sparc x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="x11-libs/libXv
