@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/actionpack/Attic/actionpack-2.2.3-r1.ebuild,v 1.6 2010/01/18 20:13:24 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/actionpack/Attic/actionpack-2.2.3-r1.ebuild,v 1.7 2010/01/18 20:23:27 ranger Exp $
 
 inherit ruby gems
 USE_RUBY="ruby18"
@@ -10,7 +10,7 @@ HOMEPAGE="http://rubyforge.org/projects/actionpack/"
 
 LICENSE="MIT"
 SLOT="2.2"
-KEYWORDS="amd64 ia64 ~ppc ppc64 sparc x86 ~x86-fbsd"
+KEYWORDS="amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=">=dev-lang/ruby-1.8.5
