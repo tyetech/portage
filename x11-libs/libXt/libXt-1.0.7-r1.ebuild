@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libXt/Attic/libXt-1.0.7-r1.ebuild,v 1.9 2010/01/18 19:56:43 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libXt/Attic/libXt-1.0.7-r1.ebuild,v 1.10 2010/01/19 20:09:44 armin76 Exp $
 
 SNAPSHOT="yes"
 
@@ -8,7 +8,7 @@ inherit x-modular flag-o-matic toolchain-funcs
 
 DESCRIPTION="X.Org Xt library"
 
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 ~s390 sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="x11-libs/libX11
