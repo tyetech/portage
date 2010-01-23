@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/passenger/Attic/passenger-2.2.8.ebuild,v 1.2 2010/01/23 13:58:54 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/passenger/Attic/passenger-2.2.9.ebuild,v 1.1 2010/01/23 13:58:54 graaff Exp $
 
 inherit apache-module flag-o-matic ruby
 
