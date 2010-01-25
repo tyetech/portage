@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-4.3.4.ebuild,v 1.11 2010/01/23 17:47:31 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdelibs/Attic/kdelibs-4.3.4.ebuild,v 1.12 2010/01/25 13:35:24 ssuominen Exp $
 
 EAPI="2"
 
@@ -29,7 +29,7 @@ COMMONDEPEND="
 	media-libs/fontconfig
 	media-libs/freetype:2
 	media-libs/giflib
-	media-libs/jpeg
+	media-libs/jpeg:0
 	media-libs/libpng
 	sys-libs/zlib
 	>=x11-misc/shared-mime-info-0.60
