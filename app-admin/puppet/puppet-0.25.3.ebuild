@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/puppet/Attic/puppet-0.25.1.ebuild,v 1.1 2009/11/16 20:18:49 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/puppet/Attic/puppet-0.25.3.ebuild,v 1.1 2010/01/26 15:58:13 matsuu Exp $
 
 EAPI="2"
 inherit elisp-common eutils ruby
@@ -35,10 +35,6 @@ pkg_setup() {
 	enewuser puppet -1 -1 /var/lib/puppet puppet
 }
 
-src_prepare() {
-	epatch "${FILESDIR}/${PN}-0.25.1-eix-0.18.patch"
-}
-
 src_compile() {
 	if use emacs ; then
 		elisp-compile ext/emacs/puppet-mode.el || die "elisp-compile failed"
@@ -47,44 +43,45 @@ src_compile() {
 
 src_install() {
 	DESTDIR="${D}" ruby_einstall "$@" || die
-	DESTDIR="${D}" erubydoc
+	DESTDIR="${D}" erubydoc || die
 
-	newinitd "${FILESDIR}"/puppetmaster-0.25.init puppetmaster
-	newconfd "${FILESDIR}"/puppetmaster.confd puppetmaster
-	newinitd "${FILESDIR}"/puppet-0.25.init puppet
-	doconfd conf/gentoo/conf.d/puppet
+	newinitd "${FILESDIR}"/puppetmaster-0.25.init puppetmaster || die
+	doconfd conf/gentoo/conf.d/puppetmaster || die
+	newinitd "${FILESDIR}"/puppet-0.25.init puppet || die
+	doconfd conf/gentoo/conf.d/puppet || die
 
 	# Initial configuration files
-	keepdir /etc/puppet/manifests
+	keepdir /etc/puppet/manifests || die
 	insinto /etc/puppet
-	doins conf/gentoo/puppet/*
+	doins conf/gentoo/puppet/* || die
+	doins conf/auth.conf || die
 
 	# Location of log and data files
-	keepdir /var/run/puppet
-	keepdir /var/log/puppet
-	keepdir /var/lib/puppet/ssl
-	keepdir /var/lib/puppet/files
-	fowners -R puppet:puppet /var/{run,log,lib}/puppet
+	keepdir /var/run/puppet || die
+	keepdir /var/log/puppet || die
+	keepdir /var/lib/puppet/ssl || die
+	keepdir /var/lib/puppet/files || die
+	fowners -R puppet:puppet /var/{run,log,lib}/puppet || die
 
 	if use emacs ; then
 		elisp-install ${PN} ext/emacs/puppet-mode.el* || die "elisp-install failed"
-		elisp-site-file-install "${FILESDIR}/${SITEFILE}"
+		elisp-site-file-install "${FILESDIR}/${SITEFILE}" || die
 	fi
 
 	if use ldap ; then
-		insinto /etc/openldap/schema; doins ext/ldap/puppet.schema
+		insinto /etc/openldap/schema; doins ext/ldap/puppet.schema || die
 	fi
 
 	if use vim-syntax ; then
-		insinto /usr/share/vim/vimfiles/syntax; doins ext/vim/syntax/puppet.vim
-		insinto /usr/share/vim/vimfiles/ftdetect; doins	ext/vim/ftdetect/puppet.vim
+		insinto /usr/share/vim/vimfiles/syntax; doins ext/vim/syntax/puppet.vim || die
+		insinto /usr/share/vim/vimfiles/ftdetect; doins	ext/vim/ftdetect/puppet.vim || die
 	fi
 
 	# ext and examples files
 	for f in $(find ext examples -type f) ; do
-		docinto "$(dirname ${f})"; dodoc "${f}"
+		docinto "$(dirname ${f})"; dodoc "${f}" || die
 	done
-	docinto conf; dodoc conf/namespaceauth.conf
+	docinto conf; dodoc conf/namespaceauth.conf || die
 }
 
 pkg_postinst() {
