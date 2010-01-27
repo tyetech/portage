@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebase-kioslaves/Attic/kdebase-kioslaves-4.3.5.ebuild,v 1.1 2010/01/25 14:55:52 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebase-kioslaves/Attic/kdebase-kioslaves-4.3.5-r1.ebuild,v 1.1 2010/01/27 10:40:51 scarabeus Exp $
 
 EAPI="2"
 
@@ -38,6 +38,8 @@ KMEXTRA="
 	kioexec
 	kdeeject
 "
+
+PATCHES=( "${FILESDIR}/${PV}-"* )
 
 src_configure() {
 	mycmakeargs=(
