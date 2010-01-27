@@ -1,11 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.4.3_p3.ebuild,v 1.8 2009/08/01 19:09:53 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.4.3_p3.ebuild,v 1.9 2010/01/27 18:18:20 jer Exp $
 
 inherit flag-o-matic
 
 MY_PN=${PN//-tools}
-MY_PV=${PV/_p3/-P3}
+MY_PV=${PV/_p/-P}
 MY_P="${MY_PN}-${MY_PV}"
 S="${WORKDIR}/${MY_P}"
 DESCRIPTION="bind tools: dig, nslookup, host, nsupdate, dnssec-keygen"
