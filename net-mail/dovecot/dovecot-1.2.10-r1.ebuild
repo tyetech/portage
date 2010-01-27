@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/dovecot/Attic/dovecot-1.2.10-r1.ebuild,v 1.1 2010/01/26 20:43:51 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/dovecot/Attic/dovecot-1.2.10-r1.ebuild,v 1.2 2010/01/27 08:21:21 patrick Exp $
 
 EAPI="2"
 
@@ -59,7 +59,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	use managesieve && epatch "${WORKDIR}"/dovecot-1.2.7-managesieve-${managesieve_version}.diff
+	use managesieve && epatch "${WORKDIR}"/dovecot-1.2.10-managesieve-${managesieve_version}.diff
 }
 
 src_configure() {
