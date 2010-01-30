@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/lxc/Attic/lxc-0.6.4-r1.ebuild,v 1.1 2009/12/07 11:39:11 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/lxc/Attic/lxc-0.6.5.ebuild,v 1.1 2010/01/30 23:16:54 flameeyes Exp $
 
 EAPI="2"
 
@@ -45,12 +45,6 @@ ERROR_NET_NS="CONFIG_NET_NS:	needed for unshared network"
 
 ERROR_VETH="CONFIG_VETH:	needed for internal (inter-container) networking"
 ERROR_MACVLAN="CONFIG_MACVLAN:	needed for internal (inter-container) networking"
-
-PATCHES=(
-	"${FILESDIR}"/${P}-lxc.network.pair.patch
-	"${FILESDIR}"/${P}-move-rcfile.patch
-	"${FILESDIR}"/${P}-fix-full-system.patch
-)
 
 src_configure() {
 	econf \
