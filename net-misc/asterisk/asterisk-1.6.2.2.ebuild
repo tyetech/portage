@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.2.1.ebuild,v 1.1 2010/01/19 13:12:46 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-1.6.2.2.ebuild,v 1.1 2010/02/02 22:48:08 chainsaw Exp $
 
 EAPI=1
 inherit eutils autotools linux-info
@@ -104,7 +104,7 @@ src_unpack() {
 	# sprinkle some plus signs in strategic locations for maximum parallel make happiness
 	# https://issues.asterisk.org/view.php?id=16489
 	#
-	epatch "${FILESDIR}"/1.6.2/${P}-parallel-make.patch || die "patch failed"
+	epatch "${FILESDIR}"/1.6.2/${PN}-1.6.2.1-parallel-make.patch || die "patch failed"
 
 	AT_M4DIR=autoconf eautoreconf
 
@@ -268,7 +268,7 @@ src_install() {
 	diropts -m 0750 -o asterisk -g asterisk
 	keepdir /var/log/asterisk/{cdr-csv,cdr-custom}
 
-	newinitd "${FILESDIR}"/1.6.1/asterisk.initd2 asterisk
+	newinitd "${FILESDIR}"/1.6.1/asterisk.initd3 asterisk
 	newconfd "${FILESDIR}"/1.6.0/asterisk.confd asterisk
 
 	# some people like to keep the sources around for custom patching
