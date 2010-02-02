@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/mysql/mysql-5.1.ebuild,v 1.6 2010/02/02 22:06:11 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/mysql/mysql-5.5.ebuild,v 1.1 2010/02/02 22:06:11 robbat2 Exp $
 
 DESCRIPTION="Virtual for MySQL client or database"
 HOMEPAGE=""
@@ -15,5 +15,4 @@ DEPEND=""
 # TODO: add Drizzle and MariaDB here
 RDEPEND="|| (
 	=dev-db/mysql-${PV}*
-	=dev-db/mysql-community-${PV}*
 )"
