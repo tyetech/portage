@@ -1,9 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-4.0.266.0-r1.ebuild,v 1.5 2010/02/03 13:11:38 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-5.0.307.1.ebuild,v 1.1 2010/02/03 13:11:38 voyageur Exp $
 
 EAPI="2"
-inherit eutils multilib toolchain-funcs
+inherit eutils multilib toolchain-funcs flag-o-matic
 
 DESCRIPTION="Open-source version of Google Chrome web browser"
 HOMEPAGE="http://chromium.org/"
@@ -27,6 +27,7 @@ RDEPEND="app-arch/bzip2
 	ffmpeg? ( >=media-video/ffmpeg-0.5_p19787 )
 	sys-libs/zlib
 	>=x11-libs/gtk+-2.14.7
+	x11-libs/libXScrnSaver
 	x11-misc/xdg-utils
 	|| (
 		x11-themes/gnome-icon-theme
@@ -49,14 +50,12 @@ src_prepare() {
 	sed -i "s/'-Werror'/''/" build/common.gypi || die "Werror sed failed"
 	# Prevent automatic -march=pentium4 -msse2 enabling on x86, http://crbug.com/9007
 	epatch "${FILESDIR}"/${PN}-drop_sse2.patch
-	# Add configuration flag to use system libevent
-	epatch "${FILESDIR}"/${PN}-use_system_libevent-1.4.13.patch
 	# Allow use of MP3/MPEG-4 audio/video tags with our system ffmpeg
 	epatch "${FILESDIR}"/${PN}-20100122-ubuntu-html5-video-mimetypes.patch
 
 	# Disable prefixing to allow linking against system zlib
 	sed -e '/^#include "mozzconf.h"$/d' \
-		-i third_party/{,WebKit/WebCore/platform/image-decoders}/zlib/zconf.h \
+		-i third_party/zlib/zconf.h \
 		|| die "zlib sed failed"
 }
 
@@ -92,7 +91,8 @@ EOF
 	fi
 
 	if use arm; then
-		myconf="${myconf} -Dtarget_arch=arm -Ddisable_nacl=1 -Dv8_use_snapshot=false -Dlinux_use_tcmalloc=0"
+		myconf="${myconf} -Dtarget_arch=arm -Ddisable_nacl=1 -Dlinux_use_tcmalloc=0"
+		append-flags -fno-tree-sink
 	fi
 
 	if [[ "$(gcc-major-version)$(gcc-minor-version)" == "44" ]]; then
