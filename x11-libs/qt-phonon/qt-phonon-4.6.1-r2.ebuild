@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-phonon/Attic/qt-phonon-4.6.1-r1.ebuild,v 1.2 2010/01/26 16:28:27 spatz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-phonon/Attic/qt-phonon-4.6.1-r2.ebuild,v 1.1 2010/02/06 11:49:20 hwoarang Exp $
 
 EAPI="2"
 inherit qt4-build
@@ -23,7 +23,8 @@ RDEPEND="${DEPEND}"
 pkg_setup() {
 	QT4_TARGET_DIRECTORIES="
 		src/phonon
-		src/plugins/phonon"
+		src/plugins/phonon
+		tools/designer/src/plugins/phononwidgets"
 	QT4_EXTRACT_DIRECTORIES="${QT4_TARGET_DIRECTORIES}
 		include/
 		src"
