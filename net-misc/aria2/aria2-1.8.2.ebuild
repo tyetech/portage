@@ -1,10 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/aria2/Attic/aria2-1.6.3-r1.ebuild,v 1.1 2009/12/04 21:25:02 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/aria2/Attic/aria2-1.8.2.ebuild,v 1.1 2010/02/06 06:35:47 dev-zero Exp $
 
 EAPI="2"
-
-inherit eutils
 
 DESCRIPTION="A download utility with resuming and segmented downloading with HTTP/HTTPS/FTP/BitTorrent support."
 HOMEPAGE="http://aria2.sourceforge.net/"
@@ -24,13 +22,11 @@ CDEPEND="sys-libs/zlib
 		!gnutls? ( dev-libs/openssl ) )
 	metalink? (
 		!expat? ( >=dev-libs/libxml2-2.6.26 )
-		expat? ( dev-libs/expat )
-	)
+		expat? ( dev-libs/expat ) )
 	sqlite? ( dev-db/sqlite:3 )
 	xmlrpc? (
 		!expat? ( >=dev-libs/libxml2-2.6.26 )
-		expat? ( dev-libs/expat )
-	)"
+		expat? ( dev-libs/expat ) )"
 DEPEND="${CDEPEND}
 	nls? ( sys-devel/gettext )
 	test? ( >=dev-util/cppunit-1.12.0 )"
@@ -46,8 +42,6 @@ pkg_setup() {
 
 src_prepare() {
 	sed -i -e "s|/tmp|${T}|" test/*.cc test/*.txt || die "sed failed"
-
-	epatch "${FILESDIR}/${PV}-unaligned_pointers.patch"
 }
 
 src_configure() {
@@ -62,7 +56,8 @@ src_configure() {
 
 	# Note:
 	# - depends on libgcrypt only when using gnutls
-	# - links only against libxml2 and libexpat when metalink is enabled
+	# - if --without-libexpat or --without-libxml2 are not given, it links against
+	#   one of them to provide xmlrpc-functionality
 	# - always enable gzip/http compression since zlib should always be available anyway
 	# - always enable epoll since we can assume kernel 2.6.x
 	# - other options for threads: solaris, pth, win32
@@ -86,5 +81,5 @@ src_install() {
 	dodoc ChangeLog README AUTHORS NEWS
 	dohtml README.html doc/aria2c.1.html
 
-	use scripts && dobin doc/xmlrpc/*
+	use scripts && dobin doc/xmlrpc/aria2{mon,rpc}
 }
