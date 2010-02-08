@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/cherokee/Attic/cherokee-0.99.22.ebuild,v 1.1 2009/08/06 07:14:56 bass Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/cherokee/Attic/cherokee-0.99.42.ebuild,v 1.1 2010/02/08 08:35:27 bass Exp $
 
 inherit eutils pam versionator libtool
 
@@ -11,10 +11,11 @@ HOMEPAGE="http://www.cherokee-project.com/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="ipv6 ssl static pam coverpage threads kernel_linux admin debug geoip ldap mysql ffmpeg fastcgi"
+IUSE="ipv6 nls ssl static pam coverpage threads kernel_linux admin debug geoip ldap mysql ffmpeg fastcgi"
 
 RDEPEND="
 	>=sys-libs/zlib-1.1.4-r1
+	nls? ( sys-devel/gettext )
 	ssl? ( dev-libs/openssl )
 	pam? ( virtual/pam )
 	admin? ( dev-lang/python )
@@ -55,6 +56,7 @@ src_compile() {
 		${myconf} \
 		$(use_enable pam) \
 		$(use_enable ipv6) \
+		$(use_enable nls) \
 		$(use_enable threads pthread) \
 		$(use_enable kernel_linux epoll) \
 		$(use_with geoip) \
@@ -77,7 +79,7 @@ src_install () {
 	dodoc AUTHORS ChangeLog
 
 	use pam && pamd_mimic system-auth cherokee auth account session
-	newinitd "${FILESDIR}/${PN}-initd-0.11" ${PN} || die "newinitd failed"
+	newinitd "${FILESDIR}/${PN}-initd-0.99.23" ${PN} || die "newinitd failed"
 
 	dodir /usr/share/doc/${PF}/contrib
 	insinto /usr/share/${PF}/contrib
