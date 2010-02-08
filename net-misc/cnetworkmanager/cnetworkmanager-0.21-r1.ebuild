@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cnetworkmanager/Attic/cnetworkmanager-0.21-r1.ebuild,v 1.1 2009/08/14 10:25:02 dagger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cnetworkmanager/Attic/cnetworkmanager-0.21-r1.ebuild,v 1.2 2010/02/08 08:52:25 pva Exp $
 
 EAPI=2
 
-inherit distutils
+inherit eutils distutils
 
 DESCRIPTION="Command line interface for NetworkManager."
 HOMEPAGE="http://vidner.net/martin/software/cnetworkmanager/"
