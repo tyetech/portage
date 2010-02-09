@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libarchive/Attic/libarchive-2.7.902a.ebuild,v 1.1 2010/01/05 15:12:20 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libarchive/Attic/libarchive-2.8.0.ebuild,v 1.1 2010/02/09 14:28:12 flameeyes Exp $
 
 EAPI="2"
 
