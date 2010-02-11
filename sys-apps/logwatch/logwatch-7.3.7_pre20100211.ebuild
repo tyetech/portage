@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/logwatch/logwatch-7.3.7_pre20091210.ebuild,v 1.3 2010/02/11 10:23:49 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/logwatch/Attic/logwatch-7.3.7_pre20100211.ebuild,v 1.1 2010/02/11 10:23:49 hollow Exp $
 
 DESCRIPTION="Analyzes and Reports on system logs"
 HOMEPAGE="http://www.logwatch.org/"
