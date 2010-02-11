@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kmail/Attic/kmail-4.4.0.ebuild,v 1.3 2010/02/11 15:12:09 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kmail/Attic/kmail-4.4.0.ebuild,v 1.4 2010/02/11 15:47:48 reavertm Exp $
 
 EAPI="2"
 
@@ -20,7 +20,7 @@ DEPEND="
 	ayatana? ( >=dev-libs/libindicate-qt-0.2.1 )
 "
 RDEPEND="${DEPEND}
-	$(add_kdebase_dep akonadi)
+	$(add_kdebase_dep kdepim-runtime)
 "
 
 add_blocker kmailcvt
