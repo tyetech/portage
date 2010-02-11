@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/gettext_activerecord/Attic/gettext_activerecord-2.1.0.ebuild,v 1.1 2009/11/28 07:40:57 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/gettext_activerecord/Attic/gettext_activerecord-2.1.0.ebuild,v 1.2 2010/02/11 14:28:59 fauli Exp $
 
 inherit gems
 
@@ -8,7 +8,7 @@ DESCRIPTION="An L10 library for ActiveRecord."
 HOMEPAGE="http://www.yotabanana.com/hiki/ruby-gettext-rails.html"
 LICENSE="Ruby"
 
-KEYWORDS="~amd64 ~ia64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ia64 ~ppc x86"
 SLOT="0"
 IUSE=""
 
