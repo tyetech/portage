@@ -1,8 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/twoftpd/Attic/twoftpd-1.21.ebuild,v 1.7 2010/02/12 09:46:37 bangert Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/twoftpd/Attic/twoftpd-1.41.ebuild,v 1.1 2010/02/12 09:46:37 bangert Exp $
 
-inherit toolchain-funcs
+EAPI="2"
+
+inherit eutils toolchain-funcs multilib
 
 DESCRIPTION="Simple secure efficient FTP server by Bruce Guenter"
 HOMEPAGE="http://untroubled.org/twoftpd/"
@@ -11,26 +13,28 @@ SRC_URI="http://untroubled.org/twoftpd/archive/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86"
-IUSE=""
+IUSE="breakrfc"
 
-DEPEND=">=dev-libs/bglibs-1.026
-	>=net-libs/cvm-0.32"
+DEPEND=">=dev-libs/bglibs-1.106
+	>=net-libs/cvm-0.96"
 RDEPEND="sys-apps/ucspi-tcp
 	sys-process/daemontools
-	>=net-libs/cvm-0.32"
+	${DEPEND}"
 
-src_compile() {
+src_prepare() {
+	use breakrfc && epatch "${FILESDIR}"/${PN}-1.21-disable-TELNET_IAC.patch
+}
+
+src_configure() {
 	echo "/usr/sbin" > conf-bin
 	echo "/usr/share/man" > conf-man
-	echo "$(tc-getCC) ${CFLAGS} -I/usr/include/bglibs" > conf-cc
-	echo "$(tc-getCC) -L/usr/lib/bglibs" > conf-ld
-	emake || die "make failed"
+	echo "/usr/include/bglibs" > conf-bgincs
+	echo "/usr/$(get_libdir)/bglibs" > conf-bglibs
+	echo "$(tc-getCC) ${CFLAGS}" > conf-cc
+	echo "$(tc-getCC) ${LDFLAGS}" > conf-ld
 }
 
 src_install() {
-	dodir /usr/sbin
-	dodir /usr/share/man/man1
-
 	emake install install_prefix="${D}" || die "install failed"
 
 	dodoc ANNOUNCEMENT ChangeLog NEWS README TODO VERSION
