@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/aws-s3/aws-s3-0.6.2-r1.ebuild,v 1.2 2010/01/28 14:15:49 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/aws-s3/aws-s3-0.6.2-r1.ebuild,v 1.3 2010/02/12 21:30:14 flameeyes Exp $
 
 EAPI=2
 
@@ -9,6 +9,8 @@ USE_RUBY="ruby18 jruby"
 RUBY_FAKEGEM_TASK_DOC="doc:redoc"
 RUBY_FAKEGEM_DOCDIR="doc"
 RUBY_FAKEGEM_EXTRADOC="README"
+
+RUBY_FAKEGEM_BINWRAP="s3sh"
 
 inherit ruby-fakegem
 
