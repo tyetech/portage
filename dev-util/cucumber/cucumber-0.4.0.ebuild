@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cucumber/Attic/cucumber-0.4.0.ebuild,v 1.1 2009/10/13 06:19:29 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cucumber/Attic/cucumber-0.4.0.ebuild,v 1.2 2010/02/13 19:43:04 armin76 Exp $
 
 inherit ruby gems
 
@@ -8,7 +8,7 @@ DESCRIPTION="Executable feature scenarios"
 HOMEPAGE="http://github.com/aslakhellesoy/cucumber/wikis"
 LICENSE="Ruby"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~sparc ~x86"
 SLOT="0"
 IUSE=""
 
