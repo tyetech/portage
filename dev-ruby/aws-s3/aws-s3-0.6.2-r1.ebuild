@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/aws-s3/aws-s3-0.6.2-r1.ebuild,v 1.3 2010/02/12 21:30:14 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/aws-s3/aws-s3-0.6.2-r1.ebuild,v 1.4 2010/02/14 21:31:16 flameeyes Exp $
 
 EAPI=2
 
@@ -19,7 +19,7 @@ HOMEPAGE="http://amazon.rubyforge.org/"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 ruby_add_rdepend "dev-ruby/xml-simple
