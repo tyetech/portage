@@ -1,6 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/orinoco-usb/orinoco-usb-9999.ebuild,v 1.4 2007/08/29 19:07:45 genstef Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/orinoco-usb/orinoco-usb-9999.ebuild,v 1.5 2010/02/15 20:40:27 ssuominen Exp $
 
 inherit linux-mod subversion
 
@@ -13,6 +13,7 @@ SRC_URI=""
 LICENSE="GPL-2 MPL-1.1"
 SLOT="0"
 KEYWORDS=""
+IUSE=""
 
 RDEPEND="!net-wireless/orinoco-sn
 	net-wireless/wireless-tools
