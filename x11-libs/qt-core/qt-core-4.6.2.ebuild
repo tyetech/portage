@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-core/Attic/qt-core-4.6.1.ebuild,v 1.5 2010/02/15 15:08:44 spatz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-core/Attic/qt-core-4.6.2.ebuild,v 1.1 2010/02/15 15:08:44 spatz Exp $
 
 EAPI="2"
 inherit qt4-build
