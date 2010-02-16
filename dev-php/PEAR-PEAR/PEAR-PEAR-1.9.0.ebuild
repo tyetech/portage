@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-PEAR/Attic/PEAR-PEAR-1.9.0.ebuild,v 1.1 2009/10/05 18:24:36 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-PEAR/Attic/PEAR-PEAR-1.9.0.ebuild,v 1.2 2010/02/16 04:16:42 beandog Exp $
 
 inherit depend.php
 
@@ -16,7 +16,6 @@ SLOT="0"
 IUSE=""
 
 DEPEND="dev-lang/php"
-PDEPEND="=dev-php/pear-${PV}"
 
 S="${WORKDIR}"
 
