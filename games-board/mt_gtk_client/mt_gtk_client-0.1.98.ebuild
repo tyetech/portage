@@ -1,6 +1,6 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/mt_gtk_client/mt_gtk_client-0.1.98.ebuild,v 1.5 2008/02/14 04:01:34 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/mt_gtk_client/mt_gtk_client-0.1.98.ebuild,v 1.6 2010/02/17 15:58:54 mr_bones_ Exp $
 
 inherit games
 
@@ -30,6 +30,6 @@ src_compile() {
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
 	mv "${D}"/${GAMES_DATADIR}/locale "${D}"/usr/share/
-	dodoc AUTHORS BUGS ChangeLog NEWS README TODO
+	dodoc AUTHORS ChangeLog NEWS README TODO
 	prepgamesdirs
 }
