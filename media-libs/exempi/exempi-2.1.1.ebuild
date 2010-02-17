@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/exempi/exempi-2.1.1.ebuild,v 1.2 2010/02/17 08:45:54 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/exempi/exempi-2.1.1.ebuild,v 1.3 2010/02/17 08:47:01 ssuominen Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -16,8 +16,7 @@ IUSE="examples test"
 
 RDEPEND="dev-libs/expat
 	virtual/libiconv
-	sys-libs/zlib
-	virtual/libiconv"
+	sys-libs/zlib"
 DEPEND="${RDEPEND}
 	test? ( >=dev-libs/boost-1.37 )"
 
