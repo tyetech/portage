@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/obexd/Attic/obexd-0.21.ebuild,v 1.1 2010/02/13 18:33:18 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/obexd/Attic/obexd-0.18-r1.ebuild,v 1.1 2010/02/19 13:26:39 pacho Exp $
 
 EAPI="2"
 
@@ -10,21 +10,30 @@ SRC_URI="mirror://kernel/linux/bluetooth/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~hppa ~x86"
-IUSE="debug eds"
+IUSE="debug -eds -server"
 
 RDEPEND="eds? ( gnome-extra/evolution-data-server )
 	net-wireless/bluez
 	>=dev-libs/openobex-1.4
 	dev-libs/glib:2
 	sys-apps/dbus
-	!app-mobilephone/obex-data-server"
+	server? ( !app-mobilephone/obex-data-server )"
+
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 src_configure() {
+	local myconf
+	if use eds && ! use server ; then
+		ewarn "The 'eds' USE flah needs 'server' one to be enabled, disabling 'eds' for now then..."
+		myconf="${myconf} --disable-ebook"
+	fi
+
 	econf \
 		$(use_enable debug) \
-		$(use_with eds phonebook ebook)
+		$(use_enable eds ebook) \
+		$(use_enable server) \
+		${myconf}
 }
 
 src_install() {
