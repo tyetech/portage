@@ -1,12 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/pymol/Attic/pymol-1.2.2-r3.ebuild,v 1.1 2010/02/18 13:23:48 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/pymol/Attic/pymol-1.2.2-r4.ebuild,v 1.1 2010/02/19 08:39:18 jlec Exp $
 
 EAPI="3"
 
+SUPPORT_PYTHON_ABIS="1"
 PYTHON_USE_WITH="tk"
-PYTHON_DEPEND="2:2.5"
-PYTHON_MODNAME="chempy pmg_tk pymol"
 REV="3859"
 
 inherit eutils distutils prefix
@@ -35,12 +34,9 @@ DEPEND="
 			sci-chemistry/pymol-apbs-plugin
 		)"
 RDEPEND="${DEPEND}"
+RESTRICT_PYTHON_ABIS="3.* 2.4"
 
 S="${WORKDIR}"/${PN}
-
-pkg_setup() {
-	python_set_active_version 2
-}
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PV}-data-path.patch
@@ -65,6 +61,12 @@ src_prepare() {
 		sed \
 			-e '/PYMOL_NUMPY/s:^#::g' \
 			-i setup.py
+
+	rm ./modules/pmg_tk/startup/apbs_tools.py || die
+
+	# python 3.* fix
+	# sed '452,465d' -i setup.py
+	distutils_src_prepare
 }
 
 src_configure() {
@@ -77,7 +79,7 @@ src_install() {
 	# These environment variables should not go in the wrapper script, or else
 	# it will be impossible to use the PyMOL libraries from Python.
 	cat >> "${T}"/20pymol <<- EOF
-		PYMOL_PATH="${EPREFIX}/$(python_get_sitedir)/${PN}"
+		PYMOL_PATH="${EPREFIX}/$(python_get_sitedir -f)/${PN}"
 		PYMOL_DATA="${EPREFIX}/usr/share/pymol/data"
 		PYMOL_SCRIPTS="${EPREFIX}/usr/share/pymol/scripts"
 	EOF
@@ -86,7 +88,7 @@ src_install() {
 
 	cat >> "${T}"/pymol <<- EOF
 	#!/bin/sh
-	$(PYTHON -A -a) -O \${PYMOL_PATH}/__init__.py \$*
+	$(PYTHON -f) -O \${PYMOL_PATH}/__init__.py \$*
 	EOF
 
 	dobin "${T}"/pymol || die "Failed to install wrapper."
@@ -99,5 +101,5 @@ src_install() {
 
 	dodoc DEVELOPERS README || die "Failed to install docs."
 
-	rm "${D}"$(python_get_sitedir)/pmg_tk/startup/apbs_tools.py
+#	rm "${D}"$(python_get_sitedir)/pmg_tk/startup/apbs_tools.py
 }
