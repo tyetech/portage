@@ -1,10 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.6.31-r8.ebuild,v 1.1 2009/12/17 23:18:25 mpagano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/gentoo-sources/Attic/gentoo-sources-2.6.32-r6.ebuild,v 1.1 2010/02/19 17:20:13 mpagano Exp $
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="9"
+K_GENPATCHES_VER="7"
 inherit kernel-2
 detect_version
 detect_arch
