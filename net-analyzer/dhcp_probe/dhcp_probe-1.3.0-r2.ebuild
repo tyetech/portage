@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/dhcp_probe/Attic/dhcp_probe-1.3.0-r1.ebuild,v 1.1 2009/11/19 17:34:00 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/dhcp_probe/Attic/dhcp_probe-1.3.0-r2.ebuild,v 1.1 2010/02/20 16:31:57 jer Exp $
 
 EAPI="2"
 
@@ -30,9 +30,11 @@ src_configure() {
 }
 
 src_install() {
+	emake install DESTDIR="${D}"
+
 	newinitd "${FILESDIR}/${PN}.initd" ${PN}
 	newconfd "${FILESDIR}/${PN}.confd" ${PN}
-	dobin src/dhcp_probe "${FILESDIR}"/dhcp_probe_mail || die "dobin failed"
+
 	dodoc \
 		extras/dhcp_probe.cf.sample \
 		NEWS \
@@ -41,8 +43,4 @@ src_install() {
 		AUTHORS \
 		TODO \
 		|| die "dodoc failed"
-	doman \
-		doc/dhcp_probe.8 \
-		doc/dhcp_probe.cf.5 \
-		|| die "doman failed"
 }
