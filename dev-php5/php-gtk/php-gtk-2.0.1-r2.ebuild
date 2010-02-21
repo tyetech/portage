@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/php-gtk/Attic/php-gtk-2.0.1-r1.ebuild,v 1.1 2009/09/13 10:20:21 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/php-gtk/Attic/php-gtk-2.0.1-r2.ebuild,v 1.1 2010/02/21 17:30:56 pacho Exp $
 
 EAPI="1"
 
@@ -15,7 +15,7 @@ inherit php-ext-source-r1
 DESCRIPTION="PHP 5 bindings for the Gtk+ 2 library."
 HOMEPAGE="http://gtk.php.net/"
 SRC_URI="http://gtk.php.net/distributions/${P}.tar.gz"
-IUSE="debug doc examples extra +glade gtkhtml libsexy mozembed scintilla spell"
+IUSE="debug doc examples +glade gtkhtml libsexy mozembed scintilla spell"
 LICENSE="PHP-2.02 PHP-3 PHP-3.01 LGPL-2.1 public-domain Scintilla"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -36,7 +36,6 @@ RDEPEND=">=dev-lang/php-5.1.2
 	>=dev-libs/glib-2.6.0
 	>=x11-libs/pango-1.8.0
 	>=dev-libs/atk-1.9.0
-	extra? ( >=x11-libs/gtk+extra-2.1.1 )
 	glade? ( >=gnome-base/libglade-2.5.0 )
 	libsexy? ( >=x11-libs/libsexy-0.1.10 )
 	gtkhtml? ( gnome-extra/gtkhtml:3.14 )
@@ -93,7 +92,7 @@ src_unpack() {
 }
 
 src_compile() {
-	my_conf="$(use_with extra) \
+	my_conf="--without-extra \
 		$(use_with gtkhtml html) \
 		$(use_with libsexy) \
 		$(use_with mozembed) \
