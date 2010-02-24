@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-meta/Attic/xfce4-meta-4.6.1.ebuild,v 1.5 2010/02/04 07:37:52 mduft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-meta/Attic/xfce4-meta-4.6.1.ebuild,v 1.6 2010/02/24 14:04:19 ssuominen Exp $
 
 EAPI=2
 
