@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/aix-miscutils/Attic/aix-miscutils-0.1.1634.ebuild,v 1.1 2009/06/21 13:38:16 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/aix-miscutils/aix-miscutils-0.1.1671.ebuild,v 1.1 2010/02/26 12:51:40 haubi Exp $
 
 DESCRIPTION="Miscellaneous helpers for AIX (currently just ldd)"
 HOMEPAGE="http://www.gentoo.org/proj/en/gentoo-alt/prefix/"
