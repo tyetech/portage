@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/ccpn/Attic/ccpn-2.1.3.1_p100225.ebuild,v 1.1 2010/02/25 08:54:43 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/ccpn/Attic/ccpn-2.1.3.1_p100227.ebuild,v 1.1 2010/02/27 09:39:12 jlec Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
