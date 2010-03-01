@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-458.ebuild,v 1.3 2010/02/03 09:59:26 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/musepack-tools/Attic/musepack-tools-458.ebuild,v 1.4 2010/03/01 17:21:13 ssuominen Exp $
 
 inherit cmake-utils
 
@@ -10,8 +10,7 @@ inherit cmake-utils
 
 DESCRIPTION="Musepack SV8 libraries and utilities"
 HOMEPAGE="http://www.musepack.net"
-SRC_URI="http://dev.gentoo.org/~ssuominen/${P}.tar.bz2"
-#SRC_URI="mirror://gentoo/${P}.tar.bz2"
+SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="BSD LGPL-2.1"
 SLOT="0"
