@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/qemu-kvm/Attic/qemu-kvm-9999.ebuild,v 1.4 2010/03/02 16:56:34 cardoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/qemu-kvm/Attic/qemu-kvm-0.12.3.ebuild,v 1.1 2010/03/02 16:56:34 cardoe Exp $
 
 EAPI="2"
 
