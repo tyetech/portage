@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mozilla-thunderbird-bin/Attic/mozilla-thunderbird-bin-3.0.1-r1.ebuild,v 1.1 2010/02/20 14:32:23 anarchy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mozilla-thunderbird-bin/Attic/mozilla-thunderbird-bin-3.0.3.ebuild,v 1.1 2010/03/04 14:19:45 anarchy Exp $
 EAPI="2"
 
 inherit eutils multilib mozextension
