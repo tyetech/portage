@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/boinc/Attic/boinc-6.10.18.ebuild,v 1.4 2010/03/05 14:56:17 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-misc/cvs-repo/gentoo-x86/sci-misc/boinc/Attic/boinc-6.10.36.ebuild,v 1.1 2010/03/05 14:56:17 scarabeus Exp $
 
 EAPI="2"
 
