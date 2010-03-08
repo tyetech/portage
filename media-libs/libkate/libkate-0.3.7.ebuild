@@ -1,6 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libkate/libkate-0.3.7.ebuild,v 1.8 2010/02/24 19:33:08 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libkate/libkate-0.3.7.ebuild,v 1.9 2010/03/08 10:43:36 ssuominen Exp $
+
+inherit eutils
 
 DESCRIPTION="Codec for karaoke and text encapsulation for Ogg"
 HOMEPAGE="http://code.google.com/p/libkate/"
@@ -21,6 +23,13 @@ DEPEND="${COMMON_DEPEND}
 	doc? ( app-doc/doxygen )"
 RDEPEND="${COMMON_DEPEND}
 	wxwidgets? ( =dev-python/wxpython-2.8* media-libs/liboggz )"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	has_version ">=media-libs/libpng-1.4" && epatch \
+		"${FILESDIR}"/${P}-libpng14.patch
+}
 
 src_compile() {
 	use wxwidgets || sed -i -e "s/HAVE_PYTHON=yes/HAVE_PYTHON=no/" configure
