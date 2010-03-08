@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc-apple/Attic/gcc-apple-4.2.1_p5566-r2.ebuild,v 1.2 2010/03/08 17:12:11 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/gcc-apple/Attic/gcc-apple-4.2.1_p5647.ebuild,v 1.1 2010/03/08 17:12:11 grobian Exp $
 
 EAPI="3"
 
@@ -9,14 +9,21 @@ ETYPE="gcc-compiler"
 inherit eutils toolchain flag-o-matic autotools prefix
 
 GCC_VERS=${PV/_p*/}
-APPLE_VERS=${PV/*_p/}
-LIBSTDCXX_APPLE_VERSION=16
-DESCRIPTION="Apple branch of the GNU Compiler Collection, Xcode Tools 3.1.2"
+APPLE_VERS="$((${PV/*_p/} - 1)).1" # stupid hack because _p may not contain .
+DESCRIPTION="Apple branch of the GNU Compiler Collection, Developer Tools 3.2.1"
 HOMEPAGE="http://gcc.gnu.org"
-SRC_URI="http://www.opensource.apple.com/darwinsource/tarballs/other/gcc_42-${APPLE_VERS}.tar.gz
-		http://www.opensource.apple.com/darwinsource/tarballs/other/libstdcxx-${LIBSTDCXX_APPLE_VERSION}.tar.gz
-		fortran? ( mirror://gnu/gcc/gcc-${GCC_VERS}/gcc-fortran-${GCC_VERS}.tar.bz2 )"
-LICENSE="APSL-2 GPL-2"
+SRC_URI="http://www.opensource.apple.com/darwinsource/tarballs/other/gcc-${APPLE_VERS}.tar.gz
+		http://www.opensource.apple.com/darwinsource/tarballs/other/libstdcxx-16.tar.gz
+		http://www.opensource.apple.com/darwinsource/tarballs/other/libstdcxx-39.tar.gz
+		fortran? ( mirror://gnu/gcc/gcc-4.2.4/gcc-fortran-4.2.4.tar.bz2 )"
+LICENSE="GPL-2 GPL-3"
+
+if [[ ${CHOST#*-darwin} -ge 9 ]] ; then
+	LIBSTDCXX_APPLE_VERSION=39
+else
+	# pre Leopard has no dtrace, which is required by 37.11 and above
+	LIBSTDCXX_APPLE_VERSION=16
+fi
 
 if is_crosscompile; then
 	SLOT="${CTARGET}-42"
@@ -42,7 +49,7 @@ DEPEND="${RDEPEND}
 	${CATEGORY}/binutils-apple
 	>=dev-libs/mpfr-2.2.0_p10"
 
-S=${WORKDIR}/gcc_42-${APPLE_VERS}
+S=${WORKDIR}/gcc-${APPLE_VERS}
 
 # TPREFIX is the prefix of the CTARGET installation
 export TPREFIX=${TPREFIX:-${EPREFIX}}
@@ -63,15 +70,20 @@ src_unpack() {
 src_prepare() {
 	# Support for fortran
 	if use fortran ; then
-		mv "${WORKDIR}"/gcc-${GCC_VERS}/gcc/fortran gcc/ || die
-		mv "${WORKDIR}"/gcc-${GCC_VERS}/libgfortran . || die
+		mv "${WORKDIR}"/gcc-4.2.4/gcc/fortran gcc/ || die
+		mv "${WORKDIR}"/gcc-4.2.4/libgfortran . || die
 		# from: substracted from http://r.research.att.com/tools/
-		epatch "${FILESDIR}"/${PN}-${GCC_VERS}-gfortran.patch
+		epatch "${FILESDIR}"/${PN}-4.2.1_p5646-gfortran.patch
 	fi
 
 	# move in libstdc++
 	mv "${WORKDIR}"/libstdcxx-${LIBSTDCXX_APPLE_VERSION}/libstdcxx/libstdc++-v3 .
-	epatch "${FILESDIR}"/libstdc++-${LIBSTDCXX_APPLE_VERSION}.patch
+	if [[ ${LIBSTDCXX_APPLE_VERSION} == 16 ]] ; then
+		epatch "${FILESDIR}"/libstdc++-${LIBSTDCXX_APPLE_VERSION}.patch # does it apply on 37?
+		sed -i -e 's/__block\([^_]\)/__blk\1/g' \
+			libstdc++-v3/include/ext/mt_allocator.h \
+			libstdc++-v3/src/mt_allocator.cc || die "conflict fix failed"
+	fi
 
 	# we use our libtool
 	sed -i -e "s:/usr/bin/libtool:${EPREFIX}/usr/bin/${CTARGET}-libtool:" \
@@ -86,7 +98,7 @@ src_prepare() {
 		gcc/Makefile.in || die "sed gcc/Makefile.in failed."
 
 	epatch "${FILESDIR}"/${PN}-4.0.1_p5465-default-altivec.patch
-	epatch "${FILESDIR}"/${P}-x86_64-defines.patch
+	#epatch "${FILESDIR}"/${PN}-4.2.1_p5566-x86_64-defines.patch
 
 	# dsymutil stuff breaks on 10.4/x86, revert it
 	[[ ${CHOST} == *86*-apple-darwin8 ]] && \
