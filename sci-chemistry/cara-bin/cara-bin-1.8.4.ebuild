@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/cara-bin/cara-bin-1.8.4.ebuild,v 1.1 2010/03/07 09:48:50 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/cara-bin/cara-bin-1.8.4.ebuild,v 1.2 2010/03/09 07:55:02 jlec Exp $
 
 EAPI="3"
 
@@ -15,7 +15,7 @@ HOMEPAGE="www.nmr.ch"
 RESTRICT="mirror"
 LICENSE="CARA"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~x86-linux"
+KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="lua"
 
 RDEPEND="
