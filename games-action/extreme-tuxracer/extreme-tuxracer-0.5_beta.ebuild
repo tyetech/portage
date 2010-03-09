@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/extreme-tuxracer/extreme-tuxracer-0.5_beta.ebuild,v 1.1 2009/08/22 07:33:10 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/extreme-tuxracer/extreme-tuxracer-0.5_beta.ebuild,v 1.2 2010/03/09 18:30:55 ssuominen Exp $
 
 EAPI=2
 inherit eutils games
@@ -35,6 +35,8 @@ src_prepare() {
 		-e '/^localedir/s:=.*:=@localedir@:' \
 		src/Makefile.in \
 		|| die "sed failed"
+
+	epatch "${FILESDIR}"/${P}-libpng14.patch
 }
 
 src_configure() {
