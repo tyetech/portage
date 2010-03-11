@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4.6-r1.ebuild,v 1.1 2010/03/01 19:58:04 fuzzyray Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/gentoolkit/Attic/gentoolkit-0.2.4.6.1.ebuild,v 1.1 2010/03/11 22:32:46 fuzzyray Exp $
 
 EAPI=2
 
@@ -24,10 +24,6 @@ DEPEND="sys-apps/portage
 RDEPEND="${DEPEND}
 	 app-misc/realpath"
 RESTRICT="test"
-
-src_prepare() {
-	epatch "${FILESDIR}/revdep-rebuild.143498.patch"
-}
 
 src_install() {
 	emake DESTDIR="${D}" install-gentoolkit || die "install-gentoolkit failed"
