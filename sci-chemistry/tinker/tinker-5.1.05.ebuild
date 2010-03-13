@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/tinker/Attic/tinker-5.1.04.ebuild,v 1.1 2010/02/26 21:37:48 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/tinker/Attic/tinker-5.1.05.ebuild,v 1.1 2010/03/13 13:21:10 jlec Exp $
 
 EAPI="2"
 FORTRAN="gfortran ifc"
