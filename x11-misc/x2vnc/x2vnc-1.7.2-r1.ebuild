@@ -1,6 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/x2vnc/x2vnc-1.7.2.ebuild,v 1.4 2010/03/14 20:56:09 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/x2vnc/x2vnc-1.7.2-r1.ebuild,v 1.1 2010/03/14 20:56:09 phosphan Exp $
+
+inherit eutils
 
 DESCRIPTION="Control a remote computer running VNC from X"
 HOMEPAGE="http://fredrik.hubbe.net/x2vnc.html"
@@ -20,6 +22,12 @@ DEPEND="${RDEPEND}
 	x11-proto/xproto
 	x11-proto/xineramaproto
 	tk? ( dev-tcltk/expect )"
+
+src_unpack() {
+		unpack ${A}
+		cd "${S}/contrib"
+		epatch "${FILESDIR}/expectk.patch"
+}
 
 src_install() {
 	dodir /usr/share /usr/bin
