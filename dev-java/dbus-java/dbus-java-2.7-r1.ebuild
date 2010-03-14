@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/dbus-java/Attic/dbus-java-2.7.ebuild,v 1.1 2010/02/28 10:16:03 serkan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/dbus-java/dbus-java-2.7-r1.ebuild,v 1.1 2010/03/14 10:43:01 serkan Exp $
 
 EAPI="2"
 
@@ -52,7 +52,7 @@ src_compile() {
 src_install() {
 	local debug="disable"
 	use debug && debug="enable"
-	for jar in unix debug-${debug}; do
+	for jar in unix hexdump debug-${debug}; do
 		java-pkg_register-dependency libmatthew-java ${jar}.jar
 	done
 	java-pkg_newjar lib${P}.jar dbus.jar
