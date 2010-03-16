@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/sysinfo/Attic/sysinfo-0.7.2.ebuild,v 1.1 2010/02/13 15:12:13 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/sysinfo/Attic/sysinfo-0.7.3.ebuild,v 1.1 2010/03/16 12:25:10 flameeyes Exp $
 
 EAPI=2
 
