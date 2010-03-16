@@ -1,13 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-docs/Attic/postgresql-docs-8.4.2.ebuild,v 1.3 2010/03/16 22:50:11 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-docs/Attic/postgresql-docs-8.2.16.ebuild,v 1.1 2010/03/16 22:50:11 patrick Exp $
 
 inherit versionator
 
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~sparc-fbsd ~x86-fbsd"
-
-# Nothing to test here per 232157
-RESTRICT="test"
+KEYWORDS="~amd64 ~hppa ~ppc ~x86"
 
 DESCRIPTION="PostgreSQL documentation"
 HOMEPAGE="http://www.postgresql.org/"
@@ -17,6 +14,8 @@ SLOT="$(get_version_component_range 1-2)"
 IUSE=""
 
 DEPEND=""
+RDEPEND=""
+RESTRICT="test"
 
 S="${WORKDIR}/postgresql-${PV}"
 
@@ -30,13 +29,13 @@ src_install() {
 	fowners root:0 -R /usr/share/doc/${PF}/html
 	cd "${S}/doc"
 	docinto FAQ_html
-	#dodoc src/FAQ/* # no longer there?
+	dodoc src/FAQ/*
 	docinto sgml
 	dodoc src/sgml/*.{sgml,dsl}
 	docinto sgml/ref
 	dodoc src/sgml/ref/*.sgml
-	docinto
-	dodoc TODO
+	docinto TODO.detail
+	dodoc TODO.detail/*
 
 	dodir /etc/eselect/postgresql/slots/${SLOT}
 	{
