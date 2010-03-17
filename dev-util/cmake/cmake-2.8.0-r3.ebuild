@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cmake/Attic/cmake-2.8.0.ebuild,v 1.3 2010/01/11 01:25:08 abcd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cmake/Attic/cmake-2.8.0-r3.ebuild,v 1.1 2010/03/17 12:07:00 scarabeus Exp $
 
 EAPI="2"
 
@@ -13,19 +13,15 @@ HOMEPAGE="http://www.cmake.org/"
 SRC_URI="http://www.cmake.org/files/v$(get_version_component_range 1-2)/${MY_P}.tar.gz"
 
 LICENSE="CMake"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~sparc-fbsd ~x86-fbsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~sparc-fbsd ~x86-fbsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~x64-solaris ~x86-solaris"
 SLOT="0"
-IUSE="emacs qt4 vim-syntax"
+IUSE="emacs ncurses qt4 vim-syntax"
 
 DEPEND="
-	|| (
-		>=net-misc/curl-7.16.7[gnutls]
-		>=net-misc/curl-7.16.7[nss]
-		>=net-misc/curl-7.16.7[openssl]
-	)
+	>=net-misc/curl-7.20.0-r1[ssl]
 	>=dev-libs/expat-2.0.1
-	>=dev-libs/libxml2-2.6.28
-	>=dev-libs/xmlrpc-c-1.06.27[curl]
+	sys-libs/zlib
+	ncurses? ( sys-libs/ncurses )
 	qt4? ( x11-libs/qt-gui:4 )
 "
 RDEPEND="${DEPEND}
@@ -53,6 +49,8 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.6.3-darwin-bundle.patch
 	"${FILESDIR}"/${PN}-2.6.3-no-duplicates-in-rpath.patch
 	"${FILESDIR}"/${PN}-2.6.3-fix_broken_lfs_on_aix.patch
+	"${FILESDIR}"/${P}-darwin-default-install_name.patch
+	"${FILESDIR}"/${P}-darwin-no-app-with-qt.patch
 )
 
 src_prepare() {
@@ -114,7 +112,7 @@ src_configure() {
 			-DCMAKE_DOC_DIR=/share/doc/${PF}
 			-DCMAKE_MAN_DIR=/share/man
 			-DCMAKE_DATA_DIR=/share/${PN}
-			-DBUILD_CursesDialog=ON
+			$(cmake-utils_use_build ncurses CursesDialog)
 			$(cmake-utils_use_build qt4 QtDialog)
 		)
 		cmake-utils_src_configure
