@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/svn2git/svn2git-9999.ebuild,v 1.1 2010/03/04 23:01:34 sping Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/svn2git/svn2git-9999.ebuild,v 1.2 2010/03/17 16:34:02 sping Exp $
 
 EAPI="2"
 
@@ -25,7 +25,7 @@ IUSE=""
 DEPEND="dev-util/subversion
 	x11-libs/qt-core"
 RDEPEND="${DEPEND}
-	dev-util/git"
+	dev-vcs/git"
 
 src_prepare() {
 	sed -i 's|^\(APR_INCLUDE = /usr/include/apr-1\)\.0|\1|' "${S}"/src/src.pro
