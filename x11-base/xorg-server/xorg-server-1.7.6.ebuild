@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.7.5.902.ebuild,v 1.3 2010/03/16 15:01:48 solar Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.7.6.ebuild,v 1.1 2010/03/17 15:35:54 scarabeus Exp $
 
 EAPI="2"
 
@@ -124,6 +124,8 @@ UPSTREAMED_PATCHES=(
 
 	# Fix from bug http://bugs.freedesktop.org/show_bug.cgi?id=25400
 	"${FILESDIR}/1.7.3.901-0001-dix-if-owner-events-is-true-for-passive-grabs-add-th.patch"
+	# Fix for bug #304067
+	"${FILESDIR}/1.7.5.902-fix-tslib-1.0-check.patch"
 	)
 
 PATCHES=(
