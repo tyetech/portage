@@ -1,20 +1,17 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg123/Attic/mpg123-1.10.1_pre.ebuild,v 1.1 2010/02/13 17:51:22 ssuominen Exp $
-
-# Only for testing http://bugs.gentoo.org/show_bug.cgi?id=299490
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mpg123/Attic/mpg123-1.10.1.ebuild,v 1.1 2010/03/20 08:22:15 ssuominen Exp $
 
 EAPI=2
 
-MY_P=${P/_pre/-prerelease}
-
 DESCRIPTION="a realtime MPEG 1.0/2.0/2.5 audio player for layers 1, 2 and 3"
 HOMEPAGE="http://www.mpg123.org/"
-SRC_URI="http://www.mpg123.org/download/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2
+	http://www.mpg123.org/download/${P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="3dnow 3dnowext alsa altivec ipv6 jack mmx nas +network oss portaudio pulseaudio sdl sse"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
@@ -26,8 +23,6 @@ RDEPEND="alsa? ( media-libs/alsa-lib )
 	sys-devel/libtool"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
-
-S=${WORKDIR}/${MY_P}
 
 src_configure() {
 	local _audio=dummy
