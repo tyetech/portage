@@ -1,23 +1,26 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/binutils-apple/Attic/binutils-apple-3.1.1.ebuild,v 1.3 2010/03/21 19:33:06 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/binutils-apple/Attic/binutils-apple-3.2-r1.ebuild,v 1.1 2010/03/21 19:33:06 grobian Exp $
 
 EAPI="3"
 
 inherit eutils flag-o-matic toolchain-funcs
 
-RESTRICT="test mirror" # the test suite will test what's installed.
+RESTRICT="test" # the test suite will test what's installed.
 
-LD64=ld64-85.2.2
-CCTOOLS=cctools-698
+# http://lists.apple.com/archives/Darwin-dev/2009/Sep/msg00025.html
+LD64=ld64-95.2.12
+CCTOOLS=cctools-750
+UNWIND=binutils-apple-3.2-unwind-patches-1
 
-DESCRIPTION="Darwin assembler as(1) and static linker ld(1), Xcode Tools 3.1.1"
+DESCRIPTION="Darwin assembler as(1) and static linker ld(1), Xcode Tools 3.2"
 HOMEPAGE="http://www.opensource.apple.com/darwinsource/"
 SRC_URI="http://www.gentoo.org/~grobian/distfiles/${LD64}.tar.gz
-	http://www.gentoo.org/~grobian/distfiles/${CCTOOLS}.tar.gz"
+	http://www.gentoo.org/~grobian/distfiles/${CCTOOLS}.tar.gz
+	http://www.gentoo.org/~grobian/distfiles/${UNWIND}.tar.xz"
 
 LICENSE="APSL-2"
-KEYWORDS="~ppc-macos ~x86-macos"
+KEYWORDS="~ppc-macos ~x64-macos ~x86-macos"
 IUSE="test"
 SLOT="0"
 
@@ -52,13 +55,14 @@ S=${WORKDIR}
 
 prepare_ld64() {
 	cd "${S}"/${LD64}/src
-	cp "${FILESDIR}"/Makefile .
+	cp "${FILESDIR}"/${LD64}-Makefile Makefile
 
-	local VER_STR="\"@(#)PROGRAM:ld  PROJECT:${LD64}\\n\""
-	sed -i \
-		-e '/^#define LTO_SUPPORT 1/s:1:0:' \
-		ObjectDump.cpp
+	ln -s ../../${CCTOOLS}/include
+	cp "${WORKDIR}"/ld64-unwind/compact_unwind_encoding.h include/mach-o/
+
+	local VER_STR="\"@(#)PROGRAM:ld  PROJECT:${LD64} (Gentoo ${PN}-${PVR})\\n\""
 	echo '#undef LTO_SUPPORT' > configure.h
+	echo '' > linker_opts
 	echo "char ldVersionString[] = ${VER_STR};" > version.cpp
 
 	# clean up test suite
@@ -90,17 +94,29 @@ prepare_ld64() {
 
 src_prepare() {
 	prepare_ld64
-	cd "${S}"
 
-	epatch "${FILESDIR}"/${P}-as.patch
-	epatch "${FILESDIR}"/${P}-as-dir.patch
-	epatch "${FILESDIR}"/${P}-ranlib.patch
-	epatch "${FILESDIR}"/${P}-libtool-ranlib.patch
-	epatch "${FILESDIR}"/${P}-nmedit.patch
-	epatch "${FILESDIR}"/${P}-no-efi-man.patch
-	epatch "${FILESDIR}"/${P}-no-headers.patch
-	epatch "${FILESDIR}"/${P}-no-oss-dir.patch
-	epatch "${FILESDIR}"/${P}-testsuite.patch
+	cd "${S}"/${CCTOOLS}
+	epatch "${FILESDIR}"/${PN}-3.1.1-as.patch
+	epatch "${FILESDIR}"/${PN}-3.1.1-as-dir.patch
+	epatch "${FILESDIR}"/${PN}-3.1.1-ranlib.patch
+	epatch "${FILESDIR}"/${PN}-3.1.1-libtool-ranlib.patch
+	epatch "${FILESDIR}"/${PN}-3.1.1-nmedit.patch
+	epatch "${FILESDIR}"/${PN}-3.1.1-no-headers.patch
+	epatch "${FILESDIR}"/${PN}-3.1.1-no-oss-dir.patch
+	epatch "${FILESDIR}"/${P}-armv7-defines.patch
+
+	cd "${S}"/${LD64}
+	epatch "${FILESDIR}"/${PN}-3.1.1-testsuite.patch
+	epatch "${WORKDIR}"/ld64-unwind/ld64-95.2.12-unlibunwind.patch
+
+	cd "${S}"
+	ebegin "cleaning Makefiles from unwanted CFLAGS"
+	find . -name "Makefile" -print0 | xargs -0 sed \
+		-i \
+		-e 's/ -g / /g' \
+		-e 's/^OFLAG =.*$/OFLAG =/' \
+		-e 's/install -c -s/install/g'
+	eend $?
 
 	# -pg is used and the two are incompatible
 	filter-flags -fomit-frame-pointer
@@ -108,40 +124,42 @@ src_prepare() {
 
 compile_ld64() {
 	cd "${S}"/${LD64}/src
-	# 'struct linkedit_data_command' is defined in mach-o/loader.h on leopard,
-	# but not on tiger.
-	[[ ${CHOST} == *-apple-darwin8 ]] && \
-		append-flags -isystem "${S}"/${CCTOOLS}/include/
-	emake
+	# remove antiquated copy that's available on any OSX system and
+	# breaks ld64 compilation
+	mv include/mach-o/dyld.h{,.disable}
+	emake CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}" \
+		|| die "emake failed for ld64"
 	use test && emake build_test
+	# restore, it's necessary for cctools' install
+	mv include/mach-o/dyld.h{.disable,}
 }
 
 compile_cctools() {
 	cd "${S}"/${CCTOOLS}
 	emake \
 		LTO= \
+		TRIE= \
 		EFITOOLS= \
 		COMMON_SUBDIRS='libstuff ar misc otool' \
-		RC_CFLAGS="${CFLAGS}"
+		SUBDIRS_32= \
+		RC_CFLAGS="${CFLAGS}" OFLAG="${CFLAGS}" \
+		|| die "emake failed for the cctools"
 	cd "${S}"/${CCTOOLS}/as
-	# the errors can be ignored
-	emake -k \
-		BUILD_OBSOLETE_ARCH= \
-		RC_CFLAGS="-DASLIBEXECDIR=\"\\\"${EPREFIX}${LIBPATH}/\\\"\" ${CFLAGS}"
 	emake \
 		BUILD_OBSOLETE_ARCH= \
-		RC_CFLAGS="-DASLIBEXECDIR=\"\\\"${EPREFIX}${LIBPATH}/\\\"\" ${CFLAGS}"
+		RC_CFLAGS="-DASLIBEXECDIR=\"\\\"${EPREFIX}${LIBPATH}/\\\"\" ${CFLAGS}" \
+		|| die "emake failed for as"
 }
 
 src_compile() {
-	tc-export CC CXX
+	tc-export CC CXX AR
 	compile_cctools
 	compile_ld64
 }
 
 install_ld64() {
 	exeinto ${BINPATH}
-	doexe "${S}"/${LD64}/src/{ld64,rebase}
+	doexe "${S}"/${LD64}/src/{ld64,rebase,dyldinfo,unwinddump,ObjectDump}
 	dosym ld64 ${BINPATH}/ld
 	insinto ${DATAPATH}/man/man1
 	doins "${S}"/${LD64}/doc/man/man1/{ld,ld64,rebase}.1
@@ -152,6 +170,8 @@ install_cctools() {
 	emake install_all_but_headers \
 		EFITOOLS= \
 		COMMON_SUBDIRS='ar misc otool' \
+		SUBDIRS_32= \
+		RC_CFLAGS="${CFLAGS}" OFLAG="${CFLAGS}" \
 		DSTROOT=\"${D}\" \
 		BINDIR=\"${EPREFIX}\"${BINPATH} \
 		LOCBINDIR=\"${EPREFIX}\"${BINPATH} \
@@ -186,6 +206,7 @@ install_cctools() {
 }
 
 src_test() {
+	einfo "Running unit tests"
 	cd "${S}"/${LD64}/unit-tests/test-cases
 	# need host arch, since GNU arch doesn't do what Apple's does
 	tc-export CC CXX
