@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/tkTheme/tkTheme-1.0-r2.ebuild,v 1.1 2010/03/22 20:43:12 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/tkTheme/tkTheme-1.0-r2.ebuild,v 1.2 2010/03/22 20:43:40 jlec Exp $
 
 EAPI="3"
 
@@ -34,5 +34,5 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog INSTALL LICENSE README TODO || die
+	dodoc AUTHORS ChangeLog README TODO || die
 }
