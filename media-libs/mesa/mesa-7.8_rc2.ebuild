@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-7.8_rc1.ebuild,v 1.1 2010/03/16 15:27:10 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-7.8_rc2.ebuild,v 1.1 2010/03/23 11:20:10 scarabeus Exp $
 
 EAPI=3
 
@@ -34,7 +34,7 @@ LICENSE="LGPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 
-VIDEO_CARDS="intel mach64 mga none nouveau r128 radeon radeonhd savage sis sunffb svga tdfx via"
+VIDEO_CARDS="intel mach64 mga none nouveau r128 radeon radeonhd savage sis svga tdfx via"
 for card in ${VIDEO_CARDS}; do
 	IUSE_VIDEO_CARDS+=" video_cards_${card}"
 done
@@ -122,7 +122,6 @@ src_configure() {
 	driver_enable video_cards_radeonhd r300 r600
 	driver_enable video_cards_savage savage
 	driver_enable video_cards_sis sis
-	driver_enable video_cards_sunffb ffb
 	driver_enable video_cards_tdfx tdfx
 	driver_enable video_cards_via unichrome
 
