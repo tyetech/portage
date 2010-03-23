@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/anyremote/Attic/anyremote-5.1.2.ebuild,v 1.1 2010/03/21 20:59:38 serkan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/anyremote/Attic/anyremote-5.1.2.ebuild,v 1.2 2010/03/23 18:00:29 serkan Exp $
 
 EAPI="2"
 
@@ -19,7 +19,8 @@ RDEPEND="bluetooth? ( || ( net-wireless/bluez ( net-wireless/bluez-libs net-wire
 	dbus? ( sys-apps/dbus )
 	x11-libs/libXtst"
 
-DEPEND="${RDEPEND}"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 src_prepare() {
 	#workaround to badly broken autotools scripts by upstream
