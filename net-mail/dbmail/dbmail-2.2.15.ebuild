@@ -1,7 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/dbmail/Attic/dbmail-2.2.11_rc3-r1.ebuild,v 1.5 2010/01/04 02:55:30 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/dbmail/dbmail-2.2.15.ebuild,v 1.1 2010/03/28 20:33:23 lordvan Exp $
 
+EAPI="1"
 inherit eutils multilib python
 
 MY_P="${P/_/-}" # for rcX was without the - for versions < 2.2.6
@@ -13,20 +14,20 @@ SRC_URI="http://www.dbmail.org/download/2.2/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="ldap mysql postgres sieve sqlite3 ssl static python"
+IUSE="ldap mysql postgres sieve sqlite ssl static python"
 
 DEPEND="ssl? ( dev-libs/openssl )
 	postgres? ( >=virtual/postgresql-server-7.4 )
 	mysql? ( >=virtual/mysql-4.1 )
-	sqlite3? ( >=dev-db/sqlite-3.0 )
-	!mysql? ( !postgres? ( !sqlite3? ( >=dev-db/sqlite-3.0 ) ) )
+	sqlite? ( >=dev-db/sqlite-3.0 )
+	!mysql? ( !postgres? ( !sqlite? ( >=dev-db/sqlite-3.0 ) ) )
 	sieve? ( >=mail-filter/libsieve-2.2.1 )
 	ldap? ( >=net-nds/openldap-2.3.33 )
 	python? ( net-zope/zope-interface )
 	app-text/asciidoc
 	app-text/xmlto
 	sys-libs/zlib
-	=dev-libs/gmime-2.2*
+	>=dev-libs/gmime-2.2.10:0
 	>=dev-libs/glib-2.8"
 
 S=${WORKDIR}/${P/_/-}
@@ -37,8 +38,8 @@ pkg_setup() {
 }
 
 src_compile() {
-	use sqlite3 && myconf="--with-sqlite"
-	if ! use postgres && ! use mysql && ! use sqlite3; then myconf="${myconf} --with-sqlite" ; fi
+	use sqlite && myconf="--with-sqlite"
+	if ! use postgres && ! use mysql && ! use sqlite; then myconf="${myconf} --with-sqlite" ; fi
 	use ldap && myconf=${myconf}" --with-auth-ldap"
 
 	econf \
@@ -96,16 +97,15 @@ src_install() {
 	fi
 
 	if use python; then
-	   python_version
-	   insinto /usr/$(get_libdir)/python${PYVER}/site-packages/dbmail
+	   insinto $(python_get_sitedir)/dbmail
 	   doins python/*.py
-	   insinto /usr/$(get_libdir)/python${PYVER}/site-packages/dbmail/app
+	   insinto $(python_get_sitedir)/dbmail/app
 	   doins python/app/*.py
-	   insinto /usr/$(get_libdir)/python${PYVER}/site-packages/dbmail/bin
+	   insinto $(python_get_sitedir)/dbmail/bin
 	   doins python/bin/*.py
-	   insinto /usr/$(get_libdir)/python${PYVER}/site-packages/dbmail/lib
+	   insinto $(python_get_sitedir)/dbmail/lib
 	   doins python/lib/*.py
-	   insinto /usr/$(get_libdir)/python${PYVER}/site-packages/dbmail/tests
+	   insinto $(python_get_sitedir)/dbmail/tests
 	   doins python/tests/*.py
 	fi
 
@@ -116,16 +116,15 @@ src_install() {
 
 pkg_postinst() {
 	if use python; then
-	   python_version
-	   python_mod_optimize /usr/$(get_libdir)/python${PYVER}/site-packages/dbmail
+	   python_mod_optimize $(python_get_sitedir)/dbmail
 	fi
 	elog "Please read the INSTALL file in /usr/share/doc/${PF}/"
 	elog "for remaining instructions on setting up dbmail users and "
 	elog "for finishing configuration to connect to your MTA and "
 	elog "to connect to your db."
 	echo
-	elog "DBMail requires either SQLite3, PostgreSQL or MySQL."
-	elog "If none of the use-flags are specified SQLite3 is"
+	elog "DBMail requires either SQLite, PostgreSQL or MySQL."
+	elog "If none of the use-flags are specified SQLite is"
 	elog "used as default. To use another database please"
 	elog "specify the appropriate use-flag and re-emerge dbmail."
 	echo
