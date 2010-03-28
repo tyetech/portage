@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/vuze/Attic/vuze-4.3.1.4.ebuild,v 1.1 2010/02/12 09:43:21 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/vuze/Attic/vuze-4.2.0.2-r1.ebuild,v 1.3 2010/03/28 21:44:24 caster Exp $
 
 EAPI=2
 
@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="source"
 
 inherit eutils fdo-mime java-pkg-2 java-ant-2
 
-PATCHSET_VER="4.3.1.2"
+PATCHSET_VER="4.2.0.0"
 
 DESCRIPTION="BitTorrent client in Java, formerly called Azureus"
 HOMEPAGE="http://www.vuze.com/"
@@ -17,17 +17,17 @@ SRC_URI="mirror://sourceforge/azureus/Vuze_${PV}_source.zip
 LICENSE="GPL-2 BSD"
 
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~ppc ppc64 x86"
 IUSE=""
 
 # bundles parts of commons-lang, but modified
 # bundles parts of http://www.programmers-friend.org/
 RDEPEND="
 	dev-java/json-simple:0
-	>=dev-java/bcprov-1.35:0
+	dev-java/bcprov:1.3
 	>=dev-java/commons-cli-1.0:1
 	>=dev-java/log4j-1.2.8:0
-	dev-java/swt:3.5[cairo,xulrunner]
+	>=dev-java/swt-3.4:3.4[cairo,xulrunner]
 	!net-p2p/azureus-bin
 	>=virtual/jre-1.5"
 
@@ -40,11 +40,15 @@ PDEPEND="~net-p2p/vuze-coreplugins-${PV}"
 
 src_unpack() {
 	mkdir "${S}" && cd "${S}" || die
-	default
-}
+	unpack ${A}
 
-java_prepare() {
-	EPATCH_FORCE="yes" EPATCH_SUFFIX="patch" epatch "${S}/${PN}-${PATCHSET_VER}-gentoo-patches/"
+	# build.xml disappeared from 4.1.0.0 although it was there in 4.0.0.4
+	# hopefully that's just a packaging mistake
+	[[ -f build.xml ]] && die "upstream has build.xml again, don't overwrite"
+	cp "${FILESDIR}/build.xml" . || die "failed to copy build.xml"
+
+	epatch "${S}/${PN}-${PATCHSET_VER}-gentoo-patches/0001-remove-osx-platform.patch"
+	epatch "${S}/${PN}-${PATCHSET_VER}-gentoo-patches/0002-use-jdk-cipher-only.patch"
 
 	### Removes OS X files and entries.
 	rm -rv "org/gudy/azureus2/platform/macosx" \
@@ -67,7 +71,7 @@ java_prepare() {
 }
 
 JAVA_ANT_REWRITE_CLASSPATH="true"
-EANT_GENTOO_CLASSPATH="swt-3.5,bcprov,json-simple,log4j,commons-cli-1"
+EANT_GENTOO_CLASSPATH="swt-3.4,bcprov-1.3,json-simple,log4j,commons-cli-1"
 
 src_compile() {
 	local mem
@@ -131,12 +135,6 @@ pkg_postinst() {
 	elog
 	elog "If you have problems starting Vuze, try starting it"
 	elog "from the command line to look at debugging output."
-	elog
-	elog "If vuze crashes with sun-jdk or icedtea and crash log includes CompileTask"
-	elog "add this line to the end of your ~/.axureus/gentoo.config file:"
-	local opts='-XX:CompileCommand=exclude,com/aelitis/net/udp/uc/impl/PRUDPPacketHandlerImpl$5,runSupport'
-	elog "JAVA_OPTIONS='${opts}'"
-	elog "This is a workaround for a bug in the JDK, see https://bugs.gentoo.org/show_bug.cgi?id=259884"
 
 	fdo-mime_desktop_database_update
 }
