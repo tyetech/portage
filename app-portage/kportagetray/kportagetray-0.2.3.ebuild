@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/kportagetray/Attic/kportagetray-0.2.2.ebuild,v 1.1 2010/03/17 12:57:25 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/kportagetray/Attic/kportagetray-0.2.3.ebuild,v 1.1 2010/03/31 21:59:40 tampakrap Exp $
 
 EAPI="2"
 
@@ -29,3 +29,13 @@ RDEPEND="${DEPEND}
 	>=kde-base/knotify-${KDE_MINIMAL}
 	>=kde-base/konsole-${KDE_MINIMAL}
 "
+
+pkg_setup() {
+	python_set_active_version 2
+	kde4-base_pkg_setup
+}
+
+src_prepare() {
+	python_convert_shebangs -r 2 .
+	kde4-base_src_prepare
+}
