@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/tangerine-icon-theme/tangerine-icon-theme-0.27.ebuild,v 1.2 2010/04/02 15:40:02 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/tangerine-icon-theme/tangerine-icon-theme-0.27.ebuild,v 1.3 2010/04/02 15:42:25 ssuominen Exp $
 
 EAPI=3
 inherit gnome2-utils
@@ -29,7 +29,7 @@ src_prepare() {
 		Makefile || die
 
 	cp "${DISTDIR}"/gentoo-logo.svg scalable/places/start-here.svg || die
-	
+
 	local res
 	for res in 16 22 32; do
 		rsvg -w ${res} -h ${res} scalable/places/start-here.svg \
