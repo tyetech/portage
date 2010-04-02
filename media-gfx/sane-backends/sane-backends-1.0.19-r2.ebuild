@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.19-r2.ebuild,v 1.14 2009/06/18 20:07:03 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sane-backends/sane-backends-1.0.19-r2.ebuild,v 1.15 2010/04/02 22:15:15 phosphan Exp $
 
 EAPI="1"
 
