@@ -1,13 +1,13 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/eternal-lands/Attic/eternal-lands-1.8.0-r1.ebuild,v 1.1 2009/10/17 13:37:14 rich0 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/eternal-lands/Attic/eternal-lands-1.9.0.ebuild,v 1.1 2010/04/03 21:35:22 rich0 Exp $
 
 EAPI=2
 inherit eutils flag-o-matic games
 
 DESCRIPTION="An online MMORPG written in C and SDL"
 HOMEPAGE="http://www.eternal-lands.com"
-SRC_URI="mirror://gentoo/elc_1.8.0.tar.bz2
+SRC_URI="mirror://gentoo/elc_1.9.0.tar.bz2
 	mirror://gentoo/eternal-lands.png"
 
 LICENSE="eternal_lands"
@@ -30,7 +30,7 @@ RDEPEND="x11-libs/libX11
 	dev-libs/libxml2
 	media-libs/cal3d[-16bit-indices]
 	media-libs/libpng
-	>=games-rpg/eternal-lands-data-1.8.0"
+	>=games-rpg/eternal-lands-data-1.9.0"
 
 DEPEND="${RDEPEND}
 	>=app-admin/eselect-opengl-1.0.6-r1
@@ -84,7 +84,7 @@ src_prepare() {
 		Makefile.linux || die "sed failed"
 
 	# Clean up library flag order for --as-needed
-	sed -i -e 's/@$(LINK) $(CFLAGS) $(LDFLAGS) -o $(EXE) $(OBJS)/@$(LINK) $(CFLAGS) -o $(EXE) $(OBJS) $(LDFLAGS)/' Makefile.linux
+#	sed -i -e 's/@$(LINK) $(CFLAGS) $(LDFLAGS) -o $(EXE) $(OBJS)/@$(LINK) $(CFLAGS) -o $(EXE) $(OBJS) $(LDFLAGS)/' Makefile.linux
 
 	# Finally, update the server
 	sed -i -e '/#server_address =/ s/.*/#server_address = game.eternal-lands.com/' \
@@ -99,6 +99,8 @@ src_prepare() {
 	fi
 
 	cp Makefile.linux Makefile
+
+	epatch "${FILESDIR}/${PN}-1.9.0-glext.patch"
 }
 
 src_compile() {
