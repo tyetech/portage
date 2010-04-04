@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/uzbl/uzbl-9999.ebuild,v 1.14 2010/04/04 10:12:09 wired Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/uzbl/Attic/uzbl-2010.04.03.ebuild,v 1.1 2010/04/04 10:12:09 wired Exp $
 
 EAPI="2"
 
