@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/rekonq/Attic/rekonq-0.3.90.ebuild,v 1.2 2010/02/14 10:00:40 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/rekonq/Attic/rekonq-0.4.0.ebuild,v 1.1 2010/04/07 21:06:19 scarabeus Exp $
 
 EAPI=2
 WEBKIT_REQUIRED=always
