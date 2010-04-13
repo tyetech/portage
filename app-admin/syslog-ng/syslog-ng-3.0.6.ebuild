@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/syslog-ng/Attic/syslog-ng-3.1.0.ebuild,v 1.1 2010/04/06 02:11:35 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/syslog-ng/Attic/syslog-ng-3.0.6.ebuild,v 1.1 2010/04/13 06:25:51 mr_bones_ Exp $
 
 EAPI=2
 inherit fixheadtails eutils
