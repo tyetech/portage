@@ -1,6 +1,6 @@
-# Copyright 2006-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/matchbox-keyboard/matchbox-keyboard-0.1.ebuild,v 1.7 2008/08/21 22:38:37 yvasilev Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/matchbox-keyboard/matchbox-keyboard-0.1.ebuild,v 1.8 2010/04/15 13:11:26 yvasilev Exp $
 
 inherit versionator eutils
 
@@ -36,5 +36,5 @@ src_compile() {
 src_install() {
 	make DESTDIR="${D}" install || die "Installation failed"
 
-	dodoc AUTHORS Changelog INSTALL NEWS README
+	dodoc AUTHORS ChangeLog INSTALL NEWS README
 }
