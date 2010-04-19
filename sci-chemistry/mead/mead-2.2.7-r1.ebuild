@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mead/mead-2.2.7.ebuild,v 1.3 2010/04/19 17:49:23 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mead/mead-2.2.7-r1.ebuild,v 1.1 2010/04/19 17:49:23 jlec Exp $
 
 inherit eutils
 
