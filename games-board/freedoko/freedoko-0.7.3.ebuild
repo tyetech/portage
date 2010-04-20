@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/freedoko/Attic/freedoko-0.7.3.ebuild,v 1.10 2008/11/12 19:41:19 tupone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/freedoko/Attic/freedoko-0.7.3.ebuild,v 1.11 2010/04/20 19:10:58 mr_bones_ Exp $
 
 inherit eutils games
 
@@ -41,6 +41,7 @@ src_unpack() {
 	use !net && epatch "${FILESDIR}"/nonet.patch
 	sed -i \
 		-e 's/linux binary/Gentoo '${ARCH}' binary/g' \
+		-e '/strip\ .*/d' \
 		Makefile \
 		|| die "sed failed"
 
