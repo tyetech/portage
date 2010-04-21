@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/labrea/labrea-2.5-r1.ebuild,v 1.1 2010/04/21 13:48:44 fauli Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/labrea/labrea-2.5-r1.ebuild,v 1.2 2010/04/21 18:12:21 fauli Exp $
 
 EAPI=2
 
@@ -13,7 +13,7 @@ RESTRICT="mirror"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~ppc ~x86"
+KEYWORDS="~ppc x86"
 IUSE=""
 DEPEND="net-libs/libpcap
 	>=dev-libs/libdnet-1.7"
