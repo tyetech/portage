@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/clapack/Attic/clapack-3.2.1-r1.ebuild,v 1.2 2010/03/31 19:46:29 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/clapack/Attic/clapack-3.2.1-r2.ebuild,v 1.1 2010/04/25 09:40:16 jlec Exp $
 
 EAPI="3"
 
@@ -43,7 +43,7 @@ src_compile() {
 }
 
 src_install() {
-	insinto /usr/include
+	insinto /usr/include/${PN}
 	doins INCLUDE/${PN}.h || die
 	dolib.so lib${PN}.so.${PV} || die
 	dosym lib${PN}.so.${PV} /usr/$(get_libdir)/lib${PN}.so.$(get_version_component_range 1-2) || die
