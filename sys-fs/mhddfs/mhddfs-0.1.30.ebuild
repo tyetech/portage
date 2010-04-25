@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/mhddfs/mhddfs-0.1.30.ebuild,v 1.1 2010/04/24 03:21:59 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/mhddfs/mhddfs-0.1.30.ebuild,v 1.2 2010/04/25 03:19:25 mr_bones_ Exp $
 
 inherit eutils
 
