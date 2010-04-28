@@ -1,10 +1,14 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/virtinst/Attic/virtinst-0.500.1.ebuild,v 1.1 2009/12/08 14:49:39 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/virtinst/Attic/virtinst-0.500.3.ebuild,v 1.1 2010/04/28 21:33:45 cardoe Exp $
 
 EAPI=2
 
-inherit distutils eutils
+PYTHON_DEPEND="2"
+RESTRICT_PYTHON_ABIS="3.*"
+SUPPORT_PYTHON_ABIS="1"
+
+inherit distutils
 
 DESCRIPTION="Python modules for starting virtualized guest installations"
 HOMEPAGE="http://virt-manager.et.redhat.com/"
@@ -16,3 +20,5 @@ IUSE=""
 RDEPEND=">=app-emulation/libvirt-0.2.1
 	dev-python/urlgrabber"
 DEPEND="${RDEPEND}"
+
+PYTHON_MODNAME="virtconv virtinst"
