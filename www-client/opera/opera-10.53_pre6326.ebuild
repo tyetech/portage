@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera/Attic/opera-10.52_pre6320.ebuild,v 1.1 2010/04/20 15:38:07 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera/Attic/opera-10.53_pre6326.ebuild,v 1.1 2010/04/28 18:02:15 jer Exp $
 
 EAPI="2"
 
