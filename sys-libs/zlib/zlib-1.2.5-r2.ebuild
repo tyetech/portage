@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/zlib/Attic/zlib-1.2.5-r1.ebuild,v 1.1 2010/04/25 22:41:11 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/zlib/zlib-1.2.5-r2.ebuild,v 1.1 2010/04/29 17:49:03 flameeyes Exp $
 
 inherit eutils toolchain-funcs
 
