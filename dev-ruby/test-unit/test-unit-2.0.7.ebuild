@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/test-unit/Attic/test-unit-2.0.6.ebuild,v 1.2 2010/01/14 23:48:10 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/test-unit/Attic/test-unit-2.0.7.ebuild,v 1.1 2010/05/01 10:44:39 flameeyes Exp $
 
 EAPI=2
 # One test fails on jruby, might be a jruby bug
