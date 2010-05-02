@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-assistant/Attic/qt-assistant-4.6.2-r1.ebuild,v 1.1 2010/05/01 18:21:41 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/qt-assistant/Attic/qt-assistant-4.6.2-r1.ebuild,v 1.2 2010/05/02 19:22:00 hwoarang Exp $
 
 EAPI="2"
 inherit qt4-build
@@ -33,7 +33,7 @@ doc/"
 
 pkg_setup() {
 	use trace && QT4_TARGET_DIRECTORIES="tools/qttracereplay"
-	QT4_EXTRACT_DIRECTORIES="${QT4_TARGET_DIRECTORIES}
+	QT4_EXTRACT_DIRECTORIES="${QT4_TARGET_DIRECTORIES} \
 		${QT4_EXTRACT_DIRECTORIES}"
 	qt4-build_pkg_setup
 }
