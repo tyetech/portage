@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-calculators/cvs-repo/gentoo-x86/sci-calculators/gonvert/Attic/gonvert-0.2.15-r1.ebuild,v 1.2 2010/05/02 15:02:40 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-calculators/cvs-repo/gentoo-x86/sci-calculators/gonvert/Attic/gonvert-0.2.23.ebuild,v 1.1 2010/05/02 15:02:40 chainsaw Exp $
 
 inherit eutils
 
@@ -18,8 +18,7 @@ DEPEND=">=dev-python/pygtk-2.8.2"
 src_unpack () {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}/0.2.12-about.patch"
-	epatch "${FILESDIR}/0.2.15-glade.patch"
+	epatch "${FILESDIR}/${PV}-paths.patch"
 }
 
 src_install () {
