@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/ksplash/Attic/ksplash-4.4.2.ebuild,v 1.1 2010/03/30 21:35:23 spatz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/ksplash/Attic/ksplash-4.4.2-r1.ebuild,v 1.1 2010/05/03 18:32:39 reavertm Exp $
 
 EAPI="3"
 
@@ -19,6 +19,8 @@ DEPEND="${COMMONDEPEND}
 	xinerama? ( x11-proto/xineramaproto )
 "
 RDEPEND="${COMMONDEPEND}"
+
+PATCHES=( "${FILESDIR}/${PN}-4.4.2-xinerama_cmake_automagic.patch" )
 
 src_configure() {
 	mycmakeargs=(
