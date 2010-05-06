@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/psipred/Attic/psipred-2.6.1.ebuild,v 1.1 2010/02/28 10:31:18 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/psipred/Attic/psipred-2.6.1-r1.ebuild,v 1.1 2010/05/06 18:27:50 jlec Exp $
 
 EAPI="3"
 
@@ -24,6 +24,7 @@ RDEPEND="
 S="${WORKDIR}"
 
 src_prepare() {
+	rm -f bin/*
 	epatch "${FILESDIR}"/${PV}-Makefile.patch
 	epatch "${FILESDIR}"/${PV}-path.patch
 	eprefixify runpsipred*
