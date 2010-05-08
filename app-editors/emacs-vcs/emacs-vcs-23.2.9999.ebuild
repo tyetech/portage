@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs-vcs/Attic/emacs-vcs-23.1.9999-r3.ebuild,v 1.3 2010/05/01 15:16:49 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs-vcs/Attic/emacs-vcs-23.2.9999.ebuild,v 1.1 2010/05/08 07:52:53 ulm Exp $
 
 EAPI=2
 
@@ -235,7 +235,7 @@ src_install () {
 		c=""
 	fi
 
-	sed 's/^X//' >"${SITEFILE}" <<-EOF
+	sed 's/^X//' >"${T}/${SITEFILE}" <<-EOF
 	X
 	;;; ${PN}-${SLOT} site-lisp configuration
 	X
@@ -253,7 +253,7 @@ src_install () {
 	X	   (setcdr q (cons dir (delete dir (cdr q))))
 	X	   (setq Info-directory-list (prune-directory-list (cdr p)))))))
 	EOF
-	elisp-site-file-install "${SITEFILE}" || die
+	elisp-site-file-install "${T}/${SITEFILE}" || die
 
 	dodoc README BUGS || die "dodoc failed"
 }
