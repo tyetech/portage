@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/opencv/Attic/opencv-2.0.0.ebuild,v 1.6 2010/02/06 11:05:42 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/opencv/Attic/opencv-2.0.0.ebuild,v 1.7 2010/05/12 11:33:38 ssuominen Exp $
 
 EAPI=2
 inherit cmake-utils
@@ -37,7 +37,8 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${MY_P}
 
-PATCHES=( "${FILESDIR}/${P}-multilib.patch" )
+PATCHES=( "${FILESDIR}/${P}-multilib.patch"
+	"${FILESDIR}/${P}-libpng14.patch" )
 
 # Skip test suite for -r0, try to solve it in -r1.
 RESTRICT="test"
