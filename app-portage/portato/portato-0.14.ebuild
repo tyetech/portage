@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/portato/Attic/portato-0.14.ebuild,v 1.1 2010/05/11 21:43:20 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/portato/Attic/portato-0.14.ebuild,v 1.2 2010/05/12 15:19:48 mr_bones_ Exp $
 
 EAPI="2"
 
