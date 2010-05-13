@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/vm/Attic/vm-8.1.0_beta2.ebuild,v 1.1 2010/02/02 09:09:38 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/vm/vm-8.1.1.ebuild,v 1.1 2010/05/13 20:06:43 ulm Exp $
 
 inherit elisp eutils
 
