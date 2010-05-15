@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/policykit-qt/Attic/policykit-qt-0.9.2.ebuild,v 1.11 2010/01/19 00:51:48 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-auth/cvs-repo/gentoo-x86/sys-auth/policykit-qt/Attic/policykit-qt-0.9.2.ebuild,v 1.12 2010/05/15 13:46:31 reavertm Exp $
 
 EAPI="2"
 
@@ -22,7 +22,7 @@ RDEPEND="
 	>=x11-libs/qt-gui-4.4:4[dbus]
 "
 DEPEND="${RDEPEND}
-	kde-base/automoc
+	dev-util/automoc
 "
 
 S="${WORKDIR}/${MY_P}"
