@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/wyrd/wyrd-1.4.4.ebuild,v 1.3 2009/08/15 13:06:35 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/wyrd/wyrd-1.4.4.ebuild,v 1.4 2010/05/19 16:42:13 tove Exp $
 
 EAPI=2
 
@@ -24,6 +24,7 @@ src_configure() {
 }
 
 src_install() {
+	export STRIP_MASK="/usr/bin/wyrd"
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc ChangeLog || die "dodoc failed"
 	dohtml doc/manual.html || die "dohtml failed"
