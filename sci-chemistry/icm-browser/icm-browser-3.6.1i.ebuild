@@ -1,6 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/icm-browser/Attic/icm-browser-3.6.1h.ebuild,v 1.2 2010/03/09 11:41:34 abcd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/icm-browser/icm-browser-3.6.1i.ebuild,v 1.1 2010/05/21 12:33:55 alexxy Exp $
+
+EAPI="3"
 
 inherit rpm eutils versionator
 
