@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/uuidtools/uuidtools-2.1.1-r1.ebuild,v 1.1 2009/12/15 15:35:19 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/uuidtools/uuidtools-2.1.1-r1.ebuild,v 1.2 2010/05/22 14:00:07 flameeyes Exp $
 
 EAPI=2
 
@@ -23,4 +23,4 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-ruby_add_bdepend test '>=dev-ruby/rspec-1.0.8'
+ruby_add_bdepend "test? ( >=dev-ruby/rspec-1.0.8 )"
