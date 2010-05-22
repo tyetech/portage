@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/ruby-ng.eclass,v 1.18 2010/05/22 12:45:03 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/ruby-ng.eclass,v 1.19 2010/05/22 13:15:40 flameeyes Exp $
 #
 # @ECLASS: ruby-ng.eclass
 # @MAINTAINER:
@@ -208,6 +208,7 @@ ruby_add_bdepend() {
 	local dependency=$(_ruby_atoms_samelib "$1")
 
 	DEPEND="${DEPEND} $dependency"
+	RDEPEND="${RDEPEND}"
 }
 
 for _ruby_implementation in $USE_RUBY; do
