@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/amazon-ec2/Attic/amazon-ec2-0.9.12.ebuild,v 1.2 2010/04/26 18:59:08 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/amazon-ec2/Attic/amazon-ec2-0.9.14.ebuild,v 1.1 2010/05/23 22:50:59 flameeyes Exp $
 
 EAPI=2
 
@@ -25,9 +25,14 @@ IUSE=""
 # We only need yard for Ruby 1.8, as we use it for documentation
 # generation.
 USE_RUBY=ruby18 \
-	ruby_add_bdepend doc "dev-ruby/yard"
+	ruby_add_bdepend "doc? ( dev-ruby/yard )"
 
-ruby_add_bdepend test "virtual/ruby-test-unit >=dev-ruby/test-spec-0.10.0 >=dev-ruby/mocha-0.9.8"
+ruby_add_bdepend "
+	test? (
+		virtual/ruby-test-unit
+		>=dev-ruby/test-spec-0.10.0
+		>=dev-ruby/mocha-0.9.8
+	)"
 ruby_add_rdepend '>=dev-ruby/xml-simple-1.0.12'
 
 each_ruby_prepare() {
