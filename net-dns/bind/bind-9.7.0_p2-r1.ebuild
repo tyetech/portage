@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.7.0_p2.ebuild,v 1.3 2010/05/22 09:04:13 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.7.0_p2-r1.ebuild,v 1.1 2010/05/23 20:44:50 idl0r Exp $
 
 EAPI="3"
 
@@ -105,11 +105,6 @@ src_prepare() {
 	rm {aclocal,libtool}.m4
 	WANT_AUTOCONF=2.5 AT_NO_RECURSIVE=1 eautoreconf
 
-	# bug #151839
-	sed -i -e \
-		's:struct isc_socket {:#undef SO_BSDCOMPAT\n\nstruct isc_socket {:' \
-		lib/isc/include/isc/socket.h || die
-
 	# remove useless c++ checks
 	epunt_cxx
 }
@@ -169,6 +164,9 @@ src_configure() {
 		$(use_enable ipv6) \
 		$(use_with xml libxml2) \
 		${myconf}
+
+	# bug #151839
+	echo '#undef SO_BSDCOMPAT' >> config.h
 }
 
 src_install() {
@@ -260,11 +258,10 @@ pkg_postinst() {
 
 	einfo "The default zone files are now installed as *.zone,"
 	einfo "be careful merging config files if you have modified"
-	einfo "/var/bind/pri/127 or /var/bind/pri/localhost"
+	einfo "/var/bind/pri/127.zone or /var/bind/pri/localhost.zone"
 	einfo
 	einfo "You can edit /etc/conf.d/named to customize named settings"
 	einfo
-	einfo "The BIND ebuild now includes chroot support."
 	einfo "If you like to run bind in chroot AND this is a new install OR"
 	einfo "your bind doesn't already run in chroot, simply run:"
 	einfo "\`emerge --config '=${CATEGORY}/${PF}'\`"
@@ -284,51 +281,55 @@ pkg_postinst() {
 	einfo "	zone "com" IN { type delegation-only; };"
 	einfo "	zone "net" IN { type delegation-only; };"
 
-	ewarn "NOTE: as of 'bind-9.6.1' the chroot part of the init-script got some major changes."
+	CHROOT=$(sed -n 's/^[[:blank:]]\?CHROOT="\([^"]\+\)"/\1/p' /etc/conf.d/named 2>/dev/null)
+	if [[ -n ${CHROOT} && -d ${CHROOT} ]]; then
+		ewarn "NOTE: as of 'bind-9.6.1' the chroot part of the init-script got some major changes."
+	fi
 }
 
 pkg_config() {
-	CHROOT=`sed -n 's/^[[:blank:]]\?CHROOT="\([^"]\+\)"/\1/p' /etc/conf.d/named 2>/dev/null`
-	EXISTS="no"
+	CHROOT=$(sed -n 's/^[[:blank:]]\?CHROOT="\([^"]\+\)"/\1/p' /etc/conf.d/named 2>/dev/null)
 
-	if [ -z "${CHROOT}" -a ! -d "/chroot/dns" ]; then
+	if [ -z "${CHROOT}" ]; then
 		CHROOT="/chroot/dns"
-	elif [ -d ${CHROOT} ]; then
-		eerror; eerror "${CHROOT:-/chroot/dns} already exists. Quitting."; eerror; EXISTS="yes"
+	fi
+	if [[ -d "${CHROOT}" ]]; then
+		ewarn "NOTE: As of 'bind-9.6.1' the chroot part of the init-script got some major changes."
+		ewarn
+		ewarn "${CHROOT} already exists... some things might become overridden"
+		ewarn "press CTRL+C if you don't want to continue"
+		sleep 10
 	fi
 
-	if [ ! "$EXISTS" = yes ]; then
-		echo; einfo "Setting up the chroot directory..."
+	echo; einfo "Setting up the chroot directory..."
 
-		mkdir -m 0750 -p ${CHROOT}
-		mkdir -m 0755 -p ${CHROOT}/{dev,etc,var/{run,log}}
-		mkdir -m 0750 ${CHROOT}/etc/bind
-		mkdir -m 0770 ${CHROOT}/var/{bind,{run,log}/named}
-		chown root:named ${CHROOT} ${CHROOT}/var/{bind,{run,log}/named} ${CHROOT}/etc/bind
+	mkdir -m 0750 -p ${CHROOT}
+	mkdir -m 0755 -p ${CHROOT}/{dev,etc,var/{run,log}}
+	mkdir -m 0750 -p ${CHROOT}/etc/bind
+	mkdir -m 0770 -p ${CHROOT}/var/{bind,{run,log}/named}
+	chown root:named ${CHROOT} ${CHROOT}/var/{bind,{run,log}/named} ${CHROOT}/etc/bind
 
-		cp /etc/localtime ${CHROOT}/etc/localtime
+	cp /etc/localtime ${CHROOT}/etc/localtime
 
-		mknod ${CHROOT}/dev/zero c 1 5
-		chmod 0666 ${CHROOT}/dev/zero
+	mknod ${CHROOT}/dev/null c 1 3
+	chmod 0666 ${CHROOT}/dev/null
 
-		if use urandom; then
-			mknod ${CHROOT}/dev/urandom c 1 9
-			chmod 0666 ${CHROOT}/dev/urandom
-		else
-			mknod ${CHROOT}/dev/random c 1 8
-			chmod 0666 ${CHROOT}/dev/random
-		fi
+	mknod ${CHROOT}/dev/zero c 1 5
+	chmod 0666 ${CHROOT}/dev/zero
 
-		if [ -f '/etc/syslog-ng/syslog-ng.conf' ]; then
-			elog "You should add the following line to your syslog-ng.conf:"
-			elog "source jail { unix-stream(\"${CHROOT}/dev/log\"); };"
-		fi
-
-		grep -q "^#[[:blank:]]\?CHROOT" /etc/conf.d/named ; RETVAL=$?
-		if [ $RETVAL = 0 ]; then
-			sed -i 's/^# \?\(CHROOT.*\)$/\1/' /etc/conf.d/named 2>/dev/null
-		fi
+	if use urandom; then
+		mknod ${CHROOT}/dev/urandom c 1 9
+		chmod 0666 ${CHROOT}/dev/urandom
 	else
-		ewarn "NOTE: as of 'bind-9.6.1' the chroot part of the init-script got some major changes."
+		mknod ${CHROOT}/dev/random c 1 8
+		chmod 0666 ${CHROOT}/dev/random
+	fi
+
+	elog "You may need to add the following line to your syslog-ng.conf:"
+	elog "source jail { unix-stream(\"${CHROOT}/dev/log\"); };"
+
+	grep -q "^#[[:blank:]]\?CHROOT" /etc/conf.d/named ; RETVAL=$?
+	if [ $RETVAL = 0 ]; then
+		sed -i 's/^# \?\(CHROOT.*\)$/\1/' /etc/conf.d/named 2>/dev/null
 	fi
 }
