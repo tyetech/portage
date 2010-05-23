@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xbmc/Attic/xbmc-9.11-r3.ebuild,v 1.5 2010/05/14 15:58:12 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-tv/cvs-repo/gentoo-x86/media-tv/xbmc/Attic/xbmc-9.11-r3.ebuild,v 1.6 2010/05/23 18:38:59 vapier Exp $
 
 EAPI="2"
 
@@ -194,7 +194,7 @@ src_install() {
 	doins tools/Linux/xbmc.desktop
 	doicon tools/Linux/xbmc.png
 
-	dodoc README.linux known_issues.txt
+	dodoc README.linux
 	rm "${D}"/usr/share/xbmc/{README.linux,LICENSE.GPL,*.txt}
 }
 
