@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythvideo/Attic/mythvideo-0.22_p22864-r1.ebuild,v 1.2 2009/11/22 17:19:12 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/mythvideo/Attic/mythvideo-0.22_p23469.ebuild,v 1.1 2010/05/26 16:01:54 cardoe Exp $
 
 EAPI=2
 
