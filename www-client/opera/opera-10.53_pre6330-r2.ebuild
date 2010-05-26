@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera/Attic/opera-10.53_pre6330-r1.ebuild,v 1.2 2010/05/18 15:59:07 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera/Attic/opera-10.53_pre6330-r2.ebuild,v 1.1 2010/05/26 20:27:42 jer Exp $
 
 EAPI="2"
 
@@ -136,6 +136,12 @@ src_install() {
 	sed "${FILESDIR}"/opera \
 		-e "s|OPERA_LIBDIR|${OPREFIX}|g" > opera \
 		|| die "sed opera script failed"
+
+	# Sed libdir in defaults/pluginpath.ini
+	sed -i \
+		-e "s|/usr/lib32|${OPREFIX}|g" \
+		"${D}"/usr/share/opera/defaults/pluginpath.ini \
+		|| die "sed pluginpath.ini failed"
 
 	# Install startup scripts
 	dobin ${PN} ${PN}-widget-manager || die "dobin failed"
