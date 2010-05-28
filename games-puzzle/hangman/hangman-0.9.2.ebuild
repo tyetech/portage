@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/hangman/hangman-0.9.2.ebuild,v 1.11 2009/08/11 06:44:11 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/hangman/hangman-0.9.2.ebuild,v 1.12 2010/05/28 14:54:04 tupone Exp $
 
 EAPI=2
 inherit eutils games
@@ -14,7 +14,8 @@ SLOT="0"
 KEYWORDS="amd64 ppc ~sparc x86"
 IUSE=""
 
-DEPEND="media-libs/libsdl
+DEPEND="!games-misc/bsd-games
+	media-libs/libsdl
 	media-libs/sdl-mixer
 	media-libs/sdl-image
 	media-libs/sdl-ttf"
