@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/gatling/gatling-0.12.ebuild,v 1.1 2010/05/03 18:05:21 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/gatling/gatling-0.12.ebuild,v 1.2 2010/05/30 23:36:32 vostorga Exp $
 
 inherit eutils
 
@@ -26,7 +26,7 @@ src_unpack() {
 	unpack $A
 	cd "${S}"
 
-	epatch "${FILESDIR}/gentoo-vars.patch"
+	epatch "${FILESDIR}/${P}-FLAGS.patch"
 }
 
 src_compile() {
