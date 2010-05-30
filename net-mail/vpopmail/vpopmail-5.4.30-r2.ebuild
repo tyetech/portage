@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vpopmail/Attic/vpopmail-5.4.26.ebuild,v 1.2 2009/07/14 08:54:16 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/vpopmail/vpopmail-5.4.30-r2.ebuild,v 1.1 2010/05/30 06:49:46 hollow Exp $
+
+EAPI="2"
 
 inherit autotools eutils fixheadtails qmail
 
@@ -10,13 +12,14 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~hppa ~ppc ~s390 ~sh ~sparc ~x86"
-IUSE="clearpasswd ipalias maildrop mysql"
+KEYWORDS="~amd64 ~hppa ~ppc ~s390 ~sh ~sparc ~x86"
+IUSE="clearpasswd ipalias maildrop mysql spamassassin"
 
 DEPEND="virtual/qmail
 	maildrop? ( mail-filter/maildrop )
 	mysql? ( virtual/mysql )
-"
+	spamassassin? ( mail-filter/spamassassin )"
+RDEPEND="${DEPEND}"
 
 # This makes sure the variable is set, and that it isn't null.
 VPOP_DEFAULT_HOME="/var/vpopmail"
@@ -40,12 +43,10 @@ pkg_setup() {
 	upgradewarning
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
+src_prepare() {
 	epatch "${FILESDIR}"/${PN}-5.4.9-access.violation.patch
 	epatch "${FILESDIR}"/${PN}-lazy.patch
+	epatch "${FILESDIR}"/${PN}-double-free.patch
 
 	# fix maildir paths
 	sed -i -e 's|Maildir|.maildir|g' \
@@ -61,13 +62,12 @@ src_unpack() {
 	ht_fix_file cdb/Makefile
 }
 
-src_compile() {
+src_configure() {
 	vpopmail_set_homedir
 
 	if use mysql; then
 		authopts=" \
 			--enable-auth-module=mysql \
-			--enable-libs=/usr/include/mysql \
 			--enable-libdir=/usr/lib/mysql \
 			--enable-sql-logging \
 			--enable-valias \
@@ -94,14 +94,16 @@ src_compile() {
 		--enable-auth-logging \
 		--enable-log-name=vpopmail \
 		--enable-qmail-ext \
-		--disable-tcp-rules-prog \
 		--disable-tcpserver-file \
 		--disable-roaming-users \
 		$(use_enable ipalias ip-alias-domains) \
 		$(use_enable clearpasswd clear-passwd) \
 		$(use_enable maildrop) \
-		|| die "configure failed"
+		$(use_enable maildrop maildrop-prog /usr/bin/maildrop) \
+		$(use_enable spamassassin)
+}
 
+src_compile() {
 	emake || die "make failed"
 }
 
@@ -117,7 +119,7 @@ src_install() {
 	dobin "${FILESDIR}"/vpopmail-Maildir-dotmaildir-fix.sh
 	into /usr
 
-	dodoc AUTHORS ChangeLog FAQ INSTALL README*
+	dodoc doc/AUTHORS ChangeLog doc/FAQ doc/INSTALL doc/README*
 	dohtml doc/doc_html/* doc/man_html/*
 	rm -rf "${D}/${VPOP_HOME}"/doc
 	dosym /usr/share/doc/${PF}/ "${VPOP_HOME}"/doc
@@ -138,6 +140,11 @@ src_install() {
 		fperms 640 /etc/vpopmail.conf
 		fowners root:vpopmail /etc/vpopmail.conf
 	fi
+
+	insinto "${VPOP_HOME}"/etc
+	doins vusagec.conf
+	dosym "${VPOP_HOME}"/etc/vusagec.conf /etc/vusagec.conf
+	sed -i 's/Disable = False;/Disable = True;/g' "${D}${VPOP_HOME}"/etc/vusagec.conf
 
 	einfo "Installing env.d entry"
 	dodir /etc/env.d
@@ -216,4 +223,11 @@ upgradewarning() {
 		elog '    ADD `delete_spam` TINYINT(1) DEFAULT '0' NOT NULL AFTER `disable_spamassassin`;'
 		elog
 	fi
+
+	ewarn
+	ewarn "Newer versions of vpopmail contain a quota daemon called vusaged."
+	ewarn "This ebuild DOES NOT INSTALL vusaged and has therefore disabled"
+	ewarn "its usage in ${VPOP_HOME}/etc/vusagec.conf. DO NOT ENABLE!"
+	ewarn "Otherwise mail delivery WILL BREAK"
+	ewarn
 }
