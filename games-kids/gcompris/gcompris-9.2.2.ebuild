@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-kids/cvs-repo/gentoo-x86/games-kids/gcompris/Attic/gcompris-9.2.2.ebuild,v 1.3 2010/03/27 19:40:46 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-kids/cvs-repo/gentoo-x86/games-kids/gcompris/Attic/gcompris-9.2.2.ebuild,v 1.4 2010/05/31 19:24:19 maekke Exp $
 
 EAPI=2
 
@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/gcompris/${PN}-$(replace_version_separator 2 -).ta
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE="debug gnet python"
 
 RDEPEND="x11-libs/gtk+:2
