@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-geode/Attic/xf86-video-geode-2.11.8.ebuild,v 1.1 2010/04/29 00:55:45 leio Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/xf86-video-geode/Attic/xf86-video-geode-2.11.8.ebuild,v 1.2 2010/06/01 12:37:41 phajdan.jr Exp $
 
 inherit x-modular
 
 DESCRIPTION="AMD Geode GX and LX video driver"
 
-KEYWORDS="~x86"
+KEYWORDS="x86"
 IUSE=""
 
 RDEPEND=">=x11-base/xorg-server-1.5"
