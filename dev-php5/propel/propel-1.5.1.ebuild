@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/propel/Attic/propel-1.3.0_beta4.ebuild,v 1.1 2008/02/26 16:42:11 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/propel/Attic/propel-1.5.1.ebuild,v 1.1 2010/06/01 12:20:27 mabi Exp $
 
 KEYWORDS="~amd64 ~x86"
 
