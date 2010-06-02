@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/tokyocabinet/Attic/tokyocabinet-1.4.44.ebuild,v 1.2 2010/05/03 17:56:03 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/tokyocabinet/Attic/tokyocabinet-1.4.45.ebuild,v 1.1 2010/06/02 10:55:17 patrick Exp $
 
 EAPI=2
 
