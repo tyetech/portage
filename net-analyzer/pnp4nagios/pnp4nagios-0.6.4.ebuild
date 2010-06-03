@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pnp4nagios/Attic/pnp4nagios-0.6.3.ebuild,v 1.1 2010/04/02 16:50:16 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pnp4nagios/Attic/pnp4nagios-0.6.4.ebuild,v 1.1 2010/06/03 18:25:03 dertobi123 Exp $
 
 EAPI="2"
 
