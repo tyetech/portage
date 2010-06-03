@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gsoap/Attic/gsoap-2.7.12.ebuild,v 1.2 2009/03/04 06:34:48 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gsoap/Attic/gsoap-2.7.14.ebuild,v 1.1 2010/06/03 21:25:46 polynomial-c Exp $
 
-EAPI=1
+EAPI=2
 
 inherit eutils
 
@@ -24,12 +24,21 @@ RDEPEND=""
 
 S=${WORKDIR}/${MY_P}
 
-src_compile() {
+src_prepare() {
+	# Fix Pre-ISO headers
+	epatch "${FILESDIR}/${PN}-2.7-fix-pre-iso-headers.patch"
+	#fix for >=openssl-1.0.0
+	epatch "${FILESDIR}/${PN}-2.7-fedora-openssl.patch"
+}
+
+src_configure() {
 	econf $(use_enable ssl openssl) \
 	$(use_enable examples samples) \
 	$(use_enable debug) \
 	|| die "econf failed"
+}
 
+src_compile() {
 	emake -j1 || die "emake failed"
 }
 
