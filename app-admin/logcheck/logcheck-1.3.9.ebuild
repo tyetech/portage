@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/logcheck/Attic/logcheck-1.3.7.ebuild,v 1.2 2010/03/10 09:55:55 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/logcheck/Attic/logcheck-1.3.9.ebuild,v 1.1 2010/06/04 10:34:46 phajdan.jr Exp $
 
 inherit eutils
 
