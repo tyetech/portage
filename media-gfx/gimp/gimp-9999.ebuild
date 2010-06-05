@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp/gimp-9999.ebuild,v 1.24 2010/02/10 13:54:28 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/gimp/gimp-9999.ebuild,v 1.25 2010/06/05 17:26:00 reavertm Exp $
 
 EAPI=2
 
@@ -95,12 +95,13 @@ pkg_setup() {
 pkg_postinst() {
 	gnome2_pkg_postinst
 
-	python_mod_optimize /usr/$(get_libdir)/gimp/2.0/python \
+	use python && python_mod_optimize /usr/$(get_libdir)/gimp/2.0/python \
 		/usr/$(get_libdir)/gimp/2.0/plug-ins
 }
 
 pkg_postrm() {
 	gnome2_pkg_postrm
+
 	python_mod_cleanup /usr/$(get_libdir)/gimp/2.0/python \
 		/usr/$(get_libdir)/gimp/2.0/plug-ins
 }
