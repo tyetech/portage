@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/zfs-fuse/Attic/zfs-fuse-0.5.0.ebuild,v 1.3 2010/06/05 22:21:16 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/zfs-fuse/Attic/zfs-fuse-0.5.0.ebuild,v 1.4 2010/06/05 23:46:32 ssuominen Exp $
 
 IUSE="doc debug"
 
@@ -73,6 +73,8 @@ src_install() {
 	if use doc; then
 		dodoc {INSTALL,TODO,STATUS,TESTING,HACKING,BUGS} || die
 	fi
+
+	dodir /etc/zfs
 }
 
 pkg_postinst() {
