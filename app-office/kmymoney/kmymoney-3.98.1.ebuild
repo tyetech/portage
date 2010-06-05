@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kmymoney/Attic/kmymoney-3.97.2.ebuild,v 1.2 2010/05/20 13:59:50 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kmymoney/Attic/kmymoney-3.98.1.ebuild,v 1.1 2010/06/05 22:10:18 ssuominen Exp $
 
 EAPI=2
 KDE_LINGUAS="bg ca ca@valencia cs da de el en_GB eo es et fi fr ga gl hu it lt
 ms nds nl pl pt pt_BR ro ru sk sv tr uk zh_CN zh_TW"
 KDE_DOC_DIRS="doc doc-translations/%lingua_${PN}"
-inherit kde4-base
+inherit virtualx kde4-base
 
 DESCRIPTION="A personal finance manager for KDE"
 HOMEPAGE="http://sourceforge.net/projects/kmymoney2/"
@@ -33,10 +33,8 @@ DEPEND="${COMMON_DEPEND}
 
 DOCS="AUTHORS BUGS ChangeLog* README* TODO"
 
-RESTRICT="test"
-
 src_configure() {
-	mycmakeargs+=(
+	mycmakeargs=(
 		$(cmake-utils_use_enable hbci KBANKING)
 		$(cmake-utils_use_enable calendar LIBICAL)
 		$(cmake-utils_use_enable ofx LIBOFX)
@@ -44,4 +42,9 @@ src_configure() {
 		)
 
 	kde4-base_src_configure
+}
+
+src_test() {
+	export maketype="kde4-base_src_test"
+	virtualmake
 }
