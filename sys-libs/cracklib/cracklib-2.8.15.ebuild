@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/cracklib/Attic/cracklib-2.8.15.ebuild,v 1.9 2010/04/01 17:24:35 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/cracklib/Attic/cracklib-2.8.15.ebuild,v 1.10 2010/06/05 20:46:31 vapier Exp $
 
 inherit eutils toolchain-funcs multilib libtool
 
@@ -31,6 +31,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${PN}-2.8.13-python-linkage.patch #246747
+	epatch "${FILESDIR}"/${P}-no-nls.patch
 	sed -i '/PYTHON/s:\(print\) \([^"]*\):\1(\2):' configure #302908
 	elibtoolize #269003
 }
