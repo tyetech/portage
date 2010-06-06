@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/altermime/altermime-0.3.10.ebuild,v 1.2 2010/06/06 01:14:18 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/altermime/altermime-0.3.10.ebuild,v 1.3 2010/06/06 01:21:07 ssuominen Exp $
 
 EAPI=2
 inherit eutils toolchain-funcs
@@ -16,6 +16,7 @@ IUSE=""
 
 src_prepare() {
 	sed -i \
+		-e 's:-Werror::' \
 		-e "/^CFLAGS[[:space:]]*=/ s/-O2/${CFLAGS}/" \
 		-e 's/${CFLAGS} altermime.c/${CFLAGS} ${LDFLAGS} altermime.c/' \
 		Makefile || die
