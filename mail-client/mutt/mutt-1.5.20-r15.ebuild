@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.20-r14.ebuild,v 1.3 2010/04/12 17:56:18 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.20-r15.ebuild,v 1.1 2010/06/06 10:39:12 grobian Exp $
 
 EAPI="3"
 
 inherit eutils flag-o-matic autotools
 
-PATCHSET_REV="-r6.2"
+PATCHSET_REV="-r7"
 
 # note: latest sidebar patches can be found here:
 # http://www.lunar-linux.org/index.php?option=com_content&task=view&id=44
