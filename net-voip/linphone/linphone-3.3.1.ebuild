@@ -1,24 +1,24 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-voip/cvs-repo/gentoo-x86/net-voip/linphone/Attic/linphone-3.2.1-r1.ebuild,v 1.2 2010/03/21 12:16:20 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-voip/cvs-repo/gentoo-x86/net-voip/linphone/Attic/linphone-3.3.1.ebuild,v 1.1 2010/06/07 14:49:11 pva Exp $
 
 EAPI="3"
 
-inherit eutils autotools multilib
+inherit eutils autotools multilib versionator
 
 DESCRIPTION="Video softphone based on the SIP protocol"
 HOMEPAGE="http://www.linphone.org/"
-SRC_URI="http://download.savannah.nongnu.org/releases/${PN}/stable/sources/${P}.tar.gz"
+SRC_URI="http://download.savannah.nongnu.org/releases-noredirect/${PN}/$(get_version_component_range 1-2).x/sources/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86 ~ppc-macos ~x86-macos"
 IUSE="doc gtk ipv6 ncurses nls video"
 
-RDEPEND=">=media-libs/mediastreamer-2.3.0[video?]
+RDEPEND=">=media-libs/mediastreamer-2.4.0[video?]
 	>=net-libs/libeXosip-3.0.2
 	>=net-libs/libosip-3.0.0
-	>=net-libs/ortp-0.16.1
+	>=net-libs/ortp-0.16.2
 	gtk? ( dev-libs/glib:2
 		>=gnome-base/libglade-2.4.0:2.0
 		>=x11-libs/gtk+-2.4.0:2 )
@@ -51,10 +51,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-external-mediastreamer.patch
-	epatch "${FILESDIR}"/${P}-nls.patch
-	epatch "${FILESDIR}"/${P}-log-window-crash.patch
-	epatch "${FILESDIR}"/${P}-linphone.desktop.patch
+	epatch "${FILESDIR}"/${PN}-3.2.99.1-external-mediastreamer.patch
+	epatch "${FILESDIR}"/${PN}-3.2.1-nls.patch
 
 	# remove speex check, avoid bug when mediastreamer[-speex]
 	sed -i -e '/SPEEX/d' configure.in || die "patching configure.in failed"
@@ -66,7 +64,7 @@ src_prepare() {
 	# removing bundled libs dir prevent them to be reconf
 	rm -rf mediastreamer2 oRTP || die "should not die"
 	# and references in Makefile.am
-	sed -i -e "s:oRTP::" -e "s:mediastreamer2::" Makefile.am \
+	sed -i -e "s:oRTP::;s:mediastreamer2::" Makefile.am \
 		|| die "patching Makefile.am failed"
 
 	# make sure to use host libtool version
@@ -98,5 +96,6 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dosym linphone-3 /usr/bin/linphone || die
-	dodoc AUTHORS BUGS ChangeLog NEWS README README.arm TODO
+	dodoc AUTHORS BUGS ChangeLog NEWS README README.arm TODO || die
+	#cp "${ED}/usr/share/pixmaps/"{linphone/linphone2.png,linphone2.png} || die
 }
