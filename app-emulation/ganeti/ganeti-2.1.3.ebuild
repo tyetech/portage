@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.1.0.ebuild,v 1.1 2010/03/07 20:56:03 ramereth Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/ganeti/Attic/ganeti-2.1.3.ebuild,v 1.1 2010/06/07 22:26:03 ramereth Exp $
 
 EAPI=2
 
@@ -15,7 +15,7 @@ SRC_URI="http://ganeti.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="kvm xen drbd"
+IUSE="kvm xen drbd +filestorage syslog"
 
 S="${WORKDIR}/${MY_P}"
 
@@ -35,21 +35,24 @@ DEPEND="xen? ( >=app-emulation/xen-3.0 )
 	sys-fs/lvm2"
 RDEPEND="${DEPEND}"
 
-src_prepare () {
-	epatch "${FILESDIR}/${PN}-2.1.0_rc1-fix-brctl-path-for-gentoo.patch"
-}
-
 pkg_setup () {
 	confutils_require_any kvm xen
 }
 
 src_configure () {
+	local myconf
+	if use filestorage ; then
+		myconf="--with-file-storage-dir=/var/lib/ganeti-storage/file"
+	else
+		myconf="--with-file-storage-dir=no"
+	fi
 	econf --localstatedir=/var \
 		--docdir=/usr/share/doc/${P} \
 		--with-ssh-initscript=/etc/init.d/sshd \
 		--with-export-dir=/var/lib/ganeti-storage/export \
 		--with-os-search-path=/usr/share/ganeti/os \
-		--with-file-storage-dir=/var/lib/ganeti-storage/file
+		$(use_enable syslog) \
+		${myconf}
 }
 
 src_install () {
@@ -57,7 +60,7 @@ src_install () {
 	newinitd "${FILESDIR}"/ganeti-2.1.initd ganeti
 	newconfd "${FILESDIR}"/ganeti.confd ganeti
 	dobashcompletion doc/examples/bash_completion ganeti
-	dodoc INSTALL NEWS README doc/*.{rst,png}
+	dodoc INSTALL NEWS README doc/*.rst
 	rm -rf "${D}"/usr/share/doc/ganeti
 	docinto examples
 	dodoc doc/examples/{dumb-allocator,ganeti.cron,gnt-config-backup}
