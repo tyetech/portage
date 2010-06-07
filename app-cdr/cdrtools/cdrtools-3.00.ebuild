@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrtools/Attic/cdrtools-2.01.01_alpha79.ebuild,v 1.1 2010/05/18 18:59:25 billie Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-cdr/cvs-repo/gentoo-x86/app-cdr/cdrtools/cdrtools-3.00.ebuild,v 1.1 2010/06/07 16:23:12 billie Exp $
 
 EAPI=2
 
