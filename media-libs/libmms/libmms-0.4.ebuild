@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmms/Attic/libmms-0.4.ebuild,v 1.10 2010/06/08 17:04:30 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmms/Attic/libmms-0.4.ebuild,v 1.11 2010/06/08 17:08:24 ssuominen Exp $
 
 EAPI=2
 inherit eutils
