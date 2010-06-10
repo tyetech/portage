@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/amazon-ec2/Attic/amazon-ec2-0.9.14.ebuild,v 1.1 2010/05/23 22:50:59 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/amazon-ec2/Attic/amazon-ec2-0.9.15.ebuild,v 1.1 2010/06/10 22:41:41 flameeyes Exp $
 
 EAPI=2
 
