@@ -1,11 +1,11 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sam2p/Attic/sam2p-0.46.ebuild,v 1.2 2009/09/23 15:07:41 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/sam2p/Attic/sam2p-0.46.ebuild,v 1.3 2010/06/11 20:13:04 aballier Exp $
 
 inherit toolchain-funcs eutils autotools
 
 DESCRIPTION="Utility to convert raster images to EPS, PDF and many others"
-HOMEPAGE="http://www.inf.bme.hu/~pts/sam2p/"
+HOMEPAGE="http://code.google.com/p/sam2p/"
 SRC_URI="http://www.inf.bme.hu/~pts/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
