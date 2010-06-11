@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/krossjava/Attic/krossjava-4.4.4.ebuild,v 1.1 2010/06/06 14:42:16 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/krossjava/Attic/krossjava-4.4.4.ebuild,v 1.2 2010/06/11 02:01:46 reavertm Exp $
 
 EAPI="3"
 
@@ -31,6 +31,7 @@ src_prepare() {
 
 src_configure() {
 	mycmakeargs=(-DENABLE_KROSSJAVA=ON)
+	export JAVA_HOME=$(java-config -g JAVA_HOME)
 	kde4-meta_src_configure
 	java-ant-2_src_configure
 }
