@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bss/bss-0.8.ebuild,v 1.2 2010/06/11 10:23:05 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bss/bss-0.8.ebuild,v 1.3 2010/06/11 11:00:39 ssuominen Exp $
 
 EAPI=2
 inherit toolchain-funcs
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
-DEPEND="|| ( net-wireless/bluez net-wireless/bluez-libs )"
+DEPEND="net-wireless/bluez"
 
 src_prepare() {
 	sed -i -e 's:/local::' Makefile || die
