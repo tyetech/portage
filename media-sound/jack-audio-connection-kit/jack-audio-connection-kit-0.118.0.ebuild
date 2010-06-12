@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-audio-connection-kit/Attic/jack-audio-connection-kit-0.118.0.ebuild,v 1.3 2010/04/12 19:07:50 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/jack-audio-connection-kit/Attic/jack-audio-connection-kit-0.118.0.ebuild,v 1.4 2010/06/12 17:15:24 aballier Exp $
 
 inherit flag-o-matic eutils multilib multilib
 
@@ -26,6 +26,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}/${PN}-sparc-cpuinfo.patch"
+	epatch "${FILESDIR}/${P}-debug.patch"
 }
 
 src_compile() {
