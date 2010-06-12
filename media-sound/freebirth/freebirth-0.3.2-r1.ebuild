@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/freebirth/freebirth-0.3.2-r1.ebuild,v 1.8 2008/02/29 20:05:11 carlo Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/freebirth/freebirth-0.3.2-r1.ebuild,v 1.9 2010/06/12 20:12:07 aballier Exp $
 
 inherit eutils toolchain-funcs
 
@@ -21,6 +21,7 @@ src_unpack() {
 	unpack ${A}
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-gentoo-2.patch
+	epatch "${FILESDIR}"/${P}-segfault.patch
 }
 
 src_compile() {
