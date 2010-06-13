@@ -1,6 +1,6 @@
 # Copyright 1999-2007 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/fluxter/fluxter-0.1.0.ebuild,v 1.15 2010/06/13 14:31:02 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/fluxter/fluxter-0.1.0.ebuild,v 1.16 2010/06/13 15:05:26 ssuominen Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -11,7 +11,7 @@ SRC_URI="http://www.isomedia.com/homes/stevencooper/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~x86 ~x86-fbsd"
+KEYWORDS="amd64 hppa ppc x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND="x11-libs/libX11
