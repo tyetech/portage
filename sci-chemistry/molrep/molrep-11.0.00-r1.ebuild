@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/molrep/Attic/molrep-11.0.00.ebuild,v 1.2 2010/06/15 14:11:24 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/molrep/Attic/molrep-11.0.00-r1.ebuild,v 1.1 2010/06/15 14:16:48 jlec Exp $
 
 EAPI="3"
 
