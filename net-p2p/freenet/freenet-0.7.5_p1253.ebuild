@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/freenet/Attic/freenet-0.7.5_p1247.ebuild,v 1.1 2010/05/11 21:02:01 tommy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/freenet/Attic/freenet-0.7.5_p1253.ebuild,v 1.1 2010/06/15 22:42:36 tommy Exp $
 
 EAPI="2"
 DATE=20100425
