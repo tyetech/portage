@@ -1,9 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mopac7/Attic/mopac7-1.13-r1.ebuild,v 1.1 2008/07/13 20:59:11 je_fro Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mopac7/Attic/mopac7-1.13-r1.ebuild,v 1.2 2010/06/15 16:57:35 jlec Exp $
 
 WANT_AUTOMAKE="1.8"
-WANT_AUTOCONF="latest"
 
 inherit autotools
 
