@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/qtoctave/Attic/qtoctave-0.9.1.ebuild,v 1.1 2010/06/16 05:56:39 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/qtoctave/Attic/qtoctave-0.9.1.ebuild,v 1.2 2010/06/16 15:30:24 bicatali Exp $
 
 EAPI="2"
 
@@ -28,6 +28,7 @@ S="${WORKDIR}/${P}"
 DOCS="readme.txt leeme.txt"
 
 src_prepare() {
+	epatch "${FILESDIR}"/${PN}-0.9.1-qtinfo.patch
 	epatch "${FILESDIR}"/${PN}-0.9.1-qt-version.patch
 	epatch "${FILESDIR}"/${PN}-0.9.1-doc-path.patch
 	epatch "${FILESDIR}"/${PN}-0.8.1-gcc4.4.patch
