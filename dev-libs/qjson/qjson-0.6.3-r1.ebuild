@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/qjson/Attic/qjson-0.6.2.ebuild,v 1.3 2009/11/08 15:50:25 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/qjson/Attic/qjson-0.6.3-r1.ebuild,v 1.1 2010/06/16 15:44:01 ayoy Exp $
 
 EAPI="2"
 
@@ -23,9 +23,6 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${PN}"
 DOCS=( "${S}/README" )
 
-# bug 292387
-PATCHES=( "${FILESDIR}/${PN}-quint64.patch" )
-
 src_configure() {
 	mycmakeargs="${mycmakeargs}
 		$(cmake-utils_use test QJSON_BUILD_TESTS)"
@@ -37,7 +34,7 @@ src_install() {
 	if use doc; then
 		cd "${S}/doc"
 		doxygen Doxyfile || die "Generating documentation failed"
-		HTML_DOCS=( "${S}/doc/html/*" )
+		HTML_DOCS=( "${S}/doc/html/" )
 	fi
 
 	cmake-utils_src_install
