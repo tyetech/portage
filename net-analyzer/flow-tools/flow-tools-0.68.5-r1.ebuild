@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/flow-tools/Attic/flow-tools-0.68.5-r1.ebuild,v 1.2 2010/05/07 00:44:48 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/flow-tools/Attic/flow-tools-0.68.5-r1.ebuild,v 1.3 2010/06/17 20:30:16 patrick Exp $
 
 EAPI="2"
 
@@ -18,7 +18,7 @@ IUSE="mysql postgres debug ssl"
 RDEPEND="sys-apps/tcp-wrappers
 	sys-libs/zlib
 	mysql? ( virtual/mysql )
-	postgres? ( virtual/postgresql-base )
+	postgres? ( dev-db/postgresql-base )
 	ssl? ( dev-libs/openssl )"
 
 DEPEND="${RDEPEND}
