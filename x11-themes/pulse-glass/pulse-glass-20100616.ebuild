@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/pulse-glass/pulse-glass-20100616.ebuild,v 1.3 2010/06/17 17:18:37 spatz Exp $
 
 MY_PN="Pulse-Glass"
 
