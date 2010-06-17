@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/dspam/Attic/dspam-3.8.0-r15.ebuild,v 1.7 2010/06/17 20:23:48 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/dspam/Attic/dspam-3.8.0-r15.ebuild,v 1.8 2010/06/17 21:44:20 patrick Exp $
 
 EAPI="2"
 
@@ -26,7 +26,7 @@ COMMON_DEPEND="clamav?		( >=app-antivirus/clamav-0.90.2 )
 DEPEND="${COMMON_DEPEND}
 	postgres?	( >=dev-db/postgresql-base-8 )"
 RDEPEND="${COMMON_DEPEND}
-	postgres?	( || ( dev-python/psycopg >=virtual/postgresql-server-8 ) )
+	postgres?	( || ( dev-python/psycopg >=dev-db/postgresql-server-8 ) )
 	sys-process/cronbase
 	virtual/logger"
 
