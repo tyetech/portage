@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/grass/Attic/grass-6.4.0_rc6.ebuild,v 1.9 2010/06/17 18:28:47 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/grass/Attic/grass-6.4.0_rc6.ebuild,v 1.10 2010/06/17 21:03:51 patrick Exp $
 
 EAPI="3"
 
@@ -45,8 +45,8 @@ RDEPEND="
 	png? ( media-libs/libpng )
 	postgres? (
 		|| (
-			>=virtual/postgresql-base-8.4
-			>=virtual/postgresql-server-8.4
+			>=dev-db/postgresql-base-8.4
+			>=dev-db/postgresql-server-8.4
 		)
 	)
 	readline? ( sys-libs/readline )
