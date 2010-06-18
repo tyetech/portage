@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/deluge/Attic/deluge-1.2.2-r1.ebuild,v 1.1 2010/04/12 20:50:57 sochotnicky Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/deluge/Attic/deluge-1.3.0_rc1.ebuild,v 1.1 2010/06/18 19:54:34 sochotnicky Exp $
 
 EAPI="2"
 
@@ -37,10 +37,6 @@ RDEPEND="${DEPEND}
 
 pkg_setup() {
 	append-ldflags $(no-as-needed)
-}
-
-src_prepare() {
-	epatch "${FILESDIR}"/${P}-versionsplit.patch
 }
 
 src_install() {
