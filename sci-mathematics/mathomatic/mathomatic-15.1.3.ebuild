@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-15.0.8.ebuild,v 1.1 2010/05/14 04:15:52 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-15.1.3.ebuild,v 1.1 2010/06/18 00:10:46 bicatali Exp $
 
 inherit eutils
 
@@ -29,6 +29,7 @@ src_test() {
 }
 
 src_install() {
+	dobin mathomatic || die
 	dobin primes/matho-{mult,primes,pascal,sumsq} primes/primorial || die
 	dodoc changes.txt README.txt AUTHORS
 	doman mathomatic.1 primes/*.1 || die
