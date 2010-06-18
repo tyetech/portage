@@ -1,8 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/itk/itk-3.4_pre20090417.ebuild,v 1.2 2010/06/07 15:45:37 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tcltk/cvs-repo/gentoo-x86/dev-tcltk/itk/itk-3.4_pre20090417.ebuild,v 1.3 2010/06/18 05:27:39 bicatali Exp $
 
 EAPI="3"
+inherit multilib
 
 MY_PN="incrTcl"
 MY_P="${MY_PN}-${PV}"
