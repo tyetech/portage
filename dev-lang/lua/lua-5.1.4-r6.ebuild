@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/lua/Attic/lua-5.1.4-r5.ebuild,v 1.2 2010/03/05 19:58:21 mabi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/lua/Attic/lua-5.1.4-r6.ebuild,v 1.1 2010/06/19 17:04:05 mabi Exp $
 
 EAPI="1"
 
