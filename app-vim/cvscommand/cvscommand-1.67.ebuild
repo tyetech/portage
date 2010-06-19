@@ -1,6 +1,6 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/cvscommand/cvscommand-1.67.ebuild,v 1.6 2005/04/24 11:59:18 hansmi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/cvscommand/cvscommand-1.67.ebuild,v 1.7 2010/06/19 00:41:09 abcd Exp $
 
 inherit vim-plugin
 
@@ -13,5 +13,5 @@ IUSE=""
 VIM_PLUGIN_HELPFILES="cvscommand-contents"
 # conflict, bug 62677
 RDEPEND="${RDEPEND}
-	dev-util/cvs
+	dev-vcs/cvs
 	!app-vim/calendar"
