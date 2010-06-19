@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/multi_json/Attic/multi_json-0.0.3.ebuild,v 1.1 2010/06/19 11:35:43 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/multi_json/Attic/multi_json-0.0.3-r1.ebuild,v 1.1 2010/06/19 11:55:40 flameeyes Exp $
 
 EAPI=2
 
