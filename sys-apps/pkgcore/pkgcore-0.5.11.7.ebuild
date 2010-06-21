@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.5.11.3.ebuild,v 1.2 2010/04/20 19:09:56 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.5.11.7.ebuild,v 1.1 2010/06/21 05:52:06 ferringb Exp $
 
 DISTUTILS_SRC_TEST="setup.py"
 
