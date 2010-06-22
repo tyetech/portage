@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/qct/qct-1.7.ebuild,v 1.6 2010/06/19 00:54:05 abcd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/qct/qct-1.7.ebuild,v 1.7 2010/06/22 18:50:01 arfrever Exp $
 
 EAPI="2"
 NEED_PYTHON="2.4"
@@ -22,7 +22,7 @@ DEPEND="app-text/asciidoc
 	cvs? ( dev-vcs/cvs )
 	mercurial? ( dev-vcs/mercurial )
 	monotone? ( dev-vcs/monotone )
-	subversion? ( dev-util/subversion )"
+	subversion? ( dev-vcs/subversion )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}"
