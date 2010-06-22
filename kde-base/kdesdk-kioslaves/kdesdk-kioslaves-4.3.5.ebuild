@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdesdk-kioslaves/Attic/kdesdk-kioslaves-4.3.5.ebuild,v 1.7 2010/06/21 15:53:24 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdesdk-kioslaves/Attic/kdesdk-kioslaves-4.3.5.ebuild,v 1.8 2010/06/22 18:53:58 arfrever Exp $
 
 EAPI="2"
 
@@ -15,7 +15,7 @@ IUSE="debug subversion"
 DEPEND="
 	subversion? (
 		dev-libs/apr
-		dev-util/subversion
+		dev-vcs/subversion
 	)
 "
 RDEPEND="${DEPEND}
