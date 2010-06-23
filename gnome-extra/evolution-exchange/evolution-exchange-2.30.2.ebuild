@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/evolution-exchange/Attic/evolution-exchange-2.28.2.ebuild,v 1.1 2010/01/11 21:49:00 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/evolution-exchange/Attic/evolution-exchange-2.30.2.ebuild,v 1.1 2010/06/23 14:33:26 pacho Exp $
 
 EAPI="2"
 
-inherit autotools eutils gnome2
+inherit autotools gnome2
 
 DESCRIPTION="Evolution module for connecting to Microsoft Exchange"
 HOMEPAGE="http://www.novell.com/products/desktop/features/evolution.html"
@@ -46,12 +46,15 @@ pkg_setup() {
 src_prepare() {
 	gnome2_src_prepare
 
-	# Fix build with --as-needed, upstream bug #597489
-	epatch "${FILESDIR}/${PN}-2.28.0-as-needed.patch"
-
 	# FIXME: Fix compilation flags crazyness
 	sed 's/CFLAGS="$CFLAGS $WARNING_FLAGS"//' \
 		-i configure.ac configure || die "sed 1 failed"
+
+	sed 's:-DG.*DISABLE_DEPRECATED::g' -i configure.ac configure \
+		|| die "sed 2 failed"
+
+	sed 's:-DG.*DISABLE_SINGLE_INCLUDES::g' -i configure.ac configure \
+		|| die "sed 3 failed"
 
 	intltoolize --force --copy --automake || die "intltoolize failed"
 	eautoreconf
