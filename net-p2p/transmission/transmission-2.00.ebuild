@@ -1,8 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/transmission/Attic/transmission-2.00.ebuild,v 1.4 2010/06/18 10:25:09 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/transmission/Attic/transmission-2.00.ebuild,v 1.5 2010/06/23 23:35:35 chainsaw Exp $
 
 EAPI=2
+RESTRICT=mirror
 inherit eutils fdo-mime gnome2-utils qt4-r2
 
 DESCRIPTION="A Fast, Easy and Free BitTorrent client"
