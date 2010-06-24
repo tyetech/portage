@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/geeqie/Attic/geeqie-1.0-r1.ebuild,v 1.3 2010/06/21 10:24:49 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/geeqie/Attic/geeqie-1.0-r1.ebuild,v 1.4 2010/06/24 08:40:58 hwoarang Exp $
 
 EAPI=2
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/geeqie/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE="doc exif lcms lirc xmp"
 
 RDEPEND=">=x11-libs/gtk+-2.4.0
