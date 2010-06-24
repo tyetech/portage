@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/namd/namd-2.7_beta2.ebuild,v 1.2 2010/06/24 20:37:03 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/namd/namd-2.7_beta2-r1.ebuild,v 1.1 2010/06/24 20:37:03 jlec Exp $
 
 inherit eutils toolchain-funcs flag-o-matic
 
