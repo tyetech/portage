@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-plugins/Attic/nagios-plugins-1.4.14.ebuild,v 1.9 2010/06/17 20:32:06 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-plugins/Attic/nagios-plugins-1.4.14.ebuild,v 1.10 2010/06/25 10:34:19 hwoarang Exp $
 
 EAPI=1
 
@@ -52,7 +52,7 @@ src_unpack() {
 		EPATCH_OPTS="-p1 -d ${S}" epatch \
 		"${FILESDIR}"/nagios-plugins-1.4.10-noradius.patch
 	fi
-
+	epatch "${FILESDIR}"/${P}-implicit-pointer-conversion.patch
 	epatch "${FILESDIR}"/${PN}-1.4.10-contrib.patch
 	epatch "${FILESDIR}"/${PN}-1.4.12-pgsqlconfigure.patch
 
