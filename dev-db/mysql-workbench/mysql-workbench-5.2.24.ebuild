@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-workbench/Attic/mysql-workbench-5.2.24.ebuild,v 1.1 2010/06/27 16:55:13 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-workbench/Attic/mysql-workbench-5.2.24.ebuild,v 1.2 2010/06/27 18:17:52 ssuominen Exp $
 
 EAPI="2"
 GCONF_DEBUG="no"
@@ -63,6 +63,6 @@ src_configure() {
 }
 
 src_install() {
-	emake install DESTDIR="${D}"
+	emake install DESTDIR="${D}" || die
 	find "${D}" -name '*.la' -delete || die
 }
