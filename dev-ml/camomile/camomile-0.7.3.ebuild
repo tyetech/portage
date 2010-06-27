@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/camomile/Attic/camomile-0.7.3.ebuild,v 1.1 2010/05/19 05:41:48 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/camomile/Attic/camomile-0.7.3.ebuild,v 1.2 2010/06/27 14:19:07 nixnut Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/camomile/${P}.tar.bz2"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ppc ~x86"
 IUSE="debug +ocamlopt"
 
 RDEPEND=">=dev-lang/ocaml-3.10.2[ocamlopt?]"
