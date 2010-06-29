@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmudmount/Attic/wmudmount-1.4.ebuild,v 1.2 2010/04/07 15:03:52 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmudmount/Attic/wmudmount-1.6.ebuild,v 1.1 2010/06/29 09:34:52 voyageur Exp $
 
 EAPI=2
 inherit gnome2-utils
