@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng-utils/linux-wlan-ng-utils-0.2.2.ebuild,v 1.6 2010/06/29 15:28:11 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/linux-wlan-ng-utils/linux-wlan-ng-utils-0.2.2.ebuild,v 1.7 2010/06/29 15:29:45 ssuominen Exp $
 
 inherit eutils toolchain-funcs
 
@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 DEPEND="dev-libs/openssl
-		!<net-wireless/linux-wlan-ng-0.2.2"
+	!<net-wireless/linux-wlan-ng-0.2.2"
 RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
