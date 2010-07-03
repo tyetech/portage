@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rabbitmq-server/Attic/rabbitmq-server-1.5.4-r2.ebuild,v 1.1 2009/06/21 15:45:19 caleb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rabbitmq-server/Attic/rabbitmq-server-1.5.4-r2.ebuild,v 1.2 2010/07/03 08:21:06 hollow Exp $
 
 inherit eutils
 
