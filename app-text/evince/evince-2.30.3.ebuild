@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/evince/Attic/evince-2.30.2.ebuild,v 1.1 2010/06/23 11:16:13 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/evince/Attic/evince-2.30.3.ebuild,v 1.1 2010/07/03 14:23:25 pacho Exp $
 
 EAPI="2"
 
