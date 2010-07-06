@@ -1,11 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/oasis/Attic/oasis-4.0.ebuild,v 1.4 2010/04/05 20:38:41 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/oasis/oasis-4.0-r2.ebuild,v 1.1 2010/07/06 11:18:46 jlec Exp $
 
 EAPI="3"
 
-inherit eutils multilib toolchain-funcs
+inherit eutils fortran multilib
 
+FORTRANC="ifc gfortran"
 MY_P="${PN}${PV}_Linux"
 
 DESCRIPTION="A direct-method program for SAD/SIR phasing"
@@ -39,19 +40,23 @@ src_prepare() {
 src_compile() {
 	emake \
 		-C src \
-		F77="$(tc-getFC)" \
+		F77="${FORTRANC}" \
+		CFLAGS="${FFLAGS}" \
 		CCP4_LIB="${EPREFIX}/usr/$(get_libdir)" \
 		Linux || die
 }
 
 src_install() {
-	dobin src/{${PN},fnp2fp} || die
+	exeinto /usr/libexec/ccp4/bin/
+	doexe src/{${PN},fnp2fp} || die
+	dosym ../libexec/ccp4/bin/${PN} /usr/bin/${PN}
+	dosym ../libexec/ccp4/bin/fnp2fp /usr/bin/fnp2fp
 
 	exeinto /usr/$(get_libdir)/${PN}
 	doexe bin/*.*sh || die
 
-	insinto /usr/$(get_libdir)/${PN}/html
-	doins bin/html/* || die
+	dohtml bin/html/* || die
+	dosym ../share/doc/${PF}/html /usr/$(get_libdir)/${PN}/html
 	chmod 755 "${ED}"/usr/$(get_libdir)/${PN}/html/*.{csh,awk} || die
 
 	if use examples; then
