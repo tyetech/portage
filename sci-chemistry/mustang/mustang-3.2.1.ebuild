@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mustang/mustang-3.2.1.ebuild,v 1.1 2010/07/06 12:07:57 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/mustang/mustang-3.2.1.ebuild,v 1.2 2010/07/06 12:11:58 jlec Exp $
 
 EAPI="3"
 
@@ -35,6 +35,8 @@ src_test() {
 
 src_install() {
 	newbin bin/${P} mustang || die
+	doman man/${PN}.1 || die
+	dodoc README || die
 }
 
 pkg_postinst() {
