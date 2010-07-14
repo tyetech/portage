@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/supertuxkart/Attic/supertuxkart-0.6.2.ebuild,v 1.5 2010/01/03 21:57:03 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/supertuxkart/Attic/supertuxkart-0.6.2.ebuild,v 1.6 2010/07/14 16:34:19 mr_bones_ Exp $
 
 EAPI=2
 inherit autotools eutils games
@@ -51,6 +51,11 @@ src_prepare() {
 		-e '/bindir/d' \
 		-e '/AM_CPPFLAGS/s:/games::' \
 		src/Makefile.am \
+		|| die "sed failed"
+	# bug #328021
+	sed -i \
+		-e '13d' \
+		data/Makefile.am \
 		|| die "sed failed"
 	rm -rf src/enet
 	eautoreconf
