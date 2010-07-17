@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/fms/Attic/fms-0.3.53.ebuild,v 1.1 2010/04/05 12:19:37 tommy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/fms/Attic/fms-0.3.54.ebuild,v 1.1 2010/07/17 01:18:59 tommy Exp $
 
 EAPI="2"
 
