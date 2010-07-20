@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/nemiver/Attic/nemiver-0.7.3.ebuild,v 1.1 2009/12/21 22:11:28 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/nemiver/Attic/nemiver-0.7.3.ebuild,v 1.2 2010/07/20 15:30:35 jer Exp $
 
 EAPI="2"
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://projects.gnome.org/nemiver/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="memoryview"
 
 RDEPEND=">=dev-libs/glib-2.16
