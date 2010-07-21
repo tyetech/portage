@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-panel/Attic/xfce4-panel-4.7.1.ebuild,v 1.1 2010/03/29 14:55:04 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-panel/Attic/xfce4-panel-4.7.2.ebuild,v 1.1 2010/07/21 15:26:18 ssuominen Exp $
 
 EAPI=3
 inherit xfconf
