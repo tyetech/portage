@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/minitest/Attic/minitest-1.6.0.ebuild,v 1.5 2010/07/21 07:39:20 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/minitest/Attic/minitest-1.7.0.ebuild,v 1.1 2010/07/21 07:39:20 graaff Exp $
 
 EAPI=2
 # jruby → tests fail, reported upstream
