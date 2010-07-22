@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/Attic/ffmpeg-9999-r1.ebuild,v 1.46 2010/07/22 20:44:05 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.17 2010/07/22 20:57:23 aballier Exp $
 
 EAPI="2"
 
