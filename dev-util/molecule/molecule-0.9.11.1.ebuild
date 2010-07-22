@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/molecule/Attic/molecule-0.9.11.ebuild,v 1.1 2010/07/20 23:50:38 lxnay Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/molecule/Attic/molecule-0.9.11.1.ebuild,v 1.1 2010/07/22 11:51:25 lxnay Exp $
 
 EAPI="2"
 PYTHON_DEPEND="*"
