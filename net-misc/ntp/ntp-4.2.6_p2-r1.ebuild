@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ntp/Attic/ntp-4.2.6_p1-r1.ebuild,v 1.1 2010/06/07 09:48:02 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ntp/ntp-4.2.6_p2-r1.ebuild,v 1.1 2010/07/27 13:06:37 flameeyes Exp $
 
 EAPI="2"
 
@@ -39,7 +39,6 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-4.2.4_p5-adjtimex.patch #254030
 	epatch "${FILESDIR}"/${PN}-4.2.4_p7-nano.patch #270483
-	epatch "${FILESDIR}"/${P}-linking.patch
 	append-cppflags -D_GNU_SOURCE #264109
 }
 
@@ -56,7 +55,7 @@ src_configure() {
 		$(use_enable parse-clocks) \
 		$(use_enable ipv6) \
 		$(use_enable debug debugging) \
-		$(use_with snmp netsnmpd) \
+		$(use_with snmp ntpsnmpd) \
 		$(use_with ssl crypto)
 }
 
