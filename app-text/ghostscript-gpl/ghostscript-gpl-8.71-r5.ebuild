@@ -1,19 +1,19 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ghostscript-gpl/Attic/ghostscript-gpl-8.71-r4.ebuild,v 1.4 2010/06/08 10:37:27 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/ghostscript-gpl/Attic/ghostscript-gpl-8.71-r5.ebuild,v 1.1 2010/07/30 22:09:04 tgurr Exp $
 
-EAPI=2
+EAPI=3
 inherit autotools eutils versionator flag-o-matic
 
-DESCRIPTION="GPL Ghostscript - the most current Ghostscript, AFPL, relicensed."
+DESCRIPTION="Ghostscript is an interpreter for the PostScript language and for PDF"
 HOMEPAGE="http://ghostscript.com/"
 
 MY_P=${P/-gpl}
 GSDJVU_PV=1.4
 PVM=$(get_version_component_range 1-2)
 SRC_URI="!bindist? ( djvu? ( mirror://sourceforge/djvu/gsdjvu-${GSDJVU_PV}.tar.gz ) )
-	mirror://sourceforge/ghostscript/${MY_P}.tar.gz
-	mirror://gentoo/${P}-patchset-2.tar.bz2"
+	mirror://sourceforge/ghostscript/${MY_P}.tar.xz
+	mirror://gentoo/${P}-patchset-3.tar.bz2"
 
 LICENSE="GPL-3 CPL-1.0"
 SLOT="0"
@@ -31,10 +31,10 @@ COMMON_DEPEND="app-text/libpaper
 	cups? ( >=net-print/cups-1.3.8 )
 	gtk? ( >=x11-libs/gtk+-2.0 )
 	jpeg2k? ( media-libs/jasper )
-	X? ( x11-libs/libXt x11-libs/libXext )
-	!app-text/ghostscript-gnu"
+	X? ( x11-libs/libXt x11-libs/libXext )"
 
 DEPEND="${COMMON_DEPEND}
+	app-arch/xz-utils
 	dev-util/pkgconfig"
 
 RDEPEND="${COMMON_DEPEND}
@@ -85,7 +85,7 @@ src_prepare() {
 	# remove internal urw-fonts
 	rm -rf "${S}/Resource/Font"
 
-	# Fedora patches
+	# Apply various patches, many borrowed from Fedora
 	# http://cvs.fedoraproject.org/viewvc/devel/ghostscript/
 	EPATCH_EXCLUDE="${PN}-8.64-gsdjvu-1.3.patch"
 	EPATCH_SUFFIX="patch" EPATCH_FORCE="yes"
@@ -119,11 +119,6 @@ src_prepare() {
 		-e "s:docdir=.*:docdir=/usr/share/doc/${PF}/html:" \
 		-e "s:GS_DOCDIR=.*:GS_DOCDIR=/usr/share/doc/${PF}/html:" \
 		base/Makefile.in base/*.mak || die "sed failed"
-
-	# http://repos.archlinux.org/wsvn/packages/ghostscript/trunk/libpng14.patch
-	sed -i \
-		-e 's:png_check_sig:png_sig_cmp:' \
-		"${S}"/{,base,jbig2dec}/configure.ac || die
 
 	cd "${S}"
 	eautoreconf
