@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/test-unit/Attic/test-unit-2.0.9.ebuild,v 1.3 2010/07/03 16:40:09 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/test-unit/Attic/test-unit-2.1.0-r1.ebuild,v 1.1 2010/07/30 17:32:33 flameeyes Exp $
 
 EAPI=2
 # One test fails on jruby, might be a jruby bug
@@ -26,10 +26,6 @@ SLOT="2"
 KEYWORDS="~amd64 ~ia64 ~sparc ~x86"
 IUSE=""
 
-# Two tests for jruby currently fail. This has been reported upstream:
-# http://rubyforge.org/tracker/index.php?group_id=5650&atid=21856
-RUBY_PATCHES=( "${P}-disable-tests.patch" )
-
 each_ruby_test() {
 	# the rake audit using dev-ruby/zentest currently fails, and we
 	# just need to call the testsuite directly.
@@ -41,10 +37,10 @@ each_ruby_test() {
 	${RUBY} ${rubyflags} test/run-test.rb || die "testsuite failed"
 }
 
-all_ruby_intall() {
+all_ruby_install() {
 	all_fakegem_install
 
 	# Create a testrb2 wrapper similarly to the rdoc2 wrapper for
 	# rdoc-2* series.
-	ruby_fakegem_binwrapper testrb /usr/bint/testrb2
+	ruby_fakegem_binwrapper testrb /usr/bin/testrb-2
 }
