@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/corosync/Attic/corosync-1.2.6.ebuild,v 1.1 2010/07/17 15:31:11 cardoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/corosync/Attic/corosync-1.2.7.ebuild,v 1.1 2010/08/02 05:28:57 xarthisius Exp $
 
 EAPI="3"
 
