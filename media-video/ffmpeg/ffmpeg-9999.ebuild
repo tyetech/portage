@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.17 2010/07/22 20:57:23 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.18 2010/08/02 05:12:05 aballier Exp $
 
 EAPI="2"
 
@@ -185,7 +185,6 @@ src_configure() {
 		--enable-version3
 		--enable-postproc
 		--enable-avfilter
-		--enable-avfilter-lavf
 		--disable-stripping
 		${myconf}"
 
