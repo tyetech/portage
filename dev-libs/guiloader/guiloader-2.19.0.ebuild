@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/guiloader-c++/Attic/guiloader-c++-2.17.0.ebuild,v 1.3 2010/05/21 08:52:58 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/guiloader/guiloader-2.19.0.ebuild,v 1.1 2010/08/05 06:45:56 pva Exp $
 
-EAPI="2"
+EAPI="3"
 
-DESCRIPTION="C++ binding to GuiLoader library"
+DESCRIPTION="library to create GTK+ interfaces from GuiXml at runtime"
 HOMEPAGE="http://www.crowdesigner.org"
 SRC_URI="http://nothing-personal.googlecode.com/files/${P}.tar.bz2"
 
@@ -15,13 +15,12 @@ IUSE="nls"
 
 LANGS="ru"
 
-RDEPEND=">=dev-libs/guiloader-2.17
-	>=dev-cpp/gtkmm-2.18
-	>=dev-cpp/glibmm-2.22"
+RDEPEND=">=x11-libs/gtk+-2.20:2
+	>=dev-libs/glib-2.24:2"
+
 DEPEND="${RDEPEND}
-		dev-libs/boost
-		dev-util/pkgconfig
-		nls? ( >=sys-devel/gettext-0.17 )"
+	dev-util/pkgconfig
+	nls? ( >=sys-devel/gettext-0.18 )"
 
 for x in ${LANGS}; do
 	IUSE="${IUSE} linguas_${x}"
@@ -33,5 +32,5 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "make install failed"
-	dodoc doc/{authors.txt,news.en.txt,readme.en.txt} || die
+	dodoc doc/{authors.txt,news.{ru,en}.txt,readme.{ru,en}.txt} || die
 }
