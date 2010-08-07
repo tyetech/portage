@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-3.1.6.ebuild,v 1.1 2010/08/07 06:18:01 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squid/Attic/squid-3.1.6.ebuild,v 1.2 2010/08/07 06:37:28 mrness Exp $
 
 EAPI="2"
 
@@ -36,6 +36,7 @@ DEPEND="${COMMON_DEPEND}
 	sys-devel/automake
 	sys-devel/autoconf
 	sys-devel/libtool
+	sys-apps/ed
 	test? ( dev-util/cppunit )"
 RDEPEND="${COMMON_DEPEND}
 	samba? ( net-fs/samba )
