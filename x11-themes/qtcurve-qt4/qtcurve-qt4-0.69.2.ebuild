@@ -1,10 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/qtcurve-qt4/Attic/qtcurve-qt4-0.69.2.ebuild,v 1.8 2010/06/21 16:16:12 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/qtcurve-qt4/Attic/qtcurve-qt4-0.69.2.ebuild,v 1.9 2010/08/09 12:46:44 scarabeus Exp $
 
 EAPI="2"
 KDE_REQUIRED="optional"
-KDE_MINIMAL="4.2"
 inherit flag-o-matic cmake-utils kde4-base
 
 MY_P="${P/qtcurve-qt4/QtCurve-KDE4}"
