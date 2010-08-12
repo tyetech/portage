@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/mailcrypt/mailcrypt-3.5.9.ebuild,v 1.1 2010/04/12 18:02:32 fauli Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/mailcrypt/mailcrypt-3.5.9.ebuild,v 1.2 2010/08/12 10:51:15 fauli Exp $
 
 EAPI=3
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/mailcrypt/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~sparc x86"
 IUSE=""
 RESTRICT="test"
 
