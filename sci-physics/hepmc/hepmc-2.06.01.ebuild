@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/hepmc/Attic/hepmc-2.06.00.ebuild,v 1.1 2010/06/08 05:15:07 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/hepmc/Attic/hepmc-2.06.01.ebuild,v 1.1 2010/08/12 16:32:42 bicatali Exp $
 
 EAPI=2
 
