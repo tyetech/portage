@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-0.7.2-r2.ebuild,v 1.2 2010/06/05 11:07:17 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-0.7.2-r3.ebuild,v 1.1 2010/08/14 10:16:52 gurligebis Exp $
 
 EAPI="2"
 
@@ -72,6 +72,9 @@ src_prepare() {
 
 	# bug (321627)
 	epatch "${FILESDIR}/fix-ssid-combo.patch"
+
+	# bug (330085)
+	epatch "${FILESDIR}/${P}-no-crash.patch"
 }
 
 src_configure() {
