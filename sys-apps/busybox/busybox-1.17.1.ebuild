@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/busybox/Attic/busybox-1.17.1.ebuild,v 1.2 2010/08/15 03:55:31 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/busybox/Attic/busybox-1.17.1.ebuild,v 1.3 2010/08/15 17:29:24 vapier Exp $
 
 EAPI=2
 inherit eutils flag-o-matic savedconfig toolchain-funcs
@@ -157,6 +157,7 @@ src_prepare() {
 		LASH LOCALE_SUPPORT LOGNAME LPD \
 		MSH \
 		OD \
+		RFKILL \
 		SLATTACH SULOGIN \
 		TASKSET TCPSVD \
 		RPM RPM2CPIO \
