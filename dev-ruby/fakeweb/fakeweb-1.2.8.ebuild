@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/fakeweb/Attic/fakeweb-1.2.8.ebuild,v 1.6 2010/07/29 01:54:05 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/fakeweb/Attic/fakeweb-1.2.8.ebuild,v 1.7 2010/08/15 22:30:44 flameeyes Exp $
 
 EAPI=2
 
@@ -23,6 +23,7 @@ ruby_add_bdepend "
 	test? (
 		>=dev-ruby/mocha-0.9.5
 		virtual/ruby-test-unit
+		!dev-ruby/test-unit:2
 		dev-ruby/samuel
 		dev-ruby/right_http_connection
 	)"
