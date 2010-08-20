@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/podofo/Attic/podofo-0.8.0.ebuild,v 1.2 2010/06/05 21:37:21 zmedico Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/podofo/Attic/podofo-0.8.1-r1.ebuild,v 1.1 2010/08/20 13:50:49 scarabeus Exp $
 
 EAPI=2
 inherit cmake-utils multilib
@@ -16,7 +16,6 @@ IUSE="+boost debug test"
 
 RDEPEND="dev-lang/lua
 	dev-libs/openssl
-	>=dev-libs/STLport-5.1.5
 	media-libs/fontconfig
 	media-libs/freetype:2
 	media-libs/jpeg:0
@@ -33,6 +32,10 @@ src_prepare() {
 	sed -i \
 		-e "s:LIBDIRNAME \"lib\":LIBDIRNAME \"$(get_libdir)\":" \
 		CMakeLists.txt || die
+
+	# Apply r1251 from upstream, to fix ambiguous conversion error.
+	sed -e 's/"), \([[:digit:]]L\)/"\), static_cast<pdf_int64>(\1)/' -i \
+		test/unit/EncryptTest.cpp || die
 }
 
 src_configure() {
@@ -42,7 +45,7 @@ src_configure() {
 		"-DPODOFO_HAVE_PNG_LIB=1"
 		"-DPODOFO_HAVE_TIFF_LIB=1"
 		"-DWANT_FONTCONFIG=1"
-		"-DUSE_STLPORT=1"
+		"-DUSE_STLPORT=0"
 		$(cmake-utils_use_want boost)
 		$(cmake-utils_use_has test CPPUNIT)
 		)
