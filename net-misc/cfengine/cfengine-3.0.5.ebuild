@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cfengine/Attic/cfengine-3.0.5.ebuild,v 1.2 2010/06/17 20:57:10 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cfengine/Attic/cfengine-3.0.5.ebuild,v 1.3 2010/08/29 10:57:19 idl0r Exp $
 
 EAPI="2"
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://www.cfengine.org/"
 SRC_URI="http://www.cfengine.org/tarballs/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
-SLOT="0"
+SLOT="3"
 KEYWORDS="~amd64 ~arm ~ppc ~s390 ~sparc ~x86"
 IUSE="mysql postgres selinux vim-syntax"
 
