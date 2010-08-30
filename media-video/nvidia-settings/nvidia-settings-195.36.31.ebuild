@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-177.80.ebuild,v 1.3 2009/03/18 09:58:28 ricmm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-195.36.31.ebuild,v 1.1 2010/08/30 21:08:18 cardoe Exp $
 
 inherit eutils toolchain-funcs multilib flag-o-matic
 
@@ -12,7 +12,7 @@ SRC_URI="ftp://download.nvidia.com/XFree86/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* amd64 x86 ~x86-fbsd"
+KEYWORDS="-* ~amd64 ~x86 ~x86-fbsd"
 IUSE=""
 
 # xorg-server is used in the depends as nvidia-settings builds against some
@@ -33,7 +33,13 @@ RDEPEND=">=x11-libs/gtk+-2
 	x11-libs/libXt
 	x11-drivers/nvidia-drivers"
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+	epatch "${FILESDIR}/${PN}-190.53-xf86vidmodeproto.patch"
+}
 
 src_compile() {
 	einfo "Building libXNVCtrl..."

@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-190.32.ebuild,v 1.1 2009/09/21 11:23:20 wired Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-173.14.25.ebuild,v 1.1 2010/08/30 21:08:18 cardoe Exp $
 
 inherit eutils toolchain-funcs multilib flag-o-matic
 

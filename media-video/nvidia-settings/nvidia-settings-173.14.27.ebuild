@@ -1,14 +1,14 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-256.35.ebuild,v 1.1 2010/06/24 01:39:30 spock Exp $
-
-EAPI=2
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/nvidia-settings/Attic/nvidia-settings-173.14.27.ebuild,v 1.1 2010/08/30 21:08:18 cardoe Exp $
 
 inherit eutils toolchain-funcs multilib flag-o-matic
 
+MY_P="${PN}-1.0"
+
 DESCRIPTION="NVIDIA Linux X11 Settings Utility"
 HOMEPAGE="http://www.nvidia.com/"
-SRC_URI="ftp://download.nvidia.com/XFree86/${PN}/${P}.tar.bz2"
+SRC_URI="ftp://download.nvidia.com/XFree86/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -33,9 +33,7 @@ RDEPEND=">=x11-libs/gtk+-2
 	x11-libs/libXt
 	x11-drivers/nvidia-drivers"
 
-src_prepare() {
-	sed -i -e "s#prefix = .*#prefix = ${D}/usr#" utils.mk
-}
+S="${WORKDIR}/${MY_P}"
 
 src_compile() {
 	einfo "Building libXNVCtrl..."
@@ -51,7 +49,9 @@ src_compile() {
 }
 
 src_install() {
-	make STRIP_CMD=/bin/true install
+	# Install the executable
+	exeinto /usr/bin
+	doexe nvidia-settings
 
 	# Install libXNVCtrl and headers
 	insinto "/usr/$(get_libdir)"
@@ -62,6 +62,9 @@ src_install() {
 	# Install icon and .desktop entry
 	doicon "${FILESDIR}/icon/${PN}.png"
 	domenu "${FILESDIR}/icon/${PN}.desktop"
+
+	# Install manpage
+	doman doc/nvidia-settings.1
 
 	# Now install documentation
 	dodoc doc/*.txt
