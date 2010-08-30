@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-3.7.2.ebuild,v 1.1 2010/08/29 18:20:20 betelgeuse Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-3.7.2.ebuild,v 1.2 2010/08/30 09:22:06 betelgeuse Exp $
 
 EAPI="3"
 
@@ -123,7 +123,7 @@ src_configure() {
 		$(use_enable threadsafe) \
 		$(${amalgamation} || echo --with-readline-inc="-I${EPREFIX}/usr/include/readline") \
 		$(${amalgamation} || use_enable debug) \
-		$(${amalgamation} || use_enable tcl)
+		$(${amalgamation} || echo --enable-tcl)
 }
 
 src_compile() {
