@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/miredo/Attic/miredo-1.2.3.ebuild,v 1.2 2010/05/03 18:25:14 bangert Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/miredo/Attic/miredo-1.2.3-r1.ebuild,v 1.1 2010/08/31 11:21:22 xmw Exp $
 
 EAPI=3
 
