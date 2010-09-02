@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/corosync/Attic/corosync-1.2.7.ebuild,v 1.1 2010/08/02 05:28:57 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/corosync/Attic/corosync-1.2.8.ebuild,v 1.1 2010/09/02 19:24:20 xarthisius Exp $
 
-EAPI="3"
+EAPI=3
 
 inherit base autotools
 
