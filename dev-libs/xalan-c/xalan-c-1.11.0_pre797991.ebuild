@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/xalan-c/xalan-c-1.11.0_pre797991.ebuild,v 1.2 2009/07/27 00:09:13 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/xalan-c/xalan-c-1.11.0_pre797991.ebuild,v 1.3 2010/09/03 01:17:42 weaver Exp $
 
 EAPI="2"
 
@@ -75,7 +75,7 @@ src_configure() {
 }
 
 src_compile() {
-	default
+	emake -j1 || die
 
 	if use doc ; then
 		mkdir build
