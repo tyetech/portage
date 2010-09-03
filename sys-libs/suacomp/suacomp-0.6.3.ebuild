@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/suacomp/Attic/suacomp-0.6.3.ebuild,v 1.1 2010/09/03 07:14:07 mduft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/suacomp/Attic/suacomp-0.6.3.ebuild,v 1.2 2010/09/03 14:44:38 mr_bones_ Exp $
 
 EAPI=2
 
@@ -46,4 +46,3 @@ src_install() {
 src_test() {
 	emake check $(get_opts) || die "emake check failed"
 }
-
