@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0.6.905.ebuild,v 1.2 2009/09/19 22:35:07 agaffney Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/catalyst/Attic/catalyst-2.0.6.908.ebuild,v 1.1 2010/09/05 20:10:27 armin76 Exp $
 
 inherit eutils multilib
 SRC_URI="mirror://gentoo/${P}.tar.bz2
