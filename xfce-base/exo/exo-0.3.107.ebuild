@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/exo/Attic/exo-0.3.107.ebuild,v 1.10 2010/08/29 17:55:04 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/exo/Attic/exo-0.3.107.ebuild,v 1.11 2010/09/06 17:47:44 ssuominen Exp $
 
-EAPI=2
+EAPI=3
 inherit xfconf python multilib
 
 DESCRIPTION="Extensions, widgets and framework library with session management support"
