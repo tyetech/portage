@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/xgammon/xgammon-0.98.ebuild,v 1.13 2009/09/24 20:46:30 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/xgammon/xgammon-0.98.ebuild,v 1.14 2010/09/06 08:54:07 tupone Exp $
 
 EAPI=2
 inherit eutils
@@ -33,7 +33,7 @@ src_configure() {
 }
 
 src_compile() {
-	env PATH=".:${PATH}" emake || die "emake failed"
+	env PATH=".:${PATH}" emake EXTRA_LDOPTIONS="${LDFLAGS}" || die "emake failed"
 }
 
 src_install() {
