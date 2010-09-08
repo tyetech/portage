@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sip/Attic/sip-4.10.1.ebuild,v 1.2 2010/07/06 18:41:15 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sip/Attic/sip-4.11.1.ebuild,v 1.1 2010/09/08 23:09:14 hwoarang Exp $
 
-EAPI="2"
+EAPI="3"
 PYTHON_DEPEND="*"
 PYTHON_EXPORT_PHASE_FUNCTIONS="1"
 SUPPORT_PYTHON_ABIS="1"
@@ -26,7 +26,7 @@ DEPEND=""
 RDEPEND=""
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-4.9.3-darwin.patch
+	epatch "${FILESDIR}/${PN}-4.9.3-darwin.patch"
 	python_copy_sources
 }
 
