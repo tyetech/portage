@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-0.6.10.ebuild,v 1.8 2010/09/08 17:34:33 gurligebis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-0.7.3.ebuild,v 1.1 2010/09/08 17:34:33 gurligebis Exp $
 
 EAPI="2"
 
-inherit eutils toolchain-funcs qt4
+inherit eutils toolchain-funcs qt4-r2
 
 DESCRIPTION="IEEE 802.1X/WPA supplicant for secure wireless transfers"
 HOMEPAGE="http://hostap.epitest.fi/wpa_supplicant/"
@@ -12,7 +12,7 @@ SRC_URI="http://hostap.epitest.fi/releases/${P}.tar.gz"
 LICENSE="|| ( GPL-2 BSD )"
 
 SLOT="0"
-KEYWORDS="amd64 ~arm ppc ppc64 x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd"
 IUSE="dbus debug gnutls eap-sim fasteap madwifi ps3 qt4 readline ssl wps kernel_linux kernel_FreeBSD"
 
 RDEPEND="dbus? ( sys-apps/dbus )
@@ -65,7 +65,10 @@ src_prepare() {
 		-e "s:/usr/lib/pkcs11:/usr/$(get_libdir):" \
 		wpa_supplicant.conf || die
 
-	epatch "${FILESDIR}/dbus_path_fix.patch"
+	epatch "${FILESDIR}/${P}-dbus_path_fix.patch"
+
+	# bug (320097)
+	epatch "${FILESDIR}/do-not-call-dbus-functions-with-NULL-path.patch"
 }
 
 src_configure() {
@@ -166,15 +169,21 @@ src_configure() {
 
 	# Enable mitigation against certain attacks against TKIP
 	echo "CONFIG_DELAYED_MIC_ERROR_REPORT=y" >> .config
-}
-
-src_compile() {
-	emake || die "emake failed"
 
 	if use qt4 ; then
 		cd "${S}"/wpa_gui-qt4
 		eqmake4 wpa_gui.pro
-		emake || die "Qt4 wpa_gui compilation failed"
+	fi
+}
+
+src_compile() {
+	einfo "Building wpa_supplicant"
+	emake || die "emake failed"
+
+	if use qt4 ; then
+		cd "${S}"/wpa_gui-qt4
+		einfo "Building wpa_gui"
+		emake || die "wpa_gui compilation failed"
 	fi
 }
 
@@ -206,18 +215,16 @@ src_install() {
 	if use qt4 ; then
 		into /usr
 		dobin wpa_gui-qt4/wpa_gui || die
-	fi
-
-	if use qt4 ; then
 		doicon wpa_gui-qt4/icons/wpa_gui.svg || die "Icon not found"
 		make_desktop_entry wpa_gui "WPA Supplicant Administration GUI" "wpa_gui" "Qt;Network;"
 	fi
 
 	if use dbus ; then
+		cd "${S}"/dbus
 		insinto /etc/dbus-1/system.d
 		newins dbus-wpa_supplicant.conf wpa_supplicant.conf || die
 		insinto /usr/share/dbus-1/system-services
-		newins dbus-wpa_supplicant.service 'fi.epitest.hostap.WPASupplicant.service' || die
+		doins fi.epitest.hostap.WPASupplicant.service || die
 		keepdir /var/run/wpa_supplicant
 	fi
 }
