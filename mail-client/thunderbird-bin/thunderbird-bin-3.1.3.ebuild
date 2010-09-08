@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird-bin/Attic/thunderbird-bin-3.1.2.ebuild,v 1.1 2010/09/06 11:45:51 anarchy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird-bin/Attic/thunderbird-bin-3.1.3.ebuild,v 1.1 2010/09/08 00:14:31 anarchy Exp $
 
 EAPI="2"
 
