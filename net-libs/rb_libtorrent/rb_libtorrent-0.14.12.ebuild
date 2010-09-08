@@ -1,10 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/rb_libtorrent/Attic/rb_libtorrent-0.15.2.ebuild,v 1.1 2010/08/21 13:21:44 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/rb_libtorrent/Attic/rb_libtorrent-0.14.12.ebuild,v 1.1 2010/09/08 23:03:43 hwoarang Exp $
 
 EAPI="2"
-WANT_AUTOMAKE="1.11.1"
-inherit autotools eutils versionator
+inherit autotools eutils flag-o-matic versionator
 
 MY_P=${P/rb_/}
 MY_P=${MY_P/torrent/torrent-rasterbar}
@@ -17,7 +16,7 @@ SRC_URI="http://libtorrent.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd"
-IUSE="debug doc examples python"
+IUSE="debug doc examples python test"
 RESTRICT="test"
 
 DEPEND="|| ( >=dev-libs/boost-1.35
@@ -29,16 +28,23 @@ DEPEND="|| ( >=dev-libs/boost-1.35
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-0.15.1-ax_pthread_asneeded.patch
+	epatch "${FILESDIR}"/${PN}-0.14.9-as-needed-fix.patch  #276873
+	epatch "${FILESDIR}"/${PN}-0.14.8-boost-detect.patch   #295474
+	rm ltmain.sh  #298069
 	eautoreconf
 }
 
 src_configure() {
+	append-ldflags -pthread
+
 	# use multi-threading versions of boost libs
 	local BOOST_LIBS="--with-boost-system=boost_system-mt \
+		--with-boost-asio=boost_system-mt \
 		--with-boost-filesystem=boost_filesystem-mt \
 		--with-boost-thread=boost_thread-mt \
-		--with-boost-python=boost_python-mt"
+		--with-boost-regex=boost_regex-mt \
+		--with-boost-python=boost_python-mt \
+		--with-boost-program_options=boost_program_options-mt"
 
 	# detect boost version and location, bug 295474
 	BOOST_PKG="$(best_version ">=dev-libs/boost-1.34.1")"
@@ -55,6 +61,7 @@ src_configure() {
 		$(use_enable examples) \
 		$(use_enable python python-binding) \
 		--with-zlib=system \
+		--with-asio=system \
 		${LOGGING} \
 		--with-boost=${BOOST_INC} \
 		--with-boost-libdir=${BOOST_LIB} \
