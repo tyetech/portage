@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/cairo/Attic/cairo-1.10.0-r1.ebuild,v 1.2 2010/09/09 08:03:54 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/cairo/Attic/cairo-1.10.0-r1.ebuild,v 1.3 2010/09/09 10:41:03 scarabeus Exp $
 
 EAPI=3
 
@@ -133,7 +133,7 @@ src_configure() {
 		--enable-pdf \
 		--enable-png \
 		--enable-ps \
-		--disable-xcb-lib \
+		--disable-xlib-xcb \
 		${myopts}
 }
 
