@@ -1,11 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.4.4-r2.ebuild,v 1.1 2010/09/11 12:10:19 tgurr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.4.4-r2.ebuild,v 1.2 2010/09/11 17:53:40 arfrever Exp $
 
 EAPI=3
 
 PYTHON_DEPEND="python? 2:2.5"
-RESTRICT_PYTHON_ABIS="3.*"
 
 inherit autotools eutils flag-o-matic multilib pam perl-module python versionator java-pkg-opt-2
 
