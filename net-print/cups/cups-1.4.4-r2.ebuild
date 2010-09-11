@@ -1,27 +1,24 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.4.4-r1.ebuild,v 1.3 2010/09/10 23:39:15 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.4.4-r2.ebuild,v 1.1 2010/09/11 12:10:19 tgurr Exp $
 
 EAPI=3
 
 PYTHON_DEPEND="python? 2:2.5"
 RESTRICT_PYTHON_ABIS="3.*"
 
-MY_P=${P/_}
-PATCH_VERSION=001
-SRC_PATCHES="http://gentoo.ccss.cz/${P}-gentoopatches-${PATCH_VERSION}.tar.bz2"
-
 inherit autotools eutils flag-o-matic multilib pam perl-module python versionator java-pkg-opt-2
+
+MY_P=${P/_}
 
 DESCRIPTION="The Common Unix Printing System"
 HOMEPAGE="http://www.cups.org/"
-SRC_URI="mirror://easysw/${PN}/${PV}/${MY_P}-source.tar.bz2
-	${SRC_PATCHES}"
+SRC_URI="mirror://easysw/${PN}/${PV}/${MY_P}-source.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
-IUSE="X acl dbus debug gnutls java +jpeg kerberos ldap pam perl php +png python samba slp +ssl static +threads +tiff +usb xinetd"
+IUSE="acl dbus debug gnutls java +jpeg kerberos ldap pam perl php +png python samba slp +ssl static-libs +threads +tiff +usb X xinetd"
 
 LANGS="da de es eu fi fr id it ja ko nl no pl pt pt_BR ru sv zh zh_TW"
 for X in ${LANGS} ; do
@@ -31,7 +28,6 @@ done
 RDEPEND="
 	app-text/libpaper
 	dev-libs/libgcrypt
-	X? ( x11-misc/xdg-utils )
 	acl? (
 		kernel_linux? (
 			sys-apps/acl
@@ -54,17 +50,21 @@ RDEPEND="
 	)
 	tiff? ( >=media-libs/tiff-3.5.5 )
 	usb? ( virtual/libusb:0 )
+	X? ( x11-misc/xdg-utils )
 	xinetd? ( sys-apps/xinetd )
+	!net-print/cupsddk
 "
 
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	java? ( >=virtual/jdk-1.6 )
 "
+
 PDEPEND="
 	app-text/ghostscript-gpl[cups]
 	>=app-text/poppler-0.12.3-r3[utils]
 "
+
+PROVIDE="virtual/lpr"
 
 # upstream includes an interactive test which is a nono for gentoo.
 RESTRICT="test"
@@ -82,12 +82,13 @@ pkg_setup() {
 }
 
 src_prepare() {
-	if [[ -n ${SRC_PATCHES} ]]; then
-		EPATCH_FORCE="yes" \
-		EPATCH_SOURCE="${WORKDIR}/patches" \
-		EPATCH_SUFFIX="patch" \
-		epatch
-	fi
+	# create a missing symlink to allow https printing via IPP, bug #217293
+	epatch "${FILESDIR}/${PN}-1.4.0-backend-https.patch"
+	# various build time fixes
+	epatch "${FILESDIR}/${PN}-1.4.4-dont-compress-manpages.patch"
+	epatch "${FILESDIR}/${PN}-1.4.4-fix-install-perms.patch"
+	epatch "${FILESDIR}/${PN}-1.4.4-nostrip.patch"
+	epatch "${FILESDIR}/${PN}-1.4.4-php-destdir.patch"
 
 	AT_M4DIR=config-scripts eaclocal
 	eautoconf
@@ -134,7 +135,7 @@ src_configure() {
 		$(use_enable pam) \
 		$(use_enable png) \
 		$(use_enable slp) \
-		$(use_enable static) \
+		$(use_enable static-libs static) \
 		$(use_enable threads) \
 		$(use_enable tiff) \
 		$(use_enable usb libusb) \
@@ -144,6 +145,7 @@ src_configure() {
 		$(use_with python) \
 		$(use_with xinetd xinetd /etc/xinetd.d) \
 		--enable-libpaper \
+		--disable-dnssd \
 		${myconf}
 
 	# install in /usr/libexec always, instead of using /usr/lib/cups, as that
@@ -156,15 +158,13 @@ src_configure() {
 src_compile() {
 	emake || die "emake failed"
 
-	# perl
-	if use perl; then
+	if use perl ; then
 		cd "${S}"/scripting/perl
 		perl-module_src_prep
 		perl-module_src_compile
 	fi
 
-	# php
-	if use php; then
+	if use php ; then
 		cd "${S}"/scripting/php
 		emake || die "emake php failed"
 	fi
@@ -174,15 +174,13 @@ src_install() {
 	emake BUILDROOT="${D}" install || die "emake install failed"
 	dodoc {CHANGES,CREDITS,README}.txt || die "dodoc install failed"
 
-	# perl
-	if use perl; then
+	if use perl ; then
 		cd "${S}"/scripting/perl
 		perl-module_src_install
 		fixlocalpod
 	fi
 
-	# php
-	if use php; then
+	if use php ; then
 		cd "${S}"/scripting/php
 		emake DESTDIR="${D}" install || die "emake install for php bindings failed"
 	fi
@@ -211,6 +209,8 @@ src_install() {
 		# it is safer to disable this by default, bug #137130
 		grep -w 'disable' "${D}"/etc/xinetd.d/cups-lpd || \
 			{ sed -i -e "s:}:\tdisable = yes\n}:" "${D}"/etc/xinetd.d/cups-lpd || die ; }
+		# write permission for file owner (root), bug #296221
+		fperms u+w /etc/xinetd.d/cups-lpd || die "fperms failed"
 	else
 		rm -rf "${D}"/etc/xinetd.d
 	fi
