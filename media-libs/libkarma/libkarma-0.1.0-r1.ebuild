@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libkarma/libkarma-0.1.0-r1.ebuild,v 1.3 2009/05/20 16:00:21 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libkarma/libkarma-0.1.0-r1.ebuild,v 1.4 2010/09/12 12:37:40 pacho Exp $
 
 EAPI=2
 inherit eutils mono toolchain-funcs
@@ -24,6 +24,9 @@ MAKEOPTS="${MAKEOPTS} -j1"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-destdir.patch
+
+	# Make this respect LDFLAGS, bug #336151
+	epatch "${FILESDIR}"/${P}-ldflags.patch
 }
 
 src_compile() {
