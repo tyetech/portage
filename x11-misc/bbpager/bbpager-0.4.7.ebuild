@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbpager/bbpager-0.4.7.ebuild,v 1.1 2008/12/20 23:23:51 loki_val Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/bbpager/bbpager-0.4.7.ebuild,v 1.2 2010/09/14 17:23:26 fauli Exp $
 
 inherit base autotools
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/bbtools/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
+KEYWORDS="~amd64 ~ppc ~ppc64 x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="x11-wm/blackbox"
