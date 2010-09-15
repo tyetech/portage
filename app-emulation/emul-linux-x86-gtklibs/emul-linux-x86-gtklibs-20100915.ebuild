@@ -1,14 +1,11 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/emul-linux-x86-gtklibs/Attic/emul-linux-x86-gtklibs-20100220-r2.ebuild,v 1.3 2010/03/22 13:58:58 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/emul-linux-x86-gtklibs/Attic/emul-linux-x86-gtklibs-20100915.ebuild,v 1.1 2010/09/15 11:42:05 pacho Exp $
 
 inherit emul-linux-x86
 
-SRC_URI="mirror://gentoo/${PN}-${PV}.tar.bz2
-	http://dev.gentoo.org/~pacho/emul-linux-x86-${PV}/libglade-2.0.so.0.0.7"
-
 LICENSE="GPL-3 GPL-2 LGPL-2 LGPL-2.1 FTL MIT || ( LGPL-2.1 MPL-1.1 )"
-KEYWORDS="-* amd64"
+KEYWORDS="-* ~amd64"
 
 IUSE=""
 
@@ -25,14 +22,6 @@ src_unpack() {
 	mv -f "${S}/usr/bin/pango-querymodules"{,32} || die
 	mv -f "${S}/usr/bin/gtk-query-immodules-2.0"{,-32} || die
 	mv -f "${S}/usr/bin/gdk-pixbuf-query-loaders"{,32} || die
-}
-
-src_install() {
-	emul-linux-x86_src_install
-	insinto /usr/lib32/
-	doins "${DISTDIR}"/libglade-2.0.so.0.0.7 || die
-	dosym libglade-2.0.so.0.0.7 /usr/lib32/libglade-2.0.so.0 || die
-	dosym libglade-2.0.so.0.0.7 /usr/lib32/libglade-2.0.so || die
 }
 
 pkg_preinst() {
