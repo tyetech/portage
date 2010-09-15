@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-6.0.472.55.ebuild,v 1.1 2010/09/08 00:36:18 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-6.0.472.59-r1.ebuild,v 1.1 2010/09/15 01:34:46 phajdan.jr Exp $
 
 EAPI="2"
 
