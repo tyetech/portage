@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/chromium/Attic/chromium-0.9.14.ebuild,v 1.5 2009/09/27 11:13:53 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/chromium/Attic/chromium-0.9.14.ebuild,v 1.6 2010/09/16 16:47:46 scarabeus Exp $
 
 EAPI=2
 inherit autotools eutils games
@@ -31,7 +31,7 @@ RDEPEND="media-fonts/dejavu
 		media-libs/libsdl[X]
 		media-libs/sdl-image[png]
 	)
-	!sdl? ( virtual/glut )"
+	!sdl? ( media-libs/freeglut )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
 
