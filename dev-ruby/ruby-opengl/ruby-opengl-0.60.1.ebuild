@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-opengl/Attic/ruby-opengl-0.60.1.ebuild,v 1.6 2010/05/22 15:51:23 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-opengl/Attic/ruby-opengl-0.60.1.ebuild,v 1.7 2010/09/16 16:45:21 scarabeus Exp $
 
 inherit gems
 
@@ -17,4 +17,4 @@ IUSE=""
 DEPEND=">=dev-ruby/mkrf-0.2.3
 	>=dev-ruby/rake-0.7.3
 	virtual/opengl
-	virtual/glut"
+	media-libs/freeglut"
