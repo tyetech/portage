@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/gearmand/Attic/gearmand-0.14.ebuild,v 1.2 2010/09/16 19:43:48 flameeyes Exp $
 
 EAPI=2
 
