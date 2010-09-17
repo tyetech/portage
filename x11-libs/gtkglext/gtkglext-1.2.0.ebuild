@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtkglext/gtkglext-1.2.0.ebuild,v 1.19 2010/03/14 22:31:49 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtkglext/gtkglext-1.2.0.ebuild,v 1.20 2010/09/17 11:14:14 scarabeus Exp $
 
 EAPI="2"
 
@@ -18,7 +18,6 @@ IUSE=""
 RDEPEND=">=dev-libs/glib-2:2
 	>=x11-libs/gtk+-2:2
 	>=x11-libs/pango-1[X]
-	virtual/glu
 	virtual/opengl"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
