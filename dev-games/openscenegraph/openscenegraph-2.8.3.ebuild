@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-games/cvs-repo/gentoo-x86/dev-games/openscenegraph/Attic/openscenegraph-2.8.3.ebuild,v 1.7 2010/09/16 16:35:35 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-games/cvs-repo/gentoo-x86/dev-games/openscenegraph/Attic/openscenegraph-2.8.3.ebuild,v 1.8 2010/09/17 11:07:44 scarabeus Exp $
 
 EAPI=2
 
@@ -29,7 +29,6 @@ wxwidgets xine xrandr zlib"
 RDEPEND="
 	x11-libs/libSM
 	x11-libs/libXext
-	virtual/glu
 	virtual/opengl
 	curl? ( net-misc/curl )
 	examples? (
