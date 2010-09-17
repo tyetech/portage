@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/webfuzzer/Attic/webfuzzer-0.2.0.ebuild,v 1.3 2008/11/08 15:16:59 cedk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/webfuzzer/webfuzzer-0.2.0-r1.ebuild,v 1.1 2010/09/17 03:39:47 jer Exp $
+
+EAPI="2"
 
 inherit eutils toolchain-funcs
 
@@ -18,14 +20,11 @@ RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/devel
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	sed -i \
-		-e "s/CFLAGS=-g -O3/CFLAGS+=-g/" \
-		-e "s/CC=/CC?=/" \
-		Makefile || die "sed failed"
+src_prepare() {
+	sed -i Makefile \
+		-e 's|CFLAGS=-g -O3|CFLAGS+=|' \
+		-e 's| -o |$(LDFLAGS) -o|g' \
+		|| die "sed Makefile"
 }
 
 src_compile() {
