@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/p7zip/Attic/p7zip-4.65.ebuild,v 1.10 2010/06/07 06:43:56 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/p7zip/Attic/p7zip-9.13-r1.ebuild,v 1.1 2010/09/19 09:26:59 jlec Exp $
 
 EAPI="2"
 WX_GTK_VER="2.8"
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV}_src_all.tar.bz2"
 LICENSE="LGPL-2.1 rar? ( unRAR )"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
-IUSE="doc kde rar static wxwidgets"
+IUSE="doc kde rar +pch static wxwidgets"
 
 RDEPEND="kde? ( x11-libs/wxGTK:2.8[X,-odbc] kde-base/konqueror )
 	wxwidgets? ( x11-libs/wxGTK:2.8[X,-odbc] )"
@@ -27,6 +27,14 @@ pkg_setup() {
 }
 
 src_prepare() {
+	if ! use pch; then
+		sed "s:PRE_COMPILED_HEADER=StdAfx.h.gch:PRE_COMPILED_HEADER=:g" -i makefile.* || die
+	fi
+
+	sed \
+		-e "/^CC/s:\$(ALLFLAGS):${CFLAGS} \$(ALLFLAGS):g" \
+		-e "/^CXX/s:\$(ALLFLAGS):${CXXFLAGS} \$(ALLFLAGS):g" \
+		-i makefile* || die
 	if use kde && ! use wxwidgets ; then
 		einfo "USE-flag kde needs wxwidgets flag"
 		einfo "silently enabling wxwidgets flag"
@@ -38,24 +46,27 @@ src_prepare() {
 	else
 		sed -e '/Rar/d' -i makefile*
 		rm -rf CPP/7zip/Compress/Rar
-		epatch "${FILESDIR}"/${PV}-makefile.patch
+		epatch "${FILESDIR}"/9.04-makefile.patch
 	fi
 
 	sed -i \
 		-e "/^CXX=/s:g++:$(tc-getCXX):" \
 		-e "/^CC=/s:gcc:$(tc-getCC):" \
-		-e "s:OPTFLAGS=-O:OPTFLAGS=${CXXFLAGS}:" \
-		-e 's:-s ::' \
+		-e '/ALLFLAGS/s:-s ::' \
 		makefile* || die "changing makefiles"
 
 	if use amd64; then
 		cp -f makefile.linux_amd64 makefile.machine
 	elif [[ ${CHOST} == *-darwin* ]] ; then
 		# Mac OS X needs this special makefile, because it has a non-GNU linker
-		cp -f makefile.macosx makefile.machine
-		# bundles have extension .bundle
+		[[ ${CHOST} == *64-* ]] \
+			&& cp -f makefile.macosx_64bits makefile.machine \
+			|| cp -f makefile.macosx_32bits makefile.machine
+		# bundles have extension .bundle but don't die because USE=-rar
+		# removes the Rar directory
 		sed -i -e '/^PROG=/s/\.so/.bundle/' \
-			CPP/7zip/Bundles/Format7zFree/makefile || die
+			CPP/7zip/Bundles/Format7zFree/makefile \
+			CPP/7zip/Compress/Rar/makefile
 	elif use x86-fbsd; then
 		# FreeBSD needs this special makefile, because it hasn't -ldl
 		sed -e 's/-lc_r/-pthread/' makefile.freebsd > makefile.machine
@@ -65,7 +76,12 @@ src_prepare() {
 	# We can be more parallel
 	cp -f makefile.parallel_jobs makefile
 
-	epatch "${FILESDIR}"/${PV}-hardlink.patch
+	epatch "${FILESDIR}"/9.04-kde4.patch
+
+	if use kde || use wxwidgets; then
+		einfo "Preparing dependency list"
+		emake depend || die
+	fi
 }
 
 src_compile() {
@@ -99,7 +115,7 @@ src_install() {
 			insinto /usr/share/icons/hicolor/16x16/apps/
 			newins GUI/p7zip_16_ok.png p7zip.png
 
-			insinto  /usr/share/apps/konqueror/servicemenus/
+			insinto  /usr/share/kde4/services/ServiceMenus
 			doins GUI/kde/*.desktop
 		fi
 	fi
