@@ -1,8 +1,10 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/xl2tpd/Attic/xl2tpd-1.2.3.ebuild,v 1.2 2009/07/16 06:19:19 mrness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/xl2tpd/Attic/xl2tpd-1.2.6-r1.ebuild,v 1.1 2010/09/19 11:31:22 mrness Exp $
 
-inherit eutils flag-o-matic
+EAPI="2"
+
+inherit eutils
 
 DESCRIPTION="A modern version of the Layer 2 Tunneling Protocol (L2TP) daemon"
 HOMEPAGE="http://www.xelerance.com/software/xl2tpd/"
@@ -10,22 +12,17 @@ SRC_URI="ftp://ftp.xelerance.com/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
-IUSE=""
+KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="dnsretry"
 
 DEPEND="net-libs/libpcap"
 RDEPEND="${DEPEND}
 	net-dialup/ppp"
 
-src_unpack() {
-	unpack ${A}
-
+src_prepare() {
 	epatch "${FILESDIR}"/${P}-as-needed.patch
-}
-
-src_compile() {
-	append-flags -DTRUST_PPPD_TO_DIE
-	emake || die "emake failed"
+	epatch "${FILESDIR}"/${P}-qa-fixes.patch
+	use dnsretry && epatch "${FILESDIR}"/${PN}-dnsretry.patch
 }
 
 src_install() {
