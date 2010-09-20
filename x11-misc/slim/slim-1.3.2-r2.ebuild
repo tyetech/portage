@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/slim/Attic/slim-1.3.2.ebuild,v 1.1 2010/07/31 02:58:39 darkside Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/slim/Attic/slim-1.3.2-r2.ebuild,v 1.1 2010/09/20 15:22:38 darkside Exp $
 
 EAPI=2
 
@@ -39,7 +39,8 @@ src_prepare() {
 		-e "s:-lpng12:$(pkg-config --libs-only-l libpng):" \
 		-r -e "s:^LDFLAGS=(.*):LDFLAGS=\1 ${LDFLAGS}:" \
 		Makefile || die "sed failed in Makefile"
-	epatch "${FILESDIR}/${PN}-1.3.2-config.diff"
+	# Our Gentoo-specific config changes
+	epatch "${FILESDIR}/${PN}-1.3.2-r2-config.diff"
 
 	if use branding; then
 		sed -i -e 's/  default/  slim-gentoo-simple/' slim.conf || die
@@ -51,6 +52,8 @@ src_prepare() {
 	epatch "${FILESDIR}/15287-fix-pam-authentication-with-pam_unix2.patch"
 	# Gentoo Bug 261713
 	epatch "${FILESDIR}/261713-restart-xserver-if-killed.patch"
+	# Gentoo bug 261359, upstream 15326
+	epatch "${FILESDIR}/261359-fix-SIGTERM-freeze.patch"
 }
 
 src_compile() {
@@ -69,6 +72,9 @@ src_install() {
 		emake DESTDIR="${D}" install || die "emake install failed."
 	fi
 
+	insinto /usr/share/slim
+	newins "${FILESDIR}/Xsession" Xsession || die "newins failed"
+
 	insinto /etc/logrotate.d
 	newins "${FILESDIR}/slim.logrotate" slim || die "newins failed"
 
@@ -81,7 +87,13 @@ pkg_postinst() {
 	elog
 	elog "If you wish ${PN} to start automatically, set DISPLAYMANAGER=\"${PN}\" "
 	elog "in /etc/conf.d/xdm and run \"rc-update add xdm default\"."
-	elog "By default, ${PN} will use default XSESSION value set in /etc/rc.conf."
+	elog
+	elog "By default, ${PN} now does proper X session selection, including ~/.xsession"
+	elog "support, as well as selection between sessions available in"
+	elog "/etc/X11/Sessions/ at login by pressing [F1]."
+	elog
+	elog "The XSESSION environment variable is still supported as a default"
+	elog "if no session has been specified by the user."
 	elog
 	elog "If you want to use .xinitrc in the user's home directory for session"
 	elog "management instead, see README and xinitrc.sample in"
