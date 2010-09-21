@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/compiz/Attic/compiz-0.8.4-r2.ebuild,v 1.3 2010/09/09 10:49:21 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/compiz/Attic/compiz-0.8.4-r2.ebuild,v 1.4 2010/09/21 07:42:49 scarabeus Exp $
 
 EAPI="2"
 
@@ -22,7 +22,7 @@ DEPEND="
 	media-libs/libpng
 	>=media-libs/mesa-6.5.1-r1
 	>=x11-base/xorg-server-1.1.1-r1
-	|| ( <=x11-libs/libX11-1.3.5[xcb] >x11-libs/libX11-1.3.5  )
+	|| ( <x11-libs/libX11-1.3.99.901[xcb] >=x11-libs/libX11-1.3.99.901 )
 	x11-libs/libxcb
 	x11-libs/libXcomposite
 	x11-libs/libXdamage
