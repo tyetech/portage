@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/PyQt4/Attic/PyQt4-4.7.6.ebuild,v 1.2 2010/09/10 22:02:27 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/PyQt4/Attic/PyQt4-4.7.7.ebuild,v 1.1 2010/09/21 12:14:58 hwoarang Exp $
 
 EAPI="3"
 PYTHON_DEPEND="*"
