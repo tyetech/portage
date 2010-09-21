@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.21.2.ebuild,v 1.4 2010/09/21 22:36:43 abcd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-0.9.21.2-r2.ebuild,v 1.1 2010/09/21 22:36:43 abcd Exp $
 
-EAPI=2
+EAPI=3
 
 inherit eutils libtool flag-o-matic versionator
 
@@ -23,8 +23,8 @@ S="${WORKDIR}/${P/_rc/-test}"
 
 LICENSE="LGPL-2 GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86"
-IUSE="+alsa avahi +caps jack lirc oss tcpd +X hal dbus libsamplerate gnome bluetooth +asyncns +glib test doc +udev ipv6 system-wide"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
+IUSE="+alsa avahi +caps jack lirc oss tcpd +X hal dbus libsamplerate gnome bluetooth +asyncns +glib test doc +udev ipv6 system-wide realtime"
 
 RDEPEND="X? ( x11-libs/libX11 x11-libs/libSM x11-libs/libICE x11-libs/libXtst )
 	caps? ( sys-libs/libcap )
@@ -49,6 +49,7 @@ RDEPEND="X? ( x11-libs/libX11 x11-libs/libSM x11-libs/libICE x11-libs/libXtst )
 	)
 	asyncns? ( net-libs/libasyncns )
 	udev? ( >=sys-fs/udev-143[extras] )
+	realtime? ( sys-auth/rtkit )
 	>=media-libs/audiofile-0.2.6-r1
 	>=media-libs/speex-1.2_beta
 	>=media-libs/libsndfile-1.0.20
@@ -122,7 +123,7 @@ src_configure() {
 		$(use_enable udev) \
 		$(use_enable ipv6) \
 		$(use_with caps) \
-		--localstatedir=/var \
+		--localstatedir="${EPREFIX}"/var \
 		--disable-per-user-esound-socket \
 		--with-database=gdbm \
 		|| die "econf failed"
@@ -142,10 +143,12 @@ src_test() {
 }
 
 src_install() {
-	emake -j1 DESTDIR="${D}" install || die "make install failed"
+	emake -j1 DESTDIR="${D}" \
+		udevrulesdir="${EPREFIX}/$(get_libdir)/udev/rules.d" \
+		install || die "make install failed"
 
 	# Drop the script entirely if X is disabled
-	use X || rm "${D}"/usr/bin/start-pulseaudio-x11
+	use X || rm "${ED}"/usr/bin/start-pulseaudio-x11
 
 	if use system-wide; then
 		newconfd "${FILESDIR}/pulseaudio.conf.d" pulseaudio
@@ -167,10 +170,10 @@ src_install() {
 		doinitd "${T}/pulseaudio"
 	fi
 
-	use avahi && sed -i -e '/module-zeroconf-publish/s:^#::' "${D}/etc/pulse/default.pa"
+	use avahi && sed -i -e '/module-zeroconf-publish/s:^#::' "${ED}/etc/pulse/default.pa"
 
 	if use hal && ! use udev; then
-		sed -i -e 's:-udev:-hal:' "${D}/etc/pulse/default.pa" || die
+		sed -i -e 's:-udev:-hal:' "${ED}/etc/pulse/default.pa" || die
 	fi
 
 	dodoc README ChangeLog todo || die
@@ -182,7 +185,7 @@ src_install() {
 	fi
 
 	# Create the state directory
-	diropts -o pulse -g pulse -m0755
+	use prefix || diropts -o pulse -g pulse -m0755
 	keepdir /var/run/pulse
 
 	find "${D}" -name '*.la' -delete
