@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/kdesvn/Attic/kdesvn-1.5.2-r1.ebuild,v 1.7 2010/06/22 18:49:16 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/kdesvn/Attic/kdesvn-1.5.5.ebuild,v 1.1 2010/09/27 07:38:48 tampakrap Exp $
 
 EAPI="2"
 
@@ -9,10 +9,15 @@ inherit kde4-base
 
 DESCRIPTION="KDESvn is a frontend to the subversion vcs."
 HOMEPAGE="http://kdesvn.alwins-world.de/"
-SRC_URI="http://kdesvn.alwins-world.de/downloads/${P}.tar.bz2"
+if [[ ${PV} = 9999* ]]; then
+	ESVN_REPO_URI="http://www.alwins-world.de/repos/kdesvn/trunk/"
+	ESVN_PROJECT="kdesvn"
+else
+	SRC_URI="http://kdesvn.alwins-world.de/downloads/${P}.tar.bz2"
+fi
 
 LICENSE="GPL-2"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 SLOT="4"
 IUSE="debug +handbook"
 
@@ -29,6 +34,8 @@ RDEPEND="${DEPEND}
 
 src_configure() {
 	append-cppflags -DQT_THREAD_SUPPORT
+
+	[[ ${PV} = 9999* ]] && mycmakeargs=(-DDAILY_BUILD=ON)
 
 	kde4-base_src_configure
 }
