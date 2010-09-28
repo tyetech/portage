@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-mozc/Attic/ibus-mozc-0.11.383.102.ebuild,v 1.1 2010/06/17 17:23:04 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-mozc/Attic/ibus-mozc-0.13.481.102.ebuild,v 1.1 2010/09/28 23:45:53 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 inherit eutils multilib python toolchain-funcs
 
-MY_P="mozc-${PV}"
+MY_P="${P/ibus-}"
 DESCRIPTION="The Mozc engine for IBus Framework"
 HOMEPAGE="http://code.google.com/p/mozc/"
 SRC_URI="http://mozc.googlecode.com/files/${MY_P}.tar.bz2"
@@ -31,6 +31,8 @@ S="${WORKDIR}/${MY_P}"
 
 BUILDTYPE="${BUILDTYPE:-Release}"
 
+RESTRICT="test"
+
 pkg_setup() {
 	python_set_active_version 2
 }
@@ -41,7 +43,7 @@ src_prepare() {
 }
 
 src_configure() {
-	"$(PYTHON)" build_mozc.py gyp --gypdir=third_party/gyp || die "gyp failed"
+	"$(PYTHON)" build_mozc.py gyp || die "gyp failed"
 }
 
 src_compile() {
@@ -57,26 +59,49 @@ src_compile() {
 	"$(PYTHON)" build_mozc.py build -c "${BUILDTYPE}" ${mytarget} || die
 }
 
+src_test() {
+	"$(PYTHON)" build_mozc.py runtests -c "${BUILDTYPE}" || die
+}
+
 src_install() {
 	if use ibus ; then
 		exeinto /usr/libexec || die
-		newexe "out/${BUILDTYPE}/ibus_mozc" ibus-engine-mozc || die
+		newexe "out_linux/${BUILDTYPE}/ibus_mozc" ibus-engine-mozc || die
 		insinto /usr/share/ibus/component || die
-		doins unix/ibus/mozc.xml || die
+		doins "out_linux/${BUILDTYPE}/obj/gen/unix/ibus/mozc.xml" || die
+		insinto /usr/share/ibus-mozc || die
+		(
+			cd data/images/unix
+			newins ime_product_icon_opensource-32.png product_icon.png || die
+			for f in ui-*
+			do
+				newins ${f} ${f/ui-} || die
+			done
+		)
+
 	fi
 
 	if use scim ; then
 		exeinto "$(pkg-config --variable=moduledir scim)/IMEngine/" || die
-		newexe "out/${BUILDTYPE}/lib.target/libscim_mozc.so" mozc.so || die
+		newexe "out_linux/${BUILDTYPE}/lib.target/libscim_mozc.so" mozc.so || die
 		exeinto "$(pkg-config --variable=moduledir scim)/SetupUI/" || die
-		newexe "out/${BUILDTYPE}/lib.target/libscim_mozc_setup.so" mozc-setup.so || die
+		newexe "out_linux/${BUILDTYPE}/lib.target/libscim_mozc_setup.so" mozc-setup.so || die
+		insinto "$(pkg-config --variable=icondir scim)" || die
+		(
+			cd data/images/unix
+			newins ime_product_icon_opensource-32.png scim-mozc.png || die
+			for f in ui-*
+			do
+				newins ${f} ${f/ui-/scim-mozc-} || die
+			done
+		)
 	fi
 
 	exeinto "/usr/$(get_libdir)/mozc" || die
-	doexe "out/${BUILDTYPE}/mozc_server" || die
+	doexe "out_linux/${BUILDTYPE}/mozc_server" || die
 
 	if use qt4 ; then
 		exeinto "/usr/$(get_libdir)/mozc" || die
-		doexe "out/${BUILDTYPE}/mozc_tool" || die
+		doexe "out_linux/${BUILDTYPE}/mozc_tool" || die
 	fi
 }
