@@ -1,10 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/telepathy-glib/Attic/telepathy-glib-0.8.0.ebuild,v 1.1 2009/09/24 16:46:55 tester Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/telepathy-glib/Attic/telepathy-glib-0.12.0.ebuild,v 1.1 2010/09/29 11:29:52 pacho Exp $
 
 EAPI="2"
-
-inherit autotools eutils libtool
 
 DESCRIPTION="GLib bindings for the Telepathy D-Bus protocol."
 HOMEPAGE="http://telepathy.freedesktop.org"
@@ -12,23 +10,26 @@ SRC_URI="http://telepathy.freedesktop.org/releases/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="debug"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+IUSE="debug introspection"
 
-RDEPEND=">=dev-libs/glib-2.16
-	>=dev-libs/dbus-glib-0.73
-	>=dev-lang/python-2.3"
+RDEPEND=">=dev-libs/glib-2.24
+	>=dev-libs/dbus-glib-0.82
+	>=dev-lang/python-2.5
+	introspection? ( >=dev-libs/gobject-introspection-0.6.14 )"
 
 DEPEND="${RDEPEND}
 	dev-libs/libxslt
 	>=dev-util/pkgconfig-0.21"
 
 src_configure() {
+	# configure help says vala-bindings are experimental
 	econf \
 		$(use_enable debug) \
 		$(use_enable debug backtrace) \
 		$(use_enable debug handle-leak-debug) \
-		|| die "econf failed"
+		$(use_enable introspection) \
+		--disable-vala-bindings
 }
 
 src_test() {
