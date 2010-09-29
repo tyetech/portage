@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/horde-imp/Attic/horde-imp-4.3.6.ebuild,v 1.1 2009/12/17 17:40:44 a3li Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/horde-imp/horde-imp-4.3.8.ebuild,v 1.1 2010/09/29 18:45:28 a3li Exp $
 
 HORDE_PHP_FEATURES="imap"
 HORDE_MAJ="-h3"
