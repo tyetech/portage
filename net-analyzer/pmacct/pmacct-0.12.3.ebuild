@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pmacct/Attic/pmacct-0.12.2.ebuild,v 1.2 2010/09/30 16:43:04 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pmacct/Attic/pmacct-0.12.3.ebuild,v 1.1 2010/09/30 16:43:04 jer Exp $
 
 EAPI="2"
 
