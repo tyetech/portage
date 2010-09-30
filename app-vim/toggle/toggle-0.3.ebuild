@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/toggle/Attic/toggle-1.3.ebuild,v 1.12 2008/03/24 17:04:45 coldwind Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/toggle/Attic/toggle-0.3.ebuild,v 1.1 2010/09/30 05:18:20 radhermit Exp $
 
 inherit vim-plugin
 
