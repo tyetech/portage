@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.21 2010/10/01 00:56:44 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.22 2010/10/01 01:46:48 aballier Exp $
 
 EAPI="2"
 
@@ -158,8 +158,8 @@ src_configure() {
 	use 3dnow || myconf="${myconf} --disable-amd3dnow"
 	use 3dnowext || myconf="${myconf} --disable-amd3dnowext"
 	# disable mmx accelerated code if PIC is required
-	# as the provided asm decidedly is not PIC.
-	if gcc-specs-pie ; then
+	# as the provided asm decidedly is not PIC for x86.
+	if use pic && use x86 ; then
 		myconf="${myconf} --disable-mmx --disable-mmx2"
 	fi
 
