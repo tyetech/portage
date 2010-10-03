@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/easychem/easychem-0.6-r1.ebuild,v 1.1 2010/10/03 08:04:15 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/easychem/easychem-0.6-r1.ebuild,v 1.2 2010/10/03 08:30:26 jlec Exp $
 
 EAPI="3"
 
 inherit eutils toolchain-funcs
 
-DESCRIPTION="Chemical structure drawing program - focused on presentation."
+DESCRIPTION="Chemical structure drawing program - focused on presentation"
 HOMEPAGE="http://easychem.sourceforge.net/"
 SRC_URI="mirror://sourceforge/easychem/${P}.tar.gz"
 
