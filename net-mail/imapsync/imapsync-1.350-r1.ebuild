@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/imapsync/Attic/imapsync-1.350.ebuild,v 1.1 2010/09/25 08:06:49 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/imapsync/Attic/imapsync-1.350-r1.ebuild,v 1.1 2010/10/03 18:17:55 radhermit Exp $
 
 EAPI=2
 
@@ -15,7 +15,6 @@ IUSE=""
 
 DEPEND="dev-lang/perl"
 RDEPEND="${DEPEND}
-	dev-perl/DateManip
 	dev-perl/Digest-HMAC
 	dev-perl/IO-Socket-SSL
 	dev-perl/Mail-IMAPClient
