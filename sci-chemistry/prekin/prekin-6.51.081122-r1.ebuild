@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/prekin/Attic/prekin-6.51.081122.ebuild,v 1.2 2010/10/03 08:28:36 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/prekin/prekin-6.51.081122-r1.ebuild,v 1.1 2010/10/03 08:28:36 jlec Exp $
 
 EAPI="2"
 
