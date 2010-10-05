@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Event-ExecFlow/Attic/Event-ExecFlow-0.64.ebuild,v 1.3 2010/10/03 17:12:48 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Event-ExecFlow/Attic/Event-ExecFlow-0.64.ebuild,v 1.4 2010/10/05 19:44:53 maekke Exp $
 
 EAPI=2
 
@@ -11,7 +11,7 @@ DESCRIPTION="High level API for event-based execution flow control"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ppc64 ~sparc ~x86"
+KEYWORDS="amd64 ~ppc ppc64 ~sparc x86"
 IUSE=""
 
 RDEPEND="dev-perl/AnyEvent
