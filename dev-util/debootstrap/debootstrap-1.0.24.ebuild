@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/debootstrap/Attic/debootstrap-1.0.24.ebuild,v 1.1 2010/09/20 11:33:36 jer Exp ${PN}/${PN}-1.0.10.ebuild,v 1.1 2008/07/15 17:46:08 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/debootstrap/Attic/debootstrap-1.0.24.ebuild,v 1.2 2010/10/05 01:17:45 jer Exp $
 
 inherit eutils
 
