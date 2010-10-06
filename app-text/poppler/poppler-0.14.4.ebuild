@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/poppler/Attic/poppler-0.14.3.ebuild,v 1.2 2010/09/23 11:20:25 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/poppler/Attic/poppler-0.14.4.ebuild,v 1.1 2010/10/06 21:39:32 reavertm Exp $
 
 EAPI="2"
 
