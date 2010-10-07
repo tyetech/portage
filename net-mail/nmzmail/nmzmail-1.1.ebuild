@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/nmzmail/nmzmail-1.1.ebuild,v 1.3 2010/08/12 09:19:30 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/nmzmail/nmzmail-1.1.ebuild,v 1.4 2010/10/07 07:47:03 radhermit Exp $
 
 EAPI=2
 
-DESCRIPTION="Fast mail searchng for mutt using namazu"
+DESCRIPTION="Fast mail searching for mutt using namazu"
 HOMEPAGE="http://www.ecademix.com/JohannesHofmann/nmzmail.html"
 SRC_URI="http://www.ecademix.com/JohannesHofmann/${P}.tar.gz"
 
