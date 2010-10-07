@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/rafkill/rafkill-1.2.3.ebuild,v 1.4 2009/11/23 01:40:57 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/rafkill/rafkill-1.2.3.ebuild,v 1.5 2010/10/07 08:43:21 tupone Exp $
 
 EAPI=2
 inherit eutils toolchain-funcs games
@@ -23,7 +23,8 @@ src_prepare() {
 	rm -f {data,music}/.sconsign
 	epatch \
 		"${FILESDIR}"/${P}-build.patch \
-		"${FILESDIR}"/${P}-gcc43.patch
+		"${FILESDIR}"/${P}-gcc43.patch \
+		"${FILESDIR}"/${P}-ldflags.patch
 	sed -i \
 		-e "/^#define INSTALL_DIR/s:\.:${GAMES_DATADIR}:" \
 		src/defs.cpp \
