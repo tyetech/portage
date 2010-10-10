@@ -1,9 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/wcslib/Attic/wcslib-4.5.ebuild,v 1.1 2010/07/21 16:25:40 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/wcslib/Attic/wcslib-4.5.4.ebuild,v 1.1 2010/10/10 01:27:25 bicatali Exp $
 
 EAPI=2
-inherit eutils virtualx flag-o-matic
+inherit eutils virtualx flag-o-matic autotools
 
 DESCRIPTION="Astronomical World Coordinate System transformations library"
 HOMEPAGE="http://www.atnf.csiro.au/people/mcalabre/WCS/"
@@ -12,19 +12,26 @@ SRC_URI="ftp://ftp.atnf.csiro.au/pub/software/${PN}/${P}.tar.bz2"
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc test"
+IUSE="doc fortran fits pgplot test"
 
-RDEPEND="sci-libs/cfitsio
-	sci-libs/pgplot"
+RDEPEND="fits? ( sci-libs/cfitsio )
+	pgplot? ( sci-libs/pgplot )"
 DEPEND="${RDEPEND}
 	test? ( media-fonts/font-misc-misc
 			media-fonts/font-cursor-misc )"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-4.4.2-flibs.patch
 	epatch "${FILESDIR}"/${PN}-4.4.4-destdir.patch
 	epatch "${FILESDIR}"/${PN}-4.4.4-ldflags.patch
-	append-flags -U_FORTIFY_SOURCE
+	epatch "${FILESDIR}"/${PN}-4.5.3-fortran.patch
+	eautoreconf
+}
+
+src_configure() {
+	econf \
+		$(use_enable fortran) \
+		$(use_with fits cfitsio) \
+		$(use_with pgplot)
 }
 
 src_compile() {
