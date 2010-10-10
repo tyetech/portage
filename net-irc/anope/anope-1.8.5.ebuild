@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/anope/Attic/anope-1.8.0.ebuild,v 1.1 2009/06/27 11:04:34 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/anope/Attic/anope-1.8.5.ebuild,v 1.1 2010/10/10 18:07:36 gurligebis Exp $
+
+EAPI="2"
 
 inherit eutils versionator
 
@@ -31,14 +33,12 @@ pkg_setup() {
 	fi
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}"/pid-patch.diff
+src_prepare() {
+	epatch "${FILESDIR}/pid-patch.diff"
+	epatch "${FILESDIR}/ldflags-fix.patch"
 }
 
-src_compile() {
+src_configure() {
 	local myconf
 	if ! use mysql; then
 		myconf="${myconf} --without-mysql"
@@ -56,8 +56,6 @@ src_compile() {
 	|| die "Configuration failed."
 
 	sed -i -e "/^build:/s:$: language:g" "${S}"/Makefile || die "sed failed"
-
-	emake || die "Make failed."
 }
 
 src_install() {
@@ -67,7 +65,6 @@ src_install() {
 	dodir ${INSTALL_DIR}/data/languages
 	dodir ${INSTALL_DIR}/data/modules
 	dodir ${INSTALL_DIR}/data/modules/runtime
-	dodir ${INSTALL_DIR}/modules
 
 	dodir /var/run/anope
 	fowners anope:anope /var/run/anope
@@ -79,7 +76,6 @@ src_install() {
 	fowners anope:anope ${INSTALL_DIR}/data/languages
 	fowners anope:anope ${INSTALL_DIR}/data/modules
 	fowners anope:anope ${INSTALL_DIR}/data/modules/runtime
-	fowners anope:anope ${INSTALL_DIR}/modules
 
 	exeinto ${INSTALL_DIR}
 	doexe src/services
@@ -89,7 +85,7 @@ src_install() {
 	newinitd "${FILESDIR}"/anope.initd anope
 	newconfd "${FILESDIR}"/anope.confd anope
 
-	insinto ${INSTALL_DIR}/modules
+	insinto ${INSTALL_DIR}/data/modules
 	doins src/modules/*.so
 
 	keepdir ${INSTALL_DIR}/data/logs
