@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/datefudge/datefudge-1.14.ebuild,v 1.6 2010/09/28 16:54:11 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/datefudge/datefudge-1.14.ebuild,v 1.7 2010/10/10 16:06:39 klausman Exp $
 
 EAPI=2
 inherit multilib toolchain-funcs
@@ -11,7 +11,7 @@ SRC_URI="mirror://debian/pool/main/d/${PN}/${PN}_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~arm ~hppa ~ppc ppc64 ~x86"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ppc ppc64 ~x86"
 IUSE=""
 
 src_prepare() {
