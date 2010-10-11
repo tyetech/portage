@@ -1,7 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Auth/Attic/PEAR-Auth-1.6.2-r1.ebuild,v 1.1 2010/09/11 14:19:39 mabi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Auth/Attic/PEAR-Auth-1.6.2-r1.ebuild,v 1.2 2010/10/11 19:36:40 olemarkus Exp $
 
+EAPI="2"
 inherit php-pear-r1 eutils
 
 DESCRIPTION="Provides methods for creating an authentication system using PHP."
