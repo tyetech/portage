@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/icebreaker/icebreaker-1.9.5.ebuild,v 1.12 2010/10/11 16:08:48 tupone Exp $
-EAPI="2"
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/icebreaker/icebreaker-1.9.5.ebuild,v 1.13 2010/10/11 16:12:26 mr_bones_ Exp $
 
+EAPI=2
 inherit eutils games
 
 DESCRIPTION="Trap and capture penguins on Antarctica"
