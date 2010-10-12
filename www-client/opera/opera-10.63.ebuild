@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera/Attic/opera-10.62.ebuild,v 1.1 2010/09/09 15:30:34 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera/Attic/opera-10.63.ebuild,v 1.1 2010/10/12 15:49:30 jer Exp $
 
 EAPI="2"
 
@@ -16,7 +16,7 @@ IUSE="elibc_FreeBSD gtk kde +gstreamer"
 
 RESTRICT="mirror test"
 
-O_V="${PV/_pre/-}-6438"
+O_V="${PV}-6450"
 O_P="${PN}-${O_V}"
 O_U="mirror://opera/"
 
