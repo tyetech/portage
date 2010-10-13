@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/smart-live-rebuild/Attic/smart-live-rebuild-0.6.1.1.ebuild,v 1.2 2010/10/10 18:39:24 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/smart-live-rebuild/Attic/smart-live-rebuild-0.6.3.ebuild,v 1.1 2010/10/13 18:42:16 mgorny Exp $
 
 EAPI="3"
 PYTHON_DEPEND='*:2.6'
