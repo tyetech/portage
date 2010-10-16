@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.2_rc89.ebuild,v 1.1 2010/10/05 17:15:04 zmedico Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/portage/Attic/portage-2.2_rc97.ebuild,v 1.1 2010/10/16 03:30:49 zmedico Exp $
 
 # Require EAPI 2 since we now require at least python-2.6 (for python 3
 # syntax support) which also requires EAPI 2.
@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~sparc-fbsd ~x86 ~x86-fbsd"
 PROVIDE="virtual/portage"
 SLOT="0"
-IUSE="build doc epydoc linguas_pl python3 selinux"
+IUSE="build doc epydoc +ipc linguas_pl python3 selinux"
 
 python_dep="python3? ( =dev-lang/python-3* )
 	!python3? (
@@ -119,7 +119,15 @@ src_prepare() {
 	sed -e "1s/VERSION/${PVR}/" -i man/* || \
 		die "Failed to patch VERSION in man page headers"
 
+	if ! use ipc ; then
+		einfo "Disabling ipc..."
+		sed -e "s:_enable_ipc_daemon = True:_enable_ipc_daemon = False:" \
+			-i pym/_emerge/AbstractEbuildProcess.py || \
+			die "failed to patch AbstractEbuildProcess.py"
+	fi
+
 	if use python3; then
+		einfo "Converting shebangs for python3..."
 		python_convert_shebangs -r 3 .
 	fi
 }
