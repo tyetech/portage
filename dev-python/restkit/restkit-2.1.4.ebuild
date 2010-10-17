@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/restkit/restkit-2.1.4.ebuild,v 1.1 2010/08/27 21:19:31 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/restkit/restkit-2.1.4.ebuild,v 1.2 2010/10/17 21:57:10 arfrever Exp $
 
 EAPI=3
 
@@ -15,8 +15,7 @@ inherit distutils
 TAG="benoitc-restkit-addf4be"
 
 DESCRIPTION="A HTTP ressource kit for Python."
-HOMEPAGE="http://github.com/benoitc/restkit
-	http://benoitc.github.com/restkit/"
+HOMEPAGE="http://github.com/benoitc/restkit http://benoitc.github.com/restkit/ http://pypi.python.org/pypi/restkit"
 SRC_URI="http://github.com/benoitc/restkit/tarball/${PV}/${P}.tgz"
 
 LICENSE="MIT"
