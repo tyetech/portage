@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.95.ebuild,v 1.3 2010/10/03 16:31:22 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.95.ebuild,v 1.4 2010/10/18 09:03:11 nerdboy Exp $
 
 EAPI=3
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://berlios/gpsd/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 GPSD_PROTOCOLS="ashtech aivdm clientdebug earthmate evermore fv18 garmin
 	garmintxt gpsclock itrax mtk3301 nmea ntrip navcom oceanserver
