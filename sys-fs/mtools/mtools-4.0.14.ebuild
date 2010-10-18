@@ -1,8 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/mtools/Attic/mtools-4.0.14.ebuild,v 1.1 2010/10/17 04:22:24 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/mtools/Attic/mtools-4.0.14.ebuild,v 1.2 2010/10/18 00:21:12 vapier Exp $
 
 EAPI="2"
+
+inherit autotools
 
 DESCRIPTION="utilities to access MS-DOS disks from Unix without mounting them"
 HOMEPAGE="http://mtools.linux.lu/"
@@ -25,6 +27,7 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	sed -i 's:/usr/local/etc:/etc:g' mtools.5 mtools.texi
+	eautoconf #341443
 }
 
 src_configure() {
