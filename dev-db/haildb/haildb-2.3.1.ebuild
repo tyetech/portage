@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/haildb/haildb-2.3.1.ebuild,v 1.1 2010/10/18 01:42:43 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/haildb/haildb-2.3.1.ebuild,v 1.2 2010/10/18 13:24:54 flameeyes Exp $
 
 EAPI=2
 
-inherit versionator
+inherit versionator flag-o-matic
 
 DESCRIPTION="a relational database in shared library form"
 HOMEPAGE="http://www.haildb.com/"
