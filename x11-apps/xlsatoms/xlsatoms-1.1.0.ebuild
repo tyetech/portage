@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xlsatoms/xlsatoms-1.1.0.ebuild,v 1.8 2010/09/28 13:56:14 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xlsatoms/xlsatoms-1.1.0.ebuild,v 1.9 2010/10/21 01:08:36 ranger Exp $
 
 EAPI=3
 
@@ -8,7 +8,7 @@ XORG_STATIC="no"
 inherit xorg-2
 
 DESCRIPTION="list interned atoms defined on server"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ~ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND="x11-libs/libxcb"
