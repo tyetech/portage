@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/stix-fonts/Attic/stix-fonts-1.0.0.ebuild,v 1.1 2010/06/05 06:46:56 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/stix-fonts/stix-fonts-1.0.0-r1.ebuild,v 1.1 2010/10/21 03:55:20 dirtyepic Exp $
 
 inherit font
 
