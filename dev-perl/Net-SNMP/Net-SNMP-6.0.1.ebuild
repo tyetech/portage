@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Net-SNMP/Net-SNMP-6.0.1.ebuild,v 1.7 2010/10/21 19:22:21 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Net-SNMP/Net-SNMP-6.0.1.ebuild,v 1.8 2010/10/22 17:28:18 ssuominen Exp $
 
 EAPI=3
 
@@ -12,7 +12,7 @@ inherit perl-module
 DESCRIPTION="A SNMP Perl Module"
 
 SLOT="0"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ~ppc64 sparc x86 ~sparc-solaris ~x86-solaris"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ~mips ppc ppc64 sparc x86 ~sparc-solaris ~x86-solaris"
 IUSE=""
 
 RDEPEND="
