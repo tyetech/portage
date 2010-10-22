@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libjpeg-turbo/Attic/libjpeg-turbo-1.0.90.ebuild,v 1.1 2010/10/21 13:31:15 anarchy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libjpeg-turbo/Attic/libjpeg-turbo-1.0.90.ebuild,v 1.2 2010/10/22 08:44:23 ssuominen Exp $
 
 EAPI=2
 inherit libtool
@@ -14,8 +14,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="static-libs"
 
-RDEPEND="!media-libs/jpeg:0
-	!media-libs/jpeg:62"
+RDEPEND="!media-libs/jpeg:0"
 DEPEND="${RDEPEND}
 	dev-lang/nasm"
 
