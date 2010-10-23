@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsmi/libsmi-0.4.8-r1.ebuild,v 1.1 2010/10/22 16:45:20 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libsmi/libsmi-0.4.8-r1.ebuild,v 1.2 2010/10/23 00:59:38 hwoarang Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.ibr.cs.tu-bs.de/projects/libsmi"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 src_prepare() {
