@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/dirmngr/dirmngr-1.1.0.ebuild,v 1.7 2010/10/19 02:24:43 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/dirmngr/dirmngr-1.1.0.ebuild,v 1.8 2010/10/23 14:19:34 arfrever Exp $
 
 EAPI="3"
 
@@ -25,8 +25,6 @@ RDEPEND=">=net-nds/openldap-2.1.26
 DEPEND="${RDEPEND}
 	>=dev-libs/libassuan-2
 	nls? ( >=sys-devel/gettext-0.12.1 )"
-
-#S="${WORKDIR}/${P/_/}"
 
 src_configure() {
 	econf --docdir="/usr/share/doc/${PF}" $(use_enable nls)
