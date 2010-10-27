@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/arandr/Attic/arandr-0.1.3.ebuild,v 1.1 2010/10/26 16:01:15 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/arandr/Attic/arandr-0.1.3.ebuild,v 1.2 2010/10/27 03:14:25 ssuominen Exp $
 
 EAPI=3
 
-PYTHON_DEPEND="2"
+PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="3.*"
 
