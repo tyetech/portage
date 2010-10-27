@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/rudy/Attic/rudy-0.9.8.015.ebuild,v 1.1 2010/10/25 22:26:04 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/rudy/rudy-0.9.8.016.ebuild,v 1.1 2010/10/27 12:41:48 flameeyes Exp $
 
 EAPI=2
 
