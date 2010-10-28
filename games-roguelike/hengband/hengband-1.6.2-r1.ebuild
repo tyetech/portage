@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/hengband/hengband-1.6.2-r1.ebuild,v 1.5 2010/10/13 23:46:42 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-roguelike/cvs-repo/gentoo-x86/games-roguelike/hengband/hengband-1.6.2-r1.ebuild,v 1.6 2010/10/28 11:12:45 tupone Exp $
 
 EAPI=2
 inherit eutils autotools games
@@ -33,7 +33,8 @@ src_prepare() {
 		|| die
 	epatch \
 		"../${P}"-mispellings.patch	\
-		"${FILESDIR}/${P}"-added_faq.patch
+		"${FILESDIR}/${P}"-added_faq.patch \
+		"${FILESDIR}"/${P}-ovflfix.patch
 	eautoreconf
 }
 
