@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gmime/Attic/gmime-2.4.19.ebuild,v 1.2 2010/10/28 21:15:38 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gmime/Attic/gmime-2.4.20.ebuild,v 1.1 2010/10/28 21:15:38 eva Exp $
 
 EAPI="2"
 
