@@ -1,9 +1,6 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ser2net/Attic/ser2net-2.3.ebuild,v 1.6 2007/01/04 13:20:23 flameeyes Exp $
-
-WANT_AUTOCONF="latest"
-WANT_AUTOMAKE="latest"
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ser2net/Attic/ser2net-2.3.ebuild,v 1.7 2010/10/28 09:38:59 ssuominen Exp $
 
 inherit eutils autotools
 
