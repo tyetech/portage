@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/bti/Attic/bti-026.ebuild,v 1.1 2010/08/10 14:51:13 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/bti/Attic/bti-026.ebuild,v 1.2 2010/10/28 09:44:33 ssuominen Exp $
 
 inherit bash-completion
 
@@ -11,6 +11,7 @@ SRC_URI="mirror://kernel/software/web/bti/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
+IUSE=""
 
 DEPEND="net-misc/curl dev-libs/libxml2 dev-libs/libpcre"
 RDEPEND="sys-libs/readline"
