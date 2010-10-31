@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/util-macros/Attic/util-macros-1.10.1.ebuild,v 1.1 2010/09/27 12:13:48 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/util-macros/Attic/util-macros-1.11.0.ebuild,v 1.1 2010/10/31 12:05:59 scarabeus Exp $
 
 EAPI=3
 inherit xorg-2
