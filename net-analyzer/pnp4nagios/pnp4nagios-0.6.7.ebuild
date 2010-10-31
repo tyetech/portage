@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pnp4nagios/Attic/pnp4nagios-0.6.7.ebuild,v 1.3 2010/10/25 22:49:00 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/pnp4nagios/Attic/pnp4nagios-0.6.7.ebuild,v 1.4 2010/10/31 15:15:30 dertobi123 Exp $
 
 EAPI="2"
 
@@ -58,4 +58,9 @@ src_install() {
 		insinto "${APACHE_MODULES_CONFDIR}"
 		doins "${FILESDIR}"/98_pnp4nagios.conf
 	fi
+}
+
+pkg_postinst() {
+	elog "Please make sure to enable URL rewriting in Apache or any other"
+	elog "webserver you're using, to get pnp4nagios running!"
 }
