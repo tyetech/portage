@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xrandr/Attic/xrandr-1.3.2.ebuild,v 1.10 2010/03/23 23:19:59 abcd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xrandr/Attic/xrandr-1.3.2.ebuild,v 1.11 2010/11/01 12:46:28 scarabeus Exp $
 
 EAPI=3
 
-XORG_STATIC=no
+
 inherit xorg-2
 
 DESCRIPTION="primitive command line interface to RandR extension"
