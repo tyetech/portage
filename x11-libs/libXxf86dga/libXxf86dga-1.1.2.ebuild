@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libXxf86dga/libXxf86dga-1.1.2.ebuild,v 1.1 2010/10/31 11:05:28 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libXxf86dga/libXxf86dga-1.1.2.ebuild,v 1.2 2010/11/01 14:28:02 scarabeus Exp $
 
 EAPI=3
 inherit xorg-2
@@ -11,8 +11,8 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
 IUSE=""
 
 RDEPEND="x11-libs/libX11
-	x11-libs/libXext"
-DEPEND="${RDEPEND}
+	x11-libs/libXext
 	x11-proto/xextproto
 	x11-proto/xproto
 	>=x11-proto/xf86dgaproto-2.0.99.2"
+DEPEND="${RDEPEND}"
