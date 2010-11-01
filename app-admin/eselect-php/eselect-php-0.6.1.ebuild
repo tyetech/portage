@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect-php/Attic/eselect-php-0.6.ebuild,v 1.1 2010/10/30 19:42:29 olemarkus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect-php/Attic/eselect-php-0.6.1.ebuild,v 1.1 2010/11/01 09:40:03 olemarkus Exp $
 
 EAPI=3
 
