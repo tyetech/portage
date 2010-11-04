@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/clementine/Attic/clementine-0.5.3.ebuild,v 1.4 2010/11/02 20:59:29 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/clementine/Attic/clementine-0.5.3.ebuild,v 1.5 2010/11/04 17:15:59 fauli Exp $
 
 EAPI=2
 
@@ -14,7 +14,7 @@ SRC_URI="http://clementine-player.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 x86"
 IUSE="iphone ipod mtp projectm wiimote"
 IUSE+="${LANGS// / linguas_}"
 
