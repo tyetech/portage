@@ -1,12 +1,12 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-15.1.3.ebuild,v 1.1 2010/06/18 00:10:46 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/mathomatic/Attic/mathomatic-15.3.2.ebuild,v 1.1 2010/11/05 22:16:05 bicatali Exp $
 
-inherit eutils
+inherit eutils toolchain-funcs
 
 DESCRIPTION="Automatic algebraic manipulator"
-HOMEPAGE="http://www.mathomatic.com/math/"
-SRC_URI="http://www.panix.com/~gesslein/${P}.tar.bz2"
+HOMEPAGE="http://www.mathomatic.org/"
+SRC_URI="${HOMEPAGE}/archive/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -19,8 +19,8 @@ RDEPEND="${DEPEND}
 	gnuplot? ( sci-visualization/gnuplot )"
 
 src_compile() {
-	emake READLINE=1 OPTFLAGS="" || die "emake failed"
-	emake OPTFLAGS="" -C primes || die "emake in primes failed"
+	emake READLINE=1 OPTFLAGS="" CC=$(tc-getCC) || die "emake failed"
+	emake OPTFLAGS="" CC=$(tc-getCC) -C primes || die "emake in primes failed"
 }
 
 src_test() {
