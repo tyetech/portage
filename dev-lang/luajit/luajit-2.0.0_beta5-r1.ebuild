@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/luajit/Attic/luajit-2.0.0_beta5.ebuild,v 1.2 2010/11/07 02:27:11 rafaelmartins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/luajit/Attic/luajit-2.0.0_beta5-r1.ebuild,v 1.1 2010/11/07 02:51:01 rafaelmartins Exp $
 
 EAPI="2"
 
