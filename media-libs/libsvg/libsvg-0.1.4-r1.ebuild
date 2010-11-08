@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsvg/libsvg-0.1.4-r1.ebuild,v 1.1 2010/05/24 16:05:50 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsvg/libsvg-0.1.4-r1.ebuild,v 1.2 2010/11/08 23:17:00 maekke Exp $
 
 inherit autotools eutils libtool
 
@@ -14,8 +14,8 @@ KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd ~
 IUSE=""
 
 RDEPEND="dev-libs/libxml2
-	media-libs/jpeg
-	media-libs/libpng"
+	media-libs/libpng
+	virtual/jpeg"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
