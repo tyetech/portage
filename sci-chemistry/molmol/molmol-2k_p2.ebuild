@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/molmol/Attic/molmol-2k_p2.ebuild,v 1.14 2010/10/10 21:26:18 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/molmol/Attic/molmol-2k_p2.ebuild,v 1.15 2010/11/08 17:14:25 xarthisius Exp $
 
 EAPI="2"
 
@@ -20,7 +20,7 @@ IUSE=""
 DEPEND=">=x11-libs/openmotif-2.3:0
 	x11-libs/libXpm
 	media-libs/mesa[motif]
-	media-libs/jpeg
+	virtual/jpeg
 	media-libs/tiff
 	media-libs/libpng
 	sys-libs/zlib"
