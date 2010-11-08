@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/eix/Attic/eix-0.22.1.ebuild,v 1.1 2010/09/12 03:58:54 darkside Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/eix/Attic/eix-0.22.4.ebuild,v 1.1 2010/11/08 13:53:32 darkside Exp $
 
 EAPI=3
 
