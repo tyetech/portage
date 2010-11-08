@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/stiff/Attic/stiff-2.1.2.ebuild,v 1.1 2010/02/26 19:47:28 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-astronomy/cvs-repo/gentoo-x86/sci-astronomy/stiff/Attic/stiff-2.1.2.ebuild,v 1.2 2010/11/08 17:08:39 xarthisius Exp $
 
 EAPI=2
 
@@ -14,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc threads"
 
 RDEPEND="media-libs/tiff
-	media-libs/jpeg
+	virtual/jpeg
 	sys-libs/zlib"
 
 DEPEND="${RDEPEND}"
