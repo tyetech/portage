@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/ldns/Attic/ldns-1.6.5.ebuild,v 1.2 2010/06/17 00:20:52 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/ldns/Attic/ldns-1.6.7.ebuild,v 1.1 2010/11/09 00:00:42 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2:2.4"
@@ -14,9 +14,10 @@ SRC_URI="http://www.nlnetlabs.nl/downloads/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~ppc-macos ~x64-macos"
-IUSE="doc python ssl vim-syntax"
+IUSE="doc gost python ssl vim-syntax"
 
-RDEPEND="ssl? ( >=dev-libs/openssl-0.9.7 )"
+RDEPEND="ssl? ( >=dev-libs/openssl-0.9.7 )
+	gost? ( >=dev-libs/openssl-1 )"
 DEPEND="${RDEPEND}
 	python? ( dev-lang/swig )
 	doc? ( app-doc/doxygen )"
@@ -27,6 +28,7 @@ pkg_setup() {
 
 src_configure() {
 	econf \
+		$(use_enable gost) \
 		$(use_enable ssl sha2) \
 		$(use_with ssl) \
 		$(use_with python pyldns) \
