@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/ess/Attic/ess-5.9.1.ebuild,v 1.1 2010/05/28 09:42:23 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/ess/Attic/ess-5.12.ebuild,v 1.1 2010/11/09 20:58:59 ulm Exp $
 
 EAPI=3
 
