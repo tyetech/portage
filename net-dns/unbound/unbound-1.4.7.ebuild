@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/unbound/Attic/unbound-1.4.5.ebuild,v 1.1 2010/06/17 23:53:35 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/unbound/Attic/unbound-1.4.7.ebuild,v 1.1 2010/11/09 00:03:12 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
@@ -13,13 +13,12 @@ SRC_URI="http://unbound.net/downloads/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~x64-macos"
-#IUSE="debug gost python static test threads"
-IUSE="debug python static test threads"
+IUSE="debug gost python static test threads"
 
-RDEPEND="dev-libs/libevent
+RDEPEND="dev-libs/expat
+	dev-libs/libevent
 	>=dev-libs/openssl-0.9.8
-	>=net-libs/ldns-1.4[ssl]"
-#	gost? ( >=dev-libs/openssl-1 )
+	>=net-libs/ldns-1.4[ssl,gost?]"
 
 DEPEND="${RDEPEND}
 	python? ( dev-lang/swig )
@@ -45,11 +44,11 @@ src_configure() {
 		$(use_enable debug alloc-checks) \
 		$(use_enable debug alloc-lite) \
 		$(use_enable debug alloc-nonregional) \
+		$(use_enable gost) \
 		$(use_enable static static-exe) \
 		$(use_with threads pthreads) \
 		$(use_with python pyunbound) \
 		$(use_with python pythonmodule) || die
-#		$(use_enable gost) \
 }
 
 src_install() {
