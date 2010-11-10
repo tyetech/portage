@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/asymptote/Attic/asymptote-2.04.ebuild,v 1.2 2010/11/01 13:16:31 grozin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/asymptote/Attic/asymptote-2.08.ebuild,v 1.1 2010/11/10 05:29:07 grozin Exp $
 EAPI=3
 SUPPORT_PYTHON_ABIS=1
 PYTHON_DEPEND="python? 2"
