@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/kphotoalbum/Attic/kphotoalbum-4.1.1.ebuild,v 1.3 2010/07/15 10:00:38 fauli Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/kphotoalbum/Attic/kphotoalbum-4.1.1.ebuild,v 1.4 2010/11/11 23:22:46 dilfridge Exp $
 
 EAPI=2
 KDE_LINGUAS="ar be bg ca cs da de el en_GB eo es et fi fr ga gl hi hne is it ja
@@ -39,3 +39,5 @@ src_configure() {
 }
 
 DOCS="ChangeLog README TODO"
+
+PATCHES=( "${FILESDIR}/${P}-docbook_fix.patch" )
