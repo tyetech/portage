@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/coq/Attic/coq-8.2_p1-r1.ebuild,v 1.8 2010/11/11 20:24:23 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/coq/Attic/coq-8.2_p1-r1.ebuild,v 1.9 2010/11/11 20:29:52 aballier Exp $
 
 EAPI="2"
 
@@ -29,6 +29,7 @@ DEPEND="${RDEPEND}
 		dev-tex/xcolor
 		|| ( dev-texlive/texlive-pictures app-text/ptex )
 		|| ( dev-texlive/texlive-mathextra app-text/ptex )
+		|| ( dev-texlive/texlive-latexextra app-text/ptex )
 		)"
 
 S="${WORKDIR}/${MY_P}"
