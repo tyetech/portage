@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.7.1-r1.ebuild,v 1.1 2010/11/11 18:18:46 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.6.2_p2-r2.ebuild,v 1.1 2010/11/14 19:07:03 idl0r Exp $
 
 EAPI="3"
 
@@ -40,6 +40,9 @@ src_prepare() {
 	# bug 231247
 	epatch "${FILESDIR}"/${PN}-9.5.0_p1-lwconfig.patch
 
+	# bug 278364 (workaround)
+	epatch "${FILESDIR}/${PN}-9.6.1-parallel.patch"
+
 	eautoreconf
 }
 
@@ -55,7 +58,7 @@ src_configure() {
 	fi
 
 	# bug 344029
-	append-cppflags "-DDIG_SIGCHASE"
+	append-cflags "-DDIG_SIGCHASE"
 
 	econf \
 		$(use_enable ipv6) \
