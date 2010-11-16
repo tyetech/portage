@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/xsane/Attic/xsane-0.996.ebuild,v 1.9 2009/10/01 19:39:46 phosphan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/xsane/Attic/xsane-0.996.ebuild,v 1.10 2010/11/16 20:54:43 phosphan Exp $
 
 inherit eutils
 
@@ -15,7 +15,7 @@ IUSE="nls jpeg png tiff gimp lcms"
 
 RDEPEND="media-gfx/sane-backends
 	>=x11-libs/gtk+-2.0
-	jpeg? ( media-libs/jpeg )
+	jpeg? ( virtual/jpeg )
 	png? ( media-libs/libpng )
 	tiff? ( media-libs/tiff )
 	gimp? ( media-gfx/gimp )
