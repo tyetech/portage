@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-260.19.12.ebuild,v 1.1 2010/10/15 23:30:21 cardoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/nvidia-drivers/Attic/nvidia-drivers-260.19.21.ebuild,v 1.1 2010/11/18 18:33:48 cardoe Exp $
 
 EAPI="2"
 
