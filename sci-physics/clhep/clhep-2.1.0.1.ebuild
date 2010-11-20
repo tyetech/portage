@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/clhep/Attic/clhep-2.1.0.0.ebuild,v 1.1 2010/08/12 16:33:52 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/clhep/clhep-2.1.0.1.ebuild,v 1.1 2010/11/20 07:40:28 bicatali Exp $
 
 EAPI=2
 inherit autotools eutils
