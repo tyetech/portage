@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/colorschemes/Attic/colorschemes-20101119.ebuild,v 1.1 2010/11/20 05:57:32 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/colorschemes/Attic/colorschemes-20101121.ebuild,v 1.1 2010/11/21 21:23:39 radhermit Exp $
 
 EAPI="2"
 
