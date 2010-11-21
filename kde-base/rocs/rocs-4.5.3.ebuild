@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/rocs/Attic/rocs-4.5.3.ebuild,v 1.2 2010/11/11 22:45:55 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/rocs/Attic/rocs-4.5.3.ebuild,v 1.3 2010/11/21 22:05:15 dilfridge Exp $
 
 EAPI="3"
 
@@ -18,3 +18,8 @@ DEPEND="
 RDEPEND=""
 
 PATCHES=( "${FILESDIR}/${P}-double.patch" )
+
+src_prepare() {
+	kde4-meta_src_prepare
+	use handbook && epatch "${FILESDIR}/${P}-double-handbook.patch"
+}
