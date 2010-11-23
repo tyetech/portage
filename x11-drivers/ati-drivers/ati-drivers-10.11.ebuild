@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-10.10.ebuild,v 1.2 2010/11/23 21:06:20 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-drivers/cvs-repo/gentoo-x86/x11-drivers/ati-drivers/Attic/ati-drivers-10.11.ebuild,v 1.1 2010/11/23 21:06:20 lu_zero Exp $
 
 EAPI="2"
 
