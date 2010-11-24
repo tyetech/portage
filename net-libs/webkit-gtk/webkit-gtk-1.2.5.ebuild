@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/webkit-gtk/Attic/webkit-gtk-1.2.5.ebuild,v 1.2 2010/11/07 21:13:34 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/webkit-gtk/Attic/webkit-gtk-1.2.5.ebuild,v 1.3 2010/11/24 08:12:00 grobian Exp $
 
 EAPI="3"
 
@@ -106,6 +106,6 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${ED}" install || die "Install failed"
+	emake DESTDIR="${D}" install || die "Install failed"
 	dodoc WebKit/gtk/{NEWS,ChangeLog} || die "dodoc failed"
 }
