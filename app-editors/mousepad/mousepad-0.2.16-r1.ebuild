@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/mousepad/Attic/mousepad-0.2.16-r1.ebuild,v 1.7 2010/11/25 19:11:43 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/mousepad/Attic/mousepad-0.2.16-r1.ebuild,v 1.8 2010/11/25 19:12:20 ssuominen Exp $
 
 EAPI=3
 inherit xfconf
@@ -30,7 +30,7 @@ pkg_setup() {
 		--disable-dependency-tracking
 		$(xfconf_use_debug)
 		)
-	
+
 	DOCS="AUTHORS ChangeLog NEWS README TODO"
 }
 
