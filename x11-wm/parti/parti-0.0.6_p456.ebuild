@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/parti/Attic/parti-0.0.6_p456.ebuild,v 1.1 2010/11/25 16:51:10 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/parti/Attic/parti-0.0.6_p456.ebuild,v 1.2 2010/11/25 16:55:42 xmw Exp $
 
 EAPI=2
 
@@ -35,5 +35,5 @@ pkg_setup() {
 }
 
 src_prepare() {
-	$(PYTHON -2 -a) make_constants_pxi.py wimpiggy/lowlevel/constants.txt wimpiggy/lowlevel/constants.pxi
+	$(PYTHON -2 -a) make_constants_pxi.py wimpiggy/lowlevel/constants.txt wimpiggy/lowlevel/constants.pxi || die
 }
