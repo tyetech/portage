@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/shiboken/Attic/shiboken-0.4.0.ebuild,v 1.1 2010/08/24 19:46:29 ayoy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/shiboken/Attic/shiboken-0.5.1.ebuild,v 1.1 2010/11/25 01:18:06 chiiph Exp $
 
 EAPI="2"
 
@@ -15,11 +15,13 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DEPEND=">=dev-python/apiextractor-0.7.0
-	>=dev-python/generatorrunner-0.6.0
+DEPEND=">=dev-python/apiextractor-0.8.1
+	>=dev-python/generatorrunner-0.6.1
 	>=x11-libs/qt-core-4.5.0"
 RDEPEND="${DEPEND}
 	!dev-python/boostpythongenerator"
+
+PATCHES=( "${FILESDIR}/${P}-fix-pkgconfig.patch" )
 
 src_install() {
 	cmake-utils_src_install
