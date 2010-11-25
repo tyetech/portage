@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gromacs/Attic/gromacs-4.0.7-r4.ebuild,v 1.9 2010/11/25 13:08:58 alexxy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gromacs/Attic/gromacs-4.0.7-r5.ebuild,v 1.1 2010/11/25 13:08:58 alexxy Exp $
 
 EAPI="3"
 
@@ -12,14 +12,15 @@ inherit autotools bash-completion eutils fortran multilib toolchain-funcs
 DESCRIPTION="The ultimate molecular dynamics simulation package"
 HOMEPAGE="http://www.gromacs.org/"
 SRC_URI="ftp://ftp.gromacs.org/pub/${PN}/${P}.tar.gz
-		mirror://gentoo/${P}_upstream2010-06-08.patch.gz
+		mirror://gentoo/${P}_upstream2010-09-15.patch.bz2
+		mirror://gentoo/${P}_missing_distfiles.patch.bz2
 		test? ( ftp://ftp.gromacs.org/pub/tests/gmxtest-${TEST_PV}.tgz )
 		doc? ( ftp://ftp.gromacs.org/pub/manual/manual-4.0.pdf -> gromacs-manual-4.0.pdf )
 		ffamber? ( http://ffamber.cnsm.csulb.edu/ffamber_v4.0-doc.tar.gz )"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ppc64 sparc x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux"
 IUSE="X blas dmalloc doc -double-precision ffamber +fftw fkernels +gsl lapack
 mpi +single-precision static static-libs test +xml zsh-completion"
 
@@ -44,6 +45,15 @@ QA_EXECSTACK="usr/lib/libgmx.so.*
 
 use static && QA_EXECSTACK="$QA_EXECSTACK usr/bin/*"
 
+pkg_setup() {
+	if use fkernels; then
+		FORTRAN="g77 gfortran ifc"
+		fortran_pkg_setup
+	else
+		FORTRANC=""
+	fi
+}
+
 src_prepare() {
 
 	( use single-precision || use double-precision ) || \
@@ -55,31 +65,16 @@ src_prepare() {
 		(see bug #306479), disable xml or static"
 	fi
 
-	epatch "${WORKDIR}/${P}_upstream2010-06-08.patch"
-	sed -e '/AC_INIT/s/4\.0\.7/&-2010-06-08/' -i configure.ac \
+	epatch "${WORKDIR}/${P}_upstream2010-09-15.patch"
+	epatch "${WORKDIR}/${P}_missing_distfiles.patch"
+	sed -e '/AC_INIT/s/4\.0\.7/&-2010-09-15/' -i configure.ac \
 		|| die "Failed to change version in configure.ac"
-	epatch "${FILESDIR}/${PN}-4.0.9999-docdir.patch"
+
 	# Fix typos in a couple of files.
 	sed -e "s:+0f:-f:" -i share/tutor/gmxdemo/demo \
 		|| die "Failed to fixup demo script."
 
-	# Fix a sandbox violation that occurs when re-emerging with mpi.
-	sed "/libdir=\"\$(libdir)\"/ a\	temp_libdir=\"${ED}usr/$( get_libdir )\" ; \\\\" \
-	-i src/tools/Makefile.am \
-	|| die "sed tools/Makefile.am failed"
-
-	sed -e "s:\$\$libdir:\$temp_libdir:" \
-	-i src/tools/Makefile.am \
-	|| die "sed tools/Makefile.am failed"
-
-	sed "/libdir=\"\$(libdir)\"/ a\ temp_libdir=\"${ED}usr/$( get_libdir )\" ; \\\\" \
-	-i src/tools/Makefile.am \
-	|| die "sed tools/Makefile.am failed"
-
-	sed -e "s:\$\$libdir:\$\$temp_libdir:" \
-	-i src/tools/Makefile.am \
-	|| die "sed tools/Makefile.am failed"
-
+	epatch_user
 	eautoreconf
 	GMX_DIRS=""
 	use single-precision && GMX_DIRS+=" single"
@@ -122,8 +117,7 @@ src_configure() {
 	if use fkernels; then
 		ewarn "Fortran kernels are usually not faster than C kernels and assembly"
 		ewarn "I hope, you know what are you doing..."
-		FORTRAN="g77 gfortran ifc"
-		myconf="${myconf} --enable-fortran" && fortran_pkg_setup
+		myconf="${myconf} --enable-fortran"
 	else
 		myconf="${myconf} --disable-fortran"
 	fi
@@ -229,6 +223,8 @@ src_install() {
 		cd "${S}-${x}_mpi"
 		emake DESTDIR="${D}" install-mdrun || die "emake install-mdrun for ${x} failed"
 	done
+	#we have pkg-config files
+	rm "${ED}"/usr/$(get_libdir)/*.la
 
 	sed -n -e '/^GMXBIN/,/^GMXDATA/p' "${ED}"/usr/bin/GMXRC.bash > "${T}/80gromacs"
 	doenvd "${T}/80gromacs"
@@ -243,7 +239,12 @@ src_install() {
 
 	cd "${S}"
 	dodoc AUTHORS INSTALL README
-	use doc && dodoc "${DISTDIR}/manual-4.0.pdf"
+	if use doc; then
+		newdoc "${DISTDIR}/gromacs-manual-4.0.pdf" "manual-4.0.pdf"
+		dohtml -r "${ED}usr/share/gromacs/html/"
+	fi
+	rm -rf "${ED}usr/share/gromacs/html/"
+
 	if use ffamber; then
 		use doc && dodoc "${WORKDIR}/ffamber_v4.0/README/pdfs/*.pdf"
 		# prepare vdwradii.dat
