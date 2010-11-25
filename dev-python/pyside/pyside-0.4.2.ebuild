@@ -1,16 +1,17 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyside/Attic/pyside-0.4.0-r1.ebuild,v 1.1 2010/08/25 17:19:42 ayoy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyside/Attic/pyside-0.4.2.ebuild,v 1.1 2010/11/25 01:20:31 chiiph Exp $
 
 EAPI="2"
 
 inherit cmake-utils
 
-MY_P="${PN}-qt4.6+${PV}"
+MY_P="${PN}-qt4.7+${PV}"
 
 DESCRIPTION="Python bindings for the Qt framework"
 HOMEPAGE="http://www.pyside.org/"
 SRC_URI="http://www.pyside.org/files/${MY_P}.tar.bz2"
+RESTRICT="test"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
@@ -20,7 +21,7 @@ IUSE="debug kde"
 QT_PV="4.6.0"
 
 DEPEND=">=dev-libs/boost-1.41.0[python]
-	~dev-python/shiboken-${PV}
+	>=dev-python/shiboken-${PV}
 	>=x11-libs/qt-core-${QT_PV}
 	>=x11-libs/qt-assistant-${QT_PV}
 	>=x11-libs/qt-gui-${QT_PV}
