@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.2.12.ebuild,v 1.1 2010/11/21 14:09:28 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/eselect/Attic/eselect-1.2.13.ebuild,v 1.1 2010/11/27 13:21:36 ulm Exp $
 
 inherit bash-completion
 
