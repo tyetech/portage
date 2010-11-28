@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/multipath-tools/Attic/multipath-tools-0.4.9.ebuild,v 1.1 2010/10/28 06:28:41 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/multipath-tools/Attic/multipath-tools-0.4.9-r1.ebuild,v 1.1 2010/11/28 21:34:59 radhermit Exp $
 
 EAPI=2
 inherit eutils toolchain-funcs
@@ -26,7 +26,8 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}"
 
 src_prepare() {
-	 epatch "${FILESDIR}"/${P}-build.patch
+	 epatch "${FILESDIR}"/${PN}-0.4.9-build.patch
+	 epatch "${FILESDIR}"/${PN}-0.4.9-buffer-overflows.patch
 	 # kpartx fails on extended partitions
 	 epatch "${FILESDIR}"/${PN}-0.4.8-kparted-ext-partitions.patch
 }
