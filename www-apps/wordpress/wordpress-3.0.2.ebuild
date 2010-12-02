@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/wordpress/Attic/wordpress-3.0.1.ebuild,v 1.2 2010/12/02 11:58:18 tampakrap Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/wordpress/Attic/wordpress-3.0.2.ebuild,v 1.1 2010/12/02 11:58:18 tampakrap Exp $
 
 EAPI="2"
 
