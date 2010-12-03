@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.6.2_p3.ebuild,v 1.2 2010/12/02 17:56:06 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.7.2_p3-r1.ebuild,v 1.1 2010/12/03 18:06:24 idl0r Exp $
 
 EAPI="3"
 
@@ -63,9 +63,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# bug 278364 (workaround)
-	epatch "${FILESDIR}/${PN}-9.6.1-parallel.patch"
-
 	# Adjusting PATHs in manpages
 	for i in bin/{named/named.8,check/named-checkconf.8,rndc/rndc.8} ; do
 		sed -i \
@@ -76,18 +73,10 @@ src_prepare() {
 	done
 
 	if use dlz; then
-		epatch "${FILESDIR}"/${PN}-9.4.0-dlzbdb-close_cursor.patch
-
 		# bind fails to reconnect to MySQL5 databases, bug #180720, patch by Nicolas Brousse
 		# (http://www.shell-tips.com/2007/09/04/bind-950-patch-dlz-mysql-5-for-auto-reconnect/)
 		if use mysql && has_version ">=dev-db/mysql-5"; then
 			epatch "${FILESDIR}"/bind-dlzmysql5-reconnect.patch
-		fi
-
-		if use ldap; then
-			# bug 238681
-			epatch "${FILESDIR}/bind-9.6.1-dlz-patch-ldap-url.patch" \
-				"${FILESDIR}/bind-9.6.1-dlz-patch-dollar2.patch"
 		fi
 	fi
 
@@ -179,10 +168,10 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die
 
-	dodoc CHANGES FAQ KNOWN-DEFECTS README
+	dodoc CHANGES FAQ README
 
 	if use idn; then
-		dodoc README.idnkit || die
+		dodoc contrib/idn/README.idnkit || die
 	fi
 
 	if use doc; then
@@ -213,7 +202,7 @@ src_install() {
 	use geoip && dodoc "${DISTDIR}"/${GEOIP_P}-readme.txt
 
 	insinto /etc/bind
-	newins "${FILESDIR}"/named.conf-r4 named.conf || die
+	newins "${FILESDIR}"/named.conf-r5 named.conf || die
 
 	# ftp://ftp.rs.internic.net/domain/named.cache:
 	insinto /var/bind
@@ -242,8 +231,8 @@ src_install() {
 	dodir /var/{run,log}/named || die
 
 	fowners root:named /{etc,var}/bind /var/{run,log}/named /var/bind/{sec,pri}
-	fowners root:named /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/named.conf
-	fperms 0640 /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/named.conf
+	fowners root:named /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/{bind.keys,named.conf}
+	fperms 0640 /var/bind/named.cache /var/bind/pri/{127,localhost}.zone /etc/bind/{bind.keys,named.conf}
 	fperms 0750 /etc/bind /var/bind/pri
 	fperms 0770 /var/{run,log}/named /var/bind/{,sec}
 }

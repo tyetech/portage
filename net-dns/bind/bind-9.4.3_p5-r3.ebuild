@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.4.3_p5-r2.ebuild,v 1.1 2010/10/24 20:47:16 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.4.3_p5-r3.ebuild,v 1.1 2010/12/03 18:06:24 idl0r Exp $
 
 EAPI="3"
 
@@ -187,7 +187,7 @@ src_install() {
 	fi
 
 	insinto /etc/bind
-	newins "${FILESDIR}"/named.conf-r4 named.conf || die
+	newins "${FILESDIR}"/named.conf-r5 named.conf || die
 
 	# ftp://ftp.rs.internic.net/domain/named.cache:
 	insinto /var/bind
