@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/tatt/tatt-9999.ebuild,v 1.2 2010/12/03 17:15:55 tomka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/tatt/tatt-9999.ebuild,v 1.3 2010/12/03 17:18:33 tomka Exp $
 
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://github.com/tom111/tatt.git"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE=""
+IUSE="+templates"
 
 DEPEND="dev-python/setuptools"
 RDEPEND="app-portage/eix
