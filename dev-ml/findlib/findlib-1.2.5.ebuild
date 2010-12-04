@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/findlib/Attic/findlib-1.2.5.ebuild,v 1.7 2010/11/15 09:07:33 tomka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ml/cvs-repo/gentoo-x86/dev-ml/findlib/Attic/findlib-1.2.5.ebuild,v 1.8 2010/12/04 17:44:32 armin76 Exp $
 
 EAPI=2
 
@@ -16,7 +16,7 @@ IUSE="doc +ocamlopt tk"
 LICENSE="MIT"
 
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~ppc ~ppc64 ~sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 hppa ia64 ~ppc ~ppc64 sparc x86 ~x86-fbsd"
 
 DEPEND=">=dev-lang/ocaml-3.10[ocamlopt?,tk?]"
 RDEPEND="${DEPEND}"
