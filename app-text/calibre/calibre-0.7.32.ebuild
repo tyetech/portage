@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/calibre/Attic/calibre-0.7.27.ebuild,v 1.1 2010/11/09 03:34:42 zmedico Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/calibre/Attic/calibre-0.7.32.ebuild,v 1.1 2010/12/06 06:30:24 zmedico Exp $
 
 EAPI=3
 PYTHON_DEPEND=2:2.6
