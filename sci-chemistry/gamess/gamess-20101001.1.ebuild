@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gamess/Attic/gamess-20090112.3.ebuild,v 1.1 2009/10/23 02:56:50 markusle Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gamess/Attic/gamess-20101001.1.ebuild,v 1.1 2010/12/07 17:52:17 alexxy Exp $
+
+EAPI="3"
 
 inherit eutils toolchain-funcs fortran flag-o-matic
 
@@ -18,21 +20,23 @@ SLOT="0"
 # new version comes out the stable version will be useless since
 # users can not get at the tarball any more.
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="hardened qmmm-tinker"
+IUSE="hardened mpi qmmm-tinker"
 
 RESTRICT="fetch"
 
-DEPEND="app-shells/tcsh
+CDEPEND="app-shells/tcsh
 	hardened? ( sys-apps/paxctl )
+	mpi? ( virtual/mpi )
 	virtual/blas"
-
-RDEPEND="${DEPEND}
+DEPEND="${CDEPEND}
+	dev-util/pkgconfig"
+RDEPEND="${CDEPEND}
 	net-misc/openssh"
 
 S="${WORKDIR}/${PN}"
 
 GAMESS_DOWNLOAD="http://www.msg.ameslab.gov/GAMESS/License_Agreement.html"
-GAMESS_VERSION="12 JAN 2009 (R3)"
+GAMESS_VERSION="1 OCT 2010 (R1)"
 FORTRAN="ifc g77 gfortran"
 
 pkg_nofetch() {
@@ -57,11 +61,26 @@ pkg_setup() {
 		then die "You will need gfortran to compile gamess on amd64"
 	fi
 
+	# note about qmmm-tinker
 	if use qmmm-tinker; then
-		einfo "By default MM subsistem is restricted to 1000 atoms"
-		einfo "if you want larger MM subsystems then you should set"
-		einfo "QMMM_GAMESS_MAXMM variable to needed value in your make.conf"
-		ebeep 5
+			einfo "By default MM subsistem is restricted to 1000 atoms"
+			einfo "if you want larger MM subsystems then you should set"
+			einfo "QMMM_GAMESS_MAXMM variable to needed value in your make.conf"
+			einfo "By default maximum number of atom classes types and size of"
+			einfo "hessian are restricted to 250, 500 and 1000000 respectively"
+			einfo "If you want larger sizes set:"
+			einfo "QMMM_GAMESS_MAXCLASS"
+			einfo "QMMM_GAMESS_MAXCTYP"
+			einfo "QMMM_GAMESS_MAXHESS"
+			einfo "in your make.conf"
+	fi
+
+	#note about mpi
+	if use mpi; then
+		ewarn ""
+		ewarn "You should adjust rungms script for your mpi implentation"
+		ewarn "because deafult one will not work"
+		ewarn ""
 	fi
 }
 
@@ -71,10 +90,11 @@ src_unpack() {
 	if use qmmm-tinker; then
 		mv tinker gamess/ || die "failed to move tinker directory"
 	fi
+}
 
+src_prepare() {
 	# apply LINUX-arch patches to gamess makesfiles
-	epatch "${FILESDIR}"/${PN}-20090112.1.gentoo.patch
-
+	epatch "${FILESDIR}"/${P}.gentoo.patch
 	# select arch
 	# NOTE: please leave lked alone; it should be good as is!!
 	cd "${S}"
@@ -84,14 +104,21 @@ src_unpack() {
 	else
 		active_arch="linux32";
 	fi
-	sed -e "s:gentoo-target:${active_arch}:" \
-		-i comp compall ddi/compddi \
-		|| die "Failed to select proper architecure"
 
 	# for hardened-gcc let't turn off ssp, since it breakes
 	# a few routines
 	if use hardened && [[ "${FORTRANC}" = "g77" ]]; then
 		FFLAGS="${FFLAGS} -fno-stack-protector-all"
+	fi
+
+	# Enable mpi stuff
+	if use mpi; then
+		sed -e "s:set COMM = sockets:set COMM = mpi:g" \
+			-i ddi/compddi || die "Enabling mpi build failed"
+		sed -e "s:MPI_INCLUDE_PATH = ' ':MPI_INCLUDE_PATH =	'-I/usr/include ':g" \
+			-i ddi/compddi || die "Enabling mpi build failed"
+		sed -e "s:MSG_LIBRARIES='../ddi/libddi.a -lpthread':MSG_LIBRARIES='../ddi/libddi.a -lmpi -lpthread':g" \
+			-i lked || die "Enabling mpi build failed"
 	fi
 
 	# enable NEO
@@ -112,6 +139,27 @@ src_unpack() {
 			 -i source/inputb.src \
 			 || die "Setting QMMM_GAMESS_MAXMM failed"
 		fi
+		if [ "x$QMMM_GAMESS_MAXCLASS" == "x" ]; then
+			einfo "No QMMM_GAMESS_MAXMM set. Using default value = 250"
+		else
+			sed -e "s:maxclass=250:maxclass=$QMMM_GAMESS_MAXCLASS:g" \
+				-i tinker/sizes.i \
+				|| die "Setting QMMM_GAMESS_MAXCLASS failed"
+		fi
+		if [ "x$QMMM_GAMESS_MAXCTYP" == "x" ]; then
+			einfo "No QMMM_GAMESS_MAXCTYP set. Using default value = 500"
+		else
+			sed -e "s:maxtyp=500:maxtyp=$QMMM_GAMESS_MAXCTYP:g" \
+				-i tinker/sizes.i \
+				|| die "Setting QMMM_GAMESS_MAXCTYP failed"
+		fi
+		if [ "x$QMMM_GAMESS_MAXHESS" == "x" ]; then
+			einfo "No QMMM_GAMESS_MAXHESS set. Usingdefault value = 1000000"
+		else
+			sed -e "s:maxhess=1000000:maxhess=$QMMM_GAMESS_MAXHESS:g" \
+				-i tinker/sizes.i \
+				|| die "Setting QMMM_GAMESS_MAXHESS failed"
+		fi
 	fi
 	# greate proper activate sourcefile
 	cp "./tools/actvte.code" "./tools/actvte.f" || \
@@ -128,33 +176,33 @@ src_unpack() {
 	# specific stuff
 	if [[ "${FORTRANC}" == "ifc" ]]; then
 		sed -e "s/gentoo-OPT = '-O2'/OPT = '${FFLAGS} -quiet'/" \
-			-e "s/gentoo-g77/${FORTRANC}/" \
 			-i comp || die "Failed setting up comp script"
 	elif ! use x86; then
 		sed -e "s/-malign-double //" \
 			-e "s/gentoo-OPT = '-O2'/OPT = '${FFLAGS}'/" \
-			-e "s/gentoo-g77/${FORTRANC}/" \
 			-i comp || die "Failed setting up comp script"
 	else
 		sed -e "s/gentoo-OPT = '-O2'/OPT = '${FFLAGS}'/" \
-			-e "s/gentoo-g77/${FORTRANC}/" \
 			-i comp || die "Failed setting up comp script"
 	fi
 
 	# fix up GAMESS' linker script;
-	sed -e "s/gentoo-g77/${FORTRANC}/" \
-		-e "s/gentoo-LDOPTS=' '/LDOPTS='${LDFLAGS}'/" \
+	sed -e "s/gentoo-LDOPTS=' '/LDOPTS='${LDFLAGS}'/" \
 		-i lked || die "Failed setting up lked script"
-
 	# fix up GAMESS' ddi TCP/IP socket build
 	sed -e "s/gentoo-CC = 'gcc'/CC = '$(tc-getCC)'/" \
-		-e "s/gentoo-g77/${FORTRANC}/" \
 		-i ddi/compddi || die "Failed setting up compddi script"
+	# Creating install.info
+	cat > install.info <<-EOF
+	#!/bin/csh
+	setenv GMS_PATH $WORKDIR/gamess
+	setenv GMS_TARGET $active_arch
+	setenv GMS_FORTRAN $FORTRANC
+	setenv GMS_MATHLIB atlas
+	setenv GMS_MATHLIB_PATH  /usr/$(get_libdir)/atlas
+	setenv GMS_DDI_COMM sockets
+	EOF
 
-	# fix up the checker scripts for gamess tests
-	sed -e "s:set GMSPATH:#set GMSPATH:g" \
-		-e "s:\$GMSPATH/tools/checktst:.:g" \
-		-i tools/checktst/checktst
 }
 
 src_compile() {
@@ -192,8 +240,12 @@ src_compile() {
 
 src_install() {
 	# the executables
-	dobin ${PN}.00.x ddi/ddikick.x rungms \
+	dobin ${PN}.00.x rungms \
 		|| die "Failed installing binaries"
+	if use !mpi; then
+		dobin ddi/ddikick.x \
+			|| die "Failed installing binaries"
+	fi
 
 	# the docs
 	dodoc *.DOC qmnuc/*.DOC || die "Failed installing docs"
@@ -210,7 +262,7 @@ src_install() {
 	if use qmmm-tinker ; then
 			dodoc tinker/simomm.doc || die "Failed installing docs"
 			insinto /usr/share/${PN}
-			doins -r tinker/params || die "Failed to install Tinker params"
+			doins -r tinker/params51 || die "Failed to install Tinker params"
 	fi
 
 	# install the tests the user should run, and
