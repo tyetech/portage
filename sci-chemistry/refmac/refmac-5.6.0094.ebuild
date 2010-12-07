@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/refmac/Attic/refmac-5.6.0088.ebuild,v 1.1 2010/11/03 19:01:51 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/refmac/Attic/refmac-5.6.0094.ebuild,v 1.1 2010/12/07 16:57:04 jlec Exp $
 
 EAPI="2"
 
