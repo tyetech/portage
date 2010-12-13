@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/pth/Attic/pth-2.0.7.ebuild,v 1.12 2008/01/14 14:17:02 alonbl Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/pth/Attic/pth-2.0.7.ebuild,v 1.13 2010/12/13 18:30:22 c1pher Exp $
 
 inherit eutils fixheadtails libtool
 
