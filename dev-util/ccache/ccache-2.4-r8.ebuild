@@ -1,6 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ccache/ccache-2.4-r8.ebuild,v 1.1 2008/09/30 06:39:50 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/ccache/ccache-2.4-r8.ebuild,v 1.2 2010/12/16 20:42:34 robbat2 Exp $
+
+WANT_AUTOMAKE=none # not using automake
 
 inherit eutils autotools multilib
 
