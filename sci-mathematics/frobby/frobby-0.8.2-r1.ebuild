@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/frobby/Attic/frobby-0.8.2-r1.ebuild,v 1.2 2010/11/07 22:50:09 tomka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/frobby/Attic/frobby-0.8.2-r1.ebuild,v 1.3 2010/12/16 09:00:24 phajdan.jr Exp $
 
 EAPI=2
 
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.broune.com/frobby/"
 SRC_URI="http://www.broune.com/frobby/frobby_v${PV}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 x86"
 IUSE="doc"
 
 DEPEND="dev-libs/gmp[-nocxx]
