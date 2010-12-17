@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/cyana/cyana-2.1.ebuild,v 1.4 2010/12/16 08:39:14 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/cyana/cyana-2.1.ebuild,v 1.5 2010/12/17 07:56:05 jlec Exp $
 
 EAPI="3"
 
@@ -46,7 +46,7 @@ src_prepare() {
 	LIBS=-pthread -lpthread -liomp5
 	EOF
 
-	if [[ $(tc-getFC) == gfortran ]]; then
+	if [[ $(tc-getFC) =~ gfortran ]]; then
 		cat >> etc/config <<- EOF
 		DEFS=-Dgfortran
 		SYSTEM=gfortran
