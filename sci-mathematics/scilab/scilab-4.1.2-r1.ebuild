@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/scilab/scilab-4.1.2-r1.ebuild,v 1.7 2010/12/17 07:16:05 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/scilab/scilab-4.1.2-r1.ebuild,v 1.8 2010/12/17 08:17:22 jlec Exp $
 
 inherit eutils toolchain-funcs multilib autotools java-pkg-opt-2
 
@@ -85,7 +85,7 @@ src_compile() {
 	# the tk interface is the default
 	myopts="${myopts} --with-tk"
 
-	if [[ $(tc-getFC) == gfortran ]]; then
+	if [[ $(tc-getFC) =~ gfortran ]]; then
 		myopts="${myopts} --with-gfortran"
 	fi
 
