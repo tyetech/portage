@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/clisp/clisp-2.47-r1.ebuild,v 1.6 2010/06/17 20:15:40 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/clisp/clisp-2.47-r1.ebuild,v 1.7 2010/12/17 20:17:25 ulm Exp $
 
 inherit flag-o-matic eutils toolchain-funcs multilib
 
@@ -34,8 +34,6 @@ RDEPEND="virtual/libiconv
 DEPEND="${RDEPEND} X? ( new-clx? ( x11-misc/imake x11-proto/xextproto ) )"
 
 PDEPEND="dev-lisp/gentoo-init"
-
-PROVIDE="virtual/commonlisp"
 
 enable_modules() {
 	[[ $# = 0 ]] && die "${FUNCNAME[0]} must receive at least one argument"
