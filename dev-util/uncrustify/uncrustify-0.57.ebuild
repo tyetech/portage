@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/uncrustify/Attic/uncrustify-0.53.ebuild,v 1.3 2010/07/03 07:36:58 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/uncrustify/uncrustify-0.57.ebuild,v 1.1 2010/12/20 13:35:30 grobian Exp $
 
 DESCRIPTION="C/C++/C#/D/Java/Pawn code indenter and beautifier"
 HOMEPAGE="http://uncrustify.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -21,5 +21,5 @@ src_test() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
-	dodoc AUTHORS BUGS NEWS README || die "dodoc failed"
+	dodoc AUTHORS ChangeLog NEWS README || die "dodoc failed"
 }
