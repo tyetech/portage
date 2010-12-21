@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/ipset/Attic/ipset-4.3.ebuild,v 1.1 2010/08/25 09:13:21 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/ipset/ipset-4.5.ebuild,v 1.1 2010/12/21 10:02:00 pva Exp $
 
 EAPI="2"
 
