@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/phpdbg/Attic/phpdbg-2.15.5-r1.ebuild,v 1.2 2010/11/04 17:43:15 mabi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/phpdbg/Attic/phpdbg-2.15.5-r1.ebuild,v 1.3 2010/12/28 19:29:57 ranger Exp $
 
 EAPI=3
 
@@ -12,7 +12,7 @@ USE_PHP="php5-2"
 
 inherit php-ext-source-r2
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~ppc64 ~x86"
 
 DESCRIPTION="A PHP debugger useable with some editors like phpedit."
 HOMEPAGE="http://dd.cron.ru/dbg/"
