@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ck-sources/Attic/ck-sources-2.6.35-r1.ebuild,v 1.2 2010/08/31 11:37:26 nelchael Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/ck-sources/Attic/ck-sources-2.6.36-r5.ebuild,v 1.1 2010/12/28 16:37:43 nelchael Exp $
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="2"
+K_GENPATCHES_VER="8"
 
 inherit kernel-2
 detect_version
@@ -14,7 +14,7 @@ DESCRIPTION="Con Kolivas' high performance patchset + Gentoo patchset sources"
 HOMEPAGE="http://dev.gentoo.org/~mpagano/genpatches/
 	http://www.kernel.org/pub/linux/kernel/people/ck/patches/2.6/"
 
-CK_VERSION="1"
+CK_VERSION="2"
 CK_REVISION=""
 K_SECURITY_UNSUPPORTED="1"
 
