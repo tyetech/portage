@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/tuxonice-sources/Attic/tuxonice-sources-2.6.32-r20.ebuild,v 1.1 2010/11/04 10:09:55 nelchael Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/tuxonice-sources/Attic/tuxonice-sources-2.6.36-r4.ebuild,v 1.1 2010/12/28 16:46:42 nelchael Exp $
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="26"
+K_GENPATCHES_VER="8"
 
 inherit kernel-2
 detect_version
@@ -16,13 +16,14 @@ IUSE=""
 
 TUXONICE_SNAPSHOT=""
 TUXONICE_VERSION="3.2-rc2"
-TUXONICE_TARGET="2.6.32"
+TUXONICE_TARGET="2.6.36"
 
 if [[ -n "${TUXONICE_SNAPSHOT}" ]]; then
 	TUXONICE_SRC="current-tuxonice-for-${TUXONICE_TARGET}.patch-${TUXONICE_SNAPSHOT}"
 else
 	TUXONICE_SRC="tuxonice-${TUXONICE_VERSION}-for-${TUXONICE_TARGET}.patch"
 fi
+
 TUXONICE_URI="http://www.tuxonice.net/files/${TUXONICE_SRC}.bz2"
 
 UNIPATCH_LIST="${DISTDIR}/${TUXONICE_SRC}.bz2"
@@ -32,8 +33,8 @@ SRC_URI="${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI} ${TUXONICE_URI}"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="${RDEPEND}
-		>=sys-apps/tuxonice-userui-1.0
-		>=sys-power/hibernate-script-2.0"
+	>=sys-apps/tuxonice-userui-1.0
+	|| ( >=sys-power/hibernate-script-2.0 sys-power/pm-utils )"
 
 K_EXTRAELOG="If there are issues with this kernel, please direct any
 queries to the tuxonice-users mailing list:
