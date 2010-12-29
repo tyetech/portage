@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.7.8.ebuild,v 1.2 2010/12/24 12:58:02 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.7.9.ebuild,v 1.1 2010/12/29 07:21:29 pva Exp $
 
 EAPI=2
 
