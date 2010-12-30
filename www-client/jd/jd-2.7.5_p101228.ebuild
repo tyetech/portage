@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/jd/Attic/jd-2.4.2_p090927.ebuild,v 1.1 2009/10/06 17:35:30 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/jd/jd-2.7.5_p101228.ebuild,v 1.1 2010/12/30 05:43:21 matsuu Exp $
 
 inherit eutils autotools
 
@@ -9,7 +9,7 @@ MY_P="${MY_P/_/-}"
 
 DESCRIPTION="gtk2 based 2ch browser written in C++"
 HOMEPAGE="http://jd4linux.sourceforge.jp/"
-SRC_URI="mirror://sourceforge.jp/jd4linux/43788/${MY_P}.tgz"
+SRC_URI="mirror://sourceforge.jp/jd4linux/50363/${MY_P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
