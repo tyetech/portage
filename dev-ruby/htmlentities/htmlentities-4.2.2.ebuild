@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/htmlentities/Attic/htmlentities-4.2.2.ebuild,v 1.3 2010/12/27 19:24:49 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/htmlentities/Attic/htmlentities-4.2.2.ebuild,v 1.4 2011/01/01 21:27:17 hwoarang Exp $
 
 EAPI=2
 
@@ -18,7 +18,7 @@ HOMEPAGE="http://htmlentities.rubyforge.org/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~x86-macos"
+KEYWORDS="amd64 ~x86 ~x86-macos"
 IUSE=""
 
 ruby_add_bdepend "test? ( virtual/ruby-test-unit )"
