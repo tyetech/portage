@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/qtrans/Attic/qtrans-0.2.2.1.ebuild,v 1.1 2009/12/15 13:12:30 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/qtrans/qtrans-0.2.2.6.ebuild,v 1.1 2011/01/03 20:58:40 dilfridge Exp $
 
 EAPI=2
 WEBKIT_REQUIRED=always
