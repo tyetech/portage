@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/squeezeboxserver/Attic/squeezeboxserver-7.5.1.ebuild,v 1.3 2010/07/24 16:29:15 lavajoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/squeezeboxserver/Attic/squeezeboxserver-7.5.2.ebuild,v 1.1 2011/01/05 19:53:27 lavajoe Exp $
 
 EAPI="2"
 
@@ -8,7 +8,7 @@ inherit eutils
 
 MAJOR_VER="${PV:0:3}"
 MINOR_VER="${PV:4:1}"
-BUILD_NUM="30836"
+BUILD_NUM="31632"
 SRC_DIR="SqueezeboxServer_v${MAJOR_VER}.${MINOR_VER}"
 MY_P="squeezeboxserver-${MAJOR_VER}.${MINOR_VER}-noCPAN"
 MY_P_BUILD_NUM="squeezeboxserver-${MAJOR_VER}.${MINOR_VER}-${BUILD_NUM}-noCPAN"
@@ -110,6 +110,7 @@ RDEPEND="
 	>=dev-perl/Tie-LLHash-1.003
 	>=dev-perl/Tie-RegexpHash-0.15
 	>=dev-perl/Data-UUID-1.202
+	>=perl-core/Class-ISA-0.36
 	lame? ( media-sound/lame )
 	wavpack? ( media-sound/wavpack )
 	flac? (
@@ -125,6 +126,7 @@ S="${WORKDIR}/${MY_P_BUILD_NUM}"
 ETCDIR="/etc/squeezeboxserver"
 PREFS="${ETCDIR}/squeezeboxserver.prefs"
 PREFSDIR="${ETCDIR}/prefs"
+PREFS2="${PREFSDIR}/server.prefs"
 DOCDIR="/usr/share/doc/squeezeboxserver-${PV}"
 SHAREDIR="/usr/share/squeezeboxserver"
 LIBDIR="/usr/$(get_libdir)/squeezeboxserver"
@@ -154,14 +156,14 @@ src_prepare() {
 
 	# Copy in the module builder - can't run it from the files directory in case
 	# Portage is mounted 'noexec'.
-	cp "${FILESDIR}/build-modules-${PV}.sh" "${S}/build-modules.sh"	|| die
+	cp "${FILESDIR}/build-modules-${PVR}.sh" "${S}/build-modules.sh"	|| die
 	chmod 555 "${S}/build-modules.sh"			|| die
 }
 
 # Building of EV present because of bug#287857.
 src_compile() {
 	einfo "Building bundled Perl modules (some warnings are normal here)..."
-	"./build-modules.sh" "${DISTDIR}" || die "Unable to build Perl modules"
+	"./build-modules.sh" "${DISTDIR}" "${S}/perl-modules" || die "Unable to build Perl modules"
 }
 
 src_install() {
@@ -198,8 +200,7 @@ src_install() {
 
 	# Install compiled Perl modules because of bug#287857.
 	dodir "${LIBDIR}/CPAN/arch"
-	cp -r CPAN-arch/* "${D}${LIBDIR}/CPAN/arch" || die "Unable to install compiled CPAN modules"
-	cp -r CPAN-pm/* "${D}${LIBDIR}/CPAN" || die "Unable to install compiled CPAN modules"
+	mv perl-modules/*/*/*/* "${D}${LIBDIR}/CPAN/arch" || die "Unable to install compiled CPAN modules"
 
 	# Strings and version identification
 	insinto "${SHAREDIR}"
@@ -462,9 +463,11 @@ pkg_config() {
 
 	# Remove the existing MySQL preferences from Squeezebox Server (if any).
 	sc_remove_db_prefs "${PREFS}"
+	sc_remove_db_prefs "${PREFS2}"
 
 	# Insert the external MySQL configuration into the preferences.
 	sc_update_prefs "${PREFS}" "${DBUSER}" "${DBUSER_PASSWD}"
+	sc_update_prefs "${PREFS2}" "${DBUSER}" "${DBUSER_PASSWD}"
 
 	# Phew - all done. Give some tips on what to do now.
 	einfo "Database configuration complete."
