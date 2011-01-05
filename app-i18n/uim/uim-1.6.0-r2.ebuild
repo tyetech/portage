@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/uim/Attic/uim-1.5.6-r4.ebuild,v 1.3 2010/01/04 03:58:18 yngwin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/uim/Attic/uim-1.6.0-r2.ebuild,v 1.1 2011/01/05 11:17:11 matsuu Exp $
 
-EAPI="2"
+EAPI="3"
 inherit autotools eutils multilib elisp-common flag-o-matic
 
 DESCRIPTION="Simple, secure and flexible input method library"
@@ -12,7 +12,9 @@ SRC_URI="http://uim.googlecode.com/files/${P}.tar.bz2"
 LICENSE="BSD GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
-IUSE="+anthy canna eb emacs gnome gtk libedit libnotify m17n-lib ncurses nls prime qt4 unicode X xft linguas_zh_CN linguas_zh_TW linguas_ja linguas_ko"
+IUSE="+anthy canna curl eb emacs ffi gnome gtk kde libedit libnotify m17n-lib ncurses nls prime qt4 skk sqlite ssl test unicode X xft linguas_zh_CN linguas_zh_TW linguas_ja linguas_ko"
+
+RESTRICT="test"
 
 RDEPEND="X? (
 		x11-libs/libX11
@@ -28,10 +30,13 @@ RDEPEND="X? (
 		!unicode? ( app-i18n/anthy )
 	)
 	canna? ( app-i18n/canna )
+	curl? ( >=net-misc/curl-7.16.4 )
 	eb? ( dev-libs/eb )
 	emacs? ( virtual/emacs )
+	ffi? ( virtual/libffi )
 	gnome? ( >=gnome-base/gnome-panel-2.14 )
-	gtk? ( >=x11-libs/gtk+-2.4 )
+	gtk? ( >=x11-libs/gtk+-2.4:2 )
+	kde? ( >=kde-base/kdelibs-4 )
 	libedit? ( dev-libs/libedit )
 	libnotify? ( >=x11-libs/libnotify-0.4 )
 	m17n-lib? ( >=dev-libs/m17n-lib-1.3.1 )
@@ -39,8 +44,13 @@ RDEPEND="X? (
 	nls? ( virtual/libintl )
 	prime? ( app-i18n/prime )
 	qt4? ( x11-libs/qt-gui:4[qt3support] )
+	skk? ( app-i18n/skk-jisyo )
+	sqlite? ( dev-db/sqlite:3 )
+	ssl? ( dev-libs/openssl )
+	!dev-scheme/sigscheme
 	!app-i18n/uim-svn
 	!<app-i18n/prime-0.9.4"
+#	>=dev-scheme/sigscheme-0.8.5
 #	mana? ( app-i18n/mana )
 #	scim? ( >=app-i18n/scim-1.3.0 ) # broken
 #	sj3? ( >=app-i18n/sj3-2.0.1.21 )
@@ -49,6 +59,7 @@ RDEPEND="X? (
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	>=sys-devel/gettext-0.15
+	kde? ( dev-util/cmake )
 	X? (
 		x11-proto/xextproto
 		x11-proto/xproto
@@ -70,6 +81,7 @@ RDEPEND="${RDEPEND}
 			|| ( media-fonts/font-daewoo-misc media-fonts/intlfonts )
 		)
 	)"
+#	test? ( dev-scheme/gauche )
 
 SITEFILE=50${PN}-gentoo.el
 
@@ -81,15 +93,17 @@ pkg_setup() {
 
 src_prepare() {
 	epatch \
-		"${FILESDIR}/${PN}-1.5.4-gentoo.patch" \
-		"${FILESDIR}/${PN}-1.5.4-gcc43.patch" \
+		"${FILESDIR}/${P}-gentoo.patch" \
 		"${FILESDIR}/${PN}-1.5.4-zhTW.patch" \
-		"${FILESDIR}/${PN}-disable-notify.diff" \
-		"${FILESDIR}/${P}-toplevel-delete-event.patch"
+		"${FILESDIR}/${P}-sandbox-violation.patch" \
+		"${FILESDIR}/${P}-gettext.patch" \
+		"${FILESDIR}/${P}-xcompose.patch" \
+		"${FILESDIR}/${P}-linker.patch"
 
 	# bug 275420
 	sed -i -e "s:\$libedit_path/lib:/$(get_libdir):g" configure.ac || die
-	eautoconf
+	#./autogen.sh
+	AT_NO_RECURSIVE=1 eautoreconf
 }
 
 src_configure() {
@@ -101,7 +115,7 @@ src_configure() {
 		myconf="${myconf} --disable-dict"
 	fi
 
-	if use gtk; then
+	if use gtk || use qt4 ; then
 		myconf="${myconf} --enable-pref"
 	else
 		myconf="${myconf} --disable-pref"
@@ -123,22 +137,30 @@ src_configure() {
 
 	econf $(use_with X x) \
 		$(use_with canna) \
+		$(use_with curl) \
 		$(use_with eb) \
 		$(use_enable emacs) \
 		$(use_with emacs lispdir "${SITELISP}") \
+		$(use_with ffi) \
 		$(use_enable gnome gnome-applet) \
 		$(use_with gtk gtk2) \
 		$(use_with libedit) \
 		--disable-kde-applet \
+		$(use_enable kde kde4-applet) \
 		$(use_with m17n-lib m17nlib) \
 		$(use_enable ncurses fep) \
 		$(use_enable nls) \
 		$(use_with prime) \
 		--without-qt \
 		--without-qt-immodule \
+		$(use_with qt4 qt4) \
 		$(use_with qt4 qt4-immodule) \
+		$(use_with skk) \
+		$(use_with sqlite sqlite3) \
+		$(use_enable ssl openssl) \
 		$(use_with xft) \
 		${myconf}
+		# $(use_enable qt4 qt4-qt3support) \
 }
 
 src_compile() {
@@ -154,17 +176,18 @@ src_install() {
 	# parallel make install b0rked, bug #222677
 	emake -j1 INSTALL_ROOT="${D}" DESTDIR="${D}" install || die "make install failed"
 
-	dodoc AUTHORS ChangeLog* NEWS README RELNOTE
+	dodoc AUTHORS ChangeLog* NEWS README RELNOTE || die
 	if use emacs; then
 		elisp-install uim-el emacs/*.elc || die "elisp-install failed"
 		elisp-site-file-install "${FILESDIR}/${SITEFILE}" uim-el \
 			|| die "elisp-site-file-install failed"
 	fi
+
+	# collision with dev-scheme/sigscheme, bug #330975
+	# find "${ED}" -name '*gcroots*' -delete || die
 }
 
 pkg_postinst() {
-	elog
-	elog "To use uim-skk you should emerge app-i18n/skk-jisyo."
 	elog
 	elog "New input method switcher has been introduced. You need to set"
 	elog
@@ -176,8 +199,8 @@ pkg_postinst() {
 	elog "(define default-im-name 'anthy)"
 	elog "to your ~/.uim."
 	elog
-	elog "All input methods can be found by running uim-im-switcher-gtk"
-	elog "or uim-im-switcher-qt."
+	elog "All input methods can be found by running uim-im-switcher-gtk, "
+	elog "or uim-im-switcher-qt4."
 	elog
 	elog "If you upgrade from a version of uim older than 1.4.0,"
 	elog "you should run revdep-rebuild."
