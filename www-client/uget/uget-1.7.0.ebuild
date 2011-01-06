@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/uget/Attic/uget-1.5.9.3.ebuild,v 1.1 2010/07/26 12:34:47 wired Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/uget/Attic/uget-1.7.0.ebuild,v 1.1 2011/01/06 21:31:42 wired Exp $
 
 EAPI="2"
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/urlget/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="gstreamer libnotify nls"
+IUSE="gstreamer hide-temp-files libnotify nls"
 
 RDEPEND="
 	dev-libs/libpcre
@@ -27,14 +27,25 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	sys-devel/gettext"
 
+pkg_setup() {
+	echo
+	ewarn "Be warned that the configuration file has been split into smaller"
+	ewarn "files in Uget >= 1.5.9 and Uget will not attempt to import your"
+	ewarn "old settings."
+	ewarn
+	ewarn "In other words, you will lose your current download lists."
+	echo
+}
+
 src_prepare() {
-	epatch "${FILESDIR}"/"${PN}"-1.5.9.2-as-needed.patch
+	epatch "${FILESDIR}"/"${PN}"-1.7.0-as-needed.patch
 	eautoreconf
 }
 
 src_configure() {
 	econf $(use_enable nls) \
 		  $(use_enable gstreamer) \
+		  $(use_enable hide-temp-files hidden) \
 		  $(use_enable libnotify notify) || die "econf failed"
 }
 
