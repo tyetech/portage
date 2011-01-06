@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/most/most-5.0.0a.ebuild,v 1.10 2008/09/25 11:58:05 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/most/most-5.0.0a.ebuild,v 1.11 2011/01/06 21:32:23 jlec Exp $
 
-DESCRIPTION="a paging program that displays, one windowful at a time, the contents of a file."
+DESCRIPTION="Paging program that displays, one windowful at a time, the contents of a file"
 HOMEPAGE="ftp://space.mit.edu/pub/davis/most"
 SRC_URI="ftp://space.mit.edu/pub/davis/${PN}/${P}.tar.bz2"
 
@@ -16,7 +16,7 @@ DEPEND="${RDEPEND}"
 
 src_unpack() {
 	unpack ${A}
-	sed -i -e 's:$(INSTALL) -s:$(INSTALL):' "${S}"/src/Makefile.in
+	sed -i -e 's:$(INSTALL) -s:$(INSTALL):' "${S}"/src/Makefile.in || die
 }
 
 src_compile() {
