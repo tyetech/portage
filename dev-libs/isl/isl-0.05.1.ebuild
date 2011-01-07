@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/isl/Attic/isl-0.05.ebuild,v 1.1 2011/01/01 04:44:31 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/isl/Attic/isl-0.05.1.ebuild,v 1.1 2011/01/07 23:53:27 dirtyepic Exp $
 
 EAPI="3"
 
