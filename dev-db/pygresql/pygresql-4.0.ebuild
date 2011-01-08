@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/pygresql/pygresql-4.0.ebuild,v 1.2 2010/06/17 18:20:09 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/pygresql/pygresql-4.0.ebuild,v 1.3 2011/01/08 16:08:43 arfrever Exp $
+
+EAPI="3"
 
 inherit eutils distutils
 
