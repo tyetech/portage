@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gpac/Attic/gpac-0.4.5-r3.ebuild,v 1.1 2010/11/01 17:17:34 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/gpac/gpac-0.4.5-r4.ebuild,v 1.1 2011/01/10 16:22:08 anarchy Exp $
 
 inherit eutils wxwidgets flag-o-matic multilib toolchain-funcs
 
@@ -62,6 +62,8 @@ src_unpack() {
 	cd "${S}"
 
 	EPATCH_SUFFIX="patch" epatch "${WORKDIR}/patches"
+
+	epatch "${FILESDIR}/${P}-spidermonkey-update.patch"
 
 	sed -ie '/ldconfig / d' "${S}/Makefile"
 
