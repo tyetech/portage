@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-1.8.4.ebuild,v 1.1 2011/01/16 12:27:33 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-1.8.4.ebuild,v 1.2 2011/01/17 15:55:08 patrick Exp $
 
 EAPI="2"
 
@@ -35,7 +35,8 @@ RDEPEND="${COMMON_DEPEND}
 	proxy? ( net-analyzer/fping )
 	server? ( net-analyzer/fping
 		app-admin/webapp-config )
-	frontend? ( dev-lang/php[bcmath,ctype,sockets,gd]
+	frontend? ( dev-lang/php[bcmath,ctype,sockets,gd,truetype,xml,session]
+		media-libs/gd[png]
 		app-admin/webapp-config )"
 DEPEND="${COMMON_DEPEND}
 	jabber? ( dev-util/pkgconfig )"
