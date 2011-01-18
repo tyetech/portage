@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/imosflm/Attic/imosflm-1.0.4.ebuild,v 1.2 2011/01/16 12:24:25 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/imosflm/Attic/imosflm-1.0.4.ebuild,v 1.3 2011/01/18 16:36:29 jlec Exp $
 
 EAPI="3"
 
@@ -34,7 +34,9 @@ DEPEND="app-arch/unzip"
 S="${WORKDIR}"/${PN}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PV}-tk.patch
+	epatch \
+		"${FILESDIR}"/${PV}-tk.patch \
+		"${FILESDIR}"/${PV}-impl-dec.patch
 }
 
 src_compile() {
