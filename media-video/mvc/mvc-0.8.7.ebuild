@@ -1,6 +1,6 @@
-# Copyright 1999-2006 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mvc/Attic/mvc-0.8.7.ebuild,v 1.4 2006/09/12 15:50:29 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mvc/Attic/mvc-0.8.7.ebuild,v 1.5 2011/01/19 20:39:41 spatz Exp $
 
 inherit toolchain-funcs
 
@@ -13,7 +13,7 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~ppc ~x86"
 
-RDEPEND="media-libs/jpeg
+RDEPEND="virtual/jpeg
 	media-libs/libpng"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
