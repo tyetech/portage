@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/v8/Attic/v8-2.5.9.6.ebuild,v 1.1 2011/01/05 15:09:28 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/v8/Attic/v8-2.5.9.7.ebuild,v 1.1 2011/01/19 10:17:02 phajdan.jr Exp $
 
 EAPI="2"
 
@@ -36,6 +36,10 @@ src_prepare() {
 
 	# Fix a compile error (bug #349794), to be upstreamed.
 	epatch "${FILESDIR}"/${PN}-gentoo-bug-349794-r0.patch
+
+	# Backport an upstream bugfix for symbol visibility,
+	# see bug #348609.
+	epatch "${FILESDIR}"/${PN}-upstream-bug-1016-r0.patch
 
 	# Remove a test that is known to fail:
 	# http://groups.google.com/group/v8-users/browse_thread/thread/b8a3f42b5aa18d06
