@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/coot/Attic/coot-0.6.1.ebuild,v 1.8 2011/01/18 18:34:15 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/coot/Attic/coot-0.6.1.ebuild,v 1.9 2011/01/20 12:13:36 hwoarang Exp $
 
 EAPI="3"
 
@@ -22,7 +22,7 @@ SRC_URI="
 
 SLOT="0"
 LICENSE="GPL-3"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="test"
 
 SCIDEPS="
