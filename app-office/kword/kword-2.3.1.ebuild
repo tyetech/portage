@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kspread/Attic/kspread-2.3.0.ebuild,v 1.1 2011/01/14 20:38:14 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/kword/Attic/kword-2.3.1.ebuild,v 1.1 2011/01/20 00:09:09 dilfridge Exp $
 
 EAPI=3
 
@@ -8,34 +8,35 @@ KMNAME="koffice"
 KMMODULE="${PN}"
 inherit kde4-meta
 
-DESCRIPTION="KOffice spreadsheet application"
+DESCRIPTION="KOffice word processor"
 
 KEYWORDS="~amd64 ~x86"
-IUSE="+solver"
+IUSE="wpd"
 
 DEPEND="
-	dev-cpp/eigen:2
-	solver? ( sci-libs/gsl )
+	wpd? ( app-text/libwpd )
 "
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	!app-text/wv2
+"
+
+KMEXTRA="filters/${KMMODULE}/
+	filters/libmso/
+"
 
 KMEXTRACTONLY="
 	KoConfig.h.cmake
-	kchart/
-	interfaces/
-	libs/
 	filters/
+	kspread/
+	libs/
 	plugins/
 "
-KMEXTRA="filters/${KMMODULE}/
-	filters/libmso"
 
 KMLOADLIBS="koffice-libs"
 
 src_configure() {
 	mycmakeargs=(
-		-DWITH_Eigen2=ON
-		$(cmake-utils_use_with solver GSL)
+		$(cmake-utils_use_with wpd)
 	)
 
 	kde4-meta_src_configure
