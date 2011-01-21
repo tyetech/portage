@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ofono/Attic/ofono-0.35.ebuild,v 1.1 2010/11/10 12:23:51 dagger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ofono/Attic/ofono-0.39.ebuild,v 1.1 2011/01/21 15:09:58 dagger Exp $
 
 EAPI="2"
 
@@ -8,7 +8,7 @@ inherit multilib
 
 DESCRIPTION="Open Source mobile telephony (GSM/UMTS) daemon."
 HOMEPAGE="http://ofono.org/"
-SRC_URI="mirror://kernel/linux/network/${PN}/${P}.tar.gz"
+SRC_URI="mirror://kernel/linux/network/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
