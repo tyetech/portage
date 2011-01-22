@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/ekg2/Attic/ekg2-0.3.0_rc5.ebuild,v 1.3 2011/01/13 22:04:33 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/ekg2/Attic/ekg2-0.3.0_rc7.ebuild,v 1.1 2011/01/22 14:14:03 mgorny Exp $
 
 EAPI=3
 inherit autotools-utils versionator
@@ -12,8 +12,8 @@ SRC_URI="http://pl.ekg2.org/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
-IUSE="expat gadu gif gnutls gpg gpm gsm gtk idn inotify jpeg ncurses nls
-	oracle perl python readline spell sqlite sqlite3 ssl threads unicode
+IUSE="gadu gif gnutls gpg gpm gsm gtk idn inotify jabber jpeg ncurses nls
+	oracle perl python readline rss spell sqlite sqlite3 ssl threads unicode
 	xosd zlib"
 
 RDEPEND="
@@ -33,11 +33,12 @@ RDEPEND="
 	gadu? ( net-libs/libgadu
 		gif? ( media-libs/giflib )
 		jpeg? ( media-libs/jpeg ) )
-	expat? ( dev-libs/expat
+	jabber? ( dev-libs/expat
 		gnutls? ( net-libs/gnutls ) )
 	ncurses? ( sys-libs/ncurses[unicode?]
 		gpm? ( sys-libs/gpm )
 		spell? ( app-text/aspell ) )
+	rss? ( dev-libs/expat )
 	sqlite3? ( dev-db/sqlite:3 )
 	!sqlite3? ( sqlite? ( dev-db/sqlite:0 ) )"
 
@@ -51,6 +52,7 @@ DOCS=(
 	docs/ui-ncurses.txt docs/ui-ncurses-en.txt
 )
 
+# Due to MakeMaker being used to build Perl modules.
 AUTOTOOLS_IN_SOURCE_BUILD=1
 
 pkg_setup() {
@@ -68,16 +70,17 @@ pkg_setup() {
 
 src_configure() {
 	myeconfargs=(
-		$(use_with expat)
 		$(use_with gadu libgadu)
 		$(use_with gif)
-		$(use_with gnutls libgnutls)
+		# gnutls is jabber-specific
+		$(use jabber && use_with gnutls libgnutls || echo '--without-libgnutls')
 		$(use_with gpg)
 		$(use_with gpm gpm-mouse)
 		$(use_with gsm libgsm)
 		$(use_with gtk)
 		$(use_with idn libidn)
 		$(use_with inotify)
+		$(use jabber && echo '--with-expat' || use_with rss expat)
 		$(use_with jpeg libjpeg)
 		$(use_with ncurses)
 		$(use_with oracle logsoracle)
