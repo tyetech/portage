@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/devhelp/devhelp-2.32.0.ebuild,v 1.1 2010/10/22 20:44:40 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/devhelp/devhelp-2.32.0.ebuild,v 1.2 2011/01/24 16:45:07 eva Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -19,7 +19,7 @@ RDEPEND=">=gnome-base/gconf-2.6
 	>=x11-libs/gtk+-2.10:2
 	>=dev-libs/glib-2.10:2
 	>=x11-libs/libwnck-2.10
-	>=net-libs/webkit-gtk-1.1.13
+	>=net-libs/webkit-gtk-1.1.13:2
 	>=dev-libs/libunique-1"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
