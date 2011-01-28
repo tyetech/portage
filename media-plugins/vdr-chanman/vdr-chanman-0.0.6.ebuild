@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-chanman/vdr-chanman-0.0.6.ebuild,v 1.3 2011/01/28 18:05:11 hd_brummy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vdr-chanman/vdr-chanman-0.0.6.ebuild,v 1.4 2011/01/28 21:21:05 mr_bones_ Exp $
 
 EAPI="3"
 
