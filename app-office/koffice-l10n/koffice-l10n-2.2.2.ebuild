@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/koffice-l10n/Attic/koffice-l10n-2.2.2.ebuild,v 1.4 2010/11/04 13:44:43 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/koffice-l10n/Attic/koffice-l10n-2.2.2.ebuild,v 1.5 2011/01/28 09:52:41 tampakrap Exp $
 
-EAPI="2"
+EAPI="3"
 
 inherit kde4-base
 
