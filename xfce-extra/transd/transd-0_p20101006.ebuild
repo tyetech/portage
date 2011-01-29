@@ -1,8 +1,8 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/transd/Attic/transd-0_p20101006.ebuild,v 1.3 2010/12/13 18:46:52 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-extra/cvs-repo/gentoo-x86/xfce-extra/transd/Attic/transd-0_p20101006.ebuild,v 1.4 2011/01/29 20:57:10 ssuominen Exp $
 
-EAPI=2
+EAPI=3
 EAUTORECONF=yes
 EINTLTOOLIZE=yes
 inherit xfconf
