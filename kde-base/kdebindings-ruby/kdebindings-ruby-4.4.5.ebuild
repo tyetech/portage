@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebindings-ruby/Attic/kdebindings-ruby-4.4.5.ebuild,v 1.7 2010/12/19 11:10:40 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdebindings-ruby/Attic/kdebindings-ruby-4.4.5.ebuild,v 1.8 2011/01/30 13:09:48 tampakrap Exp $
 
-EAPI="2"
+EAPI=3
 
 KMNAME="kdebindings"
 KMMODULE="ruby"
