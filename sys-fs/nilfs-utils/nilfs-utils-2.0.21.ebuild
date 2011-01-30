@@ -1,32 +1,30 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/nilfs-utils/Attic/nilfs-utils-2.0.14.ebuild,v 1.3 2009/12/27 09:17:52 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/nilfs-utils/nilfs-utils-2.0.21.ebuild,v 1.1 2011/01/30 00:50:43 matsuu Exp $
 
-inherit autotools
+EAPI=3
+
+inherit multilib
 
 DESCRIPTION="A New Implementation of a Log-structured File System for Linux"
 HOMEPAGE="http://www.nilfs.org/"
 SRC_URI="http://www.nilfs.org/download/${P}.tar.bz2"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~x86"
-IUSE=""
+IUSE="static-libs"
 
 RDEPEND="sys-libs/e2fsprogs-libs"
 DEPEND="${DEPEND}
 	sys-kernel/linux-headers"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-
-	epatch "${FILESDIR}/${P}-gentoo.patch"
-	eautoreconf
+src_configure() {
+	econf $(use_enable static-libs static)
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
 
-	dodoc AUTHORS ChangeLog NEWS README
+	dodoc AUTHORS ChangeLog NEWS README || die
 }
