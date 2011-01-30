@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/plasma-widget-message-indicator/Attic/plasma-widget-message-indicator-0.5.6.ebuild,v 1.2 2011/01/09 17:56:35 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/plasma-widget-message-indicator/Attic/plasma-widget-message-indicator-0.5.6.ebuild,v 1.3 2011/01/30 18:36:18 scarabeus Exp $
 
-EAPI=2
+EAPI=3
 
 VIRTUALX_REQUIRED="tests"
 inherit kde4-base
