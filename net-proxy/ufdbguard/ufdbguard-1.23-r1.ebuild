@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/ufdbguard/Attic/ufdbguard-1.23.ebuild,v 1.1 2010/12/07 09:11:50 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/ufdbguard/Attic/ufdbguard-1.23-r1.ebuild,v 1.1 2011/01/31 05:37:32 jer Exp $
 
 EAPI="2"
 
