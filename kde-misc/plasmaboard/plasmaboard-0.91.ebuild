@@ -1,8 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/plasmaboard/Attic/plasmaboard-0.91.ebuild,v 1.1 2009/12/05 15:40:41 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/plasmaboard/Attic/plasmaboard-0.91.ebuild,v 1.2 2011/01/31 06:15:30 tampakrap Exp $
 
-EAPI=2
+EAPI=3
 inherit kde4-base
 
 DESCRIPTION="A virtual keyboard for your desktop"
@@ -16,4 +16,4 @@ IUSE="debug"
 
 S=${WORKDIR}/${PN}
 
-DOCS="AUTHORS README"
+DOCS=( AUTHORS README )
