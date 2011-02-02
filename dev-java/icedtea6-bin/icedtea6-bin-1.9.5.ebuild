@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/icedtea6-bin/Attic/icedtea6-bin-1.9.5.ebuild,v 1.1 2011/02/02 14:17:59 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/icedtea6-bin/Attic/icedtea6-bin-1.9.5.ebuild,v 1.2 2011/02/02 14:53:59 caster Exp $
 
 EAPI="1"
 
 inherit java-vm-2
 
-dist="mirror://gentoo/"
+dist="http://dev.gentoo.org/~caster/distfiles/"
 DESCRIPTION="A Gentoo-made binary build of the icedtea6 JDK"
 TARBALL_VERSION="${PVR}"
 SRC_URI="amd64? ( ${dist}/${PN}-core-${TARBALL_VERSION}-amd64.tar.bz2 )
