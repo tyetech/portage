@@ -1,11 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/pitivi/pitivi-0.13.5.ebuild,v 1.2 2011/02/03 22:24:28 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/pitivi/pitivi-0.13.5.ebuild,v 1.3 2011/02/03 22:29:10 arfrever Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 PYTHON_DEPEND="2:2.5"
-RESTRICT_PYTHON_ABIS="3.*"
 
 inherit gnome2 python eutils virtualx
 
