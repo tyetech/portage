@@ -1,10 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gource/Attic/gource-0.26b.ebuild,v 1.1 2010/04/21 13:57:02 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gource/Attic/gource-0.29.ebuild,v 1.1 2011/02/04 15:41:52 flameeyes Exp $
 
 EAPI=2
 
-MY_P=${P/_/-}
+inherit versionator
+
+MY_P=${P/_p/-}
+MY_P=${MY_P/_/-}
+MY_DATE=${PV/*_p}
 
 DESCRIPTION="A software version control visualization tool"
 HOMEPAGE="http://code.google.com/p/gource/"
@@ -24,13 +28,22 @@ RDEPEND="
 	>=media-libs/jpeg-6b-r9
 	media-libs/mesa
 	media-fonts/freefont-ttf
+	>=media-libs/glew-1.5
 	"
 DEPEND="
 	${RDEPEND}
 	dev-util/pkgconfig
 	media-libs/freetype:2
 	"
-S="${WORKDIR}/${PN}-${PV%_*}"
+
+case ${PV} in
+	*_beta*)
+		my_v=$(get_version_component_range 1-3)
+		my_v=${my_v//_/-}
+		S="${WORKDIR}/${PN}-${my_v}" ;;
+	*)
+		S="${WORKDIR}/${PN}-$(get_version_component_range 1-2)" ;;
+esac
 
 src_configure() {
 	econf --enable-ttf-font-dir=/usr/share/fonts/freefont-ttf/
