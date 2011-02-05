@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.17.ebuild,v 1.2 2011/02/05 12:36:20 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/java-gnome/Attic/java-gnome-4.0.18-r1.ebuild,v 1.1 2011/02/05 12:36:20 ssuominen Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="doc examples source"
@@ -20,16 +20,16 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND=">=dev-libs/glib-2.22
-	>=x11-libs/gtk+-2.20.1
+	>=x11-libs/gtk+-2.22.0
 	>=gnome-base/libglade-2.6.4
 	>=gnome-base/libgnome-2.22.0
 	>=gnome-base/gnome-desktop-2.22.0:2
-	>=x11-libs/cairo-1.8.8[svg]
+	>=x11-libs/cairo-1.10.0[svg]
 	>=x11-libs/gtksourceview-2.6.2
 	>=app-text/gtkspell-2.0.15-r1
-	>=x11-libs/libnotify-0.4.5
-	<x11-libs/libnotify-0.7
+	>=x11-libs/libnotify-0.7
 	>=dev-libs/libunique-1.0.8
+	>=gnome-base/librsvg-2.32.1
 	>=virtual/jre-1.5"
 DEPEND="${RDEPEND}
 	dev-java/junit:0
@@ -41,6 +41,12 @@ DEPEND="${RDEPEND}
 RESTRICT="test"
 
 S="${WORKDIR}/${MY_P}"
+
+src_prepare() {
+	#fix dependency typo in configure
+	sed -i -e "s/librsvg-2.0atk/librsvg-2.0 atk/" configure || die
+	epatch "${FILESDIR}"/${P}-libnotify-0.7.patch
+}
 
 src_configure() {
 	# Handwritten in perl so not using econf
