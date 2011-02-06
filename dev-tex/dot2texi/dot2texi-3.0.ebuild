@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/dot2texi/dot2texi-3.0.ebuild,v 1.5 2011/01/26 19:35:56 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-tex/cvs-repo/gentoo-x86/dev-tex/dot2texi/dot2texi-3.0.ebuild,v 1.6 2011/02/06 21:52:29 maekke Exp $
 
 inherit latex-package
 
@@ -11,7 +11,7 @@ SRC_URI="mirror://gentoo/${P}.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~x86 ~ppc-macos"
+KEYWORDS="~amd64 ~arm ~hppa ~x86 ~ppc-macos"
 IUSE="pgf pstricks examples"
 
 DEPEND="app-arch/unzip"
