@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/glib/Attic/glib-2.27.93.ebuild,v 1.1 2011/02/04 00:10:58 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/glib/Attic/glib-2.28.0.ebuild,v 1.1 2011/02/08 20:57:21 nirbheek Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
