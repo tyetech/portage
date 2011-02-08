@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/vuze/Attic/vuze-4.5.0.4.ebuild,v 1.2 2010/09/10 15:28:54 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/vuze/vuze-4.6.0.2.ebuild,v 1.1 2011/02/08 23:37:59 caster Exp $
 
 EAPI=2
 
@@ -32,7 +32,7 @@ RDEPEND="
 	dev-java/bcprov:1.3
 	>=dev-java/commons-cli-1.0:1
 	>=dev-java/log4j-1.2.8:0
-	dev-java/swt:3.6[cairo,xulrunner]
+	dev-java/swt:3.6[cairo]
 	!net-p2p/azureus-bin
 	>=virtual/jre-1.5"
 
@@ -47,6 +47,8 @@ src_unpack() {
 	unpack ${PATCHSET}
 	mkdir "${S}" && cd "${S}" || die
 	unpack ${SRC_TARBALL}
+	# this is no longer needed
+	rm "${WORKDIR}/${PATCHSET_DIR}/0006-Remove-the-use-of-windows-only-Tree2-widget.patch" || die
 }
 
 java_prepare() {
@@ -127,6 +129,12 @@ pkg_postinst() {
 	elog "modify this file, rather than the startup script."
 	elog "Using this config file you can start the console UI."
 	elog
+
+	if ! has_version dev-java/swt:3.6[xulrunner]; then
+		elog
+		elog "Your dev-java/swt:3.6 was built without xulrunner support. Features such as Vuze HD Network will not work."
+		elog "Rebuild swt with USE=xulrunner (needs xulrunner-1.9) to use these features."
+	fi
 
 	fdo-mime_desktop_database_update
 }
