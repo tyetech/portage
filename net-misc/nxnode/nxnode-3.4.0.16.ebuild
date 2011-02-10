@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/nxnode/Attic/nxnode-3.4.0.6-r1.ebuild,v 1.2 2010/01/18 15:05:53 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/nxnode/Attic/nxnode-3.4.0.16.ebuild,v 1.1 2011/02/10 13:09:15 voyageur Exp $
 
 EAPI="2"
 
@@ -20,7 +20,7 @@ IUSE="rdesktop vnc"
 RESTRICT="strip"
 
 DEPEND="!<net-misc/nxserver-freeedition-3.0.0"
-RDEPEND="=net-misc/nxclient-${MAJOR_PV}*
+RDEPEND="=net-misc/nxclient-${MAJOR_PV}*[cups]
 	sys-process/lsof
 	x11-libs/libICE
 	x11-libs/libXmu
