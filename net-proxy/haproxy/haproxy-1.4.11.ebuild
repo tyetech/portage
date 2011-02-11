@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/haproxy/Attic/haproxy-1.4.10.ebuild,v 1.1 2010/11/29 17:58:47 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/haproxy/Attic/haproxy-1.4.11.ebuild,v 1.1 2011/02/11 01:22:47 idl0r Exp $
 
 inherit eutils versionator
 
