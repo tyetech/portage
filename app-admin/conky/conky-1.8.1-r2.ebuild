@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conky/Attic/conky-1.8.1-r1.ebuild,v 1.2 2011/02/12 16:21:03 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/conky/Attic/conky-1.8.1-r2.ebuild,v 1.1 2011/02/12 17:43:58 billie Exp $
 
 EAPI=2
 
