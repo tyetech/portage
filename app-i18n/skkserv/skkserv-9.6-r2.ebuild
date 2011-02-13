@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skkserv/skkserv-9.6-r2.ebuild,v 1.14 2009/12/31 21:16:55 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/skkserv/skkserv-9.6-r2.ebuild,v 1.15 2011/02/13 19:11:17 armin76 Exp $
 
 inherit eutils
 
@@ -12,7 +12,7 @@ SRC_URI="http://openlab.ring.gr.jp/skk/maintrunk/museum/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha"
+KEYWORDS="ppc x86"
 IUSE=""
 
 DEPEND=">=app-i18n/skk-jisyo-200210"
