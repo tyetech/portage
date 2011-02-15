@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/gitolite-gentoo/Attic/gitolite-gentoo-1.5.8.ebuild,v 1.1 2011/01/03 05:14:33 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/gitolite-gentoo/Attic/gitolite-gentoo-1.5.9.ebuild,v 1.1 2011/02/15 17:08:39 idl0r Exp $
 
 EAPI=3
 
@@ -28,7 +28,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	rm -rf Makefile doc/COPYING contrib/{autotoc,gitweb,vim}
+	rm -rf Makefile doc/COPYING contrib/{autotoc,gitweb,vim} || die
 
 	echo "${PF}-gentoo" > conf/VERSION
 }
@@ -55,4 +55,12 @@ src_install() {
 	keepdir /var/lib/gitolite
 	fowners git:git /var/lib/gitolite
 	fperms 750 /var/lib/gitolite
+}
+
+pkg_postinst() {
+	# bug 352291
+	ewarn
+	elog "Please make sure that your 'git' user has the correct homedir (/var/lib/gitolite)."
+	elog "Especially if you're migrating from gitosis."
+	ewarn
 }
