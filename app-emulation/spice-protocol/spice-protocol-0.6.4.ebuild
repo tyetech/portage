@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/spice-protocol/Attic/spice-protocol-0.6.4.ebuild,v 1.1 2011/02/17 10:28:08 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/spice-protocol/Attic/spice-protocol-0.6.4.ebuild,v 1.2 2011/02/17 10:29:38 dev-zero Exp $
 
-EAPI=3
+EAPI=4
 
 DESCRIPTION="Headers defining the SPICE protocol."
 HOMEPAGE="http://spice-space.org/"
@@ -15,8 +15,3 @@ IUSE=""
 
 DEPEND=""
 RDEPEND=""
-
-src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc NEWS
-}
