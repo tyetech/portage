@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/nxml-libvirt-schemas/Attic/nxml-libvirt-schemas-0.8.5.ebuild,v 1.1 2010/10/29 18:46:14 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/nxml-libvirt-schemas/nxml-libvirt-schemas-0.8.8.ebuild,v 1.1 2011/02/17 15:23:40 flameeyes Exp $
 
 BACKPORTS=
 
