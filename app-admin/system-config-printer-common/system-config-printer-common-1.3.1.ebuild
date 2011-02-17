@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/system-config-printer-common/Attic/system-config-printer-common-1.3.0-r1.ebuild,v 1.1 2011/02/16 19:57:04 reavertm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/system-config-printer-common/Attic/system-config-printer-common-1.3.1.ebuild,v 1.1 2011/02/17 20:37:33 reavertm Exp $
 
 EAPI="3"
 
