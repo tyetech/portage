@@ -1,9 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyclutter/Attic/pyclutter-1.3.2.ebuild,v 1.1 2011/01/12 05:46:23 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyclutter/pyclutter-1.3.2-r2.ebuild,v 1.1 2011/02/18 07:17:14 nirbheek Exp $
 
 EAPI="2"
 PYTHON_DEPEND="2:2.6"
+CLUTTER_LA_PUNT="yes"
 
 inherit eutils python clutter
 
@@ -13,7 +14,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="doc examples"
 
 SLOT="1.0"
-RDEPEND=">=dev-lang/python-2.5
+RDEPEND="
 	>=dev-python/pygtk-2.8.0
 	>=dev-python/pygobject-2.21.3
 	>=dev-python/pycairo-1.0.2
@@ -21,6 +22,15 @@ RDEPEND=">=dev-lang/python-2.5
 DEPEND="${RDEPEND}
 	doc? ( dev-libs/libxslt )"
 EXAMPLES="examples/{*.py,*.png}"
+
+pkg_setup() {
+	python_set_active_version 2
+}
+
+src_prepare() {
+	python_convert_shebangs --recursive 2 examples codegen
+	default_src_prepare
+}
 
 src_configure() {
 	ln -sf $(type -P true) py-compile
