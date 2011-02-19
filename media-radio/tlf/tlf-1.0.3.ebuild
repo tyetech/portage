@@ -1,27 +1,22 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/tlf/Attic/tlf-0.9.31.2.ebuild,v 1.3 2011/02/13 19:19:43 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/tlf/Attic/tlf-1.0.3.ebuild,v 1.1 2011/02/19 13:29:07 tomjbe Exp $
 
-inherit flag-o-matic versionator multilib
-
-MY_PV=$(replace_version_separator 3 '-')
-MY_P=${PN}-${MY_PV}
+inherit flag-o-matic multilib
 
 DESCRIPTION="Console-mode amateur radio contest logger"
 HOMEPAGE="http://home.iae.nl/users/reinc/TLF-0.2.html"
-SRC_URI="http://sharon.esrac.ele.tue.nl/pub/linux/ham/tlf/${MY_P}.tar.gz"
-LICENSE="GPL-2"
+SRC_URI="http://www.hs-mittweida.de/tb/${P}.tar.gz"
 
+LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 IUSE=""
 
 RDEPEND="sys-libs/ncurses
 	media-libs/hamlib"
 DEPEND="${RDEPEND}
 	sys-apps/gawk"
-
-S=${WORKDIR}/${PN}-$(get_version_component_range 1-3)
 
 src_compile() {
 	append-flags -L/usr/$(get_libdir)/hamlib
