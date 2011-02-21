@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.32.ebuild,v 1.12 2010/11/21 12:42:45 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/gpsd/Attic/gpsd-2.32.ebuild,v 1.13 2011/02/21 03:29:14 nerdboy Exp $
 
 EAPI=1
 
