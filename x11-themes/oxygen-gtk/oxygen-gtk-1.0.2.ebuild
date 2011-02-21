@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/oxygen-gtk/Attic/oxygen-gtk-1.0.2.ebuild,v 1.1 2011/02/12 09:41:50 tampakrap Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/oxygen-gtk/Attic/oxygen-gtk-1.0.2.ebuild,v 1.2 2011/02/21 15:40:52 scarabeus Exp $
 
 EAPI=3
 
@@ -18,7 +18,7 @@ IUSE="debug doc"
 RDEPEND="
 	dev-libs/glib
 	x11-libs/cairo
-	x11-libs/gtk+
+	x11-libs/gtk+:2
 	x11-libs/libX11
 	x11-libs/pango
 "
