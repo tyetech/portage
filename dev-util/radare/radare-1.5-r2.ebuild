@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/radare/Attic/radare-1.5-r2.ebuild,v 1.1 2011/02/23 16:00:09 signals Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/radare/Attic/radare-1.5-r2.ebuild,v 1.2 2011/02/23 16:04:55 signals Exp $
 
 EAPI="3"
 inherit base eutils
 
-DESCRIPTION="Advanced command line hexadecimail editor and more"
+DESCRIPTION="Advanced command line hexadecimal editor and more"
 HOMEPAGE="http://www.radare.org"
 SRC_URI="http://www.radare.org/get/radare-${PV}.tar.gz"
 
