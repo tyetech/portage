@@ -1,17 +1,16 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/ccid/Attic/ccid-1.4.1-r2.ebuild,v 1.1 2011/01/05 19:55:46 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/ccid/ccid-1.4.2.ebuild,v 1.1 2011/02/23 10:45:19 flameeyes Exp $
 
 EAPI="3"
 
-STUPID_NUM="3475"
+STUPID_NUM="3518"
 
 inherit eutils
 
 DESCRIPTION="CCID free software driver"
 HOMEPAGE="http://pcsclite.alioth.debian.org/ccid.html"
-SRC_URI="http://alioth.debian.org/download.php/${STUPID_NUM}/${P}.tar.bz2
-	http://dev.gentoo.org/~flameeyes/patches/${PN}/${P}-o2micro-oz776.patch.bz2"
+SRC_URI="http://alioth.debian.org/download.php/${STUPID_NUM}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -25,8 +24,6 @@ RDEPEND="${DEPEND}"
 src_prepare() {
 	sed -i -e 's:GROUP="pcscd":ENV{PCSCD}="1":' \
 		src/92_pcscd_ccid.rules || die
-
-	epatch "${WORKDIR}/${P}-o2micro-oz776.patch"
 }
 
 src_configure() {
