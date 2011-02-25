@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/fldigi/Attic/fldigi-3.20.32.ebuild,v 1.1 2010/12/19 16:41:05 tomjbe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/fldigi/Attic/fldigi-3.21.3.ebuild,v 1.1 2011/02/25 17:10:31 tomjbe Exp $
 
 EAPI=2
 
