@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libsynce/Attic/libsynce-0.15.1.ebuild,v 1.1 2011/02/25 14:39:37 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libsynce/Attic/libsynce-0.15.1.ebuild,v 1.2 2011/02/25 14:58:55 ssuominen Exp $
 
 EAPI=2
 
 DESCRIPTION="A library for SynCE"
-HOMEPAGE="http://sourceforge.net/projects/synce/"
+HOMEPAGE="http://www.synce.org/"
 SRC_URI="mirror://sourceforge/synce/${P}.tar.gz"
 
 LICENSE="MIT"
