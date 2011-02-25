@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/stepmania/Attic/stepmania-3.9-r2.ebuild,v 1.3 2010/03/09 19:25:41 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/stepmania/Attic/stepmania-3.9-r2.ebuild,v 1.4 2011/02/25 21:55:08 signals Exp $
 
 EAPI=2
 inherit autotools eutils games
@@ -23,7 +23,7 @@ RDEPEND="gtk? ( x11-libs/gtk+:2 )
 	mad? ( media-libs/libmad )
 	>=dev-lang/lua-5
 	media-libs/libsdl[joystick,opengl]
-	jpeg? ( media-libs/jpeg )
+	jpeg? ( virtual/jpeg )
 	media-libs/libpng
 	ffmpeg? ( >=media-video/ffmpeg-0.5 )
 	vorbis? ( media-libs/libvorbis )
