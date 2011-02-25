@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/luakit/Attic/luakit-2010.09.24.ebuild,v 1.3 2011/02/25 09:23:01 wired Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/luakit/luakit-2010.12.25_p2.ebuild,v 1.1 2011/02/25 09:23:01 wired Exp $
 
 EAPI=3
 
@@ -15,8 +15,9 @@ if [[ ${PV} == *9999* ]]; then
 	SRC_URI=""
 else
 	inherit base
+	MY_PV="${PV/_p/-r}"
 	KEYWORDS="~amd64 ~x86"
-	SRC_URI="http://github.com/mason-larobina/${PN}/tarball/${PV} -> ${P}.tar.gz"
+	SRC_URI="http://github.com/mason-larobina/${PN}/tarball/${MY_PV} -> ${P}.tar.gz"
 fi
 
 DESCRIPTION="fast, small, webkit-gtk based micro-browser extensible by lua"
@@ -26,7 +27,7 @@ LICENSE="GPL-3"
 SLOT="0"
 
 COMMON_DEPEND="
-	>=dev-lang/lua-5.1[deprecated]
+	>=dev-lang/lua-5.1
 	dev-libs/glib:2
 	net-libs/libsoup
 	net-libs/webkit-gtk
@@ -41,11 +42,17 @@ DEPEND="
 
 RDEPEND="
 	${COMMON_DEPEND}
+	dev-lua/luafilesystem
 	helpers? (
 		x11-misc/dmenu
 	)
 	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )
 "
+
+PATCHES=(
+	# bug 354355
+	"${FILESDIR}/${PN}-2010.12.25-fix-deprecated.patch"
+)
 
 src_prepare() {
 	if [[ ${PV} == *9999* ]]; then
@@ -53,6 +60,7 @@ src_prepare() {
 	else
 		cd "${WORKDIR}"/mason-larobina-luakit-*
 		S=$(pwd)
+		base_src_prepare
 	fi
 }
 
