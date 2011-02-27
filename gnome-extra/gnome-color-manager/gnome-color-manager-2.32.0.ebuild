@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-color-manager/gnome-color-manager-2.32.0.ebuild,v 1.3 2011/02/05 13:31:15 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-color-manager/gnome-color-manager-2.32.0.ebuild,v 1.4 2011/02/27 15:17:44 eva Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -17,7 +17,7 @@ IUSE="doc"
 
 RDEPEND=">=dev-libs/glib-2.14:2
 	>=dev-libs/dbus-glib-0.73
-	>=dev-libs/libunique-1
+	>=dev-libs/libunique-1:1
 	>=gnome-base/gconf-2
 	>=gnome-base/gnome-desktop-2.14:2
 	media-gfx/sane-backends
