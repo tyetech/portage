@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/Attic/fluxbox-1.1.1-r1.ebuild,v 1.9 2011/02/28 00:32:30 lack Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fluxbox/fluxbox-1.3.1.ebuild,v 1.1 2011/02/28 00:32:30 lack Exp $
 
-EAPI="3"
+EAPI=4
 inherit eutils prefix
 
-IUSE="nls xinerama truetype gnome +imlib +slit +toolbar vim-syntax"
+IUSE="nls xinerama bidi +truetype gnome +imlib +slit +toolbar vim-syntax"
 
 DESCRIPTION="Fluxbox is an X11 window manager featuring tabs and an iconbar"
 
@@ -23,6 +23,7 @@ RDEPEND="x11-libs/libXpm
 	x11-apps/xmessage
 	x11-libs/libXft
 	truetype? ( media-libs/freetype )
+	bidi? ( dev-libs/fribidi )
 	imlib? ( >=media-libs/imlib2-1.2.0[X] )
 	vim-syntax? ( app-vim/fluxbox-syntax )
 	!!<x11-themes/fluxbox-styles-fluxmod-20040809-r1
@@ -36,7 +37,7 @@ PROVIDE="virtual/blackbox"
 
 SLOT="0"
 LICENSE="MIT"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux"
 
 src_prepare() {
 	# We need to be able to include directories rather than just plain
@@ -46,15 +47,6 @@ src_prepare() {
 	eprefixify util/fluxbox-generate_menu.in
 
 	epatch "${FILESDIR}"/osx-has-otool.patch
-
-	# Patch to handle a broken key file gracefully, #263379
-	epatch "${FILESDIR}/macrocmd-crash-1.1.1.patch"
-
-	# Patch to quiet fbsetbg on upgrade
-	epatch "${FILESDIR}/fbsetbg-quiet-1.1.1.patch"
-
-	# Patch to fix window focus bug when you have "focus-follows-mouse"
-	epatch "${FILESDIR}/mousefocus-1.1.1.patch"
 
 	# Add in the Gentoo -r number to fluxbox -version output.
 	if [[ "${PR}" == "r0" ]] ; then
@@ -74,6 +66,7 @@ src_configure() {
 		$(use_enable truetype xft) \
 		$(use_enable gnome) \
 		$(use_enable imlib imlib2) \
+		$(use_enable bidi fribidi ) \
 		$(use_enable slit ) \
 		$(use_enable toolbar ) \
 		--sysconfdir="${EPREFIX}"/etc/X11/${PN} \
@@ -95,7 +88,7 @@ src_compile() {
 
 src_install() {
 	dodir /usr/share/fluxbox
-	emake DESTDIR="${D}" STRIP="" install || die "install failed"
+	emake DESTDIR="${D}" STRIP="" install
 	dodoc README* AUTHORS TODO* ChangeLog NEWS
 
 	dodir /usr/share/xsessions
@@ -110,7 +103,7 @@ src_install() {
 	# Styles menu framework
 	dodir /usr/share/fluxbox/menu.d/styles
 	insinto /usr/share/fluxbox/menu.d/styles
-	doins "${FILESDIR}/styles-menu-fluxbox" || die
-	doins "${FILESDIR}/styles-menu-commonbox" || die
-	doins "${FILESDIR}/styles-menu-user" || die
+	doins "${FILESDIR}/styles-menu-fluxbox"
+	doins "${FILESDIR}/styles-menu-commonbox"
+	doins "${FILESDIR}/styles-menu-user"
 }
