@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libjpeg-turbo/Attic/libjpeg-turbo-1.1.0.ebuild,v 1.1 2011/02/28 17:36:42 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libjpeg-turbo/Attic/libjpeg-turbo-1.1.0.ebuild,v 1.2 2011/03/01 17:33:43 ssuominen Exp $
 
 EAPI=2
 inherit libtool toolchain-funcs
@@ -35,6 +35,10 @@ src_compile() {
 
 	cd ../debian/extra || die
 	emake CC="$(tc-getCC)" CFLAGS="${LDFLAGS} ${CFLAGS}" || die
+}
+
+src_test() {
+	emake test || die
 }
 
 src_install() {
