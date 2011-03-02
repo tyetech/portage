@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xaos/xaos-3.5-r1.ebuild,v 1.4 2011/02/12 18:03:48 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xaos/xaos-3.5-r1.ebuild,v 1.5 2011/03/02 13:44:10 jlec Exp $
 
 EAPI=2
 inherit eutils autotools
@@ -17,7 +17,7 @@ IUSE="aalib doc -gtk nls png svga threads X"
 RDEPEND="sys-libs/zlib
 	sci-libs/gsl
 	aalib? ( media-libs/aalib )
-	gtk? ( >=x11-libs/gtk+-2 )
+	gtk? ( x11-libs/gtk+:2 )
 	png? ( media-libs/libpng )
 	X? ( x11-libs/libX11
 		 x11-libs/libXext
