@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/gpsd/gpsd-2.95-r1.ebuild,v 1.2 2011/02/23 21:47:59 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/gpsd/gpsd-2.95-r1.ebuild,v 1.3 2011/03/02 19:51:41 jlec Exp $
 
 EAPI=3
 
@@ -28,7 +28,7 @@ IUSE="${IUSE_GPSD_PROTOCOLS} dbus ipv6 ntp qt4"
 
 # those harddeps are de-facto automagicall
 RDEPEND="
-	dev-python/pygtk
+	dev-python/pygtk:2
 	sys-libs/ncurses
 	virtual/libusb:1
 	dbus? (
