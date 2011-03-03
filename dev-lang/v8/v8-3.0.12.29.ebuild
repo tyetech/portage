@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/v8/Attic/v8-3.1.4.ebuild,v 1.1 2011/02/18 10:38:09 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/v8/Attic/v8-3.0.12.29.ebuild,v 1.1 2011/03/03 11:15:59 phajdan.jr Exp $
 
 EAPI="2"
 
