@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libzip/Attic/libzip-0.10_rc1-r1.ebuild,v 1.1 2011/03/05 00:13:16 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libzip/Attic/libzip-0.10_rc1-r2.ebuild,v 1.1 2011/03/05 19:45:31 scarabeus Exp $
 
 EAPI=3
 
