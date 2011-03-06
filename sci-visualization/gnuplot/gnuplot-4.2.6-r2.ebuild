@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/gnuplot/Attic/gnuplot-4.2.6-r1.ebuild,v 1.6 2011/02/22 12:05:48 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/gnuplot/Attic/gnuplot-4.2.6-r2.ebuild,v 1.1 2011/03/06 12:40:47 ulm Exp $
 
 EAPI=2
 
