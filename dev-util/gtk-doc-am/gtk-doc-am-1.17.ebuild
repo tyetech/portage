@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gtk-doc-am/gtk-doc-am-1.17.ebuild,v 1.2 2011/03/07 11:49:41 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gtk-doc-am/gtk-doc-am-1.17.ebuild,v 1.3 2011/03/07 18:27:59 mr_bones_ Exp $
 
 EAPI="3"
 
@@ -22,7 +22,7 @@ IUSE=""
 # pkg-config is used by gtkdoc-rebase at runtime
 RDEPEND=">=dev-lang/perl-5.6
 	dev-util/pkgconfig"
-DEPEND="${RDEPEND} 
+DEPEND="${RDEPEND}
 	!<dev-util/gtk-doc-${MAJ_PV}"
 
 # This ebuild doesn't even compile anything, causing tests to fail when updating (bug #316071)
