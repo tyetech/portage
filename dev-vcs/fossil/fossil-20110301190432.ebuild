@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/fossil/Attic/fossil-20101101142335.ebuild,v 1.1 2010/11/02 06:34:58 rafaelmartins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/fossil/fossil-20110301190432.ebuild,v 1.1 2011/03/08 19:22:34 rafaelmartins Exp $
 
 EAPI="2"
 
@@ -15,21 +15,23 @@ SRC_URI="http://www.fossil-scm.org/download/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="+ssl"
 
-DEPEND=">=dev-db/sqlite-3.7.0
-	dev-libs/openssl
-	sys-libs/zlib"
+DEPEND="sys-libs/zlib
+	ssl? ( dev-libs/openssl )"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${MY_P}"
 
-src_prepare() {
-	epatch "${FILESDIR}/${PV}-gentoo.patch"
-	sed -i \
-		-e "/^TCC *=/s:=.*:=$(tc-getCC) -Wall \$(CFLAGS) \$(CPPFLAGS):" \
-		-e "/^BCC/s:gcc:$(tc-getBUILD_CC):" \
-		Makefile || die 'sed failed.'
+src_compile() {
+	local tcc lib
+	tcc="$(tc-getCC)"
+	lib="${LDFLAGS} -lz"
+	if use ssl; then
+		tcc="${tcc} -DFOSSIL_ENABLE_SSL"
+		lib="${lib} -lcrypto -lssl"
+	fi
+	emake TCC="${tcc}" BCC="$(tc-getBUILD_CC)" LIB="${lib}" || die 'emake failed.'
 }
 
 src_install() {
