@@ -1,10 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.3.1.ebuild,v 1.1 2010/12/12 20:50:27 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.4.2.ebuild,v 1.1 2011/03/09 03:00:23 patrick Exp $
 
 EAPI="2"
 
 inherit eutils
+
+# omgwtf
+RESTRICT="test"
 
 DESCRIPTION="Evented IO for V8 Javascript"
 HOMEPAGE="http://nodejs.org/"
@@ -15,7 +18,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND="dev-lang/v8
+DEPEND=">=dev-lang/v8-2.5.9.6-r1
 	dev-libs/openssl"
 RDEPEND="${DEPEND}"
 
@@ -23,7 +26,7 @@ S=${WORKDIR}/node-v${PV}
 
 src_configure() {
 	# this is a waf confuserator
-	./configure --prefix=/usr || die
+	./configure --shared-v8 --prefix=/usr || die
 }
 
 src_compile() {
