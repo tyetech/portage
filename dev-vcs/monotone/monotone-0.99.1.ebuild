@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/monotone/Attic/monotone-0.48.ebuild,v 1.4 2010/10/19 18:12:20 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/monotone/Attic/monotone-0.99.1.ebuild,v 1.1 2011/03/12 16:32:03 pva Exp $
 
-EAPI=2
+EAPI="4"
 inherit bash-completion elisp-common eutils toolchain-funcs
 
 DESCRIPTION="Monotone Distributed Version Control System"
@@ -11,7 +11,7 @@ SRC_URI="http://monotone.ca/downloads/${PV}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="1"
-KEYWORDS="amd64 ~ia64 ppc x86"
+KEYWORDS="~amd64 ~ia64 ~ppc ~x86"
 IUSE="doc emacs ipv6 nls"
 
 RDEPEND="sys-libs/zlib
@@ -40,7 +40,6 @@ src_prepare() {
 
 src_configure() {
 	econf \
-		--disable-dependency-tracking \
 		$(use_enable nls) \
 		$(use_enable ipv6)
 }
@@ -69,7 +68,7 @@ src_test() {
 src_install() {
 	emake DESTDIR="${D}" install || die
 
-	mv "${D}"/usr/share/doc/${PN} "${D}"/usr/share/doc/${PF} || die
+	mv "${ED}"/usr/share/doc/${PN} "${ED}"/usr/share/doc/${PF} || die
 
 	dobashcompletion contrib/monotone.bash_completion
 
@@ -84,16 +83,17 @@ src_install() {
 			|| die
 	fi
 
-	dodoc AUTHORS NEWS README* UPGRADE || die
+	dodoc AUTHORS NEWS README* UPGRADE
 	docinto contrib
-	dodoc contrib/*
-	newconfd "${FILESDIR}"/monotone.confd monotone || die
-	newinitd "${FILESDIR}"/${PN}-0.36.initd monotone || die
+	docompress -x /usr/share/doc/${PF}/contrib
+	dodoc -r contrib
+	newconfd "${FILESDIR}"/monotone.confd monotone
+	newinitd "${FILESDIR}"/${PN}-0.36.initd monotone
 
 	insinto /etc/monotone
-	newins "${FILESDIR}"/hooks.lua hooks.lua || die
-	newins "${FILESDIR}"/read-permissions read-permissions || die
-	newins "${FILESDIR}"/write-permissions write-permissions || die
+	newins "${FILESDIR}"/hooks.lua hooks.lua
+	newins "${FILESDIR}"/read-permissions read-permissions
+	newins "${FILESDIR}"/write-permissions write-permissions
 
 	keepdir /var/lib/monotone/keys/ /var/{log,run}/monotone
 	fowners monotone:monotone /var/lib/monotone{,/keys} /var/{log,run}/monotone
