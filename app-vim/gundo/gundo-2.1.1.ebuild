@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/gundo/Attic/gundo-2.1.0.ebuild,v 1.1 2011/03/11 10:09:24 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/gundo/Attic/gundo-2.1.1.ebuild,v 1.1 2011/03/14 07:08:47 radhermit Exp $
 
 EAPI=3
 VIM_PLUGIN_VIM_VERSION="7.3"
