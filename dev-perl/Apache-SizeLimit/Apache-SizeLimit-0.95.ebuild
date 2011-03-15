@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Apache-SizeLimit/Attic/Apache-SizeLimit-0.95.ebuild,v 1.1 2011/03/15 16:59:02 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Apache-SizeLimit/Attic/Apache-SizeLimit-0.95.ebuild,v 1.2 2011/03/15 16:59:43 idl0r Exp $
 
 EAPI="3"
 
