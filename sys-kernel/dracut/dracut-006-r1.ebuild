@@ -1,13 +1,13 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/dracut/Attic/dracut-006-r1.ebuild,v 1.2 2010/08/25 17:46:08 ramereth Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/dracut/Attic/dracut-006-r1.ebuild,v 1.3 2011/03/16 21:36:49 aidecoe Exp $
 
 EAPI=2
 
 inherit eutils mount-boot
 
 DESCRIPTION="Generic initramfs generation tool"
-HOMEPAGE="http://sourceforge.net/projects/dracut/"
+HOMEPAGE="http://dracut.wiki.kernel.org"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
