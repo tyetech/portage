@@ -1,10 +1,10 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/strace/strace-4.5.20.ebuild,v 1.9 2010/11/21 23:56:01 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/strace/strace-4.5.20.ebuild,v 1.10 2011/03/16 01:11:24 vapier Exp $
 
 EAPI="2"
 
-inherit flag-o-matic
+inherit flag-o-matic eutils
 
 DESCRIPTION="A useful diagnostic, instructional, and debugging tool"
 HOMEPAGE="http://sourceforge.net/projects/strace/"
