@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/grsync/Attic/grsync-1.0.0.ebuild,v 1.1 2010/02/04 18:09:15 dertobi123 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/grsync/grsync-1.1.1.ebuild,v 1.1 2011/03/16 18:42:58 dertobi123 Exp $
 
 inherit gnome2
 
