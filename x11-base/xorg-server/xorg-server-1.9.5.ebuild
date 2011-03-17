@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.9.4.901.ebuild,v 1.1 2011/03/15 12:44:27 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.9.5.ebuild,v 1.1 2011/03/17 22:31:58 scarabeus Exp $
 
 EAPI=3
 inherit xorg-2 multilib versionator
