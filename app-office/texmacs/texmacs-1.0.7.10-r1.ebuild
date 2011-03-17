@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.7.9.ebuild,v 1.2 2011/03/07 12:57:33 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmacs/Attic/texmacs-1.0.7.10-r1.ebuild,v 1.1 2011/03/17 20:21:24 grozin Exp $
 EAPI=2
 inherit autotools
 MY_P=${P/tex/TeX}-src
@@ -16,8 +16,7 @@ SLOT="0"
 IUSE="imlib jpeg netpbm -qt4 svg spell"
 KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 ~x86-interix ~amd64-linux ~x86-linux"
 
-RDEPEND="
-	dev-scheme/guile[deprecated]
+RDEPEND="dev-scheme/guile[deprecated]
 	virtual/latex-base
 	app-text/ghostscript-gpl
 	media-libs/freetype
@@ -47,6 +46,9 @@ src_prepare() {
 
 	# respect LDFLAGS, bug #338459
 	epatch "${FILESDIR}"/${PN}-ldflags.patch
+
+	# fix LD_LIBRARY_PATH in tm_mupad_help, bug #337532
+	epatch "${FILESDIR}"/${PN}-mupad.patch
 
 	eautoreconf
 }
