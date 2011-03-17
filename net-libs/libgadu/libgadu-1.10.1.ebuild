@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libgadu/Attic/libgadu-1.10.0-r1.ebuild,v 1.2 2011/03/15 19:09:43 reavertm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libgadu/Attic/libgadu-1.10.1.ebuild,v 1.1 2011/03/17 17:13:48 reavertm Exp $
 
 EAPI="4"
 
