@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/eutils.eclass,v 1.354 2011/02/25 21:58:19 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/eutils.eclass,v 1.355 2011/03/18 20:36:37 vapier Exp $
 
 # @ECLASS: eutils.eclass
 # @MAINTAINER:
@@ -1794,6 +1794,8 @@ preserve_old_lib_notify() {
 			ewarn "helper program, simply emerge the 'gentoolkit' package."
 			ewarn
 		fi
+		# temp hack for #348634 #357225
+		[[ ${PN} == "mpfr" ]] && lib=${lib##*/}
 		ewarn "  # revdep-rebuild --library '${lib}'"
 	done
 	if [[ ${notice} -eq 1 ]] ; then
