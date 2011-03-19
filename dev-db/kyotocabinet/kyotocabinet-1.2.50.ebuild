@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/kyotocabinet/Attic/kyotocabinet-1.2.41.ebuild,v 1.1 2011/02/09 11:21:08 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/kyotocabinet/Attic/kyotocabinet-1.2.50.ebuild,v 1.1 2011/03/19 16:27:45 patrick Exp $
 
 EAPI="2"
 
@@ -20,7 +20,6 @@ DEPEND="sys-libs/zlib
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}/fix_rpath-1.2.4.patch"
 	sed -ie "/ldconfig/d" Makefile.in
 	sed -ie "/DOCDIR/d" Makefile.in
 }
