@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/lightdm/Attic/lightdm-0.1.1.ebuild,v 1.3 2010/11/01 18:36:34 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/lightdm/Attic/lightdm-0.1.1.ebuild,v 1.4 2011/03/21 23:28:06 nirbheek Exp $
 
 EAPI=2
 
@@ -17,7 +17,7 @@ IUSE="consolekit doc nls webkit"
 
 RDEPEND="dev-libs/glib:2
 	dev-libs/dbus-glib
-	webkit? ( net-libs/webkit-gtk )
+	webkit? ( net-libs/webkit-gtk:2 )
 	consolekit? ( sys-auth/consolekit )
 	x11-libs/gtk+:2
 	x11-libs/libxcb
