@@ -1,9 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/hamlib/Attic/hamlib-1.2.12-r1.ebuild,v 1.1 2010/12/21 19:56:13 tomjbe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/hamlib/Attic/hamlib-1.2.13.ebuild,v 1.1 2011/03/21 19:53:05 tomjbe Exp $
 
-PYTHON_DEPEND="2"
 EAPI="2"
+PYTHON_DEPEND="python? 2"
+
 inherit autotools-utils eutils multilib python
 
 DESCRIPTION="Ham radio backend rig control libraries"
@@ -20,7 +21,6 @@ RESTRICT="test"
 RDEPEND="
 	=virtual/libusb-0*
 	dev-libs/libxml2
-	python? ( dev-lang/python )
 	tcl? ( dev-lang/tcl )"
 
 DEPEND=" ${RDEPEND}
@@ -28,6 +28,13 @@ DEPEND=" ${RDEPEND}
 	dev-lang/swig
 	>=sys-devel/libtool-2.2
 	doc? ( app-doc/doxygen )"
+
+pkg_setup() {
+	if use python; then
+		python_set_active_version 2
+		python_pkg_setup
+	fi
+}
 
 src_prepare() {
 	# fix hardcoded libdir paths
@@ -75,4 +82,12 @@ src_install() {
 
 	echo "LDPATH=/usr/$(get_libdir)/hamlib" > "${T}"/73hamlib
 	doenvd "${T}"/73hamlib || die "doenvd failed"
+}
+
+pkg_postinst()  {
+	use python && python_mod_optimize $(python_get_sitedir)/Hamlib.py
+}
+
+pkg_postrm()  {
+	use python && python_mod_cleanup $(python_get_sitedir)/Hamlib.py
 }
