@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/superswitcher/superswitcher-0.6.ebuild,v 1.5 2010/09/27 10:36:55 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/superswitcher/superswitcher-0.6.ebuild,v 1.6 2011/03/21 22:37:46 nirbheek Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -16,9 +16,9 @@ IUSE=""
 
 RDEPEND="dev-libs/dbus-glib
 	dev-libs/glib:2
-	>=gnome-base/gconf-2
+	>=gnome-base/gconf-2:2
 	x11-libs/gtk+:2
-	>=x11-libs/libwnck-2.10
+	>=x11-libs/libwnck-2.10:1
 	x11-libs/libXcomposite
 	x11-libs/libXinerama
 	x11-libs/libXrender"
