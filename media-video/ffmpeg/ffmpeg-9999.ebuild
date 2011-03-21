@@ -1,13 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.31 2011/03/10 03:50:26 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.32 2011/03/21 11:37:03 aballier Exp $
 
 EAPI="2"
 
 SCM=""
 if [ "${PV#9999}" != "${PV}" ] ; then
 	SCM="git"
-	EGIT_REPO_URI="git://git.ffmpeg.org/ffmpeg.git"
+	EGIT_REPO_URI="git://git.videolan.org/ffmpeg.git"
 fi
 
 inherit eutils flag-o-matic multilib toolchain-funcs ${SCM}
