@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gource/Attic/gource-0.29.ebuild,v 1.2 2011/02/25 20:54:44 signals Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/gource/Attic/gource-0.32.ebuild,v 1.1 2011/03/21 15:26:36 flameeyes Exp $
 
 EAPI=2
 
@@ -29,6 +29,7 @@ RDEPEND="
 	media-libs/mesa
 	media-fonts/freefont-ttf
 	>=media-libs/glew-1.5
+	dev-libs/tinyxml[-stl]
 	"
 DEPEND="
 	${RDEPEND}
@@ -46,7 +47,8 @@ case ${PV} in
 esac
 
 src_configure() {
-	econf --enable-ttf-font-dir=/usr/share/fonts/freefont-ttf/
+	econf --enable-ttf-font-dir=/usr/share/fonts/freefont-ttf/ \
+		--with-tinyxml
 }
 
 src_install() {
