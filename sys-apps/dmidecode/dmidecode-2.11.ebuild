@@ -1,16 +1,16 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/dmidecode/dmidecode-2.10.ebuild,v 1.7 2011/03/22 10:02:30 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/dmidecode/dmidecode-2.11.ebuild,v 1.1 2011/03/22 10:02:30 chainsaw Exp $
 
 inherit flag-o-matic toolchain-funcs
 
 DESCRIPTION="DMI (Desktop Management Interface) table related utilities"
 HOMEPAGE="http://www.nongnu.org/dmidecode/"
-SRC_URI="http://savannah.nongnu.org/download/dmidecode/${P}.tar.bz2"
+SRC_URI="http://savannah.nongnu.org/releases/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* amd64 arm ia64 ppc sparc x86"
+KEYWORDS="-* ~amd64 ~arm ~ia64 ~ppc ~sparc ~x86"
 IUSE=""
 
 DEPEND=""
