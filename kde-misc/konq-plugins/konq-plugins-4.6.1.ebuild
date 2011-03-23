@@ -1,9 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/konq-plugins/Attic/konq-plugins-4.6.1.ebuild,v 1.2 2011/03/22 14:04:48 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/konq-plugins/Attic/konq-plugins-4.6.1.ebuild,v 1.3 2011/03/23 07:46:30 scarabeus Exp $
 
 EAPI=4
 
+KDE_MINIMAL="${PV}"
 inherit kde4-base
 
 DESCRIPTION="Various plugins for konqueror"
