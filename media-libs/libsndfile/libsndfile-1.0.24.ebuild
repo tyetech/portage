@@ -1,8 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsndfile/Attic/libsndfile-1.0.21-r1.ebuild,v 1.1 2010/09/05 09:26:49 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libsndfile/Attic/libsndfile-1.0.24.ebuild,v 1.1 2011/03/24 08:09:37 radhermit Exp $
 
-inherit eutils libtool autotools
+EAPI=4
+inherit eutils autotools
 
 MY_P=${P/_pre/pre}
 
@@ -17,11 +18,11 @@ fi
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
-IUSE="alsa minimal sqlite"
+IUSE="alsa minimal sqlite static-libs"
 
 RDEPEND="!minimal? ( >=media-libs/flac-1.2.1
 		>=media-libs/libogg-1.1.3
-		>=media-libs/libvorbis-1.2.1_rc1 )
+		>=media-libs/libvorbis-1.2.3 )
 	alsa? ( media-libs/alsa-lib )
 	sqlite? ( >=dev-db/sqlite-3.2 )"
 DEPEND="${RDEPEND}
@@ -29,32 +30,28 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${MY_P}
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
+src_prepare() {
 	sed -i -e "s/noinst_PROGRAMS/check_PROGRAMS/" "${S}/tests/Makefile.am" \
 		"${S}/examples/Makefile.am" || die "sed failed"
 
 	epatch "${FILESDIR}"/${PN}-1.0.17-regtests-need-sqlite.patch
 
-	rm M4/libtool.m4 M4/lt*.m4 || die "rm failed"
-
 	AT_M4DIR=M4 eautoreconf
 	epunt_cxx
 }
 
-src_compile() {
+src_configure() {
 	econf $(use_enable sqlite) \
+		$(use_enable static-libs static) \
 		$(use_enable alsa) \
 		$(use_enable !minimal external-libs) \
+		htmldocdir=/usr/share/doc/${PF}/html \
 		--disable-octave \
 		--disable-gcc-werror \
-		--disable-gcc-pipe \
-		--disable-dependency-tracking
-	emake || die "emake failed"
+		--disable-gcc-pipe
 }
 
 src_install() {
-	emake DESTDIR="${D}" htmldocdir="/usr/share/doc/${PF}/html" install || die "emake install failed"
+	emake DESTDIR="${D}" htmldocdir="/usr/share/doc/${PF}/html" install
 	dodoc AUTHORS ChangeLog NEWS README
 }
