@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/kradio/Attic/kradio-4.0.2.ebuild,v 1.2 2011/02/02 04:47:02 tampakrap Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/kradio/Attic/kradio-4.0.2.ebuild,v 1.3 2011/03/26 15:16:33 scarabeus Exp $
 
 EAPI=3
 
@@ -29,7 +29,7 @@ DEPEND="
 	)
 	ffmpeg? (
 		>=media-libs/libmms-0.4
-		>=media-video/ffmpeg-0.5
+		virtual/ffmpeg
 	)
 "
 RDEPEND="${DEPEND}"
