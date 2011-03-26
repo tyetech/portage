@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/tracker/Attic/tracker-0.9.38.ebuild,v 1.1 2011/02/14 22:49:17 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/tracker/Attic/tracker-0.10.5.ebuild,v 1.1 2011/03/26 20:32:12 eva Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -13,20 +13,21 @@ HOMEPAGE="http://www.tracker-project.org/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 # USE="doc" is managed by eclass.
-IUSE="applet doc eds exif flac gif gnome-keyring gsf gstreamer gtk hal iptc +jpeg laptop mp3 nautilus networkmanager pdf playlist rss strigi test +tiff upnp +vorbis xine +xml xmp"
+IUSE="applet doc eds exif flac gif gnome-keyring gsf gstreamer gtk hal iptc +jpeg laptop mp3 nautilus networkmanager pdf playlist qt4 rss strigi test +tiff upnp +vorbis xine +xml xmp"
 
 # Test suite highly disfunctional, loops forever
 # putting aside for now
 RESTRICT="test"
 
-# TODO: rest -> flickr, qt vs. gdk
+# TODO: rest -> flickr
 # vala is built with debug by default (see VALAFLAGS)
 RDEPEND="
 	>=app-i18n/enca-1.9
 	>=dev-db/sqlite-3.7[threadsafe]
 	>=dev-libs/glib-2.26:2
+	>=dev-libs/icu-4
 	|| (
 		>=media-gfx/imagemagick-5.2.1[png,jpeg=]
 		media-gfx/graphicsmagick[imagemagick,png,jpeg=] )
@@ -35,11 +36,11 @@ RDEPEND="
 	sys-apps/util-linux
 
 	applet? (
-		>=gnome-base/gnome-panel-2.32
-		>=x11-libs/gtk+-2.18:2 )
+		>=gnome-base/gnome-panel-2.91
+		>=x11-libs/gtk+-3:3 )
 	eds? (
-		>=mail-client/evolution-2.29.1
-		>=gnome-extra/evolution-data-server-2.29.1 )
+		>=mail-client/evolution-2.32
+		>=gnome-extra/evolution-data-server-2.32 )
 	exif? ( >=media-libs/libexif-0.6 )
 	flac? ( >=media-libs/flac-1.2.1 )
 	gif? ( media-libs/giflib )
@@ -60,14 +61,17 @@ RDEPEND="
 	laptop? (
 		hal? ( >=sys-apps/hal-0.5 )
 		!hal? ( >=sys-power/upower-0.9 ) )
-	mp3? ( >=media-libs/taglib-1.6 )
+	mp3? (
+		>=media-libs/taglib-1.6
+		gtk? ( x11-libs/gdk-pixbuf:2 )
+		qt4? ( >=x11-libs/qt-gui-4.7.1:4 ) )
 	nautilus? (
 		gnome-base/nautilus
 		>=x11-libs/gtk+-2.18:2 )
 	networkmanager? ( >=net-misc/networkmanager-0.8 )
 	pdf? (
 		>=x11-libs/cairo-1
-		>=app-text/poppler-0.12.3-r3[cairo,utils]
+		>=app-text/poppler-0.16[cairo,utils]
 		>=x11-libs/gtk+-2.12:2 )
 	playlist? ( dev-libs/totem-pl-parser )
 	rss? ( net-libs/libgrss )
@@ -136,13 +140,16 @@ pkg_setup() {
 		G2CONF="${G2CONF} VALAC=$(type -P valac-0.12)"
 	fi
 
+	if use mp3; then
+		G2CONF="${G2CONF} $(use_enable gtk gdkpixbuf) $(use_enable qt4 qt)"
+	fi
+
 	# unicode-support: libunistring, libicu or glib ?
 	G2CONF="${G2CONF}
 		--enable-tracker-fts
 		--with-enca
-		--with-unicode-support=glib
+		--with-unicode-support=libicu
 		--enable-guarantee-metadata
-		$(use_enable applet tracker-status-icon)
 		$(use_enable applet tracker-search-bar)
 		$(use_enable eds miner-evolution)
 		$(use_enable exif libexif)
@@ -167,8 +174,6 @@ pkg_setup() {
 		$(use_enable vorbis libvorbis)
 		$(use_enable xml libxml2)
 		$(use_enable xmp exempi)"
-		# FIXME: handle gdk vs qt for mp3 thumbnail extract
-		# $(use_enable gtk gdkpixbuf)
 
 	DOCS="AUTHORS ChangeLog NEWS README"
 
