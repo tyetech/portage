@@ -1,21 +1,22 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen/Attic/xen-3.1.3.ebuild,v 1.2 2009/06/27 07:13:43 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen/Attic/xen-4.1.0.ebuild,v 1.1 2011/03/26 00:34:06 alexxy Exp $
 
-inherit mount-boot flag-o-matic
+EAPI="3"
+
+inherit mount-boot flag-o-matic toolchain-funcs
 
 DESCRIPTION="The Xen virtual machine monitor"
-HOMEPAGE="http://www.xensource.com/xen/xen/"
-SRC_URI="mirror://gentoo/xen-${PV}.tar.bz2"
+HOMEPAGE="http://xen.org/"
+SRC_URI="http://bits.xensource.com/oss-xen/release/${PV}/xen-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug custom-cflags pae"
+IUSE="debug custom-cflags pae acm flask xsm"
 
 RDEPEND="|| ( sys-boot/grub
-		sys-boot/grub-static )
-		>=sys-kernel/xen-sources-2.6.18"
+		sys-boot/grub-static )"
 PDEPEND="~app-emulation/xen-tools-${PV}"
 
 RESTRICT="test"
@@ -35,10 +36,20 @@ pkg_setup() {
 			die "Unsupported architecture!"
 		fi
 	fi
+
+	if use xsm ; then
+		export "XSM_ENABLE=y"
+		use acm && export "ACM_SECURITY=y"
+		if use flask ; then
+			! use acm  && export "FLASK_ENABLE=y"
+			  use acm  && ewarn "Both acm and flask XSM specified, defaulting to acm."
+		fi
+	elif use acm || use flask ; then
+		ewarn "acm and flask require USE=xsm to be set, dropping use flags"
+	fi
 }
 
-src_unpack() {
-	unpack ${A}
+src_prepare() {
 	# if the user *really* wants to use their own custom-cflags, let them
 	if use custom-cflags; then
 		einfo "User wants their own CFLAGS - removing defaults"
@@ -53,8 +64,7 @@ src_unpack() {
 	fi
 }
 
-src_compile() {
-	local myopt
+src_configure() {
 	use debug && myopt="${myopt} debug=y"
 	use pae && myopt="${myopt} pae=y"
 
@@ -64,9 +74,11 @@ src_compile() {
 	else
 		unset CFLAGS
 	fi
+}
 
+src_compile() {
 	# Send raw LDFLAGS so that --as-needed works
-	emake LDFLAGS="$(raw-ldflags)" -C xen ${myopt} || die "compile failed"
+	emake CC="$(tc-getCC)" LDFLAGS="$(raw-ldflags)" -C xen ${myopt} || die "compile failed"
 }
 
 src_install() {
@@ -81,9 +93,6 @@ pkg_postinst() {
 	elog "Official Xen Guide and the unoffical wiki page:"
 	elog " http://www.gentoo.org/doc/en/xen-guide.xml"
 	elog " http://en.gentoo-wiki.com/wiki/Xen/"
-
-	echo
-	elog "Note: xen tools have been moved to app-emulation/xen-tools"
 
 	if use pae; then
 		echo
