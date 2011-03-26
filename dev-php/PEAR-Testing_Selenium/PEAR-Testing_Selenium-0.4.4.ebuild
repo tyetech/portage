@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Testing_Selenium/PEAR-Testing_Selenium-0.4.3.ebuild,v 1.2 2011/03/26 10:57:04 olemarkus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-Testing_Selenium/PEAR-Testing_Selenium-0.4.4.ebuild,v 1.1 2011/03/26 10:57:04 olemarkus Exp $
 
 inherit php-pear-r1
 
