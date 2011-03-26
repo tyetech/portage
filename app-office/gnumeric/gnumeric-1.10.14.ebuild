@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.10.12.ebuild,v 1.2 2011/03/16 09:05:05 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/gnumeric/Attic/gnumeric-1.10.14.ebuild,v 1.1 2011/03/26 21:04:39 pacho Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
@@ -17,6 +17,7 @@ KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
 IUSE="gnome perl python"
 # Missing gnome-extra/libgnomedb required version in tree
+# but its upstream is dead and will be dropped soon.
 
 # lots of missing files, wait for next release
 # also fails tests due to 80-bit long story
@@ -40,13 +41,13 @@ RDEPEND="sys-libs/zlib
 		>=gnome-base/libbonobo-2.2
 		>=gnome-base/libbonoboui-2.2 )
 	perl? ( dev-lang/perl )
-	python? ( >=dev-python/pygtk-2 )
+	python? ( >=dev-python/pygtk-2:2 )
 "
 #	libgda? (
 #		>=gnome-extra/libgda-4.1.1:4.0
 #		>=gnome-extra/libgnomedb-3.99.6:4.0 )
 DEPEND="${RDEPEND}
-	>=dev-util/intltool-0.25
+	>=dev-util/intltool-0.35.0
 	>=dev-util/pkgconfig-0.18
 	app-text/scrollkeeper"
 
