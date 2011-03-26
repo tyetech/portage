@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/ffmpeg/Attic/ffmpeg-0.1.ebuild,v 1.1 2011/03/26 14:26:58 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/ffmpeg/Attic/ffmpeg-0.ebuild,v 1.1 2011/03/26 14:29:54 scarabeus Exp $
 
 EAPI=4
 
