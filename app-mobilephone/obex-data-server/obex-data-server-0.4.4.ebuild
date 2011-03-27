@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/obex-data-server/obex-data-server-0.4.4.ebuild,v 1.8 2010/02/19 13:29:32 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/obex-data-server/obex-data-server-0.4.4.ebuild,v 1.9 2011/03/27 12:15:04 nirbheek Exp $
 
 EAPI="2"
 
@@ -19,7 +19,7 @@ RDEPEND="dev-libs/glib:2
 	>=net-wireless/bluez-4.31
 	>=dev-libs/openobex-1.3
 	imagemagick? ( !gtk? ( media-gfx/imagemagick ) )
-	gtk? ( x11-libs/gtk+ )
+	gtk? ( x11-libs/gtk+:2 )
 	usb? ( virtual/libusb:0 )
 	!app-mobilephone/obexd[server]"
 DEPEND="dev-util/pkgconfig
