@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/synce-connector/Attic/synce-connector-0.15.1.ebuild,v 1.2 2011/02/26 10:56:33 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/synce-connector/Attic/synce-connector-0.15.2.ebuild,v 1.1 2011/03/28 02:39:51 ssuominen Exp $
 
 EAPI=3
 
