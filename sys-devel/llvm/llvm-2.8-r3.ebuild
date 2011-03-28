@@ -1,18 +1,20 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/llvm/Attic/llvm-2.7-r2.ebuild,v 1.1 2010/09/21 15:57:12 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/llvm/Attic/llvm-2.8-r3.ebuild,v 1.1 2011/03/28 14:02:53 voyageur Exp $
 
 EAPI="3"
 inherit eutils multilib toolchain-funcs
 
 DESCRIPTION="Low Level Virtual Machine"
 HOMEPAGE="http://llvm.org/"
-SRC_URI="http://llvm.org/releases/${PV}/${P}.tgz"
+# Upstream silently re-released the tarball...
+# drop the -> in 2.9
+SRC_URI="http://llvm.org/releases/${PV}/${P}.tgz -> ${P}-r1.tgz"
 
 LICENSE="UoI-NCSA"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~ppc-macos"
-IUSE="alltargets debug +libffi llvm-gcc ocaml test udis86"
+KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
+IUSE="alltargets debug +libffi llvm-gcc ocaml test udis86 vim-syntax"
 
 DEPEND="dev-lang/perl
 	>=sys-devel/make-3.79
@@ -24,10 +26,10 @@ DEPEND="dev-lang/perl
 	|| ( >=sys-devel/binutils-2.18 >=sys-devel/binutils-apple-3.2.3 )
 	libffi? ( virtual/libffi )
 	ocaml? ( dev-lang/ocaml )
-	test? ( dev-util/dejagnu )
 	udis86? ( amd64? ( dev-libs/udis86[pic] )
 		!amd64? ( dev-libs/udis86 ) )"
-RDEPEND="dev-lang/perl"
+RDEPEND="dev-lang/perl
+	vim-syntax? ( || ( app-editors/vim app-editors/gvim ) )"
 
 S=${WORKDIR}/${PN}-${PV/_pre*}
 
@@ -82,6 +84,9 @@ src_prepare() {
 
 	epatch "${FILESDIR}"/${PN}-2.7-nodoctargz.patch
 	epatch "${FILESDIR}"/${PN}-2.6-commandguide-nops.patch
+	epatch "${FILESDIR}"/${PN}-2.8-darwin8.patch
+	# Upstream backport, r117774
+	epatch "${FILESDIR}"/${P}-alignof.patch
 }
 
 src_configure() {
@@ -154,14 +159,30 @@ src_compile() {
 src_install() {
 	emake KEEP_SYMBOLS=1 DESTDIR="${D}" install || die "install failed"
 
+	if use vim-syntax; then
+		insinto /usr/share/vim/vimfiles/syntax
+		doins utils/vim/*.vim
+	fi
+
 	# Fix install_names on Darwin.  The build system is too complicated
 	# to just fix this, so we correct it post-install
 	if [[ ${CHOST} == *-darwin* ]] ; then
-		for lib in lib{EnhancedDisassembly,LLVM-${PN},LLVMHello,LTO,profile_rt}.dylib ; do
-			# libEnhancedDisassembly is Darwin10 only
+		for lib in lib{EnhancedDisassembly,LLVM-${PV},BugpointPasses,LLVMHello,LTO,profile_rt}.dylib ; do
+			# libEnhancedDisassembly is Darwin10 only, so non-fatal
 			[[ -f ${ED}/usr/lib/${PN}/${lib} ]] || continue
-			install_name_tool -id "${EPREFIX}"/usr/lib/${PN}/${lib} \
+			ebegin "fixing install_name of $lib"
+			install_name_tool \
+				-id "${EPREFIX}"/usr/lib/${PN}/${lib} \
 				"${ED}"/usr/lib/${PN}/${lib}
+			eend $?
+		done
+		for f in "${ED}"/usr/bin/* "${ED}"/usr/lib/${PN}/libLTO.dylib ; do
+			ebegin "fixing install_name reference to libLLVM-${PV}.dylib of ${f##*/}"
+			install_name_tool \
+				-change "${S}"/Release/lib/libLLVM-${PV}.dylib \
+					"${EPREFIX}"/usr/lib/${PN}/libLLVM-${PV}.dylib \
+				"${f}"
+			eend $?
 		done
 	fi
 }
