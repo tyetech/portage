@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amsynth/amsynth-1.2.2.ebuild,v 1.1 2009/08/28 18:18:30 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/amsynth/amsynth-1.2.2.ebuild,v 1.2 2011/03/28 18:17:43 angelos Exp $
 
 EAPI=2
 MY_P=${P/ams/amS}
@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
 IUSE="alsa debug jack oss sndfile"
 
-RDEPEND=">=dev-cpp/gtkmm-2.4
+RDEPEND="dev-cpp/gtkmm:2.4
 	sndfile? ( >=media-libs/libsndfile-1 )
 	alsa? ( media-libs/alsa-lib
 		media-sound/alsa-utils )
