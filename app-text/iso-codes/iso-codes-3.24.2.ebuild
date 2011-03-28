@@ -1,8 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/iso-codes/Attic/iso-codes-3.21.ebuild,v 1.1 2010/10/05 03:34:05 leio Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-text/cvs-repo/gentoo-x86/app-text/iso-codes/Attic/iso-codes-3.24.2.ebuild,v 1.1 2011/03/28 21:42:04 eva Exp $
 
-EAPI="2"
+EAPI="3"
 
 inherit eutils
 
@@ -12,11 +12,14 @@ SRC_URI="ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~amd64-linux ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-linux ~x86-macos ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 IUSE=""
 
 RDEPEND=""
 DEPEND="sys-devel/gettext"
+
+# This ebuild does not install any binaries
+RESTRICT="binchecks strip"
 
 src_prepare() {
 	local linguas_bak=${LINGUAS}
