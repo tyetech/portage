@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/filezilla/Attic/filezilla-3.3.3.ebuild,v 1.3 2010/08/19 19:00:02 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/filezilla/Attic/filezilla-3.4.0.ebuild,v 1.1 2011/03/28 09:59:27 voyageur Exp $
 
 EAPI=2
 
@@ -21,6 +21,7 @@ KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86"
 IUSE="dbus nls test"
 
 RDEPEND=">=app-admin/eselect-wxwidgets-0.7-r1
+	>=dev-libs/tinyxml-2.6.1-r1[-stl]
 	net-dns/libidn
 	>=net-libs/gnutls-2.8.3
 	>=x11-libs/wxGTK-2.8.9:2.8[X]
@@ -33,9 +34,14 @@ DEPEND="${RDEPEND}
 
 S="${WORKDIR}"/${PN}-${MY_PV}
 
+src_prepare() {
+	epatch "${FILESDIR}"/${P}-debug.patch
+	eautoreconf
+}
+
 src_configure() {
 	econf $(use_with dbus) $(use_enable nls locales) \
-		--with-tinyxml=builtin \
+		--with-tinyxml=system \
 		--disable-autoupdatecheck || die "econf failed"
 }
 
