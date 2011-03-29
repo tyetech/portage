@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/fme/Attic/fme-1.1.2.ebuild,v 1.2 2010/05/06 11:18:59 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/fme/Attic/fme-1.1.2.ebuild,v 1.3 2011/03/29 06:13:46 nirbheek Exp $
 
 EAPI=2
 inherit eutils
@@ -16,9 +16,9 @@ IUSE=""
 
 RDEPEND="sys-devel/bc
 	>=x11-wm/fluxbox-1.0
-	>=dev-cpp/gtkmm-2.4
-	>=dev-cpp/glibmm-2.14.0
-	>=dev-cpp/libglademm-2.4"
+	>=dev-cpp/gtkmm-2.4:2.4
+	>=dev-cpp/glibmm-2.14.0:2
+	>=dev-cpp/libglademm-2.4:2.4"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
