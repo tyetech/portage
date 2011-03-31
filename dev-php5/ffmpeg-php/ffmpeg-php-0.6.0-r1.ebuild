@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/ffmpeg-php/Attic/ffmpeg-php-0.6.0-r1.ebuild,v 1.4 2011/01/11 22:00:59 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php5/cvs-repo/gentoo-x86/dev-php5/ffmpeg-php/Attic/ffmpeg-php-0.6.0-r1.ebuild,v 1.5 2011/03/31 15:42:49 scarabeus Exp $
 
 EAPI="3"
 
@@ -19,7 +19,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-DEPEND=">=media-video/ffmpeg-0.4.9_pre1
+DEPEND="virtual/ffmpeg
 		|| ( dev-lang/php[gd] dev-lang/php[gd-external] )"
 RDEPEND="${DEPEND}"
 
