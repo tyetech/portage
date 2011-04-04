@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/lftp/Attic/lftp-4.2.0.ebuild,v 1.1 2011/03/04 17:21:45 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/lftp/Attic/lftp-4.2.1.ebuild,v 1.1 2011/04/04 16:07:32 jer Exp $
 
 EAPI="3"
 
