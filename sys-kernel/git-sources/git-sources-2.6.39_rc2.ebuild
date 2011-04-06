@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/git-sources/Attic/git-sources-2.6.38-r20.ebuild,v 1.1 2011/03/29 11:42:02 mpagano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/git-sources/Attic/git-sources-2.6.39_rc2.ebuild,v 1.1 2011/04/06 12:23:16 mpagano Exp $
 
 UNIPATCH_STRICTORDER="yes"
 K_NOUSENAME="yes"
