@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/tomcat/Attic/tomcat-7.0.11.ebuild,v 1.1 2011/03/11 16:28:54 fordfrog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/tomcat/Attic/tomcat-7.0.12.ebuild,v 1.1 2011/04/07 14:13:49 fordfrog Exp $
 
 EAPI=2
 JAVA_PKG_IUSE="doc examples source test"
