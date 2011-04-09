@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.6.13.ebuild,v 1.1 2011/04/09 16:47:10 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/duplicity/Attic/duplicity-0.6.13.ebuild,v 1.2 2011/04/09 17:00:40 jer Exp $
 
 EAPI="3"
 
@@ -25,7 +25,6 @@ DEPEND="
 RDEPEND="${DEPEND}
 	>=dev-python/py-gnupg-0.3.2
 	>=dev-python/pexpect-2.1
-	>=net-ftp/ncftp-3.1.9
 	s3? ( dev-python/boto )
 "
 
