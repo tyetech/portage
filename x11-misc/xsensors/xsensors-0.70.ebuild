@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xsensors/xsensors-0.70.ebuild,v 1.6 2010/10/04 12:55:15 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xsensors/xsensors-0.70.ebuild,v 1.7 2011/04/09 07:44:02 xarthisius Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -25,7 +25,7 @@ src_prepare() {
 	sed -i \
 		-e '/-DG.*_DISABLE_DEPRECATED/d' \
 		-e 's:-Werror:-Wall:' \
-		src/Makefile.am || die
+		src/Makefile.am configure.in || die
 
 	eautoreconf
 }
