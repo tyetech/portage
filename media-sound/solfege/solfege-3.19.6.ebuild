@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/solfege/Attic/solfege-3.19.5.ebuild,v 1.1 2011/03/11 21:18:35 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/solfege/Attic/solfege-3.19.6.ebuild,v 1.1 2011/04/11 18:28:45 radhermit Exp $
 
 EAPI=2
 PYTHON_DEPEND="2:2.6"
