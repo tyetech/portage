@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/jemalloc/Attic/jemalloc-2.2.1-r1.ebuild,v 1.1 2011/04/11 15:50:23 anarchy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/jemalloc/Attic/jemalloc-2.2.1-r1.ebuild,v 1.2 2011/04/12 18:18:10 mr_bones_ Exp $
 
 EAPI="2"
 
@@ -37,4 +37,3 @@ src_configure() {
 src_install() {
 	make DESTDIR="${D}" install
 }
-
