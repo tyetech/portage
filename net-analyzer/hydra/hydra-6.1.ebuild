@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/hydra/hydra-6.1.ebuild,v 1.2 2011/03/01 22:44:01 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/hydra/hydra-6.1.ebuild,v 1.3 2011/04/12 15:02:21 jer Exp $
 
 EAPI="2"
 
@@ -78,5 +78,5 @@ src_install() {
 	if use gtk ; then
 		dobin hydra-gtk/src/xhydra || die "gtk"
 	fi
-	dodoc CHANGES README TODO
+	dodoc CHANGES README
 }
