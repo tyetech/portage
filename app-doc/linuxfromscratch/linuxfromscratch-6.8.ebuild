@@ -1,6 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/linuxfromscratch/Attic/linuxfromscratch-6.7.ebuild,v 1.3 2011/04/13 08:42:26 dirtyepic Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-doc/cvs-repo/gentoo-x86/app-doc/linuxfromscratch/Attic/linuxfromscratch-6.8.ebuild,v 1.1 2011/04/13 08:42:26 dirtyepic Exp $
+
+EAPI="4"
 
 MY_SRC="http://www.linuxfromscratch.org/lfs/downloads/${PV}"
 
@@ -17,7 +19,7 @@ SRC_URI="${MY_SRC}/LFS-BOOK-${PV}-HTML.tar.bz2
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="htmlsingle pdf"
 
 DEPEND=""
@@ -25,8 +27,16 @@ RDEPEND=""
 
 S=${WORKDIR}
 
+src_unpack() {
+	unpack LFS-BOOK-${PV}-HTML.tar.bz2 \
+		lfs-bootscripts-${BOOTSCRIPT_PV}.tar.bz2 \
+		udev-config-${UDEV_PV}.tar.bz2
+
+	use htmlsingle && unpack LFS-BOOK-${PV}-NOCHUNKS.html.bz2
+	use pdf && cp "${DISTDIR}"/LFS-BOOK-${PV}.pdf "${S}"
+}
+
 src_install() {
-	# We don't want this stuff compressed
-	insinto /usr/share/doc/${PF}
-	doins -r * || die "Install failed."
+	dodoc -r *
+	docompress -x /usr/share/doc/${PF}
 }
