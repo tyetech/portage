@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ofono/Attic/ofono-0.42.ebuild,v 1.1 2011/02/15 10:28:05 dagger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ofono/Attic/ofono-0.46.ebuild,v 1.1 2011/04/14 08:29:42 dagger Exp $
 
 EAPI="2"
 
