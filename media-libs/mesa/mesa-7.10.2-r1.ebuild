@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-7.10.1.ebuild,v 1.8 2011/04/17 22:53:15 chithanh Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-7.10.2-r1.ebuild,v 1.1 2011/04/17 22:53:15 chithanh Exp $
 
 EAPI=3
 
@@ -25,7 +25,7 @@ FOLDER="${PV/_rc*/}"
 DESCRIPTION="OpenGL-like graphic library for Linux"
 HOMEPAGE="http://mesa3d.sourceforge.net/"
 
-#SRC_PATCHES="mirror://gentoo/${P}-gentoo-patches-01.tar.bz2"
+SRC_PATCHES="mirror://gentoo/${PN}-7.10.2-gentoo-patches-01.tar.bz2"
 if [[ $PV = 9999* ]]; then
 	SRC_URI="${SRC_PATCHES}"
 else
@@ -35,7 +35,7 @@ fi
 
 LICENSE="LGPL-2 kilgard"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~ia64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
 
 INTEL_CARDS="intel"
 RADEON_CARDS="radeon"
@@ -47,13 +47,20 @@ done
 IUSE="${IUSE_VIDEO_CARDS}
 	+classic debug +gallium gles llvm motif +nptl pic selinux kernel_FreeBSD hardened"
 
-LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.23"
+LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.24"
+# not a runtime dependency of this package, but dependency of packages which
+# depend on this package, bug #342393
+EXTERNAL_DEPEND="
+	>=x11-proto/dri2proto-2.2
+	>=x11-proto/glproto-1.4.11
+"
 # keep correct libdrm and dri2proto dep
 # keep blocks in rdepend for binpkg
-RDEPEND="
+RDEPEND="${EXTERNAL_DEPEND}
 	!<x11-base/xorg-server-1.7
 	!<=x11-proto/xf86driproto-2.0.3
-	>=app-admin/eselect-mesa-0.0.3
+	classic? ( app-admin/eselect-mesa )
+	gallium? ( app-admin/eselect-mesa )
 	>=app-admin/eselect-opengl-1.1.1-r2
 	dev-libs/expat
 	dev-libs/libxml2[python]
@@ -71,11 +78,10 @@ RDEPEND="
 			amd64? ( dev-libs/udis86 )
 			x86? ( dev-libs/udis86 )
 			x86-fbsd? ( dev-libs/udis86 )
-			<sys-devel/llvm-2.9
+			sys-devel/llvm
 		)
 	)
 	${LIBDRM_DEPSTRING}[video_cards_nouveau?,video_cards_vmware?]
-	video_cards_nouveau? ( <x11-libs/libdrm-2.4.24 )
 "
 for card in ${INTEL_CARDS}; do
 	RDEPEND="${RDEPEND}
@@ -93,8 +99,6 @@ DEPEND="${RDEPEND}
 	=dev-lang/python-2*
 	dev-util/pkgconfig
 	x11-misc/makedepend
-	>=x11-proto/dri2proto-2.2
-	>=x11-proto/glproto-1.4.11
 	x11-proto/inputproto
 	>=x11-proto/xextproto-7.0.99.1
 	x11-proto/xf86driproto
@@ -280,8 +284,9 @@ src_install() {
 	eend $?
 
 	if use classic || use gallium; then
-		ebegin "Moving DRI/Gallium drivers for dynamic switching"
+			ebegin "Moving DRI/Gallium drivers for dynamic switching"
 			local gallium_drivers=( i915_dri.so i965_dri.so r300_dri.so r600_dri.so swrast_dri.so )
+			keepdir /usr/$(get_libdir)/dri
 			dodir /usr/$(get_libdir)/mesa
 			for x in ${gallium_drivers[@]}; do
 				if [ -f "${S}/$(get_libdir)/gallium/${x}" ]; then
@@ -318,7 +323,9 @@ pkg_postinst() {
 	echo
 	eselect opengl set --use-old ${OPENGL_DIR}
 	# Select classic/gallium drivers
-	eselect mesa set --auto
+	if use classic || use gallium; then
+		eselect mesa set --auto
+	fi
 }
 
 # $1 - VIDEO_CARDS flag
