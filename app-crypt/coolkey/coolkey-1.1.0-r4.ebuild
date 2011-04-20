@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/coolkey/coolkey-1.1.0-r4.ebuild,v 1.1 2011/04/20 02:22:36 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/coolkey/coolkey-1.1.0-r4.ebuild,v 1.2 2011/04/20 02:26:57 nerdboy Exp $
 
 EAPI=3
 
@@ -85,7 +85,9 @@ pkg_postinst() {
 }
 
 pkg_postrm() {
-	if $(modutil -rawlist -dbdir $dbdir | grep libcoolkeypk11); then
-		elog "You should remove libcoolkey from your PKCS11 library."
+	if [[ -x $dbdir ]]; then
+		if $(modutil -rawlist -dbdir $dbdir | grep libcoolkeypk11); then
+			elog "You should remove libcoolkey from your PKCS11 library."
+		fi
 	fi
 }
