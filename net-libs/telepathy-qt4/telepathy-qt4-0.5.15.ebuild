@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/telepathy-qt4/Attic/telepathy-qt4-0.5.12.ebuild,v 1.1 2011/03/23 08:23:47 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/telepathy-qt4/Attic/telepathy-qt4-0.5.15.ebuild,v 1.1 2011/04/20 12:31:17 scarabeus Exp $
 
 PYTHON_DEPEND="2"
 
@@ -33,7 +33,7 @@ DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
 PATCHES=(
-	"${FILESDIR}/${PV}_automagicness.patch"
+	"${FILESDIR}/0.5.12_automagicness.patch"
 )
 
 pkg_setup() {
