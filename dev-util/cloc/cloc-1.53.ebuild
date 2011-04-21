@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cloc/Attic/cloc-1.50.ebuild,v 1.1 2010/06/10 14:12:27 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cloc/Attic/cloc-1.53.ebuild,v 1.1 2011/04/21 13:41:09 jer Exp $
 
 DESCRIPTION="Count Lines of Code"
 HOMEPAGE="http://cloc.sourceforge.net/"
