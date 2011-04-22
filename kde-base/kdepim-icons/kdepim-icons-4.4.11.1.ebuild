@@ -1,10 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdepim-icons/kdepim-icons-4.4.11.1.ebuild,v 1.1 2011/04/21 21:04:37 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdepim-icons/kdepim-icons-4.4.11.1.ebuild,v 1.2 2011/04/22 12:12:50 dilfridge Exp $
 
 EAPI=4
 
-KDE_MINIMAL="4.6"
 KMNAME="kdepim"
 KMMODULE="icons"
 inherit kde4-meta
