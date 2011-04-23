@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-12.0.733.0.ebuild,v 1.1 2011/04/13 15:13:09 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-12.0.742.5.ebuild,v 1.1 2011/04/23 11:41:18 phajdan.jr Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
 
-inherit eutils fdo-mime flag-o-matic gnome2-utils multilib pax-utils \
-	portability python toolchain-funcs versionator virtualx
+inherit eutils fdo-mime flag-o-matic gnome2-utils linux-info multilib \
+	pax-utils portability python toolchain-funcs versionator virtualx
 
 DESCRIPTION="Open-source version of Google Chrome web browser"
 HOMEPAGE="http://chromium.org/"
@@ -98,14 +98,24 @@ pkg_setup() {
 		ewarn "If compilation fails, please try removing -g{,gdb} before reporting a bug."
 	fi
 	eshopts_pop
+
+	# Warn if the kernel doesn't support features useful for sandboxing,
+	# bug #363907.
+	CONFIG_CHECK="~PID_NS ~NET_NS"
+	PID_NS_WARNING="PID (process id) namespaces are needed for sandboxing."
+	NET_NS_WARNING="Network namespaces are needed for sandboxing."
+	check_extra_config
 }
 
 src_prepare() {
 	# Make sure we don't use bundled libvpx headers.
 	epatch "${FILESDIR}/${PN}-system-vpx-r4.patch"
 
-	# Fix some net_unittests failures, bug #361939; to be upstreamed.
-	epatch "${FILESDIR}/${PN}-net-tests-r0.patch"
+	# Fix compilation with system zlib, bug #364205. To be upstreamed.
+	epatch "${FILESDIR}/${PN}-system-zlib-r0.patch"
+
+	# Fix compilation without CUPS, bug #364525. To be upstreamed.
+	epatch "${FILESDIR}/${PN}-cups-r0.patch"
 
 	# Remove most bundled libraries. Some are still needed.
 	find third_party -type f \! -iname '*.gyp*' \
@@ -236,8 +246,8 @@ src_compile() {
 	emake chrome chrome_sandbox BUILDTYPE=Release V=1 || die
 	pax-mark m out/Release/chrome
 	if use test; then
-		emake {base,net}_unittests BUILDTYPE=Release V=1 || die
-		pax-mark m out/Release/{base,net}_unittests
+		emake {base,crypto,googleurl,net}_unittests BUILDTYPE=Release V=1 || die
+		pax-mark m out/Release/{base,crypto,googleurl,net}_unittests
 	fi
 }
 
@@ -255,6 +265,9 @@ src_test() {
 	# For more info see bug #350347.
 	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/base_unittests virtualmake \
 		'--gtest_filter=-ICUStringConversionsTest.*'
+
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/crypto_unittests virtualmake
+	LC_ALL="${mylocale}" VIRTUALX_COMMAND=out/Release/googleurl_unittests virtualmake
 
 	# NetUtilTest: bug #361885.
 	# UDP: unstable, active development. We should revisit this later.
