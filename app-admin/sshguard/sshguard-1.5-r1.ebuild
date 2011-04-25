@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sshguard/Attic/sshguard-1.5.ebuild,v 1.1 2011/04/23 14:44:44 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sshguard/sshguard-1.5-r1.ebuild,v 1.1 2011/04/25 04:59:42 jer Exp $
 
 EAPI="2"
 
@@ -20,6 +20,7 @@ CDEPEND="kernel_linux? ( net-firewall/iptables )
 DEPEND="${CDEPEND}
 	sys-devel/flex"
 RDEPEND="${CDEPEND}
+	sys-apps/openrc
 	virtual/logger"
 
 src_prepare() {
