@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-elf/Attic/ruby-elf-1.0.3.ebuild,v 1.1 2011/02/04 22:50:50 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-elf/Attic/ruby-elf-1.0.4.ebuild,v 1.1 2011/04/26 17:29:26 flameeyes Exp $
 
 EAPI=2
 
