@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xcb-util-image/xcb-util-image-0.3.8.ebuild,v 1.1 2011/04/26 09:52:47 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/xcb-util-image/xcb-util-image-0.3.8.ebuild,v 1.2 2011/04/26 15:11:07 mr_bones_ Exp $
 
 EAPI=4
 
