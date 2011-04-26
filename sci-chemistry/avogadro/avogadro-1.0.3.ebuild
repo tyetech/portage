@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/avogadro/Attic/avogadro-1.0.2_rc1.ebuild,v 1.1 2011/03/26 17:09:52 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/avogadro/Attic/avogadro-1.0.3.ebuild,v 1.1 2011/04/26 16:26:52 jlec Exp $
 
 EAPI=2
 
