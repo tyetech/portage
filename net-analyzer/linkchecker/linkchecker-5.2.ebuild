@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/linkchecker/Attic/linkchecker-5.2.ebuild,v 1.5 2011/04/27 09:34:42 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/linkchecker/Attic/linkchecker-5.2.ebuild,v 1.6 2011/04/27 09:35:57 jlec Exp $
 
 EAPI="3"
 
@@ -28,7 +28,6 @@ RDEPEND="${DEPEND}"
 RESTRICT="test"
 
 S="${WORKDIR}/${MY_P}"
-
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PV}-missing-files.patch
