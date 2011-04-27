@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmaker/Attic/texmaker-2.10.ebuild,v 1.1 2010/10/30 21:36:24 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmaker/Attic/texmaker-3.02.ebuild,v 1.1 2011/04/27 06:38:17 jlec Exp $
 
 EAPI="3"
 
