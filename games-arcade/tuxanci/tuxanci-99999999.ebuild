@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/tuxanci/Attic/tuxanci-9999.ebuild,v 1.3 2011/04/28 22:07:32 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-arcade/cvs-repo/gentoo-x86/games-arcade/tuxanci/tuxanci-99999999.ebuild,v 1.1 2011/04/28 22:36:10 scarabeus Exp $
 
 EAPI=3
 
@@ -21,7 +21,7 @@ fi
 LICENSE="GPL-2"
 
 SLOT="0"
-IUSE="debug dedicated +ipv6 nls opengl +sound"
+IUSE="debug dedicated +ipv6 nls opengl physfs +sound"
 
 # >=x11-libs/cairo-1.8.8[X,svg]
 RDEPEND="
@@ -34,16 +34,20 @@ RDEPEND="
 			>=media-libs/sdl-mixer-1.2.11[vorbis]
 		)
 	)
-	>=dev-libs/libzip-0.9"
+	physfs? ( dev-games/physfs[zip] )
+	!physfs? ( >=dev-libs/libzip-0.9 )
+"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
-	nls? ( sys-devel/gettext )"
+	nls? ( sys-devel/gettext )
+"
 
 src_configure() {
 	local mycmakeargs+=(
 		$(cmake-utils_use_with sound AUDIO)
 		$(cmake-utils_use_build dedicated SERVER)
 		$(cmake-utils_use_with nls)
+		$(cmake-utils_use_with physfs)
 		$(cmake-utils_use_with opengl)
 		$(cmake-utils_use_enable ipv6)
 		$(cmake-utils_use_enable debug)
