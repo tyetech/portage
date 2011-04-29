@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-3.1.7.ebuild,v 1.9 2011/03/14 06:54:45 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-3.1.10.ebuild,v 1.1 2011/04/29 15:53:37 polynomial-c Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
 
-inherit flag-o-matic toolchain-funcs eutils mozconfig-3 makeedit multilib mozextension autotools python
+inherit flag-o-matic toolchain-funcs eutils mozconfig-3 makeedit multilib mozextension autotools python pax-utils
 
 # This list can be updated using get_langs.sh from the mozilla overlay
 LANGS="af ar be bg bn-BD ca cs da de el en en-GB en-US es-AR es-ES et eu fi fr \
@@ -19,7 +19,7 @@ MY_P="${P/_rc/rc}"
 DESCRIPTION="Thunderbird Mail Client"
 HOMEPAGE="http://www.mozilla.com/en-US/thunderbird/"
 
-KEYWORDS="alpha amd64 ~arm ia64 ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 SLOT="0"
 LICENSE="|| ( MPL-1.1 GPL-2 LGPL-2.1 )"
 IUSE="+alsa ldap +crypt bindist gnome libnotify +lightning mozdom system-sqlite wifi"
@@ -57,7 +57,7 @@ RDEPEND=">=sys-devel/binutils-2.16.1
 		>=gnome-base/gconf-2.16.0
 		>=gnome-base/libgnome-2.16.0 )
 	libnotify? ( >=x11-libs/libnotify-0.4 )
-	system-sqlite? ( >=dev-db/sqlite-3.7.1[fts3,secure-delete] )
+	system-sqlite? ( >=dev-db/sqlite-3.7.1[fts3,secure-delete,threadsafe] )
 	wifi? ( net-wireless/wireless-tools )
 	!x11-plugins/lightning"
 
@@ -93,6 +93,7 @@ linguas() {
 pkg_setup() {
 	export BUILD_OFFICIAL=1
 	export MOZILLA_OFFICIAL=1
+	export ALDFLAGS=${LDFLAGS}
 
 	if ! use bindist; then
 		elog "You are enabling official branding. You may not redistribute this build"
@@ -119,6 +120,7 @@ src_unpack() {
 
 src_prepare() {
 	# Apply our patches
+	EPATCH_EXCLUDE="1002-fix_hunspell_double_buffer.patch" \
 	EPATCH_SUFFIX="patch" \
 	EPATCH_FORCE="yes" \
 	epatch "${WORKDIR}"
@@ -259,4 +261,6 @@ src_install() {
 	cp "${FILESDIR}"/thunderbird-gentoo-default-prefs-1.js \
 		"${ED}/${MOZILLA_FIVE_HOME}/defaults/pref/all-gentoo.js" || \
 		die "failed to cp thunderbird-gentoo-default-prefs.js"
+
+	pax-mark m "${ED}"/${MOZILLA_FIVE_HOME}/thunderbird-bin
 }
