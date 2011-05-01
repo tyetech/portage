@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/msn-pecan/Attic/msn-pecan-0.1.1.ebuild,v 1.1 2010/08/28 22:27:59 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/msn-pecan/msn-pecan-0.1.2.ebuild,v 1.1 2011/05/01 19:20:26 voyageur Exp $
 
 EAPI="2"
 
