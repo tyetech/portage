@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rubyripper/Attic/rubyripper-0.6.0.ebuild,v 1.2 2011/03/14 19:39:40 billie Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/rubyripper/Attic/rubyripper-0.6.0.ebuild,v 1.3 2011/05/02 21:24:52 billie Exp $
 
 EAPI=2
 
@@ -39,7 +39,6 @@ RDEPEND="virtual/eject
 DEPEND="${RDEPEND}"
 
 ruby_add_rdepend ">=dev-ruby/ruby-gettext-2.1.0-r1
-	>=dev-ruby/rcairo-1.8.1[svg]
 	gtk? ( >=dev-ruby/ruby-gtk2-0.19.3 )"
 
 # fix for bug 203737
