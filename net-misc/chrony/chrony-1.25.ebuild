@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/chrony/Attic/chrony-1.25_pre2.ebuild,v 1.1 2011/04/27 05:07:56 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/chrony/Attic/chrony-1.25.ebuild,v 1.1 2011/05/04 14:36:38 jer Exp $
 
 EAPI=2
 
