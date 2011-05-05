@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libktorrent/Attic/libktorrent-1.1.0.ebuild,v 1.1 2011/03/23 08:31:47 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libktorrent/Attic/libktorrent-1.1.1.ebuild,v 1.1 2011/05/05 14:26:03 scarabeus Exp $
 
 EAPI=3
 
