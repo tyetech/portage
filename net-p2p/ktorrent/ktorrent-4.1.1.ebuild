@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-4.1.1.ebuild,v 1.1 2011/05/05 14:28:09 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ktorrent/Attic/ktorrent-4.1.1.ebuild,v 1.2 2011/05/05 14:32:16 scarabeus Exp $
 
-EAPI=3
+EAPI=4
 
 KDE_SCM="git"
 KDE_MINIMAL="4.5"
