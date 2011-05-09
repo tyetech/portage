@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.8.6-r3.ebuild,v 1.1 2011/04/11 21:24:18 sochotnicky Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/rtorrent/Attic/rtorrent-0.8.7-r3.ebuild,v 1.1 2011/05/09 21:34:21 sochotnicky Exp $
 
 EAPI=2
 
@@ -13,7 +13,7 @@ SRC_URI="http://libtorrent.rakshasa.no/downloads/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="daemon debug ipv6 xmlrpc"
+IUSE="color daemon debug ipv6 test xmlrpc"
 
 COMMON_DEPEND=">=net-libs/libtorrent-0.12.${PV##*.}
 	>=dev-libs/libsigc++-2.2.2:2
@@ -23,13 +23,14 @@ COMMON_DEPEND=">=net-libs/libtorrent-0.12.${PV##*.}
 RDEPEND="${COMMON_DEPEND}
 	daemon? ( app-misc/screen )"
 DEPEND="${COMMON_DEPEND}
+	test? ( dev-util/cppunit )
 	dev-util/pkgconfig"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-canvas-fix.patch
-
 	# bug #358271
-	epatch "${FILESDIR}"/${P}-ncurses.patch
+	epatch "${FILESDIR}"/${PN}-0.8.6-ncurses.patch
+
+	use color && EPATCH_OPTS="-p1" epatch "${FILESDIR}"/${P}-canvas-fix.patch
 }
 
 src_configure() {
@@ -51,10 +52,12 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "rtorrent colors patch"
-	elog "Set colors using the options below in .rtorrent.rc:"
-	elog "Options: done_fg_color, done_bg_color, active_fg_color, active_bg_color"
-	elog "Colors: 0 = black, 1 = red, 2 = green, 3 = yellow, 4 = blue,"
-	elog "5 = magenta, 6 = cyan and 7 = white"
-	elog "Example: done_fg_color = 1"
+	if use color; then
+		elog "rtorrent colors patch"
+		elog "Set colors using the options below in .rtorrent.rc:"
+		elog "Options: done_fg_color, done_bg_color, active_fg_color, active_bg_color"
+		elog "Colors: 0 = black, 1 = red, 2 = green, 3 = yellow, 4 = blue,"
+		elog "5 = magenta, 6 = cyan and 7 = white"
+		elog "Example: done_fg_color = 1"
+	fi
 }
