@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation                                                              
-# Distributed under the terms of the GNU General Public License v2                                   
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/wipe/wipe-2.3.1.ebuild,v 1.1 2011/05/10 09:06:14 xmw Exp $ 
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/wipe/wipe-2.3.1.ebuild,v 1.2 2011/05/12 12:57:27 mr_bones_ Exp $
 
 EAPI=3
 
