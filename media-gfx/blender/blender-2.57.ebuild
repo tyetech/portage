@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.57.ebuild,v 1.1 2011/05/07 00:02:09 sping Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/blender/Attic/blender-2.57.ebuild,v 1.2 2011/05/12 14:56:00 sping Exp $
 
 PYTHON_DEPEND="3:3.2"
 
@@ -362,7 +362,8 @@ src_install() {
 	insinto /usr/share/applications
 	cp release/freedesktop/blender.desktop \
 		release/freedesktop/blender-${SLOT}.desktop
-	doins release/freedesktop/blender-${SLOT}.desktop
+	doins release/freedesktop/blender-${SLOT}.desktop || die
+	newins "${FILESDIR}"/${P}-insecure.desktop ${PN}-${SLOT}-insecure.desktop || die
 
 	# install docs
 #	use doc && dodoc release/text/BlenderQuickStart.pdf
