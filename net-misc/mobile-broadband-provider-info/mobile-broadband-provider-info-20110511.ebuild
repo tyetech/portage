@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/mobile-broadband-provider-info/Attic/mobile-broadband-provider-info-20100122.ebuild,v 1.3 2011/03/18 15:46:48 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/mobile-broadband-provider-info/mobile-broadband-provider-info-20110511.ebuild,v 1.1 2011/05/12 03:46:46 nirbheek Exp $
 
 inherit gnome.org
 
