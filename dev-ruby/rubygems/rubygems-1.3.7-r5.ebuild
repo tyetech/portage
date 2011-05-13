@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rubygems/Attic/rubygems-1.3.7-r4.ebuild,v 1.6 2011/05/03 11:13:38 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rubygems/rubygems-1.3.7-r5.ebuild,v 1.1 2011/05/13 17:49:31 graaff Exp $
 
 EAPI="3"
 
