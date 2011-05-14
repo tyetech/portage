@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-skk/Attic/ibus-skk-1.3.3.ebuild,v 1.2 2011/04/16 22:19:27 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-skk/Attic/ibus-skk-1.3.6.ebuild,v 1.1 2011/05/14 00:40:05 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
