@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qmpdclient/Attic/qmpdclient-1.2.1.ebuild,v 1.7 2011/04/13 18:06:10 tomka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/qmpdclient/Attic/qmpdclient-1.2.1.ebuild,v 1.8 2011/05/15 14:36:21 angelos Exp $
 
-EAPI=3
+EAPI=4
 inherit fdo-mime cmake-utils
 
 DESCRIPTION="QMPDClient with NBL additions, such as lyrics' display"
@@ -22,16 +22,15 @@ RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${PN}
 
-pkg_setup() {
-	DOCS="AUTHORS README THANKSTO Changelog"
-}
+DOCS=( AUTHORS README THANKSTO Changelog )
 
 src_prepare() {
 	sed -i -e "/^Categories/s/Network/AudioVideo/" ${PN}.desktop || die
+	epatch "${FILESDIR}"/${P}-explicit-link.patch
 }
 
 src_configure() {
-	mycmakeargs=( "-DVERSION=${PV}" )
+	local mycmakeargs=( "-DVERSION=${PV}" )
 	cmake-utils_src_configure
 }
 
