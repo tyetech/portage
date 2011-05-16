@@ -1,15 +1,16 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/pure-ftpd/Attic/pure-ftpd-1.0.30-r1.ebuild,v 1.1 2011/04/22 12:04:38 polynomial-c Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-ftp/cvs-repo/gentoo-x86/net-ftp/pure-ftpd/Attic/pure-ftpd-1.0.32-r1.ebuild,v 1.1 2011/05/16 14:54:53 polynomial-c Exp $
 
 EAPI=2
 inherit eutils confutils flag-o-matic
 
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 DESCRIPTION="Fast, production-quality, standard-conformant FTP server."
 HOMEPAGE="http://www.pureftpd.org/"
-SRC_URI="ftp://ftp.pureftpd.org/pub/${PN}/releases/${P}.tar.bz2"
+SRC_URI="ftp://ftp.pureftpd.org/pub/${PN}/releases/${P}.tar.bz2
+	http://download.pureftpd.org/pub/${PN}/releases/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
@@ -89,9 +90,9 @@ src_install() {
 
 	dodoc AUTHORS CONTACT ChangeLog FAQ HISTORY INSTALL README* NEWS
 
-	newconfd "${FILESDIR}/pure-ftpd.conf_d-2" pure-ftpd
+	newconfd "${FILESDIR}/pure-ftpd.conf_d-3" pure-ftpd
 
-	newinitd "${FILESDIR}/pure-ftpd.rc10" pure-ftpd
+	newinitd "${FILESDIR}/pure-ftpd.rc11" pure-ftpd
 
 	dodir /var/lib/run/${PN}
 
