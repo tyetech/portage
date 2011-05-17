@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/pbzip2/Attic/pbzip2-1.1.2.ebuild,v 1.1 2011/02/20 22:24:38 spatz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/pbzip2/Attic/pbzip2-1.1.4.ebuild,v 1.1 2011/05/17 21:46:52 spatz Exp $
 
-EAPI=2
+EAPI=4
 
 inherit multilib eutils
 
@@ -19,7 +19,7 @@ DEPEND="app-arch/bzip2"
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-makefile.patch
+	epatch "${FILESDIR}"/${PN}-1.1.2-makefile.patch
 	tc-export CXX
 }
 
