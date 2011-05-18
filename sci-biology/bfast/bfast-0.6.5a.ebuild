@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/bfast/Attic/bfast-0.6.4b.ebuild,v 1.1 2010/04/18 23:41:06 weaver Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/bfast/bfast-0.6.5a.ebuild,v 1.1 2011/05/18 16:11:49 weaver Exp $
 
 EAPI="2"
 
