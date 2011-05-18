@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/hplip/Attic/hplip-3.11.3a.ebuild,v 1.1 2011/03/27 17:43:42 billie Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/hplip/Attic/hplip-3.11.5.ebuild,v 1.1 2011/05/18 20:21:50 billie Exp $
 
-EAPI=2
+EAPI=3
 
 PYTHON_DEPEND="!minimal? 2"
 PYTHON_USE_WITH="threads xml"
