@@ -1,7 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/Sys-Syslog/Attic/Sys-Syslog-0.27.ebuild,v 1.9 2009/12/16 21:57:04 abcd Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/Sys-Syslog/Sys-Syslog-0.270.0.ebuild,v 1.1 2011/05/19 19:09:14 tove Exp $
 
+MODULE_VERSION=0.27
 MODULE_AUTHOR=SAPER
 inherit perl-module
 
