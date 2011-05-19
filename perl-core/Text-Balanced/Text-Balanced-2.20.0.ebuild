@@ -1,10 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/Text-Balanced/Attic/Text-Balanced-2.02.ebuild,v 1.9 2010/10/22 18:06:13 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/perl-core/cvs-repo/gentoo-x86/perl-core/Text-Balanced/Text-Balanced-2.20.0.ebuild,v 1.1 2011/05/19 18:53:10 tove Exp $
 
 EAPI=2
 
 MODULE_AUTHOR=ADAMK
+MODULE_VERSION=2.02
 inherit perl-module
 
 DESCRIPTION="Extract balanced-delimiter substrings"
