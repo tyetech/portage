@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/plasma-workspace/Attic/plasma-workspace-4.6.3.ebuild,v 1.2 2011/05/07 15:21:05 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/plasma-workspace/Attic/plasma-workspace-4.6.3-r2.ebuild,v 1.1 2011/05/22 18:20:36 dilfridge Exp $
 
 EAPI=3
 
@@ -15,6 +15,7 @@ KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="debug google-gadgets gps python qalculate +rss semantic-desktop xinerama"
 
 COMMONDEPEND="
+	dev-libs/boost
 	$(add_kdebase_dep kdelibs 'semantic-desktop=')
 	$(add_kdebase_dep kephal)
 	$(add_kdebase_dep ksysguard)
@@ -73,6 +74,8 @@ KMLOADLIBS="libkworkspace libplasmaclock libplasmagenericshell libtaskmanager"
 PATCHES=(
 	"${FILESDIR}/${PN}-4.4.2-xinerama_cmake_automagic.patch"
 	"${FILESDIR}/${PN}-4.6.2-optional_akonadi-server.patch"
+	"${FILESDIR}/${PN}-4.6.2-panelplacement.patch"
+	"${FILESDIR}/${PN}-4.6.3-dduplicate.patch"
 )
 
 pkg_setup() {
