@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/psipred/psipred-3.2.ebuild,v 1.2 2011/05/24 12:18:04 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/psipred/psipred-3.2.1.ebuild,v 1.1 2011/05/24 12:18:04 jlec Exp $
 
-EAPI=3
+EAPI=4
 
 inherit eutils prefix toolchain-funcs versionator
 
@@ -29,20 +29,20 @@ src_prepare() {
 	epatch \
 		"${FILESDIR}"/3.1-Makefile.patch \
 		"${FILESDIR}"/3.1-path.patch \
-		"${FILESDIR}"/${PV}-fgets.patch
+		"${FILESDIR}"/3.2-fgets.patch
 	eprefixify runpsipred*
 }
 
 src_compile() {
-	emake -C src CC=$(tc-getCC) || die "emake failed"
+	emake -C src CC=$(tc-getCC)
 }
 
 src_install() {
-	emake -C src DESTDIR="${D}" install || die "installation failed"
-	dobin runpsipred* bin/* BLAST+/runpsipred* || die
+	emake -C src DESTDIR="${D}" install
+	dobin runpsipred* bin/* BLAST+/runpsipred*
 	insinto /usr/share/${PN}
-	doins -r data || die "failed to install data"
-	dodoc README || die "nothing to read"
+	doins -r data
+	dodoc README
 }
 
 pkg_postinst() {
