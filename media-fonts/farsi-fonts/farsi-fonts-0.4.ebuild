@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/farsi-fonts/farsi-fonts-0.4.ebuild,v 1.12 2009/07/06 21:25:48 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/farsi-fonts/farsi-fonts-0.4.ebuild,v 1.13 2011/05/25 16:36:57 flameeyes Exp $
 
 inherit font
 
@@ -19,3 +19,4 @@ FONT_SUFFIX="ttf"
 FONT_S="${S}"
 
 DEPEND="app-arch/unzip"
+RDEPEND=""
