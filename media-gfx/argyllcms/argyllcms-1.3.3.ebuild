@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/argyllcms/Attic/argyllcms-1.3.2-r1.ebuild,v 1.1 2011/02/09 23:40:26 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/argyllcms/Attic/argyllcms-1.3.3.ebuild,v 1.1 2011/05/29 10:51:12 dilfridge Exp $
 
 MY_P="Argyll_V${PV}"
 DESCRIPTION="Open source, ICC compatible color management system"
