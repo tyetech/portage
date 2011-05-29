@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.10.1.902.ebuild,v 1.1 2011/05/21 18:01:26 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-base/cvs-repo/gentoo-x86/x11-base/xorg-server/Attic/xorg-server-1.10.2.ebuild,v 1.1 2011/05/29 08:19:28 scarabeus Exp $
 
 EAPI=4
 
