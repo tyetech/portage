@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/nsscache/Attic/nsscache-0.21.10.ebuild,v 1.1 2011/03/15 17:20:25 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nds/cvs-repo/gentoo-x86/net-nds/nsscache/nsscache-0.21.14.ebuild,v 1.1 2011/05/29 13:03:38 idl0r Exp $
 
 EAPI=3
 
