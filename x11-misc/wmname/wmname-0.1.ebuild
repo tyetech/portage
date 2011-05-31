@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wmname/wmname-0.1.ebuild,v 1.1 2011/05/31 03:29:42 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wmname/wmname-0.1.ebuild,v 1.2 2011/05/31 08:28:57 mr_bones_ Exp $
 
 EAPI=3
 
@@ -31,4 +31,3 @@ src_install() {
 		PREFIX="${EPREFIX}"/usr DESTDIR="${D}" install || die
 	dodoc README || die
 }
-
