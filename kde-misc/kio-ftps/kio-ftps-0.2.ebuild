@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/kio-ftps/kio-ftps-0.2.ebuild,v 1.2 2011/01/28 15:39:20 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/kio-ftps/kio-ftps-0.2.ebuild,v 1.3 2011/05/31 10:34:34 scarabeus Exp $
 
-EAPI=3
+EAPI=4
 
 inherit kde4-base
 
