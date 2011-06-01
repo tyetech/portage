@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/pf-sources/Attic/pf-sources-2.6.38_p5.ebuild,v 1.2 2011/04/26 11:36:22 wired Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/pf-sources/Attic/pf-sources-2.6.39_p1.ebuild,v 1.1 2011/06/01 12:18:01 wired Exp $
 
 EAPI="2"
 
