@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/foo2zjs/Attic/foo2zjs-20081129.ebuild,v 1.2 2008/12/31 03:40:50 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/foo2zjs/Attic/foo2zjs-20081129.ebuild,v 1.3 2011/06/02 10:36:52 dilfridge Exp $
 
 inherit eutils
 
@@ -73,7 +73,8 @@ LICENSE="GPL-2"
 # due to those firmwares/icms/etc...
 RESTRICT="mirror"
 SLOT="0"
-DEPEND="app-arch/unzip"
+DEPEND="app-arch/unzip
+	app-text/ghostscript-gpl"
 RDEPEND="cups? ( net-print/cups )
 	foomaticdb? ( net-print/foomatic-db-engine )
 	net-print/foomatic-filters
