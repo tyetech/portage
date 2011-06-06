@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/lilo/Attic/lilo-23.0.ebuild,v 1.3 2011/03/22 16:10:58 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/lilo/lilo-23.2-r2.ebuild,v 1.1 2011/06/06 01:17:31 jer Exp $
 
 EAPI="2"
 
@@ -11,10 +11,10 @@ IUSE="static minimal pxeserial device-mapper"
 
 DESCRIPTION="Standard Linux boot loader"
 HOMEPAGE="https://alioth.debian.org/projects/lilo/"
-DOLILO_TAR="dolilo-${DOLILO_V}.tar.bz2"
 
+DOLILO_TAR="dolilo-${DOLILO_V}.tar.bz2"
 SRC_URI="
-	https://alioth.debian.org/frs/download.php/3315/${P}.tar.gz
+	http://lilo.alioth.debian.org/ftp/sources/${P}.tar.gz
 	mirror://gentoo/${DOLILO_TAR}
 "
 
@@ -33,8 +33,19 @@ src_prepare() {
 	# IE..  B.B.o.o.o.o.t.t.i.i.n.n.g.g....l.l.i.i.n.n.u.u.x.x and stair stepping.
 	use pxeserial && epatch "${FILESDIR}/${PN}-22.8-novga.patch"
 
-	# Do not strip
-	sed -i src/Makefile -e '/strip/d' || die "sed strip failed"
+	# Do not strip and have parallel make
+	# FIXME: images/Makefile does weird stuff
+	sed -i Makefile src/Makefile \
+		-e '/strip/d;s|^	make|	$(MAKE)|g' \
+		-e '/images install/d' \
+		-e '/images all/d' \
+		|| die "sed strip failed"
+}
+
+src_configure() {
+	if ! use device-mapper; then
+		sed -i make.vars -e 's|-DDEVMAPPER||g' || die
+	fi
 }
 
 src_compile() {
@@ -43,14 +54,16 @@ src_compile() {
 
 	# hardened automatic PIC plus PIE building should be suppressed
 	# because of assembler instructions that cannot be compiled PIC
-	HARDENED_CFLAGS="`test-flags-CC -fno-pic -nopie`"
+	HARDENED_CFLAGS=$(test-flags-CC -fno-pic -nopie)
 
 	# we explicitly prevent the custom CFLAGS for stability reasons
 	if use static; then
-		emake CC="$(tc-getCC) ${LDFLAGS} ${HARDENED_CFLAGS}" alles || die
+		local target=alles
 	else
-		emake CC="$(tc-getCC) ${LDFLAGS} ${HARDENED_CFLAGS}" all || die
+		local target=all
 	fi
+
+	emake CC="$(tc-getCC) ${LDFLAGS} ${HARDENED_CFLAGS}" ${target} || die
 }
 
 src_install() {
@@ -69,7 +82,6 @@ src_install() {
 
 		newconfd "${WORKDIR}"/dolilo/dolilo.conf.d dolilo.example || die
 
-		doman manPages/*.[5-8]
 		dodoc CHANGELOG* readme/README.* readme/INCOMPAT README
 		docinto samples ; dodoc sample/*
 	fi
