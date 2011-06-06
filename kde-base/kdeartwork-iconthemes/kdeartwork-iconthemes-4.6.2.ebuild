@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork-iconthemes/Attic/kdeartwork-iconthemes-4.6.2.ebuild,v 1.4 2011/06/01 17:58:06 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdeartwork-iconthemes/Attic/kdeartwork-iconthemes-4.6.2.ebuild,v 1.5 2011/06/06 20:23:06 abcd Exp $
 
 EAPI=3
 
@@ -14,5 +14,5 @@ IUSE=""
 
 # Provides nuvola icon theme
 RDEPEND="
-	!kdeprefix? ( !x11-themes/nuvola )
+	!x11-themes/nuvola
 "
