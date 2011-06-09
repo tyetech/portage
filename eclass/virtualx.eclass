@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/virtualx.eclass,v 1.38 2011/03/13 19:37:28 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/virtualx.eclass,v 1.39 2011/06/09 21:42:58 mattst88 Exp $
 
 # Original author: Martin Schlemmer <azarah@gentoo.org>
 
@@ -25,7 +25,7 @@
 # complicated dep is needed.
 # You can specify the variable BEFORE inherit to add more dependencies.
 VIRTUALX_DEPEND="${VIRTUALX_DEPEND}
-	!prefix? ( x11-base/xorg-server[-minimal] )
+	!prefix? ( x11-base/xorg-server[xvfb] )
 	x11-apps/xhost
 "
 
