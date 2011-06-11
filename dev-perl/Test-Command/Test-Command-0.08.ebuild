@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Test-Command/Attic/Test-Command-0.08.ebuild,v 1.8 2010/07/19 01:10:05 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Test-Command/Attic/Test-Command-0.08.ebuild,v 1.9 2011/06/11 12:08:52 maekke Exp $
 
 EAPI=2
 
@@ -10,7 +10,7 @@ inherit perl-module
 DESCRIPTION="Test routines for external commands"
 
 SLOT="0"
-KEYWORDS="alpha amd64 ppc ppc64 sparc x86"
+KEYWORDS="alpha amd64 ~arm ppc ppc64 sparc x86"
 IUSE="test"
 
 SRC_TEST="do"
