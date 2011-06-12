@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/test-spec/Attic/test-spec-0.10.0-r2.ebuild,v 1.13 2011/05/31 20:21:28 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/test-spec/Attic/test-spec-0.10.0-r2.ebuild,v 1.14 2011/06/12 14:35:44 armin76 Exp $
 
 EAPI="2"
 
@@ -16,7 +16,7 @@ HOMEPAGE="http://chneukirchen.org/blog/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ~ia64 ~ppc ~ppc64 ~sparc x86"
+KEYWORDS="amd64 ia64 ~ppc ~ppc64 sparc x86"
 IUSE=""
 
 ruby_add_rdepend virtual/ruby-test-unit
