@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/mspdebug/Attic/mspdebug-0.14.ebuild,v 1.1 2011/02/18 03:13:47 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/mspdebug/Attic/mspdebug-0.16.ebuild,v 1.1 2011/06/14 10:14:13 radhermit Exp $
 
 EAPI=4
 
