@@ -1,6 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-power/cvs-repo/gentoo-x86/sys-power/athcool/athcool-0.3.11-r2.ebuild,v 1.2 2011/06/15 05:39:03 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-power/cvs-repo/gentoo-x86/sys-power/athcool/athcool-0.3.12.ebuild,v 1.1 2011/06/15 05:39:03 jer Exp $
+
+EAPI="3"
 
 inherit eutils toolchain-funcs
 
@@ -20,10 +22,8 @@ pkg_setup() {
 	tc-export CC
 }
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-build.patch
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-0.3.11-build.patch
 }
 
 src_install() {
