@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/kde4-meta-pkg.eclass,v 1.5 2011/06/09 21:05:45 tampakrap Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/kde4-meta-pkg.eclass,v 1.7 2011/07/10 17:53:37 tampakrap Exp $
 
 # @ECLASS: kde4-meta-pkg.eclass
 # @MAINTAINER:
@@ -22,7 +22,4 @@ if [[ ${PV} < 4.6.4 && ( ${PN} != kdepim-meta || ${PV} < 4.6 ) ]]; then
 	IUSE+=" kdeprefix"
 fi
 
-SLOT=$(get_kde_version)
-[[ -z ${SLOT} ]] && die "Unsupported ${PV}"
-
-RDEPEND="$(block_other_slots)"
+SLOT=4
