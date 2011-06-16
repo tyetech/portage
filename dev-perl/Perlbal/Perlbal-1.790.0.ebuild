@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Perlbal/Attic/Perlbal-1.790.ebuild,v 1.1 2011/06/16 08:38:45 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/Perlbal/Attic/Perlbal-1.790.0.ebuild,v 1.1 2011/06/16 15:57:39 tove Exp $
 
 EAPI=3
 
 MODULE_AUTHOR=DORMANDO
-MODULE_VERSION=1.78
+MODULE_VERSION=1.79
 inherit perl-module
 
 DESCRIPTION="Reverse-proxy load balancer and webserver"
