@@ -1,9 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/ipset/Attic/ipset-6.4.ebuild,v 1.3 2011/05/15 11:44:10 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/ipset/Attic/ipset-6.7-r1.ebuild,v 1.1 2011/06/16 12:32:39 pva Exp $
 
 EAPI="4"
-
 inherit autotools linux-info linux-mod
 
 DESCRIPTION="IPset tool for iptables, successor to ippool."
@@ -24,8 +23,8 @@ IP_NF_SET_MAX=${IP_NF_SET_MAX:-256}
 
 BUILD_TARGETS="modules"
 MODULE_NAMES_ARG="kernel/net/netfilter/ipset/:${S}/kernel/net/netfilter/ipset"
-MODULE_NAMES=""
-for i in ip_set{,_bitmap_{ip{,mac},port},_hash_{ip{,port{,ip,net}},net,netport},_list_set}; do
+MODULE_NAMES="xt_set(kernel/net/netfilter/ipset/:${S}/kernel/net/netfilter/)"
+for i in ip_set{,_bitmap_{ip{,mac},port},_hash_{ip{,port{,ip,net}},net,net{port,iface}},_list_set}; do
 	MODULE_NAMES+=" ${i}(${MODULE_NAMES_ARG})"
 done
 CONFIG_CHECK="NETFILTER IP6_NF_IPTABLES"
@@ -46,7 +45,7 @@ pkg_setup() {
 
 	build_modules=0
 	if use modules; then
-		kernel_is -lt 2 6 34 && die "${PN} requires kernel greater then 2.6.34."
+		kernel_is -lt 2 6 35 && die "${PN} requires kernel greater then 2.6.35."
 		if linux_config_src_exists && linux_chkconfig_builtin "MODULES" ; then
 			if linux_chkconfig_builtin "IP_NF_SET"; then #274577
 				einfo "Modular kernel detected but IP_NF_SET=y, will not build kernel modules"
@@ -75,8 +74,7 @@ src_configure() {
 	econf \
 		--with-maxsets=${IP_NF_SET_MAX} \
 		--libdir=${EPREFIX}/$(get_libdir) \
-		--with-kbuild=${KV_DIR} \
-		--disable-static
+		--with-kbuild=${KV_DIR}
 }
 
 src_compile() {
@@ -98,5 +96,11 @@ src_install() {
 		einfo "Installing kernel modules"
 		linux-mod_src_install
 	fi
-	find "${ED}" -name '*.la' -exec rm -f '{}' +
+	find "${ED}" \( -name '*.la' -o -name '*.a' \) -exec rm -f '{}' +
+}
+
+pkg_postinst() {
+	linux-mod_pkg_postinst
+	elog "Note you need to rebuid and run kernel with netlink.patch or you'll get error:"
+	elog "Kernel error received: Invalid argument"
 }
