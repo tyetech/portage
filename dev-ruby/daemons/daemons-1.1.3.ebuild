@@ -1,9 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/daemons/Attic/daemons-1.1.3.ebuild,v 1.1 2011/04/22 17:27:37 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/daemons/Attic/daemons-1.1.3.ebuild,v 1.2 2011/06/18 04:50:26 graaff Exp $
 
 EAPI="2"
-USE_RUBY="ruby18 ree18 ruby19 jruby"
+USE_RUBY="ruby18 ree18 jruby"
 
 RUBY_FAKEGEM_EXTRADOC="Releases README TODO"
 RUBY_FAKEGEM_DOCDIR="html"
