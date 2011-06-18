@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/v8/Attic/v8-3.1.8.12.ebuild,v 1.4 2011/05/24 08:04:01 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/v8/Attic/v8-3.4.3.ebuild,v 1.1 2011/06/18 10:04:51 phajdan.jr Exp $
 
 EAPI="2"
 
@@ -12,7 +12,7 @@ SRC_URI="mirror://gentoo/${P}.tar.gz"
 LICENSE="BSD"
 
 SLOT="0"
-KEYWORDS="amd64 ~arm x86"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="readline"
 
 RDEPEND="readline? ( >=sys-libs/readline-6.1 )"
@@ -47,13 +47,23 @@ src_configure() {
 }
 
 src_compile() {
-	# To make tests work, we compile with sample=shell.
+	# To make tests work, we compile with sample=shell and visibility=default.
 	# For more info see http://groups.google.com/group/v8-users/browse_thread/thread/61ca70420e4476bc
-	local myconf="library=shared soname=on sample=shell importenv=\"LINKFLAGS\""
+	# and http://groups.google.com/group/v8-users/browse_thread/thread/165f89728ed6f97d
+	local myconf="library=shared soname=on sample=shell visibility=default importenv=LINKFLAGS,PATH"
 
-	# Use target arch detection logic from bug #296917.
-	local myarch="$ABI"
-	[[ $myarch = "" ]] && myarch="$ARCH"
+	# Use target arch detection logic from bug #354601.
+	case ${CHOST} in
+		i?86-*) myarch=x86 ;;
+		x86_64-*)
+			if [[ $ABI = "" ]] ; then
+				myarch=amd64
+			else
+				myarch="$ABI"
+			fi ;;
+		arm*-*) myarch=arm ;;
+		*) die "Unrecognized CHOST: ${CHOST}"
+	esac
 
 	if [[ $myarch = amd64 ]] ; then
 		myconf+=" arch=x64"
