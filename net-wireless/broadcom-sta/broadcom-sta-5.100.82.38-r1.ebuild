@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/broadcom-sta/broadcom-sta-5.100.82.38-r1.ebuild,v 1.3 2011/04/28 18:57:12 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/broadcom-sta/broadcom-sta-5.100.82.38-r1.ebuild,v 1.4 2011/06/18 14:43:31 hwoarang Exp $
 
 EAPI="2"
 inherit eutils linux-mod
@@ -12,7 +12,7 @@ SRC_URI="x86? ( ${SRC_BASE}32-v${PV//\./_}.tar.gz )
 	amd64? ( ${SRC_BASE}64-v${PV//\./_}.tar.gz )"
 
 LICENSE="Broadcom"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE=""
 
 RESTRICT="mirror"
