@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/safecat/Attic/safecat-1.11.ebuild,v 1.13 2009/09/23 19:12:45 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/safecat/Attic/safecat-1.11.ebuild,v 1.14 2011/06/19 15:49:23 armin76 Exp $
 
 inherit fixheadtails eutils toolchain-funcs
 
@@ -15,7 +15,7 @@ RDEPEND=""
 
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS="alpha amd64 ~hppa ia64 ~mips ppc ~sparc x86"
+KEYWORDS="amd64 ~hppa ~mips ppc ~sparc x86"
 
 src_unpack() {
 	unpack ${P}.tar.gz
