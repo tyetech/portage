@@ -1,15 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/freeverb3/freeverb3-2.5.12.ebuild,v 1.2 2011/06/20 00:41:22 sping Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/freeverb3/freeverb3-2.5.16.ebuild,v 1.1 2011/06/20 00:41:22 sping Exp $
 
 EAPI=2
 inherit versionator
 
-MY_PV=$(replace_version_separator 3 '')
-
 DESCRIPTION="High Quality Reverb and Impulse Response Convolution library including XMMS/Audacious Effect plugins"
 HOMEPAGE="http://freeverb3.sourceforge.net/"
-SRC_URI="mirror://sourceforge/${PN}/${PN}-${MY_PV}.tar.gz"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -17,7 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="audacious jack plugdouble sse sse2 sse3 sse4 3dnow forcefpu"
 
 RDEPEND=">=sci-libs/fftw-3.0.1
-	audacious? ( <media-sound/audacious-2.5
+	audacious? ( media-sound/audacious
 		media-libs/libsndfile )
 	jack? ( media-sound/jack-audio-connection-kit
 		media-libs/libsndfile )"
@@ -45,4 +43,7 @@ src_configure() {
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
 	dodoc ChangeLog README || die 'dodoc failed'
+
+	insinto /usr/share/${PN}/samples/IR
+	doins samples/IR/*.wav || die
 }
