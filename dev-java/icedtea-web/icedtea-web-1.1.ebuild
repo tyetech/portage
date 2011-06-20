@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/icedtea-web/Attic/icedtea-web-1.1.ebuild,v 1.1 2011/06/13 15:01:08 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/icedtea-web/Attic/icedtea-web-1.1.ebuild,v 1.2 2011/06/20 12:34:46 caster Exp $
 # Build written by Andrew John Hughes (ahughes@redhat.com)
 
 EAPI="2"
@@ -96,7 +96,8 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Install failed"
+	# parallel make problem bug #372235
+	emake -j1 DESTDIR="${D}" install || die "Install failed"
 	dodoc AUTHORS README NEWS || die
 
 	if use nsplugin; then
