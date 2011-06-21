@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/raster3d/raster3d-3.0.2.ebuild,v 1.3 2011/06/21 09:49:40 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/raster3d/raster3d-3.0.2.ebuild,v 1.4 2011/06/21 15:57:37 jlec Exp $
 
 EAPI=4
 
@@ -20,6 +20,8 @@ KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
 IUSE="gd tiff"
 
 RDEPEND="
+	virtual/fortran
+
 	tiff? ( media-libs/tiff )
 	gd? ( media-libs/gd[jpeg,png] )"
 DEPEND="${RDEPEND}"
