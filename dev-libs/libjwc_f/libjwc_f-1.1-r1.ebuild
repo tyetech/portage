@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libjwc_f/Attic/libjwc_f-1.1-r1.ebuild,v 1.7 2011/01/23 12:59:35 tomka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libjwc_f/Attic/libjwc_f-1.1-r1.ebuild,v 1.8 2011/06/21 10:04:07 jlec Exp $
 
 EAPI="2"
 
-inherit autotools eutils
+inherit autotools eutils fortran-2
 
 PATCH="612"
 
