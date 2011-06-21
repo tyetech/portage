@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/gts/Attic/gts-20081607.ebuild,v 1.4 2011/06/21 08:25:15 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/gts/Attic/gts-20081607.ebuild,v 1.5 2011/06/21 15:18:09 jlec Exp $
 
 EAPI="1"
 
@@ -16,6 +16,8 @@ KEYWORDS="~amd64 ~ppc ~x86"
 IUSE="doc"
 
 RDEPEND="
+	virtual/fortran
+
 	dev-libs/glib:2
 	sys-apps/gawk
 	media-libs/netpbm"
