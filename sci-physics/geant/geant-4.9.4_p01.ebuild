@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/geant/Attic/geant-4.9.4_p01.ebuild,v 1.3 2011/06/07 16:05:29 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/geant/Attic/geant-4.9.4_p01.ebuild,v 1.4 2011/06/21 09:54:14 jlec Exp $
 
 EAPI=3
 
-inherit cmake-utils versionator eutils
+inherit cmake-utils fortran-2 versionator eutils fortran-2
 
 PV1=$(get_version_component_range 1 ${PV})
 PV2=$(get_version_component_range 2 ${PV})
