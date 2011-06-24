@@ -1,13 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libpciaccess/libpciaccess-0.12.1.ebuild,v 1.9 2011/03/05 17:56:29 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/libpciaccess/libpciaccess-0.12.1.ebuild,v 1.10 2011/06/24 13:17:08 darkside Exp $
 
 EAPI=3
 
 inherit xorg-2
 
 DESCRIPTION="Library providing generic access to the PCI bus and devices"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x64-freebsd ~x86-freebsd ~amd64-linux ~x86-linux ~sparc-solaris ~x64-solaris ~x86-solaris"
 IUSE="minimal zlib"
 
 DEPEND="zlib? ( sys-libs/zlib )"
