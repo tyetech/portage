@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/pykde4/Attic/pykde4-4.6.3-r1.ebuild,v 1.4 2011/06/24 21:01:56 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/pykde4/Attic/pykde4-4.6.3-r1.ebuild,v 1.5 2011/06/25 05:31:26 mr_bones_ Exp $
 
 EAPI=3
 
@@ -33,7 +33,7 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
-PATCHES=( "${FILESDIR}/${PN}-4.6.3-pyqt475.patch" 
+PATCHES=( "${FILESDIR}/${PN}-4.6.3-pyqt475.patch"
 	"${FILESDIR}/${P}-python-3.2.patch" )
 
 pkg_setup() {
