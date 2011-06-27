@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/git/git-9999.ebuild,v 1.22 2011/06/27 19:56:45 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/git/Attic/git-1.7.6.ebuild,v 1.1 2011/06/27 19:56:45 robbat2 Exp $
 
 EAPI=3
 
