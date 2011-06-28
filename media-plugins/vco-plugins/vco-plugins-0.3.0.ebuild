@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vco-plugins/vco-plugins-0.3.0.ebuild,v 1.7 2011/06/27 23:47:30 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/vco-plugins/vco-plugins-0.3.0.ebuild,v 1.8 2011/06/28 00:01:31 radhermit Exp $
 
 EAPI=4
 
@@ -17,7 +17,7 @@ KEYWORDS="x86 amd64 ~ppc"
 IUSE=""
 
 DEPEND="media-libs/ladspa-sdk"
-RDEPEND=""
+RDEPEND="${DEPEND}"
 
 S=${WORKDIR}/${MY_P}
 
