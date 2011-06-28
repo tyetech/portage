@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-xemacs/cvs-repo/gentoo-x86/app-xemacs/speedbar/speedbar-1.29.ebuild,v 1.3 2011/06/25 18:54:55 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-xemacs/cvs-repo/gentoo-x86/app-xemacs/speedbar/speedbar-1.29.ebuild,v 1.4 2011/06/28 21:43:13 ranger Exp $
 
 SLOT="0"
 IUSE=""
@@ -11,6 +11,6 @@ RDEPEND="app-xemacs/xemacs-base
 app-xemacs/edebug
 app-xemacs/cedet-common
 "
-KEYWORDS="alpha ~amd64 ~ppc ~ppc64 sparc x86"
+KEYWORDS="alpha ~amd64 ppc ~ppc64 sparc x86"
 
 inherit xemacs-packages
