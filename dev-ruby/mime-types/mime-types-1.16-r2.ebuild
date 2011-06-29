@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mime-types/mime-types-1.16-r2.ebuild,v 1.8 2011/01/07 11:08:27 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mime-types/mime-types-1.16-r2.ebuild,v 1.9 2011/06/29 19:45:15 grobian Exp $
 
 EAPI=2
 
@@ -17,7 +17,7 @@ HOMEPAGE="http://rubyforge.org/projects/mime-types"
 
 LICENSE="Ruby Artistic GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-macos"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-macos ~x86-solaris"
 IUSE=""
 
 ruby_add_bdepend "doc? ( dev-ruby/hoe )
