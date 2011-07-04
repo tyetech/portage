@@ -1,9 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/portpeek/Attic/portpeek-2.0.8.ebuild,v 1.2 2011/07/04 20:44:10 mpagano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-portage/cvs-repo/gentoo-x86/app-portage/portpeek/Attic/portpeek-1.9.71.ebuild,v 1.1 2011/07/04 20:44:10 mpagano Exp $
 
 EAPI="2"
-PYTHON_DEPEND="3"
+PYTHON_DEPEND="2"
 
 inherit eutils python
 
@@ -17,15 +17,16 @@ KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 DEPEND=""
-RDEPEND=">=app-portage/gentoolkit-0.3.0_rc10-r1
-	>=sys-apps/portage-2.2_rc81"
+RDEPEND=">=app-portage/gentoolkit-0.3.0.4
+	>=sys-apps/portage-2.1.10.3
+	|| ( dev-lang/python:2.6 dev-lang/python:2.7 )"
 
 pkg_setup() {
-	python_set_active_version 3
+	python_set_active_version 2
 }
 
 src_prepare() {
-	python_convert_shebangs 3 portpeek
+	python_convert_shebangs 2 portpeek
 }
 
 src_install() {
