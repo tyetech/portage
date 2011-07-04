@@ -1,17 +1,17 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/mono/Attic/mono-2.8.2-r1.ebuild,v 1.5 2011/03/05 16:35:18 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/mono/Attic/mono-2.10.2-r1.ebuild,v 1.1 2011/07/04 11:27:20 pacho Exp $
 
 EAPI="2"
 
 inherit linux-info mono eutils flag-o-matic multilib go-mono pax-utils
 
 DESCRIPTION="Mono runtime and class libraries, a C# compiler/interpreter"
-HOMEPAGE="http://www.go-mono.com"
+HOMEPAGE="http://www.mono-project.com/Main_Page"
 
 LICENSE="MIT LGPL-2.1 GPL-2 BSD-4 NPL-1.1 Ms-PL GPL-2-with-linking-exception IDPL"
 SLOT="0"
-KEYWORDS="amd64 ~ppc x86"
+KEYWORDS="~amd64 ~ppc ~x86"
 
 IUSE="hardened minimal xen"
 
@@ -31,13 +31,6 @@ DEPEND="${COMMONDEPEND}
 MAKEOPTS="${MAKEOPTS} -j1"
 
 RESTRICT="test"
-
-PATCHES=(
-	"${WORKDIR}/${PN}-2.8-libdir.patch"
-	"${FILESDIR}/${PN}-2.2-ppc-threading.patch"
-	"${FILESDIR}/${PN}-2.2-uselibdir.patch"
-	"${FILESDIR}/${PN}-2.8.1-radegast-crash.patch"
-)
 
 pkg_setup() {
 	if use kernel_linux
@@ -59,13 +52,10 @@ pkg_setup() {
 			ewarn "See http://bugs.gentoo.org/261869 for more info."
 		fi
 	fi
+	PATCHES=( "${FILESDIR}/${PN}-2.10.2-threads-access.patch" )
 }
 
 src_prepare() {
-	sed -e "s:@MONOLIBDIR@:$(get_libdir):" \
-		< "${FILESDIR}"/${PN}-2.8-libdir.patch \
-		> "${WORKDIR}"/${PN}-2.8-libdir.patch ||
-		die "Sedding patch file failed"
 	go-mono_src_prepare
 
 	# we need to sed in the paxctl -mr in the runtime/mono-wrapper.in so it don't
@@ -92,7 +82,11 @@ src_configure() {
 	#
 	# --with-profile4 needs to be always enabled since it's used by default
 	# and, otherwise, problems like bug #340641 appear.
+	#
+	# sgen fails on ppc, bug #359515
 
+	local myconf=""
+	use ppc && myconf="${myconf} --with-sgen=no"
 	go-mono_src_configure \
 		--enable-static \
 		--disable-quiet-build \
@@ -102,7 +96,8 @@ src_configure() {
 		--without-ikvm-native \
 		--with-jit \
 		--disable-dtrace \
-		--with-profile4
+		--with-profile4 \
+		${myconf}
 }
 
 src_test() {
@@ -120,23 +115,11 @@ src_test() {
 src_install() {
 	go-mono_src_install
 
-	#Bug 255610
-	sed -i -e "s:mono/2.0/mod.exe:mono/1.0/mod.exe:" \
-		"${D}"/usr/bin/mod || die "Failed to fix mod."
-
-	find "${D}"/usr/ -name '*nunit-docs*' -exec rm -rf '{}' '+' || die "Removing nunit .docs failed"
-
-	# Remove Jay to avoid colliding with dev-util/jay, the internal
-	# version is only used to build mcs.
-	rm -r "${D}"/usr/share/jay "${D}"/usr/bin/jay "${D}"/usr/share/man/man1/jay.1*
-
 	# Remove files not respecting LDFLAGS and that we are not supposed to provide, see Fedora
 	# mono.spec and http://www.mail-archive.com/mono-devel-list@lists.ximian.com/msg24870.html
 	# for reference.
-	rm -f "${D}"/usr/$(get_libdir)/mono/4.0/mscorlib.dll.so
-	rm -f "${D}"/usr/$(get_libdir)/mono/4.0/dmcs.exe.so
 	rm -f "${D}"/usr/$(get_libdir)/mono/2.0/mscorlib.dll.so
-	rm -f "${D}"/usr/$(get_libdir)/mono/2.0/gmcs.exe.so
+	rm -f "${D}"/usr/$(get_libdir)/mono/2.0/mcs.exe.so
 }
 
 #THINK!!!! Before touching postrm and postinst
