@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/oregano/oregano-0.69.1-r1.ebuild,v 1.4 2011/05/06 11:23:23 tomka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/oregano/oregano-0.69.1-r1.ebuild,v 1.5 2011/07/05 10:38:17 tomjbe Exp $
 
 EAPI="4"
 
@@ -36,6 +36,8 @@ src_prepare() {
 }
 
 src_compile() {
+	# bug 369875
+	strip-unsupported-flags
 	# see bug 363833
 	append-cflags -fno-omit-frame-pointer
 	escons --cache-disable PREFIX=/usr
