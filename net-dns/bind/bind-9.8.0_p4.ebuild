@@ -1,22 +1,24 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.7.3-r1.ebuild,v 1.2 2011/02/27 22:27:48 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind/Attic/bind-9.8.0_p4.ebuild,v 1.1 2011/07/05 17:00:12 idl0r Exp $
 
 EAPI="3"
 
-inherit eutils autotools toolchain-funcs flag-o-matic
+inherit eutils autotools toolchain-funcs flag-o-matic multilib
 
 MY_PV="${PV/_p/-P}"
+MY_PV="${MY_PV/_rc/rc}"
 MY_P="${PN}-${MY_PV}"
 
 SDB_LDAP_VER="1.1.0-fc14"
 
+# bind-9.8.0-P1-geoip-1.3.patch
 GEOIP_PV=1.3
 #GEOIP_PV_AGAINST="${MY_PV}"
-GEOIP_PV_AGAINST="9.7.2-P2"
-GEOIP_P="bind-geoip-${GEOIP_PV}"
-GEOIP_PATCH_A="${GEOIP_P}-${GEOIP_PV_AGAINST}.patch"
-GEOIP_DOC_A="${GEOIP_P}-readme.txt"
+GEOIP_PV_AGAINST="9.8.0-P1"
+GEOIP_P="bind-${GEOIP_PV_AGAINST}-geoip-${GEOIP_PV}"
+GEOIP_PATCH_A="${GEOIP_P}.patch"
+GEOIP_DOC_A="bind-geoip-1.3-readme.txt"
 GEOIP_SRC_URI_BASE="http://bind-geoip.googlecode.com/"
 
 DESCRIPTION="BIND - Berkeley Internet Name Domain - Name Server"
@@ -103,10 +105,7 @@ src_prepare() {
 
 	if use geoip; then
 		cp "${DISTDIR}"/${GEOIP_PATCH_A} "${S}" || die
-		sed -i -e 's/RELEASETYPE=-P/RELEASETYPE=/' \
-			-e 's/-RELEASEVER=2/-RELEASEVER=/' \
-			-e 's/+RELEASEVER=2-geoip-1.3/+RELEASEVER=-geoip-1.3/' \
-			${GEOIP_PATCH_A} || die
+		sed -i -e 's:RELEASEVER=1:RELEASEVER=4:' ${GEOIP_PATCH_A} || die
 		epatch ${GEOIP_PATCH_A}
 	fi
 
@@ -213,7 +212,7 @@ src_install() {
 		tar xf "${DISTDIR}"/dyndns-samples.tbz2 || die
 	fi
 
-	use geoip && dodoc "${DISTDIR}"/${GEOIP_P}-readme.txt
+	use geoip && dodoc "${DISTDIR}"/${GEOIP_DOC_A}
 
 	insinto /etc/bind
 	newins "${FILESDIR}"/named.conf-r5 named.conf || die
@@ -226,8 +225,14 @@ src_install() {
 	newins "${FILESDIR}"/127.zone-r1 127.zone || die
 	newins "${FILESDIR}"/localhost.zone-r3 localhost.zone || die
 
-	newinitd "${FILESDIR}"/named.init-r10 named || die
+	newinitd "${FILESDIR}"/named.init-r11 named || die
 	newconfd "${FILESDIR}"/named.confd-r6 named || die
+
+	if use ssl && [ -e /usr/lib/engines/libgost.so ]; then
+		sed -i -e 's/^OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-0}$/OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-1}/' "${D}/etc/init.d/named" || die
+	else
+		sed -i -e 's/^OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-1}$/OPENSSL_LIBGOST=${OPENSSL_LIBGOST:-0}/' "${D}/etc/init.d/named" || die
+	fi
 
 	newenvd "${FILESDIR}"/10bind.env 10bind || die
 
@@ -334,6 +339,15 @@ pkg_config() {
 	mkdir -m 0755 -p ${CHROOT}/{dev,etc,var/{run,log}}
 	mkdir -m 0750 -p ${CHROOT}/etc/bind
 	mkdir -m 0770 -p ${CHROOT}/var/{bind,{run,log}/named}
+	# As of bind 9.8.0
+	if has_version net-dns/bind[ssl] -a -e /usr/lib/engines/libgost.so; then
+		if [ "$(get_libdir)" = "lib64" ]; then
+			mkdir -m 0755 -p ${CHROOT}/usr/lib64/engines
+			ln -s lib64 ${CHROOT}/usr/lib
+		else
+			mkdir -m 0755 -p ${CHROOT}/usr/lib/engines
+		fi
+	fi
 	chown root:named ${CHROOT} ${CHROOT}/var/{bind,{run,log}/named} ${CHROOT}/etc/bind
 
 	mknod ${CHROOT}/dev/null c 1 3
