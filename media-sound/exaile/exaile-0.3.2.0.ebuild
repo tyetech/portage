@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/exaile/exaile-0.3.2.0.ebuild,v 1.6 2011/01/14 21:26:28 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/exaile/exaile-0.3.2.0.ebuild,v 1.7 2011/07/07 15:31:31 ssuominen Exp $
 
-EAPI=2
+EAPI=3
 
 PYTHON_DEPEND="2:2.6"
 PYTHON_USE_WITH="sqlite"
