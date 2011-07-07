@@ -1,12 +1,14 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/megamgr/Attic/megamgr-5.20.ebuild,v 1.2 2008/07/11 09:10:04 wschlich Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/megamgr/megamgr-5.20-r2.ebuild,v 1.1 2011/07/07 17:14:45 idl0r Exp $
+
+EAPI="3"
 
 inherit multilib
 
 DESCRIPTION="LSI Logic MegaRAID Text User Interface management tool"
 HOMEPAGE="http://www.lsi.com"
-SRC_URI="http://www.lsi.com/files/support/rsa/utilities/megamgr/ut_linux_${PN##mega}_${PV}.zip"
+SRC_URI="http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/ut_linux_${PN##mega}_${PV}.zip"
 
 LICENSE="LSI"
 SLOT="0"
@@ -17,19 +19,19 @@ IUSE=""
 
 DEPEND="app-arch/unzip"
 
-RESTRICT="strip mirror test"
+RESTRICT="mirror"
 
 S="${WORKDIR}"
+
+QA_PRESTRIPPED="/opt/bin/megamgr"
 
 pkg_setup() {
 	use amd64 && { has_multilib_profile || die "needs multilib profile on amd64"; }
 }
 
-src_compile() {
-	echo "Nothing to compile."
-}
-
 src_install() {
 	newdoc ut_linux_${PN##mega}_${PV}.txt ${PN}-release-${PV}.txt
-	dosbin "${FILESDIR}"/megamgr megamgr.bin
+
+	exeinto /opt/bin
+	newexe megamgr.bin megamgr || die
 }
