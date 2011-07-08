@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wpa_supplicant/Attic/wpa_supplicant-0.7.3-r4.ebuild,v 1.1 2011/07/07 07:54:54 gurligebis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/wpa_supplicant/wpa_supplicant-0.7.3-r5.ebuild,v 1.1 2011/07/08 07:06:21 gurligebis Exp $
 
 EAPI="2"
 
