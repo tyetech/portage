@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/python-wifi/python-wifi-0.5.0-r1.ebuild,v 1.5 2011/04/29 19:11:31 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/python-wifi/python-wifi-0.5.0-r1.ebuild,v 1.6 2011/07/09 05:00:48 mattst88 Exp $
 
 EAPI="3"
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://pypi.python.org/pypi/python-wifi https://developer.berlios.de/p
 SRC_URI="mirror://berlios/${PN/-}/${P}.tar.bz2"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc64 ~sparc ~x86"
 LICENSE="LGPL-2.1 examples? ( GPL-2 )"
 IUSE="examples"
 
