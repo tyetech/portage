@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/blohg/Attic/blohg-0.6.ebuild,v 1.1 2011/07/10 05:31:21 rafaelmartins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/blohg/Attic/blohg-0.6.1.ebuild,v 1.1 2011/07/10 18:48:49 rafaelmartins Exp $
 
 EAPI="3"
 
