@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-process/cvs-repo/gentoo-x86/sys-process/cronie/Attic/cronie-1.4.6.ebuild,v 1.2 2011/07/10 19:41:09 polynomial-c Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-process/cvs-repo/gentoo-x86/sys-process/cronie/Attic/cronie-1.4.6.ebuild,v 1.3 2011/07/10 19:53:23 polynomial-c Exp $
 
 EAPI="3"
 
@@ -20,7 +20,7 @@ RDEPEND="${DEPEND}"
 #cronie supports /etc/crontab
 CRON_SYSTEM_CRONTAB="yes"
 
-pkg_Setup() {
+pkg_setup() {
 	enewgroup crontab
 }
 
