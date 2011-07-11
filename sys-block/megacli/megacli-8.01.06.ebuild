@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/megacli/Attic/megacli-8.01.06.ebuild,v 1.1 2011/07/11 18:42:13 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/megacli/Attic/megacli-8.01.06.ebuild,v 1.2 2011/07/11 21:32:22 mr_bones_ Exp $
 
 EAPI="3"
 
