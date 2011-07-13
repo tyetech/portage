@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/newick-utils/newick-utils-1.5.0.ebuild,v 1.1 2011/04/02 18:34:50 weaver Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/newick-utils/newick-utils-1.5.0.ebuild,v 1.2 2011/07/13 14:45:45 xarthisius Exp $
 
 EAPI="2"
 
@@ -14,7 +14,7 @@ IUSE=""
 KEYWORDS="~amd64 ~x86"
 
 DEPEND=""
-RDEPEND=""
+RDEPEND="!dev-games/libnw"
 
 src_install() {
 	einstall || die
