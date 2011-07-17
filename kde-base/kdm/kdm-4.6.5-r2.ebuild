@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdm/Attic/kdm-4.6.5-r1.ebuild,v 1.1 2011/07/12 20:49:17 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kdm/Attic/kdm-4.6.5-r2.ebuild,v 1.1 2011/07/17 11:23:51 dilfridge Exp $
 
 EAPI=4
 
@@ -78,7 +78,7 @@ src_install() {
 	# - TerminateServer=true to workaround X server regen bug, bug 278473
 	# - DataDir set to /var/lib/kdm
 	# - FaceDir set to /var/lib/kdm/faces
-	sed -e "s|^.*SessionsDirs=.*$|#&\nSessionsDirs=${EPREFIX}/usr/share/apps/kdm/sessions|" \
+	sed -e "s|^.*SessionsDirs=.*$|#&\nSessionsDirs=${EPREFIX}/usr/share/apps/kdm/sessions,${EPREFIX}/usr/share/xsessions|" \
 		-e "/#ServerTimeout=/s/^.*$/ServerTimeout=30/" \
 		-e "/#TerminateServer=/s/^.*$/TerminateServer=true/" \
 		-e "s|^.*DataDir=.*$|#&\nDataDir=${EPREFIX}${KDM_HOME}|" \
