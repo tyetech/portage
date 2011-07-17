@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/virtualbox-guest-additions/Attic/virtualbox-guest-additions-4.0.8.ebuild,v 1.2 2011/07/08 10:56:36 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/virtualbox-guest-additions/Attic/virtualbox-guest-additions-4.0.12.ebuild,v 1.1 2011/07/17 21:10:03 polynomial-c Exp $
 
 EAPI=2
 
