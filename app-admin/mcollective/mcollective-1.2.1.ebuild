@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/mcollective/Attic/mcollective-1.2.0.ebuild,v 1.1 2011/05/26 22:53:12 ramereth Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/mcollective/mcollective-1.2.1.ebuild,v 1.1 2011/07/18 08:07:40 ramereth Exp $
 
 EAPI="4"
 
