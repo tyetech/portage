@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gtk-gnutella/Attic/gtk-gnutella-0.97.ebuild,v 1.2 2011/07/18 10:27:35 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/gtk-gnutella/Attic/gtk-gnutella-0.97.ebuild,v 1.3 2011/07/18 10:41:11 graaff Exp $
 
 EAPI="2"
 
@@ -16,7 +16,7 @@ SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd"
 
-RDEPEND=">=dev-libs/libxml2-2.6.0
+RDEPEND="
 	gtk? ( >=x11-libs/gtk+-2.2.1:2 )
 	dbus? ( >=sys-apps/dbus-0.35.2 )
 	ssl? ( >=net-libs/gnutls-1.0.16 )
