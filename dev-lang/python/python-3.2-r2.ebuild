@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/python/Attic/python-3.1.4-r1.ebuild,v 1.1 2011/07/23 00:53:21 neurogeek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/python/Attic/python-3.2-r2.ebuild,v 1.1 2011/07/24 15:06:30 neurogeek Exp $
 
 EAPI="3"
 WANT_AUTOMAKE="none"
@@ -8,10 +8,11 @@ WANT_AUTOMAKE="none"
 inherit autotools eutils flag-o-matic multilib python toolchain-funcs
 
 if [[ "${PV}" == *_pre* ]]; then
-	inherit mercurial
+	inherit subversion
 
-	EHG_REPO_URI="http://hg.python.org/cpython"
-	EHG_REVISION=""
+	ESVN_PROJECT="python"
+	ESVN_REPO_URI="http://svn.python.org/projects/python/branches/release32-maint"
+	ESVN_REVISION=""
 else
 	MY_PV="${PV%_p*}"
 	MY_P="Python-${MY_PV}"
@@ -29,13 +30,12 @@ else
 fi
 
 LICENSE="PSF-2.2"
-SLOT="3.1"
+SLOT="3.2"
 PYTHON_ABI="${SLOT}"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
 IUSE="build doc elibc_uclibc examples gdbm ipv6 +ncurses +readline sqlite +ssl +threads tk +wide-unicode wininst +xml"
 
 RDEPEND=">=app-admin/eselect-python-20091230
-		app-arch/bzip2
 		>=sys-libs/zlib-1.1.3
 		virtual/libffi
 		virtual/libintl
@@ -45,7 +45,7 @@ RDEPEND=">=app-admin/eselect-python-20091230
 				>=sys-libs/ncurses-5.2
 				readline? ( >=sys-libs/readline-4.1 )
 			)
-			sqlite? ( >=dev-db/sqlite-3.3.3:3 )
+			sqlite? ( >=dev-db/sqlite-3.3.8:3[extensions] )
 			ssl? ( dev-libs/openssl )
 			tk? (
 				>=dev-lang/tk-8.0
@@ -53,8 +53,10 @@ RDEPEND=">=app-admin/eselect-python-20091230
 			)
 			xml? ( >=dev-libs/expat-2 )
 		)"
-DEPEND="${RDEPEND}
+DEPEND=">=sys-devel/autoconf-2.65
+		${RDEPEND}
 		$([[ "${PV}" == *_pre* ]] && echo "=${CATEGORY}/${PN}-${PV%%.*}*")
+		$([[ "${PV}" != *_pre* ]] && echo "app-arch/xz-utils")
 		dev-util/pkgconfig
 		$([[ "${PV}" =~ ^[[:digit:]]+\.[[:digit:]]+_pre ]] && echo "doc? ( dev-python/sphinx )")
 		!sys-devel/gcc[libffi]"
@@ -76,17 +78,7 @@ src_prepare() {
 	rm -fr Modules/_ctypes/libffi*
 	rm -fr Modules/zlib
 
-	if [[ "${PV}" =~ ^[[:digit:]]+\.[[:digit:]]+_pre ]]; then
-		if [[ "$(hg branch)" != "default" ]]; then
-			die "Invalid EHG_REVISION"
-		fi
-	fi
-
 	if [[ "${PV}" =~ ^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+_pre ]]; then
-		if [[ "$(hg branch)" != "${SLOT}" ]]; then
-			die "Invalid EHG_REVISION"
-		fi
-
 		if grep -Eq '#define PY_RELEASE_LEVEL[[:space:]]+PY_RELEASE_LEVEL_FINAL' Include/patchlevel.h; then
 			# Update micro version, release level and version string.
 			local micro_version="${PV%_pre*}"
@@ -114,14 +106,34 @@ src_prepare() {
 
 	EPATCH_EXCLUDE="${excluded_patches}" EPATCH_SUFFIX="patch" epatch "${patchset_dir}"
 
+	#Linux-3 compat. Bug #374579 (upstream issue12571)
+	cp -r "${S}/Lib/plat-linux2" "${S}/Lib/plat-linux3" || die "copy plat-linux failed"
+
 	sed -i -e "s:@@GENTOO_LIBDIR@@:$(get_libdir):g" \
 		Lib/distutils/command/install.py \
 		Lib/distutils/sysconfig.py \
 		Lib/site.py \
+		Lib/sysconfig.py \
+		Lib/test/test_site.py \
 		Makefile.pre.in \
 		Modules/Setup.dist \
 		Modules/getpath.c \
 		setup.py || die "sed failed to replace @@GENTOO_LIBDIR@@"
+
+	if ! use wininst; then
+		# Remove Microsoft Windows executables.
+		rm Lib/distutils/command/wininst-*.exe
+	fi
+
+	# Support versions of Autoconf other than 2.65.
+	sed -e "/version_required(2\.65)/d" -i configure.in || die "sed failed"
+
+	# Disable ABI flags.
+	sed -e "s/ABIFLAGS=\"\${ABIFLAGS}.*\"/:/" -i configure.in || die "sed failed"
+
+	if [[ "${PV}" == *_pre* ]]; then
+		sed -e "s/\(-DSVNVERSION=\).*\( -o\)/\1\\\\\"${ESVN_REVISION}\\\\\"\2/" -i Makefile.pre.in || die "sed failed"
+	fi
 
 	eautoreconf
 }
@@ -183,8 +195,8 @@ src_configure() {
 	# Export CXX so it ends up in /usr/lib/python3.X/config/Makefile.
 	tc-export CXX
 
-	# Set LDFLAGS so we link modules with -lpython3.1 correctly.
-	# Needed on FreeBSD unless Python 3.1 is already installed.
+	# Set LDFLAGS so we link modules with -lpython3.2 correctly.
+	# Needed on FreeBSD unless Python 3.2 is already installed.
 	# Please query BSD team before removing this!
 	append-ldflags "-L."
 
@@ -204,11 +216,13 @@ src_configure() {
 		--with-computed-gotos \
 		--with-dbmliborder="${dbmliborder}" \
 		--with-libc="" \
+		--enable-loadable-sqlite-extensions \
+		--with-system-expat \
 		--with-system-ffi
 }
 
 src_compile() {
-	emake EPYTHON="python${PV%%.*}" || die "emake failed"
+	emake EPYTHON="python${PV%%.*}" CPPFLAGS="" CFLAGS="" LDFLAGS="" || die "emake failed"
 }
 
 src_test() {
@@ -218,32 +232,27 @@ src_test() {
 		return
 	fi
 
-	if ! use threads; then
-		ewarn "Disabling tests due to USE=\"-threads\""
-		return
-	fi
-
 	# Byte compiling should be enabled here.
 	# Otherwise test_import fails.
 	python_enable_pyc
 
 	# Skip failing tests.
-	local skipped_tests="distutils"
+	local skip_tests="distutils gdb"
 
-	for test in ${skipped_tests}; do
+	for test in ${skip_tests}; do
 		mv "${S}/Lib/test/test_${test}.py" "${T}"
 	done
 
 	# Rerun failed tests in verbose mode (regrtest -w).
-	emake test EXTRATESTOPTS="-w" < /dev/tty
+	emake test EXTRATESTOPTS="-w" CPPFLAGS="" CFLAGS="" LDFLAGS="" < /dev/tty
 	local result="$?"
 
-	for test in ${skipped_tests}; do
+	for test in ${skip_tests}; do
 		mv "${T}/test_${test}.py" "${S}/Lib/test/test_${test}.py"
 	done
 
 	elog "The following tests have been skipped:"
-	for test in ${skipped_tests}; do
+	for test in ${skip_tests}; do
 		elog "test_${test}.py"
 	done
 
@@ -262,13 +271,12 @@ src_install() {
 	emake DESTDIR="${D}" altinstall || die "emake altinstall failed"
 	python_clean_installation_image -q
 
-	mv "${ED}usr/bin/python${SLOT}-config" "${ED}usr/bin/python-config-${SLOT}"
+	sed \
+		-e "s/\(CONFIGURE_LDFLAGS=\).*/\1/" \
+		-e "s/\(PY_LDFLAGS=\).*/\1/" \
+		-i "${ED}$(python_get_libdir)/config-${SLOT}/Makefile" || die "sed failed"
 
-	# Fix collisions between different slots of Python.
-	mv "${ED}usr/bin/2to3" "${ED}usr/bin/2to3-${SLOT}"
-	mv "${ED}usr/bin/pydoc3" "${ED}usr/bin/pydoc${SLOT}"
-	mv "${ED}usr/bin/idle3" "${ED}usr/bin/idle${SLOT}"
-	rm -f "${ED}usr/bin/smtpd.py"
+	mv "${ED}usr/bin/python${SLOT}-config" "${ED}usr/bin/python-config-${SLOT}"
 
 	if use build; then
 		rm -fr "${ED}usr/bin/idle${SLOT}" "${ED}$(python_get_libdir)/"{idlelib,sqlite3,test,tkinter}
@@ -279,7 +287,6 @@ src_install() {
 	fi
 
 	use threads || rm -fr "${ED}$(python_get_libdir)/multiprocessing"
-	use wininst || rm -f "${ED}$(python_get_libdir)/distutils/command/"wininst-*.exe
 
 	dodoc Misc/{ACKS,HISTORY,NEWS} || die "dodoc failed"
 
@@ -291,14 +298,15 @@ src_install() {
 	newconfd "${FILESDIR}/pydoc.conf" pydoc-${SLOT} || die "newconfd failed"
 	newinitd "${FILESDIR}/pydoc.init" pydoc-${SLOT} || die "newinitd failed"
 
-	#Linux-3 compat. Bug #374579 (upstream issue12571)
-	cp -r "${ED}$(python_get_libdir)/plat-linux2" \
+	if [ -d "${ED}$(python_get_libdir)/plat-linux2" ];then
+		cp -r "${ED}$(python_get_libdir)/plat-linux2" \
 			"${ED}$(python_get_libdir)/plat-linux3" || die "copy plat-linux failed"
+	else
+		cp -r "${ED}$(python_get_libdir)/plat-linux3" \
+			"${ED}$(python_get_libdir)/plat-linux2" || die "copy plat-linux failed"
+	fi
 
-	sed \
-		-e "s:@PYDOC_PORT_VARIABLE@:PYDOC${SLOT/./_}_PORT:" \
-		-e "s:@PYDOC@:pydoc${SLOT}:" \
-		-i "${ED}etc/conf.d/pydoc-${SLOT}" "${ED}etc/init.d/pydoc-${SLOT}" || die "sed failed"
+	sed -e "s:@PYDOC@:pydoc${SLOT}:" -i "${ED}etc/init.d/pydoc-${SLOT}" || die "sed failed"
 }
 
 pkg_preinst() {
@@ -327,8 +335,7 @@ pkg_postinst() {
 		ewarn "\e[1;31m************************************************************************\e[0m"
 		ewarn
 		ewarn "You have just upgraded from an older version of Python."
-		ewarn "You should switch active version of Python ${PV%%.*} and run"
-		ewarn "'python-updater \${options}' to rebuild Python modules."
+		ewarn "You should run 'python-updater \${options}' to rebuild Python modules."
 		ewarn
 		ewarn "\e[1;31m************************************************************************\e[0m"
 		ewarn
@@ -338,13 +345,6 @@ pkg_postinst() {
 			echo -ne "\a"
 			sleep 1
 		done
-	fi
-
-	if [[ "${PV}" != *_pre* ]]; then
-		elog
-		elog "If you want to help in testing of recent changes in Python, then you can use"
-		elog "snapshots of Python from python overlay."
-		elog
 	fi
 }
 
