@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/oauth2/Attic/oauth2-0.4.1.ebuild,v 1.1 2011/07/19 07:25:57 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/oauth2/Attic/oauth2-0.4.1.ebuild,v 1.2 2011/07/24 20:09:44 tomka Exp $
 
 EAPI="2"
 
@@ -19,7 +19,7 @@ HOMEPAGE="http://github.com/intridea/oauth2"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 ruby_add_rdepend ">=dev-ruby/faraday-0.6.1 >=dev-ruby/multi_json-0.0.5"
