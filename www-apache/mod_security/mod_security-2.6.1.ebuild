@@ -1,25 +1,27 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_security/Attic/mod_security-2.6.0.ebuild,v 1.1 2011/05/19 20:24:42 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_security/Attic/mod_security-2.6.1.ebuild,v 1.1 2011/07/25 10:34:57 flameeyes Exp $
 
 EAPI=4
 
 inherit apache-module autotools
 
-MY_P=modsecurity-apache_${PV/_rc/-rc}
+MY_PN=modsecurity-apache
+MY_PV=${PV/_rc/-rc}
+MY_P=${MY_PN}_${MY_PV}
 
 DESCRIPTION="Web application firewall and Intrusion Detection System for Apache."
 HOMEPAGE="http://www.modsecurity.org/"
-SRC_URI="http://www.modsecurity.org/download/${MY_P}.tar.gz"
+SRC_URI="mirror://sourceforge/project/mod-security/${MY_PN}/${MY_PV}/${MY_P}.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="geoip curl"
+IUSE="geoip curl lua"
 
 DEPEND=">=dev-libs/libxml2-2.7.8
 	dev-libs/libpcre
-	>=dev-lang/lua-5.1
+	lua? ( >=dev-lang/lua-5.1 )
 	curl? ( >=net-misc/curl-7.15.1 )
 	www-servers/apache[apache2_modules_unique_id]"
 RDEPEND="${DEPEND}
@@ -47,6 +49,7 @@ src_configure() {
 		--enable-shared --disable-static \
 		--with-apxs="${APXS}" \
 		$(use_enable curl mlogc) \
+		$(use_with lua) \
 		|| die "econf failed"
 }
 
