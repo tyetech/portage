@@ -1,9 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/libvirt/Attic/libvirt-0.9.3-r1.ebuild,v 1.2 2011/07/25 11:38:08 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/libvirt/Attic/libvirt-0.9.3-r1.ebuild,v 1.3 2011/07/25 11:52:47 flameeyes Exp $
 
-BACKPORTS=1
-#AUTOTOOLIZE=yes
+BACKPORTS=2
+AUTOTOOLIZE=yes
 
 EAPI="3"
 
