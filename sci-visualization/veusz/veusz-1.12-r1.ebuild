@@ -1,11 +1,11 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/veusz/Attic/veusz-1.10.ebuild,v 1.1 2010/12/15 15:18:50 grozin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/veusz/Attic/veusz-1.12-r1.ebuild,v 1.1 2011/07/26 09:52:41 grozin Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* *-jython"
 
 inherit distutils eutils fdo-mime
 
@@ -43,6 +43,11 @@ src_install() {
 	domenu "${FILESDIR}"/veusz.desktop || die "domenu failed"
 	insinto /usr/share/mime/packages
 	doins "${FILESDIR}"/veusz.xml || die "doins failed"
+	# symlinking the license, bug #341653
+	symlink_license() {
+		dosym "${ROOT}"/usr/portage/licenses/GPL-2 "$(python_get_sitedir)/${PN}"/COPYING
+	}
+	python_execute_function -q symlink_license
 }
 
 pkg_postinst() {
