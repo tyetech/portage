@@ -1,6 +1,8 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/gwiz/gwiz-0.8.ebuild,v 1.9 2005/09/11 05:23:27 agriffis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-rpg/cvs-repo/gentoo-x86/games-rpg/gwiz/gwiz-0.8.ebuild,v 1.10 2011/07/27 17:56:13 pacho Exp $
+
+inherit eutils
 
 DESCRIPTION="clone of old-school Wizardry(tm) games by SirTech"
 HOMEPAGE="http://icculus.org/gwiz/"
@@ -22,5 +24,7 @@ src_compile() {
 
 src_install() {
 	einstall || die
+	doicon pixmaps/gwiz_icon.xpm
+	make_desktop_entry gwiz Gwiz gwiz_icon.xpm
 	dodoc AUTHORS ChangeLog README doc/HOWTO-PLAY
 }
