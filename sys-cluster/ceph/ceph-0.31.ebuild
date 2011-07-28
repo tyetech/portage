@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/ceph/Attic/ceph-0.30.ebuild,v 1.1 2011/06/28 21:19:30 alexxy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/ceph/Attic/ceph-0.31.ebuild,v 1.1 2011/07/28 21:27:33 alexxy Exp $
 
 EAPI="3"
 
