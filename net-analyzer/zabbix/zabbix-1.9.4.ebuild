@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-1.9.3.ebuild,v 1.3 2011/07/08 10:20:59 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-1.9.4.ebuild,v 1.1 2011/07/28 20:31:22 patrick Exp $
 
 EAPI="2"
 
