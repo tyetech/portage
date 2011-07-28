@@ -1,8 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/drupal/Attic/drupal-7.0.ebuild,v 1.1 2011/01/06 00:45:51 alexxy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/drupal/Attic/drupal-7.7.ebuild,v 1.1 2011/07/28 08:51:23 pva Exp $
 
-inherit webapp eutils depend.php
+EAPI=4
+
+inherit webapp depend.php
 
 MY_PV=${PV:0:3}.0
 
@@ -12,26 +14,18 @@ SRC_URI="http://drupal.org/files/projects/${P/_/-}.tar.gz"
 
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~ppc ~x86"
-IUSE=""
+IUSE="+mysql postgres sqlite"
 
 need_httpd_cgi
 need_php_httpd
 
-S="${WORKDIR}/${P/_/-}"
+RDEPEND="dev-lang/php[pdo,postgres?,sqlite?,xml]
+	mysql? ( || ( dev-lang/php[mysql] dev-lang/php[mysqli] ) )
+	|| ( dev-lang/php[gd] dev-lang/php[gd-external] )"
 
-pkg_setup() {
-	webapp_pkg_setup
-	has_php
-	if [[ ${PHP_VERSION} == "4" ]] ; then
-		local flags="expat"
-	else
-		local flags="xml"
-	fi
-	if ! PHPCHECKNODIE="yes" require_php_with_use ${flags} \
-		|| ! PHPCHECKNODIE="yes" require_php_with_any_use gd gd-external ; then
-			die "Re-install ${PHP_PKG} with ${flags} and either gd or gd-external"
-	fi
-}
+REQUIRED_USE="|| ( mysql postgres sqlite )"
+
+S="${WORKDIR}/${P/_/-}"
 
 src_install() {
 	webapp_src_preinst
