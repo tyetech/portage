@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.4.2.3.ebuild,v 1.8 2011/07/28 14:04:41 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.4.2.3.ebuild,v 1.9 2011/07/28 14:22:21 scarabeus Exp $
 
 EAPI=3
 
@@ -516,7 +516,8 @@ src_configure() {
 }
 
 src_compile() {
-	emake || die
+	# this is not a proper make script and the jobs are passed during configure
+	make || die
 }
 
 src_install() {
