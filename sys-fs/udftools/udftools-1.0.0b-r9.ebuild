@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/udftools/udftools-1.0.0b-r9.ebuild,v 1.4 2010/09/01 14:00:31 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/udftools/udftools-1.0.0b-r9.ebuild,v 1.5 2011/07/29 08:36:42 zmedico Exp $
 
 inherit eutils
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/linux-udf/${MY_P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc sparc x86"
+KEYWORDS="amd64 ~ppc sparc x86 ~x86-linux"
 IUSE=""
 
 S=${WORKDIR}/${MY_P}
