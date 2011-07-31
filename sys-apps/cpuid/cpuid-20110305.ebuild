@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/cpuid/Attic/cpuid-20110305.ebuild,v 1.2 2011/07/23 15:28:56 tomka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/cpuid/Attic/cpuid-20110305.ebuild,v 1.3 2011/07/31 16:12:40 mattst88 Exp $
 
 EAPI="4"
 
@@ -18,6 +18,7 @@ IUSE=""
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-Makefile.patch
+	epatch "${FILESDIR}"/${P}-fPIC.patch #376245
 }
 
 src_compile() {
