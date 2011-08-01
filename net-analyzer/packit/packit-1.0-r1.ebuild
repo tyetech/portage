@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/packit/Attic/packit-1.0-r1.ebuild,v 1.4 2010/09/15 02:01:55 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/packit/Attic/packit-1.0-r1.ebuild,v 1.5 2011/08/01 20:12:52 jer Exp $
 
 inherit eutils
 
@@ -15,6 +15,7 @@ IUSE=""
 
 DEPEND=">=net-libs/libnet-1.1.2
 	net-libs/libpcap"
+RDEPEND="${DEPEND}"
 
 src_unpack(){
 	unpack ${A}
