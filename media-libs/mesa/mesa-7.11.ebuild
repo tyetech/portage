@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/Attic/mesa-7.11_rc4.ebuild,v 1.3 2011/07/31 16:09:15 mattst88 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/mesa/mesa-7.11.ebuild,v 1.1 2011/08/01 22:35:44 chithanh Exp $
 
 EAPI=3
 
@@ -44,7 +44,7 @@ for card in ${VIDEO_CARDS}; do
 done
 
 IUSE="${IUSE_VIDEO_CARDS}
-	bindist +classic debug +egl +gallium gles +llvm motif +nptl openvg pic selinux shared-dricore +shared-glapi kernel_FreeBSD"
+	bindist +classic debug +egl +gallium gbm gles +llvm motif +nptl openvg pic selinux shared-dricore +shared-glapi kernel_FreeBSD"
 
 LIBDRM_DEPSTRING=">=x11-libs/libdrm-2.4.24"
 # not a runtime dependency of this package, but dependency of packages which
@@ -62,6 +62,7 @@ RDEPEND="${EXTERNAL_DEPEND}
 	gallium? ( app-admin/eselect-mesa )
 	app-admin/eselect-opengl
 	dev-libs/expat
+	gbm? ( sys-fs/udev )
 	x11-libs/libICE
 	>=x11-libs/libX11-1.3.99.901
 	x11-libs/libXdamage
@@ -191,7 +192,7 @@ src_configure() {
 	if use egl; then
 		use shared-glapi || die "egl needs shared-glapi. Please either enable shared-glapi or disable the egl use flag ."
 		myconf+="
-			--with-egl-platforms=x11,drm
+			--with-egl-platforms=x11$(use gbm && echo ",drm")
 			$(use_enable gallium gallium-egl)
 		"
 	fi
@@ -227,6 +228,7 @@ src_configure() {
 		--without-demos \
 		--enable-xcb \
 		$(use_enable debug) \
+		$(use_enable gbm) \
 		$(use_enable motif glw) \
 		$(use_enable motif) \
 		$(use_enable nptl glx-tls) \
