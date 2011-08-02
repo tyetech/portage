@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/courier/Attic/courier-0.64.1.ebuild,v 1.11 2011/04/16 11:14:40 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/courier/courier-0.66.3.ebuild,v 1.1 2011/08/02 18:44:26 hanno Exp $
 
-inherit eutils flag-o-matic
+inherit eutils flag-o-matic multilib
 
 DESCRIPTION="An MTA designed specifically for maildirs"
 SRC_URI="mirror://sourceforge/courier/${P}.tar.bz2"
@@ -10,13 +10,14 @@ HOMEPAGE="http://www.courier-mta.org/"
 SLOT="0"
 LICENSE="GPL-2"
 # not in keywords due to missing dependencies: ~arm ~s390 ~ppc64
-KEYWORDS="~alpha ~amd64 hppa ~ia64 ppc ~sparc x86"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86"
 IUSE="postgres ldap mysql pam nls ipv6 spell fax crypt norewrite \
-	fam web webmail"
+	fam web webmail gnutls"
 
 DEPEND="
 	>=net-libs/courier-authlib-0.61.0
-	>=dev-libs/openssl-0.9.6
+	!gnutls? ( >=dev-libs/openssl-0.9.6 )
+	gnutls? ( net-libs/gnutls )
 	>=sys-libs/gdbm-1.8.0
 	dev-libs/libpcre
 	app-misc/mime-types
@@ -76,6 +77,7 @@ src_compile() {
 		$(use_with spell ispell) \
 		$(use_with ldap ldapaliasd) \
 		$(use_enable ldap maildroldap) \
+		$(use_with gnutls) \
 		--enable-mimetypes=/etc/mime.types \
 		--prefix=/usr \
 		--disable-root-check \
@@ -126,20 +128,26 @@ src_install() {
 
 	# Get rid of files we dont want
 	if ! use webmail ; then
-		cd "${D}"
-		cat "${FILESDIR}/webmail_files" | xargs rm -rf
+		rm -rf "${D}/usr/$(get_libdir)/courier/courier/webmail" \
+			"${D}/usr/$(get_libdir)/courier/courier/sqwebmaild" \
+			"${D}/usr/share/courier/sqwebmail/" \
+			"${D}/usr/sbin/webmaild" \
+			"${D}/usr/sbin/webgpg" \
+			"${D}/etc/courier/webmail.authpam" \
+			"${D}/var/lib/courier/webmail-logincache" \
+			"${D}"/etc/courier/sqwebmaild*
 	fi
 
 	if ! use web ; then
-		cd "${D}"
-		cat "${FILESDIR}/webadmin_files" | xargs rm -rf
+		rm -rf "${D}/usr/share/courier/courierwebadmin/" \
+			"${D}/etc/courier/webadmin"
 	fi
 
 	for dir2keep in $(cd "${D}" && find ./var/lib/courier -type d) ; do
 		keepdir "$dir2keep" || die "failed running keepdir: $dir2keep"
 	done
 
-	newinitd "${FILESDIR}/courier-init-r2" "courier"
+	newinitd "${FILESDIR}/courier-init-r3" "courier"
 	use fam || sed -i -e's|^.*use famd$||g' "${D}/etc/init.d/courier"
 
 	cd "${D}/etc/courier"
@@ -177,7 +185,6 @@ src_install() {
 
 	# Fix for a sandbox violation on subsequential merges
 	# - ticho@gentoo.org, 2005-07-10
-	rm "${D}"/usr/sbin/{pop3d,imapd}{,-ssl}
 	dosym /usr/share/courier/pop3d /usr/sbin/courier-pop3d
 	dosym /usr/share/courier/pop3d-ssl /usr/sbin/courier-pop3d-ssl
 	dosym /usr/share/courier/imapd /usr/sbin/courier-imapd
@@ -188,7 +195,7 @@ src_install() {
 	use nls && cp unicode/README README.unicode
 	dodoc AUTHORS BENCHMARKS COPYING* ChangeLog* INSTALL NEWS README* TODO courier/doc/*.txt
 	dodoc tcpd/README.couriertls
-	mv "${D}/usr/share/courier/htmldoc" "${D}/usr/share/doc/${P}/html"
+	mv "${D}/usr/share/courier/htmldoc" "${D}/usr/share/doc/${PF}/html"
 
 	if use webmail ; then
 		insinto /usr/$(get_libdir)/courier/courier
