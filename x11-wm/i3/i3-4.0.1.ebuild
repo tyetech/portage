@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/i3/Attic/i3-4.0.ebuild,v 1.2 2011/08/01 16:27:46 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/i3/Attic/i3-4.0.1.ebuild,v 1.1 2011/08/02 04:55:28 xarthisius Exp $
 
 EAPI=4
 
