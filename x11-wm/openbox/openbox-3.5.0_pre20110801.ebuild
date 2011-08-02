@@ -1,18 +1,18 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/openbox-9999.ebuild,v 1.10 2011/08/02 11:03:07 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/openbox/Attic/openbox-3.5.0_pre20110801.ebuild,v 1.1 2011/08/02 11:03:07 hwoarang Exp $
 
 EAPI="2"
 WANT_AUTOMAKE="1.9"
-inherit multilib autotools eutils git
+inherit multilib autotools eutils
 
 DESCRIPTION="A standards compliant, fast, light-weight, extensible window manager"
 HOMEPAGE="http://openbox.org/"
-EGIT_REPO_URI="git://git.openbox.org/dana/openbox"
+SRC_URI="http://dev.gentoo.org/~hwoarang/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="3"
-KEYWORDS=""
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="debug imlib nls session startup-notification static-libs"
 
 RDEPEND="dev-libs/glib:2
