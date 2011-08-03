@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/httping/Attic/httping-1.5.1-r1.ebuild,v 1.1 2011/08/03 11:27:32 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/httping/httping-1.5.2.ebuild,v 1.1 2011/08/03 22:31:59 pva Exp $
 
 EAPI="4"
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit flag-o-matic toolchain-funcs
 
 MY_P="${P/_beta1/beta}"
 
@@ -22,10 +22,6 @@ RDEPEND=">=sys-libs/ncurses-5
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}"/${MY_P}
-
-src_prepare() {
-	epatch ${FILESDIR}/${P}-bind.patch
-}
 
 src_compile() {
 	emake \
