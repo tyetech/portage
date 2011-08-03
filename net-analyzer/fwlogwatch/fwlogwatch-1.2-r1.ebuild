@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/fwlogwatch/fwlogwatch-1.2-r1.ebuild,v 1.1 2011/08/01 02:31:27 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/fwlogwatch/fwlogwatch-1.2-r1.ebuild,v 1.2 2011/08/03 14:32:31 jer Exp $
 
 EAPI="4"
 
@@ -36,7 +36,6 @@ src_install() {
 	doins contrib/fwlogsummary.cgi
 	doins contrib/fwlogsummary_small.cgi
 	doins contrib/fwlogwatch.php
-	doins contrib
 
 	insinto /etc
 	doins fwlogwatch.config
