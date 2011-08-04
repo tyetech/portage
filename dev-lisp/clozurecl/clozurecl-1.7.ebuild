@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/clozurecl/Attic/clozurecl-1.5.ebuild,v 1.2 2010/12/17 20:18:11 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lisp/cvs-repo/gentoo-x86/dev-lisp/clozurecl/clozurecl-1.7.ebuild,v 1.1 2011/08/04 09:35:20 grozin Exp $
 
 EAPI=3
 inherit eutils
@@ -23,14 +23,12 @@ IUSE="doc"
 
 DEPEND="!dev-lisp/openmcl"
 
-S="${WORKDIR}"/${MY_PN}
+S="${WORKDIR}"/${MY_P}
 
 ENVD="${T}"/50ccl
 
 src_prepare() {
 	find "${S}" -type d -name .svn -exec rm -rf {} ';' &>/dev/null
-	find "${S}" -type f -name .cvsignore -delete &>/dev/null
-	epatch "${FILESDIR}"/fix_user-homedir-pathname.patch
 }
 
 src_configure() {
