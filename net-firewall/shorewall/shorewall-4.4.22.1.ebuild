@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/shorewall/Attic/shorewall-4.4.20.3.ebuild,v 1.1 2011/06/19 14:52:57 constanze Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-firewall/cvs-repo/gentoo-x86/net-firewall/shorewall/Attic/shorewall-4.4.22.1.ebuild,v 1.1 2011/08/06 15:46:03 constanze Exp $
 
 EAPI="4"
 
@@ -48,6 +48,7 @@ src_install() {
 		cd "${WORKDIR}/${MY_P_DOCS}"
 		dohtml -r *
 	fi
+	dodir /var/lock/subsys
 }
 
 pkg_postinst() {
