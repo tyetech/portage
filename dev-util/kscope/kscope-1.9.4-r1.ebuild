@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kscope/kscope-1.9.4-r1.ebuild,v 1.1 2011/08/07 18:13:06 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/kscope/kscope-1.9.4-r1.ebuild,v 1.2 2011/08/07 18:36:32 dilfridge Exp $
 
 EAPI=4
 
@@ -34,5 +34,5 @@ src_prepare() {
 	# fix build failure with parallel make
 	echo "CONFIG += ordered" >> kscope.pro
 
-	epatch "${FILESDIR}/${P}-actions.patch"
+	epatch "${FILESDIR}/${P}"-{actions,underlinking}.patch
 }
