@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fvwm/Attic/fvwm-2.5.30.ebuild,v 1.2 2010/05/14 22:59:01 darkside Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/fvwm/fvwm-2.6.2.ebuild,v 1.1 2011/08/08 15:43:03 darkside Exp $
 
 EAPI=2
 
@@ -12,7 +12,7 @@ SRC_URI="ftp://ftp.fvwm.org/pub/fvwm/version-2/${P}.tar.bz2"
 
 LICENSE="GPL-2 FVWM"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="bidi debug doc gtk2-perl netpbm nls perl png readline rplay stroke svg tk truetype vanilla xinerama lock"
 
 COMMON_DEPEND="
