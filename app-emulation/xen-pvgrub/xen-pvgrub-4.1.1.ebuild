@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen-pvgrub/Attic/xen-pvgrub-4.1.0.ebuild,v 1.3 2011/08/09 17:35:54 alexxy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/xen-pvgrub/Attic/xen-pvgrub-4.1.1.ebuild,v 1.1 2011/08/09 17:35:54 alexxy Exp $
 
 EAPI="2"
 
