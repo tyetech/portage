@@ -1,8 +1,9 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/soundconverter/soundconverter-1.5.4.ebuild,v 1.1 2011/01/27 22:16:55 hanno Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/soundconverter/soundconverter-1.5.4.ebuild,v 1.2 2011/08/14 16:59:58 leio Exp $
 
 PYTHON_DEPEND="2"
+GCONF_DEBUG="no"
 
 inherit gnome2 python
 
