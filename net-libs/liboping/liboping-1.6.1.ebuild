@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/liboping/Attic/liboping-1.5.1-r1.ebuild,v 1.1 2011/01/07 22:36:52 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/liboping/liboping-1.6.1.ebuild,v 1.1 2011/08/19 22:45:02 dilfridge Exp $
 
 EAPI=3
 
