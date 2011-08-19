@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios/nagios-3.3.1.ebuild,v 1.3 2011/08/18 15:51:03 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios/nagios-3.3.1.ebuild,v 1.4 2011/08/19 16:22:58 tomka Exp $
 
 inherit multilib
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://www.nagios.org"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ppc ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~hppa ppc ppc64 ~sparc x86"
 IUSE=""
 
 RDEPEND="~net-analyzer/nagios-core-${PV}
