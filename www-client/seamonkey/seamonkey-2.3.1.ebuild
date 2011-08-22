@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.3.ebuild,v 1.3 2011/08/16 04:50:01 polynomial-c Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/seamonkey/Attic/seamonkey-2.3.1.ebuild,v 1.1 2011/08/22 07:19:41 polynomial-c Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
@@ -8,7 +8,7 @@ WANT_AUTOCONF="2.1"
 inherit flag-o-matic toolchain-funcs eutils mozconfig-3 makeedit multilib fdo-mime autotools mozextension python
 
 PATCH="${PN}-2.3-patches-01"
-EMVER="1.2.1"
+EMVER="1.3"
 
 LANGS="be ca cs de en en-GB en-US es-AR es-ES fi fr gl hu it ja lt nb-NO nl pl pt-PT ru sk sv-SE tr zh-CN"
 NOSHORTLANGS="en-GB en-US es-AR"
@@ -172,7 +172,6 @@ src_prepare() {
 	if use crypt ; then
 		mv "${WORKDIR}"/enigmail "${S}"/mailnews/extensions/enigmail
 		cd "${S}"/mailnews/extensions/enigmail || die
-		epatch "${FILESDIR}"/enigmail/enigmail-1.2.1-seamonkey-2.3-versionfix.patch
 		./makemake -r 2&>/dev/null
 		sed -e 's:@srcdir@:${S}/mailnews/extensions/enigmail:' \
 			-i Makefile.in || die
