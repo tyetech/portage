@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.5.0.ebuild,v 1.1 2011/08/17 20:28:56 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.5.0-r1.ebuild,v 1.1 2011/08/25 01:02:49 tgurr Exp $
 
 #
 # See http://git.overlays.gentoo.org/gitweb/?p=dev/dilfridge.git;a=blob;f=net-print/cups/notes.txt;hb=HEAD
@@ -141,6 +141,8 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.4.4-nostrip.patch"
 	epatch "${FILESDIR}/${PN}-1.4.4-php-destdir.patch"
 	epatch "${FILESDIR}/${PN}-1.4.4-perl-includes.patch"
+	# security fixes
+	epatch "${FILESDIR}/${PN}-1.4.8-CVE-2011-2896.patch"
 
 	AT_M4DIR=config-scripts eaclocal
 	eautoconf

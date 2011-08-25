@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.4.6-r21.ebuild,v 1.2 2011/06/06 21:54:07 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/cups/Attic/cups-1.4.8-r21.ebuild,v 1.1 2011/08/25 01:02:49 tgurr Exp $
 
 EAPI=3
 
@@ -139,8 +139,8 @@ src_prepare() {
 	epatch "${FILESDIR}/${PN}-1.4.4-perl-includes.patch"
 	epatch "${FILESDIR}/${PN}-1.4.6-force-gnutls.patch"
 	epatch "${FILESDIR}/${PN}-1.4.6-serialize-gnutls.patch"
-	# interface hangs using some browsers, bug #325871
-	epatch "${FILESDIR}/${PN}-1.4.6-web-hang.patch"
+	# security fixes
+	epatch "${FILESDIR}/${PN}-1.4.8-CVE-2011-2896.patch"
 
 	AT_M4DIR=config-scripts eaclocal
 	eautoconf
