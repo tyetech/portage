@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libzpaq/Attic/libzpaq-2.02a.ebuild,v 1.1 2011/01/06 16:41:08 mgorny Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/libzpaq/Attic/libzpaq-2.02a-r1.ebuild,v 1.1 2011/08/25 10:24:36 mgorny Exp $
 
 EAPI=3
 
@@ -14,7 +14,7 @@ SRC_URI="http://mattmahoney.net/dc/${MY_P}.zip"
 LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="static-libs"
 
 DEPEND="app-arch/unzip"
 RDEPEND="!=app-arch/zpaq-2.04"
@@ -25,4 +25,12 @@ src_prepare() {
 	EPATCH_OPTS+=-p1 epatch "${FILESDIR}"/0001-Add-autotools-files.patch
 	autotools-utils_src_prepare
 	eautoreconf
+}
+
+src_configure() {
+	local myeconfargs=(
+		--with-library-version=0:0:0
+	)
+
+	autotools-utils_src_configure
 }
