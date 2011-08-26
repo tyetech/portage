@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/poink/poink-2.03.ebuild,v 1.8 2009/09/23 18:23:09 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/poink/poink-2.03.ebuild,v 1.9 2011/08/26 20:21:52 flameeyes Exp $
 
 inherit eutils toolchain-funcs
 
@@ -19,7 +19,7 @@ src_unpack() {
 }
 
 src_compile() {
-	emake CFLAGS="${CFLAGS}" CC="$(tc-getCC)" || die
+	emake CFLAGS="${CFLAGS} ${LDFLAGS}" CC="$(tc-getCC)" || die
 }
 
 src_install() {
