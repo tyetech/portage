@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmapsi/Attic/nmapsi-0.2_beta3.ebuild,v 1.1 2010/10/08 08:04:16 wired Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nmapsi/Attic/nmapsi-0.2.1.ebuild,v 1.1 2011/08/28 11:31:11 scarabeus Exp $
 
-EAPI=2
-inherit cmake-utils eutils
+EAPI=4
+inherit base cmake-utils
 
 MY_P=${PN}4-${PV/_/-}
 
@@ -23,9 +23,8 @@ RDEPEND="${DEPEND}
 
 S=${WORKDIR}/${MY_P}
 
-DOCS="AUTHORS NEWS README TODO Translation"
+DOCS=( AUTHORS NEWS README TODO Translation )
 
-src_install() {
-	cmake-utils_src_install
-	fperms 755 /usr/bin/nmapsi4{,-logr}
-}
+PATCHES=(
+	"${FILESDIR}/0.2.1-install-binaries.patch"
+)
