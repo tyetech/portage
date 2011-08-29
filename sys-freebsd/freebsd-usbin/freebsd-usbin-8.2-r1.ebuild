@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-freebsd/cvs-repo/gentoo-x86/sys-freebsd/freebsd-usbin/Attic/freebsd-usbin-8.2.ebuild,v 1.1 2011/07/06 06:09:51 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-freebsd/cvs-repo/gentoo-x86/sys-freebsd/freebsd-usbin/freebsd-usbin-8.2-r1.ebuild,v 1.1 2011/08/29 12:04:41 naota Exp $
 
 EAPI=2
 
