@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cfengine/Attic/cfengine-3.1.4.ebuild,v 1.6 2011/08/30 17:11:03 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cfengine/Attic/cfengine-3.2.0.ebuild,v 1.1 2011/08/30 17:11:03 idl0r Exp $
 
 EAPI="3"
 
@@ -15,16 +15,13 @@ SRC_URI="http://cfengine.com/source_code/download?file=${MY_P}.tar.gz -> ${MY_P}
 
 LICENSE="GPL-3"
 SLOT="3"
-KEYWORDS="amd64 arm ~ppc ~s390 sparc x86"
+KEYWORDS="~amd64 ~arm ~ppc ~s390 ~sparc ~x86"
 
 # libvirt disabled for now because it blocks stabilization etc.
-IUSE="examples gd graphviz html ldap mysql postgres qdbm selinux tests tokyocabinet vim-syntax"
+IUSE="examples html mysql postgres qdbm selinux tests tokyocabinet vim-syntax"
 
 # libvirt? ( app-emulation/libvirt )
 DEPEND=">=sys-libs/db-4
-	gd? ( media-libs/gd )
-	graphviz? ( media-gfx/graphviz )
-	ldap? ( net-nds/openldap )
 	mysql? ( virtual/mysql )
 	postgres? ( dev-db/postgresql-base )
 	selinux? ( sys-libs/libselinux )
@@ -41,13 +38,14 @@ S="${WORKDIR}/${MY_P}"
 src_configure() {
 	local myconf
 
-	if use mysql || use postgres ; then
-		myconf="--with-sql"
-	else
-		myconf="--without-sql"
-	fi
+#	if use mysql || use postgres ; then
+#		myconf="--with-sql"
+#	else
+#		myconf="--without-sql"
+#	fi
 
 	# BDB by default, prefer tokyocabinet above qdbm...
+	# sqlite3 has been added but stated as experimental/broken...
 	if ! use qdbm && ! use tokyocabinet; then
 		myconf="${myconf} --with-berkeleydb=/usr"
 	elif use qdbm && use tokyocabinet; then
@@ -66,26 +64,15 @@ src_configure() {
 		--with-workdir=/var/cfengine \
 		--with-pcre \
 		${myconf} \
-		$(use_with gd) \
-		$(use_with graphviz) \
-		$(use_with ldap) \
+		$(use_with postgres postgresql) \
+		$(use_with mysql) \
 		$(use_enable selinux)
 
 	# Fix Makefile to skip inputs, see below "examples"
-	sed -i -e 's/\(SUBDIRS.*\) inputs/\1/' Makefile || die
+	#sed -i -e 's/\(SUBDIRS.*\) inputs/\1/' Makefile || die
 
 	# We install documentation through portage
 	sed -i -e 's/\(install-data-am.*\) install-docDATA/\1/' Makefile || die
-
-	if use tests; then
-		# Fix Makefiles to install tests in correct directory
-		for i in file_masters file_operands units ; do
-			sed -i -e "s/\(docdir.*\) =.*/\1 = \/usr\/share\/doc\/${PF}\/tests\/${i}/" \
-				tests/${i}/Makefile || die
-		done
-	else
-		sed -i -e 's/\(SUBDIRS =\).*/\1/' tests/Makefile || die
-	fi
 }
 
 src_install() {
@@ -94,11 +81,10 @@ src_install() {
 	newinitd "${FILESDIR}"/cf-execd.rc6 cf-execd || die
 
 	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README TODO INSTALL
+	dodoc AUTHORS ChangeLog README INSTALL
 
-	if use examples; then
-		docinto examples
-		dodoc inputs/*.cf || die
+	if ! use examples; then
+		rm -rf "${D}"/usr/share/doc/${PF}/example*
 	fi
 
 	# Create cfengine working directory
