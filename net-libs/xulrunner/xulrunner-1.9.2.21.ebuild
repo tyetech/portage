@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.2.18.ebuild,v 1.3 2011/08/23 19:26:43 polynomial-c Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/xulrunner/Attic/xulrunner-1.9.2.21.ebuild,v 1.1 2011/08/31 09:35:18 polynomial-c Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
