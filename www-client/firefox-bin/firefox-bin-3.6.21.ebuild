@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/firefox-bin/Attic/firefox-bin-3.6.18.ebuild,v 1.2 2011/08/31 20:03:14 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/firefox-bin/Attic/firefox-bin-3.6.21.ebuild,v 1.1 2011/08/31 20:03:14 nirbheek Exp $
 
 EAPI="2"
 
