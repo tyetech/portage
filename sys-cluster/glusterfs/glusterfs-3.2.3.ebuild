@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/glusterfs/Attic/glusterfs-3.2.1.ebuild,v 1.1 2011/07/04 16:52:23 ultrabug Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/glusterfs/Attic/glusterfs-3.2.3.ebuild,v 1.1 2011/08/31 15:16:39 alexxy Exp $
 
 EAPI=4
 
