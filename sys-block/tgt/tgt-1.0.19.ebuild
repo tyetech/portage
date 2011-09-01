@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/tgt/Attic/tgt-1.0.18.ebuild,v 1.1 2011/09/01 12:04:00 alexxy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/tgt/tgt-1.0.19.ebuild,v 1.1 2011/09/01 12:12:42 alexxy Exp $
 
 EAPI=4
 
