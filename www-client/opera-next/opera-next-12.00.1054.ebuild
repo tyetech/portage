@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera-next/Attic/opera-next-12.00.1020.ebuild,v 1.1 2011/07/14 10:46:20 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/opera-next/Attic/opera-next-12.00.1054.ebuild,v 1.1 2011/09/02 15:50:23 jer Exp $
 
 EAPI="4"
 
@@ -17,7 +17,7 @@ IUSE="elibc_FreeBSD gtk kde +gstreamer"
 O_V="$(get_version_component_range 1-2)" # Major version, i.e. 11.00
 O_B="$(get_version_component_range 3)"   # Build version, i.e. 1156
 
-O_D="stickybucket_${O_V}-${O_B}"
+O_D="twelvereturns_${O_V}-${O_B}"
 O_P="${PN}-${O_V}-${O_B}"
 O_U="http://snapshot.opera.com/unix/"
 
@@ -130,7 +130,7 @@ src_prepare() {
 
 	# Leave libopera*.so only if the user chooses
 	if ! use gtk; then
-		rm lib/${PN}/liboperagtk.so || die "rm liboperagtk.so failed"
+		rm lib/${PN}/liboperagtk2.so || die "rm liboperagtk.so failed"
 	fi
 	if ! use kde; then
 		rm lib/${PN}/liboperakde4.so || die "rm liboperakde4.so failed"
@@ -147,8 +147,14 @@ src_prepare() {
 		-e "s:@@{USUFFIX}::g" \
 		-e "s:opera:${PN}:g" \
 		share/man/man1/* \
-		share/applications/${PN}-browser.desktop \
+		share/applications/${PN}-*.desktop \
 		|| die "sed failed"
+
+	# Replace "Opera" with "Opera Next"
+	if [[ ${PN} = opera-next ]]; then
+		sed -i share/applications/${PN}-*.desktop \
+			-e "/^Name=Opera\|^ Next/s:Opera:& Next:" || die
+	fi
 
 	# Create /usr/bin/opera wrapper
 	echo '#!/bin/sh' > ${PN}
@@ -208,11 +214,6 @@ pkg_preinst() {
 }
 
 pkg_postinst() {
-	elog "To change the UI language, choose [Tools] -> [Preferences], open the"
-	elog "[General] tab, click on [Details...] then [Choose...] and point the"
-	elog "file chooser at /usr/share/${PN}/locale/, then enter the"
-	elog "directory for the language you want and [Open] the .lng file."
-
 	if use elibc_FreeBSD; then
 		elog
 		elog "To improve shared memory usage please set:"
