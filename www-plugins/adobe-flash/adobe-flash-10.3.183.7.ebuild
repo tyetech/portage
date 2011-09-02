@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-plugins/cvs-repo/gentoo-x86/www-plugins/adobe-flash/Attic/adobe-flash-10.3.183.5.ebuild,v 1.4 2011/08/12 11:13:32 tomka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-plugins/cvs-repo/gentoo-x86/www-plugins/adobe-flash/Attic/adobe-flash-10.3.183.7.ebuild,v 1.1 2011/09/02 15:11:07 scarabeus Exp $
 
 EAPI=4
 inherit nsplugins rpm multilib toolchain-funcs
