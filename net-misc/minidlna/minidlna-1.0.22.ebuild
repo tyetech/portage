@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/minidlna/Attic/minidlna-1.0.21.ebuild,v 1.3 2011/09/02 21:30:19 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/minidlna/Attic/minidlna-1.0.22.ebuild,v 1.1 2011/09/02 21:30:18 xmw Exp $
 
 EAPI=2
 
