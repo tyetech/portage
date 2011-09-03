@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.4.3.2.ebuild,v 1.6 2011/09/03 19:13:13 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.4.9999-r1.ebuild,v 1.1 2011/09/03 21:01:18 scarabeus Exp $
 
 EAPI=3
 
@@ -178,7 +178,7 @@ RDEPEND="${COMMON_DEPEND}
 "
 
 PDEPEND="
-	>=app-office/libreoffice-l10n-$(get_version_component_range 1-2)
+    >=app-office/libreoffice-l10n-$(get_version_component_range 1-2)
 "
 
 DEPEND="${COMMON_DEPEND}
