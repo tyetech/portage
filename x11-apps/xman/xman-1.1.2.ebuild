@@ -1,13 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xman/xman-1.1.2.ebuild,v 1.2 2011/08/30 07:56:43 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xman/xman-1.1.2.ebuild,v 1.3 2011/09/04 11:58:41 maekke Exp $
 
 EAPI=4
 inherit xorg-2
 
 DESCRIPTION="Manual page display program for the X Window System"
 
-KEYWORDS="amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
+KEYWORDS="amd64 ~arm ~hppa ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86"
 IUSE=""
 
 RDEPEND="x11-libs/libXaw
