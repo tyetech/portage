@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/tinynotify-send/Attic/tinynotify-send-1.0.0.ebuild,v 1.1 2011/08/29 22:23:48 mgorny Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/tinynotify-send/Attic/tinynotify-send-1.1.ebuild,v 1.1 2011/09/04 11:29:25 mgorny Exp $
 
 EAPI=4
 inherit autotools-utils
