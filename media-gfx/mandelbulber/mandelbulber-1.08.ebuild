@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/mandelbulber/Attic/mandelbulber-1.05.ebuild,v 1.1 2011/07/16 09:27:41 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/mandelbulber/Attic/mandelbulber-1.08.ebuild,v 1.1 2011/09/04 10:45:04 xarthisius Exp $
 
 EAPI=4
 
@@ -28,13 +28,11 @@ S=${WORKDIR}/${MY_P}
 
 src_prepare() {
 	# https://sourceforge.net/tracker/?func=detail&aid=3368617&group_id=303080&atid=1277701
-	# https://sourceforge.net/tracker/?func=detail&aid=3368618&group_id=303080&atid=1277701
-	epatch "${FILESDIR}"/${PN}-1.00-qa.patch \
-		"${FILESDIR}"/${P}-overflow.patch
+	epatch "${FILESDIR}"/${P}-qa.patch
 }
 
 src_compile() {
-	emake CXX="$(tc-getCXX)" -C makefiles all || die
+	emake CXX="$(tc-getCXX)" -C makefiles all
 }
 
 src_install() {
