@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/harfbuzz/harfbuzz-0.7.0_pre20110904.ebuild,v 1.2 2011/09/04 11:27:15 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/harfbuzz/harfbuzz-0.7.0_pre20110904.ebuild,v 1.3 2011/09/04 15:52:03 scarabeus Exp $
 
 EAPI=4
 
@@ -16,6 +16,7 @@ IUSE=""
 RDEPEND="
 	dev-libs/glib:2
 	dev-libs/icu
+	media-gfx/graphite2
 	media-libs/freetype:2
 	x11-libs/cairo
 "
