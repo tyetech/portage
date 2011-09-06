@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/dcraw/Attic/dcraw-8.98-r1.ebuild,v 1.8 2011/04/25 22:09:10 hanno Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/dcraw/dcraw-9.10.ebuild,v 1.1 2011/09/06 19:34:32 pva Exp $
 
 EAPI="2"
 
@@ -9,16 +9,17 @@ inherit eutils toolchain-funcs
 DESCRIPTION="Converts the native (RAW) format of various digital cameras into netpbm portable pixmap (.ppm) image"
 HOMEPAGE="http://www.cybercom.net/~dcoffin/dcraw/"
 SRC_URI="http://www.cybercom.net/~dcoffin/dcraw/archive/${P}.tar.gz
-	mirror://gentoo/parse-1.69.tar.bz2
+	mirror://gentoo/parse-1.73.tar.bz2
 	gimp? ( mirror://gentoo/rawphoto-1.32.tar.bz2 )"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86"
-IUSE="nls gimp jpeg lcms"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~x86-solaris"
+IUSE="nls gimp jpeg jpeg2k lcms"
 
 COMMON_DEPEND="jpeg? ( virtual/jpeg )
-	lcms? ( media-libs/lcms )
+	lcms? ( =media-libs/lcms-1* )
+	jpeg2k? ( media-libs/jasper )
 	gimp? ( media-gfx/gimp )"
 DEPEND="${COMMON_DEPEND}
 	nls? ( sys-devel/gettext )
@@ -28,7 +29,7 @@ RDEPEND="${COMMON_DEPEND}
 
 S=${WORKDIR}/dcraw
 
-LANGS="ca cs de eo es fr hu it nl pl pt ru sv zh_CN zh_TW"
+LANGS="ca cs de da eo es fr hu it nl pl pt ru sv zh_CN zh_TW"
 
 for lng in ${LANGS}; do
 	IUSE+=" linguas_${lng}"
@@ -60,19 +61,11 @@ src_prepare() {
 src_compile() {
 	local ECFLAGS="-O2" # Without optimisation build fails
 	local ELIBS="-lm"
-	if use lcms; then
-		ELIBS="-llcms ${ELIBS}"
-	else
-		ECFLAGS+=" -DNO_LCMS=yes"
-	fi
-	if use jpeg; then
-		ELIBS="-ljpeg ${ELIBS}"
-	else
-		ECFLAGS+=" -DNO_JPEG=yes"
-	fi
-	if use nls; then
-		ECFLAGS+=" -DLOCALEDIR=\"/usr/share/locale/\""
-	fi
+
+	use lcms && ELIBS="-llcms ${ELIBS}" || ECFLAGS+=" -DNO_LCMS=yes"
+	use jpeg && ELIBS="-ljpeg ${ELIBS}" || ECFLAGS+=" -DNO_JPEG=yes"
+	use jpeg2k && ELIBS="-ljasper ${ELIBS}" || ECFLAGS+=" -DNO_JASPER=yes"
+	use nls && ECFLAGS+=" -DLOCALEDIR=\"/usr/share/locale/\""
 
 	run_build $(tc-getCC) ${ECFLAGS} ${CFLAGS} ${LDFLAGS} \
 				-o dcraw dcraw.c ${ELIBS}
