@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/shiboken/Attic/shiboken-1.0.0.ebuild,v 1.1 2011/03/20 19:58:45 chiiph Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/shiboken/Attic/shiboken-1.0.6.ebuild,v 1.1 2011/09/06 12:42:16 scarabeus Exp $
 
-EAPI="2"
+EAPI=3
 
 PYTHON_DEPEND="2:2.5"
 
-inherit cmake-utils python versionator
+inherit python versionator cmake-utils
 
 MY_PV=$(replace_version_separator '_' '~')
 MY_P=${PN}-${MY_PV}
@@ -18,15 +18,17 @@ SRC_URI="http://www.pyside.org/files/${MY_P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug"
+IUSE="debug test"
 
-DEPEND=">=dev-python/apiextractor-0.8.1
-	>=dev-python/generatorrunner-0.6.1
-	>=x11-libs/qt-core-4.5.0"
+DEPEND=">=dev-python/apiextractor-0.10.6
+	>=dev-python/generatorrunner-0.6.12
+	>=x11-libs/qt-core-4.7.0"
 RDEPEND="${DEPEND}
 	!dev-python/boostpythongenerator"
 
 PATCHES=( "${FILESDIR}/${P}-fix-pkgconfig.patch" )
+
+DOCS=( ChangeLog )
 
 S=${WORKDIR}/${MY_P}
 
@@ -34,7 +36,9 @@ pkg_setup() {
 	python_set_active_version 2
 }
 
-src_install() {
-	cmake-utils_src_install
-	dodoc ChangeLog || die "dodoc failed"
+src_configure() {
+	local mycmakeargs=(
+		$(cmake-utils_use_build test TESTS)
+	)
+	cmake-utils_src_configure
 }
