@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/parcellite/Attic/parcellite-1.0.2_rc2.ebuild,v 1.1 2011/04/09 07:40:29 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/parcellite/Attic/parcellite-1.0.2_rc4.ebuild,v 1.1 2011/09/06 08:14:31 hwoarang Exp $
 
-EAPI=2
+EAPI=4
 inherit fdo-mime autotools
 
 MY_PV="${PV/_/}"
@@ -34,11 +34,6 @@ src_configure() {
 	econf \
 		--disable-dependency-tracking \
 		$(use_enable nls)
-}
-
-src_install() {
-	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README TODO
 }
 
 pkg_postinst() {
