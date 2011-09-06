@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-mozc/Attic/ibus-mozc-1.1.626.102.ebuild,v 1.1 2011/03/28 16:25:37 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus-mozc/Attic/ibus-mozc-1.2.831.102.ebuild,v 1.1 2011/09/06 22:57:14 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -23,7 +23,11 @@ RDEPEND="dev-libs/glib:2
 	emacs? ( virtual/emacs )
 	ibus? ( >=app-i18n/ibus-1.2 )
 	scim? ( app-i18n/scim )
-	qt4? ( x11-libs/qt-gui:4 )"
+	qt4? (
+		x11-libs/qt-gui:4
+		app-i18n/zinnia
+	)"
+#	chewing? ( dev-libs/libchewing )
 DEPEND="${RDEPEND}
 	dev-util/gtest
 	dev-util/pkgconfig"
@@ -42,22 +46,30 @@ pkg_setup() {
 
 src_prepare() {
 	sed -i -e "s:/usr/lib/mozc:${EPREFIX}/usr/$(get_libdir)/mozc:" base/util.cc || die
-	epatch "${FILESDIR}/${PN}-0.11.365.102-gentoo.patch"
+	epatch "${FILESDIR}/${PN}-1.2.809.102-gentoo.patch"
 }
 
 src_configure() {
-	"$(PYTHON)" build_mozc.py gyp || die "gyp failed"
+	local myconf
+	#use chewing && myconf="${myconf} --chewing"
+	if ! use qt4 ; then
+		myconf="${myconf} --noqt"
+		export GYP_DEFINES="use_libzinnia=0"
+	fi
+	"$(PYTHON)" build_mozc.py gyp ${myconf} || die "gyp failed"
 }
 
 src_compile() {
 	tc-export CC CXX AR AS RANLIB LD
-	export QTDIR="${EPREFIX}/usr"
 
 	local mytarget="server/server.gyp:mozc_server"
 	use emacs && mytarget="${mytarget} unix/emacs/emacs.gyp:mozc_emacs_helper"
 	use ibus && mytarget="${mytarget} unix/ibus/ibus.gyp:ibus_mozc"
 	use scim && mytarget="${mytarget} unix/scim/scim.gyp:scim_mozc unix/scim/scim.gyp:scim_mozc_setup"
-	use qt4 && mytarget="${mytarget} gui/gui.gyp:mozc_tool"
+	if use qt4 ; then
+		export QTDIR="${EPREFIX}/usr"
+		mytarget="${mytarget} gui/gui.gyp:mozc_tool"
+	fi
 
 	"$(PYTHON)" build_mozc.py build_tools -c "${BUILDTYPE}" || die
 	"$(PYTHON)" build_mozc.py build -c "${BUILDTYPE}" ${mytarget} || die
