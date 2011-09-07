@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/freeipmi/Attic/freeipmi-1.0.6.ebuild,v 1.1 2011/09/03 02:06:29 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/freeipmi/Attic/freeipmi-1.0.6-r1.ebuild,v 1.1 2011/09/07 06:20:45 flameeyes Exp $
 
 EAPI=4
 
@@ -24,6 +24,7 @@ src_prepare() {
 	sed -i -e '/-module/d' "${S}"/libfreeipmi/src/Makefile.am || die
 
 	epatch "${FILESDIR}"/${PN}-1.0.5-strictaliasing.patch
+	epatch "${FILESDIR}"/${P}-bmc-watchdog-pidfile.patch
 
 	AT_M4DIR="config" eautoreconf
 }
@@ -67,7 +68,8 @@ src_install() {
 		/var/lib/freeipmi \
 		/var/log/{freeipmi,ipmiconsole}
 
-	newinitd "${FILESDIR}/ipmidetectd.initd" ipmidetectd
-	newinitd "${FILESDIR}/bmc-watchdog.initd" bmc-watchdog
-	newconfd "${FILESDIR}/bmc-watchdog.confd" bmc-watchdog
+	newinitd "${FILESDIR}"/ipmidetectd.initd.2 ipmidetectd
+
+	newinitd "${FILESDIR}"/bmc-watchdog.initd.2 bmc-watchdog
+	newconfd "${FILESDIR}"/bmc-watchdog.confd bmc-watchdog
 }
