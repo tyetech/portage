@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-plugins/cvs-repo/gentoo-x86/www-plugins/adobe-flash/Attic/adobe-flash-11.0.1.60_beta201107131-r1.ebuild,v 1.3 2011/08/11 14:40:29 lack Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-plugins/cvs-repo/gentoo-x86/www-plugins/adobe-flash/Attic/adobe-flash-11.0.1.129_rc201109061.ebuild,v 1.1 2011/09/08 07:45:36 scarabeus Exp $
 
 EAPI=4
 inherit nsplugins multilib toolchain-funcs versionator
@@ -9,10 +9,10 @@ inherit nsplugins multilib toolchain-funcs versionator
 # For proper date ordering in the ebuild we are using CCYYMMDD,  whereas Adobe
 # uses MMDDYY in their filename.  Plus we tack on the release number, too.
 EBUILD_DATE=$(get_version_component_range $(get_version_component_count))
-DATE_SUFFIX=${EBUILD_DATE: -5:4}${EBUILD_DATE:6:2}
+DATE_SUFFIX=${EBUILD_DATE: -5:4}${EBUILD_DATE:4:2}
 REL_SUFFIX=${EBUILD_DATE: -1}
-MY_64B_URI="http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_b${REL_SUFFIX}_install_lin_64_${DATE_SUFFIX}.tar.gz"
-MY_32B_URI="http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_b${REL_SUFFIX}_install_lin_32_${DATE_SUFFIX}.tar.gz"
+MY_64B_URI="http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_rc${REL_SUFFIX}_install_lin_64_${DATE_SUFFIX}.tar.gz"
+MY_32B_URI="http://download.macromedia.com/pub/labs/flashplatformruntimes/flashplayer11/flashplayer11_rc${REL_SUFFIX}_install_lin_32_${DATE_SUFFIX}.tar.gz"
 
 DESCRIPTION="Adobe Flash Player"
 SRC_URI="x86? ( ${MY_32B_URI} )
@@ -62,7 +62,7 @@ RDEPEND="x86? ( $NATIVE_DEPS )
 INSTALL_BASE="opt/Adobe/flash-player"
 
 # Ignore QA warnings in these closed-source binaries, since we can't fix them:
-QA_PREBUILT="opt/* usr/lib*/kde4/*"
+QA_PREBUILT="opt/*"
 
 pkg_setup() {
 	einfo "Date is $EBUILD_DATE suffix is $DATE_SUFFIX"
@@ -137,8 +137,10 @@ src_install() {
 
 		# The optional KDE4 KCM plugin
 		if use kde; then
-			exeinto /usr/$(get_libdir)/kde4/
+			exeinto /${BASE}/bin/
 			doexe usr/lib/kde4/kcm_adobe_flash_player.so
+			dosym /${BASE}/bin/kcm_adobe_flash_player.so \
+				/usr/$(get_libdir)/kde4/kcm_adobe_flash_player.so
 			insinto /usr/share/kde4/services
 			doins usr/share/kde4/services/kcm_adobe_flash_player.desktop
 		else
