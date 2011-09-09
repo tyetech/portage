@@ -1,25 +1,27 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-3.7.5.ebuild,v 1.8 2011/03/22 19:56:36 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/sqlite/Attic/sqlite-3.7.7.1-r1.ebuild,v 1.1 2011/09/09 18:15:04 scarabeus Exp $
 
-EAPI="3"
+EAPI=4
 
-inherit autotools eutils flag-o-matic multilib versionator
+inherit eutils flag-o-matic multilib versionator autotools
 
-MY_PV="$(printf "%u%02u%02u%02u" $(get_version_components))"
+SRC_PV="$(printf "%u%02u%02u%02u" $(get_version_components))"
+# DOC_PV="$(printf "%u%02u%02u00" $(get_version_components $(get_version_component_range 1-3)))"
+DOC_PV="${SRC_PV}"
 
 DESCRIPTION="A SQL Database Engine in a C Library"
 HOMEPAGE="http://sqlite.org/"
-SRC_URI="doc? ( http://sqlite.org/${PN}-doc-${MY_PV}.zip )
-	tcl? ( http://sqlite.org/${PN}-src-${MY_PV}.zip )
+SRC_URI="doc? ( http://sqlite.org/${PN}-doc-${DOC_PV}.zip )
+	tcl? ( http://sqlite.org/${PN}-src-${SRC_PV}.zip )
 	!tcl? (
-		test? ( http://sqlite.org/${PN}-src-${MY_PV}.zip )
-		!test? ( http://sqlite.org/${PN}-autoconf-${MY_PV}.tar.gz )
+		test? ( http://sqlite.org/${PN}-src-${SRC_PV}.zip )
+		!test? ( http://sqlite.org/${PN}-autoconf-${SRC_PV}.tar.gz )
 	)"
 
 LICENSE="as-is"
 SLOT="3"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~ppc-aix ~sparc-fbsd ~x86-fbsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~ppc-aix ~sparc-fbsd ~x86-fbsd ~x86-freebsd ~hppa-hpux ~ia64-hpux ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~m68k-mint ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="debug doc +extensions +fts3 icu +readline secure-delete soundex tcl test +threadsafe unlock-notify"
 
 RDEPEND="icu? ( dev-libs/icu )
@@ -39,22 +41,20 @@ amalgamation() {
 
 pkg_setup() {
 	if amalgamation; then
-		S="${WORKDIR}/${PN}-autoconf-${MY_PV}"
+		S="${WORKDIR}/${PN}-autoconf-${SRC_PV}"
 	else
-		S="${WORKDIR}/${PN}-src-${MY_PV}"
+		S="${WORKDIR}/${PN}-src-${SRC_PV}"
 	fi
 }
 
 src_prepare() {
 	if amalgamation; then
-		epatch "${FILESDIR}/${PN}-3.6.22-interix-fixes-amalgamation.patch"
-	else
-		epatch "${FILESDIR}/${P}-utimes.patch"
-		epatch "${FILESDIR}/${PN}-3.6.22-dlopen.patch"
-		epatch "${FILESDIR}/${P}-SQLITE_OMIT_WAL.patch"
+		epatch "${FILESDIR}"/${P}-interix-amalgamation.patch
 	fi
 
-	eautoreconf
+	# at least x86-interix, ppc-aix and *-solaris need this to catch a new(er)
+	# libtool, as the shipped one lacks some platform support.
+	use prefix && eautoreconf
 	epunt_cxx
 }
 
@@ -127,6 +127,7 @@ src_configure() {
 	# `configure` from amalgamation tarball doesn't support
 	# --with-readline-inc and --(enable|disable)-tcl options.
 	econf \
+		--disable-static \
 		$(use_enable extensions ${extensions_option}) \
 		$(use_enable readline) \
 		$(use_enable threadsafe) \
@@ -136,7 +137,7 @@ src_configure() {
 }
 
 src_compile() {
-	emake TCLLIBDIR="${EPREFIX}/usr/$(get_libdir)/${P}" || die "emake failed"
+	emake TCLLIBDIR="${EPREFIX}/usr/$(get_libdir)/${P}"
 }
 
 src_test() {
@@ -147,14 +148,15 @@ src_test() {
 
 	local test="test"
 	use debug && test="fulltest"
-	emake ${test} || die "Test failed"
+	emake ${test}
 }
 
 src_install() {
-	emake DESTDIR="${D}" TCLLIBDIR="${EPREFIX}/usr/$(get_libdir)/${P}" install || die "emake install failed"
-	doman sqlite3.1 || die "doman failed"
+	emake DESTDIR="${D}" TCLLIBDIR="${EPREFIX}/usr/$(get_libdir)/${P}" install
 
-	if use doc; then
-		dohtml -r "${WORKDIR}/${PN}-doc-${MY_PV}/"* || die "dohtml failed"
-	fi
+	find "${ED}" -name '*.la' -exec rm -f {} +
+
+	doman sqlite3.1
+
+	use doc && dohtml -r "${WORKDIR}/${PN}-doc-${DOC_PV}/"*
 }
