@@ -1,6 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libg15/Attic/libg15-1.2.7.ebuild,v 1.4 2010/03/09 21:52:36 josejx Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libg15/libg15-1.2.7-r1.ebuild,v 1.1 2011/09/09 16:55:47 scarabeus Exp $
+
+EAPI=4
 
 DESCRIPTION="The libg15 library gives low-level access to the Logitech G15 keyboard"
 HOMEPAGE="http://g15tools.sourceforge.net/"
@@ -14,7 +16,15 @@ IUSE=""
 DEPEND="=virtual/libusb-0*"
 RDEPEND=${DEPEND}
 
+DOCS=( AUTHORS README ChangeLog )
+
+src_configure() {
+	econf \
+		--disable-static
+}
+
 src_install() {
-	emake DESTDIR="${D}" install || die "make install failed"
-	dodoc AUTHORS README ChangeLog
+	default
+
+	find "${ED}" -name '*.la' -exec rm -f {} +
 }
