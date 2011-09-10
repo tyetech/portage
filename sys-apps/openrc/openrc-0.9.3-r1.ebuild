@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/openrc/openrc-9999.ebuild,v 1.87 2011/09/10 23:47:46 williamh Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/openrc/Attic/openrc-0.9.3-r1.ebuild,v 1.1 2011/09/10 23:47:46 williamh Exp $
 
 EAPI=4
 
