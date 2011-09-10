@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-check_ipmi_sensor/Attic/nagios-check_ipmi_sensor-2.3_rc1.ebuild,v 1.2 2011/06/16 17:00:08 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-check_ipmi_sensor/nagios-check_ipmi_sensor-2.3.ebuild,v 1.1 2011/09/10 08:54:55 idl0r Exp $
 
 EAPI=3
 
