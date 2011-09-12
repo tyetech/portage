@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.3.3.ebuild,v 1.9 2011/07/20 16:44:05 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/sawfish/Attic/sawfish-1.3.3.ebuild,v 1.10 2011/09/12 14:13:00 pacho Exp $
 
 EAPI=1
 
@@ -24,7 +24,7 @@ fi
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ~ppc64 sparc x86"
+KEYWORDS="alpha amd64 ia64 ppc sparc x86"
 IUSE="gnome esd nls audiofile pango"
 
 RDEPEND=">=x11-libs/rep-gtk-0.17
