@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.6.0_rc1.ebuild,v 1.1 2011/05/24 10:44:24 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.4.9.ebuild,v 1.1 2011/09/12 18:55:52 pva Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
-inherit libtool flag-o-matic eutils toolchain-funcs python
+inherit libtool flag-o-matic eutils toolchain-funcs python autotools
 
 [[ -n ${PV#*_rc} && ${PV#*_rc} != ${PV} ]] && MY_P=${PN}-${PV/_} || MY_P=${P}
 DESCRIPTION="A network protocol analyzer formerly known as ethereal"
@@ -39,6 +39,7 @@ RDEPEND=">=dev-libs/glib-2.14:2
 
 DEPEND="${RDEPEND}
 	doc? ( dev-libs/libxslt
+		app-text/docbook-xml-dtd:4.2
 		dev-libs/libxml2
 		app-doc/doxygen
 		doc-pdf? ( dev-java/fop ) )
@@ -152,16 +153,16 @@ src_configure() {
 		$(use_with lua) \
 		$(use_with kerberos krb5) \
 		$(use_with smi libsmi) \
+		$(use_with pcap) \
 		$(use_with zlib) \
 		$(use_with geoip) \
 		$(use_with portaudio) \
 		$(use_with python) \
 		$(use_with caps libcap) \
-		$(use_with pcap) \
-		$(use_with pcap dumpcap-group wireshark) \
 		$(use pcap && use_enable caps setcap-install) \
 		$(use pcap && use_enable !caps setuid-install) \
 		--sysconfdir=/etc/wireshark \
+		--with-dumpcap-group=wireshark \
 		--disable-extra-gcc-checks \
 		${myconf}
 }
