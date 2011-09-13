@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libvisio/Attic/libvisio-0.0.6.ebuild,v 1.1 2011/09/01 08:28:01 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libvisio/Attic/libvisio-0.0.7.ebuild,v 1.1 2011/09/13 14:51:51 scarabeus Exp $
 
 EAPI=4
 
