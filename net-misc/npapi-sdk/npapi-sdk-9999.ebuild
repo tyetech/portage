@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/npapi-sdk/npapi-sdk-9999.ebuild,v 1.2 2011/09/13 08:03:36 naota Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/npapi-sdk/npapi-sdk-9999.ebuild,v 1.3 2011/09/13 16:30:31 mgorny Exp $
 
 EAPI=4
 inherit autotools-utils
@@ -22,7 +22,7 @@ IUSE=""
 
 #if LIVE
 
-KEYWORDS="~amd64 ~x86 ~x86-fbsd"
+KEYWORDS=""
 SRC_URI=
 
 src_prepare() {
