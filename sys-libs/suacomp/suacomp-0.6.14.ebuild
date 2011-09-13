@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/suacomp/Attic/suacomp-0.6.11.ebuild,v 1.1 2011/05/25 14:08:54 mduft Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/suacomp/suacomp-0.6.14.ebuild,v 1.1 2011/09/13 07:16:53 mduft Exp $
 
 EAPI=3
 
