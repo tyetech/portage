@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/openssh/Attic/openssh-5.9_p1-r1.ebuild,v 1.2 2011/09/12 05:38:10 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/openssh/Attic/openssh-5.9_p1-r2.ebuild,v 1.1 2011/09/14 21:46:19 polynomial-c Exp $
 
 EAPI="2"
 inherit eutils flag-o-matic multilib autotools pam
