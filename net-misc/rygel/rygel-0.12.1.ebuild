@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rygel/Attic/rygel-0.10.4.ebuild,v 1.3 2011/09/15 21:26:58 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/rygel/Attic/rygel-0.12.1.ebuild,v 1.1 2011/09/15 21:26:58 eva Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -24,11 +24,10 @@ RDEPEND="
 	>=media-libs/gupnp-dlna-0.5
 	>=media-libs/gstreamer-0.10.28
 	>=media-libs/gst-plugins-base-0.10.28
-	>=net-libs/gssdp-0.9.2
-	<net-libs/gssdp-0.10.9999
-	>=net-libs/gupnp-0.13.4
-	>=net-libs/gupnp-av-0.7
-	>=net-libs/libsoup-2.26:2.4
+	>=net-libs/gssdp-0.11
+	>=net-libs/gupnp-0.17
+	>=net-libs/gupnp-av-0.9
+	>=net-libs/libsoup-2.34:2.4
 	>=sys-libs/e2fsprogs-libs-1.41.3
 	sqlite? ( >=dev-db/sqlite-3.5:3 )
 	tracker? ( >=app-misc/tracker-0.8.17 )
@@ -46,7 +45,7 @@ DEPEND="${RDEPEND}
 "
 # Maintainer only
 #	>=dev-lang/vala-0.11.6
-#	>=net-libs/gupnp-vala-0.7.5
+#	>=net-libs/gupnp-vala-0.9
 #   dev-libs/libxslt
 
 pkg_setup() {
