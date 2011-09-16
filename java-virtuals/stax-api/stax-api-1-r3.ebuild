@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/java-virtuals/cvs-repo/gentoo-x86/java-virtuals/stax-api/Attic/stax-api-1-r2.ebuild,v 1.1 2011/09/11 06:33:43 serkan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/java-virtuals/cvs-repo/gentoo-x86/java-virtuals/stax-api/Attic/stax-api-1-r3.ebuild,v 1.1 2011/09/16 03:58:00 serkan Exp $
 
 EAPI=1
 
