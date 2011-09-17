@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libpng/Attic/libpng-1.4.8-r2.ebuild,v 1.3 2011/09/17 18:16:35 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libpng/Attic/libpng-1.4.8-r2.ebuild,v 1.4 2011/09/17 18:26:29 ssuominen Exp $
 
 # this ebuild is only for the libpng14.so.14 SONAME for ABI compat
 
@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 	app-arch/xz-utils"
 
 pkg_setup() {
-	if [[ -e ${EROOT}/usr/$(get_libdir)/libpng14.so.14 ]]; then
+	if ! has_version media-libs/libpng:${SLOT}; then
 		rm -f "${EROOT}"/usr/$(get_libdir)/libpng14.so.14
 	fi
 }
