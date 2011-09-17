@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-9.1_beta3.ebuild,v 1.1 2011/07/15 12:15:23 titanofold Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/postgresql-server/Attic/postgresql-server-9.1.0.ebuild,v 1.1 2011/09/17 17:48:36 titanofold Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
@@ -10,18 +10,15 @@ inherit autotools eutils flag-o-matic multilib pam prefix python versionator
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~ppc-macos ~x86-solaris"
 
-# Upstream doesn't have an underscore in the file name
-MY_PV=${PV/_/}
+SLOT="$(get_version_component_range 1-2)"
+S="${WORKDIR}/postgresql-${PV}"
 
 DESCRIPTION="PostgreSQL server"
 HOMEPAGE="http://www.postgresql.org/"
-SRC_URI="mirror://postgresql/source/v${MY_PV}/postgresql-${MY_PV}.tar.bz2
-		 http://dev.gentoo.org/~titanofold/postgresql-patches-${MY_PV}.tbz2
+SRC_URI="mirror://postgresql/source/v${PV}/postgresql-${PV}.tar.bz2
+		 http://dev.gentoo.org/~titanofold/postgresql-patches-${SLOT}.tbz2
 		 http://dev.gentoo.org/~titanofold/postgresql-initscript-1.2.tbz2"
 LICENSE="POSTGRESQL"
-
-S="${WORKDIR}/postgresql-${MY_PV}"
-SLOT="$(get_version_component_range 1-2)"
 
 LINGUAS="af cs de en es fa fr hr hu it ko nb pl pt_BR ro ru sk sl sv tr zh_CN zh_TW"
 IUSE="doc kernel_linux nls pam perl -pg_legacytimestamp python selinux tcl uuid xml"
@@ -59,10 +56,8 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${WORKDIR}/autoconf.patch" \
-		"${WORKDIR}/server.patch"
-	epatch "${FILESDIR}"/${PN}-9.0.4-bool.patch
-	epatch "${FILESDIR}/pg_ctl-exit-status.patch"
+	epatch "${WORKDIR}/autoconf.patch" "${WORKDIR}/bool.patch" \
+		"${WORKDIR}/pg_ctl-exit-status.patch" "${WORKDIR}/server.patch"
 
 	eprefixify src/include/pg_config_manual.h
 
@@ -75,6 +70,8 @@ src_prepare() {
 	fi
 
 	eautoconf
+
+#	use perl && epatch "${WORKDIR}/perl-ExtUtils-ParseXS.patch"
 }
 
 src_configure() {
@@ -84,19 +81,19 @@ src_configure() {
 			;;
 	esac
 
-	local prfx="${EPREFIX%/}"
+	local PO="${EPREFIX%/}"
 
 	# eval is needed to get along with pg_config quotation of space-rich entities.
-	eval econf "$(${EROOT%/}/usr/$(get_libdir)/postgresql-${SLOT}/bin/pg_config --configure)" \
+	eval econf "$(${PO}/usr/$(get_libdir)/postgresql-${SLOT}/bin/pg_config --configure)" \
 		$(use_with perl) \
 		$(use_with python) \
 		$(use_with tcl) \
 		$(use_with xml libxml) \
 		$(use_with xml libxslt) \
 		$(use_with uuid ossp-uuid) \
-		--with-system-tzdata="${prfx}/usr/share/zoneinfo" \
-		--with-includes="${prfx}/usr/include/postgresql-${SLOT}/" \
-		--with-libraries="${prfx}/usr/$(get_libdir)/postgresql-${SLOT}/$(get_libdir)" \
+		--with-system-tzdata="${PO}/usr/share/zoneinfo" \
+		--with-includes="${PO}/usr/include/postgresql-${SLOT}/" \
+		--with-libraries="${PO}/usr/$(get_libdir)/postgresql-${SLOT}/$(get_libdir)" \
 		"$(use_enable nls nls "$(wanted_languages)")"
 }
 
@@ -121,7 +118,7 @@ src_install() {
 			emake install -C $bd DESTDIR="${D}" || die "emake install in $bd failed"
 	done
 
-	dodoc README HISTORY doc/{README.*,TODO,bug.template}
+	dodoc README HISTORY doc/{TODO,bug.template}
 
 	dodir /etc/eselect/postgresql/slots/${SLOT}
 	echo "postgres_ebuilds=\"\${postgres_ebuilds} ${PF}\"" > \
