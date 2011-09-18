@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gnutls/Attic/gnutls-2.10.4.ebuild,v 1.9 2011/02/28 23:10:11 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gnutls/Attic/gnutls-2.12.10.ebuild,v 1.1 2011/09/18 07:50:20 scarabeus Exp $
 
 EAPI="3"
 
@@ -13,7 +13,7 @@ if [[ "${PV}" == *pre* ]]; then
 	SRC_URI="http://daily.josefsson.org/${P%.*}/${P%.*}-${PV#*pre}.tar.gz"
 else
 	MINOR_VERSION="${PV#*.}"
-	MINOR_VERSION="${MINOR_VERSION%.*}"
+	MINOR_VERSION="${MINOR_VERSION%%.*}"
 	if [[ $((MINOR_VERSION % 2)) == 0 ]]; then
 		#SRC_URI="ftp://ftp.gnu.org/pub/gnu/${PN}/${P}.tar.bz2"
 		SRC_URI="mirror://gnu/${PN}/${P}.tar.bz2"
@@ -23,17 +23,21 @@ else
 	unset MINOR_VERSION
 fi
 
-# GPL-3 for the gnutls-extras library and LGPL for the gnutls library.
-LICENSE="LGPL-2.1 GPL-3"
+# LGPL-2.1 for libgnutls library and GPL-3 for libgnutls-extra library.
+LICENSE="GPL-3 LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="bindist +cxx doc examples guile lzo nls test zlib"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
+IUSE="bindist +cxx doc examples guile lzo +nettle nls test zlib"
 
-RDEPEND=">=dev-libs/libgcrypt-1.4.0
+# lib/m4/hooks.m4 says that GnuTLS uses a fork of PaKChoiS.
+RDEPEND="
+	app-crypt/p11-kit
 	>=dev-libs/libtasn1-0.3.4
 	nls? ( virtual/libintl )
 	guile? ( >=dev-scheme/guile-1.8[networking] )
-	zlib? ( >=sys-libs/zlib-1.1 )
+	nettle? ( >=dev-libs/nettle-2.1[gmp] )
+	!nettle? ( >=dev-libs/libgcrypt-1.4.0 )
+	zlib? ( >=sys-libs/zlib-1.2.3.1 )
 	!bindist? ( lzo? ( >=dev-libs/lzo-2 ) )"
 DEPEND="${RDEPEND}
 	sys-devel/libtool
@@ -50,6 +54,9 @@ pkg_setup() {
 }
 
 src_prepare() {
+	# tests/suite directory is not distributed.
+	sed -e 's|AC_CONFIG_FILES(\[tests/suite/Makefile\])|:|' -i configure.ac
+
 	sed -e 's/imagesdir = $(infodir)/imagesdir = $(htmldir)/' -i doc/Makefile.am
 
 	local dir
@@ -76,6 +83,7 @@ src_configure() {
 		$(use_enable cxx) \
 		$(use_enable doc gtk-doc) \
 		$(use_enable guile) \
+		$(use_with !nettle libgcrypt) \
 		$(use_enable nls) \
 		$(use_with zlib) \
 		${myconf}
