@@ -1,14 +1,15 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/vzctl/vzctl-9999.ebuild,v 1.7 2011/04/01 11:34:55 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/vzctl/vzctl-9999.ebuild,v 1.8 2011/09/21 09:04:52 mgorny Exp $
 
 EAPI="4"
 
-inherit bash-completion autotools git
+inherit bash-completion autotools git-2
 
 DESCRIPTION="OpenVZ ConTainers control utility"
 HOMEPAGE="http://openvz.org/"
-EGIT_REPO_URI="git://git.openvz.org/pub/vzctl"
+EGIT_REPO_URI="git://git.openvz.org/pub/${PN}
+	http://git.openvz.org/pub/${PN}"
 
 LICENSE="GPL-2"
 SLOT="0"
