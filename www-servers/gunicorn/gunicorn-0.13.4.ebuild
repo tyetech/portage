@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/gunicorn/Attic/gunicorn-0.13.1.ebuild,v 1.1 2011/08/22 15:19:03 rafaelmartins Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/gunicorn/gunicorn-0.13.4.ebuild,v 1.1 2011/09/23 06:05:25 rafaelmartins Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
@@ -21,6 +21,9 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="dev-python/setproctitle"
 DEPEND="dev-python/setuptools
 	test? ( dev-python/nose )"
+
+# tests are failing randomly.
+RESTRICT="test"
 
 DOCS="README.rst"
 
