@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_rc4_p20110322.ebuild,v 1.4 2011/07/15 06:15:32 mattst88 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/mplayer/Attic/mplayer-1.0_rc4_p20110322.ebuild,v 1.5 2011/09/24 14:24:42 mattst88 Exp $
 
 EAPI=4
 
@@ -196,6 +196,7 @@ fi
 REQUIRED_USE="bindist? ( !amr !faac !win32codecs )"
 
 PATCHES=(
+	"${FILESDIR}"/${P}-gcc46.patch
 )
 
 pkg_setup() {
