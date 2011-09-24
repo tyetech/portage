@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/netpbm/Attic/netpbm-10.51.00-r1.ebuild,v 1.4 2011/09/24 21:16:50 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/netpbm/Attic/netpbm-10.51.00-r1.ebuild,v 1.5 2011/09/24 23:24:33 robbat2 Exp $
 
 EAPI="3"
 
@@ -103,7 +103,7 @@ src_prepare() {
 }
 
 src_configure() {
-	cat config.mk.in /dev/stdin >> config.mk <<-EOF
+	cat config.mk.in - >> config.mk <<-EOF
 	# Misc crap
 	BUILD_FIASCO = N
 	SYMLINK = ln -sf
