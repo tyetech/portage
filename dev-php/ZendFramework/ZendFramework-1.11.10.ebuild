@@ -1,12 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/ZendFramework/Attic/ZendFramework-1.7.5.ebuild,v 1.1 2011/03/03 20:56:46 olemarkus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/ZendFramework/Attic/ZendFramework-1.11.10.ebuild,v 1.1 2011/09/25 14:21:32 gurligebis Exp $
+
+EAPI="2"
 
 PHP_LIB_NAME="Zend"
 
 inherit php-lib-r1
 
-KEYWORDS="amd64 hppa ppc ppc64 x86"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~x86"
 
 DESCRIPTION="Zend Framework is a high quality and open source framework for developing Web Applications."
 HOMEPAGE="http://framework.zend.com/"
@@ -17,24 +19,34 @@ SRC_URI="!minimal? ( http://framework.zend.com/releases/${P}/${P}.tar.gz )
 		http://framework.zend.com/releases/${P}/${P}-manual-en.tar.gz )"
 LICENSE="BSD"
 SLOT="0"
-IUSE="doc examples minimal"
+IUSE="doc examples minimal cli"
 
-DEPEND=""
-RDEPEND=""
+DEPEND="cli? ( dev-lang/php[simplexml,tokenizer] )"
+RDEPEND="${DEPEND}"
 need_php_by_category
 
-src_unpack() {
+src_prepare() {
 	if use minimal ; then
 		S="${WORKDIR}/${P}-minimal"
+		if use doc ; then
+			mv "${WORKDIR}/${P}/documentation" "${S}"
+		fi
 	fi
-
-	unpack ${A}
-
-	cd "${S}"
 }
 
 src_install() {
+	if use cli ; then
+		insinto /usr/bin
+		doins bin/zf.php
+		dobin bin/zf.sh
+		dosym /usr/bin/zf.sh /usr/bin/zf
+	fi
 	php-lib-r1_src_install library/Zend $(cd library/Zend ; find . -type f -print)
+
+	if ! use minimal ; then
+		insinto /usr/share/php5
+		doins -r externals/dojo
+	fi
 
 	if use examples ; then
 		insinto /usr/share/doc/${PF}
