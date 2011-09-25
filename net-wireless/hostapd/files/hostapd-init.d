@@ -1,9 +1,9 @@
 #!/sbin/runscript
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/hostapd/files/hostapd-init.d,v 1.2 2011/09/09 22:56:50 gurligebis Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/hostapd/files/hostapd-init.d,v 1.3 2011/09/25 14:03:46 gurligebis Exp $
 
-extra_commands="reload"
+extra_started_commands="reload"
 
 depend() {
 	local myneeds=
