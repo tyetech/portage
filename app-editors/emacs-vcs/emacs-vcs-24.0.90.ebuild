@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs-vcs/Attic/emacs-vcs-24.0.9999-r1.ebuild,v 1.17 2011/09/26 12:31:15 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/emacs-vcs/Attic/emacs-vcs-24.0.90.ebuild,v 1.1 2011/09/26 12:31:16 ulm Exp $
 
 EAPI=4
 
