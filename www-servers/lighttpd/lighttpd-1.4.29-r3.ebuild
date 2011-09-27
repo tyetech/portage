@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.29-r1.ebuild,v 1.1 2011/07/04 17:48:20 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/lighttpd/Attic/lighttpd-1.4.29-r3.ebuild,v 1.1 2011/09/27 00:53:18 hwoarang Exp $
 
 EAPI="4"
 
@@ -12,8 +12,8 @@ SRC_URI="http://download.lighttpd.net/lighttpd/releases-1.4.x/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd"
-IUSE="bzip2 doc fam gdbm ipv6 kerberos ldap libev lua minimal memcache mysql pcre php rrdtool ssl test webdav xattr zlib"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc x86 ~sparc-fbsd ~x86-fbsd"
+IUSE="bzip2 doc fam gdbm ipv6 kerberos ldap libev lua minimal memcache mysql pcre php rrdtool ssl test uploadprogress webdav xattr zlib"
 
 REQUIRED_USE="kerberos? ( ssl )"
 
@@ -98,6 +98,11 @@ src_prepare() {
 	#dev-python/docutils installs rst2html.py not rst2html
 	sed -i -e 's|\(rst2html\)|\1.py|g' doc/outdated/Makefile.am || \
 		die "sed doc/Makefile.am failed"
+	# Experimental patch for progress bar. Bug #380093
+	if use uploadprogress; then
+	    epatch "${FILESDIR}"/${P}-mod_uploadprogress.patch
+	fi
+	epatch "${FILESDIR}"/${P}-ssl-no-ecdh.patch
 	eautoreconf
 }
 src_configure() {
@@ -200,5 +205,14 @@ pkg_postinst () {
 		elog "Gentoo has a customized configuration,"
 		elog "which is now located in /etc/lighttpd.  Please migrate your"
 		elog "existing configuration."
+	fi
+
+	if use uploadprogress; then
+		elog "WARNING! mod_uploadprogress is a backported module from the"
+		elog "1.5x-branch, which is not considered stable yet. Please go to"
+		elog "http://redmine.lighttpd.net/wiki/1/Docs:ModUploadProgress"
+		elog "for more information. This configuration also is NOT supported"
+		elog "by upstream, so please refrain from reporting bugs. You have"
+		elog "been warned!"
 	fi
 }
