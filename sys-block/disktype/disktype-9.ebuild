@@ -1,6 +1,8 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/disktype/disktype-9.ebuild,v 1.11 2009/09/23 20:30:12 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/disktype/disktype-9.ebuild,v 1.12 2011/09/28 00:52:19 radhermit Exp $
+
+EAPI=4
 
 inherit toolchain-funcs
 
@@ -11,12 +13,10 @@ SRC_URI="mirror://sourceforge/disktype/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="amd64 arm ppc sh sparc x86"
-
 IUSE=""
-DEPEND=""
 
 src_compile() {
-	make CC="$(tc-getCC)" CFLAGS="${CFLAGS}" || die
+	emake CC="$(tc-getCC)" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 }
 
 src_install() {
