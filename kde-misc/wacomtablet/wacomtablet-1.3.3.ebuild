@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/wacomtablet/Attic/wacomtablet-1.3.1.ebuild,v 1.1 2011/05/14 16:33:18 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/wacomtablet/Attic/wacomtablet-1.3.3.ebuild,v 1.1 2011/09/28 20:34:41 scarabeus Exp $
 
 EAPI=4
 
