@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.8.0.ebuild,v 1.1 2011/06/14 10:27:08 pva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/pidgin/Attic/pidgin-2.10.0-r1.ebuild,v 1.1 2011/10/02 18:13:16 pva Exp $
 
 EAPI=3
 
@@ -42,12 +42,13 @@ RDEPEND="
 		>=net-libs/farsight2-0.0.14
 		media-plugins/gst-plugins-meta
 		media-plugins/gst-plugins-gconf )
-	zeroconf? ( net-dns/avahi )
+	zeroconf? ( net-dns/avahi[dbus] )
 	dbus? ( >=dev-libs/dbus-glib-0.71
 		>=sys-apps/dbus-0.90
 		dev-python/dbus-python )
 	perl? ( >=dev-lang/perl-5.8.2-r1[-build] )
-	gadu? ( >=net-libs/libgadu-1.11.0[ssl,gnutls] )
+	gadu? ( || ( >=net-libs/libgadu-1.11.0[ssl,gnutls]
+		>=net-libs/libgadu-1.11.0[-ssl] ) )
 	gnutls? ( net-libs/gnutls )
 	!gnutls? ( >=dev-libs/nss-3.11 )
 	meanwhile? ( net-libs/meanwhile )
@@ -125,9 +126,7 @@ pkg_setup() {
 }
 
 src_prepare() {
-	# Fix build issue.
-	# http://developer.pidgin.im/viewmtn/revision/diff/9e7616dbab2878bcc9f4b412bca1f55c903a337e/with/aebefd6d98382ce0f7b42b41e4bf2611044d4182/pidgin/plugins/gevolution/gevolution.c
-	sed 's:\<GTK_POLICY_AUTO\>:GTK_POLICY_AUTOMATIC:' -i pidgin/plugins/gevolution/gevolution.c || die
+	epatch "${FILESDIR}/${P}-utf8-validation.patch"
 }
 
 src_configure() {
