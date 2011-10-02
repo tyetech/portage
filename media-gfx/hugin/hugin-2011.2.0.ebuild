@@ -1,11 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/hugin/Attic/hugin-2010.4.0.ebuild,v 1.3 2011/07/05 19:41:43 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/hugin/hugin-2011.2.0.ebuild,v 1.1 2011/10/02 21:33:47 maekke Exp $
 
-EAPI=2
+EAPI=3
 WX_GTK_VER="2.8"
+PYTHON_DEPEND="python? 2:2.6 3"
 
-inherit wxwidgets versionator cmake-utils
+inherit python wxwidgets versionator cmake-utils
 
 DESCRIPTION="GUI for the creation & processing of panoramic images"
 HOMEPAGE="http://hugin.sf.net"
@@ -14,17 +15,19 @@ LICENSE="GPL-2 SIFT"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~x86"
 
-LANGS=" bg ca cs de en_GB es fi fr hu it ja ko nl pl pt_BR ru sk sl sv uk zh_CN zh_TW"
-IUSE="lapack sift $(echo ${LANGS//\ /\ linguas_})"
+LANGS=" bg ca cs da de en_GB es fi fr hu it ja ko nl pl pt_BR ro ru sk sl sv uk zh_CN zh_TW"
+IUSE="lapack python sift $(echo ${LANGS//\ /\ linguas_})"
 
 CDEPEND="
 	!!dev-util/cocom
 	app-arch/zip
+	dev-cpp/tclap
 	>=dev-libs/boost-1.35.0-r5
-	>=media-gfx/enblend-3.0_p20080807
+	dev-libs/zthread
+	>=media-gfx/enblend-4.0
 	media-gfx/exiv2
 	media-libs/freeglut
-	>=media-libs/libpano13-2.9.17
+	>=media-libs/libpano13-2.9.18
 	media-libs/libpng
 	media-libs/openexr
 	media-libs/tiff
@@ -36,13 +39,17 @@ CDEPEND="
 RDEPEND="${CDEPEND}
 	media-libs/exiftool"
 DEPEND="${CDEPEND}
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	python? ( >=dev-lang/swig-2.0.4 )"
 
 S=${WORKDIR}/${PN}-$(get_version_component_range 1-3)
 
 pkg_setup() {
 	DOCS="authors.txt README TODO"
-	mycmakeargs=( $(cmake-utils_use_enable lapack LAPACK) )
+	mycmakeargs=(
+		$(cmake-utils_use_enable lapack LAPACK)
+		$(cmake-utils_use_build python HSI)
+	)
 }
 
 src_install() {
@@ -56,9 +63,4 @@ src_install() {
 		esac
 		use linguas_${lang} || rm -r "${D}"/usr/share/locale/${dir}
 	done
-}
-
-pkg_postinst() {
-	elog "Please note that the sift USE-flag has been disabled by default"
-	elog "as hugin ships its own control point generator with 2010.4"
 }
