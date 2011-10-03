@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libcmis/libcmis-9999.ebuild,v 1.2 2011/10/03 12:44:03 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libcmis/libcmis-9999.ebuild,v 1.3 2011/10/03 13:33:43 scarabeus Exp $
 
 EAPI=4
 
@@ -36,7 +36,9 @@ src_prepare() {
 
 src_configure() {
 	econf \
+		--disable-werror \
 		$(use_enable static-libs static) \
+		$(use_enable test tests) \
 		--enable-client
 }
 
