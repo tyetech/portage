@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/rt/Attic/rt-3.8.10.ebuild,v 1.4 2011/10/05 11:17:04 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/rt/Attic/rt-3.8.10.ebuild,v 1.5 2011/10/05 15:53:36 flameeyes Exp $
 
 inherit webapp eutils depend.apache confutils
 
@@ -66,6 +66,7 @@ DEPEND="
 	dev-perl/File-ShareDir
 	dev-perl/HTML-RewriteAttributes
 	dev-perl/Data-ICal
+	dev-perl/Email-Address
 
 	!lighttpd? ( dev-perl/Apache-DBI )
 	lighttpd? ( dev-perl/FCGI )
