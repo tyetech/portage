@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/dwm/Attic/dwm-5.9.ebuild,v 1.1 2011/07/19 12:54:05 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/dwm/Attic/dwm-5.9.ebuild,v 1.2 2011/10/07 15:20:32 jer Exp $
 
 EAPI="4"
 
@@ -20,8 +20,7 @@ DEPEND="x11-libs/libX11
 		x11-proto/xineramaproto
 		x11-libs/libXinerama
 		)"
-RDEPEND="${DEPEND}
-	x11-apps/xsetroot"
+RDEPEND="${DEPEND}"
 
 src_prepare() {
 	sed -i \
