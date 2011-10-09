@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/grisbi/grisbi-0.8.8.ebuild,v 1.1 2011/10/02 18:57:16 remi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/grisbi/grisbi-0.8.8.ebuild,v 1.2 2011/10/09 16:31:10 remi Exp $
 
 EAPI="3"
 
@@ -29,6 +29,7 @@ pkg_setup() {
 	G2CONF="
 		--with-plugins
 		--with-libxml2
+		--without-cunit
 		$(use_with ssl openssl)
 		$(use_with ofx)
 		$(use_enable nls)"
