@@ -1,13 +1,13 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvdnav/Attic/libdvdnav-4.2.0_pre1243.ebuild,v 1.1 2011/10/10 19:14:52 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvdnav/libdvdnav-4.2.0.ebuild,v 1.1 2011/10/10 23:03:33 beandog Exp $
 
 EAPI=4
 inherit autotools libtool
 
 DESCRIPTION="Library for DVD navigation tools"
-HOMEPAGE="http://mplayerhq.hu/"
-SRC_URI="http://dev.gentoo.org/~ssuominen/${P}.tar.xz"
+HOMEPAGE="http://dvdnav.mplayerhq.hu/"
+SRC_URI="http://dvdnav.mplayerhq.hu/releases/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
