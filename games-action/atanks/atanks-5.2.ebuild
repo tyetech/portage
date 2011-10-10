@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/atanks/Attic/atanks-5.0.ebuild,v 1.1 2011/06/06 17:32:31 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-action/cvs-repo/gentoo-x86/games-action/atanks/Attic/atanks-5.2.ebuild,v 1.1 2011/10/10 16:57:43 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils games
