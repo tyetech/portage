@@ -1,33 +1,33 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/knetworkmanager/Attic/knetworkmanager-4.4.0_p20110415.ebuild,v 1.3 2011/05/09 23:10:18 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/knetworkmanager/Attic/knetworkmanager-0.8.80.ebuild,v 1.1 2011/10/14 10:08:31 scarabeus Exp $
 
 EAPI=4
 
 KDE_MINIMAL="4.6"
+MY_PN="networkmanagement"
+MY_P="${MY_PN}-${PV}"
 
 KDE_SCM="git"
-EGIT_REPONAME="networkmanagement"
-[[ ${PV} = 9999* ]] || SRC_URI="mirror://gentoo/${P}.tar.xz"
-[[ ${PV} = 9999* ]] || SRC_URI+=" http://dev.gentoo.org/~scarabeus/${P}.tar.xz"
-
+EGIT_REPONAME="${MY_PN}"
 inherit kde4-base
 
 DESCRIPTION="KDE frontend for NetworkManager"
 HOMEPAGE="http://kde.org/"
+[[ ${PV} = 9999* ]] || SRC_URI="mirror://kde/unstable/${MY_PN}/${PV}/src/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2 LGPL-2"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 SLOT="4"
 IUSE="consolekit debug"
 
 DEPEND="
 	net-misc/mobile-broadband-provider-info
-	$(add_kdebase_dep solid 'networkmanager')
+	>=net-misc/networkmanager-0.9.0
 "
 RDEPEND="${DEPEND}"
 
-RESTRICT="test"
+S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
 	kde4-base_src_prepare
