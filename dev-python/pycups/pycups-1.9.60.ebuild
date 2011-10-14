@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pycups/Attic/pycups-1.9.59.ebuild,v 1.1 2011/10/04 17:20:31 reavertm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pycups/Attic/pycups-1.9.60.ebuild,v 1.1 2011/10/14 23:26:11 reavertm Exp $
 
 EAPI="3"
 
