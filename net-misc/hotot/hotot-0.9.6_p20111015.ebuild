@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/hotot/Attic/hotot-0.9.6_p20110703-r1.ebuild,v 1.1 2011/07/26 16:37:45 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/hotot/Attic/hotot-0.9.6_p20111015.ebuild,v 1.1 2011/10/15 09:23:18 xmw Exp $
 
 EAPI=2
 
