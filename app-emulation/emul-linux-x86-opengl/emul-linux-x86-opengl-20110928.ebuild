@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/emul-linux-x86-opengl/Attic/emul-linux-x86-opengl-20110928.ebuild,v 1.1 2011/09/28 13:54:29 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/emul-linux-x86-opengl/Attic/emul-linux-x86-opengl-20110928.ebuild,v 1.2 2011/10/15 19:29:08 hwoarang Exp $
 
 EAPI="4"
 
@@ -8,7 +8,7 @@ inherit emul-linux-x86
 
 LICENSE="BSD LGPL-2 MIT"
 
-KEYWORDS="-* ~amd64 ~amd64-linux"
+KEYWORDS="-* amd64 ~amd64-linux"
 
 DEPEND="app-admin/eselect-opengl
 	>=app-admin/eselect-mesa-0.0.9"
