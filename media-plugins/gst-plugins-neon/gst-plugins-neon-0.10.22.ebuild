@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-neon/gst-plugins-neon-0.10.22.ebuild,v 1.4 2011/10/09 17:00:26 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-neon/gst-plugins-neon-0.10.22.ebuild,v 1.5 2011/10/15 18:35:21 xarthisius Exp $
 
 inherit gst-plugins-bad
 
-KEYWORDS="alpha amd64 ~ppc ~ppc64 x86"
+KEYWORDS="alpha amd64 ppc ppc64 x86"
 IUSE=""
 
 RDEPEND=">=net-libs/neon-0.27
