@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xdiskusage/xdiskusage-1.48_p20111016.ebuild,v 1.1 2011/10/16 19:57:39 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xdiskusage/xdiskusage-1.48_p20111016.ebuild,v 1.2 2011/10/16 19:58:46 ssuominen Exp $
 
 EAPI=4
 inherit autotools
@@ -24,4 +24,4 @@ src_compile() {
 		CXXFLAGS="${CXXFLAGS} $(fltk-config --cxxflags)" \
 		LDLIBS="$(fltk-config --ldflags)"
 }
-src_install() { dobin ${PN}; doman ${PN}.1;	dodoc README; }
+src_install() { dobin ${PN}; doman ${PN}.1; dodoc README; }
