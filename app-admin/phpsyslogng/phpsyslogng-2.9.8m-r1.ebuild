@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/phpsyslogng/phpsyslogng-2.9.8m-r1.ebuild,v 1.1 2009/09/29 16:03:10 hoffie Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/phpsyslogng/phpsyslogng-2.9.8m-r1.ebuild,v 1.2 2011/10/16 10:58:17 hwoarang Exp $
 
 inherit webapp
 
@@ -24,7 +24,8 @@ src_install() {
 	rm html/LICENSE html/README \
 		html/CHANGELOG html/INSTALL-STEPS \
 		html/TROUBLESHOOTING-INSTALL
-	dodoc scripts/*
+	insinto /usr/share/doc/${PF}
+	doins -r scripts/*
 
 	insinto "${MY_HTDOCSDIR}"
 	doins -r ./html/{.htaccess,*}
