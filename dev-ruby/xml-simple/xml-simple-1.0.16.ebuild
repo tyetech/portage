@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/xml-simple/Attic/xml-simple-1.0.16.ebuild,v 1.2 2011/10/12 06:22:13 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/xml-simple/Attic/xml-simple-1.0.16.ebuild,v 1.3 2011/10/17 22:13:08 hwoarang Exp $
 
 EAPI=2
 USE_RUBY="ruby18 jruby ree18"
@@ -16,5 +16,5 @@ HOMEPAGE="http://rubyforge.org/projects/xml-simple/"
 
 LICENSE="Ruby"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~x86"
+KEYWORDS="amd64 ~ia64 ~ppc ~x86"
 IUSE=""
