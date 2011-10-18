@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/oxygen-gtk/Attic/oxygen-gtk-1.1.3.ebuild,v 1.1 2011/09/24 22:23:49 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/oxygen-gtk/Attic/oxygen-gtk-1.1.4.ebuild,v 1.1 2011/10/18 07:20:33 scarabeus Exp $
 
 EAPI=4
 
