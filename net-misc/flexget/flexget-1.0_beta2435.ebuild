@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/flexget/Attic/flexget-1.0_beta2385.ebuild,v 1.1 2011/09/26 03:56:13 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/flexget/Attic/flexget-1.0_beta2435.ebuild,v 1.1 2011/10/18 03:24:39 floppym Exp $
 
-EAPI="3"
+EAPI=4
 
 PYTHON_DEPEND="2:2.5"
 SUPPORT_PYTHON_ABIS="1"
@@ -19,9 +19,9 @@ SRC_URI="http://download.flexget.com/unstable/${MY_P}.tar.gz"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="test"
+IUSE="deluge test transmission"
 
-RDEPEND="dev-python/setuptools
+RDEPEND="
 	dev-python/feedparser
 	>=dev-python/sqlalchemy-0.7
 	dev-python/pyyaml
@@ -32,9 +32,17 @@ RDEPEND="dev-python/setuptools
 	dev-python/pynzb
 	dev-python/progressbar
 	dev-python/flask
-	dev-python/cherrypy"
-DEPEND="${RDEPEND}
-	test? ( dev-python/nose )"
+	dev-python/cherrypy
+"
+DEPEND="
+	dev-python/setuptools
+	test? ( ${RDEPEND} dev-python/nose )
+"
+RDEPEND+="
+	dev-python/setuptools
+	deluge? ( net-p2p/deluge )
+	transmission? ( dev-python/transmissionrpc )
+"
 
 S="${WORKDIR}/${MY_P}"
 
