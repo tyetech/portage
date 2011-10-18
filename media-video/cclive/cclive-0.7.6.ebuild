@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/cclive/cclive-0.7.6.ebuild,v 1.3 2011/10/18 23:41:23 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/cclive/cclive-0.7.6.ebuild,v 1.4 2011/10/18 23:48:21 radhermit Exp $
 
 EAPI=4
 
@@ -18,4 +18,5 @@ RDEPEND=">=media-libs/quvi-0.2.17
 	>=net-misc/curl-7.20
 	>=dev-libs/libpcre-8.02[cxx]"
 DEPEND="${RDEPEND}
+	app-arch/xz-utils
 	dev-util/pkgconfig"
