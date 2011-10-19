@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/glib-networking/Attic/glib-networking-2.30.0.ebuild,v 1.1 2011/09/27 12:59:41 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/glib-networking/Attic/glib-networking-2.30.0-r1.ebuild,v 1.1 2011/10/19 16:09:07 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
 GNOME2_LA_PUNT="yes"
 
-inherit gnome2
+inherit autotools eutils gnome2
 
 DESCRIPTION="Network-related giomodules for glib"
 HOMEPAGE="http://git.gnome.org/browse/glib-networking/"
@@ -44,4 +44,13 @@ pkg_setup() {
 		$(use_with gnome gnome-proxy)
 		$(use_with libproxy)
 		$(use_with ssl gnutls)"
+}
+
+src_prepare() {
+	# bug #387589, https://bugzilla.gnome.org/show_bug.cgi?id=662203 
+	# Fixed in upstream git master
+	epatch "${FILESDIR}/${PN}-2.28.7-gnome-proxy-AC_ARG_WITH.patch"
+	mkdir m4
+	eautoreconf
+	gnome2_src_prepare
 }
