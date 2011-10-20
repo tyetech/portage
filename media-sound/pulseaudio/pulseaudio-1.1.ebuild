@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-1.0-r1.ebuild,v 1.1 2011/09/28 14:31:56 ford_prefect Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-1.1.ebuild,v 1.1 2011/10/20 16:15:56 ford_prefect Exp $
 
 EAPI=4
 
@@ -77,6 +77,10 @@ pkg_setup() {
 	enewgroup pulse-access
 	enewgroup pulse
 	enewuser pulse -1 -1 /var/run/pulse pulse,audio
+}
+
+src_prepare() {
+	epatch "${FILESDIR}/${P}-python3-fix.patch"
 }
 
 src_configure() {
