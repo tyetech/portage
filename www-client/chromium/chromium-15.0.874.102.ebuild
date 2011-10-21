@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-16.0.899.0.ebuild,v 1.1 2011/10/04 20:48:43 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-15.0.874.102.ebuild,v 1.1 2011/10/21 21:26:43 floppym Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
@@ -10,7 +10,7 @@ inherit eutils fdo-mime flag-o-matic gnome2-utils linux-info multilib \
 
 DESCRIPTION="Open-source version of Google Chrome web browser"
 HOMEPAGE="http://chromium.org/"
-SRC_URI="http://build.chromium.org/official/${P}.tar.bz2"
+SRC_URI="http://commondatastorage.googleapis.com/chromium-browser-official/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
@@ -122,10 +122,15 @@ pkg_setup() {
 }
 
 src_prepare() {
+	cp "${FILESDIR}/nacl.gypi" chrome/ || die
+
 	# zlib-1.2.5.1-r1 renames the OF macro in zconf.h, bug 383371.
 	sed -i '1i#define OF(x) x' \
 		third_party/zlib/contrib/minizip/{ioapi,{,un}zip}.c \
 		chrome/common/zip.cc || die
+
+	# Backport http://codereview.chromium.org/8038051, fix for bug #383121.
+	epatch "${FILESDIR}/${PN}-kerberos-r0.patch"
 
 	epatch_user
 
@@ -185,6 +190,10 @@ src_configure() {
 
 	# Disable NaCl temporarily, this tarball doesn't have IRT.
 	myconf+=" -Ddisable_nacl=1"
+
+	# Disable WebRTC until they make PulseAudio dependency optional,
+	# bug #377847.
+	myconf+=" -Denable_webrtc=0"
 
 	# Use system-provided libraries.
 	# TODO: use_system_ffmpeg
