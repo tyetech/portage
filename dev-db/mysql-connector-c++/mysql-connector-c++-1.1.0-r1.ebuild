@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-connector-c++/Attic/mysql-connector-c++-1.1.0.ebuild,v 1.3 2011/10/23 14:53:26 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-connector-c++/mysql-connector-c++-1.1.0-r1.ebuild,v 1.1 2011/10/23 14:54:59 scarabeus Exp $
 
 EAPI=4
 
