@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/monomer-db/monomer-db-5.30.ebuild,v 1.2 2011/10/25 06:06:56 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/monomer-db/monomer-db-5.31.ebuild,v 1.1 2011/10/25 06:06:56 jlec Exp $
 
 EAPI=4
 
