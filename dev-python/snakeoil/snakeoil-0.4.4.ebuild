@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/snakeoil/Attic/snakeoil-0.4.1.ebuild,v 1.2 2011/08/06 08:51:38 ferringb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/snakeoil/Attic/snakeoil-0.4.4.ebuild,v 1.1 2011/10/27 07:40:26 ferringb Exp $
 
 EAPI="2"
 SUPPORT_PYTHON_ABIS="1"
@@ -48,4 +48,8 @@ src_test() {
 		PYTHONPATH="$(ls -d build-${PYTHON_ABI}/lib*)" "$(PYTHON)" setup.py build -b "build-${PYTHON_ABI}" test
 	}
 	python_execute_function testing
+}
+
+src_install() {
+	distutils_src_install
 }
