@@ -1,5 +1,5 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/profiles/cvs-repo/gentoo-x86/profiles/targets/desktop/gnome/make.defaults,v 1.4 2010/12/18 23:53:59 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/profiles/cvs-repo/gentoo-x86/profiles/targets/desktop/gnome/make.defaults,v 1.5 2011/10/28 03:00:24 tetromino Exp $
 
-USE="eds evo gnome gnome-keyring gstreamer nautilus"
+USE="colord eds evo gnome gnome-keyring gstreamer nautilus"
