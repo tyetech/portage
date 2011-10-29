@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/bkodama/bkodama-0.3.1.ebuild,v 1.2 2011/01/31 02:56:06 tampakrap Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/bkodama/bkodama-0.3.1.ebuild,v 1.3 2011/10/29 00:51:32 abcd Exp $
 
-EAPI=3
+EAPI=4
 
 inherit kde4-base
 
