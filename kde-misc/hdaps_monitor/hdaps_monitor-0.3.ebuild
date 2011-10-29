@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/hdaps_monitor/hdaps_monitor-0.3.ebuild,v 1.2 2011/01/24 00:00:51 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/hdaps_monitor/hdaps_monitor-0.3.ebuild,v 1.3 2011/10/29 00:41:28 abcd Exp $
 
-EAPI=3
+EAPI=4
 inherit kde4-base
 
 DESCRIPTION="KDE-based monitor for the IBM HDAPS system"
