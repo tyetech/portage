@@ -1,10 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/mikutter/Attic/mikutter-0.0.3.13.ebuild,v 1.2 2011/10/28 22:51:07 naota Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/mikutter/Attic/mikutter-0.0.4.556.ebuild,v 1.1 2011/10/30 04:38:54 naota Exp $
 
 EAPI=3
 
-USE_RUBY="ruby18 ruby19"
+USE_RUBY="ruby19"
 
 inherit ruby-ng
 
