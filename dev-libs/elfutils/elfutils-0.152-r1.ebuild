@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/elfutils/elfutils-0.152-r1.ebuild,v 1.3 2011/10/20 09:47:24 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/elfutils/elfutils-0.152-r1.ebuild,v 1.4 2011/10/31 22:23:02 vapier Exp $
 
 EAPI="3"
 
@@ -75,6 +75,7 @@ src_compile() {
 		emake -C libcpu || die
 		popd >/dev/null
 		ln ${CBUILD}/libcpu/i386_gendis ${CHOST}/libcpu/ || die
+		sed -i -e '/^%_dis.h: %_defs/s: i386_gendis::' ${CHOST}/libcpu/Makefile || die
 	fi
 
 	emake -C ${CHOST} || die
