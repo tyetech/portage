@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/banshee/Attic/banshee-2.2.0.ebuild,v 1.2 2011/10/20 22:54:37 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/banshee/Attic/banshee-2.2.0-r1.ebuild,v 1.1 2011/11/01 11:54:05 pacho Exp $
 
 EAPI="4"
 
@@ -87,6 +87,9 @@ DEPEND="${RDEPEND}
 DOCS="AUTHORS ChangeLog HACKING NEWS README"
 
 src_prepare () {
+	# EqualizerManager: Update values for the Smiley Face preset (bgo#661224)
+	epatch "${FILESDIR}/${PN}-2.2.0-fix-equalizer-values.patch"
+
 	epatch "${FILESDIR}/${PN}-1.7.4-make-webkit-optional.patch" # upstream bug 628518
 	AT_M4DIR="-I build/m4/banshee -I build/m4/shamrock -I build/m4/shave" \
 		eautoreconf
