@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/spideroak-bin/Attic/spideroak-bin-4.1.9850.ebuild,v 1.1 2011/09/29 19:20:58 naota Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-backup/cvs-repo/gentoo-x86/app-backup/spideroak-bin/spideroak-bin-4.1.9860.ebuild,v 1.1 2011/11/01 07:03:34 naota Exp $
 
 EAPI=4
 
