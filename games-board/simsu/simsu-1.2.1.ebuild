@@ -1,9 +1,9 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/simsu/simsu-1.2.1.ebuild,v 1.2 2010/02/27 17:19:11 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-board/cvs-repo/gentoo-x86/games-board/simsu/simsu-1.2.1.ebuild,v 1.3 2011/11/02 01:40:07 mr_bones_ Exp $
 
 EAPI=2
-inherit eutils qt4 games
+inherit eutils qt4-r2 games
 
 DESCRIPTION="A basic sudoku game"
 HOMEPAGE="http://gottcode.org/simsu/"
