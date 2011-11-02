@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice-l10n/Attic/libreoffice-l10n-3.4.3-r3.ebuild,v 1.4 2011/11/02 09:05:46 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice-l10n/Attic/libreoffice-l10n-3.4.3-r3.ebuild,v 1.5 2011/11/02 09:27:36 scarabeus Exp $
 
 EAPI=4
 
@@ -71,7 +71,7 @@ src_unpack() {
 
 	local lang dir rpmdir
 
-	for lang in ${LINGUAS}; do
+	for lang in ${LANGUAGES}; do
 		# break away if not enabled; paludis support
 		use_if_iuse linguas_${lang} || continue
 
