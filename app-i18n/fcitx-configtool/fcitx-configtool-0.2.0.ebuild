@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/fcitx-configtool/fcitx-configtool-0.2.0.ebuild,v 1.2 2011/09/02 00:55:27 qiaomuf Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/fcitx-configtool/fcitx-configtool-0.2.0.ebuild,v 1.3 2011/11/02 06:44:50 qiaomuf Exp $
 
 EAPI="2"
 
@@ -18,7 +18,7 @@ IUSE=""
 RDEPEND="dev-libs/glib:2
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
-	>=app-i18n/fcitx-4.0.1
+	=app-i18n/fcitx-4.0.1
 	dev-libs/libunique:1
 	dev-util/intltool
 	dev-util/pkgconfig
