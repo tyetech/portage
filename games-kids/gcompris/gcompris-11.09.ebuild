@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-kids/cvs-repo/gentoo-x86/games-kids/gcompris/Attic/gcompris-9.2.2.ebuild,v 1.8 2010/10/21 11:43:36 tupone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-kids/cvs-repo/gentoo-x86/games-kids/gcompris/Attic/gcompris-11.09.ebuild,v 1.1 2011/11/04 18:04:45 mr_bones_ Exp $
 
 EAPI=2
 
@@ -8,21 +8,22 @@ PYTHON_DEPEND="python? 2:2.6"
 PYTHON_USE_WITH_OPT="python"
 PYTHON_USE_WITH="sqlite threads"
 
-inherit autotools eutils python versionator games
+inherit autotools eutils python games
 
 DESCRIPTION="full featured educational application for children from 2 to 10"
 HOMEPAGE="http://gcompris.net/"
-SRC_URI="mirror://sourceforge/gcompris/${PN}-$(replace_version_separator 2 -).tar.gz"
+SRC_URI="mirror://sourceforge/gcompris/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ppc x86"
-IUSE="debug gnet python"
+KEYWORDS="~amd64 ~ppc ~x86"
+IUSE="gnet python"
 
 RDEPEND="x11-libs/gtk+:2
 	media-libs/gstreamer:0.10
 	media-libs/gst-plugins-good
 	media-plugins/gst-plugins-ogg
+	media-plugins/gst-plugins-alsa
 	media-plugins/gst-plugins-vorbis
 	media-libs/sdl-mixer
 	media-libs/libsdl
@@ -44,8 +45,6 @@ RDEPEND="${RDEPEND}
 	media-gfx/tuxpaint
 	sci-electronics/gnucap"
 
-S=${WORKDIR}/${PN}-$(get_version_component_range 1-2)
-
 pkg_setup() {
 	if use python; then
 		python_set_active_version 2
@@ -55,23 +54,14 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-build.patch \
-		"${FILESDIR}"/${P}-gtk2.22.patch
-	cp /usr/share/gettext/config.rpath .
-	if has_version '>=x11-libs/gtk+-2.20:2' ; then
-		sed -i \
-			-e 's:GTK_WIDGET_REALIZED:gtk_widget_get_realized:g'    \
-			-e 's:GTK_WIDGET_VISIBLE:gtk_widget_get_visible:g'      \
-			-e 's:GTK_WIDGET_DRAWABLE:gtk_widget_is_drawable:g'     \
-			-e 's:GTK_WIDGET_HAS_FOCUS:gtk_widget_has_focus:g'      \
-			-e 's:GTK_WIDGET_HAS_FOCUS:gtk_widget_has_focus:g'      \
-			-e 's:GTK_WIDGET_MAPPED:gtk_widget_get_mapped:g'        \
-			./src/goocanvas/src/goocanvaswidget.c \
-			./src/goocanvas/src/goocanvas.c \
-			./src/goocanvas/src/goocanvasatk.c \
-			|| die 'sed failed'
-	fi
+	# Drop DEPRECATED flags, bug #387817
+	sed -i -e 's:-D[A-Z_]*DISABLE_DEPRECATED:$(NULL):g' \
+		src/gcompris/Makefile.am src/gcompris/Makefile.in \
+		src/goocanvas/src/Makefile.am src/goocanvas/src/Makefile.in \
+		|| die
 
+	epatch "${FILESDIR}"/${P}-build.patch
+	cp /usr/share/gettext/config.rpath .
 	eautoreconf
 }
 
@@ -84,7 +74,6 @@ src_configure() {
 		--localedir=/usr/share/locale \
 		--infodir=/usr/share/info \
 		$(use_with python python "$(PYTHON -a)") \
-		$(use_enable debug) \
 		$(use_enable gnet) \
 		--enable-sqlite \
 		--enable-py-build-only
@@ -96,6 +85,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
+	find "${D}" -name '*.la' -exec rm -f '{}' +
 	dodoc AUTHORS ChangeLog NEWS README THANKS TODO
 	prepgamesdirs
 }
