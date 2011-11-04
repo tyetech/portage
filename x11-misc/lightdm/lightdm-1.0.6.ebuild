@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/lightdm/Attic/lightdm-1.0.5.ebuild,v 1.1 2011/10/29 08:08:40 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/lightdm/Attic/lightdm-1.0.6.ebuild,v 1.1 2011/11/04 20:24:00 hwoarang Exp $
 
 EAPI=4
 inherit autotools eutils pam
