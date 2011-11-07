@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/wine/wine-9999.ebuild,v 1.95 2011/11/07 01:57:08 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/wine/Attic/wine-1.3.32.ebuild,v 1.1 2011/11/07 01:57:08 vapier Exp $
 
 EAPI="2"
 
