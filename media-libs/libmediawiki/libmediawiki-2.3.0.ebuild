@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmediawiki/Attic/libmediawiki-2.1.0.ebuild,v 1.1 2011/09/09 17:20:37 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libmediawiki/Attic/libmediawiki-2.3.0.ebuild,v 1.1 2011/11/09 02:44:06 dilfridge Exp $
 
 EAPI=4
 
