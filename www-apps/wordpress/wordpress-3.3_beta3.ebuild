@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/wordpress/Attic/wordpress-3.3_beta1.ebuild,v 1.1 2011/10/11 06:08:45 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/wordpress/Attic/wordpress-3.3_beta3.ebuild,v 1.1 2011/11/11 04:52:58 radhermit Exp $
 
 EAPI="4"
 
@@ -15,7 +15,7 @@ KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND="|| ( dev-lang/php[mysql] dev-lang/php[mysqli] )
-		 || ( <dev-lang/php-5.3[pcre] >=dev-lang/php-5.3 )"
+	|| ( <dev-lang/php-5.3[pcre] >=dev-lang/php-5.3 )"
 
 S=${WORKDIR}/${PN}
 
