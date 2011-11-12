@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/clipgrab/Attic/clipgrab-3.1.0.1.ebuild,v 1.2 2011/04/04 12:22:00 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/clipgrab/Attic/clipgrab-3.1.0.2.ebuild,v 1.1 2011/11/12 01:23:36 xmw Exp $
 
 EAPI=4
 
