@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-8.0.ebuild,v 1.2 2011/11/11 23:40:14 anarchy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-8.0.ebuild,v 1.3 2011/11/13 17:13:47 polynomial-c Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
@@ -102,7 +102,11 @@ linguas() {
 pkg_setup() {
 	moz_pkgsetup
 
-	if ! use bindist; then
+	if ! use crypt ; then
+		export MOZILLA_DIR="${S}/mozilla"
+	fi
+
+	if ! use bindist ; then
 		elog "You are enabling official branding. You may not redistribute this build"
 		elog "to any users on your network or the internet. Doing so puts yourself into"
 		elog "a legal problem with Mozilla Foundation"
