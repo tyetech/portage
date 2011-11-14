@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/spice/Attic/spice-0.8.0.ebuild,v 1.1 2011/04/18 07:58:19 dev-zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/spice/spice-0.10.0.ebuild,v 1.1 2011/11/14 08:44:11 dev-zero Exp $
 
 EAPI=4
 
@@ -10,10 +10,10 @@ SRC_URI="http://spice-space.org/download/releases/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64"
-IUSE="+gui static-libs"
+KEYWORDS="~amd64 ~x86"
+IUSE="+client +gui sasl static static-libs"
 
-RDEPEND="~app-emulation/spice-protocol-${PV}
+RDEPEND=">=app-emulation/spice-protocol-0.8.1
 	>=x11-libs/pixman-0.17.7
 	media-libs/alsa-lib
 	media-libs/celt:0.5.1
@@ -25,7 +25,8 @@ RDEPEND="~app-emulation/spice-protocol-${PV}
 	x11-libs/libXfixes
 	virtual/jpeg
 	sys-libs/zlib
-	gui? ( =dev-games/cegui-0.6* )"
+	client? ( gui? ( =dev-games/cegui-0.6* ) )
+	sasl? ( dev-libs/cyrus-sasl )"
 DEPEND="dev-util/pkgconfig
 	${RDEPEND}"
 
@@ -35,10 +36,16 @@ DEPEND="dev-util/pkgconfig
 # * add libcacard for smartcard support
 
 src_configure() {
-	local myconf=""
-	use gui && myconf+="--enable-gui "
-	econf ${myconf} \
-		$(use_enable static-libs static)
+	local gui="$(use_enable gui)"
+	use client || gui="--disable-gui"
+	econf \
+		$(use_enable static-libs static) \
+		--disable-tunnel \
+		${gui} \
+		--disable-smartcard \
+		$(use_enable client) \
+		$(use_enable static static-linkage) \
+		$(use_with sasl)
 }
 
 src_install() {
