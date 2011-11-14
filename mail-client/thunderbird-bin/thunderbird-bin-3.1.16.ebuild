@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird-bin/Attic/thunderbird-bin-3.1.11.ebuild,v 1.1 2011/06/23 14:13:51 polynomial-c Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird-bin/Attic/thunderbird-bin-3.1.16.ebuild,v 1.1 2011/11/14 15:33:14 nirbheek Exp $
 
 EAPI="2"
 
@@ -8,9 +8,9 @@ inherit eutils multilib mozextension
 
 # Can be updated using scripts/get_langs.sh from mozilla overlay
 # '\' at EOL is needed for ${LANG} matching in linguas() below
-LANGS="af ar be bg bn-BD ca cs da de el en en-GB en-US es-AR es-ES et eu fi fr \
-fy-NL ga-IE he hu id is it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ro ru \
-si sk sl sq sv-SE tr uk zh-CN zh-TW"
+LANGS="af ar be bg bn-BD ca cs da de el en en-GB en-US es-AR es-ES et eu fi \
+fr fy-NL ga-IE gd gl he hu id is it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR \
+pt-PT ro ru si sk sl sq sr sv-SE tr uk vi zh-CN zh-TW"
 NOSHORTLANGS="en-GB es-AR pt-BR zh-TW"
 
 MY_PN="${PN/-bin}"
