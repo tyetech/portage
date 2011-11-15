@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/openocd/openocd-9999.ebuild,v 1.19 2011/10/31 03:46:58 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-embedded/cvs-repo/gentoo-x86/dev-embedded/openocd/openocd-9999.ebuild,v 1.20 2011/11/15 21:12:38 vapier Exp $
 
 EAPI="4"
 
 inherit eutils
 if [[ ${PV} == "9999" ]] ; then
-	inherit git-2
+	inherit autotools git-2
 	KEYWORDS=""
 	EGIT_REPO_URI="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
 else
