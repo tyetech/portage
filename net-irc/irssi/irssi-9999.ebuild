@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irssi/irssi-9999.ebuild,v 1.2 2011/10/29 17:34:04 binki Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/irssi/irssi-9999.ebuild,v 1.3 2011/11/17 15:12:36 binki Exp $
 
 EAPI=4
 
@@ -15,7 +15,7 @@ HOMEPAGE="http://irssi.org/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="ipv6 perl ssl socks5"
+IUSE="ipv6 +perl ssl socks5"
 
 RDEPEND="sys-libs/ncurses
 	>=dev-libs/glib-2.2.1
