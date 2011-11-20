@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/telepathy-logger/Attic/telepathy-logger-0.2.10.ebuild,v 1.7 2011/10/05 17:55:44 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/telepathy-logger/Attic/telepathy-logger-0.2.12.ebuild,v 1.1 2011/11/20 12:56:09 pacho Exp $
 
-EAPI="3"
+EAPI="4"
 PYTHON_DEPEND="2:2.5"
 
 inherit base python virtualx
@@ -13,13 +13,13 @@ SRC_URI="http://telepathy.freedesktop.org/releases/${PN}/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc sparc x86 ~x86-linux"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 ~x86-linux"
 IUSE="doc +introspection"
 
 RDEPEND=">=dev-libs/glib-2.25.11:2
 	>=sys-apps/dbus-1.1
 	>=dev-libs/dbus-glib-0.82
-	>=net-libs/telepathy-glib-0.14.0[introspection?]
+	>=net-libs/telepathy-glib-0.15.6[introspection?]
 	dev-libs/libxml2
 	dev-libs/libxslt
 	dev-db/sqlite:3
@@ -32,6 +32,7 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	python_set_active_version 2
+	python_pkg_setup
 }
 
 src_prepare() {
@@ -58,6 +59,6 @@ src_test() {
 
 src_install() {
 	base_src_install
-	dodoc AUTHORS ChangeLog NEWS README || die
-	find "${ED}" -name "*.la" -delete || die "la files removal failed"
+	dodoc AUTHORS ChangeLog NEWS README
+	find "${D}" -name "*.la" -delete || die "la files removal failed"
 }
