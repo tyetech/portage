@@ -1,6 +1,6 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/enlightenment.eclass,v 1.89 2011/07/08 11:35:01 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/enlightenment.eclass,v 1.90 2011/11/20 08:19:23 vapier Exp $
 
 # @ECLASS: enlightenment.eclass
 # @MAINTAINER:
@@ -162,7 +162,7 @@ enlightenment_src_compile() {
 	if use doc ; then
 		if [[ -x ./gendoc ]] ; then
 			./gendoc || die
-		else
+		elif emake -j1 -n doc >&/dev/null ; then
 			emake doc || die
 		fi
 	fi
