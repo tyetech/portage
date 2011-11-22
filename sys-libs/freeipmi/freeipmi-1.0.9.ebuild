@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/freeipmi/Attic/freeipmi-1.0.7-r1.ebuild,v 1.1 2011/10/18 09:01:08 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/freeipmi/Attic/freeipmi-1.0.9.ebuild,v 1.1 2011/11/22 01:51:50 flameeyes Exp $
 
 EAPI=4
 
