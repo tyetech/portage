@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/rb_libtorrent/Attic/rb_libtorrent-0.15.7.ebuild,v 1.1 2011/08/02 14:18:30 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/rb_libtorrent/rb_libtorrent-0.15.9.ebuild,v 1.1 2011/11/22 21:28:44 hwoarang Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? 2:2.6"
@@ -19,7 +19,7 @@ SRC_URI="http://libtorrent.googlecode.com/files/${MY_P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="debug doc examples python ssl"
+IUSE="debug doc examples python ssl static-libs"
 RESTRICT="test"
 
 DEPEND=">=dev-libs/boost-1.36[python?]
@@ -59,6 +59,7 @@ src_configure() {
 		$(use_enable examples) \
 		$(use_enable python python-binding) \
 		$(use_enable ssl encryption) \
+		$(use_enable static-libs static) \
 		--with-zlib=system \
 		${LOGGING} \
 		--with-boost=${BOOST_INC} \
@@ -68,6 +69,7 @@ src_configure() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die 'emake install failed'
+	use static-libs || find "${D}" -name '*.la' -exec rm -f {} +
 	dodoc ChangeLog AUTHORS NEWS README || die 'dodoc failed'
 	if use doc ; then
 		dohtml docs/* || die "Could not install HTML documentation"
