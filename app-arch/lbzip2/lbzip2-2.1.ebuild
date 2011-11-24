@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/lbzip2/Attic/lbzip2-2.0.ebuild,v 1.1 2011/11/03 07:14:37 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/lbzip2/Attic/lbzip2-2.1.ebuild,v 1.1 2011/11/24 08:09:27 jlec Exp $
 
 EAPI=4
 
