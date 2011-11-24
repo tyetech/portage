@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-docs/linux-docs-3.1.ebuild,v 1.1 2011/10/28 12:38:50 mpagano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/linux-docs/linux-docs-3.1.ebuild,v 1.2 2011/11/24 01:04:36 mpagano Exp $
 
 inherit toolchain-funcs
 
@@ -9,7 +9,7 @@ S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="Developer documentation generated from the Linux kernel"
 HOMEPAGE="http://www.kernel.org/"
-SRC_URI="mirror://kernel/linux/kernel/v2.6/${MY_P}.tar.bz2"
+SRC_URI="mirror://kernel/linux/kernel/v3.x/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
