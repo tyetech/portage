@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/abcm2ps/Attic/abcm2ps-6.5.10.ebuild,v 1.1 2011/11/12 08:20:56 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/abcm2ps/Attic/abcm2ps-6.5.13.ebuild,v 1.1 2011/11/26 02:09:55 radhermit Exp $
 
 EAPI=4
 
@@ -12,16 +12,17 @@ SRC_URI="http://moinejf.free.fr/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~sparc ~x86"
-IUSE="examples"
+IUSE="examples pango"
 
-src_prepare() {
-	sed -i -e '/LDFLAGS/s:=.*:= @LDFLAGS@:' Makefile.in || die
-}
+RDEPEND="pango? ( x11-libs/pango media-libs/freetype:2 )"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 src_configure() {
 	econf \
 		--enable-a4 \
-		--enable-deco-is-roll
+		--enable-deco-is-roll \
+		$(use_enable pango)
 }
 
 src_install() {

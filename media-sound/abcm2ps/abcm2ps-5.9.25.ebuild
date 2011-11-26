@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/abcm2ps/Attic/abcm2ps-6.5.12.ebuild,v 1.1 2011/11/18 10:25:53 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/abcm2ps/Attic/abcm2ps-5.9.25.ebuild,v 1.1 2011/11/26 02:09:55 radhermit Exp $
 
 EAPI=4
 
