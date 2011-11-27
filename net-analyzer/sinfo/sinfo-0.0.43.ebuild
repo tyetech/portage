@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sinfo/Attic/sinfo-0.0.43.ebuild,v 1.2 2011/11/27 15:51:42 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/sinfo/Attic/sinfo-0.0.43.ebuild,v 1.3 2011/11/27 15:54:11 radhermit Exp $
 
 EAPI=4
 
@@ -20,7 +20,6 @@ RDEPEND="dev-libs/boost
 DEPEND="${RDEPEND}
 	dev-cpp/asio"
 
-#AUTOTOOLS_IN_SOURCE_BUILD=1
 DOCS=( AUTHORS ChangeLog README )
 
 PATCHES=(
