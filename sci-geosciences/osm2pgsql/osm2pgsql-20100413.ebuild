@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/osm2pgsql/osm2pgsql-20100413.ebuild,v 1.6 2011/06/01 11:48:48 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/osm2pgsql/osm2pgsql-20100413.ebuild,v 1.7 2011/11/27 13:54:44 swegener Exp $
 
 EAPI=4
 
@@ -17,7 +17,6 @@ IUSE=""
 
 DEPEND="
 	app-arch/bzip2
-	dev-db/postgis
 	dev-libs/libxml2:2
 	sci-libs/geos
 	sci-libs/proj
