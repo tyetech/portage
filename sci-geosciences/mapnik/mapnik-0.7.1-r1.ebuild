@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/mapnik/Attic/mapnik-0.7.1-r1.ebuild,v 1.8 2011/09/26 07:45:56 nerdboy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/mapnik/Attic/mapnik-0.7.1-r1.ebuild,v 1.9 2011/11/27 16:05:08 swegener Exp $
 
 EAPI=3
 
@@ -35,7 +35,6 @@ RDEPEND="dev-libs/boost
 	gdal? ( sci-libs/gdal )
 	postgres? (
 		>=dev-db/postgresql-base-8.3
-		>=dev-db/postgis-1.5.2
 	)
 	python? ( dev-libs/boost[python] )
 	sqlite? ( dev-db/sqlite:3 )"
