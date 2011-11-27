@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/veusz/Attic/veusz-1.12-r1.ebuild,v 1.1 2011/07/26 09:52:41 grozin Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-visualization/cvs-repo/gentoo-x86/sci-visualization/veusz/Attic/veusz-1.14.ebuild,v 1.1 2011/11/27 04:20:15 bicatali Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
