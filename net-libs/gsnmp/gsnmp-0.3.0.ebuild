@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gsnmp/gsnmp-0.3.0.ebuild,v 1.2 2011/06/05 13:11:45 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gsnmp/gsnmp-0.3.0.ebuild,v 1.3 2011/11/27 04:51:35 radhermit Exp $
 
 EAPI=3
 
@@ -20,6 +20,8 @@ DEPEND="
 	net-libs/gnet
 "
 RDEPEND="${DEPEND}"
+
+AUTOTOOLS_IN_SOURCE_BUILD=1
 
 src_configure() {
 	econf $(use_enable static-libs static)
