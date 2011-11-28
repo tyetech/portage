@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/dragonegg/Attic/dragonegg-3.0_rc3.ebuild,v 1.1 2011/11/10 12:35:56 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-devel/cvs-repo/gentoo-x86/sys-devel/dragonegg/Attic/dragonegg-3.0_rc4.ebuild,v 1.1 2011/11/28 10:56:07 voyageur Exp $
 
 EAPI=4
 inherit multilib
