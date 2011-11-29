@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/apng2gif/Attic/apng2gif-1.2.ebuild,v 1.1 2011/06/25 23:26:23 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/apng2gif/apng2gif-1.4.ebuild,v 1.1 2011/11/29 08:35:23 radhermit Exp $
 
 EAPI="4"
 
