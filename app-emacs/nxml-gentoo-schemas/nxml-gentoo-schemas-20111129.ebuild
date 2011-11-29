@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/nxml-gentoo-schemas/Attic/nxml-gentoo-schemas-20110309.ebuild,v 1.2 2011/03/12 14:42:13 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/nxml-gentoo-schemas/nxml-gentoo-schemas-20111129.ebuild,v 1.1 2011/11/29 21:08:05 flameeyes Exp $
 
 NEED_EMACS=23
 inherit elisp
