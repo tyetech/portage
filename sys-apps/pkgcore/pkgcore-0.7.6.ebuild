@@ -1,11 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.7.2.ebuild,v 1.2 2011/09/28 04:00:18 ferringb Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/pkgcore/Attic/pkgcore-0.7.6.ebuild,v 1.1 2011/11/30 23:03:31 ferringb Exp $
 
 EAPI="3"
 DISTUTILS_SRC_TEST="setup.py"
 
-inherit distutils
+inherit distutils eutils
 
 DESCRIPTION="pkgcore package manager"
 HOMEPAGE="http://pkgcore.googlecode.com/"
@@ -17,13 +17,10 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86"
 IUSE="-doc build"
 
 RDEPEND=">=dev-lang/python-2.4
-	>=dev-python/snakeoil-0.4.3
-	!build? (
-		dev-python/pyparsing
-	)
+	>=dev-python/snakeoil-0.4.4
 	|| ( >=dev-lang/python-2.5 dev-python/pycrypto )"
 DEPEND="${RDEPEND}
-	doc? ( dev-python/sphinx )"
+	doc? ( dev-python/sphinx dev-python/pyparsing )"
 
 DOCS="AUTHORS NEWS"
 
