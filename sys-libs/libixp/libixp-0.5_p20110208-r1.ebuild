@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/libixp/Attic/libixp-0.5_p20110208.ebuild,v 1.3 2011/03/17 15:29:17 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/libixp/Attic/libixp-0.5_p20110208-r1.ebuild,v 1.1 2011/12/04 21:11:30 ssuominen Exp $
 
 # hg clone http://hg.suckless.org/libixp
 
@@ -27,7 +27,7 @@ pkg_setup() {
 		LD="$(tc-getCC) ${LDFLAGS}"
 		AR="$(tc-getAR) crs"
 		MAKESO="1"
-		SOLDFLAGS="-shared -Wl,-soname"
+		SOLDFLAGS="-shared"
 		)
 }
 
