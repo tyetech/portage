@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/s3ql/Attic/s3ql-1.8.1.ebuild,v 1.1 2011/12/08 10:04:41 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/s3ql/Attic/s3ql-1.8.1.ebuild,v 1.2 2011/12/08 10:20:11 radhermit Exp $
 
 EAPI="4"
 
@@ -35,7 +35,7 @@ DEPEND="${RDEPEND}
 
 src_test() {
 	if [[ ${EUID} -ne 0 ]] ; then
-		ewarn "tests require root privileges so userpriv must be disabled"
+		ewarn "Skipping tests: root privileges are required so userpriv must be disabled"
 	else
 		addwrite /dev/fuse
 		distutils_src_test
