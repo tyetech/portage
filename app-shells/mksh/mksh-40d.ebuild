@@ -1,12 +1,12 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/mksh/Attic/mksh-36b.ebuild,v 1.1 2008/12/21 01:41:27 hanno Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-shells/cvs-repo/gentoo-x86/app-shells/mksh/Attic/mksh-40d.ebuild,v 1.1 2011/12/12 03:23:17 patrick Exp $
 
 inherit eutils
 
 DESCRIPTION="MirBSD KSH Shell"
 HOMEPAGE="http://mirbsd.de/mksh"
-ARC4_VERSION="1.12"
+ARC4_VERSION="1.14"
 SRC_URI="http://www.mirbsd.org/MirOS/dist/mir/mksh/${PN}-R${PV}.cpio.gz
 	http://www.mirbsd.org/MirOS/dist/hosted/other/arc4random.c.${ARC4_VERSION}"
 LICENSE="BSD"
@@ -24,7 +24,8 @@ src_unpack() {
 
 src_compile() {
 	tc-export CC
-	sh Build.sh -r || die
+	# we can't assume lto existing/enabled, so we add a fallback
+	sh Build.sh -r -c lto || sh Rebuild.sh || die
 }
 
 src_install() {
