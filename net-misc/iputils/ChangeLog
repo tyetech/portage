@@ -1,6 +1,9 @@
 # ChangeLog for net-misc/iputils
 # Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/iputils/ChangeLog,v 1.99 2011/11/09 22:34:11 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/iputils/ChangeLog,v 1.100 2011/12/12 11:45:15 jer Exp $
+
+  12 Dec 2011; Jeroen Roovers <jer@gentoo.org> iputils-20101006-r2.ebuild:
+  Stable for HPPA (bug #394191).
 
 *iputils-20101006-r2 (09 Nov 2011)
 
