@@ -1,12 +1,12 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-workbench/Attic/mysql-workbench-5.2.36.ebuild,v 1.1 2011/12/14 19:30:38 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mysql-workbench/Attic/mysql-workbench-5.2.36.ebuild,v 1.2 2011/12/14 19:34:14 graaff Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 PYTHON_DEPEND=2
 
-inherit gnome2 eutils flag-o-matic python autotools
+inherit gnome2 eutils flag-o-matic python
 
 MY_P="${PN}-gpl-${PV}-src"
 
