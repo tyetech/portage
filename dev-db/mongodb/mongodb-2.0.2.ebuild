@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.0.2_rc2.ebuild,v 1.1 2011/12/12 15:54:34 ultrabug Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mongodb/Attic/mongodb-2.0.2.ebuild,v 1.1 2011/12/15 09:56:02 ultrabug Exp $
 
 EAPI=4
 SCONS_MIN_VERSION="1.2.0"
