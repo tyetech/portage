@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/leechcraft-newlife/Attic/leechcraft-newlife-0.4.96.ebuild,v 1.1 2011/12/15 19:42:03 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/leechcraft-newlife/Attic/leechcraft-newlife-0.4.96-r1.ebuild,v 1.1 2011/12/16 18:44:40 maksbotan Exp $
 
-EAPI="2"
+EAPI="4"
 
 inherit leechcraft
 
@@ -12,5 +12,5 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DEPEND="=net-misc/leechcraft-core-${PV}"
+DEPEND="~net-misc/leechcraft-core-${PV}"
 RDEPEND="${DEPEND}"
