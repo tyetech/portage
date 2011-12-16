@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/leechcraft-task-show/Attic/leechcraft-task-show-0.4.96.ebuild,v 1.1 2011/12/15 19:47:28 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/leechcraft-task-show/Attic/leechcraft-task-show-0.4.96-r1.ebuild,v 1.1 2011/12/16 18:50:03 maksbotan Exp $
 
-EAPI="2"
+EAPI="4"
 
 DESCRIPTION="Virtual for plugins that can show IDownloads and IJobHolders"
 HOMEPAGE=""
