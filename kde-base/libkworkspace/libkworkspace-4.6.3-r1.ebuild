@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkworkspace/Attic/libkworkspace-4.6.3.ebuild,v 1.4 2011/06/26 01:54:48 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkworkspace/Attic/libkworkspace-4.6.3-r1.ebuild,v 1.1 2011/12/18 00:03:00 dilfridge Exp $
 
 EAPI=4
 
