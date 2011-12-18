@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/darkstat/Attic/darkstat-3.0.714.ebuild,v 1.2 2011/12/15 14:16:59 ago Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/darkstat/Attic/darkstat-3.0.714.ebuild,v 1.3 2011/12/18 19:48:37 phajdan.jr Exp $
 
 EAPI="2"
 inherit eutils
@@ -10,7 +10,7 @@ HOMEPAGE="http://dmr.ath.cx/net/darkstat/"
 SRC_URI="http://dmr.ath.cx/net/${PN}/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE=""
 
 DEPEND="net-libs/libpcap"
