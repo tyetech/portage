@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/postfix/Attic/postfix-2.9_pre20111213.ebuild,v 1.1 2011/12/15 06:58:52 eras Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/postfix/Attic/postfix-2.9_pre20111217.ebuild,v 1.1 2011/12/18 10:23:21 eras Exp $
 
 EAPI=4
 
