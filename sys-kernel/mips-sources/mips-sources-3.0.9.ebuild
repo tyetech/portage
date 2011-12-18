@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-3.0.4.ebuild,v 1.1 2011/09/04 11:18:13 kumba Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/mips-sources/Attic/mips-sources-3.0.9.ebuild,v 1.1 2011/12/18 03:54:19 kumba Exp $
 
 # INCLUDED:
 # 1) linux sources from kernel.org
@@ -16,7 +16,7 @@
 # Version Data
 OKV=${PV/_/-}
 GITDATE="20110821"			# Date of diff between kernel.org and lmo GIT
-GENPATCHREV="1"				# Tarball revision for patches
+GENPATCHREV="2"				# Tarball revision for patches
 
 # Directories
 S="${WORKDIR}/linux-${OKV}-${GITDATE}"
