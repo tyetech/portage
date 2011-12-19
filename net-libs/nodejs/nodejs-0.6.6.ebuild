@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.6.3.ebuild,v 1.1 2011/11/28 03:05:38 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.6.6.ebuild,v 1.1 2011/12/19 04:34:01 patrick Exp $
 
 EAPI="2"
 
