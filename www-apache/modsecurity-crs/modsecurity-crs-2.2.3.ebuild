@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/modsecurity-crs/Attic/modsecurity-crs-2.2.2.ebuild,v 1.1 2011/10/17 21:58:10 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/modsecurity-crs/Attic/modsecurity-crs-2.2.3.ebuild,v 1.1 2011/12/20 11:14:05 flameeyes Exp $
 
 EAPI=4
 
