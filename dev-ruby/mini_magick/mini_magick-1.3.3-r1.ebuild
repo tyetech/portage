@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mini_magick/Attic/mini_magick-3.1.ebuild,v 1.1 2011/01/02 13:04:53 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/mini_magick/Attic/mini_magick-1.3.3-r1.ebuild,v 1.1 2011/12/21 10:31:47 flameeyes Exp $
 
 EAPI=2
 
@@ -40,4 +40,8 @@ all_ruby_prepare() {
 
 	# Remove spec definition part because the gemspec file is not included
 	sed -i -e '/gemspec/,$ d' Rakefile || die
+
+	# fix dependency over subexec, so that 0.1.x is also accepted (tests
+	# pass just fine, package works).
+	sed -i -e 's:~>:>=:' ../metadata || die
 }
