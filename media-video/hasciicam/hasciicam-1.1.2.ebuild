@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/hasciicam/hasciicam-1.1.2.ebuild,v 1.1 2011/12/22 18:12:34 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/hasciicam/hasciicam-1.1.2.ebuild,v 1.2 2011/12/22 18:17:05 ssuominen Exp $
 
 EAPI=4
 
@@ -18,4 +18,4 @@ DEPEND="media-libs/aalib
 RDEPEND="${DEPEND}
 	media-fonts/font-misc-misc" #387909
 
-DOCS=( AUTHORS ChangeLog NEWS README TODO )
+DOCS=( AUTHORS NEWS README TODO ) # ChangeLog is dead
