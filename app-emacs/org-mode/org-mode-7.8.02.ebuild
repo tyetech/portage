@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/org-mode/org-mode-7.7.ebuild,v 1.3 2011/12/25 15:41:00 ulm Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/org-mode/Attic/org-mode-7.8.02.ebuild,v 1.1 2011/12/25 15:41:00 ulm Exp $
 
 EAPI=4
 NEED_EMACS=22
