@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/unbound/Attic/unbound-1.4.12.ebuild,v 1.1 2011/07/16 03:52:59 matsuu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/unbound/Attic/unbound-1.4.14.ebuild,v 1.1 2011/12/26 13:41:51 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
@@ -38,13 +38,16 @@ RDEPEND="${RDEPEND}
 pkg_setup() {
 	enewgroup unbound
 	enewuser unbound -1 -1 /etc/unbound unbound
+
+	use python && python_pkg_setup
 }
 
 src_prepare() {
 	# To avoid below error messages, set 'trust-anchor-file' to same value in
 	# 'auto-trust-anchor-file'.
-	# [23109:0] error: Could not open autotrust file for writing, # /etc/dnssec/root-anchors.txt: Permission denied
-	epatch "${FILESDIR}/${P}-gentoo.patch"
+	# [23109:0] error: Could not open autotrust file for writing,
+	# /etc/dnssec/root-anchors.txt: Permission denied
+	epatch "${FILESDIR}/${PN}-1.4.12-gentoo.patch"
 }
 
 src_configure() {
@@ -95,4 +98,12 @@ src_install() {
 
 	exeinto /usr/share/${PN}
 	doexe contrib/update-anchor.sh || die "doexe failed"
+}
+
+pkg_postinst() {
+	use python && python_mod_optimize unbound.py unboundmodule.py
+}
+
+pkg_postrm() {
+	use python && python_mod_cleanup unbound.py unboundmodule.py
 }
