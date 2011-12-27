@@ -1,6 +1,6 @@
-# Copyright 1999-2004 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/common-lisp.eclass,v 1.13 2005/07/11 15:08:06 swegener Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/common-lisp.eclass,v 1.14 2011/12/27 17:55:12 fauli Exp $
 #
 # Author Matthew Kennedy <mkennedy@gentoo.org>
 #

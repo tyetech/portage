@@ -1,8 +1,8 @@
-# Copyright 1999-2007 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/xemacs-elisp-common.eclass,v 1.4 2011/06/26 19:06:59 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/xemacs-elisp-common.eclass,v 1.5 2011/12/27 17:55:13 fauli Exp $
 #
-# Copyright 2007 Hans de Graaff <graaff@gentoo.org>
+# Copyright 2007-2011 Hans de Graaff <graaff@gentoo.org>
 #
 # Based on elisp-common.eclass:
 # Copyright 2007 Christian Faulhammer <opfer@gentoo.org>
