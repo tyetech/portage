@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/konsole/Attic/konsole-4.7.4.ebuild,v 1.1 2011/12/11 18:52:27 alexxy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/konsole/Attic/konsole-4.7.4-r1.ebuild,v 1.1 2011/12/28 17:26:43 dilfridge Exp $
 
 EAPI=4
 
@@ -36,4 +36,5 @@ RDEPEND="${COMMONDEPEND}"
 PATCHES=(
 	"${FILESDIR}/${PN}-4.6.4-imagesize.patch"
 	"${FILESDIR}/${PN}-4.7.0-tests.patch"
+	"${FILESDIR}/${PN}-4.7.4-ypos.patch"
 )
