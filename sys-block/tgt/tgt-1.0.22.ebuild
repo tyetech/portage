@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/tgt/tgt-1.0.22.ebuild,v 1.1 2011/12/28 11:50:24 ultrabug Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/tgt/tgt-1.0.22.ebuild,v 1.2 2011/12/30 18:18:02 mr_bones_ Exp $
 
 EAPI=4
 
