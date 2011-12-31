@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/leechcraft-bittorrent/Attic/leechcraft-bittorrent-0.4.85.ebuild,v 1.1 2011/08/25 15:31:44 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/leechcraft-bittorrent/Attic/leechcraft-bittorrent-0.4.97.ebuild,v 1.1 2011/12/31 12:18:31 maksbotan Exp $
 
-EAPI="2"
+EAPI="4"
 
 inherit leechcraft
 
@@ -12,7 +12,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-DEPEND="=net-misc/leechcraft-core-${PV}
+DEPEND="~net-misc/leechcraft-core-${PV}
 		net-libs/rb_libtorrent"
 RDEPEND="${DEPEND}
 		virtual/leechcraft-task-show"
