@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/chef-solr/Attic/chef-solr-0.10.2.ebuild,v 1.1 2011/07/25 09:19:37 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/chef-solr/Attic/chef-solr-0.10.2-r1.ebuild,v 1.1 2011/12/31 20:07:50 idl0r Exp $
 
 EAPI="2"
 USE_RUBY="ruby18"
