@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/netperf/Attic/netperf-2.4.4.ebuild,v 1.11 2011/08/14 12:57:34 lxnay Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/netperf/Attic/netperf-2.4.4-r1.ebuild,v 1.1 2011/12/31 20:14:06 idl0r Exp $
 
 inherit eutils flag-o-matic autotools
 
