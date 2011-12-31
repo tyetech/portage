@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/pdnsd/Attic/pdnsd-1.2.8-r2.ebuild,v 1.5 2011/12/17 19:36:20 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/pdnsd/pdnsd-1.2.8-r4.ebuild,v 1.1 2011/12/31 21:22:49 idl0r Exp $
 
 EAPI="2"
 
