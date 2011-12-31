@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/leechcraft-downloader-http/Attic/leechcraft-downloader-http-0.4.90.ebuild,v 1.1 2011/09/14 17:08:04 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/virtual/cvs-repo/gentoo-x86/virtual/leechcraft-downloader-http/Attic/leechcraft-downloader-http-0.4.97.ebuild,v 1.1 2011/12/31 12:19:39 maksbotan Exp $
 
-EAPI="2"
+EAPI="4"
 
 DESCRIPTION="Virtual for LeechCraft plugins providing HTTP downloading"
 HOMEPAGE=""
