@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-1.8.8.ebuild,v 1.2 2011/11/03 00:40:50 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-1.8.9-r3.ebuild,v 1.1 2011/12/31 20:47:13 idl0r Exp $
 
 EAPI="2"
 
@@ -26,6 +26,7 @@ COMMON_DEPEND="snmp? ( net-analyzer/net-snmp )
 	mysql? ( virtual/mysql )
 	sqlite3? ( =dev-db/sqlite-3* )
 	postgres? ( dev-db/postgresql-base )
+	oracle? ( dev-db/oracle-instantclient-basic )
 	jabber? ( dev-libs/iksemel )
 	curl? ( net-misc/curl )
 	openipmi? ( sys-libs/openipmi )
@@ -44,7 +45,7 @@ DEPEND="${COMMON_DEPEND}
 use frontend && need_php_httpd
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.8.3-as-needed.patch"
+	epatch "${FILESDIR}/${PN}-1.8.9-as-needed.patch"
 	eautoreconf
 }
 
