@@ -1,8 +1,8 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/leechcraft-azoth/Attic/leechcraft-azoth-0.4.90.ebuild,v 1.1 2011/09/15 05:28:20 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/leechcraft-azoth/Attic/leechcraft-azoth-0.4.97.ebuild,v 1.1 2011/12/31 12:08:41 maksbotan Exp $
 
-EAPI="2"
+EAPI="4"
 
 inherit leechcraft
 
@@ -11,13 +11,14 @@ DESCRIPTION="Azoth, the modular IM client for LeechCraft."
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="debug +acetamide +adiumstyles +autoidler +autopaste +chathistory +crypt
-		+depester +embedmedia +herbicide +hili +juick +lastseen +metacontacts
-		+modnok +nativeemoticons +p100q +rosenthal +standardstyles +xoox
-		+xtazy"
+		+depester +embedmedia +herbicide +hili +isterique +juick +lastseen
+		+metacontacts +modnok +nativeemoticons +otroid +p100q +rosenthal
+		+standardstyles +xoox +xtazy"
 
-DEPEND="=net-misc/leechcraft-core-${PV}
+DEPEND="~net-misc/leechcraft-core-${PV}
 		x11-libs/qt-webkit
 		x11-libs/qt-multimedia
+		otroid? ( net-libs/libotr )
 		xoox? ( net-libs/qxmpp[extras] media-libs/speex )
 		xtazy? ( x11-libs/qt-dbus )
 		crypt? ( app-crypt/qca app-crypt/qca-gnupg )"
@@ -42,11 +43,13 @@ src_configure() {
 		$(cmake-utils_use_enable embedmedia AZOTH_EMBEDMEDIA)
 		$(cmake-utils_use_enable herbicide AZOTH_HERBICIDE)
 		$(cmake-utils_use_enable hili AZOTH_HILI)
+		$(cmake-utils_use_enable isterique AZOTH_ISTERIQUE)
 		$(cmake-utils_use_enable juick AZOTH_JUICK)
 		$(cmake-utils_use_enable lastseen AZOTH_LASTSEEN)
 		$(cmake-utils_use_enable metacontacts AZOTH_LASTSEEN)
 		$(cmake-utils_use_enable modnok AZOTH_MODNOK)
 		$(cmake-utils_use_enable nativeemoticons AZOTH_NATIVEEMOTICONS)
+		$(cmake-utils_use_enable otroid AZOTH_OTROID)
 		$(cmake-utils_use_enable p100q AZOTH_P100Q)
 		$(cmake-utils_use_enable rosenthal AZOTH_ROSENTHAL)
 		$(cmake-utils_use_enable standardstyles AZOTH_STANDARDSTYLES)
