@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/test-unit/Attic/test-unit-2.4.3.ebuild,v 1.1 2011/12/13 06:52:11 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/test-unit/Attic/test-unit-2.4.3.ebuild,v 1.2 2012/01/01 10:10:16 graaff Exp $
 
 EAPI=2
 USE_RUBY="ruby18 ruby19 ree18 jruby"
