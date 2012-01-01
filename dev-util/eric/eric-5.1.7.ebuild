@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/eric/Attic/eric-5.1.4.ebuild,v 1.1 2011/07/06 19:38:47 djc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/eric/Attic/eric-5.1.7.ebuild,v 1.1 2012/01/01 22:54:42 pesa Exp $
 
 EAPI="3"
-PYTHON_DEPEND="3"
+PYTHON_DEPEND="3:3.1"
 SUPPORT_PYTHON_ABIS="1"
 RESTRICT_PYTHON_ABIS="2.* *-jython"
 
@@ -23,7 +23,8 @@ SLOT="5"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE="spell"
 
-DEPEND=">=dev-python/PyQt4-4.7[assistant,svg,webkit,X]
+DEPEND=">=dev-python/sip-4.12.4
+	>=dev-python/PyQt4-4.7[assistant,svg,webkit,X]
 	>=dev-python/qscintilla-python-2.4"
 RDEPEND="${DEPEND}
 	>=dev-python/chardet-2.0.1
@@ -31,15 +32,14 @@ RDEPEND="${DEPEND}
 	>=dev-python/pygments-1.4"
 PDEPEND="spell? ( dev-python/pyenchant )"
 
-LANGS="cs de es fr it ru tr zh_CN"
+LANGS="cs de en es fr it ru tr zh_CN"
 for L in ${LANGS}; do
-	SRC_URI="${SRC_URI}
-		linguas_${L}? ( ${BASE_URI}/${MY_PN}-i18n-${L/zh_CN/zh_CN.GB2312}-${MY_PV}.tar.gz )"
-	IUSE="${IUSE} linguas_${L}"
+	SRC_URI+=" linguas_${L}? ( ${BASE_URI}/${MY_PN}-i18n-${L/zh_CN/zh_CN.GB2312}-${MY_PV}.tar.gz )"
+	IUSE+=" linguas_${L}"
 done
 unset L
 
-S="${WORKDIR}/${MY_P}"
+S=${WORKDIR}/${MY_P}
 
 PYTHON_VERSIONED_EXECUTABLES=("/usr/bin/.*")
 
