@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/kwave/Attic/kwave-0.8.6.ebuild,v 1.1 2011/04/19 20:29:50 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/kwave/kwave-0.8.7.ebuild,v 1.1 2012/01/03 14:48:46 johu Exp $
 
 EAPI=4
 
