@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtiger/libtiger-0.3.4.ebuild,v 1.1 2011/01/09 15:19:39 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtiger/libtiger-0.3.4.ebuild,v 1.2 2012/01/04 18:10:58 ago Exp $
 
 EAPI=2
 
@@ -12,7 +12,7 @@ SRC_URI="http://libtiger.googlecode.com/files/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="doc"
 
 RDEPEND="x11-libs/pango
