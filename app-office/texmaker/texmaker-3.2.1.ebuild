@@ -1,12 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmaker/Attic/texmaker-1.92.ebuild,v 1.8 2010/10/23 14:48:48 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/texmaker/Attic/texmaker-3.2.1.ebuild,v 1.1 2012/01/05 08:17:31 jlec Exp $
 
-EAPI=1
+EAPI="3"
 
-inherit eutils versionator qt4
-
-DESCRIPTION="A nice LaTeX-IDE"
+inherit base prefix qt4-r2 versionator
 
 # The upstream version numbering is bad, so we have to remove a dot in the
 # minor version number
@@ -19,46 +17,45 @@ else
 	MY_P="${PN}-${MAJOR}.${MINOR_1}.${MINOR_2}"
 fi
 
-S="${WORKDIR}/${MY_P}"
+MY_P="${P}"
+
+DESCRIPTION="A nice LaTeX-IDE"
 HOMEPAGE="http://www.xm1math.net/texmaker/"
 SRC_URI="http://www.xm1math.net/texmaker/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
-
 SLOT="0"
-
-KEYWORDS="amd64 ppc ppc64 x86 ~x86-fbsd"
-
+KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE=""
 
-COMMON_DEPEND="x11-libs/libX11
-	x11-libs/libXext
-	>=x11-libs/qt-gui-4.5.1:4
-	>=x11-libs/qt-core-4.5.1:4
-	>=app-text/hunspell-1.2.4"
+S="${WORKDIR}/${MY_P}"
 
+COMMON_DEPEND="
+	app-text/poppler[qt4]
+	sys-libs/zlib
+	x11-libs/libX11
+	x11-libs/libXext
+	>=x11-libs/qt-gui-4.6.1:4
+	>=x11-libs/qt-core-4.6.1:4
+	>=x11-libs/qt-webkit-4.6.1:4
+	>=app-text/hunspell-1.2.4"
 RDEPEND="${COMMON_DEPEND}
 	virtual/latex-base
 	app-text/psutils
 	app-text/ghostscript-gpl
 	media-libs/netpbm"
-
 DEPEND="${COMMON_DEPEND}
 	dev-util/pkgconfig"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}/${PN}-1.91-hunspell.patch"
-}
+PATCHES=( "${FILESDIR}/${P}-hunspell.patch" )
 
-src_compile() {
-	eqmake4 texmaker.pro || die "qmake failed"
-	emake || die "emake failed"
+src_prepare() {
+	qt4-r2_src_prepare
+	eprefixify ${PN}.pro configdialog.cpp
 }
 
 src_install() {
-	emake INSTALL_ROOT="${D}" install || die "make install failed"
+	emake INSTALL_ROOT="${ED}" install || die "make install failed"
 
 	insinto /usr/share/pixmaps/texmaker
 	doins utilities/texmaker*.png || die "doins failed."
@@ -69,6 +66,5 @@ src_install() {
 
 pkg_postinst() {
 	elog "A user manual with many screenshots is available at:"
-	elog "/usr/share/${PN}/usermanual_en.html"
-	elog
+	elog "${EPREFIX}/usr/share/${PN}/usermanual_en.html"
 }
