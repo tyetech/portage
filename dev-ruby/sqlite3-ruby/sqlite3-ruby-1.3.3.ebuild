@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/sqlite3-ruby/Attic/sqlite3-ruby-1.3.3.ebuild,v 1.2 2011/09/19 18:58:41 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/sqlite3-ruby/Attic/sqlite3-ruby-1.3.3.ebuild,v 1.3 2012/01/07 08:35:31 graaff Exp $
 
 EAPI=2
-USE_RUBY="ruby18 ree18 ruby19"
+USE_RUBY="ruby18 ree18"
 
 RUBY_FAKEGEM_TASK_DOC="docs"
 RUBY_FAKEGEM_DOCDIR="doc faq"
