@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/apt-cacher-ng/Attic/apt-cacher-ng-0.6.5.ebuild,v 1.1 2011/08/16 21:00:31 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/apt-cacher-ng/Attic/apt-cacher-ng-0.6.11.ebuild,v 1.1 2012/01/07 17:22:35 jer Exp $
 
 EAPI="4"
 
@@ -10,10 +10,10 @@ DESCRIPTION="Yet another implementation of an HTTP proxy for Debian/Ubuntu softw
 HOMEPAGE="http://www.unix-ag.uni-kl.de/~bloch/acng/"
 LICENSE="as-is"
 SLOT="0"
-SRC_URI="mirror://debian/pool/main/a/${PN}/${PN}_${PV}.orig.tar.gz"
+SRC_URI="mirror://debian/pool/main/a/${PN}/${PN}_${PV}.orig.tar.xz"
 
 KEYWORDS="~amd64 ~x86"
-IUSE="doc fuse"
+IUSE="doc fuse lzma tcpd"
 
 COMMON_DEPEND="
 	app-arch/bzip2
@@ -21,12 +21,15 @@ COMMON_DEPEND="
 "
 DEPEND="
 	${COMMON_DEPEND}
+	app-arch/xz-utils
 	dev-util/cmake
 "
 RDEPEND="
 	${COMMON_DEPEND}
-	dev-lang/perl
+	lzma? ( app-arch/xz-utils )
 	fuse? ( sys-fs/fuse )
+	tcpd? ( sys-apps/tcp-wrappers )
+	dev-lang/perl
 "
 
 pkg_setup() {
@@ -41,6 +44,16 @@ src_configure(){
 		mycmakeargs="-DHAVE_FUSE_26=yes ${mycmakeargs}"
 	else
 		mycmakeargs="-DHAVE_FUSE_26=no ${mycmakeargs}"
+	fi
+	if use lzma; then
+		mycmakeargs="-DHAVE_LZMA=yes ${mycmakeargs}"
+	else
+		mycmakeargs="-DHAVE_LZMA=no ${mycmakeargs}"
+	fi
+	if use tcpd; then
+		mycmakeargs="-DHAVE_LIBWRAP=yes ${mycmakeargs}"
+	else
+		mycmakeargs="-DHAVE_LIBWRAP=no ${mycmakeargs}"
 	fi
 
 	cmake-utils_src_configure
@@ -82,17 +95,7 @@ src_install() {
 	# default configuration
 	insinto /etc/${PN}
 	newins conf/acng.conf ${PN}.conf
-	newins conf/report.html report.html
-	newins conf/deb_mirrors.gz deb_mirrors.gz
-	newins conf/debvol_mirrors.gz debvol_mirrors.gz
-	newins conf/ubuntu_mirrors ubuntu_mirrors
-	newins conf/archlx_mirrors archlx_mirrors
-	newins conf/sfnet_mirrors sfnet_mirrors
-	newins conf/cygwin_mirrors cygwin_mirrors
-	newins conf/security.conf security.conf
-	newins conf/maint.html maint.html
-	newins conf/userinfo.html userinfo.html
-	newins conf/style.css style.css
+	doins $( echo conf/* | sed 's|conf/acng.conf||g' )
 
 	dodir /var/cache/${PN}
 	dodir /var/log/${PN}
