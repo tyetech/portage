@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/numexpr/Attic/numexpr-1.4.2.ebuild,v 1.3 2011/11/25 09:31:42 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/numexpr/numexpr-2.0.1.ebuild,v 1.1 2012/01/08 16:51:27 xarthisius Exp $
 
 EAPI=3
 
