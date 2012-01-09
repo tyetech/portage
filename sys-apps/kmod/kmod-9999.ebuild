@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/kmod/kmod-9999.ebuild,v 1.5 2012/01/09 14:27:36 williamh Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/kmod/kmod-9999.ebuild,v 1.6 2012/01/09 16:01:44 williamh Exp $
 
 EAPI=4
 
@@ -55,7 +55,7 @@ src_install()
 	# we have a .pc file for people to use
 	find "${D}" -name libkmod.la -delete
 
-	if use compat; then
+	if use compat && use tools; then
 	dodir /sbin
 		for cmd in depmod insmod lsmod modinfo modprobe rmmod; do
 			dosym /usr/bin/kmod /sbin/$cmd
