@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez/Attic/bluez-4.97.ebuild,v 1.2 2012/01/06 22:34:39 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/bluez/Attic/bluez-4.97-r2.ebuild,v 1.1 2012/01/09 23:01:55 pacho Exp $
 
 EAPI="4"
 PYTHON_DEPEND="test-programs? 2"
@@ -134,11 +134,7 @@ src_install() {
 		network/network.conf \
 		serial/serial.conf
 
-	insinto /lib/udev/rules.d/
-	newins "${FILESDIR}/${PN}-4.18-udev.rules" 70-bluetooth.rules
-	exeinto /lib/udev/
-	newexe "${FILESDIR}/${PN}-4.67-udev.script" bluetooth.sh
-
+	newinitd "${FILESDIR}/bluetooth-init.d-r1" bluetooth
 	newinitd "${FILESDIR}/rfcomm-init.d" rfcomm
 	newconfd "${FILESDIR}/rfcomm-conf.d" rfcomm
 
@@ -164,5 +160,12 @@ pkg_postinst() {
 		elog "bluetooth clients as root. If you want to be able to run bluetooth clientes as "
 		elog "a regular user, you need to enable the consolekit use flag for this package or"
 		elog "to add the user to the plugdev group."
+	fi
+
+	if [ "$(rc-config list default | grep bluetooth)" = "" ] ; then
+		elog "You will need to add bluetooth service to default runlevel"
+		elog "for getting your devices detected from startup without needing"
+		elog "to reconnect them. For that please run:"
+		elog "'rc-update add bluetooth default'"
 	fi
 }
