@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/grig/grig-0.8.0.ebuild,v 1.3 2012/01/09 20:44:08 ago Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-radio/cvs-repo/gentoo-x86/media-radio/grig/grig-0.8.0.ebuild,v 1.4 2012/01/09 21:01:40 tomjbe Exp $
 
 EAPI=4
 
@@ -22,7 +22,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_prepare() {
-	sed -i -e "s/-DG_DISABLE_DEPRECATED//" src/Makefile.in
+	sed -i -e "s/-DG_DISABLE_DEPRECATED//" src/Makefile.in || die
 }
 
 src_configure() {
