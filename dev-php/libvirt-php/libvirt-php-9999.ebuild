@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/libvirt-php/libvirt-php-9999.ebuild,v 1.1 2011/12/14 22:30:25 mabi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/libvirt-php/libvirt-php-9999.ebuild,v 1.2 2012/01/15 17:14:31 olemarkus Exp $
 
 EAPI=3
 
