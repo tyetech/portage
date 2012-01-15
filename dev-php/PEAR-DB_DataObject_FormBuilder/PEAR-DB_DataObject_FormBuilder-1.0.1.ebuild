@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-DB_DataObject_FormBuilder/Attic/PEAR-DB_DataObject_FormBuilder-1.0.0.ebuild,v 1.1 2010/02/16 04:31:50 beandog Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PEAR-DB_DataObject_FormBuilder/Attic/PEAR-DB_DataObject_FormBuilder-1.0.1.ebuild,v 1.1 2012/01/15 10:18:13 mabi Exp $
 
 inherit php-pear-r1
 
