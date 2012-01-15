@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header:
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/rt-sources/rt-sources-3.0.14_p31.ebuild,v 1.2 2012/01/15 19:15:47 tove Exp $
 
 EAPI="2"
 
