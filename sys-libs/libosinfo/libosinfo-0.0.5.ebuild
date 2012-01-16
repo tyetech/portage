@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/libosinfo/Attic/libosinfo-0.0.4.ebuild,v 1.1 2011/12/19 17:46:53 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/libosinfo/Attic/libosinfo-0.0.5.ebuild,v 1.1 2012/01/16 21:50:31 nirbheek Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
