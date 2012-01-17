@@ -1,19 +1,19 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.21-r3.ebuild,v 1.2 2011/08/17 20:11:31 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/mutt/Attic/mutt-1.5.21-r8.ebuild,v 1.1 2012/01/17 16:28:34 grobian Exp $
 
 EAPI="3"
 
 inherit eutils flag-o-matic autotools
 
-PATCHSET_REV="-r3"
+PATCHSET_REV="-r8"
 
 DESCRIPTION="A small but very powerful text-based mail client"
-HOMEPAGE="http://www.mutt.org"
+HOMEPAGE="http://www.mutt.org/"
 SRC_URI="ftp://ftp.mutt.org/mutt/devel/${P}.tar.gz
 	mirror://gentoo/${P}-gentoo-patches${PATCHSET_REV}.tar.bz2
 	http://dev.gentoo.org/~grobian/distfiles/${P}-gentoo-patches${PATCHSET_REV}.tar.bz2"
-IUSE="berkdb crypt debug doc gdbm gnutls gpg idn imap mbox nls nntp pop qdbm sasl sidebar smime smtp ssl tokyocabinet"
+IUSE="berkdb crypt debug doc gdbm gnutls gpg idn imap mbox nls nntp pop qdbm sasl selinux sidebar smime smtp ssl tokyocabinet"
 SLOT="0"
 LICENSE="GPL-2"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x64-freebsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
@@ -42,8 +42,9 @@ RDEPEND=">=sys-libs/ncurses-5.2
 		sasl?    ( >=dev-libs/cyrus-sasl-2 )
 	)
 	idn?     ( net-dns/libidn )
-	gpg?   ( >=app-crypt/gpgme-0.9.0 )
+	gpg?     ( >=app-crypt/gpgme-0.9.0 )
 	smime?   ( >=dev-libs/openssl-0.9.6 )
+	selinux? ( sec-policy/selinux-mutt )
 	app-misc/mime-types"
 DEPEND="${RDEPEND}
 	net-mail/mailbase
@@ -91,7 +92,11 @@ src_prepare() {
 
 	# we conditionalise this one, simply because it has considerable
 	# impact on the code
-	use sidebar && epatch "${PATCHDIR}"/sidebar.patch
+	if use sidebar ; then
+		epatch "${PATCHDIR}"/sidebar.patch
+		epatch "${PATCHDIR}"/sidebar-utf8.patch
+		epatch "${PATCHDIR}"/sidebar-dotpathsep.patch
+	fi
 
 	# patch version string for bug reports
 	sed -i -e 's/"Mutt %s (%s)"/"Mutt %s (%s, Gentoo '"${PVR}"')"/' \
@@ -200,9 +205,11 @@ src_install() {
 
 	# A man-page is always handy
 	if use !doc; then
+		make -C doc DESTDIR="${D}" muttrc.man || die
 		cp doc/mutt.man mutt.1
 		cp doc/muttbug.man flea.1
-		doman mutt.1 flea.1
+		cp doc/muttrc.man muttrc.5
+		doman mutt.1 flea.1 muttrc.5
 	else
 		# nuke manpages that should be provided by an MTA, bug #177605
 		rm "${ED}"/usr/share/man/man5/{mbox,mmdf}.5 \
