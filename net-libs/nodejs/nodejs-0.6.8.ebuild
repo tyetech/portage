@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.6.7.ebuild,v 1.1 2012/01/11 07:44:30 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/nodejs/Attic/nodejs-0.6.8.ebuild,v 1.1 2012/01/20 09:21:28 patrick Exp $
 
 EAPI="2"
 
-inherit eutils
+inherit eutils pax-utils
 
 # omgwtf
 RESTRICT="test"
@@ -35,6 +35,7 @@ src_compile() {
 
 src_install() {
 	emake DESTDIR="${D}" install || die
+	pax-mark -m "${D}"/usr/bin/node
 }
 
 src_test() {
