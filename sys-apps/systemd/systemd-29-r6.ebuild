@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/systemd/Attic/systemd-29-r5.ebuild,v 1.2 2012/01/14 21:17:23 williamh Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/systemd/Attic/systemd-29-r6.ebuild,v 1.1 2012/01/21 15:55:11 mgorny Exp $
 
 EAPI=4
 
@@ -15,7 +15,11 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="audit cryptsetup gtk pam plymouth selinux tcpd"
 
+# We need to depend on sysvinit for sulogin which is used in the rescue
+# mode. Bug #399615.
+
 COMMON_DEPEND=">=sys-apps/dbus-1.4.10
+	sys-apps/sysvinit
 	>=sys-apps/util-linux-2.19
 	>=sys-fs/udev-171
 	sys-libs/libcap
@@ -67,7 +71,10 @@ src_prepare() {
 src_configure() {
 	local myeconfargs=(
 		--with-distro=gentoo
+		# install everything to /usr
 		--with-rootdir=/usr
+		# but pam modules have to lie in /lib*
+		--with-pamlibdir=/$(get_libdir)/security
 		--localstatedir=/var
 		--docdir=/tmp/docs
 		$(use_enable audit)
@@ -106,6 +113,7 @@ src_install() {
 	# we just keep sysvinit tools, so no need for the mans
 	rm "${D}"/usr/share/man/man8/{halt,poweroff,reboot,runlevel,shutdown,telinit}.8 \
 		|| die
+	rm "${D}"/usr/share/man/man1/init.1 || die
 
 	# Create /run/lock as required by new baselay/OpenRC compat.
 	insinto /usr/lib/tmpfiles.d
@@ -129,7 +137,7 @@ optfeature() {
 }
 
 pkg_postinst() {
-	mkdir -p "${ROOT}"/run
+	mkdir -p "${ROOT}"/run || ewarn "Unable to mkdir /run, this could mean trouble."
 	if [[ ! -L "${ROOT}"/etc/mtab ]]; then
 		ewarn "Upstream suggests that the /etc/mtab file should be a symlink to /proc/mounts."
 		ewarn "It is known to cause users being unable to unmount user mounts. If you don't"
