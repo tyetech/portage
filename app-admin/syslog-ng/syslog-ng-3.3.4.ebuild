@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/syslog-ng/Attic/syslog-ng-3.3.1.ebuild,v 1.6 2011/11/09 17:36:10 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/syslog-ng/Attic/syslog-ng-3.3.4.ebuild,v 1.1 2012/01/21 21:51:52 mr_bones_ Exp $
 
 EAPI=2
-inherit autotools fixheadtails eutils multilib
+inherit autotools eutils multilib
 
 MY_PV=${PV/_/}
 DESCRIPTION="syslog replacement with advanced filtering features"
@@ -39,10 +39,7 @@ DEPEND="${RDEPEND}
 S=${WORKDIR}/${PN}-${MY_PV}
 
 src_prepare() {
-	epatch \
-		"${FILESDIR}"/${P}-ssl.patch \
-		"${FILESDIR}"/${P}-filter.patch
-	ht_fix_file configure.in
+	epatch "${FILESDIR}"/${P}-compile.patch
 	eautoreconf
 }
 
