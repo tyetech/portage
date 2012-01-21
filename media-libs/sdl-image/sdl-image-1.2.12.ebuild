@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdl-image/Attic/sdl-image-1.2.11.ebuild,v 1.1 2012/01/16 22:52:05 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/sdl-image/sdl-image-1.2.12.ebuild,v 1.1 2012/01/21 21:46:36 mr_bones_ Exp $
 
 EAPI=2
 MY_P="${P/sdl-/SDL_}"
