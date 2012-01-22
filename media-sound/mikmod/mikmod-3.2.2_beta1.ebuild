@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mikmod/mikmod-3.2.2_beta1.ebuild,v 1.3 2012/01/20 12:56:25 ago Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/mikmod/mikmod-3.2.2_beta1.ebuild,v 1.4 2012/01/22 01:05:19 mr_bones_ Exp $
 
 EAPI=4
 
