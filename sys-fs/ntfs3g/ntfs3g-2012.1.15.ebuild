@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-2010.10.2.ebuild,v 1.4 2011/01/04 16:40:26 chutzpah Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ntfs3g/Attic/ntfs3g-2012.1.15.ebuild,v 1.1 2012/01/23 18:32:01 chutzpah Exp $
 
 EAPI=2
 inherit linux-info
 
 MY_PN="${PN/3g/-3g}"
-MY_P="${MY_PN}-${PV}"
+MY_P="${MY_PN}_ntfsprogs-${PV}"
 
 DESCRIPTION="Open source read-write NTFS driver that runs under FUSE"
 HOMEPAGE="http://www.tuxera.com/community/ntfs-3g-download/"
@@ -15,9 +15,12 @@ SRC_URI="http://tuxera.com/opensource/${MY_P}.tgz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~sparc ~x86"
-IUSE="acl debug suid +udev +external-fuse"
+IUSE="acl crypt debug extras ntfsprogs suid static-libs xattr +udev +external-fuse"
 
-RDEPEND="external-fuse? ( >=sys-fs/fuse-2.8.0 )"
+RDEPEND="external-fuse? ( >=sys-fs/fuse-2.8.0 )
+	ntfsprogs? ( !!sys-fs/ntfsprogs )
+	crypt? ( net-libs/gnutls )"
+
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	sys-apps/attr"
@@ -42,6 +45,11 @@ src_configure() {
 		--disable-ldconfig \
 		--with-fuse=$(use external-fuse && echo external || echo internal) \
 		$(use_enable acl posix-acls) \
+		$(use_enable crypt crypto) \
+		$(use_enable extras) \
+		$(use_enable ntfsprogs) \
+		$(use_enable static-libs static) \
+		$(use_enable xattr xattr-mappings)	\
 		$(use_enable debug)
 }
 
@@ -56,6 +64,8 @@ src_install() {
 		insinto /etc/udev/rules.d/
 		doins "${FILESDIR}/99-ntfs3g.rules"
 	fi
+
+	find "${D}" -name '*.la' -delete
 }
 
 pkg_postinst() {
