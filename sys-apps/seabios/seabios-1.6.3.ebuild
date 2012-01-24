@@ -1,8 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/seabios/Attic/seabios-1.6.3.ebuild,v 1.3 2012/01/20 10:52:41 ago Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/seabios/Attic/seabios-1.6.3.ebuild,v 1.4 2012/01/24 01:32:19 vapier Exp $
 
 EAPI=4
+
+PYTHON_DEPEND="2"
 
 #BACKPORTS=1
 
@@ -17,9 +19,7 @@ fi
 
 inherit ${GIT_ECLASS} python
 
-if [[ ${PV} = *9999* ]]; then
-	KEYWORDS=""
-else
+if [[ ${PV} != *9999* ]]; then
 	KEYWORDS="amd64 ~x86"
 fi
 
