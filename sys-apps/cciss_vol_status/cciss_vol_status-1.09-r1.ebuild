@@ -1,9 +1,8 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/cciss_vol_status/Attic/cciss_vol_status-1.06.ebuild,v 1.1 2010/05/02 15:39:47 chainsaw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/cciss_vol_status/cciss_vol_status-1.09-r1.ebuild,v 1.1 2012/01/27 13:12:41 chainsaw Exp $
 
-EAPI=3
-inherit base
+EAPI=4
 
 IUSE=""
 DESCRIPTION="Shows status of logical drives attached to HP SmartArray controllers."
@@ -15,9 +14,9 @@ SLOT="0"
 RDEPEND=""
 DEPEND=""
 
-PATCHES=( "${FILESDIR}/${PV}-strlen-typo.patch" )
-
 src_install() {
 	emake DESTDIR="${D}" install || die "Install failed."
 	dodoc AUTHORS ChangeLog NEWS README
+	exeinto /etc/cron.daily
+	newexe "${FILESDIR}/cciss_vol_status.cron" cciss_vol_status
 }
