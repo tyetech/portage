@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/xdebug-client/xdebug-client-2.1.2.ebuild,v 1.1 2011/07/29 14:16:40 olemarkus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/xdebug-client/xdebug-client-2.1.2.ebuild,v 1.2 2012/01/27 15:51:40 ago Exp $
 
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 
 MY_PV="${PV/_/}"
 MY_PV="${MY_PV/rc/RC}"
