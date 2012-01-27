@@ -1,6 +1,7 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/rar/Attic/rar-3.9.3-r1.ebuild,v 1.1 2010/12/26 23:02:23 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/rar/Attic/rar-4.1.0.ebuild,v 1.1 2012/01/27 06:33:11 jdhore Exp $
+EAPI=4
 
 DESCRIPTION="RAR compressor/uncompressor"
 HOMEPAGE="http://www.rarsoft.com/"
