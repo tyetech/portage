@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/mc/Attic/mc-4.8.0-r2.ebuild,v 1.1 2011/11/30 07:21:30 slyfox Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/mc/Attic/mc-4.8.1-r2.ebuild,v 1.1 2012/01/27 20:26:43 slyfox Exp $
 
 EAPI=4
 
-inherit base flag-o-matic
+inherit autotools eutils flag-o-matic
 
 MY_P=${P/_/-}
 
@@ -15,7 +15,7 @@ SRC_URI="http://www.midnight-commander.org/downloads/${MY_P}.tar.xz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x86-solaris"
-IUSE="+edit gpm mclib +ncurses nls samba slang test X"
+IUSE="+edit gpm mclib +ncurses nls samba slang test X +xdg"
 
 REQUIRED_USE="^^ ( ncurses slang )"
 
@@ -39,14 +39,20 @@ DEPEND="${RDEPEND}
 
 S=${WORKDIR}/${MY_P}
 
-PATCHES=("${FILESDIR}/${PN}"-4.8.0-fix-nls.patch
-	"${FILESDIR}/${PN}"-4.8.0-fix-ftp-spaces.patch
-	)
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-4.8.1-fix-fallocate-xBSD.patch
+
+	# patch above changed .m4 bits
+	eautoreconf
+}
 
 src_configure() {
 	local myscreen=ncurses
 	use slang && myscreen=slang
 	[[ ${CHOST} == *-solaris* ]] && append-ldflags "-lnsl -lsocket"
+
+	local homedir=".mc"
+	use xdg && homedir="XDG"
 
 	econf \
 		--disable-dependency-tracking \
@@ -60,19 +66,18 @@ src_configure() {
 		--with-screen=${myscreen} \
 		$(use_with edit) \
 		$(use_enable mclib) \
-		$(use_enable test tests)
+		$(use_enable test tests) \
+		--with-homedir=${homedir}
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install
 	dodoc AUTHORS README NEWS
 
 	# fix bug #334383
 	if use kernel_linux && [[ ${EUID} == 0 ]] ; then
-		fowners root:tty /usr/libexec/mc/cons.saver ||
-			die "setting cons.saver's owner failed"
-		fperms g+s /usr/libexec/mc/cons.saver ||
-			die "setting cons.saver's permissions failed"
+		fowners root:tty /usr/libexec/mc/cons.saver
+		fperms g+s /usr/libexec/mc/cons.saver
 	fi
 }
 
