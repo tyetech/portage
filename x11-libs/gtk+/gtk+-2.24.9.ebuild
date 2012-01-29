@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.24.7.ebuild,v 1.1 2011/10/18 18:43:56 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.24.9.ebuild,v 1.1 2012/01/29 10:51:28 pacho Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.4"
@@ -17,7 +17,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-
 IUSE="aqua cups debug doc examples +introspection test vim-syntax xinerama"
 
 # NOTE: cairo[svg] dep is due to bug 291283 (not patched to avoid eautoreconf)
-RDEPEND="!aqua? (
+COMMON_DEPEND="!aqua? (
 		x11-libs/libXrender
 		x11-libs/libX11
 		x11-libs/libXi
@@ -44,7 +44,7 @@ RDEPEND="!aqua? (
 	cups? ( net-print/cups )
 	introspection? ( >=dev-libs/gobject-introspection-0.9.3 )
 	!<gnome-base/gail-1000"
-DEPEND="${RDEPEND}
+DEPEND="${COMMON_DEPEND}
 	>=dev-util/pkgconfig-0.9
 	!aqua? (
 		x11-proto/xextproto
@@ -60,6 +60,10 @@ DEPEND="${RDEPEND}
 	test? (
 		media-fonts/font-misc-misc
 		media-fonts/font-cursor-misc )"
+# gtk+-2.24.8 breaks Alt key handling in <=x11-libs/vte-0.28.2:0
+# Remove blocker after >=vte-0.28.2-r201:0 is stable
+RDEPEND="${COMMON_DEPEND}
+	!<x11-libs/vte-0.28.2-r201:0"
 PDEPEND="vim-syntax? ( app-vim/gtk-syntax )"
 
 strip_builddir() {
@@ -83,9 +87,6 @@ src_prepare() {
 
 	# Don't break inclusion of gtkclist.h, upstream bug 536767
 	epatch "${FILESDIR}/${PN}-2.14.3-limit-gtksignal-includes.patch"
-
-	# Create symlinks to old icons until apps are ported, bug #339319
-	epatch "${FILESDIR}/${PN}-2.24.4-old-icons.patch"
 
 	# fix building with gir #372953, upstream bug #642085
 	epatch "${FILESDIR}"/${PN}-2.24.7-darwin-quartz-introspection.patch
