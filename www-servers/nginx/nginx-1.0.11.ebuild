@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/nginx/Attic/nginx-1.1.8.ebuild,v 1.1 2011/11/20 06:50:14 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-servers/cvs-repo/gentoo-x86/www-servers/nginx/Attic/nginx-1.0.11.ebuild,v 1.1 2012/01/29 13:11:49 hollow Exp $
 
 EAPI="4"
 
