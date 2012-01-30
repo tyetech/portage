@@ -1,14 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-meta/Attic/gst-plugins-meta-0.10-r5.ebuild,v 1.12 2011/10/30 15:36:36 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/gst-plugins-meta/gst-plugins-meta-0.10-r7.ebuild,v 1.1 2012/01/30 10:46:18 pacho Exp $
 
 DESCRIPTION="Meta ebuild to pull in gst plugins for apps"
 HOMEPAGE="http://www.gentoo.org"
 
 LICENSE="GPL-2"
 SLOT="0.10"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
-IUSE="aac a52 alsa dv dvb dvd esd ffmpeg flac lame mp3 mpeg musepack mythtv ogg oss pulseaudio taglib theora v4l vorbis wavpack X xv"
+KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~amd64-linux ~x86-linux ~x86-solaris"
+IUSE="aac a52 alsa dts dv dvb dvd esd ffmpeg flac http lame libvisual mms mp3 mpeg musepack mythtv ogg oss pulseaudio taglib theora v4l vcd vorbis vpx wavpack X xv"
 
 RDEPEND="=media-libs/gstreamer-0.10*
 	=media-libs/gst-plugins-base-0.10*
@@ -16,6 +16,7 @@ RDEPEND="=media-libs/gstreamer-0.10*
 	a52? ( >=media-plugins/gst-plugins-a52dec-0.10 )
 	aac? ( >=media-plugins/gst-plugins-faad-0.10 )
 	alsa? ( >=media-plugins/gst-plugins-alsa-0.10 )
+	dts? ( >=media-plugins/gst-plugins-dts-0.10 )
 	dv? ( >=media-plugins/gst-plugins-dv-0.10 )
 	dvb? (
 		media-plugins/gst-plugins-dvb
@@ -29,7 +30,10 @@ RDEPEND="=media-libs/gstreamer-0.10*
 	esd? ( >=media-plugins/gst-plugins-esd-0.10 )
 	ffmpeg? ( >=media-plugins/gst-plugins-ffmpeg-0.10 )
 	flac? ( >=media-plugins/gst-plugins-flac-0.10 )
+	http? ( >=media-plugins/gst-plugins-soup-0.10 )
 	lame? ( >=media-plugins/gst-plugins-lame-0.10 )
+	libvisual? ( >=media-plugins/gst-plugins-libvisual-0.10 )
+	mms? ( >=media-plugins/gst-plugins-libmms-0.10 )
 	mp3? ( >=media-libs/gst-plugins-ugly-0.10
 		>=media-plugins/gst-plugins-mad-0.10 )
 	mpeg? ( >=media-plugins/gst-plugins-mpeg2dec-0.10 )
@@ -43,9 +47,12 @@ RDEPEND="=media-libs/gstreamer-0.10*
 		>=media-plugins/gst-plugins-theora-0.10 )
 	taglib? ( media-plugins/gst-plugins-taglib )
 	v4l? ( >=media-plugins/gst-plugins-v4l2-0.10 )
+	vcd? (	>=media-plugins/gst-plugins-mplex-0.10
+		>=media-plugins/gst-plugins-mpeg2dec-0.10 )
 	vorbis? (
 		>=media-plugins/gst-plugins-ogg-0.10
 		>=media-plugins/gst-plugins-vorbis-0.10 )
+	vpx? ( >=media-plugins/gst-plugins-vp8-0.10 )
 	wavpack? ( >=media-plugins/gst-plugins-wavpack-0.10 )
 	X? ( >=media-plugins/gst-plugins-x-0.10 )
 	xv? ( >=media-plugins/gst-plugins-xvideo-0.10 )"
