@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkworkspace/Attic/libkworkspace-4.8.0.ebuild,v 1.1 2012/01/25 18:17:04 johu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/libkworkspace/Attic/libkworkspace-4.7.4-r2.ebuild,v 1.1 2012/02/03 15:50:03 johu Exp $
 
 EAPI=4
 
@@ -9,7 +9,7 @@ KMMODULE="libs/kworkspace"
 inherit kde4-meta
 
 DESCRIPTION="A library for KDE desktop applications"
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE="debug"
 
 KMEXTRACTONLY="
@@ -24,6 +24,10 @@ DEPEND="
 	x11-libs/libXcomposite
 "
 RDEPEND=${DEPEND}
+
+PATCHES=(
+	"${FILESDIR}/${PN}-4.8.0-pam-optional.patch"
+)
 
 src_prepare() {
 	sed -i -e 's/install( FILES kdisplaymanager.h/install( FILES kdisplaymanager.h screenpreviewwidget.h/' \
