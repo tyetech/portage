@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-5.2.12-r1.ebuild,v 1.6 2012/01/03 21:13:45 swift Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/dhcpcd/Attic/dhcpcd-5.2.12-r1.ebuild,v 1.7 2012/02/03 16:21:34 williamh Exp $
 
 EAPI=4
 
@@ -22,7 +22,7 @@ SLOT="0"
 IUSE="+zeroconf elibc_glibc"
 
 DEPEND=""
-RDEPEND="!<sys-apps/openrc-0.6.0"
+RDEPEND=""
 
 src_prepare() {
 	if ! use zeroconf; then
