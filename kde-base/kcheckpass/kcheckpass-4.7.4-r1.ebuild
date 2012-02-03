@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kcheckpass/Attic/kcheckpass-4.8.0.ebuild,v 1.1 2012/01/25 18:16:51 johu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kcheckpass/Attic/kcheckpass-4.7.4-r1.ebuild,v 1.1 2012/02/03 15:58:55 johu Exp $
 
 EAPI=4
 
@@ -8,7 +8,7 @@ KMNAME="kde-workspace"
 inherit kde4-meta
 
 DESCRIPTION="A simple password checker, used by any software in need of user authentication."
-KEYWORDS="~amd64 ~x86 ~amd64-linux ~x86-linux"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86 ~amd64-linux ~x86-linux"
 IUSE="debug pam"
 
 RDEPEND="
@@ -20,10 +20,6 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	x11-libs/libxkbfile
 "
-
-PATCHES=(
-	"${FILESDIR}/kdebase-4.0.2-pam-optional.patch"
-)
 
 src_prepare() {
 	kde4-meta_src_prepare
