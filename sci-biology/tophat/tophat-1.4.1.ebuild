@@ -1,8 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/tophat/Attic/tophat-1.3.2.ebuild,v 1.1 2011/09/26 15:33:22 weaver Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/tophat/tophat-1.4.1.ebuild,v 1.1 2012/02/04 23:41:54 weaver Exp $
 
 EAPI=4
+
+inherit flag-o-matic autotools
 
 DESCRIPTION="A fast splice junction mapper for RNA-Seq reads"
 HOMEPAGE="http://tophat.cbcb.umd.edu/"
@@ -18,6 +20,11 @@ RDEPEND="${DEPEND}
 	sci-biology/bowtie"
 
 MAKEOPTS="${MAKEOPTS} -j1"
+
+src_prepare() {
+	filter-ldflags -Wl,--as-needed
+	eautoreconf
+}
 
 src_configure() {
 	econf \
