@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus/Attic/ibus-1.3.99.20110817.ebuild,v 1.3 2011/11/22 23:27:59 naota Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/ibus/ibus-1.4.1.ebuild,v 1.1 2012/02/05 16:33:16 matsuu Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2:2.5"
-inherit confutils eutils gnome2-utils multilib python
+inherit confutils eutils gnome2-utils multilib python autotools
 
 DESCRIPTION="Intelligent Input Bus for Linux / Unix OS"
 HOMEPAGE="http://code.google.com/p/ibus/"
@@ -13,17 +13,17 @@ SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86 ~x86-fbsd"
-IUSE="doc +gconf gtk gtk3 introspection nls +python vala X"
+IUSE="dconf doc +gconf gtk gtk3 introspection nls +python vala X"
 
 RDEPEND=">=dev-libs/glib-2.26:2
+	dconf? ( >=gnome-base/dconf-0.7.5 )
 	gconf? ( >=gnome-base/gconf-2.12:2 )
 	gnome-base/librsvg:2
-	sys-apps/dbus
+	sys-apps/dbus[X?]
 	app-text/iso-codes
 	gtk? ( x11-libs/gtk+:2 )
 	gtk3? ( x11-libs/gtk+:3 )
 	X? (
-		sys-apps/dbus[X]
 		x11-libs/libX11
 		x11-libs/gtk+:2
 	)
@@ -79,14 +79,19 @@ pkg_setup() {
 }
 
 src_prepare() {
-	mv py-compile py-compile.orig || die
-	ln -s "$(type -P true)" py-compile || die
+	>py-compile #397497
 	echo "ibus/_config.py" >> po/POTFILES.skip || die
-	sed -i -e "s/python/python2/" setup/ibus-setup.in ui/gtk/ibus-ui-gtk.in || die
+
+	epatch \
+		"${FILESDIR}"/${PN}-1.4.0-machine-id-fallback.patch
+	use gconf || epatch "${FILESDIR}/${P}-no-gconf.patch"
+
+	eautoreconf
 }
 
 src_configure() {
 	econf \
+		$(use_enable dconf) \
 		$(use_enable doc gtk-doc) \
 		$(use_enable doc gtk-doc-html) \
 		$(use_enable introspection) \
@@ -97,7 +102,8 @@ src_configure() {
 		$(use_enable nls) \
 		$(use_enable python) \
 		$(use_enable vala) \
-		$(use_enable X xim) || die
+		$(use_enable X xim) \
+		PYTHON="$(PYTHON)" || die
 }
 
 src_install() {
