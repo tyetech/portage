@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms2/xmms2-0.7-r2.ebuild,v 1.12 2011/04/03 21:12:49 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/xmms2/xmms2-0.7-r2.ebuild,v 1.13 2012/02/05 01:48:59 floppym Exp $
 
 EAPI=3
 
-inherit base eutils python
+inherit base eutils multilib python
 
 MY_P="${P}DrNo"
 
