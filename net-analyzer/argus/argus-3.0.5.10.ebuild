@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/argus/Attic/argus-3.0.5.7.ebuild,v 1.1 2011/12/16 16:11:43 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/argus/Attic/argus-3.0.5.10.ebuild,v 1.1 2012/02/07 20:49:11 jer Exp $
 
 EAPI="4"
 
