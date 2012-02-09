@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/php/Attic/php-5.4.0_rc7.ebuild,v 1.3 2012/02/09 16:59:39 olemarkus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/php/Attic/php-5.4.0_rc7-r1.ebuild,v 1.1 2012/02/09 16:59:39 olemarkus Exp $
 
 EAPI=4
 
@@ -53,7 +53,7 @@ PHP_PATCHSET_LOC="olemarkus"
 
 PHP_SRC_URI="$(php_get_uri "${PHP_RELEASE}" "${PHP_P}.tar.bz2")"
 
-PHP_PATCHSET="0"
+PHP_PATCHSET="1"
 PHP_PATCHSET_URI="
 	$(php_get_uri "${PHP_PATCHSET_LOC}" "php-patchset-${PV}-r${PHP_PATCHSET}.tar.bz2")"
 
@@ -118,7 +118,6 @@ IUSE="${IUSE} bcmath berkdb bzip2 calendar cdb cjk
 DEPEND="!dev-lang/php:5
 	>=app-admin/eselect-php-0.6.2
 	>=dev-libs/libpcre-8.12[unicode]
-	<dev-libs/libpcre-8.30
 	apache2? ( www-servers/apache[threads=] )
 	berkdb? ( =sys-libs/db-4* )
 	bzip2? ( app-arch/bzip2 )
