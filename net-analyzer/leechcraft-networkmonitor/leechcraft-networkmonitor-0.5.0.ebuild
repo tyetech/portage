@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/leechcraft-networkmonitor/Attic/leechcraft-networkmonitor-0.4.96-r1.ebuild,v 1.1 2011/12/16 18:38:23 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/leechcraft-networkmonitor/Attic/leechcraft-networkmonitor-0.5.0.ebuild,v 1.1 2012/02/09 11:06:28 maksbotan Exp $
 
 EAPI="4"
 
