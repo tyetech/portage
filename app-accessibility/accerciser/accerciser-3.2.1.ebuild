@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/accerciser/accerciser-3.2.1.ebuild,v 1.3 2011/12/31 22:16:21 tetromino Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/accerciser/accerciser-3.2.1.ebuild,v 1.4 2012/02/10 04:04:50 patrick Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
-PYTHON_DEPEND="2:2.4"
+PYTHON_DEPEND="2:2.5"
 PYTHON_USE_WITH="xml"
 
 inherit gnome2 python
