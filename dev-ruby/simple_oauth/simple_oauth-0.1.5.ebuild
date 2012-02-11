@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/simple_oauth/Attic/simple_oauth-0.1.5.ebuild,v 1.1 2011/09/19 19:38:32 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/simple_oauth/Attic/simple_oauth-0.1.5.ebuild,v 1.2 2012/02/11 16:10:09 tomka Exp $
 
 EAPI=4
 
@@ -18,7 +18,7 @@ HOMEPAGE="https://github.com/laserlemon/simple_oauth"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 ruby_add_bdepend "doc? ( dev-ruby/yard )"

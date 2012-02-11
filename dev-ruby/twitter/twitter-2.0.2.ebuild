@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/twitter/twitter-2.0.2.ebuild,v 1.2 2012/02/11 10:22:02 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/twitter/twitter-2.0.2.ebuild,v 1.3 2012/02/11 16:10:39 tomka Exp $
 
 EAPI="2"
 USE_RUBY="ruby18 ree18"
@@ -15,7 +15,7 @@ HOMEPAGE="http://twitter.rubyforge.org/"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 ruby_add_rdepend "
