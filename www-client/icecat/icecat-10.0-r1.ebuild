@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/icecat/Attic/icecat-10.0.ebuild,v 1.1 2012/02/08 14:29:37 polynomial-c Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/icecat/Attic/icecat-10.0-r1.ebuild,v 1.1 2012/02/13 17:25:09 polynomial-c Exp $
 
 EAPI="3"
 VIRTUALX_REQUIRED="pgo"
@@ -19,7 +19,7 @@ MOZ_PV="${MOZ_PV/_beta/b}" # Handle beta for SRC_URI
 MOZ_PV="${MOZ_PV/_rc/rc}" # Handle rc for SRC_URI
 
 # Patch version
-PATCH="firefox-10.0-patches-0.4"
+PATCH="firefox-10.0-patches-0.5"
 # Upstream ftp release URI that's used by mozlinguas.eclass
 # We don't use the http mirror because it deletes old tarballs.
 MOZ_FTP_URI="ftp://ftp.mozilla.org/pub/firefox/releases"
@@ -37,7 +37,8 @@ IUSE="+crashreporter +ipc pgo selinux system-sqlite +webm"
 # More URIs appended below...
 SRC_URI="${SRC_URI}
 	mirror://gnu/gnuzilla/${MOZ_PV}/${PN}-${MOZ_PV}.tar.xz
-	http://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCH}.tar.xz"
+	http://dev.gentoo.org/~anarchy/mozilla/patchsets/${PATCH}.tar.xz
+	http://dev.gentoo.org/~polynomial-c/mozilla/ff1001.diff"
 
 ASM_DEPEND=">=dev-lang/yasm-1.1"
 
@@ -101,6 +102,9 @@ src_unpack() {
 }
 
 src_prepare() {
+	# Make this a 10.0.1 release
+	epatch "${DISTDIR}"/ff1001.diff
+
 	# Fix preferences location
 	sed -i 's|defaults/pref/|defaults/preferences/|' browser/installer/packages-static || die "sed failed"
 	# Apply our patches
@@ -225,9 +229,9 @@ src_compile() {
 			cards=$(echo -n /dev/ati/card* /dev/nvidiactl* | sed 's/ /:/g')
 			if test -n "${cards}"; then
 				# Binary drivers seem to cause access violations anyway, so
-				# let's use software rendering so that the device files aren't
+				# let's use indirect rendering so that the device files aren't
 				# touched at all. See bug 394715.
-				export LIBGL_ALWAYS_SOFTWARE=1
+				export LIBGL_ALWAYS_INDIRECT=1
 			fi
 		fi
 		shopt -u nullglob
