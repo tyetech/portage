@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/scribus/Attic/scribus-1.4.0.ebuild,v 1.3 2012/02/13 09:25:29 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/scribus/Attic/scribus-1.4.0-r1.ebuild,v 1.1 2012/02/13 10:55:47 jlec Exp $
 
 EAPI=4
 
@@ -44,6 +44,7 @@ DEPEND="${COMMON_DEPEND}
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-1.4.0_rc5-docs.patch
+	"${FILESDIR}"/${P}-export.patch
 	)
 
 pkg_setup() {
