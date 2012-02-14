@@ -1,5 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/dispcalgui/Attic/dispcalgui-0.8.5.2.ebuild,v 1.2 2012/02/14 17:18:15 tove Exp $
 
 EAPI="2"
 PYTHON_DEPEND="2"
