@@ -1,6 +1,6 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvb/libdvb-0.5.5.1-r3.ebuild,v 1.9 2008/05/04 04:33:41 zzam Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libdvb/libdvb-0.5.5.1-r3.ebuild,v 1.10 2012/02/15 18:37:21 hd_brummy Exp $
 
 WANT_AUTOMAKE="latest"
 WANT_AUTOCONF="latest"
@@ -16,7 +16,7 @@ SLOT="0"
 KEYWORDS="amd64 ppc x86"
 IUSE="doc"
 
-DEPEND="media-tv/linuxtv-dvb-headers"
+DEPEND="virtual/linuxtv-dvb-headers"
 
 src_unpack() {
 	unpack ${A}
