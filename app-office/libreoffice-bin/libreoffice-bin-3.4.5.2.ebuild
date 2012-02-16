@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice-bin/Attic/libreoffice-bin-3.4.5.2.ebuild,v 1.2 2012/02/16 08:55:36 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice-bin/Attic/libreoffice-bin-3.4.5.2.ebuild,v 1.3 2012/02/16 17:47:47 scarabeus Exp $
 
 EAPI=4
 
@@ -146,7 +146,7 @@ src_install() {
 	cp -aR "${S}"/usr/* "${ED}"/usr/
 
 	# prevent revdep-rebuild from attempting to rebuild all the time
-	insinto /etc/revdep-rebuild && doins "${T}/50-${PN}"
+	insinto /etc/revdep-rebuild && doins "${FILESDIR}/50-${PN}"
 
 }
 
