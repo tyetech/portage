@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xcalendar/xcalendar-4.0-r1.ebuild,v 1.7 2012/02/04 15:47:58 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/xcalendar/xcalendar-4.0-r1.ebuild,v 1.8 2012/02/19 13:27:18 klausman Exp $
 
 EAPI=4
 inherit eutils multilib
@@ -11,7 +11,7 @@ SRC_URI="ftp://daemon.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/${P}+i1
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="~alpha amd64 ppc ppc64 x86 ~x86-fbsd"
+KEYWORDS="alpha amd64 ppc ppc64 x86 ~x86-fbsd"
 IUSE="motif"
 
 RDEPEND="x11-libs/libX11
