@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/efax-gtk/efax-gtk-3.2.9.ebuild,v 1.3 2012/01/28 20:09:56 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/efax-gtk/efax-gtk-3.2.9.ebuild,v 1.4 2012/02/21 17:59:04 ago Exp $
 
 EAPI=4
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.src.tgz"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE="nls"
 
 RDEPEND=">=dev-libs/glib-2.10
