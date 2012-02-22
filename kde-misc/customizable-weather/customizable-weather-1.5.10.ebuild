@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/customizable-weather/Attic/customizable-weather-1.5.7.ebuild,v 1.1 2012/01/11 20:24:20 johu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-misc/cvs-repo/gentoo-x86/kde-misc/customizable-weather/Attic/customizable-weather-1.5.10.ebuild,v 1.1 2012/02/22 15:38:30 johu Exp $
 
 EAPI=4
 
