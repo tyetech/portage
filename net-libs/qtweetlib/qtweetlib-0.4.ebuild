@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/qtweetlib/qtweetlib-9999.ebuild,v 1.2 2012/02/23 18:44:04 johu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/qtweetlib/qtweetlib-0.4.ebuild,v 1.1 2012/02/23 18:44:04 johu Exp $
 
 EAPI=4
 
