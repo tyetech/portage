@@ -1,8 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-session/Attic/xfce4-session-4.8.3-r1.ebuild,v 1.1 2012/02/24 11:41:33 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/xfce-base/cvs-repo/gentoo-x86/xfce-base/xfce4-session/Attic/xfce4-session-4.8.3-r1.ebuild,v 1.2 2012/02/24 11:43:40 ssuominen Exp $
 
 EAPI=4
+EAUTORECONF=yes
 inherit xfconf
 
 DESCRIPTION="Xfce's session manager"
