@@ -1,12 +1,12 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/scikits_optimization/scikits_optimization-0.1.ebuild,v 1.2 2011/01/08 19:34:28 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/scikits_optimization/scikits_optimization-0.1.ebuild,v 1.3 2012/02/26 04:29:49 patrick Exp $
 
 EAPI="2"
 
 PYTHON_DEPEND="2"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
 inherit distutils
 
