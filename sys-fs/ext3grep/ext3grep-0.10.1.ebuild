@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ext3grep/ext3grep-0.10.1.ebuild,v 1.3 2009/09/23 20:50:19 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/ext3grep/ext3grep-0.10.1.ebuild,v 1.4 2012/02/26 17:51:44 hanno Exp $
 
 inherit eutils
 
