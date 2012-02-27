@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/icu/Attic/icu-4.8.ebuild,v 1.6 2011/08/20 16:00:49 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/icu/Attic/icu-4.8.1.1-r1.ebuild,v 1.1 2012/02/27 16:19:35 scarabeus Exp $
 
-EAPI="3"
+EAPI="4"
 
 inherit versionator
 
@@ -26,7 +26,7 @@ SRC_URI="${BASE_URI}/${SRC_ARCHIVE}
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="debug doc examples static-libs"
 
 DEPEND="doc? ( app-arch/unzip )"
@@ -34,7 +34,7 @@ RDEPEND=""
 
 S="${WORKDIR}/${PN}/source"
 
-QA_DT_NEEDED="/usr/lib.*/libicudata\.so\.${MAJOR_VERSION}${MINOR_VERSION}\.${MICRO_VERSION}"
+QA_DT_NEEDED="/usr/lib.*/libicudata\.so\.${MAJOR_VERSION}${MINOR_VERSION}\.${MICRO_VERSION}.*"
 
 src_unpack() {
 	unpack "${SRC_ARCHIVE}"
@@ -53,6 +53,11 @@ src_prepare() {
 	for variable in CFLAGS CPPFLAGS CXXFLAGS FFLAGS LDFLAGS; do
 		sed -i -e "/^${variable} =.*/s:@${variable}@::" config/Makefile.inc.in || die "sed failed"
 	done
+
+	epatch \
+		"${FILESDIR}/icu-4.8.1-fix_binformat_fonts.patch" \
+		"${FILESDIR}/icu-4.8.1-fix_nan.patch" \
+		"${FILESDIR}/icu-4.8.1-fix_ltr.patch"
 }
 
 src_configure() {
@@ -73,16 +78,16 @@ src_test() {
 	# CINTLTST_OPTS: cintltst options
 	#   -e: Exhaustive testing
 	#   -v: Increased verbosity
-	emake -j1 check || die "emake check failed"
+	emake -j1 check
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" install
 
 	dohtml ../readme.html
 	dodoc ../unicode-license.txt
 	if use doc; then
 		insinto /usr/share/doc/${PF}/html/api
-		doins -r "${WORKDIR}/docs/"* || die "doins failed"
+		doins -r "${WORKDIR}/docs/"*
 	fi
 }

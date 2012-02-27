@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/icu/Attic/icu-4.8.1.1.ebuild,v 1.1 2011/10/30 12:02:54 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/icu/Attic/icu-4.8.1-r3.ebuild,v 1.1 2012/02/27 16:19:35 scarabeus Exp $
 
-EAPI="4"
+EAPI="3"
 
 inherit versionator
 
@@ -34,7 +34,7 @@ RDEPEND=""
 
 S="${WORKDIR}/${PN}/source"
 
-QA_DT_NEEDED="/usr/lib.*/libicudata\.so\.${MAJOR_VERSION}${MINOR_VERSION}\.${MICRO_VERSION}.*"
+QA_DT_NEEDED="/usr/lib.*/libicudata\.so\.${MAJOR_VERSION}${MINOR_VERSION}\.${MICRO_VERSION}"
 
 src_unpack() {
 	unpack "${SRC_ARCHIVE}"
@@ -54,8 +54,10 @@ src_prepare() {
 		sed -i -e "/^${variable} =.*/s:@${variable}@::" config/Makefile.inc.in || die "sed failed"
 	done
 
-	epatch "${FILESDIR}/${PN}-4.8.1-fix_binformat_fonts.patch"
-	epatch "${FILESDIR}/${PN}-4.8.1-fix_nan.patch"
+	epatch \
+		"${FILESDIR}/icu-4.8.1-fix_binformat_fonts.patch" \
+		"${FILESDIR}/icu-4.8.1-fix_nan.patch" \
+		"${FILESDIR}/icu-4.8.1-fix_ltr.patch"
 }
 
 src_configure() {
@@ -76,16 +78,16 @@ src_test() {
 	# CINTLTST_OPTS: cintltst options
 	#   -e: Exhaustive testing
 	#   -v: Increased verbosity
-	emake -j1 check
+	emake -j1 check || die "emake check failed"
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
+	emake DESTDIR="${D}" install || die "emake install failed"
 
 	dohtml ../readme.html
 	dodoc ../unicode-license.txt
 	if use doc; then
 		insinto /usr/share/doc/${PF}/html/api
-		doins -r "${WORKDIR}/docs/"*
+		doins -r "${WORKDIR}/docs/"* || die "doins failed"
 	fi
 }
