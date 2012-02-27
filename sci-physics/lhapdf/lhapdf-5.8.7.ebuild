@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/lhapdf/Attic/lhapdf-5.8.4-r1.ebuild,v 1.2 2011/03/09 20:03:41 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/lhapdf/lhapdf-5.8.7.ebuild,v 1.1 2012/02/27 02:35:17 bicatali Exp $
 
 EAPI=4
 
@@ -8,12 +8,10 @@ inherit versionator eutils
 
 MY_PV=$(get_version_component_range 1-3 ${PV})
 MY_PF=${PN}-${MY_PV}
-MY_UV=20110126
 
 DESCRIPTION="Les Houches Parton Density Function unified library"
 HOMEPAGE="http://projects.hepforge.org/lhapdf/"
 SRC_URI="http://www.hepforge.org/archive/lhapdf/${MY_PF}.tar.gz
-	mirror://gentoo/${P}-updates-${MY_UV}.patch.gz
 	test? (
 		http://svn.hepforge.org/${PN}/pdfsets/tags/${MY_PV}/cteq61.LHgrid
 		http://svn.hepforge.org/${PN}/pdfsets/tags/${MY_PV}/MRST2004nlo.LHgrid
@@ -33,7 +31,6 @@ DEPEND="${RDEPEND}
 S="${WORKDIR}/${MY_PF}"
 
 src_prepare() {
-	epatch "${WORKDIR}"/${P}-updates-${MY_UV}.patch
 	# do not create extra latex docs
 	sed -i \
 		-e 's/GENERATE_LATEX.*=YES/GENERATE_LATEX = NO/g' \
@@ -59,9 +56,7 @@ src_test() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" install
-	dodoc README TODO AUTHORS ChangeLog
-
+	default
 	# leftover
 	rm -rf "${ED}"/usr/share/${PN}/doc || die
 	use doc && use cxx && dohtml -r ccwrap/doxy/html/*
