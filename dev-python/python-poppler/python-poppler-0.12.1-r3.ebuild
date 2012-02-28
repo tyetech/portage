@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/python-poppler/Attic/python-poppler-0.12.1-r2.ebuild,v 1.3 2012/02/28 21:41:58 marienz Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/python-poppler/python-poppler-0.12.1-r3.ebuild,v 1.1 2012/02/28 21:41:58 marienz Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.6"
@@ -22,7 +22,6 @@ IUSE="examples"
 S=${WORKDIR}/pypoppler-${PV}
 
 RDEPEND=">=app-text/poppler-0.15.0[cairo]
-	<app-text/poppler-0.18
 	>=dev-python/pycairo-1.8.4
 	dev-python/pygobject:2
 	dev-python/pygtk:2"
@@ -33,7 +32,8 @@ src_prepare() {
 	epatch \
 		"${FILESDIR}"/${P}-75_74.diff \
 		"${FILESDIR}"/${P}-79_78.diff \
-		"${FILESDIR}"/${P}-poppler0.15.0-changes.patch
+		"${FILESDIR}"/${P}-poppler0.15.0-changes.patch \
+		"${FILESDIR}"/${P}-poppler-0.18.0-minimal-fix.patch
 
 	elibtoolize
 	python_copy_sources
