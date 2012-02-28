@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/editra/Attic/editra-0.6.89.ebuild,v 1.2 2012/02/28 11:44:59 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-editors/cvs-repo/gentoo-x86/app-editors/editra/Attic/editra-0.6.89.ebuild,v 1.3 2012/02/28 11:51:10 patrick Exp $
 
 EAPI=2
 SUPPORT_PYTHON_ABIS=1
 PYTHON_DEPEND="2:2.5"
-RESTRICT_PYTHON_ABIS="3.* *-jython"
+RESTRICT_PYTHON_ABIS="3.* *-jython 2.7-pypy-*"
 
 inherit distutils eutils fdo-mime python
 
