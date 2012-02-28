@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ncdc/Attic/ncdc-1.8.ebuild,v 1.1 2012/02/13 23:20:06 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/ncdc/Attic/ncdc-1.8-r1.ebuild,v 1.1 2012/02/28 13:02:36 xmw Exp $
 
 EAPI=4
 
@@ -18,6 +18,7 @@ RDEPEND="app-arch/bzip2
 	dev-lang/perl
 	dev-libs/glib:2
 	dev-libs/libxml2:2
+	net-libs/glib-networking
 	sys-libs/gdbm
 	sys-libs/ncurses:5"
 DEPEND="${RDEPEND}
