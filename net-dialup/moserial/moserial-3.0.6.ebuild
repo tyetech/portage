@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/moserial/Attic/moserial-3.0.4.ebuild,v 1.1 2012/01/22 13:15:39 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dialup/cvs-repo/gentoo-x86/net-dialup/moserial/moserial-3.0.6.ebuild,v 1.1 2012/03/03 11:37:43 pacho Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
