@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/cortado/cortado-0.6.0.ebuild,v 1.1 2012/03/03 20:17:54 tupone Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/cortado/cortado-0.6.0.ebuild,v 1.2 2012/03/03 20:39:34 tupone Exp $
 
 EAPI=2
 
@@ -12,7 +12,7 @@ SRC_URI="http://downloads.xiph.org/releases/cortado/${P}.tar.gz"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="~amd64 ~x86"
 
 IUSE=""
 
