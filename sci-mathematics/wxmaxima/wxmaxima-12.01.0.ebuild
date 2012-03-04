@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/wxmaxima/Attic/wxmaxima-11.04.0.ebuild,v 1.1 2011/06/09 22:53:39 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/wxmaxima/wxmaxima-12.01.0.ebuild,v 1.1 2012/03/04 18:38:47 bicatali Exp $
 
 WX_GTK_VER="2.8"
 EAPI=4
