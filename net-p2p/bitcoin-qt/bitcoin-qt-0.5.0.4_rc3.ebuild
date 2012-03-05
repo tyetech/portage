@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bitcoin-qt/Attic/bitcoin-qt-0.5.0.4_rc2-r1.ebuild,v 1.1 2012/02/21 17:59:36 blueness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bitcoin-qt/Attic/bitcoin-qt-0.5.0.4_rc3.ebuild,v 1.1 2012/03/05 21:48:00 blueness Exp $
 
 EAPI=4
 
