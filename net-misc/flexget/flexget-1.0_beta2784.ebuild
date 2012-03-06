@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/flexget/flexget-9999.ebuild,v 1.15 2012/03/06 03:25:48 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/flexget/Attic/flexget-1.0_beta2784.ebuild,v 1.1 2012/03/06 03:25:48 floppym Exp $
 
 EAPI=4
 
