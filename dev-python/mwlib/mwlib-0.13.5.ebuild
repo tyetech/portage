@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/mwlib/Attic/mwlib-0.13.3.ebuild,v 1.3 2012/02/23 10:14:45 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/mwlib/mwlib-0.13.5.ebuild,v 1.1 2012/03/06 10:31:05 patrick Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
