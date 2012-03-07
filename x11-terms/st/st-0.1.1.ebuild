@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/st/st-0.1.1.ebuild,v 1.3 2012/01/04 05:35:09 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/st/st-0.1.1.ebuild,v 1.4 2012/03/07 18:09:17 jer Exp $
 
 EAPI=3
 
@@ -8,7 +8,7 @@ inherit savedconfig toolchain-funcs
 
 DESCRIPTION="simple terminal implementation for X"
 HOMEPAGE="http://st.suckless.org/"
-SRC_URI="http://hg.suckless.org/st/archive/0.1.1.tar.gz"
+SRC_URI="http://hg.suckless.org/st/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
