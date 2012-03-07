@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/suse-build/suse-build-9999.ebuild,v 1.3 2012/03/07 13:36:56 miska Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/suse-build/Attic/suse-build-2011.09.26.ebuild,v 1.1 2012/03/07 13:36:56 miska Exp $
 
 EAPI=4
 
