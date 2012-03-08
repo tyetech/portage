@@ -1,8 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/parrot/Attic/parrot-2.11.0.ebuild,v 1.3 2011/03/26 09:39:08 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/parrot/Attic/parrot-4.1.0.ebuild,v 1.1 2012/03/08 04:18:42 patrick Exp $
 
 EAPI=3
+
+# There's multiple small issues at the moment, so ...
+RESTRICT="test"
 
 inherit eutils multilib
 
@@ -12,7 +15,7 @@ SRC_URI="ftp://ftp.parrot.org/pub/parrot/releases/devel/${PV}/${P}.tar.bz2"
 
 LICENSE="Artistic-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos"
 IUSE="opengl nls doc examples gdbm gmp ssl +unicode pcre"
 
 RDEPEND="sys-libs/readline
@@ -26,6 +29,11 @@ RDEPEND="sys-libs/readline
 
 DEPEND="dev-lang/perl[doc?]
 	${RDEPEND}"
+
+src_prepare() {
+	# Fix for #404195 - pcre detection is wonky
+	sed -i 's:libpcre.so.0:libpcre.so.1:' runtime/parrot/library/pcre.pir || die "Couldn't fix pcre location"
+}
 
 src_configure() {
 	myconf="--disable-rpath"
@@ -45,7 +53,6 @@ src_configure() {
 		--mandir="${EPREFIX}"/usr/share/man \
 		--sysconfdir="${EPREFIX}"/etc \
 		--sharedstatedir="${EPREFIX}"/var/lib/parrot \
-		--pkgconfigdir=pkgconfig \
 		$myconf || die
 }
 
@@ -64,7 +71,7 @@ src_test() {
 
 src_install() {
 	emake -j1 install-dev DESTDIR="${D}" DOC_DIR="${EPREFIX}/usr/share/doc/${PF}" || die
-	dodoc CREDITS DEPRECATED.pod DONORS.pod NEWS PBC_COMPAT PLATFORMS RESPONSIBLE_PARTIES TODO || die
+	dodoc CREDITS DONORS.pod PBC_COMPAT PLATFORMS RESPONSIBLE_PARTIES TODO || die
 	if use examples; then
 		insinto "/usr/share/doc/${PF}/examples"
 		doins -r examples/* || die
