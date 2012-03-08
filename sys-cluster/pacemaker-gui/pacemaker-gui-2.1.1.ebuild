@@ -1,16 +1,17 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/pacemaker-gui/Attic/pacemaker-gui-2.1.0-r1.ebuild,v 1.2 2012/02/05 02:01:35 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/pacemaker-gui/pacemaker-gui-2.1.1.ebuild,v 1.1 2012/03/08 10:35:39 ultrabug Exp $
 
 EAPI=4
 PYTHON_DEPEND="2"
 MY_P="pacemaker-mgmt-${PV}"
+MY_TREE="e4db9d3"
 
-inherit python base autotools multilib
+inherit python base autotools
 
 DESCRIPTION="Pacemaker python GUI and management daemon"
 HOMEPAGE="http://hg.clusterlabs.org/pacemaker/pygui/"
-SRC_URI="http://hg.clusterlabs.org/pacemaker/pygui/archive/${MY_P}.tar.bz2"
+SRC_URI="https://github.com/gao-yan/pacemaker-mgmt/tarball/${MY_P} -> ${P}.tar.gz"
 
 LICENSE="GPL-2 LGPL-2.1"
 KEYWORDS="~amd64 ~x86"
@@ -29,7 +30,6 @@ CDEPEND="
 	heartbeat? ( sys-cluster/pacemaker[heartbeat] )
 	gtk? (
 		dev-python/pygtk
-		dev-python/pyxml
 		)
 	sys-libs/ncurses
 	sys-libs/pam
@@ -44,11 +44,10 @@ DEPEND="${CDEPEND}
 		sys-devel/gettext
 	)"
 
-S="${WORKDIR}/Pacemaker-Python-GUI-${MY_P}/"
+S="${WORKDIR}/gao-yan-pacemaker-mgmt-${MY_TREE}"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-2.0.0-gnutls.patch"
-	"${FILESDIR}/${PN}-2.0.0-doc.patch"
+	"${FILESDIR}/${PN}-2.1.1-doc.patch"
 )
 
 pkg_setup() {
@@ -57,11 +56,6 @@ pkg_setup() {
 
 src_prepare() {
 	base_src_prepare
-	if ! use gtk;
-	then
-		sed -i -e 's/ client//g' mgmt/Makefile.am
-		epatch "${FILESDIR}/${PN}-2.0.0-noGTK.patch"
-	fi
 	eautoreconf
 }
 
@@ -71,6 +65,7 @@ src_configure() {
 	econf $(use_with heartbeat heartbeat-support) \
 		$(use_enable snmp) \
 		$(use_enable nls) \
+		$(use_enable gtk mgmt-client) \
 		$(use_enable static-libs static) \
 		${myopts} \
 		--disable-fatal-warnings
@@ -78,7 +73,7 @@ src_configure() {
 
 src_install() {
 	base_src_install
-	use static-libs || rm "${D}"/usr/$(get_libdir)/*.la
+	use static-libs || find "${D}"/usr/$(get_libdir)/ -name "*.la" -delete
 	dodoc README doc/AUTHORS || die
 }
 
