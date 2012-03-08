@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/postfix/Attic/postfix-2.10_pre20120305.ebuild,v 1.1 2012/03/06 13:12:55 eras Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-mta/cvs-repo/gentoo-x86/mail-mta/postfix/Attic/postfix-2.10_pre20120308.ebuild,v 1.1 2012/03/08 14:49:06 eras Exp $
 
 EAPI=4
 
@@ -9,9 +9,9 @@ inherit eutils multilib ssl-cert toolchain-funcs flag-o-matic pam versionator
 MY_PV="${PV/_pre/-}"
 MY_SRC="${PN}-${MY_PV}"
 MY_URI="ftp://ftp.porcupine.org/mirrors/postfix-release/experimental"
-VDA_PV="2.8.5"
+VDA_PV="2.8.8"
 VDA_P="${PN}-vda-v10-${VDA_PV}"
-RC_VER="2.6"
+RC_VER="2.7"
 
 DESCRIPTION="A fast and secure drop-in replacement for sendmail."
 HOMEPAGE="http://www.postfix.org/"
