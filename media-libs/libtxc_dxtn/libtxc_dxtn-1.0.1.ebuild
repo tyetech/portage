@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtxc_dxtn/libtxc_dxtn-1.0.1.ebuild,v 1.3 2012/03/09 18:14:14 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtxc_dxtn/libtxc_dxtn-1.0.1.ebuild,v 1.4 2012/03/09 18:39:32 mgorny Exp $
 
 EAPI=4
 
@@ -36,9 +36,6 @@ src_compile() {
 
 src_install() {
 	foreachabi autotools-utils_src_install
-	#remove_libtool_files all
-	# above spits boring warning
-	find "${ED}" -name '*.la' -exec rm -f {} +
 }
 
 pkg_postinst() {
