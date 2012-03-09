@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pavucontrol/pavucontrol-1.0.ebuild,v 1.2 2012/03/09 18:55:39 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pavucontrol/pavucontrol-1.0.ebuild,v 1.3 2012/03/09 18:57:57 ssuominen Exp $
 
 EAPI=4
 
@@ -33,8 +33,4 @@ src_configure() {
 		--htmldir=/usr/share/doc/${PF}/html \
 		--disable-lynx \
 		$(use_enable nls)
-}
-
-src_install() {
-	emake DESTDIR="${D}" install
 }
