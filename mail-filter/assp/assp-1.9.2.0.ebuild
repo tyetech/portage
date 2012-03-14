@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/assp/Attic/assp-1.7.5.7-r1.ebuild,v 1.1 2011/03/04 15:37:49 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/assp/Attic/assp-1.9.2.0.ebuild,v 1.1 2012/03/14 03:25:43 patrick Exp $
 
 inherit eutils
 
@@ -11,7 +11,8 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PN}.zip"
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS="~amd64 ~x86"
+# this is a pre-release, so no keywords for now
+KEYWORDS=""
 
 IUSE="ipv6 ldap sasl spf srs ssl syslog"
 
@@ -50,7 +51,6 @@ src_unpack() {
 
 	local FILES="
 		assp.pl
-		move2num.pl
 		rebuildspamdb.pl
 		stat.pl
 	"
@@ -91,9 +91,6 @@ src_unpack() {
 		-e 's|$base/$bf|/etc/assp/$bf|g' \
 		-e 's|rebuildrun.txt|/var/lib/assp/rebuildrun.txt|' \
 		assp.pl || die
-
-	# sed move2num.pl
-	sed -i -e 's|assp.cfg|/etc/assp/assp.cfg|' move2num.pl || die
 
 	# sed rebuildspamdb.pl
 	sed -i -e 's|assp.cfg|/etc/assp/assp.cfg|' \
