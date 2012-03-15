@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/roxterm/Attic/roxterm-2.3.4.ebuild,v 1.3 2012/03/13 14:22:32 ago Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/roxterm/Attic/roxterm-2.3.4.ebuild,v 1.4 2012/03/15 07:29:54 jdhore Exp $
 
 EAPI=4
 PYTHON_DEPEND="2:2.6"
@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/roxterm/${P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="amd64 ppc ~x86"
+KEYWORDS="amd64 ppc x86"
 IUSE="nls"
 
 RDEPEND="dev-libs/dbus-glib
