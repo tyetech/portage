@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/visual/Attic/visual-5.72-r1.ebuild,v 1.5 2012/02/25 02:00:49 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/visual/visual-5.72-r2.ebuild,v 1.1 2012/03/16 16:29:07 bicatali Exp $
 
 EAPI="4"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="2.5 *-jython 2.7-pypy-*"
+RESTRICT_PYTHON_ABIS="2.5 3.* *-jython 2.7-pypy-*"
 PYTHON_EXPORT_PHASE_FUNCTIONS="1"
 
 inherit flag-o-matic multilib python versionator
@@ -24,7 +24,7 @@ RDEPEND=">=dev-cpp/gtkglextmm-1.2
 	dev-cpp/libglademm
 	>=dev-libs/boost-1.48[python]
 	dev-python/numpy
-	dev-python/polygon
+	dev-python/polygon:2
 	dev-python/ttfquery"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
@@ -34,19 +34,23 @@ S="${WORKDIR}/${MY_P}"
 src_prepare() {
 	# Delete redundant file, which causes compilation failure.
 	rm -f src/gtk2/random_device.cpp
-	sed -e "s/ random_device.l\?o//" -i src/Makefile.in src/gtk2/makefile || die "sed failed"
+	sed -i \
+		-e "s/ random_device.l\?o//" \
+		src/Makefile.in src/gtk2/makefile || die
 
 	# Verbose build.
-	sed -e 's/2\?>>[[:space:]]*\$(LOGFILE).*//' -i src/Makefile.in || die "sed failed"
+	sed -i \
+		-e 's/2\?>>[[:space:]]*\$(LOGFILE).*//' \
+		src/Makefile.in || die
 
 	python_clean_py-compile_files
 	python_src_prepare
 
 	preparation() {
-		sed \
+		sed -i \
 			-e "s/-lboost_python/-lboost_python-${PYTHON_ABI}/" \
 			-e "s/libboost_python/libboost_python-${PYTHON_ABI}/" \
-			-i src/Makefile.in src/gtk2/makefile
+			src/Makefile.in src/gtk2/makefile
 	}
 	python_execute_function -s preparation
 }
