@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/qx11grab/Attic/qx11grab-0.4.1-r1.ebuild,v 1.1 2012/03/17 17:13:08 pesa Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/qx11grab/Attic/qx11grab-0.4.1-r2.ebuild,v 1.1 2012/03/17 19:39:19 pesa Exp $
 
 EAPI=4
 
@@ -36,6 +36,7 @@ PDEPEND="virtual/freedesktop-icon-theme"
 
 PATCHES=(
 	"${FILESDIR}/${PV}-detect-avconv-presets-dir.patch"
+	"${FILESDIR}/${PV}-fix-install-destination.patch"
 	"${FILESDIR}/${PV}-fix-typos-in-CMakeLists.patch"
 	"${FILESDIR}/${PV}-optional-pulseaudio.patch"
 )
