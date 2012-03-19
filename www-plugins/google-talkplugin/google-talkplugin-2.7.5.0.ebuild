@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-plugins/cvs-repo/gentoo-x86/www-plugins/google-talkplugin/Attic/google-talkplugin-2.6.1.0.ebuild,v 1.2 2012/03/19 03:15:03 ottxor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-plugins/cvs-repo/gentoo-x86/www-plugins/google-talkplugin/Attic/google-talkplugin-2.7.5.0.ebuild,v 1.1 2012/03/19 03:15:03 ottxor Exp $
 
 EAPI=4
 
-inherit eutils nsplugins
+inherit eutils nsplugins unpacker
 
 if [ "${PV}" != "9999" ]; then
 	DEB_PATCH="1"
@@ -28,9 +28,9 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
 #GoogleTalkPlugin binary contains openssl
 LICENSE="google-talkplugin openssl"
-RESTRICT="fetch strip"
+RESTRICT="strip mirror"
 
-NATIVE_DEPS="|| ( media-sound/pulseaudio media-libs/alsa-lib )
+RDEPEND="|| ( media-sound/pulseaudio media-libs/alsa-lib )
 	dev-libs/glib:2
 	system-libCg? ( media-gfx/nvidia-cg-toolkit )
 	media-libs/fontconfig
@@ -51,15 +51,6 @@ NATIVE_DEPS="|| ( media-sound/pulseaudio media-libs/alsa-lib )
 	libnotify? ( x11-libs/libnotify )"
 
 DEPEND=""
-
-EMUL_DEPS=">=app-emulation/emul-linux-x86-baselibs-20100220
-	app-emulation/emul-linux-x86-gtklibs
-	app-emulation/emul-linux-x86-soundlibs
-	app-emulation/emul-linux-x86-xlibs"
-
-#amd64 needs EMUL_DEPS as GoogleTalkPlugin is a 32-bit binary
-RDEPEND="x86? ( ${NATIVE_DEPS} )
-	amd64? ( ${NATIVE_DEPS} ${EMUL_DEPS} )"
 
 INSTALL_BASE="opt/google/talkplugin"
 
@@ -82,33 +73,24 @@ done
 
 # nofetch means upstream bumped and thus needs version bump
 pkg_nofetch() {
-	elog "This version is no longer available from Google and the license prevents mirroring."
-	elog "This ebuild is intended for users who already downloaded it previously and have problems"
-	elog "with ${PV}+. If you can get the distfile from e.g. another computer of yours, or search"
-	use amd64 && MY_PKG="${MY_PKG/i386/amd64}"
-	elog "it with google: http://www.google.com/search?q=intitle:%22index+of%22+${MY_PKG}"
-	elog "and copy the file ${MY_PKG} to ${DISTDIR}."
+	einfo "This version is no longer available from Google."
+	einfo "Note that Gentoo cannot mirror the distfiles due to license reasons, so we have to follow the bump."
+	einfo "Please file a version bump bug on http://bugs.gentoo.org (search	existing bugs for ${PN} first!)."
 }
 
 src_unpack() {
-	if [ "${PV}" != "9999" ]; then
-		unpack ${A}
-	else
-		local pkg="${MY_PKG}"
+	local pkg="${A:=${MY_PKG}}"
+	if [ "${PV}" = "9999" ]; then
 		use amd64 && pkg="${pkg/i386/amd64}"
 		einfo "Fetching ${pkg}"
 		wget "${MY_URL}/${pkg}" || die
-		unpack ./"${pkg}"
 	fi
-	unpack ./data.tar.gz
+	unpacker ${pkg}
 }
 
 src_install() {
-	#workaround for bug #376741
-	cd usr/share/doc/google-talkplugin || die
-	unpack ./changelog.Debian.gz
-	dodoc changelog.Debian
-	cd -
+	unpacker usr/share/doc/google-talkplugin/changelog.Debian.gz
+	dodoc usr/share/doc/google-talkplugin/changelog.Debian
 
 	exeinto "/${INSTALL_BASE}"
 	doexe "${INSTALL_BASE}"/GoogleTalkPlugin
