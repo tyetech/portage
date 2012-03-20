@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/debhelper/Attic/debhelper-8.1.4.ebuild,v 1.1 2011/04/27 00:10:35 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/debhelper/Attic/debhelper-9.20120312.ebuild,v 1.1 2012/03/20 21:28:42 jer Exp $
 
-EAPI="3"
+EAPI="4"
 
 inherit eutils toolchain-funcs
 
@@ -13,7 +13,7 @@ SRC_URI="mirror://debian/pool/main/d/${PN}/${P/-/_}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~s390 ~sh ~sparc ~x86"
-IUSE="nls linguas_es linguas_fr test"
+IUSE="nls linguas_de linguas_es linguas_fr test"
 
 RDEPEND="app-arch/dpkg
 	dev-perl/TimeDate
@@ -24,12 +24,10 @@ DEPEND="${RDEPEND}
 	nls? ( >=app-text/po4a-0.24 )
 	test? ( dev-perl/Test-Pod )"
 
-S="${WORKDIR}"/${PN}
-
-PATCH_VER=7.4.13
+S=${WORKDIR}/${PN}
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-${PATCH_VER}-conditional-nls.patch
+	epatch "${FILESDIR}"/${PN}-7.4.13-conditional-nls.patch
 }
 
 src_compile() {
@@ -38,20 +36,24 @@ src_compile() {
 
 	use nls && USE_NLS=yes
 
+	use linguas_de && LANGS="${LANGS} de"
 	use linguas_es && LANGS="${LANGS} es"
 	use linguas_fr && LANGS="${LANGS} fr"
 
-	emake USE_NLS=${USE_NLS} LANGS="${LANGS}" build \
-		|| die "Compilation failed"
+	emake USE_NLS=${USE_NLS} LANGS="${LANGS}" build
 }
 
 src_install() {
-	emake DESTDIR="${D}" install || die "Installation failed"
+	default
 	dodoc doc/* debian/changelog
 	docinto examples
 	dodoc examples/*
 	for manfile in *.1 *.7 ; do
 		case ${manfile} in
+			*.de.?)	use linguas_de \
+					&& cp ${manfile} "${T}"/${manfile/.de/} \
+					&& doman -i18n=de "${T}"/${manfile/.de/}
+				;;
 			*.es.?)	use linguas_es \
 					&& cp ${manfile} "${T}"/${manfile/.es/} \
 					&& doman -i18n=es "${T}"/${manfile/.es/}
