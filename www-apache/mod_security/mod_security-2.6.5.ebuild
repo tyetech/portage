@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_security/Attic/mod_security-2.6.2.ebuild,v 1.1 2011/10/02 13:40:01 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apache/cvs-repo/gentoo-x86/www-apache/mod_security/Attic/mod_security-2.6.5.ebuild,v 1.1 2012/03/21 16:29:24 flameeyes Exp $
 
 EAPI=4
 
