@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/google-chrome/Attic/google-chrome-17.0.963.79_p125985.ebuild,v 1.1 2012/03/11 02:35:46 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/google-chrome/Attic/google-chrome-17.0.963.83_p127885.ebuild,v 1.1 2012/03/22 01:16:35 floppym Exp $
 
 EAPI="4"
 
