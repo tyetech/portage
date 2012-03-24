@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/nqp/Attic/nqp-2011.10.ebuild,v 1.1 2011/10/28 15:18:17 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/nqp/Attic/nqp-2012.03.ebuild,v 1.1 2012/03/24 05:41:22 patrick Exp $
 
 EAPI=3
 
@@ -30,6 +30,10 @@ src_prepare() {
 
 src_configure() {
 	perl Configure.pl || die
+}
+
+src_compile() {
+	emake -j1 || die
 }
 
 src_test() {
