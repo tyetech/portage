@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/open-vm-tools-kmod/Attic/open-vm-tools-kmod-2012.03.13.651368.ebuild,v 1.1 2012/03/24 12:55:45 vadimk Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/open-vm-tools-kmod/open-vm-tools-kmod-8.8.2.590212-r1.ebuild,v 1.1 2012/03/26 15:54:37 vadimk Exp $
 
 EAPI="4"
 
-inherit linux-mod versionator
+inherit linux-info linux-mod versionator
 
 MY_PN="${PN/-kmod}"
 MY_PV="$(replace_version_separator 3 '-')"
@@ -23,6 +23,12 @@ RDEPEND=""
 
 DEPEND="${RDEPEND}
 	virtual/linux-sources
+	"
+CONFIG_CHECK="
+	~DRM_VMWGFX
+	~VMWARE_BALLOON
+	~VMWARE_PVSCSI
+	~VMXNET3
 	"
 
 S="${WORKDIR}/${MY_P}"
@@ -51,6 +57,7 @@ pkg_setup() {
 src_prepare() {
 	sed -i.bak -e '/\smake\s/s/make/$(MAKE)/g' modules/linux/{vmblock,vmci,vmhgfs,vmsync,vmxnet,vsock}/Makefile\
 		|| die "Sed failed."
+	kernel_is ge 3 2 0 && epatch "${FILESDIR}/fragsize.patch"
 }
 
 src_configure() {
@@ -64,13 +71,6 @@ src_install() {
 	cat > "${udevrules}" <<-EOF
 		KERNEL=="vsock", GROUP="vmware", MODE=660
 	EOF
-	insinto /etc/udev/rules.d/
+	insinto /lib/udev/rules.d/
 	doins "${udevrules}"
-}
-
-pkg_postinst() {
-	linux-mod_pkg_postinst
-	elog "vmxnet3 for Linux is now upstream (as of Linux 2.6.32)"
-	elog "pvscsi for Linux is now upstream (vmw_pvscsi) (as of Linux 2.6.33)"
-	elog "vmmemctl for Linux is now upstream (vmw_balloon) (as of Linux 2.6.34)"
 }
