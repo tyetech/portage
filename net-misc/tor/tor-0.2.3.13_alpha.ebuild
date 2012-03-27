@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/tor/Attic/tor-0.2.3.12_alpha-r2.ebuild,v 1.1 2012/03/23 01:00:31 blueness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/tor/Attic/tor-0.2.3.13_alpha.ebuild,v 1.1 2012/03/27 15:15:05 blueness Exp $
 
 EAPI="4"
 
@@ -32,7 +32,6 @@ pkg_setup() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/torrc.sample.patch
-	epatch "${FILESDIR}"/${P}-fix-tor-fw-helper-natpmp.patch
 	epatch "${FILESDIR}"/${P}-fix-miniupnpc-1.6.patch
 	eautoreconf
 }
