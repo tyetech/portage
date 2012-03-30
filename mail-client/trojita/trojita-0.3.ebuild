@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/trojita/trojita-9999.ebuild,v 1.10 2012/03/30 10:34:00 johu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/trojita/trojita-0.3.ebuild,v 1.1 2012/03/30 10:34:00 johu Exp $
 
 EAPI=4
 
