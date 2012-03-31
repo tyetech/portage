@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/libplist/libplist-1.8-r1.ebuild,v 1.1 2012/03/31 15:28:44 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-pda/cvs-repo/gentoo-x86/app-pda/libplist/libplist-1.8-r1.ebuild,v 1.2 2012/03/31 19:47:31 pesa Exp $
 
 EAPI=4
 
@@ -19,7 +19,7 @@ IUSE="python"
 
 RDEPEND="dev-libs/libxml2"
 DEPEND="${RDEPEND}
-	python? ( >=dev-python/cython-0.13 )"
+	python? ( >=dev-python/cython-0.14.1-r1 )" #410349
 
 DOCS=( AUTHORS NEWS README )
 
