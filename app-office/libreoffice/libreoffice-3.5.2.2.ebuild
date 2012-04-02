@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.5.2.2.ebuild,v 1.2 2012/03/30 13:19:48 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.5.2.2.ebuild,v 1.3 2012/04/02 07:39:49 scarabeus Exp $
 
 EAPI=4
 
@@ -236,6 +236,8 @@ pkg_setup() {
 
 	python_set_active_version 2
 	python_pkg_setup
+
+	[[ ${MERGE_TYPE} != binary ]] && check-reqs_pkg_pretend
 
 	if ! use gtk; then
 		ewarn "If you want the LibreOffice systray quickstarter to work"
