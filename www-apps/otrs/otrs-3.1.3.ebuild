@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/otrs/Attic/otrs-3.0.11.ebuild,v 1.1 2011/12/27 04:31:57 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/otrs/Attic/otrs-3.1.3.ebuild,v 1.1 2012/04/04 08:16:02 patrick Exp $
 
 EAPI=2
 
@@ -125,8 +125,8 @@ src_prepare() {
 }
 
 src_install() {
-	dodoc CHANGES CREDITS INSTALL README* TODO UPGRADING \
-	 	doc/otrs-database.dia  doc/X-OTRS-Headers.txt || die
+	dodoc CHANGES CREDITS INSTALL README* UPGRADING \
+	 	doc/X-OTRS-Headers.txt || die
 
 	dodoc doc/manual/en/otrs_admin_book.pdf
 
