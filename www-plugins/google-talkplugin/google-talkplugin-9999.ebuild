@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-plugins/cvs-repo/gentoo-x86/www-plugins/google-talkplugin/google-talkplugin-9999.ebuild,v 1.3 2012/03/19 03:15:03 ottxor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-plugins/cvs-repo/gentoo-x86/www-plugins/google-talkplugin/google-talkplugin-9999.ebuild,v 1.4 2012/04/05 14:50:33 ottxor Exp $
 
 EAPI=4
 
@@ -90,7 +90,7 @@ src_unpack() {
 
 src_install() {
 	unpacker usr/share/doc/google-talkplugin/changelog.Debian.gz
-	dodoc usr/share/doc/google-talkplugin/changelog.Debian
+	dodoc changelog.Debian
 
 	exeinto "/${INSTALL_BASE}"
 	doexe "${INSTALL_BASE}"/GoogleTalkPlugin
