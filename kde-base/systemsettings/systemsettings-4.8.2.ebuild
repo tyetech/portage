@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/systemsettings/Attic/systemsettings-4.8.2.ebuild,v 1.1 2012/04/04 23:59:34 johu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/systemsettings/Attic/systemsettings-4.8.2.ebuild,v 1.2 2012/04/07 21:55:12 dilfridge Exp $
 
 EAPI=4
 
@@ -41,6 +41,9 @@ RDEPEND="${COMMONDEPEND}
 	x11-misc/xkeyboard-config
 	gtk? ( kde-misc/kcm-gtk-config )
 "
+
+RESTRICT="test"
+# bug 393133
 
 KMEXTRA="
 	kcontrol/
