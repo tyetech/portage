@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/gfifteen/Attic/gfifteen-0.10.2.ebuild,v 1.2 2012/04/07 04:08:27 mr_bones_ Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-puzzle/cvs-repo/gentoo-x86/games-puzzle/gfifteen/Attic/gfifteen-1.0.ebuild,v 1.1 2012/04/11 17:35:52 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils games
