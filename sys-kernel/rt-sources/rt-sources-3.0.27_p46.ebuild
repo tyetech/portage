@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/rt-sources/Attic/rt-sources-3.0.8_p23.ebuild,v 1.2 2012/01/15 19:15:47 tove Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/rt-sources/rt-sources-3.0.27_p46.ebuild,v 1.1 2012/04/11 14:42:39 psomas Exp $
 
 EAPI="2"
 
@@ -21,10 +21,10 @@ RT_PATCHSET="${PV/*_p}"
 RT_KERNEL="${PV/_p[0-9]*}"
 RT_KERNEL="${RT_KERNEL/_/-}"
 RT_FILE="patch-${RT_KERNEL}-rt${RT_PATCHSET}.patch${COMPRESSTYPE}"
-RT_URI="http://dev.gentoo.org/~psomas/${RT_FILE}"
+RT_URI="mirror://kernel/linux/kernel/projects/rt/${KV_MAJOR}.${KV_MINOR}/${RT_FILE}"
 
 DESCRIPTION="Real-time patchset for the Linux Kernel"
-HOMEPAGE="https://tglx.de/~tglx/rt/"
+HOMEPAGE="http://www.kernel.org/pub/linux/kernel/projects/rt/"
 SRC_URI="${KERNEL_URI} ${RT_URI}"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86"
