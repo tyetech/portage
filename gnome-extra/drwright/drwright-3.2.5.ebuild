@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/drwright/Attic/drwright-3.2.3.ebuild,v 1.2 2012/02/13 23:11:15 tetromino Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/drwright/drwright-3.2.5.ebuild,v 1.1 2012/04/12 20:18:40 eva Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
