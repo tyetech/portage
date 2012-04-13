@@ -1,9 +1,9 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/dsiutils/Attic/dsiutils-1.0.5.ebuild,v 1.1 2008/06/04 07:47:09 ali_bush Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/dsiutils/Attic/dsiutils-1.0.5.ebuild,v 1.2 2012/04/13 18:05:15 ulm Exp $
 
-JAVA_PKG_IUSE="doc source test"
 EAPI="1"
+JAVA_PKG_IUSE="doc source test"
 
 inherit java-pkg-2 java-ant-2
 
