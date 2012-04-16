@@ -1,6 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/gimps/Attic/gimps-26.6.ebuild,v 1.6 2011/12/06 16:47:12 tomka Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/gimps/gimps-27.4.ebuild,v 1.1 2012/04/16 20:43:47 tomka Exp $
+
+EAPI=4
 
 IUSE=""
 DESCRIPTION="GIMPS - The Great Internet Mersenne Prime Search"
@@ -10,7 +12,7 @@ SRC_URI="amd64? ( ftp://mersenne.org/gimps/mprime${PV/./}-linux64.tar.gz )
 
 SLOT="0"
 LICENSE="as-is"
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 RESTRICT="binchecks"
 
 # Since there are no statically linked binaries for this version of mprime,
@@ -26,14 +28,14 @@ QA_EXECSTACK="opt/gimps/mprime"
 src_install() {
 	dodir ${I} /var/lib/gimps
 	cp mprime "${D}/${I}"
-	chmod a-w "${D}/${I}/mprime"
-	chown root:0 "${D}/${I}"
-	chown root:0 "${D}/${I}/mprime"
+	fperms a-w "${I}/mprime"
+	fowners root:0 "${I}"
+	fowners root:0 "${I}/mprime"
 
 	dodoc license.txt readme.txt stress.txt whatsnew.txt undoc.txt
 
-	newinitd "${FILESDIR}/gimps-25.7-init.d" gimps
-	newconfd "${FILESDIR}/gimps-25.6-conf.d" gimps
+	newinitd "${FILESDIR}/${PN}-26.6-r1-init.d" gimps
+	newconfd "${FILESDIR}/${PN}-25.6-conf.d" gimps
 }
 
 pkg_postinst() {
@@ -46,6 +48,19 @@ pkg_postinst() {
 	einfo "pass it an additional command line parameter specifying where the data"
 	einfo "files are to be stored, e.g.:"
 	einfo "   ${I}/mprime -w/var/lib/gimps"
+	einfo
+	einfo "GIMPS version 27.4 has issues with correct detection of physical and"
+	einfo "logical CPUs on hyperthreaded Intel CPUs. If you determine that"
+	einfo "GIMPS is not using the right CPUs on your PC use the"
+	einfo "AffinityScramble2 option in your local.txt file (instructions in"
+	einfo "/usr/share/doc/gimps-27.4/undoc.txt.bz2)."
+	einfo "In a 4 core, 8 threads Core i7 \"AffinityScramble2=04152637\" works"
+	einfo "best."
+	einfo
+	einfo "GIMPS version 27.4 is a beta version and it only offers improvements"
+	einfo "for Intel CPUs with AVX instructions (Sandy Bridge and later). It"
+	einfo "does _not_ work (at all) on AMD Bulldozer CPUs."
+	einfo
 	echo
 }
 
