@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/spyder/Attic/spyder-2.1.6.ebuild,v 1.3 2012/02/25 01:58:24 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/spyder/spyder-2.1.9.ebuild,v 1.1 2012/04/17 14:53:25 xarthisius Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
