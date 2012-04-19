@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/rpm/Attic/rpm-4.9.1.2-r1.ebuild,v 1.1 2012/03/21 19:19:35 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-arch/cvs-repo/gentoo-x86/app-arch/rpm/Attic/rpm-4.9.1.2-r2.ebuild,v 1.1 2012/04/19 10:37:02 scarabeus Exp $
 
 EAPI=4
 
