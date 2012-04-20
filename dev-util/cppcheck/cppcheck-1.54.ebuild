@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cppcheck/Attic/cppcheck-1.51.ebuild,v 1.1 2011/10/15 08:50:39 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cppcheck/cppcheck-1.54.ebuild,v 1.1 2012/04/20 10:02:48 xmw Exp $
 
 EAPI="3"
 PYTHON_DEPEND="htmlreport? 2"
