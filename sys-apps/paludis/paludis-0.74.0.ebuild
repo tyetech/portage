@@ -1,14 +1,14 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/paludis/Attic/paludis-0.58.5.ebuild,v 1.3 2011/07/08 11:00:19 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/paludis/Attic/paludis-0.74.0.ebuild,v 1.1 2012/04/21 20:08:36 dagger Exp $
 
 inherit bash-completion eutils
 
 DESCRIPTION="paludis, the other package mangler"
-HOMEPAGE="http://paludis.pioto.org/"
-SRC_URI="http://paludis.pioto.org/download/${P}.tar.bz2"
+HOMEPAGE="http://paludis.exherbo.org/"
+SRC_URI="http://paludis.exherbo.org/download/${P}.tar.bz2"
 
-IUSE="doc pbins portage pink python-bindings ruby-bindings search-index vim-syntax visibility xml zsh-completion"
+IUSE="doc pbins portage pink prebuilt-documentation python-bindings ruby-bindings search-index vim-syntax visibility xml zsh-completion"
 LICENSE="GPL-2 vim-syntax? ( vim )"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
@@ -26,13 +26,18 @@ COMMON_DEPEND="
 	search-index? ( >=dev-db/sqlite-3 )"
 
 DEPEND="${COMMON_DEPEND}
+	!prebuilt-documentation? (
+		>=app-text/asciidoc-8.6.3
+		app-text/xmlto
+	)
 	doc? (
 		|| ( >=app-doc/doxygen-1.5.3 <=app-doc/doxygen-1.5.1 )
 		media-gfx/imagemagick
 		python-bindings? ( dev-python/epydoc dev-python/pygments )
 		ruby-bindings? ( dev-ruby/syntax dev-ruby/allison )
 	)
-	dev-util/pkgconfig"
+	dev-util/pkgconfig
+	dev-cpp/gtest"
 
 RDEPEND="${COMMON_DEPEND}
 	sys-apps/sandbox"
@@ -53,6 +58,12 @@ pkg_setup() {
 		eerror "Paludis needs dev-libs/libpcre built with C++ support"
 		eerror "Please build dev-libs/libpcre with USE=cxx support"
 		die "Rebuild dev-libs/libpcre with USE=cxx"
+	fi
+
+	if ! built_with_use dev-cpp/gtest threads ; then
+		eerror "Paludis needs dev-cpp/gtest built with threads support"
+		eerror "Please build dev-cpp/gtest with USE=threads support"
+		die "Rebuild dev-cpp/gtest with USE threads"
 	fi
 
 	if use python-bindings && \
@@ -79,11 +90,17 @@ pkg_setup() {
 	fi
 
 	create-paludis-user
+
+	# 'paludis' tries to exec() itself after an upgrade
+	if [[ "${PKGMANAGER}" == paludis-0.[012345]* ]] && [[ -z "${CAVE}" ]] ; then
+		eerror "The 'paludis' client has been removed in Paludis 0.60. You must use"
+		eerror "'cave' to upgrade."
+		die "Can't use 'paludis' to upgrade Paludis"
+	fi
 }
 
 src_compile() {
 	local repositories=`echo default unavailable unpackaged | tr -s \  ,`
-	local clients=`echo default accerso adjutrix appareo cave importare inquisitio instruo paludis reconcilio | tr -s \  ,`
 	local environments=`echo default $(usev portage ) | tr -s \  ,`
 	econf \
 		$(use_enable doc doxygen ) \
@@ -91,6 +108,7 @@ src_compile() {
 		$(use_enable pink ) \
 		$(use_enable ruby-bindings ruby ) \
 		$(use ruby-bindings && use doc && echo --enable-ruby-doc ) \
+		$(use_enable prebuilt-documentation ) \
 		$(use_enable python-bindings python ) \
 		$(use python-bindings && use doc && echo --enable-python-doc ) \
 		$(use_enable vim-syntax vim ) \
@@ -99,7 +117,6 @@ src_compile() {
 		$(use_enable search-index ) \
 		--with-vim-install-dir=/usr/share/vim/vimfiles \
 		--with-repositories=${repositories} \
-		--with-clients=${clients} \
 		--with-environments=${environments} \
 		|| die "econf failed"
 
@@ -110,23 +127,10 @@ src_install() {
 	emake DESTDIR="${D}" install || die "install failed"
 	dodoc AUTHORS README NEWS
 
-	BASHCOMPLETION_NAME="adjutrix" dobashcompletion bash-completion/adjutrix
-	BASHCOMPLETION_NAME="paludis" dobashcompletion bash-completion/paludis
-	BASHCOMPLETION_NAME="accerso" dobashcompletion bash-completion/accerso
-	BASHCOMPLETION_NAME="importare" dobashcompletion bash-completion/importare
-	BASHCOMPLETION_NAME="instruo" dobashcompletion bash-completion/instruo
-	BASHCOMPLETION_NAME="reconcilio" dobashcompletion bash-completion/reconcilio
-	BASHCOMPLETION_NAME="inquisitio" dobashcompletion bash-completion/inquisitio
 	BASHCOMPLETION_NAME="cave" dobashcompletion bash-completion/cave
 
 	if use zsh-completion ; then
 		insinto /usr/share/zsh/site-functions
-		doins zsh-completion/_paludis
-		doins zsh-completion/_adjutrix
-		doins zsh-completion/_importare
-		doins zsh-completion/_reconcilio
-		doins zsh-completion/_inquisitio
-		doins zsh-completion/_paludis_packages
 		doins zsh-completion/_cave
 	fi
 }
