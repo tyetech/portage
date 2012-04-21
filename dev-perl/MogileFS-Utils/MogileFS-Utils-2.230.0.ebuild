@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/MogileFS-Utils/MogileFS-Utils-2.220.0.ebuild,v 1.2 2012/04/21 02:26:53 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-perl/cvs-repo/gentoo-x86/dev-perl/MogileFS-Utils/MogileFS-Utils-2.230.0.ebuild,v 1.1 2012/04/21 02:26:53 robbat2 Exp $
 
 EAPI=4
 
@@ -16,5 +16,5 @@ IUSE=""
 
 RDEPEND="virtual/perl-IO-Compress
 	dev-perl/libwww-perl
-	>=dev-perl/MogileFS-Client-1.14"
+	>=dev-perl/MogileFS-Client-1.16"
 DEPEND="${RDEPEND}"
