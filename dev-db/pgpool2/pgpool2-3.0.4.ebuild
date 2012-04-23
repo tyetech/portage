@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/pgpool2/Attic/pgpool2-3.0.4.ebuild,v 1.1 2011/06/19 18:50:43 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/pgpool2/Attic/pgpool2-3.0.4.ebuild,v 1.2 2012/04/23 15:00:44 titanofold Exp $
 
 EAPI=4
 
@@ -58,7 +58,7 @@ src_prepare() {
 
 src_configure() {
 	econf \
-		--sysconfdir=${EROOT}/etc/${PN} \
+		--sysconfdir="${EROOT}/etc/${PN}" \
 		--disable-rpath \
 		$(use_enable static-libs static) \
 		$(use_with ssl openssl) \
