@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/freeipmi/Attic/freeipmi-1.0.9.ebuild,v 1.1 2011/11/22 01:51:50 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-libs/cvs-repo/gentoo-x86/sys-libs/freeipmi/Attic/freeipmi-1.1.4.ebuild,v 1.1 2012/04/24 19:03:16 flameeyes Exp $
 
 EAPI=4
 
@@ -22,7 +22,7 @@ RDEPEND="${RDEPEND}
 	sys-apps/openrc"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-1.0.5-strictaliasing.patch
+	epatch "${FILESDIR}"/${PN}-1.1.1-strictaliasing.patch
 
 	AT_M4DIR="config" eautoreconf
 }
