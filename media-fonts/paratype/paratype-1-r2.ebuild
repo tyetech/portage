@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/paratype/Attic/paratype-1-r1.ebuild,v 1.1 2011/12/30 16:22:37 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-fonts/cvs-repo/gentoo-x86/media-fonts/paratype/paratype-1-r2.ebuild,v 1.1 2012/04/25 15:24:22 maksbotan Exp $
 
 EAPI=3
 
