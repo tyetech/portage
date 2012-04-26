@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/virtualbox/Attic/virtualbox-4.1.10.ebuild,v 1.3 2012/04/05 07:44:41 polynomial-c Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/virtualbox/Attic/virtualbox-4.1.14.ebuild,v 1.1 2012/04/26 18:20:25 polynomial-c Exp $
 
 EAPI=4
 
@@ -178,11 +178,6 @@ src_prepare() {
 	if gcc-specs-pie ; then
 		epatch "${FILESDIR}"/virtualbox_nopie.patch
 	fi
-
-	# Link to correct gsoap library. Bug #408569
-	# This has been fixed upstream and should be removed when virtualbox is
-	# bumped
-	epatch "${FILESDIR}"/${P}-libgsoapssl.patch
 }
 
 src_configure() {
