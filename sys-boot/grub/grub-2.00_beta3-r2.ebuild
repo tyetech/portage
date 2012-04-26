@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/grub/Attic/grub-2.00_beta3-r1.ebuild,v 1.1 2012/04/07 21:33:13 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/grub/Attic/grub-2.00_beta3-r2.ebuild,v 1.1 2012/04/26 00:08:27 floppym Exp $
 
 EAPI=4
 
