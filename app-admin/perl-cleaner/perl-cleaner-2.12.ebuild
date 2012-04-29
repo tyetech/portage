@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/perl-cleaner/Attic/perl-cleaner-2.11.ebuild,v 1.1 2012/04/29 07:31:00 tove Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/perl-cleaner/perl-cleaner-2.12.ebuild,v 1.1 2012/04/29 07:39:43 tove Exp $
 
 EAPI=4
 
