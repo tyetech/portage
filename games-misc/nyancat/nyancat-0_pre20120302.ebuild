@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-misc/cvs-repo/gentoo-x86/games-misc/nyancat/nyancat-0_pre20120302.ebuild,v 1.2 2012/03/21 06:02:48 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-misc/cvs-repo/gentoo-x86/games-misc/nyancat/nyancat-0_pre20120302.ebuild,v 1.3 2012/04/30 09:52:31 ago Exp $
 
 EAPI=2
 inherit games
@@ -11,7 +11,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="UoI-NCSA"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE=""
 
 src_compile() {
