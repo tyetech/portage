@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rack-protection/Attic/rack-protection-1.1.4.ebuild,v 1.2 2011/12/31 19:27:31 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rack-protection/Attic/rack-protection-1.1.4.ebuild,v 1.3 2012/05/01 18:24:20 armin76 Exp $
 
 EAPI=4
 USE_RUBY="ruby18 ree18 ruby19"

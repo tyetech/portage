@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-sdl/ruby-sdl-2.1.1.1.ebuild,v 1.3 2012/02/24 14:31:13 ago Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-sdl/ruby-sdl-2.1.1.1.ebuild,v 1.4 2012/05/01 18:24:26 armin76 Exp $
 
 EAPI=2
 USE_RUBY="ruby18"
@@ -15,7 +15,7 @@ HOMEPAGE="http://www.kmc.gr.jp/~ohai/rubysdl.en.html"
 SRC_URI="mirror://rubyforge/rubysdl/${MY_P}.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="amd64 ~ia64 ~ppc x86"
+KEYWORDS="amd64 ~ppc x86"
 
 IUSE="image mixer truetype mpeg sge"
 
