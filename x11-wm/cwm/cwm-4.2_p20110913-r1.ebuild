@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/cwm/Attic/cwm-20110515.ebuild,v 1.6 2011/09/11 21:21:49 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/cwm/Attic/cwm-4.2_p20110913-r1.ebuild,v 1.1 2012/05/02 13:19:24 xmw Exp $
 
 EAPI=2
 
@@ -8,12 +8,12 @@ inherit eutils toolchain-funcs
 
 DESCRIPTION="OpenBSD fork of calmwm, a clean and lightweight window manager"
 HOMEPAGE="http://www.openbsd.org/cgi-bin/cvsweb/xenocara/app/cwm/
-	https://github.com/chneukirchen/cwm"
-SRC_URI="mirror://gentoo/${P}.tar.gz"
+	http://github.com/chneukirchen/cwm"
+SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="ISC"
 SLOT="0"
-KEYWORDS="amd64 arm sparc x86"
+KEYWORDS="~amd64 ~arm ~sparc ~x86"
 IUSE=""
 
 RDEPEND="x11-libs/libXft
@@ -24,15 +24,12 @@ DEPEND="${RDEPEND}
 	sys-devel/bison"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-20110323-Makefile.patch
-}
-
-src_compile() {
+	epatch "${FILESDIR}"/${P}-Makefile.patch
 	export LDADD="${LDFLAGS}"
 	tc-export CC
-	emake || die
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
+	make_session_desktop ${PN} ${PN}
 }
