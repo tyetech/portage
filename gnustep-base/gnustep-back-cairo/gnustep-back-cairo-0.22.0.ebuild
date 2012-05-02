@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-back-cairo/gnustep-back-cairo-0.22.0.ebuild,v 1.4 2012/04/07 14:45:16 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-base/cvs-repo/gentoo-x86/gnustep-base/gnustep-back-cairo/gnustep-back-cairo-0.22.0.ebuild,v 1.5 2012/05/02 21:21:12 jdhore Exp $
 
 EAPI=4
 inherit gnustep-base
@@ -33,7 +33,7 @@ RDEPEND="${GNUSTEP_CORE_DEPEND}
 	!gnustep-base/gnustep-back-art
 	!gnustep-base/gnustep-back-xlib"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/gnustep-back-${PV}
 
