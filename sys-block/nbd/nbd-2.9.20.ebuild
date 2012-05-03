@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/nbd/nbd-2.9.20.ebuild,v 1.4 2011/03/02 08:18:39 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-block/cvs-repo/gentoo-x86/sys-block/nbd/nbd-2.9.20.ebuild,v 1.5 2012/05/03 04:46:47 jdhore Exp $
 
 EAPI="2"
 
@@ -15,7 +15,7 @@ IUSE=""
 
 RDEPEND=">=dev-libs/glib-2.0"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_configure() {
 	econf \
