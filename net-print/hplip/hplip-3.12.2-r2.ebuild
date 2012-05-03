@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/hplip/Attic/hplip-3.12.2-r2.ebuild,v 1.2 2012/03/20 10:39:43 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-print/cvs-repo/gentoo-x86/net-print/hplip/Attic/hplip-3.12.2-r2.ebuild,v 1.3 2012/05/03 07:22:30 jdhore Exp $
 
 EAPI=4
 
@@ -40,7 +40,7 @@ COMMON_DEPEND="
 	)"
 
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 RDEPEND="${COMMON_DEPEND}
 	>=app-text/ghostscript-gpl-8.71-r3
