@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-prime/scim-prime-1.0.1.ebuild,v 1.2 2011/12/04 16:43:50 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-i18n/cvs-repo/gentoo-x86/app-i18n/scim-prime/scim-prime-1.0.1.ebuild,v 1.3 2012/05/03 19:24:28 jdhore Exp $
 
 inherit eutils
 
@@ -16,7 +16,7 @@ IUSE=""
 RDEPEND=">=app-i18n/scim-1.0
 	>=app-i18n/prime-1.0.0"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_install() {
 	emake DESTDIR="${D}" install || die "make install failed"
