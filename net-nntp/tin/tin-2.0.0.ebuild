@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/tin/tin-2.0.0.ebuild,v 1.2 2011/09/12 21:04:15 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/tin/tin-2.0.0.ebuild,v 1.3 2012/05/03 04:32:51 jdhore Exp $
 
 EAPI="4"
 
@@ -31,7 +31,7 @@ RDEPEND="
 
 DEPEND="
 	${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 "
 
 src_prepare() {

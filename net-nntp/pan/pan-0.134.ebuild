@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/pan/pan-0.134.ebuild,v 1.2 2011/10/27 06:45:25 tetromino Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-nntp/cvs-repo/gentoo-x86/net-nntp/pan/pan-0.134.ebuild,v 1.3 2012/05/03 04:32:51 jdhore Exp $
 
 EAPI="3"
 
@@ -20,7 +20,7 @@ RDEPEND=">=dev-libs/glib-2.14:2
 
 DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.35.5
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
 src_prepare() {
