@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/evilvte/Attic/evilvte-0.5.0.ebuild,v 1.3 2012/01/04 05:36:11 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/evilvte/Attic/evilvte-0.5.0.ebuild,v 1.4 2012/05/03 07:11:34 jdhore Exp $
 
 EAPI=4
 MY_P=${P/_/\~}
@@ -18,7 +18,7 @@ IUSE=""
 RDEPEND="x11-libs/vte:2.90
 	x11-libs/gtk+:3"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-277.ebuild,v 1.1 2012/01/10 14:28:49 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/xterm/Attic/xterm-277.ebuild,v 1.2 2012/05/03 07:11:34 jdhore Exp $
 
 EAPI=4
 inherit eutils multilib
@@ -30,7 +30,7 @@ COMMON_DEPEND="kernel_linux? ( sys-libs/libutempter )
 RDEPEND="${COMMON_DEPEND}
 	media-fonts/font-misc-misc"
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	x11-proto/kbproto
 	x11-proto/xproto"
 

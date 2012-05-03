@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/tilda/Attic/tilda-0.9.5.ebuild,v 1.6 2011/03/23 06:21:38 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/tilda/Attic/tilda-0.9.5.ebuild,v 1.7 2012/05/03 07:11:34 jdhore Exp $
 
 EAPI=2
 
@@ -17,7 +17,7 @@ RDEPEND="x11-libs/vte:0
 	>=dev-libs/glib-2.8.4
 	dev-libs/confuse"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_install() {
 	emake DESTDIR="${D}" install || die
