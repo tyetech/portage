@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/rsyslog/rsyslog-5.8.5.ebuild,v 1.6 2011/09/11 09:28:27 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/rsyslog/rsyslog-5.8.5.ebuild,v 1.7 2012/05/03 18:02:22 jdhore Exp $
 
 EAPI=4
 
@@ -28,7 +28,7 @@ RDEPEND="dbi? ( dev-db/libdbi )
 	zeromq? ( net-libs/zeromq )
 	zlib? ( sys-libs/zlib )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 BRANCH="5-stable"
 
