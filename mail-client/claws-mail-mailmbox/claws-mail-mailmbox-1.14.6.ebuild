@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-mailmbox/claws-mail-mailmbox-1.14.6.ebuild,v 1.6 2012/04/07 11:32:57 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-mailmbox/claws-mail-mailmbox-1.14.6.ebuild,v 1.7 2012/05/04 08:42:22 jdhore Exp $
 
 MY_P="${P#claws-mail-}"
 
@@ -13,7 +13,7 @@ KEYWORDS="~alpha amd64 ppc ppc64 sparc x86"
 IUSE=""
 RDEPEND=">=mail-client/claws-mail-3.8.0"
 DEPEND="${RDEPEND}
-		dev-util/pkgconfig"
+		virtual/pkgconfig"
 
 S="${WORKDIR}/${MY_P}"
 

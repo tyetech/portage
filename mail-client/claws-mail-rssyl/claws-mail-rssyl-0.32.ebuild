@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-rssyl/claws-mail-rssyl-0.32.ebuild,v 1.6 2012/04/07 11:36:30 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/claws-mail-rssyl/claws-mail-rssyl-0.32.ebuild,v 1.7 2012/05/04 08:42:24 jdhore Exp $
 
 EAPI="4"
 
@@ -20,7 +20,7 @@ RDEPEND=">=mail-client/claws-mail-3.8.0
 	dev-libs/libxml2
 	nls? ( >=sys-devel/gettext-0.12.1 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S="${WORKDIR}/${MY_P}"
 
