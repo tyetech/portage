@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/libticables2/Attic/libticables2-1.3.1.ebuild,v 1.1 2011/03/15 21:18:16 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/libticables2/Attic/libticables2-1.3.1.ebuild,v 1.2 2012/05/04 08:22:52 jdhore Exp $
 
 EAPI=2
 inherit eutils
@@ -19,7 +19,7 @@ RDEPEND="dev-libs/glib:2
 	nls? ( virtual/libintl )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 src_configure() {
