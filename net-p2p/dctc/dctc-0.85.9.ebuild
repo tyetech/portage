@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dctc/dctc-0.85.9.ebuild,v 1.19 2010/07/14 11:16:34 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/dctc/dctc-0.85.9.ebuild,v 1.20 2012/05/04 06:33:35 jdhore Exp $
 
 inherit autotools eutils
 
@@ -17,7 +17,7 @@ RDEPEND="=dev-libs/glib-2*
 	>=sys-libs/db-3
 	dev-libs/libxml2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_unpack() {
 	unpack ${A}
