@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/linpopup/linpopup-2.1.0.ebuild,v 1.1 2009/08/05 08:38:21 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-im/cvs-repo/gentoo-x86/net-im/linpopup/linpopup-2.1.0.ebuild,v 1.2 2012/05/04 06:22:11 jdhore Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -18,7 +18,7 @@ RDEPEND="x11-libs/libX11
 	x11-libs/libXmu
 	x11-libs/gtk+:2"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	x11-proto/xproto"
 
 src_prepare() {
