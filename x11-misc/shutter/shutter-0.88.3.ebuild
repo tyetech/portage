@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/shutter/Attic/shutter-0.88.ebuild,v 1.1 2011/11/26 16:52:00 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/shutter/Attic/shutter-0.88.3.ebuild,v 1.1 2012/05/04 23:47:09 hwoarang Exp $
 
 EAPI="2"
 
