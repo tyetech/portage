@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/windowlab/windowlab-1.34.ebuild,v 1.6 2009/01/09 15:42:49 remi Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/windowlab/windowlab-1.34.ebuild,v 1.7 2012/05/04 08:58:57 jdhore Exp $
 
 inherit eutils
 
@@ -17,7 +17,7 @@ RDEPEND="truetype? ( x11-libs/libXft )
 	x11-libs/libXext"
 DEPEND="${RDEPEND}
 	x11-proto/xextproto
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_unpack() {
 	unpack ${A}

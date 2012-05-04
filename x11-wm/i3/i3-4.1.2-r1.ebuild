@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/i3/Attic/i3-4.1.2-r1.ebuild,v 1.3 2012/03/24 16:57:39 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/i3/Attic/i3-4.1.2-r1.ebuild,v 1.4 2012/05/04 08:58:56 jdhore Exp $
 
 EAPI=4
 
@@ -25,7 +25,7 @@ CDEPEND="dev-libs/libev
 	x11-libs/xcb-util"
 DEPEND="${CDEPEND}
 	app-text/asciidoc
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/flex
 	sys-devel/bison
 	x11-proto/xcb-proto"
