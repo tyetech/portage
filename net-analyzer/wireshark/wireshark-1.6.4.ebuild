@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.6.4.ebuild,v 1.8 2012/01/06 18:52:52 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/wireshark/Attic/wireshark-1.6.4.ebuild,v 1.9 2012/05/04 06:08:10 jdhore Exp $
 
 EAPI="3"
 PYTHON_DEPEND="python? 2"
@@ -42,7 +42,7 @@ DEPEND="${RDEPEND}
 		dev-libs/libxml2
 		app-doc/doxygen
 		doc-pdf? ( dev-java/fop ) )
-	>=dev-util/pkgconfig-0.15.0
+	virtual/pkgconfig
 	dev-lang/perl
 	sys-devel/bison
 	sys-apps/sed

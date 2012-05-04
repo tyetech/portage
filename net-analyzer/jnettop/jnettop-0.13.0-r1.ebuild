@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/jnettop/jnettop-0.13.0-r1.ebuild,v 1.3 2009/06/02 11:55:36 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/jnettop/jnettop-0.13.0-r1.ebuild,v 1.4 2012/05/04 06:08:08 jdhore Exp $
 
 inherit autotools eutils
 
@@ -17,7 +17,7 @@ RDEPEND="net-libs/libpcap
 	>=dev-libs/glib-2.0.1"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_unpack() {
 	unpack ${A}
