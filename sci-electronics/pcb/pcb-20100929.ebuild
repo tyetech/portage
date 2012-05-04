@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/pcb/pcb-20100929.ebuild,v 1.9 2011/06/28 19:56:04 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/pcb/pcb-20100929.ebuild,v 1.10 2012/05/04 07:10:19 jdhore Exp $
 
 EAPI="3"
 
@@ -38,7 +38,7 @@ DEPEND="${CDEPEND}
 		sci-electronics/gerbv
 	)
 	>=dev-util/intltool-0.35
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 RDEPEND="${CDEPEND}

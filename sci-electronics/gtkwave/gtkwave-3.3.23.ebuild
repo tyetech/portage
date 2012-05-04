@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/gtkwave/gtkwave-3.3.23.ebuild,v 1.2 2012/03/31 17:52:42 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/gtkwave/gtkwave-3.3.23.ebuild,v 1.3 2012/05/04 07:10:19 jdhore Exp $
 
 EAPI="2"
 
@@ -22,7 +22,7 @@ RDEPEND="dev-libs/glib:2
 	lzma? ( app-arch/xz-utils )"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	dev-util/gperf"
 
 src_prepare(){

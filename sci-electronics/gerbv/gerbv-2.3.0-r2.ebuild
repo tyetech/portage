@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/gerbv/gerbv-2.3.0-r2.ebuild,v 1.7 2011/03/02 21:40:55 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/gerbv/gerbv-2.3.0-r2.ebuild,v 1.8 2012/05/04 07:10:19 jdhore Exp $
 
 EAPI="2"
 
@@ -21,7 +21,7 @@ RDEPEND="
 	>=x11-libs/cairo-1.2"
 
 DEPEND="${RDEPEND}
-	>=dev-util/pkgconfig-0.9"
+	virtual/pkgconfig"
 
 src_configure() {
 	econf \
