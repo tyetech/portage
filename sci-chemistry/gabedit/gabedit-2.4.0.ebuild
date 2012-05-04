@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gabedit/gabedit-2.4.0.ebuild,v 1.1 2011/10/05 19:47:00 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/gabedit/gabedit-2.4.0.ebuild,v 1.2 2012/05/04 07:02:33 jdhore Exp $
 
 EAPI=4
 
@@ -30,7 +30,7 @@ RDEPEND="
 	virtual/opengl
 	virtual/glu"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${MY_P}
 
