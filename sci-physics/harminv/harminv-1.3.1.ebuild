@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/harminv/harminv-1.3.1.ebuild,v 1.3 2012/04/25 16:56:30 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-physics/cvs-repo/gentoo-x86/sci-physics/harminv/harminv-1.3.1.ebuild,v 1.4 2012/05/04 07:55:33 jdhore Exp $
 
 EAPI=4
 
@@ -19,7 +19,7 @@ IUSE="static-libs"
 
 RDEPEND="virtual/lapack"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 PATCHES=( "${FILESDIR}"/${P}-configure.ac.patch )
 
