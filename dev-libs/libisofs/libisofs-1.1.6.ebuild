@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libisofs/Attic/libisofs-1.1.6.ebuild,v 1.5 2012/03/13 15:04:12 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/libisofs/Attic/libisofs-1.1.6.ebuild,v 1.6 2012/05/04 18:35:43 jdhore Exp $
 
 EAPI=4
 
@@ -17,7 +17,7 @@ RDEPEND="acl? ( virtual/acl )
 	xattr? ( sys-apps/attr )
 	zlib? ( sys-libs/zlib )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_configure() {
 	econf \
