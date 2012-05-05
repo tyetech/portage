@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/iscan/iscan-2.26.2.ebuild,v 1.5 2011/10/15 23:14:57 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/iscan/iscan-2.26.2.ebuild,v 1.6 2012/05/05 07:00:26 jdhore Exp $
 
 EAPI="2"
 
@@ -57,7 +57,7 @@ RDEPEND="media-gfx/iscan-data
 	)"
 
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	X? ( sys-devel/gettext )"
 
 src_prepare() {

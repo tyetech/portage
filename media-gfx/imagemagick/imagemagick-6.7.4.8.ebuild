@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/imagemagick/Attic/imagemagick-6.7.4.8.ebuild,v 1.1 2012/01/23 22:54:00 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/imagemagick/Attic/imagemagick-6.7.4.8.ebuild,v 1.2 2012/05/05 07:00:21 jdhore Exp $
 
 EAPI=4
 inherit multilib toolchain-funcs versionator
@@ -54,7 +54,7 @@ RDEPEND=">=sys-devel/libtool-2.2.6b
 DEPEND="${RDEPEND}
 	!media-gfx/graphicsmagick[imagemagick]
 	app-arch/xz-utils
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	>=sys-apps/sed-4
 	X? ( x11-proto/xextproto )"
 

@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/qosmic/qosmic-1.5.0.ebuild,v 1.1 2011/11/02 14:30:08 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/qosmic/qosmic-1.5.0.ebuild,v 1.2 2012/05/05 07:00:23 jdhore Exp $
 
 EAPI=4
 inherit qt4-r2
@@ -18,6 +18,6 @@ RDEPEND=">=dev-lang/lua-5.1.4
 	>=media-gfx/flam3-3.0.1
 	>=x11-libs/qt-gui-4.6:4"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 DOCS="changes.txt README"
