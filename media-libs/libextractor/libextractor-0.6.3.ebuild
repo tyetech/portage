@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libextractor/Attic/libextractor-0.6.3.ebuild,v 1.3 2012/04/30 09:54:24 ago Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libextractor/Attic/libextractor-0.6.3.ebuild,v 1.4 2012/05/05 08:02:42 jdhore Exp $
 
 EAPI=4
 inherit flag-o-matic multilib toolchain-funcs
@@ -34,7 +34,7 @@ RDEPEND="app-arch/bzip2
 		x11-libs/qt-svg:4
 		)"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 # test? ( app-forensics/zzuf )
 

@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtimidity/libtimidity-0.1.0-r1.ebuild,v 1.9 2012/02/28 16:38:42 jer Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/libtimidity/libtimidity-0.1.0-r1.ebuild,v 1.10 2012/05/05 08:02:40 jdhore Exp $
 
 EAPI=2
 inherit autotools eutils
@@ -16,7 +16,7 @@ IUSE="ao debug"
 
 RDEPEND="ao? ( media-libs/libao )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 RESTRICT="test"
 
