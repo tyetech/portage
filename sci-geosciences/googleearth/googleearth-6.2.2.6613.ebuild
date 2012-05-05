@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/googleearth/Attic/googleearth-6.2.1.6014-r1.ebuild,v 1.3 2012/03/10 07:50:46 caster Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-geosciences/cvs-repo/gentoo-x86/sci-geosciences/googleearth/googleearth-6.2.2.6613.ebuild,v 1.1 2012/05/05 11:03:09 xmw Exp $
 
 EAPI="4"
 
