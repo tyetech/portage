@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmlife/wmlife-1.0.0.ebuild,v 1.3 2011/03/28 15:04:30 nirbheek Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-plugins/cvs-repo/gentoo-x86/x11-plugins/wmlife/wmlife-1.0.0.ebuild,v 1.4 2012/05/05 05:12:01 jdhore Exp $
 
 EAPI="1"
 
@@ -24,7 +24,7 @@ RDEPEND="x11-libs/gtk+:2
 	x11-libs/libICE
 	x11-libs/libXt"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_unpack() {
 	unpack ${A}
