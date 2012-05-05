@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdauthor/dvdauthor-0.7.0.ebuild,v 1.1 2011/10/09 09:37:29 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/dvdauthor/dvdauthor-0.7.0.ebuild,v 1.2 2012/05/05 08:58:51 jdhore Exp $
 
 EAPI=4
 inherit eutils
@@ -22,7 +22,7 @@ RDEPEND="dev-libs/fribidi
 	graphicsmagick? ( media-gfx/graphicsmagick )
 	!graphicsmagick? ( >=media-gfx/imagemagick-5.5.7.14 )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 S=${WORKDIR}/${PN}
 

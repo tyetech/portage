@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xine-ui/xine-ui-0.99.6.ebuild,v 1.14 2012/04/17 08:57:36 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/xine-ui/xine-ui-0.99.6.ebuild,v 1.15 2012/05/05 08:58:59 jdhore Exp $
 
 EAPI=3
 inherit fdo-mime gnome2-utils eutils
@@ -38,7 +38,7 @@ DEPEND="${RDEPEND}
 		x11-proto/xf86vidmodeproto
 		x11-proto/inputproto
 		xinerama? ( x11-proto/xineramaproto ) )
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	app-arch/xz-utils"
 
 src_prepare() {
