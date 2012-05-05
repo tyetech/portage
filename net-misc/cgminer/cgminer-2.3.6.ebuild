@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cgminer/cgminer-2.3.6.ebuild,v 1.1 2012/04/29 13:18:34 blueness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/cgminer/cgminer-2.3.6.ebuild,v 1.2 2012/05/05 03:20:40 jdhore Exp $
 
 EAPI="4"
 
@@ -45,7 +45,7 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 DEPEND="${DEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-apps/sed
 	adl? (
 		x11-libs/amd-adl-sdk

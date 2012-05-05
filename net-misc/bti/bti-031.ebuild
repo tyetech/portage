@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/bti/bti-031.ebuild,v 1.1 2011/03/22 00:15:43 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/bti/bti-031.ebuild,v 1.2 2012/05/05 03:20:45 jdhore Exp $
 
 EAPI=2
 
@@ -21,7 +21,7 @@ RDEPEND="net-misc/curl
 	dev-libs/libpcre
 	net-libs/liboauth"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 # Readline is dynamically loaded, for whatever reason, and can use
 # libedit as an alternative...
