@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/patchage/patchage-0.4.4.ebuild,v 1.2 2011/03/28 18:37:25 angelos Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/patchage/patchage-0.4.4.ebuild,v 1.3 2012/05/05 08:45:11 mgorny Exp $
 
 EAPI=2
 
@@ -26,7 +26,7 @@ RDEPEND=">=media-libs/raul-0.5.1
 	alsa? ( media-libs/alsa-lib )
 	lash? ( dev-libs/dbus-glib )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_prepare() {
 	epatch "${FILESDIR}/ldconfig.patch"

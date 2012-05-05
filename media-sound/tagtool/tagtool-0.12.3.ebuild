@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/tagtool/tagtool-0.12.3.ebuild,v 1.10 2011/03/28 15:30:17 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/tagtool/tagtool-0.12.3.ebuild,v 1.11 2012/05/05 08:53:12 mgorny Exp $
 
 EAPI=2
 
@@ -19,7 +19,7 @@ RDEPEND="x11-libs/gtk+:2
 	vorbis? ( >=media-libs/libvorbis-1 )
 	!mp3? ( !vorbis? ( >=media-libs/libvorbis-1 ) )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_configure() {
 	local myconf

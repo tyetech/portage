@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-1.99.2.ebuild,v 1.3 2012/04/23 21:09:16 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/pulseaudio/Attic/pulseaudio-1.99.2.ebuild,v 1.4 2012/05/05 08:49:55 mgorny Exp $
 
 EAPI=4
 
@@ -62,7 +62,7 @@ DEPEND="${RDEPEND}
 		>=x11-libs/libXtst-1.0.99.2
 	)
 	dev-libs/libatomic_ops
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	system-wide? ( || ( dev-util/unifdef sys-freebsd/freebsd-ubin ) )
 	dev-util/intltool"
 # This is a PDEPEND to avoid a circular dep

@@ -1,6 +1,6 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/picoxine/picoxine-0.0.7.ebuild,v 1.5 2009/08/03 13:24:03 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/picoxine/picoxine-0.0.7.ebuild,v 1.6 2012/05/05 08:45:55 mgorny Exp $
 
 inherit toolchain-funcs
 
@@ -15,7 +15,7 @@ IUSE=""
 
 RDEPEND="media-libs/xine-lib"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 src_unpack() {
 	unpack ${A}

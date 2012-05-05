@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gtick/gtick-0.4.2.ebuild,v 1.6 2012/01/23 23:07:44 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/gtick/gtick-0.4.2.ebuild,v 1.7 2012/05/05 08:27:40 mgorny Exp $
 
 EAPI=2
 inherit eutils
@@ -17,7 +17,7 @@ IUSE="nls sndfile"
 RDEPEND="x11-libs/gtk+:2
 	sndfile? ( media-libs/libsndfile )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 RESTRICT="test"

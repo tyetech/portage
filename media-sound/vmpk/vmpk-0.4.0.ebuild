@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/vmpk/vmpk-0.4.0.ebuild,v 1.1 2011/06/09 18:43:01 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/vmpk/vmpk-0.4.0.ebuild,v 1.2 2012/05/05 08:54:54 mgorny Exp $
 
 inherit cmake-utils eutils
 
@@ -20,7 +20,7 @@ RDEPEND="x11-libs/qt-core
 	media-libs/alsa-lib"
 DEPEND="${RDEPEND}
 	app-text/docbook-xsl-stylesheets
-	dev-util/pkgconfig"
+	virtual/pkgconfig"
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
 
