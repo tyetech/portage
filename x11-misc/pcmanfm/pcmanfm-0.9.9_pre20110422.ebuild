@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/pcmanfm/Attic/pcmanfm-0.9.9_pre20110422.ebuild,v 1.7 2011/07/29 12:23:08 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/pcmanfm/Attic/pcmanfm-0.9.9_pre20110422.ebuild,v 1.8 2012/05/05 04:53:46 jdhore Exp $
 
 EAPI=2
 
@@ -31,7 +31,7 @@ RDEPEND="${COMMON_DEPEND}
 	virtual/eject"
 DEPEND="${COMMON_DEPEND}
 	>=dev-util/intltool-0.40
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
 src_prepare() {
