@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/boost/Attic/boost-1.49.0.ebuild,v 1.3 2012/04/28 03:26:43 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/boost/boost-1.49.0-r1.ebuild,v 1.1 2012/05/06 16:22:14 hwoarang Exp $
 
 EAPI="4"
 PYTHON_DEPEND="python? *"
@@ -142,7 +142,7 @@ src_configure() {
 	fi
 
 	use icu && OPTIONS+=" -sICU_PATH=/usr"
-	use icu || OPTIONS+=" --disable-icu"
+	use icu || OPTIONS+=" --disable-icu boost.locale.icu=off"
 	use mpi || OPTIONS+=" --without-mpi"
 	use python || OPTIONS+=" --without-python"
 
