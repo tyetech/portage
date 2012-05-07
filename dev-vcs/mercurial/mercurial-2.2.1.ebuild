@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/mercurial/Attic/mercurial-2.2.ebuild,v 1.1 2012/05/02 08:35:56 djc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/mercurial/Attic/mercurial-2.2.1.ebuild,v 1.1 2012/05/07 16:37:16 djc Exp $
 
 EAPI=3
 PYTHON_DEPEND="2"
