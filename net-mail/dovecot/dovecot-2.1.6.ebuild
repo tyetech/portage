@@ -1,9 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/dovecot/Attic/dovecot-2.1.3.ebuild,v 1.1 2012/03/16 23:17:33 eras Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-mail/cvs-repo/gentoo-x86/net-mail/dovecot/Attic/dovecot-2.1.6.ebuild,v 1.1 2012/05/07 12:42:57 eras Exp $
 
 EAPI=4
-
 inherit eutils versionator ssl-cert systemd
 
 MY_P="${P/_/.}"
@@ -100,7 +99,7 @@ src_configure() {
 	if use sieve || use managesieve ; then
 		# The sieve plugin needs this file to be build to determine the plugin
 		# directory and the list of libraries to link to.
-		emake dovecot-config || die "emake dovecot-config failed"
+		emake dovecot-config
 		cd "../dovecot-${major_minor}-pigeonhole-${sieve_version}" || die "cd failed"
 		econf \
 			$( use_enable static-libs static ) \
