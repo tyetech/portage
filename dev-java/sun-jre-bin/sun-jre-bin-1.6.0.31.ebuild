@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jre-bin/Attic/sun-jre-bin-1.6.0.31.ebuild,v 1.4 2012/05/05 15:30:56 sera Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/sun-jre-bin/Attic/sun-jre-bin-1.6.0.31.ebuild,v 1.5 2012/05/07 11:58:18 sera Exp $
 
 EAPI="4"
 
@@ -71,7 +71,9 @@ src_compile() {
 	if use x86; then
 		bin/java -client -Xshare:dump || die
 	fi
-	bin/java -server -Xshare:dump || die
+	# limit heap size for large memory on x86 #405239
+	# this is a workaround and shouldn't be needed.
+	bin/java -server -Xmx64m -Xshare:dump || die
 }
 
 src_install() {
