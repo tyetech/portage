@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/setproctitle/setproctitle-1.1.6.ebuild,v 1.1 2012/05/08 10:31:57 djc Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/setproctitle/setproctitle-1.1.6.ebuild,v 1.2 2012/05/08 15:22:16 mr_bones_ Exp $
 
 EAPI="3"
 SUPPORT_PYTHON_ABIS="1"
