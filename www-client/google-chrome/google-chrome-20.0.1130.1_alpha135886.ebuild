@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/google-chrome/Attic/google-chrome-20.0.1123.4_alpha135092.ebuild,v 1.1 2012/05/04 02:28:52 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/google-chrome/Attic/google-chrome-20.0.1130.1_alpha135886.ebuild,v 1.1 2012/05/10 02:16:16 floppym Exp $
 
 EAPI="4"
 
