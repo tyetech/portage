@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-2.0.0_rc3.ebuild,v 1.2 2012/05/04 06:08:08 jdhore Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/zabbix/Attic/zabbix-2.0.0_rc4.ebuild,v 1.1 2012/05/13 21:42:17 mattm Exp $
 
 EAPI="2"
 
@@ -56,6 +56,8 @@ DEPEND="${COMMON_DEPEND}
 use frontend && need_php_httpd
 
 S=${WORKDIR}/${MY_P}
+
+ZABBIXJAVA_BASE="opt/zabbix_java"
 
 java_prepare() {
 	cd "${S}/src/zabbix_java/lib"
@@ -122,7 +124,7 @@ pkg_postinst() {
 		elog "zabbix updates do not require db changes. However, "
 		elog "you should read the release notes to be sure."
 		elog
-		elog "Have a look at /usr/share/zabbix/database for"
+		elog "Have a look at /usr/share/zabbix for"
 		elog "database creation and upgrades."
 		elog
 		elog "For more info read the Zabbix manual at"
@@ -290,10 +292,10 @@ src_install() {
 		dosbin \
 			src/zabbix_server/zabbix_server
 		dodir \
-			/usr/share/zabbix/database
-		insinto /usr/share/zabbix/database
+			/usr/share/zabbix
+		insinto /usr/share/zabbix
 		doins -r \
-			upgrades \
+			database \
 			create
 		fowners zabbix:zabbix \
 			/etc/zabbix/zabbix_server.conf \
@@ -312,10 +314,10 @@ src_install() {
 		doins \
 			"${FILESDIR}/1.6.6"/zabbix_proxy.conf
 		dodir \
-			/usr/share/zabbix/database
-		insinto /usr/share/zabbix/database
+			/usr/share/zabbix
+		insinto /usr/share/zabbix
 		doins -r \
-			upgrades \
+			database \
 			create
 	fi
 
@@ -355,7 +357,13 @@ src_install() {
 		/var/log/zabbix \
 		/var/run/zabbix
 
-	dodoc README INSTALL NEWS ChangeLog
+	dodoc README INSTALL NEWS ChangeLog \
+		conf/zabbix_agent.conf \
+		conf/zabbix_agentd.conf \
+		conf/zabbix_proxy.conf \
+		conf/zabbix_agentd/userparameter_examples.conf \
+		conf/zabbix_agentd/userparameter_mysql.conf \
+		conf/zabbix_server.conf
 
 	if use frontend; then
 		webapp_src_preinst
@@ -366,4 +374,28 @@ src_install() {
 			"${MY_HTDOCSDIR}"/include/config.inc.php
 		webapp_src_install
 	fi
+
+	if use java; then
+	   dodir \
+	   	/${ZABBIXJAVA_BASE} \
+		/${ZABBIXJAVA_BASE}/bin \
+		/${ZABBIXJAVA_BASE}/lib
+	   keepdir /${ZABBIXJAVA_BASE}
+	   exeinto /${ZABBIXJAVA_BASE}/bin
+	   doexe src/zabbix_java/bin/zabbix-java-gateway-2.0.0rc3.jar
+	   exeinto /${ZABBIXJAVA_BASE}/lib
+	   doexe \
+	   	src/zabbix_java/lib/logback-classic-0.9.27.jar \
+		src/zabbix_java/lib/logback-console.xml \
+		src/zabbix_java/lib/logback-core-0.9.27.jar \
+		src/zabbix_java/lib/logback.xml \
+		src/zabbix_java/lib/org-json-2010-12-28.jar \
+		src/zabbix_java/lib/slf4j-api-1.6.1.jar
+	   exeinto /${ZABBIXJAVA_BASE}/
+	   	src/zabbix_java/settings.sh \
+		src/zabbix_java/startup.sh \
+		src/zabbix_java/shutdown.sh
+	   fowners -R zabbix:zabbix /${ZABBIXJAVA_BASE}
+	fi
+
 }
