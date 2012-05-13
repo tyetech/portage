@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-color-manager/Attic/gnome-color-manager-3.2.2.ebuild,v 1.1 2012/02/12 17:19:03 eva Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-extra/cvs-repo/gentoo-x86/gnome-extra/gnome-color-manager/Attic/gnome-color-manager-3.4.0.ebuild,v 1.1 2012/05/13 23:36:49 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -17,8 +17,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="clutter packagekit raw"
 
 # FIXME: fix detection of docbook2man
-COMMON_DEPEND=">=dev-libs/glib-2.30.0:2
-
+COMMON_DEPEND=">=dev-libs/glib-2.31.10:2
+	gnome-base/gnome-desktop:3
 	>=media-libs/lcms-2.2:2
 	>=media-libs/libcanberra-0.10[gtk3]
 	media-libs/libexif
@@ -31,6 +31,7 @@ COMMON_DEPEND=">=dev-libs/glib-2.30.0:2
 	>=x11-misc/colord-0.1.12
 
 	clutter? (
+		>=media-libs/clutter-1.9.11:1.0
 		media-libs/clutter-gtk:1.0
 		media-libs/mash:0.2 )
 	packagekit? ( app-admin/packagekit-base )
@@ -46,6 +47,7 @@ DEPEND="${COMMON_DEPEND}
 	app-text/gnome-doc-utils
 	dev-libs/libxslt
 	>=dev-util/intltool-0.35
+	virtual/pkgconfig
 "
 
 # FIXME: run test-suite with files on live file-system
@@ -61,4 +63,11 @@ pkg_setup() {
 		$(use_enable clutter)
 		$(use_enable packagekit)
 		$(use_enable raw exiv)"
+}
+
+pkg_postinst() {
+	gnome2_pkg_postinst
+
+	elog "If you want to do display or scanner calibration, you will need to"
+	elog "install media-gfx/argyllcms"
 }
