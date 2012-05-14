@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/p0f/Attic/p0f-3.04_beta.ebuild,v 1.1 2012/03/30 04:39:06 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/p0f/p0f-3.05_beta.ebuild,v 1.1 2012/05/14 11:38:17 scarabeus Exp $
 
 EAPI=4
 inherit toolchain-funcs
