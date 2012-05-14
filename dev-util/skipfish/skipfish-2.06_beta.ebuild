@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/skipfish/Attic/skipfish-2.05_beta.ebuild,v 1.1 2012/03/13 20:26:01 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/skipfish/skipfish-2.06_beta.ebuild,v 1.1 2012/05/14 16:21:54 pacho Exp $
 
 EAPI=4
 inherit toolchain-funcs
@@ -40,7 +40,7 @@ src_compile() {
 	local _debug
 	use debug && _debug=debug
 
-	emake ${_debug} || die
+	emake ${_debug}
 }
 
 src_install() {
