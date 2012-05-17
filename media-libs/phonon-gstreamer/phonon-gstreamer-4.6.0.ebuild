@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/phonon-gstreamer/Attic/phonon-gstreamer-4.6.0.ebuild,v 1.3 2012/05/04 13:42:05 johu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/phonon-gstreamer/Attic/phonon-gstreamer-4.6.0.ebuild,v 1.4 2012/05/17 16:53:03 aballier Exp $
 
 EAPI=4
 
@@ -20,7 +20,7 @@ LICENSE="LGPL-2.1"
 if [[ ${PV} == *9999 ]]; then
 	KEYWORDS=""
 else
-	KEYWORDS="~amd64 ~hppa ~x86"
+	KEYWORDS="~amd64 ~hppa ~x86 ~amd64-fbsd"
 fi
 SLOT="0"
 IUSE="alsa debug +network"
