@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rake/rake-0.8.7-r6.ebuild,v 1.3 2011/10/21 07:13:28 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/rake/rake-0.8.7-r6.ebuild,v 1.4 2012/05/19 06:30:17 graaff Exp $
 
 EAPI=2
-USE_RUBY="ruby18 ree18 ruby19 jruby rbx"
+USE_RUBY="ruby18 ree18 ruby19 jruby"
 
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_TASK_TEST=""
