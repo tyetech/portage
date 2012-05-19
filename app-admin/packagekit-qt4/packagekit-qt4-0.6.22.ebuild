@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/packagekit-qt4/Attic/packagekit-qt4-0.6.20.ebuild,v 1.3 2012/05/03 18:02:22 jdhore Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/packagekit-qt4/packagekit-qt4-0.6.22.ebuild,v 1.1 2012/05/19 11:21:30 lxnay Exp $
 
 EAPI="3"
 
