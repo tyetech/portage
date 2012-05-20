@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/gitolite-gentoo/Attic/gitolite-gentoo-1.5.9.1-r1.ebuild,v 1.4 2011/05/31 17:23:16 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/gitolite-gentoo/gitolite-gentoo-2.3.1.ebuild,v 1.1 2012/05/20 20:11:14 idl0r Exp $
 
-EAPI=3
+EAPI=4
 
 inherit eutils perl-module
 
@@ -12,11 +12,13 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="contrib vim-syntax"
 
 DEPEND="dev-lang/perl
-	>=dev-vcs/git-1.6.2"
+	virtual/perl-File-Path
+	virtual/perl-File-Temp
+	>=dev-vcs/git-1.6.6"
 RDEPEND="${DEPEND}
 	!dev-vcs/gitolite
 	dev-perl/Net-SSH-AuthorizedKeysFile
@@ -28,25 +30,27 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-umask.patch"
-
-	rm Makefile doc/COPYING contrib/autotoc || die
+	rm Makefile doc/COPYING || die
 	rm -rf contrib/{gitweb,vim} || die
 
 	echo "${PF}-gentoo" > conf/VERSION
 }
 
 src_install() {
+	local gl_bin="${D}/usr/bin"
+	gl_bin=${gl_bin/\/\//\/}
+
 	dodir /usr/share/gitolite/{conf,hooks} /usr/bin || die
 
-	./src/gl-system-install "${D}"/usr/bin \
+	export PATH="${gl_bin}:${PATH}"
+	./src/gl-system-install ${gl_bin} \
 		"${D}"/usr/share/gitolite/conf "${D}"/usr/share/gitolite/hooks || die
 	sed -i -e "s:${D}::g" "${D}/usr/bin/gl-setup" \
 		"${D}/usr/share/gitolite/conf/example.gitolite.rc" || die
 
-	rm "${D}/usr/bin/gitolite.pm"
+	rm "${D}"/usr/bin/*.pm
 	insinto "${VENDOR_LIB}"
-	doins src/gitolite.pm || die
+	doins src/*.pm || die
 
 	dodoc README.mkd doc/*
 
@@ -67,7 +71,7 @@ pkg_postinst() {
 	elog "Especially if you're migrating from gitosis."
 	ewarn
 	ewarn
-	elog "If you use the umask feature and upgrade from gitolite-gentoo-1.5.9.1"
+	elog "If you use the umask feature and upgrade from <=gitolite-gentoo-1.5.9.1"
 	elog "then please check the permissions of all repositories using the umask feature"
 	ewarn
 }
