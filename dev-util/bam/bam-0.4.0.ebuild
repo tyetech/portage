@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/bam/bam-0.4.0.ebuild,v 1.3 2012/05/05 11:41:53 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/bam/bam-0.4.0.ebuild,v 1.4 2012/05/21 12:23:12 phajdan.jr Exp $
 
 EAPI=3
 
@@ -14,7 +14,7 @@ SRC_URI="http://github.com/downloads/matricks/${PN}/${P}.tar.bz2"
 
 LICENSE="ZLIB"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="doc test"
 
 RDEPEND="dev-lang/lua"
