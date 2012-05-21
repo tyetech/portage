@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/repoze-lru/repoze-lru-0.5.ebuild,v 1.1 2012/05/21 07:22:17 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/repoze-lru/repoze-lru-0.5.ebuild,v 1.2 2012/05/21 16:45:50 mr_bones_ Exp $
 
 EAPI=3
 
