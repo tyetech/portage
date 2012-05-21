@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprint/libgnomeprint-2.18.8.ebuild,v 1.9 2012/05/05 05:38:09 jdhore Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnome-base/cvs-repo/gentoo-x86/gnome-base/libgnomeprint/libgnomeprint-2.18.8.ebuild,v 1.10 2012/05/21 18:59:25 tetromino Exp $
 
 EAPI="3"
 GCONF_DEBUG="no"
 
-inherit gnome2
+inherit eutils gnome2
 
 DESCRIPTION="Printer handling for Gnome"
 HOMEPAGE="http://www.gnome.org/"
