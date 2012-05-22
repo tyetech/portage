@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/bitpim/bitpim-1.0.6-r1.ebuild,v 1.6 2011/04/03 21:25:36 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-mobilephone/cvs-repo/gentoo-x86/app-mobilephone/bitpim/bitpim-1.0.6-r1.ebuild,v 1.7 2012/05/22 16:33:29 ssuominen Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2:2.5"
@@ -26,7 +26,7 @@ COMMON_DEPEND="dev-python/apsw
 		>=dev-python/paramiko-1.7.1
 		dev-python/pycrypto
 	)
-	usb? ( dev-libs/libusb:0 )"
+	usb? ( virtual/libusb:0 )"
 DEPEND="${COMMON_DEPEND}
 	usb? ( dev-lang/swig )"
 RDEPEND="${COMMON_DEPEND}
