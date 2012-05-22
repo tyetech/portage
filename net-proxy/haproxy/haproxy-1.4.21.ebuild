@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/haproxy/Attic/haproxy-1.4.20.ebuild,v 1.1 2012/05/09 19:19:57 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/haproxy/haproxy-1.4.21.ebuild,v 1.1 2012/05/22 13:50:57 idl0r Exp $
 
 EAPI="4"
 
