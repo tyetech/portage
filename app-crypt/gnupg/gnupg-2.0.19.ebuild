@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg/gnupg-2.0.19.ebuild,v 1.3 2012/05/13 11:34:57 swift Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/gnupg/gnupg-2.0.19.ebuild,v 1.4 2012/05/22 16:41:57 ssuominen Exp $
 
 EAPI="4"
 
@@ -132,7 +132,7 @@ pkg_postinst() {
 
 	if use smartcard; then
 		elog "To use your OpenPGP smartcard (or token) with GnuPG you need one of"
-		use usb && elog " - a CCID-compatible reader, used directly through dev-libs/libusb;"
+		use usb && elog " - a CCID-compatible reader, used directly through libusb;"
 		elog " - sys-apps/pcsc-lite and a compatible reader device;"
 		elog " - dev-libs/openct and a compatible reader device;"
 		elog " - a reader device and drivers exporting either PC/SC or CT-API interfaces."
