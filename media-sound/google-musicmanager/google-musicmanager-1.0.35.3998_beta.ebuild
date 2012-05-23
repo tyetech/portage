@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/google-musicmanager/Attic/google-musicmanager-1.0.35.1577_beta.ebuild,v 1.1 2012/05/12 22:48:58 ottxor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/google-musicmanager/Attic/google-musicmanager-1.0.35.3998_beta.ebuild,v 1.1 2012/05/23 07:57:44 zmedico Exp $
 
 EAPI=4
 
