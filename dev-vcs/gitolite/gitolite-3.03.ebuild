@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/gitolite/Attic/gitolite-3.02.ebuild,v 1.1 2012/05/20 15:57:42 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/gitolite/Attic/gitolite-3.03.ebuild,v 1.1 2012/05/23 11:38:09 idl0r Exp $
 
 EAPI=4
 
