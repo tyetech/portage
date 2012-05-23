@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/speechd-el/speechd-el-2.4.ebuild,v 1.1 2011/06/06 20:01:12 cbrannon Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-accessibility/cvs-repo/gentoo-x86/app-accessibility/speechd-el/speechd-el-2.4.ebuild,v 1.2 2012/05/23 23:02:17 vapier Exp $
 
 EAPI="4"
 NEED_EMACS=23
-inherit elisp
+inherit elisp eutils
 
 DESCRIPTION="Emacs speech support"
 HOMEPAGE="http://www.freebsoft.org/speechd-el"
