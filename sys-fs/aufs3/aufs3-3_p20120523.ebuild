@@ -1,14 +1,14 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/aufs3/Attic/aufs3-3_p20111205-r1.ebuild,v 1.1 2012/01/08 13:31:17 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/aufs3/aufs3-3_p20120523.ebuild,v 1.1 2012/05/23 06:31:29 jlec Exp $
 
 EAPI=4
 
 inherit linux-mod multilib toolchain-funcs
 
 AUFS_VERSION="${PV%%_p*}"
-PATCH_MAX_VER="1"
-UTIL_MAX_VER="0"
+PATCH_MAX_VER=4
+UTIL_MAX_VER=0
 
 DESCRIPTION="An entirely re-designed and re-implemented Unionfs"
 HOMEPAGE="http://aufs.sourceforge.net/"
@@ -40,7 +40,7 @@ pkg_setup() {
 
 	get_version
 	kernel_is lt 3 0 0 && die "kernel too old, Please use sys-fs/aufs2"
-	kernel_is gt 3 2 99 && die "kernel too new"
+	kernel_is gt 3 4 99 && die "kernel too new"
 
 	linux-mod_pkg_setup
 
@@ -66,8 +66,6 @@ pkg_setup() {
 			patch --no-backup-if-mismatch --force -p1 -R -d ${KV_DIR} < "${FILESDIR}"/${PN}-standalone-${PATCH_BRANCH}.patch >/dev/null
 			patch --no-backup-if-mismatch --force -p1 -R -d ${KV_DIR} < "${FILESDIR}"/${PN}-base-${PATCH_BRANCH}.patch >/dev/null
 			epatch "${FILESDIR}"/${PN}-{base,standalone}-${PATCH_BRANCH}.patch
-			[[ ${KV_MINOR} -gt ${PATCH_MAX_VER} ]] && \
-				epatch "${FILESDIR}"/${PN}-fix-export-__devcgroup_inode_permission.patch
 			ewarn "You need to compile your kernel with the applied patch"
 			ewarn "to be able to load and use the aufs kernel module"
 		else
@@ -137,7 +135,7 @@ src_install() {
 
 	use doc && doins -r Documentation
 
-	dodoc README
+	dodoc Documentation/filesystems/aufs/README
 
 	cd "${WORKDIR}"/${PN/3}-util
 	emake DESTDIR="${D}" KDIR=${KV_DIR} install
