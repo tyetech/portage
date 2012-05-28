@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/beets/Attic/beets-1.0_beta14.ebuild,v 1.1 2012/05/28 11:13:42 sochotnicky Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/beets/Attic/beets-1.0_beta14.ebuild,v 1.2 2012/05/28 12:51:32 sochotnicky Exp $
 
 EAPI="4"
 
@@ -9,10 +9,11 @@ RESTRICT_PYTHON_ABIS="3.*"
 
 inherit distutils python
 
-S="${WORKDIR}/${PN}-1.0b14"
+MY_PV=${PV/_beta/b}
+S="${WORKDIR}/${PN}-${MY_PV}"
 
 DESCRIPTION="A media library management system for obsessive-compulsive music geeks."
-SRC_URI="http://beets.googlecode.com/files/${PN}-1.0b14.tar.gz"
+SRC_URI="http://beets.googlecode.com/files/${PN}-${MY_PV}.tar.gz"
 HOMEPAGE="http://beets.radbox.org/"
 
 KEYWORDS="~amd64"
