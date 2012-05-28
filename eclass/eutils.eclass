@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/eutils.eclass,v 1.392 2012/05/11 14:22:01 vapier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/eutils.eclass,v 1.393 2012/05/28 16:45:57 phajdan.jr Exp $
 
 # @ECLASS: eutils.eclass
 # @MAINTAINER:
@@ -1090,16 +1090,8 @@ preserve_old_lib_notify() {
 		fi
 		# temp hack for #348634 #357225
 		[[ ${PN} == "mpfr" ]] && lib=${lib##*/}
-		ewarn "  # revdep-rebuild --library '${lib}'"
+		ewarn "  # revdep-rebuild --library '${lib}' && rm '${lib}'"
 	done
-	if [[ ${notice} -eq 1 ]] ; then
-		ewarn
-		ewarn "Once you've finished running revdep-rebuild, it should be safe to"
-		ewarn "delete the old libraries.  Here is a copy & paste for the lazy:"
-		for lib in "$@" ; do
-			ewarn "  # rm '${lib}'"
-		done
-	fi
 }
 
 # @FUNCTION: built_with_use
