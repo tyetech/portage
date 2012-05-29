@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ncp/ncp-1.2.4.ebuild,v 1.3 2012/05/25 09:45:13 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ncp/ncp-1.2.4.ebuild,v 1.4 2012/05/29 05:24:21 xmw Exp $
 
 EAPI=4
 
@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="diet"
 
 RDEPEND=""
-DEPEND="dev-libs/libowfat
+DEPEND=">=dev-libs/libowfat-0.28-r1
 	diet? ( dev-libs/dietlibc )"
 
 src_prepare() {
