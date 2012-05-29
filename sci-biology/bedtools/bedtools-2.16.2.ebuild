@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/bedtools/Attic/bedtools-2.13.3.ebuild,v 1.1 2011/10/09 04:01:53 weaver Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/bedtools/bedtools-2.16.2.ebuild,v 1.1 2012/05/29 02:54:40 weaver Exp $
 
 EAPI=4
 
@@ -19,14 +19,15 @@ S="${WORKDIR}/BEDTools-Version-${PV}"
 
 src_prepare() {
 	filter-ldflags -Wl,--as-needed
-	sed -i -e '1 a SHELL := /bin/bash -e' \
+	sed -i \
 		-e '/export CXXFLAGS/ d' \
 		-e '/export CXX/ d' \
 		Makefile || die
 }
 
-src_install(){
+src_install() {
 	dobin bin/*
 	dodoc README* RELEASE_HISTORY
-	newbin bin/overlap bt_ovelap
+	insinto /usr/share/${PN}
+	doins -r genomes
 }
