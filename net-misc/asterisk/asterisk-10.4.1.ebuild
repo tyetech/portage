@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-10.4.0.ebuild,v 1.5 2012/05/25 10:46:32 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/asterisk/Attic/asterisk-10.4.1.ebuild,v 1.1 2012/05/29 22:41:55 chainsaw Exp $
 
 EAPI=4
 inherit autotools base eutils linux-info multilib
