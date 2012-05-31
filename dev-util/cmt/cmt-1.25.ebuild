@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cmt/Attic/cmt-1.22.ebuild,v 1.1 2011/03/23 19:11:02 bicatali Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/cmt/cmt-1.25.ebuild,v 1.1 2012/05/31 15:41:56 bicatali Exp $
 
 EAPI=4
 inherit eutils elisp-common toolchain-funcs versionator
@@ -24,7 +24,7 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/CMT/${CMT_PV}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${P}-limits.patch
+	epatch "${FILESDIR}"/${PN}-1.22-limits.patch
 }
 
 src_configure() {
