@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/chef/Attic/chef-0.10.2.ebuild,v 1.1 2011/07/25 09:06:18 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/chef/Attic/chef-0.10.2.ebuild,v 1.2 2012/05/31 02:23:21 zmedico Exp $
 
 EAPI="2"
 USE_RUBY="ruby18"
@@ -8,7 +8,7 @@ USE_RUBY="ruby18"
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_TASK_TEST=""
 
-inherit ruby-fakegem
+inherit ruby-fakegem user
 
 DESCRIPTION="Chef is a systems integration framework"
 HOMEPAGE="http://wiki.opscode.com/display/chef"
