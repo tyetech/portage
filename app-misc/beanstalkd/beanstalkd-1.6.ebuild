@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/beanstalkd/beanstalkd-1.6.ebuild,v 1.1 2012/05/18 03:56:40 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/beanstalkd/beanstalkd-1.6.ebuild,v 1.2 2012/06/01 00:26:21 zmedico Exp $
 
 EAPI="3"
 
-inherit eutils
+inherit eutils user
 
 DESCRIPTION="A fast, distributed, in-memory workqueue service"
 HOMEPAGE="http://xph.us/software/beanstalkd/"
