@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/tomoyo-tools/Attic/tomoyo-tools-2.5.0_p20111025.ebuild,v 1.1 2011/11/14 18:50:26 naota Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/tomoyo-tools/tomoyo-tools-2.5.0_p20120414.ebuild,v 1.1 2012/06/01 07:56:06 naota Exp $
 
 EAPI="2"
 
@@ -23,7 +23,7 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${PN}"
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-2.5.0_p20111025-flags-parallel.patch
+	epatch "${FILESDIR}"/${P}-flags-parallel.patch
 
 	# Fix libdir
 	sed -i \
