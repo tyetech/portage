@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/rbot/rbot-9999-r10.ebuild,v 1.7 2012/04/24 13:35:41 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-irc/cvs-repo/gentoo-x86/net-irc/rbot/rbot-9999-r10.ebuild,v 1.8 2012/06/01 03:58:21 zmedico Exp $
 
-inherit ruby eutils
+inherit ruby eutils user
 
 [[ ${PV} == *"9999" ]] && inherit git-2
 
