@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/grub/grub-9999.ebuild,v 1.65 2012/06/02 16:06:48 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-boot/cvs-repo/gentoo-x86/sys-boot/grub/grub-2.00_beta6.ebuild,v 1.1 2012/06/02 16:06:48 floppym Exp $
 
 EAPI=4
 
