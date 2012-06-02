@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pngcrush/Attic/pngcrush-1.7.25.ebuild,v 1.1 2012/03/03 14:49:20 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/pngcrush/Attic/pngcrush-1.7.25.ebuild,v 1.2 2012/06/02 10:49:29 ago Exp $
 
 EAPI=4
 
@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/pmt/${MY_P}.tar.xz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
+KEYWORDS="~alpha amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos"
 IUSE=""
 
 RDEPEND=">=media-libs/libpng-1.4:0
