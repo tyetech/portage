@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iptstate/iptstate-2.2.5.ebuild,v 1.1 2012/06/03 08:41:38 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/iptstate/iptstate-2.2.5.ebuild,v 1.2 2012/06/03 08:45:16 ssuominen Exp $
 
 EAPI=4
 inherit toolchain-funcs
@@ -21,6 +21,7 @@ DEPEND=${RDEPEND}
 src_prepare() {
 	sed -i \
 		-e 's:?= -g -Wall -O2:+= -Wall:' \
+		-e '/^CPPFLAGS=/d' \
 		-e 's:$(CXX):& $(LDFLAGS):' \
 		Makefile || die
 }
