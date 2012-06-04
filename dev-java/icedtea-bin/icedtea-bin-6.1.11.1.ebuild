@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/icedtea-bin/Attic/icedtea-bin-6.1.11.1.ebuild,v 1.3 2012/02/19 10:46:58 ago Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/icedtea-bin/Attic/icedtea-bin-6.1.11.1.ebuild,v 1.4 2012/06/04 07:20:35 zmedico Exp $
 
 EAPI="4"
 
-inherit java-vm-2 prefix
+inherit java-vm-2 multilib prefix
 
 dist="http://dev.gentoo.org/~caster/distfiles/"
 TARBALL_VERSION="${PV}"
