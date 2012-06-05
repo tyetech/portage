@@ -1,9 +1,9 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spamassassin-fuzzyocr/spamassassin-fuzzyocr-3.6.0-r2.ebuild,v 1.2 2010/07/30 14:56:35 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/spamassassin-fuzzyocr/spamassassin-fuzzyocr-3.6.0-r2.ebuild,v 1.3 2012/06/05 00:07:53 zmedico Exp $
 
 EAPI=2
-inherit perl-module eutils
+inherit perl-module eutils user
 
 MY_P="${P#spamassassin-}"
 
