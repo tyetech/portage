@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/geany/Attic/geany-0.21.ebuild,v 1.7 2012/05/04 17:51:43 jdhore Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/geany/geany-0.21-r1.ebuild,v 1.1 2012/06/06 13:24:05 polynomial-c Exp $
 
 EAPI=4
 inherit eutils gnome2-utils
@@ -38,6 +38,7 @@ src_prepare() {
 src_configure() {
 	econf \
 		--disable-dependency-tracking \
+		--docdir="/usr/share/doc/${PF}" \
 		$(use_enable vte)
 }
 
