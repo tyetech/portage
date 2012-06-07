@@ -1,8 +1,8 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/terminal/Attic/terminal-0.9.6.ebuild,v 1.2 2011/08/05 11:55:22 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/gnustep-apps/cvs-repo/gentoo-x86/gnustep-apps/terminal/terminal-0.9.8.ebuild,v 1.1 2012/06/07 23:17:04 voyageur Exp $
 
-EAPI=2
+EAPI=4
 
 inherit gnustep-2
 
@@ -19,8 +19,3 @@ IUSE=""
 
 RDEPEND="!x11-terms/terminal" #376257
 DEPEND="${RDEPEND}"
-
-src_prepare() {
-	# Correct link command for --as-needed
-	sed -i -e "s/Terminal_LDFLAGS/ADDITIONAL_TOOL_LIBS/" GNUmakefile || die "sed failed"
-}
