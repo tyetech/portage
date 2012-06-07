@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/digikam/Attic/digikam-2.6.0_rc.ebuild,v 1.1 2012/05/13 13:56:11 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/digikam/digikam-2.6.0.ebuild,v 1.1 2012/06/07 18:58:41 dilfridge Exp $
 
 EAPI=4
 
@@ -16,17 +16,16 @@ KDE_DOC_DIRS="doc-digikam doc-showfoto"
 
 inherit kde4-base
 
-MY_PN=digikam-software-compilation
 MY_PV=${PV/_/-}
-MY_P=${MY_PN}-${MY_PV}
+MY_P=${PN}-${MY_PV}
 
 DESCRIPTION="Digital photo management application for KDE"
 HOMEPAGE="http://www.digikam.org/"
-SRC_URI="mirror://sourceforge/${PN}/${PN}/${MY_PV}/${MY_P}.tar.bz2"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2
 	handbook? ( FDL-1.2 )"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 SLOT="4"
 IUSE="addressbook debug doc gphoto2 mysql semantic-desktop themedesigner +thumbnails video"
 
