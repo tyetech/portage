@@ -1,10 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libkvkontakte/Attic/libkvkontakte-2.6.0_beta3.ebuild,v 1.1 2012/04/08 19:43:31 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/libkvkontakte/libkvkontakte-2.6.0.ebuild,v 1.1 2012/06/07 19:12:47 dilfridge Exp $
 
 EAPI=4
-
-DIGIKAMPN=digikam
 
 KDE_LINGUAS=""
 KDE_MINIMAL="4.8"
@@ -13,14 +11,15 @@ CMAKE_MIN_VERSION=2.8
 
 inherit kde4-base
 
-MY_P="${DIGIKAMPN}-${PV/_/-}"
+MY_PV=${PV/_/-}
+MY_P="digikam-${MY_PV}"
+SRC_URI="mirror://sourceforge/digikam/${MY_P}.tar.bz2"
 
 DESCRIPTION="Library for accessing the features of social networking site vkontakte.ru"
 HOMEPAGE="http://www.digikam.org/"
-SRC_URI="mirror://sourceforge/${DIGIKAMPN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 SLOT=4
 
