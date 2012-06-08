@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/k3d/k3d-0.7.11.0-r1.ebuild,v 1.11 2012/06/01 17:32:33 axs Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-gfx/cvs-repo/gentoo-x86/media-gfx/k3d/k3d-0.7.11.0-r1.ebuild,v 1.12 2012/06/08 02:19:43 zmedico Exp $
 
 EAPI="2"
 
-inherit eutils cmake-utils
+inherit eutils cmake-utils flag-o-matic
 
 MY_P="${PN}-source-${PV}"
 
