@@ -1,8 +1,8 @@
-# Copyright 1999-2008 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/ladspa-sdk/ladspa-sdk-1.13.ebuild,v 1.7 2008/03/22 16:38:16 coldwind Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/ladspa-sdk/ladspa-sdk-1.13.ebuild,v 1.8 2012/06/08 23:51:44 zmedico Exp $
 
-inherit eutils toolchain-funcs
+inherit eutils multilib toolchain-funcs
 
 MY_PN=${PN/-/_}
 MY_P=${MY_PN}_${PV}
