@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/logitechmediaserver-bin/Attic/logitechmediaserver-bin-7.7.2-r1.ebuild,v 1.1 2012/05/30 18:45:33 lavajoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/logitechmediaserver-bin/Attic/logitechmediaserver-bin-7.7.2-r1.ebuild,v 1.2 2012/06/09 23:10:31 zmedico Exp $
 
 EAPI="3"
 
-inherit eutils
+inherit eutils user
 
 BUILD_NUM="33893"
 SRC_DIR="LogitechMediaServer_v${PV}"
