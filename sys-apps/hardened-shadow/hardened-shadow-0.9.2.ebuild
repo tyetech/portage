@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hardened-shadow/Attic/hardened-shadow-0.9.1.ebuild,v 1.1 2012/05/31 10:52:55 phajdan.jr Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-apps/cvs-repo/gentoo-x86/sys-apps/hardened-shadow/hardened-shadow-0.9.2.ebuild,v 1.1 2012/06/09 09:12:57 phajdan.jr Exp $
 
 EAPI=4
 
-inherit autotools-utils eutils multilib user
+inherit autotools-utils eutils multilib
 
 DESCRIPTION="Hardened implementation of user account utilities"
 HOMEPAGE="http://code.google.com/p/hardened-shadow/"
