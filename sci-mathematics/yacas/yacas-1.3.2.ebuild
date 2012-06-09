@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/yacas/yacas-1.3.2.ebuild,v 1.2 2012/04/25 17:08:36 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-mathematics/cvs-repo/gentoo-x86/sci-mathematics/yacas/yacas-1.3.2.ebuild,v 1.3 2012/06/09 04:51:49 jdhore Exp $
 
 EAPI=4
 
@@ -12,7 +12,7 @@ SRC_URI="http://${PN}.sourceforge.net/backups/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc ~x86"
+KEYWORDS="~amd64 ~ppc x86"
 IUSE="doc java server"
 
 DEPEND="java? ( >=virtual/jdk-1.6 )"
