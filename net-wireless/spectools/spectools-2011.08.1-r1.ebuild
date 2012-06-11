@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/spectools/spectools-2011.08.1-r1.ebuild,v 1.1 2012/02/19 22:27:11 robbat2 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/spectools/spectools-2011.08.1-r1.ebuild,v 1.2 2012/06/11 13:11:23 ago Exp $
 
 EAPI=4
 
@@ -21,7 +21,7 @@ if [[ ${PV} == "9999" ]] ; then
 		KEYWORDS=""
 else
 		SRC_URI="http://www.kismetwireless.net/code/${MY_P}.tar.gz"
-		KEYWORDS="~amd64 ~arm ~ppc ~x86"
+		KEYWORDS="amd64 ~arm ~ppc ~x86"
 fi
 
 LICENSE="GPL-2"
