@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-plugins/Attic/nagios-plugins-1.4.14.ebuild,v 1.10 2010/06/25 10:34:19 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/nagios-plugins/Attic/nagios-plugins-1.4.14.ebuild,v 1.11 2012/06/12 02:36:31 zmedico Exp $
 
 EAPI=1
 
-inherit eutils autotools
+inherit autotools eutils user
 
 DESCRIPTION="Nagios $PV plugins - Pack of plugins to make Nagios work properly"
 HOMEPAGE="http://www.nagios.org/"
