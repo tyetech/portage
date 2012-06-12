@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/argus/argus-3.0.3.8.ebuild,v 1.4 2010/10/10 11:03:39 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/argus/argus-3.0.3.8.ebuild,v 1.5 2012/06/12 02:13:49 zmedico Exp $
 
 EAPI="2"
 
-inherit eutils autotools
+inherit autotools eutils user
 
 DESCRIPTION="network Audit Record Generation and Utilization System"
 HOMEPAGE="http://www.qosient.com/argus/"
