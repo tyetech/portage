@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ntop/ntop-4.0.1.ebuild,v 1.6 2011/08/07 16:53:07 armin76 Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/ntop/ntop-4.0.1.ebuild,v 1.7 2012/06/12 02:58:12 zmedico Exp $
 
 EAPI="2"
 
-inherit eutils autotools
+inherit autotools eutils user
 
 DESCRIPTION="Network traffic analyzer with web interface"
 HOMEPAGE="http://www.ntop.org/ntop.html"
