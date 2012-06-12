@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/munin/munin-1.4.6-r4.ebuild,v 1.4 2012/01/28 01:56:12 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/munin/munin-1.4.6-r4.ebuild,v 1.5 2012/06/12 02:29:18 zmedico Exp $
 
 EAPI=2
 
-inherit eutils
+inherit eutils user
 
 DESCRIPTION="Munin Server Monitoring Tool"
 HOMEPAGE="http://munin.projects.linpro.no/"
