@@ -1,27 +1,38 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/ncbi-tools/Attic/ncbi-tools-20100808.ebuild,v 1.4 2010/11/15 21:07:43 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/ncbi-tools/ncbi-tools-0.20080302.ebuild,v 1.1 2012/06/13 10:49:23 jlec Exp $
 
-EAPI="3"
+EAPI=1
 
 inherit flag-o-matic toolchain-funcs eutils
 
-DESCRIPTION="Development toolkit and applications for computational biology, including NCBI BLAST"
-LICENSE="public-domain"
+DESCRIPTION="Development toolkit and applications for computational biology"
 HOMEPAGE="http://www.ncbi.nlm.nih.gov/"
-SRC_URI="ftp://ftp.ncbi.nlm.nih.gov/toolbox/ncbi_tools/old/${PV}/ncbi.tar.gz -> ${P}.tar.gz"
+SRC_URI="
+	mirror://gentoo/${PN}-${PV/0./}.tar.gz
+	doc? ( mirror://gentoo/${PN}-sdk-doc.tar.bz2 )"
 
+#	mpi? ( mirror://gentoo/mpiblast-20070826.tar.gz )
+
+LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc64 ~x86 ~amd64-linux ~x86-linux ~ppc-macos"
+KEYWORDS="~alpha amd64 ~ppc ppc64 ~sparc x86"
 
-# IUSE=mpi deprecated, use sci-biology/mpiblast separately
+# IUSE="doc mpi X"
+# mpiblast 1.5.0beta1 doesn't compile as advertised with this ncbi release.
+# Currently seeking a fix.
+
 IUSE="doc X"
 
 RDEPEND="app-shells/tcsh
 	dev-lang/perl
 	media-libs/libpng
 	X? ( >=x11-libs/openmotif-2.3:0 )"
-DEPEND="${RDEPEND}"
+
+DEPEND="${RDEPEND}
+		sys-devel/pmake"
+
+#	mpi? ( virtual/mpi )
 
 S="${WORKDIR}/ncbi"
 
@@ -37,12 +48,20 @@ pkg_setup() {
 	echo
 }
 
-src_prepare() {
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
 	epatch "${FILESDIR}"/${PN}-extra_vib.patch
 
-	if use ppc || use ppc64; then
+	if use ppc64; then
 		epatch "${FILESDIR}"/${PN}-lop.patch
 	fi
+
+#	if use mpi; then
+#		cd "${WORKDIR}"
+#		epatch "${WORKDIR}"/mpiblast/ncbi_Mar2007_evalue.patch
+#	fi
 
 	if ! use X; then
 		cd "${S}"/make
@@ -60,32 +79,32 @@ src_prepare() {
 	cd "${S}"/platform
 	# ... on x86...
 	sed -e "s/NCBI_CFLAGS1 = -c/NCBI_CFLAGS1 = -c ${CFLAGS}/" \
-		-e "s/NCBI_LDFLAGS1 = -O3 -mcpu=pentium4/NCBI_LDFLAGS1 = ${CFLAGS} ${LDFLAGS}/" \
+		-e "s/NCBI_LDFLAGS1 = -O3 -mcpu=pentium4/NCBI_LDFLAGS1 = ${CFLAGS}/" \
 		-e "s/NCBI_OPTFLAG = -O3 -mcpu=pentium4/NCBI_OPTFLAG = ${CFLAGS}/" \
 		-i linux-x86.ncbi.mk || die
 	# ... on alpha...
 	sed -e "s/NCBI_CFLAGS1 = -c/NCBI_CFLAGS1 = -c ${CFLAGS}/" \
-		-e "s/NCBI_LDFLAGS1 = -O3 -mieee/NCBI_LDFLAGS1 = -mieee ${CFLAGS} ${LDFLAGS}/" \
+		-e "s/NCBI_LDFLAGS1 = -O3 -mieee/NCBI_LDFLAGS1 = -mieee ${CFLAGS}/" \
 		-e "s/NCBI_OPTFLAG = -O3 -mieee/NCBI_OPTFLAG = -mieee ${CFLAGS}/" \
 		-i linux-alpha.ncbi.mk || die
 	# ... on hppa...
 	sed -e "s/NCBI_CFLAGS1 = -c/NCBI_CFLAGS1 = -c ${CFLAGS}/" \
-		-e "s/NCBI_LDFLAGS1 = -O2/NCBI_LDFLAGS1 = ${CFLAGS} ${LDFLAGS}/" \
+		-e "s/NCBI_LDFLAGS1 = -O2/NCBI_LDFLAGS1 = ${CFLAGS}/" \
 		-e "s/NCBI_OPTFLAG = -O2/NCBI_OPTFLAG = ${CFLAGS}/" \
 		-i hppalinux.ncbi.mk || die
 	# ... on ppc...
 	sed -e "s/NCBI_CFLAGS1 = -c/NCBI_CFLAGS1 = -c ${CFLAGS}/" \
-		-e "s/NCBI_LDFLAGS1 = -O2/NCBI_LDFLAGS1 = ${CFLAGS} ${LDFLAGS}/" \
+		-e "s/NCBI_LDFLAGS1 = -O2/NCBI_LDFLAGS1 = ${CFLAGS}/" \
 		-e "s/NCBI_OPTFLAG = -O2/NCBI_OPTFLAG = ${CFLAGS}/" \
 		-i ppclinux.ncbi.mk || die
 	# ... on generic 64-bit Linux...
 	sed -e "s/NCBI_CFLAGS1 = -c/NCBI_CFLAGS1 = -c ${CFLAGS}/" \
-		-e "s/NCBI_LDFLAGS1 = -O3/NCBI_LDFLAGS1 = ${CFLAGS} ${LDFLAGS}/" \
+		-e "s/NCBI_LDFLAGS1 = -O3/NCBI_LDFLAGS1 = ${CFLAGS}/" \
 		-e "s/NCBI_OPTFLAG = -O3/NCBI_OPTFLAG = ${CFLAGS}/" \
 		-i linux64.ncbi.mk || die
 	# ... on generic Linux.
 	sed -e "s/NCBI_CFLAGS1 = -c/NCBI_CFLAGS1 = -c ${CFLAGS}/" \
-		-e "s/NCBI_LDFLAGS1 = -O3/NCBI_LDFLAGS1 = ${CFLAGS} ${LDFLAGS}/" \
+		-e "s/NCBI_LDFLAGS1 = -O3/NCBI_LDFLAGS1 = ${CFLAGS}/" \
 		-e "s/NCBI_OPTFLAG = -O3/NCBI_OPTFLAG = ${CFLAGS}/" \
 		-i linux.ncbi.mk || die
 
@@ -109,48 +128,56 @@ src_prepare() {
 	# We use dynamic libraries
 	sed -i -e "s/-Wl,-Bstatic//" *linux*.ncbi.mk || die
 
-	sed \
-		-re "s:/usr(/bin/.*sh):\1:g" \
-		-e "s:(/bin/.*sh):${EPREFIX}\1:g" \
-		-i $(find "${S}" -type f) || die
+	# GNU make 3.81 is confused by those nightmarish Makefiles, so we use pmake
+	# instead. The right solution would be to fix the Makefiles. (Be my guest.)
+	cd "${S}"/make
+	sed -i -e "s%CMD='make%CMD='/usr/bin/pmake%" makedis.csh || die \
+			"Failed to replace make by pmake."
 }
 
 src_compile() {
 	export EXTRA_VIB
 	cd "${WORKDIR}"
-	csh ncbi/make/makedis.csh || die
+	ncbi/make/makedis.csh || die
 	mkdir "${S}"/cgi
 	mkdir "${S}"/real
 	mv "${S}"/bin/*.cgi "${S}"/cgi || die
 	mv "${S}"/bin/*.REAL "${S}"/real || die
-	cd "${S}"/demo
-	emake \
-		-f ../make/makenet.unx \
-		CC="$(tc-getCC) ${CFLAGS} -I../include  -L../lib" \
-		LDFLAGS="${LDFLAGS}" \
-		spidey || die
-	cp spidey ../bin/ || die
+
+# mpiblast fails to compile... perhaps mpiblast2 contain a fix
+#	if use mpi; then
+#		cd "${WORKDIR}"/mpiblast
+#		AM_OPT="-a"
+#		eautoreconf
+#		econf --with-ncbi="${WORKDIR}"/ncbi --with-mpi=/usr
+#		emake || die
+#	fi
 }
 
 src_install() {
-	mv "${S}"/bin/cdscan "${S}"/bin/cdscan-ncbi #sci-geosciences/cdat-lite
 	dobin "${S}"/bin/* || die "Failed to install binaries."
 	for i in ${EXTRA_VIB}; do
 		dobin "${S}"/build/${i} || die "Failed to install binaries."
 	done
 	dolib "${S}"/lib/* || die "Failed to install libraries."
-	mkdir -p "${ED}"/usr/include/ncbi
-	cp -RL "${S}"/include/* "${ED}"/usr/include/ncbi || \
+	mkdir -p "${D}"/usr/include/ncbi
+	cp -RL "${S}"/include/* "${D}"/usr/include/ncbi || \
 		die "Failed to install headers."
 
-	# TODO: wwwblast with webapps
+#	if use mpi; then
+#		cd "${WORKDIR}"/mpiblast
+#		make install DESTDIR="${D}" || die "Failed to install MPI blast."
+#	fi
+
+	# TODO: Web apps
 	#insinto /usr/share/ncbi/lib/cgi
 	#doins ${S}/cgi/*
 	#insinto /usr/share/ncbi/lib/real
 	#doins ${S}/real/*
+	# TODO: Add support for wwwblast.
 
 	# Basic documentation
-	dodoc "${S}"/{README,VERSION,doc/{*.txt,README.*}} || \
+	dodoc "${S}"/{README,VERSION,doc/{*.txt,README.asn2xml}} || \
 		die "Failed to install basic documentation."
 	newdoc "${S}"/doc/fa2htgs/README README.fa2htgs || \
 		die "Failed renaming fa2htgs documentation."
@@ -166,20 +193,20 @@ src_install() {
 		die "Failed to install man pages."
 
 	# Hypertext user documentation
-	dohtml "${S}"/{README.htm,doc/{*.html,*.htm,*.gif}} || \
+	dohtml "${S}"/{README.htm,doc/{*.html,*.gif}} || \
 		die "Failed to install HTML documentation."
 	insinto /usr/share/doc/${PF}/html/blast
 	doins "${S}"/doc/blast/* || die "Failed to install blast HTML documentation."
-	insinto /usr/share/doc/${PF}/html/images
-	doins "${S}"/doc/images/* || die "Failed to install documentation images."
-	insinto /usr/share/doc/${PF}/html/seq_install
-	doins "${S}"/doc/seq_install/* || die "Failed to install seq_install documentation."
 
 	# Developer documentation
 	if use doc; then
+		# Hypertext SDK documentation
+		insinto /usr/share/doc/${PF}/html/sdk
+		doins "${WORKDIR}"/${PN}-sdk-doc/* || die
+
 		# Demo programs
-		mkdir "${ED}"/usr/share/ncbi
-		mv "${S}"/demo "${ED}"/usr/share/ncbi/demo || die
+		mkdir "${D}"/usr/share/ncbi
+		mv "${S}"/demo "${D}"/usr/share/ncbi/demo || die
 	fi
 
 	# Shared data (similarity matrices and such) and database directory.
