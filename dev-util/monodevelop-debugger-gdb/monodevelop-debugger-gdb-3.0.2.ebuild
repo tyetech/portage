@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodevelop-debugger-gdb/Attic/monodevelop-debugger-gdb-2.8.2.ebuild,v 1.2 2012/05/05 02:18:58 jdhore Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/monodevelop-debugger-gdb/monodevelop-debugger-gdb-3.0.2.ebuild,v 1.1 2012/06/16 11:40:15 pacho Exp $
 
 EAPI="4"
 
