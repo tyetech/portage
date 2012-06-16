@@ -1,17 +1,15 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/vte/Attic/vte-0.28.2-r301.ebuild,v 1.2 2012/05/05 03:52:26 jdhore Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/vte/vte-0.32.2.ebuild,v 1.1 2012/06/16 10:48:27 pacho Exp $
 
-EAPI="3"
+EAPI="4"
 GCONF_DEBUG="yes"
-GNOME_TARBALL_SUFFIX="xz"
 GNOME2_LA_PUNT="yes"
 
-inherit autotools eutils gnome2
+inherit eutils gnome2
 
 DESCRIPTION="GNOME terminal widget"
 HOMEPAGE="http://git.gnome.org/browse/vte"
-SRC_URI="${SRC_URI} mirror://gentoo/introspection.m4.bz2"
 
 LICENSE="LGPL-2"
 SLOT="2.90"
@@ -19,8 +17,8 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-
 IUSE="debug doc glade +introspection"
 
 PDEPEND="x11-libs/gnome-pty-helper"
-RDEPEND=">=dev-libs/glib-2.26:2
-	>=x11-libs/gtk+-3.0:3[introspection?]
+RDEPEND=">=dev-libs/glib-2.31.13:2
+	>=x11-libs/gtk+-3.1.9:3[introspection?]
 	>=x11-libs/pango-1.22.0
 
 	sys-libs/ncurses
@@ -41,20 +39,16 @@ pkg_setup() {
 	# Do not disable gnome-pty-helper, bug #401389
 	G2CONF="${G2CONF}
 		--disable-deprecation
-		--disable-maintainer-mode
 		--disable-static
 		$(use_enable debug)
 		$(use_enable glade glade-catalogue)
-		$(use_enable introspection)
-		--with-gtk=3.0"
+		$(use_enable introspection)"
 	DOCS="AUTHORS ChangeLog HACKING NEWS README"
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-0.28.0-fix-gdk-targets.patch"
-
-	mv "${WORKDIR}/introspection.m4" "${S}/" || die
-	AT_M4DIR="." eautoreconf
+	# https://bugzilla.gnome.org/show_bug.cgi?id=663779
+	epatch "${FILESDIR}/${PN}-0.30.1-alt-meta.patch"
 
 	gnome2_src_prepare
 }
