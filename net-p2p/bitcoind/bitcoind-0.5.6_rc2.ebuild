@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.5.6_rc1.ebuild,v 1.1 2012/05/14 23:23:44 blueness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bitcoind/bitcoind-0.5.6_rc2.ebuild,v 1.1 2012/06/16 22:31:11 blueness Exp $
 
 EAPI="4"
 
@@ -11,7 +11,7 @@ inherit db-use eutils versionator toolchain-funcs
 DESCRIPTION="Original Bitcoin crypto-currency wallet for automated services"
 HOMEPAGE="http://bitcoin.org/"
 SRC_URI="http://gitorious.org/bitcoin/bitcoind-stable/archive-tarball/v${PV/_/} -> bitcoin-v${PV}.tgz
-	bip16? ( http://luke.dashjr.org/programs/bitcoin/files/bip16/0.5.0.5-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch.xz )
+	bip16? ( http://luke.dashjr.org/programs/bitcoin/files/bip16/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch.xz )
 	eligius? (
 		!bip16? ( http://luke.dashjr.org/programs/bitcoin/files/eligius_sendfee/0.5.0.6rc1-eligius_sendfee.patch.xz )
 	)
@@ -48,12 +48,12 @@ pkg_setup() {
 src_prepare() {
 	cd src || die
 	if use bip16; then
-		epatch "${WORKDIR}/0.5.0.5-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch"
+		epatch "${WORKDIR}/0.5.6-Minimal-support-for-mining-BIP16-pay-to-script-hash-.patch"
 		use eligius && epatch "${FILESDIR}/0.5.0.5+bip16-eligius_sendfee.patch"
 	else
 		use eligius && epatch "${WORKDIR}/0.5.0.6rc1-eligius_sendfee.patch"
 	fi
-	use logrotate && epatch "${FILESDIR}/0.4.5-reopen_log_file.patch"
+	use logrotate && epatch "${FILESDIR}/0.4.7-reopen_log_file.patch"
 }
 
 src_compile() {
