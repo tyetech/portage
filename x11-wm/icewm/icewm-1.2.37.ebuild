@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/icewm/icewm-1.2.37.ebuild,v 1.10 2012/03/18 13:01:01 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/icewm/icewm-1.2.37.ebuild,v 1.11 2012/06/16 13:26:14 chithanh Exp $
 
 EAPI=1
 
@@ -64,6 +64,8 @@ src_unpack() {
 	cd "${S}"
 	#Fixing gnome2 support
 	epatch "${FILESDIR}/${P}-gnome2.patch"
+	# build fix for libX11-1.5.0, bug 420773
+	epatch "${FILESDIR}"/${PN}-1.2.37-libX11-1.5.0-deprecated.patch
 
 	eautoreconf
 }
