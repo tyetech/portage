@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wbarconf/Attic/wbarconf-0.7.2.2.ebuild,v 1.1 2012/05/14 17:37:18 hasufell Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/wbarconf/wbarconf-0.7.2.2-r1.ebuild,v 1.1 2012/06/17 14:32:36 hasufell Exp $
 
 EAPI=4
 
