@@ -1,15 +1,15 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/golly/Attic/golly-2.2-r1.ebuild,v 1.1 2011/09/27 22:36:43 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/golly/golly-2.4.ebuild,v 1.1 2012/06/18 22:38:11 xmw Exp $
 
-EAPI=2
+EAPI=4
 PYTHON_DEPEND=2
 WX_GTK_VER=2.8
 
-inherit eutils python wxwidgets
+inherit python toolchain-funcs wxwidgets
 
 MY_P=${P}-src
-DESCRIPTION="A simulator for Conway's Game of Life and other cellular automata"
+DESCRIPTION="simulator for Conway's Game of Life and other cellular automata"
 HOMEPAGE="http://golly.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
 
@@ -19,6 +19,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-lang/perl
+	sys-libs/zlib
 	x11-libs/wxGTK:${WX_GTK_VER}[X]"
 RDEPEND="${DEPEND}"
 
@@ -26,11 +27,11 @@ S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
 	python_set_active_version 2
+	python_pkg_setup
 }
 
 src_prepare() {
-	#bug 384057
-	epatch "${FILESDIR}"/${P}-perl-5.14.patch
+	sed -e 's:-O2::' -i configure Makefile.{am,in} || die
 }
 
 src_configure() {
@@ -40,6 +41,6 @@ src_configure() {
 }
 
 src_install() {
-	emake docdir= DESTDIR="${D}" install || die
-	dodoc README
+	emake docdir= DESTDIR="${D}" install
+	dodoc README TODO
 }
