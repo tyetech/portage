@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/abyss/abyss-1.3.3.ebuild,v 1.2 2012/06/20 20:48:56 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-biology/cvs-repo/gentoo-x86/sci-biology/abyss/abyss-1.3.4.ebuild,v 1.1 2012/06/20 20:48:56 jlec Exp $
 
 EAPI="4"
 
