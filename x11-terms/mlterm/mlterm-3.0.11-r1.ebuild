@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/mlterm/Attic/mlterm-3.0.7.ebuild,v 1.3 2012/05/03 07:11:34 jdhore Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-terms/cvs-repo/gentoo-x86/x11-terms/mlterm/mlterm-3.0.11-r1.ebuild,v 1.1 2012/06/21 13:41:09 naota Exp $
 
 EAPI="3"
 inherit autotools eutils
@@ -37,7 +37,6 @@ src_prepare() {
 	epatch \
 		"${FILESDIR}"/${PN}-2.9.4-uim15-fix.patch \
 		"${FILESDIR}"/${PN}-3.0.5-ibus.patch \
-		"${FILESDIR}"/${PN}-3.0.7-ldflags.patch \
 		"${FILESDIR}"/${PN}-3.0.7-underlinking.patch
 
 	eautoconf
@@ -82,7 +81,7 @@ src_install () {
 	fi
 
 	doicon contrib/icon/mlterm* || die
-	make_desktop_entry mlterm mlterm mlterm-icon TerminalEmulator || die
+	make_desktop_entry mlterm mlterm mlterm-icon "System;TerminalEmulator" || die
 
 	dodoc ChangeLog README || die
 
