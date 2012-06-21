@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.5.9999.ebuild,v 1.52 2012/06/06 12:44:12 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-office/cvs-repo/gentoo-x86/app-office/libreoffice/Attic/libreoffice-3.5.9999.ebuild,v 1.53 2012/06/21 15:34:20 scarabeus Exp $
 
 EAPI=4
 
@@ -182,7 +182,7 @@ DEPEND="${COMMON_DEPEND}
 	x11-proto/xineramaproto
 	x11-proto/xproto
 	java? (
-		=virtual/jdk-1.6*
+		>=virtual/jdk-1.6
 		>=dev-java/ant-core-1.7
 		test? ( dev-java/junit:4 )
 	)
