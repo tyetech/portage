@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/gearmand/gearmand-0.33.ebuild,v 1.1 2012/06/04 06:56:29 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-cluster/cvs-repo/gentoo-x86/sys-cluster/gearmand/gearmand-0.33.ebuild,v 1.2 2012/06/21 14:43:30 flameeyes Exp $
 
 EAPI=4
 
@@ -30,6 +30,7 @@ pkg_setup() {
 }
 
 src_prepare() {
+	epatch "${FILESDIR}"/${P}+gcc-4.7.patch
 	elibtoolize
 }
 
