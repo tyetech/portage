@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libcmis/libcmis-9999.ebuild,v 1.5 2012/06/14 08:41:31 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libcmis/libcmis-9999.ebuild,v 1.6 2012/06/21 15:31:11 scarabeus Exp $
 
 EAPI=4
 
@@ -24,6 +24,7 @@ RDEPEND="
 	net-misc/curl
 "
 DEPEND="${RDEPEND}
+	virtual/pkgconfig
 	man? ( app-text/docbook2X )
 	test? ( dev-util/cppunit )
 "
