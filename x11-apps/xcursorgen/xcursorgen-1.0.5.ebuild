@@ -1,13 +1,13 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xcursorgen/xcursorgen-1.0.5.ebuild,v 1.2 2012/05/13 16:25:40 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xcursorgen/xcursorgen-1.0.5.ebuild,v 1.3 2012/06/22 20:27:06 ago Exp $
 
 EAPI=4
 inherit xorg-2
 
 DESCRIPTION="create an X cursor file from a collection of PNG images"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd"
 IUSE=""
 
 RDEPEND="x11-libs/libX11
