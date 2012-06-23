@@ -1,8 +1,11 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PHPUnit_MockObject/PHPUnit_MockObject-1.0.3.ebuild,v 1.1 2012/03/10 15:17:52 olemarkus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-php/cvs-repo/gentoo-x86/dev-php/PHPUnit_MockObject/PHPUnit_MockObject-1.0.3.ebuild,v 1.2 2012/06/23 14:31:49 olemarkus Exp $
 
 EAPI="2"
+PHP_PEAR_CHANNEL="${FILESDIR}/channel.xml"
+PHP_PEAR_PN="PHPUnit_MockObject"
+
 inherit php-pear-lib-r1
 
 KEYWORDS="amd64 x86"
