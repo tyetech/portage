@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/ngspice/ngspice-24.ebuild,v 1.1 2012/05/23 18:43:02 calchan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-electronics/cvs-repo/gentoo-x86/sci-electronics/ngspice/ngspice-24.ebuild,v 1.2 2012/06/24 08:55:11 jlec Exp $
 
 EAPI="3"
 
@@ -27,6 +27,7 @@ RDEPEND="$DEPEND"
 src_prepare() {
 	sed -e 's/_CFLAGS -O2/_CFLAGS/' -i configure.ac || die "sed failed"
 	sed -e 's/LDFLAGS =/LDFLAGS +=/' -i src/xspice/icm/makedefs.in || die "sed failed"
+	epatch "${FILESDIR}"/${P}-automake-1.12.patch
 	eautoreconf
 }
 
