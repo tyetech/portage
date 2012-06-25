@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/zfs/Attic/zfs-0.6.0_rc9-r1.ebuild,v 1.1 2012/06/25 00:50:51 ryao Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/zfs/Attic/zfs-0.6.0_rc9-r2.ebuild,v 1.1 2012/06/25 20:21:55 ryao Exp $
 
 EAPI="4"
 
