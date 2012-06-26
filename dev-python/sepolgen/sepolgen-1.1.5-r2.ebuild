@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sepolgen/sepolgen-1.1.5-r2.ebuild,v 1.1 2012/06/25 20:07:58 swift Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/sepolgen/sepolgen-1.1.5-r2.ebuild,v 1.2 2012/06/26 04:57:47 floppym Exp $
 
 EAPI="3"
-PYTHON_DEPEND=""
+PYTHON_DEPEND="*"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="*-jython"
+RESTRICT_PYTHON_ABIS="*-jython *-pypy-*"
 
 inherit python eutils
 
