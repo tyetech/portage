@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/libguestfs/Attic/libguestfs-1.16.10.ebuild,v 1.1 2012/03/18 18:25:42 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emulation/cvs-repo/gentoo-x86/app-emulation/libguestfs/libguestfs-1.16.25.ebuild,v 1.1 2012/06/26 16:14:41 maksbotan Exp $
 
 EAPI="4"
 
@@ -69,13 +69,14 @@ COMMON_DEPEND="
 	"
 
 DEPEND="${COMMON_DEPEND}
+	sys-apps/sed
 	dev-util/gperf
 	doc? ( app-text/po4a )
 	ruby? ( dev-lang/ruby virtual/rubygems dev-ruby/rake )
 	"
 RDEPEND="${COMMON_DEPEND}"
 
-PATCHES=(${FILESDIR}/1.17/*.patch)
+PATCHES=("${FILESDIR}"/1.17/0002-configure_ac_automagic.patch  )
 
 DOCS=(AUTHORS BUGS HACKING README RELEASE-NOTES ROADMAP TODO)
 
