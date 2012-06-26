@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/setools/setools-3.3.7-r3.ebuild,v 1.1 2012/06/25 20:07:09 swift Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/setools/setools-3.3.7-r3.ebuild,v 1.2 2012/06/26 04:59:51 floppym Exp $
 
 EAPI="2"
 PYTHON_DEPEND="python? *"
 SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="*-jython"
+RESTRICT_PYTHON_ABIS="*-jython *-pypy-*"
 
 inherit autotools java-pkg-opt-2 python eutils
 
