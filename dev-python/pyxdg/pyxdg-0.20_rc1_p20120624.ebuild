@@ -1,12 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyxdg/Attic/pyxdg-0.20_rc1_p20120624.ebuild,v 1.1 2012/06/24 16:01:53 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/pyxdg/Attic/pyxdg-0.20_rc1_p20120624.ebuild,v 1.2 2012/06/27 04:21:04 floppym Exp $
 
 EAPI=4
 
-PYTHON_DEPEND="2:2.6 3:3.2"
+PYTHON_DEPEND="2:2.6 3"
 SUPPORT_PYTHON_ABIS=1
-RESTRICT_PYTHON_ABIS="2.5 3.1 *-jython 2.7-pypy-*"
+RESTRICT_PYTHON_ABIS="2.5"
 
 inherit distutils
 
