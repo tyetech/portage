@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/owncloud/Attic/owncloud-4.0.2.ebuild,v 1.2 2012/06/27 09:06:50 voyageur Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-apps/cvs-repo/gentoo-x86/www-apps/owncloud/Attic/owncloud-4.0.4.ebuild,v 1.1 2012/06/27 09:17:43 voyageur Exp $
 
 EAPI=4
 
