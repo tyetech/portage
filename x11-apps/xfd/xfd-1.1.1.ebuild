@@ -1,13 +1,13 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xfd/xfd-1.1.1.ebuild,v 1.4 2012/06/27 18:37:41 maekke Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/xfd/xfd-1.1.1.ebuild,v 1.5 2012/06/28 14:27:17 jer Exp $
 
 EAPI=4
 
 inherit xorg-2
 
 DESCRIPTION="X.Org xfd application"
-KEYWORDS="amd64 arm ~hppa ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86"
+KEYWORDS="amd64 arm hppa ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86"
 IUSE=""
 
 RDEPEND="media-libs/freetype:2
