@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/zukitwo/Attic/zukitwo-2012.06.02.ebuild,v 1.1 2012/06/07 06:09:28 tetromino Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-themes/cvs-repo/gentoo-x86/x11-themes/zukitwo/zukitwo-2012.07.02.ebuild,v 1.1 2012/07/05 00:37:35 tetromino Exp $
 
 EAPI="4"
 
