@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-inline/Attic/ruby-inline-3.11.0.ebuild,v 1.1 2011/12/25 07:24:08 graaff Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/ruby-inline/Attic/ruby-inline-3.11.3.ebuild,v 1.1 2012/07/08 11:23:20 flameeyes Exp $
 
 EAPI=4
 
@@ -20,7 +20,7 @@ HOMEPAGE="http://www.zenspider.com/ZSS/Products/RubyInline/"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~x64-solaris ~x86-solaris"
-IUSE=""
+IUSE="doc test"
 
 ruby_add_rdepend dev-ruby/zentest
 
@@ -32,16 +32,15 @@ ruby_add_bdepend "
 	test? (
 		dev-ruby/hoe
 		dev-ruby/hoe-seattlerb
-		virtual/ruby-test-unit
 	)"
 
 all_ruby_prepare() {
-	epatch "${FILESDIR}/${P}-gentoo.patch"
+	epatch "${FILESDIR}/${PN}-3.11.0-gentoo.patch"
 
 	# Respect ruby's (and thus Gentoo's) LDFLAGS, and explicitly link
 	# against the ruby shared library to avoid confusion and potential
 	# crashes when later using the shared object.
-	epatch "${FILESDIR}/${PN}-3.8.4-ldflags.patch"
+	epatch "${FILESDIR}/${PN}-3.11.1-ldflags.patch"
 
 	sed -i -e '/isolate/ s:^:#:' Rakefile || die
 }
