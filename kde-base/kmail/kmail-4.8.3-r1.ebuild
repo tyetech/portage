@@ -1,11 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kmail/Attic/kmail-4.8.4.ebuild,v 1.1 2012/06/21 21:54:58 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/kmail/Attic/kmail-4.8.3-r1.ebuild,v 1.1 2012/07/08 22:37:53 dilfridge Exp $
 
 EAPI=4
 
 KDE_HANDBOOK="optional"
 KMNAME="kdepim"
+KDE_SCM="git"
 VIRTUALX_REQUIRED=test
 inherit flag-o-matic kde4-meta
 
@@ -53,6 +54,11 @@ KMEXTRA="
 "
 
 KMLOADLIBS="kdepim-common-libs"
+
+PATCHES=(
+	"${FILESDIR}/${P}-qt47-compat.patch"
+	"${FILESDIR}/${PN}-4.8.4-sec.patch"
+)
 
 src_configure() {
 	# Bug 308903
