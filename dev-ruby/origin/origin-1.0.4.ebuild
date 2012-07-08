@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/origin/Attic/origin-1.0.3.ebuild,v 1.2 2012/07/05 21:38:01 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/origin/Attic/origin-1.0.4.ebuild,v 1.1 2012/07/08 10:12:35 flameeyes Exp $
 
 EAPI=4
 
