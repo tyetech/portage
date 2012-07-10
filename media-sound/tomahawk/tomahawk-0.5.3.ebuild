@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/tomahawk/Attic/tomahawk-0.5.2.ebuild,v 1.1 2012/07/02 15:17:22 johu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-sound/cvs-repo/gentoo-x86/media-sound/tomahawk/Attic/tomahawk-0.5.3.ebuild,v 1.1 2012/07/10 23:23:35 johu Exp $
 
 EAPI=4
 
