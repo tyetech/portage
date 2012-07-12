@@ -1,10 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/opendkim/Attic/opendkim-2.4.2.ebuild,v 1.4 2012/06/04 23:58:02 zmedico Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-filter/cvs-repo/gentoo-x86/mail-filter/opendkim/opendkim-2.6.3.ebuild,v 1.1 2012/07/12 17:14:04 eras Exp $
 
 EAPI=4
-
-inherit eutils db-use user
+inherit eutils db-use autotools user
 
 # for betas
 #MY_P=${P/_b/.B}
@@ -17,8 +16,8 @@ SRC_URI="mirror://sourceforge/opendkim/${P}.tar.gz"
 
 LICENSE="Sendmail-Open-Source BSD"
 SLOT="0"
-KEYWORDS="amd64 x86"
-IUSE="asyncdns +berkdb ldap lua opendbx poll sasl +ssl unbound"
+KEYWORDS="~amd64 ~x86"
+IUSE="asyncdns +berkdb ldap lua opendbx poll sasl +ssl static-libs unbound"
 
 # FUTURE: diffheaders (libtre error) - bug #296813
 
@@ -35,8 +34,8 @@ DEPEND="|| ( mail-filter/libmilter mail-mta/sendmail )
 
 RDEPEND="${DEPEND}"
 
-REQUIRED_USE="sasl? ( ldap )
-	lua? ( berkdb )"
+REQUIRED_USE="sasl? ( ldap )"
+	#lua? ( berkdb )"
 
 pkg_setup() {
 	enewgroup milter
@@ -53,9 +52,12 @@ src_prepare() {
 	       -e 's:mailnull:milter:g' \
 	       -e 's:^#[[:space:]]*PidFile.*:PidFile /var/run/opendkim/opendkim.pid:' \
 		   opendkim/opendkim.conf.sample opendkim/opendkim.conf.simple.in \
-		   contrib/stats/opendkim-reportstats || die
+		   stats/opendkim-reportstats || die
 
-		   epatch "${FILESDIR}/${PN}-2.4.0-ipv6.patch"
+	sed -i -e 's:dist_doc_DATA:dist_html_DATA:' libopendkim/docs/Makefile.am \
+		|| die
+
+	eautoreconf
 }
 
 src_configure() {
@@ -65,8 +67,6 @@ src_configure() {
 		myconf="--with-db-incdir=${myconf#-I}"
 		myconf+=" --enable-popauth"
 		myconf+=" --enable-query_cache"
-		myconf+=" --enable-report_intervals"
-		myconf+=" --enable-stats"
 	fi
 	if use asyncdns ; then
 		if use unbound; then
@@ -84,15 +84,14 @@ src_configure() {
 		$(use_with berkdb db) \
 		$(use_with opendbx odbx) \
 		$(use_with lua) \
-		$(use_enable lua statsext) \
 		$(use_enable lua rbl) \
 		$(use_with ldap openldap) \
-		$(use_enable ldap ldap_caching) \
 		$(use_enable poll) \
+		$(use_enable static-libs static) \
 		${myconf} \
 		--docdir=/usr/share/doc/${PF} \
+		--htmldir=/usr/share/doc/${PF}/html \
 		--enable-filter \
-		--without-domainkeys \
 		--enable-oversign \
 		--enable-adsp_lists \
 		--enable-dkim_reputation \
@@ -101,7 +100,6 @@ src_configure() {
 		--enable-redirect \
 		--enable-resign \
 		--enable-replace_rules \
-		--enable-selector_header \
 		--enable-default_sender \
 		--enable-sender_macro \
 		--enable-vbr \
@@ -115,7 +113,7 @@ src_install() {
 	# file collision
 	rm -f "${D}"/usr/share/man/man3/ar.3
 
-	dosbin contrib/stats/opendkim-reportstats
+	dosbin stats/opendkim-reportstats
 	newinitd "${FILESDIR}/opendkim.init.r2" opendkim
 	dodir /etc/opendkim /var/lib/opendkim
 	fowners milter:milter /var/lib/opendkim
@@ -133,6 +131,8 @@ src_install() {
 				"${D}"/etc/opendkim/opendkim.conf
 		fi
 	fi
+
+	use static-libs || find "${D}" -name "*.la" -delete
 }
 
 pkg_postinst() {
