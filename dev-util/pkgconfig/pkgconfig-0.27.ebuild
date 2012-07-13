@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/pkgconfig/pkgconfig-9999.ebuild,v 1.3 2012/07/13 09:27:19 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/pkgconfig/Attic/pkgconfig-0.27.ebuild,v 1.1 2012/07/13 09:27:19 ssuominen Exp $
 
 EAPI=4
 
