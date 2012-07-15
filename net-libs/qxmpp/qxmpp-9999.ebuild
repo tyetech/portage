@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/qxmpp/qxmpp-9999.ebuild,v 1.1 2011/08/21 16:29:19 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/qxmpp/qxmpp-9999.ebuild,v 1.2 2012/07/15 16:52:03 kensington Exp $
 
 EAPI=3
 
@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS=""
 IUSE="debug +extras"
 
-DEPEND="x11-libs/qt-core
-		x11-libs/qt-gui
+DEPEND="x11-libs/qt-core:4
+		x11-libs/qt-gui:4
 		media-libs/speex"
 RDEPEND="${DEPEND}"
 
