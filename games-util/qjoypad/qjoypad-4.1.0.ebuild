@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/games-util/cvs-repo/gentoo-x86/games-util/qjoypad/qjoypad-4.1.0.ebuild,v 1.6 2012/07/16 10:37:52 kensington Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/games-util/cvs-repo/gentoo-x86/games-util/qjoypad/qjoypad-4.1.0.ebuild,v 1.7 2012/07/16 15:45:54 mr_bones_ Exp $
 
 EAPI=2
 inherit eutils qt4-r2
@@ -21,7 +21,7 @@ DEPEND="${RDEPEND}
 	x11-proto/xextproto
 	x11-proto/xproto"
 
-S="${WORKDIR}"/${P}/src
+S=${WORKDIR}/${P}/src
 
 PATCHES=( "${FILESDIR}"/${P}-underlink.patch )
 
