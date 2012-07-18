@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/herqq/herqq-1.0.0-r1.ebuild,v 1.5 2011/12/07 22:08:19 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/herqq/herqq-1.0.0-r1.ebuild,v 1.6 2012/07/18 01:45:46 ottxor Exp $
 
 EAPI=4
 
