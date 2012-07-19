@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/leechcraft-xproxy/Attic/leechcraft-xproxy-0.5.65.ebuild,v 1.1 2012/04/22 13:18:48 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/leechcraft-xproxy/leechcraft-xproxy-0.5.75.ebuild,v 1.1 2012/07/19 20:13:23 maksbotan Exp $
 
 EAPI="4"
 
