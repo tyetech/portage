@@ -1,11 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/parrot/Attic/parrot-4.3.0.ebuild,v 1.1 2012/04/20 08:52:36 patrick Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-lang/cvs-repo/gentoo-x86/dev-lang/parrot/parrot-4.6.0.ebuild,v 1.1 2012/07/19 06:05:32 patrick Exp $
 
 EAPI=3
-
-# There's multiple small issues at the moment, so ...
-RESTRICT="test"
 
 inherit eutils multilib
 
