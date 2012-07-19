@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-misc/cvs-repo/gentoo-x86/www-misc/leechcraft-seekthru/Attic/leechcraft-seekthru-0.5.60.ebuild,v 1.1 2012/03/20 13:10:13 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-misc/cvs-repo/gentoo-x86/www-misc/leechcraft-seekthru/leechcraft-seekthru-0.5.75.ebuild,v 1.1 2012/07/19 20:20:15 maksbotan Exp $
 
 EAPI="4"
 
