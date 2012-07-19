@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/leechcraft-laure/Attic/leechcraft-laure-0.5.65.ebuild,v 1.1 2012/04/22 12:59:52 maksbotan Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/leechcraft-laure/leechcraft-laure-0.5.75.ebuild,v 1.1 2012/07/19 19:56:02 maksbotan Exp $
 
 EAPI="4"
 
