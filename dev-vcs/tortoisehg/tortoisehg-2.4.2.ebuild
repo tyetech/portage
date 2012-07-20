@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/tortoisehg/Attic/tortoisehg-2.3.1.ebuild,v 1.4 2012/05/03 02:25:52 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/tortoisehg/tortoisehg-2.4.2.ebuild,v 1.1 2012/07/20 16:31:52 floppym Exp $
 
 EAPI=4
 
@@ -13,11 +13,13 @@ inherit distutils eutils multilib
 if [[ ${PV} != *9999* ]]; then
 	KEYWORDS="~amd64 ~x86"
 	SRC_URI="mirror://bitbucket/${PN}/targz/downloads/${P}.tar.gz"
+	HG_DEPEND=">=dev-vcs/mercurial-2.1 <dev-vcs/mercurial-2.3"
 else
 	inherit mercurial
 	EHG_REPO_URI="https://bitbucket.org/tortoisehg/thg"
 	KEYWORDS=""
 	SRC_URI=""
+	HG_DEPEND="dev-vcs/mercurial"
 fi
 
 DESCRIPTION="Set of graphical tools for Mercurial"
@@ -25,15 +27,13 @@ HOMEPAGE="http://tortoisehg.bitbucket.org"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="doc nautilus"
+IUSE="doc"
 
-RDEPEND="dev-python/iniparse
+RDEPEND="${HG_DEPEND}
+	dev-python/iniparse
 	dev-python/pygments
 	dev-python/PyQt4
-	dev-python/qscintilla-python
-	>=dev-vcs/mercurial-2.0
-	<dev-vcs/mercurial-2.2
-	nautilus? ( dev-python/nautilus-python )"
+	dev-python/qscintilla-python"
 DEPEND="${RDEPEND}
 	doc? ( >=dev-python/sphinx-1.0.3 )"
 
@@ -79,8 +79,4 @@ src_install() {
 	insinto /usr/share/icons/hicolor/scalable/apps
 	newins icons/scalable/apps/thg-logo.svg tortoisehg_logo.svg
 	domenu contrib/${PN}.desktop
-
-	if ! use nautilus; then
-		rm -r "${ED}usr/$(get_libdir)/nautilus" || die
-	fi
 }
