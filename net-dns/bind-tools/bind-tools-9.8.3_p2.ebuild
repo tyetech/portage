@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.8.3_p1.ebuild,v 1.2 2012/06/05 14:57:41 idl0r Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-dns/cvs-repo/gentoo-x86/net-dns/bind-tools/Attic/bind-tools-9.8.3_p2.ebuild,v 1.1 2012/07/25 17:54:43 idl0r Exp $
 
 EAPI="4"
 
