@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squidclamav/Attic/squidclamav-6.5.ebuild,v 1.1 2012/01/15 22:03:12 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-proxy/cvs-repo/gentoo-x86/net-proxy/squidclamav/squidclamav-6.8.ebuild,v 1.1 2012/07/26 19:48:35 flameeyes Exp $
 
 EAPI=4
 
