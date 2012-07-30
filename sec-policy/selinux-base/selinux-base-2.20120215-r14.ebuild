@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-base/selinux-base-2.20120215-r14.ebuild,v 1.1 2012/07/17 14:27:20 swift Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sec-policy/cvs-repo/gentoo-x86/sec-policy/selinux-base/selinux-base-2.20120215-r14.ebuild,v 1.2 2012/07/30 16:25:58 swift Exp $
 EAPI="4"
 
 inherit eutils
@@ -14,7 +14,7 @@ SRC_URI="http://oss.tresys.com/files/refpolicy/refpolicy-${PV}.tar.bz2
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 RDEPEND=">=sys-apps/policycoreutils-2.1.10
 	>=sys-fs/udev-151
