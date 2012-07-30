@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/suse-build/Attic/suse-build-2011.01.20.ebuild,v 1.3 2012/03/07 13:36:56 miska Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-util/cvs-repo/gentoo-x86/dev-util/suse-build/Attic/suse-build-2011.09.26-r1.ebuild,v 1.1 2012/07/30 13:48:45 miska Exp $
 
 EAPI=4
 
 EGIT_REPO_URI="git://gitorious.org/opensuse/build.git"
-OPENSUSE_RELEASE="11.4"
+OPENSUSE_RELEASE="12.1"
 MY_PN="build"
 OBS_PACKAGE="${MY_PN}"
 
@@ -48,5 +48,5 @@ src_install() {
 	find share/man/man1 -type f | while read i; do
 		mv "${i}" "${i/man1\//man1/suse-}"
 	done
-	find . -type f sed -i 's|/usr/lib/build|/usr/share/suse-build|' {} +
+	find . -type f -exec sed -i 's|/usr/lib/build|/usr/share/suse-build|' {} +
 }
