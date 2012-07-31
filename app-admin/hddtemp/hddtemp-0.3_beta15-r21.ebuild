@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/hddtemp/hddtemp-0.3_beta15-r4.ebuild,v 1.7 2011/11/14 12:25:25 aidecoe Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/hddtemp/hddtemp-0.3_beta15-r21.ebuild,v 1.1 2012/07/31 10:40:08 aidecoe Exp $
 
 EAPI=4
 
@@ -31,6 +31,7 @@ src_prepare() {
 	epatch "${FILESDIR}"/${P}-execinfo.patch
 	epatch "${FILESDIR}"/${P}-nls.patch
 	epatch "${FILESDIR}"/${P}-iconv.patch
+	epatch "${FILESDIR}"/${P}-dontwake.patch
 	AT_M4DIR="m4" eautoreconf
 }
 
