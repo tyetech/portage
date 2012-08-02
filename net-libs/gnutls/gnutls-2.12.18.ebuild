@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gnutls/gnutls-2.12.18.ebuild,v 1.15 2012/06/10 05:24:41 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-libs/cvs-repo/gentoo-x86/net-libs/gnutls/gnutls-2.12.18.ebuild,v 1.16 2012/08/02 20:08:08 radhermit Exp $
 
 EAPI=4
 
@@ -89,6 +89,7 @@ src_configure() {
 
 	econf \
 		--htmldir=/usr/share/doc/${P}/html \
+		--disable-silent-rules \
 		$(use_enable cxx) \
 		$(use_enable doc gtk-doc) \
 		$(use_enable doc gtk-doc-pdf) \
