@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/icedtea-bin/Attic/icedtea-bin-7.2.1-r1.ebuild,v 1.3 2012/06/05 15:35:28 sera Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-java/cvs-repo/gentoo-x86/dev-java/icedtea-bin/icedtea-bin-7.2.2.1-r1.ebuild,v 1.1 2012/08/03 21:08:04 caster Exp $
 
 EAPI="4"
 
