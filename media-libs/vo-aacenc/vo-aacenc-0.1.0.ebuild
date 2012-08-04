@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/vo-aacenc/vo-aacenc-0.1.0.ebuild,v 1.1 2011/04/07 11:33:10 lu_zero Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/vo-aacenc/vo-aacenc-0.1.0.ebuild,v 1.2 2012/08/04 17:26:53 hasufell Exp $
 
 EAPI=4
 
@@ -35,6 +35,7 @@ src_prepare() {
 
 src_configure() {
 	econf \
+		--disable-silent-rules \
 		--disable-dependency-tracking \
 		$(use_enable examples example) \
 		$(use_enable neon armv7neon) \
