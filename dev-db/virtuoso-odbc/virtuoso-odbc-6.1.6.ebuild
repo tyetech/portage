@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/virtuoso-odbc/Attic/virtuoso-odbc-6.1.5.ebuild,v 1.1 2012/07/13 22:20:20 creffett Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/virtuoso-odbc/virtuoso-odbc-6.1.6.ebuild,v 1.1 2012/08/05 03:48:34 creffett Exp $
 
 EAPI=4
 
