@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/basenji/basenji-0.9.0.ebuild,v 1.1 2012/08/06 12:03:42 elvanor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-misc/cvs-repo/gentoo-x86/app-misc/basenji/basenji-0.9.0.ebuild,v 1.2 2012/08/06 15:03:54 mr_bones_ Exp $
 
 EAPI="3"
 
