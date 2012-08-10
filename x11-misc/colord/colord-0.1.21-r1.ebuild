@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/colord/colord-0.1.21-r1.ebuild,v 1.2 2012/08/10 17:11:37 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/colord/colord-0.1.21-r1.ebuild,v 1.3 2012/08/10 17:46:05 ssuominen Exp $
 
 EAPI="4"
 
@@ -83,10 +83,10 @@ src_configure() {
 }
 
 src_install() {
-	local udevrulesdir=/lib/udev
-	use udev && udevrulesdir="$($(tc-getPKG_CONFIG) --variable=udevdir udev)"/rules.d
+	local udevdir=/lib/udev
+	use udev && udevdir="$($(tc-getPKG_CONFIG) --variable=udevdir udev)"
 
-	base_src_install udevrulesdir="${udevrulesdir}"
+	base_src_install udevrulesdir="${udevdir}"/rules.d
 
 	newbashcomp client/colormgr-completion.bash colormgr
 	rm -vr "${ED}etc/bash_completion.d"
