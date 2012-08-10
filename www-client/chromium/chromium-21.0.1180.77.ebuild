@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-21.0.1180.64.ebuild,v 1.1 2012/08/06 22:24:41 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/www-client/cvs-repo/gentoo-x86/www-client/chromium/Attic/chromium-21.0.1180.77.ebuild,v 1.1 2012/08/10 03:30:56 floppym Exp $
 
 EAPI="4"
 PYTHON_DEPEND="2:2.6"
