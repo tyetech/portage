@@ -1,9 +1,9 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/net-ssh/net-ssh-2.2.2.ebuild,v 1.6 2012/07/22 15:15:05 nixnut Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/net-ssh/net-ssh-2.2.2.ebuild,v 1.7 2012/08/11 09:17:47 hollow Exp $
 
 EAPI="2"
-USE_RUBY="ruby18 ree18"
+USE_RUBY="ruby18 ruby19 ree18"
 
 RUBY_FAKEGEM_TASK_TEST=""
 
