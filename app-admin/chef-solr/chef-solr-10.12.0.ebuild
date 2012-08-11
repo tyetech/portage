@@ -1,13 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/chef-solr/Attic/chef-solr-0.10.10_beta1.ebuild,v 1.1 2012/04/29 13:19:34 hollow Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/chef-solr/chef-solr-10.12.0.ebuild,v 1.1 2012/08/11 12:45:49 hollow Exp $
 
-EAPI="4"
-USE_RUBY="ruby18"
+EAPI=4
+USE_RUBY="ruby18 ruby19"
 
 RUBY_FAKEGEM_TASK_DOC=""
-RUBY_FAKEGEM_TASK_TEST=""
-RUBY_FAKEGEM_VERSION=${PV/_beta/.beta.}
+RUBY_FAKEGEM_TASK_TEST="spec"
 
 inherit ruby-fakegem
 
@@ -23,6 +22,10 @@ RDEPEND=">=net-misc/rabbitmq-server-1.7.2
 	virtual/jre:1.6"
 
 ruby_add_rdepend "~app-admin/chef-${PV}"
+
+each_ruby_test() {
+	${RUBY} -S rspec spec || die
+}
 
 each_ruby_install() {
 	each_fakegem_install
