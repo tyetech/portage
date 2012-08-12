@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/spectools/spectools-2011.08.1.ebuild,v 1.3 2012/05/25 10:48:34 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-wireless/cvs-repo/gentoo-x86/net-wireless/spectools/spectools-2011.08.1.ebuild,v 1.4 2012/08/12 08:44:45 ssuominen Exp $
 
 EAPI=4
 
-inherit toolchain-funcs eutils
+inherit toolchain-funcs eutils multilib
 
 MY_P=${P/\./-}
 MY_P=${MY_P/./-R}
