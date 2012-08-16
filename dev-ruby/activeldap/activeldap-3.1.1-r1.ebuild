@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/activeldap/activeldap-3.1.1-r1.ebuild,v 1.1 2012/08/16 03:43:18 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/activeldap/activeldap-3.1.1-r1.ebuild,v 1.2 2012/08/16 15:20:40 flameeyes Exp $
 
 EAPI=4
 USE_RUBY="ruby18 ruby19"
@@ -8,7 +8,6 @@ USE_RUBY="ruby18 ruby19"
 RUBY_FAKEGEM_TASK_DOC=""
 RUBY_FAKEGEM_EXTRADOC="README.textile TODO"
 RUBY_FAKEGEM_EXTRAINSTALL="po"
-RUBY_FAKEGEM_NAME="activeldap"
 
 inherit ruby-fakegem
 
