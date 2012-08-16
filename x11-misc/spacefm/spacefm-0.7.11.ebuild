@@ -1,14 +1,15 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/spacefm/Attic/spacefm-0.7.8.ebuild,v 1.2 2012/06/17 17:31:44 hasufell Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-misc/cvs-repo/gentoo-x86/x11-misc/spacefm/spacefm-0.7.11.ebuild,v 1.1 2012/08/16 22:06:25 hasufell Exp $
 
 EAPI=4
 
-inherit fdo-mime linux-info
+inherit eutils fdo-mime gnome2-utils linux-info
 
 DESCRIPTION="A multi-panel tabbed file manager"
 HOMEPAGE="http://ignorantguru.github.com/spacefm/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.xz"
+SRC_URI="http://dev.gentoo.org/~hasufell/distfiles/${P}.tar.xz
+	mirror://sourceforge/${PN}/${P}.tar.xz"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
@@ -31,16 +32,27 @@ DEPEND="${RDEPEND}
 	virtual/pkgconfig
 	sys-devel/gettext"
 
+src_prepare() {
+	epatch "${FILESDIR}"/${PN}-0.7.10-desktopfiles.patch
+}
+
 src_configure() {
 	econf \
 		--htmldir=/usr/share/doc/${PF}/html \
 		--disable-hal \
-		--enable-inotify
+		--enable-inotify \
+		--disable-pixmaps
+}
+
+pkg_preinst() {
+	gnome2_icon_savelist
 }
 
 pkg_postinst() {
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
+	gnome2_icon_cache_update
+
 	einfo
 	elog "To mount as non-root user you need one of the following:"
 	elog "  sys-apps/udevil (recommended, see below)"
@@ -70,4 +82,5 @@ pkg_postinst() {
 pkg_postrm() {
 	fdo-mime_desktop_database_update
 	fdo-mime_mime_database_update
+	gnome2_icon_cache_update
 }
