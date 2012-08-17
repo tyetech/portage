@@ -1,8 +1,8 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sudo/Attic/sudo-1.8.4_p4.ebuild,v 1.3 2012/04/27 15:21:09 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sudo/sudo-1.8.5_p3.ebuild,v 1.1 2012/08/17 14:22:50 flameeyes Exp $
 
-EAPI="4"
+EAPI=4
 
 inherit eutils pam multilib libtool
 
@@ -23,7 +23,7 @@ SRC_URI="http://www.sudo.ws/sudo/dist/${uri_prefix}${MY_P}.tar.gz
 # 3-clause BSD license
 LICENSE="as-is BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~sparc-fbsd ~x86-fbsd ~sparc-solaris"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~amd64-fbsd ~sparc-fbsd ~x86-fbsd ~x64-freebsd ~sparc-solaris"
 IUSE="ldap nls pam offensive selinux skey"
 
 DEPEND="pam? ( virtual/pam )
@@ -50,7 +50,6 @@ REQUIRED_USE="pam? ( !skey ) skey? ( !pam )"
 MAKEOPTS+=" SAMPLES="
 
 src_prepare() {
-	epatch "${FILESDIR}"/${PN}-1.8.3_p1-no-utmpx.patch
 	elibtoolize
 }
 
@@ -172,6 +171,8 @@ pkg_postinst() {
 		ewarn "  # chown root:root ${EPREFIX}/usr/bin/sudo"
 		ewarn "  # chown root:root ${EPREFIX}/usr/lib/sudo/sudoers.so"
 		ewarn "  # chown root:root ${EPREFIX}/etc/sudoers"
+		ewarn "  # chown root:root ${EPREFIX}/etc/sudoers.d"
+		ewarn "  # chown root:root ${EPREFIX}/var/db/sudo"
 		ewarn "  # chmod 4111 ${EPREFIX}/usr/bin/sudo"
 		ewarn
 	fi
