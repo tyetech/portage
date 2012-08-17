@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/qmmp-plugin-pack/Attic/qmmp-plugin-pack-0.6.0.ebuild,v 1.1 2012/07/02 18:09:15 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-plugins/cvs-repo/gentoo-x86/media-plugins/qmmp-plugin-pack/qmmp-plugin-pack-0.6.2.ebuild,v 1.1 2012/08/17 17:52:56 hwoarang Exp $
 
 EAPI=4
 
