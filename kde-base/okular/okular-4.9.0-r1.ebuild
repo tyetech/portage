@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/okular/Attic/okular-4.9.0.ebuild,v 1.2 2012/08/03 16:08:12 johu Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/kde-base/cvs-repo/gentoo-x86/kde-base/okular/Attic/okular-4.9.0-r1.ebuild,v 1.1 2012/08/18 11:23:54 johu Exp $
 
 EAPI=4
 
@@ -26,6 +26,8 @@ DEPEND="
 	tiff? ( media-libs/tiff )
 "
 RDEPEND="${DEPEND}"
+
+PATCHES=( "${FILESDIR}/${P}-memory-corruption-warning.patch" )
 
 src_configure() {
 	mycmakeargs=(
