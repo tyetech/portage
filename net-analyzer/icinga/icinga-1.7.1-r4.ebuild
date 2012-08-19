@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/icinga/Attic/icinga-1.7.1.ebuild,v 1.1 2012/06/18 18:23:28 prometheanfire Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/icinga/Attic/icinga-1.7.1-r4.ebuild,v 1.1 2012/08/19 04:43:24 prometheanfire Exp $
 
 EAPI=2
 
@@ -16,18 +16,18 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+apache2 debug eventhandler +idoutils lighttpd +mysql perl +plugins postgres ssl +vim-syntax +web"
+IUSE="+apache2 eventhandler +idoutils lighttpd +mysql perl +plugins postgres ssl +vim-syntax +web"
 DEPEND="idoutils? ( dev-db/libdbi-drivers[mysql?,postgres?] )
 	perl? ( dev-lang/perl )
 	virtual/mailx
 	web? (
 		media-libs/gd[jpeg,png]
-		lighttpd? ( www-servers/lighttpd dev-lang/php[cgi] )
-		apache2? ( || ( dev-lang/php[apache2] dev-lang/php[cgi] ) )
+		lighttpd? ( www-servers/lighttpd )
 	)
 	!net-analyzer/nagios-core"
 RDEPEND="${DEPEND}
 	plugins? ( net-analyzer/nagios-plugins )"
+RESTRICT="test"
 
 want_apache2
 
@@ -49,12 +49,6 @@ src_configure() {
 	$(use_with perl perlcache)
 	$(use_enable idoutils)
 	$(use_enable ssl)
-	$(use_enable debug DEBUG0)
-	$(use_enable debug DEBUG1)
-	$(use_enable debug DEBUG2)
-	$(use_enable debug DEBUG3)
-	$(use_enable debug DEBUG4)
-	$(use_enable debug DEBUG5)
 	--disable-statuswrl
 	--with-cgiurl=/icinga/cgi-bin
 	--with-log-dir=/var/log/icinga
@@ -130,10 +124,10 @@ src_install() {
 		emake DESTDIR="${D}" install-eventhandlers || die
 	fi
 
-	newinitd "${FILESDIR}"/icinga-init.d icinga || die
+	newinitd "${FILESDIR}"/icinga-init.d-2 icinga || die
 	newconfd "${FILESDIR}"/icinga-conf.d icinga || die
 	if use idoutils ; then
-		newinitd "${FILESDIR}"/ido2db-init.d ido2db || die
+		newinitd "${FILESDIR}"/ido2db-init.d-2 ido2db || die
 		newconfd "${FILESDIR}"/ido2db-conf.d ido2db || die
 		insinto /usr/share/icinga/contrib/db
 		doins -r module/idoutils/db/* || die
@@ -151,6 +145,10 @@ src_install() {
 			ewarn "out-of-the-box. Since you are not using one of them, you"
 			ewarn "have to configure your webserver accordingly yourself."
 		fi
+		fowners -R root:root /usr/$(get_libdir)/icinga || die
+		cd "${D}" || die
+		find usr/$(get_libdir)/icinga -type d -exec fperms 755 {} +
+		find usr/$(get_libdir)/icinga/cgi-bin -type f -exec fperms 755 {} +
 	fi
 
 	if use eventhandler ; then
@@ -158,10 +156,6 @@ src_install() {
 		fowners icinga:icinga /etc/icinga/eventhandlers || die
 	fi
 
-	fowners -R root:root /usr/$(get_libdir)/icinga || die
-	cd "${D}" || die
-	find usr/$(get_libdir)/icinga -type d -exec fperms 755 {} +
-	find usr/$(get_libdir)/icinga/cgi-bin -type f -exec fperms 755 {} +
 	dodir /var/run/icinga || die
 	fowners icinga:icinga /var/run/icinga || die
 
