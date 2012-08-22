@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/bfgminer/bfgminer-2.6.3.ebuild,v 1.2 2012/08/22 02:10:20 blueness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/bfgminer/bfgminer-2.7.0.ebuild,v 1.1 2012/08/22 02:10:20 blueness Exp $
 
 EAPI="4"
 
@@ -46,9 +46,6 @@ RDEPEND="${DEPEND}
 DEPEND="${DEPEND}
 	virtual/pkgconfig
 	sys-apps/sed
-	adl? (
-		x11-libs/amd-adl-sdk
-	)
 	sse2? (
 		>=dev-lang/yasm-1.0.1
 	)
@@ -59,7 +56,6 @@ DEPEND="${DEPEND}
 
 src_prepare() {
 	sed -i 's/\(^\#define WANT_.*\(SSE\|PADLOCK\|ALTIVEC\)\)/\/\/ \1/' miner.h
-	ln -s /usr/include/ADL/* ADL_SDK/
 }
 
 src_configure() {
@@ -105,6 +101,9 @@ src_install() {
 	fi
 	if use icarus || use bitforce; then
 		dodoc FPGA-README
+	fi
+	if use bitforce; then
+		dobin bitforce-firmware-flash
 	fi
 	if use modminer; then
 		insinto /usr/lib/bfgminer/modminer
