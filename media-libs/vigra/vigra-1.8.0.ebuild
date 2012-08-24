@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/vigra/vigra-1.8.0.ebuild,v 1.1 2012/05/19 23:23:15 dilfridge Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-libs/cvs-repo/gentoo-x86/media-libs/vigra/vigra-1.8.0.ebuild,v 1.2 2012/08/24 22:05:44 dilfridge Exp $
 
 EAPI=4
 
@@ -43,6 +43,7 @@ DEPEND="${RDEPEND}
 PATCHES=(
 	"${FILESDIR}/${P}-automagicness.patch"
 	"${FILESDIR}/${P}-numpy_doc.patch"
+	"${FILESDIR}/${P}-gcc47.patch"
 )
 
 REQUIRED_USE="
