@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sulfur/Attic/sulfur-1.0_rc90.ebuild,v 1.1 2012/03/23 14:19:22 lxnay Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-admin/cvs-repo/gentoo-x86/app-admin/sulfur/sulfur-1.0_rc104.ebuild,v 1.1 2012/08/25 05:17:03 lxnay Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -14,11 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE=""
 
-SRC_URI="mirror://sabayon/sys-apps/entropy-${PV}.tar.bz2"
-S="${WORKDIR}/entropy-${PV}/sulfur"
+SRC_URI="mirror://sabayon/app-admin/sulfur-${PV}.tar.bz2"
 
 RDEPEND="dev-python/pygtk:2
-	~sys-apps/entropy-${PV}
+	>=sys-apps/entropy-${PV}
 	sys-apps/file[python]
 	sys-devel/gettext
 	x11-libs/vte:0[python]
