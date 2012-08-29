@@ -1,6 +1,6 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/python-distutils-extra/Attic/python-distutils-extra-2.19.ebuild,v 1.1 2010/07/15 17:31:57 arfrever Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-python/cvs-repo/gentoo-x86/dev-python/python-distutils-extra/python-distutils-extra-2.34.ebuild,v 1.1 2012/08/29 06:17:05 patrick Exp $
 
 EAPI="3"
 PYTHON_DEPEND="2"
@@ -11,7 +11,7 @@ inherit distutils
 
 DESCRIPTION="You can integrate gettext support, themed icons and scrollkeeper based documentation in distutils."
 HOMEPAGE="https://launchpad.net/python-distutils-extra"
-SRC_URI="http://launchpad.net/python-distutils-extra/trunk/${PV}/+download/dist-${P}.tar.gz"
+SRC_URI="http://launchpad.net/python-distutils-extra/trunk/${PV}/+download/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -20,19 +20,20 @@ IUSE=""
 
 DEPEND="dev-python/setuptools"
 RDEPEND="${DEPEND}"
-# Tests are broken.
-RESTRICT="test"
 
 DOCS="doc/FAQ doc/README doc/setup.cfg.example doc/setup.py.example"
 PYTHON_MODNAME="DistUtilsExtra"
 
 src_prepare() {
+	distutils_src_prepare
+
 	# Disable broken tests.
 	sed \
 		-e "s/test_desktop/_&/" \
+		-e "s/test_po(/_&/" \
 		-e "s/test_policykit/_&/" \
 		-e "s/test_requires_provides/_&/" \
-		-i test/auto.py || die "sed failed"
+		-i test/auto.py
 }
 
 src_test() {
@@ -40,7 +41,7 @@ src_test() {
 	python_enable_pyc
 
 	testing() {
-		"$(PYTHON)" test/auto.py
+		PYTHONPATH="build-${PYTHON_ABI}/lib" "$(PYTHON)" test/auto.py
 	}
 	python_execute_function testing
 
