@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mongodb/Attic/mongodb-1.8.4-r1.ebuild,v 1.4 2012/06/04 06:34:29 zmedico Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-db/cvs-repo/gentoo-x86/dev-db/mongodb/mongodb-2.2.0.ebuild,v 1.1 2012/08/30 10:14:54 ultrabug Exp $
 
 EAPI=4
 SCONS_MIN_VERSION="1.2.0"
@@ -12,7 +12,7 @@ MY_P=${PN}-src-r${PV/_rc/-rc}
 DESCRIPTION="A high-performance, open source, schema-free document-oriented database"
 HOMEPAGE="http://www.mongodb.org"
 SRC_URI="http://downloads.mongodb.org/src/${MY_P}.tar.gz
-	mms-agent? ( http://dev.gentoo.org/~ultrabug/20111027-10gen-mms-agent.zip )"
+	mms-agent? ( http://dev.gentoo.org/~ultrabug/20120830-10gen-mms-agent.zip )"
 
 LICENSE="AGPL-3 Apache-2.0"
 SLOT="0"
@@ -20,12 +20,14 @@ KEYWORDS="~amd64 ~x86"
 IUSE="mms-agent static-libs v8"
 
 PDEPEND="mms-agent? ( dev-python/pymongo )"
-RDEPEND="!v8? ( =dev-lang/spidermonkey-1.8.2* )
+RDEPEND="!v8? ( <dev-lang/spidermonkey-1.8[unicode] )
 	v8? ( dev-lang/v8 )
 	dev-libs/boost
 	dev-libs/libpcre[cxx]
-	net-libs/libpcap"
+	net-libs/libpcap
+	app-arch/snappy"
 DEPEND="${RDEPEND}
+	dev-util/google-perftools
 	sys-libs/readline
 	sys-libs/ncurses"
 
@@ -35,7 +37,7 @@ pkg_setup() {
 	enewgroup mongodb
 	enewuser mongodb -1 -1 /var/lib/${PN} mongodb
 
-	scons_opts=" --cxx=$(tc-getCXX) --sharedclient"
+	scons_opts=" --cxx=$(tc-getCXX) --use-system-all"
 	if use v8; then
 		scons_opts+=" --usev8"
 	else
@@ -44,8 +46,12 @@ pkg_setup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-1.8-fix-scons.patch"
-	epatch "${FILESDIR}/${PN}-linux3.patch"
+	epatch "${FILESDIR}/${PN}-2.2-fix-scons.patch"
+	epatch "${FILESDIR}/${PN}-2.2-fix-sconscript.patch"
+
+	sed -e 's@third_party/js-1.7/@/usr/include/js/@g' \
+		-i src/mongo/scripting/engine_spidermonkey.h  \
+		-i src/mongo/scripting/engine_spidermonkey.cpp || die
 }
 
 src_compile() {
@@ -71,6 +77,9 @@ src_install() {
 	newconfd "${FILESDIR}/${PN}.confd" ${PN}
 	newinitd "${FILESDIR}/${PN/db/s}.initd" ${PN/db/s}
 	newconfd "${FILESDIR}/${PN/db/s}.confd" ${PN/db/s}
+
+	insinto /etc/logrotate.d/
+	newins "${FILESDIR}/${PN}.logrotate" ${PN}
 
 	if use mms-agent; then
 		local MY_PN="mms-agent"
