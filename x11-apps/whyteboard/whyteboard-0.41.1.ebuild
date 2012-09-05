@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/whyteboard/whyteboard-0.41.1.ebuild,v 1.2 2012/01/26 18:53:38 lxnay Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-apps/cvs-repo/gentoo-x86/x11-apps/whyteboard/whyteboard-0.41.1.ebuild,v 1.3 2012/09/05 08:13:21 jlec Exp $
 
 EAPI="3"
 
@@ -28,8 +28,7 @@ src_install() {
 
 	insinto /usr/share/pixmaps
 	doins "${DISTDIR}/${PN}.png" || die
-	insinto /usr/share/applications
-	doins "${FILESDIR}/${PN}.desktop" || die
+	domenu "${FILESDIR}/${PN}.desktop" || die
 
 	dodoc CHANGELOG.txt DEVELOPING.txt README.txt TODO.txt || die
 
