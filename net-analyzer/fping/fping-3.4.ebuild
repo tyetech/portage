@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/fping/Attic/fping-3.3.ebuild,v 1.1 2012/08/20 05:33:25 radhermit Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/fping/fping-3.4.ebuild,v 1.1 2012/09/05 15:58:45 jer Exp $
 
 EAPI=4
 
