@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/python-mode/Attic/python-mode-0.6.6.ebuild,v 1.1 2012/08/03 08:20:02 xarthisius Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-vim/cvs-repo/gentoo-x86/app-vim/python-mode/python-mode-0.6.8.ebuild,v 1.1 2012/09/07 09:39:22 xarthisius Exp $
 
 EAPI=4
 
