@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/tortoisehg/tortoisehg-9999.ebuild,v 1.11 2012/09/10 20:12:33 floppym Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-vcs/cvs-repo/gentoo-x86/dev-vcs/tortoisehg/tortoisehg-2.5.ebuild,v 1.1 2012/09/10 20:12:33 floppym Exp $
 
 EAPI=4
 
