@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/cara-bin/cara-bin-1.8.4.ebuild,v 1.4 2011/12/26 16:01:14 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-chemistry/cvs-repo/gentoo-x86/sci-chemistry/cara-bin/cara-bin-1.8.4.ebuild,v 1.5 2012/09/10 16:20:51 jlec Exp $
 
 EAPI=4
 
@@ -38,6 +38,8 @@ RDEPEND="
 DEPEND=""
 
 RESTRICT="mirror"
+
+QA_PREBUILT="opt/cara/*"
 
 S="${WORKDIR}"
 
