@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ttytter/Attic/ttytter-2.0.01.ebuild,v 1.1 2012/07/02 18:26:36 hwoarang Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-misc/cvs-repo/gentoo-x86/net-misc/ttytter/ttytter-2.0.03.ebuild,v 1.1 2012/09/11 20:35:15 hwoarang Exp $
 
 EAPI="2"
 
