@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird-bin/Attic/thunderbird-bin-14.0.ebuild,v 1.1 2012/07/17 05:39:58 jdhore Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird-bin/thunderbird-bin-15.0.1.ebuild,v 1.1 2012/09/11 08:13:46 polynomial-c Exp $
 
 EAPI="4"
 
