@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird/Attic/thunderbird-15.0.ebuild,v 1.1 2012/09/01 23:29:58 anarchy Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/mail-client/cvs-repo/gentoo-x86/mail-client/thunderbird/thunderbird-15.0.1.ebuild,v 1.1 2012/09/12 22:57:55 anarchy Exp $
 
 EAPI="3"
 WANT_AUTOCONF="2.1"
