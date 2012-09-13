@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libcmis/Attic/libcmis-0.2.3.ebuild,v 1.3 2012/08/09 08:27:31 scarabeus Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-cpp/cvs-repo/gentoo-x86/dev-cpp/libcmis/libcmis-0.2.3-r1.ebuild,v 1.1 2012/09/13 15:53:20 scarabeus Exp $
 
 EAPI=4
 
@@ -14,11 +14,12 @@ HOMEPAGE="https://sourceforge.net/projects/libcmis/"
 [[ ${PV} == 9999 ]] || SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 LGPL-2 MPL-1.1 )"
-SLOT="0"
+SLOT="0.2"
 [[ ${PV} == 9999 ]] || KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux"
 IUSE="static-libs man test"
 
 RDEPEND="
+	!dev-cpp/libcmis:0
 	dev-libs/boost
 	dev-libs/libxml2
 	net-misc/curl
@@ -39,6 +40,8 @@ src_prepare() {
 
 src_configure() {
 	econf \
+		--docdir="${EPREFIX}"/usr/share/doc/${PF} \
+		--program-suffix=-${SLOT} \
 		--disable-werror \
 		$(use_with man) \
 		$(use_enable static-libs static) \
@@ -49,4 +52,12 @@ src_configure() {
 src_install() {
 	default
 	find "${ED}" -name '*.la' -exec rm -f {} +
+}
+
+pkg_postinst() {
+	alternatives_auto_makesym /usr/bin/cmis-client "/usr/bin/cmis-client-[0-9].[0-9]"
+}
+
+pkg_postrm() {
+	alternatives_auto_makesym /usr/bin/cmis-client "/usr/bin/cmis-client-[0-9].[0-9]"
 }
