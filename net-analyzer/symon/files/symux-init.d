@@ -1,7 +1,7 @@
 #!/sbin/runscript
-# Copyright 1999-2007 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/symon/files/symux-init.d,v 1.2 2008/11/17 00:00:46 tcunha Exp $
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the 2-clause BSD license
+# $Header: /usr/local/ssd/gentoo-x86/output/net-analyzer/cvs-repo/gentoo-x86/net-analyzer/symon/files/symux-init.d,v 1.3 2012/09/13 07:07:53 pinkbyte Exp $
 
 opts="${opts} reload"
 
