@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/libtool.eclass,v 1.101 2012/07/26 16:14:47 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/eclass/cvs-repo/gentoo-x86/eclass/libtool.eclass,v 1.102 2012/09/15 16:16:53 zmedico Exp $
 
 # @ECLASS: libtool.eclass
 # @MAINTAINER:
@@ -29,8 +29,6 @@ elt_patch_dir() {
 	fi
 	echo "${d}"
 }
-
-DESCRIPTION="Based on the ${ECLASS} eclass"
 
 inherit multilib toolchain-funcs
 
