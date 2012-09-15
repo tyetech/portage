@@ -1,12 +1,12 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/tuxonice-sources/Attic/tuxonice-sources-3.4.5.ebuild,v 1.1 2012/07/21 18:34:59 pacho Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/tuxonice-sources/tuxonice-sources-3.4.10.ebuild,v 1.1 2012/09/15 10:13:17 pacho Exp $
 
 EAPI="4"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="6"
+K_GENPATCHES_VER="11"
 
 inherit kernel-2
 detect_version
