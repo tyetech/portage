@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/spectrwm/Attic/spectrwm-1.1.1.ebuild,v 1.1 2012/07/09 16:28:17 xmw Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-wm/cvs-repo/gentoo-x86/x11-wm/spectrwm/spectrwm-2.0.2.ebuild,v 1.1 2012/09/18 01:26:03 xmw Exp $
 
 EAPI=4
 
@@ -18,8 +18,10 @@ IUSE=""
 RDEPEND="x11-misc/dmenu"
 DEPEND="${DEPEND}
 	x11-libs/libX11
+	x11-libs/libXcursor
 	x11-libs/libXrandr
 	x11-libs/libXtst
+	x11-libs/xcb-util
 	!x11-wm/scrotwm"
 
 S=${WORKDIR}/${P}/linux
