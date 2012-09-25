@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/Attic/gtk+-2.24.11-r1.ebuild,v 1.1 2012/07/20 23:58:11 tetromino Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/x11-libs/cvs-repo/gentoo-x86/x11-libs/gtk+/gtk+-2.24.13.ebuild,v 1.1 2012/09/25 15:19:35 tetromino Exp $
 
 EAPI="4"
 
@@ -10,7 +10,7 @@ DESCRIPTION="Gimp ToolKit +"
 HOMEPAGE="http://www.gtk.org/"
 SRC_URI="${SRC_URI} mirror://gentoo/introspection.m4.bz2"
 
-LICENSE="LGPL-2"
+LICENSE="LGPL-2+"
 SLOT="2"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~amd64-fbsd ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE="aqua cups debug doc examples +introspection test vim-syntax xinerama"
@@ -80,12 +80,8 @@ set_gtk2_confdir() {
 }
 
 src_prepare() {
-	# gold detected underlinking
-	# Add missing libs, patch sent upstream
-	epatch "${FILESDIR}/${PN}-2.24.10-gold.patch"
-
-	# Prevent stuck grab in pidgin, bug #427148, upstream 680346
-	epatch "${FILESDIR}/${PN}-2.24.11-stuck-grab.patch"
+	# 
+	epatch "${FILESDIR}/${PN}-2.24.13-gold.patch"
 
 	# use an arch-specific config directory so that 32bit and 64bit versions
 	# dont clash on multilib systems
