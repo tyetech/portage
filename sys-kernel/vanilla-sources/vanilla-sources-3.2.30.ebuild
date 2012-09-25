@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/Attic/vanilla-sources-3.0.40.ebuild,v 1.1 2012/08/10 23:47:29 mpagano Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-kernel/cvs-repo/gentoo-x86/sys-kernel/vanilla-sources/vanilla-sources-3.2.30.ebuild,v 1.1 2012/09/25 13:38:23 mpagano Exp $
 
 EAPI="2"
 K_NOUSENAME="yes"
