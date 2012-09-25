@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gjs/gjs-1.32.0.ebuild,v 1.5 2012/09/25 11:52:27 tetromino Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-libs/cvs-repo/gentoo-x86/dev-libs/gjs/gjs-1.34.0.ebuild,v 1.1 2012/09/25 11:52:27 tetromino Exp $
 
 EAPI="4"
 GCONF_DEBUG="no"
@@ -17,13 +17,14 @@ SLOT="0"
 IUSE="examples test"
 KEYWORDS="~alpha ~amd64 ~ppc ~x86"
 
-RDEPEND=">=dev-libs/glib-2.31:2
-	>=dev-libs/gobject-introspection-1.31.22
+RDEPEND=">=dev-libs/glib-2.32:2
+	>=dev-libs/gobject-introspection-1.33.10
 
 	dev-libs/dbus-glib
 	sys-libs/readline
 	x11-libs/cairo
-	>=dev-lang/spidermonkey-1.8.5"
+	>=dev-lang/spidermonkey-1.8.5
+	virtual/libffi"
 DEPEND="${RDEPEND}
 	sys-devel/gettext
 	virtual/pkgconfig"
@@ -37,8 +38,8 @@ pkg_setup() {
 	G2CONF="${G2CONF}
 		--disable-systemtap
 		--disable-dtrace
-		--disable-coverage"
-
+		--disable-coverage
+		$(use_enable test tests)"
 	python_set_active_version 2
 	python_pkg_setup
 }
