@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.104 2012/09/21 11:49:42 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.105 2012/09/29 02:08:58 aballier Exp $
 
 EAPI="4"
 
@@ -140,7 +140,7 @@ src_configure() {
 	use bzip2 || myconf="${myconf} --disable-bzlib"
 	use sdl || myconf="${myconf} --disable-ffplay"
 
-	use cpudetection && myconf="${myconf} --enable-runtime-cpudetect"
+	use cpudetection || myconf="${myconf} --disable-runtime-cpudetect"
 	use openssl && myconf="${myconf} --enable-openssl --enable-nonfree"
 	for i in gnutls ; do
 		use $i && myconf="${myconf} --enable-$i"
