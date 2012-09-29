@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.105 2012/09/29 02:08:58 aballier Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/media-video/cvs-repo/gentoo-x86/media-video/ffmpeg/ffmpeg-9999.ebuild,v 1.106 2012/09/29 15:17:30 aballier Exp $
 
 EAPI="4"
 
@@ -118,7 +118,7 @@ DEPEND="${RDEPEND}
 REQUIRED_USE="bindist? ( encode? ( !faac !aacplus ) !openssl )
 	libv4l? ( v4l )
 	fftools_cws2fws? ( zlib )
-	test? ( encode zlib )"
+	test? ( encode )"
 
 S=${WORKDIR}/${P/_/-}
 
