@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/riece/riece-8.0.0.ebuild,v 1.5 2012/05/22 21:04:21 ranger Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-emacs/cvs-repo/gentoo-x86/app-emacs/riece/riece-8.0.0.ebuild,v 1.6 2012/09/30 18:07:22 armin76 Exp $
 
 EAPI=4
 
@@ -12,7 +12,7 @@ SRC_URI="http://download.savannah.gnu.org/releases/riece/${P}.tar.gz"
 
 LICENSE="GPL-3 FDL-1.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 ppc ppc64 x86"
+KEYWORDS="amd64 ppc ppc64 x86"
 IUSE="linguas_ja"
 RESTRICT="test"
 
