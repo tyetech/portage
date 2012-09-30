@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/snapraid/Attic/snapraid-1.11.ebuild,v 1.1 2012/07/18 01:58:40 ottxor Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/snapraid/snapraid-1.12.ebuild,v 1.1 2012/09/30 20:09:14 ottxor Exp $
 
 EAPI=4
 
