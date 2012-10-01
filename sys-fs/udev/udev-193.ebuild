@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/udev/udev-193.ebuild,v 1.1 2012/09/30 22:04:59 williamh Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sys-fs/cvs-repo/gentoo-x86/sys-fs/udev/udev-193.ebuild,v 1.2 2012/10/01 17:35:25 flameeyes Exp $
 
 EAPI=4
 
@@ -396,7 +396,7 @@ pkg_postinst()
 
 	ewarn
 	ewarn "You need to restart udev as soon as possible to make the upgrade go"
-	ewarn "into affect."
+	ewarn "into effect."
 	ewarn "The method you use to do this depends on your init system."
 
 	ewarn
