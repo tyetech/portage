@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/aws-sdk/Attic/aws-sdk-1.6.7.ebuild,v 1.1 2012/10/02 01:29:04 flameeyes Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/dev-ruby/cvs-repo/gentoo-x86/dev-ruby/aws-sdk/Attic/aws-sdk-1.6.7-r1.ebuild,v 1.1 2012/10/02 03:15:36 flameeyes Exp $
 
 EAPI=4
 
