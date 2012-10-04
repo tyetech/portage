@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/java-virtuals/cvs-repo/gentoo-x86/java-virtuals/jdk-with-com-sun/jdk-with-com-sun-20111111.ebuild,v 1.2 2011/11/29 19:53:42 grobian Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/java-virtuals/cvs-repo/gentoo-x86/java-virtuals/jdk-with-com-sun/jdk-with-com-sun-20111111.ebuild,v 1.3 2012/10/04 17:36:29 sera Exp $
 
 EAPI=1
 
@@ -10,7 +10,7 @@ DESCRIPTION="Virtual ebuilds that require internal com.sun classes from a JDK"
 HOMEPAGE="http://www.gentoo.org"
 SRC_URI=""
 
-LICENSE="GPL-2"
+LICENSE="public-domain"
 SLOT="0"
 KEYWORDS="amd64 x86 ~x86-fbsd ~ppc-macos ~x64-macos ~x86-macos"
 IUSE=""
