@@ -1,10 +1,10 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/ccid/Attic/ccid-1.4.7-r1.ebuild,v 1.1 2012/08/12 07:57:43 ssuominen Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/app-crypt/cvs-repo/gentoo-x86/app-crypt/ccid/ccid-1.4.8.ebuild,v 1.1 2012/10/07 19:13:56 flameeyes Exp $
 
 EAPI="4"
 
-STUPID_NUM="3730"
+STUPID_NUM="3768"
 
 inherit eutils toolchain-funcs
 
