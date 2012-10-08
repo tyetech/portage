@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bitcoind/Attic/bitcoind-0.6.0.9.ebuild,v 1.3 2012/09/16 12:30:48 blueness Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/net-p2p/cvs-repo/gentoo-x86/net-p2p/bitcoind/bitcoind-0.6.0.10_rc3.ebuild,v 1.1 2012/10/08 18:04:56 blueness Exp $
 
 EAPI="4"
 
