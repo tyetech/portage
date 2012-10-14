@@ -1,11 +1,11 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/lis/lis-1.2.62.ebuild,v 1.2 2012/10/14 19:08:41 jlec Exp $
+# $Header: /usr/local/ssd/gentoo-x86/output/sci-libs/cvs-repo/gentoo-x86/sci-libs/lis/lis-1.2.62.ebuild,v 1.3 2012/10/14 20:50:31 jlec Exp $
 
 EAPI=4
 
 AUTOTOOLS_AUTORECONF=yes
-FORTRAN_DEPEND=fortran
+FORTRAN_NEEDED=fortran
 
 inherit autotools-utils fortran-2
 
